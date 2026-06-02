@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thomas 英文饮食打卡</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f0f4f8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      color: #1a202c;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      width: 100%;
+      max-width: 380px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      margin-bottom: 16px;
+    }
+
+    .label {
+      font-size: 0.8rem;
+      color: #718096;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+
+    .value {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #2d3748;
+    }
+
+    .value.highlight {
+      color: #3182ce;
+    }
+
+    .value.green {
+      color: #38a169;
+    }
+
+    .today-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    .badge.done { background: #c6f6d5; color: #276749; }
+    .badge.pending { background: #fed7d7; color: #9b2c2c; }
+
+    button {
+      width: 100%;
+      max-width: 380px;
+      padding: 16px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: transform 0.1s, opacity 0.2s;
+    }
+
+    button:active { transform: scale(0.97); }
+
+    #logBtn {
+      background: #3182ce;
+      color: white;
+    }
+
+    #logBtn:disabled {
+      background: #a0aec0;
+      cursor: not-allowed;
+    }
+
+    #undoBtn {
+      background: white;
+      color: #e53e3e;
+      border: 2px solid #e53e3e;
+      margin-top: 10px;
+      font-size: 0.9rem;
+      padding: 12px;
+    }
+
+    #undoBtn:disabled {
+      color: #a0aec0;
+      border-color: #a0aec0;
+      cursor: not-allowed;
+    }
+
+    .history-card {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      width: 100%;
+      max-width: 380px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      margin-top: 8px;
+    }
+
+    .history-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #4a5568;
+      margin-bottom: 12px;
+    }
+
+    .history-list {
+      list-style: none;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .history-list li {
+      font-size: 0.88rem;
+      color: #4a5568;
+      padding: 6px 0;
+      border-bottom: 1px solid #f7fafc;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .history-list li:last-child { border-bottom: none; }
+
+    .dot { color: #38a169; font-size: 1rem; }
+
+    .empty-msg {
+      font-size: 0.85rem;
+      color: #a0aec0;
+      text-align: center;
+      padding: 12px 0;
+    }
+
+    .reset-link {
+      margin-top: 20px;
+      font-size: 0.75rem;
+      color: #a0aec0;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🍽️ Thomas 英文饮食打卡</h1>
+
+  <!-- 主数据卡片 -->
+  <div class="card">
+    <div class="label">今天日期</div>
+    <div class="value" id="todayDate">—</div>
+
+    <div class="today-row">
+      <div>
+        <div class="label">今日打卡</div>
+        <span class="badge pending" id="todayBadge">未打卡</span>
+      </div>
+      <div style="text-align:right">
+        <div class="label">累计天数</div>
+        <div class="value green" id="totalCount">0 天</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 目标日期卡片 -->
+  <div class="card">
+    <div class="label">目标截止日</div>
+    <div class="value highlight" id="deadlineDate">—</div>
+    <div style="margin-top:8px; font-size:0.82rem; color:#718096;">
+      每打卡一次，截止日 <strong>+1 天</strong>
+    </div>
+  </div>
+
+  <!-- 打卡按钮 -->
+  <button id="logBtn" onclick="logToday()">✅ 今天吃饭说英文了！</button>
+  <button id="undoBtn" onclick="undoToday()" disabled>↩ 撤销今天的打卡</button>
+
+  <!-- 历史记录 -->
+  <div class="history-card">
+    <div class="history-title">📅 打卡记录</div>
+    <ul class="history-list" id="historyList">
+      <li class="empty-msg" id="emptyMsg">还没有打卡记录</li>
+    </ul>
+  </div>
+
+  <span class="reset-link" onclick="confirmReset()">重置所有数据</span>
+
+  <script>
+    const STORAGE_KEY = 'thomas_meal_counter';
+
+    function loadData() {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) return JSON.parse(raw);
+      // 默认截止日：今天起 30 天后
+      const def = new Date();
+      def.setDate(def.getDate() + 30);
+      return { deadline: fmt(def), logs: [] };
+    }
+
+    function saveData(d) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(d));
+    }
+
+    function fmt(date) {
+      // YYYY-MM-DD
+      return date.toISOString().slice(0, 10);
+    }
+
+    function fmtDisplay(dateStr) {
+      const [y, m, d] = dateStr.split('-');
+      return `${y} 年 ${parseInt(m)} 月 ${parseInt(d)} 日`;
+    }
+
+    function todayStr() {
+      return fmt(new Date());
+    }
+
+    function render() {
+      const data = loadData();
+      const today = todayStr();
+      const alreadyLogged = data.logs.includes(today);
+
+      document.getElementById('todayDate').textContent = fmtDisplay(today);
+      document.getElementById('deadlineDate').textContent = fmtDisplay(data.deadline);
+      document.getElementById('totalCount').textContent = data.logs.length + ' 天';
+
+      const badge = document.getElementById('todayBadge');
+      if (alreadyLogged) {
+        badge.textContent = '已打卡 ✅';
+        badge.className = 'badge done';
+      } else {
+        badge.textContent = '未打卡';
+        badge.className = 'badge pending';
+      }
+
+      document.getElementById('logBtn').disabled = alreadyLogged;
+      document.getElementById('undoBtn').disabled = !alreadyLogged;
+
+      // 历史记录
+      const list = document.getElementById('historyList');
+      const empty = document.getElementById('emptyMsg');
+      if (data.logs.length === 0) {
+        list.innerHTML = '<li class="empty-msg">还没有打卡记录</li>';
+      } else {
+        const sorted = [...data.logs].sort((a, b) => b.localeCompare(a));
+        list.innerHTML = sorted.map(d =>
+          `<li><span class="dot">●</span>${fmtDisplay(d)}</li>`
+        ).join('');
+      }
+    }
+
+    function logToday() {
+      const data = loadData();
+      const today = todayStr();
+      if (data.logs.includes(today)) return;
+
+      data.logs.push(today);
+
+      // 截止日 +1 天
+      const dl = new Date(data.deadline + 'T00:00:00');
+      dl.setDate(dl.getDate() + 1);
+      data.deadline = fmt(dl);
+
+      saveData(data);
+      render();
+    }
+
+    function undoToday() {
+      const data = loadData();
+      const today = todayStr();
+      if (!data.logs.includes(today)) return;
+
+      data.logs = data.logs.filter(d => d !== today);
+
+      // 截止日 -1 天
+      const dl = new Date(data.deadline + 'T00:00:00');
+      dl.setDate(dl.getDate() - 1);
+      data.deadline = fmt(dl);
+
+      saveData(data);
+      render();
+    }
+
+    function confirmReset() {
+      if (confirm('确定要清除所有打卡记录并重置截止日吗？')) {
+        localStorage.removeItem(STORAGE_KEY);
+        render();
+      }
+    }
+
+    render();
+  </script>
+</body>
+</html>
