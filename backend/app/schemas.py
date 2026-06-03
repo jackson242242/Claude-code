@@ -2,7 +2,9 @@
 JSON (and accept camelCase input) so the API matches the TypeScript types."""
 from __future__ import annotations
 
-from pydantic import BaseModel, ConfigDict
+from typing import Any
+
+from pydantic import BaseModel, ConfigDict, Field
 from pydantic.alias_generators import to_camel
 
 
@@ -109,3 +111,90 @@ class TransportSearchQuery(CamelModel):
     destination: str
     date: str
     mode: str | None = None
+
+
+# --- Phase 2: accounts, trips and itineraries -----------------------------
+
+class User(CamelModel):
+    id: str
+    display_name: str
+    created_at: str
+
+
+class TripItem(CamelModel):
+    id: str
+    trip_id: str
+    kind: str  # "match" | "flight" | "hotel" | "transport"
+    match_id: str | None = None
+    city_id: str | None = None
+    title: str
+    subtitle: str | None = None
+    price_usd: float = 0.0
+    starts_at: str | None = None
+    sort_order: int = 0
+    payload: dict[str, Any] = Field(default_factory=dict)
+    created_at: str
+
+
+class Trip(CamelModel):
+    id: str
+    user_id: str
+    name: str
+    share_token: str
+    created_at: str
+    updated_at: str
+    items: list[TripItem] = Field(default_factory=list)
+    item_count: int = 0
+    total_usd: float = 0.0
+
+
+class TripSummary(CamelModel):
+    id: str
+    name: str
+    share_token: str
+    item_count: int
+    total_usd: float
+    updated_at: str
+
+
+class CreateTripRequest(CamelModel):
+    name: str
+
+
+class RenameTripRequest(CamelModel):
+    name: str
+
+
+class AddTripItemRequest(CamelModel):
+    kind: str
+    match_id: str | None = None
+    city_id: str | None = None
+    title: str
+    subtitle: str | None = None
+    price_usd: float = 0.0
+    starts_at: str | None = None
+    payload: dict[str, Any] = Field(default_factory=dict)
+
+
+class CityStay(CamelModel):
+    city_id: str
+    city_name: str
+    check_in: str
+    check_out: str
+    nights: int
+    hotel: HotelOffer | None = None
+
+
+class TravelLeg(CamelModel):
+    from_city_id: str
+    from_city_name: str
+    to_city_id: str
+    to_city_name: str
+    date: str
+    flight: FlightOffer | None = None
+    transport: TransportOffer | None = None
+
+
+class TripSuggestions(CamelModel):
+    city_stays: list[CityStay] = Field(default_factory=list)
+    legs: list[TravelLeg] = Field(default_factory=list)

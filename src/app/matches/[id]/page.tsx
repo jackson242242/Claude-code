@@ -7,6 +7,7 @@ import {
   getVenueById,
 } from '@/services/scheduleService';
 import { NearbyOptions } from '@/components/NearbyOptions';
+import { AddToTripButton } from '@/components/AddToTripButton';
 import { formatKickoff } from '@/lib/format';
 
 interface MatchPageProps {
@@ -37,6 +38,11 @@ const MatchPage = async ({ params }: MatchPageProps) => {
         {match.group ? ` · Group ${match.group}` : ''} ·{' '}
         {formatKickoff(match.kickoffLocal)}
       </p>
+
+      <AddToTripButton
+        match={match}
+        venueName={venue ? venue.name : match.venueId}
+      />
 
       {venue ? (
         <NearbyOptions match={match} venue={venue} city={city} cities={cities} />

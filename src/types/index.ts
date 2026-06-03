@@ -17,3 +17,14 @@ export type {
   HotelSearchQuery,
   TransportSearchQuery,
 } from './offers';
+export type {
+  TripItemKind,
+  User,
+  TripItem,
+  Trip,
+  TripSummary,
+  AddTripItemInput,
+  CityStay,
+  TravelLeg,
+  TripSuggestions,
+} from './trip';

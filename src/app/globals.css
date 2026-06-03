@@ -344,3 +344,255 @@ h1 {
   color: var(--muted);
   padding: 1.5rem 0;
 }
+
+/* Phase 2 — trips & itineraries */
+.error {
+  color: var(--accent-2);
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+}
+
+.link-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.danger-btn {
+  background: transparent;
+  border: 1px solid var(--accent-2);
+  color: var(--accent-2);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-top: 1.5rem;
+}
+
+.trip-detail button:not(.link-btn):not(.danger-btn),
+.suggestion button,
+.add-to-trip__new button,
+.share button {
+  background: var(--accent);
+  color: #06120c;
+  border: none;
+  border-radius: 8px;
+  padding: 0.45rem 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.trip-detail button:disabled,
+.suggestion button:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.trip-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.trip-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+}
+
+.trip-card__main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+}
+
+.trip-card__name {
+  font-weight: 600;
+}
+
+.trip-card__meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.trip-items {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.trip-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.7rem 1rem;
+}
+
+.trip-item__main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.trip-item__title {
+  font-weight: 600;
+}
+
+.trip-item__subtitle {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.trip-item__price {
+  font-weight: 700;
+}
+
+.badge {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  color: #06120c;
+  white-space: nowrap;
+}
+
+.badge--match {
+  background: var(--accent);
+}
+.badge--hotel {
+  background: #ffd166;
+}
+.badge--flight {
+  background: #6ec1ff;
+}
+.badge--transport {
+  background: #c792ea;
+}
+
+.trip-detail__title {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.trip-detail__title input {
+  flex: 1;
+  font-size: 1.4rem;
+  font-weight: 700;
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+}
+
+.suggestions {
+  margin-top: 1.5rem;
+}
+
+.suggestion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.suggestion__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.suggestion__actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.trip-detail__share {
+  margin-top: 1.5rem;
+}
+
+.share {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 520px;
+}
+
+.share__url {
+  flex: 1;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 0.5rem 0.7rem;
+}
+
+.add-to-trip {
+  margin: 1rem 0 1.5rem;
+}
+
+.add-to-trip__panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  max-width: 420px;
+}
+
+.add-to-trip__head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.add-to-trip__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.5rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.add-to-trip__new {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.add-to-trip__new input {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 0.45rem 0.6rem;
+}
+
+.add-to-trip__status {
+  color: var(--accent);
+  margin-top: 0.5rem;
+}

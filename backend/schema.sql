@@ -48,3 +48,38 @@ CREATE TABLE IF NOT EXISTS matches (
 
 CREATE INDEX IF NOT EXISTS idx_matches_venue ON matches (venue_id);
 CREATE INDEX IF NOT EXISTS idx_matches_group ON matches (group_label);
+
+-- Phase 2: lightweight accounts and saved trips / itineraries.
+
+CREATE TABLE IF NOT EXISTS users (
+    id           TEXT PRIMARY KEY,
+    display_name TEXT NOT NULL,
+    created_at   TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS trips (
+    id          TEXT PRIMARY KEY,
+    user_id     TEXT NOT NULL REFERENCES users (id) ON DELETE CASCADE,
+    name        TEXT NOT NULL,
+    share_token TEXT NOT NULL UNIQUE,
+    created_at  TEXT NOT NULL,
+    updated_at  TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS trip_items (
+    id         TEXT PRIMARY KEY,
+    trip_id    TEXT NOT NULL REFERENCES trips (id) ON DELETE CASCADE,
+    kind       TEXT NOT NULL,
+    match_id   TEXT,
+    city_id    TEXT,
+    title      TEXT NOT NULL,
+    subtitle   TEXT,
+    price_usd  DOUBLE PRECISION NOT NULL DEFAULT 0,
+    starts_at  TEXT,
+    sort_order INTEGER NOT NULL DEFAULT 0,
+    payload    JSONB NOT NULL DEFAULT '{}'::jsonb,
+    created_at TEXT NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_trips_user ON trips (user_id);
+CREATE INDEX IF NOT EXISTS idx_trip_items_trip ON trip_items (trip_id);
