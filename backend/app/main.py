@@ -13,7 +13,7 @@ from fastapi.responses import JSONResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from app.config import settings
-from app.routers import flights, hotels, schedule, transport, trips
+from app.routers import flights, hotels, meta, schedule, transport, trips
 
 app = FastAPI(title="World Cup 2026 Tour Guide API", version="0.1.0")
 
@@ -64,3 +64,4 @@ app.include_router(flights.router)
 app.include_router(hotels.router)
 app.include_router(transport.router)
 app.include_router(trips.router)
+app.include_router(meta.router)
