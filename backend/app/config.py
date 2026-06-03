@@ -7,7 +7,17 @@ from dataclasses import dataclass, field
 
 def _cors_origins() -> tuple[str, ...]:
     raw = os.getenv("CORS_ORIGINS") or "http://localhost:3000"
-    return tuple(origin.strip() for origin in raw.split(",") if origin.strip())
+    origins: list[str] = []
+    for origin in raw.split(","):
+        origin = origin.strip()
+        if not origin:
+            continue
+        # Accept a bare host (e.g. a platform's service-to-service reference)
+        # by defaulting to https, and drop any trailing slash for exact match.
+        if not origin.startswith(("http://", "https://")):
+            origin = f"https://{origin}"
+        origins.append(origin.rstrip("/"))
+    return tuple(origins)
 
 
 def _float(name: str, default: str) -> float:

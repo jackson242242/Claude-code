@@ -1,0 +1,52 @@
+# Render Blueprint — World Cup 2026 Tour Guide
+#
+# Stands up the full app on Render: a FastAPI backend (worldcup-api) and a
+# Next.js frontend (worldcup-web). The only secret you must supply is
+# DUFFEL_API_KEY (marked `sync: false`, so Render prompts for it). With it set,
+# flights and hotels return live Duffel pricing/availability; without it (or on
+# any upstream error) the API degrades gracefully to deterministic seed/mock
+# data, so the site always renders.
+#
+# The two cross-service URLs are wired automatically via `fromService` hosts;
+# the app code tolerates a bare host (defaults to https). PostgreSQL is optional
+# and omitted here — the API runs on in-process seed data + in-memory trips. See
+# DEPLOY.md to add a managed database for persistence.
+
+services:
+  - type: web
+    name: worldcup-api
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11"
+      - key: FLIGHT_PROVIDER
+        value: duffel
+      - key: HOTEL_PROVIDER
+        value: duffel
+      - key: DUFFEL_API_KEY
+        sync: false
+      - key: CORS_ORIGINS
+        fromService:
+          type: web
+          name: worldcup-web
+          property: host
+
+  - type: web
+    name: worldcup-web
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start -- -p $PORT
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NEXT_PUBLIC_API_BASE_URL
+        fromService:
+          type: web
+          name: worldcup-api
+          property: host

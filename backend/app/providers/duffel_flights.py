@@ -109,5 +109,7 @@ class DuffelFlightProvider(FlightProvider):
             arrive_utc=arrive,
             duration_minutes=_duration_minutes(depart, arrive),
             stops=max(0, len(segments) - 1),
+            # Amount is treated as USD (Duffel test accounts are USD-denominated).
+            # Multi-currency normalization via `total_currency` is a tracked follow-up.
             price_usd=float(offer.get("total_amount", 0) or 0),
         )
