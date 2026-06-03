@@ -12,6 +12,14 @@ const config: Config = {
   },
   collectCoverageFrom: ['src/**/*.{ts,tsx}', '!src/**/*.d.ts'],
   coverageReporters: ['text-summary', 'lcov'],
+  coverageThreshold: {
+    global: {
+      statements: 35,
+      branches: 27,
+      functions: 38,
+      lines: 34,
+    },
+  },
 };
 
 export default createJestConfig(config);
