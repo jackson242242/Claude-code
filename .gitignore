@@ -34,4 +34,7 @@ __pycache__/
 .venv/
 backend/.venv/
 .pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
 *.egg-info/
