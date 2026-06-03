@@ -22,6 +22,7 @@ import { sortTripItems } from '@/services/itinerary';
 import { formatDuration, formatPriceUsd } from '@/lib/format';
 import { TripItemRow } from './TripItemRow';
 import { ShareTripLink } from './ShareTripLink';
+import { CheckoutButton } from './CheckoutButton';
 
 interface TripDetailViewProps {
   tripId: string;
@@ -271,6 +272,15 @@ export const TripDetailView = ({ tripId }: TripDetailViewProps) => {
           ))}
         </section>
       ) : null}
+
+      <section className="trip-detail__checkout">
+        <h2>Reserve</h2>
+        <p className="muted">
+          Snapshot this itinerary into a booking with links to complete each
+          purchase.
+        </p>
+        <CheckoutButton tripId={trip.id} disabled={trip.itemCount === 0} />
+      </section>
 
       <section className="trip-detail__share">
         <h2>Share</h2>

@@ -83,3 +83,22 @@ CREATE TABLE IF NOT EXISTS trip_items (
 
 CREATE INDEX IF NOT EXISTS idx_trips_user ON trips (user_id);
 CREATE INDEX IF NOT EXISTS idx_trip_items_trip ON trip_items (trip_id);
+
+-- Phase 4: checkout / bookings. A booking is an immutable snapshot of a trip's
+-- items at checkout time, with per-line deep links and a payment status.
+
+CREATE TABLE IF NOT EXISTS bookings (
+    id                TEXT PRIMARY KEY,
+    user_id           TEXT NOT NULL,
+    trip_id           TEXT,
+    trip_name         TEXT NOT NULL,
+    status            TEXT NOT NULL,
+    confirmation_code TEXT NOT NULL,
+    currency          TEXT NOT NULL DEFAULT 'USD',
+    total_usd         DOUBLE PRECISION NOT NULL DEFAULT 0,
+    payment_provider  TEXT NOT NULL,
+    lines             JSONB NOT NULL DEFAULT '[]'::jsonb,
+    created_at        TEXT NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_bookings_user ON bookings (user_id);

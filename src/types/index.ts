@@ -28,3 +28,9 @@ export type {
   TravelLeg,
   TripSuggestions,
 } from './trip';
+export type {
+  BookingStatus,
+  BookingLine,
+  Booking,
+  BookingSummary,
+} from './booking';

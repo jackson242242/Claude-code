@@ -26,6 +26,7 @@ const RootLayout = ({ children }: RootLayoutProps) => (
           <Link href="/hotels">Hotels</Link>
           <Link href="/transport">Transport</Link>
           <Link href="/trips">My Trips</Link>
+          <Link href="/bookings">Bookings</Link>
         </nav>
       </header>
       <main className="site-main">{children}</main>

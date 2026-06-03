@@ -5,32 +5,12 @@ import type {
   TripSummary,
   User,
 } from '@/types';
-import { apiBaseUrl } from './apiClient';
-import { getUserId } from './userClient';
+import { authedFetch } from './authedClient';
 
 /**
  * Trip data is user-specific and mutable, so it is always served by the
  * backend (which itself runs with an in-memory store when no database is set).
- * Requests carry the opaque user id in the X-User-Id header.
  */
-const authedFetch = async <T>(
-  path: string,
-  init: RequestInit = {},
-): Promise<T> => {
-  const res = await fetch(`${apiBaseUrl()}${path}`, {
-    ...init,
-    headers: {
-      'Content-Type': 'application/json',
-      'X-User-Id': getUserId(),
-      ...(init.headers ?? {}),
-    },
-    cache: 'no-store',
-  });
-  if (!res.ok) {
-    throw new Error(`${init.method ?? 'GET'} ${path} failed: ${res.status}`);
-  }
-  return (await res.json()) as T;
-};
 
 export const getMe = (): Promise<User> => authedFetch<User>('/me');
 

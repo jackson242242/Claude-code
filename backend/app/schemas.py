@@ -198,3 +198,37 @@ class TravelLeg(CamelModel):
 class TripSuggestions(CamelModel):
     city_stays: list[CityStay] = Field(default_factory=list)
     legs: list[TravelLeg] = Field(default_factory=list)
+
+
+# --- Phase 4: checkout / bookings -----------------------------------------
+
+class BookingLine(CamelModel):
+    kind: str
+    title: str
+    subtitle: str | None = None
+    price_usd: float = 0.0
+    deep_link: str | None = None
+
+
+class Booking(CamelModel):
+    id: str
+    user_id: str
+    trip_id: str | None = None
+    trip_name: str
+    status: str  # "reserved" | "paid"
+    confirmation_code: str
+    currency: str = "USD"
+    total_usd: float = 0.0
+    payment_provider: str
+    created_at: str
+    lines: list[BookingLine] = Field(default_factory=list)
+
+
+class BookingSummary(CamelModel):
+    id: str
+    trip_name: str
+    status: str
+    confirmation_code: str
+    total_usd: float
+    line_count: int
+    created_at: str
