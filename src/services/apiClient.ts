@@ -2,8 +2,13 @@
  * Thin wrapper around the native fetch API for talking to the FastAPI backend.
  * No third-party HTTP client (no Axios) per project conventions.
  */
-export const apiBaseUrl = (): string =>
-  process.env.NEXT_PUBLIC_API_BASE_URL ?? 'http://localhost:8000';
+export const apiBaseUrl = (): string => {
+  const raw = process.env.NEXT_PUBLIC_API_BASE_URL ?? 'http://localhost:8000';
+  // Accept a bare host (e.g. a platform's service-to-service reference) by
+  // defaulting to https, and drop any trailing slash so callers pass "/paths".
+  const withScheme = /^https?:\/\//.test(raw) ? raw : `https://${raw}`;
+  return withScheme.replace(/\/+$/, '');
+};
 
 export const mocksEnabled = (): boolean =>
   process.env.NEXT_PUBLIC_USE_MOCKS === 'true';

@@ -17,6 +17,7 @@ from app.providers.cache import (
     TtlCache,
 )
 from app.providers.duffel_flights import DuffelFlightProvider
+from app.providers.duffel_hotels import DuffelStaysHotelProvider
 from app.providers.http_providers import (
     HttpFlightProvider,
     HttpHotelProvider,
@@ -30,6 +31,18 @@ from app.providers.resilient import (
     ResilientHotelProvider,
     ResilientTransportProvider,
 )
+from app.seed import schedule_2026 as _seed
+
+# city_id -> (lat, lng) for host cities; Duffel Stays searches by coordinates.
+_CITY_COORDS: dict[str, tuple[float, float]] = {
+    str(city["id"]): (float(city["lat"]), float(city["lng"]))
+    for city in _seed.CITIES
+}
+
+
+def _locate_city(city_id: str) -> tuple[float, float] | None:
+    return _CITY_COORDS.get(city_id)
+
 
 _TIMEOUT = settings.provider_timeout_seconds
 _flight_cache: TtlCache[list[schemas.FlightOffer]] = TtlCache(
@@ -58,6 +71,13 @@ def _flight_primary() -> FlightProvider | None:
 
 
 def _hotel_primary() -> HotelProvider | None:
+    if settings.hotel_provider == "duffel" and settings.duffel_api_key:
+        return DuffelStaysHotelProvider(
+            settings.duffel_api_key,
+            _locate_city,
+            base_url=settings.duffel_base_url,
+            timeout=_TIMEOUT,
+        )
     if settings.hotel_provider == "http" and settings.hotels_api_url:
         return HttpHotelProvider(
             settings.hotels_api_url, settings.hotels_api_key, timeout=_TIMEOUT

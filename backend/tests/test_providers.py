@@ -1,3 +1,5 @@
+import json
+
 import httpx
 from fastapi.testclient import TestClient
 
@@ -5,6 +7,7 @@ from app import schemas
 from app.providers.base import FlightProvider
 from app.providers.cache import CachedFlightProvider, TtlCache
 from app.providers.duffel_flights import DuffelFlightProvider
+from app.providers.duffel_hotels import DuffelStaysHotelProvider
 from app.providers.http_providers import HttpFlightProvider
 from app.providers.resilient import ResilientFlightProvider
 
@@ -142,3 +145,66 @@ def test_meta_providers_defaults_to_mock(client: TestClient) -> None:
     assert body["flights"]["mode"] == "mock"
     assert body["hotels"]["mode"] == "mock"
     assert body["transport"]["mode"] == "mock"
+
+
+def test_duffel_stays_maps_hotel_results() -> None:
+    query = schemas.HotelSearchQuery(
+        city_id="miami", check_in="2026-06-20", check_out="2026-06-23", guests=2
+    )
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        assert request.url.path == "/stays/search"
+        assert request.headers["Authorization"] == "Bearer duffel-key"
+        coords = json.loads(request.content)["data"]["location"][
+            "geographic_coordinates"
+        ]
+        assert coords == {"latitude": 25.958, "longitude": -80.239}
+        return httpx.Response(
+            200,
+            json={
+                "data": {
+                    "results": [
+                        {
+                            "id": "res_1",
+                            "cheapest_rate_total_amount": "600.00",
+                            "cheapest_rate_total_currency": "USD",
+                            "accommodation": {
+                                "name": "Bayfront Hotel",
+                                "rating": 4,
+                                "location": {
+                                    "geographic_coordinates": {
+                                        "latitude": 25.97,
+                                        "longitude": -80.24,
+                                    }
+                                },
+                            },
+                        },
+                        # Zero-priced result is dropped.
+                        {"id": "res_skip", "cheapest_rate_total_amount": "0"},
+                    ]
+                }
+            },
+        )
+
+    client = httpx.Client(transport=httpx.MockTransport(handler))
+    provider = DuffelStaysHotelProvider(
+        "duffel-key", lambda _city: (25.958, -80.239), client=client
+    )
+    offers = provider.search(query)
+    assert len(offers) == 1
+    offer = offers[0]
+    assert offer.provider == "Duffel"
+    assert offer.name == "Bayfront Hotel"
+    assert offer.city_id == "miami"
+    assert offer.rating == 4
+    assert offer.nights == 3
+    assert offer.price_usd == 600.0
+    assert offer.price_per_night_usd == 200.0
+
+
+def test_duffel_stays_returns_empty_for_unknown_city() -> None:
+    query = schemas.HotelSearchQuery(
+        city_id="atlantis", check_in="2026-06-20", check_out="2026-06-21"
+    )
+    provider = DuffelStaysHotelProvider("duffel-key", lambda _city: None)
+    assert provider.search(query) == []
