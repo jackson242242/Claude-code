@@ -1,0 +1,52 @@
+import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
+import Link from 'next/link';
+import { getLocale } from '@/i18n/server';
+import { translator } from '@/i18n';
+import { LanguageSwitcher } from '@/components/LanguageSwitcher';
+import './globals.css';
+
+export const metadata: Metadata = {
+  title: 'World Cup 2026 Tour Guide',
+  description:
+    'Browse the full 2026 World Cup schedule and book flights, hotels, and transportation around the matches you want to attend.',
+};
+
+interface RootLayoutProps {
+  children: ReactNode;
+}
+
+const RootLayout = async ({ children }: RootLayoutProps) => {
+  const locale = await getLocale();
+  const t = translator(locale);
+
+  return (
+    <html lang={locale}>
+      <body>
+        <a href="#main" className="skip-link">
+          {t('common.skipToContent')}
+        </a>
+        <header className="site-header">
+          <Link href="/" className="brand">
+            ⚽ WC2026 Tour Guide
+          </Link>
+          <nav className="site-nav">
+            <Link href="/schedule">{t('nav.schedule')}</Link>
+            <Link href="/flights">{t('nav.flights')}</Link>
+            <Link href="/hotels">{t('nav.hotels')}</Link>
+            <Link href="/transport">{t('nav.transport')}</Link>
+            <Link href="/trips">{t('nav.trips')}</Link>
+            <Link href="/bookings">{t('nav.bookings')}</Link>
+            <LanguageSwitcher locale={locale} />
+          </nav>
+        </header>
+        <main id="main" className="site-main">
+          {children}
+        </main>
+        <footer className="site-footer">{t('footer.tagline')}</footer>
+      </body>
+    </html>
+  );
+};
+
+export default RootLayout;
