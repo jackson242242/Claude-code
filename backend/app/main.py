@@ -11,8 +11,10 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
+from starlette.responses import Response
 
 from app.config import settings
+from app.observability import metrics
 from app.routers import (
     bookings,
     flights,
@@ -22,6 +24,8 @@ from app.routers import (
     transport,
     trips,
 )
+
+_CACHEABLE_GETS = {"/matches", "/cities", "/teams"}
 
 app = FastAPI(title="World Cup 2026 Tour Guide API", version="0.1.0")
 
@@ -60,6 +64,17 @@ async def unhandled_exception_handler(
     _request: Request, _exc: Exception
 ) -> JSONResponse:
     return _error("Internal server error", "internal_error", 500)
+
+
+@app.middleware("http")
+async def observe_and_cache(request: Request, call_next) -> Response:
+    response = await call_next(request)
+    route = request.scope.get("route")
+    path = getattr(route, "path", request.url.path)
+    metrics.record(request.method, path, response.status_code)
+    if request.method == "GET" and path in _CACHEABLE_GETS:
+        response.headers.setdefault("Cache-Control", "public, max-age=60")
+    return response
 
 
 @app.get("/health", tags=["meta"])

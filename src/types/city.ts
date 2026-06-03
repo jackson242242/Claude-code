@@ -10,3 +10,10 @@ export interface City {
   airports: string[];
   transportNotes: string;
 }
+
+export interface NearbyCity {
+  id: string;
+  name: string;
+  country: Country;
+  distanceKm: number;
+}

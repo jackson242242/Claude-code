@@ -39,6 +39,13 @@ class Team(CamelModel):
     confederation: str
 
 
+class NearbyCity(CamelModel):
+    id: str
+    name: str
+    country: str
+    distance_km: float
+
+
 class Match(CamelModel):
     id: str
     match_number: int

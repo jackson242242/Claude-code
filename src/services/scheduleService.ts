@@ -1,8 +1,16 @@
-import type { City, Match, MatchFilters, Team, Venue } from '@/types';
+import type {
+  City,
+  Match,
+  MatchFilters,
+  NearbyCity,
+  Team,
+  Venue,
+} from '@/types';
 import { MOCK_CITIES } from '@/mocks/cities';
 import { MOCK_MATCHES } from '@/mocks/matches';
 import { MOCK_TEAMS } from '@/mocks/teams';
 import { MOCK_VENUES } from '@/mocks/venues';
+import { nearestCities } from '@/lib/geo';
 import { getJson, mocksEnabled } from './apiClient';
 import { filterMatches, sortByKickoff } from './matchFilters';
 
@@ -73,6 +81,20 @@ export const getTeams = async (): Promise<Team[]> => {
     }
   }
   return MOCK_TEAMS;
+};
+
+export const getNearbyCities = async (
+  id: string,
+  limit = 3,
+): Promise<NearbyCity[]> => {
+  if (!mocksEnabled()) {
+    try {
+      return await getJson<NearbyCity[]>(`/cities/${id}/nearby?limit=${limit}`);
+    } catch {
+      // fall through to the local geo computation
+    }
+  }
+  return nearestCities(MOCK_CITIES, id, limit);
 };
 
 /** Venues are static reference data, resolved locally on both server and client. */

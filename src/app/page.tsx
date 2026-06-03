@@ -1,30 +1,30 @@
 import Link from 'next/link';
 import { getCities } from '@/services/scheduleService';
 import { CityCard } from '@/components/CityCard';
+import { getLocale } from '@/i18n/server';
+import { translator } from '@/i18n';
 
 const HomePage = async () => {
-  const cities = await getCities();
+  const [cities, locale] = await Promise.all([getCities(), getLocale()]);
+  const t = translator(locale);
+
   return (
     <div className="home">
       <section className="hero">
-        <h1>Your 2026 World Cup, sorted.</h1>
-        <p>
-          Browse all 104 matches across 16 host cities in the USA, Canada and
-          Mexico — then book the flights, hotels and transport to follow your
-          team.
-        </p>
+        <h1>{t('home.title')}</h1>
+        <p>{t('home.subtitle')}</p>
         <div className="hero__actions">
           <Link className="btn" href="/schedule">
-            Explore the schedule
+            {t('home.exploreSchedule')}
           </Link>
           <Link className="btn btn--ghost" href="/hotels">
-            Find hotels
+            {t('home.findHotels')}
           </Link>
         </div>
       </section>
 
       <section>
-        <h2>Host cities</h2>
+        <h2>{t('home.hostCities')}</h2>
         <div className="city-grid">
           {cities.map((city) => (
             <CityCard key={city.id} city={city} />

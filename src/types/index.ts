@@ -1,4 +1,4 @@
-export type { City, Country } from './city';
+export type { City, Country, NearbyCity } from './city';
 export type { Venue } from './venue';
 export type { Team, GroupId, Confederation } from './team';
 export type {

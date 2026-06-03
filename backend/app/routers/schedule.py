@@ -3,6 +3,7 @@ from __future__ import annotations
 from fastapi import APIRouter, HTTPException, Query
 
 from app import schemas
+from app.services import geo as geo_service
 from app.services import schedule as schedule_service
 
 router = APIRouter(tags=["schedule"])
@@ -40,6 +41,15 @@ def get_city(city_id: str) -> schemas.City:
     if city is None:
         raise HTTPException(status_code=404, detail="City not found")
     return city
+
+
+@router.get("/cities/{city_id}/nearby", response_model=list[schemas.NearbyCity])
+def nearby_cities(
+    city_id: str, limit: int = Query(3, ge=1, le=15)
+) -> list[schemas.NearbyCity]:
+    if schedule_service.get_city(city_id) is None:
+        raise HTTPException(status_code=404, detail="City not found")
+    return geo_service.nearby_cities(city_id, limit)
 
 
 @router.get("/teams", response_model=list[schemas.Team])

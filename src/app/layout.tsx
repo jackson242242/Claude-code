@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import Link from 'next/link';
+import { getLocale } from '@/i18n/server';
+import { translator } from '@/i18n';
+import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -13,28 +16,37 @@ interface RootLayoutProps {
   children: ReactNode;
 }
 
-const RootLayout = ({ children }: RootLayoutProps) => (
-  <html lang="en">
-    <body>
-      <header className="site-header">
-        <Link href="/" className="brand">
-          ⚽ WC2026 Tour Guide
-        </Link>
-        <nav className="site-nav">
-          <Link href="/schedule">Schedule</Link>
-          <Link href="/flights">Flights</Link>
-          <Link href="/hotels">Hotels</Link>
-          <Link href="/transport">Transport</Link>
-          <Link href="/trips">My Trips</Link>
-          <Link href="/bookings">Bookings</Link>
-        </nav>
-      </header>
-      <main className="site-main">{children}</main>
-      <footer className="site-footer">
-        2026 FIFA World Cup · United States · Canada · Mexico
-      </footer>
-    </body>
-  </html>
-);
+const RootLayout = async ({ children }: RootLayoutProps) => {
+  const locale = await getLocale();
+  const t = translator(locale);
+
+  return (
+    <html lang={locale}>
+      <body>
+        <a href="#main" className="skip-link">
+          {t('common.skipToContent')}
+        </a>
+        <header className="site-header">
+          <Link href="/" className="brand">
+            ⚽ WC2026 Tour Guide
+          </Link>
+          <nav className="site-nav">
+            <Link href="/schedule">{t('nav.schedule')}</Link>
+            <Link href="/flights">{t('nav.flights')}</Link>
+            <Link href="/hotels">{t('nav.hotels')}</Link>
+            <Link href="/transport">{t('nav.transport')}</Link>
+            <Link href="/trips">{t('nav.trips')}</Link>
+            <Link href="/bookings">{t('nav.bookings')}</Link>
+            <LanguageSwitcher locale={locale} />
+          </nav>
+        </header>
+        <main id="main" className="site-main">
+          {children}
+        </main>
+        <footer className="site-footer">{t('footer.tagline')}</footer>
+      </body>
+    </html>
+  );
+};
 
 export default RootLayout;

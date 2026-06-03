@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import {
   getCityById,
   getMatches,
+  getNearbyCities,
   getVenueById,
 } from '@/services/scheduleService';
 import { MatchList } from '@/components/MatchList';
@@ -18,7 +19,10 @@ const CityPage = async ({ params }: CityPageProps) => {
   if (!city) notFound();
 
   const venue = getVenueById(id);
-  const matches = await getMatches({ cityId: id });
+  const [matches, nearby] = await Promise.all([
+    getMatches({ cityId: id }),
+    getNearbyCities(id),
+  ]);
 
   return (
     <div>
@@ -31,6 +35,23 @@ const CityPage = async ({ params }: CityPageProps) => {
       </p>
 
       {venue ? <VenueInfo venue={venue} city={city} /> : null}
+
+      {nearby.length > 0 ? (
+        <section>
+          <h2>Nearby host cities</h2>
+          <ul className="nearby-cities">
+            {nearby.map((other) => (
+              <li key={other.id}>
+                <Link href={`/cities/${other.id}`}>{other.name}</Link>
+                <span className="muted">
+                  {' '}
+                  · {other.distanceKm.toLocaleString('en-US')} km
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       <h2>Matches in {city.name}</h2>
       <MatchList matches={matches} />
