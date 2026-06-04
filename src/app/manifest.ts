@@ -2,13 +2,13 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'World Cup 2026 Tour Guide',
-    short_name: 'WC2026',
-    description: 'Browse the 2026 World Cup schedule and book flights, hotels, and transport.',
+    name: 'Matchday26 — Your Road to the Game',
+    short_name: 'Matchday26',
+    description: 'Your road to the game. Browse the 2026 World Cup schedule and book flights, hotels, and transport.',
     start_url: '/',
     display: 'standalone',
-    background_color: '#0d1117',
-    theme_color: '#146c34',
+    background_color: '#0f1419',
+    theme_color: '#1fb88f',
     orientation: 'portrait-primary',
     icons: [
       {

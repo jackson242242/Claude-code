@@ -1,17 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg: #0d1117;
+  --bg: #0f1419;
   --panel: #161b22;
   --panel-2: #1c2230;
   --text: #e6edf3;
   --muted: #8b949e;
-  --accent: #00c896;
+  --accent: #1fb88f;
+  --accent-hover: #1aa876;
+  --accent-glow: rgba(31, 184, 143, 0.35);
+  --price: #e6a817;
   --accent-2: #f85149;
   --border: #21262d;
   --radius: 12px;
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.18), 0 4px 8px rgba(0, 0, 0, 0.16);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.22), 0 8px 24px rgba(0, 0, 0, 0.18);
 }
 
 * {
@@ -124,7 +127,7 @@ h2 {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(0, 200, 150, 0.12) 0%, rgba(0, 0, 0, 0) 60%, rgba(248, 81, 73, 0.07) 100%);
+  background: linear-gradient(135deg, rgba(31, 184, 143, 0.12) 0%, rgba(0, 0, 0, 0) 60%, rgba(248, 81, 73, 0.07) 100%);
   pointer-events: none;
   border-radius: inherit;
 }
@@ -162,8 +165,8 @@ h2 {
 }
 
 .btn:hover {
-  background: #00b384;
-  box-shadow: 0 2px 8px rgba(0, 200, 150, 0.35);
+  background: var(--accent-hover);
+  box-shadow: 0 2px 8px var(--accent-glow);
   transform: translateY(-1px);
 }
 
@@ -201,7 +204,7 @@ h2 {
 .city-card:hover {
   border-color: var(--accent);
   box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
 }
 
 .city-card__image {
@@ -257,7 +260,7 @@ h2 {
 .search-form input:focus,
 .search-form select:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(0, 200, 150, 0.15);
+  box-shadow: 0 0 0 3px rgba(31, 184, 143, 0.15);
 }
 
 .filters button,
@@ -276,8 +279,8 @@ h2 {
 
 .filters button:hover,
 .search-form button:hover {
-  background: #00b384;
-  box-shadow: 0 2px 8px rgba(0, 200, 150, 0.35);
+  background: var(--accent-hover);
+  box-shadow: 0 2px 8px var(--accent-glow);
   transform: translateY(-1px);
 }
 
@@ -323,7 +326,7 @@ h2 {
 .match-card:hover {
   border-color: var(--accent);
   box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
 }
 
 .match-card__head {
@@ -446,7 +449,8 @@ h2 {
 
 .offer-card:hover {
   box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  border-color: var(--accent);
 }
 
 .offer-card__title {
@@ -465,8 +469,10 @@ h2 {
 }
 
 .offer-card__price {
-  font-size: 1.25rem;
+  font-size: 1.45rem;
   font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--price);
   margin-top: 0.5rem;
 }
 
@@ -495,9 +501,9 @@ a.offer-card__book {
 
 .offer-card__book:hover,
 a.offer-card__book:hover {
-  background: #00b384;
-  box-shadow: 0 2px 8px rgba(0, 200, 150, 0.35);
-  transform: translateY(-1px);
+  background: var(--accent-hover);
+  box-shadow: 0 4px 14px var(--accent-glow);
+  transform: translateY(-2px);
   text-decoration: none;
 }
 
@@ -566,8 +572,8 @@ a.offer-card__book:hover {
 .suggestion button:hover,
 .add-to-trip__new button:hover,
 .share button:hover {
-  background: #00b384;
-  box-shadow: 0 2px 6px rgba(0, 200, 150, 0.3);
+  background: var(--accent-hover);
+  box-shadow: 0 2px 6px rgba(31, 184, 143, 0.3);
 }
 
 .trip-detail button:disabled,
@@ -702,7 +708,7 @@ a.offer-card__book:hover {
 
 .trip-detail__title input:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(0, 200, 150, 0.15);
+  box-shadow: 0 0 0 3px rgba(31, 184, 143, 0.15);
 }
 
 .suggestions {
@@ -805,7 +811,7 @@ a.offer-card__book:hover {
 
 .add-to-trip__new input:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(0, 200, 150, 0.15);
+  box-shadow: 0 0 0 3px rgba(31, 184, 143, 0.15);
 }
 
 .add-to-trip__status {
