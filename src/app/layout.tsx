@@ -8,13 +8,13 @@ import { PwaRegistration } from '@/components/PwaRegistration';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Tour Guide',
+  title: 'Matchday26 — Your Road to the Game | World Cup 2026 Travel',
   description:
-    'Browse the full 2026 World Cup schedule and book flights, hotels, and transportation around the matches you want to attend.',
+    'Matchday26 — your road to the game. Browse the full 2026 World Cup schedule and book flights, hotels, and transportation around the matches you want to attend.',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',
-    title: 'WC2026',
+    title: 'Matchday26',
   },
 };
 
@@ -38,7 +38,7 @@ const RootLayout = async ({ children }: RootLayoutProps) => {
         </a>
         <header className="site-header">
           <Link href="/" className="brand">
-            ⚽ WC2026 Tour Guide
+            ⚽ Matchday26
           </Link>
           <nav className="site-nav">
             <Link href="/schedule">{t('nav.schedule')}</Link>

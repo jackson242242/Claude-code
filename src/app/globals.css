@@ -1,17 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg: #0d1117;
+  --bg: #0f1419;
   --panel: #161b22;
   --panel-2: #1c2230;
   --text: #e6edf3;
   --muted: #8b949e;
-  --accent: #00c896;
+  --accent: #1fb88f;
+  --accent-hover: #1aa876;
+  --accent-glow: rgba(31, 184, 143, 0.35);
+  --price: #e6a817;
   --accent-2: #f85149;
   --border: #21262d;
   --radius: 12px;
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.18), 0 4px 8px rgba(0, 0, 0, 0.16);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.22), 0 8px 24px rgba(0, 0, 0, 0.18);
 }
 
 * {
@@ -111,11 +114,27 @@ h2 {
 
 /* Hero */
 .hero {
+  position: relative;
   background: linear-gradient(135deg, var(--panel-2), var(--panel));
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 2.5rem;
   margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(31, 184, 143, 0.12) 0%, rgba(0, 0, 0, 0) 60%, rgba(248, 81, 73, 0.07) 100%);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 .hero h1 {
@@ -146,8 +165,8 @@ h2 {
 }
 
 .btn:hover {
-  background: #00b384;
-  box-shadow: 0 2px 8px rgba(0, 200, 150, 0.35);
+  background: var(--accent-hover);
+  box-shadow: 0 2px 8px var(--accent-glow);
   transform: translateY(-1px);
 }
 
@@ -173,12 +192,11 @@ h2 {
 .city-card {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0;
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1rem;
-  min-height: 96px;
+  overflow: hidden;
   box-shadow: var(--shadow-sm);
   transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
 }
@@ -186,7 +204,22 @@ h2 {
 .city-card:hover {
   border-color: var(--accent);
   box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+}
+
+.city-card__image {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: var(--radius) var(--radius) 0 0;
+  display: block;
+}
+
+.city-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.75rem 1rem;
 }
 
 .city-card__name {
@@ -227,7 +260,7 @@ h2 {
 .search-form input:focus,
 .search-form select:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(0, 200, 150, 0.15);
+  box-shadow: 0 0 0 3px rgba(31, 184, 143, 0.15);
 }
 
 .filters button,
@@ -246,8 +279,8 @@ h2 {
 
 .filters button:hover,
 .search-form button:hover {
-  background: #00b384;
-  box-shadow: 0 2px 8px rgba(0, 200, 150, 0.35);
+  background: var(--accent-hover);
+  box-shadow: 0 2px 8px var(--accent-glow);
   transform: translateY(-1px);
 }
 
@@ -293,7 +326,7 @@ h2 {
 .match-card:hover {
   border-color: var(--accent);
   box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
 }
 
 .match-card__head {
@@ -319,6 +352,17 @@ h2 {
   color: var(--accent-2);
   font-size: 0.85rem;
   font-weight: 500;
+}
+
+.match-card__team {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.match-card__flag {
+  font-size: 1.1em;
+  line-height: 1;
 }
 
 .match-card__meta {
@@ -405,7 +449,8 @@ h2 {
 
 .offer-card:hover {
   box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  border-color: var(--accent);
 }
 
 .offer-card__title {
@@ -424,13 +469,15 @@ h2 {
 }
 
 .offer-card__price {
-  font-size: 1.25rem;
+  font-size: 1.45rem;
   font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--price);
   margin-top: 0.5rem;
 }
 
 .offer-card__book {
-  display: inline-block;
+  display: block;
   margin-top: auto;
   padding-top: 0.75rem;
 }
@@ -438,23 +485,25 @@ h2 {
 .offer-card__book a,
 .offer-card__book,
 a.offer-card__book {
-  display: inline-block;
+  display: block;
+  text-align: center;
   margin-top: 0.75rem;
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 0.875rem;
+  font-weight: 700;
   color: #fff;
   background: var(--accent);
   text-decoration: none;
-  border-radius: 6px;
-  padding: 0.3rem 0.75rem;
-  transition: background 0.15s ease, box-shadow 0.15s ease;
+  border-radius: 8px;
+  padding: 0.55rem 1rem;
+  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
   letter-spacing: 0.01em;
 }
 
 .offer-card__book:hover,
 a.offer-card__book:hover {
-  background: #00b384;
-  box-shadow: 0 2px 6px rgba(0, 200, 150, 0.3);
+  background: var(--accent-hover);
+  box-shadow: 0 4px 14px var(--accent-glow);
+  transform: translateY(-2px);
   text-decoration: none;
 }
 
@@ -523,8 +572,8 @@ a.offer-card__book:hover {
 .suggestion button:hover,
 .add-to-trip__new button:hover,
 .share button:hover {
-  background: #00b384;
-  box-shadow: 0 2px 6px rgba(0, 200, 150, 0.3);
+  background: var(--accent-hover);
+  box-shadow: 0 2px 6px rgba(31, 184, 143, 0.3);
 }
 
 .trip-detail button:disabled,
@@ -659,7 +708,7 @@ a.offer-card__book:hover {
 
 .trip-detail__title input:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(0, 200, 150, 0.15);
+  box-shadow: 0 0 0 3px rgba(31, 184, 143, 0.15);
 }
 
 .suggestions {
@@ -762,7 +811,7 @@ a.offer-card__book:hover {
 
 .add-to-trip__new input:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(0, 200, 150, 0.15);
+  box-shadow: 0 0 0 3px rgba(31, 184, 143, 0.15);
 }
 
 .add-to-trip__status {
@@ -873,4 +922,30 @@ a.offer-card__book:hover {
 
 .nearby-cities a:hover {
   opacity: 0.8;
+}
+
+/* Mobile responsive polish */
+@media (max-width: 640px) {
+  .offer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-nav {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    padding-right: 0.5rem;
+  }
+
+  .site-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .offer-card__book a,
+  .offer-card__book,
+  a.offer-card__book {
+    width: 100%;
+  }
 }
