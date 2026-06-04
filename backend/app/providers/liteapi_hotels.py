@@ -217,7 +217,12 @@ class LiteApiHotelProvider(HotelProvider):
             nights=nights,
             price_usd=total,
             deep_link=(
-                "https://www.google.com/travel/hotels?"
-                + urlencode({"q": name})
+                "https://www.booking.com/searchresults.html?"
+                + urlencode({
+                    "ss": name,
+                    "checkin": query.check_in,
+                    "checkout": query.check_out,
+                    "group_adults": max(1, query.guests),
+                })
             ),
         )

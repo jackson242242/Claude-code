@@ -37,10 +37,9 @@ class MockFlightProvider(FlightProvider):
                         seeded_int(seed, 120, 900) * max(1, query.passengers)
                     ),
                     deep_link=(
-                        "https://www.google.com/travel/flights?"
-                        + urlencode({
-                            "q": f"Flights from {query.origin.upper()} to {query.destination.upper()} on {query.date}"
-                        })
+                        f"https://www.kayak.com/flights/"
+                        f"{query.origin.upper()}-{query.destination.upper()}/"
+                        f"{query.date}/{max(1, query.passengers)}adults"
                     ),
                 )
             )
