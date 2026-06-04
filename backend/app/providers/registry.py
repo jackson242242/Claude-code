@@ -184,15 +184,35 @@ def probe_flights(query: schemas.FlightSearchQuery) -> dict[str, object]:
     return _probe_provider(primary, query)
 
 
+# The credential each real provider needs, per vertical. Lets an unconfigured
+# probe name exactly what's missing instead of always pointing at Duffel.
+_REQUIRED_CREDENTIAL: dict[str, dict[str, str]] = {
+    "flight": {"duffel": "DUFFEL_API_KEY", "http": "FLIGHTS_API_URL"},
+    "hotel": {
+        "duffel": "DUFFEL_API_KEY",
+        "liteapi": "LITEAPI_API_KEY",
+        "http": "HOTELS_API_URL",
+    },
+}
+
+
 def _unconfigured(vertical: str, configured: str, env_var: str) -> dict[str, object]:
-    return {
-        "ok": False,
-        "configured": configured,
-        "reason": (
-            f"no real {vertical} provider configured "
-            f"(set {env_var}=duffel and DUFFEL_API_KEY)"
-        ),
-    }
+    credentials = _REQUIRED_CREDENTIAL[vertical]
+    needed = credentials.get(configured)
+    if needed is not None:
+        # A real provider is selected, but its credential is missing/empty.
+        reason = (
+            f"{env_var}={configured} is selected, but its credential "
+            f"{needed} is not set"
+        )
+    else:
+        # No real provider selected (e.g. the default "mock") — list the options.
+        options = ", ".join(f"{name} (+{cred})" for name, cred in credentials.items())
+        reason = (
+            f"no real {vertical} provider configured — set {env_var} to one of: "
+            f"{options}"
+        )
+    return {"ok": False, "configured": configured, "reason": reason}
 
 
 def _probe_provider(
