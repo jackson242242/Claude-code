@@ -20,5 +20,15 @@ export const HotelCard = ({ offer }: HotelCardProps) => (
       {offer.nights} night{offer.nights === 1 ? '' : 's'} ·{' '}
       {formatPriceUsd(offer.priceUsd)} total
     </div>
+    {offer.deepLink && (
+      <a
+        href={offer.deepLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="offer-card__book"
+      >
+        Book now →
+      </a>
+    )}
   </div>
 );

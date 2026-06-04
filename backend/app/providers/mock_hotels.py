@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from datetime import date
+from urllib.parse import urlencode
 
 from app import schemas
 from app.providers.base import HotelProvider
@@ -42,6 +43,12 @@ class MockHotelProvider(HotelProvider):
                     nights=nights,
                     price_usd=float(
                         per_night * nights * (2 if query.guests > 2 else 1)
+                    ),
+                    deep_link=(
+                        "https://www.google.com/travel/hotels?"
+                        + urlencode({
+                            "q": HOTEL_BRANDS[i % len(HOTEL_BRANDS)]
+                        })
                     ),
                 )
             )

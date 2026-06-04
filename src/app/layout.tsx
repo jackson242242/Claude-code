@@ -4,12 +4,18 @@ import Link from 'next/link';
 import { getLocale } from '@/i18n/server';
 import { translator } from '@/i18n';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
+import { PwaRegistration } from '@/components/PwaRegistration';
 import './globals.css';
 
 export const metadata: Metadata = {
   title: 'World Cup 2026 Tour Guide',
   description:
     'Browse the full 2026 World Cup schedule and book flights, hotels, and transportation around the matches you want to attend.',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'WC2026',
+  },
 };
 
 interface RootLayoutProps {
@@ -22,7 +28,11 @@ const RootLayout = async ({ children }: RootLayoutProps) => {
 
   return (
     <html lang={locale}>
+      <head>
+        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+      </head>
       <body>
+        <PwaRegistration />
         <a href="#main" className="skip-link">
           {t('common.skipToContent')}
         </a>

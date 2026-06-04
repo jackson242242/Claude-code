@@ -1,6 +1,8 @@
 """Deterministic mock flight provider."""
 from __future__ import annotations
 
+from urllib.parse import urlencode
+
 from app import schemas
 from app.providers.base import FlightProvider
 from app.providers.util import leg, seeded_int
@@ -33,6 +35,12 @@ class MockFlightProvider(FlightProvider):
                     stops=stops,
                     price_usd=float(
                         seeded_int(seed, 120, 900) * max(1, query.passengers)
+                    ),
+                    deep_link=(
+                        "https://www.google.com/travel/flights?"
+                        + urlencode({
+                            "q": f"Flights from {query.origin.upper()} to {query.destination.upper()} on {query.date}"
+                        })
                     ),
                 )
             )
