@@ -20,6 +20,7 @@ from app.providers.cache import (
 )
 from app.providers.duffel_flights import DuffelFlightProvider
 from app.providers.duffel_hotels import DuffelStaysHotelProvider
+from app.providers.liteapi_hotels import LiteApiHotelProvider
 from app.providers.http_providers import (
     HttpFlightProvider,
     HttpHotelProvider,
@@ -78,6 +79,13 @@ def _hotel_primary() -> HotelProvider | None:
             settings.duffel_api_key,
             _locate_city,
             base_url=settings.duffel_base_url,
+            timeout=_TIMEOUT,
+        )
+    if settings.hotel_provider == "liteapi" and settings.liteapi_api_key:
+        return LiteApiHotelProvider(
+            settings.liteapi_api_key,
+            _locate_city,
+            base_url=settings.liteapi_base_url,
             timeout=_TIMEOUT,
         )
     if settings.hotel_provider == "http" and settings.hotels_api_url:

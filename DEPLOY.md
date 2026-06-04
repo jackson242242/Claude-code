@@ -1,25 +1,34 @@
-# Deploying to Render (with live Duffel data)
+# Deploying to Render (live flights + hotels)
 
 This repo ships a [`render.yaml`](./render.yaml) Blueprint that deploys the
-FastAPI backend and the Next.js frontend as two web services. With a Duffel
-token set, **flights and hotels show live pricing/availability**; without it the
-app falls back to deterministic seed/mock data, so it always renders.
+FastAPI backend and the Next.js frontend as two web services. With API keys set,
+**flights and hotels show live pricing/availability**; without them the app falls
+back to deterministic seed/mock data, so it always renders.
 
-> Why deploy to see it? Live third-party calls (Duffel) require outbound network
-> access and a real API token. They can't run from the build sandbox — Render is
-> where the integration actually lights up.
+> Why deploy to see it? Live third-party calls require outbound network access
+> and real API keys. They can't run from the build sandbox — Render is where the
+> integration actually lights up.
 
-## 1. Get a Duffel access token
+## 1. Get the API keys
 
+Flights and hotels use two independent providers, each optional — a missing key
+just means that vertical serves mock data.
+
+**Flights — Duffel** (`DUFFEL_API_KEY`)
 1. Sign up at <https://duffel.com> → **Developers → Access tokens**.
-2. Create a token:
-   - **Test** token — immediate; great for a first deploy. Stays (hotels) and
-     air offers return real-shaped data for development.
-   - **Live** token — requires activating your Duffel account; returns true
-     bookable inventory.
-3. Copy the token (starts with `duffel_test_…` or `duffel_live_…`).
+2. Create a **Test** token (immediate; simulated airlines return real-shaped
+   offers) or a **Live** token (activated account; true bookable inventory).
+3. Copy it (starts with `duffel_test_…` / `duffel_live_…`).
 
-The same key powers both flights and hotels (Duffel Stays).
+**Hotels — LiteAPI** (`LITEAPI_API_KEY`)
+1. Sign up at <https://liteapi.travel> — instant, self-serve, no sales approval.
+2. Copy a **sandbox** key (starts with `sand_…`) for testing, or a production key
+   (requires a card) for real bookable rates.
+
+> Why LiteAPI for hotels? Duffel Stays is sales-gated — a standard token returns
+> `403 "This feature is not enabled for your account"`. LiteAPI gives instant
+> self-serve hotel data. (To use Duffel for hotels once it's enabled on your
+> account, set `HOTEL_PROVIDER=duffel`.)
 
 ## 2. Create the Blueprint on Render
 
@@ -27,20 +36,25 @@ The same key powers both flights and hotels (Duffel Stays).
 2. In Render: **New → Blueprint**, connect this repository, and select the branch.
 3. Render detects `render.yaml` and proposes two services: `worldcup-api` and
    `worldcup-web`.
-4. When prompted for the **`DUFFEL_API_KEY`** value, paste your token. (It's the
-   only secret; everything else is pre-wired.)
+4. When prompted, paste your secrets: **`DUFFEL_API_KEY`** (flights) and
+   **`LITEAPI_API_KEY`** (hotels). Everything else is pre-wired. Supply one, both,
+   or neither — whatever you omit serves mock data for that vertical.
 5. **Apply** to create and deploy both services.
 
 ## 3. See it
 
-- Open the **`worldcup-web`** URL → browse a city's hotels or a route's flights;
-  offers now come from Duffel (provider shows as `Duffel`).
-- Sanity-check the backend: open `https://<worldcup-api-url>/meta/providers` —
+- Open the **`worldcup-web`** URL → browse a route's flights or a city's hotels;
+  flight offers come from **Duffel**, hotels from **LiteAPI**.
+- Sanity-check config: open `https://<worldcup-api-url>/meta/providers` —
   `flights` and `hotels` should report `"mode": "real"`.
+- Confirm live data per vertical (these bypass the mock fallback and surface the
+  raw upstream result or error, so they're the source of truth):
+  - `https://<worldcup-api-url>/meta/flight-probe` → `{"ok":true,…,"provider":"Duffel"}`
+  - `https://<worldcup-api-url>/meta/hotel-probe` → `{"ok":true,…,"provider":"LiteAPI"}`
 - Health check: `https://<worldcup-api-url>/health` → `{"status":"ok"}`.
 
-If Duffel is unreachable or returns an error, the resilient wrapper falls back to
-mock data automatically — the page still works, provider just reads as the mock.
+If a provider is unreachable or errors, the resilient wrapper falls back to mock
+automatically — the page still works, the provider just reads as the mock.
 
 ## How the wiring works (no manual URLs)
 

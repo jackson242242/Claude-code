@@ -1,11 +1,11 @@
 # Render Blueprint — World Cup 2026 Tour Guide
 #
 # Stands up the full app on Render: a FastAPI backend (worldcup-api) and a
-# Next.js frontend (worldcup-web). The only secret you must supply is
-# DUFFEL_API_KEY (marked `sync: false`, so Render prompts for it). With it set,
-# flights and hotels return live Duffel pricing/availability; without it (or on
-# any upstream error) the API degrades gracefully to deterministic seed/mock
-# data, so the site always renders.
+# Next.js frontend (worldcup-web). Two secrets (both `sync: false`, so Render
+# prompts for them): DUFFEL_API_KEY powers live flights (Duffel Air) and
+# LITEAPI_API_KEY powers live hotels (LiteAPI). Either can be omitted — on a
+# missing key or any upstream error the API degrades gracefully to deterministic
+# seed/mock data for that vertical, so the site always renders.
 #
 # The two cross-service URLs are wired automatically via `fromService` hosts;
 # the app code tolerates a bare host (defaults to https). PostgreSQL is optional
@@ -26,9 +26,14 @@ services:
         value: "3.11"
       - key: FLIGHT_PROVIDER
         value: duffel
+      # Hotels use LiteAPI (instant self-serve); Duffel Stays is sales-gated.
       - key: HOTEL_PROVIDER
-        value: duffel
+        value: liteapi
+      # Flights (Duffel Air) — works on a self-serve test token.
       - key: DUFFEL_API_KEY
+        sync: false
+      # Hotels (LiteAPI) — grab an instant sandbox key at liteapi.travel.
+      - key: LITEAPI_API_KEY
         sync: false
       - key: CORS_ORIGINS
         fromService:

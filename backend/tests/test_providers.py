@@ -11,6 +11,7 @@ from app.providers.cache import CachedFlightProvider, TtlCache
 from app.providers.duffel_flights import DuffelFlightProvider
 from app.providers.duffel_hotels import DuffelStaysHotelProvider
 from app.providers.http_providers import HttpFlightProvider
+from app.providers.liteapi_hotels import LiteApiHotelProvider
 from app.providers.resilient import ResilientFlightProvider
 
 _QUERY = schemas.FlightSearchQuery(
@@ -350,3 +351,108 @@ def test_probe_flights_reports_unconfigured(monkeypatch: pytest.MonkeyPatch) -> 
     result = registry.probe_flights(_PROBE_FLIGHT_QUERY)
     assert result["ok"] is False
     assert "reason" in result
+
+
+_LITE_QUERY = schemas.HotelSearchQuery(
+    city_id="miami", check_in="2026-06-20", check_out="2026-06-23", guests=2
+)
+
+
+def _liteapi_with(handler) -> LiteApiHotelProvider:
+    client = httpx.Client(transport=httpx.MockTransport(handler))
+    return LiteApiHotelProvider("lite-key", lambda _city: (25.958, -80.239), client=client)
+
+
+def _rate(hotel_id: str, amount: float) -> dict:
+    return {
+        "hotelId": hotel_id,
+        "roomTypes": [
+            {"rates": [{"retailRate": {"total": [{"amount": amount, "currency": "USD"}]}}]}
+        ],
+    }
+
+
+def test_liteapi_maps_hotel_results() -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        assert request.headers["X-API-Key"] == "lite-key"
+        if request.url.path.endswith("/data/hotels"):
+            assert "latitude" in request.url.params
+            return httpx.Response(
+                200,
+                json={
+                    "data": [
+                        {"id": "lp1", "name": "Ocean View", "starRating": 4,
+                         "latitude": 25.97, "longitude": -80.24},
+                        {"id": "lp2", "name": "Budget Inn", "starRating": 3,
+                         "latitude": 25.9, "longitude": -80.2},
+                    ]
+                },
+            )
+        if request.url.path.endswith("/hotels/rates"):
+            body = json.loads(request.content)
+            assert body["checkin"] == "2026-06-20"
+            assert body["occupancies"] == [{"adults": 2}]
+            assert set(body["hotelIds"]) == {"lp1", "lp2"}
+            return httpx.Response(200, json={"data": [_rate("lp1", 600.0), _rate("lp2", 300.0)]})
+        return httpx.Response(404)
+
+    offers = _liteapi_with(handler).search(_LITE_QUERY)
+    by_name = {o.name: o for o in offers}
+    assert set(by_name) == {"Ocean View", "Budget Inn"}
+    ocean = by_name["Ocean View"]
+    assert ocean.provider == "LiteAPI"
+    assert ocean.price_usd == 600.0
+    assert ocean.nights == 3
+    assert ocean.price_per_night_usd == 200.0
+    assert ocean.rating == 4
+    assert ocean.city_id == "miami"
+
+
+def test_liteapi_skips_hotels_without_a_rate() -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        if request.url.path.endswith("/data/hotels"):
+            return httpx.Response(
+                200,
+                json={
+                    "data": [
+                        {"id": "lp1", "name": "Priced", "starRating": 5,
+                         "latitude": 25.97, "longitude": -80.24},
+                        {"id": "lp2", "name": "Unpriced", "starRating": 3,
+                         "latitude": 25.9, "longitude": -80.2},
+                    ]
+                },
+            )
+        return httpx.Response(200, json={"data": [_rate("lp1", 450.0)]})
+
+    offers = _liteapi_with(handler).search(_LITE_QUERY)
+    assert len(offers) == 1
+    assert offers[0].name == "Priced"
+    assert offers[0].price_usd == 450.0
+
+
+def test_liteapi_defaults_rating_and_distance_when_missing() -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        if request.url.path.endswith("/data/hotels"):
+            return httpx.Response(200, json={"data": [{"id": "lp9", "name": "Sparse"}]})
+        return httpx.Response(200, json={"data": [_rate("lp9", 150.0)]})
+
+    offers = _liteapi_with(handler).search(_LITE_QUERY)
+    assert len(offers) == 1
+    assert offers[0].rating == 3
+    assert offers[0].distance_km == 0.0
+
+
+def test_liteapi_returns_empty_for_unknown_city() -> None:
+    provider = LiteApiHotelProvider("lite-key", lambda _city: None)
+    query = schemas.HotelSearchQuery(
+        city_id="atlantis", check_in="2026-06-20", check_out="2026-06-21"
+    )
+    assert provider.search(query) == []
+
+
+def test_liteapi_propagates_http_error() -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(401, json={"error": {"code": 401}})
+
+    with pytest.raises(httpx.HTTPStatusError):
+        _liteapi_with(handler).search(_LITE_QUERY)
