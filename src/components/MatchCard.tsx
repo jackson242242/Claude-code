@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Match } from '@/types';
 import { getVenueById } from '@/services/scheduleService';
 import { formatKickoff } from '@/lib/format';
+import { getFlag } from '@/lib/flags';
 
 interface MatchCardProps {
   match: Match;
@@ -23,9 +24,19 @@ export const MatchCard = ({ match }: MatchCardProps) => {
         <span className="match-card__num">#{match.matchNumber}</span>
       </div>
       <div className="match-card__teams">
-        <span>{match.homeTeam}</span>
+        <span className="match-card__team">
+          {getFlag(match.homeTeam) && (
+            <span className="match-card__flag" aria-hidden="true">{getFlag(match.homeTeam)}</span>
+          )}
+          <span className="match-card__team-name">{match.homeTeam}</span>
+        </span>
         <span className="match-card__vs">vs</span>
-        <span>{match.awayTeam}</span>
+        <span className="match-card__team">
+          {getFlag(match.awayTeam) && (
+            <span className="match-card__flag" aria-hidden="true">{getFlag(match.awayTeam)}</span>
+          )}
+          <span className="match-card__team-name">{match.awayTeam}</span>
+        </span>
       </div>
       <div className="match-card__meta">
         <span>{formatKickoff(match.kickoffLocal)}</span>

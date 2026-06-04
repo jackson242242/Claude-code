@@ -9,6 +9,7 @@ import {
 import { NearbyOptions } from '@/components/NearbyOptions';
 import { AddToTripButton } from '@/components/AddToTripButton';
 import { formatKickoff } from '@/lib/format';
+import { getFlag } from '@/lib/flags';
 
 interface MatchPageProps {
   params: Promise<{ id: string }>;
@@ -31,7 +32,14 @@ const MatchPage = async ({ params }: MatchPageProps) => {
         ← Back to schedule
       </Link>
       <h1>
-        {match.homeTeam} vs {match.awayTeam}
+        {getFlag(match.homeTeam) && (
+          <span aria-hidden="true">{getFlag(match.homeTeam)} </span>
+        )}
+        {match.homeTeam} vs{' '}
+        {getFlag(match.awayTeam) && (
+          <span aria-hidden="true">{getFlag(match.awayTeam)} </span>
+        )}
+        {match.awayTeam}
       </h1>
       <p className="lead">
         {match.stage}
