@@ -1,9 +1,11 @@
 import json
 
 import httpx
+import pytest
 from fastapi.testclient import TestClient
 
 from app import schemas
+from app.providers import registry
 from app.providers.base import FlightProvider
 from app.providers.cache import CachedFlightProvider, TtlCache
 from app.providers.duffel_flights import DuffelFlightProvider
@@ -208,3 +210,80 @@ def test_duffel_stays_returns_empty_for_unknown_city() -> None:
     )
     provider = DuffelStaysHotelProvider("duffel-key", lambda _city: None)
     assert provider.search(query) == []
+
+
+_PROBE_QUERY = schemas.HotelSearchQuery(
+    city_id="new-york", check_in="2026-06-15", check_out="2026-06-18", guests=2
+)
+
+
+def _duffel_with(handler) -> DuffelStaysHotelProvider:
+    client = httpx.Client(transport=httpx.MockTransport(handler))
+    return DuffelStaysHotelProvider("duffel-key", lambda _city: (40.7, -74.0), client=client)
+
+
+def test_probe_hotels_surfaces_upstream_json_error(monkeypatch: pytest.MonkeyPatch) -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(
+            403, json={"errors": [{"type": "authentication_error", "title": "no Stays"}]}
+        )
+
+    monkeypatch.setattr(registry, "_hotel_primary", lambda: _duffel_with(handler))
+    result = registry.probe_hotels(_PROBE_QUERY)
+    assert result["ok"] is False
+    assert result["status"] == 403
+    assert result["upstreamError"]["errors"][0]["type"] == "authentication_error"
+
+
+def test_probe_hotels_surfaces_non_json_error_body(monkeypatch: pytest.MonkeyPatch) -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(500, text="upstream boom")
+
+    monkeypatch.setattr(registry, "_hotel_primary", lambda: _duffel_with(handler))
+    result = registry.probe_hotels(_PROBE_QUERY)
+    assert result["ok"] is False
+    assert result["status"] == 500
+    assert result["upstreamError"] == "upstream boom"
+
+
+def test_probe_hotels_reports_live_sample(monkeypatch: pytest.MonkeyPatch) -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(
+            200,
+            json={
+                "data": {
+                    "results": [
+                        {
+                            "id": "res_9",
+                            "cheapest_rate_total_amount": "300.00",
+                            "accommodation": {"name": "Probe Hotel", "rating": 5},
+                        }
+                    ]
+                }
+            },
+        )
+
+    monkeypatch.setattr(registry, "_hotel_primary", lambda: _duffel_with(handler))
+    result = registry.probe_hotels(_PROBE_QUERY)
+    assert result["ok"] is True
+    assert result["count"] == 1
+    assert result["sample"]["provider"] == "Duffel"
+    assert result["sample"]["name"] == "Probe Hotel"
+
+
+def test_probe_hotels_surfaces_generic_error(monkeypatch: pytest.MonkeyPatch) -> None:
+    class _Boom:
+        def search(self, _query: schemas.HotelSearchQuery) -> list[schemas.HotelOffer]:
+            raise RuntimeError("kaboom")
+
+    monkeypatch.setattr(registry, "_hotel_primary", lambda: _Boom())
+    result = registry.probe_hotels(_PROBE_QUERY)
+    assert result["ok"] is False
+    assert "RuntimeError" in result["error"]
+
+
+def test_probe_hotels_reports_unconfigured(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(registry, "_hotel_primary", lambda: None)
+    result = registry.probe_hotels(_PROBE_QUERY)
+    assert result["ok"] is False
+    assert "reason" in result
