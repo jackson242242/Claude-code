@@ -60,6 +60,13 @@ class Settings:
     duffel_api_key: str | None = os.getenv("DUFFEL_API_KEY") or None
     duffel_base_url: str = os.getenv("DUFFEL_BASE_URL", "https://api.duffel.com")
 
+    # Branded hotel adapter (LiteAPI / Nuitée) — instant self-serve alternative
+    # to the sales-gated Duffel Stays.
+    liteapi_api_key: str | None = os.getenv("LITEAPI_API_KEY") or None
+    liteapi_base_url: str = os.getenv(
+        "LITEAPI_BASE_URL", "https://api.liteapi.travel/v3.0"
+    )
+
     # Payments (Phase 4). Default is the affiliate / no-charge model.
     payment_gateway: str = os.getenv("PAYMENT_GATEWAY", "none")
     stripe_secret_key: str | None = os.getenv("STRIPE_SECRET_KEY") or None
