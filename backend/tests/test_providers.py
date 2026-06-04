@@ -5,6 +5,7 @@ import pytest
 from fastapi.testclient import TestClient
 
 from app import schemas
+from app.config import Settings
 from app.providers import registry
 from app.providers.base import FlightProvider
 from app.providers.cache import CachedFlightProvider, TtlCache
@@ -288,6 +289,22 @@ def test_probe_hotels_reports_unconfigured(monkeypatch: pytest.MonkeyPatch) -> N
     result = registry.probe_hotels(_PROBE_QUERY)
     assert result["ok"] is False
     assert "reason" in result
+
+
+def test_probe_hotels_names_selected_providers_missing_credential(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    # Regression: when a real provider is selected but its key is absent, the
+    # probe must name THAT provider's credential (LiteAPI here), not always
+    # misdirect to Duffel.
+    monkeypatch.setattr(
+        registry, "settings", Settings(hotel_provider="liteapi", liteapi_api_key=None)
+    )
+    result = registry.probe_hotels(_PROBE_QUERY)
+    assert result["ok"] is False
+    assert result["configured"] == "liteapi"
+    assert "LITEAPI_API_KEY" in result["reason"]
+    assert "DUFFEL_API_KEY" not in result["reason"]
 
 
 _PROBE_FLIGHT_QUERY = schemas.FlightSearchQuery(
