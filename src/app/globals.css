@@ -334,6 +334,20 @@ h1 {
   margin-top: 0.4rem;
 }
 
+.offer-card__book {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.offer-card__book:hover {
+  text-decoration: underline;
+}
+
 .muted {
   color: var(--muted);
   font-weight: 400;

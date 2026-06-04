@@ -71,6 +71,7 @@ class FlightOffer(CamelModel):
     arrive_utc: str
     duration_minutes: int
     stops: int
+    deep_link: str | None = None
 
 
 class HotelOffer(CamelModel):
@@ -84,6 +85,7 @@ class HotelOffer(CamelModel):
     distance_km: float
     price_per_night_usd: float
     nights: int
+    deep_link: str | None = None
 
 
 class TransportOffer(CamelModel):

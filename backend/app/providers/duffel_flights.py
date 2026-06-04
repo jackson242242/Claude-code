@@ -8,6 +8,7 @@ the mock provider rather than failing the request.
 from __future__ import annotations
 
 from datetime import datetime
+from urllib.parse import urlencode
 
 import httpx
 
@@ -112,4 +113,10 @@ class DuffelFlightProvider(FlightProvider):
             # Amount is treated as USD (Duffel test accounts are USD-denominated).
             # Multi-currency normalization via `total_currency` is a tracked follow-up.
             price_usd=float(offer.get("total_amount", 0) or 0),
+            deep_link=(
+                "https://www.google.com/travel/flights?"
+                + urlencode({
+                    "q": f"Flights from {query.origin.upper()} to {query.destination.upper()} on {query.date}"
+                })
+            ),
         )

@@ -24,6 +24,7 @@ export interface FlightOffer extends OfferBase {
   arriveUtc: string;
   durationMinutes: number;
   stops: number;
+  deepLink?: string;
 }
 
 export interface HotelOffer extends OfferBase {
@@ -36,6 +37,7 @@ export interface HotelOffer extends OfferBase {
   distanceKm: number;
   pricePerNightUsd: number;
   nights: number;
+  deepLink?: string;
 }
 
 export interface TransportOffer extends OfferBase {

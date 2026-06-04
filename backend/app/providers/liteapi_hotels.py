@@ -21,6 +21,7 @@ from __future__ import annotations
 from collections.abc import Callable
 from datetime import date
 from math import asin, cos, radians, sin, sqrt
+from urllib.parse import urlencode
 
 import httpx
 
@@ -204,14 +205,19 @@ class LiteApiHotelProvider(HotelProvider):
                 city_coords[0], city_coords[1], float(lat), float(lng)
             )
 
+        name = str(meta.get("name", "Hotel"))
         return schemas.HotelOffer(
             id=f"liteapi-{meta.get('id') or meta.get('hotelId') or ''}",
             provider="LiteAPI",
-            name=str(meta.get("name", "Hotel")),
+            name=name,
             city_id=query.city_id,
             rating=rating,
             distance_km=distance_km,
             price_per_night_usd=round(total / nights, 2),
             nights=nights,
             price_usd=total,
+            deep_link=(
+                "https://www.google.com/travel/hotels?"
+                + urlencode({"q": name})
+            ),
         )

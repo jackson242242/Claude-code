@@ -20,5 +20,15 @@ export const FlightCard = ({ offer }: FlightCardProps) => (
       </span>
     </div>
     <div className="offer-card__price">{formatPriceUsd(offer.priceUsd)}</div>
+    {offer.deepLink && (
+      <a
+        href={offer.deepLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="offer-card__book"
+      >
+        Book now →
+      </a>
+    )}
   </div>
 );
