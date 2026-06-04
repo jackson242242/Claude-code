@@ -45,9 +45,12 @@ class MockHotelProvider(HotelProvider):
                         per_night * nights * (2 if query.guests > 2 else 1)
                     ),
                     deep_link=(
-                        "https://www.google.com/travel/hotels?"
+                        "https://www.booking.com/searchresults.html?"
                         + urlencode({
-                            "q": HOTEL_BRANDS[i % len(HOTEL_BRANDS)]
+                            "ss": HOTEL_BRANDS[i % len(HOTEL_BRANDS)],
+                            "checkin": query.check_in,
+                            "checkout": query.check_out,
+                            "group_adults": max(1, query.guests),
                         })
                     ),
                 )
