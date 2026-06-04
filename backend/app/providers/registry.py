@@ -7,6 +7,8 @@ gaining real data, resilience, and caching.
 """
 from __future__ import annotations
 
+import httpx
+
 from app import schemas
 from app.config import settings
 from app.providers.base import FlightProvider, HotelProvider, TransportProvider
@@ -138,4 +140,54 @@ def provider_status() -> dict[str, dict[str, object]]:
         "transport": describe(
             settings.transport_provider, _transport_primary() is not None
         ),
+    }
+
+
+def _error_body(response: httpx.Response) -> object:
+    """Best-effort decode of an upstream error payload for diagnostics."""
+    try:
+        return response.json()
+    except ValueError:
+        return response.text[:500]
+
+
+def probe_hotels(query: schemas.HotelSearchQuery) -> dict[str, object]:
+    """Call the configured *real* hotel provider directly — no resilient
+    fallback, no cache — and report the raw outcome.
+
+    The production path deliberately hides upstream failures by degrading to
+    mock, which is great for uptime but useless for diagnosis. This surfaces the
+    actual status / error body (auth, validation, enablement) so a deploy can be
+    debugged from the browser. It never echoes credentials.
+    """
+    primary = _hotel_primary()
+    if primary is None:
+        return {
+            "ok": False,
+            "configured": settings.hotel_provider,
+            "reason": (
+                "no real hotel provider configured "
+                "(set HOTEL_PROVIDER=duffel and DUFFEL_API_KEY)"
+            ),
+        }
+    try:
+        offers = primary.search(query)
+    except httpx.HTTPStatusError as exc:
+        return {
+            "ok": False,
+            "provider": type(primary).__name__,
+            "status": exc.response.status_code,
+            "upstreamError": _error_body(exc.response),
+        }
+    except Exception as exc:  # noqa: BLE001 - diagnostic surfaces any failure
+        return {
+            "ok": False,
+            "provider": type(primary).__name__,
+            "error": f"{type(exc).__name__}: {exc}",
+        }
+    return {
+        "ok": True,
+        "provider": type(primary).__name__,
+        "count": len(offers),
+        "sample": offers[0].model_dump(by_alias=True) if offers else None,
     }

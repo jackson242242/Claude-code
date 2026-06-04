@@ -36,3 +36,13 @@ def test_metrics_endpoint_counts_requests(client: TestClient) -> None:
     assert body["totalRequests"] >= 1
     assert "byStatus" in body
     assert "byRoute" in body
+
+
+def test_hotel_probe_reports_unconfigured_on_default(client: TestClient) -> None:
+    # Default test config has no real hotel provider, so the probe says so
+    # cleanly (rather than masking it behind the mock fallback).
+    res = client.get("/meta/hotel-probe")
+    assert res.status_code == 200
+    body = res.json()
+    assert body["ok"] is False
+    assert body["configured"] == "mock"
