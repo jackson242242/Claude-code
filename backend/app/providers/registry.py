@@ -162,16 +162,39 @@ def probe_hotels(query: schemas.HotelSearchQuery) -> dict[str, object]:
     """
     primary = _hotel_primary()
     if primary is None:
-        return {
-            "ok": False,
-            "configured": settings.hotel_provider,
-            "reason": (
-                "no real hotel provider configured "
-                "(set HOTEL_PROVIDER=duffel and DUFFEL_API_KEY)"
-            ),
-        }
+        return _unconfigured("hotel", settings.hotel_provider, "HOTEL_PROVIDER")
+    return _probe_provider(primary, query)
+
+
+def probe_flights(query: schemas.FlightSearchQuery) -> dict[str, object]:
+    """Flights counterpart to :func:`probe_hotels` — calls the real flight
+    provider (Duffel Air) directly so live integration errors surface instead of
+    silently degrading to mock."""
+    primary = _flight_primary()
+    if primary is None:
+        return _unconfigured("flight", settings.flight_provider, "FLIGHT_PROVIDER")
+    return _probe_provider(primary, query)
+
+
+def _unconfigured(vertical: str, configured: str, env_var: str) -> dict[str, object]:
+    return {
+        "ok": False,
+        "configured": configured,
+        "reason": (
+            f"no real {vertical} provider configured "
+            f"(set {env_var}=duffel and DUFFEL_API_KEY)"
+        ),
+    }
+
+
+def _probe_provider(
+    primary: FlightProvider | HotelProvider,
+    query: schemas.FlightSearchQuery | schemas.HotelSearchQuery,
+) -> dict[str, object]:
+    """Run one real provider search directly and shape the raw outcome —
+    surfacing the upstream status / error body that the resilient path hides."""
     try:
-        offers = primary.search(query)
+        offers = primary.search(query)  # type: ignore[arg-type]
     except httpx.HTTPStatusError as exc:
         return {
             "ok": False,

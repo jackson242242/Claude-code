@@ -46,3 +46,11 @@ def test_hotel_probe_reports_unconfigured_on_default(client: TestClient) -> None
     body = res.json()
     assert body["ok"] is False
     assert body["configured"] == "mock"
+
+
+def test_flight_probe_reports_unconfigured_on_default(client: TestClient) -> None:
+    res = client.get("/meta/flight-probe")
+    assert res.status_code == 200
+    body = res.json()
+    assert body["ok"] is False
+    assert body["configured"] == "mock"

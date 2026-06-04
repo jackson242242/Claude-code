@@ -287,3 +287,66 @@ def test_probe_hotels_reports_unconfigured(monkeypatch: pytest.MonkeyPatch) -> N
     result = registry.probe_hotels(_PROBE_QUERY)
     assert result["ok"] is False
     assert "reason" in result
+
+
+_PROBE_FLIGHT_QUERY = schemas.FlightSearchQuery(
+    origin="jfk", destination="lax", date="2026-06-15", passengers=1
+)
+
+
+def _duffel_flights_with(handler) -> DuffelFlightProvider:
+    client = httpx.Client(transport=httpx.MockTransport(handler))
+    return DuffelFlightProvider("duffel-key", client=client)
+
+
+def test_probe_flights_surfaces_upstream_error(monkeypatch: pytest.MonkeyPatch) -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(403, json={"errors": [{"type": "invalid_state"}]})
+
+    monkeypatch.setattr(registry, "_flight_primary", lambda: _duffel_flights_with(handler))
+    result = registry.probe_flights(_PROBE_FLIGHT_QUERY)
+    assert result["ok"] is False
+    assert result["status"] == 403
+    assert result["upstreamError"]["errors"][0]["type"] == "invalid_state"
+
+
+def test_probe_flights_reports_live_sample(monkeypatch: pytest.MonkeyPatch) -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(
+            200,
+            json={
+                "data": {
+                    "offers": [
+                        {
+                            "id": "off_1",
+                            "total_amount": "199.00",
+                            "owner": {"name": "Test Air"},
+                            "slices": [
+                                {
+                                    "segments": [
+                                        {
+                                            "departing_at": "2026-06-15T08:00:00",
+                                            "arriving_at": "2026-06-15T11:00:00",
+                                        }
+                                    ]
+                                }
+                            ],
+                        }
+                    ]
+                }
+            },
+        )
+
+    monkeypatch.setattr(registry, "_flight_primary", lambda: _duffel_flights_with(handler))
+    result = registry.probe_flights(_PROBE_FLIGHT_QUERY)
+    assert result["ok"] is True
+    assert result["count"] == 1
+    assert result["sample"]["provider"] == "Duffel"
+    assert result["sample"]["airline"] == "Test Air"
+
+
+def test_probe_flights_reports_unconfigured(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(registry, "_flight_primary", lambda: None)
+    result = registry.probe_flights(_PROBE_FLIGHT_QUERY)
+    assert result["ok"] is False
+    assert "reason" in result

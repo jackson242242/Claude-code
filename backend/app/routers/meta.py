@@ -34,3 +34,17 @@ def hotel_probe(
         city_id=city_id, check_in=check_in, check_out=check_out, guests=2
     )
     return registry.probe_hotels(query)
+
+
+@router.get("/flight-probe")
+def flight_probe(
+    origin: str = "JFK",
+    destination: str = "LAX",
+    date: str = "2026-06-15",
+) -> dict[str, object]:
+    """Diagnostic counterpart to /hotel-probe for flights (Duffel Air). Calls
+    the live flight provider directly and reports the raw result or error."""
+    query = schemas.FlightSearchQuery(
+        origin=origin, destination=destination, date=date, passengers=1
+    )
+    return registry.probe_flights(query)
