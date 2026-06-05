@@ -10,6 +10,11 @@
   --accent-hover: #1aa876;
   --accent-glow: rgba(31, 184, 143, 0.35);
   --price: #e6a817;
+  /* Festival palette — emotional-moment accents only (see DESIGN.md) */
+  --festival-orange: #ff6b35;
+  --festival-magenta: #e91e8c;
+  --festival-blue: #00c2ff;
+  --festival-gold: #f0b429;
   --accent-2: #f85149;
   --border: #21262d;
   --radius: 12px;
@@ -123,18 +128,64 @@ h2 {
   overflow: hidden;
 }
 
+/* Stadium dual glow: green pitch (top) + warm stands (bottom) */
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(31, 184, 143, 0.12) 0%, rgba(0, 0, 0, 0) 60%, rgba(248, 81, 73, 0.07) 100%);
+  background:
+    radial-gradient(ellipse 620px 360px at 50% -12%, rgba(31, 184, 143, 0.16), transparent 60%),
+    radial-gradient(ellipse 820px 440px at 50% 118%, rgba(255, 107, 53, 0.12), transparent 60%);
   pointer-events: none;
   border-radius: inherit;
+}
+
+/* Flag band along the top edge */
+.hero::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    var(--festival-gold),
+    var(--festival-orange),
+    var(--festival-magenta),
+    var(--festival-blue),
+    var(--festival-gold),
+    var(--accent)
+  );
+  opacity: 0.85;
+  pointer-events: none;
 }
 
 .hero > * {
   position: relative;
   z-index: 1;
+}
+
+.hero__countdown {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--festival-orange);
+  text-shadow: 0 0 24px rgba(255, 107, 53, 0.3);
+  margin-bottom: 0.75rem;
+}
+
+.hero__countdown small {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.4rem;
+  text-shadow: none;
 }
 
 .hero h1 {
@@ -323,9 +374,10 @@ h2 {
   transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
 }
 
+/* Goal pulse: warm ring on match-card hover */
 .match-card:hover {
-  border-color: var(--accent);
-  box-shadow: var(--shadow-md);
+  border-color: var(--festival-orange);
+  box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.45), var(--shadow-md);
   transform: translateY(-4px);
 }
 
