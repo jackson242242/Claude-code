@@ -35,7 +35,10 @@
 ## 4. 团队（详见 TEAM.md）
 - 主控 Claude（编排，集中决策，向老板汇报）
 - **Sheng** — UI/UX 设计研究（Haiku，只研究不改码）
-- **Amelia** — 产品经理/品牌（Sonnet，产出 BRAND.md，负责日常运营）
+- **Amelia** — 产品经理/品牌（Sonnet，产出 BRAND.md + marketing/launch-plan.md，牵头推广/合作）
+- **龙哥** — 艺术 & 娱乐圈审查官（Sonnet，review-only，带 KPI）
+- **浩哥** — 技术/基础设施（Haiku，产品迭代/工具/取数/DB/MCP/队列）
+- **Yifu（易甫，原名 Vera）** — 内容 & 市场调研（Haiku，产出 marketing/daily-brief.md，支援 Amelia）
 - 临时实现 agent（Sonnet，按任务写码）
 
 ## 5. 设计方向（来自 Sheng 的研究报告，待落地）
