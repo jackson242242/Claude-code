@@ -4,6 +4,7 @@ import { type FormEvent, useState } from 'react';
 import type { FlightOffer } from '@/types';
 import { searchFlights } from '@/services/flightsService';
 import { FlightCard } from './FlightCard';
+import { SkeletonCard } from './SkeletonCard';
 
 interface FlightSearchProps {
   defaultOrigin?: string;
@@ -70,9 +71,13 @@ export const FlightSearch = ({
         </button>
       </form>
       <div className="offer-grid">
-        {offers.map((offer) => (
-          <FlightCard key={offer.id} offer={offer} />
-        ))}
+        {loading
+          ? Array.from({ length: 5 }).map((_, i) => (
+              <SkeletonCard key={`skeleton-${i}`} />
+            ))
+          : offers.map((offer) => (
+              <FlightCard key={offer.id} offer={offer} />
+            ))}
       </div>
     </div>
   );

@@ -1004,3 +1004,56 @@ a.offer-card__book:hover {
   letter-spacing: -0.02em;
   font-variant-numeric: tabular-nums;
 }
+
+/* Skeleton loading screens */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--panel) 0%, rgba(255, 255, 255, 0.08) 50%, var(--panel) 100%));
+  background-size: 1000px 100%;
+  animation: shimmer 1.6s infinite;
+  border-radius: 6px;
+}
+
+.skeleton-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem;
+  min-height: 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.skeleton-line {
+  height: 0.9rem;
+}
+
+.skeleton-line.title {
+  width: 55%;
+  height: 1.1rem;
+}
+
+.skeleton-line.short {
+  width: 35%;
+}
+
+.skeleton-line.price {
+  width: 40%;
+  height: 1.3rem;
+  margin-top: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+  }
+}
