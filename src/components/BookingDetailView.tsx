@@ -5,6 +5,12 @@ import Link from 'next/link';
 import type { Booking } from '@/types';
 import { getBooking } from '@/services/bookingsService';
 import { formatPriceUsd } from '@/lib/format';
+import { CelebrationConfetti } from './CelebrationConfetti';
+
+const SHARE_URL = `https://twitter.com/intent/tweet?${new URLSearchParams({
+  text: "I'm going to the 2026 World Cup! Flights, hotels and route — all planned on Matchday26.",
+  hashtags: 'YourRoadToTheGame,FWC26',
+}).toString()}`;
 
 interface BookingDetailViewProps {
   bookingId: string;
@@ -48,10 +54,12 @@ export const BookingDetailView = ({ bookingId }: BookingDetailViewProps) => {
       </Link>
 
       <div className="confirmation">
+        <CelebrationConfetti />
         <span className={`status status--${booking.status}`}>
           {booking.status === 'paid' ? 'Paid' : 'Reserved'}
         </span>
         <h1>{booking.tripName}</h1>
+        <p className="confirmation__cheer">You're going. See you at the game.</p>
         <p className="lead">
           Confirmation <strong>{booking.confirmationCode}</strong> ·{' '}
           {formatPriceUsd(booking.totalUsd)} total
@@ -61,6 +69,14 @@ export const BookingDetailView = ({ bookingId }: BookingDetailViewProps) => {
             ? 'Reserved — complete each booking via the partner links below.'
             : `Paid via ${booking.paymentProvider}.`}
         </p>
+        <a
+          className="share-trip"
+          href={SHARE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Share my trip · #YourRoadToTheGame
+        </a>
       </div>
 
       <ul className="trip-items" data-testid="booking-lines">

@@ -44,5 +44,7 @@ describe('BookingDetailView', () => {
       'href',
       'https://www.booking.com/x',
     );
+    const share = screen.getByRole('link', { name: /Share my trip/ });
+    expect(share.getAttribute('href')).toContain('twitter.com/intent/tweet');
   });
 });
