@@ -27,7 +27,10 @@
 - **PR #9** — 修复 probe 误导性凭证提示（按所选 provider 命名缺失的凭证）。
 - **PR #10** — PWA 可安装（manifest + service worker）+ 机票/酒店卡片 "Book now" 深链 + 高级感 UI 重设计（Inter 字体、薄荷绿强调色、玻璃质感头部、卡片 hover）。
 - **PR #11** — 预订深链改为 Kayak（机票 `kayak.com/flights/ORG-DST/DATE/Nadults`）和 Booking.com（酒店 `searchresults.html?ss=...&checkin=...&checkout=...&group_adults=N`），替换不可靠的 Google Travel 链接。
-- **commit `5059e44`（待并入部署分支）** — 国旗 emoji（`src/lib/flags.ts`）+ 城市图片（Unsplash）+ 手机端优化（单列卡片、导航横向滚动、Book now 按钮加大）。
+- **PR #12** — Matchday26 改名 + tagline "Your Road to the Game" + Stage-1 设计（强调色 `#1fb88f`、金价 `#e6a817`、双层阴影、卡片 hover -4px）+ 国旗/城市图/手机端批次。
+- **PR #13** — 全程总价分项汇总（`TripCostSummary` + `calculateTripCostBreakdown`），浩哥首个产品增量，主控审后修了 match-only 边界 bug 并加基础样式上线。
+
+> ⚠️ **分支漂移教训（2026-06-05）：** 长期复用一个功能分支 + squash-merge 会导致功能分支与部署分支内容漂移（重叠文件最终冲突，见 PR #13 那次）。**修法：** 每次 squash 合并到部署分支后，把功能分支 `git reset --hard origin/部署分支` 重新对齐（功能分支内容是部署分支的超集，零丢失）。Routines 因每次从默认分支全新克隆，天然无此问题。
 
 ## 4. 团队（详见 TEAM.md）
 - 主控 Claude（编排，集中决策，向老板汇报）
