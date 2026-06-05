@@ -59,7 +59,13 @@
 - 接着做视觉升级（配色/阴影）并联动成本分项的高级美化（金色价格、稀缺徽章）。
 
 ## 6. 设计 Roadmap（每轮推进一步）
-来源：Sheng 报告（见 MEMORY.md §5）。
+来源：Sheng 报告（见 MEMORY.md §5）+ DESIGN.md 节日化方向。**节日化(Festival)优先，纯 CSS 先行：**
+- [ ] **节日色 token**（橙 `#FF6B35`/品红 `#E91E8C`/电蓝 `#00C2FF`/金 `#F0B429`）+ 护栏（每屏≤1 节日色，必过 WCAG AA）
+- [ ] **Hero 节日版**：球场双径向光晕(绿场+橙看台,纯 CSS) + 大字倒计时 + 国旗带 + `Find My Match →`
+- [ ] **卡片进球脉冲** hover（橙环 0.25s）；**标志性赛事金徽章**（决赛/揭幕）
+- [ ] **预订完成庆祝态**：CSS 彩带(一次性,reduce-motion 关) + 庆祝文案 + 分享按钮(#YourRoadToTheGame)
+- [ ] 外部素材接入（Midjourney 图 / Runway 视频 / Lottie confetti）——见 `design/moodboard-workflow.md`
+（原有项续接：）
 - [ ] **发布首屏 Hero**（启动项）——龙哥审查"需改后通过"(6.5/10)：①主标题→`Are You Going?`(首词金色) ②CTA→`Find My Match →` ③国旗带改三国可辨配色(美白/墨绿/加红) ④副标题末句换情绪句 ⑤信任卡数字下加微描述。改完实现并**先预览给老板**。
 - [ ] **情绪基调参考板**（3 张非竞品图定义产品气质）——龙哥 KPI 前置要求
 - [x] 骨架屏加载态（shimmer） —— 完成（commit `111f5c5`）
