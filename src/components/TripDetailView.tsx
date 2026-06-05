@@ -23,6 +23,7 @@ import { formatDuration, formatPriceUsd } from '@/lib/format';
 import { TripItemRow } from './TripItemRow';
 import { ShareTripLink } from './ShareTripLink';
 import { CheckoutButton } from './CheckoutButton';
+import { TripCostSummary } from './TripCostSummary';
 
 interface TripDetailViewProps {
   tripId: string;
@@ -171,9 +172,10 @@ export const TripDetailView = ({ tripId }: TripDetailViewProps) => {
       </form>
 
       <p className="lead">
-        {trip.itemCount} item{trip.itemCount === 1 ? '' : 's'} ·{' '}
-        <strong>{formatPriceUsd(trip.totalUsd)}</strong> total
+        {trip.itemCount} item{trip.itemCount === 1 ? '' : 's'}
       </p>
+
+      <TripCostSummary items={items} totalUsd={trip.totalUsd} />
 
       {error ? <p className="error">{error}</p> : null}
 

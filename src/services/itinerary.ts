@@ -20,3 +20,27 @@ export const sortTripItems = (items: TripItem[]): TripItem[] =>
 
 export const tripTotal = (items: TripItem[]): number =>
   Math.round(items.reduce((sum, item) => sum + item.priceUsd, 0) * 100) / 100;
+
+/** Calculates cost breakdown by trip item kind. */
+export const calculateTripCostBreakdown = (
+  items: TripItem[],
+): Record<TripItemKind, number> => {
+  const breakdown: Record<TripItemKind, number> = {
+    match: 0,
+    flight: 0,
+    hotel: 0,
+    transport: 0,
+  };
+
+  items.forEach((item) => {
+    breakdown[item.kind] += item.priceUsd;
+  });
+
+  // Round each category to 2 decimal places
+  Object.keys(breakdown).forEach((key) => {
+    breakdown[key as TripItemKind] =
+      Math.round(breakdown[key as TripItemKind] * 100) / 100;
+  });
+
+  return breakdown;
+};
