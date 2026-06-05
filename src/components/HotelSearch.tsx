@@ -4,6 +4,7 @@ import { type FormEvent, useState } from 'react';
 import type { City, HotelOffer } from '@/types';
 import { searchHotels } from '@/services/hotelsService';
 import { HotelCard } from './HotelCard';
+import { SkeletonCard } from './SkeletonCard';
 
 interface HotelSearchProps {
   cities: City[];
@@ -76,9 +77,13 @@ export const HotelSearch = ({
         </button>
       </form>
       <div className="offer-grid">
-        {offers.map((offer) => (
-          <HotelCard key={offer.id} offer={offer} />
-        ))}
+        {loading
+          ? Array.from({ length: 5 }).map((_, i) => (
+              <SkeletonCard key={`skeleton-${i}`} />
+            ))
+          : offers.map((offer) => (
+              <HotelCard key={offer.id} offer={offer} />
+            ))}
       </div>
     </div>
   );
