@@ -18,6 +18,11 @@ describe('mock offer generators', () => {
     expect(first).toEqual(second);
     expect(first[0].origin).toBe('LHR');
     expect(first.every((offer) => offer.priceUsd > 0)).toBe(true);
+    // Every offer must carry a booking deep link, so "Book now" always renders
+    // even on the offline/API-fallback path (regression guard).
+    expect(first.every((offer) => offer.deepLink?.includes('kayak.com'))).toBe(
+      true,
+    );
   });
 
   it('computes hotel nights from the date range', () => {
@@ -29,6 +34,9 @@ describe('mock offer generators', () => {
     });
     expect(offers).toHaveLength(5);
     expect(offers.every((offer) => offer.nights === 3)).toBe(true);
+    expect(
+      offers.every((offer) => offer.deepLink?.includes('booking.com')),
+    ).toBe(true);
   });
 
   it('respects a transport mode filter', () => {

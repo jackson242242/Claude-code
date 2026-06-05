@@ -93,6 +93,7 @@ export const mockFlightOffers = (query: FlightSearchQuery): FlightOffer[] =>
       durationMinutes,
       stops,
       priceUsd: seededInt(seed, 120, 900) * Math.max(1, query.passengers),
+      deepLink: `https://www.kayak.com/flights/${query.origin.toUpperCase()}-${query.destination.toUpperCase()}/${query.date}/${Math.max(1, query.passengers)}adults`,
     };
   });
 
@@ -112,6 +113,14 @@ export const mockHotelOffers = (query: HotelSearchQuery): HotelOffer[] => {
       pricePerNightUsd,
       nights,
       priceUsd: pricePerNightUsd * nights * Math.max(1, query.guests > 2 ? 2 : 1),
+      deepLink: `https://www.booking.com/searchresults.html?${new URLSearchParams(
+        {
+          ss: HOTEL_BRANDS[i % HOTEL_BRANDS.length],
+          checkin: query.checkIn,
+          checkout: query.checkOut,
+          group_adults: String(Math.max(1, query.guests)),
+        },
+      ).toString()}`,
     };
   });
 };
