@@ -71,7 +71,9 @@
 - [x] 国旗+城市图+手机端上线（PR #12）。
 - [x] BRAND.md（Amelia 交付，`975b353`）。
 - [x] Stage-1 设计 + Matchday26 改名上线（PR #12）。
-- [x] 浩哥加入架构（模型 Sonnet）。下一步：派发首个任务（建议先做基础设施评估）。
+- [x] 浩哥加入架构（模型 Haiku）。首个任务：基建快评 + 成本分项显示（commit `2d795a9`）。
+- [ ] **全程总价汇总（多币种）** —— 后续在 TripCostSummary 扩展 USD/CAD/MXN 切换。
+- [ ] **真实赛程数据缓存策略** —— 浩哥评估 Redis 或 LRU，TTL 6h，按 route+date 分key（前置于多城市引擎）。
 - [ ] 下一阶段设计：情绪基调参考板（龙哥 KPI 要求）+ 骨架屏 + 8px 间距系统 + 价格对比徽章(A/B)。
 - [ ] **升级节奏**（架构规则）：12h 产品 / 24h 设计，见 `CADENCE.md`。入口命令 `.claude/commands/product-upgrade.md`、`design-upgrade.md`。机制=Routines（claude.ai/code/routines，老板一次性创建；agent 无法代建）。每次运行=全新会话，仓库是唯一记忆，必须先读 backlog 后写回进度。
 - [ ] 仓库根目录无关的 `ZombieSpawner.lua` 属历史遗留，忽略。
