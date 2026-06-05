@@ -949,3 +949,58 @@ a.offer-card__book:hover {
     width: 100%;
   }
 }
+
+/* Trip cost breakdown — functional baseline; design cycle refines the polish */
+.trip-cost-summary:empty {
+  display: none;
+}
+
+.trip-cost-summary {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  margin: 1rem 0 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.trip-cost-summary h3 {
+  margin: 0 0 0.6rem;
+  font-size: 0.95rem;
+}
+
+.cost-breakdown-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.cost-breakdown-item {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.cost-breakdown-value {
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.cost-breakdown-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.trip-total-value {
+  color: var(--price);
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}

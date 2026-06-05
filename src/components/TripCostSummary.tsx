@@ -12,15 +12,9 @@ interface TripCostSummaryProps {
 export const TripCostSummary = ({ items, totalUsd }: TripCostSummaryProps) => {
   const breakdown = calculateTripCostBreakdown(items);
 
-  // Only show the breakdown if there are items
-  const hasItems = items.length > 0;
-  const hasBreakdownItems = (breakdown.flight > 0 ||
-    breakdown.hotel > 0 ||
-    breakdown.transport > 0) as boolean;
-
   return (
     <div className="trip-cost-summary">
-      {hasItems && hasBreakdownItems ? (
+      {items.length > 0 ? (
         <>
           <h3>Cost breakdown</h3>
           <ul className="cost-breakdown-list">
