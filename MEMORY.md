@@ -55,8 +55,25 @@
 - 复用现有 mock 层（`src/mocks/`、`backend/app/seed/`），不造平行假数据。
 - **未经老板明确许可不开对外 PR / 不推非指定分支。**
 
-## 7. 待办 / 进行中
-- [ ] 把 `5059e44`（国旗+城市图+手机端）并入部署分支上线。
-- [ ] Amelia 产出 `BRAND.md`（进行中）。
-- [ ] 落地 Sheng 的设计建议（第一阶段优先）。
-- [ ] 仓库根目录有无关的 `ZombieSpawner.lua`，属历史遗留，忽略即可。
+## 7. 基础设施现状（浩哥领域，如实记录）
+- **数据库：** 生产**无真库**——Render 蓝图省略 Postgres，跑 `backend/app/seed` 种子数据 + 内存 trips。`backend/schema.sql` 是 source of truth 但未部署。改结构先改 schema.sql。
+- **消息队列：** **不存在**。属浩哥按需设计/引入领域，需先论证必要性（防过度工程）。
+- **MCP：** 现为 GitHub MCP + 远程执行 MCP（`mcp__github__*`、`mcp__claude-code-remote__*`）。新增集成由浩哥评估。
+- **联网：** 沙箱出站受 allowlist 限制（onrender.com 被挡）；agent 可用 WebSearch/WebFetch 取数。
+
+## 8. 团队治理更新（2026-06-04）
+- 新增 **龙哥**（艺术/娱乐圈审查官，review-only，带 KPI：提升团队沟通效率+审美）。
+- 新增 **浩哥**（技术/基础设施：产品迭代、工具调优、联网、DB、MCP、消息队列），模型 **Haiku**（原指定 "hermes" 不可用；从 opus/sonnet/haiku 选定 Haiku，最快最省）。
+- **投票治理：** 需老板拍板事项 → agent ≥2 轮讨论 → 多数票 → 呈报逻辑 → 老板做架构级裁决。投票成员：Sheng/Amelia/龙哥；浩哥默认不投票，提供技术可行性评估。
+- 首次投票结果见 TEAM.md「投票存档」。
+
+## 9. 待办 / 进行中
+- [x] 国旗+城市图+手机端上线（PR #12）。
+- [x] BRAND.md（Amelia 交付，`975b353`）。
+- [x] Stage-1 设计 + Matchday26 改名上线（PR #12）。
+- [x] 浩哥加入架构（模型 Haiku）。首个任务：基建快评 + 成本分项显示（commit `2d795a9`）。
+- [ ] **全程总价汇总（多币种）** —— 后续在 TripCostSummary 扩展 USD/CAD/MXN 切换。
+- [ ] **真实赛程数据缓存策略** —— 浩哥评估 Redis 或 LRU，TTL 6h，按 route+date 分key（前置于多城市引擎）。
+- [ ] 下一阶段设计：情绪基调参考板（龙哥 KPI 要求）+ 骨架屏 + 8px 间距系统 + 价格对比徽章(A/B)。
+- [ ] **升级节奏**（架构规则）：12h 产品 / 24h 设计，见 `CADENCE.md`。入口命令 `.claude/commands/product-upgrade.md`、`design-upgrade.md`。机制=Routines（claude.ai/code/routines，老板一次性创建；agent 无法代建）。每次运行=全新会话，仓库是唯一记忆，必须先读 backlog 后写回进度。
+- [ ] 仓库根目录无关的 `ZombieSpawner.lua` 属历史遗留，忽略。

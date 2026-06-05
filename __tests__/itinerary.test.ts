@@ -1,4 +1,5 @@
 import {
+  calculateTripCostBreakdown,
   sortTripItems,
   tripItemKindLabel,
   tripTotal,
@@ -43,5 +44,44 @@ describe('itinerary helpers', () => {
     expect(tripTotal([item({ priceUsd: 100 }), item({ priceUsd: 49.5 })])).toBe(
       149.5,
     );
+  });
+
+  it('calculates cost breakdown by item kind', () => {
+    const items = [
+      item({ kind: 'flight', priceUsd: 250 }),
+      item({ kind: 'flight', priceUsd: 180 }),
+      item({ kind: 'hotel', priceUsd: 150 }),
+      item({ kind: 'hotel', priceUsd: 200 }),
+      item({ kind: 'transport', priceUsd: 75.5 }),
+      item({ kind: 'match', priceUsd: 0 }),
+    ];
+
+    const breakdown = calculateTripCostBreakdown(items);
+
+    expect(breakdown.flight).toBe(430);
+    expect(breakdown.hotel).toBe(350);
+    expect(breakdown.transport).toBe(75.5);
+    expect(breakdown.match).toBe(0);
+  });
+
+  it('rounds cost breakdown values to 2 decimal places', () => {
+    const items = [
+      item({ kind: 'flight', priceUsd: 100.333 }),
+      item({ kind: 'hotel', priceUsd: 50.456 }),
+    ];
+
+    const breakdown = calculateTripCostBreakdown(items);
+
+    expect(breakdown.flight).toBe(100.33);
+    expect(breakdown.hotel).toBe(50.46);
+  });
+
+  it('returns zero values for empty item list', () => {
+    const breakdown = calculateTripCostBreakdown([]);
+
+    expect(breakdown.flight).toBe(0);
+    expect(breakdown.hotel).toBe(0);
+    expect(breakdown.transport).toBe(0);
+    expect(breakdown.match).toBe(0);
   });
 });
