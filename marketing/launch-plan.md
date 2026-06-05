@@ -71,14 +71,15 @@ We start with your fixtures. Everything else flows from there.
 #Matchday26 #WorldCup2026
 ```
 
-**Tweet 3 (the border problem — high-anxiety, high-attention):**
+**Tweet 3 (the logistics problem — high-attention):**
 ```
 Hot take: the biggest travel problem at this World Cup isn't finding flights.
 
-It's not knowing you needed an eTA for Canada or an ESTA for the US — BEFORE 
+It's not knowing how to chain 3 matches across 3 cities and 2 borders —
+realistic transfer windows, inter-city connections, total cost — BEFORE
 you bought those tickets.
 
-Matchday26 flags the entry requirements for each leg of your trip, per country.
+Matchday26 builds that itinerary around your fixtures, automatically.
 
 #Matchday26 #WorldCup2026 #travel
 ```
@@ -139,28 +140,31 @@ Caption:
 Most fans have the tickets. Almost no one has the plan.
 
 Matchday26 chains your fixtures into a multi-city itinerary — with the flights, 
-hotels, and border requirements worked out per leg.
+hotels, and inter-city connections worked out per leg.
 
 Built for fans. Not for generic tourists. Try it free → link in bio.
 
 #Matchday26 #WorldCup2026 #travel #footballtravel #matchday #soccer #football
 ```
 
-**Post 3 — The border anxiety hook (high-share content):**
-- Carousel or infographic: "Which entry doc do you need for each host country?"
-  (USA = ESTA/B1-B2 · Canada = eTA/TRV · Mexico = FMM — simple table, link to
-  official sources, "Matchday26 checks this automatically in your itinerary.")
+**Post 3 — The logistics complexity hook (high-share content):**
+- Carousel or infographic: "What it actually takes to attend matches in all 3 host
+  countries" — city-to-city transfer windows, price transparency per leg, one-stop
+  booking vs. piecing it together yourself.
 ```
 Caption:
 The thing nobody tells you before you book 3 World Cup matches across North America.
 
-Swipe for the entry requirements per host country — and how Matchday26 flags 
-them automatically for every leg of your trip.
+Chaining matches across 3 countries means 3 sets of flights, 3 hotel markets,
+and transfer windows that look fine on a calendar — until you do the math.
+
+Matchday26 builds the full itinerary around your fixture list, with transparent
+pricing per leg and one-stop booking.
 
 Save this post. Share it with your travel group. Thank us later.
 
 #Matchday26 #WorldCup2026 #travelplanning #worldcuptravel #football #soccer 
-#FIFA2026 #visainfo #travel
+#FIFA2026 #travel
 ```
 
 ---
@@ -172,7 +176,8 @@ Script structure (30–45 sec):
 - Opening hook (0–3s): Text on screen — "POV you just bought tickets to the World
   Cup in New York, Toronto, AND Mexico City and have no idea how to connect them"
 - Middle (3–25s): Screen recording / demo of building a multi-city trip on
-  Matchday26 — watch it auto-chain flights and flag the eTA requirement for Canada
+  Matchday26 — watch it auto-chain flights and calculate realistic transfer windows
+  between cities
 - Closing CTA (25–45s): "This is Matchday26. Free. Link in bio."
 
 ```
@@ -184,9 +189,9 @@ The fixture list is set. Your move. ⚽🗺️
 ```
 
 **Video 2 — "Things Expedia doesn't tell you about this World Cup" (listicle format)**
-Quick-cut, text-on-screen list: border docs, currency differences, 3-country
-turnaround times, stadium-to-airport windows. Each pain point resolved by showing
-Matchday26.
+Quick-cut, text-on-screen list: inter-city transfer windows, currency differences
+across 3 countries, stadium-to-airport logistics, price gaps between booking
+separately vs. as a chain. Each pain point resolved by showing Matchday26.
 
 ```
 Caption:
@@ -217,13 +222,14 @@ fan zones), closes with Matchday26 CTA.
 
 **r/worldcup — "Resource" angle (link only if mods/rules allow):**
 ```
-Title: Cross-border logistics breakdown for traveling fans — which entry docs you 
-need per host country (and the turnaround math between cities)
+Title: Cross-border logistics breakdown for traveling fans — inter-city connections,
+transfer windows, and realistic trip-chaining math across 3 host countries
 
-[Post body: a genuinely useful summary of ESTA/eTA/FMM requirements, with links to 
-official government sources. Mention at the end: "I've been building a trip-planning 
-tool that flags these automatically — happy to share if useful or answer questions 
-in the comments."]
+[Post body: a genuinely useful summary of how to chain matches across USA, Canada,
+and Mexico — realistic turnaround times between cities, which routes need overnight
+stays, how to compare total trip cost across legs. Mention at the end: "I've been
+building a trip-planning tool that handles this automatically — happy to share if
+useful or answer questions in the comments."]
 ```
 
 **r/soccer — Matchday / travel thread participation:**
@@ -237,8 +243,9 @@ Title: Planning a multi-country World Cup trip? The cross-border logistics are
 genuinely complicated — here's what I learned building a planner for it.
 
 [Body: 400-600 words of genuinely useful advice about chaining matches across 3 
-countries — entry docs, currency, realistic transfer windows. Tool mention at the 
-end as a resource, not the lead.]
+countries — realistic transfer windows, currency differences, how to compare prices
+across 3 hotel markets, stadium-to-airport timing. Tool mention at the end as a
+resource, not the lead.]
 ```
 
 **r/USTravel, r/CanadaTravel, r/Mexico_Travel — Host-city specific threads:**
@@ -255,9 +262,8 @@ Organic, helpful, tool mentioned as a resource.
 **Description (260 chars):**
 ```
 Matchday26 chains your World Cup matches into a cross-border itinerary — 
-flights, hotels, transfers, and entry requirements (ESTA/eTA/FMM) per leg, 
-across USA, Canada & Mexico. Built for fans who want to follow their team, 
-not stare at a hotel grid.
+flights, hotels, transfers, and per-leg pricing across USA, Canada & Mexico.
+Built for fans who want to follow their team, not stare at a hotel grid.
 ```
 
 **Full Product Hunt listing body:**
@@ -267,7 +273,8 @@ Hi hunters 👋
 We built Matchday26 for one reason: the 2026 World Cup is the first 
 tri-national, 48-team tournament, and the travel logistics are genuinely 
 unprecedented. A fan following Argentina or England could cross 3 borders, 
-visit 4+ cities, and need 3 different entry documents — all for one month-long trip.
+visit 4+ cities, and need to chain together flights, hotels, and transfers
+across 3 separate travel markets — all for one month-long trip.
 
 Booking.com, Expedia, and the official FIFA channels each solve one slice.
 None of them start from the fixture list.
@@ -277,9 +284,9 @@ None of them start from the fixture list.
   inter-city connections and turnaround times.
 → Flights, hotels, and transport are surfaced per leg (we aggregate partners 
   and earn on affiliate commission — no hidden markup).
-→ Border/entry requirements (ESTA, eTA, FMM) are flagged per leg, with links 
-  to official government sources.
 → Total trip cost rolls up in your home currency across all three countries.
+→ Price transparency per leg: see exactly what each segment costs before
+  you book anything.
 → Works as a PWA — install it on your phone before you travel.
 
 **Honest state of the product:** core trip builder is live and functional; 
@@ -312,14 +319,14 @@ around the fixture list, not generic dates.
 
 The strategic insight behind it: the 2026 tournament is the first 
 tri-national, 48-team World Cup. A fan following their team could cross 
-3 borders, visit 4+ cities, and need 3 different entry documents. The 
-logistical complexity is genuinely unprecedented — and none of the big 
-incumbents (Booking, Expedia, or FIFA's own channels) solve it as a 
+3 borders, visit 4+ cities, and navigate 3 completely different travel 
+markets. The logistical complexity is genuinely unprecedented — and none of 
+the big incumbents (Booking, Expedia, or FIFA's own channels) solve it as a 
 whole-trip problem.
 
 We do. Start with your fixtures; we chain everything else — inter-city 
-flights, hotels, transport, and cross-border entry requirements per leg — 
-into one itinerary. Total cost in your home currency.
+flights, hotels, transport, and per-leg pricing — into one itinerary. 
+Total cost in your home currency.
 
 Built on Next.js + FastAPI, affiliate-monetized (we don't take inventory 
 risk), live at worldcup-web-03eq.onrender.com.
@@ -338,9 +345,9 @@ Something nobody in mainstream travel media is writing about yet: the
 in slow motion.
 
 500M+ ticket requests. ~80% of US host-city hotels reportedly below 
-forecast booking pace. And most traveling fans don't yet know whether 
-they need an ESTA, an eTA, or a Mexican FMM for their trip — let alone 
-all three.
+forecast booking pace. And most traveling fans are trying to chain 3 cities
+across 3 countries — 3 flight markets, 3 hotel markets, 3 currency contexts
+— without a single tool that models the whole trip.
 
 This is the gap we built Matchday26 to fill.
 
@@ -385,29 +392,30 @@ rather than generic dates. We're live at matchday26.com /
 worldcup-web-03eq.onrender.com.
 
 The problem we solve: a fan following Argentina or England across this 
-tri-national tournament could need flights across 3 countries, 3 different 
-entry documents, and a realistic inter-city transfer plan — on tight 
-turnarounds. No mainstream OTA solves that as a whole-trip problem. We do.
+tri-national tournament needs to chain flights across 3 countries, navigate
+3 separate hotel markets, and work out realistic inter-city transfer windows
+— on tight turnarounds. No mainstream OTA solves that as a whole-trip 
+problem. We do.
 
 Why I'm reaching out to [Organization]:
 
 [Option A — Media/editorial:]
 We have some interesting data on the cross-border travel patterns fans are 
-actually planning (most-searched team-chase routes, entry-doc confusion 
-spikes) that could be worth a story or a data embed. Happy to share access 
-and walk you through it.
+actually planning (most-searched team-chase routes, city-pair searches, 
+price trends across the 16 host markets) that could be worth a story or a 
+data embed. Happy to share access and walk you through it.
 
 [Option B — Supporter group/fan club:]
 If your members are traveling to matches, I'd like to offer a co-branded 
 trip-planning link for [national team] fans — so your community can build 
-their multi-city trip in one place, and you'd earn a share of any bookings 
-completed through it.
+their multi-city trip in one place, with transparent per-leg pricing, and 
+you'd earn a share of any bookings completed through it.
 
 [Option C — Creator/influencer:]
 If you're covering World Cup travel in your content, I'd love to set you up 
 with a demo and an affiliate link — so you can point your audience to a tool 
-that actually solves the multi-city problem rather than just another hotel 
-search page.
+that actually solves the multi-city itinerary problem rather than just 
+another hotel search page.
 
 Would a 20-minute call this week make sense?
 
@@ -426,9 +434,9 @@ Hey [Name] — love your World Cup travel content, especially [specific post
 or video].
 
 Quick ask: I built Matchday26 — a trip planner for the tournament that 
-chains fixtures into a full multi-city itinerary (flights, hotels, cross-
-border entry docs, total cost). It's the tool I kept wishing existed when 
-covering this stuff.
+chains fixtures into a full multi-city itinerary (flights, hotels, inter-
+city transfers, total cost in your currency). It's the tool I kept wishing 
+existed when covering this stuff.
 
 If you're making more World Cup travel content, I'd love to give you early 
 access and set up an affiliate link so your audience has something practical 
@@ -480,7 +488,7 @@ All of these require a human. None can be automated or done by AI.
 - [ ] Set up a Matchday26 X/Twitter account (if not already done) and post the
       launch thread above. Pin Tweet 1.
 - [ ] Set up Instagram account. Post the launch announcement (Post 1) and the
-      border-requirements carousel (Post 3) — carousel posts outperform single images.
+      multi-city logistics carousel (Post 3) — carousel posts outperform single images.
 - [ ] Submit to Product Hunt using the copy in Section 2e. Timing matters: submit at
       midnight PT for the US day to maximize upvote window.
 - [ ] Post personally on LinkedIn (Post 1) from your own account, not a company page.
@@ -553,9 +561,10 @@ during the group stage if revenue is the near-term goal.
 1. **Product Hunt launch today** — submit at midnight PT with the copy above;
    this is the highest-leverage single action for a cold-start tool and can
    generate 1,000–5,000 qualified visitors in 24 hours if it ranks on the day.
-2. **Post the border/entry-requirements carousel on Instagram + the Reddit
-   travel thread** — purely informational, genuinely shareable, and the highest-
-   signal content for our differentiation (the cross-border angle no one else owns).
+2. **Post the multi-city logistics carousel on Instagram + the Reddit travel
+   thread** — purely informational, genuinely shareable, and the highest-signal
+   content for our differentiation (the cross-border itinerary-chaining angle
+   no one else owns).
 3. **Send DMs to 10 football/travel creators today** — creator affiliate
    partnerships have a longer lead time (they need to film/shoot) but the
    sooner they are in flight, the sooner they compound during the knockout rounds.
