@@ -12,8 +12,18 @@
 
 ## 流水线
 
-### 步骤 1 · 静态图片（参考图/Hero 背景）
-- 工具：Midjourney v6（首选）/ DALL·E 3。
+### 步骤 0 · 自动化路径（agent + OpenAI Images）【已就绪，待权限】
+让 agent 直接出图，而非只写 CSS：
+- **脚本：** `scripts/generate-asset.mjs`（Node 22 内置 fetch，无新依赖）。
+- **入口命令：** `/design-asset`（`.claude/commands/design-asset.md`）——agent 据 DESIGN.md 拟 prompt → 调 API 出图 → 接入组件 → 跑门禁 → 开 PR（不自动合并，主控/老板审图）。
+- **用法：** `node scripts/generate-asset.mjs --prompt "..." --out public/images/hero-bg.webp --size 1536x1024 --quality medium`
+- **老板需授予的两项权限（缺一即报错）：**
+  1. 环境 **Network access → Custom** 放开 `api.openai.com`（或设 Full）。
+  2. 环境 **Variables** 里加 `OPENAI_API_KEY`（**作密钥，别贴聊天/进仓库**）。
+- **内容硬规则：** 不出真实 logo/商标（FIFA/World Cup/俱乐部徽）、不出真实球员肖像、不涉政治/法律；只出通用球场/球迷/城市/节日意象。文字压图必加深色蒙版保 WCAG AA。
+- **成本/诚实：** 出图消耗老板 OpenAI 账户额度；本环境在未授权前**无法运行/测试**，授权后由 agent 或 Routine 触发。
+
+
 - prompt 例：`dark cinematic stadium tunnel, one beam of light, deep teal and orange, no people, --ar 16:9 --style raw --v6`。
 - 处理：`cwebp -q 85` 压成 WebP，≤200KB。
 - 交付：`public/images/hero-bg.webp`。
