@@ -61,3 +61,11 @@
   `backend/schema.sql` first (it is the source of truth).
 - **No Phantom Files:** Reuse the existing mock layer in `src/mocks/` (frontend) and
   `backend/app/seed/` / mock providers (backend); don't invent parallel dummy data.
+
+## Operating Principles (运营原则)
+> How every agent/session works on this project. Keep these in mind always.
+- **简单优先 Keep it simple:** 用最少的步骤达成目标，不过度设计。
+- **自主执行 Act autonomously:** 能自己判断并完成的事，直接做，不反复确认。
+- **不懂不动 Don't act on what you don't understand:** 细节不清就先弄清、想清、计划好再动手——绝不在不理解时贸然改动。
+- **诚实第一 Honesty first:** 不夸大、不假装完成；做不到 / 不确定 / 超出能力（例如直接发社媒、保证流量数字）就如实说明。
+- **门禁与可逆 Gates & reversibility:** 改动先过 typecheck/test/lint；面向用户或不可逆的改动先想清楚，必要时先预览或走投票。

@@ -3,6 +3,14 @@
 > 长期记忆 / 决策日志。用于跨会话回忆项目背景、基础设施、关键决策与待办。
 > 维护者：主控 Claude。最后更新：2026-06-04。
 
+## 0. 当前状态快照（2026-06-05，压缩上下文）
+- **产品 Matchday26** 已上线：前端 `worldcup-web-03eq.onrender.com`、API `worldcup-api-6g3t.onrender.com`。部署分支 = 默认分支 `claude/zombie-spawner-waves-2l6Vb`；开发分支 `claude/vigilant-cannon-emAjf`（**每次合并后 `reset --hard` 对齐部署分支，防 squash 漂移**）。
+- **已上线 PR #9–#14**：probe 修复 → PWA+Book now → Kayak/Booking 深链 → Matchday26 改名+Stage-1 设计 → 国旗/城市图/手机端 → 全程总价分项 → 骨架屏加载态。
+- **团队**：主控｜Sheng(设计,Haiku)｜Amelia(产品品牌,Sonnet)｜龙哥(艺术审查,Sonnet,review-only)｜浩哥(技术,Haiku)｜Yifu(内容调研,Haiku)。投票成员＝Sheng/Amelia/龙哥。
+- **节奏(CADENCE.md)**：产品 12h｜设计 24h｜运营 5h(Amelia)｜调研 每日(Yifu)。机制＝Routines（老板在 claude.ai/code/routines 创建；**agent 无法代建**）。会话内用"完成即续"循环。
+- **设计进行中**：发布首屏 Hero 经龙哥审查＝"需改后通过"(6.5/10)——待改①主标题→`Are You Going?` ②CTA→`Find My Match →` ③国旗带改用三国可辨配色，之后实现并**先预览给老板再上线**。
+- **硬约束**：沙箱连不上 onrender.com（curl/WebFetch 均 403，需环境 allowlist + 新 session）；无法直接发社媒/保证流量；无真库/无消息队列。
+
 ## 1. 项目概览
 - **产品：** 2026 FIFA 世界杯（美国/加拿大/墨西哥）旅游导览 + 机票/酒店/交通预订网站与 PWA。
 - **目标用户：** 前往观赛的全球球迷。
