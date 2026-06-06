@@ -55,7 +55,11 @@ for (const c of clips) {
 }
 if (m.fontFile && !existsSync(m.fontFile)) fail(`fontFile not found: ${m.fontFile}`);
 
-const total = round3(clips.reduce((s, c) => s + Number(c.dur), 0));
+const xfade = Number(m.transition?.duration) > 0 ? Number(m.transition.duration) : 0;
+const xfadeType = m.transition?.type ?? 'fade';
+// With crossfades, each transition overlaps two clips, so the timeline shrinks by (n-1)*xfade.
+const rawTotal = clips.reduce((s, c) => s + Number(c.dur), 0);
+const total = round3(xfade > 0 ? rawTotal - (clips.length - 1) * xfade : rawTotal);
 if (total < 30 || total > 50) {
   console.warn(`⚠ Total video length ${total}s is outside the 35–45s sweet spot (PLAYBOOK §5). Adjust clip durations if unintended.`);
 }
@@ -63,19 +67,38 @@ if (total < 30 || total > 50) {
 const work = mkdtempSync(join(tmpdir(), 'mashup-'));
 const inputs = [];
 const filters = [];
+const isImage = (p) => /\.(png|jpe?g|webp|bmp)$/i.test(p);
 
-// 1) Each clip: fast-seek to its in-point, scale-to-cover 9:16, crop, normalize fps/sar.
+// 1) Each clip → a normalized WxH segment. Video: scale-to-cover + crop. Image still:
+//    Ken Burns (slow zoom/pan via zoompan) so a generated still becomes a living shot.
 clips.forEach((c, i) => {
-  inputs.push('-ss', String(c.in ?? 0), '-t', String(c.dur), '-i', c.src);
-  filters.push(
-    `[${i}:v]scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H},` +
-      `fps=${FPS},setsar=1,format=yuv420p[v${i}]`,
-  );
+  if (isImage(c.src)) {
+    inputs.push('-i', c.src); // single still; zoompan synthesizes the frames
+    filters.push(`[${i}:v]${kenBurns(c, W, H, FPS)},setsar=1,format=yuv420p[v${i}]`);
+  } else {
+    inputs.push('-ss', String(c.in ?? 0), '-t', String(c.dur), '-i', c.src);
+    filters.push(
+      `[${i}:v]scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H},` +
+        `fps=${FPS},setsar=1,format=yuv420p[v${i}]`,
+    );
+  }
 });
 
-// 2) Hard-cut concat (no fancy transitions — the handmade aesthetic is intentional).
-const concatInputs = clips.map((_, i) => `[v${i}]`).join('');
-filters.push(`${concatInputs}concat=n=${clips.length}:v=1:a=0[vcat]`);
+// 2) Join clips — optional uniform crossfade, else hard cuts (the handmade default).
+if (xfade > 0 && clips.length > 1) {
+  let prev = '[v0]';
+  let acc = Number(clips[0].dur); // running length of the composite so far
+  for (let i = 1; i < clips.length; i += 1) {
+    const off = round3(acc - xfade);
+    const out = i === clips.length - 1 ? 'vcat' : `xf${i}`;
+    filters.push(`${prev}[v${i}]xfade=transition=${xfadeType}:duration=${xfade}:offset=${off}[${out}]`);
+    prev = `[${out}]`;
+    acc = round3(acc + Number(clips[i].dur) - xfade);
+  }
+} else {
+  const concatInputs = clips.map((_, i) => `[v${i}]`).join('');
+  filters.push(`${concatInputs}concat=n=${clips.length}:v=1:a=0[vcat]`);
+}
 
 // 3) Burn in 图文 captions via libass (an ASS track styled for legible CJK + handmade outline).
 let vlabel = 'vcat';
@@ -130,7 +153,40 @@ try {
 }
 console.log(`✓ Done: ${args.out} (${total}s, 9:16). Ready to deliver to Drive + post per Minji's schedule.`);
 
+// 6) Optional cover/thumbnail: grab a frame for the SEO thumbnail (Canva can add the title).
+if (m.cover) {
+  const at = round3(m.cover.at ?? total * 0.15);
+  const coverOut = args.out.replace(/\.[^./]+$/, '') + '.cover.jpg';
+  try {
+    execFileSync(ffmpeg, ['-y', '-ss', String(at), '-i', args.out, '-frames:v', '1', '-q:v', '3', coverOut], {
+      stdio: ['ignore', 'ignore', 'inherit'],
+    });
+    console.log(`✓ Cover: ${coverOut} (frame @ ${at}s)`);
+  } catch {
+    console.warn('⚠ Cover frame export failed (non-fatal).');
+  }
+}
+
 // --- helpers ---------------------------------------------------------------
+
+// Ken Burns on a still: prescale to a 2x canvas (kills zoompan jitter), then slow zoom/pan.
+function kenBurns(c, W, H, FPS) {
+  const frames = Math.max(1, Math.round(Number(c.dur) * FPS));
+  const cw = W * 2;
+  const ch = H * 2;
+  const cover = `scale=${cw}:${ch}:force_original_aspect_ratio=increase,crop=${cw}:${ch}`;
+  const cx = `iw/2-(iw/zoom/2)`;
+  const cy = `ih/2-(ih/zoom/2)`;
+  let z = `min(1.0+0.0012*on,1.18)`, x = cx, y = cy; // 'in' (slow push) is the default
+  switch (c.motion) {
+    case 'out': z = `if(eq(on,0),1.18,max(1.18-0.0012*on,1.0))`; break;
+    case 'left': z = `1.12`; x = `(iw-iw/zoom)*(1-on/${frames})`; break;
+    case 'right': z = `1.12`; x = `(iw-iw/zoom)*(on/${frames})`; break;
+    case 'none': z = `1.0`; break;
+    default: break; // 'in'
+  }
+  return `${cover},zoompan=z='${z}':x='${x}':y='${y}':d=${frames}:s=${W}x${H}:fps=${FPS}`;
+}
 
 function resolveFontFamily(fontFile, fontName) {
   if (fontName) return fontName;

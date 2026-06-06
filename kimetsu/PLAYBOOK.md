@@ -49,9 +49,12 @@
 - **B. 仅当老板明确接受风险：** 用原版热门歌。必须标注"⚠️高 Content ID/静音风险"，仅适合
   非盈利、可接受被 claim/分成/下架的账号。**默认不选 B。**
 
-**画面（鬼灭素材）：**
-- 定位为**转化式二创/点评/混剪**（transformative）：重新叙事、加图文解说/赏析/角色分析，
-  **不做整段原片搬运**；单段原片尽量短、与文案/节奏强绑定。
+**画面（三选一）：**
+- **C. 最安全——AI 原创画面（`scripts/generate-broll.mjs`）：** 生成**原创氛围/象征**画面（雪中独行剑客剪影、
+  紫藤林、暗水上的一点火光、山间破晓），用 Ken Burns 运镜变活。⚠️**"AI 原创"≠"重画炭治郎"**——
+  复制受保护的角色设计/名字/logo 仍属侵权；脚本内置黑名单会拒绝点名鬼灭角色的 prompt。这是默认推荐路线。
+- **A. 鬼灭原片转化式二创：** 定位**点评/赏析/混剪**（transformative），重新叙事 + 图文解说，
+  **不做整段原片搬运**；单段原片尽量短、与文案/节奏强绑定。残余下架风险仍在，归账号主体。
 - **必署名原作**（"原作：吾峠呼世晴《鬼灭之刃》／动画：ufotable"），声明非官方、非盈利向（如适用）。
 - 残余风险仍存在 → 每条片发布前过 §6 合规检查单。
 
@@ -159,7 +162,8 @@ ffmpeg 来自 `ffmpeg-static` npm 包——**无需系统安装、无需 credent
 **交付与"发布"：**
 | 能力 | 用什么 | 需要的 credential | 状态 |
 |------|--------|------------------|------|
-| 渲染成片 mp4 | `scripts/render-mashup.mjs`（ffmpeg-static） | 无 | ✅ 已跑通 |
+| 渲染成片 mp4（含运镜/转场/封面） | `scripts/render-mashup.mjs`（ffmpeg-static） | 无 | ✅ 已跑通 |
+| AI 原创 b-roll 静图 | `scripts/generate-broll.mjs`（OpenAI Images） | `OPENAI_API_KEY` + 放行 api.openai.com | ⏸ 已建好，待 key |
 | 图文卡/封面 | Canva MCP | 已连接（无需新增） | ✅ 可用 |
 | 推成片到你手机 | `SendUserFile` / Google Drive MCP | 已连接（无需新增） | ✅ 可用 |
 | 最佳时间提醒 | Google Calendar MCP | 已连接（无需新增） | ✅ 可用 |

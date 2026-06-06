@@ -26,9 +26,12 @@ npm run render -- --manifest kimetsu/briefs/manifest-2026-06-06.json \
     "gainDb": -2                                             // 音量增益 dB（可省）
   },
 
-  "clips": [                                                 // 按顺序硬切；总时长=各 dur 之和（目标 35–45s）
-    { "src": "kimetsu/assets/2026-06-06/c1.mp4", "in": 2.0, "dur": 4.5 },
-    { "src": "kimetsu/assets/2026-06-06/c2.mp4", "in": 0,   "dur": 5.0 }
+  "transition": { "type": "fade", "duration": 0.6 },         // 可选：全局交叉淡入淡出；省略=硬切（手作默认）
+  "cover": { "at": 6 },                                      // 可选：导出 <out>.cover.jpg 缩略图（取该秒的帧）
+
+  "clips": [                                                 // 按顺序拼接；总时长=各 dur 之和（有 transition 则减 (n-1)*duration）
+    { "src": "kimetsu/assets/2026-06-06/c1.mp4", "in": 2.0, "dur": 4.5 },   // 视频：in=入点秒，scale-to-cover 9:16
+    { "src": "kimetsu/assets/2026-06-06/s1.png", "dur": 5.0, "motion": "in" } // 图片：Ken Burns 运镜让静图活起来
   ],
 
   "texts": [                                                 // 图文字幕（屏幕文字/内心独白），可空
@@ -42,6 +45,12 @@ npm run render -- --manifest kimetsu/briefs/manifest-2026-06-06.json \
   ]
 }
 ```
+
+## 图片素材与运镜（AI 原创路线）
+- clip 的 `src` 是图片（png/jpg/webp）时，引擎用 **Ken Burns 运镜**把静图变成有呼吸的镜头。
+- `motion`：`in`(缓推，默认) | `out`(缓拉) | `left` | `right` | `none`。
+- 图片建议**竖版**（如 1024×1536，`scripts/generate-broll.mjs` 默认就出这个尺寸），中心裁切到 9:16。
+- 视频 clip 不吃 `motion`（自带运动）。可图片+视频混用。
 
 ## 约束与行为
 - `clips` 至少 1 段；每段需 `src`（文件须存在）+ 正的 `dur`。

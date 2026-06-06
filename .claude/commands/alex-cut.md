@@ -37,12 +37,19 @@ free editor (剪映/CapCut/DaVinci free). Include:
    data for the render engine (schema: `kimetsu/briefs/manifest.schema.md`). Point `clips`/`audio`
    at the owner's assets under `kimetsu/assets/<date>/` and set caption `texts` from your 图文 lines.
 
-**RENDER (the actual cut) — only if source assets exist:**
-10. Check `kimetsu/assets/<date>/` for the clips + commercial-safe song named in the manifest.
-    - If present: run `npm run render -- --manifest kimetsu/briefs/manifest-<date>.json --out kimetsu/briefs/out/<date>.mp4`.
-      The engine (ffmpeg via ffmpeg-static, no credential) outputs a 9:16 35–45s mp4 with burned-in captions + music.
-    - If assets are missing: do NOT fabricate a render. Leave the manifest ready and tell the owner
-      exactly which files to drop into `kimetsu/assets/<date>/` (per `kimetsu/assets/README.md`).
+**RENDER (the actual cut):**
+10. Get visuals, in this priority:
+    - **(a) Owner footage** in `kimetsu/assets/<date>/` (+ commercial-safe song) → use it directly.
+    - **(b) AI-original b-roll (copyright-safe default when no footage)** → write a `broll-<date>.json`
+      (array of `{name, prompt}`) of **original atmospheric/symbolic** scenes — NO named 鬼灭
+      characters/logos (PLAYBOOK §2) — then `node scripts/generate-broll.mjs --prompts kimetsu/briefs/broll-<date>.json --outdir kimetsu/assets/<date>`.
+      Reference each still in the manifest as an image clip with a `motion` (Ken Burns). Needs
+      `OPENAI_API_KEY` + allowlisted api.openai.com; if absent, STOP and tell the owner the exact fix.
+    - Use `transition` (gentle crossfade) and `cover` (thumbnail) in the manifest where they help.
+    Then render: `npm run render -- --manifest kimetsu/briefs/manifest-<date>.json --out kimetsu/briefs/out/<date>.mp4`
+    (ffmpeg via ffmpeg-static, no credential → 9:16 35–45s mp4 + burned-in captions + music + cover.jpg).
+    Never fabricate a render: if neither footage nor a key is available, leave the manifest +
+    broll prompts ready and tell the owner exactly what to add.
 11. **Deliver the finished mp4** (it is gitignored — never committed): use `SendUserFile` to push it to
     the owner, and/or the Google Drive MCP tool to upload it (load via ToolSearch: `select:SendUserFile`
     or search "google drive upload"). Hand off to Minji's schedule for posting.
