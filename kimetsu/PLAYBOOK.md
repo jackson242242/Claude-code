@@ -159,6 +159,11 @@ ffmpeg 来自 `ffmpeg-static` npm 包——**无需系统安装、无需 credent
 
 **图文层（可选）：** Canva MCP（已 OAuth 连接）可生成图文卡/封面/缩略图并导出——无需新 credential。
 
+**low hour 做 / peak hour 发（YouTube）：** 低峰时段渲染好后，用
+`node scripts/youtube-upload.mjs --video ... --title "... #shorts" --publishAt <高峰ISO时间>`
+以**私有+定时**上传，YouTube 到点自动转公开——一条流程搞定，无需第二个 routine、无需盯。
+不带 `--publishAt` 则默认私有，你在 Studio 审核后再公开（安全默认）。
+
 **交付与"发布"：**
 | 能力 | 用什么 | 需要的 credential | 状态 |
 |------|--------|------------------|------|
@@ -168,7 +173,7 @@ ffmpeg 来自 `ffmpeg-static` npm 包——**无需系统安装、无需 credent
 | 推成片到你手机 | `SendUserFile` / Google Drive MCP | 已连接（无需新增） | ✅ 可用 |
 | 最佳时间提醒 | Google Calendar MCP | 已连接（无需新增） | ✅ 可用 |
 | 每日打包草稿邮件 | Gmail MCP（draft，不自动发） | 已连接（无需新增） | ✅ 可用 |
-| **YouTube 自动上传** | YouTube Data API 脚本 | `YT_CLIENT_ID`/`YT_CLIENT_SECRET`/`YT_REFRESH_TOKEN`（环境变量）+ 放行 `*.googleapis.com` | ⏸ 待 owner 给凭据再建 |
+| **YouTube 自动上传/定时发布** | `scripts/youtube-upload.mjs`（Data API v3） | `YT_CLIENT_ID`/`YT_CLIENT_SECRET`/`YT_REFRESH_TOKEN`（环境变量）+ 放行 `oauth2.googleapis.com`+`www.googleapis.com` | ✅ 已建好，待 owner 给 OAuth |
 | TikTok / 小红书 自动发 | —（无可用公开发布 API） | — | ❌ 手动发 |
 
 **credential 怎么给（沿用仓库 `generate-asset.mjs` 模式）：** secret 一律放**环境变量**（Claude Code 环境
