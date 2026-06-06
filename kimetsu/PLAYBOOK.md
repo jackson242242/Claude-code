@@ -22,12 +22,16 @@
 
 > **诚实第一。** 不夸大、不假装完成、不编数字。做不到的就说做不到。
 
-1. **Agent 不能替你剪片。** 临时容器里没有剪映/CapCut/Premiere，agent 不渲染视频。
-   它产出的是**给人或给剪辑工具执行的脚本/分镜/EDL**。实际成片由老板用免费工具
-   （剪映/CapCut/DaVinci Resolve 免费版）按成片包剪。
-2. **Agent 不能替你发片，也不能保证涨粉。** 不能登录账号、不能自动上传、不能买量、
-   不能保证"粉丝最大化"或任何具体数字。它把**命中算法的概率拉满**（钩子/节奏/SEO/发布时机），
-   真实涨粉取决于老板的实际分发与作品本身。北极星＝**可持续的每日真实涨粉**，如实记录漏斗。
+1. **Agent 能自动剪片（从 owner 提供的素材），但不能凭空变出素材。** 渲染引擎
+   `scripts/render-mashup.mjs`（ffmpeg via ffmpeg-static，无需 credential）会按 Alex 的 manifest
+   自动出 9:16 成片（裁切/拼接/烧字幕/配乐）。**前提是源素材（片段+商用音乐+字体）已在
+   `kimetsu/assets/` 里**——这步是 owner 的（合规备料，见 §2）。没素材时 agent 不会假装出片，
+   只把 manifest 备好并告诉你缺哪些文件。
+2. **Agent 不能替你发片到 TikTok/小红书，也不能保证涨粉。** 这两平台**无可用发布 API**；
+   YouTube 可用 Data API 自动上传（需 owner 的 OAuth，见 §9）。默认路径＝agent 渲染好成片 →
+   投递到你手机（SendUserFile / Google Drive）→ Calendar 在最佳时间提醒 → **你一键发**。
+   不能登录、买量，不保证"粉丝最大化"或任何数字。它把**命中算法的概率拉满**（钩子/节奏/SEO/时机），
+   真实涨粉取决于 owner 的实际分发与作品本身。北极星＝**可持续的每日真实涨粉**，如实记录漏斗。
 3. **不编造数据。** 播放/粉丝/互动只记录真实可测的；趋势/预测明确标注 ⚠️。
 
 ---
@@ -141,7 +145,36 @@ agent **无法自建 Routine**。本项目跑在 Claude Code on the web 临时�
 
 ---
 
-## 8. Backlog（每轮可从顶部取，做完在 MEMORY.md 勾掉）
+## 9. 自动化引擎与交付（剪辑+发布的真实实现）
+
+> 这一节说明 agent 到底"调用什么"来达到剪辑与发布——以及哪些需要 credential、哪些不需要。
+
+**剪辑引擎（已跑通）：** `scripts/render-mashup.mjs`（`npm run render`）。
+ffmpeg 来自 `ffmpeg-static` npm 包——**无需系统安装、无需 credential**。输入＝Alex 的
+`manifest-<date>.json`（schema 见 `kimetsu/briefs/manifest.schema.md`）+ `kimetsu/assets/` 里的素材。
+输出＝9:16、35–45s、烧入图文字幕 + 配乐的 mp4，存到 `kimetsu/briefs/out/`（gitignore，不进仓库）。
+
+**图文层（可选）：** Canva MCP（已 OAuth 连接）可生成图文卡/封面/缩略图并导出——无需新 credential。
+
+**交付与"发布"：**
+| 能力 | 用什么 | 需要的 credential | 状态 |
+|------|--------|------------------|------|
+| 渲染成片 mp4 | `scripts/render-mashup.mjs`（ffmpeg-static） | 无 | ✅ 已跑通 |
+| 图文卡/封面 | Canva MCP | 已连接（无需新增） | ✅ 可用 |
+| 推成片到你手机 | `SendUserFile` / Google Drive MCP | 已连接（无需新增） | ✅ 可用 |
+| 最佳时间提醒 | Google Calendar MCP | 已连接（无需新增） | ✅ 可用 |
+| 每日打包草稿邮件 | Gmail MCP（draft，不自动发） | 已连接（无需新增） | ✅ 可用 |
+| **YouTube 自动上传** | YouTube Data API 脚本 | `YT_CLIENT_ID`/`YT_CLIENT_SECRET`/`YT_REFRESH_TOKEN`（环境变量）+ 放行 `*.googleapis.com` | ⏸ 待 owner 给凭据再建 |
+| TikTok / 小红书 自动发 | —（无可用公开发布 API） | — | ❌ 手动发 |
+
+**credential 怎么给（沿用仓库 `generate-asset.mjs` 模式）：** secret 一律放**环境变量**（Claude Code 环境
+设置 → Variables），**绝不粘进聊天**；对应域名加入**网络 allowlist**。当前默认路径（投递+提醒）
+**不需要任何新 credential**——Drive/Gmail/Calendar/Canva 已通过 MCP 授权。只有要开 YouTube 自动上传
+或 AI 原创素材（OpenAI）时才需新增。
+
+---
+
+## 10. Backlog（每轮可从顶部取，做完在 MEMORY.md 勾掉）
 
 - [ ] 跑通第一条完整成片包（Thomas 选曲 → Alex 分镜+文案 → Minji 排期），老板试剪一条验证流程。
 - [ ] 沉淀"情绪选题库"（角色×情绪×对应叙事模板）到 `kimetsu/research/`，避免每天从零想。

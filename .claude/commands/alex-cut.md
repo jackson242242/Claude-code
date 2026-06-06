@@ -33,7 +33,22 @@ free editor (剪映/CapCut/DaVinci free). Include:
 7. **改脚本 / 替换素材 hooks**: a short "if a clip is unavailable, swap with X" fallback list, so the
    owner is never blocked.
 8. **发布前合规检查单 (PLAYBOOK §6)**: paste it filled-in. If anything is ⚠️, say so plainly.
+9. **机器可读 manifest**: also emit `kimetsu/briefs/manifest-<YYYY-MM-DD>.json` — the EDL above as
+   data for the render engine (schema: `kimetsu/briefs/manifest.schema.md`). Point `clips`/`audio`
+   at the owner's assets under `kimetsu/assets/<date>/` and set caption `texts` from your 图文 lines.
+
+**RENDER (the actual cut) — only if source assets exist:**
+10. Check `kimetsu/assets/<date>/` for the clips + commercial-safe song named in the manifest.
+    - If present: run `npm run render -- --manifest kimetsu/briefs/manifest-<date>.json --out kimetsu/briefs/out/<date>.mp4`.
+      The engine (ffmpeg via ffmpeg-static, no credential) outputs a 9:16 35–45s mp4 with burned-in captions + music.
+    - If assets are missing: do NOT fabricate a render. Leave the manifest ready and tell the owner
+      exactly which files to drop into `kimetsu/assets/<date>/` (per `kimetsu/assets/README.md`).
+11. **Deliver the finished mp4** (it is gitignored — never committed): use `SendUserFile` to push it to
+    the owner, and/or the Google Drive MCP tool to upload it (load via ToolSearch: `select:SendUserFile`
+    or search "google drive upload"). Hand off to Minji's schedule for posting.
 
 Then update `kimetsu/MEMORY.md` (§3 add today's 选题+曲 to dedupe; §1 note next-round idea) and
-commit ONLY `kimetsu/briefs/*.md` + `kimetsu/MEMORY.md`. Push to the working branch.
-Report: today's 选题 in one line + the single hook caption + whether any ⚠️ flags remain.
+commit ONLY `kimetsu/briefs/*.md` + `kimetsu/briefs/manifest-*.json` + `kimetsu/MEMORY.md`
+(NOT the mp4, NOT assets — both gitignored). Push to the working branch.
+Report: today's 选题 in one line + the single hook caption + whether the render ran (or which assets
+the owner must drop) + whether any ⚠️ flags remain.

@@ -28,6 +28,12 @@ npm-debug.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# kimetsu mashup factory — owner's source media + rendered output (never commit
+# copyrighted/large footage; keep the README + schema, ignore the media)
+/kimetsu/assets/**
+!/kimetsu/assets/README.md
+/kimetsu/briefs/out/
+
 # python / backend
 __pycache__/
 *.py[cod]

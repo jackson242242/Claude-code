@@ -19,7 +19,11 @@ Produce today's `kimetsu/ops/ops-<YYYY-MM-DD>.md` with:
    (小红书/公众号 style) — earnest fan voice, no marketing-speak. Tie to today's emotional 选题.
 2. **发布排期 (最佳时间)**: recommended post time **per platform per timezone** for today's slot,
    with a one-line rationale; mark which is ✅established-best-practice vs ⚠️estimate. Note that the
-   owner posts manually or via each platform's native scheduler (agent can't auto-post).
+   owner posts manually or via each platform's native scheduler (agent can't auto-post to TikTok/小红书).
+   **Then set the reminder for real**: use the Google Calendar MCP tool (load via ToolSearch:
+   search "google calendar create event") to create an event at today's best post time titled with
+   today's 选题, body = the caption package + which platforms. Optionally use the Gmail MCP tool to
+   draft (NOT auto-send) the day's package to the owner so it's one tap to post from the phone.
 3. **跨平台分发清单 (owner must-do)**: where to post + which communities to seed (relevant fan
    subreddits / Discords / 小红书 tags / 鬼灭 fan groups) — only legitimate, on-topic seeding,
    **no spam, no fake engagement, no follow-for-follow schemes**.
