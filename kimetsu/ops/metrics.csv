@@ -1,0 +1,7 @@
+# 种草 tracking sheet — one row per posted video. Fill from each platform's analytics.
+# Numbers must be REAL exports (YouTube Studio / TikTok / 小红书). Then: node scripts/measure.mjs --csv kimetsu/ops/metrics.csv
+# columns: date,platform,title,length_sec,impressions,views,avg_view_sec,likes,comments,shares,saves,follows
+date,platform,title,length_sec,impressions,views,avg_view_sec,likes,comments,shares,saves,follows
+2026-06-06,youtube,带着怕前行,35,0,1200,38,140,22,18,40,9
+2026-06-06,tiktok,带着怕前行,35,0,8000,21,520,60,95,210,40
+2026-06-07,youtube,燃尽也要发光,35,0,900,19,60,8,5,9,3

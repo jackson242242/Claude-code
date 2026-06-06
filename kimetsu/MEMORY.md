@@ -24,6 +24,9 @@
 - MoneyPrinterTurbo（harry0703）：已评估。口播品类、依赖 Pexels+LLM，整体不适配动画 edit；**只摘了 edge-tts 旁白+字幕**思路 → `voiceover.mjs` + 引擎 `voiceover`/`subtitlesFile`。
 
 ## 1. 待办 / 进行中
+- [x] 种草体系落地：`kimetsu/ops/seeding-kit.md`(可复制文案+社区+前60min协议+KPI) +
+      `scripts/measure.mjs`(从 metrics.csv 算完播/互动/收藏/转发/涨粉转化+种草指数+杀/扩判定，已用样本验证) +
+      `kimetsu/ops/metrics.csv`(模板)。衡量标准：单条 收藏≥2%&转发≥1%&完播≥70%；账号看周环比种草指数+涨粉/千。
 - [x] 渲染引擎升级：图片 Ken Burns 运镜 + 可选交叉淡入淡出(xfade) + 自动封面缩略图。已测：
       38.8s=40-2×0.6 转场算式正确，运镜帧差 YAVG0.55(非零=真动)，cover.jpg 导出。
 - [x] AI 原创画面线：`scripts/generate-broll.mjs`（OpenAI Images→竖版原创静图）。已测无 key 清晰报错、
