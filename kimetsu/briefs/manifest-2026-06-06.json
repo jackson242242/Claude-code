@@ -1,0 +1,19 @@
+{
+  "output": { "width": 1080, "height": 1920, "fps": 30 },
+  "audio": { "src": "kimetsu/assets/2026-06-06/placeholder_tone.m4a", "fadeOut": 2.0, "gainDb": -3 },
+  "clips": [
+    { "src": "kimetsu/assets/2026-06-06/s2_fear.mp4",    "in": 0, "dur": 8 },
+    { "src": "kimetsu/assets/2026-06-06/s3_dark.mp4",    "in": 0, "dur": 8 },
+    { "src": "kimetsu/assets/2026-06-06/s1_dawn.mp4",    "in": 0, "dur": 8 },
+    { "src": "kimetsu/assets/2026-06-06/s4_resolve.mp4", "in": 0, "dur": 8 },
+    { "src": "kimetsu/assets/2026-06-06/s5_calm.mp4",    "in": 0, "dur": 8 }
+  ],
+  "texts": [
+    { "content": "他怕到睡着了",        "start": 1.5,  "dur": 3.5, "size": 60, "yPct": 0.70 },
+    { "content": "可在梦里 他站了起来",   "start": 9.5,  "dur": 4.0, "size": 60, "yPct": 0.70 },
+    { "content": "雷之呼吸 · 壹之型",     "start": 17.0, "dur": 3.5, "size": 66, "color": "yellow", "yPct": 0.50 },
+    { "content": "原来勇敢 不是不怕",     "start": 25.0, "dur": 4.0, "size": 62, "yPct": 0.72 },
+    { "content": "是怕 还往前走",        "start": 31.0, "dur": 3.5, "size": 64, "yPct": 0.72 },
+    { "content": "——善逸，谢谢你",       "start": 35.5, "dur": 3.8, "size": 56, "yPct": 0.80 }
+  ]
+}
