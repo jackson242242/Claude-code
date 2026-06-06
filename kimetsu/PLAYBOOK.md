@@ -168,7 +168,10 @@ ffmpeg 来自 `ffmpeg-static` npm 包——**无需系统安装、无需 credent
 | 能力 | 用什么 | 需要的 credential | 状态 |
 |------|--------|------------------|------|
 | 渲染成片 mp4（含运镜/转场/封面） | `scripts/render-mashup.mjs`（ffmpeg-static） | 无 | ✅ 已跑通 |
+| 程序化动态画面（零依赖兜底） | `scripts/generate-visuals.mjs`（纯 ffmpeg 分形/等离子/能量） | 无 | ✅ 已跑通（沙箱可用） |
 | AI 原创 b-roll 静图 | `scripts/generate-broll.mjs`（OpenAI Images） | `OPENAI_API_KEY` + 放行 api.openai.com | ⏸ 已建好，待 key |
+| 合法实拍 b-roll | `scripts/fetch-stock.mjs`（Pexels） | `PEXELS_API_KEY` + 放行 api.pexels.com/CDN | ⏸ 已建好（沙箱挡 Pexels） |
+| AI 旁白 + 同步字幕（免 key） | `scripts/voiceover.mjs`（edge-tts） | 无 key，但需放行 speech.platform.bing.com | ⏸ 已建好（沙箱挡该域名，本地可跑） |
 | 图文卡/封面 | Canva MCP | 已连接（无需新增） | ✅ 可用 |
 | 推成片到你手机 | `SendUserFile` / Google Drive MCP | 已连接（无需新增） | ✅ 可用 |
 | 最佳时间提醒 | Google Calendar MCP | 已连接（无需新增） | ✅ 可用 |

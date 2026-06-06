@@ -17,6 +17,12 @@
 - **硬约束（如实）**：agent 能按 owner 素材自动剪，但不能凭空变素材、不能自动发 TikTok/小红书、不保证涨粉；
   版权无法 100% 免责（默认商用曲库+转化式二创降险，残余风险归账号主体）。
 
+## 0b. 沙箱网络现状（关键，2026-06-06 实测）
+- **放行**：github.com、pypi.org（可 clone/pip）。**挡（403）**：Pexels/Pixabay、speech.platform.bing.com(edge-tts)、onrender。
+- 故 fetch-stock / voiceover / generate-broll 在**本沙箱跑不通**（缺 key 或域名被挡），但脚本已建好、fails-closed，**本地或放行环境可跑**。
+- **唯一在沙箱内全程可跑的视觉源** = `generate-visuals.mjs`（纯 ffmpeg，零网络）→ 已用它出过真·成片(34.6s)。
+- MoneyPrinterTurbo（harry0703）：已评估。口播品类、依赖 Pexels+LLM，整体不适配动画 edit；**只摘了 edge-tts 旁白+字幕**思路 → `voiceover.mjs` + 引擎 `voiceover`/`subtitlesFile`。
+
 ## 1. 待办 / 进行中
 - [x] 渲染引擎升级：图片 Ken Burns 运镜 + 可选交叉淡入淡出(xfade) + 自动封面缩略图。已测：
       38.8s=40-2×0.6 转场算式正确，运镜帧差 YAVG0.55(非零=真动)，cover.jpg 导出。

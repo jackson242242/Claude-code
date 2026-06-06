@@ -100,32 +100,56 @@ if (xfade > 0 && clips.length > 1) {
   filters.push(`${concatInputs}concat=n=${clips.length}:v=1:a=0[vcat]`);
 }
 
-// 3) Burn in 图文 captions via libass (an ASS track styled for legible CJK + handmade outline).
+// 3) Burn in captions. Either an external SRT/VTT (e.g. from edge-tts, via subtitlesFile)
+//    or the manifest's own 图文 lines as a styled ASS track (legible CJK + handmade outline).
 let vlabel = 'vcat';
-if (texts.length > 0) {
-  const family = resolveFontFamily(m.fontFile, m.fontName);
+const family = resolveFontFamily(m.fontFile, m.fontName);
+const fontsdir = m.fontFile ? `:fontsdir='${dirname(m.fontFile)}'` : '';
+if (m.subtitlesFile) {
+  if (!existsSync(m.subtitlesFile)) fail(`subtitlesFile not found: ${m.subtitlesFile}`);
+  const style = `:force_style='FontName=${family},Fontsize=18,Bold=1,PrimaryColour=&H00FFFFFF,OutlineColour=&H00000000,Outline=3,Shadow=0,Alignment=2,MarginV=90'`;
+  filters.push(`[vcat]subtitles='${m.subtitlesFile}'${fontsdir}${style}[vtext]`);
+  vlabel = 'vtext';
+} else if (texts.length > 0) {
   const assPath = join(work, 'subs.ass');
   writeFileSync(assPath, buildAss({ texts, W, H, family }), 'utf8');
-  const fontsdir = m.fontFile ? `:fontsdir='${dirname(m.fontFile)}'` : '';
   filters.push(`[vcat]subtitles='${assPath}'${fontsdir}[vtext]`);
   vlabel = 'vtext';
 }
 
-// 4) Audio: the song, trimmed to video length with a gentle fade-out.
+// 4) Audio: music (trimmed + fade-out) and/or an AI voiceover ducked over the music.
 const audioSrc = m.audio?.src;
+const voSrc = m.voiceover?.src;
 let mapAudio = null;
+let aIdx = clips.length; // audio inputs come after all clip inputs
+let musicLabel = null;
+let voLabel = null;
 if (audioSrc) {
   if (!existsSync(audioSrc)) fail(`Audio not found: ${audioSrc}\nUse a commercial-safe / royalty-free track (PLAYBOOK §2).`);
   inputs.push('-i', audioSrc);
-  const aIdx = clips.length; // audio input comes after all clip inputs
+  const idx = aIdx; aIdx += 1;
   const gain = m.audio?.gainDb ? `,volume=${m.audio.gainDb}dB` : '';
   const fade = m.audio?.fadeOut ?? 1.0;
   const fadeStart = round3(Math.max(0, total - fade));
-  filters.push(
-    `[${aIdx}:a]atrim=0:${total},asetpts=PTS-STARTPTS${gain},` +
-      `afade=t=out:st=${fadeStart}:d=${fade}[aud]`,
-  );
-  mapAudio = '[aud]';
+  filters.push(`[${idx}:a]atrim=0:${total},asetpts=PTS-STARTPTS${gain},afade=t=out:st=${fadeStart}:d=${fade}[music]`);
+  musicLabel = '[music]';
+}
+if (voSrc) {
+  if (!existsSync(voSrc)) fail(`Voiceover not found: ${voSrc}\nGenerate it with scripts/voiceover.mjs (edge-tts).`);
+  inputs.push('-i', voSrc);
+  const idx = aIdx; aIdx += 1;
+  const voGain = m.voiceover?.gainDb ? `,volume=${m.voiceover.gainDb}dB` : '';
+  filters.push(`[${idx}:a]asetpts=PTS-STARTPTS${voGain}[vo]`);
+  voLabel = '[vo]';
+}
+if (musicLabel && voLabel) {
+  const duck = m.voiceover?.duckMusicDb ?? -9; // lower the music under the narration
+  filters.push(`${musicLabel}volume=${duck}dB[mduck];[mduck]${voLabel}amix=inputs=2:normalize=0:duration=first[aout]`);
+  mapAudio = '[aout]';
+} else if (musicLabel) {
+  mapAudio = musicLabel;
+} else if (voLabel) {
+  mapAudio = voLabel;
 } else {
   console.warn('⚠ No audio in manifest — rendering silent. A song is the soul of the cut (PLAYBOOK §5).');
 }

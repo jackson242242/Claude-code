@@ -26,6 +26,13 @@ npm run render -- --manifest kimetsu/briefs/manifest-2026-06-06.json \
     "gainDb": -2                                             // 音量增益 dB（可省）
   },
 
+  "voiceover": {                                             // 可选：AI 旁白（scripts/voiceover.mjs, edge-tts, 免key）
+    "src": "kimetsu/assets/2026-06-06/vo.mp3",               // 旁白音轨，自动压低音乐(ducking)后混入
+    "gainDb": 2, "duckMusicDb": -9                           // 旁白增益 / 音乐被压低的 dB（默认 -9）
+  },
+  "subtitlesFile": "kimetsu/assets/2026-06-06/vo.vtt",       // 可选：直接烧录 SRT/VTT（如 edge-tts 产出的同步字幕）
+                                                             //   有它就用它；否则用下面的 texts。粗体白字黑边、底部居中。
+
   "transition": { "type": "fade", "duration": 0.6 },         // 可选：全局交叉淡入淡出；省略=硬切（手作默认）
   "cover": { "at": 6 },                                      // 可选：导出 <out>.cover.jpg 缩略图（取该秒的帧）
 

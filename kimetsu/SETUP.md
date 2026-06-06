@@ -25,8 +25,12 @@
 |-----------|--------|---------|
 | AI 原创画面出片（推荐） | `OPENAI_API_KEY` | `api.openai.com` |
 | YouTube 自动上传（可选） | `YT_CLIENT_ID`/`YT_CLIENT_SECRET`/`YT_REFRESH_TOKEN` | `*.googleapis.com` |
+| AI 旁白 + 自动字幕（免 key） | `pip install edge-tts`；无 key | `speech.platform.bing.com`（web 沙箱挡，**本地可直接跑**） |
 | 投递/提醒/图文卡 | 无需新增（Drive/Gmail/Calendar/Canva 已连） | — |
 > 当前默认路径（投递+提醒、ffmpeg 剪辑）**不配任何 key 也能跑**——只是画面要你自备（A 路线）。
+> **完全零依赖兜底**：`scripts/generate-visuals.mjs` 纯 ffmpeg 生成动态画面，连网络都不需要（本沙箱已验证出片）。
+> **旁白**：`node scripts/voiceover.mjs --text "..." --out vo.mp3 --srt vo.vtt`（edge-tts，免 key，但要能连微软端点；
+> 在 manifest 用 `voiceover` 混入、`subtitlesFile` 烧字幕）。
 
 ## D. 发布（如实）
 - **TikTok / 小红书：无公开发布 API → 手动发**（Alex 渲染好 + Minji 排期提醒 → 你一键发）。
