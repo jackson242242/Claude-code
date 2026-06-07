@@ -21,27 +21,27 @@ How to run the diagnostic fairly, turn raw scores into a profile, and re-test so
 | Item | Guidance |
 |------|----------|
 | **Setting** | Quiet table, no phone, water nearby. Morning is ideal for focus. |
-| **Total time** | ~75 min. Not a race — allow up to 90 if he's still working productively. |
-| **Breaks** | One 5-min break after Part 3 (the vocab/conventions midpoint). |
-| **What he may do** | Re-read passages, underline, jot plans for writing, cross out. |
-| **What to avoid** | Don't hint at answers or define vocabulary words — those are data. |
-| **Read-aloud?** | Don't read passages to him (that changes what's measured). You *may* read a *direction* aloud if he's confused about the task. |
+| **Total time** | ~80 min. Not a race — allow up to 95 if he's still working productively. The missions are meatier than worksheet items, so this is *thinking* time. |
+| **Breaks** | Let him break between any two missions — they're self-contained. |
+| **What he may do** | Re-read, underline, jot plans (Missions 2 & 4 reward planning), cross out, change his mind. |
+| **What to avoid** | Don't hint at answers, define vocabulary, or tell him "the hamster did it." The struggle *is* the data. |
+| **Read-aloud?** | Don't read passages to him (that changes what's measured). You *may* re-explain a *mission's job* if he's unsure what's being asked. |
+| **Mindset to set** | "These are real jobs, not quizzes. Take risks on the hard parts — a smart-but-wrong attempt tells us more than a blank." |
 
-### Suggested timing per part
+### Suggested timing per mission
 
-| Part | Content | Time | Points |
-|------|---------|:----:|:------:|
-| 1 | Literature reading | 18 min | 12 |
-| 2 | Informational reading | 18 min | 12 |
-| 3 | Vocabulary & word study | 8 min | 8 |
-| *break* | | 5 min | |
-| 4 | Language & conventions | 8 min | 8 |
-| 5 | Writing (2 prompts) | 20 min | 10 |
-| **Total** | | **~75 min** | **50** |
+| Mission | Real-world job | Time | Points |
+|---------|----------------|:----:|:------:|
+| 🗞️ 1 | Newsroom Fix-Up (editor) | 15 min | 12 |
+| ⭐ 2 | Story Reviewer | 18 min | 13 |
+| 🔍 3 | The Case File (detective) | 15 min | 11 |
+| 📣 4 | Make Your Case (campaign) | 25 min | 14 |
+| *flex / breaks* | | 5–10 min | |
+| **Total** | | **~80 min** | **50** |
 
 ### Observing Fluency & Stamina (the un-scored domain)
 
-While he reads Passage A or B, optionally have him read **one paragraph aloud** and note:
+While he reads any mission's text, optionally have him read **one paragraph aloud** and note:
 - Did he read smoothly with expression, or word-by-word?
 - Did focus fade in the longer Part 2 passage (a stamina signal)?
 - Did he go back and re-read to understand (good strategy) or guess?
@@ -96,10 +96,11 @@ study-plan agent (file 05). Higher PriorityScore = a domain that is both **impor
 | **Every 4–6 weeks** | Re-take a **parallel form** of the full diagnostic (swap in new passages, same question types/weights) to measure real movement. |
 | **Next NWEA window (Fall '26)** | Compare MAP Reading RIT; goal is continued upward trend, ideally narrowing the gap to his math percentile. |
 
-**Building a parallel re-test:** keep the structure, point values, and domain mapping
-identical; only replace the two passages and refresh the vocabulary words drawn from them.
-This keeps results comparable across time. The study-plan agent (file 05) can generate
-parallel forms on request.
+**Building a parallel re-test:** keep the four mission *types* (editor / reviewer /
+detective / campaign), their point values, and the domain mapping identical; only swap in
+new texts — a different article to fix, a new story to review, a fresh case, a new debate.
+This keeps results comparable across time while staying unpredictable. The study-plan agent
+(file 05) can generate parallel mission packs on request.
 
 ### Tracking table (fill in over time)
 
