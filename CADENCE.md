@@ -20,7 +20,7 @@
 ## 2. 每轮通用流程（两条节奏都遵守）
 1. **读状态**：读 `CADENCE.md`（本文件）的 backlog、`MEMORY.md` §待办、`BRAND.md`（产品）或 Sheng 设计 roadmap（设计），确定"本轮做哪一件"。**一轮只做一件、改动有界**。
 2. **执行**：实现该增量（产品=功能/工具/取数；设计=下一阶段视觉）。
-3. **质量门禁（硬性，不过不合并）**：`npm run typecheck` + `npm test` + `npm run lint`（前端）；改后端则 `cd backend && .venv/bin/python -m pytest`。
+3. **质量门禁（硬性，不过不合并）**：`npm run typecheck` + `npm test` + `npm run lint` + **`npm run build`**（前端——`next build` 会抓到 typecheck/lint 漏掉的编译错误；曾因一个未转义撇号让前端连续多个 PR 无法部署）；改后端则 `cd backend && .venv/bin/python -m pytest`。
 4. **安全判定**（见 §3）：在"安全范围"内且门禁全绿 → 开 PR 到默认分支并合并上线；否则 → 开 PR、**不合并**、在 PR 里写清原因等人/投票。
 5. **写回状态**：在本文件 backlog 勾掉已完成项、追加"下一轮建议"；更新 `MEMORY.md` §待办与 PR 记录。**这是跨运行连续性的关键，绝不能跳过。**
 6. **一句话产出**：运行结束在 PR 描述里写：做了什么 / 门禁结果 / 是否已上线 / 下一轮建议。
