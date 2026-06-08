@@ -1,12 +1,21 @@
 from __future__ import annotations
 
+from urllib.parse import parse_qs, urlparse
+
 from fastapi import APIRouter
 
 from app import schemas
 from app.observability import metrics
-from app.providers import registry
+from app.providers import mock_hotels, registry
+from app.seed import schedule_2026 as _seed
+from app.services import deeplinks
 
 router = APIRouter(prefix="/meta", tags=["meta"])
+
+
+def _ss_param(url: str) -> str:
+    """Extract Booking.com's ``ss`` (destination) query param from a deep link."""
+    return (parse_qs(urlparse(url).query).get("ss") or [""])[0]
 
 
 @router.get("/providers")
@@ -34,6 +43,55 @@ def hotel_probe(
         city_id=city_id, check_in=check_in, check_out=check_out, guests=2
     )
     return registry.probe_hotels(query)
+
+
+@router.get("/link-audit")
+def link_audit(
+    check_in: str = "2026-06-15", check_out: str = "2026-06-18"
+) -> dict[str, object]:
+    """Audit that every host city's hotel deep links are geo-anchored to that
+    city — i.e. the Booking.com ``ss`` (destination) contains the city name.
+
+    Catches the class of bug where a generic hotel/brand name resolves globally
+    and lands users in the wrong country (e.g. a Mexico City search opening
+    hotels in England). Deterministic — exercises the mock offer links and the
+    booking-line builder, so it needs no network and is safe to call anytime.
+    """
+    provider = mock_hotels.MockHotelProvider()
+    failures: list[dict[str, object]] = []
+    checked = 0
+    for city in _seed.CITIES:
+        city_id = str(city["id"])
+        city_name = str(city["name"])
+        query = schemas.HotelSearchQuery(
+            city_id=city_id, check_in=check_in, check_out=check_out, guests=2
+        )
+        for offer in provider.search(query):
+            checked += 1
+            if city_name.lower() not in _ss_param(offer.deep_link).lower():
+                failures.append(
+                    {"cityId": city_id, "where": "offer", "deepLink": offer.deep_link}
+                )
+        item = schemas.TripItem(
+            id=f"audit-{city_id}",
+            trip_id="audit",
+            kind="hotel",
+            city_id=city_id,
+            title="Sample Hotel",
+            created_at="2026-01-01T00:00:00.000Z",
+        )
+        checked += 1
+        line_link = deeplinks.deep_link_for(item)
+        if city_name.lower() not in _ss_param(line_link).lower():
+            failures.append(
+                {"cityId": city_id, "where": "bookingLine", "deepLink": line_link}
+            )
+    return {
+        "ok": not failures,
+        "cities": len(_seed.CITIES),
+        "checked": checked,
+        "failures": failures,
+    }
 
 
 @router.get("/flight-probe")

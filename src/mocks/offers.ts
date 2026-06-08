@@ -99,6 +99,10 @@ export const mockFlightOffers = (query: FlightSearchQuery): FlightOffer[] =>
 
 export const mockHotelOffers = (query: HotelSearchQuery): HotelOffer[] => {
   const nights = Math.max(1, diffDays(query.checkIn, query.checkOut));
+  // Geo-anchor the Booking.com link to the searched city ("City, Country").
+  // A bare hotel name resolves globally and lands users in the wrong country.
+  const city = MOCK_CITIES.find((entry) => entry.id === query.cityId);
+  const destination = city ? `${city.name}, ${city.country}` : query.cityId;
   return Array.from({ length: 5 }, (_, i) => {
     const seed = `${query.cityId}-${query.checkIn}-${i}`;
     const pricePerNightUsd = seededInt(seed, 90, 480);
@@ -115,7 +119,7 @@ export const mockHotelOffers = (query: HotelSearchQuery): HotelOffer[] => {
       priceUsd: pricePerNightUsd * nights * Math.max(1, query.guests > 2 ? 2 : 1),
       deepLink: `https://www.booking.com/searchresults.html?${new URLSearchParams(
         {
-          ss: HOTEL_BRANDS[i % HOTEL_BRANDS.length],
+          ss: destination,
           checkin: query.checkIn,
           checkout: query.checkOut,
           group_adults: String(Math.max(1, query.guests)),

@@ -2,11 +2,10 @@
 from __future__ import annotations
 
 from datetime import date
-from urllib.parse import urlencode
 
 from app import schemas
 from app.providers.base import HotelProvider
-from app.providers.util import seeded_int
+from app.providers.util import booking_hotel_link, city_label, seeded_int
 
 HOTEL_BRANDS = [
     "Grand Plaza",
@@ -44,14 +43,11 @@ class MockHotelProvider(HotelProvider):
                     price_usd=float(
                         per_night * nights * (2 if query.guests > 2 else 1)
                     ),
-                    deep_link=(
-                        "https://www.booking.com/searchresults.html?"
-                        + urlencode({
-                            "ss": HOTEL_BRANDS[i % len(HOTEL_BRANDS)],
-                            "checkin": query.check_in,
-                            "checkout": query.check_out,
-                            "group_adults": max(1, query.guests),
-                        })
+                    deep_link=booking_hotel_link(
+                        city_label(query.city_id),
+                        query.check_in,
+                        query.check_out,
+                        query.guests,
                     ),
                 )
             )

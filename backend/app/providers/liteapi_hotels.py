@@ -21,12 +21,12 @@ from __future__ import annotations
 from collections.abc import Callable
 from datetime import date
 from math import asin, cos, radians, sin, sqrt
-from urllib.parse import urlencode
 
 import httpx
 
 from app import schemas
 from app.providers.base import HotelProvider
+from app.providers.util import booking_hotel_link, city_label
 
 # Resolves a city_id to its (latitude, longitude), or None if unknown.
 CityLocator = Callable[[str], "tuple[float, float] | None"]
@@ -216,13 +216,12 @@ class LiteApiHotelProvider(HotelProvider):
             price_per_night_usd=round(total / nights, 2),
             nights=nights,
             price_usd=total,
-            deep_link=(
-                "https://www.booking.com/searchresults.html?"
-                + urlencode({
-                    "ss": name,
-                    "checkin": query.check_in,
-                    "checkout": query.check_out,
-                    "group_adults": max(1, query.guests),
-                })
+            # Anchor the real hotel name to its city so Booking.com lands in the
+            # right place (a bare name can resolve to the wrong country).
+            deep_link=booking_hotel_link(
+                f"{name}, {city_label(query.city_id)}",
+                query.check_in,
+                query.check_out,
+                query.guests,
             ),
         )
