@@ -216,10 +216,12 @@ class LiteApiHotelProvider(HotelProvider):
             price_per_night_usd=round(total / nights, 2),
             nights=nights,
             price_usd=total,
-            # Anchor the real hotel name to its city so Booking.com lands in the
-            # right place (a bare name can resolve to the wrong country).
+            # Geo-anchor strictly to the city. We deliberately do NOT put the
+            # hotel name in the Booking.com `ss` query: real LiteAPI names (often
+            # India/Asia-weighted in sandbox data) drag the text search to the
+            # wrong country even with the city appended. City-only is unambiguous.
             deep_link=booking_hotel_link(
-                f"{name}, {city_label(query.city_id)}",
+                city_label(query.city_id),
                 query.check_in,
                 query.check_out,
                 query.guests,

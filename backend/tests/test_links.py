@@ -11,6 +11,7 @@ from urllib.parse import parse_qs, urlparse
 from fastapi.testclient import TestClient
 
 from app import schemas
+from app.providers.liteapi_hotels import LiteApiHotelProvider
 from app.providers.mock_hotels import MockHotelProvider
 from app.providers.util import booking_hotel_link, city_label
 
@@ -59,3 +60,32 @@ def test_audit_detects_a_non_anchored_link() -> None:
     # Sanity: the audit's membership check must actually flag a bad link.
     bad = booking_hotel_link("Grand Plaza", "2026-06-15", "2026-06-18", 2)
     assert "Mexico City".lower() not in _ss(bad).lower()
+
+
+def test_liteapi_link_is_city_only_not_dragged_by_hotel_name() -> None:
+    """A real hotel name that strongly matches another country (e.g. an Indian
+    chain in LiteAPI sandbox data) must NOT leak into the Booking.com search —
+    the link must resolve to the searched city only."""
+    provider = LiteApiHotelProvider("key", lambda _city_id: (19.303, -99.15))
+    query = schemas.HotelSearchQuery(
+        city_id="mexico-city",
+        check_in="2026-06-15",
+        check_out="2026-06-18",
+        guests=2,
+    )
+    offer = provider._to_offer(
+        {
+            "id": "h1",
+            "name": "OYO Townhouse 123 New Delhi",
+            "starRating": 3,
+            "latitude": 19.303,
+            "longitude": -99.15,
+        },
+        200.0,
+        3,
+        query,
+        (19.303, -99.15),
+    )
+    assert _ss(offer.deep_link) == "Mexico City, Mexico"
+    assert "OYO" not in (offer.deep_link or "")
+    assert "Delhi" not in (offer.deep_link or "")
