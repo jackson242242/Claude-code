@@ -59,7 +59,7 @@ export const BookingDetailView = ({ bookingId }: BookingDetailViewProps) => {
           {booking.status === 'paid' ? 'Paid' : 'Reserved'}
         </span>
         <h1>{booking.tripName}</h1>
-        <p className="confirmation__cheer">You're going. See you at the game.</p>
+        <p className="confirmation__cheer">You&apos;re going. See you at the game.</p>
         <p className="lead">
           Confirmation <strong>{booking.confirmationCode}</strong> ·{' '}
           {formatPriceUsd(booking.totalUsd)} total
