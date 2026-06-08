@@ -39,6 +39,21 @@ describe('mock offer generators', () => {
     ).toBe(true);
   });
 
+  it('geo-anchors the hotel booking link to the searched city', () => {
+    const offers = mockHotelOffers({
+      cityId: 'mexico-city',
+      checkIn: '2026-06-20',
+      checkOut: '2026-06-23',
+      guests: 2,
+    });
+    // The Booking.com destination (ss) must carry the city, not a bare hotel
+    // name — otherwise results resolve to the wrong country.
+    for (const offer of offers) {
+      const ss = new URL(offer.deepLink ?? '').searchParams.get('ss');
+      expect(ss).toContain('Mexico City');
+    }
+  });
+
   it('respects a transport mode filter', () => {
     const offers = mockTransportOffers({
       origin: 'Newark',

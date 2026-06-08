@@ -11,16 +11,17 @@ from app import schemas
 from app.services import schedule as schedule_service
 
 
-def _city_name(city_id: str | None) -> str:
+def _city_label(city_id: str | None) -> str:
+    """'City, Country' so a hotel search geo-resolves to the right place."""
     if not city_id:
         return ""
     city = schedule_service.get_city(city_id)
-    return city.name if city else city_id
+    return f"{city.name}, {city.country}" if city else city_id
 
 
 def deep_link_for(item: schemas.TripItem) -> str:
     if item.kind == "hotel":
-        query = quote_plus(_city_name(item.city_id) or item.title)
+        query = quote_plus(_city_label(item.city_id) or item.title)
         return f"https://www.booking.com/searchresults.html?ss={query}"
     if item.kind == "flight":
         return f"https://www.google.com/travel/flights?q={quote_plus(item.title)}"
