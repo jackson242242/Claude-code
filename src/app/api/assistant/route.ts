@@ -17,12 +17,23 @@ import {
   FALLBACK_REPLY,
   MAX_TOKENS,
   SYSTEM_PROMPT,
+  buildHealth,
   endsWithUserTurn,
   parseSseTextDelta,
   sanitizeHistory,
 } from '@/lib/assistant';
 
 export const dynamic = 'force-dynamic';
+
+/**
+ * GET /api/assistant — safe health probe. Confirms whether ANTHROPIC_API_KEY is
+ * configured (live replies on) and which model is wired, without exposing the
+ * key — so the deploy can be verified in a browser with one request.
+ */
+export const GET = async (): Promise<NextResponse> =>
+  NextResponse.json(buildHealth(Boolean(process.env.ANTHROPIC_API_KEY)), {
+    headers: { 'cache-control': 'no-store' },
+  });
 
 const TEXT_HEADERS = {
   'content-type': 'text/plain; charset=utf-8',

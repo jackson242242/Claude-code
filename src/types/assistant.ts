@@ -20,3 +20,16 @@ export interface AssistantResponse {
   /** Present on a non-2xx response, mirroring the backend error contract. */
   error?: { message: string; type: string };
 }
+
+/**
+ * Shape returned by GET /api/assistant — a safe health probe. Reports whether
+ * the assistant key is configured (so live replies stream) and which model is
+ * wired, WITHOUT ever exposing the key itself. Mirrors the backend `/meta/*`
+ * diagnostic probes.
+ */
+export interface AssistantHealth {
+  /** True when ANTHROPIC_API_KEY is present — i.e. live replies are on. */
+  configured: boolean;
+  /** The model the concierge calls when configured. */
+  model: string;
+}

@@ -3,6 +3,7 @@ import {
   FALLBACK_REPLY,
   MAX_HISTORY,
   MAX_MESSAGE_CHARS,
+  buildHealth,
   endsWithUserTurn,
   extractReplyText,
   parseSseTextDelta,
@@ -118,5 +119,18 @@ describe('constants', () => {
   it('defaults to the haiku model and a non-empty fallback', () => {
     expect(ASSISTANT_MODEL).toBe('claude-haiku-4-5');
     expect(FALLBACK_REPLY.length).toBeGreaterThan(0);
+  });
+});
+
+describe('buildHealth', () => {
+  it('reports configured + model without leaking any key', () => {
+    expect(buildHealth(true)).toEqual({
+      configured: true,
+      model: ASSISTANT_MODEL,
+    });
+    expect(buildHealth(false)).toEqual({
+      configured: false,
+      model: ASSISTANT_MODEL,
+    });
   });
 });

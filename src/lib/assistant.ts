@@ -6,7 +6,7 @@
  * a live Anthropic call or a Request/Response polyfill.
  */
 
-import type { ChatMessage } from '@/types/assistant';
+import type { AssistantHealth, ChatMessage } from '@/types/assistant';
 
 // ---------------------------------------------------------------------------
 // Anthropic Messages API config (called via native fetch — no SDK dependency)
@@ -88,6 +88,19 @@ export const sanitizeHistory = (input: unknown): ChatMessage[] => {
 /** A valid turn must end with the user speaking. */
 export const endsWithUserTurn = (messages: ChatMessage[]): boolean =>
   messages.length > 0 && messages[messages.length - 1].role === 'user';
+
+// ---------------------------------------------------------------------------
+// Health probe
+// ---------------------------------------------------------------------------
+
+/**
+ * Build the safe health payload for GET /api/assistant. Reports whether the key
+ * is configured and which model is wired — never the key value itself.
+ */
+export const buildHealth = (hasKey: boolean): AssistantHealth => ({
+  configured: hasKey,
+  model: ASSISTANT_MODEL,
+});
 
 // ---------------------------------------------------------------------------
 // Response parsing
