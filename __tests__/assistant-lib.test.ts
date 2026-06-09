@@ -115,8 +115,8 @@ describe('parseSseTextDelta', () => {
 });
 
 describe('constants', () => {
-  it('defaults to the opus model and a non-empty fallback', () => {
-    expect(ASSISTANT_MODEL).toBe('claude-opus-4-8');
+  it('defaults to the haiku model and a non-empty fallback', () => {
+    expect(ASSISTANT_MODEL).toBe('claude-haiku-4-5');
     expect(FALLBACK_REPLY.length).toBeGreaterThan(0);
   });
 });

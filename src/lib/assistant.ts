@@ -13,13 +13,13 @@ import type { ChatMessage } from '@/types/assistant';
 // ---------------------------------------------------------------------------
 
 /**
- * Default model. This is a one-line swap; for a high-traffic concierge the
- * cheaper tiers are usually the right production choice:
- *   'claude-haiku-4-5'  — $1 / $5 per 1M, fastest, plenty for travel Q&A
+ * Default model — Haiku 4.5: fastest + cheapest tier ($1 / $5 per 1M tokens)
+ * and plenty for a travel concierge. One-line swaps for more capability:
  *   'claude-sonnet-4-6' — $3 / $15 per 1M, mid-tier
- * 'claude-opus-4-8' is the most capable (and priciest: $5 / $25 per 1M).
+ *   'claude-opus-4-8'   — $5 / $25 per 1M, most capable
+ * For cross-vendor / open-source cheaper options, see docs/chatbot-model-options.md.
  */
-export const ASSISTANT_MODEL = 'claude-opus-4-8';
+export const ASSISTANT_MODEL = 'claude-haiku-4-5';
 export const ANTHROPIC_URL = 'https://api.anthropic.com/v1/messages';
 export const ANTHROPIC_VERSION = '2023-06-01';
 
