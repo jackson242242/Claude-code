@@ -164,25 +164,38 @@ h2 {
   border-radius: inherit;
 }
 
-/* Flag band along the top edge */
+/* Flag band: Mexico · Canada · USA — three blocks, each country's flag colours */
 .hero::after {
   content: '';
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
-  height: 4px;
+  height: 5px;
   background: linear-gradient(
     90deg,
-    var(--accent),
-    var(--festival-gold),
-    var(--festival-orange),
-    var(--festival-magenta),
-    var(--festival-blue),
-    var(--festival-gold),
-    var(--accent)
+    /* Mexico: green / white / red */
+    #006847 0%,
+    #006847 11.1%,
+    #ffffff 11.1%,
+    #ffffff 22.2%,
+    #ce1126 22.2%,
+    #ce1126 33.3%,
+    /* Canada: red / white / red */
+    #ff0000 33.3%,
+    #ff0000 38.9%,
+    #ffffff 38.9%,
+    #ffffff 61.1%,
+    #ff0000 61.1%,
+    #ff0000 66.7%,
+    /* USA: red / white / blue */
+    #b22234 66.7%,
+    #b22234 77.8%,
+    #ffffff 77.8%,
+    #ffffff 88.9%,
+    #3c3b6e 88.9%,
+    #3c3b6e 100%
   );
-  opacity: 0.85;
   pointer-events: none;
 }
 
