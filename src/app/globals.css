@@ -252,6 +252,13 @@ h2 {
   }
 }
 
+/* Home layout rhythm */
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
 /* Hero */
 .hero {
   position: relative;
@@ -259,7 +266,6 @@ h2 {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg, 1.5rem);
   padding: 3rem 2.5rem;
-  margin-bottom: 4rem;
   overflow: hidden;
   box-shadow: var(--shadow-card, 0 6px 24px rgba(13, 22, 33, 0.08));
 }

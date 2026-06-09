@@ -3,13 +3,21 @@ import { getCities } from '@/services/scheduleService';
 import { CityCard } from '@/components/CityCard';
 import { getLocale } from '@/i18n/server';
 import { translator } from '@/i18n';
+import { getTouristVideos } from '@/services/touristVideosService';
+import { NEWS_ITEMS } from '@/mocks/news';
+import { HomeNewsWindow } from '@/components/news/HomeNewsWindow';
 
 /** Kickoff: 2026 World Cup opening match, June 11 2026. */
 const KICKOFF_UTC = Date.UTC(2026, 5, 11);
 
 const HomePage = async () => {
-  const [cities, locale] = await Promise.all([getCities(), getLocale()]);
+  const [cities, locale, fanFootage] = await Promise.all([
+    getCities(),
+    getLocale(),
+    getTouristVideos(),
+  ]);
   const t = translator(locale);
+  const videoStories = NEWS_ITEMS.filter((item) => item.category === 'video');
   const daysUntilKickoff = Math.max(
     0,
     Math.ceil((KICKOFF_UTC - Date.now()) / 86_400_000),
@@ -49,6 +57,8 @@ const HomePage = async () => {
           </span>
         </div>
       </section>
+
+      <HomeNewsWindow videoStories={videoStories} fanFootage={fanFootage} />
 
       <section>
         <h2>{t('home.hostCities')}</h2>
