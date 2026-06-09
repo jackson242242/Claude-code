@@ -8,6 +8,7 @@ import {
   getHeroVideos,
 } from '@/services/touristVideosService';
 import { NEWS_ITEMS } from '@/mocks/news';
+import { SUPERSTAR_VIDEOS } from '@/mocks/superstars';
 import { HomeNewsWindow } from '@/components/news/HomeNewsWindow';
 import { HeroVideoBackground } from '@/components/HeroVideoBackground';
 
@@ -28,10 +29,12 @@ const HomePage = async () => {
     Math.ceil((KICKOFF_UTC - Date.now()) / 86_400_000),
   );
 
+  const hasHeroVideo = heroVideos.length > 0;
+
   return (
     <div className="home">
-      <section className="hero">
-        <HeroVideoBackground videos={heroVideos} />
+      <section className={hasHeroVideo ? 'hero hero--media' : 'hero'}>
+        {hasHeroVideo && <HeroVideoBackground videos={heroVideos} />}
         {daysUntilKickoff > 0 && (
           <div
             className="hero__countdown"
@@ -64,7 +67,11 @@ const HomePage = async () => {
         </div>
       </section>
 
-      <HomeNewsWindow videoStories={videoStories} fanFootage={fanFootage} />
+      <HomeNewsWindow
+        superstars={SUPERSTAR_VIDEOS}
+        videoStories={videoStories}
+        fanFootage={fanFootage}
+      />
 
       <section>
         <h2>{t('home.hostCities')}</h2>

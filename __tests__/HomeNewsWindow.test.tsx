@@ -2,6 +2,28 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { HomeNewsWindow } from '@/components/news/HomeNewsWindow';
 import type { NewsItem } from '@/types/news';
 import type { TouristVideo } from '@/types/touristVideo';
+import type { SuperstarVideo } from '@/mocks/superstars';
+
+const superstars: SuperstarVideo[] = [
+  {
+    id: 's1',
+    name: 'Cristiano Ronaldo',
+    nation: 'Portugal',
+    flag: '🇵🇹',
+    blurb: 'Goals & skills',
+    watchUrl: 'https://www.youtube.com/results?search_query=Cristiano+Ronaldo',
+    thumbnailKind: 'coral-to-gold',
+  },
+  {
+    id: 's2',
+    name: 'Kylian Mbappé',
+    nation: 'France',
+    flag: '🇫🇷',
+    blurb: 'Pace & finishing',
+    watchUrl: 'https://www.youtube.com/results?search_query=Kylian+Mbappe',
+    thumbnailKind: 'grape-to-turquoise',
+  },
+];
 
 const videoStories: NewsItem[] = [
   {
@@ -14,17 +36,6 @@ const videoStories: NewsItem[] = [
     thumbnailKind: 'teal-to-turquoise',
     videoSeconds: 65,
     teamName: 'Brazil',
-  },
-  {
-    id: 'n2',
-    category: 'video',
-    title: 'Canada train under the lights in Toronto',
-    summary: 'Final session before kickoff.',
-    source: 'Matchday26',
-    publishedIso: '2026-06-02T00:00:00Z',
-    thumbnailKind: 'coral-to-gold',
-    videoSeconds: 48,
-    teamName: 'Canada',
   },
 ];
 
@@ -45,66 +56,86 @@ const fanFootage: TouristVideo[] = [
 ];
 
 describe('HomeNewsWindow', () => {
-  it('renders nothing when both streams are empty', () => {
+  it('renders nothing when every stream is empty', () => {
     const { container } = render(
-      <HomeNewsWindow videoStories={[]} fanFootage={[]} />,
+      <HomeNewsWindow superstars={[]} videoStories={[]} fanFootage={[]} />,
     );
     expect(container.firstChild).toBeNull();
   });
 
-  it('shows the window heading and both tabs when both streams have content', () => {
+  it('shows the heading and all three tabs', () => {
     render(
-      <HomeNewsWindow videoStories={videoStories} fanFootage={fanFootage} />,
+      <HomeNewsWindow
+        superstars={superstars}
+        videoStories={videoStories}
+        fanFootage={fanFootage}
+      />,
     );
     expect(screen.getByText('Matchday News')).toBeInTheDocument();
+    expect(screen.getByRole('tab', { name: /Superstars/i })).toBeInTheDocument();
     expect(
       screen.getByRole('tab', { name: /National Teams/i }),
     ).toBeInTheDocument();
     expect(screen.getByRole('tab', { name: /Fan Zone/i })).toBeInTheDocument();
   });
 
-  it('defaults to the National Teams rail', () => {
+  it('defaults to Superstars and renders external YouTube links (new tab)', () => {
     render(
-      <HomeNewsWindow videoStories={videoStories} fanFootage={fanFootage} />,
+      <HomeNewsWindow
+        superstars={superstars}
+        videoStories={videoStories}
+        fanFootage={fanFootage}
+      />,
     );
+    const link = screen.getByRole('link', { name: /Cristiano Ronaldo/i });
+    expect(link).toHaveAttribute(
+      'href',
+      'https://www.youtube.com/results?search_query=Cristiano+Ronaldo',
+    );
+    expect(link).toHaveAttribute('target', '_blank');
+    expect(link).toHaveAttribute('rel', expect.stringContaining('noopener'));
+    // Other streams are not rendered until their tab is selected
     expect(
-      screen.getByRole('link', { name: /Brazil squad touch down/i }),
-    ).toBeInTheDocument();
-    // Fan footage is on the other tab, not yet rendered
-    expect(
-      screen.queryByRole('button', { name: /Mexico City fans/i }),
+      screen.queryByRole('link', { name: /Brazil squad touch down/i }),
     ).not.toBeInTheDocument();
   });
 
   it('switches to the Fan Zone rail and opens the lightbox on a tile click', () => {
     render(
-      <HomeNewsWindow videoStories={videoStories} fanFootage={fanFootage} />,
+      <HomeNewsWindow
+        superstars={superstars}
+        videoStories={videoStories}
+        fanFootage={fanFootage}
+      />,
     );
 
     fireEvent.click(screen.getByRole('tab', { name: /Fan Zone/i }));
 
     const tile = screen.getByRole('button', { name: /Mexico City fans/i });
-    expect(tile).toBeInTheDocument();
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
 
     fireEvent.click(tile);
     expect(screen.getByRole('dialog')).toBeInTheDocument();
-    // Pexels credit link from the lightbox
     expect(screen.getByRole('link', { name: /Pexels/i })).toHaveAttribute(
       'href',
       'https://www.pexels.com/video/55555',
     );
   });
 
-  it('shows only the Fan Zone tab when there are no team videos', () => {
-    render(<HomeNewsWindow videoStories={[]} fanFootage={fanFootage} />);
+  it('falls back to another tab when there are no superstars', () => {
+    render(
+      <HomeNewsWindow
+        superstars={[]}
+        videoStories={videoStories}
+        fanFootage={fanFootage}
+      />,
+    );
     expect(
-      screen.queryByRole('tab', { name: /National Teams/i }),
+      screen.queryByRole('tab', { name: /Superstars/i }),
     ).not.toBeInTheDocument();
-    expect(screen.getByRole('tab', { name: /Fan Zone/i })).toBeInTheDocument();
-    // Fan rail is active by default since it is the only stream
+    // Defaults to National Teams
     expect(
-      screen.getByRole('button', { name: /Mexico City fans/i }),
+      screen.getByRole('link', { name: /Brazil squad touch down/i }),
     ).toBeInTheDocument();
   });
 });

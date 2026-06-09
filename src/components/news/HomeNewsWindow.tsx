@@ -3,24 +3,26 @@
 /**
  * HomeNewsWindow — the home-page "Matchday News" short-video window.
  *
- * A bold, eye-catching media block that stays on the landing page: a dark
- * "video theater" header band (pops against the light page) over a tabbed rail
- * of short videos. Reuses the existing news/video module (no new data layer):
- * national-team video stories (VideoStoryCard ← NewsItem) and fan footage
- * (FootageTile + VideoLightbox ← getTouristVideos(): Pexels → JSON cache →
- * seed). Thumbnails never autoplay — tapping a fan clip opens the muted/looped
- * lightbox. Honest by design: gradient placeholders until a Pexels key is wired.
+ * A bold "video theater" block with a tabbed rail of short videos. Three
+ * streams, all reusing existing data/components (no new data layer):
+ *   - Superstars: external YouTube links per different-nation star (always
+ *     watchable, no API key, never blacks out) — SuperstarCard ← SUPERSTAR_VIDEOS.
+ *   - National Teams: video stories (VideoStoryCard ← NewsItem) linking to /news.
+ *   - Fan Zone: fan footage (FootageTile + VideoLightbox ← getTouristVideos()).
+ * Thumbnails never autoplay; honest gradient placeholders until a key is wired.
  */
 
 import { useState } from 'react';
 import Link from 'next/link';
 import type { NewsItem } from '@/types/news';
 import type { TouristVideo } from '@/types/touristVideo';
+import type { SuperstarVideo } from '@/mocks/superstars';
+import { SuperstarCard } from './SuperstarCard';
 import { VideoStoryCard } from './VideoStoryCard';
 import { FootageTile } from './FootageTile';
 import { VideoLightbox } from './VideoLightbox';
 
-type TabId = 'teams' | 'fans';
+type TabId = 'stars' | 'teams' | 'fans';
 
 const RAIL_CLASS = 'flex gap-4 overflow-x-auto pb-1 -mx-1 px-1 snap-x';
 
@@ -33,6 +35,8 @@ const tabClass = (active: boolean): string =>
   ].join(' ');
 
 interface HomeNewsWindowProps {
+  /** Different-nation superstar links (external YouTube). */
+  superstars: SuperstarVideo[];
   /** National-team video stories (NEWS_ITEMS where category === 'video'). */
   videoStories: NewsItem[];
   /** Fan footage from getTouristVideos() (Pexels → cache → seed). */
@@ -40,16 +44,20 @@ interface HomeNewsWindowProps {
 }
 
 export const HomeNewsWindow = ({
+  superstars,
   videoStories,
   fanFootage,
 }: HomeNewsWindowProps) => {
+  const hasStars = superstars.length > 0;
   const hasTeams = videoStories.length > 0;
   const hasFans = fanFootage.length > 0;
-  const [tab, setTab] = useState<TabId>(hasTeams ? 'teams' : 'fans');
+
+  const initialTab: TabId = hasStars ? 'stars' : hasTeams ? 'teams' : 'fans';
+  const [tab, setTab] = useState<TabId>(initialTab);
   const [selected, setSelected] = useState<TouristVideo | null>(null);
 
   // Nothing to show — don't render an empty shell.
-  if (!hasTeams && !hasFans) return null;
+  if (!hasStars && !hasTeams && !hasFans) return null;
 
   return (
     <section
@@ -64,7 +72,6 @@ export const HomeNewsWindow = ({
             'linear-gradient(120deg, #0b0f14 0%, #1a1030 58%, #2a0f3a 100%)',
         }}
       >
-        {/* Festival gradient accent line along the bottom edge */}
         <span
           aria-hidden="true"
           className="absolute inset-x-0 bottom-0 h-1"
@@ -82,7 +89,7 @@ export const HomeNewsWindow = ({
             Matchday News
           </h2>
           <p className="m-0 mt-1 text-sm text-white/70">
-            Short clips from the national teams and the fan zone.
+            Superstars, national teams and fan-zone clips — tap to watch.
           </p>
         </div>
         <Link
@@ -95,12 +102,18 @@ export const HomeNewsWindow = ({
 
       {/* Body */}
       <div className="bg-white px-5 py-5 sm:px-7">
-        {/* Tabs (only for streams that have content) */}
-        <div
-          role="tablist"
-          aria-label="News stream"
-          className="mb-5 flex gap-2"
-        >
+        <div role="tablist" aria-label="News stream" className="mb-5 flex gap-2">
+          {hasStars && (
+            <button
+              type="button"
+              role="tab"
+              aria-selected={tab === 'stars'}
+              onClick={() => setTab('stars')}
+              className={tabClass(tab === 'stars')}
+            >
+              Superstars
+            </button>
+          )}
           {hasTeams && (
             <button
               type="button"
@@ -124,6 +137,21 @@ export const HomeNewsWindow = ({
             </button>
           )}
         </div>
+
+        {/* Superstars — external watch links */}
+        {tab === 'stars' && hasStars && (
+          <div
+            className={RAIL_CLASS}
+            style={{ scrollbarWidth: 'none' }}
+            aria-label="Superstar highlights — scroll for more"
+          >
+            {superstars.map((item) => (
+              <div key={item.id} className="shrink-0 snap-start">
+                <SuperstarCard item={item} />
+              </div>
+            ))}
+          </div>
+        )}
 
         {/* National-team video stories */}
         {tab === 'teams' && hasTeams && (
