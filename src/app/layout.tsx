@@ -5,6 +5,8 @@ import { getLocale } from '@/i18n/server';
 import { translator } from '@/i18n';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { PwaRegistration } from '@/components/PwaRegistration';
+import { ChatWidget } from '@/components/ChatWidget';
+import { ContextNotebook } from '@/components/ContextNotebook';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -55,6 +57,8 @@ const RootLayout = async ({ children }: RootLayoutProps) => {
           {children}
         </main>
         <footer className="site-footer">{t('footer.tagline')}</footer>
+        <ContextNotebook />
+        <ChatWidget />
       </body>
     </html>
   );

@@ -55,3 +55,9 @@ services:
           type: web
           name: worldcup-api
           property: host
+      # AI concierge (Anthropic Messages API, streamed). Without it the chatbot
+      # serves an honest degraded reply; set it and replies stream live. Grab a
+      # key at console.anthropic.com. Render prompts for this (sync: false);
+      # Render web services have open outbound, so no host allow-list is needed.
+      - key: ANTHROPIC_API_KEY
+        sync: false

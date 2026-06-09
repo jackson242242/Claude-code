@@ -15,6 +15,10 @@ export const MatchCard = ({ match }: MatchCardProps) => {
       href={`/matches/${match.id}`}
       className="match-card"
       data-testid="match-card"
+      data-ctx-kind="match"
+      data-ctx-title={`${match.homeTeam} vs ${match.awayTeam}`}
+      data-ctx-detail={`${match.stage}${match.group ? ` · Group ${match.group}` : ''} · ${formatKickoff(match.kickoffLocal)}`}
+      data-ctx-href={`/matches/${match.id}`}
     >
       <div className="match-card__head">
         <span className="match-card__stage">

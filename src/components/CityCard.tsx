@@ -6,7 +6,15 @@ interface CityCardProps {
 }
 
 export const CityCard = ({ city }: CityCardProps) => (
-  <Link href={`/cities/${city.id}`} className="city-card" data-testid="city-card">
+  <Link
+    href={`/cities/${city.id}`}
+    className="city-card"
+    data-testid="city-card"
+    data-ctx-kind="city"
+    data-ctx-title={city.name}
+    data-ctx-detail={`${city.country} · ${city.airports.join(' · ')}`}
+    data-ctx-href={`/hotels?city=${city.id}`}
+  >
     <img
       src={`https://source.unsplash.com/400x200/?${encodeURIComponent(city.name)},cityscape`}
       alt={city.name}
