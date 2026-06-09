@@ -41,3 +41,7 @@ export type {
   PlayerSpotlight,
   TeamBrief,
 } from './news';
+export type {
+  ThumbnailKind as VideoThumbnailKind,
+  TouristVideo,
+} from './touristVideo';
