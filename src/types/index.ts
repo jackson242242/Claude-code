@@ -34,3 +34,14 @@ export type {
   Booking,
   BookingSummary,
 } from './booking';
+export type {
+  ThumbnailKind,
+  NewsCategory,
+  NewsItem,
+  PlayerSpotlight,
+  TeamBrief,
+} from './news';
+export type {
+  ThumbnailKind as VideoThumbnailKind,
+  TouristVideo,
+} from './touristVideo';
