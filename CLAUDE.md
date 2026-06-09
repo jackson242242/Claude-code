@@ -1,71 +1,23 @@
-# World Cup 2026 Tour Guide — Development Guide
+# Claude Code — Development Guide
 
-## Project Overview
-- **Purpose:** A companion app for the 2026 FIFA World Cup (USA · Canada · Mexico).
-- **Core Goal:** Let fans browse the full match schedule and easily book flights,
-  hotels, and transportation around the matches they want to attend.
-- **Target Audience:** People travelling to the 2026 World Cup.
+## What This File Is
+Meta guidelines for working with Claude Code on this repository. For project-specific documentation, see the project file (e.g., `WORLD_CUP_2026.md`).
 
-## Tech Stack
-- **Frontend:** Next.js (App Router) + TypeScript (strict).
-- **Backend:** Python + FastAPI.
-- **Database:** PostgreSQL (optional in dev — the API falls back to seed data).
-- **What NOT to use:** No Axios — use native `fetch`. No Redux — use React Server
-  Components + local state.
+## Operating Principles
+> How every session works. Keep these in mind always.
+- **Keep it simple:** Use minimal steps to reach the goal; avoid over-design.
+- **Act autonomously:** When you can judge and complete something, do it directly without repeated confirmation.
+- **Don't act without understanding:** If details are unclear, clarify first — never change code without understanding.
+- **Honesty first:** Don't exaggerate or pretend completion. Say clearly if something is out of scope or uncertain.
+- **Gates & reversibility:** Gate changes through typecheck/test/lint. For user-facing or irreversible changes, think it through or get approval first.
 
-> Note: an unrelated `ZombieSpawner.lua` from an earlier project still lives at the
-> repo root. It is not part of this app and can be ignored.
+## File Organization
+- **Project-specific docs:** Each project gets its own `[PROJECT_NAME].md` (e.g., `WORLD_CUP_2026.md`).
+- **This file (CLAUDE.md):** Meta guidelines only — how to work with Claude Code, not project details.
 
-## Repository Layout
-- `src/` — Next.js frontend (pages in `src/app/`, logic in `src/services/`, mock
-  data in `src/mocks/`, shared types in `src/types/`, UI in `src/components/`).
-- `__tests__/` — frontend tests (Jest + React Testing Library).
-- `backend/` — FastAPI service (`backend/app/...`), `schema.sql`, `backend/tests/`.
-
-## Critical Commands
-- **Install (frontend):** `npm install`
-- **Install (backend):** `python3 -m venv backend/.venv && backend/.venv/bin/pip install -r backend/requirements.txt`
-- **Run Dev (frontend):** `npm run dev` (http://localhost:3000)
-- **Run Dev (backend):** `cd backend && .venv/bin/uvicorn app.main:app --reload` (http://localhost:8000)
-- **Run Tests:** `npm test` (frontend) · `cd backend && .venv/bin/python -m pytest` (backend)
-- **Lint / Types:** `npm run lint` · `npm run typecheck`
-- **Database Migration:** `psql "$DATABASE_URL" -f backend/schema.sql` then `cd backend && .venv/bin/python -m app.seed.load`
-
-## Architecture & Code Placement
-- **Routing:** All page routes live in `src/app/`.
-- **Business Logic:** Keep logic out of UI components; isolate it in `src/services/`
-  (frontend) and `backend/app/services/` + `backend/app/providers/` (backend).
-- **State Management:** React Server Components for data loading; local `useState`
-  for interactivity. No global store.
-- **Booking adapters:** Each vertical (flights/hotels/transport) is fronted by an
-  abstract provider in `backend/app/providers/base.py` with a mock implementation.
-  Real APIs register in `registry.py` under the same interface — no route changes.
-
-## Coding Conventions
-- **Naming:** camelCase functions, PascalCase components, UPPERCASE constants.
-- **Types:** Strict TypeScript. No `any` (enforced by ESLint
-  `@typescript-eslint/no-explicit-any`).
-- **Error Handling:** API errors flow through a single global exception handler in
-  `backend/app/main.py` returning `{"error": {"message", "type"}}`.
-- **Style:** Functional components and arrow functions only.
-- **JSON contract:** The API serializes camelCase (Pydantic alias generator) so it
-  maps 1:1 onto the TypeScript types in `src/types/`.
-
-## Testing & Quality Bar
-- New frontend features need matching tests in `__tests__/`; backend features need
-  tests in `backend/tests/`.
-- Run lint, type-check, and both test suites before writing summaries.
-
-## Avoid / Guardrails
-- **No Breaking Changes:** Never alter the database structure without updating
-  `backend/schema.sql` first (it is the source of truth).
-- **No Phantom Files:** Reuse the existing mock layer in `src/mocks/` (frontend) and
-  `backend/app/seed/` / mock providers (backend); don't invent parallel dummy data.
-
-## Operating Principles (运营原则)
-> How every agent/session works on this project. Keep these in mind always.
-- **简单优先 Keep it simple:** 用最少的步骤达成目标，不过度设计。
-- **自主执行 Act autonomously:** 能自己判断并完成的事，直接做，不反复确认。
-- **不懂不动 Don't act on what you don't understand:** 细节不清就先弄清、想清、计划好再动手——绝不在不理解时贸然改动。
-- **诚实第一 Honesty first:** 不夸大、不假装完成；做不到 / 不确定 / 超出能力（例如直接发社媒、保证流量数字）就如实说明。
-- **门禁与可逆 Gates & reversibility:** 改动先过 typecheck/test/lint；面向用户或不可逆的改动先想清楚，必要时先预览或走投票。
+## General Practices
+- Prefer editing existing files to creating new ones.
+- Default to no comments; add only when the WHY is non-obvious.
+- Don't add error handling for impossible scenarios; trust internal guarantees.
+- Test changes locally before pushing.
+- For ambiguous or risky changes, ask first.
