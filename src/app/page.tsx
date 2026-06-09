@@ -37,6 +37,17 @@ const HomePage = async () => {
             {t('home.findHotels')}
           </Link>
         </div>
+        <div className="hero__trust">
+          <span>
+            <strong>104</strong> matches
+          </span>
+          <span>
+            <strong>{cities.length}</strong> host cities
+          </span>
+          <span>
+            <strong>3</strong> countries
+          </span>
+        </div>
       </section>
 
       <section>
@@ -45,6 +56,28 @@ const HomePage = async () => {
           {cities.map((city) => (
             <CityCard key={city.id} city={city} />
           ))}
+        </div>
+      </section>
+
+      <section>
+        <h2>Plan your trip</h2>
+        <div className="plan-grid">
+          <Link className="plan-tile plan-tile--flights" href="/flights">
+            <span className="plan-tile__label">{t('nav.flights')} →</span>
+            <span className="plan-tile__sub">
+              Search fares to every host city
+            </span>
+          </Link>
+          <Link className="plan-tile plan-tile--hotels" href="/hotels">
+            <span className="plan-tile__label">{t('nav.hotels')} →</span>
+            <span className="plan-tile__sub">Stay near the stadiums</span>
+          </Link>
+          <Link className="plan-tile plan-tile--transport" href="/transport">
+            <span className="plan-tile__label">{t('nav.transport')} →</span>
+            <span className="plan-tile__sub">
+              Get between cities and venues
+            </span>
+          </Link>
         </div>
       </section>
     </div>

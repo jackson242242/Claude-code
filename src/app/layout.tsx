@@ -40,7 +40,7 @@ const RootLayout = async ({ children }: RootLayoutProps) => {
         </a>
         <header className="site-header">
           <Link href="/" className="brand">
-            ⚽ Matchday26
+            ⚽ Matchday<span className="brand__accent">26</span>
           </Link>
           <nav className="site-nav">
             <Link href="/schedule">{t('nav.schedule')}</Link>
@@ -51,12 +51,36 @@ const RootLayout = async ({ children }: RootLayoutProps) => {
             <Link href="/trips">{t('nav.trips')}</Link>
             <Link href="/bookings">{t('nav.bookings')}</Link>
             <LanguageSwitcher locale={locale} />
+            <Link href="/schedule" className="nav-cta">
+              {t('home.exploreSchedule')}
+            </Link>
           </nav>
         </header>
         <main id="main" className="site-main">
           {children}
         </main>
-        <footer className="site-footer">{t('footer.tagline')}</footer>
+        <footer className="site-footer">
+          <div className="site-footer__inner">
+            <div className="site-footer__col">
+              <div className="site-footer__brand">
+                ⚽ Matchday<span className="brand__accent">26</span>
+              </div>
+              <p className="site-footer__tagline">{t('footer.tagline')}</p>
+            </div>
+            <div className="site-footer__col">
+              <h4>{t('nav.schedule')}</h4>
+              <Link href="/schedule">{t('nav.schedule')}</Link>
+              <Link href="/news">News</Link>
+              <Link href="/trips">{t('nav.trips')}</Link>
+            </div>
+            <div className="site-footer__col">
+              <h4>{t('home.findHotels')}</h4>
+              <Link href="/flights">{t('nav.flights')}</Link>
+              <Link href="/hotels">{t('nav.hotels')}</Link>
+              <Link href="/transport">{t('nav.transport')}</Link>
+            </div>
+          </div>
+        </footer>
         <ContextNotebook />
         <ChatWidget />
       </body>
