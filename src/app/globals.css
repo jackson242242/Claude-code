@@ -1,4 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+/* ─── Retail design tokens (Tailwind v4 @theme) ───────────────────────────
+   Light, consumer-retail base + WC2026-inspired vibrant accents. These
+   generate utilities (bg-primary, text-ink, rounded-card, shadow-card, …).
+   The legacy :root vars + classes below remain during the page-by-page
+   migration; both compile fine. */
+@theme {
+  --color-canvas: #ffffff;
+  --color-surface: #f6f7f9;
+  --color-ink: #0c1116;
+  --color-muted: #646e7a;
+  --color-line: #e8ebef;
+  --color-primary: #0fb5a6;
+  --color-primary-strong: #0a8f84;
+  --color-coral: #ff5d52;
+  --color-turquoise: #11b3c6;
+  --color-grape: #7c5cff;
+  --color-citrus: #7fb800;
+  --color-gold: #e0a82e;
+  --radius-card: 1.125rem;
+  --shadow-card: 0 6px 24px rgba(13, 22, 33, 0.08);
+  --shadow-card-lg: 0 16px 48px rgba(13, 22, 33, 0.14);
+}
 
 :root {
   --bg: #0f1419;
