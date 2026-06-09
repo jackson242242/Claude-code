@@ -19,18 +19,22 @@ const formatDuration = (seconds: number): string => {
 
 interface VideoStoryCardProps {
   item: NewsItem;
+  /** 'md' enlarges the card for prominent placements (e.g. the home window). */
+  size?: 'sm' | 'md';
 }
 
-export const VideoStoryCard = ({ item }: VideoStoryCardProps) => {
+export const VideoStoryCard = ({ item, size = 'sm' }: VideoStoryCardProps) => {
   const gradient = GRADIENT_MAP[item.thumbnailKind];
   const duration = item.videoSeconds != null ? formatDuration(item.videoSeconds) : null;
+  const widthClass = size === 'md' ? 'w-[164px]' : 'w-[120px]';
+  const playClass = size === 'md' ? 'w-14 h-14' : 'w-10 h-10';
 
   return (
     /* 9:16 card — fixed width, let height be determined by aspect ratio */
     <a
       href={`#news-${item.id}`}
       aria-label={`Watch: ${item.title}`}
-      className="relative flex-shrink-0 w-[120px] rounded-[1.125rem] overflow-hidden shadow-[0_6px_24px_rgba(13,22,33,0.08)] focus-visible:outline-2 focus-visible:outline-[#0fb5a6] focus-visible:outline-offset-2 block"
+      className={`relative flex-shrink-0 ${widthClass} rounded-[1.125rem] overflow-hidden shadow-[0_6px_24px_rgba(13,22,33,0.08)] focus-visible:outline-2 focus-visible:outline-[#0fb5a6] focus-visible:outline-offset-2 block`}
       style={{ aspectRatio: '9/16' }}
     >
       {/* Gradient thumbnail stand-in */}
@@ -50,7 +54,7 @@ export const VideoStoryCard = ({ item }: VideoStoryCardProps) => {
         className="absolute inset-0 flex items-center justify-center motion-reduce:transition-none transition-transform duration-150"
         aria-hidden="true"
       >
-        <div className="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center shadow-md">
+        <div className={`${playClass} rounded-full bg-white/90 flex items-center justify-center shadow-md`}>
           {/* Triangle play icon using borders */}
           <div
             className="ml-1"

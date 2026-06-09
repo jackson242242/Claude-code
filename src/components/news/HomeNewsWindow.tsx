@@ -3,12 +3,13 @@
 /**
  * HomeNewsWindow — the home-page "Matchday News" short-video window.
  *
- * A thin, tabbed wrapper over the existing news/video module (no new data
- * layer): one rail of national-team video stories (VideoStoryCard ← NewsItem)
- * and one rail of fan footage (FootageTile + VideoLightbox ← TouristVideo,
- * served by getTouristVideos(): Pexels → JSON cache → seed). Thumbnails never
- * autoplay — tapping a fan clip opens the muted/looped lightbox. Honest by
- * design: gradient placeholders stand in until a real Pexels key is wired.
+ * A bold, eye-catching media block that stays on the landing page: a dark
+ * "video theater" header band (pops against the light page) over a tabbed rail
+ * of short videos. Reuses the existing news/video module (no new data layer):
+ * national-team video stories (VideoStoryCard ← NewsItem) and fan footage
+ * (FootageTile + VideoLightbox ← getTouristVideos(): Pexels → JSON cache →
+ * seed). Thumbnails never autoplay — tapping a fan clip opens the muted/looped
+ * lightbox. Honest by design: gradient placeholders until a Pexels key is wired.
  */
 
 import { useState } from 'react';
@@ -21,15 +22,14 @@ import { VideoLightbox } from './VideoLightbox';
 
 type TabId = 'teams' | 'fans';
 
-const RAIL_CLASS =
-  'flex gap-3 overflow-x-auto pb-1 -mx-1 px-1 snap-x motion-reduce:scroll-auto';
+const RAIL_CLASS = 'flex gap-4 overflow-x-auto pb-1 -mx-1 px-1 snap-x';
 
 const tabClass = (active: boolean): string =>
   [
-    'px-4 py-2 rounded-full text-sm font-semibold transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0fb5a6] motion-reduce:transition-none',
+    'px-4 py-2 rounded-full text-sm font-bold transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0fb5a6] motion-reduce:transition-none',
     active
-      ? 'bg-[#0a8f84] text-white shadow-sm'
-      : 'bg-white text-[#5a6472] border border-[#e3e7ec] hover:bg-[#eceff3] hover:text-[#0b0f14]',
+      ? 'bg-[#e60e7b] text-white shadow-[0_6px_18px_rgba(230,14,123,0.32)]'
+      : 'bg-[#f4f6f8] text-[#5a6472] border border-[#e3e7ec] hover:bg-[#eceff3] hover:text-[#0b0f14]',
   ].join(' ');
 
 interface HomeNewsWindowProps {
@@ -54,84 +54,107 @@ export const HomeNewsWindow = ({
   return (
     <section
       aria-label="Matchday news videos"
-      className="rounded-[1.5rem] border border-[#e3e7ec] bg-[#f4f6f8] p-5 sm:p-6"
+      className="overflow-hidden rounded-[1.5rem] border border-[#e3e7ec] shadow-[0_16px_48px_rgba(13,22,33,0.16)]"
     >
-      {/* Header */}
-      <div className="mb-3 flex items-start justify-between gap-3">
+      {/* Dark "video theater" header band — pops against the light page */}
+      <div
+        className="relative flex items-center justify-between gap-3 px-5 py-5 text-white sm:px-7"
+        style={{
+          background:
+            'linear-gradient(120deg, #0b0f14 0%, #1a1030 58%, #2a0f3a 100%)',
+        }}
+      >
+        {/* Festival gradient accent line along the bottom edge */}
+        <span
+          aria-hidden="true"
+          className="absolute inset-x-0 bottom-0 h-1"
+          style={{ background: 'var(--gradient-festival)' }}
+        />
         <div>
-          <h2 className="m-0 flex items-center gap-2 text-xl font-bold tracking-tight text-[#0b0f14]">
-            <span aria-hidden="true" className="text-[#e60e7b]">
-              ▶
+          <span className="inline-flex items-center gap-1.5 text-[0.7rem] font-extrabold uppercase tracking-[0.18em] text-[#ff4fa3]">
+            <span aria-hidden="true" className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-[#e60e7b] opacity-75 motion-safe:animate-ping" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#e60e7b]" />
             </span>
+            ▶ Watch
+          </span>
+          <h2 className="m-0 mt-1 text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
             Matchday News
           </h2>
-          <p className="m-0 mt-1 text-sm text-[#5a6472]">
+          <p className="m-0 mt-1 text-sm text-white/70">
             Short clips from the national teams and the fan zone.
           </p>
         </div>
         <Link
           href="/news"
-          className="shrink-0 text-sm font-semibold text-[#0a8f84] hover:text-[#0fb5a6] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0fb5a6]"
+          className="shrink-0 rounded-full bg-white/15 px-3.5 py-2 text-sm font-semibold text-white backdrop-blur transition-colors hover:bg-white/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         >
           View all →
         </Link>
       </div>
 
-      {/* Tabs (only for streams that have content) */}
-      <div role="tablist" aria-label="News stream" className="mb-4 flex gap-2">
-        {hasTeams && (
-          <button
-            type="button"
-            role="tab"
-            aria-selected={tab === 'teams'}
-            onClick={() => setTab('teams')}
-            className={tabClass(tab === 'teams')}
+      {/* Body */}
+      <div className="bg-white px-5 py-5 sm:px-7">
+        {/* Tabs (only for streams that have content) */}
+        <div
+          role="tablist"
+          aria-label="News stream"
+          className="mb-5 flex gap-2"
+        >
+          {hasTeams && (
+            <button
+              type="button"
+              role="tab"
+              aria-selected={tab === 'teams'}
+              onClick={() => setTab('teams')}
+              className={tabClass(tab === 'teams')}
+            >
+              National Teams
+            </button>
+          )}
+          {hasFans && (
+            <button
+              type="button"
+              role="tab"
+              aria-selected={tab === 'fans'}
+              onClick={() => setTab('fans')}
+              className={tabClass(tab === 'fans')}
+            >
+              Fan Zone
+            </button>
+          )}
+        </div>
+
+        {/* National-team video stories */}
+        {tab === 'teams' && hasTeams && (
+          <div
+            className={RAIL_CLASS}
+            style={{ scrollbarWidth: 'none' }}
+            aria-label="National team videos — scroll for more"
           >
-            National Teams
-          </button>
+            {videoStories.map((item) => (
+              <div key={item.id} className="shrink-0 snap-start">
+                <VideoStoryCard item={item} size="md" />
+              </div>
+            ))}
+          </div>
         )}
-        {hasFans && (
-          <button
-            type="button"
-            role="tab"
-            aria-selected={tab === 'fans'}
-            onClick={() => setTab('fans')}
-            className={tabClass(tab === 'fans')}
+
+        {/* Fan footage */}
+        {tab === 'fans' && hasFans && (
+          <div
+            className={RAIL_CLASS}
+            style={{ scrollbarWidth: 'none' }}
+            aria-label="Fan footage — scroll for more"
           >
-            Fan Zone
-          </button>
+            {fanFootage.map((video) => (
+              <div key={video.id} className="w-[164px] shrink-0 snap-start">
+                <FootageTile video={video} onOpen={setSelected} />
+              </div>
+            ))}
+          </div>
         )}
       </div>
-
-      {/* National-team video stories */}
-      {tab === 'teams' && hasTeams && (
-        <div
-          className={RAIL_CLASS}
-          style={{ scrollbarWidth: 'none' }}
-          aria-label="National team videos — scroll for more"
-        >
-          {videoStories.map((item) => (
-            <div key={item.id} className="shrink-0 snap-start">
-              <VideoStoryCard item={item} />
-            </div>
-          ))}
-        </div>
-      )}
-
-      {/* Fan footage */}
-      {tab === 'fans' && hasFans && (
-        <div
-          className={RAIL_CLASS}
-          style={{ scrollbarWidth: 'none' }}
-          aria-label="Fan footage — scroll for more"
-        >
-          {fanFootage.map((video) => (
-            <div key={video.id} className="w-[150px] shrink-0 snap-start">
-              <FootageTile video={video} onOpen={setSelected} />
-            </div>
-          ))}
-        </div>
-      )}
 
       {/* Shared lightbox for fan footage */}
       {selected != null && (
