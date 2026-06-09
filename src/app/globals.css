@@ -259,29 +259,22 @@ h2 {
   gap: 4rem;
 }
 
-/* Hero */
+/* Hero — cinematic dark media hero (video/gradient bg via HeroVideoBackground) */
 .hero {
   position: relative;
-  background: #ffffff;
+  isolation: isolate;
+  background: #0b0f14;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg, 1.5rem);
-  padding: 3rem 2.5rem;
+  padding: 3.5rem 2.5rem;
   overflow: hidden;
-  box-shadow: var(--shadow-card, 0 6px 24px rgba(13, 22, 33, 0.08));
+  color: #fff;
+  box-shadow: var(--shadow-card-lg, 0 16px 48px rgba(13, 22, 33, 0.14));
 }
 
 /* Stadium dual glow: green pitch (top) + warm stands (bottom) */
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 680px 380px at 88% -10%, rgba(230, 14, 123, 0.14), transparent 60%),
-    radial-gradient(ellipse 720px 420px at 8% 115%, rgba(6, 182, 212, 0.12), transparent 60%),
-    radial-gradient(ellipse 520px 300px at 60% 50%, rgba(124, 59, 255, 0.06), transparent 70%);
-  pointer-events: none;
-  border-radius: inherit;
-}
+/* Hero background visuals (video + scrim + brand haze) are rendered by
+   <HeroVideoBackground/>; the former ::before glow is no longer needed. */
 
 /* Flag band: Mexico · Canada · USA — three blocks, each country's flag colours */
 .hero::after {
@@ -291,6 +284,7 @@ h2 {
   right: 0;
   top: 0;
   height: 5px;
+  z-index: 3;
   background: linear-gradient(
     90deg,
     /* Mexico: green / white / red */
@@ -339,7 +333,7 @@ h2 {
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.7);
   margin-top: 0.4rem;
   text-shadow: none;
 }
@@ -355,7 +349,7 @@ h2 {
 
 .hero p {
   font-size: 1.05rem;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.85);
   max-width: 44ch;
 }
 
@@ -365,13 +359,13 @@ h2 {
   flex-wrap: wrap;
   gap: 0.4rem 1.25rem;
   margin-top: 1.5rem;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 0.9rem;
   font-weight: 600;
 }
 
 .hero__trust strong {
-  color: var(--text);
+  color: #fff;
   font-weight: 800;
 }
 

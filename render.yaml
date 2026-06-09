@@ -61,3 +61,9 @@ services:
       # Render web services have open outbound, so no host allow-list is needed.
       - key: ANTHROPIC_API_KEY
         sync: false
+      # Pexels (api.pexels.com) — powers the cinematic hero video montage AND
+      # the Fan Zone footage. Without it both honestly degrade to gradient
+      # placeholders. Free instant key at pexels.com/api. Render prompts for
+      # this (sync: false); web services have open outbound, no allow-list needed.
+      - key: PEXELS_API_KEY
+        sync: false

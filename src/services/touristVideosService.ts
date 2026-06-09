@@ -191,3 +191,93 @@ export const getTouristVideos = async (): Promise<TouristVideo[]> => {
 
   return SEED_TOURIST_VIDEOS;
 };
+
+// ---------------------------------------------------------------------------
+// Hero background footage — landscape, football-action clips
+// ---------------------------------------------------------------------------
+
+/**
+ * Curated, license-safe football-action queries for the cinematic hero
+ * background. Evokes world-class / multi-nation energy (skills, training,
+ * stadium nights, celebrations, fans) WITHOUT named-player match footage,
+ * which is owned by FIFA/clubs/broadcasters and cannot be hosted.
+ */
+const HERO_QUERIES: readonly string[] = [
+  'soccer player skills',
+  'football training',
+  'soccer stadium night',
+  'football goal celebration',
+  'soccer match',
+  'football fans crowd',
+];
+
+/** Prefer a landscape mp4 around 720p to keep a background light. */
+const pickLandscapeVideoUrl = (files: PexelsVideoFile[]): string | null => {
+  if (files.length === 0) return null;
+  const mp4 = files.filter((f) => f.file_type === 'video/mp4');
+  const landscape = mp4.filter(
+    (f) => f.width !== null && f.height !== null && (f.width ?? 0) >= (f.height ?? 0),
+  );
+  const pool = landscape.length > 0 ? landscape : mp4;
+  const hd = pool.find((f) => (f.height ?? 0) >= 700 && (f.height ?? 0) <= 820);
+  if (hd) return hd.link;
+  const sd = pool.find((f) => f.quality === 'sd');
+  if (sd) return sd.link;
+  return pool[0]?.link ?? files[0].link;
+};
+
+const fetchHeroFromPexels = async (key: string): Promise<TouristVideo[]> => {
+  const results: TouristVideo[] = [];
+
+  for (const term of HERO_QUERIES) {
+    if (results.length >= 6) break;
+    const url = `https://api.pexels.com/videos/search?query=${encodeURIComponent(term)}&per_page=1&orientation=landscape&size=medium`;
+    const res = await fetch(url, {
+      headers: { Authorization: key },
+      next: { revalidate: 3600 },
+    } as RequestInit);
+
+    if (!res.ok) continue;
+
+    const data = (await res.json()) as PexelsVideosResponse;
+    for (const video of data.videos) {
+      if (results.length >= 6) break;
+      const videoUrl = pickLandscapeVideoUrl(video.video_files);
+      if (videoUrl == null) continue;
+      results.push({
+        id: `pexels-hero-${video.id}`,
+        title: term
+          .split(' ')
+          .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+          .join(' '),
+        cityId: null,
+        query: term,
+        posterUrl: video.image,
+        videoUrl,
+        durationSeconds: video.duration,
+        sourceName: 'Pexels',
+        sourceUrl: video.url,
+        author: video.user.name,
+        thumbnailKind: pickThumbnailKind(results.length),
+      });
+    }
+  }
+
+  return results;
+};
+
+/**
+ * Football-action footage for the cinematic hero background (landscape clips).
+ * Returns live Pexels results when PEXELS_API_KEY is set; otherwise an empty
+ * list so the hero honestly degrades to its gradient (no fake "live" footage).
+ * Requires PEXELS_API_KEY set AND api.pexels.com allowlisted in the deployment.
+ */
+export const getHeroVideos = async (): Promise<TouristVideo[]> => {
+  const key = process.env.PEXELS_API_KEY;
+  if (!key) return [];
+  try {
+    return await fetchHeroFromPexels(key);
+  } catch {
+    return [];
+  }
+};
