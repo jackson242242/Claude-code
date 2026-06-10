@@ -1,0 +1,139 @@
+{
+  "_meta": {
+    "lastUpdated": "2026-06-10",
+    "updatedBy": "last30days-skill synthesis",
+    "week": "2026-W24",
+    "sources": [
+      "Tech Insider / Meta 2026 Q1 Earnings",
+      "Google Alphabet Q1 2026 Earnings",
+      "BlackRock AI Playbook 2026",
+      "Grand View Research 2026",
+      "Morgan Stanley Research March 2026",
+      "Motley Fool / Berkshire 2026 Annual Letter",
+      "Google DeepMind / LLM Stats June 2026",
+      "NVIDIA Developer Blog June 2026",
+      "Google Research / ICLR 2026",
+      "Microsoft Build 2026",
+      "Reuters / AMD Investor Relations June 2026",
+      "Google AI Blog June 2026",
+      "Info-Tech Research / Medium June 2026"
+    ],
+    "howToUpdate": "Run: /last30days long-term investing AND /last30days AI LLM 2026, then paste synthesized output into this file following the same schema."
+  },
+  "invest": [
+    {
+      "id": "inv-w24-1",
+      "title": "Meta 2026 资本支出 $1,250亿 — AI基础设施供应链的投资地图",
+      "hook": "Meta本周披露2026年资本支出中位数 $1,250亿，超过120个国家的GDP。这不是一笔费用——这是一张写给AI基础设施供应商的万亿支票。",
+      "body": "当科技巨头以国家级规模投入AI基础设施，<strong>受益链条远不止AI公司本身</strong>：英伟达/AMD（芯片）、台积电（代工）、电力公司（数据中心用电）、数据中心 REITs（土地+建筑）、光纤/网络设备商——都是这场资本支出的收款方。",
+      "insight": "Thomas的思考练习：画出一个AI数据中心从0到运行需要什么——芯片、服务器、建筑、电力、冷却、光纤。每一个环节背后都是可投资的公司。",
+      "source": "Tech Insider / Meta 2026 Q1 Earnings"
+    },
+    {
+      "id": "inv-w24-2",
+      "title": "Google Cloud 积压合同 $2,400亿（+55%）— 比营收更重要的领先指标",
+      "hook": "Google Cloud合同积压金额达 $2,400亿，同比增长55%，相当于3.4年的预期营收锁定在手。",
+      "body": "Backlog（合同待执行金额）是分析高增速科技公司的<strong>领先指标</strong>，比当季营收更能预测未来。当积压合同同比增长55%，意味着未来3年收入增长几乎已经锁定，而市场的短期担忧往往是买入机会。",
+      "insight": "学会用 Backlog 替代 P/E 分析成长股：P/E 看过去，Backlog 看未来。找到一家你关注的科技公司，查查它的合同积压是否在增长。",
+      "source": "Google Alphabet Q1 2026 Earnings"
+    },
+    {
+      "id": "inv-w24-3",
+      "title": "88% 企业的AI投资已产生实际营收增长 — 这不是泡沫的样子",
+      "hook": "2026年企业调查：88%的公司称AI驱动了营收增长，30%增幅超过10%；86%计划继续加大AI预算。",
+      "body": "区分泡沫与结构性增长的核心：<strong>泡沫的特征是预期远超基本面，结构性增长的特征是基本面持续改善</strong>。当88%企业已看到真实营收增长，这更像2000年代的移动互联网，而不是1999年的dot-com。",
+      "insight": "每次你听到"AI是泡沫"时，问一个问题：这家说泡沫的人能列出三个AI没有推动实际营收的大型行业吗？数据比观点更有说服力。",
+      "source": "Enterprise AI Survey 2026 / BlackRock AI Playbook"
+    },
+    {
+      "id": "inv-w24-4",
+      "title": "Buffett的雪球公式：长坡+湿雪 = 财富复利的物理学",
+      "hook": "2026年巴菲特再次在年度信中重申：对大多数人来说，定投S&P500指数基金是"最好的选择"——每月 $200，40年变 $100万。",
+      "body": "巴菲特说复利就像滚雪球，需要"很长的坡和足够湿的雪"。<strong>长坡 = 时间（越早越好），湿雪 = 高质量的投资标的（宽基指数）</strong>。以年化10%计算：$200/月，30年→$45万，40年→$106万。多出10年的坡，财富翻一倍以上。",
+      "insight": "今天的行动：打开你的银行或券商账户，设置一个哪怕 $50/月 的自动定投S&P500指数基金。开始比金额更重要。",
+      "source": "Motley Fool / Berkshire Hathaway 2026 Annual Letter"
+    },
+    {
+      "id": "inv-w24-5",
+      "title": "生成AI市场 CAGR 40.8% 到2033 — 72法则告诉你这意味着什么",
+      "hook": "Grand View Research预测：2026-2033年生成AI市场年复合增长率40.8%，全球AI市场届时将超过万亿美元。",
+      "body": "用<strong>72法则</strong>快速算：72 ÷ 40.8 ≈ 每1.8年市场规模翻倍。这是历史上极少见的高速赛道，但高增速通常已被市场定价进去了——买在热点之后往往买贵了。聪明的策略是：指数化持有而非押注单一公司，用时间积累而非择时进出。",
+      "insight": "用72法则评估任何投资：年化8%需9年翻倍，年化12%需6年翻倍，年化40%需1.8年翻倍——但高速赛道风险也成倍放大，估值往往已经透支。",
+      "source": "Grand View Research 2026 / Motley Fool"
+    },
+    {
+      "id": "inv-w24-6",
+      "title": "大科技 $6,500亿资本支出 — 正在重塑全球经济的不可见力量",
+      "hook": "2026年全球大科技公司AI资本支出合计接近 $6,500亿，这笔钱正在重塑电力、建筑、芯片、劳动力市场。",
+      "body": "历史上每次基础设施革命（铁路1850s、电力1900s、互联网1990s）都创造了<strong>巨大的间接投资机会</strong>：不只是技术本身，还有支撑技术运行的所有配套产业。AI时代的"铁路建设者"包括：电网扩容（NextEra Energy）、高压直流输电、水冷技术公司。",
+      "insight": "这周找一个"AI基础设施的间接受益者"，研究它的商业模式——可能是电力公司、冷却系统商、或特种建筑材料商。",
+      "source": "Tech Insider / Big Tech Capex Report 2026"
+    },
+    {
+      "id": "inv-w24-7",
+      "title": "Morgan Stanley警告：AI突破已来，大多数人没准备好",
+      "hook": "Morgan Stanley在2026年3月报告指出：AI能力将在今年出现重大跃升，但全球机构和个人投资者仍未调整组合以反映这一变化。",
+      "body": "历史上每次技术范式转移，<strong>行动和不行动之间的回报差距都是非线性的</strong>：互联网1995-2000年间，早期投资者获得10-100倍回报；2007年iPhone发布后，移动互联网公司在5年内完成了对传统行业的颠覆。等到所有人都"准备好"时，超额回报机会已经定价完毕。",
+      "insight": "准备好不是指押重注，而是指系统性地理解这场变革：每天读一篇AI和投资交叉领域的内容（就像你现在做的），三年后你的认知资产将远超大多数人。",
+      "source": "Morgan Stanley Research / Fortune March 2026"
+    }
+  ],
+  "ai": [
+    {
+      "id": "ai-w24-1",
+      "title": "Gemini 3.5 Flash：76.2% Terminal-Bench — 速度与精度同时突破的新基准",
+      "hook": "Google发布 Gemini 3.5 Flash，Terminal-Bench 2.1 得分76.2%，速度是上一代的4倍，价格：$1.50/百万输入token，$9/百万输出token。",
+      "body": "AI模型评估的三个维度：<strong>精度（Benchmark分）、速度（延迟）、成本（每token价格）</strong>。过去这三者通常是三角权衡——Gemini 3.5 Flash首次在三个维度同时大幅提升，意味着实时AI应用（语音助手、实时翻译、AI Agent）的经济门槛大幅降低。",
+      "insight": "下次使用AI工具时，注意它的响应速度——那不只是用户体验问题，背后是模型架构效率和云端算力成本的直接体现。",
+      "source": "Google DeepMind / LLM Stats June 2026"
+    },
+    {
+      "id": "ai-w24-2",
+      "title": "NVIDIA Nemotron 3 Ultra 550B — 5500亿参数开源模型意味着什么？",
+      "hook": "NVIDIA于2026年6月4日发布 Nemotron 3 Ultra 550B，总参数5500亿、激活参数550亿，这是目前最大的开源推理模型。",
+      "body": "参数量 ≠ 激活参数量："550B A55B" 的意思是总参数5500亿，但每次推理只激活550亿（MoE混合专家架构）。<strong>这让超大规模模型在普通硬件上变得可运行</strong>。开源5500亿参数意味着：医院、银行、政府机构可以本地部署超强AI，数据永不离开自己的服务器。",
+      "insight": "理解 MoE（Mixture of Experts）：就像一个团队里有100个专家，每次只叫10个最相关的专家开会，而不是让100个人同时发言——效率大幅提升。",
+      "source": "NVIDIA Developer Blog / LLM Stats June 2026"
+    },
+    {
+      "id": "ai-w24-3",
+      "title": "TurboQuant：KV Cache 内存革命 — 让AI记住更长的对话",
+      "hook": "Google在ICLR 2026发布TurboQuant算法，大幅降低KV Cache（键值缓存）的内存占用——这是运行长上下文AI模型最大的技术瓶颈。",
+      "body": "KV Cache 是 AI 模型"记忆"对话的机制：每多一个token，缓存就增长一点，GPU内存快速耗尽。TurboQuant用量化压缩技术，在<strong>几乎不损失精度的情况下将缓存体积压缩60-80%</strong>，同等硬件能处理4-5倍更长的上下文。",
+      "insight": "为什么这对你重要：更长的上下文 = AI能"读完"整本书再回答，而不是只看最后几页。这直接决定AI能做多复杂的任务。",
+      "source": "Google Research / ICLR 2026"
+    },
+    {
+      "id": "ai-w24-4",
+      "title": "Microsoft Copilot Wave 3 整合 Claude — 企业AI多模型时代正式开启",
+      "hook": "Microsoft宣布Copilot Wave 3，引入多模型支持（含Anthropic Claude），并推出 Agentic Copilot Cowork——让多个AI Agent协同处理复杂任务。",
+      "body": "企业AI的未来不是一个全能模型，而是<strong>模型路由层</strong>：根据任务类型、成本预算、响应速度动态选择最合适的模型。写代码用Claude，搜索用GPT-4o，实时对话用Flash——就像雇用不同专长的员工各司其职。",
+      "insight": "未来职场的AI超能力不是"会用ChatGPT"，而是能根据任务类型选择最优AI工具，理解每个模型的优势与局限。",
+      "source": "Microsoft Build 2026 / The Verge"
+    },
+    {
+      "id": "ai-w24-5",
+      "title": "Meta $1,000亿 AMD芯片协议 — 算力即国力，AI算力链的投资地图",
+      "hook": "Meta与AMD签署多年协议，采购高达 $1,000亿的 MI540 GPU和CPU，并持有1.6亿股AMD期权——历史上最大的单笔半导体采购合同。",
+      "body": "理解<strong>AI算力的完整供应链</strong>：矿石（稀土）→ 晶圆（TSMC/Samsung）→ GPU设计（NVIDIA/AMD）→ 服务器组装（Dell/HP）→ 数据中心（Meta/Google）→ 云服务（AWS/Azure）→ 你的应用。每个环节都有其投资逻辑和风险点。",
+      "insight": "为什么AMD能拿到这笔合同？因为NVIDIA的供应不足，以及Meta希望减少对单一供应商的依赖（降低采购风险）。这是"供应多元化"策略在最高层面的体现。",
+      "source": "Reuters / AMD Investor Relations June 2026"
+    },
+    {
+      "id": "ai-w24-6",
+      "title": "Google Gemma 4 Apache 2.0 开源 — 理解为什么科技巨头会免费送出尖端AI",
+      "hook": "Google发布Gemma 4系列，专为高级推理和AI Agent设计，采用Apache 2.0许可——企业可完全免费商用、修改、不需要开源衍生作品。",
+      "body": "为什么Google免费送出前沿AI模型？因为<strong>护城河不是模型本身，而是生态系统</strong>。让全球开发者都在 Google 的工具链上构建应用，他们最终会采购 Google Cloud 的算力、API 和企业服务——这是用开源撬动商业闭环的经典策略（参考 Android）。",
+      "insight": "理解科技公司的"开源战略"：Linux（IBM/RedHat）、Android（Google）、Gemma（Google）——免费开放前端，收费锁定后端。找到任何一家大公司的开源项目，问：他们靠什么赚钱？",
+      "source": "Google AI Blog / Apache Foundation June 2026"
+    },
+    {
+      "id": "ai-w24-7",
+      "title": "2026：LLM架构革命元年 — 超越Transformer的下一代AI是什么？",
+      "hook": "多篇2026年研究指出，Transformer架构统治AI九年后，下一代模型（State Space Models、Mamba、混合架构）开始在关键任务上超越它。",
+      "body": "Transformer的核心问题：<strong>注意力机制的计算复杂度是 O(n²)</strong>——上下文长度翻倍，计算量翻四倍。新架构（Mamba、RWKV）用线性复杂度处理超长上下文，在长文档分析、长期对话记忆、大规模实时推理中显示优势。",
+      "insight": "技术架构的更迭往往是投资机会的信号：当新架构成熟并开始替代Transformer，专门优化旧架构的芯片（如NVIDIA的NVLink）可能面临竞争，而支持新架构的通用算力将获益。",
+      "source": "Medium / Info-Tech Research / ICLR 2026 Papers"
+    }
+  ]
+}

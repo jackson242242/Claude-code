@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thomas 英文饮食打卡</title>
+  <title>Thomas 每日成长</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -14,253 +14,287 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 24px 16px;
+      padding: 24px 16px 48px;
     }
 
     h1 {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       color: #1a202c;
-      margin-bottom: 24px;
+      margin-bottom: 6px;
       text-align: center;
+      font-weight: 800;
     }
 
+    .subtitle {
+      font-size: 0.78rem;
+      color: #a0aec0;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    /* ── 基础卡片 ── */
     .card {
       background: white;
       border-radius: 16px;
-      padding: 24px;
+      padding: 20px;
       width: 100%;
-      max-width: 380px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      margin-bottom: 16px;
+      max-width: 400px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      margin-bottom: 12px;
     }
 
     .label {
-      font-size: 0.8rem;
-      color: #718096;
+      font-size: 0.72rem;
+      color: #a0aec0;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 6px;
+      letter-spacing: 0.06em;
+      margin-bottom: 5px;
     }
 
     .value {
-      font-size: 1.6rem;
-      font-weight: 700;
+      font-size: 1.5rem;
+      font-weight: 800;
       color: #2d3748;
     }
+    .value.blue  { color: #3182ce; }
+    .value.green { color: #38a169; }
 
-    .value.highlight {
-      color: #3182ce;
-    }
-
-    .value.green {
-      color: #38a169;
-    }
-
-    .today-row {
+    .row {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-top: 12px;
       padding-top: 12px;
-      border-top: 1px solid #e2e8f0;
+      border-top: 1px solid #f0f4f8;
     }
 
     .badge {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       padding: 4px 10px;
       border-radius: 999px;
-      font-weight: 600;
+      font-weight: 700;
     }
-
-    .badge.done { background: #c6f6d5; color: #276749; }
+    .badge.done    { background: #c6f6d5; color: #276749; }
     .badge.pending { background: #fed7d7; color: #9b2c2c; }
 
-    button {
+    /* ── 按钮 ── */
+    .btn {
       width: 100%;
-      max-width: 380px;
-      padding: 16px;
-      font-size: 1.05rem;
+      max-width: 400px;
+      padding: 15px;
+      font-size: 1rem;
       font-weight: 700;
       border: none;
       border-radius: 14px;
       cursor: pointer;
-      transition: transform 0.1s, opacity 0.2s;
+      transition: transform 0.1s;
     }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary  { background: #3182ce; color: white; margin-bottom: 8px; }
+    .btn-primary:disabled { background: #a0aec0; cursor: default; }
+    .btn-outline  { background: white; color: #e53e3e; border: 2px solid #e53e3e; font-size: 0.88rem; padding: 11px; }
+    .btn-outline:disabled { color: #cbd5e0; border-color: #cbd5e0; cursor: default; }
 
-    button:active { transform: scale(0.97); }
-
-    #logBtn {
-      background: #3182ce;
-      color: white;
-    }
-
-    #logBtn:disabled {
-      background: #a0aec0;
-      cursor: not-allowed;
-    }
-
-    #undoBtn {
-      background: white;
-      color: #e53e3e;
-      border: 2px solid #e53e3e;
-      margin-top: 10px;
-      font-size: 0.9rem;
-      padding: 12px;
-    }
-
-    #undoBtn:disabled {
-      color: #a0aec0;
-      border-color: #a0aec0;
-      cursor: not-allowed;
-    }
-
-    .history-card {
-      background: white;
-      border-radius: 16px;
-      padding: 20px;
+    /* ── 分割线 ── */
+    .divider {
       width: 100%;
-      max-width: 380px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      margin-top: 8px;
-    }
-
-    .history-title {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: #4a5568;
-      margin-bottom: 12px;
-    }
-
-    .history-list {
-      list-style: none;
-      max-height: 200px;
-      overflow-y: auto;
-    }
-
-    .history-list li {
-      font-size: 0.88rem;
-      color: #4a5568;
-      padding: 6px 0;
-      border-bottom: 1px solid #f7fafc;
+      max-width: 400px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+      margin: 28px 0 8px;
+    }
+    .divider-line { flex: 1; height: 1px; background: #e2e8f0; }
+    .divider-text {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #718096;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      white-space: nowrap;
     }
 
-    .history-list li:last-child { border-bottom: none; }
-
-    .dot { color: #38a169; font-size: 1rem; }
-
-    .empty-msg {
-      font-size: 0.85rem;
-      color: #a0aec0;
-      text-align: center;
-      padding: 12px 0;
-    }
-
-    .reset-link {
-      margin-top: 20px;
-      font-size: 0.75rem;
-      color: #a0aec0;
-      cursor: pointer;
-      text-decoration: underline;
-    }
-
-    /* ── 每日学习卡片 ── */
+    /* ── 学习卡片 ── */
     .learn-card {
       width: 100%;
-      max-width: 380px;
-      border-radius: 16px;
+      max-width: 400px;
+      border-radius: 18px;
       padding: 20px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      margin-top: 16px;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.08);
+      margin-bottom: 12px;
+      position: relative;
+      overflow: hidden;
     }
+    .learn-card.invest { background: linear-gradient(145deg, #fffdf0, #fef3c7); }
+    .learn-card.ai     { background: linear-gradient(145deg, #f0f7ff, #dbeafe); }
 
-    .learn-card.invest { background: linear-gradient(135deg, #fffbeb, #fef3c7); }
-    .learn-card.ai     { background: linear-gradient(135deg, #eff6ff, #dbeafe); }
-
-    .learn-header {
+    .learn-card-header {
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 10px;
+      justify-content: space-between;
+      margin-bottom: 12px;
     }
-
+    .learn-tag-group { display: flex; align-items: center; gap: 6px; }
+    .learn-icon { font-size: 1.1rem; }
     .learn-tag {
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       padding: 3px 8px;
       border-radius: 999px;
     }
+    .invest .learn-tag { background: #d97706; color: white; }
+    .ai     .learn-tag { background: #2563eb; color: white; }
 
-    .invest .learn-tag { background: #f59e0b; color: white; }
-    .ai     .learn-tag { background: #3b82f6; color: white; }
+    .updated-tag {
+      font-size: 0.62rem;
+      color: #94a3b8;
+      font-weight: 500;
+    }
 
-    .learn-icon { font-size: 1.2rem; }
+    /* 新闻钩子 */
+    .learn-hook {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #475569;
+      background: rgba(0,0,0,0.04);
+      border-left: 3px solid currentColor;
+      padding: 7px 10px;
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+    .invest .learn-hook { border-left-color: #d97706; color: #92400e; background: rgba(217,119,6,0.07); }
+    .ai     .learn-hook { border-left-color: #2563eb; color: #1e3a8a; background: rgba(37,99,235,0.07); }
 
     .learn-title {
-      font-size: 0.95rem;
-      font-weight: 700;
+      font-size: 0.97rem;
+      font-weight: 800;
       color: #1a202c;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       line-height: 1.4;
     }
 
     .learn-body {
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       color: #4a5568;
-      line-height: 1.6;
+      line-height: 1.65;
+      margin-bottom: 10px;
     }
-
     .learn-body strong { color: #1a202c; }
 
-    .learn-read-btn {
-      margin-top: 12px;
-      width: auto;
-      max-width: none;
+    /* 行动洞察 */
+    .learn-insight {
+      font-size: 0.78rem;
+      color: #374151;
+      background: rgba(0,0,0,0.04);
+      border-radius: 8px;
+      padding: 8px 10px;
+      margin-bottom: 12px;
+      line-height: 1.55;
+    }
+    .learn-insight::before {
+      content: "💡 ";
+      font-style: normal;
+    }
+
+    .learn-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .learn-source {
+      font-size: 0.65rem;
+      color: #94a3b8;
+    }
+    .learn-source::before { content: "📰 "; }
+
+    .read-btn {
       display: inline-block;
-      padding: 8px 16px;
-      font-size: 0.8rem;
-      font-weight: 600;
+      padding: 6px 14px;
+      font-size: 0.78rem;
+      font-weight: 700;
       border-radius: 8px;
       border: none;
       cursor: pointer;
+      transition: transform 0.1s;
+      width: auto;
+      max-width: none;
+    }
+    .read-btn:active { transform: scale(0.95); }
+    .invest .read-btn { background: #d97706; color: white; }
+    .ai     .read-btn { background: #2563eb; color: white; }
+    .read-btn.done { background: #e2e8f0 !important; color: #94a3b8 !important; cursor: default; }
+
+    /* 加载状态 */
+    .loading-pulse {
+      height: 14px;
+      background: linear-gradient(90deg, #e2e8f0 25%, #f8fafc 50%, #e2e8f0 75%);
+      background-size: 200% 100%;
+      animation: pulse 1.4s ease infinite;
+      border-radius: 6px;
+      margin-bottom: 6px;
+    }
+    @keyframes pulse {
+      0%   { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
     }
 
-    .invest .learn-read-btn { background: #f59e0b; color: white; }
-    .ai     .learn-read-btn { background: #3b82f6; color: white; }
-
-    .learn-read-btn.read {
-      background: #e2e8f0 !important;
-      color: #a0aec0 !important;
-      cursor: default;
-    }
-
-    .section-divider {
+    /* ── 历史记录 ── */
+    .history-card {
+      background: white;
+      border-radius: 16px;
+      padding: 18px;
       width: 100%;
-      max-width: 380px;
-      text-align: center;
-      font-size: 0.75rem;
-      color: #a0aec0;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin: 24px 0 4px;
+      max-width: 400px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    .history-title {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #4a5568;
+      margin-bottom: 10px;
+    }
+    .history-list {
+      list-style: none;
+      max-height: 180px;
+      overflow-y: auto;
+    }
+    .history-list li {
+      font-size: 0.84rem;
+      color: #4a5568;
+      padding: 5px 0;
+      border-bottom: 1px solid #f7fafc;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .history-list li:last-child { border-bottom: none; }
+    .dot { color: #38a169; }
+    .empty-msg { font-size: 0.82rem; color: #a0aec0; text-align: center; padding: 10px 0; }
+
+    .reset-link {
+      margin-top: 18px;
+      font-size: 0.7rem;
+      color: #cbd5e0;
+      cursor: pointer;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <h1>🍽️ Thomas 英文饮食打卡</h1>
+  <h1>Thomas 每日成长</h1>
+  <p class="subtitle">英文饮食打卡 · 长期投资 · AI 前沿</p>
 
-  <!-- 主数据卡片 -->
+  <!-- 打卡状态 -->
   <div class="card">
     <div class="label">今天日期</div>
     <div class="value" id="todayDate">—</div>
-
-    <div class="today-row">
+    <div class="row">
       <div>
         <div class="label">今日打卡</div>
         <span class="badge pending" id="todayBadge">未打卡</span>
@@ -272,47 +306,73 @@
     </div>
   </div>
 
-  <!-- 目标日期卡片 -->
+  <!-- 目标截止日 -->
   <div class="card">
     <div class="label">目标截止日</div>
-    <div class="value highlight" id="deadlineDate">—</div>
-    <div style="margin-top:8px; font-size:0.82rem; color:#718096;">
-      每打卡一次，截止日 <strong>+1 天</strong>
+    <div class="value blue" id="deadlineDate">—</div>
+    <div style="margin-top:7px;font-size:0.8rem;color:#94a3b8;">
+      每打卡一次，截止日 <strong style="color:#4a5568">+1 天</strong>
     </div>
   </div>
 
-  <!-- 打卡按钮 -->
-  <button id="logBtn" onclick="logToday()">✅ 今天吃饭说英文了！</button>
-  <button id="undoBtn" onclick="undoToday()" disabled>↩ 撤销今天的打卡</button>
+  <button class="btn btn-primary" id="logBtn" onclick="logToday()">✅ 今天吃饭说英文了！</button>
+  <button class="btn btn-outline" id="undoBtn" onclick="undoToday()" disabled>↩ 撤销今天的打卡</button>
 
   <!-- 每日学习 -->
-  <div class="section-divider">📚 今日学习</div>
-
-  <div class="learn-card invest" id="investCard">
-    <div class="learn-header">
-      <span class="learn-icon">📈</span>
-      <span class="learn-tag">长期投资</span>
-    </div>
-    <div class="learn-title" id="investTitle"></div>
-    <div class="learn-body" id="investBody"></div>
-    <button class="learn-read-btn" id="investReadBtn" onclick="markRead('invest')">✓ 我学了</button>
+  <div class="divider">
+    <div class="divider-line"></div>
+    <span class="divider-text">📚 今日学习</span>
+    <div class="divider-line"></div>
   </div>
 
-  <div class="learn-card ai" id="aiCard" style="margin-top:12px;">
-    <div class="learn-header">
-      <span class="learn-icon">🤖</span>
-      <span class="learn-tag">AI 知识</span>
+  <!-- 投资卡片 -->
+  <div class="learn-card invest" id="investCard">
+    <div class="learn-card-header">
+      <div class="learn-tag-group">
+        <span class="learn-icon">📈</span>
+        <span class="learn-tag">长期投资</span>
+      </div>
+      <span class="updated-tag" id="investUpdated"></span>
     </div>
-    <div class="learn-title" id="aiTitle"></div>
-    <div class="learn-body" id="aiBody"></div>
-    <button class="learn-read-btn" id="aiReadBtn" onclick="markRead('ai')">✓ 我学了</button>
+    <div id="investHook" class="learn-hook"></div>
+    <div id="investTitle" class="learn-title"></div>
+    <div id="investBody" class="learn-body"></div>
+    <div id="investInsight" class="learn-insight"></div>
+    <div class="learn-footer">
+      <span id="investSource" class="learn-source"></span>
+      <button class="read-btn" id="investReadBtn" onclick="markRead('invest')">✓ 我学了</button>
+    </div>
+  </div>
+
+  <!-- AI卡片 -->
+  <div class="learn-card ai" id="aiCard">
+    <div class="learn-card-header">
+      <div class="learn-tag-group">
+        <span class="learn-icon">🤖</span>
+        <span class="learn-tag">AI 前沿</span>
+      </div>
+      <span class="updated-tag" id="aiUpdated"></span>
+    </div>
+    <div id="aiHook" class="learn-hook"></div>
+    <div id="aiTitle" class="learn-title"></div>
+    <div id="aiBody" class="learn-body"></div>
+    <div id="aiInsight" class="learn-insight"></div>
+    <div class="learn-footer">
+      <span id="aiSource" class="learn-source"></span>
+      <button class="read-btn" id="aiReadBtn" onclick="markRead('ai')">✓ 我学了</button>
+    </div>
   </div>
 
   <!-- 历史记录 -->
-  <div class="history-card" style="margin-top:24px;">
-    <div class="history-title">📅 打卡记录</div>
+  <div class="divider" style="margin-top:20px;">
+    <div class="divider-line"></div>
+    <span class="divider-text">📅 打卡记录</span>
+    <div class="divider-line"></div>
+  </div>
+
+  <div class="history-card">
     <ul class="history-list" id="historyList">
-      <li class="empty-msg" id="emptyMsg">还没有打卡记录</li>
+      <li class="empty-msg">还没有打卡记录</li>
     </ul>
   </div>
 
@@ -322,277 +382,95 @@
     const STORAGE_KEY = 'thomas_meal_counter';
     const READ_KEY    = 'thomas_learn_read';
 
-    // ── 学习内容库 ──────────────────────────────────────────
-    const INVEST_LESSONS = [
-      {
-        title: "复利是世界第八大奇迹",
-        body: "爱因斯坦曾说：<strong>复利是世界第八大奇迹</strong>。$10,000 以年化 10% 增长，30 年后变成 $174,494。越早开始，时间越是你的朋友。"
-      },
-      {
-        title: "指数基金：最简单的长期策略",
-        body: "标普500指数在过去100年平均年化回报约 <strong>10%</strong>。买入追踪大盘的 ETF（如 VOO、SPY），不需要选股，胜过大多数主动基金。"
-      },
-      {
-        title: "不要择时，要时间在市场里",
-        body: "<strong>"Time in the market beats timing the market"</strong>。错过2000-2019年中涨幅最好的10天，总回报从 $10,000 跌至 $2,900。持续持有比进出市场重要得多。"
-      },
-      {
-        title: "72法则：快速估算翻倍时间",
-        body: "用 <strong>72 ÷ 年化利率</strong> = 本金翻倍所需年数。年化8%→9年翻倍，年化6%→12年翻倍。选择投资标的时，用这个公式快速比较。"
-      },
-      {
-        title: "分散投资降低风险",
-        body: "不要把鸡蛋放在一个篮子里。股票、债券、房地产、国际市场之间的相关性低，组合配置可以在 <strong>不降低预期回报的同时减少波动</strong>。"
-      },
-      {
-        title: "定投（DCA）消除择时焦虑",
-        body: "Dollar-Cost Averaging：<strong>每月固定投入相同金额</strong>，不管市场涨跌。高位买少，低位买多，长期下来平均成本往往低于一次性买入。"
-      },
-      {
-        title: "市场短期是投票机，长期是称重机",
-        body: "巴菲特名言。短期价格受情绪驱动，但长期价格反映公司真实价值。<strong>忽略短期噪音，聚焦长期基本面</strong>，是价值投资的核心。"
-      },
-      {
-        title: "通货膨胀是储蓄的隐形杀手",
-        body: "年通胀3%，30年后 $100 的购买力只剩 <strong>$41</strong>。把钱放在回报低于通胀的地方，实际上是在亏损。投资是对抗通胀的必要手段。"
-      },
-      {
-        title: "费率侵蚀长期回报",
-        body: "主动基金平均费率 1~2%，指数基金费率低至 0.03%。看起来小，但 <strong>30年中1%的额外费率会吃掉你约25%的最终财富</strong>。费率越低越好。"
-      },
-      {
-        title: "再平衡：纪律胜过情绪",
-        body: "每年或按比例偏离时，将组合 <strong>调回目标配置</strong>（如股六债四）。这强制你"高卖低买"，是消除情绪决策的系统性方法。"
-      },
-      {
-        title: "紧急备用金是投资的前提",
-        body: "在开始长期投资前，先存好 <strong>3~6个月生活费的紧急备用金</strong>，放在流动性高的账户。这样市场下跌时你不需要被迫卖出。"
-      },
-      {
-        title: "巴菲特的护城河理论",
-        body: "伟大企业拥有 <strong>Economic Moat（经济护城河）</strong>：品牌（可口可乐）、网络效应（Visa）、成本优势（Costco）。护城河越宽，竞争对手越难侵入，长期回报越稳定。"
-      },
-      {
-        title: "股市下跌是打折促销，不是灾难",
-        body: "当你是长期买家，<strong>市场下跌其实是好事</strong>——你能用更少的钱买到同样的资产。改变心态：熊市是积累财富的机会，而不是恐慌的时刻。"
-      },
-      {
-        title: "税收优化：让政府少拿一点",
-        body: "在税收优惠账户（401k、IRA、Roth IRA）里投资，复利不被每年的资本利得税打断。<strong>相同的投资，在税优账户里30年后可多出30~50%</strong>。"
-      },
-    ];
-
-    const AI_LESSONS = [
-      {
+    // ── 备用内容（fetch 失败时使用）──────────────────────────
+    const FALLBACK = {
+      invest: [{
+        title: "复利：世界第八大奇迹",
+        hook: "巴菲特说他95%的财富是在50岁之后积累的——靠的不是选股技巧，而是几十年不间断的复利。",
+        body: "$10,000 以年化10%增长，<strong>30年后变 $174,494，40年后变 $452,593</strong>。每多一年，差距越来越大。",
+        insight: "今天的行动：设置一个哪怕$50/月的自动定投计划，开始比金额更重要。",
+        source: "Berkshire Hathaway Annual Letter"
+      }],
+      ai: [{
         title: "什么是大语言模型（LLM）？",
-        body: "LLM（Large Language Model）是在海量文本上训练的 AI 模型，学会预测"下一个词"。ChatGPT、Claude、Gemini 都是 LLM。<strong>它不是数据库查询，而是统计模式的涌现</strong>。"
-      },
-      {
-        title: "Transformer：现代 AI 的基础架构",
-        body: "2017年 Google 论文《Attention Is All You Need》提出 <strong>Transformer 架构</strong>，引入"注意力机制"让模型关注上下文中最相关的部分。几乎所有现代 LLM 都建立在这一基础上。"
-      },
-      {
-        title: "提示词工程（Prompt Engineering）",
-        body: "如何跟 AI 说话决定了答案质量。技巧：<strong>给角色、给上下文、给例子、分步骤提问</strong>。"你是一位专业财务顾问，请用简单语言解释…" 比直接提问效果好10倍。"
-      },
-      {
-        title: "AI 的幻觉问题（Hallucination）",
-        body: "LLM 有时会自信地给出<strong>错误信息</strong>，这叫"幻觉"。原因：模型生成的是"听起来合理的文字"，而非查阅事实。重要信息务必交叉验证，不要盲目信任 AI 输出。"
-      },
-      {
-        title: "RAG：让 AI 连接你的知识库",
-        body: "Retrieval-Augmented Generation（检索增强生成）：先从你的文档里<strong>检索相关片段</strong>，再喂给 LLM 生成答案。解决模型知识截止日期问题，也减少幻觉。"
-      },
-      {
-        title: "AI Agent：从对话到自主行动",
-        body: "AI Agent 不只是聊天，它能<strong>调用工具、浏览网页、写代码、执行任务</strong>，形成"思考→行动→观察"的循环。Claude Code 本身就是一个 Agent。"
-      },
-      {
-        title: "Fine-tuning vs Prompting",
-        body: "<strong>Prompting</strong>：通过精心设计输入引导模型。<strong>Fine-tuning</strong>：用自己的数据继续训练模型，改变其行为。90% 的业务场景靠好的 Prompt 就够了，Fine-tuning 成本高，慎用。"
-      },
-      {
-        title: "向量数据库是 AI 应用的记忆",
-        body: "文本转成数字向量（Embedding）后存入向量数据库（如 Pinecone、Weaviate）。<strong>语义相似的内容距离近</strong>，搜索时找"意思相近"而非"字面匹配"。是 RAG 的核心基础设施。"
-      },
-      {
-        title: "Moore's Law & AI 算力",
-        body: "AI 训练成本每18个月下降约<strong>一半</strong>。2020年训练 GPT-3 需 $460万，今天同等算力成本已降至 $10万以下。算力民主化意味着更多人能构建 AI 产品。"
-      },
-      {
-        title: "多模态 AI：不只是文字",
-        body: "最新的 AI 模型能处理<strong>文字、图像、音频、视频</strong>。GPT-4o、Gemini 1.5、Claude 3 都是多模态模型。这打开了医疗影像分析、视频理解等全新应用场景。"
-      },
-      {
-        title: "AI 的 Token 是什么？",
-        body: "Token 是 LLM 处理文本的最小单位，约 <strong>0.75个英文单词或1.5个汉字</strong>。模型有 Context Window 限制（如128k tokens）。费用通常按 token 计费，理解这个能帮你优化 AI 使用成本。"
-      },
-      {
-        title: "Chain-of-Thought：让 AI 展示推理过程",
-        body: "在 Prompt 里加入"请一步一步思考"，模型会<strong>显式列出推理步骤</strong>，准确率大幅提升。这叫 Chain-of-Thought（思维链）提示，尤其对数学、逻辑题效果显著。"
-      },
-      {
-        title: "开源 vs 闭源 AI 模型",
-        body: "<strong>闭源</strong>（GPT-4、Claude）：性能领先，API 调用，数据隐私依赖厂商。<strong>开源</strong>（Llama 3、Mistral）：可本地部署，数据不出境，可定制，但需要自己维护。选择取决于你的隐私需求和技术能力。"
-      },
-      {
-        title: "AI 如何改变投资分析？",
-        body: "AI 可以<strong>实时分析财报、新闻情绪、宏观数据</strong>，找出人类分析师容易忽略的信号。量化对冲基金（如 Renaissance）早就用机器学习。未来，不懂 AI 的投资者会面临信息劣势。"
-      },
-    ];
-    // ──────────────────────────────────────────────────────────
+        hook: "2022年ChatGPT发布后，AI从实验室走向了10亿人的日常——背后是语言模型的革命。",
+        body: "LLM 在海量文本上训练，学会预测"下一个词"。<strong>它不是数据库查询，而是统计模式的涌现</strong>。",
+        insight: "试着用不同方式问AI同一个问题，观察答案差异——感受提示词的力量。",
+        source: "OpenAI / Anthropic Research Blog"
+      }]
+    };
 
+    let LESSONS = null;
+
+    // ── 工具函数 ─────────────────────────────────────────────
+    function fmt(date) { return date.toISOString().slice(0, 10); }
+    function fmtDisplay(s) {
+      const [y, m, d] = s.split('-');
+      return `${y} 年 ${parseInt(m)} 月 ${parseInt(d)} 日`;
+    }
+    function todayStr() { return fmt(new Date()); }
+    function dayIndex(len) {
+      const d = new Date();
+      const n = d.getFullYear() * 10000 + (d.getMonth()+1) * 100 + d.getDate();
+      return n % len;
+    }
+
+    // ── localStorage ─────────────────────────────────────────
     function loadData() {
       const raw = localStorage.getItem(STORAGE_KEY);
       if (raw) return JSON.parse(raw);
-      // 默认截止日：今天起 30 天后
-      const def = new Date();
-      def.setDate(def.getDate() + 30);
+      const def = new Date(); def.setDate(def.getDate() + 30);
       return { deadline: fmt(def), logs: [] };
     }
-
-    function saveData(d) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(d));
-    }
-
-    function fmt(date) {
-      // YYYY-MM-DD
-      return date.toISOString().slice(0, 10);
-    }
-
-    function fmtDisplay(dateStr) {
-      const [y, m, d] = dateStr.split('-');
-      return `${y} 年 ${parseInt(m)} 月 ${parseInt(d)} 日`;
-    }
-
-    function todayStr() {
-      return fmt(new Date());
-    }
-
-    // ── 每日学习逻辑 ──────────────────────────────────────────
-    function dayIndex() {
-      // 用日期字符串哈希选当天内容，不同日期显示不同条目
-      const d = new Date();
-      return d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
-    }
-
+    function saveData(d) { localStorage.setItem(STORAGE_KEY, JSON.stringify(d)); }
     function getTodayRead() {
       const raw = localStorage.getItem(READ_KEY);
-      if (!raw) return { date: '', invest: false, ai: false };
-      return JSON.parse(raw);
+      return raw ? JSON.parse(raw) : { date: '', invest: false, ai: false };
     }
 
-    function renderLearn() {
-      const idx = dayIndex();
-      const invest = INVEST_LESSONS[idx % INVEST_LESSONS.length];
-      const ai     = AI_LESSONS[idx % AI_LESSONS.length];
-      const today  = todayStr();
-      const read   = getTodayRead();
-      const isToday = read.date === today;
-
-      document.getElementById('investTitle').textContent = invest.title;
-      document.getElementById('investBody').innerHTML   = invest.body;
-      document.getElementById('aiTitle').textContent    = ai.title;
-      document.getElementById('aiBody').innerHTML       = ai.body;
-
-      const investBtn = document.getElementById('investReadBtn');
-      const aiBtn     = document.getElementById('aiReadBtn');
-
-      if (isToday && read.invest) {
-        investBtn.textContent = '已学习 ✅';
-        investBtn.classList.add('read');
-      } else {
-        investBtn.textContent = '✓ 我学了';
-        investBtn.classList.remove('read');
-      }
-
-      if (isToday && read.ai) {
-        aiBtn.textContent = '已学习 ✅';
-        aiBtn.classList.add('read');
-      } else {
-        aiBtn.textContent = '✓ 我学了';
-        aiBtn.classList.remove('read');
-      }
-    }
-
-    function markRead(type) {
-      const today = todayStr();
-      const read = getTodayRead();
-      if (read.date !== today) {
-        read.date = today;
-        read.invest = false;
-        read.ai = false;
-      }
-      read[type] = true;
-      localStorage.setItem(READ_KEY, JSON.stringify(read));
-      renderLearn();
-    }
-    // ──────────────────────────────────────────────────────────
-
+    // ── 打卡渲染 ─────────────────────────────────────────────
     function render() {
       const data = loadData();
       const today = todayStr();
-      const alreadyLogged = data.logs.includes(today);
+      const logged = data.logs.includes(today);
 
       document.getElementById('todayDate').textContent = fmtDisplay(today);
       document.getElementById('deadlineDate').textContent = fmtDisplay(data.deadline);
       document.getElementById('totalCount').textContent = data.logs.length + ' 天';
 
       const badge = document.getElementById('todayBadge');
-      if (alreadyLogged) {
-        badge.textContent = '已打卡 ✅';
-        badge.className = 'badge done';
-      } else {
-        badge.textContent = '未打卡';
-        badge.className = 'badge pending';
-      }
+      badge.textContent = logged ? '已打卡 ✅' : '未打卡';
+      badge.className   = 'badge ' + (logged ? 'done' : 'pending');
 
-      document.getElementById('logBtn').disabled = alreadyLogged;
-      document.getElementById('undoBtn').disabled = !alreadyLogged;
+      document.getElementById('logBtn').disabled  = logged;
+      document.getElementById('undoBtn').disabled = !logged;
 
-      // 历史记录
       const list = document.getElementById('historyList');
-      const empty = document.getElementById('emptyMsg');
       if (data.logs.length === 0) {
         list.innerHTML = '<li class="empty-msg">还没有打卡记录</li>';
       } else {
-        const sorted = [...data.logs].sort((a, b) => b.localeCompare(a));
-        list.innerHTML = sorted.map(d =>
-          `<li><span class="dot">●</span>${fmtDisplay(d)}</li>`
-        ).join('');
+        list.innerHTML = [...data.logs].sort((a,b) => b.localeCompare(a))
+          .map(d => `<li><span class="dot">●</span>${fmtDisplay(d)}</li>`)
+          .join('');
       }
     }
 
     function logToday() {
-      const data = loadData();
-      const today = todayStr();
+      const data = loadData(), today = todayStr();
       if (data.logs.includes(today)) return;
-
       data.logs.push(today);
-
-      // 截止日 +1 天
-      const dl = new Date(data.deadline + 'T00:00:00');
-      dl.setDate(dl.getDate() + 1);
+      const dl = new Date(data.deadline + 'T00:00:00'); dl.setDate(dl.getDate() + 1);
       data.deadline = fmt(dl);
-
-      saveData(data);
-      render();
+      saveData(data); render();
     }
 
     function undoToday() {
-      const data = loadData();
-      const today = todayStr();
+      const data = loadData(), today = todayStr();
       if (!data.logs.includes(today)) return;
-
       data.logs = data.logs.filter(d => d !== today);
-
-      // 截止日 -1 天
-      const dl = new Date(data.deadline + 'T00:00:00');
-      dl.setDate(dl.getDate() - 1);
+      const dl = new Date(data.deadline + 'T00:00:00'); dl.setDate(dl.getDate() - 1);
       data.deadline = fmt(dl);
-
-      saveData(data);
-      render();
+      saveData(data); render();
     }
 
     function confirmReset() {
@@ -602,8 +480,72 @@
       }
     }
 
-    render();
-    renderLearn();
+    // ── 学习内容渲染 ─────────────────────────────────────────
+    function showLoading(type) {
+      ['Hook','Title','Body','Insight'].forEach(f => {
+        const el = document.getElementById(type + f);
+        if (el) el.innerHTML = '<div class="loading-pulse" style="width:' + (60+Math.random()*30) + '%"></div>';
+      });
+    }
+
+    function fillCard(type, lesson, meta) {
+      document.getElementById(type + 'Hook').textContent    = lesson.hook || '';
+      document.getElementById(type + 'Title').textContent   = lesson.title;
+      document.getElementById(type + 'Body').innerHTML      = lesson.body;
+      document.getElementById(type + 'Insight').textContent = lesson.insight || '';
+      document.getElementById(type + 'Source').textContent  = lesson.source || '';
+      if (meta && meta.lastUpdated) {
+        document.getElementById(type + 'Updated').textContent = '更新于 ' + meta.lastUpdated;
+      }
+    }
+
+    function applyReadState() {
+      const today = todayStr();
+      const read  = getTodayRead();
+      const isToday = read.date === today;
+
+      ['invest','ai'].forEach(type => {
+        const btn = document.getElementById(type + 'ReadBtn');
+        if (isToday && read[type]) {
+          btn.textContent = '已学习 ✅';
+          btn.classList.add('done');
+        } else {
+          btn.textContent = '✓ 我学了';
+          btn.classList.remove('done');
+        }
+      });
+    }
+
+    function renderLearn(data) {
+      const inv = data.invest[dayIndex(data.invest.length)];
+      const ai  = data.ai[dayIndex(data.ai.length)];
+      fillCard('invest', inv, data._meta);
+      fillCard('ai',     ai,  data._meta);
+      applyReadState();
+    }
+
+    function markRead(type) {
+      const today = todayStr();
+      const read  = getTodayRead();
+      if (read.date !== today) { read.date = today; read.invest = false; read.ai = false; }
+      read[type] = true;
+      localStorage.setItem(READ_KEY, JSON.stringify(read));
+      applyReadState();
+    }
+
+    // ── 启动：fetch JSON，失败则用备用 ───────────────────────
+    function init() {
+      render();
+      showLoading('invest');
+      showLoading('ai');
+
+      fetch('./thomas-lessons.json?v=' + todayStr())
+        .then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); })
+        .then(data => { LESSONS = data; renderLearn(data); })
+        .catch(() => { renderLearn(FALLBACK); });
+    }
+
+    init();
   </script>
 </body>
 </html>
