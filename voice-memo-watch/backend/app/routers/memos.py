@@ -1,13 +1,16 @@
 from __future__ import annotations
 
+import array
 import os
+import wave
+from pathlib import Path
 
 from fastapi import APIRouter, HTTPException, Response, UploadFile
 from fastapi.responses import FileResponse
 
 from app.catalog import INSTRUMENT_IDS, STYLE_IDS
 from app.providers.registry import music_provider
-from app.schemas import Memo, Render, RenderRequest
+from app.schemas import Memo, Render, RenderRequest, Transcription
 from app.store import MemoRecord, RenderRecord, get_store
 
 router = APIRouter(tags=["memos"])
@@ -108,6 +111,80 @@ def get_render(render_id: str) -> Render:
     if record is None:
         raise HTTPException(404, "Render not found")
     return _render_out(record)
+
+
+@router.post("/memos/{memo_id}/transcribe", response_model=Transcription)
+def transcribe_memo(memo_id: str) -> Transcription:
+    """Return a text transcription of the voice memo.
+
+    In mock mode (no WHISPER_API_KEY) this analyses the WAV energy envelope
+    and returns a placeholder. Set WHISPER_API_KEY for real OpenAI Whisper
+    transcription.
+    """
+    store = get_store()
+    memo = store.get_memo(memo_id)
+    if memo is None:
+        raise HTTPException(404, "Memo not found")
+    whisper_key = os.environ.get("WHISPER_API_KEY")
+    if whisper_key:
+        text = _whisper_transcribe(memo.path, whisper_key)
+    else:
+        text = _mock_transcribe(memo.path)
+    return Transcription(memo_id=memo_id, text=text)
+
+
+def _mock_transcribe(path: Path) -> str:
+    """Heuristic mock: read WAV energy to produce a descriptive placeholder."""
+    try:
+        with wave.open(str(path), "rb") as wf:
+            nframes = wf.getnframes()
+            framerate = wf.getframerate()
+            sampwidth = wf.getsampwidth()
+            raw = wf.readframes(nframes)
+        if sampwidth != 2:
+            return "[Voice memo recorded — connect Whisper API for real transcription]"
+        samples = array.array("h", raw)
+        if not samples:
+            return "[Silence]"
+        energy = sum(abs(s) for s in samples) / len(samples)
+        duration_s = nframes / max(1, framerate)
+        level = "loud" if energy > 4000 else "quiet" if energy < 500 else "moderate"
+        return (
+            f"[Mock transcript — {duration_s:.1f}s of {level} audio. "
+            "Set WHISPER_API_KEY for real transcription.]"
+        )
+    except Exception:
+        return "[Voice memo recorded — connect Whisper API for real transcription]"
+
+
+def _whisper_transcribe(path: Path, api_key: str) -> str:
+    """Call OpenAI Whisper v1 transcription endpoint."""
+    import json as _json
+    import urllib.request
+
+    with open(path, "rb") as f:
+        audio_data = f.read()
+    boundary = "----VoiceMemoBotBoundary"
+    body = (
+        f"--{boundary}\r\n"
+        f'Content-Disposition: form-data; name="file"; filename="memo{path.suffix}"\r\n'
+        "Content-Type: audio/wav\r\n\r\n"
+    ).encode() + audio_data + (
+        f"\r\n--{boundary}\r\n"
+        'Content-Disposition: form-data; name="model"\r\n\r\n'
+        f"whisper-1\r\n--{boundary}--\r\n"
+    ).encode()
+    req = urllib.request.Request(
+        "https://api.openai.com/v1/audio/transcriptions",
+        data=body,
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": f"multipart/form-data; boundary={boundary}",
+        },
+        method="POST",
+    )
+    with urllib.request.urlopen(req, timeout=60) as resp:
+        return _json.loads(resp.read())["text"]
 
 
 @router.get("/renders/{render_id}/file")

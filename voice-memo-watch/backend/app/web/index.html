@@ -10,10 +10,8 @@
     --text: #e6edf3; --muted: #8b949e; --accent: #b364f7; --accent2: #f76489;
   }
   * { box-sizing: border-box; }
-  body {
-    margin: 0; background: var(--bg); color: var(--text);
-    font-family: system-ui, -apple-system, sans-serif;
-  }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font-family: system-ui, -apple-system, sans-serif; }
   header {
     display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1.2rem;
     border-bottom: 1px solid var(--line); position: sticky; top: 0;
@@ -24,7 +22,7 @@
     background: linear-gradient(90deg, var(--accent), var(--accent2));
     -webkit-background-clip: text; background-clip: text; color: transparent;
   }
-  nav { display: flex; gap: 0.4rem; margin-left: auto; }
+  nav { display: flex; gap: 0.4rem; margin-left: auto; flex-wrap: wrap; }
   nav button {
     background: none; border: 1px solid var(--line); color: var(--muted);
     padding: 0.35rem 0.9rem; border-radius: 999px; cursor: pointer; font-size: 0.85rem;
@@ -59,24 +57,37 @@
   }
   .tool.on { border-color: var(--accent2); background: rgba(247,100,137,0.15); }
   audio { width: 100%; margin: 0.6rem 0; }
-  input[type=text] {
+  input[type=text], textarea {
     background: var(--bg); border: 1px solid var(--line); color: var(--text);
     padding: 0.5rem 0.7rem; border-radius: 8px; font-size: 0.85rem; flex: 1;
+    font-family: inherit;
   }
+  textarea { resize: vertical; min-height: 2.5rem; }
   .post { border-bottom: 1px solid var(--line); padding: 0.9rem 0; }
   .post:last-child { border-bottom: none; }
-  .post .meta { display: flex; gap: 0.5rem; align-items: baseline; font-size: 0.85rem; }
-  .post .meta .author { font-weight: 600; }
+  .post .meta { display: flex; gap: 0.5rem; align-items: baseline; font-size: 0.85rem; flex-wrap: wrap; }
+  .post .meta .author { font-weight: 600; cursor: pointer; color: var(--accent); }
+  .post .meta .author:hover { text-decoration: underline; }
   .post .meta .style-tag {
     color: var(--accent); border: 1px solid var(--accent); border-radius: 999px;
     padding: 0 0.5rem; font-size: 0.72rem;
   }
   .post .meta time { color: var(--muted); font-size: 0.75rem; margin-left: auto; }
+  .post .fwd { color: var(--muted); font-size: 0.75rem; margin: 0.2rem 0; }
   .post .caption { margin: 0.3rem 0; font-size: 0.9rem; }
-  .like {
-    background: none; border: none; color: var(--accent2); cursor: pointer;
-    font-size: 0.9rem; padding: 0;
+  .post-actions { display: flex; gap: 0.8rem; align-items: center; flex-wrap: wrap; margin-top: 0.3rem; }
+  .action-btn {
+    background: none; border: none; cursor: pointer; font-size: 0.85rem;
+    color: var(--muted); padding: 0; display: flex; align-items: center; gap: 0.25rem;
   }
+  .action-btn:hover { color: var(--text); }
+  .action-btn.liked { color: var(--accent2); }
+  .comments-section { margin-top: 0.7rem; padding-top: 0.6rem; border-top: 1px solid var(--line); display: none; }
+  .comment { font-size: 0.85rem; margin: 0.4rem 0; }
+  .comment .ca { font-weight: 600; color: var(--accent); cursor: pointer; }
+  .comment .cb { color: var(--text); }
+  .comment .cd { color: var(--muted); font-size: 0.75rem; }
+  .comment-form { display: flex; gap: 0.5rem; margin-top: 0.6rem; }
   .error { color: #f85149; font-size: 0.85rem; margin-top: 0.5rem; }
   .recdot {
     display: inline-block; width: 10px; height: 10px; border-radius: 50%;
@@ -84,6 +95,47 @@
   }
   @keyframes blink { 50% { opacity: 0.2; } }
   .hidden { display: none; }
+  .transcript-box {
+    background: var(--bg); border: 1px solid var(--line); border-radius: 8px;
+    padding: 0.6rem 0.8rem; font-size: 0.85rem; color: var(--text);
+    margin-top: 0.6rem; min-height: 2.5rem; white-space: pre-wrap;
+  }
+  /* streams */
+  .stream-card { border-bottom: 1px solid var(--line); padding: 0.8rem 0; }
+  .stream-card:last-child { border-bottom: none; }
+  .live-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+              background: #f85149; margin-right: 0.4rem; animation: blink 1s infinite; }
+  /* messages */
+  .conv-item { padding: 0.7rem 0; border-bottom: 1px solid var(--line); cursor: pointer;
+               font-size: 0.9rem; }
+  .conv-item:last-child { border-bottom: none; }
+  .conv-item:hover .conv-name { color: var(--accent); }
+  .conv-name { font-weight: 600; }
+  .msg-bubble { padding: 0.45rem 0.7rem; border-radius: 10px; max-width: 80%;
+                font-size: 0.875rem; margin-bottom: 0.4rem; }
+  .msg-me { background: rgba(179,100,247,0.2); margin-left: auto; }
+  .msg-them { background: var(--card); }
+  .msg-meta { font-size: 0.72rem; color: var(--muted); margin-bottom: 0.15rem; }
+  .thread-wrap { display: flex; flex-direction: column; }
+  /* profile panel */
+  #profile-panel {
+    position: fixed; top: 0; right: -100%; width: min(360px, 100vw);
+    height: 100vh; background: var(--card); border-left: 1px solid var(--line);
+    overflow-y: auto; transition: right 0.25s; z-index: 10; padding: 1.2rem;
+  }
+  #profile-panel.open { right: 0; }
+  #profile-panel h2 { font-size: 1rem; margin: 0 0 0.3rem;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text; background-clip: text; color: transparent; }
+  #profile-panel .pb { font-size: 0.8rem; color: var(--muted); margin: 0.4rem 0 0.7rem; }
+  #profile-panel .pstats { display: flex; gap: 1rem; font-size: 0.82rem; margin-bottom: 0.8rem; }
+  .sound-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7rem; margin-top: 0.7rem; }
+  .sound-mini { background: var(--bg); border: 1px solid var(--line); border-radius: 8px;
+                padding: 0.5rem; cursor: pointer; }
+  .sound-mini:hover { border-color: var(--accent); }
+  .sound-mini .sms { font-size: 0.7rem; color: var(--accent); }
+  .sound-mini .smc { font-size: 0.78rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .sound-mini audio { display: none; }
 </style>
 </head>
 <body>
@@ -92,10 +144,33 @@
   <nav>
     <button id="tab-create" class="active">Create</button>
     <button id="tab-feed">Feed</button>
+    <button id="tab-messages">Messages</button>
+    <button id="tab-streams">Streams</button>
   </nav>
 </header>
 
+<!-- sliding profile panel -->
+<div id="profile-panel">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem">
+    <span style="font-size:0.85rem;color:var(--muted)">Profile</span>
+    <button class="ghost" onclick="closeProfile()" style="padding:0.2rem 0.5rem">✕</button>
+  </div>
+  <h2 id="pp-name"></h2>
+  <p class="pb" id="pp-bio"></p>
+  <div class="pstats">
+    <span><b id="pp-followers">0</b> followers</span>
+    <span><b id="pp-following">0</b> following</span>
+    <span><b id="pp-posts">0</b> posts</span>
+  </div>
+  <button class="primary" id="pp-follow" style="width:100%;margin-bottom:0.8rem">Follow</button>
+  <button class="ghost" id="pp-dm" style="width:100%;margin-bottom:0.8rem">✉ Message</button>
+  <a id="pp-page-link" href="#" target="_blank" class="hint" style="display:block;margin-bottom:0.8rem">Open full profile →</a>
+  <h3 style="font-size:0.85rem;margin:0 0 0.5rem">Sound clips</h3>
+  <div class="sound-grid" id="pp-grid"></div>
+</div>
+
 <main>
+  <!-- CREATE TAB -->
   <section id="view-create">
     <div class="card" id="record-card">
       <h2>1 · Record a voice memo</h2>
@@ -103,6 +178,16 @@
         <button class="primary" id="btn-record">● Record</button>
         <button class="ghost" id="btn-demo">Use demo memo</button>
         <span id="rec-status" class="hint"></span>
+      </div>
+      <div class="row" style="margin-top:0.6rem">
+        <label style="font-size:0.82rem;color:var(--muted);cursor:pointer">
+          <input type="checkbox" id="chk-transcribe"> Auto-transcribe
+        </label>
+      </div>
+      <div id="transcript-wrap" class="hidden">
+        <p class="hint">Transcript:</p>
+        <div class="transcript-box" id="transcript-text"></div>
+        <p class="hint">You can edit above before posting.</p>
       </div>
       <p class="hint">Hum, sing, or talk — the bot turns it into music. No mic? The demo memo is a synthesized melody.</p>
     </div>
@@ -129,7 +214,7 @@
       <div class="row" style="margin-top:0.6rem" id="instrument-list"></div>
       <div class="row" style="margin-top:0.6rem">
         <input type="text" id="prompt" maxlength="200"
-               placeholder="Describe the sound… e.g. “an anime villain talking” or “a tired sigh”">
+               placeholder="Describe the sound… e.g. "an anime villain talking" or "a tired sigh"">
         <button class="ghost" id="btn-prompt">✨ Apply</button>
       </div>
       <p class="hint" id="tweak-summary"></p>
@@ -141,16 +226,64 @@
     <p class="error hidden" id="create-error"></p>
   </section>
 
+  <!-- FEED TAB -->
   <section id="view-feed" class="hidden">
     <div class="card">
       <div class="row">
         <span class="hint" style="margin:0">Posting as</span>
         <input type="text" id="handle" maxlength="40" placeholder="your handle">
+        <button class="ghost" id="btn-save-profile" style="white-space:nowrap">Save profile</button>
       </div>
     </div>
     <div class="card" id="feed-card">
-      <h2>Latest remixes</h2>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.7rem">
+        <h2 style="margin:0">Latest remixes</h2>
+        <button class="ghost" id="btn-refresh-feed" style="font-size:0.8rem;padding:0.3rem 0.6rem">↻ Refresh</button>
+      </div>
       <div id="feed-list"><p class="hint">Nothing here yet — be the first to post.</p></div>
+    </div>
+  </section>
+
+  <!-- MESSAGES TAB -->
+  <section id="view-messages" class="hidden">
+    <div class="card">
+      <h2>Direct Messages</h2>
+      <div class="row" style="margin-bottom:0.8rem">
+        <input type="text" id="dm-to" maxlength="30" placeholder="Send message to…">
+        <button class="primary" id="btn-new-dm">New DM</button>
+      </div>
+      <div id="conv-list"><p class="hint">No conversations yet.</p></div>
+    </div>
+    <div class="card hidden" id="thread-card">
+      <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.7rem">
+        <button class="ghost" onclick="closeThread()" style="padding:0.2rem 0.5rem">←</button>
+        <h2 style="margin:0" id="thread-title">Thread</h2>
+      </div>
+      <div id="thread-messages" class="thread-wrap" style="max-height:300px;overflow-y:auto;margin-bottom:0.7rem"></div>
+      <div class="row">
+        <input type="text" id="msg-body" maxlength="1000" placeholder="Type a message…">
+        <button class="primary" id="btn-send-msg">Send</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- STREAMS TAB -->
+  <section id="view-streams" class="hidden">
+    <div class="card">
+      <h2>Live Concerts</h2>
+      <div class="row" style="margin-bottom:0.8rem">
+        <input type="text" id="stream-title" maxlength="100" placeholder="Concert title…">
+        <button class="primary" id="btn-go-live">🎙 Go Live</button>
+      </div>
+      <div id="stream-controls" class="hidden card" style="margin-bottom:0.8rem;background:var(--bg)">
+        <div class="row" style="margin-bottom:0.4rem">
+          <span class="recdot"></span>
+          <span id="stream-status-text" style="font-size:0.85rem">Broadcasting…</span>
+          <span id="stream-listeners" class="hint" style="margin-left:auto"></span>
+        </div>
+        <button class="ghost" id="btn-end-stream" style="color:#f85149;border-color:#f85149">End stream</button>
+      </div>
+      <div id="streams-list"><p class="hint">No live streams right now.</p></div>
     </div>
   </section>
 </main>
@@ -162,30 +295,47 @@ const state = {
   memoId: null,
   style: null,
   styles: [],
-  instruments: [],          // catalog from the API
-  selectedInstruments: [],  // user's current mix
+  instruments: [],
+  selectedInstruments: [],
   prompt: "",
   render: null,
   tweaks: { speed: 1.0, echo: 0.0, volume: 1.0, reverse: false },
   busy: false,
+  transcript: "",
+  // messages
+  activeThread: null,  // { otherUser: str }
+  // streams
+  liveStream: null,    // { id, ws, mediaStream, ctx, processor }
 };
 const LIMITS = { speed: [0.5, 2.0], echo: [0.0, 1.0], volume: [0.1, 2.0] };
 
 // ---------- tabs ----------
+const TABS = ["create", "feed", "messages", "streams"];
 function showTab(name) {
-  $("view-create").classList.toggle("hidden", name !== "create");
-  $("view-feed").classList.toggle("hidden", name !== "feed");
-  $("tab-create").classList.toggle("active", name === "create");
-  $("tab-feed").classList.toggle("active", name === "feed");
+  TABS.forEach((t) => {
+    $(`view-${t}`).classList.toggle("hidden", t !== name);
+    $(`tab-${t}`).classList.toggle("active", t === name);
+  });
   if (name === "feed") loadFeed();
+  if (name === "messages") loadConversations();
+  if (name === "streams") loadStreams();
 }
-$("tab-create").onclick = () => showTab("create");
-$("tab-feed").onclick = () => showTab("feed");
+TABS.forEach((t) => { $(`tab-${t}`).onclick = () => showTab(t); });
 
 // ---------- handle (author) ----------
 $("handle").value = localStorage.getItem("vmb-handle") || "";
 $("handle").oninput = () => localStorage.setItem("vmb-handle", $("handle").value);
 const handle = () => ($("handle").value || "anonymous").trim() || "anonymous";
+
+$("btn-save-profile").onclick = async () => {
+  const u = handle();
+  if (u === "anonymous") return;
+  await api("/users", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username: u, displayName: u, bio: "" }),
+  }).catch(() => {});
+};
 
 // ---------- error helper ----------
 function setError(message) {
@@ -211,8 +361,8 @@ function encodeWav(float32, sampleRate) {
   writeStr(8, "WAVE");
   writeStr(12, "fmt ");
   view.setUint32(16, 16, true);
-  view.setUint16(20, 1, true);   // PCM
-  view.setUint16(22, 1, true);   // mono
+  view.setUint16(20, 1, true);
+  view.setUint16(22, 1, true);
   view.setUint32(24, sampleRate, true);
   view.setUint32(28, sampleRate * 2, true);
   view.setUint16(32, 2, true);
@@ -221,6 +371,31 @@ function encodeWav(float32, sampleRate) {
   view.setUint32(40, pcm.length * 2, true);
   new Int16Array(buffer, 44).set(pcm);
   return new Blob([buffer], { type: "audio/wav" });
+}
+
+// ---------- Web Speech API transcription ----------
+let recognition = null;
+let speechChunks = [];
+function startSpeechRecognition() {
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR) return;
+  recognition = new SR();
+  recognition.continuous = true;
+  recognition.interimResults = true;
+  speechChunks = [];
+  recognition.onresult = (e) => {
+    let final = "";
+    for (let i = 0; i < e.results.length; i++) {
+      if (e.results[i].isFinal) final += e.results[i][0].transcript + " ";
+    }
+    $("transcript-text").textContent = final;
+    state.transcript = final.trim();
+  };
+  recognition.onerror = () => {};
+  recognition.start();
+}
+function stopSpeechRecognition() {
+  if (recognition) { recognition.stop(); recognition = null; }
 }
 
 // ---------- mic recording ----------
@@ -237,10 +412,16 @@ async function startRecording() {
   recording = { stream, ctx, processor, chunks };
   $("btn-record").textContent = "■ Stop";
   $("rec-status").innerHTML = '<span class="recdot"></span>recording…';
+  if ($("chk-transcribe").checked) {
+    $("transcript-wrap").classList.remove("hidden");
+    $("transcript-text").textContent = "";
+    startSpeechRecognition();
+  }
 }
 async function stopRecording() {
   const { stream, ctx, processor, chunks } = recording;
   recording = null;
+  stopSpeechRecognition();
   processor.disconnect();
   stream.getTracks().forEach((t) => t.stop());
   const total = chunks.reduce((n, c) => n + c.length, 0);
@@ -264,7 +445,7 @@ $("btn-record").onclick = async () => {
   }
 };
 
-// ---------- demo memo (synthesized melody, works without a mic) ----------
+// ---------- demo memo ----------
 $("btn-demo").onclick = async () => {
   setError("");
   const rate = 16000, notes = [262, 330, 392, 523, 392, 330, 262, 196];
@@ -307,6 +488,15 @@ async function uploadMemo(blob, filename) {
     $("style-card").classList.remove("hidden");
     await loadStyles();
     $("rec-status").textContent = "memo ready — pick a vibe ↓";
+    // Backend mock transcription (fallback / WAV analysis)
+    if ($("chk-transcribe").checked && !state.transcript) {
+      try {
+        const t = await api(`/memos/${memo.id}/transcribe`, { method: "POST" });
+        $("transcript-text").textContent = t.text;
+        state.transcript = t.text;
+        $("transcript-wrap").classList.remove("hidden");
+      } catch (_) {}
+    }
   } catch (e) {
     setError(e.message);
   }
@@ -376,7 +566,7 @@ async function render(styleId) {
   }
 }
 
-// ---------- one-click tools (always re-render from the ORIGINAL memo) ----------
+// ---------- one-click tools ----------
 function updateToolUI() {
   const t = state.tweaks;
   $("btn-reverse").classList.toggle("on", t.reverse);
@@ -386,7 +576,7 @@ function updateToolUI() {
   if (t.volume !== 1.0) parts.push(`volume ×${t.volume.toFixed(1)}`);
   if (t.reverse) parts.push("reversed");
   if (state.selectedInstruments.length) parts.push("with " + state.selectedInstruments.join(" + "));
-  if (state.prompt) parts.push(`“${state.prompt}”`);
+  if (state.prompt) parts.push(`"${state.prompt}"`);
   $("tweak-summary").textContent = parts.length
     ? "Applied to the original memo: " + parts.join(" · ")
     : "No tweaks — every tool is one click and applies to the original memo.";
@@ -400,10 +590,7 @@ document.querySelectorAll("#tools .tool[data-tweak]").forEach((button) => {
     render(state.style);
   };
 });
-$("btn-reverse").onclick = () => {
-  state.tweaks.reverse = !state.tweaks.reverse;
-  render(state.style);
-};
+$("btn-reverse").onclick = () => { state.tweaks.reverse = !state.tweaks.reverse; render(state.style); };
 $("btn-reset").onclick = () => {
   state.tweaks = { speed: 1.0, echo: 0.0, volume: 1.0, reverse: false };
   state.selectedInstruments = [];
@@ -411,15 +598,10 @@ $("btn-reset").onclick = () => {
   $("prompt").value = "";
   render(state.style);
 };
-$("btn-prompt").onclick = () => {
-  state.prompt = $("prompt").value.trim();
-  render(state.style);
-};
-$("prompt").addEventListener("keydown", (e) => {
-  if (e.key === "Enter") $("btn-prompt").click();
-});
+$("btn-prompt").onclick = () => { state.prompt = $("prompt").value.trim(); render(state.style); };
+$("prompt").addEventListener("keydown", (e) => { if (e.key === "Enter") $("btn-prompt").click(); });
 
-// ---------- posting & feed ----------
+// ---------- posting ----------
 $("btn-post").onclick = async () => {
   if (!state.render) return;
   setError("");
@@ -440,6 +622,9 @@ $("btn-post").onclick = async () => {
   }
 };
 
+// ---------- feed ----------
+$("btn-refresh-feed").onclick = () => loadFeed();
+
 async function loadFeed() {
   const posts = await api("/posts").catch(() => []);
   const list = $("feed-list");
@@ -449,31 +634,355 @@ async function loadFeed() {
   }
   list.innerHTML = "";
   for (const post of posts) {
-    const item = document.createElement("div");
-    item.className = "post";
-    const when = new Date(post.createdAt).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-    item.innerHTML = `
-      <div class="meta">
-        <span class="author"></span>
-        <span class="style-tag"></span>
-        <time>${when}</time>
-      </div>
-      <p class="caption"></p>
-      <audio controls preload="none"></audio>
-      <div class="row">
-        <button class="like">♥ <span>${post.likes}</span></button>
-        <a class="hint" style="margin:0" href="/p/${post.id}" target="_blank">permalink</a>
-      </div>`;
-    item.querySelector(".author").textContent = post.author;
-    item.querySelector(".style-tag").textContent = post.style;
-    item.querySelector(".caption").textContent = post.caption;
-    item.querySelector("audio").src = post.fileUrl;
-    const likeButton = item.querySelector(".like");
-    likeButton.onclick = async () => {
-      const updated = await api(`/posts/${post.id}/like`, { method: "POST" });
-      likeButton.querySelector("span").textContent = updated.likes;
+    list.appendChild(buildPostEl(post));
+  }
+}
+
+function buildPostEl(post) {
+  const item = document.createElement("div");
+  item.className = "post";
+  const when = new Date(post.createdAt).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+  item.innerHTML = `
+    <div class="meta">
+      <span class="author"></span>
+      <span class="style-tag"></span>
+      <time>${when}</time>
+    </div>
+    ${post.forwardedFrom ? '<p class="fwd">↻ forwarded</p>' : ""}
+    <p class="caption"></p>
+    <audio controls preload="none"></audio>
+    <div class="post-actions">
+      <button class="action-btn btn-like">♥ <span class="like-count">${post.likes}</span></button>
+      <button class="action-btn btn-comment">💬 Comments</button>
+      <button class="action-btn btn-forward">↻ Forward</button>
+      <a class="action-btn" href="/p/${post.id}" target="_blank" style="text-decoration:none">🔗</a>
+      <button class="action-btn btn-dm">✉ DM</button>
+    </div>
+    <div class="comments-section"></div>`;
+  item.querySelector(".author").textContent = post.author;
+  item.querySelector(".author").onclick = () => openProfile(post.author);
+  item.querySelector(".style-tag").textContent = post.style;
+  item.querySelector(".caption").textContent = post.caption;
+  item.querySelector("audio").src = post.fileUrl;
+
+  const likeBtn = item.querySelector(".btn-like");
+  likeBtn.onclick = async () => {
+    const updated = await api(`/posts/${post.id}/like`, { method: "POST" });
+    likeBtn.querySelector(".like-count").textContent = updated.likes;
+    likeBtn.classList.add("liked");
+  };
+
+  const commentBtn = item.querySelector(".btn-comment");
+  const commentSection = item.querySelector(".comments-section");
+  commentBtn.onclick = async () => {
+    const open = commentSection.style.display !== "none" && commentSection.style.display !== "";
+    if (open) { commentSection.style.display = "none"; return; }
+    commentSection.style.display = "block";
+    await renderComments(post.id, commentSection);
+  };
+
+  const fwdBtn = item.querySelector(".btn-forward");
+  fwdBtn.onclick = async () => {
+    const caption = prompt("Add a caption for the forward (optional):");
+    if (caption === null) return;
+    await api(`/posts/${post.id}/forward`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ author: handle(), caption }),
+    });
+    loadFeed();
+  };
+
+  const dmBtn = item.querySelector(".btn-dm");
+  dmBtn.onclick = () => { openDMWith(post.author); showTab("messages"); };
+
+  return item;
+}
+
+async function renderComments(postId, container) {
+  const comments = await api(`/posts/${postId}/comments`).catch(() => []);
+  container.innerHTML = "";
+  for (const c of comments) {
+    const el = document.createElement("div");
+    el.className = "comment";
+    const t = new Date(c.createdAt).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+    el.innerHTML = `<span class="ca"></span> <span class="cb"></span> <span class="cd">${t}</span>`;
+    el.querySelector(".ca").textContent = c.author;
+    el.querySelector(".ca").onclick = () => openProfile(c.author);
+    el.querySelector(".cb").textContent = c.body;
+    container.appendChild(el);
+  }
+  const form = document.createElement("div");
+  form.className = "comment-form";
+  form.innerHTML = `<input type="text" maxlength="500" placeholder="Add a comment…"><button class="ghost">Post</button>`;
+  const input = form.querySelector("input");
+  const btn = form.querySelector("button");
+  const submit = async () => {
+    const body = input.value.trim();
+    if (!body) return;
+    await api(`/posts/${postId}/comments`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ author: handle(), body }),
+    });
+    input.value = "";
+    await renderComments(postId, container);
+  };
+  btn.onclick = submit;
+  input.addEventListener("keydown", (e) => { if (e.key === "Enter") submit(); });
+  container.appendChild(form);
+}
+
+// ---------- profile panel ----------
+async function openProfile(username) {
+  const panel = $("profile-panel");
+  try {
+    const user = await api(`/users/${username}`);
+    $("pp-name").textContent = user.displayName || username;
+    $("pp-bio").textContent = user.bio || "";
+    $("pp-followers").textContent = user.followerCount;
+    $("pp-following").textContent = user.followingCount;
+    $("pp-posts").textContent = user.postCount;
+    $("pp-page-link").href = `/users/${username}/page`;
+    $("pp-follow").onclick = async () => {
+      const me = handle();
+      if (me === "anonymous" || me === username) return;
+      await api(`/users/${username}/follow?follower=${encodeURIComponent(me)}`, { method: "POST" });
+      $("pp-follow").textContent = "Following ✓";
     };
-    list.appendChild(item);
+    $("pp-dm").onclick = () => { closeProfile(); openDMWith(username); showTab("messages"); };
+    const posts = await api(`/users/${username}/posts`).catch(() => []);
+    const grid = $("pp-grid");
+    grid.innerHTML = "";
+    for (const p of posts.slice(0, 6)) {
+      const card = document.createElement("div");
+      card.className = "sound-mini";
+      card.innerHTML = `<div class="sms"></div><div class="smc"></div><audio preload="none"></audio>`;
+      card.querySelector(".sms").textContent = p.style;
+      card.querySelector(".smc").textContent = p.caption || "—";
+      const audio = card.querySelector("audio");
+      audio.src = p.fileUrl;
+      card.onclick = () => { if (audio.paused) audio.play(); else audio.pause(); };
+      grid.appendChild(card);
+    }
+  } catch (_) {
+    $("pp-name").textContent = username;
+    $("pp-bio").textContent = "No profile yet.";
+    $("pp-grid").innerHTML = "";
+  }
+  panel.classList.add("open");
+}
+function closeProfile() { $("profile-panel").classList.remove("open"); }
+
+// ---------- messages ----------
+let currentThreadUser = null;
+
+function openDMWith(username) {
+  currentThreadUser = username;
+  $("thread-title").textContent = username;
+  $("thread-card").classList.remove("hidden");
+  loadThread(username);
+}
+function closeThread() { $("thread-card").classList.add("hidden"); currentThreadUser = null; }
+
+async function loadConversations() {
+  const me = handle();
+  if (me === "anonymous") {
+    $("conv-list").innerHTML = '<p class="hint">Set your handle above to see messages.</p>';
+    return;
+  }
+  const convs = await api(`/conversations/${encodeURIComponent(me)}`).catch(() => []);
+  const list = $("conv-list");
+  if (convs.length === 0) {
+    list.innerHTML = '<p class="hint">No conversations yet.</p>';
+    return;
+  }
+  list.innerHTML = "";
+  for (const other of convs) {
+    const el = document.createElement("div");
+    el.className = "conv-item";
+    el.innerHTML = `<span class="conv-name"></span>`;
+    el.querySelector(".conv-name").textContent = other;
+    el.onclick = () => openDMWith(other);
+    list.appendChild(el);
+  }
+}
+
+async function loadThread(otherUser) {
+  const me = handle();
+  const msgs = await api(`/messages/${encodeURIComponent(me)}/${encodeURIComponent(otherUser)}`).catch(() => []);
+  const wrap = $("thread-messages");
+  wrap.innerHTML = "";
+  for (const m of msgs) {
+    const isMe = m.fromUser === me;
+    const bubble = document.createElement("div");
+    bubble.className = "msg-bubble " + (isMe ? "msg-me" : "msg-them");
+    const meta = document.createElement("div");
+    meta.className = "msg-meta";
+    meta.textContent = (isMe ? "You" : m.fromUser) + " · " +
+      new Date(m.createdAt).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+    bubble.textContent = m.body;
+    const wrap2 = document.createElement("div");
+    wrap2.style.cssText = isMe ? "display:flex;flex-direction:column;align-items:flex-end" : "";
+    wrap2.append(meta, bubble);
+    wrap.appendChild(wrap2);
+  }
+  wrap.scrollTop = wrap.scrollHeight;
+}
+
+$("btn-new-dm").onclick = () => {
+  const to = $("dm-to").value.trim();
+  if (!to) return;
+  openDMWith(to);
+  $("dm-to").value = "";
+};
+
+$("btn-send-msg").onclick = async () => {
+  const body = $("msg-body").value.trim();
+  if (!body || !currentThreadUser) return;
+  await api("/messages", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ fromUser: handle(), toUser: currentThreadUser, body }),
+  });
+  $("msg-body").value = "";
+  await loadThread(currentThreadUser);
+  await loadConversations();
+};
+$("msg-body").addEventListener("keydown", (e) => { if (e.key === "Enter") $("btn-send-msg").click(); });
+
+// ---------- streams ----------
+let streamListenWs = null;
+let streamListenAudio = null;
+const audioChunks = [];
+
+$("btn-go-live").onclick = async () => {
+  const title = $("stream-title").value.trim() || "Live concert";
+  const stream = await api("/streams", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ host: handle(), title }),
+  }).catch((e) => { alert("Could not create stream: " + e.message); return null; });
+  if (!stream) return;
+  // Open WebSocket and start capturing mic
+  const wsProto = location.protocol === "https:" ? "wss" : "ws";
+  const ws = new WebSocket(`${wsProto}://${location.host}/streams/${stream.id}/ws`);
+  ws.binaryType = "arraybuffer";
+  let micStream = null;
+  let audioCtx = null;
+  let processor = null;
+  try {
+    micStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+  } catch (_) {
+    alert("Microphone not available.");
+    await api(`/streams/${stream.id}`, { method: "DELETE" }).catch(() => {});
+    return;
+  }
+  audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  const source = audioCtx.createMediaStreamSource(micStream);
+  processor = audioCtx.createScriptProcessor(4096, 1, 1);
+  processor.onaudioprocess = (e) => {
+    if (ws.readyState !== WebSocket.OPEN) return;
+    const pcm = new Int16Array(e.inputBuffer.getChannelData(0).map((s) => {
+      const v = Math.max(-1, Math.min(1, s));
+      return v < 0 ? v * 0x8000 : v * 0x7fff;
+    }));
+    ws.send(pcm.buffer);
+  };
+  source.connect(processor);
+  processor.connect(audioCtx.destination);
+  state.liveStream = { id: stream.id, ws, micStream, audioCtx, processor };
+  $("stream-controls").classList.remove("hidden");
+  $("btn-go-live").disabled = true;
+  $("stream-status-text").textContent = `Live: ${stream.title}`;
+  let listenerPoll = setInterval(async () => {
+    try {
+      const s = await api(`/streams/${stream.id}`);
+      $("stream-listeners").textContent = s.listenerCount + " listening";
+    } catch (_) {}
+  }, 5000);
+  state.liveStream.listenerPoll = listenerPoll;
+  await loadStreams();
+};
+
+$("btn-end-stream").onclick = async () => {
+  if (!state.liveStream) return;
+  const { id, ws, micStream, audioCtx, processor, listenerPoll } = state.liveStream;
+  clearInterval(listenerPoll);
+  processor.disconnect();
+  micStream.getTracks().forEach((t) => t.stop());
+  await audioCtx.close();
+  ws.close();
+  await api(`/streams/${id}`, { method: "DELETE" }).catch(() => {});
+  state.liveStream = null;
+  $("stream-controls").classList.add("hidden");
+  $("btn-go-live").disabled = false;
+  $("stream-listeners").textContent = "";
+  await loadStreams();
+};
+
+async function loadStreams() {
+  const streams = await api("/streams?status=live").catch(() => []);
+  const list = $("streams-list");
+  if (streams.length === 0) {
+    list.innerHTML = '<p class="hint">No live streams right now.</p>';
+    return;
+  }
+  list.innerHTML = "";
+  for (const s of streams) {
+    const el = document.createElement("div");
+    el.className = "stream-card";
+    el.innerHTML = `
+      <div class="row">
+        <span class="live-dot"></span>
+        <strong class="stream-title-text"></strong>
+        <span class="hint" style="margin:0">by <span class="stream-host"></span></span>
+        <span class="hint" style="margin:0;margin-left:auto"><span class="stream-listeners-text">${s.listenerCount}</span> listening</span>
+      </div>
+      <div class="row" style="margin-top:0.5rem">
+        <button class="ghost join-btn">▶ Join stream</button>
+        <button class="ghost leave-btn hidden">■ Leave</button>
+        <audio controls style="flex:1;display:none"></audio>
+      </div>`;
+    el.querySelector(".stream-title-text").textContent = s.title;
+    el.querySelector(".stream-host").textContent = s.host;
+    const joinBtn = el.querySelector(".join-btn");
+    const leaveBtn = el.querySelector(".leave-btn");
+    const audioEl = el.querySelector("audio");
+    let listenerWs = null;
+    let mediaSource = null;
+    let sourceBuffer = null;
+    joinBtn.onclick = () => {
+      const wsProto = location.protocol === "https:" ? "wss" : "ws";
+      listenerWs = new WebSocket(`${wsProto}://${location.host}/streams/${s.id}/ws`);
+      listenerWs.binaryType = "arraybuffer";
+      const ctx = new (window.AudioContext || window.webkitAudioContext)({ sampleRate: 44100 });
+      let pendingChunks = [];
+      let playing = false;
+      listenerWs.onmessage = (e) => {
+        // decode PCM Int16 → Float32 and play via AudioContext
+        const int16 = new Int16Array(e.data);
+        const float32 = new Float32Array(int16.length);
+        for (let i = 0; i < int16.length; i++) {
+          float32[i] = int16[i] / (int16[i] < 0 ? 0x8000 : 0x7fff);
+        }
+        const buf = ctx.createBuffer(1, float32.length, ctx.sampleRate);
+        buf.getChannelData(0).set(float32);
+        const src = ctx.createBufferSource();
+        src.buffer = buf;
+        src.connect(ctx.destination);
+        src.start(playing ? ctx.currentTime : ctx.currentTime + 0.05);
+        playing = true;
+      };
+      joinBtn.classList.add("hidden");
+      leaveBtn.classList.remove("hidden");
+    };
+    leaveBtn.onclick = () => {
+      if (listenerWs) { listenerWs.close(); listenerWs = null; }
+      joinBtn.classList.remove("hidden");
+      leaveBtn.classList.add("hidden");
+    };
+    list.appendChild(el);
   }
 }
 </script>

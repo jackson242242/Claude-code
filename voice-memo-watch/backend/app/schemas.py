@@ -80,4 +80,72 @@ class Post(CamelModel):
     likes: int
     file_url: str
     permalink: str
+    forwarded_from: str | None
+    created_at: str
+
+
+class CommentRequest(CamelModel):
+    author: str = Field(default="anonymous", min_length=1, max_length=40)
+    body: str = Field(min_length=1, max_length=500)
+
+
+class Comment(CamelModel):
+    id: str
+    post_id: str
+    author: str
+    body: str
+    created_at: str
+
+
+class ForwardRequest(CamelModel):
+    author: str = Field(default="anonymous", min_length=1, max_length=40)
+    caption: str = Field(default="", max_length=280)
+
+
+class Transcription(CamelModel):
+    memo_id: str
+    text: str
+
+
+class UserRequest(CamelModel):
+    username: str = Field(min_length=2, max_length=30, pattern=r"^[a-zA-Z0-9_]+$")
+    display_name: str = Field(default="", max_length=60)
+    bio: str = Field(default="", max_length=200)
+
+
+class User(CamelModel):
+    username: str
+    display_name: str
+    bio: str
+    follower_count: int
+    following_count: int
+    post_count: int
+    created_at: str
+
+
+class MessageRequest(CamelModel):
+    from_user: str = Field(min_length=2, max_length=30)
+    to_user: str = Field(min_length=2, max_length=30)
+    body: str = Field(min_length=1, max_length=1000)
+
+
+class Message(CamelModel):
+    id: str
+    from_user: str
+    to_user: str
+    body: str
+    created_at: str
+
+
+class StreamRequest(CamelModel):
+    host: str = Field(min_length=2, max_length=40)
+    title: str = Field(min_length=1, max_length=100)
+
+
+class Stream(CamelModel):
+    id: str
+    host: str
+    title: str
+    status: str
+    listener_count: int
     created_at: str

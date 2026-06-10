@@ -203,6 +203,16 @@ def test_render_failure_marks_failed(
     assert response.status_code == 502
 
 
+def test_transcribe_mock(client: TestClient) -> None:
+    memo = _upload(client)
+    resp = client.post(f"/memos/{memo['id']}/transcribe")
+    assert resp.status_code == 200
+    body = resp.json()
+    assert body["memoId"] == memo["id"]
+    assert isinstance(body["text"], str) and len(body["text"]) > 0
+    assert client.post("/memos/nope/transcribe").status_code == 404
+
+
 def test_delete_memo_removes_renders_and_posts(client: TestClient) -> None:
     memo = _upload(client)
     render = client.post(

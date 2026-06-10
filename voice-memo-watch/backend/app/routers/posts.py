@@ -12,8 +12,8 @@ from fastapi import APIRouter, HTTPException, Response
 from fastapi.responses import HTMLResponse
 
 from app.routers.memos import _public_base_url
-from app.schemas import Post, PostRequest
-from app.store import PostRecord, get_store
+from app.schemas import Comment, CommentRequest, ForwardRequest, Post, PostRequest
+from app.store import CommentRecord, PostRecord, get_store
 
 router = APIRouter(tags=["posts"])
 
@@ -30,6 +30,17 @@ def _post_out(record: PostRecord) -> Post:
         likes=record.likes,
         file_url=f"{base}/renders/{record.render_id}/file",
         permalink=f"{base}/p/{record.id}",
+        forwarded_from=record.forwarded_from,
+        created_at=record.created_at,
+    )
+
+
+def _comment_out(record: CommentRecord) -> Comment:
+    return Comment(
+        id=record.id,
+        post_id=record.post_id,
+        author=record.author,
+        body=record.body,
         created_at=record.created_at,
     )
 
@@ -69,6 +80,47 @@ def like_post(post_id: str) -> Post:
 def delete_post(post_id: str) -> Response:
     if not get_store().delete_post(post_id):
         raise HTTPException(404, "Post not found")
+    return Response(status_code=204)
+
+
+@router.post("/posts/{post_id}/forward", response_model=Post, status_code=201)
+def forward_post(post_id: str, request: ForwardRequest) -> Post:
+    store = get_store()
+    original = store.get_post(post_id)
+    if original is None:
+        raise HTTPException(404, "Post not found")
+    render = store.get_render(original.render_id)
+    if render is None or render.status != "ready":
+        raise HTTPException(404, "Render not found")
+    record = store.create_post(
+        render,
+        request.author.strip() or "anonymous",
+        request.caption.strip(),
+        forwarded_from=post_id,
+    )
+    return _post_out(record)
+
+
+@router.get("/posts/{post_id}/comments", response_model=list[Comment])
+def list_comments(post_id: str) -> list[Comment]:
+    if get_store().get_post(post_id) is None:
+        raise HTTPException(404, "Post not found")
+    return [_comment_out(c) for c in get_store().get_comments(post_id)]
+
+
+@router.post("/posts/{post_id}/comments", response_model=Comment, status_code=201)
+def add_comment(post_id: str, request: CommentRequest) -> Comment:
+    store = get_store()
+    if store.get_post(post_id) is None:
+        raise HTTPException(404, "Post not found")
+    record = store.add_comment(post_id, request.author.strip() or "anonymous", request.body.strip())
+    return _comment_out(record)
+
+
+@router.delete("/comments/{comment_id}", status_code=204)
+def delete_comment(comment_id: str) -> Response:
+    if not get_store().delete_comment(comment_id):
+        raise HTTPException(404, "Comment not found")
     return Response(status_code=204)
 
 
