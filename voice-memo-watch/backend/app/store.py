@@ -13,7 +13,7 @@ from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
 
-from app.schemas import Tweaks
+from app.schemas import RenderRequest
 
 
 def _now() -> str:
@@ -38,8 +38,7 @@ class MemoRecord:
 class RenderRecord:
     id: str
     memo_id: str
-    style: str
-    tweaks: Tweaks
+    spec: RenderRequest
     status: str
     path: Path
     created_at: str = field(default_factory=_now)
@@ -102,16 +101,13 @@ class Store:
             render.path.unlink(missing_ok=True)
         return True
 
-    def create_render(
-        self, memo: MemoRecord, style: str, tweaks: Tweaks
-    ) -> RenderRecord:
+    def create_render(self, memo: MemoRecord, spec: RenderRequest) -> RenderRecord:
         render_id = new_id()
         path = self.storage_dir / f"render-{render_id}{memo.path.suffix}"
         record = RenderRecord(
             id=render_id,
             memo_id=memo.id,
-            style=style,
-            tweaks=tweaks,
+            spec=spec,
             status="processing",
             path=path,
         )

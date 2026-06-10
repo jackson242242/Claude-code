@@ -27,10 +27,14 @@ Xcode needed:
    genuinely transforms it), or click **Use demo memo** (synthesized melody)
    if you have no mic.
 2. **Pick a vibe** — one click renders the remix.
-3. **Result screen** — every tool that changes the original memo is **one
-   click away**: style chips re-render in another vibe; 🐢 Slower / 🐇 Faster /
-   🌊 Echo / 🔊 Louder / 🔉 Softer / ⏪ Reverse each apply instantly. Tools
-   always re-render from the *original* memo (they never stack on a render).
+3. **Result screen** — every tool that changes the original memo is **one or
+   two clicks away**: style chips re-render in another vibe; 🐢 Slower /
+   🐇 Faster / 🌊 Echo / 🔊 Louder / 🔉 Softer / ⏪ Reverse each apply
+   instantly; 🎵 instrument chips (piano · strings · synth · flute · drums)
+   toggle synthesized layers that follow your memo's melody and rhythm —
+   pick one or several; and a free-text **sound prompt** ("an anime villain
+   talking", "a tired sigh") applies with one click. Tools always re-render
+   from the *original* memo (they never stack on a render).
 4. **Post to Feed** — one click publishes to the platform; the Feed tab shows
    everyone's remixes with playback, ♥ likes, and `/p/{id}` permalinks.
 
@@ -38,9 +42,13 @@ Xcode needed:
 
 - `POST /memos` — multipart upload (15 MB cap, audio types only).
 - `POST /memos/{id}/renders` — body `{"style": "lofi", "tweaks": {"speed":
-  1.25, "echo": 0.5, "volume": 1.0, "reverse": false}}`; returns
-  `{status, fileUrl, tweaks, …}`. Tweaks are validated server-side
-  (speed 0.5–2, echo 0–1, volume 0.1–2).
+  1.25, "echo": 0.5, "volume": 1.0, "reverse": false}, "instruments":
+  ["piano", "drums"], "prompt": "a tired sigh"}`; returns
+  `{status, fileUrl, tweaks, instruments, prompt, …}`. Everything is
+  validated server-side (speed 0.5–2, echo 0–1, volume 0.1–2, known
+  instrument ids only, prompt ≤ 200 chars).
+- `GET /instruments` — the instrument catalog (`piano`, `strings`, `synth`,
+  `flute`, `drums`).
 - `POST /posts` — `{"renderId", "author", "caption"}` publishes a render to
   the feed. `GET /posts` (newest first), `POST /posts/{id}/like`,
   `DELETE /posts/{id}`, and `GET /p/{post_id}` (public HTML permalink).
@@ -49,14 +57,22 @@ Xcode needed:
 
 ### Music providers (same registry pattern as the main backend)
 
-- **Mock (default, offline):** real stdlib DSP on WAV input — tempo shift,
-  echo, attenuation, reverse per style + tweaks — so the whole flow is
-  audibly testable with no keys. Non-WAV input (the watch's `.m4a`) passes
-  through unchanged.
+- **Mock (default, offline):** real stdlib DSP on WAV input so the whole flow
+  is audibly testable with no keys: style presets (tempo/echo/attenuation),
+  tweaks (speed/echo/volume/reverse), **instrument layers** synthesized from
+  the memo's amplitude envelope + zero-crossing pitch track (humming a melody
+  really plays it on the chosen instruments), and **prompt keywords** mapped
+  to DSP ("whisper" → quiet, "demon" → deep, "robot" → ring modulation,
+  "cave" → echo…). Non-WAV input (the watch's `.m4a`) passes through
+  unchanged.
 - **Replicate MusicGen (production):** set `REPLICATE_API_TOKEN` and the
-  registry switches to melody-conditioned MusicGen — your memo is the melody,
-  the style is the text prompt and tweaks become prompt modifiers.
-  ~$0.01–0.10 per generation, 30–120 s latency.
+  registry switches to melody-conditioned MusicGen — your memo is the melody;
+  style, tweaks, instruments, and your free-text prompt all become prompt
+  conditioning. ~$0.01–0.10 per generation, 30–120 s latency. True
+  character-voice conversion ("talks like a specific anime character") needs
+  a dedicated voice-conversion model behind the same provider interface —
+  and note that imitating specific copyrighted characters' voices raises
+  IP/publicity-rights issues that need legal review before launch.
 
 Styles: `lofi`, `edm`, `acoustic`, `cinematic` (`GET /styles`).
 

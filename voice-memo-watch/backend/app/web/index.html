@@ -126,6 +126,12 @@
         <button class="tool" id="btn-reverse">⏪ Reverse</button>
         <button class="tool" id="btn-reset">Reset</button>
       </div>
+      <div class="row" style="margin-top:0.6rem" id="instrument-list"></div>
+      <div class="row" style="margin-top:0.6rem">
+        <input type="text" id="prompt" maxlength="200"
+               placeholder="Describe the sound… e.g. “an anime villain talking” or “a tired sigh”">
+        <button class="ghost" id="btn-prompt">✨ Apply</button>
+      </div>
       <p class="hint" id="tweak-summary"></p>
       <div class="row" style="margin-top:0.8rem">
         <input type="text" id="caption" maxlength="280" placeholder="Say something about this remix…">
@@ -156,6 +162,9 @@ const state = {
   memoId: null,
   style: null,
   styles: [],
+  instruments: [],          // catalog from the API
+  selectedInstruments: [],  // user's current mix
+  prompt: "",
   render: null,
   tweaks: { speed: 1.0, echo: 0.0, volume: 1.0, reverse: false },
   busy: false,
@@ -290,6 +299,9 @@ async function uploadMemo(blob, filename) {
     state.memoId = memo.id;
     state.render = null;
     state.style = null;
+    state.selectedInstruments = [];
+    state.prompt = "";
+    $("prompt").value = "";
     state.tweaks = { speed: 1.0, echo: 0.0, volume: 1.0, reverse: false };
     $("result-card").classList.add("hidden");
     $("style-card").classList.remove("hidden");
@@ -302,6 +314,7 @@ async function uploadMemo(blob, filename) {
 
 async function loadStyles() {
   if (state.styles.length === 0) state.styles = await api("/styles");
+  if (state.instruments.length === 0) state.instruments = await api("/instruments");
   for (const containerId of ["style-list", "result-styles"]) {
     const container = $(containerId);
     container.innerHTML = "";
@@ -313,6 +326,23 @@ async function loadStyles() {
       chip.onclick = () => render(style.id);
       container.appendChild(chip);
     }
+  }
+  const instrumentList = $("instrument-list");
+  instrumentList.innerHTML = "";
+  for (const instrument of state.instruments) {
+    const chip = document.createElement("button");
+    const active = state.selectedInstruments.includes(instrument.id);
+    chip.className = "tool" + (active ? " on" : "");
+    chip.textContent = "🎵 " + instrument.label;
+    chip.title = instrument.description;
+    chip.onclick = () => {
+      const selected = state.selectedInstruments;
+      state.selectedInstruments = selected.includes(instrument.id)
+        ? selected.filter((id) => id !== instrument.id)
+        : [...selected, instrument.id];
+      render(state.style);
+    };
+    instrumentList.appendChild(chip);
   }
 }
 
@@ -326,7 +356,12 @@ async function render(styleId) {
     state.render = await api(`/memos/${state.memoId}/renders`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ style: styleId, tweaks: state.tweaks }),
+      body: JSON.stringify({
+        style: styleId,
+        tweaks: state.tweaks,
+        instruments: state.selectedInstruments,
+        prompt: state.prompt,
+      }),
     });
     $("player").src = state.render.fileUrl + "?t=" + Date.now();
     $("result-card").classList.remove("hidden");
@@ -350,8 +385,10 @@ function updateToolUI() {
   if (t.echo > 0) parts.push(`echo ${Math.round(t.echo * 100)}%`);
   if (t.volume !== 1.0) parts.push(`volume ×${t.volume.toFixed(1)}`);
   if (t.reverse) parts.push("reversed");
+  if (state.selectedInstruments.length) parts.push("with " + state.selectedInstruments.join(" + "));
+  if (state.prompt) parts.push(`“${state.prompt}”`);
   $("tweak-summary").textContent = parts.length
-    ? "Tweaks on the original memo: " + parts.join(" · ")
+    ? "Applied to the original memo: " + parts.join(" · ")
     : "No tweaks — every tool is one click and applies to the original memo.";
 }
 document.querySelectorAll("#tools .tool[data-tweak]").forEach((button) => {
@@ -369,8 +406,18 @@ $("btn-reverse").onclick = () => {
 };
 $("btn-reset").onclick = () => {
   state.tweaks = { speed: 1.0, echo: 0.0, volume: 1.0, reverse: false };
+  state.selectedInstruments = [];
+  state.prompt = "";
+  $("prompt").value = "";
   render(state.style);
 };
+$("btn-prompt").onclick = () => {
+  state.prompt = $("prompt").value.trim();
+  render(state.style);
+};
+$("prompt").addEventListener("keydown", (e) => {
+  if (e.key === "Enter") $("btn-prompt").click();
+});
 
 // ---------- posting & feed ----------
 $("btn-post").onclick = async () => {

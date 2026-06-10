@@ -11,6 +11,9 @@ struct ResultView: View {
 
     private let api = APIClient()
     @State private var tweaks = Tweaks()
+    @State private var instruments: [Instrument] = []
+    @State private var selectedInstruments: [String] = []
+    @State private var prompt = ""
     @State private var isWorking = false
     @State private var post: Post?
     @State private var errorMessage: String?
@@ -25,6 +28,8 @@ struct ResultView: View {
                         .font(.headline)
                     styleChips
                     toolGrid
+                    instrumentChips
+                    promptField
                     Button {
                         Task { await publish() }
                     } label: {
@@ -39,6 +44,7 @@ struct ResultView: View {
             }
         }
         .navigationTitle("Remix")
+        .task { instruments = (try? await api.fetchInstruments()) ?? [] }
         .overlay { if isWorking { ProgressView() } }
     }
 
@@ -68,13 +74,57 @@ struct ResultView: View {
                     highlighted: tweaks.reverse
                 ) { tweaks.reverse.toggle() }
             }
-            if tweaks != Tweaks() {
-                Button("Reset tweaks") {
+            if tweaks != Tweaks() || !selectedInstruments.isEmpty || !prompt.isEmpty {
+                Button("Reset tools") {
                     tweaks = Tweaks()
+                    selectedInstruments = []
+                    prompt = ""
                     Task { await rerender(style: render.style) }
                 }
                 .font(.caption2)
             }
+        }
+    }
+
+    /// One tap toggles an instrument into/out of the mix and re-renders.
+    private var instrumentChips: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack {
+                ForEach(instruments) { instrument in
+                    Button(instrument.label) {
+                        if let index = selectedInstruments.firstIndex(of: instrument.id) {
+                            selectedInstruments.remove(at: index)
+                        } else {
+                            selectedInstruments.append(instrument.id)
+                        }
+                        Task { await rerender(style: render.style) }
+                    }
+                    .font(.caption2)
+                    .buttonStyle(.bordered)
+                    .tint(
+                        selectedInstruments.contains(instrument.id)
+                            ? .pink : .gray
+                    )
+                    .disabled(isWorking)
+                }
+            }
+        }
+    }
+
+    /// watchOS text fields offer dictation, so "describe the sound" works by
+    /// voice: e.g. "an anime villain talking" or "a tired sigh".
+    private var promptField: some View {
+        HStack {
+            TextField("Describe the sound…", text: $prompt)
+                .font(.caption2)
+            Button {
+                Task { await rerender(style: render.style) }
+            } label: {
+                Image(systemName: "sparkles")
+            }
+            .buttonStyle(.bordered)
+            .frame(width: 44)
+            .disabled(isWorking)
         }
     }
 
@@ -114,7 +164,11 @@ struct ResultView: View {
         defer { isWorking = false }
         do {
             render = try await api.renderMemo(
-                memoId: memoId, style: style, tweaks: tweaks
+                memoId: memoId,
+                style: style,
+                tweaks: tweaks,
+                instruments: selectedInstruments,
+                prompt: prompt
             )
             errorMessage = nil
         } catch {

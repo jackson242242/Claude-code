@@ -5,7 +5,7 @@ import os
 from fastapi import APIRouter, HTTPException, Response, UploadFile
 from fastapi.responses import FileResponse
 
-from app.catalog import STYLE_IDS
+from app.catalog import INSTRUMENT_IDS, STYLE_IDS
 from app.providers.registry import music_provider
 from app.schemas import Memo, Render, RenderRequest
 from app.store import MemoRecord, RenderRecord, get_store
@@ -42,8 +42,10 @@ def _render_out(record: RenderRecord) -> Render:
     return Render(
         id=record.id,
         memo_id=record.memo_id,
-        style=record.style,
-        tweaks=record.tweaks,
+        style=record.spec.style,
+        tweaks=record.spec.tweaks,
+        instruments=record.spec.instruments,
+        prompt=record.spec.prompt,
         status=record.status,
         file_url=f"{_public_base_url()}/renders/{record.id}/file",
         created_at=record.created_at,
@@ -75,13 +77,16 @@ def delete_memo(memo_id: str) -> Response:
 def create_render(memo_id: str, request: RenderRequest) -> Render:
     if request.style not in STYLE_IDS:
         raise HTTPException(422, f"Unknown style: {request.style}")
+    unknown = [i for i in request.instruments if i not in INSTRUMENT_IDS]
+    if unknown:
+        raise HTTPException(422, f"Unknown instruments: {', '.join(unknown)}")
     store = get_store()
     memo = store.get_memo(memo_id)
     if memo is None:
         raise HTTPException(404, "Memo not found")
-    record = store.create_render(memo, request.style, request.tweaks)
+    record = store.create_render(memo, request)
     try:
-        music_provider().render(memo.path, request.style, record.path, request.tweaks)
+        music_provider().render(memo.path, record.path, request)
     except Exception:
         store.mark_render(record.id, "failed")
         raise HTTPException(502, "Music rendering failed")
@@ -107,5 +112,5 @@ def download_render(render_id: str) -> FileResponse:
     return FileResponse(
         record.path,
         media_type=media_type,
-        filename=f"{record.style}-{record.id}{record.path.suffix}",
+        filename=f"{record.spec.style}-{record.id}{record.path.suffix}",
     )

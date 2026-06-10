@@ -24,7 +24,7 @@ def _post_out(record: PostRecord) -> Post:
     return Post(
         id=record.id,
         render_id=record.render_id,
-        style=render.style if render else "unknown",
+        style=render.spec.style if render else "unknown",
         author=record.author,
         caption=record.caption,
         likes=record.likes,

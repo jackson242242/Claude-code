@@ -13,6 +13,10 @@ struct APIClient {
         try await get([Style].self, path: "/styles")
     }
 
+    func fetchInstruments() async throws -> [Instrument] {
+        try await get([Instrument].self, path: "/instruments")
+    }
+
     func uploadMemo(fileURL: URL) async throws -> Memo {
         let boundary = "vmb-\(UUID().uuidString)"
         var request = URLRequest(url: baseURL.appendingPathComponent("/memos"))
@@ -39,12 +43,18 @@ struct APIClient {
     }
 
     func renderMemo(
-        memoId: String, style: String, tweaks: Tweaks = Tweaks()
+        memoId: String,
+        style: String,
+        tweaks: Tweaks = Tweaks(),
+        instruments: [String] = [],
+        prompt: String = ""
     ) async throws -> Render {
         try await post(
             Render.self,
             path: "/memos/\(memoId)/renders",
-            body: RenderRequest(style: style, tweaks: tweaks)
+            body: RenderRequest(
+                style: style, tweaks: tweaks, instruments: instruments, prompt: prompt
+            )
         )
     }
 

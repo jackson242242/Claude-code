@@ -25,6 +25,12 @@ class Style(CamelModel):
     description: str
 
 
+class Instrument(CamelModel):
+    id: str
+    label: str
+    description: str
+
+
 class Tweaks(CamelModel):
     """One-click adjustments applied on top of a style, always re-rendered
     from the original memo (tools never stack on a previous render)."""
@@ -36,8 +42,15 @@ class Tweaks(CamelModel):
 
 
 class RenderRequest(CamelModel):
+    """Everything that shapes a render: the style, one-click tweaks, the
+    instruments to mix in, and a free-text prompt describing the sound
+    (e.g. "a tired sigh", "an anime villain talking"). Providers receive
+    this whole spec."""
+
     style: str
     tweaks: Tweaks = Field(default_factory=Tweaks)
+    instruments: list[str] = Field(default_factory=list, max_length=5)
+    prompt: str = Field(default="", max_length=200)
 
 
 class Render(CamelModel):
@@ -45,6 +58,8 @@ class Render(CamelModel):
     memo_id: str
     style: str
     tweaks: Tweaks
+    instruments: list[str]
+    prompt: str
     status: str
     file_url: str
     created_at: str

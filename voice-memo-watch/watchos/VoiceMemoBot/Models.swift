@@ -8,6 +8,12 @@ struct Style: Codable, Identifiable, Hashable {
     let description: String
 }
 
+struct Instrument: Codable, Identifiable, Hashable {
+    let id: String
+    let label: String
+    let description: String
+}
+
 struct Memo: Codable, Identifiable {
     let id: String
     let filename: String
@@ -27,6 +33,8 @@ struct Tweaks: Codable, Equatable {
 struct RenderRequest: Codable {
     let style: String
     let tweaks: Tweaks
+    var instruments: [String] = []
+    var prompt: String = ""
 }
 
 struct Render: Codable, Identifiable {
@@ -34,6 +42,8 @@ struct Render: Codable, Identifiable {
     let memoId: String
     let style: String
     let tweaks: Tweaks
+    let instruments: [String]
+    let prompt: String
     let status: String
     let fileUrl: String
     let createdAt: String

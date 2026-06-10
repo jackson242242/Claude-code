@@ -33,6 +33,18 @@ def test_styles_catalog(client: TestClient) -> None:
     assert all({"id", "label", "description"} <= set(s) for s in styles)
 
 
+def test_instruments_catalog(client: TestClient) -> None:
+    instruments = client.get("/instruments").json()
+    assert {i["id"] for i in instruments} == {
+        "piano",
+        "strings",
+        "synth",
+        "flute",
+        "drums",
+    }
+    assert all({"id", "label", "description"} <= set(i) for i in instruments)
+
+
 def test_upload_serializes_camel_case(client: TestClient) -> None:
     memo = _upload(client)
     assert memo["contentType"] == "audio/wav"
@@ -68,6 +80,8 @@ def test_render_and_download_flow(client: TestClient) -> None:
         "volume": 1.0,
         "reverse": False,
     }
+    assert body["instruments"] == []
+    assert body["prompt"] == ""
 
     fetched = client.get(f"/renders/{body['id']}")
     assert fetched.status_code == 200
@@ -109,6 +123,45 @@ def test_render_rejects_out_of_range_tweaks(client: TestClient) -> None:
     assert response.json()["error"]["type"] == "validation_error"
 
 
+def test_render_with_instruments_and_prompt(client: TestClient) -> None:
+    memo = _upload(client)
+    plain = client.post(
+        f"/memos/{memo['id']}/renders", json={"style": "acoustic"}
+    ).json()
+    remixed = client.post(
+        f"/memos/{memo['id']}/renders",
+        json={
+            "style": "acoustic",
+            "instruments": ["piano", "drums"],
+            "prompt": "a demon villain talks in a cave",
+        },
+    ).json()
+    assert remixed["instruments"] == ["piano", "drums"]
+    assert remixed["prompt"] == "a demon villain talks in a cave"
+
+    plain_audio = client.get(f"/renders/{plain['id']}/file").content
+    remixed_audio = client.get(f"/renders/{remixed['id']}/file").content
+    assert plain_audio != remixed_audio
+
+
+def test_render_rejects_unknown_instrument_and_long_prompt(
+    client: TestClient,
+) -> None:
+    memo = _upload(client)
+    unknown = client.post(
+        f"/memos/{memo['id']}/renders",
+        json={"style": "lofi", "instruments": ["kazoo"]},
+    )
+    assert unknown.status_code == 422
+    assert "kazoo" in unknown.json()["error"]["message"]
+
+    too_long = client.post(
+        f"/memos/{memo['id']}/renders",
+        json={"style": "lofi", "prompt": "x" * 201},
+    )
+    assert too_long.status_code == 422
+
+
 def test_render_unknown_style_and_memo(client: TestClient) -> None:
     memo = _upload(client)
     bad_style = client.post(f"/memos/{memo['id']}/renders", json={"style": "polka"})
@@ -124,7 +177,7 @@ def test_render_failure_marks_failed(
     from app.routers import memos as memos_router
 
     class Boom(MusicProvider):
-        def render(self, input_path, style, output_path, tweaks=None) -> None:
+        def render(self, input_path, output_path, spec) -> None:
             raise RuntimeError("kaput")
 
     monkeypatch.setattr(memos_router, "music_provider", lambda: Boom())
