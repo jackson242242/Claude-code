@@ -4,9 +4,15 @@ import SwiftUI
 struct VoiceMemoBotApp: App {
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
-                RecordView()
+            TabView {
+                NavigationStack {
+                    RecordView()
+                }
+                NavigationStack {
+                    FeedView()
+                }
             }
+            .tabViewStyle(.verticalPage)
         }
     }
 }

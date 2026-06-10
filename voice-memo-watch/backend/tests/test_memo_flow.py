@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import wave
+
 from fastapi.testclient import TestClient
 
 from tests.conftest import make_wav
@@ -15,6 +17,14 @@ def _upload(client: TestClient) -> dict:
 
 def test_health(client: TestClient) -> None:
     assert client.get("/health").json() == {"status": "ok"}
+
+
+def test_web_prototype_served_at_root(client: TestClient) -> None:
+    page = client.get("/")
+    assert page.status_code == 200
+    assert "VoiceMemoBot" in page.text
+    assert 'id="tab-feed"' in page.text  # the platform feed tab
+    assert 'id="tools"' in page.text  # one-click remix tools
 
 
 def test_styles_catalog(client: TestClient) -> None:
@@ -43,7 +53,7 @@ def test_upload_rejects_empty_file(client: TestClient) -> None:
     assert response.status_code == 422
 
 
-def test_render_download_and_share_flow(client: TestClient) -> None:
+def test_render_and_download_flow(client: TestClient) -> None:
     memo = _upload(client)
 
     render = client.post(f"/memos/{memo['id']}/renders", json={"style": "lofi"})
@@ -52,7 +62,12 @@ def test_render_download_and_share_flow(client: TestClient) -> None:
     assert body["status"] == "ready"
     assert body["memoId"] == memo["id"]
     assert body["fileUrl"].endswith(f"/renders/{body['id']}/file")
-    assert body["shareUrl"].endswith(f"/share/{body['id']}")
+    assert body["tweaks"] == {
+        "speed": 1.0,
+        "echo": 0.0,
+        "volume": 1.0,
+        "reverse": False,
+    }
 
     fetched = client.get(f"/renders/{body['id']}")
     assert fetched.status_code == 200
@@ -63,10 +78,35 @@ def test_render_download_and_share_flow(client: TestClient) -> None:
     assert audio.content[:4] == b"RIFF"
     assert audio.content != make_wav()  # the transform audibly changed the file
 
-    page = client.get(f"/share/{body['id']}")
-    assert page.status_code == 200
-    assert "<audio" in page.text
-    assert 'property="og:audio"' in page.text
+
+def test_render_with_tweaks_changes_output(client: TestClient) -> None:
+    memo = _upload(client)
+    plain = client.post(
+        f"/memos/{memo['id']}/renders", json={"style": "acoustic"}
+    ).json()
+    tweaked = client.post(
+        f"/memos/{memo['id']}/renders",
+        json={
+            "style": "acoustic",
+            "tweaks": {"speed": 1.5, "echo": 0.5, "volume": 0.5, "reverse": True},
+        },
+    ).json()
+    assert tweaked["tweaks"]["speed"] == 1.5
+    assert tweaked["tweaks"]["reverse"] is True
+
+    plain_audio = client.get(f"/renders/{plain['id']}/file").content
+    tweaked_audio = client.get(f"/renders/{tweaked['id']}/file").content
+    assert plain_audio != tweaked_audio
+
+
+def test_render_rejects_out_of_range_tweaks(client: TestClient) -> None:
+    memo = _upload(client)
+    response = client.post(
+        f"/memos/{memo['id']}/renders",
+        json={"style": "lofi", "tweaks": {"speed": 9.0}},
+    )
+    assert response.status_code == 422
+    assert response.json()["error"]["type"] == "validation_error"
 
 
 def test_render_unknown_style_and_memo(client: TestClient) -> None:
@@ -84,7 +124,7 @@ def test_render_failure_marks_failed(
     from app.routers import memos as memos_router
 
     class Boom(MusicProvider):
-        def render(self, input_path, style, output_path) -> None:
+        def render(self, input_path, style, output_path, tweaks=None) -> None:
             raise RuntimeError("kaput")
 
     monkeypatch.setattr(memos_router, "music_provider", lambda: Boom())
@@ -93,12 +133,13 @@ def test_render_failure_marks_failed(
     assert response.status_code == 502
 
 
-def test_delete_memo_removes_renders(client: TestClient) -> None:
+def test_delete_memo_removes_renders_and_posts(client: TestClient) -> None:
     memo = _upload(client)
     render = client.post(
         f"/memos/{memo['id']}/renders", json={"style": "cinematic"}
     ).json()
+    post = client.post("/posts", json={"renderId": render["id"]}).json()
     assert client.delete(f"/memos/{memo['id']}").status_code == 204
     assert client.delete(f"/memos/{memo['id']}").status_code == 404
     assert client.get(f"/renders/{render['id']}").status_code == 404
-    assert client.get(f"/share/{render['id']}").status_code == 404
+    assert client.get(f"/posts/{post['id']}").status_code == 404

@@ -6,13 +6,14 @@ struct StylePickerView: View {
     private let api = APIClient()
     @State private var styles: [Style] = []
     @State private var isWorking = false
+    @State private var memoId: String?
     @State private var render: Render?
     @State private var errorMessage: String?
 
     var body: some View {
         Group {
-            if let render {
-                ShareView(render: render)
+            if let render, let memoId {
+                ResultView(memoId: memoId, styles: styles, render: render)
             } else if isWorking {
                 ProgressView("Remixing…")
             } else {
@@ -52,6 +53,7 @@ struct StylePickerView: View {
         defer { isWorking = false }
         do {
             let memo = try await api.uploadMemo(fileURL: memoFileURL)
+            memoId = memo.id
             render = try await api.renderMemo(memoId: memo.id, style: style.id)
         } catch {
             errorMessage = "Remix failed — try again"

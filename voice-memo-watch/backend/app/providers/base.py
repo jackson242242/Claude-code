@@ -9,12 +9,21 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 from pathlib import Path
 
+from app.schemas import Tweaks
+
 
 class MusicProvider(ABC):
     @abstractmethod
-    def render(self, input_path: Path, style: str, output_path: Path) -> None:
+    def render(
+        self,
+        input_path: Path,
+        style: str,
+        output_path: Path,
+        tweaks: Tweaks | None = None,
+    ) -> None:
         """Transform the memo at ``input_path`` into ``output_path``.
 
-        Raises on failure; the caller owns render status bookkeeping.
+        ``tweaks`` always apply to the original memo, never to a previous
+        render. Raises on failure; the caller owns render status bookkeeping.
         """
         raise NotImplementedError

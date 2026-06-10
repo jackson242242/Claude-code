@@ -38,22 +38,52 @@ struct APIClient {
         return try JSONDecoder().decode(Memo.self, from: data)
     }
 
-    func renderMemo(memoId: String, style: String) async throws -> Render {
-        var request = URLRequest(
-            url: baseURL.appendingPathComponent("/memos/\(memoId)/renders")
+    func renderMemo(
+        memoId: String, style: String, tweaks: Tweaks = Tweaks()
+    ) async throws -> Render {
+        try await post(
+            Render.self,
+            path: "/memos/\(memoId)/renders",
+            body: RenderRequest(style: style, tweaks: tweaks)
         )
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = try JSONEncoder().encode(["style": style])
-        let (data, response) = try await URLSession.shared.data(for: request)
-        try Self.ensureSuccess(response)
-        return try JSONDecoder().decode(Render.self, from: data)
+    }
+
+    func createPost(
+        renderId: String, author: String, caption: String
+    ) async throws -> Post {
+        try await post(
+            Post.self,
+            path: "/posts",
+            body: PostRequest(renderId: renderId, author: author, caption: caption)
+        )
+    }
+
+    func fetchFeed() async throws -> [Post] {
+        try await get([Post].self, path: "/posts")
+    }
+
+    func likePost(postId: String) async throws -> Post {
+        try await post(Post.self, path: "/posts/\(postId)/like", body: nil as Int?)
     }
 
     private func get<T: Decodable>(_ type: T.Type, path: String) async throws -> T {
         let (data, response) = try await URLSession.shared.data(
             from: baseURL.appendingPathComponent(path)
         )
+        try Self.ensureSuccess(response)
+        return try JSONDecoder().decode(type, from: data)
+    }
+
+    private func post<T: Decodable, Body: Encodable>(
+        _ type: T.Type, path: String, body: Body?
+    ) async throws -> T {
+        var request = URLRequest(url: baseURL.appendingPathComponent(path))
+        request.httpMethod = "POST"
+        if let body {
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.httpBody = try JSONEncoder().encode(body)
+        }
+        let (data, response) = try await URLSession.shared.data(for: request)
         try Self.ensureSuccess(response)
         return try JSONDecoder().decode(type, from: data)
     }

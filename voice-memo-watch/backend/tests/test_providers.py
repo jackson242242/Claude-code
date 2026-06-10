@@ -7,7 +7,8 @@ import pytest
 
 from app.providers.mock_music import MockMusicProvider
 from app.providers.registry import music_provider
-from app.providers.replicate_musicgen import ReplicateMusicGenProvider
+from app.providers.replicate_musicgen import ReplicateMusicGenProvider, _prompt_for
+from app.schemas import Tweaks
 from tests.conftest import make_wav
 
 
@@ -30,6 +31,32 @@ def test_mock_acoustic_attenuates(tmp_path: Path) -> None:
     MockMusicProvider().render(source, "acoustic", out)
     with wave.open(str(out)) as b:
         assert b.getframerate() == 8000  # no tempo change for acoustic
+
+
+def test_mock_applies_speed_and_reverse_tweaks(tmp_path: Path) -> None:
+    source, out = tmp_path / "in.wav", tmp_path / "out.wav"
+    _write_wav(source)
+    MockMusicProvider().render(
+        source, "acoustic", out, Tweaks(speed=2.0, reverse=True)
+    )
+    with wave.open(str(source)) as a, wave.open(str(out)) as b:
+        assert b.getframerate() == a.getframerate() * 2
+        original = a.readframes(a.getnframes())
+        reversed_frames = b.readframes(b.getnframes())
+        assert len(original) == len(reversed_frames)
+        assert original != reversed_frames
+        # reversing frame-by-frame: last frame of the output is the first of
+        # the (attenuated) input
+        assert reversed_frames[-2:] != original[-2:]
+
+
+def test_mock_tweak_echo_changes_samples(tmp_path: Path) -> None:
+    source, plain, echoed = tmp_path / "in.wav", tmp_path / "a.wav", tmp_path / "b.wav"
+    _write_wav(source)
+    provider = MockMusicProvider()
+    provider.render(source, "acoustic", plain)
+    provider.render(source, "acoustic", echoed, Tweaks(echo=0.8))
+    assert plain.read_bytes() != echoed.read_bytes()
 
 
 def test_mock_passes_through_non_wav(tmp_path: Path) -> None:
@@ -91,6 +118,14 @@ def test_replicate_provider_polls_and_downloads(tmp_path: Path) -> None:
     )
     provider.render(source, "edm", out)
     assert out.read_bytes() == b"generated-music"
+
+
+def test_replicate_tweaks_become_prompt_modifiers() -> None:
+    prompt = _prompt_for("edm", Tweaks(speed=1.5, echo=0.5, reverse=True))
+    assert "fast tempo" in prompt
+    assert "echo" in prompt
+    assert "reversed" in prompt
+    assert _prompt_for("edm", Tweaks()) == _prompt_for("edm", Tweaks(volume=2.0))
 
 
 def test_replicate_provider_raises_on_failure(tmp_path: Path) -> None:

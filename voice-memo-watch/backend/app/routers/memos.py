@@ -39,14 +39,13 @@ def _memo_out(record: MemoRecord) -> Memo:
 
 
 def _render_out(record: RenderRecord) -> Render:
-    base = _public_base_url()
     return Render(
         id=record.id,
         memo_id=record.memo_id,
         style=record.style,
+        tweaks=record.tweaks,
         status=record.status,
-        file_url=f"{base}/renders/{record.id}/file",
-        share_url=f"{base}/share/{record.id}",
+        file_url=f"{_public_base_url()}/renders/{record.id}/file",
         created_at=record.created_at,
     )
 
@@ -80,9 +79,9 @@ def create_render(memo_id: str, request: RenderRequest) -> Render:
     memo = store.get_memo(memo_id)
     if memo is None:
         raise HTTPException(404, "Memo not found")
-    record = store.create_render(memo, request.style)
+    record = store.create_render(memo, request.style, request.tweaks)
     try:
-        music_provider().render(memo.path, request.style, record.path)
+        music_provider().render(memo.path, request.style, record.path, request.tweaks)
     except Exception:
         store.mark_render(record.id, "failed")
         raise HTTPException(502, "Music rendering failed")

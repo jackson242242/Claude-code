@@ -6,13 +6,17 @@ World Cup backend.
 """
 from __future__ import annotations
 
+from pathlib import Path
+
 from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import HTMLResponse, JSONResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
-from app.routers import memos, share, styles
+from app.routers import memos, posts, styles
+
+_WEB_INDEX = Path(__file__).parent / "web" / "index.html"
 
 app = FastAPI(title="VoiceMemoBot API", version="0.1.0")
 
@@ -57,6 +61,12 @@ def health() -> dict[str, str]:
     return {"status": "ok"}
 
 
+@app.get("/", response_class=HTMLResponse, tags=["meta"])
+def web_app() -> HTMLResponse:
+    """The web prototype: record → remix (tools 1 click away) → post → feed."""
+    return HTMLResponse(_WEB_INDEX.read_text(encoding="utf-8"))
+
+
 app.include_router(styles.router)
 app.include_router(memos.router)
-app.include_router(share.router)
+app.include_router(posts.router)

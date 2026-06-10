@@ -17,6 +17,7 @@ from pathlib import Path
 import httpx
 
 from app.providers.base import MusicProvider
+from app.schemas import Tweaks
 
 _API_URL = "https://api.replicate.com/v1/predictions"
 # meta/musicgen "melody" variant (pin a specific version hash in production).
@@ -28,6 +29,20 @@ _PROMPTS: dict[str, str] = {
     "acoustic": "soft acoustic guitar arrangement, intimate, unplugged",
     "cinematic": "sweeping cinematic orchestral score, epic trailer mood",
 }
+
+
+def _prompt_for(style: str, tweaks: Tweaks) -> str:
+    """MusicGen has no signal-level knobs, so tweaks become prompt modifiers."""
+    parts = [_PROMPTS.get(style, _PROMPTS["lofi"])]
+    if tweaks.speed > 1.0:
+        parts.append("fast tempo")
+    elif tweaks.speed < 1.0:
+        parts.append("slow tempo")
+    if tweaks.echo > 0:
+        parts.append("spacious echo and reverb")
+    if tweaks.reverse:
+        parts.append("reversed, experimental texture")
+    return ", ".join(parts)
 
 
 class ReplicateMusicGenProvider(MusicProvider):
@@ -44,14 +59,20 @@ class ReplicateMusicGenProvider(MusicProvider):
         self._poll_interval = poll_interval
         self._max_wait = max_wait
 
-    def render(self, input_path: Path, style: str, output_path: Path) -> None:
+    def render(
+        self,
+        input_path: Path,
+        style: str,
+        output_path: Path,
+        tweaks: Tweaks | None = None,
+    ) -> None:
         audio_b64 = base64.b64encode(input_path.read_bytes()).decode()
         created = self._client.post(
             _API_URL,
             json={
                 "version": _MODEL_VERSION,
                 "input": {
-                    "prompt": _PROMPTS.get(style, _PROMPTS["lofi"]),
+                    "prompt": _prompt_for(style, tweaks or Tweaks()),
                     "melody": f"data:audio/wav;base64,{audio_b64}",
                 },
             },
