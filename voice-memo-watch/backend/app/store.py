@@ -1,0 +1,123 @@
+"""In-memory metadata store + on-disk audio storage.
+
+Mirrors the main backend's in-memory repository pattern (thread-safe dicts,
+process-local state). The interface is intentionally narrow so the production
+swap — S3/R2 for files, Postgres for metadata — stays contained to this module.
+"""
+from __future__ import annotations
+
+import os
+import threading
+import uuid
+from dataclasses import dataclass, field
+from datetime import datetime, timezone
+from pathlib import Path
+
+
+def _now() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+
+def new_id() -> str:
+    return uuid.uuid4().hex[:12]
+
+
+@dataclass
+class MemoRecord:
+    id: str
+    filename: str
+    content_type: str
+    size_bytes: int
+    path: Path
+    created_at: str = field(default_factory=_now)
+
+
+@dataclass
+class RenderRecord:
+    id: str
+    memo_id: str
+    style: str
+    status: str
+    path: Path
+    created_at: str = field(default_factory=_now)
+
+
+class Store:
+    def __init__(self, storage_dir: Path) -> None:
+        self.storage_dir = storage_dir
+        storage_dir.mkdir(parents=True, exist_ok=True)
+        self._memos: dict[str, MemoRecord] = {}
+        self._renders: dict[str, RenderRecord] = {}
+        self._lock = threading.Lock()
+
+    def save_memo(self, filename: str, content_type: str, data: bytes) -> MemoRecord:
+        memo_id = new_id()
+        suffix = Path(filename).suffix or ".bin"
+        path = self.storage_dir / f"memo-{memo_id}{suffix}"
+        path.write_bytes(data)
+        record = MemoRecord(
+            id=memo_id,
+            filename=filename,
+            content_type=content_type,
+            size_bytes=len(data),
+            path=path,
+        )
+        with self._lock:
+            self._memos[memo_id] = record
+        return record
+
+    def get_memo(self, memo_id: str) -> MemoRecord | None:
+        with self._lock:
+            return self._memos.get(memo_id)
+
+    def delete_memo(self, memo_id: str) -> bool:
+        with self._lock:
+            record = self._memos.pop(memo_id, None)
+            renders = [r for r in self._renders.values() if r.memo_id == memo_id]
+            for render in renders:
+                self._renders.pop(render.id, None)
+        if record is None:
+            return False
+        record.path.unlink(missing_ok=True)
+        for render in renders:
+            render.path.unlink(missing_ok=True)
+        return True
+
+    def create_render(self, memo: MemoRecord, style: str) -> RenderRecord:
+        render_id = new_id()
+        path = self.storage_dir / f"render-{render_id}{memo.path.suffix}"
+        record = RenderRecord(
+            id=render_id,
+            memo_id=memo.id,
+            style=style,
+            status="processing",
+            path=path,
+        )
+        with self._lock:
+            self._renders[render_id] = record
+        return record
+
+    def mark_render(self, render_id: str, status: str) -> None:
+        with self._lock:
+            record = self._renders.get(render_id)
+            if record is not None:
+                record.status = status
+
+    def get_render(self, render_id: str) -> RenderRecord | None:
+        with self._lock:
+            return self._renders.get(render_id)
+
+
+_store: Store | None = None
+
+
+def get_store() -> Store:
+    global _store
+    if _store is None:
+        _store = Store(Path(os.environ.get("VOICEMEMO_STORAGE_DIR", "var/storage")))
+    return _store
+
+
+def reset_store_for_tests() -> None:
+    global _store
+    _store = None

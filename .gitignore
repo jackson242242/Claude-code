@@ -38,3 +38,6 @@ backend/.venv/
 coverage.xml
 htmlcov/
 *.egg-info/
+
+# voice memo watch app
+voice-memo-watch/backend/var/
