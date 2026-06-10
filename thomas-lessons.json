@@ -1,139 +1,139 @@
 {
   "_meta": {
     "lastUpdated": "2026-06-10",
+    "targetAge": "10-14",
     "updatedBy": "last30days-skill synthesis",
     "week": "2026-W24",
-    "sources": [
-      "Tech Insider / Meta 2026 Q1 Earnings",
-      "Google Alphabet Q1 2026 Earnings",
-      "BlackRock AI Playbook 2026",
-      "Grand View Research 2026",
-      "Morgan Stanley Research March 2026",
-      "Motley Fool / Berkshire 2026 Annual Letter",
-      "Google DeepMind / LLM Stats June 2026",
-      "NVIDIA Developer Blog June 2026",
-      "Google Research / ICLR 2026",
-      "Microsoft Build 2026",
-      "Reuters / AMD Investor Relations June 2026",
-      "Google AI Blog June 2026",
-      "Info-Tech Research / Medium June 2026"
-    ],
-    "howToUpdate": "Run: /last30days long-term investing AND /last30days AI LLM 2026, then paste synthesized output into this file following the same schema."
+    "howToUpdate": "Run /last30days on 'investing for kids' and 'AI explained simply', then rewrite lessons in child-friendly language following this schema."
   },
   "invest": [
     {
-      "id": "inv-w24-1",
-      "title": "Meta 2026 资本支出 $1,250亿 — AI基础设施供应链的投资地图",
-      "hook": "Meta本周披露2026年资本支出中位数 $1,250亿，超过120个国家的GDP。这不是一笔费用——这是一张写给AI基础设施供应商的万亿支票。",
-      "body": "当科技巨头以国家级规模投入AI基础设施，<strong>受益链条远不止AI公司本身</strong>：英伟达/AMD（芯片）、台积电（代工）、电力公司（数据中心用电）、数据中心 REITs（土地+建筑）、光纤/网络设备商——都是这场资本支出的收款方。",
-      "insight": "Thomas的思考练习：画出一个AI数据中心从0到运行需要什么——芯片、服务器、建筑、电力、冷却、光纤。每一个环节背后都是可投资的公司。",
-      "source": "Tech Insider / Meta 2026 Q1 Earnings"
+      "id": "inv-1",
+      "question": "如果你有 $100，放在枕头下面 30 年后还是 $100。但如果你"种"进股市，会变多少？",
+      "answer": "$100 以年化 10% 种进去，30 年后长成 <strong>$1,745</strong>！不是你多存了钱，是钱自己生出了新的钱，新的钱又生出更多钱……这叫 <strong>复利</strong>，巴菲特说这是世界上最厉害的魔法。",
+      "analogy": "就像雪球从山顶滚下来——开始很小，但越滚越大，到山脚变成一颗超级大雪球。",
+      "challenge": "算一算：如果你现在每月存 $20，40 年后（年化 10%）大约有多少钱？答案比你想的大很多！",
+      "funFact": "巴菲特 95% 的财富是他 50 岁之后才赚到的——靠的就是这颗雪球滚了几十年。",
+      "source": "GoHenry / EasyPeasyFinance"
     },
     {
-      "id": "inv-w24-2",
-      "title": "Google Cloud 积压合同 $2,400亿（+55%）— 比营收更重要的领先指标",
-      "hook": "Google Cloud合同积压金额达 $2,400亿，同比增长55%，相当于3.4年的预期营收锁定在手。",
-      "body": "Backlog（合同待执行金额）是分析高增速科技公司的<strong>领先指标</strong>，比当季营收更能预测未来。当积压合同同比增长55%，意味着未来3年收入增长几乎已经锁定，而市场的短期担忧往往是买入机会。",
-      "insight": "学会用 Backlog 替代 P/E 分析成长股：P/E 看过去，Backlog 看未来。找到一家你关注的科技公司，查查它的合同积压是否在增长。",
-      "source": "Google Alphabet Q1 2026 Earnings"
+      "id": "inv-2",
+      "question": "你知道你可以"拥有"Apple、Nike、McDonald's 的一小块吗？怎么做到的？",
+      "answer": "买一股 <strong>股票</strong>，就是买一家公司的一小片。公司赚钱了，你那一小片也跟着增值。苹果公司有数十亿股，你买一股就是苹果几十亿分之一的小老板！",
+      "analogy": "就像一块大披萨切成很多片，你买了一片，披萨店以后越来越火，你那片也越来越值钱。",
+      "challenge": "今天问一个大人：我们家有没有投资任何股票？他们投资的是什么公司？",
+      "funFact": "现在很多 App 可以用 $1 买一小片苹果股票，不需要很多钱才能开始！",
+      "source": "Powwow LLC / CodaKid Investing for Kids"
     },
     {
-      "id": "inv-w24-3",
-      "title": "88% 企业的AI投资已产生实际营收增长 — 这不是泡沫的样子",
-      "hook": "2026年企业调查：88%的公司称AI驱动了营收增长，30%增幅超过10%；86%计划继续加大AI预算。",
-      "body": "区分泡沫与结构性增长的核心：<strong>泡沫的特征是预期远超基本面，结构性增长的特征是基本面持续改善</strong>。当88%企业已看到真实营收增长，这更像2000年代的移动互联网，而不是1999年的dot-com。",
-      "insight": "每次你听到"AI是泡沫"时，问一个问题：这家说泡沫的人能列出三个AI没有推动实际营收的大型行业吗？数据比观点更有说服力。",
-      "source": "Enterprise AI Survey 2026 / BlackRock AI Playbook"
+      "id": "inv-3",
+      "question": "与其赌一家公司，不如同时"拥有"美国 500 家最强公司——这可能吗？",
+      "answer": "可以！这叫 <strong>指数基金</strong>（比如 VOO 或 SPY）。买一份，你就同时持有苹果、微软、谷歌、特斯拉……等 500 家公司的一小片。一家表现差没关系，其他 499 家还在帮你赚钱。",
+      "analogy": "就像不要把所有糖果押在一颗扭蛋上——买整个扭蛋机，不管转出哪颗你都有份！",
+      "challenge": "上网搜索"S&P 500 过去 10 年表现"，看看这 500 家公司合起来的成绩有多厉害。",
+      "funFact": "巴菲特说：'对大多数人来说，买指数基金就是最聪明的投资。' 连世界最强投资人都这样说！",
+      "source": "Motley Fool / Berkshire Hathaway Annual Letter 2026"
     },
     {
-      "id": "inv-w24-4",
-      "title": "Buffett的雪球公式：长坡+湿雪 = 财富复利的物理学",
-      "hook": "2026年巴菲特再次在年度信中重申：对大多数人来说，定投S&P500指数基金是"最好的选择"——每月 $200，40年变 $100万。",
-      "body": "巴菲特说复利就像滚雪球，需要"很长的坡和足够湿的雪"。<strong>长坡 = 时间（越早越好），湿雪 = 高质量的投资标的（宽基指数）</strong>。以年化10%计算：$200/月，30年→$45万，40年→$106万。多出10年的坡，财富翻一倍以上。",
-      "insight": "今天的行动：打开你的银行或券商账户，设置一个哪怕 $50/月 的自动定投S&P500指数基金。开始比金额更重要。",
-      "source": "Motley Fool / Berkshire Hathaway 2026 Annual Letter"
+      "id": "inv-4",
+      "question": "通货膨胀是什么？为什么把钱藏在床底下是个坏主意？",
+      "answer": "每年东西都会涨价一点点（大约 3%），这叫 <strong>通货膨胀</strong>。今天 $100 能买的东西，30 年后只需要 <strong>$41</strong> 就能买到同样的量……等等，这不对——应该说：30 年后同样的东西要花 <strong>$243</strong>！藏在床底的钱"变穷"了，什么都没做就输了。",
+      "analogy": "就像冰淇淋在太阳下融化——不是你吃掉了它，只是放着放着就少了。",
+      "challenge": "问爸爸妈妈：他们小时候一杯珍珠奶茶多少钱？现在多少钱？这就是通货膨胀的力量！",
+      "funFact": "这也是为什么投资很重要——你的钱要跑赢通货膨胀，不然就是在悄悄变少。",
+      "source": "Trading Costs / Protect Families Financial Guide 2026"
     },
     {
-      "id": "inv-w24-5",
-      "title": "生成AI市场 CAGR 40.8% 到2033 — 72法则告诉你这意味着什么",
-      "hook": "Grand View Research预测：2026-2033年生成AI市场年复合增长率40.8%，全球AI市场届时将超过万亿美元。",
-      "body": "用<strong>72法则</strong>快速算：72 ÷ 40.8 ≈ 每1.8年市场规模翻倍。这是历史上极少见的高速赛道，但高增速通常已被市场定价进去了——买在热点之后往往买贵了。聪明的策略是：指数化持有而非押注单一公司，用时间积累而非择时进出。",
-      "insight": "用72法则评估任何投资：年化8%需9年翻倍，年化12%需6年翻倍，年化40%需1.8年翻倍——但高速赛道风险也成倍放大，估值往往已经透支。",
-      "source": "Grand View Research 2026 / Motley Fool"
+      "id": "inv-5",
+      "question": "全球最大的科技公司今年花了多少钱建造 AI？金额大到难以想象……",
+      "answer": "2026 年，Meta（做 Facebook 的公司）一年要花 <strong>1,250 亿美元</strong>建造 AI 电脑和数据中心——这比全球 120 个国家的 GDP 还多！这些钱造就了很多工作机会和新公司。",
+      "analogy": "就像在建一座超级大城市，要买砖头（芯片）、雇工人（工程师）、通水电（电力公司）——每个环节都有人在赚钱。",
+      "challenge": "1,250 亿美元 = $125,000,000,000。试着写出这个数字，数数有几个零！",
+      "funFact": "这笔钱如果分给全球所有小学生，每人可以拿到约 $6,000！",
+      "source": "Tech Insider / Meta Q1 2026 Earnings"
     },
     {
-      "id": "inv-w24-6",
-      "title": "大科技 $6,500亿资本支出 — 正在重塑全球经济的不可见力量",
-      "hook": "2026年全球大科技公司AI资本支出合计接近 $6,500亿，这笔钱正在重塑电力、建筑、芯片、劳动力市场。",
-      "body": "历史上每次基础设施革命（铁路1850s、电力1900s、互联网1990s）都创造了<strong>巨大的间接投资机会</strong>：不只是技术本身，还有支撑技术运行的所有配套产业。AI时代的"铁路建设者"包括：电网扩容（NextEra Energy）、高压直流输电、水冷技术公司。",
-      "insight": "这周找一个"AI基础设施的间接受益者"，研究它的商业模式——可能是电力公司、冷却系统商、或特种建筑材料商。",
-      "source": "Tech Insider / Big Tech Capex Report 2026"
+      "id": "inv-6",
+      "question": "为什么"越早开始"比"存越多钱"更重要？",
+      "answer": "从 14 岁开始，每月存 $50，到 65 岁（年化 8%）大约有 <strong>$350,000</strong>。但如果等到 24 岁才开始同样的计划，最后只有约 $150,000。<strong>早 10 年开始，多赚超过 $200,000</strong>——就算多存钱也追不回来！",
+      "analogy": "就像种树：10 年前种的树比今天种的树高很多，就算你今天用更多肥料也没用——时间才是关键。",
+      "challenge": "问问自己：如果我从今天开始，每周存下一点零用钱，20 年后会是多少？",
+      "funFact": "巴菲特 11 岁就买了第一支股票。你现在开始，其实已经比很多大人早了！",
+      "source": "Powwow LLC Ages 10-14 Financial Guide"
     },
     {
-      "id": "inv-w24-7",
-      "title": "Morgan Stanley警告：AI突破已来，大多数人没准备好",
-      "hook": "Morgan Stanley在2026年3月报告指出：AI能力将在今年出现重大跃升，但全球机构和个人投资者仍未调整组合以反映这一变化。",
-      "body": "历史上每次技术范式转移，<strong>行动和不行动之间的回报差距都是非线性的</strong>：互联网1995-2000年间，早期投资者获得10-100倍回报；2007年iPhone发布后，移动互联网公司在5年内完成了对传统行业的颠覆。等到所有人都"准备好"时，超额回报机会已经定价完毕。",
-      "insight": "准备好不是指押重注，而是指系统性地理解这场变革：每天读一篇AI和投资交叉领域的内容（就像你现在做的），三年后你的认知资产将远超大多数人。",
-      "source": "Morgan Stanley Research / Fortune March 2026"
+      "id": "inv-7",
+      "question": "什么是 AI 股票和 AI ETF？为什么大家都说要投资 AI？",
+      "answer": "AI 公司（像 Nvidia、Microsoft、Google）正在高速增长。研究预测 AI 市场每 <strong>1.8 年就会翻倍</strong>！专门买这类公司的基金叫 <strong>AI ETF</strong>，让你一次投资很多 AI 公司，不用自己选哪家最强。",
+      "analogy": "就像你不确定哪个超级英雄最厉害，但你可以投资整个复仇者联盟的电影公司——只要 Marvel 赚钱，你就赢！",
+      "challenge": "在新闻里找一个你认识的 AI 工具（ChatGPT、Siri、YouTube 推荐），想一想：是哪家公司做的？他们的股票你查得到吗？",
+      "funFact": "2026 年已经有超过 86% 的公司用 AI 来帮他们赚更多钱——AI 已经不是科幻片了！",
+      "source": "Grand View Research 2026 / Motley Fool AI ETFs"
     }
   ],
   "ai": [
     {
-      "id": "ai-w24-1",
-      "title": "Gemini 3.5 Flash：76.2% Terminal-Bench — 速度与精度同时突破的新基准",
-      "hook": "Google发布 Gemini 3.5 Flash，Terminal-Bench 2.1 得分76.2%，速度是上一代的4倍，价格：$1.50/百万输入token，$9/百万输出token。",
-      "body": "AI模型评估的三个维度：<strong>精度（Benchmark分）、速度（延迟）、成本（每token价格）</strong>。过去这三者通常是三角权衡——Gemini 3.5 Flash首次在三个维度同时大幅提升，意味着实时AI应用（语音助手、实时翻译、AI Agent）的经济门槛大幅降低。",
-      "insight": "下次使用AI工具时，注意它的响应速度——那不只是用户体验问题，背后是模型架构效率和云端算力成本的直接体现。",
+      "id": "ai-1",
+      "question": "ChatGPT 怎么知道那么多事？它真的"懂"吗？",
+      "answer": "ChatGPT 读了整个互联网上几乎所有的文字——书、文章、网站、对话……然后它学会了"下一个词该是什么"。所以它看起来很懂，其实是在做超级聪明的填空题。这叫 <strong>大语言模型（LLM）</strong>。",
+      "analogy": "就像你看了一万部电影，现在让你猜下一幕会发生什么——你猜得很准，但不是真的经历过那些故事。",
+      "challenge": "打开 ChatGPT 或 Claude，问它：'你今天的心情怎么样？' 然后问：'你真的有感受吗？' 看它怎么回答！",
+      "funFact": "训练 ChatGPT 用的文字量，如果打印出来，摞起来的高度会比月球到地球的距离还要长！",
+      "source": "CodaKid AI for Kids / SafeAIKids.com"
+    },
+    {
+      "id": "ai-2",
+      "question": "你的手机怎么认识你的脸？这是怎么做到的？",
+      "answer": "这叫 <strong>人脸识别 AI</strong>。它看了几百万张脸的照片，学会了"脸的规律"——眼睛和鼻子的距离、下巴的形状……看到你的脸就能跟记住的"你的脸"对比。速度极快，大概 0.1 秒！",
+      "analogy": "就像你看过很多次一个朋友的脸，现在就算他换了发型戴了帽子，你还是认得出来——AI 也是这样学的。",
+      "challenge": "试试看：把自己的照片用美图软件改变一下（加滤镜、换眼镜），手机还能认出你吗？",
+      "funFact": "现在的 AI 认脸准确率已经超过 99.9%，比大多数人类更准！但它也可能被照片骗到。",
+      "source": "Devoteam AI for Kids / CodaKid"
+    },
+    {
+      "id": "ai-3",
+      "question": "Google 刚刚发布了一个"4倍速度"的 AI——速度为什么这么重要？",
+      "answer": "2026 年 Google 发布了 <strong>Gemini 3.5 Flash</strong>，速度是上一代的 4 倍！速度越快，AI 就能做更多实时的事：你说话它立刻回答、它看视频同步翻译、它帮你改作文不用等……速度就是能力的一部分。",
+      "analogy": "就像你的电脑变快了——以前要等 1 分钟加载的游戏，现在 10 秒就好了。能做一样的事，但快 4 倍，体验完全不一样！",
+      "challenge": "数一数：今天你用了哪些 AI 功能？（手机键盘的预测文字算吗？YouTube 的推荐算吗？）",
+      "funFact": "Gemini 3.5 Flash 每处理 100 万个字（相当于整本哈利波特系列），只需要 $1.5——比人类翻译便宜 1000 倍！",
       "source": "Google DeepMind / LLM Stats June 2026"
     },
     {
-      "id": "ai-w24-2",
-      "title": "NVIDIA Nemotron 3 Ultra 550B — 5500亿参数开源模型意味着什么？",
-      "hook": "NVIDIA于2026年6月4日发布 Nemotron 3 Ultra 550B，总参数5500亿、激活参数550亿，这是目前最大的开源推理模型。",
-      "body": "参数量 ≠ 激活参数量："550B A55B" 的意思是总参数5500亿，但每次推理只激活550亿（MoE混合专家架构）。<strong>这让超大规模模型在普通硬件上变得可运行</strong>。开源5500亿参数意味着：医院、银行、政府机构可以本地部署超强AI，数据永不离开自己的服务器。",
-      "insight": "理解 MoE（Mixture of Experts）：就像一个团队里有100个专家，每次只叫10个最相关的专家开会，而不是让100个人同时发言——效率大幅提升。",
-      "source": "NVIDIA Developer Blog / LLM Stats June 2026"
+      "id": "ai-4",
+      "question": "AI 会犯错吗？它骗过你了吗？",
+      "answer": "会！这叫 <strong>幻觉（Hallucination）</strong>——AI 有时候会自信地说出完全错误的东西。因为它的工作是"生成听起来合理的文字"，不是"查找正确答案"。所以它可能编造一个根本不存在的人名或事件，听起来还挺真实的！",
+      "analogy": "就像一个同学把书没看完，考试时靠"感觉"写答案——写得很有自信，但可能全是错的！",
+      "challenge": "问 ChatGPT 一个你非常熟悉的事实（比如你最喜欢的游戏的某个细节），看它说的对不对！",
+      "funFact": "有人曾经问 AI 推荐律师，AI 编造了几个根本不存在的律师名字，还给了假的联系方式——所以重要的事一定要查证！",
+      "source": "Verizon Parenting AI Guide / SafeAIKids.com"
     },
     {
-      "id": "ai-w24-3",
-      "title": "TurboQuant：KV Cache 内存革命 — 让AI记住更长的对话",
-      "hook": "Google在ICLR 2026发布TurboQuant算法，大幅降低KV Cache（键值缓存）的内存占用——这是运行长上下文AI模型最大的技术瓶颈。",
-      "body": "KV Cache 是 AI 模型"记忆"对话的机制：每多一个token，缓存就增长一点，GPU内存快速耗尽。TurboQuant用量化压缩技术，在<strong>几乎不损失精度的情况下将缓存体积压缩60-80%</strong>，同等硬件能处理4-5倍更长的上下文。",
-      "insight": "为什么这对你重要：更长的上下文 = AI能"读完"整本书再回答，而不是只看最后几页。这直接决定AI能做多复杂的任务。",
-      "source": "Google Research / ICLR 2026"
-    },
-    {
-      "id": "ai-w24-4",
-      "title": "Microsoft Copilot Wave 3 整合 Claude — 企业AI多模型时代正式开启",
-      "hook": "Microsoft宣布Copilot Wave 3，引入多模型支持（含Anthropic Claude），并推出 Agentic Copilot Cowork——让多个AI Agent协同处理复杂任务。",
-      "body": "企业AI的未来不是一个全能模型，而是<strong>模型路由层</strong>：根据任务类型、成本预算、响应速度动态选择最合适的模型。写代码用Claude，搜索用GPT-4o，实时对话用Flash——就像雇用不同专长的员工各司其职。",
-      "insight": "未来职场的AI超能力不是"会用ChatGPT"，而是能根据任务类型选择最优AI工具，理解每个模型的优势与局限。",
-      "source": "Microsoft Build 2026 / The Verge"
-    },
-    {
-      "id": "ai-w24-5",
-      "title": "Meta $1,000亿 AMD芯片协议 — 算力即国力，AI算力链的投资地图",
-      "hook": "Meta与AMD签署多年协议，采购高达 $1,000亿的 MI540 GPU和CPU，并持有1.6亿股AMD期权——历史上最大的单笔半导体采购合同。",
-      "body": "理解<strong>AI算力的完整供应链</strong>：矿石（稀土）→ 晶圆（TSMC/Samsung）→ GPU设计（NVIDIA/AMD）→ 服务器组装（Dell/HP）→ 数据中心（Meta/Google）→ 云服务（AWS/Azure）→ 你的应用。每个环节都有其投资逻辑和风险点。",
-      "insight": "为什么AMD能拿到这笔合同？因为NVIDIA的供应不足，以及Meta希望减少对单一供应商的依赖（降低采购风险）。这是"供应多元化"策略在最高层面的体现。",
+      "id": "ai-5",
+      "question": "NVIDIA 是做什么的？为什么每个 AI 公司都要买他们的东西？",
+      "answer": "NVIDIA 做 <strong>GPU（图形处理器）</strong>——原本是给游戏设计的超快芯片。后来发现训练 AI 需要的计算和游戏画面的计算很像，于是 NVIDIA 成了 AI 时代最重要的"铲子公司"。Meta 今年刚签了 <strong>$1000 亿</strong>的芯片订单！",
+      "analogy": "淘金热时期，卖铲子的人才是最稳赚的。NVIDIA 就是 AI 淘金热的铲子卖家！",
+      "challenge": "在你家找一张带有 'NVIDIA' 或 'AMD' 标志的东西（比如游戏电脑或显卡）。这就是你和 AI 的连接！",
+      "funFact": "NVIDIA 在 2024-2026 年之间股价涨了超过 10 倍。如果 2024 年初买了 $1000 的 NVIDIA 股票……",
       "source": "Reuters / AMD Investor Relations June 2026"
     },
     {
-      "id": "ai-w24-6",
-      "title": "Google Gemma 4 Apache 2.0 开源 — 理解为什么科技巨头会免费送出尖端AI",
-      "hook": "Google发布Gemma 4系列，专为高级推理和AI Agent设计，采用Apache 2.0许可——企业可完全免费商用、修改、不需要开源衍生作品。",
-      "body": "为什么Google免费送出前沿AI模型？因为<strong>护城河不是模型本身，而是生态系统</strong>。让全球开发者都在 Google 的工具链上构建应用，他们最终会采购 Google Cloud 的算力、API 和企业服务——这是用开源撬动商业闭环的经典策略（参考 Android）。",
-      "insight": "理解科技公司的"开源战略"：Linux（IBM/RedHat）、Android（Google）、Gemma（Google）——免费开放前端，收费锁定后端。找到任何一家大公司的开源项目，问：他们靠什么赚钱？",
-      "source": "Google AI Blog / Apache Foundation June 2026"
+      "id": "ai-6",
+      "question": "AI 能帮你学习吗？还是它只会让你变懒？",
+      "answer": "这是一个很好的问题！AI 可以当你的私人老师——随时解释你不懂的题目，给你出练习题，帮你检查作文。但如果你让 AI 直接帮你写作业，那就像让别人替你做运动，你的大脑没有得到练习。<strong>用 AI 理解，不要用 AI 代替思考。</strong>",
+      "analogy": "AI 是超级好用的计算器。但如果你连 2+2 都要靠计算器，考试时就麻烦了。用来检查和扩展，不用来替代基础！",
+      "challenge": "今天用 AI 解释一道你不懂的题，但解释完之后，把手机放下，自己再做一遍——看你真的理解了吗？",
+      "funFact": "会用 AI 工具的人，工作效率可以提高 2-3 倍。但前提是你要有足够的知识来判断 AI 说的对不对！",
+      "source": "JetLearn / CodaKid AI Skills for Kids 2026"
     },
     {
-      "id": "ai-w24-7",
-      "title": "2026：LLM架构革命元年 — 超越Transformer的下一代AI是什么？",
-      "hook": "多篇2026年研究指出，Transformer架构统治AI九年后，下一代模型（State Space Models、Mamba、混合架构）开始在关键任务上超越它。",
-      "body": "Transformer的核心问题：<strong>注意力机制的计算复杂度是 O(n²)</strong>——上下文长度翻倍，计算量翻四倍。新架构（Mamba、RWKV）用线性复杂度处理超长上下文，在长文档分析、长期对话记忆、大规模实时推理中显示优势。",
-      "insight": "技术架构的更迭往往是投资机会的信号：当新架构成熟并开始替代Transformer，专门优化旧架构的芯片（如NVIDIA的NVLink）可能面临竞争，而支持新架构的通用算力将获益。",
-      "source": "Medium / Info-Tech Research / ICLR 2026 Papers"
+      "id": "ai-7",
+      "question": "未来 10 年，AI 会取代人类的工作吗？Thomas 应该担心吗？",
+      "answer": "AI 确实会取代一些重复性的工作（比如打字录入、简单翻译），但<strong>会用 AI 的人</strong>会取代不会用 AI 的人，而不是 AI 直接取代人类。就像计算器出现后，懂数学的人依然很有价值，甚至更有价值——因为他们能用计算器做更大的事！",
+      "analogy": "挖土机出现后，用铲子挖地的工人减少了，但会开挖土机的人变得非常抢手。Thomas 要成为会开"AI 挖土机"的人！",
+      "challenge": "想想你将来想做的工作。猜猜看：AI 会帮助这个工作，还是让这个工作消失？和爸爸妈妈讨论一下！",
+      "funFact": "2026 年，Morgan Stanley 预测：最稀缺的技能不是写代码，而是"知道该问 AI 什么问题"——这叫提示词工程（Prompt Engineering）。",
+      "source": "Morgan Stanley Research 2026 / Chitti Blog"
     }
   ]
 }

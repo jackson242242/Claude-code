@@ -3,112 +3,144 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thomas 每日成长</title>
+  <title>Thomas 每日挑战</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #f0f4f8;
+      background: #f7f8fc;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 24px 16px 48px;
+      padding: 28px 16px 60px;
     }
 
-    h1 {
-      font-size: 1.35rem;
-      color: #1a202c;
-      margin-bottom: 6px;
-      text-align: center;
-      font-weight: 800;
-    }
-
-    .subtitle {
-      font-size: 0.78rem;
-      color: #a0aec0;
-      text-align: center;
-      margin-bottom: 24px;
-    }
-
-    /* ── 基础卡片 ── */
-    .card {
-      background: white;
-      border-radius: 16px;
-      padding: 20px;
+    /* ── 头部 ── */
+    .hero {
       width: 100%;
       max-width: 400px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .hero-emoji { font-size: 2.8rem; display: block; margin-bottom: 6px; }
+    .hero h1 {
+      font-size: 1.55rem;
+      font-weight: 900;
+      color: #1a202c;
+      letter-spacing: -0.5px;
+    }
+    .hero p {
+      font-size: 0.82rem;
+      color: #94a3b8;
+      margin-top: 4px;
+    }
+
+    /* ── 打卡卡片 ── */
+    .checkin-card {
+      width: 100%;
+      max-width: 400px;
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 3px 16px rgba(0,0,0,0.07);
       margin-bottom: 12px;
     }
-
-    .label {
-      font-size: 0.72rem;
-      color: #a0aec0;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 5px;
-    }
-
-    .value {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: #2d3748;
-    }
-    .value.blue  { color: #3182ce; }
-    .value.green { color: #38a169; }
-
-    .row {
+    .checkin-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-top: 12px;
-      padding-top: 12px;
-      border-top: 1px solid #f0f4f8;
     }
-
-    .badge {
-      font-size: 0.72rem;
-      padding: 4px 10px;
-      border-radius: 999px;
+    .stat-block { }
+    .stat-label {
+      font-size: 0.7rem;
       font-weight: 700;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 3px;
     }
-    .badge.done    { background: #c6f6d5; color: #276749; }
-    .badge.pending { background: #fed7d7; color: #9b2c2c; }
+    .stat-value {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: #1a202c;
+    }
+    .stat-value.blue  { color: #3b82f6; }
+    .stat-value.green { color: #22c55e; }
 
-    /* ── 按钮 ── */
-    .btn {
+    .streak-badge {
+      background: linear-gradient(135deg, #fbbf24, #f59e0b);
+      color: white;
+      border-radius: 14px;
+      padding: 10px 16px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(245,158,11,0.35);
+    }
+    .streak-num {
+      font-size: 1.8rem;
+      font-weight: 900;
+      display: block;
+      line-height: 1;
+    }
+    .streak-lbl {
+      font-size: 0.65rem;
+      font-weight: 700;
+      opacity: 0.85;
+    }
+
+    /* ── 打卡按钮 ── */
+    .big-btn {
       width: 100%;
       max-width: 400px;
-      padding: 15px;
-      font-size: 1rem;
-      font-weight: 700;
+      padding: 16px;
+      font-size: 1.05rem;
+      font-weight: 800;
       border: none;
-      border-radius: 14px;
+      border-radius: 16px;
       cursor: pointer;
-      transition: transform 0.1s;
+      transition: transform 0.12s, box-shadow 0.12s;
+      margin-bottom: 8px;
     }
-    .btn:active { transform: scale(0.97); }
-    .btn-primary  { background: #3182ce; color: white; margin-bottom: 8px; }
-    .btn-primary:disabled { background: #a0aec0; cursor: default; }
-    .btn-outline  { background: white; color: #e53e3e; border: 2px solid #e53e3e; font-size: 0.88rem; padding: 11px; }
-    .btn-outline:disabled { color: #cbd5e0; border-color: #cbd5e0; cursor: default; }
+    .big-btn:active { transform: scale(0.96); }
+    .big-btn.primary {
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      color: white;
+      box-shadow: 0 4px 14px rgba(59,130,246,0.4);
+    }
+    .big-btn.primary:disabled {
+      background: #e2e8f0;
+      color: #94a3b8;
+      box-shadow: none;
+      cursor: default;
+    }
+    .big-btn.ghost {
+      background: white;
+      color: #ef4444;
+      border: 2px solid #fca5a5;
+      font-size: 0.88rem;
+      padding: 11px;
+    }
+    .big-btn.ghost:disabled {
+      color: #cbd5e0;
+      border-color: #e2e8f0;
+      cursor: default;
+    }
 
     /* ── 分割线 ── */
-    .divider {
+    .section-head {
       width: 100%;
       max-width: 400px;
       display: flex;
       align-items: center;
       gap: 10px;
-      margin: 28px 0 8px;
+      margin: 26px 0 10px;
     }
-    .divider-line { flex: 1; height: 1px; background: #e2e8f0; }
-    .divider-text {
-      font-size: 0.72rem;
-      font-weight: 800;
-      color: #718096;
+    .section-line { flex: 1; height: 2px; background: #e2e8f0; border-radius: 2px; }
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 900;
+      color: #64748b;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       white-space: nowrap;
@@ -118,167 +150,190 @@
     .learn-card {
       width: 100%;
       max-width: 400px;
-      border-radius: 18px;
-      padding: 20px;
-      box-shadow: 0 2px 14px rgba(0,0,0,0.08);
-      margin-bottom: 12px;
+      border-radius: 20px;
+      padding: 22px 20px;
+      margin-bottom: 14px;
+      box-shadow: 0 3px 16px rgba(0,0,0,0.07);
       position: relative;
-      overflow: hidden;
     }
-    .learn-card.invest { background: linear-gradient(145deg, #fffdf0, #fef3c7); }
-    .learn-card.ai     { background: linear-gradient(145deg, #f0f7ff, #dbeafe); }
+    .learn-card.money {
+      background: linear-gradient(145deg, #fffdf5, #fef9ec);
+      border: 2px solid #fde68a;
+    }
+    .learn-card.tech {
+      background: linear-gradient(145deg, #f5f8ff, #eef2ff);
+      border: 2px solid #c7d2fe;
+    }
 
-    .learn-card-header {
+    .card-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
-    .learn-tag-group { display: flex; align-items: center; gap: 6px; }
-    .learn-icon { font-size: 1.1rem; }
-    .learn-tag {
-      font-size: 0.65rem;
+    .card-label {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .card-emoji { font-size: 1.3rem; }
+    .card-tag {
+      font-size: 0.68rem;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 3px 8px;
+      letter-spacing: 0.07em;
+      padding: 3px 9px;
       border-radius: 999px;
     }
-    .invest .learn-tag { background: #d97706; color: white; }
-    .ai     .learn-tag { background: #2563eb; color: white; }
+    .money .card-tag { background: #fbbf24; color: #78350f; }
+    .tech  .card-tag { background: #818cf8; color: white; }
 
-    .updated-tag {
+    .card-updated {
       font-size: 0.62rem;
       color: #94a3b8;
-      font-weight: 500;
     }
 
-    /* 新闻钩子 */
-    .learn-hook {
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: #475569;
-      background: rgba(0,0,0,0.04);
-      border-left: 3px solid currentColor;
-      padding: 7px 10px;
-      border-radius: 0 6px 6px 0;
-      margin-bottom: 10px;
-      line-height: 1.5;
-    }
-    .invest .learn-hook { border-left-color: #d97706; color: #92400e; background: rgba(217,119,6,0.07); }
-    .ai     .learn-hook { border-left-color: #2563eb; color: #1e3a8a; background: rgba(37,99,235,0.07); }
-
-    .learn-title {
-      font-size: 0.97rem;
+    /* 今日问题 */
+    .question-box {
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-bottom: 14px;
+      font-size: 0.95rem;
       font-weight: 800;
+      line-height: 1.5;
       color: #1a202c;
-      margin-bottom: 8px;
-      line-height: 1.4;
     }
+    .money .question-box { background: rgba(251,191,36,0.12); }
+    .tech  .question-box { background: rgba(129,140,248,0.12); }
+    .question-box::before { content: "🤔 "; }
 
-    .learn-body {
-      font-size: 0.84rem;
-      color: #4a5568;
-      line-height: 1.65;
+    /* 答案 */
+    .answer-box {
+      font-size: 0.87rem;
+      color: #374151;
+      line-height: 1.7;
       margin-bottom: 10px;
     }
-    .learn-body strong { color: #1a202c; }
+    .answer-box strong { color: #1a202c; }
 
-    /* 行动洞察 */
-    .learn-insight {
-      font-size: 0.78rem;
-      color: #374151;
-      background: rgba(0,0,0,0.04);
-      border-radius: 8px;
-      padding: 8px 10px;
-      margin-bottom: 12px;
+    /* 类比 */
+    .analogy-box {
+      font-size: 0.82rem;
+      color: #6b7280;
+      font-style: italic;
+      border-left: 3px solid;
+      padding: 6px 10px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 10px;
       line-height: 1.55;
     }
-    .learn-insight::before {
-      content: "💡 ";
-      font-style: normal;
-    }
+    .money .analogy-box { border-left-color: #fbbf24; background: rgba(251,191,36,0.07); }
+    .tech  .analogy-box { border-left-color: #818cf8; background: rgba(129,140,248,0.07); }
+    .analogy-box::before { content: "💬 "; font-style: normal; }
 
-    .learn-footer {
+    /* 挑战 */
+    .challenge-box {
+      border-radius: 12px;
+      padding: 11px 13px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #1a202c;
+      line-height: 1.55;
+      margin-bottom: 12px;
+    }
+    .money .challenge-box { background: #fef3c7; }
+    .tech  .challenge-box { background: #e0e7ff; }
+    .challenge-box::before { content: "🎯 今天的挑战："; display: block; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: #6b7280; margin-bottom: 4px; }
+
+    /* 趣味事实 */
+    .funfact {
+      font-size: 0.78rem;
+      color: #6b7280;
+      background: rgba(0,0,0,0.03);
+      border-radius: 8px;
+      padding: 8px 10px;
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+    .funfact::before { content: "⚡ 你知道吗："; font-weight: 700; color: #374151; }
+
+    /* 底部行 */
+    .card-footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 8px;
     }
-    .learn-source {
-      font-size: 0.65rem;
-      color: #94a3b8;
-    }
-    .learn-source::before { content: "📰 "; }
-
-    .read-btn {
+    .done-btn {
       display: inline-block;
-      padding: 6px 14px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      border-radius: 8px;
+      padding: 8px 18px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      border-radius: 10px;
       border: none;
       cursor: pointer;
       transition: transform 0.1s;
       width: auto;
       max-width: none;
     }
-    .read-btn:active { transform: scale(0.95); }
-    .invest .read-btn { background: #d97706; color: white; }
-    .ai     .read-btn { background: #2563eb; color: white; }
-    .read-btn.done { background: #e2e8f0 !important; color: #94a3b8 !important; cursor: default; }
-
-    /* 加载状态 */
-    .loading-pulse {
-      height: 14px;
-      background: linear-gradient(90deg, #e2e8f0 25%, #f8fafc 50%, #e2e8f0 75%);
-      background-size: 200% 100%;
-      animation: pulse 1.4s ease infinite;
-      border-radius: 6px;
-      margin-bottom: 6px;
+    .done-btn:active { transform: scale(0.94); }
+    .money .done-btn { background: #fbbf24; color: #78350f; }
+    .tech  .done-btn { background: #818cf8; color: white; }
+    .done-btn.checked {
+      background: #e2e8f0 !important;
+      color: #94a3b8 !important;
+      cursor: default;
     }
-    @keyframes pulse {
+    .source-tag {
+      font-size: 0.62rem;
+      color: #94a3b8;
+    }
+
+    /* loading skeleton */
+    .skel {
+      height: 13px;
+      background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.4s ease infinite;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+    @keyframes shimmer {
       0%   { background-position: 200% 0; }
       100% { background-position: -200% 0; }
     }
 
     /* ── 历史记录 ── */
-    .history-card {
-      background: white;
-      border-radius: 16px;
-      padding: 18px;
+    .history {
       width: 100%;
       max-width: 400px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      background: white;
+      border-radius: 18px;
+      padding: 18px 18px 12px;
+      box-shadow: 0 3px 16px rgba(0,0,0,0.07);
     }
-    .history-title {
-      font-size: 0.82rem;
-      font-weight: 800;
-      color: #4a5568;
-      margin-bottom: 10px;
-    }
-    .history-list {
+    .history ul {
       list-style: none;
-      max-height: 180px;
+      max-height: 170px;
       overflow-y: auto;
     }
-    .history-list li {
-      font-size: 0.84rem;
-      color: #4a5568;
+    .history li {
+      font-size: 0.85rem;
+      color: #4b5563;
       padding: 5px 0;
-      border-bottom: 1px solid #f7fafc;
+      border-bottom: 1px solid #f9fafb;
       display: flex;
       align-items: center;
       gap: 7px;
     }
-    .history-list li:last-child { border-bottom: none; }
-    .dot { color: #38a169; }
-    .empty-msg { font-size: 0.82rem; color: #a0aec0; text-align: center; padding: 10px 0; }
+    .history li:last-child { border-bottom: none; }
+    .dot { color: #22c55e; font-size: 0.9rem; }
+    .empty { font-size: 0.82rem; color: #cbd5e0; text-align: center; padding: 12px 0; }
 
     .reset-link {
-      margin-top: 18px;
-      font-size: 0.7rem;
+      margin-top: 16px;
+      font-size: 0.68rem;
       color: #cbd5e0;
       cursor: pointer;
       text-decoration: underline;
@@ -287,262 +342,258 @@
 </head>
 <body>
 
-  <h1>Thomas 每日成长</h1>
-  <p class="subtitle">英文饮食打卡 · 长期投资 · AI 前沿</p>
+  <!-- 头部 -->
+  <div class="hero">
+    <span class="hero-emoji">🚀</span>
+    <h1>Thomas 每日挑战</h1>
+    <p>英文餐桌打卡 · 每天学一件厉害的事</p>
+  </div>
 
-  <!-- 打卡状态 -->
-  <div class="card">
-    <div class="label">今天日期</div>
-    <div class="value" id="todayDate">—</div>
-    <div class="row">
+  <!-- 打卡卡片 -->
+  <div class="checkin-card">
+    <div class="checkin-row">
       <div>
-        <div class="label">今日打卡</div>
-        <span class="badge pending" id="todayBadge">未打卡</span>
+        <div class="stat-label">今天</div>
+        <div class="stat-value" id="todayDate">—</div>
+        <div style="margin-top:10px">
+          <div class="stat-label">截止目标日</div>
+          <div class="stat-value blue" id="deadlineDate">—</div>
+        </div>
       </div>
-      <div style="text-align:right">
-        <div class="label">累计天数</div>
-        <div class="value green" id="totalCount">0 天</div>
+      <div class="streak-badge">
+        <span class="streak-num" id="totalCount">0</span>
+        <span class="streak-lbl">天累计打卡</span>
       </div>
+    </div>
+    <div style="margin-top:6px;font-size:0.75rem;color:#94a3b8;">
+      每次英文吃饭打卡，目标截止日 <strong style="color:#4b5563">+1天</strong>
     </div>
   </div>
 
-  <!-- 目标截止日 -->
-  <div class="card">
-    <div class="label">目标截止日</div>
-    <div class="value blue" id="deadlineDate">—</div>
-    <div style="margin-top:7px;font-size:0.8rem;color:#94a3b8;">
-      每打卡一次，截止日 <strong style="color:#4a5568">+1 天</strong>
-    </div>
-  </div>
-
-  <button class="btn btn-primary" id="logBtn" onclick="logToday()">✅ 今天吃饭说英文了！</button>
-  <button class="btn btn-outline" id="undoBtn" onclick="undoToday()" disabled>↩ 撤销今天的打卡</button>
+  <button class="big-btn primary" id="logBtn" onclick="logToday()">
+    ✅ &nbsp;今天吃饭我说英文了！
+  </button>
+  <button class="big-btn ghost" id="undoBtn" onclick="undoToday()" disabled>
+    ↩ 取消今天的打卡
+  </button>
 
   <!-- 每日学习 -->
-  <div class="divider">
-    <div class="divider-line"></div>
-    <span class="divider-text">📚 今日学习</span>
-    <div class="divider-line"></div>
+  <div class="section-head">
+    <div class="section-line"></div>
+    <span class="section-label">📚 今日学一件厉害的事</span>
+    <div class="section-line"></div>
   </div>
 
-  <!-- 投资卡片 -->
-  <div class="learn-card invest" id="investCard">
-    <div class="learn-card-header">
-      <div class="learn-tag-group">
-        <span class="learn-icon">📈</span>
-        <span class="learn-tag">长期投资</span>
+  <!-- 投资卡 -->
+  <div class="learn-card money" id="moneyCard">
+    <div class="card-top">
+      <div class="card-label">
+        <span class="card-emoji">💰</span>
+        <span class="card-tag">钱与投资</span>
       </div>
-      <span class="updated-tag" id="investUpdated"></span>
+      <span class="card-updated" id="moneyUpdated"></span>
     </div>
-    <div id="investHook" class="learn-hook"></div>
-    <div id="investTitle" class="learn-title"></div>
-    <div id="investBody" class="learn-body"></div>
-    <div id="investInsight" class="learn-insight"></div>
-    <div class="learn-footer">
-      <span id="investSource" class="learn-source"></span>
-      <button class="read-btn" id="investReadBtn" onclick="markRead('invest')">✓ 我学了</button>
+    <div class="question-box" id="moneyQuestion"></div>
+    <div class="answer-box"   id="moneyAnswer"></div>
+    <div class="analogy-box"  id="moneyAnalogy"></div>
+    <div class="challenge-box" id="moneyChallenge"></div>
+    <div class="funfact"      id="moneyFunFact"></div>
+    <div class="card-footer">
+      <span class="source-tag" id="moneySource"></span>
+      <button class="done-btn" id="moneyReadBtn" onclick="markRead('money')">我学完了 ✓</button>
     </div>
   </div>
 
-  <!-- AI卡片 -->
-  <div class="learn-card ai" id="aiCard">
-    <div class="learn-card-header">
-      <div class="learn-tag-group">
-        <span class="learn-icon">🤖</span>
-        <span class="learn-tag">AI 前沿</span>
+  <!-- AI 卡 -->
+  <div class="learn-card tech" id="techCard">
+    <div class="card-top">
+      <div class="card-label">
+        <span class="card-emoji">🤖</span>
+        <span class="card-tag">AI 与科技</span>
       </div>
-      <span class="updated-tag" id="aiUpdated"></span>
+      <span class="card-updated" id="techUpdated"></span>
     </div>
-    <div id="aiHook" class="learn-hook"></div>
-    <div id="aiTitle" class="learn-title"></div>
-    <div id="aiBody" class="learn-body"></div>
-    <div id="aiInsight" class="learn-insight"></div>
-    <div class="learn-footer">
-      <span id="aiSource" class="learn-source"></span>
-      <button class="read-btn" id="aiReadBtn" onclick="markRead('ai')">✓ 我学了</button>
+    <div class="question-box" id="techQuestion"></div>
+    <div class="answer-box"   id="techAnswer"></div>
+    <div class="analogy-box"  id="techAnalogy"></div>
+    <div class="challenge-box" id="techChallenge"></div>
+    <div class="funfact"      id="techFunFact"></div>
+    <div class="card-footer">
+      <span class="source-tag" id="techSource"></span>
+      <button class="done-btn" id="techReadBtn" onclick="markRead('tech')">我学完了 ✓</button>
     </div>
   </div>
 
-  <!-- 历史记录 -->
-  <div class="divider" style="margin-top:20px;">
-    <div class="divider-line"></div>
-    <span class="divider-text">📅 打卡记录</span>
-    <div class="divider-line"></div>
+  <!-- 历史 -->
+  <div class="section-head" style="margin-top:14px;">
+    <div class="section-line"></div>
+    <span class="section-label">📅 打卡记录</span>
+    <div class="section-line"></div>
   </div>
 
-  <div class="history-card">
-    <ul class="history-list" id="historyList">
-      <li class="empty-msg">还没有打卡记录</li>
+  <div class="history">
+    <ul id="historyList">
+      <li class="empty">还没有打卡记录～加油！</li>
     </ul>
   </div>
 
   <span class="reset-link" onclick="confirmReset()">重置所有数据</span>
 
   <script>
-    const STORAGE_KEY = 'thomas_meal_counter';
-    const READ_KEY    = 'thomas_learn_read';
+    const STORE = 'thomas_checkin';
+    const RKEY  = 'thomas_read';
 
-    // ── 备用内容（fetch 失败时使用）──────────────────────────
+    // ── 备用内容（fetch 失败时用）──────────────────────────
     const FALLBACK = {
       invest: [{
-        title: "复利：世界第八大奇迹",
-        hook: "巴菲特说他95%的财富是在50岁之后积累的——靠的不是选股技巧，而是几十年不间断的复利。",
-        body: "$10,000 以年化10%增长，<strong>30年后变 $174,494，40年后变 $452,593</strong>。每多一年，差距越来越大。",
-        insight: "今天的行动：设置一个哪怕$50/月的自动定投计划，开始比金额更重要。",
+        question: "如果你有 $100 放在枕头下面 30 年，还是 $100。但"种"进股市会变多少？",
+        answer: "$100 以年化 10% 种进去，30 年后长成 <strong>$1,745</strong>！钱会自己生钱，这叫 <strong>复利</strong>，巴菲特说这是世界上最厉害的魔法。",
+        analogy: "就像雪球从山顶滚下来——开始很小，越滚越大，到山脚变成超级大雪球。",
+        challenge: "问爸爸妈妈：我们家有没有在存钱或投资？他们是怎么做的？",
+        funFact: "巴菲特 95% 的财富是他 50 岁之后才赚到的——靠的就是复利滚了几十年。",
         source: "Berkshire Hathaway Annual Letter"
       }],
       ai: [{
-        title: "什么是大语言模型（LLM）？",
-        hook: "2022年ChatGPT发布后，AI从实验室走向了10亿人的日常——背后是语言模型的革命。",
-        body: "LLM 在海量文本上训练，学会预测"下一个词"。<strong>它不是数据库查询，而是统计模式的涌现</strong>。",
-        insight: "试着用不同方式问AI同一个问题，观察答案差异——感受提示词的力量。",
-        source: "OpenAI / Anthropic Research Blog"
+        question: "ChatGPT 怎么知道那么多事？它真的"懂"吗？",
+        answer: "ChatGPT 读了整个互联网几乎所有的文字，然后学会了"下一个词该是什么"。看起来很懂，其实是在做超级聪明的填空题！这叫 <strong>大语言模型（LLM）</strong>。",
+        analogy: "就像你看了一万部电影，让你猜下一幕会发生什么——你猜得很准，但不是真的经历过那些故事。",
+        challenge: "打开 ChatGPT，问它：'你真的理解我说的话吗？' 看它怎么回答！",
+        funFact: "训练 ChatGPT 用的文字量，打印出来摞起来的高度比月球到地球还要长！",
+        source: "CodaKid / SafeAIKids.com"
       }]
     };
 
     let LESSONS = null;
 
     // ── 工具函数 ─────────────────────────────────────────────
-    function fmt(date) { return date.toISOString().slice(0, 10); }
-    function fmtDisplay(s) {
-      const [y, m, d] = s.split('-');
-      return `${y} 年 ${parseInt(m)} 月 ${parseInt(d)} 日`;
+    function fmt(d)        { return d.toISOString().slice(0,10); }
+    function todayStr()    { return fmt(new Date()); }
+    function displayDate(s) {
+      const [y,m,d] = s.split('-');
+      return `${y}年${parseInt(m)}月${parseInt(d)}日`;
     }
-    function todayStr() { return fmt(new Date()); }
-    function dayIndex(len) {
+    function dayIdx(len) {
       const d = new Date();
-      const n = d.getFullYear() * 10000 + (d.getMonth()+1) * 100 + d.getDate();
-      return n % len;
+      return (d.getFullYear()*10000 + (d.getMonth()+1)*100 + d.getDate()) % len;
     }
 
-    // ── localStorage ─────────────────────────────────────────
-    function loadData() {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (raw) return JSON.parse(raw);
-      const def = new Date(); def.setDate(def.getDate() + 30);
-      return { deadline: fmt(def), logs: [] };
+    // ── 打卡数据 ─────────────────────────────────────────────
+    function loadStore() {
+      const r = localStorage.getItem(STORE);
+      if (r) return JSON.parse(r);
+      const dl = new Date(); dl.setDate(dl.getDate() + 30);
+      return { deadline: fmt(dl), logs: [] };
     }
-    function saveData(d) { localStorage.setItem(STORAGE_KEY, JSON.stringify(d)); }
-    function getTodayRead() {
-      const raw = localStorage.getItem(READ_KEY);
-      return raw ? JSON.parse(raw) : { date: '', invest: false, ai: false };
+    function saveStore(d) { localStorage.setItem(STORE, JSON.stringify(d)); }
+    function getRead() {
+      const r = localStorage.getItem(RKEY);
+      return r ? JSON.parse(r) : { date:'', money:false, tech:false };
     }
 
     // ── 打卡渲染 ─────────────────────────────────────────────
     function render() {
-      const data = loadData();
-      const today = todayStr();
+      const data   = loadStore();
+      const today  = todayStr();
       const logged = data.logs.includes(today);
 
-      document.getElementById('todayDate').textContent = fmtDisplay(today);
-      document.getElementById('deadlineDate').textContent = fmtDisplay(data.deadline);
-      document.getElementById('totalCount').textContent = data.logs.length + ' 天';
-
-      const badge = document.getElementById('todayBadge');
-      badge.textContent = logged ? '已打卡 ✅' : '未打卡';
-      badge.className   = 'badge ' + (logged ? 'done' : 'pending');
+      document.getElementById('todayDate').textContent    = displayDate(today);
+      document.getElementById('deadlineDate').textContent = displayDate(data.deadline);
+      document.getElementById('totalCount').textContent   = data.logs.length;
 
       document.getElementById('logBtn').disabled  = logged;
       document.getElementById('undoBtn').disabled = !logged;
 
       const list = document.getElementById('historyList');
-      if (data.logs.length === 0) {
-        list.innerHTML = '<li class="empty-msg">还没有打卡记录</li>';
+      if (!data.logs.length) {
+        list.innerHTML = '<li class="empty">还没有打卡记录～加油！</li>';
       } else {
-        list.innerHTML = [...data.logs].sort((a,b) => b.localeCompare(a))
-          .map(d => `<li><span class="dot">●</span>${fmtDisplay(d)}</li>`)
-          .join('');
+        list.innerHTML = [...data.logs].sort((a,b)=>b.localeCompare(a))
+          .map(d=>`<li><span class="dot">★</span>${displayDate(d)}</li>`).join('');
       }
     }
 
     function logToday() {
-      const data = loadData(), today = todayStr();
+      const data = loadStore(), today = todayStr();
       if (data.logs.includes(today)) return;
       data.logs.push(today);
-      const dl = new Date(data.deadline + 'T00:00:00'); dl.setDate(dl.getDate() + 1);
+      const dl = new Date(data.deadline+'T00:00:00'); dl.setDate(dl.getDate()+1);
       data.deadline = fmt(dl);
-      saveData(data); render();
+      saveStore(data); render();
     }
-
     function undoToday() {
-      const data = loadData(), today = todayStr();
-      if (!data.logs.includes(today)) return;
-      data.logs = data.logs.filter(d => d !== today);
-      const dl = new Date(data.deadline + 'T00:00:00'); dl.setDate(dl.getDate() - 1);
+      const data = loadStore(), today = todayStr();
+      data.logs = data.logs.filter(d=>d!==today);
+      const dl = new Date(data.deadline+'T00:00:00'); dl.setDate(dl.getDate()-1);
       data.deadline = fmt(dl);
-      saveData(data); render();
+      saveStore(data); render();
     }
-
     function confirmReset() {
-      if (confirm('确定要清除所有打卡记录并重置截止日吗？')) {
-        localStorage.removeItem(STORAGE_KEY);
+      if (confirm('确定要清除所有记录吗？')) {
+        localStorage.removeItem(STORE);
         render();
       }
     }
 
-    // ── 学习内容渲染 ─────────────────────────────────────────
-    function showLoading(type) {
-      ['Hook','Title','Body','Insight'].forEach(f => {
-        const el = document.getElementById(type + f);
-        if (el) el.innerHTML = '<div class="loading-pulse" style="width:' + (60+Math.random()*30) + '%"></div>';
+    // ── 学习卡渲染 ────────────────────────────────────────────
+    function showSkeleton(prefix) {
+      ['Question','Answer','Analogy','Challenge','FunFact'].forEach(f => {
+        const el = document.getElementById(prefix+f);
+        if (el) el.innerHTML = `<div class="skel" style="width:${55+Math.random()*35}%"></div>`;
       });
     }
 
-    function fillCard(type, lesson, meta) {
-      document.getElementById(type + 'Hook').textContent    = lesson.hook || '';
-      document.getElementById(type + 'Title').textContent   = lesson.title;
-      document.getElementById(type + 'Body').innerHTML      = lesson.body;
-      document.getElementById(type + 'Insight').textContent = lesson.insight || '';
-      document.getElementById(type + 'Source').textContent  = lesson.source || '';
-      if (meta && meta.lastUpdated) {
-        document.getElementById(type + 'Updated').textContent = '更新于 ' + meta.lastUpdated;
-      }
+    function fillCard(prefix, lesson, meta) {
+      document.getElementById(prefix+'Question').textContent  = lesson.question  || '';
+      document.getElementById(prefix+'Answer').innerHTML      = lesson.answer    || '';
+      document.getElementById(prefix+'Analogy').textContent   = lesson.analogy   || '';
+      document.getElementById(prefix+'Challenge').textContent = lesson.challenge || '';
+      document.getElementById(prefix+'FunFact').textContent   = lesson.funFact   || '';
+      document.getElementById(prefix+'Source').textContent    = lesson.source    || '';
+      const upd = document.getElementById(prefix+'Updated');
+      if (upd && meta && meta.lastUpdated) upd.textContent = '更新于 ' + meta.lastUpdated;
     }
 
-    function applyReadState() {
-      const today = todayStr();
-      const read  = getTodayRead();
-      const isToday = read.date === today;
-
-      ['invest','ai'].forEach(type => {
-        const btn = document.getElementById(type + 'ReadBtn');
-        if (isToday && read[type]) {
-          btn.textContent = '已学习 ✅';
-          btn.classList.add('done');
+    function applyRead() {
+      const today = todayStr(), rd = getRead();
+      const same  = rd.date === today;
+      ['money','tech'].forEach(t => {
+        const btn = document.getElementById(t+'ReadBtn');
+        if (same && rd[t]) {
+          btn.textContent = '已学完 ✅';
+          btn.classList.add('checked');
         } else {
-          btn.textContent = '✓ 我学了';
-          btn.classList.remove('done');
+          btn.textContent = '我学完了 ✓';
+          btn.classList.remove('checked');
         }
       });
     }
 
-    function renderLearn(data) {
-      const inv = data.invest[dayIndex(data.invest.length)];
-      const ai  = data.ai[dayIndex(data.ai.length)];
-      fillCard('invest', inv, data._meta);
-      fillCard('ai',     ai,  data._meta);
-      applyReadState();
-    }
-
     function markRead(type) {
-      const today = todayStr();
-      const read  = getTodayRead();
-      if (read.date !== today) { read.date = today; read.invest = false; read.ai = false; }
-      read[type] = true;
-      localStorage.setItem(READ_KEY, JSON.stringify(read));
-      applyReadState();
+      const today = todayStr(), rd = getRead();
+      if (rd.date !== today) { rd.date=today; rd.money=false; rd.tech=false; }
+      rd[type] = true;
+      localStorage.setItem(RKEY, JSON.stringify(rd));
+      applyRead();
     }
 
-    // ── 启动：fetch JSON，失败则用备用 ───────────────────────
+    function renderLearn(data) {
+      const inv = data.invest[dayIdx(data.invest.length)];
+      const ai  = data.ai[dayIdx(data.ai.length)];
+      fillCard('money', inv, data._meta);
+      fillCard('tech',  ai,  data._meta);
+      applyRead();
+    }
+
+    // ── 启动 ─────────────────────────────────────────────────
     function init() {
       render();
-      showLoading('invest');
-      showLoading('ai');
+      showSkeleton('money');
+      showSkeleton('tech');
 
       fetch('./thomas-lessons.json?v=' + todayStr())
-        .then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); })
-        .then(data => { LESSONS = data; renderLearn(data); })
-        .catch(() => { renderLearn(FALLBACK); });
+        .then(r => { if(!r.ok) throw 0; return r.json(); })
+        .then(d  => renderLearn(d))
+        .catch(()=> renderLearn(FALLBACK));
     }
 
     init();
