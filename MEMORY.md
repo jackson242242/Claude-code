@@ -83,6 +83,7 @@
 - 首次投票结果见 TEAM.md「投票存档」。
 
 ## 9. 待办 / 进行中
+- [ ] **⚠️ 节奏缺口（2026-06-10 PM 检查发现）**：运营(5h)与调研(每日)循环 06-05→06-10 未运行（产品/设计循环正常）。当日已补课：`marketing/daily-brief.md`(06-10 版) + `marketing/ops-2026-06-10.md`（含 PM 记录）。**需老板**：到 claude.ai/code/routines 确认 `/amelia-ops`、`/yifu-research` 两条 Routine 存在且在触发；赛期(至 6/27)若额度紧张优先保运营/调研。
 - [x] 国旗+城市图+手机端上线（PR #12）。
 - [x] BRAND.md（Amelia 交付，`975b353`）。
 - [x] Stage-1 设计 + Matchday26 改名上线（PR #12）。
