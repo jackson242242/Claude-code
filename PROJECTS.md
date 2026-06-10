@@ -2,7 +2,13 @@
 
 > 总管（`.claude/agents/majordomo.md`）的唯一项目清单。老板只跟总管对话；
 > 总管按本台账管理所有进行中项目。每轮 `/pm-cycle` 先读本文件、后写回。
-> 最后更新：2026-06-10（节奏精简 + P2 VoiceMemoBot 登记，老板裁决）
+> 最后更新：2026-06-10 04:30 UTC（pm-cycle #1：调研 6h 补跑完成；P3 发现新 commit）
+>
+> ⚠️ **基建未并入默认分支**：总管三件套（本文件 + `.claude/commands/pm-cycle.md` +
+> `.claude/agents/majordomo.md`）目前只在工作分支上（最初 `claude/fervent-cori-de794m`，
+> 已 cherry-pick 到 `claude/upbeat-galileo-24v1mn`）。Routine 每次从**默认分支**克隆，
+> 找不到这些文件就得每轮重新跨分支找回。**需老板把工作分支并入默认分支**（纯 md +
+> 命令文件，不碰应用代码，门禁已验绿）。
 
 ## A. 进行中项目
 
@@ -12,9 +18,9 @@
 
 | 工作流 | 周期 | 入口 | 状态 | 最近一轮（证据） | 下一步 |
 |--------|------|------|------|------------------|--------|
-| 产品升级 | 12h | `/product-upgrade` | 🟢 | 2026-06-10（`6d78d78` bloopers + affiliate 链接） | 真实赛程数据缓存（CADENCE §5 顶部） |
-| 市场调研 | **6h** | `/yifu-research` | 🟡 | 2026-06-05（`marketing/daily-brief.md` 头部日期） | 已逾期；改版后首跑（last30days 式社区之声） |
-| 设计升级 | 按需 | `/design-upgrade` | ⚪ | 2026-06-10（`dcf32a3` 亮色 Phase 4 → 撤定时） | 老板点单或 pm-cycle 判断需要时跑（Phase 5 在 backlog） |
+| 产品升级 | 12h | `/product-upgrade` | 🟢 | 2026-06-10 03:41（`e667551` 多语言新闻源 + Live pill；153 FE + 62 BE 绿） | 真实赛程数据缓存（CADENCE §5 顶部），到期 ~15:41 UTC |
+| 市场调研 | **6h** | `/yifu-research` | 🟢 | 2026-06-10 04:10（daily-brief 新节：票价跌 24%/住宿分化/交通堵点，8 项 ✅ 引用） | 下一轮 ~10:00 UTC；6/11 揭幕日抓"开赛实况脉搏" |
+| 设计升级 | 按需 | `/design-upgrade` | ⚪ | 2026-06-10（`0104275` 奢华暗色改版上线） | 老板点单或 pm-cycle 判断需要时跑（Phase 5 在 backlog） |
 | 网站运营 | 按需 | `/amelia-ops` | ⚪ | 2026-06-05（`marketing/ops-2026-06-05.md` → 撤定时） | 老板点单或发布节点前跑 |
 | 素材刷新 | 按需 | `/refresh-tourist-videos` | ⚪ | 见 tourist-videos 数据时间戳 | 视频失效（404）时触发 |
 
@@ -38,7 +44,7 @@
 
 | 工作流 | 周期 | 入口 | 状态 | 最近一轮（证据） | 下一步 |
 |--------|------|------|------|------------------|--------|
-| 产品迭代 | 随 pm-cycle 体检 | （暂无专属命令） | ⚪ | 2026-06-02（`b26015d` 初版上线到分支） | 待老板定方向：要加的功能 / 部署方式 |
+| 产品迭代 | 随 pm-cycle 体检 | （暂无专属命令） | ⚪ | 2026-06-10 03:59（`45c9aed` 新增每日长期投资 + AI 学习卡片） | 待老板定方向：要加的功能 / 部署方式 |
 
 **总管审计方式：** 每轮 `git fetch origin claude/thomas-english-meal-counter-816Cf`
 看新 commit。该分支基于 4 月旧基线（含 ZombieSpawner 历史），与 Matchday26 分支

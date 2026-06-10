@@ -95,7 +95,8 @@
 - [ ] 下一阶段设计：情绪基调参考板（龙哥 KPI 要求）+ 骨架屏 + 8px 间距系统 + 价格对比徽章(A/B)。
 - [ ] **升级节奏**（架构规则）：12h 产品 / 24h 设计，见 `CADENCE.md`。入口命令 `.claude/commands/product-upgrade.md`、`design-upgrade.md`。机制=Routines（claude.ai/code/routines，老板一次性创建；agent 无法代建）。每次运行=全新会话，仓库是唯一记忆，必须先读 backlog 后写回进度。
 - [ ] 仓库根目录无关的 `ZombieSpawner.lua` 属历史遗留，忽略。
-- [ ] 老板在 claude.ai/code/routines 给 `/pm-cycle` 建 Routine（每 6h：daily×4 或 cron `0 */6 * * *`）；如之前建过设计/运营 Routine 请暂停或删除（2026-06-10 已撤定时）。首跑会补上 yifu-research（逾期至 2026-06-05）。
+- [x] `/pm-cycle` Routine 首跑 2026-06-10 04 UTC 完成（分支 `claude/upbeat-galileo-24v1mn`）：补跑 yifu-research（06-05→06-10，票价跌 24%/住宿分化/交通堵点）；P2/P3 分支体检完毕。如之前建过设计/运营 Routine 请暂停或删除（2026-06-10 已撤定时）。
+- [ ] **【需老板】总管基建并入默认分支**：`PROJECTS.md` + `.claude/commands/pm-cycle.md` + `.claude/agents/majordomo.md` 等只在工作分支（fervent-cori → 已 cherry-pick 至 upbeat-galileo）。Routine 从默认分支克隆，找不到这些文件每轮都要跨分支找回。并入 = 纯 md/命令文件、不碰应用代码、门禁已验绿（typecheck/lint/153 jest）。
 - [ ] （可选，浩哥评估）微信桥：公网 webhook 服务 + 微信公众号/企业微信凭证 + secrets，先论证必要性再动手。
 
 ## 10. 外部技能库评估（2026-06-10，总管）
