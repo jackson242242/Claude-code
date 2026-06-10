@@ -31,7 +31,7 @@ export const ConversionBridge = ({ item }: ConversionBridgeProps) => {
     >
       {/* Gradient background */}
       <div
-        className="absolute inset-0 bg-gradient-to-br from-[#0a8f84] to-[#11b3c6]"
+        className="absolute inset-0 bg-gradient-to-br from-[#3d8bff] to-[#2f6fe0]"
         aria-hidden="true"
       />
       {/* Subtle pattern overlay */}
@@ -61,7 +61,7 @@ export const ConversionBridge = ({ item }: ConversionBridgeProps) => {
           {/* Primary CTA — book trip */}
           <Link
             href={hotelsHref}
-            className="inline-flex items-center gap-1.5 h-11 px-5 rounded-[10px] bg-white text-[#0a8f84] font-bold text-sm transition-all duration-150 hover:bg-[#f0fffe] hover:shadow-md hover:-translate-y-0.5 active:bg-[#e0f7f5] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transition-none"
+            className="inline-flex items-center gap-1.5 h-11 px-5 rounded-[10px] bg-[#141d2b] text-[#3d8bff] font-bold text-sm transition-all duration-150 hover:bg-[#1b2636] hover:shadow-md hover:-translate-y-0.5 active:bg-[#e0f7f5] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transition-none"
             data-testid="conversion-bridge-hotels-link"
           >
             Book this trip →

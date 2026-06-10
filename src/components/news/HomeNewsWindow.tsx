@@ -30,10 +30,10 @@ const RAIL_CLASS = 'flex gap-4 overflow-x-auto pb-1 -mx-1 px-1 snap-x';
 
 const tabClass = (active: boolean): string =>
   [
-    'px-4 py-2 rounded-full text-sm font-bold transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0fb5a6] motion-reduce:transition-none',
+    'px-4 py-2 rounded-full text-sm font-bold transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5a9dff] motion-reduce:transition-none',
     active
-      ? 'bg-[#e60e7b] text-white shadow-[0_6px_18px_rgba(230,14,123,0.32)]'
-      : 'bg-[#f4f6f8] text-[#5a6472] border border-[#e3e7ec] hover:bg-[#eceff3] hover:text-[#0b0f14]',
+      ? 'bg-[#3d8bff] text-white shadow-[0_6px_18px_rgba(61,139,255,0.35)]'
+      : 'bg-[#1b2636] text-[#8a97a8] border border-[#243042] hover:bg-[#243042] hover:text-[#f3f6fa]',
   ].join(' ');
 
 interface HomeNewsWindowProps {
@@ -74,14 +74,14 @@ export const HomeNewsWindow = ({
   return (
     <section
       aria-label="Matchday news videos"
-      className="overflow-hidden rounded-[1.5rem] border border-[#e3e7ec] shadow-[0_16px_48px_rgba(13,22,33,0.16)]"
+      className="overflow-hidden rounded-[1.5rem] border border-[#243042] shadow-[0_16px_48px_rgba(0,0,0,0.5)]"
     >
       {/* Dark "video theater" header band — pops against the light page */}
       <div
         className="relative flex items-center justify-between gap-3 px-5 py-5 text-white sm:px-7"
         style={{
           background:
-            'linear-gradient(120deg, #0b0f14 0%, #1a1030 58%, #2a0f3a 100%)',
+            'linear-gradient(120deg, #0d1420 0%, #131f33 60%, #16263f 100%)',
         }}
       >
         <span
@@ -90,10 +90,10 @@ export const HomeNewsWindow = ({
           style={{ background: 'var(--gradient-festival)' }}
         />
         <div>
-          <span className="inline-flex items-center gap-1.5 text-[0.7rem] font-extrabold uppercase tracking-[0.18em] text-[#ff4fa3]">
+          <span className="inline-flex items-center gap-1.5 text-[0.7rem] font-extrabold uppercase tracking-[0.18em] text-[#c9a55c]">
             <span aria-hidden="true" className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-[#e60e7b] opacity-75 motion-safe:animate-ping" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#e60e7b]" />
+              <span className="absolute inline-flex h-full w-full rounded-full bg-[#3d8bff] opacity-75 motion-safe:animate-ping" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#3d8bff]" />
             </span>
             ▶ Watch
           </span>
@@ -114,7 +114,7 @@ export const HomeNewsWindow = ({
       </div>
 
       {/* Body */}
-      <div className="bg-white px-5 py-5 sm:px-7">
+      <div className="bg-[#141d2b] px-5 py-5 sm:px-7">
         <div role="tablist" aria-label="News stream" className="mb-5 flex gap-2">
           {hasStars && (
             <button

@@ -3,12 +3,12 @@
 import type { NewsItem, ThumbnailKind } from '@/types/news';
 
 const GRADIENT_MAP: Record<ThumbnailKind, string> = {
-  'teal-to-turquoise': 'from-[#0a8f84] to-[#11b3c6]',
+  'teal-to-turquoise': 'from-[#3d8bff] to-[#2f6fe0]',
   'coral-to-gold': 'from-[#ff5d52] to-[#e0a82e]',
-  'grape-to-turquoise': 'from-[#7c5cff] to-[#11b3c6]',
-  'citrus-to-teal': 'from-[#7fb800] to-[#0a8f84]',
+  'grape-to-turquoise': 'from-[#7c5cff] to-[#2f6fe0]',
+  'citrus-to-teal': 'from-[#7fb800] to-[#3d8bff]',
   'gold-to-coral': 'from-[#e0a82e] to-[#ff5d52]',
-  'turquoise-to-grape': 'from-[#11b3c6] to-[#7c5cff]',
+  'turquoise-to-grape': 'from-[#2f6fe0] to-[#7c5cff]',
 };
 
 const formatDuration = (seconds: number): string => {
@@ -34,7 +34,7 @@ export const VideoStoryCard = ({ item, size = 'sm' }: VideoStoryCardProps) => {
     <a
       href={`#news-${item.id}`}
       aria-label={`Watch: ${item.title}`}
-      className={`relative flex-shrink-0 ${widthClass} rounded-[1.125rem] overflow-hidden shadow-[0_6px_24px_rgba(13,22,33,0.08)] focus-visible:outline-2 focus-visible:outline-[#0fb5a6] focus-visible:outline-offset-2 block`}
+      className={`relative flex-shrink-0 ${widthClass} rounded-[1.125rem] overflow-hidden shadow-[0_6px_24px_rgba(0,0,0,0.45)] focus-visible:outline-2 focus-visible:outline-[#5a9dff] focus-visible:outline-offset-2 block`}
       style={{ aspectRatio: '9/16' }}
     >
       {/* Gradient thumbnail stand-in */}
@@ -63,7 +63,7 @@ export const VideoStoryCard = ({ item, size = 'sm' }: VideoStoryCardProps) => {
               height: 0,
               borderTop: '7px solid transparent',
               borderBottom: '7px solid transparent',
-              borderLeft: '12px solid #0a8f84',
+              borderLeft: '12px solid #3d8bff',
             }}
           />
         </div>
@@ -84,7 +84,7 @@ export const VideoStoryCard = ({ item, size = 'sm' }: VideoStoryCardProps) => {
         {/* Static progress bar (no real video) */}
         <div className="h-0.5 bg-white/30 rounded-full overflow-hidden">
           <div
-            className="h-full bg-[#0fb5a6] rounded-full"
+            className="h-full bg-[#5a9dff] rounded-full"
             style={{ width: '0%' }}
             role="progressbar"
             aria-label="Video progress"

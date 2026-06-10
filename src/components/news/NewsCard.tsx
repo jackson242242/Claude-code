@@ -3,20 +3,20 @@
 import type { NewsItem, ThumbnailKind } from '@/types/news';
 
 const GRADIENT_MAP: Record<ThumbnailKind, string> = {
-  'teal-to-turquoise': 'from-[#0a8f84] to-[#11b3c6]',
+  'teal-to-turquoise': 'from-[#3d8bff] to-[#2f6fe0]',
   'coral-to-gold': 'from-[#ff5d52] to-[#e0a82e]',
-  'grape-to-turquoise': 'from-[#7c5cff] to-[#11b3c6]',
-  'citrus-to-teal': 'from-[#7fb800] to-[#0a8f84]',
+  'grape-to-turquoise': 'from-[#7c5cff] to-[#2f6fe0]',
+  'citrus-to-teal': 'from-[#7fb800] to-[#3d8bff]',
   'gold-to-coral': 'from-[#e0a82e] to-[#ff5d52]',
-  'turquoise-to-grape': 'from-[#11b3c6] to-[#7c5cff]',
+  'turquoise-to-grape': 'from-[#2f6fe0] to-[#7c5cff]',
 };
 
 const CATEGORY_BADGE: Record<NewsItem['category'], { label: string; className: string }> = {
   team: { label: 'Team', className: 'bg-[#7c5cff] text-white' },
   player: { label: 'Player', className: 'bg-[#7c5cff] text-white' },
-  schedule: { label: 'Schedule', className: 'bg-[#0a8f84] text-white' },
-  city: { label: 'City', className: 'bg-[#11b3c6] text-white' },
-  video: { label: 'Video', className: 'bg-[#11b3c6] text-white' },
+  schedule: { label: 'Schedule', className: 'bg-[#3d8bff] text-white' },
+  city: { label: 'City', className: 'bg-[#2f6fe0] text-white' },
+  video: { label: 'Video', className: 'bg-[#2f6fe0] text-white' },
 };
 
 const formatRelativeDate = (iso: string): string => {
@@ -38,7 +38,7 @@ export const NewsCard = ({ item, variant = 'grid' }: NewsCardProps) => {
 
   if (variant === 'list') {
     return (
-      <article className="flex gap-4 bg-[#ffffff] rounded-[1.125rem] shadow-[0_6px_24px_rgba(13,22,33,0.08)] p-4 transition-transform duration-150 hover:-translate-y-0.5 focus-within:-translate-y-0.5">
+      <article className="flex gap-4 bg-[#141d2b] rounded-[1.125rem] shadow-[0_6px_24px_rgba(0,0,0,0.45)] p-4 transition-transform duration-150 hover:-translate-y-0.5 focus-within:-translate-y-0.5">
         {/* Thumbnail */}
         <div
           className={`shrink-0 w-20 h-20 rounded-xl bg-gradient-to-br ${gradient}`}
@@ -51,12 +51,12 @@ export const NewsCard = ({ item, variant = 'grid' }: NewsCardProps) => {
             >
               {badge.label}
             </span>
-            <span className="text-[#646e7a] text-xs">{formatRelativeDate(item.publishedIso)}</span>
+            <span className="text-[#8a97a8] text-xs">{formatRelativeDate(item.publishedIso)}</span>
           </div>
-          <p className="text-[#0c1116] font-semibold text-sm leading-snug line-clamp-2 m-0">
+          <p className="text-[#f3f6fa] font-semibold text-sm leading-snug line-clamp-2 m-0">
             {item.title}
           </p>
-          <p className="text-[#646e7a] text-xs m-0">
+          <p className="text-[#8a97a8] text-xs m-0">
             {item.source}
             {item.minutesRead != null && ` · ${item.minutesRead} min read`}
           </p>
@@ -66,7 +66,7 @@ export const NewsCard = ({ item, variant = 'grid' }: NewsCardProps) => {
   }
 
   return (
-    <article className="flex flex-col bg-[#ffffff] rounded-[1.125rem] shadow-[0_6px_24px_rgba(13,22,33,0.08)] overflow-hidden transition-transform duration-150 hover:-translate-y-0.5 focus-within:-translate-y-0.5">
+    <article className="flex flex-col bg-[#141d2b] rounded-[1.125rem] shadow-[0_6px_24px_rgba(0,0,0,0.45)] overflow-hidden transition-transform duration-150 hover:-translate-y-0.5 focus-within:-translate-y-0.5">
       {/* Thumbnail */}
       <div
         className={`h-36 bg-gradient-to-br ${gradient} shrink-0`}
@@ -79,15 +79,15 @@ export const NewsCard = ({ item, variant = 'grid' }: NewsCardProps) => {
           >
             {badge.label}
           </span>
-          <span className="text-[#646e7a] text-xs">{formatRelativeDate(item.publishedIso)}</span>
+          <span className="text-[#8a97a8] text-xs">{formatRelativeDate(item.publishedIso)}</span>
         </div>
-        <h3 className="text-[#0c1116] font-semibold text-base leading-snug m-0 line-clamp-2">
+        <h3 className="text-[#f3f6fa] font-semibold text-base leading-snug m-0 line-clamp-2">
           {item.title}
         </h3>
-        <p className="text-[#646e7a] text-sm leading-relaxed m-0 line-clamp-3 flex-1">
+        <p className="text-[#8a97a8] text-sm leading-relaxed m-0 line-clamp-3 flex-1">
           {item.summary}
         </p>
-        <p className="text-[#646e7a] text-xs m-0 mt-auto">
+        <p className="text-[#8a97a8] text-xs m-0 mt-auto">
           {item.source}
           {item.minutesRead != null && ` · ${item.minutesRead} min read`}
         </p>

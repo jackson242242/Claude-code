@@ -6,10 +6,10 @@ import type { TouristVideo, ThumbnailKind } from '@/types/touristVideo';
 /* Gradient map — same four kinds defined in ThumbnailKind             */
 /* ------------------------------------------------------------------ */
 const GRADIENT_MAP: Record<ThumbnailKind, string> = {
-  'teal-to-turquoise': 'from-[#0a8f84] to-[#11b3c6]',
-  'grape-to-turquoise': 'from-[#7c5cff] to-[#11b3c6]',
+  'teal-to-turquoise': 'from-[#3d8bff] to-[#2f6fe0]',
+  'grape-to-turquoise': 'from-[#7c5cff] to-[#2f6fe0]',
   'coral-to-gold': 'from-[#ff5d52] to-[#e0a82e]',
-  'citrus-to-teal': 'from-[#7fb800] to-[#0a8f84]',
+  'citrus-to-teal': 'from-[#7fb800] to-[#3d8bff]',
 };
 
 const formatDuration = (seconds: number): string => {
@@ -41,7 +41,7 @@ export const FootageTile = ({ video, onOpen }: FootageTileProps) => {
       aria-label={`Watch: ${video.title}`}
       onClick={() => onOpen(video)}
       onKeyDown={handleKeyDown}
-      className="relative w-full overflow-hidden rounded-[1.125rem] shadow-[0_6px_24px_rgba(13,22,33,0.08)] cursor-pointer select-none focus-visible:outline-2 focus-visible:outline-[#0fb5a6] focus-visible:outline-offset-2 group"
+      className="relative w-full overflow-hidden rounded-[1.125rem] shadow-[0_6px_24px_rgba(0,0,0,0.45)] cursor-pointer select-none focus-visible:outline-2 focus-visible:outline-[#5a9dff] focus-visible:outline-offset-2 group"
       style={{ aspectRatio: '9/16' }}
     >
       {/* Poster image if available, else gradient placeholder */}
@@ -85,7 +85,7 @@ export const FootageTile = ({ video, onOpen }: FootageTileProps) => {
               height: 0,
               borderTop: '8px solid transparent',
               borderBottom: '8px solid transparent',
-              borderLeft: '14px solid #0a8f84',
+              borderLeft: '14px solid #3d8bff',
             }}
           />
         </div>

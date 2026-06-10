@@ -4,12 +4,12 @@ import type { PlayerSpotlight, ThumbnailKind } from '@/types/news';
 import { getFlag } from '@/lib/flags';
 
 const GRADIENT_MAP: Record<ThumbnailKind, string> = {
-  'teal-to-turquoise': 'from-[#0a8f84] to-[#11b3c6]',
+  'teal-to-turquoise': 'from-[#3d8bff] to-[#2f6fe0]',
   'coral-to-gold': 'from-[#ff5d52] to-[#e0a82e]',
-  'grape-to-turquoise': 'from-[#7c5cff] to-[#11b3c6]',
-  'citrus-to-teal': 'from-[#7fb800] to-[#0a8f84]',
+  'grape-to-turquoise': 'from-[#7c5cff] to-[#2f6fe0]',
+  'citrus-to-teal': 'from-[#7fb800] to-[#3d8bff]',
   'gold-to-coral': 'from-[#e0a82e] to-[#ff5d52]',
-  'turquoise-to-grape': 'from-[#11b3c6] to-[#7c5cff]',
+  'turquoise-to-grape': 'from-[#2f6fe0] to-[#7c5cff]',
 };
 
 interface PlayerSpotlightCardProps {
@@ -21,7 +21,7 @@ export const PlayerSpotlightCard = ({ player }: PlayerSpotlightCardProps) => {
   const flag = getFlag(player.nationality);
 
   return (
-    <article className="flex gap-4 bg-[#ffffff] rounded-[1.125rem] shadow-[0_6px_24px_rgba(13,22,33,0.08)] p-4 transition-transform duration-150 hover:-translate-y-0.5">
+    <article className="flex gap-4 bg-[#141d2b] rounded-[1.125rem] shadow-[0_6px_24px_rgba(0,0,0,0.45)] p-4 transition-transform duration-150 hover:-translate-y-0.5">
       {/* Avatar stand-in */}
       <div
         className={`shrink-0 w-16 h-16 rounded-full bg-gradient-to-br ${gradient} flex items-center justify-center text-2xl`}
@@ -35,13 +35,13 @@ export const PlayerSpotlightCard = ({ player }: PlayerSpotlightCardProps) => {
           <span className="text-[0.65rem] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#7c5cff] text-white">
             Player
           </span>
-          <span className="text-[#646e7a] text-xs">{player.teamName}</span>
+          <span className="text-[#8a97a8] text-xs">{player.teamName}</span>
         </div>
-        <p className="text-[#0c1116] font-bold text-base m-0">{player.name}</p>
-        <p className="text-[#646e7a] text-xs m-0">
+        <p className="text-[#f3f6fa] font-bold text-base m-0">{player.name}</p>
+        <p className="text-[#8a97a8] text-xs m-0">
           {player.position} · {player.capsOrApps} caps
         </p>
-        <p className="text-[#0c1116] text-sm leading-relaxed m-0 line-clamp-3">
+        <p className="text-[#f3f6fa] text-sm leading-relaxed m-0 line-clamp-3">
           {player.description}
         </p>
       </div>

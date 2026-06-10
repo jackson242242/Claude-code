@@ -18,10 +18,10 @@ export const FanFootageWall = ({ videos }: FanFootageWallProps) => {
     <section aria-label="Fan footage from the host cities">
       {/* Section header */}
       <div className="mb-4">
-        <h2 className="text-[#0c1116] text-xl font-bold tracking-tight m-0">
+        <h2 className="text-[#f3f6fa] text-xl font-bold tracking-tight m-0">
           Fan footage from the host cities
         </h2>
-        <p className="text-[#646e7a] text-sm mt-1 m-0">
+        <p className="text-[#8a97a8] text-sm mt-1 m-0">
           Short clips captured by fans on the ground across all 16 venues.
         </p>
       </div>
