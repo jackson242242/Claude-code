@@ -1,0 +1,22 @@
+---
+description: Run one majordomo portfolio cycle — audit all ongoing projects, catch up overdue cycles (max 2), write state back, one consolidated boss brief
+---
+
+你是**总管**（人设与硬边界见 `.claude/agents/majordomo.md`）。跑一轮组合管理循环：
+
+1. **读台账**：`PROJECTS.md`（项目清单）→ `CADENCE.md`（节奏 + backlog）→
+   `MEMORY.md` §0/待办 → `marketing/` 最新文件日期。
+2. **体检**：逐条工作流判断"最近一轮是否在周期内"。证据 = 仓库里的
+   commit 日期 / 文件头日期 / 元数据，**不靠猜**。
+3. **补跑**：挑最逾期且价值最高的一条，按它的入口命令的完整流程执行一轮
+   （`/product-upgrade` `/design-upgrade` `/amelia-ops` `/yifu-research`
+   `/refresh-tourist-videos`，含各自门禁与红线）。**最多补两条**；
+   其余只更新台账"下一步"。
+4. **门禁**：动了前端 → `npm run typecheck && npm test && npm run lint && npm run build`；
+   动了后端 → `cd backend && .venv/bin/python -m pytest`；只改 md → 注明"无代码改动"。
+5. **写回**：更新 `PROJECTS.md`（状态/最近一轮/下一步）、勾选 `CADENCE.md` backlog、
+   更新 `MEMORY.md` 待办。提交并推送到工作分支。
+6. **简报**：≤10 行合并简报——每项目一行（图例见 PROJECTS.md §B + 一句话）、
+   需要老板的事（≤3 件）、风险/诚实声明。
+
+红线：CADENCE §3 🛑 项只开 PR 不合并；一轮 diff 有界；不编数字、不承诺流量。
