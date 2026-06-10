@@ -146,7 +146,7 @@ export const HomeNewsWindow = ({
               onClick={() => setTab('teams')}
               className={tabClass(tab === 'teams')}
             >
-              National Teams
+              Latest
             </button>
           )}
           {hasFans && (

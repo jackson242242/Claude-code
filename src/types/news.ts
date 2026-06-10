@@ -23,6 +23,8 @@ export interface NewsItem {
   cityId?: string;
   /** City id to pre-fill the booking search in ConversionBridge */
   ctaCityId?: string;
+  /** External source article URL — present on live (RSS) items; opens in a new tab. */
+  url?: string;
 }
 
 export interface PlayerSpotlight {

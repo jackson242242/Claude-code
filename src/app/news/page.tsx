@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
-import { NEWS_ITEMS, PLAYER_SPOTLIGHTS, TEAM_BRIEFS } from '@/mocks/news';
+import { PLAYER_SPOTLIGHTS, TEAM_BRIEFS } from '@/mocks/news';
 import { NewsFeed } from '@/components/news/NewsFeed';
+import { getLiveNews } from '@/services/newsService';
 import { getTouristVideos } from '@/services/touristVideosService';
 import { FanFootageWall } from '@/components/news/FanFootageWall';
 
@@ -11,7 +12,10 @@ export const metadata: Metadata = {
 };
 
 const NewsPage = async () => {
-  const footage = await getTouristVideos();
+  const [footage, allItems] = await Promise.all([
+    getTouristVideos(),
+    getLiveNews(),
+  ]);
 
   return (
     /* Self-contained light wrapper — does not inherit the dark legacy body styles */
@@ -34,7 +38,7 @@ const NewsPage = async () => {
           )}
 
           <NewsFeed
-            allItems={NEWS_ITEMS}
+            allItems={allItems}
             spotlights={PLAYER_SPOTLIGHTS}
             teamBriefs={TEAM_BRIEFS}
           />

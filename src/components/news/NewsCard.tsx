@@ -1,5 +1,6 @@
 'use client';
 
+import type { ReactElement } from 'react';
 import type { NewsItem, ThumbnailKind } from '@/types/news';
 
 const GRADIENT_MAP: Record<ThumbnailKind, string> = {
@@ -36,8 +37,25 @@ export const NewsCard = ({ item, variant = 'grid' }: NewsCardProps) => {
   const gradient = GRADIENT_MAP[item.thumbnailKind];
   const badge = CATEGORY_BADGE[item.category];
 
+  // Live (RSS) items carry an external source URL — make the whole card a link
+  // that opens the article in a new tab.
+  const linkProps =
+    item.url != null
+      ? {
+          href: item.url,
+          target: '_blank',
+          rel: 'noopener noreferrer',
+          'aria-label': `${item.title} — read on ${item.source} (opens in a new tab)`,
+          className:
+            'block rounded-[1.125rem] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5a9dff]',
+        }
+      : null;
+
+  const withLink = (card: ReactElement): ReactElement =>
+    linkProps != null ? <a {...linkProps}>{card}</a> : card;
+
   if (variant === 'list') {
-    return (
+    return withLink(
       <article className="flex gap-4 bg-[#141d2b] rounded-[1.125rem] shadow-[0_6px_24px_rgba(0,0,0,0.45)] p-4 transition-transform duration-150 hover:-translate-y-0.5 focus-within:-translate-y-0.5">
         {/* Thumbnail */}
         <div
@@ -65,7 +83,7 @@ export const NewsCard = ({ item, variant = 'grid' }: NewsCardProps) => {
     );
   }
 
-  return (
+  return withLink(
     <article className="flex flex-col bg-[#141d2b] rounded-[1.125rem] shadow-[0_6px_24px_rgba(0,0,0,0.45)] overflow-hidden transition-transform duration-150 hover:-translate-y-0.5 focus-within:-translate-y-0.5">
       {/* Thumbnail */}
       <div

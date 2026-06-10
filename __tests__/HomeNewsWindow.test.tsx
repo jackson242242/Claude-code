@@ -74,7 +74,7 @@ describe('HomeNewsWindow', () => {
     expect(screen.getByText('Matchday News')).toBeInTheDocument();
     expect(screen.getByRole('tab', { name: /Superstars/i })).toBeInTheDocument();
     expect(
-      screen.getByRole('tab', { name: /National Teams/i }),
+      screen.getByRole('tab', { name: /Latest/i }),
     ).toBeInTheDocument();
     expect(screen.getByRole('tab', { name: /Fan Zone/i })).toBeInTheDocument();
   });
@@ -133,7 +133,7 @@ describe('HomeNewsWindow', () => {
     expect(
       screen.queryByRole('tab', { name: /Superstars/i }),
     ).not.toBeInTheDocument();
-    // Defaults to National Teams
+    // Defaults to the Latest rail
     expect(
       screen.getByRole('link', { name: /Brazil squad touch down/i }),
     ).toBeInTheDocument();

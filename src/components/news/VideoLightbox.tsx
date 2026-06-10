@@ -160,13 +160,18 @@ export const VideoLightbox = ({ video, onClose }: VideoLightboxProps) => {
                   className="absolute inset-0 w-full h-full object-cover"
                 />
               )}
-              <div
-                className="absolute inset-0 bg-black/40 flex items-center justify-center px-6 text-center"
-                aria-hidden={video.posterUrl != null ? 'true' : undefined}
-              >
+              <div className="absolute inset-0 bg-black/45 flex flex-col items-center justify-center gap-3 px-6 text-center">
                 <p className="text-white text-sm font-medium leading-snug max-w-xs">
-                  Live footage appears once a free source is connected.
+                  Watch real fan footage from {video.cityId != null ? 'this city' : 'the host cities'}.
                 </p>
+                <a
+                  href={video.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 rounded-full bg-[#3d8bff] px-4 py-2 text-sm font-bold text-white hover:bg-[#5a9dff] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-colors duration-150 motion-reduce:transition-none"
+                >
+                  Watch fan footage ↗
+                </a>
               </div>
             </div>
           )}

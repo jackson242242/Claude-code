@@ -46,3 +46,27 @@ describe('NewsCard (list variant)', () => {
     expect(screen.getByText(/Matchday26/)).toBeInTheDocument();
   });
 });
+
+describe('NewsCard (live/external)', () => {
+  const liveItem: NewsItem = {
+    ...item,
+    category: 'team',
+    source: 'The Guardian',
+    url: 'https://www.theguardian.com/football/2026/jun/10/story',
+  };
+
+  it('wraps the card in an external link when the item has a url', () => {
+    render(<NewsCard item={liveItem} variant="grid" />);
+    const link = screen.getByRole('link', {
+      name: /Group Stage Fixtures Announced — read on The Guardian/i,
+    });
+    expect(link).toHaveAttribute('href', liveItem.url);
+    expect(link).toHaveAttribute('target', '_blank');
+    expect(link).toHaveAttribute('rel', expect.stringContaining('noopener'));
+  });
+
+  it('renders a plain (non-link) card when there is no url', () => {
+    render(<NewsCard item={item} variant="grid" />);
+    expect(screen.queryByRole('link')).not.toBeInTheDocument();
+  });
+});

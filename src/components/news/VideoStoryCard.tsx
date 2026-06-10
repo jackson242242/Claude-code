@@ -28,11 +28,18 @@ export const VideoStoryCard = ({ item, size = 'sm' }: VideoStoryCardProps) => {
   const duration = item.videoSeconds != null ? formatDuration(item.videoSeconds) : null;
   const widthClass = size === 'md' ? 'w-[164px]' : 'w-[120px]';
   const playClass = size === 'md' ? 'w-14 h-14' : 'w-10 h-10';
+  // Live items link out to the source article; curated stories go to /news
+  // (never a dead in-page anchor).
+  const external = item.url != null;
+  const href = item.url ?? '/news';
 
   return (
     /* 9:16 card — fixed width, let height be determined by aspect ratio */
     <a
-      href={`#news-${item.id}`}
+      href={href}
+      {...(external
+        ? { target: '_blank', rel: 'noopener noreferrer' }
+        : {})}
       aria-label={`Watch: ${item.title}`}
       className={`relative flex-shrink-0 ${widthClass} rounded-[1.125rem] overflow-hidden shadow-[0_6px_24px_rgba(0,0,0,0.45)] focus-visible:outline-2 focus-visible:outline-[#5a9dff] focus-visible:outline-offset-2 block`}
       style={{ aspectRatio: '9/16' }}

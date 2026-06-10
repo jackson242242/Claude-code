@@ -7,7 +7,7 @@ import {
   getTouristVideos,
   getHeroVideos,
 } from '@/services/touristVideosService';
-import { NEWS_ITEMS } from '@/mocks/news';
+import { getLiveNews } from '@/services/newsService';
 import { SUPERSTAR_VIDEOS } from '@/mocks/superstars';
 import { BLOOPER_VIDEOS } from '@/mocks/bloopers';
 import { HomeNewsWindow } from '@/components/news/HomeNewsWindow';
@@ -17,14 +17,17 @@ import { HeroVideoBackground } from '@/components/HeroVideoBackground';
 const KICKOFF_UTC = Date.UTC(2026, 5, 11);
 
 const HomePage = async () => {
-  const [cities, locale, fanFootage, heroVideos] = await Promise.all([
+  const [cities, locale, fanFootage, heroVideos, liveNews] = await Promise.all([
     getCities(),
     getLocale(),
     getTouristVideos(),
     getHeroVideos(),
+    getLiveNews(),
   ]);
   const t = translator(locale);
-  const videoStories = NEWS_ITEMS.filter((item) => item.category === 'video');
+  // Top live headlines for the "Latest" rail (fall back to whatever the news
+  // service returns, which is the curated seed when the feed is unreachable).
+  const videoStories = liveNews.slice(0, 10);
   const daysUntilKickoff = Math.max(
     0,
     Math.ceil((KICKOFF_UTC - Date.now()) / 86_400_000),
