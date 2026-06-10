@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VoiceMemoBot</title>
+<style>
+  :root {
+    --bg: #0d1117; --card: #161b22; --line: #2d333b;
+    --text: #e6edf3; --muted: #8b949e; --accent: #b364f7; --accent2: #f76489;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  header {
+    display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1.2rem;
+    border-bottom: 1px solid var(--line); position: sticky; top: 0;
+    background: var(--bg); z-index: 2;
+  }
+  header h1 {
+    font-size: 1.05rem; margin: 0;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  nav { display: flex; gap: 0.4rem; margin-left: auto; }
+  nav button {
+    background: none; border: 1px solid var(--line); color: var(--muted);
+    padding: 0.35rem 0.9rem; border-radius: 999px; cursor: pointer; font-size: 0.85rem;
+  }
+  nav button.active { color: var(--text); border-color: var(--accent); }
+  main { max-width: 38rem; margin: 0 auto; padding: 1.2rem; }
+  .card {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 12px; padding: 1rem 1.1rem; margin-bottom: 1rem;
+  }
+  .card h2 { font-size: 0.95rem; margin: 0 0 0.7rem; }
+  .hint { color: var(--muted); font-size: 0.8rem; margin: 0.4rem 0 0; }
+  button.primary {
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    color: #fff; border: none; padding: 0.55rem 1.2rem; border-radius: 8px;
+    cursor: pointer; font-size: 0.9rem; font-weight: 600;
+  }
+  button.ghost {
+    background: none; border: 1px solid var(--line); color: var(--text);
+    padding: 0.45rem 0.8rem; border-radius: 8px; cursor: pointer; font-size: 0.85rem;
+  }
+  button:disabled { opacity: 0.45; cursor: default; }
+  .row { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+  .chip {
+    border: 1px solid var(--line); background: none; color: var(--text);
+    padding: 0.4rem 0.8rem; border-radius: 999px; cursor: pointer; font-size: 0.85rem;
+  }
+  .chip.active { border-color: var(--accent); background: rgba(179,100,247,0.15); }
+  .tool {
+    border: 1px solid var(--line); background: var(--bg); color: var(--text);
+    padding: 0.45rem 0.7rem; border-radius: 8px; cursor: pointer; font-size: 0.82rem;
+  }
+  .tool.on { border-color: var(--accent2); background: rgba(247,100,137,0.15); }
+  audio { width: 100%; margin: 0.6rem 0; }
+  input[type=text] {
+    background: var(--bg); border: 1px solid var(--line); color: var(--text);
+    padding: 0.5rem 0.7rem; border-radius: 8px; font-size: 0.85rem; flex: 1;
+  }
+  .post { border-bottom: 1px solid var(--line); padding: 0.9rem 0; }
+  .post:last-child { border-bottom: none; }
+  .post .meta { display: flex; gap: 0.5rem; align-items: baseline; font-size: 0.85rem; }
+  .post .meta .author { font-weight: 600; }
+  .post .meta .style-tag {
+    color: var(--accent); border: 1px solid var(--accent); border-radius: 999px;
+    padding: 0 0.5rem; font-size: 0.72rem;
+  }
+  .post .meta time { color: var(--muted); font-size: 0.75rem; margin-left: auto; }
+  .post .caption { margin: 0.3rem 0; font-size: 0.9rem; }
+  .like {
+    background: none; border: none; color: var(--accent2); cursor: pointer;
+    font-size: 0.9rem; padding: 0;
+  }
+  .error { color: #f85149; font-size: 0.85rem; margin-top: 0.5rem; }
+  .recdot {
+    display: inline-block; width: 10px; height: 10px; border-radius: 50%;
+    background: #f85149; margin-right: 0.4rem; animation: blink 1s infinite;
+  }
+  @keyframes blink { 50% { opacity: 0.2; } }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<header>
+  <h1>VoiceMemoBot</h1>
+  <nav>
+    <button id="tab-create" class="active">Create</button>
+    <button id="tab-feed">Feed</button>
+  </nav>
+</header>
+
+<main>
+  <section id="view-create">
+    <div class="card" id="record-card">
+      <h2>1 · Record a voice memo</h2>
+      <div class="row">
+        <button class="primary" id="btn-record">● Record</button>
+        <button class="ghost" id="btn-demo">Use demo memo</button>
+        <span id="rec-status" class="hint"></span>
+      </div>
+      <p class="hint">Hum, sing, or talk — the bot turns it into music. No mic? The demo memo is a synthesized melody.</p>
+    </div>
+
+    <div class="card hidden" id="style-card">
+      <h2>2 · Pick a vibe <span class="hint" style="display:inline">(one click renders)</span></h2>
+      <div class="row" id="style-list"></div>
+    </div>
+
+    <div class="card hidden" id="result-card">
+      <h2>3 · Your remix</h2>
+      <audio id="player" controls></audio>
+      <div class="row" id="result-styles"></div>
+      <div class="row" style="margin-top:0.6rem" id="tools">
+        <button class="tool" data-tweak="speed" data-delta="-0.25">🐢 Slower</button>
+        <button class="tool" data-tweak="speed" data-delta="0.25">🐇 Faster</button>
+        <button class="tool" data-tweak="echo" data-delta="0.25">🌊 Echo +</button>
+        <button class="tool" data-tweak="echo" data-delta="-0.25">Echo −</button>
+        <button class="tool" data-tweak="volume" data-delta="0.3">🔊 Louder</button>
+        <button class="tool" data-tweak="volume" data-delta="-0.3">🔉 Softer</button>
+        <button class="tool" id="btn-reverse">⏪ Reverse</button>
+        <button class="tool" id="btn-reset">Reset</button>
+      </div>
+      <div class="row" style="margin-top:0.6rem" id="instrument-list"></div>
+      <div class="row" style="margin-top:0.6rem">
+        <input type="text" id="prompt" maxlength="200"
+               placeholder="Describe the sound… e.g. “an anime villain talking” or “a tired sigh”">
+        <button class="ghost" id="btn-prompt">✨ Apply</button>
+      </div>
+      <p class="hint" id="tweak-summary"></p>
+      <div class="row" style="margin-top:0.8rem">
+        <input type="text" id="caption" maxlength="280" placeholder="Say something about this remix…">
+        <button class="primary" id="btn-post">Post to Feed</button>
+      </div>
+    </div>
+    <p class="error hidden" id="create-error"></p>
+  </section>
+
+  <section id="view-feed" class="hidden">
+    <div class="card">
+      <div class="row">
+        <span class="hint" style="margin:0">Posting as</span>
+        <input type="text" id="handle" maxlength="40" placeholder="your handle">
+      </div>
+    </div>
+    <div class="card" id="feed-card">
+      <h2>Latest remixes</h2>
+      <div id="feed-list"><p class="hint">Nothing here yet — be the first to post.</p></div>
+    </div>
+  </section>
+</main>
+
+<script>
+"use strict";
+const $ = (id) => document.getElementById(id);
+const state = {
+  memoId: null,
+  style: null,
+  styles: [],
+  instruments: [],          // catalog from the API
+  selectedInstruments: [],  // user's current mix
+  prompt: "",
+  render: null,
+  tweaks: { speed: 1.0, echo: 0.0, volume: 1.0, reverse: false },
+  busy: false,
+};
+const LIMITS = { speed: [0.5, 2.0], echo: [0.0, 1.0], volume: [0.1, 2.0] };
+
+// ---------- tabs ----------
+function showTab(name) {
+  $("view-create").classList.toggle("hidden", name !== "create");
+  $("view-feed").classList.toggle("hidden", name !== "feed");
+  $("tab-create").classList.toggle("active", name === "create");
+  $("tab-feed").classList.toggle("active", name === "feed");
+  if (name === "feed") loadFeed();
+}
+$("tab-create").onclick = () => showTab("create");
+$("tab-feed").onclick = () => showTab("feed");
+
+// ---------- handle (author) ----------
+$("handle").value = localStorage.getItem("vmb-handle") || "";
+$("handle").oninput = () => localStorage.setItem("vmb-handle", $("handle").value);
+const handle = () => ($("handle").value || "anonymous").trim() || "anonymous";
+
+// ---------- error helper ----------
+function setError(message) {
+  const el = $("create-error");
+  el.textContent = message || "";
+  el.classList.toggle("hidden", !message);
+}
+
+// ---------- WAV encoding (16-bit PCM) ----------
+function encodeWav(float32, sampleRate) {
+  const pcm = new Int16Array(float32.length);
+  for (let i = 0; i < float32.length; i++) {
+    const s = Math.max(-1, Math.min(1, float32[i]));
+    pcm[i] = s < 0 ? s * 0x8000 : s * 0x7fff;
+  }
+  const buffer = new ArrayBuffer(44 + pcm.length * 2);
+  const view = new DataView(buffer);
+  const writeStr = (offset, str) => {
+    for (let i = 0; i < str.length; i++) view.setUint8(offset + i, str.charCodeAt(i));
+  };
+  writeStr(0, "RIFF");
+  view.setUint32(4, 36 + pcm.length * 2, true);
+  writeStr(8, "WAVE");
+  writeStr(12, "fmt ");
+  view.setUint32(16, 16, true);
+  view.setUint16(20, 1, true);   // PCM
+  view.setUint16(22, 1, true);   // mono
+  view.setUint32(24, sampleRate, true);
+  view.setUint32(28, sampleRate * 2, true);
+  view.setUint16(32, 2, true);
+  view.setUint16(34, 16, true);
+  writeStr(36, "data");
+  view.setUint32(40, pcm.length * 2, true);
+  new Int16Array(buffer, 44).set(pcm);
+  return new Blob([buffer], { type: "audio/wav" });
+}
+
+// ---------- mic recording ----------
+let recording = null;
+async function startRecording() {
+  const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+  const ctx = new (window.AudioContext || window.webkitAudioContext)();
+  const source = ctx.createMediaStreamSource(stream);
+  const processor = ctx.createScriptProcessor(4096, 1, 1);
+  const chunks = [];
+  processor.onaudioprocess = (e) => chunks.push(new Float32Array(e.inputBuffer.getChannelData(0)));
+  source.connect(processor);
+  processor.connect(ctx.destination);
+  recording = { stream, ctx, processor, chunks };
+  $("btn-record").textContent = "■ Stop";
+  $("rec-status").innerHTML = '<span class="recdot"></span>recording…';
+}
+async function stopRecording() {
+  const { stream, ctx, processor, chunks } = recording;
+  recording = null;
+  processor.disconnect();
+  stream.getTracks().forEach((t) => t.stop());
+  const total = chunks.reduce((n, c) => n + c.length, 0);
+  const merged = new Float32Array(total);
+  let offset = 0;
+  for (const c of chunks) { merged.set(c, offset); offset += c.length; }
+  const rate = ctx.sampleRate;
+  await ctx.close();
+  $("btn-record").textContent = "● Record";
+  $("rec-status").textContent = "";
+  if (total === 0) { setError("Nothing was recorded."); return; }
+  await uploadMemo(encodeWav(merged, rate), "memo.wav");
+}
+$("btn-record").onclick = async () => {
+  setError("");
+  try {
+    if (recording) await stopRecording();
+    else await startRecording();
+  } catch (e) {
+    setError("Microphone unavailable — use the demo memo instead.");
+  }
+};
+
+// ---------- demo memo (synthesized melody, works without a mic) ----------
+$("btn-demo").onclick = async () => {
+  setError("");
+  const rate = 16000, notes = [262, 330, 392, 523, 392, 330, 262, 196];
+  const noteLen = 0.3, samples = new Float32Array(Math.floor(rate * noteLen * notes.length));
+  notes.forEach((freq, n) => {
+    const start = Math.floor(n * noteLen * rate);
+    for (let i = 0; i < noteLen * rate; i++) {
+      const t = i / rate;
+      const env = Math.min(1, 10 * t) * Math.exp(-3 * t);
+      samples[start + i] = 0.5 * env * Math.sin(2 * Math.PI * freq * t);
+    }
+  });
+  await uploadMemo(encodeWav(samples, rate), "demo.wav");
+};
+
+// ---------- API ----------
+async function api(path, options) {
+  const response = await fetch(path, options);
+  if (!response.ok) {
+    let message = "Request failed";
+    try { message = (await response.json()).error.message; } catch (e) { /* keep default */ }
+    throw new Error(message);
+  }
+  return response.status === 204 ? null : response.json();
+}
+
+async function uploadMemo(blob, filename) {
+  const form = new FormData();
+  form.append("file", blob, filename);
+  try {
+    const memo = await api("/memos", { method: "POST", body: form });
+    state.memoId = memo.id;
+    state.render = null;
+    state.style = null;
+    state.selectedInstruments = [];
+    state.prompt = "";
+    $("prompt").value = "";
+    state.tweaks = { speed: 1.0, echo: 0.0, volume: 1.0, reverse: false };
+    $("result-card").classList.add("hidden");
+    $("style-card").classList.remove("hidden");
+    await loadStyles();
+    $("rec-status").textContent = "memo ready — pick a vibe ↓";
+  } catch (e) {
+    setError(e.message);
+  }
+}
+
+async function loadStyles() {
+  if (state.styles.length === 0) state.styles = await api("/styles");
+  if (state.instruments.length === 0) state.instruments = await api("/instruments");
+  for (const containerId of ["style-list", "result-styles"]) {
+    const container = $(containerId);
+    container.innerHTML = "";
+    for (const style of state.styles) {
+      const chip = document.createElement("button");
+      chip.className = "chip" + (style.id === state.style ? " active" : "");
+      chip.textContent = style.label;
+      chip.title = style.description;
+      chip.onclick = () => render(style.id);
+      container.appendChild(chip);
+    }
+  }
+  const instrumentList = $("instrument-list");
+  instrumentList.innerHTML = "";
+  for (const instrument of state.instruments) {
+    const chip = document.createElement("button");
+    const active = state.selectedInstruments.includes(instrument.id);
+    chip.className = "tool" + (active ? " on" : "");
+    chip.textContent = "🎵 " + instrument.label;
+    chip.title = instrument.description;
+    chip.onclick = () => {
+      const selected = state.selectedInstruments;
+      state.selectedInstruments = selected.includes(instrument.id)
+        ? selected.filter((id) => id !== instrument.id)
+        : [...selected, instrument.id];
+      render(state.style);
+    };
+    instrumentList.appendChild(chip);
+  }
+}
+
+async function render(styleId) {
+  if (state.busy || !state.memoId) return;
+  state.busy = true;
+  setError("");
+  document.body.style.cursor = "progress";
+  try {
+    state.style = styleId;
+    state.render = await api(`/memos/${state.memoId}/renders`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        style: styleId,
+        tweaks: state.tweaks,
+        instruments: state.selectedInstruments,
+        prompt: state.prompt,
+      }),
+    });
+    $("player").src = state.render.fileUrl + "?t=" + Date.now();
+    $("result-card").classList.remove("hidden");
+    await loadStyles();
+    updateToolUI();
+    $("player").play().catch(() => {});
+  } catch (e) {
+    setError(e.message);
+  } finally {
+    state.busy = false;
+    document.body.style.cursor = "";
+  }
+}
+
+// ---------- one-click tools (always re-render from the ORIGINAL memo) ----------
+function updateToolUI() {
+  const t = state.tweaks;
+  $("btn-reverse").classList.toggle("on", t.reverse);
+  const parts = [];
+  if (t.speed !== 1.0) parts.push(`speed ×${t.speed.toFixed(2)}`);
+  if (t.echo > 0) parts.push(`echo ${Math.round(t.echo * 100)}%`);
+  if (t.volume !== 1.0) parts.push(`volume ×${t.volume.toFixed(1)}`);
+  if (t.reverse) parts.push("reversed");
+  if (state.selectedInstruments.length) parts.push("with " + state.selectedInstruments.join(" + "));
+  if (state.prompt) parts.push(`“${state.prompt}”`);
+  $("tweak-summary").textContent = parts.length
+    ? "Applied to the original memo: " + parts.join(" · ")
+    : "No tweaks — every tool is one click and applies to the original memo.";
+}
+document.querySelectorAll("#tools .tool[data-tweak]").forEach((button) => {
+  button.onclick = () => {
+    const key = button.dataset.tweak;
+    const [min, max] = LIMITS[key];
+    const next = Math.round((state.tweaks[key] + parseFloat(button.dataset.delta)) * 100) / 100;
+    state.tweaks[key] = Math.max(min, Math.min(max, next));
+    render(state.style);
+  };
+});
+$("btn-reverse").onclick = () => {
+  state.tweaks.reverse = !state.tweaks.reverse;
+  render(state.style);
+};
+$("btn-reset").onclick = () => {
+  state.tweaks = { speed: 1.0, echo: 0.0, volume: 1.0, reverse: false };
+  state.selectedInstruments = [];
+  state.prompt = "";
+  $("prompt").value = "";
+  render(state.style);
+};
+$("btn-prompt").onclick = () => {
+  state.prompt = $("prompt").value.trim();
+  render(state.style);
+};
+$("prompt").addEventListener("keydown", (e) => {
+  if (e.key === "Enter") $("btn-prompt").click();
+});
+
+// ---------- posting & feed ----------
+$("btn-post").onclick = async () => {
+  if (!state.render) return;
+  setError("");
+  try {
+    await api("/posts", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        renderId: state.render.id,
+        author: handle(),
+        caption: $("caption").value.trim(),
+      }),
+    });
+    $("caption").value = "";
+    showTab("feed");
+  } catch (e) {
+    setError(e.message);
+  }
+};
+
+async function loadFeed() {
+  const posts = await api("/posts").catch(() => []);
+  const list = $("feed-list");
+  if (posts.length === 0) {
+    list.innerHTML = '<p class="hint">Nothing here yet — be the first to post.</p>';
+    return;
+  }
+  list.innerHTML = "";
+  for (const post of posts) {
+    const item = document.createElement("div");
+    item.className = "post";
+    const when = new Date(post.createdAt).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+    item.innerHTML = `
+      <div class="meta">
+        <span class="author"></span>
+        <span class="style-tag"></span>
+        <time>${when}</time>
+      </div>
+      <p class="caption"></p>
+      <audio controls preload="none"></audio>
+      <div class="row">
+        <button class="like">♥ <span>${post.likes}</span></button>
+        <a class="hint" style="margin:0" href="/p/${post.id}" target="_blank">permalink</a>
+      </div>`;
+    item.querySelector(".author").textContent = post.author;
+    item.querySelector(".style-tag").textContent = post.style;
+    item.querySelector(".caption").textContent = post.caption;
+    item.querySelector("audio").src = post.fileUrl;
+    const likeButton = item.querySelector(".like");
+    likeButton.onclick = async () => {
+      const updated = await api(`/posts/${post.id}/like`, { method: "POST" });
+      likeButton.querySelector("span").textContent = updated.likes;
+    };
+    list.appendChild(item);
+  }
+}
+</script>
+</body>
+</html>

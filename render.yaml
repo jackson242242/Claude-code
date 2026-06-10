@@ -80,3 +80,23 @@ services:
         sync: false
       - key: NEXT_PUBLIC_KAYAK_AFFILIATE_ID
         sync: false
+
+  # VoiceMemoBot — standalone product (voice memo → AI remix → its own feed).
+  # Serves the web prototype UI at "/" plus the JSON API. No secrets required:
+  # without REPLICATE_API_TOKEN the offline DSP mock provider renders remixes.
+  # RENDER_EXTERNAL_URL (set automatically by Render) is used for public file
+  # URLs and post permalinks, so no manual URL wiring is needed.
+  - type: web
+    name: voicememobot-api
+    runtime: python
+    plan: free
+    rootDir: voice-memo-watch/backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11"
+      # Optional: enables real AI generation (melody-conditioned MusicGen).
+      - key: REPLICATE_API_TOKEN
+        sync: false

@@ -1,0 +1,21 @@
+# XcodeGen spec — run `xcodegen generate` in this folder on macOS to produce
+# VoiceMemoBot.xcodeproj, then build/run on a watch simulator from Xcode.
+name: VoiceMemoBot
+options:
+  bundleIdPrefix: com.example
+  deploymentTarget:
+    watchOS: "10.0"
+targets:
+  VoiceMemoBot:
+    type: application
+    platform: watchOS
+    sources: [VoiceMemoBot]
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_WKApplication: YES
+        INFOPLIST_KEY_NSMicrophoneUsageDescription: >-
+          VoiceMemoBot records your voice memo so the AI can remix it into music.
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
+        SWIFT_VERSION: "5.9"
+        CODE_SIGN_STYLE: Automatic

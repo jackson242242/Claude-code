@@ -1,0 +1,81 @@
+name: Majordomo site health
+
+# The "majordomo": probes the deployed sites on a schedule and reports back
+# where the team can see it — it opens a GitHub issue when a site is
+# unreachable and closes it when the site recovers. GitHub-hosted runners
+# have open outbound network (unlike the Claude build sandbox, which cannot
+# reach onrender.com), so this is where uptime checks must live.
+#
+# Note: scheduled workflows only run from the repository's default branch,
+# so this activates once merged there.
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  probe:
+    name: Probe deployed sites
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe each site (with retries for Render free-tier cold starts)
+        id: probe
+        env:
+          # name|url pairs, one per line. VoiceMemoBot's URL is added via the
+          # repo variable VOICEMEMOBOT_URL once its first deploy reveals it.
+          SITES: |
+            worldcup-web|https://worldcup-web-03eq.onrender.com
+            worldcup-api|https://worldcup-api-6g3t.onrender.com/health
+            voicememobot-api|${{ vars.VOICEMEMOBOT_URL }}
+        run: |
+          down=""
+          while IFS='|' read -r name url; do
+            [ -z "$name" ] || [ -z "$url" ] && continue
+            ok=0
+            for attempt in 1 2 3 4; do
+              code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 90 "$url" || echo 000)
+              if [ "$code" -ge 200 ] && [ "$code" -lt 400 ]; then ok=1; break; fi
+              # free-tier services spin down; give the cold start time
+              sleep $((attempt * 15))
+            done
+            if [ "$ok" = 0 ]; then
+              echo "DOWN: $name ($url) last HTTP $code"
+              down="${down}- **${name}** — \`${url}\` unreachable (last HTTP ${code})\n"
+            else
+              echo "ok: $name"
+            fi
+          done <<< "$SITES"
+          {
+            echo "down<<EOF"
+            printf "%b" "$down"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Report back (open issue when down, close when recovered)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          DOWN: ${{ steps.probe.outputs.down }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          existing=$(gh issue list --repo "$REPO" --label site-down --state open --json number --jq '.[0].number // empty')
+          if [ -n "$DOWN" ]; then
+            body=$(printf "Majordomo health check failed at %s UTC:\n\n%s\nProbe log: %s" \
+              "$(date -u '+%Y-%m-%d %H:%M')" "$DOWN" "$RUN_URL")
+            if [ -n "$existing" ]; then
+              gh issue comment "$existing" --repo "$REPO" --body "$body"
+            else
+              gh label create site-down --repo "$REPO" --color B60205 \
+                --description "A deployed site is unreachable" 2>/dev/null || true
+              gh issue create --repo "$REPO" --label site-down \
+                --title "🚨 Majordomo: deployed site unreachable" --body "$body"
+            fi
+            exit 1
+          elif [ -n "$existing" ]; then
+            gh issue close "$existing" --repo "$REPO" \
+              --comment "Majordomo: all sites reachable again at $(date -u '+%Y-%m-%d %H:%M') UTC. ($RUN_URL)"
+          fi
