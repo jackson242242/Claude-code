@@ -27,8 +27,8 @@
 
 | 工作流 | 周期 | 入口 | 状态 | 最近一轮（证据） | 下一步 |
 |--------|------|------|------|------------------|--------|
-| 产品迭代 | 随 pm-cycle 体检 | （暂无专属命令） | 🟢 | 2026-06-10（自有 Feed + 1-2 击工具 + 乐器混音 + 自然语言音效 + web 原型；35 tests 97% cov） | 等老板合并 PR #23 |
-| 站点健康 | 30min（合并后生效） | `.github/workflows/site-health.yml` | 🔴 **当前无公网站点** | 2026-06-10 老板反馈 "site can't be reached"——属实：从未部署，原型只能本地跑 | 合并 PR #23 → Render 蓝图自动部署 `voicememobot-api`；首次部署后把 URL 填进 repo 变量 `VOICEMEMOBOT_URL`，site-health 工作流即开始探测并在不可达时开 `site-down` issue |
+| 产品迭代 | 随 pm-cycle 体检 | （暂无专属命令） | 🟢 | 2026-06-10（`611c755` 语音转录+评论+用户/关注+私信+转发+用户主页+直播演唱会；56 tests 96% cov） | 老板合并工作分支 PR 进部署分支 → Render 自动部署可测试 |
+| 站点健康 | 30min（合并后生效） | `.github/workflows/site-health.yml` | 🔴 **当前无公网站点** | 2026-06-10 老板反馈 "site can't be reached"——属实：从未部署，原型只能本地跑 | 合并后 Render 蓝图自动部署 `voicememobot-api`；首次部署后把 URL 填进 repo 变量 `VOICEMEMOBOT_URL` |
 
 **总管审计方式：** 同仓库即可达——每轮 `git fetch origin claude/inspiring-dirac-j8ar6q`
 看新 commit / 测试状态 / CI。**裁决更新（2026-06-10，老板亲自下令）：** 老板已明确要求
