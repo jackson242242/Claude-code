@@ -11,3 +11,4 @@
 > unaffected by the agent's reachability.
 
 - 2026-06-10T04:06Z · retest: PASS (153 FE / 62 BE) · prod news: unreachable (sandbox allow-list blocks onrender) · action: none — shipped /api/news/health probe + this check · deploy: 11bc9f2
+- 2026-06-10T09:40Z · retest: PASS (153 FE / 62 BE) · prod news: unreachable (sandbox allow-list blocks onrender) · action: none (run via /pm-cycle) · deploy: n/a

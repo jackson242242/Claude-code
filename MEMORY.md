@@ -14,6 +14,7 @@
 - **总管上线（2026-06-10）**：老板单一接口 = **总管 majordomo**（`.claude/agents/majordomo.md`），台账 `PROJECTS.md`，循环入口 `/pm-cycle`（全天候 = 老板建 Routine）。**微信直连不可行**（本环境无微信桥；如要做需公网 webhook 服务 + 公众号/企业微信凭证，属浩哥评估项）；远程对话用 Claude 手机 App/网页即可。
 - **节奏精简（2026-06-10 老板裁决）**：定时只留**产品 12h + 调研 6h**；设计 24h、运营 5h **撤定时转按需**（命令保留）。`/yifu-research` 改版为 last30days 式社区之声调研（mvanhorn/last30days-skill，MIT，仅借鉴方法未引入插件——其引擎需外部 API key/域名）。
 - **组合扩容（2026-06-10）**：登记 **P2 VoiceMemoBot**（分支 `claude/inspiring-dirac-j8ar6q`，`voice-memo-watch/`，watchOS 录音→AI remix）与 **P3 Thomas English Meal Counter**（分支 `claude/thomas-english-meal-counter-816Cf`，单文件 `thomas-meal-counter.html`）。两分支与 Matchday26 分支互不合并；总管每轮 fetch 体检。
+- **pm-cycle 首个完整轮（2026-06-10 09:40 UTC）**：补跑两条——①`/yifu-research`（逾期 5 天→已补，**关键发现：叙事反转**——主办城市酒店价自峰值回落约 1/3、票价均降 24%、揭幕战未售罄低于票面转售；旧"涨价紧迫"文案应退役，新钩子="捡漏窗口"+"最后一公里贵"）②`/news-live-check`（retest PASS 153FE/62BE；prod unreachable=沙箱限制，已记 ops-news-live.md）。P2 分支台账更新（`3477f30`）已并入默认分支 PROJECTS.md：**PR #23 等老板合并**（VoiceMemoBot 从未部署，合并后 Render 自动部署 + 填 `VOICEMEMOBOT_URL`）。P3 分支 06-10 有新 commit（学习卡/news-driven JSON），台账已记。无代码改动，本轮纯 md 写回。
 - **Routine 失明事故与修复（2026-06-10）**：老板反馈"majordomo routine 没在管 P2、也不汇报"。**根因**：Routine 每次只克隆**默认分支**，而总管基建（majordomo agent / PROJECTS.md / pm-cycle / 节奏精简）当时只在工作分支；默认分支上另有 `news-live-check`（`11bc9f2`，自称 majordomo）但只查新闻、不知组合台账。**修复**：基建经 PR 合并进默认分支；立规——**所有基建改动与每轮写回必须合并默认分支才生效**；pm-cycle 每轮把简报写 `briefs/latest.md`（老板固定读报位）。汇报机制如实说明：Routine 无推送通知，老板看 briefs/latest.md 或 claude.ai/code/routines 的 run 列表。
 
 ## 1. 项目概览
@@ -96,7 +97,7 @@
 - [ ] 下一阶段设计：情绪基调参考板（龙哥 KPI 要求）+ 骨架屏 + 8px 间距系统 + 价格对比徽章(A/B)。
 - [ ] **升级节奏**（架构规则）：12h 产品 / 24h 设计，见 `CADENCE.md`。入口命令 `.claude/commands/product-upgrade.md`、`design-upgrade.md`。机制=Routines（claude.ai/code/routines，老板一次性创建；agent 无法代建）。每次运行=全新会话，仓库是唯一记忆，必须先读 backlog 后写回进度。
 - [ ] 仓库根目录无关的 `ZombieSpawner.lua` 属历史遗留，忽略。
-- [ ] 老板在 claude.ai/code/routines 给 `/pm-cycle` 建 Routine（每 6h：daily×4 或 cron `0 */6 * * *`）；如之前建过设计/运营 Routine 请暂停或删除（2026-06-10 已撤定时）。首跑会补上 yifu-research（逾期至 2026-06-05）。
+- [x] 老板在 claude.ai/code/routines 给 `/pm-cycle` 建 Routine（每 6h）——2026-06-10 已按该节奏触发；首轮已补跑 yifu-research + news-live-check。如之前建过设计/运营 Routine 请暂停或删除（2026-06-10 已撤定时）。
 - [ ] （可选，浩哥评估）微信桥：公网 webhook 服务 + 微信公众号/企业微信凭证 + secrets，先论证必要性再动手。
 
 ## 10. 外部技能库评估（2026-06-10，总管）

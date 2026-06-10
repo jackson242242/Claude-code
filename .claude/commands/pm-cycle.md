@@ -22,5 +22,10 @@ description: Run one majordomo portfolio cycle — audit all ongoing projects, c
    不合并 = 下一轮全部失忆；红线项照 §3 停在 PR 等老板。
 6. **简报**：≤10 行合并简报（与 `briefs/latest.md` 同文）——每项目一行
    （图例见 PROJECTS.md §B + 一句话）、需要老板的事（≤3 件）、风险/诚实声明。
+7. **通知老板（有事才响）**：若本轮出现 🔴 卡住 / 红线停审 / 「需要老板的事」非空，
+   把简报发到滚动 GitHub issue **「Majordomo brief — action needed」**（复用
+   news-live-check 的模式：已有未关 issue 则追加评论，不重复开新 issue；事项解决后
+   自动关闭）。GitHub 会向老板推送通知。一切正常则**不开 issue 不打扰**，
+   简报只落 `briefs/latest.md` 与 run 记录。
 
 红线：CADENCE §3 🛑 项只开 PR 不合并；一轮 diff 有界；不编数字、不承诺流量。
