@@ -165,6 +165,90 @@
       cursor: pointer;
       text-decoration: underline;
     }
+
+    /* ── 每日学习卡片 ── */
+    .learn-card {
+      width: 100%;
+      max-width: 380px;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      margin-top: 16px;
+    }
+
+    .learn-card.invest { background: linear-gradient(135deg, #fffbeb, #fef3c7); }
+    .learn-card.ai     { background: linear-gradient(135deg, #eff6ff, #dbeafe); }
+
+    .learn-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .learn-tag {
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 3px 8px;
+      border-radius: 999px;
+    }
+
+    .invest .learn-tag { background: #f59e0b; color: white; }
+    .ai     .learn-tag { background: #3b82f6; color: white; }
+
+    .learn-icon { font-size: 1.2rem; }
+
+    .learn-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #1a202c;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    .learn-body {
+      font-size: 0.85rem;
+      color: #4a5568;
+      line-height: 1.6;
+    }
+
+    .learn-body strong { color: #1a202c; }
+
+    .learn-read-btn {
+      margin-top: 12px;
+      width: auto;
+      max-width: none;
+      display: inline-block;
+      padding: 8px 16px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .invest .learn-read-btn { background: #f59e0b; color: white; }
+    .ai     .learn-read-btn { background: #3b82f6; color: white; }
+
+    .learn-read-btn.read {
+      background: #e2e8f0 !important;
+      color: #a0aec0 !important;
+      cursor: default;
+    }
+
+    .section-divider {
+      width: 100%;
+      max-width: 380px;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #a0aec0;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin: 24px 0 4px;
+    }
   </style>
 </head>
 <body>
@@ -201,8 +285,31 @@
   <button id="logBtn" onclick="logToday()">✅ 今天吃饭说英文了！</button>
   <button id="undoBtn" onclick="undoToday()" disabled>↩ 撤销今天的打卡</button>
 
+  <!-- 每日学习 -->
+  <div class="section-divider">📚 今日学习</div>
+
+  <div class="learn-card invest" id="investCard">
+    <div class="learn-header">
+      <span class="learn-icon">📈</span>
+      <span class="learn-tag">长期投资</span>
+    </div>
+    <div class="learn-title" id="investTitle"></div>
+    <div class="learn-body" id="investBody"></div>
+    <button class="learn-read-btn" id="investReadBtn" onclick="markRead('invest')">✓ 我学了</button>
+  </div>
+
+  <div class="learn-card ai" id="aiCard" style="margin-top:12px;">
+    <div class="learn-header">
+      <span class="learn-icon">🤖</span>
+      <span class="learn-tag">AI 知识</span>
+    </div>
+    <div class="learn-title" id="aiTitle"></div>
+    <div class="learn-body" id="aiBody"></div>
+    <button class="learn-read-btn" id="aiReadBtn" onclick="markRead('ai')">✓ 我学了</button>
+  </div>
+
   <!-- 历史记录 -->
-  <div class="history-card">
+  <div class="history-card" style="margin-top:24px;">
     <div class="history-title">📅 打卡记录</div>
     <ul class="history-list" id="historyList">
       <li class="empty-msg" id="emptyMsg">还没有打卡记录</li>
@@ -213,6 +320,127 @@
 
   <script>
     const STORAGE_KEY = 'thomas_meal_counter';
+    const READ_KEY    = 'thomas_learn_read';
+
+    // ── 学习内容库 ──────────────────────────────────────────
+    const INVEST_LESSONS = [
+      {
+        title: "复利是世界第八大奇迹",
+        body: "爱因斯坦曾说：<strong>复利是世界第八大奇迹</strong>。$10,000 以年化 10% 增长，30 年后变成 $174,494。越早开始，时间越是你的朋友。"
+      },
+      {
+        title: "指数基金：最简单的长期策略",
+        body: "标普500指数在过去100年平均年化回报约 <strong>10%</strong>。买入追踪大盘的 ETF（如 VOO、SPY），不需要选股，胜过大多数主动基金。"
+      },
+      {
+        title: "不要择时，要时间在市场里",
+        body: "<strong>"Time in the market beats timing the market"</strong>。错过2000-2019年中涨幅最好的10天，总回报从 $10,000 跌至 $2,900。持续持有比进出市场重要得多。"
+      },
+      {
+        title: "72法则：快速估算翻倍时间",
+        body: "用 <strong>72 ÷ 年化利率</strong> = 本金翻倍所需年数。年化8%→9年翻倍，年化6%→12年翻倍。选择投资标的时，用这个公式快速比较。"
+      },
+      {
+        title: "分散投资降低风险",
+        body: "不要把鸡蛋放在一个篮子里。股票、债券、房地产、国际市场之间的相关性低，组合配置可以在 <strong>不降低预期回报的同时减少波动</strong>。"
+      },
+      {
+        title: "定投（DCA）消除择时焦虑",
+        body: "Dollar-Cost Averaging：<strong>每月固定投入相同金额</strong>，不管市场涨跌。高位买少，低位买多，长期下来平均成本往往低于一次性买入。"
+      },
+      {
+        title: "市场短期是投票机，长期是称重机",
+        body: "巴菲特名言。短期价格受情绪驱动，但长期价格反映公司真实价值。<strong>忽略短期噪音，聚焦长期基本面</strong>，是价值投资的核心。"
+      },
+      {
+        title: "通货膨胀是储蓄的隐形杀手",
+        body: "年通胀3%，30年后 $100 的购买力只剩 <strong>$41</strong>。把钱放在回报低于通胀的地方，实际上是在亏损。投资是对抗通胀的必要手段。"
+      },
+      {
+        title: "费率侵蚀长期回报",
+        body: "主动基金平均费率 1~2%，指数基金费率低至 0.03%。看起来小，但 <strong>30年中1%的额外费率会吃掉你约25%的最终财富</strong>。费率越低越好。"
+      },
+      {
+        title: "再平衡：纪律胜过情绪",
+        body: "每年或按比例偏离时，将组合 <strong>调回目标配置</strong>（如股六债四）。这强制你"高卖低买"，是消除情绪决策的系统性方法。"
+      },
+      {
+        title: "紧急备用金是投资的前提",
+        body: "在开始长期投资前，先存好 <strong>3~6个月生活费的紧急备用金</strong>，放在流动性高的账户。这样市场下跌时你不需要被迫卖出。"
+      },
+      {
+        title: "巴菲特的护城河理论",
+        body: "伟大企业拥有 <strong>Economic Moat（经济护城河）</strong>：品牌（可口可乐）、网络效应（Visa）、成本优势（Costco）。护城河越宽，竞争对手越难侵入，长期回报越稳定。"
+      },
+      {
+        title: "股市下跌是打折促销，不是灾难",
+        body: "当你是长期买家，<strong>市场下跌其实是好事</strong>——你能用更少的钱买到同样的资产。改变心态：熊市是积累财富的机会，而不是恐慌的时刻。"
+      },
+      {
+        title: "税收优化：让政府少拿一点",
+        body: "在税收优惠账户（401k、IRA、Roth IRA）里投资，复利不被每年的资本利得税打断。<strong>相同的投资，在税优账户里30年后可多出30~50%</strong>。"
+      },
+    ];
+
+    const AI_LESSONS = [
+      {
+        title: "什么是大语言模型（LLM）？",
+        body: "LLM（Large Language Model）是在海量文本上训练的 AI 模型，学会预测"下一个词"。ChatGPT、Claude、Gemini 都是 LLM。<strong>它不是数据库查询，而是统计模式的涌现</strong>。"
+      },
+      {
+        title: "Transformer：现代 AI 的基础架构",
+        body: "2017年 Google 论文《Attention Is All You Need》提出 <strong>Transformer 架构</strong>，引入"注意力机制"让模型关注上下文中最相关的部分。几乎所有现代 LLM 都建立在这一基础上。"
+      },
+      {
+        title: "提示词工程（Prompt Engineering）",
+        body: "如何跟 AI 说话决定了答案质量。技巧：<strong>给角色、给上下文、给例子、分步骤提问</strong>。"你是一位专业财务顾问，请用简单语言解释…" 比直接提问效果好10倍。"
+      },
+      {
+        title: "AI 的幻觉问题（Hallucination）",
+        body: "LLM 有时会自信地给出<strong>错误信息</strong>，这叫"幻觉"。原因：模型生成的是"听起来合理的文字"，而非查阅事实。重要信息务必交叉验证，不要盲目信任 AI 输出。"
+      },
+      {
+        title: "RAG：让 AI 连接你的知识库",
+        body: "Retrieval-Augmented Generation（检索增强生成）：先从你的文档里<strong>检索相关片段</strong>，再喂给 LLM 生成答案。解决模型知识截止日期问题，也减少幻觉。"
+      },
+      {
+        title: "AI Agent：从对话到自主行动",
+        body: "AI Agent 不只是聊天，它能<strong>调用工具、浏览网页、写代码、执行任务</strong>，形成"思考→行动→观察"的循环。Claude Code 本身就是一个 Agent。"
+      },
+      {
+        title: "Fine-tuning vs Prompting",
+        body: "<strong>Prompting</strong>：通过精心设计输入引导模型。<strong>Fine-tuning</strong>：用自己的数据继续训练模型，改变其行为。90% 的业务场景靠好的 Prompt 就够了，Fine-tuning 成本高，慎用。"
+      },
+      {
+        title: "向量数据库是 AI 应用的记忆",
+        body: "文本转成数字向量（Embedding）后存入向量数据库（如 Pinecone、Weaviate）。<strong>语义相似的内容距离近</strong>，搜索时找"意思相近"而非"字面匹配"。是 RAG 的核心基础设施。"
+      },
+      {
+        title: "Moore's Law & AI 算力",
+        body: "AI 训练成本每18个月下降约<strong>一半</strong>。2020年训练 GPT-3 需 $460万，今天同等算力成本已降至 $10万以下。算力民主化意味着更多人能构建 AI 产品。"
+      },
+      {
+        title: "多模态 AI：不只是文字",
+        body: "最新的 AI 模型能处理<strong>文字、图像、音频、视频</strong>。GPT-4o、Gemini 1.5、Claude 3 都是多模态模型。这打开了医疗影像分析、视频理解等全新应用场景。"
+      },
+      {
+        title: "AI 的 Token 是什么？",
+        body: "Token 是 LLM 处理文本的最小单位，约 <strong>0.75个英文单词或1.5个汉字</strong>。模型有 Context Window 限制（如128k tokens）。费用通常按 token 计费，理解这个能帮你优化 AI 使用成本。"
+      },
+      {
+        title: "Chain-of-Thought：让 AI 展示推理过程",
+        body: "在 Prompt 里加入"请一步一步思考"，模型会<strong>显式列出推理步骤</strong>，准确率大幅提升。这叫 Chain-of-Thought（思维链）提示，尤其对数学、逻辑题效果显著。"
+      },
+      {
+        title: "开源 vs 闭源 AI 模型",
+        body: "<strong>闭源</strong>（GPT-4、Claude）：性能领先，API 调用，数据隐私依赖厂商。<strong>开源</strong>（Llama 3、Mistral）：可本地部署，数据不出境，可定制，但需要自己维护。选择取决于你的隐私需求和技术能力。"
+      },
+      {
+        title: "AI 如何改变投资分析？",
+        body: "AI 可以<strong>实时分析财报、新闻情绪、宏观数据</strong>，找出人类分析师容易忽略的信号。量化对冲基金（如 Renaissance）早就用机器学习。未来，不懂 AI 的投资者会面临信息劣势。"
+      },
+    ];
+    // ──────────────────────────────────────────────────────────
 
     function loadData() {
       const raw = localStorage.getItem(STORAGE_KEY);
@@ -240,6 +468,66 @@
     function todayStr() {
       return fmt(new Date());
     }
+
+    // ── 每日学习逻辑 ──────────────────────────────────────────
+    function dayIndex() {
+      // 用日期字符串哈希选当天内容，不同日期显示不同条目
+      const d = new Date();
+      return d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
+    }
+
+    function getTodayRead() {
+      const raw = localStorage.getItem(READ_KEY);
+      if (!raw) return { date: '', invest: false, ai: false };
+      return JSON.parse(raw);
+    }
+
+    function renderLearn() {
+      const idx = dayIndex();
+      const invest = INVEST_LESSONS[idx % INVEST_LESSONS.length];
+      const ai     = AI_LESSONS[idx % AI_LESSONS.length];
+      const today  = todayStr();
+      const read   = getTodayRead();
+      const isToday = read.date === today;
+
+      document.getElementById('investTitle').textContent = invest.title;
+      document.getElementById('investBody').innerHTML   = invest.body;
+      document.getElementById('aiTitle').textContent    = ai.title;
+      document.getElementById('aiBody').innerHTML       = ai.body;
+
+      const investBtn = document.getElementById('investReadBtn');
+      const aiBtn     = document.getElementById('aiReadBtn');
+
+      if (isToday && read.invest) {
+        investBtn.textContent = '已学习 ✅';
+        investBtn.classList.add('read');
+      } else {
+        investBtn.textContent = '✓ 我学了';
+        investBtn.classList.remove('read');
+      }
+
+      if (isToday && read.ai) {
+        aiBtn.textContent = '已学习 ✅';
+        aiBtn.classList.add('read');
+      } else {
+        aiBtn.textContent = '✓ 我学了';
+        aiBtn.classList.remove('read');
+      }
+    }
+
+    function markRead(type) {
+      const today = todayStr();
+      const read = getTodayRead();
+      if (read.date !== today) {
+        read.date = today;
+        read.invest = false;
+        read.ai = false;
+      }
+      read[type] = true;
+      localStorage.setItem(READ_KEY, JSON.stringify(read));
+      renderLearn();
+    }
+    // ──────────────────────────────────────────────────────────
 
     function render() {
       const data = loadData();
@@ -315,6 +603,7 @@
     }
 
     render();
+    renderLearn();
   </script>
 </body>
 </html>
