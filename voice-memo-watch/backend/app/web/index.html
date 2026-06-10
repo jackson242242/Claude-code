@@ -6,172 +6,322 @@
 <title>VoiceMemoBot</title>
 <style>
   :root {
-    --bg: #0d1117; --card: #161b22; --line: #2d333b;
-    --text: #e6edf3; --muted: #8b949e; --accent: #b364f7; --accent2: #f76489;
+    --bg: #0a0612; --card: rgba(28, 20, 46, 0.72); --line: rgba(179, 100, 247, 0.22);
+    --text: #f2ecff; --muted: #9b8fc0;
+    --accent: #b364f7; --accent2: #ff4d8d; --accent3: #2ee6d6;
+    --glow: 0 0 24px rgba(179, 100, 247, 0.35);
+    --glow-pink: 0 0 24px rgba(255, 77, 141, 0.4);
   }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--text);
-         font-family: system-ui, -apple-system, sans-serif; }
+  body {
+    margin: 0; color: var(--text);
+    font-family: system-ui, -apple-system, sans-serif;
+    padding-bottom: 76px; /* room for bottom nav */
+    background: var(--bg);
+    background-image:
+      radial-gradient(ellipse 60% 40% at 15% -5%, rgba(179, 100, 247, 0.22), transparent),
+      radial-gradient(ellipse 50% 35% at 95% 10%, rgba(255, 77, 141, 0.16), transparent),
+      radial-gradient(ellipse 45% 35% at 50% 110%, rgba(46, 230, 214, 0.10), transparent);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
   header {
-    display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1.2rem;
-    border-bottom: 1px solid var(--line); position: sticky; top: 0;
-    background: var(--bg); z-index: 2;
+    display: flex; align-items: baseline; gap: 1rem; padding: 1rem 1.3rem 0.9rem;
+    position: sticky; top: 0; z-index: 2;
+    background: rgba(10, 6, 18, 0.82); backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
   }
   header h1 {
-    font-size: 1.05rem; margin: 0;
+    font-size: 1.5rem; margin: 0; font-weight: 800; letter-spacing: -0.03em;
+    background: linear-gradient(90deg, var(--accent3), var(--accent), var(--accent2), var(--accent3));
+    background-size: 300% 100%;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    animation: flow 6s linear infinite;
+  }
+  @keyframes flow { to { background-position: 300% 0; } }
+  header .hdr-hint {
+    color: var(--muted); font-size: 0.78rem; margin-left: auto;
+    text-transform: uppercase; letter-spacing: 0.14em;
+  }
+  main { max-width: 42rem; margin: 0 auto; padding: 1rem 0.9rem; }
+
+  /* ---------- bottom tab bar (xiaohongshu style) ---------- */
+  #bottom-nav {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 20;
+    display: flex; align-items: center; justify-content: space-around;
+    background: rgba(16, 10, 28, 0.88); backdrop-filter: blur(18px);
+    border-top: 1px solid var(--line);
+    height: 62px; padding-bottom: env(safe-area-inset-bottom);
+  }
+  #bottom-nav button {
+    background: none; border: none; color: var(--muted); cursor: pointer;
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.03em;
+    display: flex; flex-direction: column; align-items: center;
+    gap: 3px; padding: 0.3rem 0.8rem; transition: color 0.15s, transform 0.15s;
+  }
+  #bottom-nav button .icon { font-size: 1.25rem; line-height: 1; filter: grayscale(0.6); transition: filter 0.15s; }
+  #bottom-nav button.active { color: var(--text); }
+  #bottom-nav button.active .icon { transform: scale(1.18); filter: none; }
+  #tab-create {
+    background: linear-gradient(135deg, var(--accent), var(--accent2)) !important;
+    border-radius: 18px !important; width: 60px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: var(--glow-pink), 0 4px 18px rgba(0,0,0,0.5);
+    transform: translateY(-10px);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  #tab-create:hover { transform: translateY(-13px) scale(1.05); box-shadow: 0 0 34px rgba(255,77,141,0.6), 0 6px 22px rgba(0,0,0,0.5); }
+  #tab-create .icon { color: #fff; font-size: 1.6rem !important; font-weight: 800; filter: none !important; }
+
+  /* ---------- masonry feed (2-column cards) ---------- */
+  #feed-grid { column-count: 2; column-gap: 0.8rem; }
+  @media (min-width: 560px) { #feed-grid { column-count: 3; } }
+  .feed-card {
+    break-inside: avoid; background: var(--card); border: 1px solid var(--line);
+    border-radius: 18px; overflow: hidden; margin-bottom: 0.8rem; cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+  }
+  .feed-card:hover {
+    border-color: var(--accent); transform: translateY(-4px) scale(1.015);
+    box-shadow: var(--glow), 0 14px 34px rgba(0,0,0,0.45);
+  }
+  .feed-card .cover { width: 100%; height: 128px; display: block; }
+  .feed-card .body { padding: 0.65rem 0.75rem 0.75rem; }
+  .feed-card .title {
+    font-size: 0.9rem; font-weight: 650; line-height: 1.35; margin: 0 0 0.5rem;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .feed-card .byline { display: flex; align-items: center; gap: 0.35rem; font-size: 0.74rem; color: var(--muted); }
+  .feed-card .avatar {
+    width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--accent3), var(--accent), var(--accent2));
+    color: #fff; font-size: 0.64rem; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 0 8px rgba(179,100,247,0.5);
+  }
+  .feed-card .byline .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .feed-card .byline .hearts { margin-left: auto; color: var(--accent2); white-space: nowrap; font-weight: 700; }
+  .feed-card .style-pill {
+    display: inline-block; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.06em;
+    text-transform: uppercase; color: #fff;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 999px; padding: 0.1rem 0.55rem;
+    margin-bottom: 0.4rem; box-shadow: 0 0 10px rgba(179,100,247,0.35);
+  }
+  .feed-card .fwd-pill { display: inline-block; font-size: 0.66rem; color: var(--accent3); margin-bottom: 0.4rem; font-weight: 600; }
+  .feed-empty { color: var(--muted); font-size: 0.95rem; text-align: center; padding: 4rem 0; }
+  .feed-empty b {
     background: linear-gradient(90deg, var(--accent), var(--accent2));
     -webkit-background-clip: text; background-clip: text; color: transparent;
+    font-size: 1.2rem;
   }
-  nav { display: flex; gap: 0.4rem; margin-left: auto; flex-wrap: wrap; }
-  nav button {
-    background: none; border: 1px solid var(--line); color: var(--muted);
-    padding: 0.35rem 0.9rem; border-radius: 999px; cursor: pointer; font-size: 0.85rem;
+
+  /* ---------- post detail overlay ---------- */
+  #detail-overlay {
+    position: fixed; inset: 0; background: rgba(5, 2, 12, 0.72); backdrop-filter: blur(6px);
+    z-index: 30; display: none; align-items: flex-end; justify-content: center;
   }
-  nav button.active { color: var(--text); border-color: var(--accent); }
-  main { max-width: 38rem; margin: 0 auto; padding: 1.2rem; }
+  #detail-overlay.open { display: flex; }
+  #detail-sheet {
+    background: rgba(22, 14, 38, 0.97); border: 1px solid var(--line);
+    border-radius: 22px 22px 0 0; width: 100%; max-width: 42rem;
+    max-height: 88vh; overflow-y: auto; padding: 1.2rem 1.3rem 1.6rem;
+    box-shadow: 0 -10px 60px rgba(179, 100, 247, 0.25);
+  }
+  @media (min-width: 560px) {
+    #detail-overlay { align-items: center; }
+    #detail-sheet { border-radius: 22px; box-shadow: var(--glow), 0 24px 80px rgba(0,0,0,0.6); }
+  }
+  .detail-head { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.6rem; }
+  .detail-head .avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent3), var(--accent), var(--accent2));
+    color: #fff; font-weight: 800; font-size: 1.05rem;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; box-shadow: 0 0 14px rgba(179,100,247,0.5);
+  }
+  .detail-head .who { display: flex; flex-direction: column; cursor: pointer; }
+  .detail-head .who .name { font-weight: 750; font-size: 1rem; }
+  .detail-head .who .sub { color: var(--muted); font-size: 0.72rem; }
+  .detail-head .follow-btn {
+    margin-left: auto; border: none; color: #fff;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 999px; padding: 0.4rem 1.15rem;
+    font-size: 0.85rem; font-weight: 700; cursor: pointer;
+    box-shadow: var(--glow-pink);
+  }
+  .detail-head .close-btn { background: none; border: none; color: var(--muted); font-size: 1.2rem; cursor: pointer; }
+  .detail-actions { display: flex; gap: 1.3rem; align-items: center; margin: 0.7rem 0 0.2rem; }
+  .action-btn {
+    background: none; border: none; cursor: pointer; font-size: 0.95rem; font-weight: 650;
+    color: var(--muted); padding: 0; display: flex; align-items: center; gap: 0.3rem;
+    transition: color 0.15s, transform 0.1s;
+  }
+  .action-btn:hover { color: var(--text); transform: scale(1.08); }
+  .action-btn.liked { color: var(--accent2); text-shadow: 0 0 12px rgba(255,77,141,0.7); }
+  .detail-caption { font-size: 0.95rem; margin: 0.5rem 0; line-height: 1.5; }
+  .comments-wrap { border-top: 1px solid var(--line); margin-top: 0.8rem; padding-top: 0.8rem; }
+  .comments-wrap h3 {
+    font-size: 0.75rem; color: var(--accent3); margin: 0 0 0.6rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.12em;
+  }
+  .comment { font-size: 0.875rem; margin: 0.55rem 0; display: flex; gap: 0.5rem; }
+  .comment .avatar {
+    width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0; font-size: 0.64rem;
+    background: linear-gradient(135deg, var(--accent3), var(--accent), var(--accent2));
+    color: #fff; font-weight: 800; display: flex; align-items: center; justify-content: center;
+  }
+  .comment .ca { font-weight: 700; color: var(--accent); cursor: pointer; margin-right: 0.3rem; }
+  .comment .cd { color: var(--muted); font-size: 0.72rem; margin-left: 0.3rem; }
+  .comment-form { display: flex; gap: 0.5rem; margin-top: 0.7rem; }
+
+  /* ---------- create flow ---------- */
   .card {
     background: var(--card); border: 1px solid var(--line);
-    border-radius: 12px; padding: 1rem 1.1rem; margin-bottom: 1rem;
+    border-radius: 18px; padding: 1.1rem 1.2rem; margin-bottom: 1rem;
+    backdrop-filter: blur(10px);
   }
-  .card h2 { font-size: 0.95rem; margin: 0 0 0.7rem; }
+  .card h2 {
+    font-size: 1.02rem; font-weight: 750; margin: 0 0 0.8rem; letter-spacing: -0.01em;
+  }
   .hint { color: var(--muted); font-size: 0.8rem; margin: 0.4rem 0 0; }
   button.primary {
     background: linear-gradient(90deg, var(--accent), var(--accent2));
-    color: #fff; border: none; padding: 0.55rem 1.2rem; border-radius: 8px;
-    cursor: pointer; font-size: 0.9rem; font-weight: 600;
+    color: #fff; border: none; padding: 0.6rem 1.4rem; border-radius: 12px;
+    cursor: pointer; font-size: 0.92rem; font-weight: 750;
+    box-shadow: var(--glow-pink); transition: transform 0.12s, box-shadow 0.12s;
   }
+  button.primary:hover { transform: translateY(-1px); box-shadow: 0 0 30px rgba(255,77,141,0.55); }
   button.ghost {
-    background: none; border: 1px solid var(--line); color: var(--text);
-    padding: 0.45rem 0.8rem; border-radius: 8px; cursor: pointer; font-size: 0.85rem;
+    background: rgba(179,100,247,0.08); border: 1px solid var(--line); color: var(--text);
+    padding: 0.5rem 0.9rem; border-radius: 12px; cursor: pointer; font-size: 0.85rem;
+    font-weight: 600; transition: border-color 0.15s, background 0.15s;
   }
+  button.ghost:hover { border-color: var(--accent); background: rgba(179,100,247,0.16); }
   button:disabled { opacity: 0.45; cursor: default; }
   .row { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
   .chip {
-    border: 1px solid var(--line); background: none; color: var(--text);
-    padding: 0.4rem 0.8rem; border-radius: 999px; cursor: pointer; font-size: 0.85rem;
+    border: 1px solid var(--line); background: rgba(179,100,247,0.06); color: var(--text);
+    padding: 0.45rem 0.95rem; border-radius: 999px; cursor: pointer; font-size: 0.86rem;
+    font-weight: 650; transition: all 0.15s;
   }
-  .chip.active { border-color: var(--accent); background: rgba(179,100,247,0.15); }
+  .chip:hover { border-color: var(--accent); }
+  .chip.active {
+    border-color: transparent; color: #fff;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    box-shadow: var(--glow);
+  }
   .tool {
-    border: 1px solid var(--line); background: var(--bg); color: var(--text);
-    padding: 0.45rem 0.7rem; border-radius: 8px; cursor: pointer; font-size: 0.82rem;
+    border: 1px solid var(--line); background: rgba(10,6,18,0.6); color: var(--text);
+    padding: 0.5rem 0.75rem; border-radius: 12px; cursor: pointer; font-size: 0.82rem;
+    font-weight: 600; transition: all 0.15s;
   }
-  .tool.on { border-color: var(--accent2); background: rgba(247,100,137,0.15); }
-  audio { width: 100%; margin: 0.6rem 0; }
-  input[type=text], textarea {
-    background: var(--bg); border: 1px solid var(--line); color: var(--text);
-    padding: 0.5rem 0.7rem; border-radius: 8px; font-size: 0.85rem; flex: 1;
-    font-family: inherit;
+  .tool:hover { border-color: var(--accent3); }
+  .tool.on {
+    border-color: transparent; color: #fff;
+    background: linear-gradient(90deg, var(--accent2), var(--accent));
+    box-shadow: var(--glow-pink);
   }
-  textarea { resize: vertical; min-height: 2.5rem; }
-  .post { border-bottom: 1px solid var(--line); padding: 0.9rem 0; }
-  .post:last-child { border-bottom: none; }
-  .post .meta { display: flex; gap: 0.5rem; align-items: baseline; font-size: 0.85rem; flex-wrap: wrap; }
-  .post .meta .author { font-weight: 600; cursor: pointer; color: var(--accent); }
-  .post .meta .author:hover { text-decoration: underline; }
-  .post .meta .style-tag {
-    color: var(--accent); border: 1px solid var(--accent); border-radius: 999px;
-    padding: 0 0.5rem; font-size: 0.72rem;
+  audio { width: 100%; margin: 0.6rem 0; border-radius: 12px; }
+  input[type=text] {
+    background: rgba(10,6,18,0.65); border: 1px solid var(--line); color: var(--text);
+    padding: 0.55rem 0.8rem; border-radius: 12px; font-size: 0.86rem; flex: 1;
+    font-family: inherit; transition: border-color 0.15s, box-shadow 0.15s;
   }
-  .post .meta time { color: var(--muted); font-size: 0.75rem; margin-left: auto; }
-  .post .fwd { color: var(--muted); font-size: 0.75rem; margin: 0.2rem 0; }
-  .post .caption { margin: 0.3rem 0; font-size: 0.9rem; }
-  .post-actions { display: flex; gap: 0.8rem; align-items: center; flex-wrap: wrap; margin-top: 0.3rem; }
-  .action-btn {
-    background: none; border: none; cursor: pointer; font-size: 0.85rem;
-    color: var(--muted); padding: 0; display: flex; align-items: center; gap: 0.25rem;
-  }
-  .action-btn:hover { color: var(--text); }
-  .action-btn.liked { color: var(--accent2); }
-  .comments-section { margin-top: 0.7rem; padding-top: 0.6rem; border-top: 1px solid var(--line); display: none; }
-  .comment { font-size: 0.85rem; margin: 0.4rem 0; }
-  .comment .ca { font-weight: 600; color: var(--accent); cursor: pointer; }
-  .comment .cb { color: var(--text); }
-  .comment .cd { color: var(--muted); font-size: 0.75rem; }
-  .comment-form { display: flex; gap: 0.5rem; margin-top: 0.6rem; }
-  .error { color: #f85149; font-size: 0.85rem; margin-top: 0.5rem; }
+  input[type=text]:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 12px rgba(179,100,247,0.3); }
+  .error { color: #ff5e7a; font-size: 0.85rem; margin-top: 0.5rem; font-weight: 600; }
   .recdot {
     display: inline-block; width: 10px; height: 10px; border-radius: 50%;
-    background: #f85149; margin-right: 0.4rem; animation: blink 1s infinite;
+    background: #ff4d6d; box-shadow: 0 0 10px rgba(255,77,109,0.8);
+    margin-right: 0.4rem; animation: blink 1s infinite;
   }
   @keyframes blink { 50% { opacity: 0.2; } }
   .hidden { display: none; }
   .transcript-box {
-    background: var(--bg); border: 1px solid var(--line); border-radius: 8px;
-    padding: 0.6rem 0.8rem; font-size: 0.85rem; color: var(--text);
+    background: rgba(10,6,18,0.65); border: 1px solid var(--line); border-radius: 12px;
+    padding: 0.7rem 0.9rem; font-size: 0.875rem; color: var(--text);
     margin-top: 0.6rem; min-height: 2.5rem; white-space: pre-wrap;
+    border-left: 3px solid var(--accent3);
   }
-  /* streams */
-  .stream-card { border-bottom: 1px solid var(--line); padding: 0.8rem 0; }
+
+  /* ---------- streams ---------- */
+  .stream-card { border-bottom: 1px solid var(--line); padding: 0.9rem 0; }
   .stream-card:last-child { border-bottom: none; }
-  .live-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%;
-              background: #f85149; margin-right: 0.4rem; animation: blink 1s infinite; }
-  /* messages */
-  .conv-item { padding: 0.7rem 0; border-bottom: 1px solid var(--line); cursor: pointer;
-               font-size: 0.9rem; }
+  .live-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%;
+              background: #ff4d6d; box-shadow: 0 0 12px rgba(255,77,109,0.9);
+              margin-right: 0.4rem; animation: blink 1s infinite; }
+
+  /* ---------- messages ---------- */
+  .conv-item { padding: 0.8rem 0; border-bottom: 1px solid var(--line); cursor: pointer; font-size: 0.9rem; }
   .conv-item:last-child { border-bottom: none; }
   .conv-item:hover .conv-name { color: var(--accent); }
-  .conv-name { font-weight: 600; }
-  .msg-bubble { padding: 0.45rem 0.7rem; border-radius: 10px; max-width: 80%;
-                font-size: 0.875rem; margin-bottom: 0.4rem; }
-  .msg-me { background: rgba(179,100,247,0.2); margin-left: auto; }
-  .msg-them { background: var(--card); }
+  .conv-name { font-weight: 700; }
+  .msg-bubble { padding: 0.5rem 0.8rem; border-radius: 14px; max-width: 80%;
+                font-size: 0.88rem; margin-bottom: 0.4rem; }
+  .msg-me {
+    background: linear-gradient(135deg, rgba(179,100,247,0.35), rgba(255,77,141,0.3));
+    margin-left: auto; border: 1px solid rgba(179,100,247,0.35);
+  }
+  .msg-them { background: rgba(28,20,46,0.85); border: 1px solid var(--line); }
   .msg-meta { font-size: 0.72rem; color: var(--muted); margin-bottom: 0.15rem; }
   .thread-wrap { display: flex; flex-direction: column; }
-  /* profile panel */
+
+  /* ---------- me / profile ---------- */
+  .me-head { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.8rem; }
+  .me-head .avatar {
+    width: 64px; height: 64px; border-radius: 50%; font-size: 1.5rem;
+    background: linear-gradient(135deg, var(--accent3), var(--accent), var(--accent2));
+    color: #fff; font-weight: 800; display: flex; align-items: center; justify-content: center;
+    box-shadow: var(--glow);
+  }
+  .me-stats { display: flex; gap: 1.8rem; font-size: 0.8rem; margin: 0.7rem 0 1rem; color: var(--muted); }
+  .me-stats b {
+    display: block; font-size: 1.25rem; font-weight: 800; color: var(--text);
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+
+  /* ---------- other-user profile panel ---------- */
   #profile-panel {
     position: fixed; top: 0; right: -100%; width: min(360px, 100vw);
-    height: 100vh; background: var(--card); border-left: 1px solid var(--line);
-    overflow-y: auto; transition: right 0.25s; z-index: 10; padding: 1.2rem;
+    height: 100vh; background: rgba(20, 12, 36, 0.97); backdrop-filter: blur(16px);
+    border-left: 1px solid var(--line);
+    overflow-y: auto; transition: right 0.25s; z-index: 40; padding: 1.3rem;
+    box-shadow: -10px 0 50px rgba(179,100,247,0.2);
   }
   #profile-panel.open { right: 0; }
-  #profile-panel h2 { font-size: 1rem; margin: 0 0 0.3rem;
+  #profile-panel h2 { font-size: 1.25rem; font-weight: 800; margin: 0 0 0.3rem;
     background: linear-gradient(90deg, var(--accent), var(--accent2));
     -webkit-background-clip: text; background-clip: text; color: transparent; }
   #profile-panel .pb { font-size: 0.8rem; color: var(--muted); margin: 0.4rem 0 0.7rem; }
-  #profile-panel .pstats { display: flex; gap: 1rem; font-size: 0.82rem; margin-bottom: 0.8rem; }
+  #profile-panel .pstats { display: flex; gap: 1.1rem; font-size: 0.82rem; margin-bottom: 0.9rem; }
   .sound-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7rem; margin-top: 0.7rem; }
-  .sound-mini { background: var(--bg); border: 1px solid var(--line); border-radius: 8px;
-                padding: 0.5rem; cursor: pointer; }
-  .sound-mini:hover { border-color: var(--accent); }
-  .sound-mini .sms { font-size: 0.7rem; color: var(--accent); }
-  .sound-mini .smc { font-size: 0.78rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .sound-mini {
+    background: rgba(10,6,18,0.6); border: 1px solid var(--line); border-radius: 12px;
+    padding: 0.6rem; cursor: pointer; transition: all 0.15s;
+  }
+  .sound-mini:hover { border-color: var(--accent); box-shadow: var(--glow); transform: translateY(-2px); }
+  .sound-mini .sms { font-size: 0.7rem; color: var(--accent3); font-weight: 700; }
+  .sound-mini .smc { font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .sound-mini audio { display: none; }
 </style>
 </head>
 <body>
 <header>
   <h1>VoiceMemoBot</h1>
-  <nav>
-    <button id="tab-create" class="active">Create</button>
-    <button id="tab-feed">Feed</button>
-    <button id="tab-messages">Messages</button>
-    <button id="tab-streams">Streams</button>
-  </nav>
+  <span class="hdr-hint" id="hdr-hint">voice memos, remixed</span>
 </header>
 
-<!-- sliding profile panel -->
-<div id="profile-panel">
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem">
-    <span style="font-size:0.85rem;color:var(--muted)">Profile</span>
-    <button class="ghost" onclick="closeProfile()" style="padding:0.2rem 0.5rem">✕</button>
-  </div>
-  <h2 id="pp-name"></h2>
-  <p class="pb" id="pp-bio"></p>
-  <div class="pstats">
-    <span><b id="pp-followers">0</b> followers</span>
-    <span><b id="pp-following">0</b> following</span>
-    <span><b id="pp-posts">0</b> posts</span>
-  </div>
-  <button class="primary" id="pp-follow" style="width:100%;margin-bottom:0.8rem">Follow</button>
-  <button class="ghost" id="pp-dm" style="width:100%;margin-bottom:0.8rem">✉ Message</button>
-  <a id="pp-page-link" href="#" target="_blank" class="hint" style="display:block;margin-bottom:0.8rem">Open full profile →</a>
-  <h3 style="font-size:0.85rem;margin:0 0 0.5rem">Sound clips</h3>
-  <div class="sound-grid" id="pp-grid"></div>
-</div>
-
 <main>
-  <!-- CREATE TAB -->
-  <section id="view-create">
+  <!-- HOME = the feed (xiaohongshu-style masonry, the landing view) -->
+  <section id="view-feed">
+    <div id="feed-grid"></div>
+    <p class="feed-empty" id="feed-empty">Nothing here yet — tap <b>＋</b> to make the first remix.</p>
+  </section>
+
+  <!-- CREATE flow (opened by the + button) -->
+  <section id="view-create" class="hidden">
     <div class="card" id="record-card">
       <h2>1 · Record a voice memo</h2>
       <div class="row">
@@ -220,31 +370,13 @@
       <p class="hint" id="tweak-summary"></p>
       <div class="row" style="margin-top:0.8rem">
         <input type="text" id="caption" maxlength="280" placeholder="Say something about this remix…">
-        <button class="primary" id="btn-post">Post to Feed</button>
+        <button class="primary" id="btn-post">Post</button>
       </div>
     </div>
     <p class="error hidden" id="create-error"></p>
   </section>
 
-  <!-- FEED TAB -->
-  <section id="view-feed" class="hidden">
-    <div class="card">
-      <div class="row">
-        <span class="hint" style="margin:0">Posting as</span>
-        <input type="text" id="handle" maxlength="40" placeholder="your handle">
-        <button class="ghost" id="btn-save-profile" style="white-space:nowrap">Save profile</button>
-      </div>
-    </div>
-    <div class="card" id="feed-card">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.7rem">
-        <h2 style="margin:0">Latest remixes</h2>
-        <button class="ghost" id="btn-refresh-feed" style="font-size:0.8rem;padding:0.3rem 0.6rem">↻ Refresh</button>
-      </div>
-      <div id="feed-list"><p class="hint">Nothing here yet — be the first to post.</p></div>
-    </div>
-  </section>
-
-  <!-- MESSAGES TAB -->
+  <!-- MESSAGES -->
   <section id="view-messages" class="hidden">
     <div class="card">
       <h2>Direct Messages</h2>
@@ -267,7 +399,7 @@
     </div>
   </section>
 
-  <!-- STREAMS TAB -->
+  <!-- STREAMS -->
   <section id="view-streams" class="hidden">
     <div class="card">
       <h2>Live Concerts</h2>
@@ -286,7 +418,95 @@
       <div id="streams-list"><p class="hint">No live streams right now.</p></div>
     </div>
   </section>
+
+  <!-- ME (own profile) -->
+  <section id="view-me" class="hidden">
+    <div class="card">
+      <div class="me-head">
+        <div class="avatar" id="me-avatar">?</div>
+        <div style="flex:1">
+          <div class="row">
+            <input type="text" id="handle" maxlength="40" placeholder="your handle">
+            <button class="ghost" id="btn-save-profile" style="white-space:nowrap">Save</button>
+          </div>
+          <p class="hint">Your handle is your identity on VoiceMemoBot.</p>
+        </div>
+      </div>
+      <div class="me-stats">
+        <span><b id="me-followers">0</b> followers</span>
+        <span><b id="me-following">0</b> following</span>
+        <span><b id="me-posts">0</b> posts</span>
+      </div>
+      <a id="me-page-link" href="#" target="_blank" class="hint" style="display:block">Open public profile page →</a>
+    </div>
+    <div class="card">
+      <h2>My sound clips</h2>
+      <div class="sound-grid" id="me-grid"></div>
+      <p class="hint" id="me-empty">No posts yet — tap ＋ to create.</p>
+    </div>
+  </section>
 </main>
+
+<!-- post detail overlay (xiaohongshu-style sheet) -->
+<div id="detail-overlay">
+  <div id="detail-sheet">
+    <div class="detail-head">
+      <div class="avatar" id="d-avatar"></div>
+      <div class="who" id="d-who">
+        <span class="name" id="d-author"></span>
+        <span class="sub" id="d-sub"></span>
+      </div>
+      <button class="follow-btn" id="d-follow">Follow</button>
+      <button class="close-btn" onclick="closeDetail()">✕</button>
+    </div>
+    <p class="fwd-pill hidden" id="d-fwd">↻ forwarded</p>
+    <audio id="d-audio" controls></audio>
+    <p class="detail-caption" id="d-caption"></p>
+    <div class="detail-actions">
+      <button class="action-btn" id="d-like">♥ <span id="d-like-count">0</span></button>
+      <button class="action-btn" id="d-forward">↻ Forward</button>
+      <button class="action-btn" id="d-dm">✉ DM</button>
+      <a class="action-btn" id="d-permalink" target="_blank" style="text-decoration:none">🔗</a>
+    </div>
+    <div class="comments-wrap">
+      <h3 id="d-comments-title">Comments</h3>
+      <div id="d-comments"></div>
+      <div class="comment-form">
+        <input type="text" id="d-comment-input" maxlength="500" placeholder="Add a comment…">
+        <button class="ghost" id="d-comment-btn">Post</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- sliding profile panel for other users -->
+<div id="profile-panel">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem">
+    <span style="font-size:0.85rem;color:var(--muted)">Profile</span>
+    <button class="ghost" onclick="closeProfile()" style="padding:0.2rem 0.5rem">✕</button>
+  </div>
+  <h2 id="pp-name"></h2>
+  <p class="pb" id="pp-bio"></p>
+  <div class="pstats">
+    <span><b id="pp-followers">0</b> followers</span>
+    <span><b id="pp-following">0</b> following</span>
+    <span><b id="pp-posts">0</b> posts</span>
+  </div>
+  <button class="primary" id="pp-follow" style="width:100%;margin-bottom:0.8rem">Follow</button>
+  <button class="ghost" id="pp-dm" style="width:100%;margin-bottom:0.8rem">✉ Message</button>
+  <a id="pp-page-link" href="#" target="_blank" class="hint" style="display:block;margin-bottom:0.8rem">Open full profile →</a>
+  <h3 style="font-size:0.85rem;margin:0 0 0.5rem">Sound clips</h3>
+  <div class="sound-grid" id="pp-grid"></div>
+</div>
+
+<!-- bottom tab bar -->
+<nav id="bottom-nav">
+  <button id="tab-feed" class="active"><span class="icon">🏠</span>Home</button>
+  <button id="tab-streams"><span class="icon">🎙</span>Live</button>
+  <button id="tab-create"><span class="icon">＋</span></button>
+  <button id="tab-messages"><span class="icon">✉</span>Inbox</button>
+  <button id="tab-me"><span class="icon">👤</span>Me</button>
+</nav>
 
 <script>
 "use strict";
@@ -302,30 +522,34 @@ const state = {
   tweaks: { speed: 1.0, echo: 0.0, volume: 1.0, reverse: false },
   busy: false,
   transcript: "",
-  // messages
-  activeThread: null,  // { otherUser: str }
-  // streams
-  liveStream: null,    // { id, ws, mediaStream, ctx, processor }
+  detailPost: null,
+  liveStream: null,
 };
 const LIMITS = { speed: [0.5, 2.0], echo: [0.0, 1.0], volume: [0.1, 2.0] };
 
-// ---------- tabs ----------
-const TABS = ["create", "feed", "messages", "streams"];
+// ---------- tabs (bottom nav) ----------
+const TABS = ["feed", "create", "messages", "streams", "me"];
 function showTab(name) {
   TABS.forEach((t) => {
     $(`view-${t}`).classList.toggle("hidden", t !== name);
-    $(`tab-${t}`).classList.toggle("active", t === name);
+    const btn = $(`tab-${t}`);
+    if (btn) btn.classList.toggle("active", t === name);
   });
   if (name === "feed") loadFeed();
   if (name === "messages") loadConversations();
   if (name === "streams") loadStreams();
+  if (name === "me") loadMe();
 }
-TABS.forEach((t) => { $(`tab-${t}`).onclick = () => showTab(t); });
+TABS.forEach((t) => { const b = $(`tab-${t}`); if (b) b.onclick = () => showTab(t); });
 
 // ---------- handle (author) ----------
 $("handle").value = localStorage.getItem("vmb-handle") || "";
-$("handle").oninput = () => localStorage.setItem("vmb-handle", $("handle").value);
+$("handle").oninput = () => {
+  localStorage.setItem("vmb-handle", $("handle").value);
+  $("me-avatar").textContent = initialOf(handle());
+};
 const handle = () => ($("handle").value || "anonymous").trim() || "anonymous";
+const initialOf = (name) => (name || "?").charAt(0).toUpperCase();
 
 $("btn-save-profile").onclick = async () => {
   const u = handle();
@@ -335,6 +559,7 @@ $("btn-save-profile").onclick = async () => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ username: u, displayName: u, bio: "" }),
   }).catch(() => {});
+  loadMe();
 };
 
 // ---------- error helper ----------
@@ -375,14 +600,12 @@ function encodeWav(float32, sampleRate) {
 
 // ---------- Web Speech API transcription ----------
 let recognition = null;
-let speechChunks = [];
 function startSpeechRecognition() {
   const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
   if (!SR) return;
   recognition = new SR();
   recognition.continuous = true;
   recognition.interimResults = true;
-  speechChunks = [];
   recognition.onresult = (e) => {
     let final = "";
     for (let i = 0; i < e.results.length; i++) {
@@ -488,7 +711,6 @@ async function uploadMemo(blob, filename) {
     $("style-card").classList.remove("hidden");
     await loadStyles();
     $("rec-status").textContent = "memo ready — pick a vibe ↓";
-    // Backend mock transcription (fallback / WAV analysis)
     if ($("chk-transcribe").checked && !state.transcript) {
       try {
         const t = await api(`/memos/${memo.id}/transcribe`, { method: "POST" });
@@ -622,67 +844,110 @@ $("btn-post").onclick = async () => {
   }
 };
 
-// ---------- feed ----------
-$("btn-refresh-feed").onclick = () => loadFeed();
+// ---------- waveform cover art (bold neon) ----------
+function drawCover(canvas, seed) {
+  const ctx = canvas.getContext("2d");
+  const dpr = window.devicePixelRatio || 1;
+  const w = canvas.width = (canvas.offsetWidth || 320) * dpr;
+  const h = canvas.height = 128 * dpr;
+  // deterministic pseudo-random from the post id so covers are stable
+  let s = 0;
+  for (let i = 0; i < seed.length; i++) s = (s * 31 + seed.charCodeAt(i)) >>> 0;
+  const rand = () => { s = (s * 1103515245 + 12345) >>> 0; return (s >>> 16) / 0x10000; };
+  // pick one of a few bold neon palettes per post
+  const palettes = [
+    [275, 330],  // violet → hot pink
+    [330, 15],   // pink → red-orange
+    [180, 275],  // teal → violet
+    [200, 320],  // electric blue → magenta
+  ];
+  const [h1, h2] = palettes[Math.floor(rand() * palettes.length)];
+  const grad = ctx.createLinearGradient(0, 0, w, h);
+  grad.addColorStop(0, `hsl(${h1}, 85%, 14%)`);
+  grad.addColorStop(0.55, `hsl(${(h1 + h2) / 2}, 75%, 20%)`);
+  grad.addColorStop(1, `hsl(${h2}, 85%, 18%)`);
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, w, h);
+  // glow halo behind the waveform
+  const halo = ctx.createRadialGradient(w / 2, h / 2, 0, w / 2, h / 2, w / 2);
+  halo.addColorStop(0, `hsla(${h1}, 95%, 65%, 0.20)`);
+  halo.addColorStop(1, "transparent");
+  ctx.fillStyle = halo;
+  ctx.fillRect(0, 0, w, h);
+  // mirrored neon bars with per-bar hue sweep + glow
+  const bars = 42;
+  for (let i = 0; i < bars; i++) {
+    const x = (i / bars) * w;
+    const t = i / bars;
+    const barH = (0.12 + 0.8 * Math.abs(Math.sin(i * 0.55 + rand() * 5)) * (0.45 + 0.55 * rand())) * h;
+    const hue = h1 + (h2 - h1) * t;
+    ctx.shadowColor = `hsla(${hue}, 100%, 70%, 0.9)`;
+    ctx.shadowBlur = 10 * dpr;
+    ctx.fillStyle = `hsla(${hue}, 95%, 68%, 0.95)`;
+    ctx.fillRect(x + 1, (h - barH) / 2, w / bars - 3, barH);
+  }
+  ctx.shadowBlur = 0;
+}
 
+// ---------- the home feed (masonry cards) ----------
 async function loadFeed() {
   const posts = await api("/posts").catch(() => []);
-  const list = $("feed-list");
-  if (posts.length === 0) {
-    list.innerHTML = '<p class="hint">Nothing here yet — be the first to post.</p>';
-    return;
-  }
-  list.innerHTML = "";
+  const grid = $("feed-grid");
+  const empty = $("feed-empty");
+  grid.innerHTML = "";
+  empty.style.display = posts.length ? "none" : "";
   for (const post of posts) {
-    list.appendChild(buildPostEl(post));
+    const card = document.createElement("div");
+    card.className = "feed-card";
+    card.innerHTML = `
+      <canvas class="cover"></canvas>
+      <div class="body">
+        ${post.forwardedFrom ? '<span class="fwd-pill">↻ forwarded</span>' : ""}
+        <span class="style-pill"></span>
+        <p class="title"></p>
+        <div class="byline">
+          <span class="avatar"></span>
+          <span class="name"></span>
+          <span class="hearts">♥ ${post.likes}</span>
+        </div>
+      </div>`;
+    card.querySelector(".style-pill").textContent = post.style;
+    card.querySelector(".title").textContent = post.caption || `A ${post.style} remix`;
+    card.querySelector(".avatar").textContent = initialOf(post.author);
+    card.querySelector(".name").textContent = post.author;
+    card.onclick = () => openDetail(post);
+    grid.appendChild(card);
+    drawCover(card.querySelector(".cover"), post.id);
   }
 }
 
-function buildPostEl(post) {
-  const item = document.createElement("div");
-  item.className = "post";
-  const when = new Date(post.createdAt).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-  item.innerHTML = `
-    <div class="meta">
-      <span class="author"></span>
-      <span class="style-tag"></span>
-      <time>${when}</time>
-    </div>
-    ${post.forwardedFrom ? '<p class="fwd">↻ forwarded</p>' : ""}
-    <p class="caption"></p>
-    <audio controls preload="none"></audio>
-    <div class="post-actions">
-      <button class="action-btn btn-like">♥ <span class="like-count">${post.likes}</span></button>
-      <button class="action-btn btn-comment">💬 Comments</button>
-      <button class="action-btn btn-forward">↻ Forward</button>
-      <a class="action-btn" href="/p/${post.id}" target="_blank" style="text-decoration:none">🔗</a>
-      <button class="action-btn btn-dm">✉ DM</button>
-    </div>
-    <div class="comments-section"></div>`;
-  item.querySelector(".author").textContent = post.author;
-  item.querySelector(".author").onclick = () => openProfile(post.author);
-  item.querySelector(".style-tag").textContent = post.style;
-  item.querySelector(".caption").textContent = post.caption;
-  item.querySelector("audio").src = post.fileUrl;
-
-  const likeBtn = item.querySelector(".btn-like");
-  likeBtn.onclick = async () => {
+// ---------- post detail sheet ----------
+async function openDetail(post) {
+  state.detailPost = post;
+  $("d-avatar").textContent = initialOf(post.author);
+  $("d-author").textContent = post.author;
+  $("d-sub").textContent = post.style + " · " +
+    new Date(post.createdAt).toLocaleString([], { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" });
+  $("d-fwd").classList.toggle("hidden", !post.forwardedFrom);
+  $("d-audio").src = post.fileUrl;
+  $("d-caption").textContent = post.caption || "";
+  $("d-like-count").textContent = post.likes;
+  $("d-like").classList.remove("liked");
+  $("d-permalink").href = `/p/${post.id}`;
+  $("d-follow").textContent = "Follow";
+  $("d-avatar").onclick = $("d-who").onclick = () => { closeDetail(); openProfile(post.author); };
+  $("d-follow").onclick = async () => {
+    const me = handle();
+    if (me === "anonymous" || me === post.author) return;
+    await api(`/users/${post.author}/follow?follower=${encodeURIComponent(me)}`, { method: "POST" }).catch(() => {});
+    $("d-follow").textContent = "Following ✓";
+  };
+  $("d-like").onclick = async () => {
     const updated = await api(`/posts/${post.id}/like`, { method: "POST" });
-    likeBtn.querySelector(".like-count").textContent = updated.likes;
-    likeBtn.classList.add("liked");
+    $("d-like-count").textContent = updated.likes;
+    $("d-like").classList.add("liked");
   };
-
-  const commentBtn = item.querySelector(".btn-comment");
-  const commentSection = item.querySelector(".comments-section");
-  commentBtn.onclick = async () => {
-    const open = commentSection.style.display !== "none" && commentSection.style.display !== "";
-    if (open) { commentSection.style.display = "none"; return; }
-    commentSection.style.display = "block";
-    await renderComments(post.id, commentSection);
-  };
-
-  const fwdBtn = item.querySelector(".btn-forward");
-  fwdBtn.onclick = async () => {
+  $("d-forward").onclick = async () => {
     const caption = prompt("Add a caption for the forward (optional):");
     if (caption === null) return;
     await api(`/posts/${post.id}/forward`, {
@@ -690,50 +955,89 @@ function buildPostEl(post) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ author: handle(), caption }),
     });
+    closeDetail();
     loadFeed();
   };
-
-  const dmBtn = item.querySelector(".btn-dm");
-  dmBtn.onclick = () => { openDMWith(post.author); showTab("messages"); };
-
-  return item;
+  $("d-dm").onclick = () => { closeDetail(); openDMWith(post.author); showTab("messages"); };
+  await renderDetailComments(post.id);
+  $("detail-overlay").classList.add("open");
 }
+function closeDetail() {
+  $("detail-overlay").classList.remove("open");
+  $("d-audio").pause();
+  state.detailPost = null;
+}
+$("detail-overlay").onclick = (e) => { if (e.target === $("detail-overlay")) closeDetail(); };
 
-async function renderComments(postId, container) {
+async function renderDetailComments(postId) {
   const comments = await api(`/posts/${postId}/comments`).catch(() => []);
-  container.innerHTML = "";
+  $("d-comments-title").textContent = `Comments (${comments.length})`;
+  const wrap = $("d-comments");
+  wrap.innerHTML = "";
   for (const c of comments) {
     const el = document.createElement("div");
     el.className = "comment";
     const t = new Date(c.createdAt).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-    el.innerHTML = `<span class="ca"></span> <span class="cb"></span> <span class="cd">${t}</span>`;
+    el.innerHTML = `<span class="avatar"></span><div><span class="ca"></span><span class="cb"></span><span class="cd">${t}</span></div>`;
+    el.querySelector(".avatar").textContent = initialOf(c.author);
     el.querySelector(".ca").textContent = c.author;
-    el.querySelector(".ca").onclick = () => openProfile(c.author);
+    el.querySelector(".ca").onclick = () => { closeDetail(); openProfile(c.author); };
     el.querySelector(".cb").textContent = c.body;
-    container.appendChild(el);
+    wrap.appendChild(el);
   }
-  const form = document.createElement("div");
-  form.className = "comment-form";
-  form.innerHTML = `<input type="text" maxlength="500" placeholder="Add a comment…"><button class="ghost">Post</button>`;
-  const input = form.querySelector("input");
-  const btn = form.querySelector("button");
-  const submit = async () => {
-    const body = input.value.trim();
-    if (!body) return;
-    await api(`/posts/${postId}/comments`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ author: handle(), body }),
-    });
-    input.value = "";
-    await renderComments(postId, container);
-  };
-  btn.onclick = submit;
-  input.addEventListener("keydown", (e) => { if (e.key === "Enter") submit(); });
-  container.appendChild(form);
+}
+$("d-comment-btn").onclick = async () => {
+  const body = $("d-comment-input").value.trim();
+  if (!body || !state.detailPost) return;
+  await api(`/posts/${state.detailPost.id}/comments`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ author: handle(), body }),
+  });
+  $("d-comment-input").value = "";
+  await renderDetailComments(state.detailPost.id);
+};
+$("d-comment-input").addEventListener("keydown", (e) => { if (e.key === "Enter") $("d-comment-btn").click(); });
+
+// ---------- me tab ----------
+async function loadMe() {
+  const me = handle();
+  $("me-avatar").textContent = initialOf(me);
+  if (me === "anonymous") {
+    $("me-followers").textContent = $("me-following").textContent = $("me-posts").textContent = "0";
+    $("me-grid").innerHTML = "";
+    $("me-empty").style.display = "";
+    $("me-page-link").style.display = "none";
+    return;
+  }
+  $("me-page-link").style.display = "";
+  $("me-page-link").href = `/users/${me}/page`;
+  try {
+    const user = await api(`/users/${me}`);
+    $("me-followers").textContent = user.followerCount;
+    $("me-following").textContent = user.followingCount;
+    $("me-posts").textContent = user.postCount;
+  } catch (_) {
+    $("me-followers").textContent = $("me-following").textContent = $("me-posts").textContent = "0";
+  }
+  const posts = await api(`/users/${me}/posts`).catch(() => []);
+  const grid = $("me-grid");
+  grid.innerHTML = "";
+  $("me-empty").style.display = posts.length ? "none" : "";
+  for (const p of posts) {
+    const card = document.createElement("div");
+    card.className = "sound-mini";
+    card.innerHTML = `<div class="sms"></div><div class="smc"></div><audio preload="none"></audio>`;
+    card.querySelector(".sms").textContent = p.style + " · ♥ " + p.likes;
+    card.querySelector(".smc").textContent = p.caption || "—";
+    const audio = card.querySelector("audio");
+    audio.src = p.fileUrl;
+    card.onclick = () => { if (audio.paused) audio.play(); else audio.pause(); };
+    grid.appendChild(card);
+  }
 }
 
-// ---------- profile panel ----------
+// ---------- other-user profile panel ----------
 async function openProfile(username) {
   const panel = $("profile-panel");
   try {
@@ -744,6 +1048,7 @@ async function openProfile(username) {
     $("pp-following").textContent = user.followingCount;
     $("pp-posts").textContent = user.postCount;
     $("pp-page-link").href = `/users/${username}/page`;
+    $("pp-follow").textContent = "Follow";
     $("pp-follow").onclick = async () => {
       const me = handle();
       if (me === "anonymous" || me === username) return;
@@ -788,7 +1093,7 @@ function closeThread() { $("thread-card").classList.add("hidden"); currentThread
 async function loadConversations() {
   const me = handle();
   if (me === "anonymous") {
-    $("conv-list").innerHTML = '<p class="hint">Set your handle above to see messages.</p>';
+    $("conv-list").innerHTML = '<p class="hint">Set your handle in the Me tab to see messages.</p>';
     return;
   }
   const convs = await api(`/conversations/${encodeURIComponent(me)}`).catch(() => []);
@@ -852,10 +1157,6 @@ $("btn-send-msg").onclick = async () => {
 $("msg-body").addEventListener("keydown", (e) => { if (e.key === "Enter") $("btn-send-msg").click(); });
 
 // ---------- streams ----------
-let streamListenWs = null;
-let streamListenAudio = null;
-const audioChunks = [];
-
 $("btn-go-live").onclick = async () => {
   const title = $("stream-title").value.trim() || "Live concert";
   const stream = await api("/streams", {
@@ -864,13 +1165,10 @@ $("btn-go-live").onclick = async () => {
     body: JSON.stringify({ host: handle(), title }),
   }).catch((e) => { alert("Could not create stream: " + e.message); return null; });
   if (!stream) return;
-  // Open WebSocket and start capturing mic
   const wsProto = location.protocol === "https:" ? "wss" : "ws";
   const ws = new WebSocket(`${wsProto}://${location.host}/streams/${stream.id}/ws`);
   ws.binaryType = "arraybuffer";
   let micStream = null;
-  let audioCtx = null;
-  let processor = null;
   try {
     micStream = await navigator.mediaDevices.getUserMedia({ audio: true });
   } catch (_) {
@@ -878,9 +1176,9 @@ $("btn-go-live").onclick = async () => {
     await api(`/streams/${stream.id}`, { method: "DELETE" }).catch(() => {});
     return;
   }
-  audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   const source = audioCtx.createMediaStreamSource(micStream);
-  processor = audioCtx.createScriptProcessor(4096, 1, 1);
+  const processor = audioCtx.createScriptProcessor(4096, 1, 1);
   processor.onaudioprocess = (e) => {
     if (ws.readyState !== WebSocket.OPEN) return;
     const pcm = new Int16Array(e.inputBuffer.getChannelData(0).map((s) => {
@@ -895,7 +1193,7 @@ $("btn-go-live").onclick = async () => {
   $("stream-controls").classList.remove("hidden");
   $("btn-go-live").disabled = true;
   $("stream-status-text").textContent = `Live: ${stream.title}`;
-  let listenerPoll = setInterval(async () => {
+  const listenerPoll = setInterval(async () => {
     try {
       const s = await api(`/streams/${stream.id}`);
       $("stream-listeners").textContent = s.listenerCount + " listening";
@@ -942,25 +1240,18 @@ async function loadStreams() {
       <div class="row" style="margin-top:0.5rem">
         <button class="ghost join-btn">▶ Join stream</button>
         <button class="ghost leave-btn hidden">■ Leave</button>
-        <audio controls style="flex:1;display:none"></audio>
       </div>`;
     el.querySelector(".stream-title-text").textContent = s.title;
     el.querySelector(".stream-host").textContent = s.host;
     const joinBtn = el.querySelector(".join-btn");
     const leaveBtn = el.querySelector(".leave-btn");
-    const audioEl = el.querySelector("audio");
     let listenerWs = null;
-    let mediaSource = null;
-    let sourceBuffer = null;
     joinBtn.onclick = () => {
       const wsProto = location.protocol === "https:" ? "wss" : "ws";
       listenerWs = new WebSocket(`${wsProto}://${location.host}/streams/${s.id}/ws`);
       listenerWs.binaryType = "arraybuffer";
       const ctx = new (window.AudioContext || window.webkitAudioContext)({ sampleRate: 44100 });
-      let pendingChunks = [];
-      let playing = false;
       listenerWs.onmessage = (e) => {
-        // decode PCM Int16 → Float32 and play via AudioContext
         const int16 = new Int16Array(e.data);
         const float32 = new Float32Array(int16.length);
         for (let i = 0; i < int16.length; i++) {
@@ -971,8 +1262,7 @@ async function loadStreams() {
         const src = ctx.createBufferSource();
         src.buffer = buf;
         src.connect(ctx.destination);
-        src.start(playing ? ctx.currentTime : ctx.currentTime + 0.05);
-        playing = true;
+        src.start();
       };
       joinBtn.classList.add("hidden");
       leaveBtn.classList.remove("hidden");
@@ -985,6 +1275,10 @@ async function loadStreams() {
     list.appendChild(el);
   }
 }
+
+// ---------- boot: land on the feed ----------
+$("me-avatar").textContent = initialOf(handle());
+loadFeed();
 </script>
 </body>
 </html>

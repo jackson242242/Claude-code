@@ -102,36 +102,48 @@ _PROFILE_PAGE = """<!doctype html>
 <meta property="og:title" content="{display_name} on VoiceMemoBot">
 <meta property="og:description" content="{bio}">
 <style>
-  :root {{ --bg: #0d1117; --card: #161b22; --line: #2d333b;
-           --text: #e6edf3; --muted: #8b949e; --accent: #b364f7; --accent2: #f76489; }}
+  :root {{ --bg: #0a0612; --card: rgba(28, 20, 46, 0.72); --line: rgba(179, 100, 247, 0.22);
+           --text: #f2ecff; --muted: #9b8fc0;
+           --accent: #b364f7; --accent2: #ff4d8d; --accent3: #2ee6d6;
+           --glow: 0 0 24px rgba(179, 100, 247, 0.35); }}
   * {{ box-sizing: border-box; }}
   body {{ margin: 0; background: var(--bg); color: var(--text);
-          font-family: system-ui, -apple-system, sans-serif; }}
-  header {{ padding: 2rem 1.5rem 1rem; border-bottom: 1px solid var(--line); }}
-  header h1 {{ margin: 0 0 0.3rem;
-               background: linear-gradient(90deg, var(--accent), var(--accent2));
+          font-family: system-ui, -apple-system, sans-serif;
+          background-image:
+            radial-gradient(ellipse 60% 40% at 15% -5%, rgba(179, 100, 247, 0.22), transparent),
+            radial-gradient(ellipse 50% 35% at 95% 10%, rgba(255, 77, 141, 0.16), transparent);
+          background-attachment: fixed; min-height: 100vh; }}
+  header {{ padding: 2.2rem 1.5rem 1.2rem; border-bottom: 1px solid var(--line); }}
+  header h1 {{ margin: 0 0 0.3rem; font-size: 2rem; font-weight: 800; letter-spacing: -0.03em;
+               background: linear-gradient(90deg, var(--accent3), var(--accent), var(--accent2));
                -webkit-background-clip: text; background-clip: text; color: transparent; }}
-  .bio {{ color: var(--muted); font-size: 0.9rem; margin: 0.4rem 0 0.8rem; }}
-  .stats {{ display: flex; gap: 1.5rem; font-size: 0.85rem; }}
-  .stats span b {{ color: var(--text); }}
+  .bio {{ color: var(--muted); font-size: 0.92rem; margin: 0.4rem 0 0.9rem; }}
+  .stats {{ display: flex; gap: 1.8rem; font-size: 0.85rem; color: var(--muted); }}
+  .stats span b {{ color: var(--text); font-size: 1.1rem; font-weight: 800; }}
   main {{ max-width: 42rem; margin: 0 auto; padding: 1.5rem; }}
   .grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; }}
   .sound-card {{
-    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
-    padding: 0.8rem; cursor: pointer; transition: border-color 0.15s;
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    padding: 0.8rem; cursor: pointer; backdrop-filter: blur(10px);
+    transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
     position: relative; overflow: hidden;
   }}
-  .sound-card:hover {{ border-color: var(--accent); }}
-  .sound-card canvas {{ width: 100%; height: 48px; display: block; border-radius: 6px; margin-bottom: 0.5rem; }}
-  .sound-card .style {{ font-size: 0.72rem; color: var(--accent); border: 1px solid var(--accent);
-                        border-radius: 999px; padding: 0 0.5rem; display: inline-block; margin-bottom: 0.3rem; }}
-  .sound-card .caption {{ font-size: 0.82rem; color: var(--text);
+  .sound-card:hover {{ border-color: var(--accent); transform: translateY(-3px);
+                       box-shadow: var(--glow), 0 12px 30px rgba(0,0,0,0.45); }}
+  .sound-card canvas {{ width: 100%; height: 48px; display: block; border-radius: 8px; margin-bottom: 0.5rem; }}
+  .sound-card .style {{ font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+                        color: #fff; background: linear-gradient(90deg, var(--accent), var(--accent2));
+                        border-radius: 999px; padding: 0.1rem 0.55rem; display: inline-block; margin-bottom: 0.35rem;
+                        box-shadow: 0 0 10px rgba(179,100,247,0.35); }}
+  .sound-card .caption {{ font-size: 0.84rem; font-weight: 600; color: var(--text);
                            white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }}
-  .sound-card .likes {{ font-size: 0.78rem; color: var(--accent2); margin-top: 0.3rem; }}
+  .sound-card .likes {{ font-size: 0.8rem; font-weight: 700; color: var(--accent2); margin-top: 0.3rem; }}
   .sound-card audio {{ display: none; }}
-  .playing {{ border-color: var(--accent2) !important; }}
-  h2 {{ font-size: 1rem; margin: 0 0 1rem; }}
-  a.back {{ color: var(--accent); text-decoration: none; font-size: 0.9rem; }}
+  .playing {{ border-color: var(--accent2) !important;
+              box-shadow: 0 0 24px rgba(255, 77, 141, 0.45) !important; }}
+  h2 {{ font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em;
+        color: var(--accent3); margin: 0 0 1rem; }}
+  a.back {{ color: var(--accent); text-decoration: none; font-size: 0.9rem; font-weight: 600; }}
 </style>
 </head>
 <body>
@@ -161,16 +173,24 @@ function drawWaveform(canvas, audioEl) {{
   const ctx = canvas.getContext("2d");
   const w = canvas.width = canvas.offsetWidth * devicePixelRatio;
   const h = canvas.height = 48 * devicePixelRatio;
-  ctx.fillStyle = "#0d1117";
+  const bg = ctx.createLinearGradient(0, 0, w, h);
+  bg.addColorStop(0, "hsl(275, 85%, 12%)");
+  bg.addColorStop(1, "hsl(330, 85%, 16%)");
+  ctx.fillStyle = bg;
   ctx.fillRect(0, 0, w, h);
   audioEl.addEventListener("loadedmetadata", () => {{
     const bars = 40;
     for (let i = 0; i < bars; i++) {{
       const x = (i / bars) * w;
+      const t = i / bars;
       const barH = (0.3 + 0.7 * Math.random()) * h;
-      ctx.fillStyle = "rgba(179,100,247,0.6)";
+      const hue = 275 + 55 * t;
+      ctx.shadowColor = `hsla(${{hue}}, 100%, 70%, 0.9)`;
+      ctx.shadowBlur = 8 * devicePixelRatio;
+      ctx.fillStyle = `hsla(${{hue}}, 95%, 68%, 0.95)`;
       ctx.fillRect(x, (h - barH) / 2, w / bars - 2, barH);
     }}
+    ctx.shadowBlur = 0;
   }});
 }}
 
