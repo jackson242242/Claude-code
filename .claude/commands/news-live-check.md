@@ -60,8 +60,30 @@ and record + report a one-line confirmation.
    Then report the same one-liner back to the boss. If `live:false` persisted
    after a fix attempt, say so plainly and name the failing feed.
 
+5. **Escalate on failure (GitHub issue ping).** Decide severity:
+   - **RED** = step-1 retest FAILED, **or** the probe confirmed prod `live:false`
+     (a real feed outage on production) and step-3's fix did not recover it.
+   - `unreachable` (this env can't reach `onrender.com`) is **NOT** an alert on
+     its own — it's an environment limit; just log it.
+
+   On **RED**, ping the boss via the **GitHub MCP issue tools** (repo
+   `jackson242242/claude-code`), de-duplicating so we never spam:
+   1. `mcp__github__search_issues` for an **open** issue titled
+      `⚠️ Live-news health alert` (label `ops`, `live-news`).
+   2. If one exists → `mcp__github__add_issue_comment` with the failing
+      one-liner + details (which gate failed / which feed is down + probe JSON).
+   3. If none exists → `mcp__github__issue_write` to create
+      `⚠️ Live-news health alert` with the one-liner, the failing detail, and a
+      pointer to `marketing/ops-news-live.md`.
+
+   On a **GREEN** run (retest PASS **and** prod `live:true`) when an open
+   `⚠️ Live-news health alert` issue exists → comment `✅ Recovered <ISO> —
+   <source>, liveCount` and **close** it (`mcp__github__issue_write`). This keeps
+   exactly one open issue that opens on failure and closes on recovery.
+
 ## Guardrails
 - Never push on a red suite. Keep the diff bounded (feeds/cache only).
 - Honesty: if production was unreachable from this environment, report
   "unreachable — verify the Live pill", never a fabricated "live".
+- One rolling alert issue — comment on the open one, don't open duplicates.
 - Don't paste secrets (PEXELS/Anthropic keys) into chat or commits.
