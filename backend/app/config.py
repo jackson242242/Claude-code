@@ -60,6 +60,13 @@ class Settings:
     duffel_api_key: str | None = os.getenv("DUFFEL_API_KEY") or None
     duffel_base_url: str = os.getenv("DUFFEL_BASE_URL", "https://api.duffel.com")
 
+    # Real schedule feed (fixturedownload-style JSON list). Off unless a URL
+    # is set, so dev and seed-only deployments keep today's behavior.
+    schedule_feed_url: str | None = os.getenv("SCHEDULE_FEED_URL") or None
+    schedule_feed_ttl_seconds: float = field(
+        default_factory=lambda: _float("SCHEDULE_FEED_TTL_SECONDS", "21600")
+    )
+
     # Branded hotel adapter (LiteAPI / Nuitée) — instant self-serve alternative
     # to the sales-gated Duffel Stays.
     liteapi_api_key: str | None = os.getenv("LITEAPI_API_KEY") or None

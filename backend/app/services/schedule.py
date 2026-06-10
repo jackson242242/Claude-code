@@ -1,5 +1,7 @@
 """Schedule data access. Prefers PostgreSQL when DATABASE_URL is configured and
-falls back to the in-process seed module on any error or when no DB is set."""
+falls back to the in-process seed module on any error or when no DB is set.
+When SCHEDULE_FEED_URL is configured, real fixture data is overlaid onto the
+seed (TTL-cached, see app.services.schedule_feed)."""
 from __future__ import annotations
 
 from typing import Any
@@ -9,6 +11,7 @@ from sqlalchemy import text
 from app import schemas
 from app.db import get_engine
 from app.seed import schedule_2026 as seed
+from app.services import schedule_feed
 
 
 def _query(sql: str) -> list[dict[str, Any]] | None:
@@ -31,7 +34,10 @@ def _all_matches() -> list[schemas.Match]:
     )
     if rows is not None:
         return [schemas.Match(**row) for row in rows]
-    return [schemas.Match(**match) for match in seed.MATCHES]
+    return [
+        schemas.Match(**match)
+        for match in schedule_feed.overlay_matches(seed.MATCHES)
+    ]
 
 
 def list_matches(
