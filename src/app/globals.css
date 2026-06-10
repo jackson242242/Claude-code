@@ -883,6 +883,19 @@ a.offer-card__book:hover {
   text-decoration: none;
 }
 
+/* Side-by-side outbound buttons (e.g. Uber / Lyft / Maps on rideshare cards) */
+.offer-card__book--split {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.offer-card__book--split a {
+  flex: 1;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  white-space: nowrap;
+}
+
 .muted {
   color: var(--muted);
   font-weight: 400;

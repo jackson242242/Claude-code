@@ -9,6 +9,7 @@ import {
 } from '@/services/touristVideosService';
 import { NEWS_ITEMS } from '@/mocks/news';
 import { SUPERSTAR_VIDEOS } from '@/mocks/superstars';
+import { BLOOPER_VIDEOS } from '@/mocks/bloopers';
 import { HomeNewsWindow } from '@/components/news/HomeNewsWindow';
 import { HeroVideoBackground } from '@/components/HeroVideoBackground';
 
@@ -69,6 +70,7 @@ const HomePage = async () => {
 
       <HomeNewsWindow
         superstars={SUPERSTAR_VIDEOS}
+        bloopers={BLOOPER_VIDEOS}
         videoStories={videoStories}
         fanFootage={fanFootage}
       />

@@ -1,13 +1,15 @@
 """Builds partner search deep links for booking lines (affiliate model).
 
-These are real, clickable search URLs on partner sites — no affiliate ids are
-attached here, but this is where they would be added per partner agreement.
+These are real, clickable search URLs on partner sites. Affiliate tracking ids
+are appended automatically when configured (BOOKING_AID — see
+app/providers/util.booking_affiliate_params); otherwise links stay plain.
 """
 from __future__ import annotations
 
-from urllib.parse import quote_plus
+from urllib.parse import quote_plus, urlencode
 
 from app import schemas
+from app.providers.util import booking_affiliate_params
 from app.services import schedule as schedule_service
 
 
@@ -21,8 +23,11 @@ def _city_label(city_id: str | None) -> str:
 
 def deep_link_for(item: schemas.TripItem) -> str:
     if item.kind == "hotel":
-        query = quote_plus(_city_label(item.city_id) or item.title)
-        return f"https://www.booking.com/searchresults.html?ss={query}"
+        params = {
+            "ss": _city_label(item.city_id) or item.title,
+            **booking_affiliate_params(),
+        }
+        return "https://www.booking.com/searchresults.html?" + urlencode(params)
     if item.kind == "flight":
         return f"https://www.google.com/travel/flights?q={quote_plus(item.title)}"
     if item.kind == "transport":

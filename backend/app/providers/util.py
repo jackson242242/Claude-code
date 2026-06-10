@@ -1,6 +1,7 @@
 """Shared helpers for the provider implementations."""
 from __future__ import annotations
 
+import os
 from datetime import datetime, timedelta, timezone
 from urllib.parse import urlencode
 
@@ -18,6 +19,31 @@ def city_label(city_id: str) -> str:
     return _CITY_LABELS.get(city_id, city_id)
 
 
+def booking_affiliate_params() -> dict[str, str]:
+    """Booking.com Affiliate Partner Programme tracking params.
+
+    Reads ``BOOKING_AID`` at call time (the affiliate id from
+    booking.com/affiliate-program). Empty when unset — links stay plain,
+    they just earn no commission.
+    """
+    aid = os.environ.get("BOOKING_AID", "").strip()
+    return {"aid": aid} if aid else {}
+
+
+def kayak_flights_link(
+    origin: str, destination: str, date: str, passengers: int
+) -> str:
+    """Build a Kayak flight-results deep link, affiliate-tagged when
+    ``KAYAK_AFFILIATE_ID`` (from affiliates.kayak.com) is set."""
+    url = (
+        f"https://www.kayak.com/flights/"
+        f"{origin.upper()}-{destination.upper()}/{date}/"
+        f"{max(1, passengers)}adults"
+    )
+    affiliate = os.environ.get("KAYAK_AFFILIATE_ID", "").strip()
+    return f"{url}?{urlencode({'a': affiliate})}" if affiliate else url
+
+
 def booking_hotel_link(
     destination: str, check_in: str, check_out: str, guests: int
 ) -> str:
@@ -27,6 +53,7 @@ def booking_hotel_link(
     Passing a bare hotel/brand name makes Booking.com free-text-resolve it
     globally and land users in the wrong country — the exact class of bug this
     helper exists to prevent. Audited by ``/meta/link-audit``.
+    Affiliate-tagged (aid) when BOOKING_AID is configured.
     """
     return "https://www.booking.com/searchresults.html?" + urlencode(
         {
@@ -34,6 +61,7 @@ def booking_hotel_link(
             "checkin": check_in,
             "checkout": check_out,
             "group_adults": max(1, guests),
+            **booking_affiliate_params(),
         }
     )
 

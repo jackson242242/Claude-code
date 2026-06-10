@@ -5,7 +5,7 @@ from urllib.parse import urlencode
 
 from app import schemas
 from app.providers.base import FlightProvider
-from app.providers.util import leg, seeded_int
+from app.providers.util import kayak_flights_link, leg, seeded_int
 
 AIRLINES = ["Aeromexico", "United", "Delta", "Air Canada", "American", "JetBlue"]
 
@@ -36,10 +36,8 @@ class MockFlightProvider(FlightProvider):
                     price_usd=float(
                         seeded_int(seed, 120, 900) * max(1, query.passengers)
                     ),
-                    deep_link=(
-                        f"https://www.kayak.com/flights/"
-                        f"{query.origin.upper()}-{query.destination.upper()}/"
-                        f"{query.date}/{max(1, query.passengers)}adults"
+                    deep_link=kayak_flights_link(
+                        query.origin, query.destination, query.date, query.passengers
                     ),
                 )
             )

@@ -3,10 +3,12 @@
 /**
  * HomeNewsWindow — the home-page "Matchday News" short-video window.
  *
- * A bold "video theater" block with a tabbed rail of short videos. Three
+ * A bold "video theater" block with a tabbed rail of short videos. Four
  * streams, all reusing existing data/components (no new data layer):
  *   - Superstars: external YouTube links per different-nation star (always
  *     watchable, no API key, never blacks out) — SuperstarCard ← SUPERSTAR_VIDEOS.
+ *   - Bloopers: external YouTube links to fails/funny compilations (eyeball
+ *     bait) — SuperstarCard ← BLOOPER_VIDEOS.
  *   - National Teams: video stories (VideoStoryCard ← NewsItem) linking to /news.
  *   - Fan Zone: fan footage (FootageTile + VideoLightbox ← getTouristVideos()).
  * Thumbnails never autoplay; honest gradient placeholders until a key is wired.
@@ -22,7 +24,7 @@ import { VideoStoryCard } from './VideoStoryCard';
 import { FootageTile } from './FootageTile';
 import { VideoLightbox } from './VideoLightbox';
 
-type TabId = 'stars' | 'teams' | 'fans';
+type TabId = 'stars' | 'bloopers' | 'teams' | 'fans';
 
 const RAIL_CLASS = 'flex gap-4 overflow-x-auto pb-1 -mx-1 px-1 snap-x';
 
@@ -41,23 +43,33 @@ interface HomeNewsWindowProps {
   videoStories: NewsItem[];
   /** Fan footage from getTouristVideos() (Pexels → cache → seed). */
   fanFootage: TouristVideo[];
+  /** Bloopers / funny-moment links (external YouTube) — eyeball bait. */
+  bloopers?: SuperstarVideo[];
 }
 
 export const HomeNewsWindow = ({
   superstars,
   videoStories,
   fanFootage,
+  bloopers = [],
 }: HomeNewsWindowProps) => {
   const hasStars = superstars.length > 0;
+  const hasBloopers = bloopers.length > 0;
   const hasTeams = videoStories.length > 0;
   const hasFans = fanFootage.length > 0;
 
-  const initialTab: TabId = hasStars ? 'stars' : hasTeams ? 'teams' : 'fans';
+  const initialTab: TabId = hasStars
+    ? 'stars'
+    : hasBloopers
+      ? 'bloopers'
+      : hasTeams
+        ? 'teams'
+        : 'fans';
   const [tab, setTab] = useState<TabId>(initialTab);
   const [selected, setSelected] = useState<TouristVideo | null>(null);
 
   // Nothing to show — don't render an empty shell.
-  if (!hasStars && !hasTeams && !hasFans) return null;
+  if (!hasStars && !hasBloopers && !hasTeams && !hasFans) return null;
 
   return (
     <section
@@ -89,7 +101,8 @@ export const HomeNewsWindow = ({
             Matchday News
           </h2>
           <p className="m-0 mt-1 text-sm text-white/70">
-            Superstars, national teams and fan-zone clips — tap to watch.
+            Superstars, bloopers, national teams and fan-zone clips — tap to
+            watch.
           </p>
         </div>
         <Link
@@ -112,6 +125,17 @@ export const HomeNewsWindow = ({
               className={tabClass(tab === 'stars')}
             >
               Superstars
+            </button>
+          )}
+          {hasBloopers && (
+            <button
+              type="button"
+              role="tab"
+              aria-selected={tab === 'bloopers'}
+              onClick={() => setTab('bloopers')}
+              className={tabClass(tab === 'bloopers')}
+            >
+              Bloopers 😂
             </button>
           )}
           {hasTeams && (
@@ -146,6 +170,21 @@ export const HomeNewsWindow = ({
             aria-label="Superstar highlights — scroll for more"
           >
             {superstars.map((item) => (
+              <div key={item.id} className="shrink-0 snap-start">
+                <SuperstarCard item={item} />
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Bloopers — external watch links (eyeball bait) */}
+        {tab === 'bloopers' && hasBloopers && (
+          <div
+            className={RAIL_CLASS}
+            style={{ scrollbarWidth: 'none' }}
+            aria-label="Soccer bloopers — scroll for more"
+          >
+            {bloopers.map((item) => (
               <div key={item.id} className="shrink-0 snap-start">
                 <SuperstarCard item={item} />
               </div>
