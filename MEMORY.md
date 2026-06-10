@@ -12,6 +12,8 @@
 - **设计 — WC2026 亮色改版（2026-06-09 上线，已被上面暗色版取代；保留作历史）**：AskUserQuestion 选 Light & vibrant。Sheng 出全套规范→三阶段落地并上线：①主题 token+外壳+Hero（深转亮：品红 `#E60E7B`/蒂芙尼绿/紫/青 on white、Archivo 标题字、`Are You Going?`/`Find My Match →` 持久 CTA、3 列页脚、Plan-Your-Trip 渐变块、信任行；`:root` 重指向亮色作兼容垫片，全站一刀切换）②城市卡图片化（16:10+底部遮罩+hover 缩放+确定性渐变 onError 兜底）③首页短视频窗 `HomeNewsWindow`（国家队 + Fan Zone 双流，复用 `news/`+`getTouristVideos` 模块，无新数据层）。门禁全绿（typecheck/lint/build + 131 jest）。`DESIGN.md` 已同步亮色 tokens。**待办 Phase 4-5**：内页（schedule/flights/hotels/transport/trips/bookings）逐页精修 + 最终删除 `:root` 垫片。**另修**：service worker 由 cache-first 改 navigation network-first（旧缓存遮蔽新部署，曾致 bubble/新主题不显）；新增 `GET /api/assistant` 健康探针。
 - **硬约束**：沙箱连不上 onrender.com（curl/WebFetch 均 403，需环境 allowlist + 新 session）；无法直接发社媒/保证流量；无真库/无消息队列。
 - **总管上线（2026-06-10）**：老板单一接口 = **总管 majordomo**（`.claude/agents/majordomo.md`），台账 `PROJECTS.md`，循环入口 `/pm-cycle`（全天候 = 老板建 Routine）。**微信直连不可行**（本环境无微信桥；如要做需公网 webhook 服务 + 公众号/企业微信凭证，属浩哥评估项）；远程对话用 Claude 手机 App/网页即可。
+- **节奏精简（2026-06-10 老板裁决）**：定时只留**产品 12h + 调研 6h**；设计 24h、运营 5h **撤定时转按需**（命令保留）。`/yifu-research` 改版为 last30days 式社区之声调研（mvanhorn/last30days-skill，MIT，仅借鉴方法未引入插件——其引擎需外部 API key/域名）。
+- **组合扩容（2026-06-10）**：登记 **P2 VoiceMemoBot**（分支 `claude/inspiring-dirac-j8ar6q`，`voice-memo-watch/`，watchOS 录音→AI remix）与 **P3 Thomas English Meal Counter**（分支 `claude/thomas-english-meal-counter-816Cf`，单文件 `thomas-meal-counter.html`）。两分支与 Matchday26 分支互不合并；总管每轮 fetch 体检。
 
 ## 1. 项目概览
 - **产品：** 2026 FIFA 世界杯（美国/加拿大/墨西哥）旅游导览 + 机票/酒店/交通预订网站与 PWA。
@@ -93,7 +95,7 @@
 - [ ] 下一阶段设计：情绪基调参考板（龙哥 KPI 要求）+ 骨架屏 + 8px 间距系统 + 价格对比徽章(A/B)。
 - [ ] **升级节奏**（架构规则）：12h 产品 / 24h 设计，见 `CADENCE.md`。入口命令 `.claude/commands/product-upgrade.md`、`design-upgrade.md`。机制=Routines（claude.ai/code/routines，老板一次性创建；agent 无法代建）。每次运行=全新会话，仓库是唯一记忆，必须先读 backlog 后写回进度。
 - [ ] 仓库根目录无关的 `ZombieSpawner.lua` 属历史遗留，忽略。
-- [ ] 老板在 claude.ai/code/routines 给 `/pm-cycle` 建 Routine（建议每 6h，注意 Routines 每日额度）；建好后 amelia-ops / yifu-research 的逾期由总管补跑。
+- [ ] 老板在 claude.ai/code/routines 给 `/pm-cycle` 建 Routine（每 6h：daily×4 或 cron `0 */6 * * *`）；如之前建过设计/运营 Routine 请暂停或删除（2026-06-10 已撤定时）。首跑会补上 yifu-research（逾期至 2026-06-05）。
 - [ ] （可选，浩哥评估）微信桥：公网 webhook 服务 + 微信公众号/企业微信凭证 + secrets，先论证必要性再动手。
 
 ## 10. 外部技能库评估（2026-06-10，总管）

@@ -94,6 +94,7 @@
 | 13 | 发布筹备：内容日报(Yifu)/发布首屏提案(Sheng)/推广作战(Amelia) | Yifu/Sheng/Amelia | ✅ 已交付，待落地 |
 | 14 | /loop：浩哥联合 Sheng 升级产品（会话内自驱循环） | 浩哥+Sheng | 🔄 运行中 |
 | 15 | 总管上线：majordomo agent + PROJECTS.md 台账 + /pm-cycle 入口 | 主控 | ✅ 2026-06-10 |
+| 16 | 节奏精简（定时=产品 12h+调研 6h；设计/运营转按需）+ 调研改 last30days 式 + 登记 P2 VoiceMemoBot / P3 Meal Counter | 总管（老板裁决） | ✅ 2026-06-10 |
 
 ## 投票存档（2026-06-04）
 - **品牌名：Matchday26（2:1）** + 折中 tagline "Your Road to the Game"（龙哥力挺 RoadTo26，逻辑：旅程词匹配 3-6 月决策周期、获客成本更低）。
