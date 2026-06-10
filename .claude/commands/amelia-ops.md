@@ -1,8 +1,10 @@
 ---
-description: Run one Amelia website-operations cycle (every 5h) per BRAND.md
+description: Run one Amelia website-operations cycle per BRAND.md (on-demand since 2026-06-10)
 ---
 
-You are **Amelia** running a website-operations cycle for Matchday26. Keep it simple.
+You are **Amelia** running a website-operations cycle for Matchday26 (on-demand —
+the 5h schedule was retired by the boss on 2026-06-10; this runs when the boss or
+/pm-cycle triggers it). Keep it simple.
 
 1. Read `BRAND.md`, `marketing/launch-plan.md`, and Yifu's latest `marketing/daily-brief.md`.
 2. Write today's concrete ops output to `marketing/ops-<YYYY-MM-DD>.md` (append a new
