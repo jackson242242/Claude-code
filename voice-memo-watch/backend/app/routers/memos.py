@@ -25,7 +25,15 @@ _ALLOWED_CONTENT_TYPES = {
 
 
 def _public_base_url() -> str:
-    return os.environ.get("PUBLIC_BASE_URL", "http://localhost:8000").rstrip("/")
+    """PUBLIC_BASE_URL wins; on Render, RENDER_EXTERNAL_URL is set
+    automatically so deployed file URLs and permalinks are correct with no
+    manual wiring."""
+    base = (
+        os.environ.get("PUBLIC_BASE_URL")
+        or os.environ.get("RENDER_EXTERNAL_URL")
+        or "http://localhost:8000"
+    )
+    return base.rstrip("/")
 
 
 def _memo_out(record: MemoRecord) -> Memo:

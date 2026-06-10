@@ -119,14 +119,17 @@ permalinks are correct), `REPLICATE_API_TOKEN` (enables real AI generation).
   `project.yml`), HTTPS API (ATS), and a privacy policy. Apps with
   user-generated content must ship blocking/reporting to pass review.
 
-To deploy the API + web prototype on Render, add a service block to the root
-`render.yaml` (intentionally not added here to avoid auto-provisioning infra):
+## Deployment & monitoring
 
-```yaml
-  - type: web
-    name: voicememobot-api
-    rootDir: voice-memo-watch/backend
-    env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
-```
+- The root `render.yaml` includes a `voicememobot-api` service: once this code
+  reaches the branch Render's Blueprint reads (the repo's default branch),
+  Render deploys the API + web prototype publicly. `RENDER_EXTERNAL_URL` is
+  picked up automatically, so file URLs and permalinks are correct with no
+  manual wiring. Until that merge happens, **there is no public site** — run
+  it locally (commands above).
+- `.github/workflows/site-health.yml` ("Majordomo site health") probes the
+  deployed sites every 30 minutes from GitHub Actions (the build sandbox
+  cannot reach onrender.com), opens a `site-down` GitHub issue when a site is
+  unreachable, and closes it on recovery. Add VoiceMemoBot's deployed URL to
+  the repo variable `VOICEMEMOBOT_URL` after the first deploy to include it
+  in the probes.

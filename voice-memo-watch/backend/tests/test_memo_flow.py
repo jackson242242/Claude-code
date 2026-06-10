@@ -162,6 +162,23 @@ def test_render_rejects_unknown_instrument_and_long_prompt(
     assert too_long.status_code == 422
 
 
+def test_public_urls_use_render_external_url(
+    client: TestClient, monkeypatch
+) -> None:
+    monkeypatch.setenv("RENDER_EXTERNAL_URL", "https://voicememobot.onrender.com/")
+    memo = _upload(client)
+    render = client.post(
+        f"/memos/{memo['id']}/renders", json={"style": "lofi"}
+    ).json()
+    assert render["fileUrl"].startswith("https://voicememobot.onrender.com/")
+    post = client.post("/posts", json={"renderId": render["id"]}).json()
+    assert post["permalink"].startswith("https://voicememobot.onrender.com/p/")
+    # explicit PUBLIC_BASE_URL still wins
+    monkeypatch.setenv("PUBLIC_BASE_URL", "https://memo.example.com")
+    fetched = client.get(f"/renders/{render['id']}").json()
+    assert fetched["fileUrl"].startswith("https://memo.example.com/")
+
+
 def test_render_unknown_style_and_memo(client: TestClient) -> None:
     memo = _upload(client)
     bad_style = client.post(f"/memos/{memo['id']}/renders", json={"style": "polka"})

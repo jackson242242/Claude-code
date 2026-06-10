@@ -15,6 +15,8 @@ from app.main import app
 def client(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> TestClient:
     monkeypatch.setenv("VOICEMEMO_STORAGE_DIR", str(tmp_path / "storage"))
     monkeypatch.delenv("REPLICATE_API_TOKEN", raising=False)
+    monkeypatch.delenv("PUBLIC_BASE_URL", raising=False)
+    monkeypatch.delenv("RENDER_EXTERNAL_URL", raising=False)
     store.reset_store_for_tests()
     return TestClient(app)
 
