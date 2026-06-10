@@ -14,6 +14,7 @@
  */
 
 import { NEWS_ITEMS } from '@/mocks/news';
+import { DEFAULT_LOCALE, type Locale } from '@/i18n';
 import type { NewsItem, ThumbnailKind } from '@/types/news';
 
 interface NewsFeedSource {
@@ -21,11 +22,36 @@ interface NewsFeedSource {
   name: string;
 }
 
-/** Keyless, sports-only RSS sources (first that returns ≥3 items wins). */
-const FEEDS: ReadonlyArray<NewsFeedSource> = [
+/** Keyless, football-only RSS sources. English doubles as the universal fallback. */
+const EN_FEEDS: ReadonlyArray<NewsFeedSource> = [
   { url: 'https://www.theguardian.com/football/rss', name: 'The Guardian' },
+  { url: 'https://feeds.bbci.co.uk/sport/football/rss.xml', name: 'BBC Sport' },
   { url: 'https://www.espn.com/espn/rss/soccer/news', name: 'ESPN' },
 ];
+
+/** Locale-specific feeds, tried before the English fallback. */
+const FEEDS_BY_LOCALE: Record<Locale, ReadonlyArray<NewsFeedSource>> = {
+  en: EN_FEEDS,
+  es: [
+    { url: 'https://e00-marca.uecdn.es/rss/futbol/mundial.xml', name: 'Marca' },
+    { url: 'https://as.com/rss/futbol/portada.xml', name: 'AS' },
+  ],
+  fr: [
+    {
+      url: 'https://www.lequipe.fr/rss/actu_rss_Football.xml',
+      name: "L'Équipe",
+    },
+  ],
+};
+
+/** Result of a live-news lookup: the items + whether they came from a feed. */
+export interface LiveNews {
+  items: NewsItem[];
+  /** True when a real RSS feed answered (drives the "Live" pill). */
+  live: boolean;
+  /** Name of the feed that answered, or null on the seed fallback. */
+  source: string | null;
+}
 
 const THUMBNAILS: ThumbnailKind[] = [
   'teal-to-turquoise',
@@ -112,16 +138,20 @@ export const parseRss = (
   return items;
 };
 
+/** Hard timeout (where supported) so a slow feed can never stall a render. */
+const timeoutSignal = (ms: number): AbortSignal | undefined =>
+  typeof AbortSignal !== 'undefined' && typeof AbortSignal.timeout === 'function'
+    ? AbortSignal.timeout(ms)
+    : undefined;
+
 const fetchFeed = async (source: NewsFeedSource): Promise<NewsItem[]> => {
-  // Hard timeout so a slow/unreachable feed can never stall the page render —
-  // it fails fast and we fall back to the seed.
   const res = await fetch(source.url, {
     headers: {
       'user-agent': 'Matchday26/1.0 (+https://matchday26.app)',
       accept: 'application/rss+xml, application/xml, text/xml',
     },
     next: { revalidate: 1800 },
-    signal: AbortSignal.timeout(6000),
+    signal: timeoutSignal(6000),
   } as RequestInit);
   if (!res.ok) return [];
   return parseRss(await res.text(), source.name);
@@ -130,18 +160,33 @@ const fetchFeed = async (source: NewsFeedSource): Promise<NewsItem[]> => {
 /**
  * Live news for /news (and the home headlines rail): real RSS articles +
  * curated short-video stories, with a graceful fallback to the static seed.
+ * Tries the locale's feeds first, then English, then the seed.
  */
-export const getLiveNews = async (): Promise<NewsItem[]> => {
+export const getLiveNews = async (
+  locale: Locale = DEFAULT_LOCALE,
+): Promise<LiveNews> => {
   const videoStories = NEWS_ITEMS.filter((item) => item.category === 'video');
 
-  for (const source of FEEDS) {
+  // Locale feeds first, then English fallback — de-duplicated by URL.
+  const seen = new Set<string>();
+  const ordered = [...(FEEDS_BY_LOCALE[locale] ?? []), ...EN_FEEDS].filter(
+    (source) => (seen.has(source.url) ? false : seen.add(source.url)),
+  );
+
+  for (const source of ordered) {
     try {
       const live = await fetchFeed(source);
-      if (live.length >= 3) return [...live, ...videoStories];
+      if (live.length >= 3) {
+        return {
+          items: [...live, ...videoStories],
+          live: true,
+          source: source.name,
+        };
+      }
     } catch {
       // Try the next feed, then fall back to the seed.
     }
   }
 
-  return NEWS_ITEMS;
+  return { items: NEWS_ITEMS, live: false, source: null };
 };

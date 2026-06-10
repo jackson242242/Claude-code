@@ -17,17 +17,17 @@ import { HeroVideoBackground } from '@/components/HeroVideoBackground';
 const KICKOFF_UTC = Date.UTC(2026, 5, 11);
 
 const HomePage = async () => {
-  const [cities, locale, fanFootage, heroVideos, liveNews] = await Promise.all([
+  const locale = await getLocale();
+  const [cities, fanFootage, heroVideos, liveNews] = await Promise.all([
     getCities(),
-    getLocale(),
     getTouristVideos(),
     getHeroVideos(),
-    getLiveNews(),
+    getLiveNews(locale),
   ]);
   const t = translator(locale);
-  // Top live headlines for the "Latest" rail (fall back to whatever the news
-  // service returns, which is the curated seed when the feed is unreachable).
-  const videoStories = liveNews.slice(0, 10);
+  // Top live headlines for the "Latest" rail (falls back to the curated seed
+  // when the feed is unreachable).
+  const videoStories = liveNews.items.slice(0, 10);
   const daysUntilKickoff = Math.max(
     0,
     Math.ceil((KICKOFF_UTC - Date.now()) / 86_400_000),

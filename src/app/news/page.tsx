@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
 import { PLAYER_SPOTLIGHTS, TEAM_BRIEFS } from '@/mocks/news';
 import { NewsFeed } from '@/components/news/NewsFeed';
+import { LiveBadge } from '@/components/news/LiveBadge';
 import { getLiveNews } from '@/services/newsService';
 import { getTouristVideos } from '@/services/touristVideosService';
 import { FanFootageWall } from '@/components/news/FanFootageWall';
+import { getLocale } from '@/i18n/server';
 
 export const metadata: Metadata = {
   title: 'News · Matchday26 — World Cup 2026',
@@ -12,9 +14,10 @@ export const metadata: Metadata = {
 };
 
 const NewsPage = async () => {
-  const [footage, allItems] = await Promise.all([
+  const locale = await getLocale();
+  const [footage, news] = await Promise.all([
     getTouristVideos(),
-    getLiveNews(),
+    getLiveNews(locale),
   ]);
 
   return (
@@ -23,9 +26,12 @@ const NewsPage = async () => {
       <div className="max-w-[1080px] mx-auto px-4 sm:px-6 py-8 pb-16">
         {/* Page header */}
         <header className="mb-8">
-          <h1 className="text-[#f3f6fa] text-3xl sm:text-4xl font-bold tracking-tight leading-tight m-0">
-            World Cup 2026 News
-          </h1>
+          <div className="flex flex-wrap items-center gap-3">
+            <h1 className="text-[#f3f6fa] text-3xl sm:text-4xl font-bold tracking-tight leading-tight m-0">
+              World Cup 2026 News
+            </h1>
+            {news.live && <LiveBadge source={news.source} />}
+          </div>
           <p className="text-[#8a97a8] mt-2 text-base m-0">
             Match schedules, city guides, team stories and video highlights.
           </p>
@@ -38,7 +44,7 @@ const NewsPage = async () => {
           )}
 
           <NewsFeed
-            allItems={allItems}
+            allItems={news.items}
             spotlights={PLAYER_SPOTLIGHTS}
             teamBriefs={TEAM_BRIEFS}
           />
