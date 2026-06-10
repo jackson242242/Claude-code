@@ -35,6 +35,13 @@ services:
       # Hotels (LiteAPI) — grab an instant sandbox key at liteapi.travel.
       - key: LITEAPI_API_KEY
         sync: false
+      # Affiliate tracking ids (docs/affiliates.md). Optional — links work
+      # without them, they just earn no commission. Not secrets, but set in
+      # the dashboard once the programs approve the account (sync: false).
+      - key: BOOKING_AID
+        sync: false
+      - key: KAYAK_AFFILIATE_ID
+        sync: false
       - key: CORS_ORIGINS
         fromService:
           type: web
@@ -66,6 +73,12 @@ services:
       # placeholders. Free instant key at pexels.com/api. Render prompts for
       # this (sync: false); web services have open outbound, no allow-list needed.
       - key: PEXELS_API_KEY
+        sync: false
+      # Affiliate ids for the frontend's offline-fallback links (mirror of the
+      # API's BOOKING_AID / KAYAK_AFFILIATE_ID — see docs/affiliates.md).
+      - key: NEXT_PUBLIC_BOOKING_AID
+        sync: false
+      - key: NEXT_PUBLIC_KAYAK_AFFILIATE_ID
         sync: false
 
   # VoiceMemoBot — standalone product (voice memo → AI remix → its own feed).

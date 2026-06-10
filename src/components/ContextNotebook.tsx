@@ -74,17 +74,17 @@ export const ContextNotebook = ({ debounceMs = 220 }: ContextNotebookProps) => {
   return (
     <aside
       aria-label="Suggestions"
-      className="fixed bottom-5 left-5 z-40 w-[18rem] max-w-[calc(100vw-2.5rem)] overflow-hidden rounded-[1.125rem] border border-[#e8ebef] bg-white text-[#0c1116] shadow-[0_16px_48px_rgba(13,22,33,0.16)] motion-safe:animate-[fadeIn_160ms_ease-out]"
+      className="fixed bottom-5 left-5 z-40 w-[18rem] max-w-[calc(100vw-2.5rem)] overflow-hidden rounded-[1.125rem] border border-[#243042] bg-[#141d2b] text-[#f3f6fa] shadow-[0_16px_48px_rgba(0,0,0,0.5)] motion-safe:animate-[fadeIn_160ms_ease-out]"
     >
       <div className="flex items-start justify-between gap-2 px-4 pt-3">
-        <p className="m-0 text-[0.66rem] font-bold uppercase tracking-widest text-[#0a8f84]">
+        <p className="m-0 text-[0.66rem] font-bold uppercase tracking-widest text-[#3d8bff]">
           {copy.eyebrow}
         </p>
         <button
           type="button"
           onClick={() => setDismissedTitle(context.title)}
           aria-label="Dismiss suggestion"
-          className="-mr-1 -mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full text-[#646e7a] hover:bg-[#f6f7f9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a8f84]"
+          className="-mr-1 -mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full text-[#8a97a8] hover:bg-[#1b2636] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3d8bff]"
         >
           <span aria-hidden="true">✕</span>
         </button>
@@ -94,11 +94,11 @@ export const ContextNotebook = ({ debounceMs = 220 }: ContextNotebookProps) => {
         {copy.body}
       </p>
 
-      <div className="flex items-center gap-2 border-t border-[#e8ebef] px-4 py-2.5">
+      <div className="flex items-center gap-2 border-t border-[#243042] px-4 py-2.5">
         {context.href && (
           <Link
             href={context.href}
-            className="rounded-lg bg-[#0a8f84] px-3 py-1.5 text-xs font-bold text-white transition-colors hover:bg-[#0fb5a6] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a8f84]"
+            className="rounded-lg bg-[#3d8bff] px-3 py-1.5 text-xs font-bold text-white transition-colors hover:bg-[#5a9dff] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3d8bff]"
           >
             {copy.primaryLabel}
           </Link>
@@ -106,7 +106,7 @@ export const ContextNotebook = ({ debounceMs = 220 }: ContextNotebookProps) => {
         <button
           type="button"
           onClick={askConcierge}
-          className="rounded-lg px-2.5 py-1.5 text-xs font-semibold text-[#0a8f84] underline underline-offset-2 hover:text-[#0fb5a6] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a8f84]"
+          className="rounded-lg px-2.5 py-1.5 text-xs font-semibold text-[#3d8bff] underline underline-offset-2 hover:text-[#5a9dff] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3d8bff]"
         >
           Ask the concierge →
         </button>

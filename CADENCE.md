@@ -7,13 +7,24 @@
 本项目跑在 Claude Code on the web 的**临时容器**里——会话结束即回收，无法在会话内挂一个跨天的计时器。持久的定时机制是 **Routines**（claude.ai/code/routines）：到点开一个**全新云端 session**，从默认分支克隆仓库并执行下面的循环。
 > 因此每次运行都是"失忆"的新会话——**仓库（本文件 + MEMORY.md + BRAND.md）是唯一的跨运行记忆**。每轮必须"先读 backlog、后写回进度"。
 
-## 1. 升级与运营节奏（四条）
+## 1. 升级与运营节奏（老板裁决 2026-06-10 精简）
+**定时（两条）：**
 | 节奏 | 周期 | 入口 | 领衔 | 调度配置 |
 |------|------|------|------|----------|
 | 产品升级 | 每 12h | `/product-upgrade` | 浩哥（实现 agent 落地） | daily×2，相隔 12h（08:00 / 20:00）；cron `0 */12 * * *` |
-| 设计升级 | 每 24h | `/design-upgrade` | Sheng 提案 → 龙哥审查 → 实现落地 | daily（如 03:00 错峰）；cron `0 3 * * *` |
-| 网站运营 | 每 5h | `/amelia-ops` | Amelia（按 BRAND.md） | cron `0 */5 * * *`（5 不整除 24，末段间隔略短，可接受） |
-| 市场调研 | 每日 | `/yifu-research` | Yifu（喂 Amelia + Sheng） | daily（如 06:00）；cron `0 6 * * *` |
+| 市场调研 | **每 6h** | `/yifu-research` | Yifu（last30days 式社区之声，喂 Amelia + Sheng） | daily×4（00/06/12/18）；cron `0 */6 * * *` |
+| 新闻健康检查 | 每 6h | `/news-live-check` | 总管（retest + 确认 prod 新闻在流） | 随 `/pm-cycle` 体检覆盖，或单独 cron `0 */6 * * *` |
+
+**按需（不再定时，老板或 /pm-cycle 触发；命令保留）：**
+| 工作流 | 入口 | 原周期（已撤） |
+|--------|------|----------------|
+| 设计升级 | `/design-upgrade` | ~~每 24h~~ |
+| 网站运营 | `/amelia-ops` | ~~每 5h~~ |
+
+> 调研方法改版（2026-06-10）：`/yifu-research` 采用 mvanhorn/last30days-skill（MIT）的
+> 路数——最近 30 天窗口、真实社区声音（Reddit/X/YouTube/TikTok 检索）、按互动量加权、
+> 逐条引用；内容硬过滤不变。完整插件未引入（其引擎依赖外部 API key 与沙箱外域名），
+> 如需原版由老板配 key + 放开 allowlist 后再评估。
 
 > **增长目标 · 诚实声明：** 老板目标是访问量大幅增长（提到"每天 10x"）。诚实地讲——**10x/天 持续复利不现实**（一周即 ~10⁷ 倍），且 agent 不能直接发社媒、不能买量、不能保证流量数字。运营循环只把内容/外联/落地页/转化做到最好，把"命中概率"拉满；**真实流量取决于老板/伙伴的实际分发（发帖、广告、合作）**。北极星＝每日真实访问与可佣金成交的稳定增长，如实记录漏斗，不编造数字。
 
@@ -75,13 +86,17 @@
 - [ ] 价格对比徽章（原价/折扣/稀缺）——上线走 A/B
 - [ ] 圆角 12→16/20、排版字阶精细化、卡片彩色阴影
 
-## 7. 如何创建这四个 Routine（网页 UI，一次性，只有老板能建）
-在 **claude.ai/code/routines → New routine**，每个 Prompt 直接填对应入口命令即可：
-1. **产品升级**：`/product-upgrade`；触发器 **两个 daily**（08:00、20:00）= 每 12h。取真实数据时在环境 Allowed domains 放开对应域名并配 DUFFEL_API_KEY / LITEAPI_API_KEY。
-2. **设计升级**：`/design-upgrade`；触发器 **daily**（03:00 错峰）。
-3. **网站运营**：`/amelia-ops`；触发器 **daily**（间隔 5h 需 cron `0 */5 * * *`，用 CLI/Desktop `/schedule update` 设；纯网页只能用 daily/hourly 预设，5h 可改为挂多个 daily 触发器近似）。
-4. **市场调研**：`/yifu-research`；触发器 **daily**（06:00）。
+## 7. 如何创建 Routine（网页 UI，一次性，只有老板能建；2026-06-10 改版）
+在 **claude.ai/code/routines → New routine**：
+1. **总管组合循环（推荐，单条覆盖全部）**：Prompt 填 `/pm-cycle`（指明遵循
+   `.claude/commands/pm-cycle.md`）；触发器 daily×4 或 CLI `/schedule update` 设 cron
+   `0 */6 * * *`。总管自动体检 + 补跑到期工作流（含 P2 VoiceMemoBot 分支审计）。
+2. （可选拆分）**产品升级**：`/product-upgrade`，daily×2（08:00、20:00）。取真实数据时在
+   环境 Allowed domains 放开对应域名并配 DUFFEL_API_KEY / LITEAPI_API_KEY。
+3. （可选拆分）**市场调研**：`/yifu-research`，daily×4（00/06/12/18）= 每 6h。
+- ~~设计升级 / 网站运营 Routine~~ 已撤（2026-06-10 老板裁决）；如之前建过请在
+  claude.ai/code/routines **暂停或删除**。
 - 分支：默认只允许推 `claude/` 前缀分支——我们的部署/功能分支都是该前缀，无需放开"unrestricted branch pushes"。
-- 注意 Routines **每日有运行次数上限**且消耗订阅额度；4 条都开会更快吃额度，按需取舍。
+- 注意 Routines **每日有运行次数上限**且消耗订阅额度；优先只开 1 条总管循环。
 
 > 改这套节奏/护栏的权力属于老板（架构与规则管理）。agent 只在范围内执行。

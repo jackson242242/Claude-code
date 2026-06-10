@@ -14,6 +14,7 @@ import httpx
 
 from app import schemas
 from app.providers.base import FlightProvider
+from app.providers.util import kayak_flights_link
 
 
 def _parse_iso(value: str) -> datetime | None:
@@ -113,9 +114,7 @@ class DuffelFlightProvider(FlightProvider):
             # Amount is treated as USD (Duffel test accounts are USD-denominated).
             # Multi-currency normalization via `total_currency` is a tracked follow-up.
             price_usd=float(offer.get("total_amount", 0) or 0),
-            deep_link=(
-                f"https://www.kayak.com/flights/"
-                f"{query.origin.upper()}-{query.destination.upper()}/"
-                f"{query.date}/{max(1, query.passengers)}adults"
+            deep_link=kayak_flights_link(
+                query.origin, query.destination, query.date, query.passengers
             ),
         )

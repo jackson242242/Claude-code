@@ -65,3 +65,42 @@ describe('mock offer generators', () => {
     expect(offers[0].mode).toBe('train');
   });
 });
+
+describe('affiliate tracking on deep links', () => {
+  afterEach(() => {
+    delete process.env.NEXT_PUBLIC_BOOKING_AID;
+    delete process.env.NEXT_PUBLIC_KAYAK_AFFILIATE_ID;
+  });
+
+  it('appends the Booking.com aid only when configured', () => {
+    const query = {
+      cityId: 'miami',
+      checkIn: '2026-06-20',
+      checkOut: '2026-06-23',
+      guests: 2,
+    };
+    const plain = new URL(mockHotelOffers(query)[0].deepLink ?? '');
+    expect(plain.searchParams.get('aid')).toBeNull();
+
+    process.env.NEXT_PUBLIC_BOOKING_AID = '1234567';
+    const tagged = new URL(mockHotelOffers(query)[0].deepLink ?? '');
+    expect(tagged.searchParams.get('aid')).toBe('1234567');
+    // Geo-anchoring must survive the affiliate param.
+    expect(tagged.searchParams.get('ss')).toContain('Miami');
+  });
+
+  it('appends the Kayak affiliate id only when configured', () => {
+    const query = {
+      origin: 'lhr',
+      destination: 'jfk',
+      date: '2026-06-20',
+      passengers: 1,
+    };
+    expect(mockFlightOffers(query)[0].deepLink).not.toContain('a=');
+
+    process.env.NEXT_PUBLIC_KAYAK_AFFILIATE_ID = 'kan_test';
+    const tagged = new URL(mockFlightOffers(query)[0].deepLink ?? '');
+    expect(tagged.searchParams.get('a')).toBe('kan_test');
+    expect(tagged.pathname).toContain('LHR-JFK');
+  });
+});

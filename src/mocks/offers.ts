@@ -40,6 +40,29 @@ const TRANSPORT_MODES: TransportMode[] = [
   'car-rental',
 ];
 
+/**
+ * Affiliate tracking, mirrored from backend/app/providers/util.py: ids are
+ * read from NEXT_PUBLIC_* env at call time and appended only when configured —
+ * otherwise links stay plain (they work, they just earn no commission).
+ */
+const bookingAffiliateParams = (): Record<string, string> => {
+  const aid = (process.env.NEXT_PUBLIC_BOOKING_AID ?? '').trim();
+  return aid ? { aid } : {};
+};
+
+const kayakFlightsLink = (
+  origin: string,
+  destination: string,
+  date: string,
+  passengers: number,
+): string => {
+  const url = `https://www.kayak.com/flights/${origin.toUpperCase()}-${destination.toUpperCase()}/${date}/${Math.max(1, passengers)}adults`;
+  const affiliate = (process.env.NEXT_PUBLIC_KAYAK_AFFILIATE_ID ?? '').trim();
+  return affiliate
+    ? `${url}?${new URLSearchParams({ a: affiliate }).toString()}`
+    : url;
+};
+
 /** Stable FNV-1a-based pseudo-random integer in [min, max] from a string seed. */
 const seededInt = (seed: string, min: number, max: number): number => {
   let hash = 2166136261;
@@ -93,7 +116,12 @@ export const mockFlightOffers = (query: FlightSearchQuery): FlightOffer[] =>
       durationMinutes,
       stops,
       priceUsd: seededInt(seed, 120, 900) * Math.max(1, query.passengers),
-      deepLink: `https://www.kayak.com/flights/${query.origin.toUpperCase()}-${query.destination.toUpperCase()}/${query.date}/${Math.max(1, query.passengers)}adults`,
+      deepLink: kayakFlightsLink(
+        query.origin,
+        query.destination,
+        query.date,
+        query.passengers,
+      ),
     };
   });
 
@@ -123,6 +151,7 @@ export const mockHotelOffers = (query: HotelSearchQuery): HotelOffer[] => {
           checkin: query.checkIn,
           checkout: query.checkOut,
           group_adults: String(Math.max(1, query.guests)),
+          ...bookingAffiliateParams(),
         },
       ).toString()}`,
     };

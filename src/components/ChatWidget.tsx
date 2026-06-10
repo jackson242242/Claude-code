@@ -169,7 +169,7 @@ export const ChatWidget = () => {
         type="button"
         onClick={() => setOpen(true)}
         aria-label="Open travel assistant"
-        className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#0a8f84] text-2xl text-white shadow-[0_16px_48px_rgba(13,22,33,0.24)] transition-transform duration-150 hover:-translate-y-0.5 hover:bg-[#0fb5a6] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a8f84] motion-reduce:transition-none"
+        className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#3d8bff] text-2xl text-white shadow-[0_16px_48px_rgba(13,22,33,0.24)] transition-transform duration-150 hover:-translate-y-0.5 hover:bg-[#5a9dff] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3d8bff] motion-reduce:transition-none"
       >
         <span aria-hidden="true">💬</span>
       </button>
@@ -179,10 +179,10 @@ export const ChatWidget = () => {
   return (
     <section
       aria-label="Travel assistant"
-      className="fixed bottom-5 right-5 z-50 flex h-[32rem] max-h-[80vh] w-[22rem] max-w-[calc(100vw-2.5rem)] flex-col overflow-hidden rounded-[1.125rem] bg-white text-[#0c1116] shadow-[0_16px_48px_rgba(13,22,33,0.24)]"
+      className="fixed bottom-5 right-5 z-50 flex h-[32rem] max-h-[80vh] w-[22rem] max-w-[calc(100vw-2.5rem)] flex-col overflow-hidden rounded-[1.125rem] bg-[#141d2b] text-[#f3f6fa] shadow-[0_16px_48px_rgba(13,22,33,0.24)]"
     >
       {/* Header */}
-      <header className="flex items-center justify-between gap-2 bg-gradient-to-r from-[#0a8f84] to-[#11b3c6] px-4 py-3 text-white">
+      <header className="flex items-center justify-between gap-2 bg-gradient-to-r from-[#3d8bff] to-[#2f6fe0] px-4 py-3 text-white">
         <div className="flex items-center gap-2">
           <span aria-hidden="true" className="text-lg">
             ⚽
@@ -207,7 +207,7 @@ export const ChatWidget = () => {
       {/* Transcript */}
       <div
         ref={scrollRef}
-        className="flex-1 space-y-3 overflow-y-auto bg-[#f6f7f9] px-4 py-4"
+        className="flex-1 space-y-3 overflow-y-auto bg-[#1b2636] px-4 py-4"
       >
         {messages.map((message, index) => (
           <div
@@ -219,8 +219,8 @@ export const ChatWidget = () => {
             <p
               className={
                 message.role === 'user'
-                  ? 'm-0 max-w-[85%] rounded-2xl rounded-br-sm bg-[#0a8f84] px-3.5 py-2 text-sm leading-relaxed text-white'
-                  : 'm-0 max-w-[85%] rounded-2xl rounded-bl-sm bg-white px-3.5 py-2 text-sm leading-relaxed text-[#0c1116] shadow-[0_6px_24px_rgba(13,22,33,0.08)]'
+                  ? 'm-0 max-w-[85%] rounded-2xl rounded-br-sm bg-[#3d8bff] px-3.5 py-2 text-sm leading-relaxed text-white'
+                  : 'm-0 max-w-[85%] rounded-2xl rounded-bl-sm bg-[#141d2b] px-3.5 py-2 text-sm leading-relaxed text-[#f3f6fa] shadow-[0_6px_24px_rgba(0,0,0,0.45)]'
               }
             >
               {message.content}
@@ -230,7 +230,7 @@ export const ChatWidget = () => {
 
         {awaitingFirstToken && (
           <div className="flex justify-start" aria-live="polite">
-            <p className="m-0 rounded-2xl rounded-bl-sm bg-white px-3.5 py-2 text-sm text-[#646e7a] shadow-[0_6px_24px_rgba(13,22,33,0.08)]">
+            <p className="m-0 rounded-2xl rounded-bl-sm bg-[#141d2b] px-3.5 py-2 text-sm text-[#8a97a8] shadow-[0_6px_24px_rgba(0,0,0,0.45)]">
               <span aria-label="Assistant is typing">Typing…</span>
             </p>
           </div>
@@ -243,7 +243,7 @@ export const ChatWidget = () => {
                 key={reply}
                 type="button"
                 onClick={() => void send(reply)}
-                className="rounded-full border border-[#e8ebef] bg-white px-3 py-1.5 text-left text-xs font-semibold text-[#0a8f84] transition-colors hover:bg-[#f0fffe] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a8f84]"
+                className="rounded-full border border-[#243042] bg-[#141d2b] px-3 py-1.5 text-left text-xs font-semibold text-[#3d8bff] transition-colors hover:bg-[#1b2636] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3d8bff]"
               >
                 {reply}
               </button>
@@ -255,7 +255,7 @@ export const ChatWidget = () => {
       {/* Composer */}
       <form
         onSubmit={onSubmit}
-        className="flex items-center gap-2 border-t border-[#e8ebef] bg-white px-3 py-3"
+        className="flex items-center gap-2 border-t border-[#243042] bg-[#141d2b] px-3 py-3"
       >
         <label htmlFor="assistant-input" className="sr-only">
           Ask the travel assistant
@@ -267,13 +267,13 @@ export const ChatWidget = () => {
           onChange={(event) => setInput(event.target.value)}
           placeholder="Ask about cities, fixtures, trips…"
           autoComplete="off"
-          className="min-w-0 flex-1 rounded-full border border-[#e8ebef] bg-[#f6f7f9] px-4 py-2 text-sm text-[#0c1116] outline-none focus:border-[#0fb5a6] focus:bg-white"
+          className="min-w-0 flex-1 rounded-full border border-[#243042] bg-[#1b2636] px-4 py-2 text-sm text-[#f3f6fa] outline-none focus:border-[#5a9dff] focus:bg-[#141d2b]"
         />
         <button
           type="submit"
           disabled={loading || input.trim().length === 0}
           aria-label="Send message"
-          className="flex h-9 w-9 flex-none items-center justify-center rounded-full bg-[#0a8f84] text-white transition-colors hover:bg-[#0fb5a6] disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a8f84]"
+          className="flex h-9 w-9 flex-none items-center justify-center rounded-full bg-[#3d8bff] text-white transition-colors hover:bg-[#5a9dff] disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3d8bff]"
         >
           <span aria-hidden="true">↑</span>
         </button>

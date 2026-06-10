@@ -71,9 +71,10 @@ describe('SEED_TOURIST_VIDEOS integrity', () => {
     });
   });
 
-  it('every entry has sourceName set to Matchday26', () => {
+  it('every entry sources a real, watchable YouTube search', () => {
     SEED_TOURIST_VIDEOS.forEach((v) => {
-      expect(v.sourceName).toBe('Matchday26');
+      expect(v.sourceName).toBe('YouTube');
+      expect(v.sourceUrl).toContain('youtube.com/results');
     });
   });
 

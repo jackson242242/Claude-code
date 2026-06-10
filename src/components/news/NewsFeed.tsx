@@ -60,10 +60,10 @@ export const NewsFeed = ({ allItems, spotlights, teamBriefs }: NewsFeedProps) =>
             onClick={() => setActiveTab(tab.id)}
             aria-current={activeTab === tab.id ? 'page' : undefined}
             className={[
-              'px-4 py-2 rounded-full text-sm font-semibold transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0fb5a6] motion-reduce:transition-none',
+              'px-4 py-2 rounded-full text-sm font-semibold transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5a9dff] motion-reduce:transition-none',
               activeTab === tab.id
-                ? 'bg-[#0a8f84] text-white shadow-sm'
-                : 'bg-[#f6f7f9] text-[#646e7a] hover:bg-[#e8ebef] hover:text-[#0c1116]',
+                ? 'bg-[#3d8bff] text-white shadow-sm'
+                : 'bg-[#1b2636] text-[#8a97a8] hover:bg-[#243042] hover:text-[#f3f6fa]',
             ].join(' ')}
           >
             {tab.label}
@@ -79,7 +79,7 @@ export const NewsFeed = ({ allItems, spotlights, teamBriefs }: NewsFeedProps) =>
       {/* Top Stories grid */}
       {filteredItems.length > 0 && (
         <section aria-label="Top stories">
-          <h2 className="text-[#0c1116] text-xl font-bold mb-4 tracking-tight">
+          <h2 className="text-[#f3f6fa] text-xl font-bold mb-4 tracking-tight">
             {activeTab === 'all'
               ? 'Top Stories'
               : activeTab === 'videos'
@@ -97,7 +97,7 @@ export const NewsFeed = ({ allItems, spotlights, teamBriefs }: NewsFeedProps) =>
       )}
 
       {filteredItems.length === 0 && (
-        <p className="text-[#646e7a] py-8">No stories in this category yet.</p>
+        <p className="text-[#8a97a8] py-8">No stories in this category yet.</p>
       )}
 
       {/* Conversion Bridge */}
@@ -108,7 +108,7 @@ export const NewsFeed = ({ allItems, spotlights, teamBriefs }: NewsFeedProps) =>
       {/* Player Spotlight */}
       {showSpotlights && spotlights.length > 0 && (
         <section aria-label="Player spotlights">
-          <h2 className="text-[#0c1116] text-xl font-bold mb-4 tracking-tight">
+          <h2 className="text-[#f3f6fa] text-xl font-bold mb-4 tracking-tight">
             Player Spotlight
           </h2>
           <div className="flex flex-col gap-4">
@@ -122,7 +122,7 @@ export const NewsFeed = ({ allItems, spotlights, teamBriefs }: NewsFeedProps) =>
       {/* Team Briefs */}
       {showTeamBriefs && teamBriefs.length > 0 && (
         <section aria-label="Team briefs">
-          <h2 className="text-[#0c1116] text-xl font-bold mb-4 tracking-tight">
+          <h2 className="text-[#f3f6fa] text-xl font-bold mb-4 tracking-tight">
             Teams to Watch
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">

@@ -1,8 +1,10 @@
 ---
-description: Run one 24-hour Design Upgrade cycle per CADENCE.md (Sheng→龙哥→impl)
+description: Run one Design Upgrade cycle per CADENCE.md (on-demand since 2026-06-10; Sheng→龙哥→impl)
 ---
 
-You are running the **24-hour Design Upgrade** cycle for the Matchday26 project.
+You are running a **Design Upgrade** cycle for the Matchday26 project
+(on-demand — the 24h schedule was retired by the boss on 2026-06-10; this runs
+when the boss or /pm-cycle triggers it).
 Follow `CADENCE.md` in the repo root exactly. Fresh session — the repo is your
 only memory.
 

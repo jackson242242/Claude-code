@@ -7,10 +7,10 @@ import type { TouristVideo, ThumbnailKind } from '@/types/touristVideo';
 /* Gradient map                                                         */
 /* ------------------------------------------------------------------ */
 const GRADIENT_MAP: Record<ThumbnailKind, string> = {
-  'teal-to-turquoise': 'from-[#0a8f84] to-[#11b3c6]',
-  'grape-to-turquoise': 'from-[#7c5cff] to-[#11b3c6]',
+  'teal-to-turquoise': 'from-[#3d8bff] to-[#2f6fe0]',
+  'grape-to-turquoise': 'from-[#7c5cff] to-[#2f6fe0]',
   'coral-to-gold': 'from-[#ff5d52] to-[#e0a82e]',
-  'citrus-to-teal': 'from-[#7fb800] to-[#0a8f84]',
+  'citrus-to-teal': 'from-[#7fb800] to-[#3d8bff]',
 };
 
 interface VideoLightboxProps {
@@ -105,7 +105,7 @@ export const VideoLightbox = ({ video, onClose }: VideoLightboxProps) => {
         role="dialog"
         aria-modal="true"
         aria-label={`Video: ${video.title}`}
-        className="relative w-full max-w-2xl bg-[#ffffff] rounded-[1.125rem] shadow-[0_24px_64px_rgba(13,22,33,0.22)] overflow-hidden flex flex-col"
+        className="relative w-full max-w-2xl bg-[#141d2b] rounded-[1.125rem] shadow-[0_24px_64px_rgba(0,0,0,0.6)] overflow-hidden flex flex-col"
       >
         {/* Close button */}
         <button
@@ -113,7 +113,7 @@ export const VideoLightbox = ({ video, onClose }: VideoLightboxProps) => {
           type="button"
           onClick={onClose}
           aria-label="Close video"
-          className="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-black/80 focus-visible:outline-2 focus-visible:outline-[#0fb5a6] focus-visible:outline-offset-2 transition-colors duration-150 motion-reduce:transition-none"
+          className="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-black/80 focus-visible:outline-2 focus-visible:outline-[#5a9dff] focus-visible:outline-offset-2 transition-colors duration-150 motion-reduce:transition-none"
         >
           {/* × icon */}
           <svg
@@ -160,38 +160,43 @@ export const VideoLightbox = ({ video, onClose }: VideoLightboxProps) => {
                   className="absolute inset-0 w-full h-full object-cover"
                 />
               )}
-              <div
-                className="absolute inset-0 bg-black/40 flex items-center justify-center px-6 text-center"
-                aria-hidden={video.posterUrl != null ? 'true' : undefined}
-              >
+              <div className="absolute inset-0 bg-black/45 flex flex-col items-center justify-center gap-3 px-6 text-center">
                 <p className="text-white text-sm font-medium leading-snug max-w-xs">
-                  Live footage appears once a free source is connected.
+                  Watch real fan footage from {video.cityId != null ? 'this city' : 'the host cities'}.
                 </p>
+                <a
+                  href={video.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 rounded-full bg-[#3d8bff] px-4 py-2 text-sm font-bold text-white hover:bg-[#5a9dff] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-colors duration-150 motion-reduce:transition-none"
+                >
+                  Watch fan footage ↗
+                </a>
               </div>
             </div>
           )}
         </div>
 
         {/* Info panel */}
-        <div className="px-5 py-4 flex flex-col gap-2 bg-[#ffffff]">
-          <h2 className="text-[#0c1116] font-bold text-base leading-snug m-0 pr-8">
+        <div className="px-5 py-4 flex flex-col gap-2 bg-[#141d2b]">
+          <h2 className="text-[#f3f6fa] font-bold text-base leading-snug m-0 pr-8">
             {video.title}
           </h2>
 
           {video.author != null && (
-            <p className="text-[#646e7a] text-sm m-0">
+            <p className="text-[#8a97a8] text-sm m-0">
               By {video.author}
             </p>
           )}
 
           {/* Attribution / credit line — required for Pexels licence */}
-          <p className="text-[#646e7a] text-xs m-0">
+          <p className="text-[#8a97a8] text-xs m-0">
             via{' '}
             <a
               href={video.sourceUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#0a8f84] underline underline-offset-2 hover:text-[#0fb5a6] focus-visible:outline-2 focus-visible:outline-[#0fb5a6] focus-visible:outline-offset-1 rounded-sm transition-colors duration-150 motion-reduce:transition-none"
+              className="text-[#3d8bff] underline underline-offset-2 hover:text-[#5a9dff] focus-visible:outline-2 focus-visible:outline-[#5a9dff] focus-visible:outline-offset-1 rounded-sm transition-colors duration-150 motion-reduce:transition-none"
             >
               {video.sourceName}
             </a>

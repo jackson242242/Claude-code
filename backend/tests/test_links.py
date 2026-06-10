@@ -10,10 +10,13 @@ from urllib.parse import parse_qs, urlparse
 
 from fastapi.testclient import TestClient
 
+import pytest
+
 from app import schemas
 from app.providers.liteapi_hotels import LiteApiHotelProvider
+from app.providers.mock_flights import MockFlightProvider
 from app.providers.mock_hotels import MockHotelProvider
-from app.providers.util import booking_hotel_link, city_label
+from app.providers.util import booking_hotel_link, city_label, kayak_flights_link
 
 
 def _ss(url: str) -> str:
@@ -60,6 +63,37 @@ def test_audit_detects_a_non_anchored_link() -> None:
     # Sanity: the audit's membership check must actually flag a bad link.
     bad = booking_hotel_link("Grand Plaza", "2026-06-15", "2026-06-18", 2)
     assert "Mexico City".lower() not in _ss(bad).lower()
+
+
+def test_booking_link_gains_aid_only_when_configured(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    plain = booking_hotel_link("Miami, USA", "2026-06-15", "2026-06-18", 2)
+    assert "aid=" not in plain
+
+    monkeypatch.setenv("BOOKING_AID", "1234567")
+    tagged = booking_hotel_link("Miami, USA", "2026-06-15", "2026-06-18", 2)
+    assert "aid=1234567" in tagged
+    # Geo-anchoring must survive the affiliate param.
+    assert _ss(tagged) == "Miami, USA"
+
+
+def test_kayak_link_gains_affiliate_id_only_when_configured(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    plain = kayak_flights_link("lhr", "jfk", "2026-06-20", 1)
+    assert plain == "https://www.kayak.com/flights/LHR-JFK/2026-06-20/1adults"
+
+    monkeypatch.setenv("KAYAK_AFFILIATE_ID", "kan_test")
+    tagged = kayak_flights_link("lhr", "jfk", "2026-06-20", 1)
+    assert tagged.endswith("?a=kan_test")
+
+    offers = MockFlightProvider().search(
+        schemas.FlightSearchQuery(
+            origin="lhr", destination="jfk", date="2026-06-20", passengers=1
+        )
+    )
+    assert all("a=kan_test" in (offer.deep_link or "") for offer in offers)
 
 
 def test_liteapi_link_is_city_only_not_dragged_by_hotel_name() -> None:

@@ -2,10 +2,10 @@ import type { ThumbnailKind } from '@/types/touristVideo';
 import type { SuperstarVideo } from '@/mocks/superstars';
 
 const GRADIENT_MAP: Record<ThumbnailKind, string> = {
-  'teal-to-turquoise': 'from-[#0a8f84] to-[#11b3c6]',
-  'grape-to-turquoise': 'from-[#7c5cff] to-[#11b3c6]',
+  'teal-to-turquoise': 'from-[#3d8bff] to-[#2f6fe0]',
+  'grape-to-turquoise': 'from-[#7c5cff] to-[#2f6fe0]',
   'coral-to-gold': 'from-[#ff5d52] to-[#e0a82e]',
-  'citrus-to-teal': 'from-[#7fb800] to-[#0a8f84]',
+  'citrus-to-teal': 'from-[#7fb800] to-[#3d8bff]',
 };
 
 interface SuperstarCardProps {
@@ -25,7 +25,7 @@ export const SuperstarCard = ({ item }: SuperstarCardProps) => {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Watch ${item.name} (${item.nation}) highlights on YouTube — opens in a new tab`}
-      className="relative block w-[160px] flex-shrink-0 overflow-hidden rounded-[1.125rem] shadow-[0_6px_24px_rgba(13,22,33,0.08)] focus-visible:outline-2 focus-visible:outline-[#0fb5a6] focus-visible:outline-offset-2"
+      className="relative block w-[160px] flex-shrink-0 overflow-hidden rounded-[1.125rem] shadow-[0_6px_24px_rgba(0,0,0,0.45)] focus-visible:outline-2 focus-visible:outline-[#5a9dff] focus-visible:outline-offset-2"
       style={{ aspectRatio: '9/16' }}
     >
       {/* Gradient thumbnail */}
@@ -63,7 +63,7 @@ export const SuperstarCard = ({ item }: SuperstarCardProps) => {
               height: 0,
               borderTop: '8px solid transparent',
               borderBottom: '8px solid transparent',
-              borderLeft: '14px solid #0a8f84',
+              borderLeft: '14px solid #3d8bff',
             }}
           />
         </div>
