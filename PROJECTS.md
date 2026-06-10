@@ -16,9 +16,10 @@
 | 市场调研 | **6h** | `/yifu-research` | 🟡 | 2026-06-05（`marketing/daily-brief.md` 头部日期） | 已逾期；改版后首跑（last30days 式社区之声） |
 | 设计升级 | 按需 | `/design-upgrade` | ⚪ | 2026-06-10（`dcf32a3` 亮色 Phase 4 → 撤定时） | 老板点单或 pm-cycle 判断需要时跑（Phase 5 在 backlog） |
 | 网站运营 | 按需 | `/amelia-ops` | ⚪ | 2026-06-05（`marketing/ops-2026-06-05.md` → 撤定时） | 老板点单或发布节点前跑 |
+| 新闻健康检查 | 6h | `/news-live-check` | 🟢 | 2026-06-10（`11bc9f2` 探针+命令上线，默认分支） | 按命令每 6h retest+确认 prod 新闻在流（沙箱不可达 onrender 时按其降级路径） |
 | 素材刷新 | 按需 | `/refresh-tourist-videos` | ⚪ | 见 tourist-videos 数据时间戳 | 视频失效（404）时触发 |
 
-> 节奏由老板 2026-06-10 裁决精简：定时只留产品 12h + 调研 6h；设计/运营转按需（命令保留，能力不丢）。
+> 节奏由老板 2026-06-10 裁决精简：定时只留产品 12h + 调研 6h（+新闻检查 6h）；设计/运营转按需（命令保留，能力不丢）。
 
 ### P2 · VoiceMemoBot — watchOS 语音备忘 → AI 音乐 remix → 分享链接
 **位置：本仓库分支 `claude/inspiring-dirac-j8ar6q`**，代码在 `voice-memo-watch/`
@@ -61,3 +62,6 @@
 ## D. 边界（同 CADENCE §3，总管逐条执行）
 - 红线项只开 PR 不合并；门禁不绿不合并；一轮只做一件、diff 有界。
 - 不编数字、不承诺流量；不能直连微信/社媒——对外分发是老板/伙伴的动作。
+- **Routine 只克隆默认分支**：总管基建（`.claude/`、本台账、CADENCE）与每轮写回
+  都必须**合并进默认分支**才对下一轮生效；只推工作分支 = 下一轮失忆。
+- **给老板的固定读报位**：`briefs/latest.md`（每轮覆盖写入本轮简报全文）。

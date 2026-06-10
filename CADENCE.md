@@ -13,6 +13,7 @@
 |------|------|------|------|----------|
 | 产品升级 | 每 12h | `/product-upgrade` | 浩哥（实现 agent 落地） | daily×2，相隔 12h（08:00 / 20:00）；cron `0 */12 * * *` |
 | 市场调研 | **每 6h** | `/yifu-research` | Yifu（last30days 式社区之声，喂 Amelia + Sheng） | daily×4（00/06/12/18）；cron `0 */6 * * *` |
+| 新闻健康检查 | 每 6h | `/news-live-check` | 总管（retest + 确认 prod 新闻在流） | 随 `/pm-cycle` 体检覆盖，或单独 cron `0 */6 * * *` |
 
 **按需（不再定时，老板或 /pm-cycle 触发；命令保留）：**
 | 工作流 | 入口 | 原周期（已撤） |

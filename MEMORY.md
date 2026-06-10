@@ -14,6 +14,7 @@
 - **总管上线（2026-06-10）**：老板单一接口 = **总管 majordomo**（`.claude/agents/majordomo.md`），台账 `PROJECTS.md`，循环入口 `/pm-cycle`（全天候 = 老板建 Routine）。**微信直连不可行**（本环境无微信桥；如要做需公网 webhook 服务 + 公众号/企业微信凭证，属浩哥评估项）；远程对话用 Claude 手机 App/网页即可。
 - **节奏精简（2026-06-10 老板裁决）**：定时只留**产品 12h + 调研 6h**；设计 24h、运营 5h **撤定时转按需**（命令保留）。`/yifu-research` 改版为 last30days 式社区之声调研（mvanhorn/last30days-skill，MIT，仅借鉴方法未引入插件——其引擎需外部 API key/域名）。
 - **组合扩容（2026-06-10）**：登记 **P2 VoiceMemoBot**（分支 `claude/inspiring-dirac-j8ar6q`，`voice-memo-watch/`，watchOS 录音→AI remix）与 **P3 Thomas English Meal Counter**（分支 `claude/thomas-english-meal-counter-816Cf`，单文件 `thomas-meal-counter.html`）。两分支与 Matchday26 分支互不合并；总管每轮 fetch 体检。
+- **Routine 失明事故与修复（2026-06-10）**：老板反馈"majordomo routine 没在管 P2、也不汇报"。**根因**：Routine 每次只克隆**默认分支**，而总管基建（majordomo agent / PROJECTS.md / pm-cycle / 节奏精简）当时只在工作分支；默认分支上另有 `news-live-check`（`11bc9f2`，自称 majordomo）但只查新闻、不知组合台账。**修复**：基建经 PR 合并进默认分支；立规——**所有基建改动与每轮写回必须合并默认分支才生效**；pm-cycle 每轮把简报写 `briefs/latest.md`（老板固定读报位）。汇报机制如实说明：Routine 无推送通知，老板看 briefs/latest.md 或 claude.ai/code/routines 的 run 列表。
 
 ## 1. 项目概览
 - **产品：** 2026 FIFA 世界杯（美国/加拿大/墨西哥）旅游导览 + 机票/酒店/交通预订网站与 PWA。
