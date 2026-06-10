@@ -83,8 +83,10 @@ cd watchos && xcodegen generate && open VoiceMemoBot.xcodeproj
 # Point AppConfig.apiBaseURL at your machine's LAN IP, run on a watch simulator.
 ```
 
-Vertical-page TabView: **Create** (record → style → result with one-tap
-style chips + tweak buttons + "Post to Feed") and **Feed** (browse + ♥ like).
+Vertical-page TabView, feed-first like the web app: **Feed** lands first
+(single-column cards — gradient cover, caption overlay, byline, ♥ like —
+with a red Create button up top) and **Create** (record → style → result
+with one-tap style chips + tweak buttons + "Post to Feed").
 
 ## Tests
 
