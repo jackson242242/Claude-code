@@ -1,4 +1,57 @@
-# Matchday26 — 社区之声调研 · 2026-06-11 00:30 UTC（last30days 式 · 已过滤版）
+# Matchday26 — 社区之声调研 · 2026-06-11 12:10 UTC（last30days 式 · 已过滤版）
+
+> 内容边界不变：只服务品牌/运营/Sheng 设计；**无政治、无签证/入境、无法律声明**；
+> 痛点一律物流/体验/省钱角度。诚实声明：沙箱直连 Reddit/X 受限（本轮 site:reddit.com
+> 检索未返回线程，社区情绪来自媒体引述与搜索摘要）；不编造引用与互动数。
+> 本轮为 6h 增量——只记 6/11 00:30 之后的新变化。**揭幕战开球前 ~7h（19:00 UTC），
+> 赛果与现场反应是下一轮的窗口，本轮不预判。**
+
+## What I learned（开球前最后几小时，新进来的事实）
+
+- **揭幕战时刻表落定、且有免费观看路径**：揭幕式 1:30pm ET（Shakira/Burna Boy/Belinda/
+  Danny Ocean），墨西哥 vs 南非 3pm ET 开球，FOX/Telemundo 直播、**Tubi 免费流**——
+  「一分钱不花也能完整看揭幕战」是今天即用的内容角度。Azteca(Banorte) 成为**史上第一座
+  办三届世界杯揭幕战的球场**，赛前已有万人人浪冲吉尼斯纪录的现场热度。来源：
+  [Yahoo Sports](https://sports.yahoo.com/soccer/article/mexico-vs-south-africa-how-to-watch-the-first-game-of-the-2026-world-cup-tv-channel-start-time-where-to-stream-free-and-more-105500752.html)、
+  [Euronews](https://www.euronews.com/2026/06/10/mexico-city-counts-down-to-2026-world-cup-opener-at-historic-azteca-stadium)、
+  [FIFA](https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/estadio-azteca-mexico-city-host-opening-match-world-cup-2026)。✅
+- **美国揭幕战（6/12 LA，巴拉圭 vs 美国）开赛前一天仍未售罄**：FIFA 官网尚余 ~132 张
+  （ABC 报道，数字随时浮动），FIFA 官方 resale 低至 **$661**、SeatGeek $920 起，大量低于
+  票面——「smart latecomer」叙事从中性场次扩展到了**东道主揭幕战本身**。FIFA 主席公开
+  回应票价质疑（"fans should chill"），话题热度高、但我们只取「还能买到+怎么买便宜」
+  的物流角度。来源：[ABC News](https://abcnews.com/Business/wireStory/thinking-world-cup-tickets-prices-availability-stand-133767236)、
+  [NPR 6/8](https://www.npr.org/2026/06/08/nx-s1-5849905/fifa-world-cup-tickets-prices)、
+  [PBS](https://www.pbs.org/newshour/world/fifas-infantino-defends-world-cup-ticket-prices-says-fans-should-chill-about-ref-denied-us-entry)、
+  [Darden 分析](https://news.darden.virginia.edu/2026/06/10/why-world-cup-2026-tickets-are-so-expensive-and-why-some-matches-still-arent-sold-out/)。✅
+- **Fan Fest 今日开张细节齐了（无票/省钱人群的行程素材）**：亚特兰大 Centennial Park
+  12 点免费开门看揭幕战大屏；费城 Lemon Hill 2pm 起 39 天免费；圣何塞 San Pedro Square
+  免费需 RSVP；LA Coliseum Fan Festival 6/11–14；**纽约皇后区 USTA 球网中心 Fan Zone
+  6/11–27（体育场式看赛）为新确认点位**。来源：
+  [Atlanta FWC26](https://atlantafwc26.com/fan-fest/)、[Visit Philly](https://www.visitphilly.com/things-to-do/events/fifa-fan-festival/)、
+  [NBC LA](https://www.nbclosangeles.com/world-cup/la-world-cup-fan-zones-fifa-festival/3901297/)、
+  [NYC Tourism](https://www.nyctourism.com/worldcup26/world-cup-fan-zones/)。✅
+
+## KEY PATTERNS from the research
+1. **「零成本世界杯日」成型**：免费 Fan Fest + Tubi 免费流 + $1.75 接驳（上期）——
+   一条完整的不花钱/极省钱行程线，没人打包成内容。
+2. **「smart latecomer」升级**：连美国揭幕战都还能官方渠道买到低于票面的票——
+   钩子从「捡漏中性场」升级为「开赛了，最好的窗口才刚打开」。
+3. **赛果窗口在今晚**：19:00 UTC 开球后，首批「现场体验/交通实测」社区帖会涌现——
+   下一轮调研（~18:00 UTC 后）是收割窗口。
+
+## For Amelia（本轮最值得用的）
+- 钩子①「世界杯今天开打——揭幕式 1:30pm ET，Tubi 免费看」；钩子②「美国队揭幕战
+  明天 LA：官方 resale $661 起、低于票面，现在买来得及」。
+- Fan Fest「OPEN TODAY」清单（五城+皇后区新点位）可直接成推文/落地页素材。
+
+## For Sheng（视觉/UX 信号）
+- LIVE 条（已上线）下一步：今晚开球后「进行中」高亮态最有感知；赛果出来后
+  「FT 比分」回显是死内容变活的关键。
+- 「Free today」徽章语义（Fan Fest/免费流）与金色价格徽章区分开。
+
+---
+
+# （上期）Matchday26 — 社区之声调研 · 2026-06-11 00:30 UTC（last30days 式 · 已过滤版）
 
 > 内容边界不变：只服务品牌/运营/Sheng 设计；**无政治、无签证/入境、无法律声明**；
 > 痛点一律物流/体验/省钱角度。诚实声明：沙箱直连 Reddit/X 受限，本轮社区情绪来自
