@@ -2,67 +2,78 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Thomas 学习中心</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Thomas 学习基地</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --blue: #4f46e5;
-    --blue-light: #818cf8;
-    --gold: #f59e0b;
-    --green: #10b981;
-    --red: #ef4444;
-    --purple: #8b5cf6;
     --bg: #f8faff;
+    --primary: #4f46e5;
+    --primary-light: #818cf8;
+    --gold: #f59e0b;
+    --gold-light: #fde68a;
+    --green: #10b981;
+    --green-light: #d1fae5;
+    --red: #ef4444;
+    --purple: #7c3aed;
+    --purple-light: #ede9fe;
     --card: #ffffff;
-    --text: #1e1b4b;
-    --text-2: #6b7280;
+    --text: #1e293b;
+    --text-2: #64748b;
+    --text-3: #94a3b8;
+    --border: #e2e8f0;
     --shadow: 0 2px 20px rgba(0,0,0,0.08);
+    --tab-h: 70px;
     --radius: 20px;
+    --radius-sm: 12px;
   }
 
-  html, body {
-    height: 100%;
-    background: var(--bg);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
-    color: var(--text);
-    -webkit-font-smoothing: antialiased;
-  }
+  html { height: 100%; }
 
   body {
-    display: flex;
-    flex-direction: column;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+                 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background: var(--bg);
+    color: var(--text);
     max-width: 420px;
     margin: 0 auto;
-    min-height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    position: relative;
   }
 
-  /* ── TABS ── */
-  #main-content {
-    flex: 1;
+  .page-scroll {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    bottom: var(--tab-h);
     overflow-y: auto;
-    padding-bottom: 90px;
-    scroll-behavior: smooth;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
   }
+  .page-scroll::-webkit-scrollbar { display: none; }
+  .page-scroll { -ms-overflow-style: none; scrollbar-width: none; }
 
-  .tab-pane { display: none; padding: 16px; }
-  .tab-pane.active { display: block; }
+  .page-content { padding: 0 16px 32px; min-height: 100%; }
 
-  /* ── BOTTOM TAB BAR ── */
-  #tab-bar {
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* Bottom Tab Bar */
+  .tab-bar {
     position: fixed;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
     max-width: 420px;
-    background: #fff;
-    border-top: 1px solid #e5e7eb;
+    background: var(--card);
+    border-top: 1px solid var(--border);
     display: flex;
-    padding-bottom: env(safe-area-inset-bottom, 10px);
+    height: var(--tab-h);
+    padding-bottom: env(safe-area-inset-bottom, 16px);
     z-index: 100;
-    box-shadow: 0 -4px 20px rgba(0,0,0,0.06);
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
   }
 
   .tab-btn {
@@ -71,745 +82,579 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px 4px 6px;
-    border: none;
-    background: transparent;
-    cursor: pointer;
     gap: 3px;
-    transition: all 0.2s;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 4px;
+    transition: transform 0.15s;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
   }
+  .tab-btn:active { transform: scale(0.90); }
+  .tab-icon { font-size: 22px; line-height: 1; filter: grayscale(1) opacity(0.4); transition: filter 0.2s; }
+  .tab-label { font-size: 10px; font-weight: 600; color: var(--text-3); letter-spacing: 0.02em; transition: color 0.2s; }
+  .tab-btn.active .tab-icon { filter: none; }
+  .tab-btn.active .tab-label { color: var(--primary); }
 
-  .tab-btn .tab-icon { font-size: 22px; line-height: 1; }
-  .tab-btn .tab-label {
-    font-size: 10px;
+  /* App Header */
+  .app-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0 14px;
+    gap: 10px;
+  }
+  .app-title { font-size: 22px; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
+  .date-badge {
+    font-size: 12px;
+    color: var(--text-2);
+    background: var(--card);
+    border-radius: 20px;
+    padding: 5px 12px;
+    box-shadow: var(--shadow);
     font-weight: 600;
-    color: #9ca3af;
-    letter-spacing: 0.3px;
-    transition: color 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
-  .tab-btn.active .tab-label { color: var(--blue); }
-  .tab-btn.active .tab-icon { filter: drop-shadow(0 0 4px rgba(79,70,229,0.4)); }
-
-  /* ── HEADER ── */
-  .page-header {
-    background: linear-gradient(135deg, var(--blue) 0%, #7c3aed 100%);
-    border-radius: 0 0 28px 28px;
-    padding: 20px 20px 24px;
-    color: white;
-    margin-bottom: 16px;
-  }
-
-  .page-header h1 { font-size: 22px; font-weight: 800; margin-bottom: 4px; }
-  .page-header .subtitle { font-size: 13px; opacity: 0.85; }
-
-  /* ── CARD ── */
+  /* Generic Card */
   .card {
     background: var(--card);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    padding: 18px;
-    margin-bottom: 14px;
-  }
-
-  .card-title {
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--text-2);
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  /* ── DATE + STREAK ── */
-  .date-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .date-text { font-size: 15px; font-weight: 700; color: var(--text); }
-  .date-sub { font-size: 12px; color: var(--text-2); margin-top: 2px; }
-
-  .streak-badge {
-    background: linear-gradient(135deg, var(--gold), #fbbf24);
-    color: white;
-    border-radius: 50px;
-    padding: 6px 14px;
-    font-size: 13px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    box-shadow: 0 2px 8px rgba(245,158,11,0.35);
-  }
-
-  /* ── MEAL LOG ── */
-  #meal-btn {
-    width: 100%;
-    background: linear-gradient(135deg, var(--green), #059669);
-    color: white;
-    border: none;
-    border-radius: 14px;
-    padding: 14px;
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    margin-top: 12px;
-    box-shadow: 0 4px 12px rgba(16,185,129,0.3);
-    transition: transform 0.15s, box-shadow 0.15s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-  }
-
-  #meal-btn:active { transform: scale(0.97); }
-
-  .meal-deadline {
-    text-align: center;
-    font-size: 12px;
-    color: var(--text-2);
-    margin-top: 8px;
-  }
-
-  .meal-deadline strong { color: var(--blue); }
-
-  /* ── LESSON TYPE BADGE ── */
-  .lesson-type-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    padding: 4px 12px;
-    border-radius: 50px;
-    font-size: 12px;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-
-  .badge-invest { background: rgba(245,158,11,0.15); color: #b45309; }
-  .badge-ai { background: rgba(79,70,229,0.12); color: #4338ca; }
-
-  /* ── BIG QUESTION ── */
-  .big-question {
-    font-size: 17px;
-    font-weight: 800;
-    color: var(--text);
-    line-height: 1.5;
-    margin-bottom: 14px;
-  }
-
-  /* ── CONTENT SECTIONS ── */
-  .content-section {
-    border-radius: 14px;
-    padding: 14px;
-    margin-bottom: 12px;
-    font-size: 14px;
-    line-height: 1.65;
-  }
-
-  .section-answer {
-    background: linear-gradient(135deg, rgba(79,70,229,0.07), rgba(79,70,229,0.03));
-    border-left: 3px solid var(--blue);
-  }
-
-  .section-analogy {
-    background: rgba(245,158,11,0.08);
-    border-left: 3px solid var(--gold);
-  }
-
-  .section-deepthink {
-    background: linear-gradient(135deg, rgba(139,92,246,0.08), rgba(139,92,246,0.03));
-    border-left: 3px solid var(--purple);
-  }
-
-  .section-challenge {
-    background: linear-gradient(135deg, rgba(16,185,129,0.08), rgba(16,185,129,0.03));
-    border-left: 3px solid var(--green);
-  }
-
-  .section-funfact {
-    background: linear-gradient(135deg, rgba(245,158,11,0.12), rgba(245,158,11,0.05));
-    border: 1px solid rgba(245,158,11,0.25);
-    border-radius: 14px;
-    padding: 14px;
-    margin-bottom: 12px;
-    font-size: 13px;
-    line-height: 1.6;
-    color: #92400e;
-  }
-
-  .section-label {
-    font-size: 11px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    margin-bottom: 6px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-
-  .section-answer .section-label { color: var(--blue); }
-  .section-analogy .section-label { color: #b45309; }
-  .section-deepthink .section-label { color: var(--purple); }
-  .section-challenge .section-label { color: #065f46; }
-
-  /* ── CHECKBOXES ── */
-  .check-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 16px;
-    background: white;
-    border-radius: 14px;
-    border: 2px solid #e5e7eb;
-    cursor: pointer;
-    transition: all 0.2s;
-    margin-bottom: 10px;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  .check-row:active { transform: scale(0.98); }
-  .check-row.checked { border-color: var(--green); background: rgba(16,185,129,0.05); }
-
-  .check-box {
-    width: 24px;
-    height: 24px;
-    border-radius: 8px;
-    border: 2.5px solid #d1d5db;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    transition: all 0.2s;
-    font-size: 14px;
-  }
-
-  .check-row.checked .check-box {
-    background: var(--green);
-    border-color: var(--green);
-    color: white;
-  }
-
-  .check-text {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--text);
-    flex: 1;
-  }
-
-  .check-xp {
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--text-2);
-    background: #f3f4f6;
-    padding: 3px 8px;
-    border-radius: 50px;
-  }
-
-  .check-row.checked .check-xp {
-    background: rgba(16,185,129,0.15);
-    color: #065f46;
-  }
-
-  /* ── SKILLS TAB ── */
-  .level-card {
-    background: linear-gradient(135deg, var(--blue), #7c3aed);
-    border-radius: var(--radius);
     padding: 20px;
-    color: white;
     margin-bottom: 14px;
-    box-shadow: 0 4px 20px rgba(79,70,229,0.3);
+  }
+  .card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+  .card-header .emoji { font-size: 20px; }
+  .card-title { font-size: 15px; font-weight: 700; color: var(--text); }
+
+  /* Meal Card */
+  .meal-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 20px;
+    margin-bottom: 14px;
+  }
+  .meal-card .card-header { margin-bottom: 12px; }
+  .meal-card .card-title { color: white; }
+  .meal-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .meal-info { flex: 1; min-width: 0; }
+  .meal-streak { font-size: 36px; font-weight: 900; line-height: 1; color: white; }
+  .meal-streak-label { font-size: 12px; color: rgba(255,255,255,0.85); margin-top: 2px; font-weight: 500; }
+  .meal-deadline {
+    font-size: 12px; color: rgba(255,255,255,0.9); margin-top: 8px; font-weight: 600;
+    background: rgba(255,255,255,0.15); border-radius: 8px; padding: 5px 10px; display: inline-block;
   }
 
-  .level-name {
-    font-size: 24px;
-    font-weight: 900;
-    letter-spacing: -0.5px;
-  }
-
-  .level-sub { font-size: 13px; opacity: 0.8; margin-top: 2px; margin-bottom: 14px; }
-
-  .xp-bar-bg {
-    background: rgba(255,255,255,0.2);
-    border-radius: 50px;
-    height: 10px;
-    overflow: hidden;
-  }
-
-  .xp-bar-fill {
-    background: white;
-    height: 100%;
-    border-radius: 50px;
-    transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-
-  .xp-label {
-    font-size: 12px;
-    opacity: 0.85;
-    margin-top: 6px;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .total-xp-badge {
-    background: rgba(255,255,255,0.2);
-    border-radius: 50px;
-    padding: 4px 12px;
+  .log-btn {
+    flex-shrink: 0;
+    background: rgba(255,255,255,0.22);
+    border: 2px solid rgba(255,255,255,0.5);
+    color: white;
+    border-radius: 14px;
+    padding: 12px 16px;
     font-size: 13px;
     font-weight: 700;
-    display: inline-block;
-    margin-bottom: 8px;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+    -webkit-tap-highlight-color: transparent;
+    white-space: nowrap;
+    outline: none;
+    line-height: 1.3;
+    text-align: center;
+  }
+  .log-btn:active { background: rgba(255,255,255,0.38); transform: scale(0.94); }
+
+  /* Day type pill */
+  .day-type-pill {
+    display: inline-flex; align-items: center; gap: 5px;
+    border-radius: 20px; padding: 6px 14px; font-size: 12px;
+    font-weight: 700; letter-spacing: 0.03em; margin-bottom: 12px;
+  }
+  .day-type-pill.invest { background: #fef3c7; color: #92400e; }
+  .day-type-pill.ai { background: var(--purple-light); color: #5b21b6; }
+
+  /* Question Card */
+  .question-card {
+    background: linear-gradient(135deg, var(--primary) 0%, #7c3aed 100%);
+    color: white; border-radius: var(--radius);
+    box-shadow: var(--shadow); padding: 22px 20px 18px; margin-bottom: 14px;
+  }
+  .question-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.09em;
+    text-transform: uppercase; color: rgba(255,255,255,0.75); margin-bottom: 10px;
+  }
+  .question-text { font-size: 17px; font-weight: 800; line-height: 1.5; color: white; }
+  .skill-chip {
+    display: inline-block; background: rgba(255,255,255,0.2);
+    border-radius: 20px; padding: 5px 12px; font-size: 11px;
+    font-weight: 700; color: white; margin-top: 14px; letter-spacing: 0.02em;
+  }
+
+  /* Content boxes */
+  .box-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.07em;
+    text-transform: uppercase; margin-bottom: 8px;
+  }
+  .box-text { font-size: 14px; line-height: 1.7; color: var(--text); }
+  .box-text strong { font-weight: 700; color: var(--primary); }
+
+  .answer-box {
+    background: #eff6ff; border-left: 4px solid var(--primary);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 14px 16px; margin-bottom: 12px;
+  }
+  .answer-box .box-label { color: var(--primary); }
+
+  .analogy-box {
+    background: #fefce8; border-left: 4px solid var(--gold);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 14px 16px; margin-bottom: 12px;
+  }
+  .analogy-box .box-label { color: #92400e; }
+
+  .funfact-box {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    border: 2px solid var(--gold); border-radius: var(--radius-sm);
+    padding: 14px 16px; margin-bottom: 12px;
+  }
+  .funfact-box .box-label { color: #78350f; }
+
+  .deepthink-box {
+    background: var(--purple-light); border-left: 4px solid var(--purple);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 14px 16px; margin-bottom: 12px;
+  }
+  .deepthink-box .box-label { color: var(--purple); }
+
+  .challenge-box {
+    background: var(--green-light); border-left: 4px solid var(--green);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 14px 16px; margin-bottom: 12px;
+  }
+  .challenge-box .box-label { color: #065f46; }
+
+  /* Divider */
+  .divider { height: 1px; background: var(--border); margin: 16px 0; }
+
+  /* Complete checkboxes */
+  .complete-row { display: flex; flex-direction: column; gap: 10px; }
+  .complete-item {
+    display: flex; align-items: center; gap: 12px;
+    background: var(--bg); border-radius: var(--radius-sm);
+    padding: 13px 14px; cursor: pointer;
+    border: 2px solid var(--border);
+    transition: border-color 0.2s, background 0.2s;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none; outline: none;
+  }
+  .complete-item.done { border-color: var(--green); background: var(--green-light); }
+  .check-circle {
+    width: 28px; height: 28px; border-radius: 50%;
+    border: 2.5px solid var(--text-3);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; transition: border-color 0.2s, background 0.2s;
+    font-size: 15px; color: white; font-weight: 700;
+  }
+  .complete-item.done .check-circle { border-color: var(--green); background: var(--green); }
+  .complete-label { font-size: 13px; font-weight: 600; color: var(--text-2); flex: 1; line-height: 1.4; }
+  .complete-item.done .complete-label { color: #065f46; }
+  .xp-badge {
+    flex-shrink: 0; font-size: 11px; font-weight: 700;
+    color: var(--text-3); background: var(--border);
+    border-radius: 10px; padding: 3px 8px; white-space: nowrap;
+  }
+  .complete-item.done .xp-badge { color: #065f46; background: #a7f3d0; }
+
+  /* Skills tab - Level card */
+  .level-card {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white; border-radius: var(--radius);
+    padding: 22px; margin-bottom: 16px; box-shadow: var(--shadow);
+  }
+  .level-sub { font-size: 12px; color: rgba(255,255,255,0.6); font-weight: 600; margin-bottom: 2px; }
+  .level-name { font-size: 24px; font-weight: 900; letter-spacing: -0.5px; }
+  .xp-total { font-size: 38px; font-weight: 900; margin-top: 10px; letter-spacing: -1.5px; line-height: 1; }
+  .xp-unit { font-size: 14px; font-weight: 600; opacity: 0.65; letter-spacing: 0; }
+  .level-progress-track {
+    height: 8px; background: rgba(255,255,255,0.15);
+    border-radius: 4px; margin-top: 14px; overflow: hidden;
+  }
+  .level-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #f59e0b, #fbbf24);
+    border-radius: 4px;
+    transition: width 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+    min-width: 0;
+  }
+  .level-progress-label {
+    font-size: 11px; color: rgba(255,255,255,0.55);
+    margin-top: 6px; text-align: right; font-weight: 500;
+  }
+
+  .skills-section-title {
+    font-size: 12px; font-weight: 700; color: var(--text-3);
+    letter-spacing: 0.07em; text-transform: uppercase;
+    margin-bottom: 10px; padding: 0 2px;
   }
 
   .skill-item {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    padding: 14px 0;
-    border-bottom: 1px solid #f3f4f6;
+    background: var(--card); border-radius: var(--radius-sm);
+    padding: 14px 16px; margin-bottom: 10px; box-shadow: var(--shadow);
   }
-
-  .skill-item:last-child { border-bottom: none; }
-
-  .skill-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  .skill-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+  .skill-name { font-size: 14px; font-weight: 700; color: var(--text); }
+  .skill-xp-label { font-size: 12px; font-weight: 600; color: var(--text-2); }
+  .skill-track { height: 10px; background: #f1f5f9; border-radius: 5px; overflow: hidden; }
+  .skill-fill {
+    height: 100%; border-radius: 5px;
+    transition: width 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+    min-width: 0;
   }
+  .skill-level-label { font-size: 10px; color: var(--text-3); margin-top: 5px; font-weight: 500; }
 
-  .skill-name {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--text);
-    display: flex;
-    align-items: center;
-    gap: 6px;
+  /* Toolbox */
+  .section-title {
+    font-size: 17px; font-weight: 800; color: var(--text);
+    margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
   }
-
-  .skill-xp {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--text-2);
+  .prompt-item {
+    background: var(--card); border-radius: var(--radius-sm);
+    padding: 14px 16px; margin-bottom: 10px;
+    box-shadow: var(--shadow); border-left: 4px solid var(--primary-light);
   }
-
-  .skill-bar-bg {
-    height: 8px;
-    background: #f3f4f6;
-    border-radius: 50px;
-    overflow: hidden;
+  .prompt-text {
+    font-size: 13px; line-height: 1.6; color: var(--text);
+    font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+    margin-bottom: 10px; word-break: break-all;
   }
-
-  .skill-bar-fill {
-    height: 100%;
-    border-radius: 50px;
-    transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-
-  .skill-level-dot {
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--text-2);
-  }
-
-  /* ── TOOLBOX ── */
-  .template-item {
-    background: white;
-    border: 1.5px solid #e5e7eb;
-    border-radius: 14px;
-    padding: 14px;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .template-text {
-    flex: 1;
-    font-size: 14px;
-    color: var(--text);
-    line-height: 1.5;
-  }
-
   .copy-btn {
-    background: var(--blue);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 8px 12px;
-    font-size: 12px;
-    font-weight: 700;
-    cursor: pointer;
-    flex-shrink: 0;
-    transition: all 0.2s;
+    background: var(--primary); color: white; border: none;
+    border-radius: 8px; padding: 7px 16px; font-size: 12px;
+    font-weight: 700; cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+    -webkit-tap-highlight-color: transparent; outline: none;
   }
-
-  .copy-btn:active { transform: scale(0.95); }
+  .copy-btn:active { transform: scale(0.93); }
   .copy-btn.copied { background: var(--green); }
 
-  /* ── CALCULATOR ── */
-  .calc-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-bottom: 14px;
+  /* Calculator */
+  .calc-card {
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); padding: 20px; margin-bottom: 14px;
   }
-
-  .calc-field {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+  .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+  .calc-field { display: flex; flex-direction: column; gap: 5px; }
+  .calc-label { font-size: 11px; font-weight: 700; color: var(--text-2); letter-spacing: 0.02em; }
+  .calc-input {
+    border: 2px solid var(--border); border-radius: 10px;
+    padding: 9px 12px; font-size: 15px; font-weight: 600;
+    color: var(--text); background: var(--bg); outline: none;
+    transition: border-color 0.2s; width: 100%; -webkit-appearance: none;
   }
-
-  .calc-field label {
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--text-2);
-    text-transform: uppercase;
-    letter-spacing: 0.4px;
-  }
-
-  .calc-field input {
-    border: 2px solid #e5e7eb;
-    border-radius: 10px;
-    padding: 10px 12px;
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--text);
-    background: white;
-    outline: none;
-    transition: border-color 0.2s;
-    width: 100%;
-  }
-
-  .calc-field input:focus { border-color: var(--blue); }
-
+  .calc-input:focus { border-color: var(--primary); }
   .calc-btn {
-    grid-column: 1 / -1;
-    background: linear-gradient(135deg, var(--blue), #7c3aed);
-    color: white;
-    border: none;
-    border-radius: 14px;
-    padding: 14px;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: transform 0.15s;
-    box-shadow: 0 4px 12px rgba(79,70,229,0.3);
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary), #7c3aed);
+    color: white; border: none; border-radius: 12px;
+    padding: 14px; font-size: 15px; font-weight: 700;
+    cursor: pointer; margin-bottom: 16px;
+    transition: transform 0.1s, opacity 0.15s;
+    -webkit-tap-highlight-color: transparent; outline: none;
   }
-
-  .calc-btn:active { transform: scale(0.98); }
-
-  .calc-result {
-    display: none;
-    margin-top: 4px;
-  }
-
+  .calc-btn:active { transform: scale(0.97); opacity: 0.9; }
+  .calc-result { display: none; }
   .calc-result.show { display: block; }
+  .result-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 7px 0; border-bottom: 1px solid var(--border); margin-bottom: 4px;
+  }
+  .result-row:last-of-type { border-bottom: none; }
+  .result-label { font-size: 13px; color: var(--text-2); font-weight: 500; }
+  .result-value { font-size: 17px; font-weight: 800; color: var(--primary); }
+  .result-value.big { font-size: 22px; color: var(--green); }
 
-  .calc-numbers {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 12px;
-    gap: 12px;
+  .bar-compare { margin-top: 16px; }
+  .bar-compare-label { font-size: 11px; font-weight: 700; color: var(--text-2); margin-bottom: 7px; }
+  .bar-compare-track {
+    height: 14px; background: #f1f5f9; border-radius: 7px;
+    overflow: hidden; margin-bottom: 5px; position: relative;
+  }
+  .bar-initial-fill {
+    position: absolute; top: 0; left: 0; bottom: 0;
+    background: var(--primary-light); border-radius: 7px; transition: width 0.6s ease;
+  }
+  .bar-final-fill {
+    height: 14px;
+    background: linear-gradient(90deg, var(--green), #34d399);
+    border-radius: 7px; transition: width 0.6s ease;
+  }
+  .bar-compare-row {
+    display: flex; justify-content: space-between;
+    font-size: 11px; color: var(--text-3); font-weight: 600; margin-top: 2px;
+  }
+  .result-multiplier {
+    text-align: center; margin-top: 14px; padding: 12px;
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    border-radius: 12px; font-size: 15px; font-weight: 800; color: #78350f;
   }
 
-  .calc-num-block { flex: 1; text-align: center; }
-  .calc-num-label { font-size: 11px; color: var(--text-2); font-weight: 600; margin-bottom: 4px; }
-  .calc-num-value { font-size: 18px; font-weight: 800; color: var(--text); }
-  .calc-num-value.big { font-size: 22px; color: var(--green); }
-
-  .calc-arrow { font-size: 22px; color: var(--text-2); padding-bottom: 4px; }
-
-  .calc-bar-container { margin-top: 8px; }
-  .calc-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
-  .calc-bar-label { font-size: 11px; color: var(--text-2); width: 40px; text-align: right; font-weight: 600; }
-  .calc-bar-track { flex: 1; background: #f3f4f6; border-radius: 50px; height: 14px; overflow: hidden; }
-  .calc-bar-inner { height: 100%; border-radius: 50px; transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1); }
-  .bar-initial { background: linear-gradient(90deg, #94a3b8, #64748b); }
-  .bar-final { background: linear-gradient(90deg, var(--green), #059669); }
-  .calc-multiplier {
-    text-align: center;
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--text-2);
-    margin-top: 10px;
+  /* Toast */
+  .toast {
+    position: fixed; top: 18px; left: 50%;
+    transform: translateX(-50%) translateY(-90px);
+    background: #1e293b; color: white; border-radius: 22px;
+    padding: 11px 22px; font-size: 13px; font-weight: 600;
+    z-index: 9999; transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none; white-space: nowrap; max-width: 320px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
   }
-  .calc-multiplier strong { color: var(--green); font-size: 16px; }
+  .toast.show { transform: translateX(-50%) translateY(0); }
 
-  /* ── SECTION HEADING ── */
-  .section-heading {
-    font-size: 16px;
-    font-weight: 800;
-    color: var(--text);
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 7px;
+  /* Animations */
+  @keyframes pop {
+    0%   { transform: scale(1); }
+    40%  { transform: scale(1.18); }
+    100% { transform: scale(1); }
   }
+  .pop { animation: pop 0.32s ease; }
 
-  /* ── ANIMATION ── */
-  @keyframes popIn {
-    0% { transform: scale(0.95); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
-
-  .card { animation: popIn 0.25s ease; }
-
-  /* ── TOAST ── */
-  #toast {
-    position: fixed;
-    bottom: 90px;
-    left: 50%;
-    transform: translateX(-50%) translateY(20px);
-    background: var(--text);
-    color: white;
-    border-radius: 50px;
-    padding: 10px 20px;
-    font-size: 14px;
-    font-weight: 600;
-    opacity: 0;
-    transition: all 0.3s;
-    pointer-events: none;
-    white-space: nowrap;
-    z-index: 200;
-  }
-
-  #toast.show {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-
-  /* ── MISC ── */
-  .divider { height: 1px; background: #f3f4f6; margin: 6px 0 12px; }
-  strong { font-weight: 800; }
+  .tab-panel.active > * { animation: fadeUp 0.25s ease both; }
 </style>
 </head>
 <body>
 
-<div id="main-content">
+<div class="toast" id="toast"></div>
 
-  <!-- TAB 1: 今日任务 -->
-  <div id="tab-mission" class="tab-pane active">
+<div class="page-scroll" id="pageScroll">
+<div class="page-content">
 
-    <!-- Header -->
-    <div class="page-header">
-      <h1>👋 你好，Thomas！</h1>
-      <div class="subtitle" id="header-date">今天是学习日</div>
+  <!-- ═══════════════════ TAB 1: 今日任务 ═══════════════════ -->
+  <div class="tab-panel active" id="panel-0">
+
+    <div class="app-header">
+      <div class="app-title">🚀 Thomas</div>
+      <div class="date-badge" id="dateDisplay">--</div>
     </div>
 
-    <!-- Date + Streak Card -->
-    <div class="card">
-      <div class="date-row">
-        <div>
-          <div class="date-text" id="today-date"></div>
-          <div class="date-sub">坚持学习，每天进步一点点</div>
+    <div class="meal-card">
+      <div class="card-header">
+        <span class="emoji">🍽️</span>
+        <span class="card-title">英语餐桌打卡</span>
+      </div>
+      <div class="meal-row">
+        <div class="meal-info">
+          <div class="meal-streak" id="mealStreakNum">0</div>
+          <div class="meal-streak-label">次英语餐桌 ✨</div>
+          <div class="meal-deadline" id="mealDeadlineText">点击开始记录</div>
         </div>
-        <div class="streak-badge">
-          🔥 <span id="streak-count">0</span> 天连续
+        <button class="log-btn" id="logMealBtn" onclick="logMeal()">✅ 记录餐桌</button>
+      </div>
+    </div>
+
+    <div id="dayTypePill"></div>
+
+    <div class="question-card">
+      <div class="question-label">📖 今天的大问题</div>
+      <div class="question-text" id="questionText">正在加载…</div>
+      <div class="skill-chip" id="skillChip"></div>
+    </div>
+
+    <div class="card">
+
+      <div class="answer-box">
+        <div class="box-label">💡 答案揭晓</div>
+        <div class="box-text" id="answerText"></div>
+      </div>
+
+      <div class="analogy-box">
+        <div class="box-label">🔗 生活类比</div>
+        <div class="box-text" id="analogyText"></div>
+      </div>
+
+      <div class="funfact-box">
+        <div class="box-label">⚡ 惊人事实</div>
+        <div class="box-text" id="funfactText"></div>
+      </div>
+
+      <div class="deepthink-box">
+        <div class="box-label">🧠 深度思考</div>
+        <div class="box-text" id="deepthinkText"></div>
+      </div>
+
+      <div class="challenge-box">
+        <div class="box-label">🔨 今日挑战</div>
+        <div class="box-text" id="challengeText"></div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="complete-row">
+        <div class="complete-item" id="lessonCheckItem" onclick="toggleComplete('lesson')">
+          <div class="check-circle" id="lessonCheckCircle"></div>
+          <div class="complete-label">完成今日课程 + 深度思考</div>
+          <div class="xp-badge" id="lessonXpBadge">+XP</div>
+        </div>
+        <div class="complete-item" id="challengeCheckItem" onclick="toggleComplete('challenge')">
+          <div class="check-circle" id="challengeCheckCircle"></div>
+          <div class="complete-label">完成今日挑战</div>
+          <div class="xp-badge">+15 XP</div>
         </div>
       </div>
 
-      <button id="meal-btn" onclick="logMeal()">
-        🍱 Log Meal — Add 1 Day
-      </button>
-      <div class="meal-deadline" id="meal-deadline-text">还未记录用餐</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════ TAB 2: 我的能力 ═══════════════════ -->
+  <div class="tab-panel" id="panel-1">
+
+    <div class="app-header">
+      <div class="app-title">⚡ 我的能力</div>
     </div>
 
-    <!-- Today's Lesson Card -->
-    <div class="card" id="lesson-card">
-      <div class="card-title">📚 今天的大问题</div>
-
-      <span class="lesson-type-badge" id="lesson-badge"></span>
-
-      <div class="big-question" id="lesson-question"></div>
-
-      <div class="content-section section-answer">
-        <div class="section-label">💡 答案揭晓</div>
-        <div id="lesson-answer"></div>
-      </div>
-
-      <div class="content-section section-analogy">
-        <div class="section-label">🎯 生活比喻</div>
-        <div id="lesson-analogy"></div>
-      </div>
-
-      <div class="section-funfact" id="lesson-funfact-block">
-        <div class="section-label" style="color:#92400e;">⚡ 震惊事实</div>
-        <div id="lesson-funfact"></div>
-      </div>
-
-      <div class="content-section section-deepthink">
-        <div class="section-label">🧠 深度思考</div>
-        <div id="lesson-deepthink"></div>
-      </div>
-
-      <div class="content-section section-challenge">
-        <div class="section-label">🚀 今日挑战</div>
-        <div id="lesson-challenge"></div>
-      </div>
-    </div>
-
-    <!-- Completion Checkboxes -->
-    <div class="card">
-      <div class="card-title">✅ 今日完成</div>
-
-      <div class="check-row" id="check-lesson" onclick="toggleCheck('lesson')">
-        <div class="check-box" id="check-lesson-box"></div>
-        <span class="check-text">完成课程 + 深度思考</span>
-        <span class="check-xp" id="xp-lesson">+30 XP</span>
-      </div>
-
-      <div class="check-row" id="check-challenge" onclick="toggleCheck('challenge')">
-        <div class="check-box" id="check-challenge-box"></div>
-        <span class="check-text">完成今日挑战</span>
-        <span class="check-xp" id="xp-challenge">+15 XP</span>
-      </div>
-    </div>
-
-  </div><!-- /tab-mission -->
-
-
-  <!-- TAB 2: 我的能力 -->
-  <div id="tab-skills" class="tab-pane">
-
-    <div class="page-header">
-      <h1>我的能力</h1>
-      <div class="subtitle">每次完成任务都在变强</div>
-    </div>
-
-    <!-- Level Card -->
     <div class="level-card">
-      <div class="total-xp-badge" id="total-xp-badge">总 XP: 0</div>
-      <div class="level-name" id="level-name">好奇探索者</div>
-      <div class="level-sub" id="level-sub">继续学习，解锁下一个称号！</div>
-      <div class="xp-bar-bg">
-        <div class="xp-bar-fill" id="level-bar" style="width:0%"></div>
+      <div class="level-sub">当前等级</div>
+      <div class="level-name" id="levelName">好奇探索者</div>
+      <div class="xp-total">
+        <span id="totalXpNum">0</span><span class="xp-unit"> XP</span>
       </div>
-      <div class="xp-label">
-        <span id="level-xp-current">0 XP</span>
-        <span id="level-xp-next">下一级: 100 XP</span>
+      <div class="level-progress-track">
+        <div class="level-progress-fill" id="levelProgressFill" style="width:0%"></div>
+      </div>
+      <div class="level-progress-label" id="levelProgressLabel">继续学习，解锁下一等级！</div>
+    </div>
+
+    <div class="skills-section-title">六大技能详情</div>
+    <div id="skillBarsContainer"></div>
+
+  </div>
+
+  <!-- ═══════════════════ TAB 3: 工具箱 ═══════════════════ -->
+  <div class="tab-panel" id="panel-2">
+
+    <div class="app-header">
+      <div class="app-title">🧰 工具箱</div>
+    </div>
+
+    <div class="section-title">🤖 AI 提问模板</div>
+
+    <div class="prompt-item">
+      <div class="prompt-text">解释给10岁小孩听：[主题]</div>
+      <button class="copy-btn" onclick="copyPrompt(this,'解释给10岁小孩听：[主题]')">复制</button>
+    </div>
+
+    <div class="prompt-item">
+      <div class="prompt-text">给我出5道关于[主题]的测试题，并告诉我答案</div>
+      <button class="copy-btn" onclick="copyPrompt(this,'给我出5道关于[主题]的测试题，并告诉我答案')">复制</button>
+    </div>
+
+    <div class="prompt-item">
+      <div class="prompt-text">我的想法是[X]，帮我找出这个想法的漏洞</div>
+      <button class="copy-btn" onclick="copyPrompt(this,'我的想法是[X]，帮我找出这个想法的漏洞')">复制</button>
+    </div>
+
+    <div class="prompt-item">
+      <div class="prompt-text">用一个生活中的例子解释[概念]</div>
+      <button class="copy-btn" onclick="copyPrompt(this,'用一个生活中的例子解释[概念]')">复制</button>
+    </div>
+
+    <div class="prompt-item">
+      <div class="prompt-text">如果[假设]，会发生什么？列出3个可能的结果</div>
+      <button class="copy-btn" onclick="copyPrompt(this,'如果[假设]，会发生什么？列出3个可能的结果')">复制</button>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-title">💰 复利计算器</div>
+
+    <div class="calc-card">
+      <div class="calc-grid">
+        <div class="calc-field">
+          <label class="calc-label" for="calcPV">初始金额 ($)</label>
+          <input class="calc-input" type="number" id="calcPV" value="1000" min="0">
+        </div>
+        <div class="calc-field">
+          <label class="calc-label" for="calcPMT">每月追加 ($)</label>
+          <input class="calc-input" type="number" id="calcPMT" value="100" min="0">
+        </div>
+        <div class="calc-field">
+          <label class="calc-label" for="calcRate">年化利率 (%)</label>
+          <input class="calc-input" type="number" id="calcRate" value="8" min="0" max="100" step="0.1">
+        </div>
+        <div class="calc-field">
+          <label class="calc-label" for="calcYears">年数</label>
+          <input class="calc-input" type="number" id="calcYears" value="30" min="1" max="100">
+        </div>
+      </div>
+
+      <button class="calc-btn" onclick="calculate()">✨ 计算我的未来财富</button>
+
+      <div class="calc-result" id="calcResult">
+        <div class="result-row">
+          <span class="result-label">初始投入</span>
+          <span class="result-value" id="resInitial">$0</span>
+        </div>
+        <div class="result-row">
+          <span class="result-label">总投入金额</span>
+          <span class="result-value" id="resTotalIn">$0</span>
+        </div>
+        <div class="result-row">
+          <span class="result-label" style="font-weight:700;color:var(--text)">🎉 最终金额</span>
+          <span class="result-value big" id="resFinal">$0</span>
+        </div>
+
+        <div class="bar-compare">
+          <div class="bar-compare-label">总投入 vs 最终金额对比</div>
+          <div class="bar-compare-track">
+            <div class="bar-initial-fill" id="barInitialEl" style="width:30%"></div>
+          </div>
+          <div class="bar-compare-track">
+            <div class="bar-final-fill" id="barFinalEl" style="width:100%"></div>
+          </div>
+          <div class="bar-compare-row">
+            <span id="barLabel1" style="color:var(--primary-light)">总投入</span>
+            <span id="barLabel2" style="color:var(--green)">最终金额</span>
+          </div>
+        </div>
+
+        <div class="result-multiplier" id="resMultiplier">复利让你的钱增值！🚀</div>
       </div>
     </div>
 
-    <!-- Skills -->
-    <div class="card">
-      <div class="card-title">🌟 技能成长</div>
-      <div id="skills-list"></div>
-    </div>
+  </div>
 
-  </div><!-- /tab-skills -->
+</div>
+</div>
 
-
-  <!-- TAB 3: 工具箱 -->
-  <div id="tab-tools" class="tab-pane">
-
-    <div class="page-header">
-      <h1>🛠️ 工具箱</h1>
-      <div class="subtitle">让 AI 成为你最强的工具</div>
-    </div>
-
-    <!-- Prompt Templates -->
-    <div class="card">
-      <div class="section-heading">❓ AI 提问模板</div>
-      <div id="templates-list"></div>
-    </div>
-
-    <!-- Compound Interest Calculator -->
-    <div class="card">
-      <div class="section-heading">💰 复利计算器</div>
-
-      <div class="calc-form">
-        <div class="calc-field">
-          <label>初始金额 ($)</label>
-          <input type="number" id="calc-pv" value="1000" min="0" inputmode="decimal">
-        </div>
-        <div class="calc-field">
-          <label>每月追加 ($)</label>
-          <input type="number" id="calc-pmt" value="100" min="0" inputmode="decimal">
-        </div>
-        <div class="calc-field">
-          <label>年化利率 (%)</label>
-          <input type="number" id="calc-rate" value="10" min="0" max="100" step="0.1" inputmode="decimal">
-        </div>
-        <div class="calc-field">
-          <label>年数</label>
-          <input type="number" id="calc-years" value="30" min="1" max="100" inputmode="numeric">
-        </div>
-        <button class="calc-btn" onclick="calculate()">📈 计算！</button>
-      </div>
-
-      <div class="calc-result" id="calc-result">
-        <div class="calc-numbers">
-          <div class="calc-num-block">
-            <div class="calc-num-label">初始投入</div>
-            <div class="calc-num-value" id="result-initial">—</div>
-          </div>
-          <div class="calc-arrow">→</div>
-          <div class="calc-num-block">
-            <div class="calc-num-label">最终金额</div>
-            <div class="calc-num-value big" id="result-final">—</div>
-          </div>
-        </div>
-
-        <div class="calc-bar-container">
-          <div class="calc-bar-row">
-            <span class="calc-bar-label">初始</span>
-            <div class="calc-bar-track">
-              <div class="calc-bar-inner bar-initial" id="bar-initial" style="width:100%"></div>
-            </div>
-          </div>
-          <div class="calc-bar-row">
-            <span class="calc-bar-label">最终</span>
-            <div class="calc-bar-track">
-              <div class="calc-bar-inner bar-final" id="bar-final" style="width:0%"></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="calc-multiplier" id="calc-multiplier"></div>
-      </div>
-    </div>
-
-  </div><!-- /tab-tools -->
-
-</div><!-- /main-content -->
-
-<!-- Fixed Tab Bar -->
-<nav id="tab-bar">
-  <button class="tab-btn active" id="tbtn-mission" onclick="switchTab('mission')">
+<!-- Tab Bar -->
+<div class="tab-bar">
+  <button class="tab-btn active" id="tab-0" onclick="switchTab(0)">
     <span class="tab-icon">📋</span>
     <span class="tab-label">今日任务</span>
   </button>
-  <button class="tab-btn" id="tbtn-skills" onclick="switchTab('skills')">
+  <button class="tab-btn" id="tab-1" onclick="switchTab(1)">
     <span class="tab-icon">⚡</span>
     <span class="tab-label">我的能力</span>
   </button>
-  <button class="tab-btn" id="tbtn-tools" onclick="switchTab('tools')">
-    <span class="tab-icon">🛠️</span>
+  <button class="tab-btn" id="tab-2" onclick="switchTab(2)">
+    <span class="tab-icon">🧰</span>
     <span class="tab-label">工具箱</span>
   </button>
-</nav>
-
-<div id="toast"></div>
+</div>
 
 <script>
-// ─── DATA ────────────────────────────────────────────────────────────────────
+/* ── Content Data ── */
 
-// 家长可指定某天的学习主题：key 为 YYYY-MM-DD，覆盖当天的自动轮换
+/* 家长可指定某天的学习主题：key 为 YYYY-MM-DD（不补零），覆盖当天的自动轮换 */
 const FOCUS_OVERRIDE = {
-  "2026-06-11": {
-    source: "invest",
+  "2026-6-11": {
+    isInvest: true,
     lesson: {
       skill: "投资思维",
-      type: "invest",
       question: "股票市场是什么？它为什么每天都在涨涨跌跌？",
       answer: "股票市场就像一个巨大的<strong>拍卖会</strong>，每天几百万人在这里买卖公司的一小片（股票）。苹果、Google、特斯拉……全都在这里。价格为什么涨跌？因为每时每刻都有人在出价——觉得公司会更赚钱就买（价格涨），觉得会变差就卖（价格跌）。",
       analogy: "就像你们班的「最受欢迎同学」投票——每天都有人改变想法，票数（价格）就跟着变。但长期来看，真正有能力的人最终总是更受欢迎。",
@@ -823,8 +668,7 @@ const FOCUS_OVERRIDE = {
 const INVEST = [
   {
     skill: "投资思维",
-    type: "invest",
-    question: "如果你有 $100 放在枕头下面 30 年后还是 $100。但「种」进股市会变多少？",
+    question: "如果你有 $100 放在枕头下面 30 年后还是 $100。但“种”进股市会变多少？",
     answer: "$100 以年化 10% 种进去，30 年后长成 <strong>$1,745</strong>！钱会自己生出新的钱，新的钱再生更多钱……这叫 <strong>复利</strong>，巴菲特说这是世界上最厉害的魔法。",
     analogy: "就像雪球从山顶滚下来——开始很小，越滚越大，到山脚变成超级大雪球。",
     challenge: "问爸爸妈妈：家里有没有在投资？如果没有，问他们为什么没有开始？",
@@ -833,8 +677,7 @@ const INVEST = [
   },
   {
     skill: "批判性思维",
-    type: "invest",
-    question: "你知道你可以「拥有」Apple 公司的一小块吗？怎么做到的？",
+    question: "你知道你可以“拥有”Apple 公司的一小块吗？怎么做到的？",
     answer: "买一股 <strong>股票</strong>，就是买一家公司的一小片。公司赚钱了，你那一小片也跟着增值。苹果公司有数十亿股，你买一股就是苹果几十亿分之一的小老板！",
     analogy: "就像一块大披萨切成很多片，你买了一片，披萨店越来越火，你那片也越来越值钱。",
     challenge: "找一个你每天都用的 App 或产品，查一查是哪家公司做的，他们的股票叫什么代码？",
@@ -843,27 +686,24 @@ const INVEST = [
   },
   {
     skill: "建设者心态",
-    type: "invest",
-    question: "与其赌一家公司，不如同时「拥有」美国 500 家最强公司——这可能吗？",
+    question: "与其赌一家公司，不如同时“拥有”美国 500 家最强公司——这可能吗？",
     answer: "可以！这叫 <strong>指数基金</strong>（比如 VOO）。买一份，你就同时持有苹果、微软、谷歌、特斯拉……等 500 家公司的一小片。一家表现差没关系，其他 499 家还在帮你赚钱。",
     analogy: "不要把所有糖果押在一颗扭蛋上——买整个扭蛋机，不管转出哪颗你都有份！",
-    challenge: "用今天学到的「指数基金」概念，做一个小海报或便利贴解释给家人听，看他们听懂了没有。",
+    challenge: "用今天学到的“指数基金”概念，做一个小海报或便利贴解释给家人听，看他们听懂了没有。",
     deepThink: "如果指数基金这么好，为什么还有人花大量时间挑选个股？他们在赌什么？",
     funFact: "巴菲特说：'对大多数人来说，买指数基金就是最聪明的投资。'"
   },
   {
     skill: "深度思考",
-    type: "invest",
     question: "通货膨胀是什么？为什么把钱藏在床底下是个坏主意？",
-    answer: "每年东西都会涨价一点点（约 3%），这叫 <strong>通货膨胀</strong>。今天 $100 能买的东西，30 年后同样的东西要花 <strong>$243</strong>！什么都没做，你的钱就悄悄「缩水」了。",
+    answer: "每年东西都会涨价一点点（约 3%），这叫 <strong>通货膨胀</strong>。今天 $100 能买的东西，30 年后同样的东西要花 <strong>$243</strong>！什么都没做，你的钱就悄悄“缩水”了。",
     analogy: "就像冰淇淋在太阳下融化——不是你吃掉了它，只是放着放着就少了。",
     challenge: "问爸爸妈妈：他们小时候一杯珍珠奶茶多少钱？现在多少钱？算一下涨了多少倍！",
-    deepThink: "如果通货膨胀是每年都在发生的「隐形税」，政府为什么不直接阻止它？通货膨胀对谁有利？",
+    deepThink: "如果通货膨胀是每年都在发生的“隐形税”，政府为什么不直接阻止它？通货膨胀对谁有利？",
     funFact: "1970 年美国一个麦当劳汉堡只要 $0.65，现在要 $5.89——50 年涨了 9 倍！"
   },
   {
     skill: "AI驾驭力",
-    type: "invest",
     question: "全球最大的科技公司今年花了多少钱建造 AI？金额大到难以想象……",
     answer: "2026 年，Meta 一年要花 <strong>$1,250 亿</strong> 建造 AI——这比全球 120 个国家的 GDP 还多！这些钱造就了芯片、电力、建筑等整条产业链。",
     analogy: "就像在建一座超级大城市——要买砖头（芯片）、通水电（能源公司）、雇工人（工程师）。每个环节都有人在赚钱。",
@@ -873,8 +713,7 @@ const INVEST = [
   },
   {
     skill: "精准提问",
-    type: "invest",
-    question: "为什么「越早开始存钱」比「存更多钱」更重要？",
+    question: "为什么“越早开始存钱”比“存更多钱”更重要？",
     answer: "从 14 岁开始每月存 $50，到 65 岁（年化 8%）大约有 <strong>$350,000</strong>。等到 24 岁才开始，只剩约 <strong>$150,000</strong>。早 10 年开始，多赚超过 $200,000！",
     analogy: "就像种树：10 年前种的树比今天种的高很多，就算你今天用更多肥料也没用——时间才是关键。",
     challenge: "用今天的复利计算器（工具箱里）算一算：如果你从今天开始每月存 $30，30 年后是多少？",
@@ -883,11 +722,10 @@ const INVEST = [
   },
   {
     skill: "批判性思维",
-    type: "invest",
     question: "AI 股票和 AI ETF 是什么？为什么大家都说要投资 AI？",
     answer: "AI 公司（Nvidia、Microsoft、Google）正在高速增长。研究预测 AI 市场每 <strong>1.8 年翻倍</strong>！AI ETF 让你一次投资很多 AI 公司，不用自己选哪家最强。",
     analogy: "你不确定哪个超级英雄最厉害，但你可以投资整个复仇者联盟的制片公司——只要 Marvel 赚钱，你就赢！",
-    challenge: "搜索「NVIDIA 股价 5年」和「标普500 5年」，比较哪个涨得更多？风险更大的是哪个？",
+    challenge: "搜索“NVIDIA 股价 5年”和“标普500 5年”，比较哪个涨得更多？风险更大的是哪个？",
     deepThink: "如果大家都知道 AI 会增长，这个信息是不是已经反映在股价里了？那还值得现在投资吗？",
     funFact: "2026 年已经有超过 86% 的公司用 AI 来帮他们赚更多钱——AI 已经不是科幻片了！"
   }
@@ -896,37 +734,33 @@ const INVEST = [
 const AI_LESSONS = [
   {
     skill: "AI驾驭力",
-    type: "ai",
-    question: "ChatGPT 怎么知道那么多事？它真的「懂」吗？",
-    answer: "ChatGPT 读了整个互联网几乎所有的文字，然后学会了「下一个词该是什么」。它看起来很懂，其实是在做超级聪明的填空题。这叫 <strong>大语言模型（LLM）</strong>。",
+    question: "ChatGPT 怎么知道那么多事？它真的“懂”吗？",
+    answer: "ChatGPT 读了整个互联网几乎所有的文字，然后学会了“下一个词该是什么”。它看起来很懂，其实是在做超级聪明的填空题。这叫 <strong>大语言模型（LLM）</strong>。",
     analogy: "就像你看了一万部电影，让你猜下一幕会发生什么——你猜得很准，但不是真的经历过那些故事。",
     challenge: "打开 ChatGPT 或 Claude，问它：'你真的理解我说的话吗，还是你只是在预测下一个词？' 看它怎么回答，然后思考：你相信它吗？",
-    deepThink: "如果 AI 只是在「预测下一个词」，为什么它能解方程、写代码、给出医疗建议？这和真正的「理解」有什么区别？",
+    deepThink: "如果 AI 只是在“预测下一个词”，为什么它能解方程、写代码、给出医疗建议？这和真正的“理解”有什么区别？",
     funFact: "训练 ChatGPT 用的文字量，打印出来摞起来的高度比月球到地球的距离还要长！"
   },
   {
     skill: "批判性思维",
-    type: "ai",
     question: "AI 会犯错吗？它骗过你了吗？",
-    answer: "会！这叫 <strong>幻觉（Hallucination）</strong>——AI 有时候会自信地说出完全错误的东西。因为它的工作是「生成听起来合理的文字」，不是「查找正确答案」。",
-    analogy: "就像一个同学把书没看完，考试时靠「感觉」写答案——写得很有自信，但可能全是错的！",
+    answer: "会！这叫 <strong>幻觉（Hallucination）</strong>——AI 有时候会自信地说出完全错误的东西。因为它的工作是“生成听起来合理的文字”，不是“查找正确答案”。",
+    analogy: "就像一个同学把书没看完，考试时靠“感觉”写答案——写得很有自信，但可能全是错的！",
     challenge: "问 AI 一个你非常熟悉的事实（比如你最喜欢的游戏细节或历史事件），记录它的答案，然后查证是否正确。",
     deepThink: "如果你不能完全信任 AI，但它又非常有用，你应该怎么用它才安全？什么情况下一定要查证？",
     funFact: "有人曾问 AI 推荐律师，AI 编造了几个根本不存在的律师名字，还给了假的联系方式！"
   },
   {
     skill: "精准提问",
-    type: "ai",
     question: "怎样问 AI 才能得到最好的答案？普通问题 vs 精准问题的差别有多大？",
     answer: "普通问法：'解释股票' → 笼统答案。精准问法：'用一个10岁小孩能理解的比喻，解释股票是什么，举一个真实公司的例子' → 超清晰答案！<strong>你问的质量决定了 AI 答的质量。</strong>",
-    analogy: "就像在餐厅点菜——说「来点好吃的」会让厨师猜，但说「我要一份不辣的、有蔬菜的炒饭」就会得到你真正想要的。",
+    analogy: "就像在餐厅点菜——说“来点好吃的”会让厨师猜，但说“我要一份不辣的、有蔬菜的炒饭”就会得到你真正想要的。",
     challenge: "拿一道你不懂的作业题，先用普通方式问 AI，再用精准方式问（给角色、给背景、给要求），比较两个答案的差别！",
     deepThink: "为什么同一个 AI，不同的人问出来的答案质量差这么多？这说明未来什么技能会变得越来越值钱？",
     funFact: "2026 年，会写好提示词（Prompt Engineering）的人平均年薪超过 $30 万——比很多医生还高！"
   },
   {
     skill: "建设者心态",
-    type: "ai",
     question: "AI 能帮你做什么真实的项目？不是玩，是真的解决问题。",
     answer: "真实案例：一个 12 岁男孩用 AI 帮他妈妈的小餐厅做了菜单翻译、社交媒体文案，还生成了宣传海报——<strong>用 AI 解决真实问题，创造真实价值</strong>。这就是建设者思维！",
     analogy: "电锤钻是工具，它不会自己钻孔——会用工具的人才是建造者。AI 就是你的电锤钻。",
@@ -936,7 +770,6 @@ const AI_LESSONS = [
   },
   {
     skill: "深度思考",
-    type: "ai",
     question: "AI 会取代人类的工作吗？Thomas 10 年后的世界是什么样的？",
     answer: "AI 会取代一些重复性工作，但<strong>会用 AI 的人</strong>会取代不会用 AI 的人。就像计算器出现后，懂数学的人依然有价值——他们能用计算器做更大的事！",
     analogy: "挖土机出现后，用铲子挖地的工人减少了，但会开挖土机的人变得非常抢手。Thomas 要成为会开'AI 挖土机'的人！",
@@ -946,7 +779,6 @@ const AI_LESSONS = [
   },
   {
     skill: "AI驾驭力",
-    type: "ai",
     question: "NVIDIA 是做什么的？为什么每个 AI 公司都要买他们的东西？",
     answer: "NVIDIA 做 <strong>GPU（图形处理器）</strong>——原本是给游戏设计的超快芯片，后来发现训练 AI 的计算和游戏画面的计算很像。Meta 今年刚签了 <strong>$1,000 亿</strong>的 AMD 芯片订单！",
     analogy: "淘金热时期，卖铲子的人才是最稳赚的。NVIDIA 就是 AI 淘金热的铲子卖家！",
@@ -956,7 +788,6 @@ const AI_LESSONS = [
   },
   {
     skill: "批判性思维",
-    type: "ai",
     question: "Google 刚发布了一个速度快 4 倍的 AI，速度为什么这么重要？",
     answer: "2026 年 Google 发布 <strong>Gemini 3.5 Flash</strong>，速度是上一代 4 倍！速度越快，AI 能做的实时事情就越多：你说话它立刻回答、同步翻译、实时批改作文……速度就是能力。",
     analogy: "就像你的电脑变快了——以前要等 1 分钟加载的游戏，现在 10 秒就好了。同样的事，快 4 倍，体验完全不一样！",
@@ -966,427 +797,335 @@ const AI_LESSONS = [
   }
 ];
 
-const PROMPT_TEMPLATES = [
-  "解释给10岁小孩听：[主题]",
-  "给我出5道关于[主题]的测试题，并告诉我答案",
-  "我的想法是[X]，帮我找出这个想法的漏洞",
-  "用一个生活中的例子解释[概念]",
-  "如果[假设]，会发生什么？列出3个可能的结果"
-];
-
-const SKILLS_CONFIG = [
-  { key: "批判性思维", emoji: "🧠", color: "#8b5cf6", gradient: "linear-gradient(90deg, #8b5cf6, #7c3aed)" },
-  { key: "建设者心态", emoji: "🔨", color: "#f59e0b", gradient: "linear-gradient(90deg, #f59e0b, #d97706)" },
-  { key: "AI驾驭力",   emoji: "🤖", color: "#4f46e5", gradient: "linear-gradient(90deg, #4f46e5, #7c3aed)" },
-  { key: "投资思维",   emoji: "💰", color: "#10b981", gradient: "linear-gradient(90deg, #10b981, #059669)" },
-  { key: "精准提问",   emoji: "❓", color: "#ef4444", gradient: "linear-gradient(90deg, #ef4444, #dc2626)" },
-  { key: "深度思考",   emoji: "🚀", color: "#0ea5e9", gradient: "linear-gradient(90deg, #0ea5e9, #0284c7)" }
+/* ── Skill Definitions ── */
+const SKILL_DEFS = [
+  { key: "批判性思维", emoji: "🧠", gradient: "linear-gradient(90deg,#4f46e5,#818cf8)" },
+  { key: "建设者心态", emoji: "🔨", gradient: "linear-gradient(90deg,#f59e0b,#fbbf24)" },
+  { key: "AI驾驭力",   emoji: "🤖", gradient: "linear-gradient(90deg,#7c3aed,#a78bfa)" },
+  { key: "投资思维",   emoji: "💰", gradient: "linear-gradient(90deg,#10b981,#34d399)" },
+  { key: "精准提问",   emoji: "❓", gradient: "linear-gradient(90deg,#0ea5e9,#38bdf8)" },
+  { key: "深度思考",   emoji: "🚀", gradient: "linear-gradient(90deg,#ec4899,#f472b6)" }
 ];
 
 const LEVELS = [
-  { name: "好奇探索者", min: 0,   max: 100,  next: 100  },
-  { name: "问题猎人",   min: 101, max: 250,  next: 250  },
-  { name: "AI驾驭者",  min: 251, max: 500,  next: 500  },
-  { name: "价值创造者", min: 501, max: Infinity, next: null }
+  { min: 0,   max: 100,      name: "好奇探索者" },
+  { min: 101, max: 250,      name: "问题猎人"   },
+  { min: 251, max: 500,      name: "AI 驾驭者"  },
+  { min: 501, max: Infinity, name: "价值创造者" }
 ];
 
-// ─── STATE ────────────────────────────────────────────────────────────────────
+/* ── State ── */
+const STATE_KEY = 'thomas_v3';
+let state = {};
 
 function loadState() {
+  const defaults = { mealCount: 0, mealDeadlineTs: null, skills: {}, completedDays: {} };
   try {
-    return JSON.parse(localStorage.getItem('thomas_state') || '{}');
-  } catch { return {}; }
+    const raw = localStorage.getItem(STATE_KEY);
+    state = raw ? Object.assign({}, defaults, JSON.parse(raw)) : defaults;
+  } catch(e) { state = defaults; }
+  SKILL_DEFS.forEach(s => {
+    if (typeof state.skills[s.key] !== 'number') state.skills[s.key] = 0;
+  });
 }
 
-function saveState(s) {
-  localStorage.setItem('thomas_state', JSON.stringify(s));
+function saveState() {
+  try { localStorage.setItem(STATE_KEY, JSON.stringify(state)); } catch(e) {}
 }
 
-let STATE = loadState();
-
-// Initialize defaults
-if (!STATE.skills) STATE.skills = {};
-SKILLS_CONFIG.forEach(s => { if (STATE.skills[s.key] === undefined) STATE.skills[s.key] = 0; });
-if (!STATE.completedDays) STATE.completedDays = {};
-if (!STATE.mealDeadline) STATE.mealDeadline = null;
-if (!STATE.mealCount) STATE.mealCount = 0;
-if (!STATE.streak) STATE.streak = 0;
-if (!STATE.lastStreakDate) STATE.lastStreakDate = null;
-
-// ─── HELPERS ─────────────────────────────────────────────────────────────────
+/* ── Day Helpers ── */
+function getDayIndex() {
+  return Math.floor((Date.now() - new Date('2024-01-01').getTime()) / 86400000);
+}
 
 function todayKey() {
-  const d = new Date();
-  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
-}
-
-function getDayIndex() {
-  const d = new Date();
-  // Days since a fixed epoch
-  const epoch = new Date('2024-01-01');
-  const days = Math.floor((d - epoch) / 86400000);
-  return days;
+  var d = new Date();
+  return d.getFullYear() + '-' + (d.getMonth()+1) + '-' + d.getDate();
 }
 
 function getTodayLesson() {
   // 家长指定的主题优先
-  const key = new Date().toISOString().slice(0, 10);
-  if (FOCUS_OVERRIDE[key]) return FOCUS_OVERRIDE[key];
+  if (FOCUS_OVERRIDE[todayKey()]) return FOCUS_OVERRIDE[todayKey()];
 
-  const idx = getDayIndex();
-  // Even days = invest, odd = ai
-  if (idx % 2 === 0) {
-    return { lesson: INVEST[idx % 7], source: 'invest' };
-  } else {
-    return { lesson: AI_LESSONS[idx % 7], source: 'ai' };
-  }
+  var idx = getDayIndex();
+  var isInvest = (idx % 2 === 0);
+  var arr = isInvest ? INVEST : AI_LESSONS;
+  return { lesson: arr[idx % 7], isInvest: isInvest };
 }
 
-function formatDate(d) {
-  const days = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
-  const months = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
-  return `${d.getFullYear()}年 ${months[d.getMonth()]}${d.getDate()}日 ${days[d.getDay()]}`;
+function fmtDate(d) {
+  var wd = ['日','一','二','三','四','五','六'];
+  return (d.getMonth()+1) + '月' + d.getDate() + '日 周' + wd[d.getDay()];
 }
 
-function formatMoney(n) {
-  if (n >= 1000000) return '$' + (n/1000000).toFixed(2) + 'M';
-  if (n >= 1000) return '$' + n.toLocaleString('en-US', {maximumFractionDigits: 0});
-  return '$' + n.toFixed(2);
+function fmtDateFull(ts) {
+  var d = new Date(ts);
+  return d.getFullYear() + '年' + (d.getMonth()+1) + '月' + d.getDate() + '日';
 }
 
-function showToast(msg, emoji = '✅') {
-  const t = document.getElementById('toast');
-  t.textContent = emoji + ' ' + msg;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2200);
-}
-
-// ─── TAB SWITCHING ────────────────────────────────────────────────────────────
-
-function switchTab(tab) {
-  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('tab-' + tab).classList.add('active');
-  document.getElementById('tbtn-' + tab).classList.add('active');
-  if (tab === 'skills') renderSkills();
-}
-
-// ─── STREAK ───────────────────────────────────────────────────────────────────
-
-function updateStreak() {
-  const today = todayKey();
-  if (STATE.lastStreakDate === today) return;
-  const yesterday = (() => {
-    const d = new Date(); d.setDate(d.getDate() - 1);
-    return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
-  })();
-  if (STATE.lastStreakDate === yesterday) {
-    STATE.streak = (STATE.streak || 0) + 1;
-  } else if (STATE.lastStreakDate !== today) {
-    STATE.streak = 1;
-  }
-  STATE.lastStreakDate = today;
-  saveState(STATE);
-}
-
-// ─── MEAL LOG ─────────────────────────────────────────────────────────────────
-
+/* ── Meal Log ── */
 function logMeal() {
-  if (!STATE.mealDeadline) {
-    const d = new Date();
-    d.setDate(d.getDate() + 1);
-    STATE.mealDeadline = d.toISOString().split('T')[0];
+  state.mealCount = (state.mealCount || 0) + 1;
+  var now = Date.now();
+  if (!state.mealDeadlineTs || state.mealDeadlineTs < now) {
+    state.mealDeadlineTs = now + 86400000;
   } else {
-    const d = new Date(STATE.mealDeadline + 'T00:00:00');
-    d.setDate(d.getDate() + 1);
-    STATE.mealDeadline = d.toISOString().split('T')[0];
+    state.mealDeadlineTs += 86400000;
   }
-  STATE.mealCount = (STATE.mealCount || 0) + 1;
-  saveState(STATE);
+  saveState();
   renderMeal();
-  showToast('餐食已记录！又多了一天！', '🍱');
+  showToast('✅ 英语餐桌记录成功！截止 +1 天');
+  var btn = document.getElementById('logMealBtn');
+  btn.classList.remove('pop');
+  void btn.offsetWidth;
+  btn.classList.add('pop');
 }
 
 function renderMeal() {
-  const el = document.getElementById('meal-deadline-text');
-  if (!STATE.mealDeadline) {
-    el.innerHTML = '还未记录用餐';
+  document.getElementById('mealStreakNum').textContent = state.mealCount || 0;
+  var el = document.getElementById('mealDeadlineText');
+  if (state.mealDeadlineTs) {
+    el.textContent = '🎯 截止：' + fmtDateFull(state.mealDeadlineTs);
   } else {
-    const d = new Date(STATE.mealDeadline + 'T00:00:00');
-    const months = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
-    el.innerHTML = `截止日期延到：<strong>${d.getFullYear()}年${months[d.getMonth()]}${d.getDate()}日</strong>（共记录 ${STATE.mealCount} 次）`;
+    el.textContent = '点击开始记录';
   }
 }
 
-// ─── LESSON RENDER ────────────────────────────────────────────────────────────
+/* ── Lesson Render ── */
+function calcLessonXp(lesson, isInvest) {
+  var xp = 10; // primary skill
+  if (lesson.skill !== '精准提问') xp += 10;
+  xp += 10; // 批判性思维
+  xp += 10; // 深度思考
+  if (isInvest && lesson.skill !== '投资思维') xp += 10;
+  if (!isInvest && lesson.skill !== 'AI驾驭力') xp += 10;
+  return xp;
+}
 
 function renderLesson() {
-  const { lesson, source } = getTodayLesson();
-  const today = todayKey();
-  const completed = STATE.completedDays[today] || {};
+  var t = getTodayLesson();
+  var lesson = t.lesson, isInvest = t.isInvest;
+  var tk = todayKey();
 
-  // Badge
-  const badge = document.getElementById('lesson-badge');
-  if (source === 'invest') {
-    badge.className = 'lesson-type-badge badge-invest';
-    badge.textContent = '💰 投资思维';
+  document.getElementById('dateDisplay').textContent = fmtDate(new Date());
+
+  var pillEl = document.getElementById('dayTypePill');
+  if (isInvest) {
+    pillEl.innerHTML = '<span class="day-type-pill invest">💰 今日主题：投资思维</span>';
   } else {
-    badge.className = 'lesson-type-badge badge-ai';
-    badge.textContent = '🤖 AI 探索';
+    pillEl.innerHTML = '<span class="day-type-pill ai">🤖 今日主题：AI 探索</span>';
   }
 
-  document.getElementById('lesson-question').textContent = lesson.question;
-  document.getElementById('lesson-answer').innerHTML = lesson.answer;
-  document.getElementById('lesson-analogy').textContent = lesson.analogy;
-  document.getElementById('lesson-deepthink').textContent = lesson.deepThink;
-  document.getElementById('lesson-challenge').textContent = lesson.challenge;
-  document.getElementById('lesson-funfact').textContent = lesson.funFact;
+  document.getElementById('questionText').textContent  = lesson.question;
+  document.getElementById('skillChip').textContent     = '技能加成：' + lesson.skill;
+  document.getElementById('answerText').innerHTML      = lesson.answer;
+  document.getElementById('analogyText').textContent   = lesson.analogy;
+  document.getElementById('funfactText').textContent   = lesson.funFact;
+  document.getElementById('deepthinkText').textContent = lesson.deepThink;
+  document.getElementById('challengeText').textContent = lesson.challenge;
+  document.getElementById('lessonXpBadge').textContent = '+' + calcLessonXp(lesson, isInvest) + ' XP';
 
-  // Checkboxes
-  setCheckState('lesson', !!completed.lesson);
-  setCheckState('challenge', !!completed.challenge);
+  var dayState = state.completedDays[tk] || {};
+  applyCheckUI('lesson',    !!dayState.lesson);
+  applyCheckUI('challenge', !!dayState.challenge);
 }
 
-function setCheckState(key, checked) {
-  const row = document.getElementById('check-' + key);
-  const box = document.getElementById('check-' + key + '-box');
-  if (checked) {
-    row.classList.add('checked');
-    box.textContent = '✓';
-  } else {
-    row.classList.remove('checked');
-    box.textContent = '';
-  }
-}
-
-function toggleCheck(key) {
-  const today = todayKey();
-  if (!STATE.completedDays[today]) STATE.completedDays[today] = {};
-  const already = !!STATE.completedDays[today][key];
-
+/* ── Completion ── */
+function toggleComplete(type) {
+  var tk = todayKey();
+  if (!state.completedDays[tk]) state.completedDays[tk] = {};
+  var already = !!state.completedDays[tk][type];
   if (already) {
-    // Uncheck — subtract XP
-    STATE.completedDays[today][key] = false;
-    applyXP(key, -1);
-    showToast('已取消', '↩️');
+    state.completedDays[tk][type] = false;
+    mutateXp(type, -1);
+    applyCheckUI(type, false);
+    showToast('已取消完成标记');
   } else {
-    STATE.completedDays[today][key] = true;
-    applyXP(key, +1);
-    if (key === 'lesson') showToast('课程完成！+30 XP', '🧠');
-    else showToast('挑战完成！+15 XP', '🚀');
+    state.completedDays[tk][type] = true;
+    mutateXp(type, +1);
+    applyCheckUI(type, true);
+    if (type === 'lesson') showToast('🎉 课程完成！XP 已获得');
+    else showToast('🔨 挑战完成！+15 XP 建设者心态');
   }
-
-  saveState(STATE);
-  setCheckState(key, !already);
-  updateStreak();
+  saveState();
+  renderLevelCard();
+  renderSkillBars();
 }
 
-function applyXP(key, dir) {
-  const { lesson, source } = getTodayLesson();
-
-  if (key === 'lesson') {
-    // +10 to lesson skill, +10 精准提问, +10 批判性思维, +10 深度思考
-    addSkillXP(lesson.skill, 10 * dir);
-    addSkillXP('精准提问', 10 * dir);
-    addSkillXP('批判性思维', 10 * dir);
-    addSkillXP('深度思考', 10 * dir);
-    // source bonus
-    if (source === 'ai') addSkillXP('AI驾驭力', 10 * dir);
-    if (source === 'invest') addSkillXP('投资思维', 10 * dir);
-  } else if (key === 'challenge') {
-    addSkillXP('建设者心态', 15 * dir);
+function mutateXp(type, sign) {
+  var t = getTodayLesson();
+  var lesson = t.lesson, isInvest = t.isInvest;
+  function add(key, amt) {
+    if (!SKILL_DEFS.find(function(s){ return s.key === key; })) return;
+    state.skills[key] = Math.max(0, (state.skills[key] || 0) + sign * amt);
+  }
+  if (type === 'lesson') {
+    add(lesson.skill, 10);
+    if (lesson.skill !== '精准提问') add('精准提问', 10);
+    add('批判性思维', 10);
+    add('深度思考',   10);
+    if (isInvest  && lesson.skill !== '投资思维') add('投资思维', 10);
+    if (!isInvest && lesson.skill !== 'AI驾驭力') add('AI驾驭力', 10);
+  } else if (type === 'challenge') {
+    add('建设者心态', 15);
   }
 }
 
-function addSkillXP(skill, amount) {
-  if (STATE.skills[skill] === undefined) STATE.skills[skill] = 0;
-  STATE.skills[skill] = Math.max(0, STATE.skills[skill] + amount);
+function applyCheckUI(type, done) {
+  var itemId   = type === 'lesson' ? 'lessonCheckItem'   : 'challengeCheckItem';
+  var circleId = type === 'lesson' ? 'lessonCheckCircle' : 'challengeCheckCircle';
+  var item   = document.getElementById(itemId);
+  var circle = document.getElementById(circleId);
+  if (done) { item.classList.add('done');    circle.textContent = '✓'; }
+  else      { item.classList.remove('done'); circle.textContent = '';  }
 }
 
-// ─── SKILLS RENDER ────────────────────────────────────────────────────────────
-
-function getTotalXP() {
-  return Object.values(STATE.skills).reduce((a, b) => a + b, 0);
+/* ── Skills Tab ── */
+function totalXp() {
+  return Object.values(state.skills).reduce(function(a,b){ return a+b; }, 0);
 }
 
-function getLevelInfo(totalXP) {
-  for (let i = LEVELS.length - 1; i >= 0; i--) {
-    if (totalXP >= LEVELS[i].min) return { ...LEVELS[i], idx: i };
+function getLevelInfo(xp) {
+  for (var i = LEVELS.length - 1; i >= 0; i--) {
+    if (xp >= LEVELS[i].min) return { level: LEVELS[i], idx: i };
   }
-  return { ...LEVELS[0], idx: 0 };
+  return { level: LEVELS[0], idx: 0 };
 }
 
-function renderSkills() {
-  const totalXP = getTotalXP();
-  const lvl = getLevelInfo(totalXP);
+function renderLevelCard() {
+  var xp = totalXp();
+  var info = getLevelInfo(xp);
+  var lv = info.level, lvIdx = info.idx;
 
-  document.getElementById('total-xp-badge').textContent = `总 XP: ${totalXP}`;
-  document.getElementById('level-name').textContent = lvl.name;
+  document.getElementById('levelName').textContent  = lv.name;
+  document.getElementById('totalXpNum').textContent = xp;
 
-  let pct = 0, currentStr = totalXP + ' XP', nextStr = '';
-  if (lvl.next) {
-    const range = lvl.next - lvl.min;
-    const prog = totalXP - lvl.min;
-    pct = Math.min(100, (prog / range) * 100);
-    nextStr = `下一级: ${lvl.next} XP`;
-    currentStr = totalXP + ' XP';
-  } else {
-    pct = 100;
-    nextStr = '已达最高级！';
+  var pct = 100, label = '已是最高等级，继续保持！';
+  if (lv.max !== Infinity) {
+    var span = lv.max - lv.min;
+    var done = xp - lv.min;
+    pct = Math.min(100, Math.max(0, Math.round(done / span * 100)));
+    var nextLv = LEVELS[lvIdx + 1];
+    label = '距「' + (nextLv ? nextLv.name : '') + '」还需 ' + (lv.max - xp + 1) + ' XP';
   }
-
-  document.getElementById('level-bar').style.width = pct + '%';
-  document.getElementById('level-xp-current').textContent = currentStr;
-  document.getElementById('level-xp-next').textContent = nextStr;
-
-  const levelSubs = ['好好学习，天天向上！', '问题越多，成长越快！', '驾驭 AI，改变未来！', '你是真正的价值创造者！'];
-  document.getElementById('level-sub').textContent = levelSubs[lvl.idx] || '继续前进！';
-
-  // Skills list
-  const list = document.getElementById('skills-list');
-  list.innerHTML = '';
-  SKILLS_CONFIG.forEach(sc => {
-    const xp = STATE.skills[sc.key] || 0;
-    const level = Math.floor(xp / 100);
-    const pctInLevel = (xp % 100);
-
-    const div = document.createElement('div');
-    div.className = 'skill-item';
-    div.innerHTML = `
-      <div class="skill-row">
-        <span class="skill-name">${sc.emoji} ${sc.key}</span>
-        <span class="skill-xp">${xp} XP · Lv.${level}</span>
-      </div>
-      <div class="skill-bar-bg">
-        <div class="skill-bar-fill" style="width:${pctInLevel}%; background:${sc.gradient}" data-xp="${xp}"></div>
-      </div>
-    `;
-    list.appendChild(div);
-  });
-
-  // Animate bars
-  setTimeout(() => {
-    document.querySelectorAll('.skill-bar-fill').forEach(bar => {
-      const xp = parseInt(bar.dataset.xp) || 0;
-      const pct = xp % 100;
-      bar.style.width = pct + '%';
-    });
-  }, 50);
+  document.getElementById('levelProgressFill').style.width = pct + '%';
+  document.getElementById('levelProgressLabel').textContent = label;
 }
 
-// ─── TOOLBOX ─────────────────────────────────────────────────────────────────
-
-function renderToolbox() {
-  const list = document.getElementById('templates-list');
-  PROMPT_TEMPLATES.forEach((tpl, i) => {
-    const div = document.createElement('div');
-    div.className = 'template-item';
-    div.innerHTML = `
-      <span class="template-text">${tpl}</span>
-      <button class="copy-btn" id="copy-btn-${i}" onclick="copyTemplate(${i})">复制</button>
-    `;
-    list.appendChild(div);
+function renderSkillBars() {
+  var container = document.getElementById('skillBarsContainer');
+  container.innerHTML = '';
+  SKILL_DEFS.forEach(function(def) {
+    var xp    = state.skills[def.key] || 0;
+    var level = Math.floor(xp / 100) + 1;
+    var pct   = xp % 100;
+    var el = document.createElement('div');
+    el.className = 'skill-item';
+    el.innerHTML =
+      '<div class="skill-row">' +
+        '<div class="skill-name">' + def.emoji + ' ' + def.key + '</div>' +
+        '<div class="skill-xp-label">' + xp + ' XP</div>' +
+      '</div>' +
+      '<div class="skill-track">' +
+        '<div class="skill-fill" style="width:' + pct + '%;background:' + def.gradient + '"></div>' +
+      '</div>' +
+      '<div class="skill-level-label">Lv.' + level + ' &#8212; 每满 100 XP 升一级</div>';
+    container.appendChild(el);
   });
 }
 
-function copyTemplate(i) {
-  const text = PROMPT_TEMPLATES[i];
+/* ── Copy Prompt ── */
+function copyPrompt(btn, text) {
+  function markCopied() {
+    btn.textContent = '已复制 ✓';
+    btn.classList.add('copied');
+    setTimeout(function(){ btn.textContent = '复制'; btn.classList.remove('copied'); }, 2000);
+  }
   if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(text).then(() => flashCopy(i));
+    navigator.clipboard.writeText(text).then(markCopied).catch(function(){ fallbackCopy(btn, text, markCopied); });
   } else {
-    // Fallback
-    const el = document.createElement('textarea');
-    el.value = text;
-    el.style.position = 'fixed';
-    el.style.opacity = '0';
-    document.body.appendChild(el);
-    el.select();
-    document.execCommand('copy');
-    document.body.removeChild(el);
-    flashCopy(i);
+    fallbackCopy(btn, text, markCopied);
   }
 }
 
-function flashCopy(i) {
-  const btn = document.getElementById('copy-btn-' + i);
-  btn.textContent = '已复制!';
-  btn.classList.add('copied');
-  showToast('已复制到剪贴板', '📋');
-  setTimeout(() => {
-    btn.textContent = '复制';
-    btn.classList.remove('copied');
-  }, 2000);
+function fallbackCopy(btn, text, cb) {
+  var ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0';
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.select();
+  try { document.execCommand('copy'); } catch(e) {}
+  document.body.removeChild(ta);
+  cb();
 }
 
-// ─── CALCULATOR ──────────────────────────────────────────────────────────────
-
+/* ── Calculator ── */
 function calculate() {
-  const pv = parseFloat(document.getElementById('calc-pv').value) || 0;
-  const pmt = parseFloat(document.getElementById('calc-pmt').value) || 0;
-  const rateAnnual = parseFloat(document.getElementById('calc-rate').value) || 0;
-  const years = parseFloat(document.getElementById('calc-years').value) || 0;
+  var PV   = parseFloat(document.getElementById('calcPV').value)    || 0;
+  var PMT  = parseFloat(document.getElementById('calcPMT').value)   || 0;
+  var rAnn = parseFloat(document.getElementById('calcRate').value)  || 0;
+  var yrs  = parseInt(document.getElementById('calcYears').value, 10) || 1;
 
-  const r = rateAnnual / 100;
-  const n = years;
-
-  let fv;
+  var r = rAnn / 100 / 12;
+  var n = yrs * 12;
+  var FV;
   if (r === 0) {
-    fv = pv + pmt * 12 * n;
+    FV = PV + PMT * n;
   } else {
-    // FV = PV*(1+r)^n + PMT * 12 * ((1+r)^n - 1) / r
-    const growth = Math.pow(1 + r, n);
-    fv = pv * growth + pmt * 12 * (growth - 1) / r;
+    var factor = Math.pow(1 + r, n);
+    FV = PV * factor + PMT * (factor - 1) / r;
   }
+  var totalIn = PV + PMT * n;
 
-  const totalInvested = pv + pmt * 12 * n;
+  function fmt(v) { return '$' + Math.round(v).toLocaleString('en-US'); }
 
-  document.getElementById('result-initial').textContent = formatMoney(totalInvested);
-  document.getElementById('result-final').textContent = formatMoney(fv);
+  document.getElementById('resInitial').textContent  = fmt(PV);
+  document.getElementById('resTotalIn').textContent  = fmt(totalIn);
+  document.getElementById('resFinal').textContent    = fmt(FV);
 
-  // Bars
-  const ratio = fv / totalInvested;
-  const initialPct = 100 / ratio;
-  document.getElementById('bar-initial').style.width = Math.min(100, initialPct) + '%';
+  var maxV = Math.max(FV, totalIn, 1);
+  var pctIn = Math.max(3, Math.round(totalIn / maxV * 100));
+  document.getElementById('barInitialEl').style.width = pctIn + '%';
+  document.getElementById('barFinalEl').style.width   = '100%';
+  document.getElementById('barLabel1').textContent    = fmt(totalIn);
+  document.getElementById('barLabel2').textContent    = fmt(FV);
 
-  const finalPct = 100;
-  // Animate
-  document.getElementById('bar-final').style.width = '0%';
-  setTimeout(() => {
-    document.getElementById('bar-final').style.width = '100%';
-    document.getElementById('bar-initial').style.width = Math.min(100, initialPct) + '%';
-  }, 50);
+  var mult = totalIn > 0 ? (FV / totalIn).toFixed(1) : '∞';
+  document.getElementById('resMultiplier').textContent =
+    '你的钱增长了 ' + mult + ' 倍 — 复利的魔法！🚀';
 
-  const mult = (fv / totalInvested).toFixed(1);
-  document.getElementById('calc-multiplier').innerHTML = `总投入 ${formatMoney(totalInvested)} → 增长 <strong>${mult}倍</strong> 变成 ${formatMoney(fv)}`;
-
-  document.getElementById('calc-result').classList.add('show');
+  var res = document.getElementById('calcResult');
+  res.classList.add('show');
+  setTimeout(function(){ res.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 50);
 }
 
-// ─── INIT ─────────────────────────────────────────────────────────────────────
+/* ── Toast ── */
+var toastTimer;
+function showToast(msg) {
+  var el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ el.classList.remove('show'); }, 2600);
+}
 
-function init() {
-  // Date
-  const now = new Date();
-  document.getElementById('today-date').textContent = formatDate(now);
-  document.getElementById('header-date').textContent = formatDate(now);
+/* ── Tab Switch ── */
+function switchTab(idx) {
+  document.querySelectorAll('.tab-panel').forEach(function(p,i){ p.classList.toggle('active', i===idx); });
+  document.querySelectorAll('.tab-btn').forEach(function(b,i){ b.classList.toggle('active', i===idx); });
+  document.getElementById('pageScroll').scrollTop = 0;
+  if (idx === 1) { renderLevelCard(); renderSkillBars(); }
+}
 
-  // Streak
-  document.getElementById('streak-count').textContent = STATE.streak || 0;
-
-  // Lesson
-  renderLesson();
-
-  // Meal
+/* ── Init ── */
+(function init() {
+  loadState();
   renderMeal();
-
-  // Toolbox
-  renderToolbox();
-
-  // Default calc result hidden
-  document.getElementById('calc-result').classList.remove('show');
-}
-
-init();
+  renderLesson();
+  renderLevelCard();
+  renderSkillBars();
+})();
 </script>
 </body>
 </html>
