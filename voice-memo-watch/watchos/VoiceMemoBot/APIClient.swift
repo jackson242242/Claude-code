@@ -17,6 +17,10 @@ struct APIClient {
         try await get([Instrument].self, path: "/instruments")
     }
 
+    func fetchPromptSuggestions() async throws -> [PromptSuggestion] {
+        try await get([PromptSuggestion].self, path: "/prompts/suggestions")
+    }
+
     func uploadMemo(fileURL: URL) async throws -> Memo {
         let boundary = "vmb-\(UUID().uuidString)"
         var request = URLRequest(url: baseURL.appendingPathComponent("/memos"))

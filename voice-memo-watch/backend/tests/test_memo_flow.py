@@ -203,6 +203,35 @@ def test_render_failure_marks_failed(
     assert response.status_code == 502
 
 
+def test_prompt_suggestions_catalog(client: TestClient) -> None:
+    from app.providers.mock_music import _PROMPT_EFFECTS
+
+    suggestions = client.get("/prompts/suggestions").json()
+    assert len(suggestions) >= 5
+    for suggestion in suggestions:
+        assert {"label", "text"} <= set(suggestion)
+        assert 0 < len(suggestion["text"]) <= 200  # fits the prompt field
+        # every suggestion must contain at least one keyword the mock DSP
+        # reacts to — no dead examples in the UI
+        words = {w.strip(".,!?\"'") for w in suggestion["text"].lower().split()}
+        assert words & set(_PROMPT_EFFECTS), suggestion["text"]
+
+
+def test_prompt_suggestion_changes_audio(client: TestClient) -> None:
+    memo = _upload(client)
+    plain = client.post(
+        f"/memos/{memo['id']}/renders", json={"style": "acoustic"}
+    ).json()
+    suggestion = client.get("/prompts/suggestions").json()[0]
+    remixed = client.post(
+        f"/memos/{memo['id']}/renders",
+        json={"style": "acoustic", "prompt": suggestion["text"]},
+    ).json()
+    plain_audio = client.get(f"/renders/{plain['id']}/file").content
+    remixed_audio = client.get(f"/renders/{remixed['id']}/file").content
+    assert plain_audio != remixed_audio
+
+
 def test_transcribe_mock(client: TestClient) -> None:
     memo = _upload(client)
     resp = client.post(f"/memos/{memo['id']}/transcribe")

@@ -6,11 +6,14 @@
 <title>VoiceMemoBot</title>
 <style>
   :root {
-    --bg: #f5f5f5; --card: #ffffff; --line: #ededed;
-    --text: #222222; --muted: #999999;
-    --accent: #ff2442; --accent-soft: #ffe7eb;
-    --shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
-    --shadow-lift: 0 6px 18px rgba(0, 0, 0, 0.10);
+    /* 2026 trend palette — Pantone "Cloud Dancer" off-white canvas,
+       WGSN "Transformative Teal" primary, Coloro "Fuchsia" energy accent. */
+    --bg: #efede7; --card: #fdfcfa; --line: #e5e2da;
+    --text: #2b2a26; --muted: #97928a;
+    --accent: #0e7c7b; --accent-soft: #ddecea;
+    --fuchsia: #c7378e; --fuchsia-soft: #f6e2ef;
+    --shadow: 0 1px 4px rgba(43, 42, 38, 0.07);
+    --shadow-lift: 0 6px 18px rgba(43, 42, 38, 0.12);
   }
   * { box-sizing: border-box; }
   body {
@@ -64,10 +67,10 @@
     background: var(--accent) !important;
     border-radius: 12px !important; width: 56px; height: 36px;
     display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 2px 10px rgba(255, 36, 66, 0.35);
+    box-shadow: 0 2px 10px rgba(14, 124, 123, 0.35);
     transition: transform 0.15s, box-shadow 0.15s;
   }
-  #tab-create:hover { transform: scale(1.06); box-shadow: 0 4px 14px rgba(255, 36, 66, 0.5); }
+  #tab-create:hover { transform: scale(1.06); box-shadow: 0 4px 14px rgba(14, 124, 123, 0.5); }
   #tab-create .icon { color: #fff; font-size: 1.45rem !important; font-weight: 800; filter: none !important; }
 
   /* ---------- masonry feed (image-dominant cards) ---------- */
@@ -102,7 +105,7 @@
   .feed-card .byline { display: flex; align-items: center; gap: 0.35rem; font-size: 0.72rem; color: var(--muted); }
   .feed-card .avatar {
     width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0;
-    background: linear-gradient(135deg, #ff8a5c, var(--accent));
+    background: linear-gradient(135deg, var(--accent), var(--fuchsia));
     color: #fff; font-size: 0.6rem; font-weight: 700;
     display: flex; align-items: center; justify-content: center;
   }
@@ -130,7 +133,7 @@
   .detail-head { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.6rem; }
   .detail-head .avatar {
     width: 38px; height: 38px; border-radius: 50%;
-    background: linear-gradient(135deg, #ff8a5c, var(--accent));
+    background: linear-gradient(135deg, var(--accent), var(--fuchsia));
     color: #fff; font-weight: 800; font-size: 1rem;
     display: flex; align-items: center; justify-content: center;
     cursor: pointer;
@@ -152,14 +155,14 @@
     transition: color 0.15s, transform 0.1s;
   }
   .action-btn:hover { color: var(--text); transform: scale(1.06); }
-  .action-btn.liked { color: var(--accent); }
+  .action-btn.liked { color: var(--fuchsia); }
   .detail-caption { font-size: 0.94rem; margin: 0.5rem 0; line-height: 1.55; }
   .comments-wrap { border-top: 1px solid var(--line); margin-top: 0.8rem; padding-top: 0.8rem; }
   .comments-wrap h3 { font-size: 0.78rem; color: var(--muted); margin: 0 0 0.6rem; font-weight: 700; }
   .comment { font-size: 0.875rem; margin: 0.55rem 0; display: flex; gap: 0.5rem; }
   .comment .avatar {
     width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0; font-size: 0.62rem;
-    background: linear-gradient(135deg, #ff8a5c, var(--accent));
+    background: linear-gradient(135deg, var(--accent), var(--fuchsia));
     color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center;
   }
   .comment .ca { font-weight: 700; color: #5b7599; cursor: pointer; margin-right: 0.3rem; }
@@ -177,9 +180,9 @@
     background: var(--accent); color: #fff; border: none;
     padding: 0.55rem 1.3rem; border-radius: 999px;
     cursor: pointer; font-size: 0.9rem; font-weight: 700;
-    box-shadow: 0 2px 8px rgba(255, 36, 66, 0.3); transition: all 0.12s;
+    box-shadow: 0 2px 8px rgba(14, 124, 123, 0.3); transition: all 0.12s;
   }
-  button.primary:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(255, 36, 66, 0.4); }
+  button.primary:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(14, 124, 123, 0.4); }
   button.ghost {
     background: #f7f7f7; border: 1px solid var(--line); color: var(--text);
     padding: 0.5rem 0.9rem; border-radius: 999px; cursor: pointer; font-size: 0.85rem;
@@ -211,10 +214,10 @@
     font-family: inherit; transition: border-color 0.15s;
   }
   input[type=text]:focus { outline: none; border-color: var(--accent); background: #fff; }
-  .error { color: var(--accent); font-size: 0.85rem; margin-top: 0.5rem; font-weight: 600; }
+  .error { color: var(--fuchsia); font-size: 0.85rem; margin-top: 0.5rem; font-weight: 600; }
   .recdot {
     display: inline-block; width: 10px; height: 10px; border-radius: 50%;
-    background: var(--accent);
+    background: var(--fuchsia);
     margin-right: 0.4rem; animation: blink 1s infinite;
   }
   @keyframes blink { 50% { opacity: 0.2; } }
@@ -230,7 +233,7 @@
   .stream-card { border-bottom: 1px solid var(--line); padding: 0.9rem 0; }
   .stream-card:last-child { border-bottom: none; }
   .live-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%;
-              background: var(--accent);
+              background: var(--fuchsia);
               margin-right: 0.4rem; animation: blink 1s infinite; }
 
   /* ---------- messages ---------- */
@@ -249,7 +252,7 @@
   .me-head { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.8rem; }
   .me-head .avatar {
     width: 60px; height: 60px; border-radius: 50%; font-size: 1.4rem;
-    background: linear-gradient(135deg, #ff8a5c, var(--accent));
+    background: linear-gradient(135deg, var(--accent), var(--fuchsia));
     color: #fff; font-weight: 800; display: flex; align-items: center; justify-content: center;
   }
   .me-stats { display: flex; gap: 1.8rem; font-size: 0.78rem; margin: 0.7rem 0 1rem; color: var(--muted); }
@@ -343,8 +346,11 @@
       <div class="row" style="margin-top:0.6rem">
         <input type="text" id="prompt" maxlength="200"
                placeholder="Describe the sound… e.g. "an anime villain talking" or "a tired sigh"">
+        <button class="ghost" id="btn-prompt-mic" title="Speak the effect — voice in, no typing">🎤</button>
         <button class="ghost" id="btn-prompt">✨ Apply</button>
       </div>
+      <p class="hint" style="margin-top:0.5rem">Try one of these (each really changes the sound):</p>
+      <div class="row" id="prompt-suggestions" style="margin-top:0.35rem"></div>
       <p class="hint" id="tweak-summary"></p>
       <div class="row" style="margin-top:0.8rem">
         <input type="text" id="caption" maxlength="280" placeholder="Say something about this remix…">
@@ -496,6 +502,7 @@ const state = {
   instruments: [],
   selectedInstruments: [],
   prompt: "",
+  promptSuggestions: [],
   render: null,
   tweaks: { speed: 1.0, echo: 0.0, volume: 1.0, reverse: false },
   busy: false,
@@ -756,6 +763,7 @@ async function render(styleId) {
     $("player").src = state.render.fileUrl + "?t=" + Date.now();
     $("result-card").classList.remove("hidden");
     await loadStyles();
+    await loadPromptSuggestions();
     updateToolUI();
     $("player").play().catch(() => {});
   } catch (e) {
@@ -801,6 +809,47 @@ $("btn-reset").onclick = () => {
 $("btn-prompt").onclick = () => { state.prompt = $("prompt").value.trim(); render(state.style); };
 $("prompt").addEventListener("keydown", (e) => { if (e.key === "Enter") $("btn-prompt").click(); });
 
+// ---------- speak the sound prompt (voice memo style, no typing) ----------
+const PromptSR = window.SpeechRecognition || window.webkitSpeechRecognition;
+let promptRec = null;
+if (!PromptSR) $("btn-prompt-mic").style.display = "none";
+$("btn-prompt-mic").onclick = () => {
+  if (promptRec) { promptRec.stop(); return; }
+  promptRec = new PromptSR();
+  promptRec.interimResults = false;
+  $("btn-prompt-mic").textContent = "⏺";
+  promptRec.onresult = (e) => {
+    const text = e.results[0][0].transcript.trim().slice(0, 200);
+    $("prompt").value = text;
+    state.prompt = text;
+    render(state.style);
+  };
+  promptRec.onerror = () => {};
+  promptRec.onend = () => { promptRec = null; $("btn-prompt-mic").textContent = "🎤"; };
+  promptRec.start();
+};
+
+// ---------- ready-made prompt suggestions (agent 提示词) ----------
+async function loadPromptSuggestions() {
+  if (state.promptSuggestions.length === 0) {
+    state.promptSuggestions = await api("/prompts/suggestions").catch(() => []);
+  }
+  const wrap = $("prompt-suggestions");
+  wrap.innerHTML = "";
+  for (const suggestion of state.promptSuggestions) {
+    const chip = document.createElement("button");
+    chip.className = "tool" + (state.prompt === suggestion.text ? " on" : "");
+    chip.textContent = suggestion.label;
+    chip.title = suggestion.text;
+    chip.onclick = () => {
+      $("prompt").value = suggestion.text;
+      state.prompt = suggestion.text;
+      render(state.style);
+    };
+    wrap.appendChild(chip);
+  }
+}
+
 // ---------- posting ----------
 $("btn-post").onclick = async () => {
   if (!state.render) return;
@@ -835,13 +884,13 @@ function drawCover(canvas, seed) {
   canvas.style.height = cssH + "px";
   const w = canvas.width = (canvas.offsetWidth || 320) * dpr;
   const h = canvas.height = cssH * dpr;
-  // vivid, photo-bright palettes that pop on a white page
+  // 2026 trend hues: transformative teal, fuchsia, caramel, mint, violet
   const palettes = [
-    [350, 25],   // red → orange
-    [205, 255],  // sky blue → violet
-    [160, 200],  // emerald → teal-blue
-    [280, 335],  // purple → pink
-    [25, 50],    // orange → gold
+    [178, 200],  // transformative teal → aqua
+    [320, 350],  // fuchsia → raspberry
+    [26, 48],    // caramel → gold
+    [156, 178],  // mint → teal
+    [268, 310],  // violet → fuchsia
   ];
   const [h1, h2] = palettes[Math.floor(rand() * palettes.length)];
   const grad = ctx.createLinearGradient(0, 0, w, h);

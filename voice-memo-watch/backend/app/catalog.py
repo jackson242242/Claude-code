@@ -5,7 +5,7 @@ truth for valid ids.
 """
 from __future__ import annotations
 
-from app.schemas import Instrument, Style
+from app.schemas import Instrument, PromptSuggestion, Style
 
 STYLES: list[Style] = [
     Style(
@@ -61,3 +61,35 @@ INSTRUMENTS: list[Instrument] = [
 ]
 
 INSTRUMENT_IDS = {instrument.id for instrument in INSTRUMENTS}
+
+# Example prompts shown next to the free-text "describe the sound" field so
+# users learn how to phrase effects in natural language. Every phrase uses
+# keywords the mock provider's DSP table reacts to (whisper/sigh/deep/demon/
+# villain/chipmunk/squeaky/robot/alien/cave/echo/hall/shout/loud/...), so
+# tapping one always audibly changes the render — no dead examples.
+PROMPT_SUGGESTIONS: list[PromptSuggestion] = [
+    PromptSuggestion(
+        label="😈 Villain", text="a demon villain talking in a cave"
+    ),
+    PromptSuggestion(
+        label="😮‍💨 Tired sigh", text="a soft tired sigh, almost a whisper"
+    ),
+    PromptSuggestion(
+        label="🤖 Robot", text="a robot reading the news in a metallic voice"
+    ),
+    PromptSuggestion(
+        label="👽 Alien signal", text="an alien broadcasting from deep space"
+    ),
+    PromptSuggestion(
+        label="🐿️ Chipmunk", text="a squeaky chipmunk chattering excitedly"
+    ),
+    PromptSuggestion(
+        label="🏟️ Stadium", text="a loud shout echoing through a huge hall"
+    ),
+    PromptSuggestion(
+        label="🌊 Deep & slow", text="a deep voice, slow and soft like waves"
+    ),
+    PromptSuggestion(
+        label="🕯️ Cave whisper", text="whispering deep inside an echoing cave"
+    ),
+]

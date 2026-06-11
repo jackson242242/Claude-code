@@ -12,6 +12,7 @@ struct ResultView: View {
     private let api = APIClient()
     @State private var tweaks = Tweaks()
     @State private var instruments: [Instrument] = []
+    @State private var promptSuggestions: [PromptSuggestion] = []
     @State private var selectedInstruments: [String] = []
     @State private var prompt = ""
     @State private var isWorking = false
@@ -30,6 +31,7 @@ struct ResultView: View {
                     toolGrid
                     instrumentChips
                     promptField
+                    promptSuggestionChips
                     Button {
                         Task { await publish() }
                     } label: {
@@ -44,7 +46,10 @@ struct ResultView: View {
             }
         }
         .navigationTitle("Remix")
-        .task { instruments = (try? await api.fetchInstruments()) ?? [] }
+        .task {
+            instruments = (try? await api.fetchInstruments()) ?? []
+            promptSuggestions = (try? await api.fetchPromptSuggestions()) ?? []
+        }
         .overlay { if isWorking { ProgressView() } }
     }
 
@@ -57,7 +62,7 @@ struct ResultView: View {
                     }
                     .font(.caption2)
                     .buttonStyle(.bordered)
-                    .tint(style.id == render.style ? .accentColor : .gray)
+                    .tint(style.id == render.style ? .vmbTeal : .gray)
                 }
             }
         }
@@ -103,7 +108,7 @@ struct ResultView: View {
                     .buttonStyle(.bordered)
                     .tint(
                         selectedInstruments.contains(instrument.id)
-                            ? .pink : .gray
+                            ? .vmbFuchsia : .gray
                     )
                     .disabled(isWorking)
                 }
@@ -128,6 +133,25 @@ struct ResultView: View {
         }
     }
 
+    /// Ready-made prompts ("agent 提示词") — one tap fills the free-text
+    /// effect and re-renders, teaching the phrasing the engine understands.
+    private var promptSuggestionChips: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack {
+                ForEach(promptSuggestions) { suggestion in
+                    Button(suggestion.label) {
+                        prompt = suggestion.text
+                        Task { await rerender(style: render.style) }
+                    }
+                    .font(.caption2)
+                    .buttonStyle(.bordered)
+                    .tint(prompt == suggestion.text ? .vmbTeal : .gray)
+                    .disabled(isWorking)
+                }
+            }
+        }
+    }
+
     private func toolButton(
         _ systemImage: String,
         highlighted: Bool = false,
@@ -140,7 +164,7 @@ struct ResultView: View {
             Image(systemName: systemImage)
         }
         .buttonStyle(.bordered)
-        .tint(highlighted ? .accentColor : .gray)
+        .tint(highlighted ? .vmbTeal : .gray)
         .disabled(isWorking)
     }
 

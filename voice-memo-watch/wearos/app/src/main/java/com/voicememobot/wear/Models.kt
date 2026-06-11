@@ -12,6 +12,9 @@ data class Style(val id: String, val label: String, val description: String)
 data class Instrument(val id: String, val label: String, val description: String)
 
 @Serializable
+data class PromptSuggestion(val label: String, val text: String)
+
+@Serializable
 data class Memo(
     val id: String,
     val filename: String,

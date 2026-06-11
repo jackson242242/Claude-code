@@ -49,6 +49,12 @@ struct Render: Codable, Identifiable {
     let createdAt: String
 }
 
+struct PromptSuggestion: Codable, Identifiable, Hashable {
+    let label: String
+    let text: String
+    var id: String { text }
+}
+
 struct PostRequest: Codable {
     let renderId: String
     let author: String

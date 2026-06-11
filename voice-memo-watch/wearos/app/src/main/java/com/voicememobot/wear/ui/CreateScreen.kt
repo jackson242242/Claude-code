@@ -1,6 +1,7 @@
 package com.voicememobot.wear.ui
 
 import android.Manifest
+import android.app.RemoteInput
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
@@ -26,7 +27,9 @@ import androidx.wear.compose.material.Chip
 import androidx.wear.compose.material.ChipDefaults
 import androidx.wear.compose.material.CompactChip
 import androidx.wear.compose.material.Text
+import androidx.wear.input.RemoteInputIntentHelper
 import com.voicememobot.wear.ApiClient
+import com.voicememobot.wear.PromptSuggestion
 import com.voicememobot.wear.Recorder
 import com.voicememobot.wear.Render
 import com.voicememobot.wear.Style
@@ -37,7 +40,9 @@ import kotlinx.coroutines.launch
  * The create flow on one scrolling screen, mirroring the watchOS app:
  * record → pick a vibe (one tap renders) → one-tap remix tools
  * (slower / faster / echo / reverse, always re-applied to the original
- * memo) → post to the feed.
+ * memo) → describe the sound in natural language (tap a ready-made
+ * suggestion, or dictate it by voice — this is a watch, talking beats
+ * typing) → post to the feed.
  */
 @Composable
 fun CreateScreen(onPosted: () -> Unit) {
@@ -49,8 +54,10 @@ fun CreateScreen(onPosted: () -> Unit) {
     var isRecording by remember { mutableStateOf(false) }
     var memoId by remember { mutableStateOf<String?>(null) }
     var styles by remember { mutableStateOf<List<Style>>(emptyList()) }
+    var suggestions by remember { mutableStateOf<List<PromptSuggestion>>(emptyList()) }
     var selectedStyle by remember { mutableStateOf<String?>(null) }
     var tweaks by remember { mutableStateOf(Tweaks()) }
+    var prompt by remember { mutableStateOf("") }
     var render by remember { mutableStateOf<Render?>(null) }
     var status by remember { mutableStateOf("Tap to record a voice memo") }
     var busy by remember { mutableStateOf(false) }
@@ -74,7 +81,7 @@ fun CreateScreen(onPosted: () -> Unit) {
         status = "Rendering…"
         scope.launch {
             runCatching {
-                api.renderMemo(memo, styleId, newTweaks)
+                api.renderMemo(memo, styleId, newTweaks, emptyList(), prompt)
             }.onSuccess {
                 render = it
                 selectedStyle = styleId
@@ -85,6 +92,29 @@ fun CreateScreen(onPosted: () -> Unit) {
             }
             busy = false
         }
+    }
+
+    // Dictate the sound prompt: the watch's RemoteInput sheet offers voice
+    // input first, so "a demon villain talking in a cave" is spoken, not typed.
+    val dictation = rememberLauncherForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        val spoken = result.data
+            ?.let { RemoteInput.getResultsFromIntent(it) }
+            ?.getCharSequence("prompt")?.toString()?.trim().orEmpty()
+        if (spoken.isNotEmpty()) {
+            prompt = spoken.take(200)
+            selectedStyle?.let { rerender(it) }
+        }
+    }
+
+    fun launchDictation() {
+        val intent = RemoteInputIntentHelper.createActionRemoteInputIntent()
+        val remoteInput = RemoteInput.Builder("prompt")
+            .setLabel("Describe the sound…")
+            .build()
+        RemoteInputIntentHelper.putRemoteInputsExtra(intent, listOf(remoteInput))
+        dictation.launch(intent)
     }
 
     ScalingLazyColumn(modifier = Modifier.fillMaxSize()) {
@@ -103,12 +133,14 @@ fun CreateScreen(onPosted: () -> Unit) {
                                 runCatching {
                                     val memo = api.uploadMemo(file)
                                     styles = api.fetchStyles()
+                                    suggestions = api.fetchPromptSuggestions()
                                     memo
                                 }.onSuccess {
                                     memoId = it.id
                                     render = null
                                     selectedStyle = null
                                     tweaks = Tweaks()
+                                    prompt = ""
                                     status = "Pick a vibe ↓"
                                 }.onFailure {
                                     status = "Upload failed — is the API reachable?"
@@ -126,7 +158,7 @@ fun CreateScreen(onPosted: () -> Unit) {
                         fontWeight = FontWeight.Bold
                     )
                 },
-                colors = ChipDefaults.primaryChipColors(backgroundColor = AccentRed),
+                colors = ChipDefaults.primaryChipColors(backgroundColor = AccentTeal),
                 enabled = !busy,
                 modifier = Modifier.fillMaxWidth()
             )
@@ -195,6 +227,29 @@ fun CreateScreen(onPosted: () -> Unit) {
             }
             item {
                 Chip(
+                    onClick = { launchDictation() },
+                    label = { Text("🎤 Describe the sound", fontSize = 12.sp) },
+                    colors = ChipDefaults.secondaryChipColors(),
+                    enabled = !busy,
+                    modifier = Modifier.fillMaxWidth()
+                )
+            }
+            items(suggestions) { suggestion ->
+                Chip(
+                    onClick = {
+                        prompt = suggestion.text
+                        rerender(selectedStyle!!)
+                    },
+                    label = { Text(suggestion.label, fontSize = 12.sp) },
+                    colors = if (prompt == suggestion.text)
+                        ChipDefaults.gradientBackgroundChipColors()
+                    else ChipDefaults.childChipColors(),
+                    enabled = !busy,
+                    modifier = Modifier.fillMaxWidth()
+                )
+            }
+            item {
+                Chip(
                     onClick = {
                         busy = true
                         scope.launch {
@@ -209,7 +264,7 @@ fun CreateScreen(onPosted: () -> Unit) {
                         }
                     },
                     label = { Text("Post to Feed", fontWeight = FontWeight.Bold) },
-                    colors = ChipDefaults.primaryChipColors(backgroundColor = AccentRed),
+                    colors = ChipDefaults.primaryChipColors(backgroundColor = AccentTeal),
                     enabled = !busy,
                     modifier = Modifier.fillMaxWidth()
                 )

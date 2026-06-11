@@ -44,7 +44,7 @@ struct FeedView: View {
                 .frame(maxWidth: .infinity)
         }
         .buttonStyle(.borderedProminent)
-        .tint(Color(red: 1.0, green: 0.14, blue: 0.26))
+        .tint(Color.vmbTeal)
     }
 
     private func refresh() async {
@@ -75,7 +75,7 @@ private struct PostCard: View {
             cover
             byline
         }
-        .background(.quaternary.opacity(0.4))
+        .background(Color.vmbCloudDancer)
         .clipShape(RoundedRectangle(cornerRadius: 12))
     }
 
@@ -115,13 +115,13 @@ private struct PostCard: View {
                 .foregroundStyle(.white)
                 .frame(width: 14, height: 14)
                 .background(
-                    LinearGradient(colors: [.orange, .pink],
+                    LinearGradient(colors: [.vmbTeal, .vmbFuchsia],
                                    startPoint: .topLeading, endPoint: .bottomTrailing),
                     in: Circle()
                 )
             Text(post.author)
                 .font(.system(size: 11))
-                .foregroundStyle(.secondary)
+                .foregroundStyle(Color(white: 0.35))
                 .lineLimit(1)
             Spacer()
             Button(action: onLike) {
@@ -129,7 +129,7 @@ private struct PostCard: View {
                     .font(.system(size: 11))
             }
             .buttonStyle(.borderless)
-            .tint(Color(red: 1.0, green: 0.14, blue: 0.26))
+            .tint(Color.vmbFuchsia)
         }
         .padding(.horizontal, 7)
         .padding(.vertical, 5)
@@ -138,15 +138,18 @@ private struct PostCard: View {
     /// Deterministic palette from the post id so covers are stable,
     /// mirroring the web prototype's cover generator.
     private var coverColors: [Color] {
+        // 2026 trend hues: transformative teal, fuchsia, caramel, mint, violet
         let palettes: [[Color]] = [
-            [Color(hue: 0.97, saturation: 0.8, brightness: 0.95),
-             Color(hue: 0.07, saturation: 0.85, brightness: 0.95)],
-            [Color(hue: 0.57, saturation: 0.8, brightness: 0.92),
-             Color(hue: 0.71, saturation: 0.85, brightness: 0.85)],
-            [Color(hue: 0.44, saturation: 0.8, brightness: 0.85),
-             Color(hue: 0.56, saturation: 0.85, brightness: 0.85)],
-            [Color(hue: 0.78, saturation: 0.8, brightness: 0.9),
-             Color(hue: 0.93, saturation: 0.85, brightness: 0.95)],
+            [Color(hue: 0.49, saturation: 0.75, brightness: 0.72),
+             Color(hue: 0.55, saturation: 0.7, brightness: 0.82)],
+            [Color(hue: 0.89, saturation: 0.72, brightness: 0.88),
+             Color(hue: 0.97, saturation: 0.7, brightness: 0.9)],
+            [Color(hue: 0.07, saturation: 0.72, brightness: 0.92),
+             Color(hue: 0.13, saturation: 0.8, brightness: 0.95)],
+            [Color(hue: 0.43, saturation: 0.6, brightness: 0.85),
+             Color(hue: 0.49, saturation: 0.7, brightness: 0.75)],
+            [Color(hue: 0.74, saturation: 0.6, brightness: 0.85),
+             Color(hue: 0.86, saturation: 0.7, brightness: 0.9)],
         ]
         var hash = 0
         for scalar in post.id.unicodeScalars {

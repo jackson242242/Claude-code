@@ -31,6 +31,15 @@ class Instrument(CamelModel):
     description: str
 
 
+class PromptSuggestion(CamelModel):
+    """A ready-made sound prompt the UI offers next to the free-text field,
+    so users see how to phrase natural-language effects ("agent 提示词").
+    Every suggestion uses keywords the mock provider genuinely reacts to."""
+
+    label: str
+    text: str
+
+
 class Tweaks(CamelModel):
     """One-click adjustments applied on top of a style, always re-rendered
     from the original memo (tools never stack on a previous render)."""

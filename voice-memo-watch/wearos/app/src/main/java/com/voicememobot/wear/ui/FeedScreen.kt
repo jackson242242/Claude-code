@@ -36,11 +36,16 @@ import com.voicememobot.wear.ApiClient
 import com.voicememobot.wear.Post
 import kotlinx.coroutines.launch
 
-val AccentRed = Color(0xFFFF2442)
+// 2026 trend palette — Pantone Cloud Dancer canvas, WGSN Transformative
+// Teal primary, Coloro Fuchsia energy accent. No black surfaces.
+val CloudDancer = Color(0xFFF0EEE8)
+val AccentTeal = Color(0xFF0E7C7B)
+val AccentFuchsia = Color(0xFFC7378E)
+val InkText = Color(0xFF2B2A26)
 
 /**
  * The landing screen: a single-column card feed (gradient cover, caption
- * overlay, byline + one-tap like) with a red Create chip pinned at the top —
+ * overlay, byline + one-tap like) with a teal Create chip pinned at the top —
  * the Wear OS twin of the watchOS FeedView.
  */
 @Composable
@@ -64,13 +69,13 @@ fun FeedScreen(openCreate: () -> Unit) {
             Chip(
                 onClick = openCreate,
                 label = { Text("＋ Create", fontWeight = FontWeight.Bold) },
-                colors = ChipDefaults.primaryChipColors(backgroundColor = AccentRed),
+                colors = ChipDefaults.primaryChipColors(backgroundColor = AccentTeal),
                 modifier = Modifier.fillMaxWidth()
             )
         }
         when {
             error != null -> item {
-                Text(error!!, fontSize = 12.sp, color = AccentRed)
+                Text(error!!, fontSize = 12.sp, color = AccentFuchsia)
             }
             posts.isEmpty() -> item {
                 Text(
@@ -103,7 +108,7 @@ private fun PostCard(post: Post, onLike: () -> Unit) {
         modifier = Modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(14.dp))
-            .background(Color(0xFF1C1C1E))
+            .background(CloudDancer)
     ) {
         Box(
             modifier = Modifier
@@ -159,7 +164,7 @@ private fun PostCard(post: Post, onLike: () -> Unit) {
                     .clip(CircleShape)
                     .background(
                         Brush.linearGradient(
-                            listOf(Color(0xFFFF8A5C), AccentRed)
+                            listOf(AccentTeal, AccentFuchsia)
                         )
                     )
             ) {
@@ -173,7 +178,7 @@ private fun PostCard(post: Post, onLike: () -> Unit) {
             Text(
                 post.author,
                 fontSize = 11.sp,
-                color = Color.Gray,
+                color = InkText.copy(alpha = 0.65f),
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
                 modifier = Modifier
@@ -182,7 +187,7 @@ private fun PostCard(post: Post, onLike: () -> Unit) {
             )
             Chip(
                 onClick = onLike,
-                label = { Text("♥ ${post.likes}", fontSize = 11.sp, color = AccentRed) },
+                label = { Text("♥ ${post.likes}", fontSize = 11.sp, color = AccentFuchsia) },
                 colors = ChipDefaults.childChipColors(),
                 modifier = Modifier.height(24.dp)
             )
@@ -192,12 +197,13 @@ private fun PostCard(post: Post, onLike: () -> Unit) {
 
 /** Deterministic palette from the post id, mirroring the web cover generator. */
 private fun coverColors(seed: String): List<Color> {
+    // 2026 trend hues: transformative teal, fuchsia, caramel, mint, violet
     val palettes = listOf(
-        listOf(Color(0xFFF24667), Color(0xFFF2914D)),  // red → orange
-        listOf(Color(0xFF4D9BF2), Color(0xFF8A5CF2)),  // blue → violet
-        listOf(Color(0xFF38D9A9), Color(0xFF3BB7D9)),  // emerald → teal
-        listOf(Color(0xFFB05CF2), Color(0xFFF25C9B)),  // purple → pink
-        listOf(Color(0xFFF2A30F), Color(0xFFF2D02E)),  // orange → gold
+        listOf(Color(0xFF18A39E), Color(0xFF3FC4D1)),  // teal → aqua
+        listOf(Color(0xFFD14BA0), Color(0xFFE05673)),  // fuchsia → raspberry
+        listOf(Color(0xFFE0913F), Color(0xFFEDC23F)),  // caramel → gold
+        listOf(Color(0xFF55C795), Color(0xFF1F9A93)),  // mint → teal
+        listOf(Color(0xFF9A6BD4), Color(0xFFD14BB4)),  // violet → fuchsia
     )
     var hash = 0
     for (c in seed) hash = (hash * 31 + c.code) and 0x7fffffff

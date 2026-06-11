@@ -29,6 +29,9 @@ class ApiClient(private val baseUrl: String = AppConfig.API_BASE_URL) {
 
     suspend fun fetchFeed(): List<Post> = get("/posts")
 
+    suspend fun fetchPromptSuggestions(): List<PromptSuggestion> =
+        get("/prompts/suggestions")
+
     suspend fun uploadMemo(file: File): Memo = withContext(Dispatchers.IO) {
         val body = MultipartBody.Builder()
             .setType(MultipartBody.FORM)
