@@ -2,7 +2,7 @@
 
 > 总管（`.claude/agents/majordomo.md`）的唯一项目清单。老板只跟总管对话；
 > 总管按本台账管理所有进行中项目。每轮 `/pm-cycle` 先读本文件、后写回。
-> 最后更新：2026-06-10 18:25 UTC（pm-cycle：补跑产品升级〔真实赛程 feed 覆盖层 + 6h 缓存〕+ 新闻检查〔PASS 153FE/70BE；Actions 17:53 两站可达〕；调研 🟡 留下轮；P2 新功能推送已开 PR 待老板）
+> 最后更新：2026-06-11 00:45 UTC（pm-cycle：补跑调研〔开赛日增量：二手票市场劈叉 + Fan Zone 今日开张〕+ 新闻检查〔PASS 153FE/70BE；Actions 23:55 两站 OK〕；发现 PR #29 与默认分支冲突（仅台账两文件）；P3 分支深夜活跃）
 
 ## A. 进行中项目
 
@@ -12,11 +12,11 @@
 
 | 工作流 | 周期 | 入口 | 状态 | 最近一轮（证据） | 下一步 |
 |--------|------|------|------|------------------|--------|
-| 产品升级 | 12h | `/product-upgrade` | 🟢 | 2026-06-10 18:15 补跑（真实赛程 feed 覆盖层 `SCHEDULE_FEED_URL` + 6h TTL 缓存 + seed 兜底；70 BE tests） | 激活需老板在 Render 给 worldcup-api 配 `SCHEDULE_FEED_URL`（环境变量=老板权限）；下件事：多城市「追随球队」引擎 |
-| 市场调研 | **6h** | `/yifu-research` | 🟡 | 2026-06-10 09:30（daily-brief 头部；last30days 式首跑，发现叙事反转：酒店/票价在降） | **逾期（本轮补跑额度已用于产品+新闻）→ 下轮 pm-cycle 第一优先补跑**；Amelia 接「捡漏窗口」钩子时退役旧涨价文案 |
+| 产品升级 | 12h | `/product-upgrade` | 🟢 | 2026-06-10 18:15（真实赛程 feed 覆盖层 `SCHEDULE_FEED_URL` + 6h TTL 缓存 + seed 兜底；70 BE tests）；下次到期 ~06-11 06:15 | 下件事二选一：**开赛日 LIVE 态**（倒计时归零→今日赛程条，调研 6-11 信号，时效最高）或多城市「追随球队」引擎；激活真实 feed 仍需老板配 `SCHEDULE_FEED_URL` |
+| 市场调研 | **6h** | `/yifu-research` | 🟢 | 2026-06-11 00:30 补跑（开赛日增量：二手票市场「劈叉」——中性场 ~$157 抛售 vs 豪门/淘汰赛坚挺；官方 resale 开球前 1h 可买；Fan Zone 今日全面开张） | 随下轮 pm-cycle 体检；新钩子「smart latecomer / 开赛日仍能上车」已交 Amelia 块 |
 | 设计升级 | 按需 | `/design-upgrade` | ⚪ | 2026-06-10（`dcf32a3` 亮色 Phase 4 → 撤定时） | 老板点单或 pm-cycle 判断需要时跑（Phase 5 在 backlog） |
 | 网站运营 | 按需 | `/amelia-ops` | ⚪ | 2026-06-05（`marketing/ops-2026-06-05.md` → 撤定时） | 老板点单或发布节点前跑 |
-| 新闻健康检查 | 6h | `/news-live-check` | 🟢 | 2026-06-10 18:20 补跑（retest PASS 153FE/70BE；site-health Actions 17:53 探测 worldcup 两站 OK——prod 确认在线，Live 标仍需人眼） | 随下轮 pm-cycle 覆盖 |
+| 新闻健康检查 | 6h | `/news-live-check` | 🟢 | 2026-06-11 00:40 补跑（retest PASS 153FE/70BE 87%cov；site-health Actions run#5 23:55 两站 OK——开赛日 prod 在线；沙箱探针仍 403） | 随下轮 pm-cycle 覆盖 |
 | 素材刷新 | 按需 | `/refresh-tourist-videos` | ⚪ | 见 tourist-videos 数据时间戳 | 视频失效（404）时触发 |
 
 > 节奏由老板 2026-06-10 裁决精简：定时只留产品 12h + 调研 6h（+新闻检查 6h）；设计/运营转按需（命令保留，能力不丢）。
@@ -27,15 +27,17 @@
 
 | 工作流 | 周期 | 入口 | 状态 | 最近一轮（证据） | 下一步 |
 |--------|------|------|------|------------------|--------|
-| 产品迭代 | 随 pm-cycle 体检 | （暂无专属命令） | 🟢 | 2026-06-10 14:53 分支新推送 `611c755`（转录+评论+用户/关注+私信+转发+直播演唱会；分支台账记 56 tests 96% cov）；总管 18:30 已代开 **PR #29** 等老板 | 老板审/合 PR #29（VoiceMemoBot 合并由老板拍板，不自动合）；合并后线上 smoke |
-| 站点健康 | 30min cron（已生效） | `.github/workflows/site-health.yml` | 🟡 **cron 在跑，探测未含本站** | 2026-06-10 17:53 run #2 success：worldcup-web/api 均 OK，但 `voicememobot-api` 的 URL 在探测列表里为空（`VOICEMEMOBOT_URL` 未填，已从 run 日志确认） | **老板**：Render 仪表盘拿 `voicememobot-api` URL → 填 repo Variables `VOICEMEMOBOT_URL`（agent 无该权限）；填后探测自动含本站，不可达即开 `site-down` issue |
+| 产品迭代 | 随 pm-cycle 体检 | （暂无专属命令） | 🟡 | 2026-06-10 18:26 分支又推 2 个 UI commit（`9a9b359`/`9e0d502` 小红书风 feed + watch 卡片布局，已自动进 PR #29）；但 **PR #29 mergeable=dirty——与默认分支冲突，冲突仅在 PROJECTS.md + briefs/latest.md 两台账文件，VoiceMemoBot 代码零冲突**（总管 06-11 00:10 merge-tree 诊断） | 老板合 PR #29 时在 GitHub UI 解冲突（两台账文件**选默认分支版本**即可）；或授权总管推一次冲突解决到该分支 |
+| 站点健康 | 30min cron（已生效） | `.github/workflows/site-health.yml` | 🟡 **cron 在跑，探测未含本站** | 2026-06-10 23:55 run #5 success（累计 5/5 全绿）：worldcup-web/api 均 OK，但 `voicememobot-api` URL 仍为空（run #5 日志再次确认 `VOICEMEMOBOT_URL` 未填） | **老板**：Render 仪表盘拿 `voicememobot-api` URL → 填 repo Variables `VOICEMEMOBOT_URL`（agent 无该权限）；填后探测自动含本站，不可达即开 `site-down` issue |
 
 **总管审计方式：** 同仓库即可达——每轮 `git fetch origin claude/inspiring-dirac-j8ar6q`
-看新 commit / 测试状态 / CI。**进展（2026-06-10 18:30 UTC）：** PR #23 已由老板合并
-（11:22）；该分支 14:53 又推了一批大功能（`611c755`），总管已代开 **PR #29** 停在那里
-等老板（VoiceMemoBot 合并按惯例由老板拍板）。site-health cron 已跑 2 轮全 success
-（14:33 / 17:53），worldcup 两站 OK；`VOICEMEMOBOT_URL` 仍为空（run 日志确认），
-所以 voicememobot 本站还在探测盲区。剩余老板动作：填 `VOICEMEMOBOT_URL` + 审 PR #29。
+看新 commit / 测试状态 / CI。**进展（2026-06-11 00:45 UTC）：** PR #29 的 head 已自动
+带上 18:17–18:26 的两个新 UI commit（小红书风改版）；但因默认分支 18:25 合并了
+pm-cycle #30 的台账写回，**PR #29 现在有冲突（dirty）——仅 PROJECTS.md 与
+briefs/latest.md 两文件，代码零冲突**（merge-tree 诊断）。总管不推他人分支（边界），
+解法：老板在 GitHub UI 合并时两台账文件选默认分支版本，或授权总管代解。site-health
+cron 已 5/5 全绿（最近 23:55），worldcup 两站 OK；`VOICEMEMOBOT_URL` 仍空。
+剩余老板动作：解冲突并合 PR #29 + 填 `VOICEMEMOBOT_URL`。
 
 ### P3 · Thomas English Meal Counter — 单文件记餐 web app
 **位置：本仓库分支 `claude/thomas-english-meal-counter-816Cf`**，代码为根目录单文件
@@ -43,7 +45,7 @@
 
 | 工作流 | 周期 | 入口 | 状态 | 最近一轮（证据） | 下一步 |
 |--------|------|------|------|------------------|--------|
-| 产品迭代 | 随 pm-cycle 体检 | （暂无专属命令） | 🟢 | 2026-06-10 18:10 体检：tip 仍 `dbeb7ee`（news-driven 学习卡 JSON），自上轮无新 commit | 待老板定方向：要加的功能 / 部署方式 |
+| 产品迭代 | 随 pm-cycle 体检 | （暂无专属命令） | 🟢 | 2026-06-11 00:05 体检：分支深夜活跃——新 commit `ed5c3ff`（23:58 面向儿童 Thomas 的年龄适配学习卡改版）+ `5164f56`（00:04 6/11 课程=股市基础）；疑似老板/其他会话在直接开发 | 总管只观察不插手该分支；待老板定部署方式 |
 
 **总管审计方式：** 每轮 `git fetch origin claude/thomas-english-meal-counter-816Cf`
 看新 commit。该分支基于 4 月旧基线（含 ZombieSpawner 历史），与 Matchday26 分支

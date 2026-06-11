@@ -1,14 +1,14 @@
-# Majordomo 简报 · 2026-06-10 18:25 UTC（/pm-cycle，每 6h）
+# Majordomo 简报 · 2026-06-11 00:45 UTC（/pm-cycle，每 6h）—— 今天开赛 ⚽
 
-- **P1 产品升级 🟢 已补跑**（逾期 ~3h）：交付「真实赛程数据」——`SCHEDULE_FEED_URL` 选配 feed 按场次覆盖 seed（队名/时间/场馆/比分状态），6h 缓存 + seed 兜底；不配置零行为变化。门禁全绿（153 FE / 70 BE / lint / build）。
-- **P1 市场调研 🟡**：逾期 ~2.5h，本轮补跑额度已用（产品+新闻），**下轮第一优先**；上轮「捡漏窗口」发现仍有效。
-- **P1 新闻健康检查 🟢 已补跑**：retest PASS；沙箱探不到 prod，但 **site-health Actions 17:53 实测 worldcup 两站在线**——首次拿到线上可达的硬证据。
-- **P2 VoiceMemoBot 🟢/🟡**：分支 14:53 又推大功能（转录/评论/用户关注/私信/直播演唱会，56 tests）；总管已代开 **PR #29** 等你拍板（不自动合）。site-health cron 跑了 2 轮全绿，但 `VOICEMEMOBOT_URL` 仍空，机器人本站还在探测盲区。
-- **P3 Meal Counter ⚪/🟢**：无新 commit；方向/部署方式仍等你定。
+- **P1 市场调研 🟢 已补跑**（逾期 ~8.6h，上轮预定第一优先）：开赛日新发现——**二手票市场劈叉**：中性小组赛抛售至 ~$157、官方 resale 开球前 1 小时仍可买；豪门/淘汰赛坚挺。新钩子=「smart latecomer：开赛日仍能上车」；Fan Zone 今日全面开张。详见 `marketing/daily-brief.md`。
+- **P1 新闻健康检查 🟢 已补跑**：retest PASS（153 FE / 70 BE，87% cov，lint/build 绿）；沙箱探不到 prod（403），但 site-health Actions 23:55 实测 worldcup 两站在线——**开赛日网站在线**。Live 标仍请人眼瞄一下 `/news`。
+- **P1 产品升级 🟢 周期内**（18:15 上轮，下次 ~06:15）：下件事建议改为**开赛日 LIVE 态**（Hero 倒计时归零→今日赛程条；调研信号，时效最高），已置顶 backlog。
+- **P2 VoiceMemoBot 🟡**：分支又推 2 个 UI commit（小红书风，已自动进 PR #29）；但 **PR #29 现在有冲突**——只冲突 PROJECTS.md + briefs/latest.md 两台账文件，**代码零冲突**。总管不推他人分支，等你处理（见下）。`VOICEMEMOBOT_URL` 仍空；site-health cron 5/5 全绿。
+- **P3 Meal Counter 🟢 深夜活跃**：23:58 / 00:04 两个新 commit（儿童年龄适配学习卡 + 6/11 股市基础课）——看着像你在亲自开发，总管只观察不插手。
 
 **需要老板（按优先级，≤3 件）：**
-1. **填 repo Variables `VOICEMEMOBOT_URL`**（Render 仪表盘拿 URL；上轮就在等，run 日志确认还没填）。
-2. **审/合 PR #29**（VoiceMemoBot 新功能 → 部署分支；按惯例你拍板）。
-3. 想让赛程吃真实数据时，在 Render 给 worldcup-api 配 `SCHEDULE_FEED_URL`（环境变量属你权限；沙箱无法外联验证 feed，故未硬编码默认源）。
+1. **合 PR #29 时解冲突**：GitHub UI 里 `PROJECTS.md` 和 `briefs/latest.md` 两文件**选默认分支（zombie-spawner）版本**即可，VoiceMemoBot 代码无冲突；或回一句授权总管代解。
+2. **填 repo Variables `VOICEMEMOBOT_URL`**（Render 仪表盘拿 URL；run #5 日志确认还没填，机器人仍在探测盲区）。
+3. 想吃真实赛程数据时，在 Render 给 worldcup-api 配 `SCHEDULE_FEED_URL`（沿上轮）。
 
-**风险/诚实声明：** 本轮动了后端代码（feed 覆盖层），门禁全绿后按 §3 安全范围合并上线；真实 feed 的线上效果未验证（未配 URL 前不生效，不算上线即变）。P2 的 56 tests 数字来自其分支台账，本轮未在本容器重跑该套件。调研逾期是额度取舍，不是故障。
+**风险/诚实声明：** 本轮无代码改动（纯 md：调研 + 日志 + 台账）。调研引用全部来自公开媒体/搜索摘要，沙箱直连 Reddit/X 受限，未编造互动数；票价数字（$157 等）为媒体报道值非实时取数。沙箱探不到 onrender.com 是环境限制，线上在线结论以 site-health Actions 实测为准。

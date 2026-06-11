@@ -61,6 +61,7 @@
 来源：BRAND.md 的 P0/P1。
 - [x] **全程总价汇总（第一步）** —— 纯前端附加式，分项显示机票/酒店/交通/赛票各类成本（浩哥交付，commit `2d795a9`）
 - [x] 接入**真实 2026 世界杯赛程数据**（替换/补充 seed），含来源与缓存策略 —— 2026-06-10 pm-cycle 补跑交付：`SCHEDULE_FEED_URL` 选配 feed（fixturedownload 式 JSON）按 match_number 覆盖 seed，6h TTL 缓存（`SCHEDULE_FEED_TTL_SECONDS`）+ 失败保留旧数据 + seed 兜底；**激活需老板在 Render 配 `SCHEDULE_FEED_URL`**（沙箱无法外联验证真实 feed URL，故做成不配=零行为变化）
+- [ ] **开赛日 LIVE 态**（2026-06-11 调研信号，时效最高）：Hero 倒计时归零后切「LIVE NOW + 今日赛程条」，避免死屏；附加式、纯前端
 - [ ] 多城市"追随球队"行程引擎（P0 护城河）
 - [ ] 逐段签证/入境提示（美 ESTA / 加 eTA / 墨 FMM）
 - [ ] 全程总价汇总 + 多币种（USD/CAD/MXN）—— 后续可扩展为多币种视图
@@ -68,8 +69,9 @@
 - [ ] 联盟佣金追踪（北极星：每个已规划行程的可佣金成交数）
 
 **下一轮建议：**
-- 多城市「追随球队」行程引擎（P0 护城河，赛程数据层已就位）。
+- **开赛日 LIVE 态优先**（赛事 6/11 已开打，倒计时死屏是真实用户面问题），其次多城市「追随球队」引擎。
 - 真实 feed 激活后跑一轮线上验证（`/matches` 对照官方赛程抽查 3 场）。
+- Amelia 下次按需运营时换用「smart latecomer / 开赛日仍能上车」钩子（daily-brief 06-11 00:30 节）。
 
 ## 6. 设计 Roadmap（每轮推进一步）
 来源：Sheng 报告（见 MEMORY.md §5）+ DESIGN.md 节日化方向。**节日化(Festival)优先，纯 CSS 先行：**
