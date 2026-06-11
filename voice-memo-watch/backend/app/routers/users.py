@@ -54,6 +54,14 @@ def get_user_posts(username: str) -> list[Post]:
     return [_post_out(p) for p in get_store().list_posts_by_author(username)]
 
 
+@router.get("/users/{username}/favorites", response_model=list[Post])
+def get_user_favorites(username: str) -> list[Post]:
+    """Posts *username* has favorited (收藏), newest first."""
+    if get_store().get_user(username) is None:
+        raise HTTPException(404, "User not found")
+    return [_post_out(p) for p in get_store().list_favorited_posts(username)]
+
+
 @router.get("/users/{username}/feed", response_model=list[Post])
 def get_user_feed(username: str) -> list[Post]:
     """Posts from users that *username* follows."""

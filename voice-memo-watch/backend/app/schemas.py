@@ -31,6 +31,18 @@ class Instrument(CamelModel):
     description: str
 
 
+class LibraryTrack(CamelModel):
+    """A backing track from the product's built-in music library that can
+    be layered under a memo — multi-track composition without leaving the
+    app. The mock provider synthesizes these offline; ``file_url`` serves a
+    preview loop."""
+
+    id: str
+    label: str
+    description: str
+    file_url: str = ""
+
+
 class PromptSuggestion(CamelModel):
     """A ready-made sound prompt the UI offers next to the free-text field,
     so users see how to phrase natural-language effects ("agent 提示词").
@@ -59,6 +71,7 @@ class RenderRequest(CamelModel):
     style: str
     tweaks: Tweaks = Field(default_factory=Tweaks)
     instruments: list[str] = Field(default_factory=list, max_length=5)
+    backing_tracks: list[str] = Field(default_factory=list, max_length=3)
     prompt: str = Field(default="", max_length=200)
 
 
@@ -68,6 +81,7 @@ class Render(CamelModel):
     style: str
     tweaks: Tweaks
     instruments: list[str]
+    backing_tracks: list[str]
     prompt: str
     status: str
     file_url: str
@@ -87,6 +101,7 @@ class Post(CamelModel):
     author: str
     caption: str
     likes: int
+    favorites: int
     file_url: str
     permalink: str
     forwarded_from: str | None

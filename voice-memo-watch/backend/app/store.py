@@ -56,6 +56,12 @@ class PostRecord:
 
 
 @dataclass
+class FavoriteRecord:
+    username: str
+    post_id: str
+
+
+@dataclass
 class CommentRecord:
     id: str
     post_id: str
@@ -104,6 +110,7 @@ class Store:
         self._renders: dict[str, RenderRecord] = {}
         self._posts: dict[str, PostRecord] = {}
         self._comments: dict[str, CommentRecord] = {}
+        self._favorites: list[FavoriteRecord] = []
         self._users: dict[str, UserRecord] = {}
         self._follows: list[FollowRecord] = []
         self._messages: list[MessageRecord] = []
@@ -143,6 +150,9 @@ class Store:
                 deleted_post_ids.add(post.id)
             for cid in [c.id for c in self._comments.values() if c.post_id in deleted_post_ids]:
                 self._comments.pop(cid, None)
+            self._favorites = [
+                f for f in self._favorites if f.post_id not in deleted_post_ids
+            ]
         if record is None:
             return False
         record.path.unlink(missing_ok=True)
@@ -227,6 +237,7 @@ class Store:
                 return False
             for cid in [c.id for c in self._comments.values() if c.post_id == post_id]:
                 self._comments.pop(cid, None)
+            self._favorites = [f for f in self._favorites if f.post_id != post_id]
         return True
 
     # ---- comments ----
@@ -250,6 +261,34 @@ class Store:
     def delete_comment(self, comment_id: str) -> bool:
         with self._lock:
             return self._comments.pop(comment_id, None) is not None
+
+    # ---- favorites (收藏) ----
+
+    def toggle_favorite(self, post_id: str, username: str) -> bool:
+        """Toggle *username*'s favorite on a post; returns True if now
+        favorited, False if the toggle removed it."""
+        self._ensure_user(username)
+        with self._lock:
+            for f in self._favorites:
+                if f.post_id == post_id and f.username == username:
+                    self._favorites.remove(f)
+                    return False
+            self._favorites.append(
+                FavoriteRecord(username=username, post_id=post_id)
+            )
+            return True
+
+    def favorite_count(self, post_id: str) -> int:
+        with self._lock:
+            return sum(1 for f in self._favorites if f.post_id == post_id)
+
+    def list_favorited_posts(self, username: str) -> list[PostRecord]:
+        with self._lock:
+            post_ids = [
+                f.post_id for f in self._favorites if f.username == username
+            ]
+            posts = [self._posts[pid] for pid in post_ids if pid in self._posts]
+        return sorted(posts, key=lambda p: p.created_at, reverse=True)
 
     # ---- users ----
 

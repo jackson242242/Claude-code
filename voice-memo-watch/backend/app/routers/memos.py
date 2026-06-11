@@ -8,7 +8,7 @@ from pathlib import Path
 from fastapi import APIRouter, HTTPException, Response, UploadFile
 from fastapi.responses import FileResponse
 
-from app.catalog import INSTRUMENT_IDS, STYLE_IDS
+from app.catalog import INSTRUMENT_IDS, LIBRARY_TRACK_IDS, STYLE_IDS
 from app.providers.registry import music_provider
 from app.schemas import Memo, Render, RenderRequest, Transcription
 from app.store import MemoRecord, RenderRecord, get_store
@@ -56,6 +56,7 @@ def _render_out(record: RenderRecord) -> Render:
         style=record.spec.style,
         tweaks=record.spec.tweaks,
         instruments=record.spec.instruments,
+        backing_tracks=record.spec.backing_tracks,
         prompt=record.spec.prompt,
         status=record.status,
         file_url=f"{_public_base_url()}/renders/{record.id}/file",
@@ -91,6 +92,13 @@ def create_render(memo_id: str, request: RenderRequest) -> Render:
     unknown = [i for i in request.instruments if i not in INSTRUMENT_IDS]
     if unknown:
         raise HTTPException(422, f"Unknown instruments: {', '.join(unknown)}")
+    unknown_tracks = [
+        t for t in request.backing_tracks if t not in LIBRARY_TRACK_IDS
+    ]
+    if unknown_tracks:
+        raise HTTPException(
+            422, f"Unknown library tracks: {', '.join(unknown_tracks)}"
+        )
     store = get_store()
     memo = store.get_memo(memo_id)
     if memo is None:

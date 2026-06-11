@@ -14,7 +14,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, JSONResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
-from app.routers import messages, memos, posts, streams, styles, users
+from app.routers import library_router, messages, memos, posts, streams, styles, users
 
 _WEB_INDEX = Path(__file__).parent / "web" / "index.html"
 
@@ -68,6 +68,7 @@ def web_app() -> HTMLResponse:
 
 
 app.include_router(styles.router)
+app.include_router(library_router.router)
 app.include_router(memos.router)
 app.include_router(posts.router)
 app.include_router(users.router)

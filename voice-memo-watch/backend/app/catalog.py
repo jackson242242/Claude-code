@@ -5,7 +5,7 @@ truth for valid ids.
 """
 from __future__ import annotations
 
-from app.schemas import Instrument, PromptSuggestion, Style
+from app.schemas import Instrument, LibraryTrack, PromptSuggestion, Style
 
 STYLES: list[Style] = [
     Style(
@@ -61,6 +61,39 @@ INSTRUMENTS: list[Instrument] = [
 ]
 
 INSTRUMENT_IDS = {instrument.id for instrument in INSTRUMENTS}
+
+# Built-in backing-track library: loops synthesized offline (see
+# app/library.py) that users layer under their memo for multi-track
+# compositions. file_url is filled in by the router per deployment origin.
+LIBRARY_TRACKS: list[LibraryTrack] = [
+    LibraryTrack(
+        id="lofi_beat",
+        label="Lo-fi beat",
+        description="Dusty 75 BPM drums with a warm round bass.",
+    ),
+    LibraryTrack(
+        id="edm_pulse",
+        label="EDM pulse",
+        description="Four-on-the-floor kick with a pumping bass line.",
+    ),
+    LibraryTrack(
+        id="acoustic_strum",
+        label="Acoustic strum",
+        description="A soft folk chord loop, unplugged feel.",
+    ),
+    LibraryTrack(
+        id="cinematic_pad",
+        label="Cinematic pad",
+        description="Slow, wide pad swells — trailer atmosphere.",
+    ),
+    LibraryTrack(
+        id="rain_texture",
+        label="Rain texture",
+        description="A gentle rain ambience bed.",
+    ),
+]
+
+LIBRARY_TRACK_IDS = {track.id for track in LIBRARY_TRACKS}
 
 # Example prompts shown next to the free-text "describe the sound" field so
 # users learn how to phrase effects in natural language. Every phrase uses

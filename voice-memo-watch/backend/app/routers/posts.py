@@ -28,6 +28,7 @@ def _post_out(record: PostRecord) -> Post:
         author=record.author,
         caption=record.caption,
         likes=record.likes,
+        favorites=get_store().favorite_count(record.id),
         file_url=f"{base}/renders/{record.render_id}/file",
         permalink=f"{base}/p/{record.id}",
         forwarded_from=record.forwarded_from,
@@ -81,6 +82,18 @@ def delete_post(post_id: str) -> Response:
     if not get_store().delete_post(post_id):
         raise HTTPException(404, "Post not found")
     return Response(status_code=204)
+
+
+@router.post("/posts/{post_id}/favorite", response_model=Post)
+def favorite_post(post_id: str, user: str = "anonymous") -> Post:
+    """Toggle 收藏: first call favorites the post for *user*, second
+    removes it. Returns the post with the updated favorite count."""
+    store = get_store()
+    record = store.get_post(post_id)
+    if record is None:
+        raise HTTPException(404, "Post not found")
+    store.toggle_favorite(post_id, user.strip() or "anonymous")
+    return _post_out(record)
 
 
 @router.post("/posts/{post_id}/forward", response_model=Post, status_code=201)

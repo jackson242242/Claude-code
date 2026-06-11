@@ -343,6 +343,8 @@
         <button class="tool" id="btn-reset">Reset</button>
       </div>
       <div class="row" style="margin-top:0.6rem" id="instrument-list"></div>
+      <p class="hint" style="margin-top:0.5rem">🎼 Layer a backing track from the library (multi-track):</p>
+      <div class="row" id="library-list" style="margin-top:0.35rem"></div>
       <div class="row" style="margin-top:0.6rem">
         <input type="text" id="prompt" maxlength="200"
                placeholder="Describe the sound… e.g. "an anime villain talking" or "a tired sigh"">
@@ -428,6 +430,11 @@
       <div class="sound-grid" id="me-grid"></div>
       <p class="hint" id="me-empty">No posts yet — tap ＋ to create.</p>
     </div>
+    <div class="card">
+      <h2>⭐ My favorites</h2>
+      <div class="sound-grid" id="me-favs"></div>
+      <p class="hint" id="me-favs-empty">Nothing favorited yet — tap ⭐ on any post.</p>
+    </div>
   </section>
 </main>
 
@@ -448,6 +455,7 @@
     <p class="detail-caption" id="d-caption"></p>
     <div class="detail-actions">
       <button class="action-btn" id="d-like">♥ <span id="d-like-count">0</span></button>
+      <button class="action-btn" id="d-fav">⭐ <span id="d-fav-count">0</span></button>
       <button class="action-btn" id="d-forward">↻ Forward</button>
       <button class="action-btn" id="d-dm">✉ DM</button>
       <a class="action-btn" id="d-permalink" target="_blank" style="text-decoration:none">🔗</a>
@@ -503,6 +511,8 @@ const state = {
   selectedInstruments: [],
   prompt: "",
   promptSuggestions: [],
+  libraryTracks: [],
+  selectedTracks: [],
   render: null,
   tweaks: { speed: 1.0, echo: 0.0, volume: 1.0, reverse: false },
   busy: false,
@@ -689,6 +699,7 @@ async function uploadMemo(blob, filename) {
     state.render = null;
     state.style = null;
     state.selectedInstruments = [];
+    state.selectedTracks = [];
     state.prompt = "";
     $("prompt").value = "";
     state.tweaks = { speed: 1.0, echo: 0.0, volume: 1.0, reverse: false };
@@ -724,6 +735,26 @@ async function loadStyles() {
       container.appendChild(chip);
     }
   }
+  if (state.libraryTracks.length === 0) {
+    state.libraryTracks = await api("/library").catch(() => []);
+  }
+  const libraryList = $("library-list");
+  libraryList.innerHTML = "";
+  for (const track of state.libraryTracks) {
+    const chip = document.createElement("button");
+    const active = state.selectedTracks.includes(track.id);
+    chip.className = "tool" + (active ? " on" : "");
+    chip.textContent = "🎼 " + track.label;
+    chip.title = track.description + " (click to layer under your memo)";
+    chip.onclick = () => {
+      const selected = state.selectedTracks;
+      state.selectedTracks = selected.includes(track.id)
+        ? selected.filter((id) => id !== track.id)
+        : [...selected, track.id].slice(0, 3);
+      render(state.style);
+    };
+    libraryList.appendChild(chip);
+  }
   const instrumentList = $("instrument-list");
   instrumentList.innerHTML = "";
   for (const instrument of state.instruments) {
@@ -757,6 +788,7 @@ async function render(styleId) {
         style: styleId,
         tweaks: state.tweaks,
         instruments: state.selectedInstruments,
+        backingTracks: state.selectedTracks,
         prompt: state.prompt,
       }),
     });
@@ -784,6 +816,7 @@ function updateToolUI() {
   if (t.volume !== 1.0) parts.push(`volume ×${t.volume.toFixed(1)}`);
   if (t.reverse) parts.push("reversed");
   if (state.selectedInstruments.length) parts.push("with " + state.selectedInstruments.join(" + "));
+  if (state.selectedTracks.length) parts.push("over " + state.selectedTracks.join(" + "));
   if (state.prompt) parts.push(`"${state.prompt}"`);
   $("tweak-summary").textContent = parts.length
     ? "Applied to the original memo: " + parts.join(" · ")
@@ -802,6 +835,7 @@ $("btn-reverse").onclick = () => { state.tweaks.reverse = !state.tweaks.reverse;
 $("btn-reset").onclick = () => {
   state.tweaks = { speed: 1.0, echo: 0.0, volume: 1.0, reverse: false };
   state.selectedInstruments = [];
+  state.selectedTracks = [];
   state.prompt = "";
   $("prompt").value = "";
   render(state.style);
@@ -998,6 +1032,16 @@ async function openDetail(post) {
     $("d-like-count").textContent = updated.likes;
     $("d-like").classList.add("liked");
   };
+  $("d-fav-count").textContent = post.favorites ?? 0;
+  $("d-fav").classList.remove("liked");
+  $("d-fav").onclick = async () => {
+    const updated = await api(
+      `/posts/${post.id}/favorite?user=${encodeURIComponent(handle())}`,
+      { method: "POST" }
+    );
+    $("d-fav-count").textContent = updated.favorites;
+    $("d-fav").classList.toggle("liked");
+  };
   $("d-forward").onclick = async () => {
     const caption = prompt("Add a caption for the forward (optional):");
     if (caption === null) return;
@@ -1058,6 +1102,8 @@ async function loadMe() {
     $("me-followers").textContent = $("me-following").textContent = $("me-posts").textContent = "0";
     $("me-grid").innerHTML = "";
     $("me-empty").style.display = "";
+    $("me-favs").innerHTML = "";
+    $("me-favs-empty").style.display = "";
     $("me-page-link").style.display = "none";
     return;
   }
@@ -1070,6 +1116,21 @@ async function loadMe() {
     $("me-posts").textContent = user.postCount;
   } catch (_) {
     $("me-followers").textContent = $("me-following").textContent = $("me-posts").textContent = "0";
+  }
+  const favs = await api(`/users/${me}/favorites`).catch(() => []);
+  const favGrid = $("me-favs");
+  favGrid.innerHTML = "";
+  $("me-favs-empty").style.display = favs.length ? "none" : "";
+  for (const p of favs) {
+    const card = document.createElement("div");
+    card.className = "sound-mini";
+    card.innerHTML = `<div class="sms"></div><div class="smc"></div><audio preload="none"></audio>`;
+    card.querySelector(".sms").textContent = p.style + " · by " + p.author;
+    card.querySelector(".smc").textContent = p.caption || "—";
+    const audio = card.querySelector("audio");
+    audio.src = p.fileUrl;
+    card.onclick = () => { if (audio.paused) audio.play(); else audio.pause(); };
+    favGrid.appendChild(card);
   }
   const posts = await api(`/users/${me}/posts`).catch(() => []);
   const grid = $("me-grid");

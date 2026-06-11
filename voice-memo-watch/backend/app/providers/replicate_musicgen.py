@@ -16,6 +16,7 @@ from pathlib import Path
 
 import httpx
 
+from app.catalog import LIBRARY_TRACKS
 from app.providers.base import MusicProvider
 from app.schemas import RenderRequest
 
@@ -37,6 +38,13 @@ def _prompt_for(spec: RenderRequest) -> str:
     parts = [_PROMPTS.get(spec.style, _PROMPTS["lofi"])]
     if spec.instruments:
         parts.append("featuring " + " and ".join(spec.instruments))
+    if spec.backing_tracks:
+        labels = {t.id: t.label.lower() for t in LIBRARY_TRACKS}
+        parts.append(
+            "over "
+            + " and ".join(labels.get(t, t) for t in spec.backing_tracks)
+            + " backing tracks"
+        )
     if spec.prompt:
         parts.append(spec.prompt)
     tweaks = spec.tweaks

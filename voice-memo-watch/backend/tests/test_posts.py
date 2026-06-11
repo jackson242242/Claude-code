@@ -81,6 +81,32 @@ def test_delete_post(client: TestClient) -> None:
     assert client.delete(f"/posts/{post['id']}").status_code == 404
 
 
+def test_favorite_toggle_and_listing(client: TestClient) -> None:
+    post = client.post(
+        "/posts", json={"renderId": _make_render(client)["id"], "author": "alice"}
+    ).json()
+    assert post["favorites"] == 0
+
+    # bob favorites it
+    favored = client.post(f"/posts/{post['id']}/favorite?user=bob").json()
+    assert favored["favorites"] == 1
+    # a second user stacks
+    assert client.post(
+        f"/posts/{post['id']}/favorite?user=carol"
+    ).json()["favorites"] == 2
+    # bob's favorites list contains it
+    bob_favs = client.get("/users/bob/favorites").json()
+    assert [p["id"] for p in bob_favs] == [post["id"]]
+    # toggling again removes
+    assert client.post(
+        f"/posts/{post['id']}/favorite?user=bob"
+    ).json()["favorites"] == 1
+    assert client.get("/users/bob/favorites").json() == []
+    # unknown post 404
+    assert client.post("/posts/nope/favorite?user=bob").status_code == 404
+    assert client.get("/users/ghost/favorites").status_code == 404
+
+
 def test_forward_post(client: TestClient) -> None:
     original = client.post(
         "/posts", json={"renderId": _make_render(client)["id"], "author": "alice"}

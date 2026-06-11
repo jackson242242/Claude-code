@@ -232,6 +232,55 @@ def test_prompt_suggestion_changes_audio(client: TestClient) -> None:
     assert plain_audio != remixed_audio
 
 
+def test_library_catalog_and_previews(client: TestClient) -> None:
+    tracks = client.get("/library").json()
+    assert {t["id"] for t in tracks} == {
+        "lofi_beat",
+        "edm_pulse",
+        "acoustic_strum",
+        "cinematic_pad",
+        "rain_texture",
+    }
+    for track in tracks:
+        assert track["fileUrl"].endswith(f"/library/{track['id']}/file")
+    preview = client.get(f"/library/{tracks[0]['id']}/file")
+    assert preview.status_code == 200
+    assert preview.content[:4] == b"RIFF"
+    assert client.get("/library/nope/file").status_code == 404
+
+
+def test_render_with_backing_tracks_is_multitrack(client: TestClient) -> None:
+    memo = _upload(client)
+    plain = client.post(
+        f"/memos/{memo['id']}/renders", json={"style": "acoustic"}
+    ).json()
+    layered = client.post(
+        f"/memos/{memo['id']}/renders",
+        json={
+            "style": "acoustic",
+            "backingTracks": ["lofi_beat", "rain_texture"],
+        },
+    ).json()
+    assert layered["backingTracks"] == ["lofi_beat", "rain_texture"]
+    plain_audio = client.get(f"/renders/{plain['id']}/file").content
+    layered_audio = client.get(f"/renders/{layered['id']}/file").content
+    assert plain_audio != layered_audio  # the library layers are audible
+
+    unknown = client.post(
+        f"/memos/{memo['id']}/renders",
+        json={"style": "lofi", "backingTracks": ["vuvuzela"]},
+    )
+    assert unknown.status_code == 422
+    too_many = client.post(
+        f"/memos/{memo['id']}/renders",
+        json={
+            "style": "lofi",
+            "backingTracks": ["lofi_beat", "edm_pulse", "rain_texture", "cinematic_pad"],
+        },
+    )
+    assert too_many.status_code == 422
+
+
 def test_transcribe_mock(client: TestClient) -> None:
     memo = _upload(client)
     resp = client.post(f"/memos/{memo['id']}/transcribe")

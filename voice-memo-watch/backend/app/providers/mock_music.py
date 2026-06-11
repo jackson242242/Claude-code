@@ -22,6 +22,7 @@ import shutil
 import wave
 from pathlib import Path
 
+from app import library
 from app.providers.base import MusicProvider
 from app.schemas import RenderRequest
 
@@ -185,6 +186,30 @@ def _mix_instruments(
     return mixed
 
 
+def _mix_backing_tracks(
+    samples: array.array,
+    track_ids: list[str],
+    framerate: int,
+    nchannels: int,
+) -> array.array:
+    """Lay library loops under the memo — the multi-track composition path."""
+    nframes = len(samples) // nchannels
+    layers = [
+        library.track_samples(track_id, framerate, nframes)
+        for track_id in track_ids
+        if track_id in library._GENERATORS
+    ]
+    if not layers:
+        return samples
+    backing_gain = 11000 / len(layers)  # keep headroom as tracks stack
+    mixed = array.array("h", samples)
+    for i in range(len(mixed)):
+        frame = i // nchannels
+        added = sum(layer[frame] for layer in layers) * backing_gain
+        mixed[i] = _clamp(int(mixed[i] * 0.75 + added))
+    return mixed
+
+
 class MockMusicProvider(MusicProvider):
     def render(
         self, input_path: Path, output_path: Path, spec: RenderRequest
@@ -254,6 +279,10 @@ class MockMusicProvider(MusicProvider):
         if spec.instruments:
             samples = _mix_instruments(
                 samples, spec.instruments, params.framerate, params.nchannels
+            )
+        if spec.backing_tracks:
+            samples = _mix_backing_tracks(
+                samples, spec.backing_tracks, params.framerate, params.nchannels
             )
         if spec.tweaks.reverse:
             samples = _reverse_frames(samples, params.nchannels)
