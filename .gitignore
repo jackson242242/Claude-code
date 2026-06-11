@@ -41,3 +41,8 @@ htmlcov/
 
 # voice memo watch app
 voice-memo-watch/backend/var/
+
+# wear os (gradle)
+voice-memo-watch/wearos/.gradle/
+voice-memo-watch/wearos/**/build/
+voice-memo-watch/wearos/local.properties

@@ -7,9 +7,17 @@ platform** — an in-app feed with likes and permalinks. Nothing is shared out
 to existing social networks.
 
 ```
-watchos/   SwiftUI watchOS app (record → pick style → tweak → post → feed)
+watchos/   SwiftUI app for Apple Watch (feed → create → tweak → post)
+wearos/    Kotlin + Compose app for Android watches (same flow, same API)
 backend/   FastAPI service: API + web prototype UI + the feed
 ```
+
+**Cross-platform strategy:** there is no framework that targets both
+watchOS and Wear OS, so the stack is one shared backend (this repo's
+FastAPI service, camelCase JSON) plus a thin native client per platform.
+The two watch apps mirror each other screen-for-screen: feed-first landing
+with card covers, a red Create entry, record → vibe → one-tap tweaks →
+post. Both record AAC `.m4a`, so the backend treats them identically.
 
 ## Try the prototype in your browser
 
@@ -76,7 +84,9 @@ Xcode needed:
 
 Styles: `lofi`, `edm`, `acoustic`, `cinematic` (`GET /styles`).
 
-## Watch app
+## Watch apps
+
+### Apple Watch (watchOS, Swift — needs macOS + Xcode)
 
 ```bash
 cd watchos && xcodegen generate && open VoiceMemoBot.xcodeproj
@@ -87,6 +97,22 @@ Vertical-page TabView, feed-first like the web app: **Feed** lands first
 (single-column cards — gradient cover, caption overlay, byline, ♥ like —
 with a red Create button up top) and **Create** (record → style → result
 with one-tap style chips + tweak buttons + "Post to Feed").
+
+### Android watches (Wear OS 3+, Kotlin — needs Android Studio)
+
+```bash
+cd wearos   # open this folder in Android Studio
+# Run the `app` configuration on a Wear OS emulator (API 30+).
+# AppConfig.API_BASE_URL defaults to 10.0.2.2:8000 (the emulator's host
+# machine); set your LAN IP or the deployed HTTPS URL for a real watch.
+```
+
+Feed-first like the watchOS app: landing screen is the card feed
+(gradient cover + caption overlay + ♥ like) with a red ＋ Create chip;
+Create records via MediaRecorder (AAC .m4a), uploads, renders on style
+tap, re-renders with 🐢/🐇/🌊/⏪ one-tap tweaks, and posts to the feed.
+Distribution: Google Play Console ($25 one-time) → internal testing
+track (the Play equivalent of TestFlight) → production review.
 
 ## Tests
 
