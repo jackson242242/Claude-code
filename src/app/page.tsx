@@ -56,7 +56,7 @@ const HomePage = async () => {
             <small>until kickoff · June 11</small>
           </div>
         ) : (
-          tournamentLive && <HeroLiveStrip matches={todayMatches} />
+          tournamentLive && <HeroLiveStrip matches={todayMatches} now={now} />
         )}
         <h1>{t('home.title')}</h1>
         <p>{t('home.subtitle')}</p>
