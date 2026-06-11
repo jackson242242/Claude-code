@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getCities } from '@/services/scheduleService';
+import { getCities, getMatches } from '@/services/scheduleService';
 import { CityCard } from '@/components/CityCard';
 import { getLocale } from '@/i18n/server';
 import { translator } from '@/i18n';
@@ -12,9 +12,12 @@ import { SUPERSTAR_VIDEOS } from '@/mocks/superstars';
 import { BLOOPER_VIDEOS } from '@/mocks/bloopers';
 import { HomeNewsWindow } from '@/components/news/HomeNewsWindow';
 import { HeroVideoBackground } from '@/components/HeroVideoBackground';
+import { HeroLiveStrip } from '@/components/HeroLiveStrip';
 
 /** Kickoff: 2026 World Cup opening match, June 11 2026. */
 const KICKOFF_UTC = Date.UTC(2026, 5, 11);
+/** Day after the July 19 2026 final — the LIVE strip retires after this. */
+const TOURNAMENT_END_UTC = Date.UTC(2026, 6, 20);
 
 const HomePage = async () => {
   const locale = await getLocale();
@@ -28,10 +31,15 @@ const HomePage = async () => {
   // Top live headlines for the "Latest" rail (falls back to the curated seed
   // when the feed is unreachable).
   const videoStories = liveNews.items.slice(0, 10);
+  const now = Date.now();
   const daysUntilKickoff = Math.max(
     0,
-    Math.ceil((KICKOFF_UTC - Date.now()) / 86_400_000),
+    Math.ceil((KICKOFF_UTC - now) / 86_400_000),
   );
+  const tournamentLive = now >= KICKOFF_UTC && now < TOURNAMENT_END_UTC;
+  const todayMatches = tournamentLive
+    ? await getMatches({ date: new Date(now).toISOString().slice(0, 10) })
+    : [];
 
   const hasHeroVideo = heroVideos.length > 0;
 
@@ -39,7 +47,7 @@ const HomePage = async () => {
     <div className="home">
       <section className={hasHeroVideo ? 'hero hero--media' : 'hero'}>
         {hasHeroVideo && <HeroVideoBackground videos={heroVideos} />}
-        {daysUntilKickoff > 0 && (
+        {daysUntilKickoff > 0 ? (
           <div
             className="hero__countdown"
             aria-label={`${daysUntilKickoff} days until kickoff`}
@@ -47,6 +55,8 @@ const HomePage = async () => {
             {daysUntilKickoff} {daysUntilKickoff === 1 ? 'DAY' : 'DAYS'}
             <small>until kickoff · June 11</small>
           </div>
+        ) : (
+          tournamentLive && <HeroLiveStrip matches={todayMatches} />
         )}
         <h1>{t('home.title')}</h1>
         <p>{t('home.subtitle')}</p>
