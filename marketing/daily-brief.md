@@ -1,4 +1,56 @@
-# Matchday26 — 社区之声调研 · 2026-06-10 09:30 UTC（last30days 式 · 已过滤版）
+# Matchday26 — 社区之声调研 · 2026-06-11 00:30 UTC（last30days 式 · 已过滤版）
+
+> 内容边界不变：只服务品牌/运营/Sheng 设计；**无政治、无签证/入境、无法律声明**；
+> 痛点一律物流/体验/省钱角度。诚实声明：沙箱直连 Reddit/X 受限，本轮社区情绪来自
+> 媒体引述与搜索摘要；不编造引用与互动数。本轮为 6h 增量——只记 6/10 09:30 之后的新变化。
+
+## What I learned（**今天开赛**——揭幕战 6/11 墨西哥城，球迷在说什么）
+
+- **二手票市场在开赛前 24h「劈叉」了。** 中性小组赛（如佛得角vs沙特）因 NFL 大球场库存
+  过剩遭恐慌性抛售，低至 **~$157**；而淘汰赛与豪门对决（迈阿密 哥伦比亚vs葡萄牙等）依旧
+  高价坚挺。背景：5 月底 FIFA 官网库存骤降 4.4 万张后**同批票现身 StubHub/SeatGeek 且低于
+  官网价**。来源：[Front Office Sports](https://frontofficesports.com/world-cup-fifa-tickets-resale-prices/)、
+  [Consequence 6月](https://consequence.net/2026/06/fifa-world-cup-ticket-prices-drop-inventory-floods-secondary-market/)、
+  [The Hill](https://thehill.com/business/5887924-world-cup-resale-ticket-prices-falling/)、
+  [Goal 价格追踪](https://www.goal.com/en-us/news/world-cup-tickets-pricing-guide-getting-cheaper-updates/bltc4ebefa2a78f6149)。✅
+- **官方 Resale 开到每场开球前 1 小时，Last-Minute 先到先得即时确认**——"今天才决定去"
+  是真实可行路径。揭幕战 Estadio Banorte(Azteca) ~8.3 万座。来源：
+  [Goal resale 指南](https://www.goal.com/en-us/news/world-cup-resale-tickets-information/blta98fd2cf01ecfd44)、
+  [Goal 墨西哥票务](https://www.goal.com/en/news/world-cup-mexico-tickets/blt6977f0541fb3db80)。✅
+- **Fan Zone 今天全面开张**：亚特兰大 Centennial Olympic Park 免费（12 点开门）、DC 国家广场
+  Fan Zone（6/11–7/19）、LA Coliseum $10（儿童免费）、圣何塞 39 天「Soccer Celebration」、
+  费城 Lemon Hill 39 天全免——无票人群今天就有去处。来源：
+  [Atlanta FWC26](https://atlantafwc26.com/fan-fest/)、[Axios DC](https://www.axios.com/local/washington-dc/2026/05/22/where-to-watch-world-cup-dc-2026)、
+  [ABC7 LA](https://abc7.com/post/world-cup-2026-heres-what-know-las-tournament-watch-parties-fan-events-pop-merch/19270307/)、
+  [KTVU 圣何塞](https://www.ktvu.com/news/world-cup-2026-san-jose-launching-massive-free-39-day-soccer-fan-fest-500-sq-ft-screen)。✅
+- **「最后一公里」怒气未消、且上了政治版面之外的体育头条**（我们只取物流角度）：
+  NJ Transit 比赛日票价为平日 ~4 倍引发"FIFA should cover the ride"呼声；步行去 MetLife
+  被官方禁止；ESPN 发问「世界杯值这个折腾吗」。我们的交通面板/深链仍是天然答案。来源：
+  [ESPN](https://www.espn.com/soccer/worldcup/story/_/id/48686530/world-cup-hassles-expenses)、
+  [Fox5NY](https://www.fox5ny.com/sports/no-general-parking-metlife-stadium-2026-fifa-world-cup-fans-warned)、
+  [TheTravel](https://www.thetravel.com/fifa-world-cup-travelers-warned-walking-to-stadium-is-banned-as-public-transport-prices-skyrocket/)。✅
+
+## KEY PATTERNS from the research
+1. **「开赛日仍能上车」是本周期最强钩子**：官方 resale 开球前 1h + 中性场次 ~$157 +
+   酒店已降 1/3（上期）→「smart latecomer」叙事，替代旧紧迫感文案。
+2. **票价分层 = 内容机会**：「哪些场次是捡漏区、哪些别等」的诚实分区指南，没人做。
+3. **Fan Zone 行程是今天就能用的零竞争内容位**（上期判断成立，今天开张=时效顶点）。
+4. **产品侧信号：赛事已开打**——首页倒计时应切「LIVE / 今日比赛」态（转给产品 backlog）。
+
+## For Amelia（本轮最值得用的）
+- 钩子①「世界杯今天开赛——现在订还来得及：官方转售开球前 1 小时都能买」；
+  钩子②「$157 看世界杯 vs $300 停车费：钱花在票上，到场用 $1.75 接驳」。
+- 合作角度不变（主办城市 Fan Zone 互链、交通指南创作者）；继续停用旧涨价文案。
+
+## For Sheng（视觉/UX 信号）
+- **Hero 从倒计时切 LIVE 态**：「LIVE NOW」徽章 + 今日赛程条（揭幕战墨西哥城）——
+  开赛后倒计时归零是死屏，最高优先。
+- 票价「分层徽章」：捡漏区（低于票面）/坚挺区（豪门+淘汰赛），仅真实取数时显示。
+- Fan Zone 模块沿用上期建议，今天起带「OPEN TODAY」标。
+
+---
+
+# （上期）Matchday26 — 社区之声调研 · 2026-06-10 09:30 UTC（last30days 式 · 已过滤版）
 
 > 内容边界不变：只服务品牌/运营/Sheng 设计；**无政治、无签证/入境、无法律声明**；
 > 痛点一律物流/体验/省钱角度。方法：最近 30 天窗口、优先 6/5 上期之后的新变化、

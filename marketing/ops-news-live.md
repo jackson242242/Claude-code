@@ -13,3 +13,4 @@
 - 2026-06-10T04:06Z · retest: PASS (153 FE / 62 BE) · prod news: unreachable (sandbox allow-list blocks onrender) · action: none — shipped /api/news/health probe + this check · deploy: 11bc9f2
 - 2026-06-10T09:40Z · retest: PASS (153 FE / 62 BE) · prod news: unreachable (sandbox allow-list blocks onrender) · action: none (run via /pm-cycle) · deploy: n/a
 - 2026-06-10T18:20Z · retest: PASS (153 FE / 70 BE) · prod news: unreachable from sandbox, but site-health Actions run 17:53Z probed both worldcup sites OK (HTTP 2xx) — prod is up, Live pill still needs an eyeball · action: none (run via /pm-cycle) · deploy: pending this round's PR
+- 2026-06-11T00:40Z · retest: PASS (153 FE / 70 BE, 87% cov) · prod news: unreachable from sandbox (403), but site-health Actions run #5 23:55Z probed both worldcup sites OK — prod up on opening day; Live pill still needs an eyeball · action: none (run via /pm-cycle) · deploy: n/a
