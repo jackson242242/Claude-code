@@ -1,20 +1,23 @@
 {
   "_meta": {
-    "lastUpdated": "2026-06-10",
+    "lastUpdated": "2026-06-11",
     "targetAge": "10-14",
     "updatedBy": "last30days-skill synthesis",
     "week": "2026-W24",
+    "todayFocus": "股票市场",
     "howToUpdate": "Run /last30days on 'investing for kids' and 'AI explained simply', then rewrite lessons in child-friendly language following this schema."
   },
   "invest": [
     {
-      "id": "inv-1",
-      "question": "如果你有 $100，放在枕头下面 30 年后还是 $100。但如果你"种"进股市，会变多少？",
-      "answer": "$100 以年化 10% 种进去，30 年后长成 <strong>$1,745</strong>！不是你多存了钱，是钱自己生出了新的钱，新的钱又生出更多钱……这叫 <strong>复利</strong>，巴菲特说这是世界上最厉害的魔法。",
-      "analogy": "就像雪球从山顶滚下来——开始很小，但越滚越大，到山脚变成一颗超级大雪球。",
-      "challenge": "算一算：如果你现在每月存 $20，40 年后（年化 10%）大约有多少钱？答案比你想的大很多！",
-      "funFact": "巴菲特 95% 的财富是他 50 岁之后才赚到的——靠的就是这颗雪球滚了几十年。",
-      "source": "GoHenry / EasyPeasyFinance"
+      "id": "inv-1-stockmarket",
+      "skill": "投资思维",
+      "question": "股票市场是什么？它为什么每天都在涨涨跌跌？",
+      "answer": "股票市场就像一个巨大的<strong>拍卖会</strong>，每天几百万人在这里买卖公司的一小片（股票）。苹果、Google、特斯拉……全都在这里。价格为什么涨跌？因为每时每刻都有人在出价——觉得公司会更赚钱就买（价格涨），觉得会变差就卖（价格跌）。",
+      "analogy": "就像你们班的"最受欢迎同学"投票——每天都有人改变想法，票数（价格）就跟着变。但长期来看，真正有能力的人最终总是更受欢迎。",
+      "challenge": "今天打开 Google，搜索"AAPL 股价"（苹果公司），看看今天的价格，再看看 5 年前是多少。涨了多少倍？",
+      "deepThink": "股市今天涨、明天跌，短期像赌博。但巴菲特说长期持有是最稳的策略——为什么短期像赌博，长期却像投资？",
+      "funFact": "纽约证券交易所（NYSE）每天的交易金额约 $200 亿美元——相当于每秒钟有 $230,000 在换手！",
+      "source": "NYSE / Investopedia Stock Market Basics 2026"
     },
     {
       "id": "inv-2",
