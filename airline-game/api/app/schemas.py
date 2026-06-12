@@ -23,6 +23,17 @@ class City(CamelModel):
     lon: float
     demand_index: int
     slot_fee: float
+    slot_capacity: int
+
+
+class CitySlotInfo(CamelModel):
+    """M2.2 slot-market snapshot for one city (CONTRACT §2), computed
+    server-side on every GameState response."""
+
+    capacity: int
+    taken: int
+    player_held: int
+    player_used: int
 
 
 class AircraftModel(CamelModel):
@@ -116,6 +127,9 @@ class GameState(CamelModel):
     routes: list[Route]
     competitors: list[Competitor]
     market_share: float
+    # Filled by the routes layer from engine.state.compute_slot_market (the
+    # engine GameState has no such attribute — it is a derived snapshot).
+    slot_market: dict[str, CitySlotInfo] = Field(default_factory=dict)
     news: list[NewsItem]
     finance: Finance
     status: Literal["active", "bankrupt"]

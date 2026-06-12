@@ -17,10 +17,15 @@ from tests.conftest import run
 
 
 def open_and_fly(game, world, model_id, city_b, weekly_flights, fare_mult=1.0):
+    # M2.2: opening a route needs a free held slot at both ends. The HQ starts
+    # with 2; the destination needs one negotiated first. The negotiation fee
+    # is a one-off capital outlay and does not touch the quarterly route stats
+    # the four balance targets are written against.
     run(
         game,
         world,
         {"type": "buyAircraft", "modelId": model_id},
+        {"type": "negotiateSlot", "cityId": city_b},
         {"type": "openRoute", "cityA": "nyc", "cityB": city_b},
         {"type": "assignAircraft", "aircraftId": "ac-1", "routeId": "rt-1"},
         {

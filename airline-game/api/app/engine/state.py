@@ -30,6 +30,7 @@ class City:
     lon: float
     demand_index: int
     slot_fee: float
+    slot_capacity: int  # M2.2: total airport slot pool
 
 
 @dataclass(frozen=True)
@@ -146,6 +147,12 @@ class GameState:
     news: list[NewsItem] = field(default_factory=list)
     finance: Finance = field(default_factory=Finance)
     status: Literal["active", "bankrupt"] = "active"
+    # M2.2 slot system: slots the player holds per city (used or not), and the
+    # turn of the last successful negotiation per city (1-per-city-per-turn
+    # cooldown). The API exposes these only through the computed slotMarket
+    # snapshot (compute_slot_market), never raw.
+    slots_held: dict[str, int] = field(default_factory=dict)
+    last_negotiation_turn: dict[str, int] = field(default_factory=dict)
     # Engine-internal bookkeeping — not exposed through the API schemas.
     negative_cash_quarters: int = 0
     next_aircraft_seq: int = 1
@@ -168,6 +175,7 @@ def new_game(game_id: str, airline_name: str, hq_city: City) -> GameState:
         quarter=balance.START_QUARTER,
         cash=balance.STARTING_CASH,
         competitors=initial_competitors(),
+        slots_held={hq_city.id: balance.HQ_STARTING_SLOTS},
         news=[
             NewsItem(
                 headline=f"{airline_name} 正式成立",
@@ -188,6 +196,52 @@ def haversine_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
         + math.cos(phi1) * math.cos(phi2) * math.sin(d_lambda / 2) ** 2
     )
     return balance.EARTH_RADIUS_KM * 2 * math.asin(math.sqrt(a))
+
+
+# --- Airport slots (CONTRACT §2/§3, M2.2) ---------------------------------------
+
+
+@dataclass
+class CitySlotInfo:
+    """One city's slot-market snapshot (CONTRACT §2 ``CitySlotInfo``)."""
+
+    capacity: int  # total pool = city.slotCapacity
+    taken: int  # AI route endpoints (1 per end) + every player-held slot
+    player_held: int  # slots the player holds (used or not)
+    player_used: int  # player route endpoints (1 per end per route)
+
+
+def player_slots_used(state: GameState, city_id: str) -> int:
+    """Held slots the player's routes occupy at a city: 1 per route end."""
+    return sum(
+        1 for route in state.routes if city_id in (route.city_a, route.city_b)
+    )
+
+
+def pool_slots_taken(state: GameState, city_id: str) -> int:
+    """Pool occupancy (CONTRACT §2 ``taken``): every AI route end at the city
+    takes 1 pool slot, plus every slot the player holds there (used or not)."""
+    ai_taken = sum(
+        1
+        for competitor in state.competitors
+        for route in competitor.routes
+        if city_id in (route.city_a, route.city_b)
+    )
+    return ai_taken + state.slots_held.get(city_id, 0)
+
+
+def compute_slot_market(state: GameState, world: World) -> dict[str, CitySlotInfo]:
+    """Pure snapshot of the slot market for every city (CONTRACT §3: recomputed
+    server-side on each GameState response)."""
+    return {
+        city.id: CitySlotInfo(
+            capacity=city.slot_capacity,
+            taken=pool_slots_taken(state, city.id),
+            player_held=state.slots_held.get(city.id, 0),
+            player_used=player_slots_used(state, city.id),
+        )
+        for city in world.cities.values()
+    }
 
 
 # --- Lookup helpers -----------------------------------------------------------

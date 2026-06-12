@@ -21,6 +21,8 @@ from app.engine.state import (
     get_aircraft,
     get_route,
     haversine_km,
+    player_slots_used,
+    pool_slots_taken,
 )
 
 
@@ -163,6 +165,35 @@ def _return_lease(state: GameState, world: World, command: Mapping[str, Any]) ->
     state.fleet.remove(aircraft)
 
 
+def _negotiate_slot(state: GameState, world: World, command: Mapping[str, Any]) -> None:
+    """negotiateSlot (CONTRACT §3, M2.2): deterministic, no RNG. Failure checks
+    in contract order — per-city per-turn cooldown, pool full, insufficient
+    cash — then cost = slotFee × SLOT_COST_MULT × (1 + taken/capacity)."""
+    city = _require_city(world, _require_str(command, "cityId"))
+    if state.last_negotiation_turn.get(city.id) == state.turn:
+        raise CommandError(
+            f"already negotiated a slot at {city.id} this turn "
+            "(one negotiation per city per turn); try again next quarter"
+        )
+    taken = pool_slots_taken(state, city.id)
+    if taken >= city.slot_capacity:
+        raise CommandError(
+            f"slot pool at {city.id} is full ({taken}/{city.slot_capacity}); "
+            "no slots left to negotiate"
+        )
+    cost = round(
+        city.slot_fee * balance.SLOT_COST_MULT * (1 + taken / city.slot_capacity), 2
+    )
+    if state.cash < cost:
+        raise CommandError(
+            f"insufficient cash: a slot at {city.id} costs ${cost:,.2f}, "
+            f"cash is ${state.cash:,.2f}"
+        )
+    state.cash = round(state.cash - cost, 2)
+    state.slots_held[city.id] = state.slots_held.get(city.id, 0) + 1
+    state.last_negotiation_turn[city.id] = state.turn
+
+
 def _open_route(state: GameState, world: World, command: Mapping[str, Any]) -> None:
     city_a = _require_city(world, _require_str(command, "cityA"))
     city_b = _require_city(world, _require_str(command, "cityB"))
@@ -174,6 +205,16 @@ def _open_route(state: GameState, world: World, command: Mapping[str, Any]) -> N
         )
     if find_route_between(state, city_a.id, city_b.id) is not None:
         raise CommandError(f"route between {city_a.id} and {city_b.id} already exists")
+    # M2.2: a route occupies 1 held slot at each end — both endpoints need a
+    # free held slot (playerHeld − playerUsed ≥ 1) before the route can open.
+    for city in (city_a, city_b):
+        held = state.slots_held.get(city.id, 0)
+        used = player_slots_used(state, city.id)
+        if held - used < 1:
+            raise CommandError(
+                f"no free held slot at {city.id} ({used} used of {held} held); "
+                f"negotiate a slot there first (negotiateSlot {city.id})"
+            )
     route = Route(
         id=f"rt-{state.next_route_seq}",
         city_a=city_a.id,
@@ -187,6 +228,8 @@ def _open_route(state: GameState, world: World, command: Mapping[str, Any]) -> N
 
 
 def _close_route(state: GameState, world: World, command: Mapping[str, Any]) -> None:
+    # M2.2: closing frees the slot *usage* at both ends (usage is derived from
+    # state.routes) while the held slots stay with the player for reuse.
     route = _require_route(state, _require_str(command, "routeId"))
     for aircraft_id in list(route.aircraft_ids):
         aircraft = get_aircraft(state, aircraft_id)
@@ -254,6 +297,7 @@ _HANDLERS: dict[str, Callable[[GameState, World, Mapping[str, Any]], None]] = {
     "leaseAircraft": _lease_aircraft,
     "sellAircraft": _sell_aircraft,
     "returnLease": _return_lease,
+    "negotiateSlot": _negotiate_slot,
     "openRoute": _open_route,
     "closeRoute": _close_route,
     "assignAircraft": _assign_aircraft,

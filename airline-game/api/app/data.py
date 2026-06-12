@@ -29,6 +29,7 @@ def load_world(data_dir: Path | None = None) -> World:
             lon=row["lon"],
             demand_index=row["demandIndex"],
             slot_fee=row["slotFee"],
+            slot_capacity=row["slotCapacity"],
         )
         for row in cities_raw
     }

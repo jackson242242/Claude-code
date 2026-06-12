@@ -12,7 +12,14 @@ import math
 from dataclasses import dataclass
 
 from app.engine import balance
-from app.engine.state import Competitor, CompetitorRoute, GameState, NewsItem, World
+from app.engine.state import (
+    Competitor,
+    CompetitorRoute,
+    GameState,
+    NewsItem,
+    World,
+    pool_slots_taken,
+)
 
 
 @dataclass(frozen=True)
@@ -88,14 +95,22 @@ def _served_cities(competitor: Competitor) -> set[str]:
     return served
 
 
-def _next_destination(competitor: Competitor, world: World) -> str | None:
+def _next_destination(
+    state: GameState, competitor: Competitor, world: World
+) -> str | None:
     """Highest-demandIndex city the AI does not serve yet; ties broken by the
-    stable order of the city table (deterministic, no randomness needed)."""
+    stable order of the city table (deterministic, no randomness needed).
+    M2.2: a candidate whose slot pool is full (taken ≥ capacity) is skipped and
+    the next candidate is taken instead — also fully deterministic."""
     served = _served_cities(competitor)
-    candidates = [city for city in world.cities.values() if city.id not in served]
-    if not candidates:
-        return None
-    return max(candidates, key=lambda city: city.demand_index).id
+    candidates = sorted(
+        (city for city in world.cities.values() if city.id not in served),
+        key=lambda city: -city.demand_index,  # stable sort keeps table order
+    )
+    for city in candidates:
+        if pool_slots_taken(state, city.id) < city.slot_capacity:
+            return city.id
+    return None
 
 
 def evolve_competitors(state: GameState, world: World) -> list[NewsItem]:
@@ -112,7 +127,10 @@ def evolve_competitors(state: GameState, world: World) -> list[NewsItem]:
                 round(largest.weekly_seats * balance.AI_GROWTH_FACTOR, 6)
             )
         if state.turn % balance.AI_NEW_ROUTE_EVERY_TURNS == 0:
-            destination_id = _next_destination(competitor, world)
+            # AI routes opened earlier this turn already count in the pool
+            # (pool occupancy is derived from state), so the skip-when-full
+            # rule sees them — order of the fixed roster keeps it deterministic.
+            destination_id = _next_destination(state, competitor, world)
             if destination_id is None:
                 continue
             competitor.routes.append(

@@ -37,6 +37,7 @@ class TestMeta:
         nyc = next(c for c in body["cities"] if c["id"] == "nyc")
         assert nyc["nameZh"] == "纽约"
         assert nyc["demandIndex"] == 10 and nyc["slotFee"] == 9500
+        assert nyc["slotCapacity"] == 12  # M2.2 slot pool on the wire
         a320 = next(m for m in body["aircraftModels"] if m["id"] == "a320neo")
         assert a320["rangeKm"] == 6300 and a320["fuelKgPerKm"] == 2.5
         b777_9 = next(m for m in body["aircraftModels"] if m["id"] == "b777-9")
@@ -54,6 +55,21 @@ class TestGameLifecycle:
         assert state["status"] == "active"
         assert state["finance"] == {"lastQuarter": None, "history": []}
         assert state["news"][0]["kind"] == "system"
+        # M2.2: the slot market snapshot covers every city; the player starts
+        # holding 2 slots at the HQ and 0 elsewhere.
+        assert len(state["slotMarket"]) == 12
+        assert state["slotMarket"]["nyc"] == {
+            "capacity": 12,
+            "taken": 2,  # the 2 HQ-held slots; no AI route touches nyc
+            "playerHeld": 2,
+            "playerUsed": 0,
+        }
+        assert state["slotMarket"]["lax"] == {
+            "capacity": 11,
+            "taken": 0,
+            "playerHeld": 0,
+            "playerUsed": 0,
+        }
 
         fetched = client.get(f"/api/games/{state['id']}").json()
         assert fetched == state
@@ -82,6 +98,7 @@ class TestFullFlow:
             json={
                 "commands": [
                     {"type": "buyAircraft", "modelId": "a320neo"},
+                    {"type": "negotiateSlot", "cityId": "lax"},
                     {"type": "openRoute", "cityA": "nyc", "cityB": "lax"},
                     {"type": "assignAircraft", "aircraftId": "ac-1", "routeId": "rt-1"},
                     {"type": "updateRoute", "routeId": "rt-1", "weeklyFlights": 7},
@@ -91,7 +108,7 @@ class TestFullFlow:
         assert response.status_code == 200
         body = response.json()
         assert all(r["ok"] for r in body["results"])
-        assert [r["index"] for r in body["results"]] == [0, 1, 2, 3]
+        assert [r["index"] for r in body["results"]] == [0, 1, 2, 3, 4]
         state = body["state"]
         assert state["fleet"][0]["modelId"] == "a320neo"
         assert state["fleet"][0]["routeId"] == "rt-1"
@@ -125,11 +142,12 @@ class TestFullFlow:
             json={
                 "commands": [
                     {"type": "openRoute", "cityA": "nyc", "cityB": "atl"},
+                    {"type": "negotiateSlot", "cityId": "lax"},
                     {"type": "openRoute", "cityA": "nyc", "cityB": "lax"},
                 ]
             },
         ).json()
-        assert [r["ok"] for r in body["results"]] == [False, True]
+        assert [r["ok"] for r in body["results"]] == [False, True, True]
         assert "unknown city" in body["results"][0]["message"]
         assert len(body["state"]["routes"]) == 1
 

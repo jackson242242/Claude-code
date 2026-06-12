@@ -19,6 +19,7 @@ def setup_reference_game(game, world):
         game,
         world,
         {"type": "buyAircraft", "modelId": "a320neo"},
+        {"type": "negotiateSlot", "cityId": "lax"},
         {"type": "openRoute", "cityA": "nyc", "cityB": "lax"},
         {"type": "assignAircraft", "aircraftId": "ac-1", "routeId": "rt-1"},
         {"type": "updateRoute", "routeId": "rt-1", "weeklyFlights": 7, "fareMult": 1.0},
@@ -120,7 +121,12 @@ class TestSettlementNumbers:
         assert report.totals.cost == pytest.approx(expected_cost)
 
     def test_unassigned_route_flies_nothing(self, game, world):
-        run(game, world, {"type": "openRoute", "cityA": "nyc", "cityB": "lax"})
+        run(
+            game,
+            world,
+            {"type": "negotiateSlot", "cityId": "lax"},
+            {"type": "openRoute", "cityA": "nyc", "cityB": "lax"},
+        )
         report = settle_turn(game, world)
         stats = report.route_stats[0]
         assert (stats.pax, stats.capacity, stats.revenue, stats.cost) == (0, 0, 0.0, 0.0)

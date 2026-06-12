@@ -32,14 +32,24 @@ class TestOpenRoute:
         assert "HQ" in result.message
 
     def test_duplicate_route_rejected_either_direction(self, game, world):
-        run(game, world, {"type": "openRoute", "cityA": "nyc", "cityB": "lax"})
+        run(
+            game,
+            world,
+            {"type": "negotiateSlot", "cityId": "lax"},
+            {"type": "openRoute", "cityA": "nyc", "cityB": "lax"},
+        )
         for a, b in (("nyc", "lax"), ("lax", "nyc")):
             result = first(game, world, {"type": "openRoute", "cityA": a, "cityB": b})
             assert not result.ok
             assert "already exists" in result.message
 
     def test_open_route_computes_haversine_distance(self, game, world):
-        run(game, world, {"type": "openRoute", "cityA": "nyc", "cityB": "lax"})
+        run(
+            game,
+            world,
+            {"type": "negotiateSlot", "cityId": "lax"},
+            {"type": "openRoute", "cityA": "nyc", "cityB": "lax"},
+        )
         route = game.routes[0]
         assert route.id == "rt-1"
         assert route.distance_km == pytest.approx(3974, abs=15)
@@ -88,6 +98,7 @@ class TestFleetCommands:
             game,
             world,
             {"type": "buyAircraft", "modelId": "a320neo"},
+            {"type": "negotiateSlot", "cityId": "lax"},
             {"type": "openRoute", "cityA": "nyc", "cityB": "lax"},
             {"type": "assignAircraft", "aircraftId": "ac-1", "routeId": "rt-1"},
             {"type": "sellAircraft", "aircraftId": "ac-1"},
@@ -102,6 +113,7 @@ class TestAssignAircraft:
             game,
             world,
             {"type": "buyAircraft", "modelId": "e195-e2"},
+            {"type": "negotiateSlot", "cityId": "hnd"},
             {"type": "openRoute", "cityA": "nyc", "cityB": "hnd"},
         )
         result = first(
@@ -117,6 +129,7 @@ class TestAssignAircraft:
             game,
             world,
             {"type": "buyAircraft", "modelId": "a320neo"},
+            {"type": "negotiateSlot", "cityId": "lax"},
             {"type": "openRoute", "cityA": "nyc", "cityB": "lax"},
             {"type": "assignAircraft", "aircraftId": "ac-1", "routeId": "rt-1"},
         )
@@ -131,6 +144,8 @@ class TestAssignAircraft:
             game,
             world,
             {"type": "buyAircraft", "modelId": "a320neo"},
+            {"type": "negotiateSlot", "cityId": "lax"},
+            {"type": "negotiateSlot", "cityId": "mex"},
             {"type": "openRoute", "cityA": "nyc", "cityB": "lax"},
             {"type": "openRoute", "cityA": "nyc", "cityB": "mex"},
             {"type": "assignAircraft", "aircraftId": "ac-1", "routeId": "rt-1"},
@@ -147,6 +162,7 @@ class TestUpdateRoute:
             game,
             world,
             {"type": "buyAircraft", "modelId": "a320neo"},
+            {"type": "negotiateSlot", "cityId": "lax"},
             {"type": "openRoute", "cityA": "nyc", "cityB": "lax"},
             {"type": "assignAircraft", "aircraftId": "ac-1", "routeId": "rt-1"},
         )
@@ -214,6 +230,7 @@ class TestBatchSemantics:
             game,
             world,
             {"type": "buyAircraft", "modelId": "a320neo"},
+            {"type": "negotiateSlot", "cityId": "lax"},
             {"type": "openRoute", "cityA": "nyc", "cityB": "lax"},
             {"type": "assignAircraft", "aircraftId": "ac-1", "routeId": "rt-1"},
             {"type": "closeRoute", "routeId": "rt-1"},

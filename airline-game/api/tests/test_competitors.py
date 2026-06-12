@@ -23,6 +23,7 @@ def fly_hnd_pvg(game, world, fare_mult=1.0):
         game,
         world,
         {"type": "buyAircraft", "modelId": "a320neo"},
+        {"type": "negotiateSlot", "cityId": "pvg"},  # M2.2: hold a pvg slot
         {"type": "openRoute", "cityA": "hnd", "cityB": "pvg"},
         {"type": "assignAircraft", "aircraftId": "ac-1", "routeId": "rt-1"},
         {"type": "updateRoute", "routeId": "rt-1", "weeklyFlights": 7, "fareMult": fare_mult},

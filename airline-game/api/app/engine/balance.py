@@ -28,6 +28,10 @@ AI_NEW_ROUTE_WEEKLY_SEATS = 2_000  # per direction, on routes opened by evolutio
 AI_GROWTH_FACTOR = 1.08  # largest route weeklySeats ×1.08 (ceil) every turn
 AI_NEW_ROUTE_EVERY_TURNS = 4  # turn % 4 == 0 → open a new HQ route
 
+# --- Airport slots (CONTRACT §3, M2.2) ----------------------------------------
+SLOT_COST_MULT = 800.0  # negotiation cost = slotFee × 800 × (1 + taken/capacity)
+HQ_STARTING_SLOTS = 2  # player holds 2 slots at the HQ on day one, 0 elsewhere
+
 # --- Pricing -----------------------------------------------------------------
 FARE_FIXED = 70.0  # USD base fare component
 FARE_PER_KM = 0.095  # USD per km fare component
