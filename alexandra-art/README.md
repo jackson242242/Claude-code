@@ -6,6 +6,9 @@ Not part of the Matchday26 app — just open `index.html` in a browser.
 No header at all: the only chrome is a dock of five hand-drawn SVG characters
 (Pikachu, Tanjiro, Sakuragi, Doraemon, Totoro — original chibi interpretations,
 no copyrighted art). Four are category filters, Totoro toggles the music.
+The gallery itself is Tyler Hobbs-style: warm cream background, scattered
+asymmetric grid with generous whitespace, square-cornered images with no card
+chrome, and small tracked-uppercase captions.
 
 ## Live URL (Render static site)
 `render.yaml` defines a `alexandra-art` static site (rootDir `alexandra-art/`).
