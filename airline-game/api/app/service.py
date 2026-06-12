@@ -11,7 +11,7 @@ from app.engine import commands as engine_commands
 from app.engine import simulate
 from app.engine.commands import CommandResult
 from app.engine.simulate import TurnReport
-from app.engine.state import GameState, World, new_game
+from app.engine.state import GameEvent, GameState, World, new_game
 
 
 class GameNotFoundError(Exception):
@@ -41,9 +41,17 @@ class GameRepository:
 
 
 class GameService:
-    def __init__(self, world: World, repository: GameRepository | None = None) -> None:
+    def __init__(
+        self,
+        world: World,
+        repository: GameRepository | None = None,
+        event_pool: list[GameEvent] | None = None,
+    ) -> None:
         self.world = world
         self.repository = repository or GameRepository()
+        # M3.1: the event pool passed to settle_turn on every end-turn call.
+        # None here means "use the global default pool" (loaded by app.data.load_events).
+        self._event_pool = event_pool
 
     def create_game(self, airline_name: str, hq_city_id: str) -> GameState:
         name = airline_name.strip()
@@ -71,5 +79,5 @@ class GameService:
 
     def end_turn(self, game_id: str) -> tuple[GameState, TurnReport]:
         state = self.get_game(game_id)
-        report = simulate.settle_turn(state, self.world)
+        report = simulate.settle_turn(state, self.world, self._event_pool)
         return state, report

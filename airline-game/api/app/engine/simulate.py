@@ -10,8 +10,10 @@ from dataclasses import dataclass, field
 
 from app.engine import balance
 from app.engine.competitors import competitor_route_capacity, evolve_competitors
+from app.engine.events import get_cost_mult, get_demand_mult, process_events
 from app.engine.state import (
     AircraftModel,
+    ActiveEvent,
     ClassStats,
     FinanceHistoryEntry,
     FinanceTotals,
@@ -181,9 +183,22 @@ def allocate_city_pair(market: float, sellers: list[_Seller]) -> None:
         )
 
 
-def allocate_market(state: GameState, world: World, quarter: int) -> MarketAllocation:
+def allocate_market(
+    state: GameState,
+    world: World,
+    quarter: int,
+    active_events: list[ActiveEvent] | None = None,
+) -> MarketAllocation:
     """Run the share competition on every city pair served by the player or an
-    AI. Pairs are independent, so a stable pair order keeps this deterministic."""
+    AI. Pairs are independent, so a stable pair order keeps this deterministic.
+
+    active_events (M3.1): when provided, demand mults from in-scope events are
+    applied to marketPax before the share competition.  Demand changes affect
+    ALL sellers on the pair (player + AI + background), per CONTRACT §3.
+    """
+    if active_events is None:
+        active_events = []
+
     player_routes: dict[frozenset[str], Route] = {
         frozenset((route.city_a, route.city_b)): route for route in state.routes
     }
@@ -211,9 +226,12 @@ def allocate_market(state: GameState, world: World, quarter: int) -> MarketAlloc
             if player_route is not None
             else round(haversine_km(city_a.lat, city_a.lon, city_b.lat, city_b.lon), 1)
         )
-        market = market_pax(
+        base_market = market_pax(
             city_a.demand_index, city_b.demand_index, quarter, distance
         )
+        # M3.1: apply in-scope demand event mults (affects all sellers including AI).
+        demand_mult = get_demand_mult(active_events, city_a.id, city_b.id)
+        market = base_market * demand_mult
 
         sellers: list[_Seller] = []
         if player_route is not None:
@@ -256,7 +274,12 @@ def update_market_shares(state: GameState, allocation: MarketAllocation) -> None
 
 
 def simulate_route(
-    state: GameState, world: World, route: Route, quarter: int, pax: int
+    state: GameState,
+    world: World,
+    route: Route,
+    quarter: int,
+    pax: int,
+    active_events: list[ActiveEvent] | None = None,
 ) -> RouteQuarterStats:
     """One route's quarter per CONTRACT §3 M2.3; ``pax`` is the total allocated
     from the share competition model. With default cabin mix (100,0,0) and
@@ -329,11 +352,16 @@ def simulate_route(
     first_rev = first_pax * first_fare
     revenue = round(econ_rev + biz_rev + first_rev, 2)
 
-    # --- Operating costs ------------------------------------------------------
+    # --- Operating costs (with M3.1 event cost mults applied to player only) ----
+    if active_events is None:
+        active_events = []
     mean_fuel = _mean([m.fuel_kg_per_km for m in models])
     mean_cruise = _mean([m.cruise_kmh for m in models])
-    fuel_cost = distance * mean_fuel * balance.FUEL_USD_PER_KG * flights
-    airport_cost = (city_a.slot_fee + city_b.slot_fee) * flights
+    fuel_mult = get_cost_mult(active_events, "fuelCost")
+    slot_mult = get_cost_mult(active_events, "slotFee")
+    service_mult = get_cost_mult(active_events, "serviceCost")
+    fuel_cost = distance * mean_fuel * balance.FUEL_USD_PER_KG * flights * fuel_mult
+    airport_cost = (city_a.slot_fee + city_b.slot_fee) * flights * slot_mult
     block_hours = flights * block_hours_per_flight(distance, mean_cruise)
     crew_maint_cost = block_hours * balance.CREW_MAINT_USD_PER_BH
     # Service tier per-pax cost (M2.3); with tier=2 at defaults:
@@ -350,7 +378,7 @@ def simulate_route(
     # (defaults-equal-M2.2) in the M2.3 test suite verifies exact equality
     # ONLY against a fixture expected value, not against old test numbers.
     # CONTRACT is authoritative: service cost is always added.
-    service_cost = total_pax * balance.SERVICE_COST_PER_PAX[route.service_tier]
+    service_cost = total_pax * balance.SERVICE_COST_PER_PAX[route.service_tier] * service_mult
     cost = round(fuel_cost + airport_cost + crew_maint_cost + service_cost, 2)
 
     classes = {
@@ -438,17 +466,30 @@ def _build_final_result(state: GameState) -> FinalResult:
     )
 
 
-def settle_turn(state: GameState, world: World) -> TurnReport:
+def settle_turn(
+    state: GameState,
+    world: World,
+    event_pool: list | None = None,
+) -> TurnReport:
     """Settle the current quarter, mutate state (cash, finance, calendar,
-    status, news) and return the TurnReport for that settled quarter."""
+    status, news) and return the TurnReport for that settled quarter.
+
+    event_pool (M3.1): pass an explicit list[GameEvent] to override the global
+    static library.  Pass [] to disable events entirely (used by old tests that
+    need exact numbers).  Defaults to None → loaded static library.
+    """
     ensure_active(state)
 
     turn, year, quarter = state.turn, state.year, state.quarter
 
+    # M3.1: process events at START of settlement (decrement, expire, draw).
+    event_news = process_events(state, turn, event_pool)
+
     # AI airlines evolve before settlement (CONTRACT §3, M2.1).
     ai_news = evolve_competitors(state, world)
 
-    allocation = allocate_market(state, world, quarter)
+    # Pass active events so demand mults apply to the shared market allocation.
+    allocation = allocate_market(state, world, quarter, state.active_events)
     update_market_shares(state, allocation)
 
     route_stats: list[RouteTurnStats] = []
@@ -456,7 +497,9 @@ def settle_turn(state: GameState, world: World) -> TurnReport:
     routes_cost = 0.0
     for route in state.routes:
         stats = simulate_route(
-            state, world, route, quarter, allocation.route_pax.get(route.id, 0)
+            state, world, route, quarter,
+            allocation.route_pax.get(route.id, 0),
+            state.active_events,
         )
         route.last_quarter = stats
         route_stats.append(RouteTurnStats(**vars(stats), route_id=route.id))
@@ -480,6 +523,7 @@ def settle_turn(state: GameState, world: World) -> TurnReport:
     state.lifetime.pax += total_route_pax
 
     news = [
+        *event_news,
         NewsItem(
             headline=f"{year} 年 Q{quarter} 结算完成",
             detail=(

@@ -1,0 +1,422 @@
+[
+  {
+    "id": "evt-fuel-spike-1",
+    "source": "static",
+    "headline": "国际原油价格大幅上涨，航空燃油成本攀升",
+    "detail": "主要产油地区供应收紧，布伦特原油期货创近年新高，航空煤油价格随之显著上涨。",
+    "scope": {"kind": "global", "ids": []},
+    "effects": [{"target": "fuelCost", "mult": 1.35}],
+    "durationTurns": 3,
+    "severity": "major"
+  },
+  {
+    "id": "evt-fuel-spike-2",
+    "source": "static",
+    "headline": "地缘局势紧张推高油价，燃油附加费压力增大",
+    "detail": "中东地区局势动荡导致原油期货溢价扩大，航司普遍上调燃油附加费。",
+    "scope": {"kind": "global", "ids": []},
+    "effects": [{"target": "fuelCost", "mult": 1.20}],
+    "durationTurns": 2,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-fuel-drop-1",
+    "source": "static",
+    "headline": "全球原油供应过剩，航空燃油价格大幅下滑",
+    "detail": "主要产油国增产协议生效，国际油价回落，航空运营成本迎来喘息空间。",
+    "scope": {"kind": "global", "ids": []},
+    "effects": [{"target": "fuelCost", "mult": 0.75}],
+    "durationTurns": 3,
+    "severity": "major"
+  },
+  {
+    "id": "evt-fuel-drop-2",
+    "source": "static",
+    "headline": "原油价格温和回落，运营成本小幅改善",
+    "detail": "全球经济增长放缓压制能源需求，航油价格出现季节性下调。",
+    "scope": {"kind": "global", "ids": []},
+    "effects": [{"target": "fuelCost", "mult": 0.88}],
+    "durationTurns": 2,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-typhoon-hnd",
+    "source": "static",
+    "headline": "强台风袭击日本关东地区，东京机场短期关闭",
+    "detail": "台风携带强风暴雨登陆关东，羽田机场临时关闭，东京区域航班需求受到抑制。",
+    "scope": {"kind": "city", "ids": ["hnd"]},
+    "effects": [{"target": "demand", "mult": 0.65}],
+    "durationTurns": 1,
+    "severity": "major"
+  },
+  {
+    "id": "evt-typhoon-pvg",
+    "source": "static",
+    "headline": "台风影响长三角地区，上海浦东机场运力受限",
+    "detail": "热带气旋带来强降雨，上海浦东机场延误率大幅上升，旅客出行需求受到短暂冲击。",
+    "scope": {"kind": "city", "ids": ["pvg"]},
+    "effects": [{"target": "demand", "mult": 0.70}],
+    "durationTurns": 1,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-volcanic-sin",
+    "source": "static",
+    "headline": "印尼火山喷发，火山灰云波及新加坡空域",
+    "detail": "苏门答腊岛火山进入活跃期，大量火山灰进入高空气流，新加坡周边航路受到管制。",
+    "scope": {"kind": "city", "ids": ["sin"]},
+    "effects": [{"target": "demand", "mult": 0.75}, {"target": "fuelCost", "mult": 1.10}],
+    "durationTurns": 2,
+    "severity": "major"
+  },
+  {
+    "id": "evt-blizzard-nyc",
+    "source": "static",
+    "headline": "历史性暴雪席卷美国东北部，纽约机场大面积取消航班",
+    "detail": "强冬季风暴带来大量降雪，肯尼迪机场和纽瓦克机场相继关闭，旅客出行严重受阻。",
+    "scope": {"kind": "city", "ids": ["nyc"]},
+    "effects": [{"target": "demand", "mult": 0.60}],
+    "durationTurns": 1,
+    "severity": "major"
+  },
+  {
+    "id": "evt-blizzard-lhr",
+    "source": "static",
+    "headline": "异常寒流影响英国，伦敦希思罗机场运行受阻",
+    "detail": "北极高压南下带来罕见暴雪，希思罗机场跑道除冰作业导致大范围延误。",
+    "scope": {"kind": "city", "ids": ["lhr"]},
+    "effects": [{"target": "demand", "mult": 0.72}],
+    "durationTurns": 1,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-worldcup-lax",
+    "source": "static",
+    "headline": "FIFA 世界杯在洛杉矶举办，旅游需求大幅攀升",
+    "detail": "2026 年 FIFA 世界杯将多场关键赛事安排在洛杉矶，全球球迷涌入，机票需求激增。",
+    "scope": {"kind": "city", "ids": ["lax"]},
+    "effects": [{"target": "demand", "mult": 1.40}],
+    "durationTurns": 2,
+    "severity": "major"
+  },
+  {
+    "id": "evt-worldcup-nyc",
+    "source": "static",
+    "headline": "世界杯决赛周活动带动纽约国际旅客激增",
+    "detail": "纽约大都市区承办世界杯多项配套活动，入境旅客数量创历史新高。",
+    "scope": {"kind": "city", "ids": ["nyc"]},
+    "effects": [{"target": "demand", "mult": 1.35}],
+    "durationTurns": 2,
+    "severity": "major"
+  },
+  {
+    "id": "evt-olympics-cdg",
+    "source": "static",
+    "headline": "巴黎夏季奥运会吸引全球游客，戴高乐机场旅客量创新高",
+    "detail": "全球运动员与观众汇聚巴黎，巴黎戴高乐机场旅客吞吐量显著上升。",
+    "scope": {"kind": "city", "ids": ["cdg"]},
+    "effects": [{"target": "demand", "mult": 1.30}],
+    "durationTurns": 3,
+    "severity": "major"
+  },
+  {
+    "id": "evt-airshow-sin",
+    "source": "static",
+    "headline": "新加坡航展盛大举办，商务与观光旅客同步增长",
+    "detail": "两年一届的新加坡航空展吸引全球航空业者与参观者，商务舱需求尤为旺盛。",
+    "scope": {"kind": "city", "ids": ["sin"]},
+    "effects": [{"target": "demand", "mult": 1.20}],
+    "durationTurns": 1,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-expo-pvg",
+    "source": "static",
+    "headline": "上海举办大型国际博览会，国际旅客需求激增",
+    "detail": "大规模国际展会在上海国家会展中心举行，吸引数十万境外参展商和观众。",
+    "scope": {"kind": "city", "ids": ["pvg"]},
+    "effects": [{"target": "demand", "mult": 1.25}],
+    "durationTurns": 2,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-f1-dxb",
+    "source": "static",
+    "headline": "F1 大奖赛重返迪拜，中东航空枢纽迎来客流高峰",
+    "detail": "首届迪拜 F1 大奖赛举办，富裕旅客大量涌入，阿联酋及周边路线高端需求显著提升。",
+    "scope": {"kind": "city", "ids": ["dxb"]},
+    "effects": [{"target": "demand", "mult": 1.15}],
+    "durationTurns": 1,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-policy-open-sky",
+    "source": "static",
+    "headline": "多国签署开放天空协议，国际航权大幅扩容",
+    "detail": "新一轮多边开放天空谈判达成共识，跨太平洋及跨大西洋航线增班限制大幅放宽。",
+    "scope": {"kind": "global", "ids": []},
+    "effects": [{"target": "demand", "mult": 1.10}],
+    "durationTurns": 4,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-policy-visa-ease",
+    "source": "static",
+    "headline": "主要经济体放宽签证限制，跨境旅行需求回升",
+    "detail": "多个国家宣布对主要客源国实施落地签或免签政策，国际旅游市场迎来提振。",
+    "scope": {"kind": "global", "ids": []},
+    "effects": [{"target": "demand", "mult": 1.08}],
+    "durationTurns": 3,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-policy-visa-ease-asia",
+    "source": "static",
+    "headline": "亚太地区多国简化入境手续，区域旅游复苏加速",
+    "detail": "东亚及东南亚主要旅游目的地联合推出便利化入境措施，区域内旅客流量持续回暖。",
+    "scope": {"kind": "city", "ids": ["hnd", "pvg", "sin"]},
+    "effects": [{"target": "demand", "mult": 1.12}],
+    "durationTurns": 3,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-policy-slot-restrict",
+    "source": "static",
+    "headline": "监管机构收紧核心机场时刻分配，时刻费用上调",
+    "detail": "欧洲航空安全局与美国联邦航空局联合发布新规，核心机场时刻稀缺程度上升，费用随之提高。",
+    "scope": {"kind": "global", "ids": []},
+    "effects": [{"target": "slotFee", "mult": 1.25}],
+    "durationTurns": 4,
+    "severity": "major"
+  },
+  {
+    "id": "evt-policy-cabotage",
+    "source": "static",
+    "headline": "部分地区收紧境外航司经营权，市场竞争格局改变",
+    "detail": "多个国家修订双边航空协议，外国航司在特定航线的运营许可受到限制，票价竞争略有缓和。",
+    "scope": {"kind": "city", "ids": ["mex", "gru"]},
+    "effects": [{"target": "demand", "mult": 0.92}],
+    "durationTurns": 3,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-health-scare-global",
+    "source": "static",
+    "headline": "全球健康预警发布，国际旅行需求明显回落",
+    "detail": "世界卫生组织就新型呼吸道疾病发出旅行健康警示，多国旅行者推迟出行计划。",
+    "scope": {"kind": "global", "ids": []},
+    "effects": [{"target": "demand", "mult": 0.72}],
+    "durationTurns": 3,
+    "severity": "major"
+  },
+  {
+    "id": "evt-health-scare-asia",
+    "source": "static",
+    "headline": "亚洲地区出现季节性疫情预警，区域旅客信心受挫",
+    "detail": "东亚多国出现不明原因呼吸道疾病聚集性病例，旅游平台预订量短暂下滑。",
+    "scope": {"kind": "city", "ids": ["hnd", "pvg", "sin"]},
+    "effects": [{"target": "demand", "mult": 0.80}],
+    "durationTurns": 2,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-health-recovery",
+    "source": "static",
+    "headline": "疫情管控解除，被压制需求集中释放",
+    "detail": "主要疫情防控措施取消后，积压的出行需求大量释放，多条航线出现超额预订。",
+    "scope": {"kind": "global", "ids": []},
+    "effects": [{"target": "demand", "mult": 1.18}],
+    "durationTurns": 2,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-economy-boom",
+    "source": "static",
+    "headline": "全球经济景气度上升，商务出行与休闲旅行同步增长",
+    "detail": "多项经济指标显示全球经济进入景气上行周期，消费者信心增强，航空需求全面提升。",
+    "scope": {"kind": "global", "ids": []},
+    "effects": [{"target": "demand", "mult": 1.12}],
+    "durationTurns": 4,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-economy-boom-strong",
+    "source": "static",
+    "headline": "全球经济超预期扩张，跨国商务旅行需求创周期新高",
+    "detail": "G20 经济体整体 GDP 增速超过预期，企业差旅预算明显扩大，高端舱位需求尤为突出。",
+    "scope": {"kind": "global", "ids": []},
+    "effects": [{"target": "demand", "mult": 1.22}],
+    "durationTurns": 3,
+    "severity": "major"
+  },
+  {
+    "id": "evt-economy-recession",
+    "source": "static",
+    "headline": "全球经济衰退预期升温，企业缩减差旅预算",
+    "detail": "主要经济体 PMI 连续下滑，市场情绪转向谨慎，航空公司普遍面临票价下行压力。",
+    "scope": {"kind": "global", "ids": []},
+    "effects": [{"target": "demand", "mult": 0.82}],
+    "durationTurns": 4,
+    "severity": "major"
+  },
+  {
+    "id": "evt-economy-slowdown",
+    "source": "static",
+    "headline": "经济增长放缓，消费者非必要出行意愿有所下降",
+    "detail": "通胀压力持续，居民可支配收入增速收窄，中短途旅游市场出现一定程度降温。",
+    "scope": {"kind": "global", "ids": []},
+    "effects": [{"target": "demand", "mult": 0.90}],
+    "durationTurns": 3,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-economy-latam",
+    "source": "static",
+    "headline": "拉美经济承压，南美洲旅行需求疲软",
+    "detail": "巴西、墨西哥等主要拉美经济体增速下滑，出境旅行需求相应收缩。",
+    "scope": {"kind": "city", "ids": ["gru", "mex"]},
+    "effects": [{"target": "demand", "mult": 0.85}],
+    "durationTurns": 3,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-airport-expand-fra",
+    "source": "static",
+    "headline": "法兰克福机场新候机楼启用，时刻容量显著扩大",
+    "detail": "法兰克福国际机场北扩项目竣工投产，新增停机位和登机桥，时刻资源供给更加充裕。",
+    "scope": {"kind": "city", "ids": ["fra"]},
+    "effects": [{"target": "slotFee", "mult": 0.82}],
+    "durationTurns": 4,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-airport-expand-dxb",
+    "source": "static",
+    "headline": "迪拜 Al Maktoum 机场扩建完成，中东枢纽容量翻番",
+    "detail": "世界最大机场扩建工程正式投运，迪拜机场时刻费用随容量提升出现下调。",
+    "scope": {"kind": "city", "ids": ["dxb"]},
+    "effects": [{"target": "slotFee", "mult": 0.78}],
+    "durationTurns": 5,
+    "severity": "major"
+  },
+  {
+    "id": "evt-airport-expand-syd",
+    "source": "static",
+    "headline": "悉尼第二机场正式投运，新南威尔士州航空容量大幅提升",
+    "detail": "悉尼南部新机场开航，有效分流时刻需求，机场使用费整体水平下调。",
+    "scope": {"kind": "city", "ids": ["syd"]},
+    "effects": [{"target": "slotFee", "mult": 0.80}],
+    "durationTurns": 5,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-labor-dispute-service",
+    "source": "static",
+    "headline": "地面保障人员薪资谈判陷入僵局，服务成本大幅攀升",
+    "detail": "多个主要机场地勤及餐饮服务商工会发起集体谈判，人工成本压力向航空公司传导。",
+    "scope": {"kind": "global", "ids": []},
+    "effects": [{"target": "serviceCost", "mult": 1.28}],
+    "durationTurns": 2,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-labor-dispute-major",
+    "source": "static",
+    "headline": "航空业大规模劳资纠纷爆发，运营成本全线上升",
+    "detail": "航空公司机组人员与地面服务人员同步发动薪资谈判，各项服务成本显著抬升。",
+    "scope": {"kind": "global", "ids": []},
+    "effects": [{"target": "serviceCost", "mult": 1.40}],
+    "durationTurns": 3,
+    "severity": "major"
+  },
+  {
+    "id": "evt-labor-catering",
+    "source": "static",
+    "headline": "欧洲主要航空配餐公司停工，机上服务成本上涨",
+    "detail": "LSG 等欧洲知名航空配餐企业工人发起罢工，配餐替代方案推高每客服务成本。",
+    "scope": {"kind": "city", "ids": ["lhr", "cdg", "fra"]},
+    "effects": [{"target": "serviceCost", "mult": 1.20}],
+    "durationTurns": 2,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-carbon-tax",
+    "source": "static",
+    "headline": "欧盟扩大碳交易体系覆盖范围，航空燃油成本上涨",
+    "detail": "欧盟将更多国际航线纳入碳排放交易体系，碳配额成本增加推高运营费用。",
+    "scope": {"kind": "city", "ids": ["lhr", "cdg", "fra"]},
+    "effects": [{"target": "fuelCost", "mult": 1.12}],
+    "durationTurns": 4,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-sustainable-fuel",
+    "source": "static",
+    "headline": "可持续航空燃料规模化推广，燃油成本小幅下降",
+    "detail": "主要航空枢纽 SAF 供应量显著增加，混合使用比例提升后单位燃油成本出现下调。",
+    "scope": {"kind": "global", "ids": []},
+    "effects": [{"target": "fuelCost", "mult": 0.92}],
+    "durationTurns": 4,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-currency-boost-europe",
+    "source": "static",
+    "headline": "欧元区汇率利好，赴欧旅行成本下降推动需求回升",
+    "detail": "欧元相对美元贬值，欧洲旅行性价比提升，赴欧商务及旅游客流同步增长。",
+    "scope": {"kind": "city", "ids": ["lhr", "cdg", "fra"]},
+    "effects": [{"target": "demand", "mult": 1.10}],
+    "durationTurns": 2,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-tech-boom-hnd-pvg",
+    "source": "static",
+    "headline": "东亚科技产业高景气，商务舱及高端旅行需求增加",
+    "detail": "日本与中国科技产业进入景气扩张周期，跨境商务出行频率上升。",
+    "scope": {"kind": "city", "ids": ["hnd", "pvg"]},
+    "effects": [{"target": "demand", "mult": 1.14}],
+    "durationTurns": 3,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-summer-peak",
+    "source": "static",
+    "headline": "全球夏季旅游旺季提前到来，各大枢纽出行需求超预期",
+    "detail": "北半球夏季旅游旺季开局强劲，长途休闲旅行市场提前进入高峰。",
+    "scope": {"kind": "global", "ids": []},
+    "effects": [{"target": "demand", "mult": 1.08}],
+    "durationTurns": 2,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-infrastructure-nyc",
+    "source": "static",
+    "headline": "纽约 JFK 机场大规模翻新完成，运营效率显著提升",
+    "detail": "纽约肯尼迪机场历时多年的现代化改造竣工，新航站楼开放后时刻配置更加灵活，机场费用下调。",
+    "scope": {"kind": "city", "ids": ["nyc"]},
+    "effects": [{"target": "slotFee", "mult": 0.85}],
+    "durationTurns": 5,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-fuel-supply-disruption",
+    "source": "static",
+    "headline": "主要炼油厂设施故障，亚太地区航煤供应临时紧张",
+    "detail": "新加坡及香港地区关键炼油设施出现技术故障，亚太航线燃油补给成本短期攀升。",
+    "scope": {"kind": "city", "ids": ["sin", "hnd", "pvg", "syd"]},
+    "effects": [{"target": "fuelCost", "mult": 1.18}],
+    "durationTurns": 2,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-slot-reform-global",
+    "source": "static",
+    "headline": "国际民航组织推进时刻改革，全球机场费率结构调整",
+    "detail": "ICAO 新规要求成员国航空当局重新核定机场收费标准，部分繁忙机场费率上调。",
+    "scope": {"kind": "global", "ids": []},
+    "effects": [{"target": "slotFee", "mult": 1.15}],
+    "durationTurns": 3,
+    "severity": "minor"
+  }
+]

@@ -81,3 +81,14 @@ GAME_LENGTH_TURNS = 80  # 2026 Q3 → 2046 Q2, 20 years (CONTRACT §3)
 
 # --- Geometry --------------------------------------------------------------------
 EARTH_RADIUS_KM = 6_371.0
+
+# --- Dynamic events (M3.1) -------------------------------------------------------
+EVENT_CHANCE = 0.45            # probability per turn of drawing one new event
+EVENT_SEVERITY_WEIGHTS = {"minor": 3, "major": 1}  # draw weights by severity
+EVENT_EFFECT_MULT_MIN = 0.5    # per-entry mult lower bound (invalid entry if violated)
+EVENT_EFFECT_MULT_MAX = 2.0    # per-entry mult upper bound (invalid entry if violated)
+EVENT_DURATION_MIN = 1         # durationTurns lower bound
+EVENT_DURATION_MAX = 8         # durationTurns upper bound
+# Stacked same-target multiplier product is clamped to this range (CONTRACT §3).
+EVENT_STACK_CLAMP_LO = 0.25
+EVENT_STACK_CLAMP_HI = 4.0

@@ -49,3 +49,32 @@ def load_world(data_dir: Path | None = None) -> World:
         for row in aircraft_raw
     }
     return World(cities=cities, aircraft_models=aircraft_models)
+
+
+def load_events(data_dir: Path | None = None) -> list:
+    """Load and validate the static event library from events-static.json.
+
+    Returns a list of validated GameEvent objects.  Invalid entries are
+    silently skipped (CONTRACT §3 M3.1).  The caller is responsible for
+    passing this pool to GameService (or to settle_turn directly in tests).
+    No global state is mutated here.
+    """
+    # Import here to avoid circular dependency (events.py imports from state.py
+    # which is pure; data.py wires I/O to the engine).
+    from app.engine.events import validate_event
+
+    base = data_dir or DATA_DIR
+    events_path = base / "events-static.json"
+    if not events_path.exists():
+        return []
+
+    with open(events_path, encoding="utf-8") as fh:
+        raw_list = json.load(fh)
+
+    pool = []
+    for raw in raw_list:
+        ev = validate_event(raw)
+        if ev is not None:
+            pool.append(ev)
+
+    return pool

@@ -17,6 +17,58 @@ class GameOverError(Exception):
     """Raised when commands or settlements are attempted on a bankrupt or finished game."""
 
 
+# --- M3.1 dynamic event types --------------------------------------------------
+
+
+@dataclass
+class EventEffect:
+    """One effect entry inside a GameEvent (CONTRACT §2, M3.1).
+    target: fuelCost | demand | slotFee | serviceCost
+    mult: [0.5, 2.0] per single entry; stacked mults clamped to [0.25, 4.0].
+    """
+
+    target: str  # "fuelCost" | "demand" | "slotFee" | "serviceCost"
+    mult: float
+
+
+@dataclass
+class EventScope:
+    kind: str  # "global" | "city" | "route"
+    ids: list[str] = field(default_factory=list)
+
+
+@dataclass
+class GameEvent:
+    """A static or news-sourced event definition (CONTRACT §2, M3.1)."""
+
+    id: str
+    source: str  # "static" | "news"
+    headline: str
+    scope: EventScope
+    effects: list[EventEffect]
+    duration_turns: int  # [1, 8]
+    severity: str  # "minor" | "major"
+    detail: str | None = None
+    source_url: str | None = None
+
+
+@dataclass
+class ActiveEvent:
+    """A GameEvent that is currently in effect (CONTRACT §2, M3.1)."""
+
+    id: str
+    source: str
+    headline: str
+    scope: EventScope
+    effects: list[EventEffect]
+    duration_turns: int
+    severity: str
+    detail: str | None = None
+    source_url: str | None = None
+    started_turn: int = 0
+    remaining_turns: int = 0
+
+
 # --- Static world data (loaded from airline-game/data/*.json by the app layer) --
 
 
@@ -214,6 +266,8 @@ class GameState:
     # snapshot (compute_slot_market), never raw.
     slots_held: dict[str, int] = field(default_factory=dict)
     last_negotiation_turn: dict[str, int] = field(default_factory=dict)
+    # M3.1: currently active events (serialized as camelCase via the schema layer).
+    active_events: list[ActiveEvent] = field(default_factory=list)
     # Engine-internal bookkeeping — not exposed through the API schemas.
     negative_cash_quarters: int = 0
     next_aircraft_seq: int = 1

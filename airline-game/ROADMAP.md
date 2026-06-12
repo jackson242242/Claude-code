@@ -28,11 +28,13 @@
   终局按最终季 marketShare 排名（并列玩家优先、AI 按名册序），lifetime 累计利润/乘客；
   前端胜利「称霸蓝天」/失败名次画面 + 第 N/80 季进度。api 124 测 + web 60 测全绿。
 
+- [x] **M3.1+M3.2 动态事件系统与静态库**（2026-06-12，/airline-cycle）：事件引擎
+  （确定性种子抽取 EVENT_CHANCE=0.45、效果同 target 相乘夹紧 [0.25,4]、到期消退、
+  可注入事件池保旧测精确）+ 42 条中文静态事件（28 minor/14 major，油价/灾害/赛事/
+  政策/疫情/经济/扩建/劳资/碳税，全数过 schema 校验）；前端 EventTicker 药丸条+
+  效果弹层。api 180 测 + web 83 测全绿；e2e 8 回合实测抽取/叠加/消退正常。
+
 ## 待办（按序取最上面一条可做的）
-- [ ] **M3.1 事件系统接入**：CONTRACT §「GameEvent schema」落地（见计划文档 §4.3）
-  ——引擎修正器叠加与到期消退、回合抽取、前端「世界新闻播报」UI 与季报联动。
-- [ ] **M3.2 静态事件库**：手写 ~40 条（油价/灾害/赛事/政策/流行病），
-  data/events-static.json，权重抽取 + 单测。
 - [ ] **M4.1 NewsProvider 抽象**：api/app/providers/（base + mock + GDELT 免费源），
   注册表模式同主仓库 backend/app/providers。
 - [ ] **M4.2 LLM 结构化管道**：Claude API 把新闻转 GameEvent（Pydantic 强校验 +

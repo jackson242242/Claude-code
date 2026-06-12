@@ -118,6 +118,33 @@ class NewsItem(CamelModel):
     kind: Literal["system", "event"] = "system"
 
 
+# --- M3.1 dynamic event schemas -----------------------------------------------
+
+
+class EventEffect(CamelModel):
+    target: Literal["fuelCost", "demand", "slotFee", "serviceCost"]
+    mult: float
+
+
+class EventScope(CamelModel):
+    kind: Literal["global", "city", "route"]
+    ids: list[str] = Field(default_factory=list)
+
+
+class ActiveEvent(CamelModel):
+    id: str
+    source: Literal["static", "news"]
+    headline: str
+    scope: EventScope
+    effects: list[EventEffect]
+    duration_turns: int
+    severity: Literal["minor", "major"]
+    detail: str | None = None
+    source_url: str | None = None
+    started_turn: int
+    remaining_turns: int
+
+
 class FinanceTotals(CamelModel):
     revenue: float
     cost: float
@@ -182,6 +209,8 @@ class GameState(CamelModel):
     # M2.4: lifetime stats and final result.
     lifetime: Lifetime = Field(default_factory=Lifetime)
     final_result: FinalResult | None = None
+    # M3.1: active events.
+    active_events: list[ActiveEvent] = Field(default_factory=list)
 
 
 class RouteTurnStats(RouteQuarterStats):
