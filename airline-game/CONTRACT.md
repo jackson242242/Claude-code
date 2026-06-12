@@ -115,6 +115,7 @@ type GameState = {
   status: "active" | "bankrupt" | "finished";   // finished：M2.4 到期结算
   lifetime: { profit: number; pax: number };    // M2.4：累计利润/乘客（每季累加）
   finalResult: FinalResult | null;              // M2.4：终局前为 null
+  activeEvents: ActiveEvent[];                  // M3.1：当前生效事件
 };
 
 // M2.4 终局结算
@@ -139,6 +140,26 @@ type Competitor = {
 };
 
 type NewsItem = { headline: string; detail?: string; kind: "system" | "event" };
+
+// M3.1 动态事件（静态库与 M4 新闻管道共用同一 schema）
+type EventEffect = {
+  target: "fuelCost" | "demand" | "slotFee" | "serviceCost";
+  mult: number;               // 单条限 [0.5, 2.0]，越界事件整条作废
+};
+
+type GameEvent = {
+  id: string;                 // 静态库内唯一，如 "evt-fuel-spike"
+  source: "static" | "news";
+  headline: string;           // 中文播报标题
+  detail?: string;
+  sourceUrl?: string;         // news 事件的原始新闻链接（M4）
+  scope: { kind: "global" | "city" | "route"; ids: string[] };
+  effects: EventEffect[];     // 1–3 条
+  durationTurns: number;      // 限 [1, 8]
+  severity: "minor" | "major";
+};
+
+type ActiveEvent = GameEvent & { startedTurn: number; remainingTurns: number };
 
 type Command =
   | { type: "buyAircraft";   modelId: string }
@@ -225,6 +246,18 @@ type TurnReport = {
   租赁 = `price × LEASE_RATE_Q`（2.75%）。未指派的飞机同样产生持有成本。
 - **总部开销**：`HQ_OVERHEAD + ADMIN_PER_AIRCRAFT × fleetSize` 每季度。
 - **破产**：连续 2 个季度结束时 `cash < 0` → `status = "bankrupt"`，拒绝后续命令与回合。
+- **动态事件（M3.1）**：每回合结算**开始**时处理事件，顺序：先递减 remainingTurns
+  并移除到期事件，再确定性抽取新事件（PRNG 种子 = 字符串 `"{gameId}:{turn}"`，
+  `random.Random(seed)`）：以 `EVENT_CHANCE = 0.45` 概率从事件池抽 1 条
+  （按 `severity` 加权：minor 权重 3、major 权重 1；已激活的 id 不重复抽）。
+  - 事件池 = 静态库 `data/events-static.json`（M3.2 填充，M3.1 先用测试夹具）
+    ＋ 待生效新闻事件（M4.3）。schema 校验失败或 mult 越界的条目整条忽略。
+  - **效果应用**（同 target 多事件相乘，乘积夹紧 [0.25, 4.0]）：
+    `demand` → 作用域内城市对的 `marketPax`；`fuelCost` → 燃油成本；
+    `slotFee` → 机场费；`serviceCost` → 每客服务成本。
+    作用域命中：global = 全部；city = 城市对任一端 ∈ ids；route = 两端恰为 ids 两城。
+    AI 与玩家同受影响（分配模型的 marketPax 是共用的；成本类仅作用玩家——AI 无成本模型）。
+  - 激活时生成 `NewsItem{kind:"event"}` 播报进当回合季报；`activeEvents` 随状态返回。
 - **终局（M2.4）**：`GAME_LENGTH_TURNS = 80`（2026 Q3 → 2046 Q2，20 年）。第 80 回合
   结算完成后 `status = "finished"`，计算 `finalResult` 并随状态返回；此后命令与
   end-turn 一律拒绝（与破产同语义，错误信息区分「比赛已结束」）。
