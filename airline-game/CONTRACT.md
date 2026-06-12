@@ -29,7 +29,13 @@
 - 缺省值：新开航线 `weeklyFlights = 7`、`fareMult = 1.0`；`leaseAircraft` 无首付，
   只产生每季度租金；`CommandResult.message` 缺省序列化为 `null`。
 - `CommandResult = { index: number, ok: boolean, message?: string }`；单条失败不影响其余命令。
-- 存储：内存 dict + 进程内自增 id（M1 不接 PG；接口留 service 层便于 M5 换存储）。
+- 存储（M5.1 起双模式，service 层之下可替换）：
+  - **JSON 文件**（缺省）：`GAMES_FILE`（缺省 `api/var/games.json`，目录自动建），
+    每次变更后整体落盘，启动时恢复；写失败仅记日志不影响游戏（降级为内存）。
+  - **PostgreSQL**：配置 `DATABASE_URL` 时启用；表结构以 `api/schema.sql` 为源
+    （games 表：id text PK、state jsonb、updated_at timestamptz）。先改 schema.sql
+    再改代码（与主仓库同红线）。
+  - 游戏 id 在持久化模式下用 uuid4 短串（防重启撞自增 id）；内存测试模式保持自增。
 
 ## 2. 核心类型（TypeScript 形式，后端 Pydantic 同构）
 
