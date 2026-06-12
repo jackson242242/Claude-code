@@ -7,6 +7,7 @@ import { GameScreen } from '@/components/GameScreen';
 import { StartScreen } from '@/components/StartScreen';
 import { TurnReportModal } from '@/components/TurnReportModal';
 import { createGame, endTurn, getGame, sendCommands } from '@/services/api';
+import { voice } from '@/lib/voice';
 import type { Command, GameState, TurnReport } from '@/types';
 
 const STORAGE_KEY = 'skyempire.gameId';
@@ -82,6 +83,7 @@ const Page = () => {
       const { state: next, report: turnReport } = await endTurn(state.id);
       setState(next);
       setReport(turnReport);
+      voice.speakTurnReport(turnReport, next.turn);
     });
   }, [run, state]);
 

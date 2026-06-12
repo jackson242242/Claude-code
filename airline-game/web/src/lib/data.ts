@@ -3,8 +3,11 @@
 import citiesJson from '../../../data/cities.json';
 import aircraftJson from '../../../data/aircraft.json';
 import aircraftImagesJson from '../../../data/aircraft-images.json';
+import cityImagesJson from '../../../data/city-images.json';
 
-import type { AircraftImageManifest, AircraftModel, City } from '@/types';
+import type { AircraftImageManifest, AircraftModel, City, CityImageManifest } from '@/types';
+
+export type { CityImageEntry, CityImageManifest } from '@/types';
 
 export const CITIES: City[] = citiesJson;
 
@@ -14,6 +17,11 @@ export const AIRCRAFT_MODELS: AircraftModel[] = aircraftJson;
 // every consumer must tolerate missing entries (silhouette fallback).
 export const AIRCRAFT_IMAGES: AircraftImageManifest =
   aircraftImagesJson as AircraftImageManifest;
+
+// city-images.json may be {} (created empty when the parallel agent hasn't run);
+// consumers must tolerate missing entries and show a gradient placeholder.
+export const CITY_IMAGES: CityImageManifest =
+  cityImagesJson as CityImageManifest;
 
 export const CITY_BY_ID: ReadonlyMap<string, City> = new Map(
   CITIES.map((city) => [city.id, city]),

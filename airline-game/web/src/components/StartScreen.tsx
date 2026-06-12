@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { CityCard } from '@/components/CityCard';
 import { CITIES } from '@/lib/data';
 
 type StartScreenProps = {
@@ -9,21 +10,21 @@ type StartScreenProps = {
   onCreate: (airlineName: string, hqCityId: string) => void;
 };
 
-const DemandDots = ({ value }: { value: number }) => (
-  <span className="flex gap-0.5" aria-label={`需求指数 ${value}/10`}>
-    {Array.from({ length: 10 }, (_, i) => (
-      <span
-        key={i}
-        className={`h-1.5 w-1.5 rounded-full ${i < value ? 'bg-glow' : 'bg-ops-600'}`}
-      />
-    ))}
-  </span>
-);
-
 export const StartScreen = ({ busy, error, onCreate }: StartScreenProps) => {
   const [airlineName, setAirlineName] = useState('');
   const [hqCityId, setHqCityId] = useState<string | null>(null);
+  const [search, setSearch] = useState('');
   const canCreate = airlineName.trim().length > 0 && hqCityId !== null && !busy;
+
+  const query = search.trim().toLowerCase();
+  const filteredCities = CITIES.filter((city) => {
+    if (!query) return true;
+    return (
+      city.name.toLowerCase().includes(query) ||
+      city.nameZh.includes(query) ||
+      city.country.toLowerCase().includes(query)
+    );
+  }).sort((a, b) => b.demandIndex - a.demandIndex);
 
   return (
     <main className="mx-auto flex min-h-dvh max-w-3xl flex-col gap-6 px-4 py-8">
@@ -51,35 +52,30 @@ export const StartScreen = ({ busy, error, onCreate }: StartScreenProps) => {
 
       <section>
         <h2 className="mb-3 text-sm font-semibold text-slate-300">选择总部枢纽（HQ）</h2>
+
+        {/* Search */}
+        <input
+          type="search"
+          value={search}
+          onChange={(event) => setSearch(event.target.value)}
+          placeholder="搜索城市、国家…"
+          aria-label="搜索城市"
+          className="mb-3 w-full rounded-lg border border-ops-600 bg-ops-900 px-3 py-2 text-sm text-white outline-none placeholder:text-slate-600 focus:border-glow"
+        />
+
+        {filteredCities.length === 0 && (
+          <p className="text-sm text-slate-500">未找到匹配城市</p>
+        )}
+
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-          {CITIES.map((city) => {
-            const selected = city.id === hqCityId;
-            return (
-              <button
-                key={city.id}
-                type="button"
-                onClick={() => setHqCityId(city.id)}
-                aria-pressed={selected}
-                className={`panel flex flex-col gap-1.5 p-3 text-left transition ${
-                  selected
-                    ? 'border-accent ring-1 ring-accent'
-                    : 'hover:border-glow-dim'
-                }`}
-              >
-                <span className="flex items-baseline justify-between">
-                  <span className="text-base font-bold text-white">{city.nameZh}</span>
-                  <span className="text-[10px] uppercase tracking-wider text-slate-500">
-                    {city.country}
-                  </span>
-                </span>
-                <span className="text-xs text-slate-400">{city.name}</span>
-                <span className="mt-1 flex items-center justify-between text-[10px] text-slate-500">
-                  <DemandDots value={city.demandIndex} />
-                  <span className="text-glow">{city.demandIndex}/10</span>
-                </span>
-              </button>
-            );
-          })}
+          {filteredCities.map((city) => (
+            <CityCard
+              key={city.id}
+              city={city}
+              selected={city.id === hqCityId}
+              onClick={() => setHqCityId(city.id)}
+            />
+          ))}
         </div>
       </section>
 

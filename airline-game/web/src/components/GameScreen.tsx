@@ -1,11 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { EventTicker } from '@/components/EventTicker';
 import { SlotBadge } from '@/components/SlotBadge';
 import { TopBar } from '@/components/TopBar';
 import { WorldMap } from '@/components/WorldMap';
-import { cityLabel } from '@/lib/data';
+import { cityLabel, CITY_IMAGES } from '@/lib/data';
+import { voice } from '@/lib/voice';
 import { FinanceTab } from '@/components/tabs/FinanceTab';
 import { FleetTab } from '@/components/tabs/FleetTab';
 import { MarketTab } from '@/components/tabs/MarketTab';
@@ -22,6 +23,51 @@ const TABS: { id: TabId; label: string }[] = [
   { id: 'finance', label: '财务' },
   { id: 'news', label: '新闻' },
 ];
+
+// Deterministic gradient based on id charCode sum.
+const GRADIENT_PAIRS: [string, string][] = [
+  ['#1a3a5c', '#0d6e8a'],
+  ['#2d1b69', '#7b2d8b'],
+  ['#1a4731', '#2d8a5e'],
+  ['#5c2a1a', '#c0692b'],
+  ['#1a1a5c', '#2b4fc0'],
+  ['#3d1a5c', '#8b5cf6'],
+  ['#5c1a3a', '#c02b6e'],
+  ['#1a4a4a', '#2b8a8a'],
+];
+
+const getGradient = (id: string): [string, string] => {
+  const sum = id.split('').reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
+  return GRADIENT_PAIRS[sum % GRADIENT_PAIRS.length];
+};
+
+type CityPhotoProps = { cityId: string };
+
+const CityPhoto = ({ cityId }: CityPhotoProps) => {
+  const [imgError, setImgError] = useState(false);
+  const entry = CITY_IMAGES[cityId];
+  const showImg = !!entry && !imgError;
+  const [from, to] = getGradient(cityId);
+
+  if (showImg) {
+    return (
+      <img
+        src={entry.url}
+        alt={`${cityId} skyline`}
+        loading="lazy"
+        onError={() => setImgError(true)}
+        className="h-16 w-20 flex-none rounded object-cover"
+      />
+    );
+  }
+  return (
+    <div
+      data-testid={`city-gradient-${cityId}`}
+      className="h-16 w-20 flex-none rounded"
+      style={{ background: `linear-gradient(135deg, ${from} 0%, ${to} 100%)` }}
+    />
+  );
+};
 
 type GameScreenProps = {
   state: GameState;
@@ -42,6 +88,17 @@ export const GameScreen = ({
 }: GameScreenProps) => {
   const [tab, setTab] = useState<TabId>('routes');
   const [selectedCityId, setSelectedCityId] = useState<string | null>(null);
+
+  // Speak major events when they first appear.
+  const spokenEventIds = useRef<Set<string>>(new Set());
+  useEffect(() => {
+    for (const event of state.activeEvents) {
+      if (event.severity === 'major' && !spokenEventIds.current.has(event.id)) {
+        spokenEventIds.current.add(event.id);
+        voice.speakMajorEvent(event.headline);
+      }
+    }
+  }, [state.activeEvents]);
 
   const handleSelectCity = (cityId: string) => {
     setSelectedCityId(cityId);
@@ -67,12 +124,18 @@ export const GameScreen = ({
           {selectedCityId && (
             <div
               data-testid="map-city-slots"
-              className="absolute bottom-2 left-2 flex max-w-[92%] flex-wrap items-center gap-2 rounded-lg border border-ops-700 bg-ops-900/90 px-2.5 py-1.5 backdrop-blur"
+              className="absolute bottom-2 left-2 flex max-w-[92%] items-start gap-2 rounded-lg border border-ops-700 bg-ops-900/90 px-2.5 py-1.5 backdrop-blur"
             >
-              <span className="text-xs font-semibold text-slate-200">
-                {cityLabel(selectedCityId)}
-              </span>
-              <SlotBadge cityId={selectedCityId} info={state.slotMarket[selectedCityId]} />
+              {/* Skyline thumbnail */}
+              <CityPhoto cityId={selectedCityId} />
+
+              {/* City name + slot badge */}
+              <div className="flex flex-col gap-1">
+                <span className="text-xs font-semibold text-slate-200">
+                  {cityLabel(selectedCityId)}
+                </span>
+                <SlotBadge cityId={selectedCityId} info={state.slotMarket[selectedCityId]} />
+              </div>
             </div>
           )}
         </div>

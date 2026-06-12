@@ -178,3 +178,12 @@ export type AircraftImageEntry = {
 };
 
 export type AircraftImageManifest = Record<string, AircraftImageEntry>;
+
+// city-images.json manifest entry — skyline photos.
+export type CityImageEntry = {
+  url: string;
+  filePage: string;
+  credit: string;
+};
+
+export type CityImageManifest = Record<string, CityImageEntry>;
