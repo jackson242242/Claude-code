@@ -1,102 +1,51 @@
-# Render Blueprint — World Cup 2026 Tour Guide
+# Render Blueprint — SkyEmpire 蓝天霸业（本分支专属）
 #
-# Stands up the full app on Render: a FastAPI backend (worldcup-api) and a
-# Next.js frontend (worldcup-web). Two secrets (both `sync: false`, so Render
-# prompts for them): DUFFEL_API_KEY powers live flights (Duffel Air) and
-# LITEAPI_API_KEY powers live hotels (LiteAPI). Either can be omitted — on a
-# missing key or any upstream error the API degrades gracefully to deterministic
-# seed/mock data for that vertical, so the site always renders.
+# 注意：本分支（claude/airline-tycoon-dynamic-events-ps9if8）是 SkyEmpire 游戏的
+# 主线。Matchday26 的蓝图在它自己的部署分支上，互不影响——从本分支创建 Blueprint
+# 实例只会管理下面两个游戏服务。
 #
-# The two cross-service URLs are wired automatically via `fromService` hosts;
-# the app code tolerates a bare host (defaults to https). PostgreSQL is optional
-# and omitted here — the API runs on in-process seed data + in-memory trips. See
-# DEPLOY.md to add a managed database for persistence.
+# 老板操作（一次性）：Render Dashboard → New + → Blueprint → 选本仓库 →
+# Branch 选本分支 → Apply。Render 会提示输入 ANTHROPIC_API_KEY（可留空，
+# 留空则新闻管道停用、只用 57 条静态事件库，游戏照常可玩）。
+# INGEST_TOKEN 由 Render 自动生成（之后在 skyempire-api 的 Environment 页可见，
+# 配 GitHub Actions cron 时复制它）。
 
 services:
   - type: web
-    name: worldcup-api
+    name: skyempire-api
     runtime: python
     plan: free
-    rootDir: backend
+    rootDir: airline-game/api
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
-    healthCheckPath: /health
+    healthCheckPath: /api/meta
     envVars:
       - key: PYTHON_VERSION
         value: "3.11"
-      - key: FLIGHT_PROVIDER
-        value: duffel
-      # Hotels use LiteAPI (instant self-serve); Duffel Stays is sales-gated.
-      - key: HOTEL_PROVIDER
-        value: liteapi
-      # Flights (Duffel Air) — works on a self-serve test token.
-      - key: DUFFEL_API_KEY
+      - key: NEWS_PROVIDER
+        value: gdelt
+      # Claude 新闻结构化（console.anthropic.com 生成）。留空 = 仅静态事件库。
+      - key: ANTHROPIC_API_KEY
         sync: false
-      # Hotels (LiteAPI) — grab an instant sandbox key at liteapi.travel.
-      - key: LITEAPI_API_KEY
-        sync: false
-      # Affiliate tracking ids (docs/affiliates.md). Optional — links work
-      # without them, they just earn no commission. Not secrets, but set in
-      # the dashboard once the programs approve the account (sync: false).
-      - key: BOOKING_AID
-        sync: false
-      - key: KAYAK_AFFILIATE_ID
-        sync: false
-      - key: CORS_ORIGINS
-        fromService:
-          type: web
-          name: worldcup-web
-          property: host
+      # 新闻注入端点令牌：Render 自动生成强随机值；配 cron 时从面板复制。
+      - key: INGEST_TOKEN
+        generateValue: true
+      # 免费实例无持久盘：存档/事件池在重启时清零（升级 Starter+Disk 后把
+      # GAMES_FILE/EVENTS_POOL_FILE 指到挂载路径即可持久化，见 airline-game/DEPLOY.md）。
 
   - type: web
-    name: worldcup-web
+    name: skyempire-web
     runtime: node
     plan: free
+    rootDir: airline-game/web
     buildCommand: npm ci --include=dev && npm run build
     startCommand: npm run start -- -p $PORT
     envVars:
       - key: NODE_VERSION
         value: "22"
-      - key: NEXT_PUBLIC_API_BASE_URL
+      # 裸主机名（xxx.onrender.com），前端代码自动补 https://
+      - key: NEXT_PUBLIC_API_URL
         fromService:
           type: web
-          name: worldcup-api
+          name: skyempire-api
           property: host
-      # AI concierge (Anthropic Messages API, streamed). Without it the chatbot
-      # serves an honest degraded reply; set it and replies stream live. Grab a
-      # key at console.anthropic.com. Render prompts for this (sync: false);
-      # Render web services have open outbound, so no host allow-list is needed.
-      - key: ANTHROPIC_API_KEY
-        sync: false
-      # Pexels (api.pexels.com) — powers the cinematic hero video montage AND
-      # the Fan Zone footage. Without it both honestly degrade to gradient
-      # placeholders. Free instant key at pexels.com/api. Render prompts for
-      # this (sync: false); web services have open outbound, no allow-list needed.
-      - key: PEXELS_API_KEY
-        sync: false
-      # Affiliate ids for the frontend's offline-fallback links (mirror of the
-      # API's BOOKING_AID / KAYAK_AFFILIATE_ID — see docs/affiliates.md).
-      - key: NEXT_PUBLIC_BOOKING_AID
-        sync: false
-      - key: NEXT_PUBLIC_KAYAK_AFFILIATE_ID
-        sync: false
-
-  # VoiceMemoBot — standalone product (voice memo → AI remix → its own feed).
-  # Serves the web prototype UI at "/" plus the JSON API. No secrets required:
-  # without REPLICATE_API_TOKEN the offline DSP mock provider renders remixes.
-  # RENDER_EXTERNAL_URL (set automatically by Render) is used for public file
-  # URLs and post permalinks, so no manual URL wiring is needed.
-  - type: web
-    name: voicememobot-api
-    runtime: python
-    plan: free
-    rootDir: voice-memo-watch/backend
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
-    healthCheckPath: /health
-    envVars:
-      - key: PYTHON_VERSION
-        value: "3.11"
-      # Optional: enables real AI generation (melody-conditioned MusicGen).
-      - key: REPLICATE_API_TOKEN
-        sync: false

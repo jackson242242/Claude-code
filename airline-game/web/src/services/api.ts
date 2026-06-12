@@ -7,7 +7,9 @@ import type {
 } from '@/types';
 
 // airline-game/data is the source of truth; backend dev server runs on :8001.
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8001';
+// Render 蓝图通过 fromService 注入裸主机名（xxx.onrender.com），这里自动补协议。
+const rawBase = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8001';
+const API_BASE = rawBase.startsWith('http') ? rawBase : `https://${rawBase}`;
 
 export class ApiError extends Error {
   readonly type: string;

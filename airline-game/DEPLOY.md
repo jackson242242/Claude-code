@@ -4,10 +4,18 @@
 > 合进部署分支或默认分支；Render 直接指向本分支即可。
 > 项目分支：`claude/airline-tycoon-dynamic-events-ps9if8`
 
-## 一、两个 Render 服务（Dashboard 手动创建，无需 Blueprint）
+## 一、两个 Render 服务（推荐：Blueprint 四次点击）
 
-根目录的 `render.yaml` 属于 Matchday26（另一分支的蓝图），SkyEmpire 用
-**rootDir 定向**的方式独立建服务，互不干扰：
+本分支根目录的 `render.yaml` 已改写为 SkyEmpire 专属蓝图（Matchday26 的蓝图在
+它自己的部署分支上，互不影响）。**推荐路径**：
+
+1. Render Dashboard → **New +** → **Blueprint**
+2. 选仓库 `jackson242242/Claude-code`
+3. Branch 选 `claude/airline-tycoon-dynamic-events-ps9if8`
+4. **Apply**——提示输入 `ANTHROPIC_API_KEY` 时粘贴（或留空，留空则只用静态事件库）。
+   `INGEST_TOKEN` 自动生成；`NEXT_PUBLIC_API_URL` 通过 fromService 自动接线。
+
+完成后跳到「二、新闻管道 cron」。以下手动建服务方式仅作备选参考：
 
 ### 1. skyempire-api（Web Service · Python）
 | 设置 | 值 |
