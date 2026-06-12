@@ -1,6 +1,3 @@
-> 草稿：`/airline-cycle` 周期命令。老板批准后移动到 `.claude/commands/airline-cycle.md` 生效
-> （移动命令：`git mv airline-game/docs/airline-cycle.command-draft.md .claude/commands/airline-cycle.md`）。
-
 ---
 description: Run one SkyEmpire (airline-game) milestone cycle per airline-game/ROADMAP.md
 ---
