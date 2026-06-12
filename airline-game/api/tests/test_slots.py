@@ -102,7 +102,7 @@ class TestNegotiateSlot:
         assert not result.ok and "full" in result.message
 
     def test_unknown_city_rejected(self, game, world):
-        result = first(game, world, {"type": "negotiateSlot", "cityId": "atl"})
+        result = first(game, world, {"type": "negotiateSlot", "cityId": "zzz"})  # zzz: not in cities.json
         assert not result.ok
         assert "unknown city" in result.message
 

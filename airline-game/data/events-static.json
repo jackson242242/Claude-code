@@ -418,5 +418,155 @@
     "effects": [{"target": "slotFee", "mult": 1.15}],
     "durationTurns": 3,
     "severity": "minor"
+  },
+  {
+    "id": "evt-airshow-icn-hkg",
+    "source": "static",
+    "headline": "首尔与香港联合举办亚太航空展，东北亚枢纽旅客量激增",
+    "detail": "仁川与香港联合主办的亚太航空技术展吸引全球买家与媒体，两城商务出行需求同步大幅上升。",
+    "scope": {"kind": "city", "ids": ["icn", "hkg"]},
+    "effects": [{"target": "demand", "mult": 1.22}],
+    "durationTurns": 2,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-hub-expansion-ist",
+    "source": "static",
+    "headline": "伊斯坦布尔机场完成枢纽扩建，时刻容量大幅释放",
+    "detail": "伊斯坦布尔新机场第二期扩建工程竣工，新跑道与候机楼投运后时刻费用显著下降，过境客流提升。",
+    "scope": {"kind": "city", "ids": ["ist"]},
+    "effects": [{"target": "slotFee", "mult": 0.80}, {"target": "demand", "mult": 1.12}],
+    "durationTurns": 5,
+    "severity": "major"
+  },
+  {
+    "id": "evt-tourism-boom-bkk",
+    "source": "static",
+    "headline": "曼谷旅游业强势复苏，东南亚黄金目的地吸引力大增",
+    "detail": "泰国政府推出为期一年的免签政策，叠加大型文化节庆活动，曼谷素万那普机场入境旅客量创历史新高。",
+    "scope": {"kind": "city", "ids": ["bkk"]},
+    "effects": [{"target": "demand", "mult": 1.30}],
+    "durationTurns": 3,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-demand-surge-del-bom",
+    "source": "static",
+    "headline": "印度经济高速增长推动航空出行需求井喷",
+    "detail": "德里与孟买双城商务出行需求受益于印度科技与金融业景气，国际航线预订量同比大幅提升。",
+    "scope": {"kind": "city", "ids": ["del", "bom"]},
+    "effects": [{"target": "demand", "mult": 1.28}],
+    "durationTurns": 4,
+    "severity": "major"
+  },
+  {
+    "id": "evt-tech-conference-sfo",
+    "source": "static",
+    "headline": "旧金山科技峰会吸引全球高管云集，湾区商务旅行创新高",
+    "detail": "年度全球科技领袖大会在旧金山举办，数万名企业决策者与投资人涌入，旧金山国际机场旅客吞吐量激增。",
+    "scope": {"kind": "city", "ids": ["sfo"]},
+    "effects": [{"target": "demand", "mult": 1.18}],
+    "durationTurns": 1,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-hurricane-season-mia",
+    "source": "static",
+    "headline": "飓风季来袭，迈阿密航班大规模取消",
+    "detail": "大西洋强飓风逼近佛罗里达州，迈阿密国际机场关闭跑道，大量国际航班被迫取消或绕飞。",
+    "scope": {"kind": "city", "ids": ["mia"]},
+    "effects": [{"target": "demand", "mult": 0.58}],
+    "durationTurns": 1,
+    "severity": "major"
+  },
+  {
+    "id": "evt-slot-expansion-doh",
+    "source": "static",
+    "headline": "多哈哈马德机场新航站楼启用，海湾中转枢纽时刻费下调",
+    "detail": "卡塔尔航空总部所在机场完成新航站楼扩建，时刻供给增加带动机场费率下降，过境旅客量随之提升。",
+    "scope": {"kind": "city", "ids": ["doh"]},
+    "effects": [{"target": "slotFee", "mult": 0.78}],
+    "durationTurns": 4,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-earthquake-minor-scl",
+    "source": "static",
+    "headline": "智利发生中等强度地震，圣地亚哥机场短暂关闭检查",
+    "detail": "南美安第斯山脉附近发生 5.8 级地震，圣地亚哥机场临时暂停运营以完成安全检查，旅客出行受到短暂影响。",
+    "scope": {"kind": "city", "ids": ["scl"]},
+    "effects": [{"target": "demand", "mult": 0.75}],
+    "durationTurns": 1,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-volcanic-ash-akl",
+    "source": "static",
+    "headline": "新西兰火山喷发，奥克兰空域受火山灰污染影响",
+    "detail": "北岛鲁阿佩胡火山进入活跃期，火山灰云扩散至奥克兰空域，部分跨太平洋航班改航或取消。",
+    "scope": {"kind": "city", "ids": ["akl"]},
+    "effects": [{"target": "demand", "mult": 0.68}, {"target": "fuelCost", "mult": 1.08}],
+    "durationTurns": 2,
+    "severity": "major"
+  },
+  {
+    "id": "evt-winter-storm-yyz",
+    "source": "static",
+    "headline": "极地涡旋南下，多伦多皮尔逊机场冰雪封场",
+    "detail": "历史性寒潮携带大量降雪袭击多伦多，皮尔逊国际机场跑道除冰作业延误数百架次航班。",
+    "scope": {"kind": "city", "ids": ["yyz"]},
+    "effects": [{"target": "demand", "mult": 0.72}],
+    "durationTurns": 1,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-worldcup-atl",
+    "source": "static",
+    "headline": "世界杯赛事落地亚特兰大，哈茨菲尔德机场旅客量骤升",
+    "detail": "2026 FIFA 世界杯小组赛多场赛事在亚特兰大举办，哈茨菲尔德-杰克逊机场迎来史上最繁忙的旅游旺季。",
+    "scope": {"kind": "city", "ids": ["atl"]},
+    "effects": [{"target": "demand", "mult": 1.35}],
+    "durationTurns": 2,
+    "severity": "major"
+  },
+  {
+    "id": "evt-cargo-demand-hkg",
+    "source": "static",
+    "headline": "香港货运需求旺盛，客运市场受益联动增长",
+    "detail": "亚太区电商及科技产品出口旺季拉动香港国际机场货运量大幅攀升，客运市场信心随之提振。",
+    "scope": {"kind": "city", "ids": ["hkg"]},
+    "effects": [{"target": "demand", "mult": 1.14}],
+    "durationTurns": 2,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-labor-cost-del",
+    "source": "static",
+    "headline": "德里机场地面服务商薪资调整，服务成本小幅上升",
+    "detail": "印度民用航空部门推行地勤最低工资新标准，德里英迪拉·甘地机场运营方将部分成本转嫁至航司。",
+    "scope": {"kind": "city", "ids": ["del"]},
+    "effects": [{"target": "serviceCost", "mult": 1.15}],
+    "durationTurns": 3,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-connectivity-boost-ist",
+    "source": "static",
+    "headline": "伊斯坦布尔开放第五航权，欧亚过境旅客需求显著提升",
+    "detail": "土耳其与多国签署第五航权协议，伊斯坦布尔作为欧亚枢纽的中转吸引力大幅增强，区域旅客量持续上升。",
+    "scope": {"kind": "city", "ids": ["ist"]},
+    "effects": [{"target": "demand", "mult": 1.16}],
+    "durationTurns": 4,
+    "severity": "minor"
+  },
+  {
+    "id": "evt-fuel-tax-icn",
+    "source": "static",
+    "headline": "韩国上调航空燃油消费税，仁川机场过境航班成本小幅上升",
+    "detail": "韩国政府宣布提高航空燃油税率，仁川国际机场为区域最大中转枢纽之一，对过境航班营运成本产生直接影响。",
+    "scope": {"kind": "city", "ids": ["icn"]},
+    "effects": [{"target": "fuelCost", "mult": 1.10}],
+    "durationTurns": 3,
+    "severity": "minor"
   }
 ]

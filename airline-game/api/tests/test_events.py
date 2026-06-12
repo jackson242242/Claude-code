@@ -667,10 +667,14 @@ class TestStaticLibrary:
         assert not failed, f"Entries that failed validation: {failed}"
 
     def test_roughly_forty_entries(self, library):
-        assert 35 <= len(library) <= 50, f"Expected ~40 events, got {len(library)}"
+        # Expanded to ~55 after V2.5 added 15 new regional events; upper bound raised.
+        assert 35 <= len(library) <= 70, f"Expected 35–70 events, got {len(library)}"
 
     def test_all_city_ids_exist(self, library):
-        valid_cities = {"nyc", "lax", "mex", "gru", "lhr", "cdg", "fra", "dxb", "sin", "hnd", "pvg", "syd"}
+        # Load valid city ids dynamically from the real data file so new cities
+        # added to cities.json are automatically accepted here.
+        with open(DATA_DIR / "cities.json", encoding="utf-8") as fh:
+            valid_cities = {c["id"] for c in json.load(fh)}
         bad_ids = []
         for ev in library:
             for city_id in ev.scope.ids:

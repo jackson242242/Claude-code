@@ -32,8 +32,8 @@ def assert_error_envelope(response, status, error_type=None):
 class TestMeta:
     def test_meta_serves_data_tables_in_camel_case(self, client):
         body = client.get("/api/meta").json()
-        assert len(body["cities"]) == 12
-        assert len(body["aircraftModels"]) == 13
+        assert len(body["cities"]) == 95   # loaded from cities.json (additive)
+        assert len(body["aircraftModels"]) == 19  # loaded from aircraft.json (additive)
         nyc = next(c for c in body["cities"] if c["id"] == "nyc")
         assert nyc["nameZh"] == "纽约"
         assert nyc["demandIndex"] == 10 and nyc["slotFee"] == 9500
@@ -57,7 +57,7 @@ class TestGameLifecycle:
         assert state["news"][0]["kind"] == "system"
         # M2.2: the slot market snapshot covers every city; the player starts
         # holding 2 slots at the HQ and 0 elsewhere.
-        assert len(state["slotMarket"]) == 12
+        assert len(state["slotMarket"]) == 95  # all cities in cities.json
         assert state["slotMarket"]["nyc"] == {
             "capacity": 12,
             "taken": 2,  # the 2 HQ-held slots; no AI route touches nyc
@@ -141,7 +141,7 @@ class TestFullFlow:
             f"/api/games/{game_id}/commands",
             json={
                 "commands": [
-                    {"type": "openRoute", "cityA": "nyc", "cityB": "atl"},
+                    {"type": "openRoute", "cityA": "nyc", "cityB": "zzz"},  # zzz: not in cities.json
                     {"type": "negotiateSlot", "cityId": "lax"},
                     {"type": "openRoute", "cityA": "nyc", "cityB": "lax"},
                 ]

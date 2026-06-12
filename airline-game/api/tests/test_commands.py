@@ -17,7 +17,7 @@ def first(state, world, command: dict):
 
 class TestOpenRoute:
     def test_invalid_city_rejected(self, game, world):
-        result = first(game, world, {"type": "openRoute", "cityA": "nyc", "cityB": "atl"})
+        result = first(game, world, {"type": "openRoute", "cityA": "nyc", "cityB": "zzz"})  # zzz: not in cities.json
         assert not result.ok
         assert "unknown city" in result.message
         assert game.routes == []
