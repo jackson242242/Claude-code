@@ -1,0 +1,31 @@
+# SkyEmpire 新闻摄取定时任务（每 6 小时）
+# 来源模板：游戏分支 airline-game/ops/news-ingest.yml
+# 需要 Secrets：INGEST_URL（如 https://skyempire-api.onrender.com）、INGEST_TOKEN
+#（与 Render 上 skyempire-api 的 INGEST_TOKEN 环境变量一致——蓝图自动生成，
+#  在该服务 Environment 页可复制）。未配置 secrets 时手动触发会失败，无其他影响。
+
+name: News Ingest
+
+on:
+  schedule:
+    # 每 6 小时触发一次：0:00 / 6:00 / 12:00 / 18:00 UTC
+    - cron: "0 */6 * * *"
+  # 允许手动触发（用于测试）
+  workflow_dispatch:
+
+jobs:
+  ingest:
+    name: 触发新闻摄取
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: 调用新闻摄取端点
+        run: |
+          curl -X POST "${{ secrets.INGEST_URL }}" \
+            -H "X-Ingest-Token: ${{ secrets.INGEST_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            --fail \
+            --silent \
+            --show-error \
+            --max-time 60
