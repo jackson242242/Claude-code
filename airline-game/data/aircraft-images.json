@@ -63,5 +63,35 @@
     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Boeing_777-9_front_view.jpg?width=1280",
     "filePage": "https://commons.wikimedia.org/wiki/File:Boeing_777-9_front_view.jpg",
     "credit": "Wikimedia Commons（作者与许可见文件页）"
+  },
+  "e175": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/N263SY_(55238706882).jpg?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:N263SY_(55238706882).jpg",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
+  },
+  "b737-800": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Boeing_737-800_Turkish_Airlines.jpg?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:Boeing_737-800_Turkish_Airlines.jpg",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
+  },
+  "a330-300": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Airbus_A330-300_of_Lufthansa_D-AIKB_(40499124245).jpg?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:Airbus_A330-300_of_Lufthansa_D-AIKB_(40499124245).jpg",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
+  },
+  "b777-200er": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Air_France_Boeing_777-200ER_F-GSPN.jpg?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:Air_France_Boeing_777-200ER_F-GSPN.jpg",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
+  },
+  "b747-8i": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lufthansa_Boeing_747-8_(16278601112).jpg?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:Lufthansa_Boeing_747-8_(16278601112).jpg",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
+  },
+  "a380": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Airbus_A380-861,_Emirates_AN1731525.jpg?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:Airbus_A380-861,_Emirates_AN1731525.jpg",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
   }
 }

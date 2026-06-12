@@ -1,0 +1,122 @@
+{
+  "nyc": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/New_York_City_skyline.jpg?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:New_York_City_skyline.jpg",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
+  },
+  "lax": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Los_Angeles_Skyline_at_Night.jpg?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:Los_Angeles_Skyline_at_Night.jpg",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
+  },
+  "lhr": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/City_of_London_skyline_from_London_City_Hall_-_Sept_2015_-_Crop_Aligned.jpg?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:City_of_London_skyline_from_London_City_Hall_-_Sept_2015_-_Crop_Aligned.jpg",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
+  },
+  "cdg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tour_Eiffel_Wikimedia_Commons.jpg?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:Tour_Eiffel_Wikimedia_Commons.jpg",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
+  },
+  "fra": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Frankfurt_Skyline_with_river_Main_2014.jpg?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:Frankfurt_Skyline_with_river_Main_2014.jpg",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
+  },
+  "dxb": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Dubai_Skyline_2016.jpg?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:Dubai_Skyline_2016.jpg",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
+  },
+  "sin": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Marina_Bay_Sands_and_the_skyline_of_the_Central_Business_District,_Singapore,_at_dusk_-_20120805.jpg?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:Marina_Bay_Sands_and_the_skyline_of_the_Central_Business_District,_Singapore,_at_dusk_-_20120805.jpg",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
+  },
+  "hnd": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tokyo_from_the_top_of_the_SkyTree.JPG?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:Tokyo_from_the_top_of_the_SkyTree.JPG",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
+  },
+  "pvg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shanghai_-_Skyline_Sunset_0057.jpg?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:Shanghai_-_Skyline_Sunset_0057.jpg",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
+  },
+  "syd": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sydney_Opera_House,_Sydney.jpg?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:Sydney_Opera_House,_Sydney.jpg",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
+  },
+  "mex": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mexico_City_Skyline.jpg?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:Mexico_City_Skyline.jpg",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
+  },
+  "gru": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sao_Paulo_Skyline_at_night.jpg?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:Sao_Paulo_Skyline_at_night.jpg",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
+  },
+  "hkg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Victoria_Harbour_(Hong_Kong).jpg?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:Victoria_Harbour_(Hong_Kong).jpg",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
+  },
+  "icn": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Seoul_at_N_Seoul_Tower.jpg?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:Seoul_at_N_Seoul_Tower.jpg",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
+  },
+  "pek": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Beijing_skyline_at_night.JPG?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:Beijing_skyline_at_night.JPG",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
+  },
+  "bkk": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bangkok_skyline_September_2022.jpg?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:Bangkok_skyline_September_2022.jpg",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
+  },
+  "ist": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Istanbul_panorama_and_skyline.jpg?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:Istanbul_panorama_and_skyline.jpg",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
+  },
+  "ams": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Skyline_Amsterdam_Zuidas_(cropped).jpg?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:Skyline_Amsterdam_Zuidas_(cropped).jpg",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
+  },
+  "mad": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edificios_Skyline_Madrid_03.jpg?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:Edificios_Skyline_Madrid_03.jpg",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
+  },
+  "fco": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rome_skyline_panorama.jpg?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:Rome_skyline_panorama.jpg",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
+  },
+  "sfo": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/San_Francisco_skyline_from_Potrero_Hill,_February_2020.JPG?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:San_Francisco_skyline_from_Potrero_Hill,_February_2020.JPG",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
+  },
+  "yyz": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Toronto_skyline,_at_dawn,_2017_06_12.jpg?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:Toronto_skyline,_at_dawn,_2017_06_12.jpg",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
+  },
+  "doh": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Doha_skyline_in_the_morning_(12544910974).jpg?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:Doha_skyline_in_the_morning_(12544910974).jpg",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
+  },
+  "mia": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Miami_skyline_from_rusty_pelican_1.JPG?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:Miami_skyline_from_rusty_pelican_1.JPG",
+    "credit": "Wikimedia Commons（作者与许可见文件页）"
+  }
+}
