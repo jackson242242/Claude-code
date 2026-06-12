@@ -42,13 +42,13 @@ class TestSeeding:
         assert (aurora.name_zh, aurora.hq_city_id, aurora.fare_mult) == (
             "极光太平洋航空",
             "hnd",
-            0.9,
+            0.95,
         )
         assert (meridian.hq_city_id, meridian.fare_mult) == ("lhr", 1.1)
         assert (falcon.hq_city_id, falcon.fare_mult) == ("dxb", 1.0)
         assert [(r.city_a, r.city_b, r.weekly_seats) for r in aurora.routes] == [
-            ("hnd", "pvg", 2200),
-            ("hnd", "sin", 2200),
+            ("hnd", "pvg", 1600),
+            ("hnd", "sin", 1600),
         ]
         assert [(r.city_a, r.city_b) for r in meridian.routes] == [
             ("lhr", "fra"),
@@ -82,12 +82,12 @@ class TestShareCompetition:
             Competitor(
                 id="ai-cheap", name="Cheap Air", name_zh="低价航空",
                 hq_city_id="hnd", fare_mult=0.9,
-                routes=[CompetitorRoute("hnd", "pvg", 2200)],
+                routes=[CompetitorRoute("hnd", "pvg", 1600)],
             ),
             Competitor(
                 id="ai-posh", name="Posh Air", name_zh="高端航空",
                 hq_city_id="hnd", fare_mult=1.1,
-                routes=[CompetitorRoute("hnd", "pvg", 2200)],
+                routes=[CompetitorRoute("hnd", "pvg", 1600)],
             ),
         ]
         settle_turn(game, world)
@@ -138,21 +138,21 @@ class TestEvolution:
         game = fresh(world, game_id="g-grow")
         aurora = game.competitors[0]
         settle_turn(game, world)
-        # 2200 × 1.08 = 2376 (exact); only the largest route grows.
-        assert [r.weekly_seats for r in aurora.routes] == [2376, 2200]
+        # 1600 × 1.05 = 1680 (exact); only the largest route grows.
+        assert [r.weekly_seats for r in aurora.routes] == [1680, 1600]
         settle_turn(game, world)
-        # ceil(2376 × 1.08) = ceil(2566.08) = 2567.
-        assert [r.weekly_seats for r in aurora.routes] == [2567, 2200]
-        assert aurora.routes[0].weekly_seats == math.ceil(round(2376 * 1.08, 6))
+        # ceil(1680 × 1.05) = 1764 (exact).
+        assert [r.weekly_seats for r in aurora.routes] == [1764, 1600]
+        assert aurora.routes[0].weekly_seats == math.ceil(round(1680 * 1.05, 6))
 
-    def test_new_hq_route_opens_every_fourth_turn_with_news(self, world):
+    def test_new_hq_route_opens_on_cadence_turn_with_news(self, world):
         game = fresh(world, game_id="g-open")
-        for _ in range(3):
+        for _ in range(balance.AI_NEW_ROUTE_EVERY_TURNS - 1):
             report = settle_turn(game, world)
             assert all(len(c.routes) == 2 for c in game.competitors)
             assert not any("开通" in item.headline for item in report.news)
 
-        report = settle_turn(game, world)  # turn 4: turn % 4 == 0
+        report = settle_turn(game, world)  # cadence turn: turn % AI_NEW_ROUTE_EVERY_TURNS == 0
         assert all(len(c.routes) == 3 for c in game.competitors)
         aurora = game.competitors[0]
         new_route = aurora.routes[-1]

@@ -40,7 +40,7 @@ AI_SPECS: tuple[_AISpec, ...] = (
         name="Aurora Pacific",
         name_zh="极光太平洋航空",
         hq_city_id="hnd",
-        fare_mult=0.9,
+        fare_mult=0.95,
         initial_routes=(("hnd", "pvg"), ("hnd", "sin")),
     ),
     _AISpec(
@@ -115,14 +115,14 @@ def _next_destination(
 
 def evolve_competitors(state: GameState, world: World) -> list[NewsItem]:
     """Pre-settlement evolution (CONTRACT §3): every turn the largest route of
-    each AI grows ×1.08 (ceil); every 4th turn each AI opens a new HQ route to
+    each AI grows ×AI_GROWTH_FACTOR (ceil, capped at AI_ROUTE_MAX_WEEKLY_SEATS); every 4th turn each AI opens a new HQ route to
     its best unserved city, announced as a system NewsItem."""
     news: list[NewsItem] = []
     for competitor in state.competitors:
         if competitor.routes:
             largest = max(competitor.routes, key=lambda r: r.weekly_seats)
             # round(…, 6) before ceil keeps binary-float noise (e.g.
-            # 2200 × 1.08 → 2376.0000000000005) from inflating the ceiling.
+            # e.g. 2200 × 1.05 → float noise) from inflating the ceiling.
             largest.weekly_seats = math.ceil(
                 round(largest.weekly_seats * balance.AI_GROWTH_FACTOR, 6)
             )

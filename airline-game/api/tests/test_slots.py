@@ -187,8 +187,8 @@ class TestAIPoolConsumption:
             game = new_game("g-skip", "Skip Air", world.cities["nyc"])
             # Fill nyc's pool (capacity 12) so the AIs' top candidate is full.
             game.slots_held["nyc"] = world.cities["nyc"].slot_capacity
-            for _ in range(4):
-                settle_turn(game, world)  # turn 4: turn % 4 == 0 → expansion
+            for _ in range(balance.AI_NEW_ROUTE_EVERY_TURNS):
+                settle_turn(game, world)  # cadence turn → expansion
             return game
 
         game = play()
@@ -208,7 +208,7 @@ class TestAIPoolConsumption:
         # turn 4 every AI's best unserved city is nyc and its pool is not full
         # (2 of 12), so all three open a route there: taken 2 → 5.
         before = compute_slot_market(game, world)["nyc"].taken
-        for _ in range(4):
+        for _ in range(balance.AI_NEW_ROUTE_EVERY_TURNS):
             settle_turn(game, world)
         after = compute_slot_market(game, world)["nyc"].taken
         assert before == 2

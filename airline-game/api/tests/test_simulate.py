@@ -61,7 +61,7 @@ def expected_route_numbers(world, route, quarter, model_id="a320neo"):
     revenue = pax * fare
 
     fuel = d * model.fuel_kg_per_km * balance.FUEL_USD_PER_KG * flights
-    airport = (city_a.slot_fee + city_b.slot_fee) * flights
+    airport = (city_a.slot_fee + city_b.slot_fee) * balance.AIRPORT_FEE_FACTOR * flights
     block_hours = flights * (d / model.cruise_kmh + 0.6)
     crew = block_hours * balance.CREW_MAINT_USD_PER_BH
     # M2.3: per-pax service cost; SERVICE_COST_PER_PAX[2] = $25.

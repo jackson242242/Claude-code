@@ -179,11 +179,54 @@ def _strategy_idle(_state: GameState, _world: World, _turn: int) -> list[dict]:
     return []
 
 
+
+def _strategy_expansionist(state: GameState, world: World, turn: int) -> list[dict]:
+    """narrowbody-hub opening, then reinvest: every 6 turns, while cash allows,
+    lease another A320neo and open the next unserved reachable route (or add
+    the aircraft to the busiest existing route when no city is left)."""
+    if turn == 1:
+        return _strategy_narrowbody_hub(state, world, turn)
+    if turn % 6 != 0 or state.cash < 200_000_000:
+        return []
+    from app.engine.state import haversine_km
+    hq = state.hq_city_id
+    hq_city = world.cities[hq]
+    served = {r.city_b if r.city_a == hq else r.city_a for r in state.routes}
+    candidates = [
+        c for c in world.cities.values()
+        if c.id != hq and c.id not in served and haversine_km(
+            hq_city.lat, hq_city.lon, c.lat, c.lon
+        ) <= 6_300
+    ]
+    cmds: list[dict] = [{"type": "leaseAircraft", "modelId": "a320neo"}]
+    next_ac = f"ac-{len(state.fleet) + 1}"
+    if candidates:
+        dest = max(candidates, key=lambda c: c.demand_index)
+        cmds += [
+            {"type": "negotiateSlot", "cityId": hq},
+            {"type": "negotiateSlot", "cityId": dest.id},
+            {"type": "openRoute", "cityA": hq, "cityB": dest.id},
+        ]
+        next_rt = f"rt-{len(state.routes) + 1}"
+        cmds.append({"type": "assignAircraft", "aircraftId": next_ac, "routeId": next_rt})
+        cmds.append({"type": "updateRoute", "routeId": next_rt, "weeklyFlights": 7})
+    elif state.routes:
+        busiest = max(
+            state.routes,
+            key=lambda r: r.last_quarter.pax if r.last_quarter else 0,
+        )
+        per_dir = busiest.weekly_flights + 7
+        cmds.append({"type": "assignAircraft", "aircraftId": next_ac, "routeId": busiest.id})
+        cmds.append({"type": "updateRoute", "routeId": busiest.id, "weeklyFlights": per_dir})
+    return cmds
+
+
 STRATEGIES: dict[str, Callable[[GameState, World, int], list[dict]]] = {
     "narrowbody-hub": _strategy_narrowbody_hub,
     "widebody-premium": _strategy_widebody_premium,
     "budget": _strategy_budget,
     "idle": _strategy_idle,
+    "expansionist": _strategy_expansionist,
 }
 
 HQ_CHOICES = ["nyc", "hnd", "lhr"]

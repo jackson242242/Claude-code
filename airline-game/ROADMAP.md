@@ -42,10 +42,24 @@
   （**待老板**：部署后复制进默认分支 workflows + 配 INGEST_URL/INGEST_TOKEN/
   ANTHROPIC_API_KEY）。
 
+- [x] **M5.1 存档持久化**（2026-06-12）：Memory/JsonFile/Postgres 三模式存储抽象
+  （schema.sql 先行、全状态 round-trip 保真、写失败降级内存、env 自动选择）；
+  4 条 PG 测试待 DATABASE_URL 环境自动启用。api 248 测全绿。
+- [x] **M5.3 平衡性工具 + 首轮大调参**（2026-06-12）：scripts/balance_sim.py
+  （5 策略×3 总部×N 局确定性快进，0.6s 出表）。首跑揪出三层结构问题并修复：
+  ① AI 无上限复利扩张（增长 1.08→1.05、单线封顶 3200、开新线 4→6 回合、
+  初始运力 2200→1600、极光票价 0.9→0.95）；② 持有成本过重（租率 2.75%→1.7%、
+  折旧 1.25%→0.95%、总部/管理开销下调、公里票价 +10%）；③ 全额机场费压垮短途
+  （AIRPORT_FEE_FACTOR=0.55）。调参后：纽约 budget 累计 +552M / narrowbody +308M、
+  伦敦 budget 存活；AI 主场（东京/伦敦/迪拜）= 困难模式（如实保留）。
+  **遗留观察**（后续迭代）：widebody-premium 策略选址差仍亏损；静态策略 20 年
+  夺冠（份额第一）难度偏高——真人扩张流可达 9.9% 份额但需更强纪律。
+
 ## 待办（按序取最上面一条可做的）
-- [ ] **M5.1 存档持久化**：PG（schema.sql 先行）/JSON 文件双模式，匿名 id 续局。
-- [ ] **M5.2 Render 部署**：render.yaml 加 web+api 双服务；上线冒烟。
-- [ ] **M5.3 平衡性工具**：快进模拟 N 局脚本，调 balance.py 常数不改代码。
+- [ ] **M5.2 Render 部署（仅剩老板操作）**：agent 侧已完成——部署方案与冒烟清单
+  见 `DEPLOY.md`（rootDir 双服务，不动根 render.yaml）。待老板在 Render Dashboard
+  按文档建 skyempire-api/skyempire-web 两服务 + 配 env（含 ANTHROPIC_API_KEY/
+  INGEST_TOKEN）+ 把 ops/news-ingest.yml 放进默认分支 workflows。
 - [ ] **素材本地化**（待老板把 upload.wikimedia.org/commons.wikimedia.org 加进环境
   网络白名单）：下载 13 张机型照片进仓库、逐张校验（含 737 MAX 10 那张未确认文件名的）、
   补全精确作者署名。

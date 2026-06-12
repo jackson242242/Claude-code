@@ -215,14 +215,16 @@ type TurnReport = {
     **再分配一轮**给未满载卖方（含背景），只做一轮，保持确定性。
   - AI 航线容量：`weeklySeats × 2 × 13`（双向、13 周，与玩家同口径）。
 - **AI 航司（3 家，纯函数确定性，伪随机种子 = hash(gameId, turn, aiId)）**：
-  - Aurora Pacific／极光太平洋航空（HQ 东京 hnd，fareMult 0.9）、
+  - Aurora Pacific／极光太平洋航空（HQ 东京 hnd，fareMult 0.95，调参前 0.9）、
     Royal Meridian／皇家子午线航空（HQ 伦敦 lhr，fareMult 1.1）、
     Falcon Dunes／沙丘猎鹰航空（HQ 迪拜 dxb，fareMult 1.0）。
   - 初始各 2 条 HQ 航线（固定表，刻意避开 nyc 城市对以不干扰平衡性验收）：
-    hnd-pvg、hnd-sin；lhr-fra、lhr-dxb；dxb-sin、dxb-cdg。初始 weeklySeats=2200。
-  - 每回合结算前演进：最大航线 weeklySeats ×1.08（向上取整）；每第 4 回合
-    （turn%4==0）从 HQ 向其尚未服务的 demandIndex 最高城市开新航线
-    （weeklySeats=2000），并产生 NewsItem（kind:"system"）播报。
+    hnd-pvg、hnd-sin；lhr-fra、lhr-dxb；dxb-sin、dxb-cdg。初始 weeklySeats=1600（2026-06-12 调参：2200 时 AI 主场玩家无法生存）。
+  - 每回合结算前演进：最大航线 weeklySeats ×`AI_GROWTH_FACTOR`（向上取整），
+    单航线封顶 `AI_ROUTE_MAX_WEEKLY_SEATS`（防 80 回合复利碾压玩家——2026-06-12
+    平衡模拟器实测无上限时全策略破产）；每第 4 回合（turn%4==0）从 HQ 向其
+    尚未服务的 demandIndex 最高城市开新航线（weeklySeats=2000），并产生
+    NewsItem（kind:"system"）播报。常数现值：增长 1.05/季、封顶 3200、开新线节奏 6 回合（调参前 4）。
   - `marketShare`（玩家与 AI 同口径）= 该航司本季度 pax ÷ 当季所有卖方
     （含背景）pax 总和；无任何航线时为 0。
 - **票价**：经济舱 `fare = (FARE_FIXED + FARE_PER_KM × distanceKm) × fareMult`；
@@ -246,7 +248,8 @@ type TurnReport = {
 - **成交客流**：`pax = min(capacity, marketPax × share × demandMult)`。
 - **季度成本**（按航线）：
   - 燃油：`distanceKm × fuelKgPerKm × FUEL_USD_PER_KG × flights`（flights = weeklyFlights×2×13）
-  - 机场费：`(slotFeeA + slotFeeB) × flights`
+  - 机场费：`(slotFeeA + slotFeeB) × AIRPORT_FEE_FACTOR × flights`（系数 0.55——
+    2026-06-12 平衡模拟：全额机场费使短途航线结构性亏损）
   - 机组+维护：`blockHours × CREW_MAINT_USD_PER_BH`（blockHours = flights × (distance/cruise + 0.6)）
 - **机队持有成本**（按飞机/季度）：自有 = `price × DEPRECIATION_Q`（1.25%）；
   租赁 = `price × LEASE_RATE_Q`（2.75%）。未指派的飞机同样产生持有成本。

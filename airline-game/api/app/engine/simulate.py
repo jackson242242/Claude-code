@@ -361,7 +361,7 @@ def simulate_route(
     slot_mult = get_cost_mult(active_events, "slotFee")
     service_mult = get_cost_mult(active_events, "serviceCost")
     fuel_cost = distance * mean_fuel * balance.FUEL_USD_PER_KG * flights * fuel_mult
-    airport_cost = (city_a.slot_fee + city_b.slot_fee) * flights * slot_mult
+    airport_cost = (city_a.slot_fee + city_b.slot_fee) * balance.AIRPORT_FEE_FACTOR * flights * slot_mult
     block_hours = flights * block_hours_per_flight(distance, mean_cruise)
     crew_maint_cost = block_hours * balance.CREW_MAINT_USD_PER_BH
     # Service tier per-pax cost (M2.3); with tier=2 at defaults:

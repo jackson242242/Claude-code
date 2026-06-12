@@ -23,10 +23,11 @@ DISTANCE_DECAY_KM = 9_000.0  # distanceDecay = exp(-distanceKm / 9000)
 SEASON_FACTOR = {1: 0.9, 2: 1.0, 3: 1.15, 4: 0.95}
 
 # --- AI competitors (CONTRACT §3, M2.1) ----------------------------------------
-AI_INITIAL_WEEKLY_SEATS = 2_200  # per direction, on each fixed initial route
+AI_INITIAL_WEEKLY_SEATS = 1_600  # per direction, on each fixed initial route
 AI_NEW_ROUTE_WEEKLY_SEATS = 2_000  # per direction, on routes opened by evolution
-AI_GROWTH_FACTOR = 1.08  # largest route weeklySeats ×1.08 (ceil) every turn
-AI_NEW_ROUTE_EVERY_TURNS = 4  # turn % 4 == 0 → open a new HQ route
+AI_GROWTH_FACTOR = 1.05  # largest route weeklySeats ×1.05 (ceil) every turn
+AI_ROUTE_MAX_WEEKLY_SEATS = 3200  # per-route cap — uncapped compounding bankrupted every strategy (balance_sim 2026-06-12)
+AI_NEW_ROUTE_EVERY_TURNS = 6  # turn % 6 == 0 → open a new HQ route
 
 # --- Airport slots (CONTRACT §3, M2.2) ----------------------------------------
 SLOT_COST_MULT = 800.0  # negotiation cost = slotFee × 800 × (1 + taken/capacity)
@@ -34,22 +35,23 @@ HQ_STARTING_SLOTS = 2  # player holds 2 slots at the HQ on day one, 0 elsewhere
 
 # --- Pricing -----------------------------------------------------------------
 FARE_FIXED = 70.0  # USD base fare component
-FARE_PER_KM = 0.095  # USD per km fare component
+FARE_PER_KM = 0.115  # USD per km fare component
 FARE_MULT_MIN = 0.6
 FARE_MULT_MAX = 1.6
 
 # --- Operating costs ---------------------------------------------------------
 FUEL_USD_PER_KG = 0.75
+AIRPORT_FEE_FACTOR = 0.55  # share of slotFee charged per movement as operating fee (balance_sim 2026-06-12: full fee killed short-haul)
 CREW_MAINT_USD_PER_BH = 3_000.0  # crew + maintenance per block hour
 
 # --- Fleet holding costs (per aircraft per quarter, fractions of list price) --
-DEPRECIATION_Q = 0.0125  # owned: 1.25% (CONTRACT §3)
-LEASE_RATE_Q = 0.0275  # leased: 2.75% (CONTRACT §3)
+DEPRECIATION_Q = 0.0095  # owned: 1.25% (CONTRACT §3)
+LEASE_RATE_Q = 0.017  # leased: 2.75% (CONTRACT §3)
 SELL_VALUE_RATIO = 0.7  # resale value = price × 0.7 (CONTRACT §2)
 
 # --- Company overhead (per quarter) -------------------------------------------
-HQ_OVERHEAD = 1_000_000.0
-ADMIN_PER_AIRCRAFT = 150_000.0
+HQ_OVERHEAD = 600_000.0
+ADMIN_PER_AIRCRAFT = 100_000.0
 
 # --- Operations / scheduling ---------------------------------------------------
 WEEKS_PER_QUARTER = 13

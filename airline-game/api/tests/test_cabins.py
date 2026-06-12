@@ -508,7 +508,7 @@ class TestServiceCostInRouteCost:
         mean_fuel = model.fuel_kg_per_km
         mean_cruise = model.cruise_kmh
         fuel = d * mean_fuel * balance.FUEL_USD_PER_KG * flights
-        airport = (world.cities["nyc"].slot_fee + world.cities["lax"].slot_fee) * flights
+        airport = (world.cities["nyc"].slot_fee + world.cities["lax"].slot_fee) * balance.AIRPORT_FEE_FACTOR * flights
         block_hours = flights * block_hours_per_flight(d, mean_cruise)
         crew = block_hours * balance.CREW_MAINT_USD_PER_BH
         ops_cost = fuel + airport + crew

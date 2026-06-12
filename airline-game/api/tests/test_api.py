@@ -165,20 +165,20 @@ class TestCompetitorsWire:
         assert aurora["name"] == "Aurora Pacific"
         assert aurora["nameZh"] == "极光太平洋航空"
         assert aurora["hqCityId"] == "hnd"
-        assert aurora["fareMult"] == 0.9
+        assert aurora["fareMult"] == 0.95
         assert aurora["marketShare"] == 0
         assert aurora["routes"][0] == {
             "cityA": "hnd",
             "cityB": "pvg",
-            "weeklySeats": 2200,
+            "weeklySeats": 1600,
         }
 
         body = client.post(f"/api/games/{state['id']}/end-turn", json={}).json()
         settled = body["state"]
         assert settled["marketShare"] == 0  # player flies no routes yet
         assert all(c["marketShare"] > 0 for c in settled["competitors"])
-        # Evolution ran: Aurora's largest route grew 2200 → 2376.
-        assert settled["competitors"][0]["routes"][0]["weeklySeats"] == 2376
+        # Evolution ran: Aurora's largest route grew 1600 → 1680.
+        assert settled["competitors"][0]["routes"][0]["weeklySeats"] == 1680
 
 
 class TestBankruptcyPath:
