@@ -81,6 +81,16 @@ services:
       - key: NEXT_PUBLIC_KAYAK_AFFILIATE_ID
         sync: false
 
+  # Alexandra Huang art portfolio — plain static site, no build, no secrets.
+  # Lives in alexandra-art/ (single index.html + works/ images). rootDir scopes
+  # auto-deploys to changes inside that folder only.
+  - type: web
+    name: alexandra-art
+    runtime: static
+    rootDir: alexandra-art
+    buildCommand: echo "static site, nothing to build"
+    staticPublishPath: .
+
   # VoiceMemoBot — standalone product (voice memo → AI remix → its own feed).
   # Serves the web prototype UI at "/" plus the JSON API. No secrets required:
   # without REPLICATE_API_TOKEN the offline DSP mock provider renders remixes.

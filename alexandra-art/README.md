@@ -1,8 +1,17 @@
 # Alexandra Huang — Art Portfolio
 
 A standalone, zero-dependency static portfolio site (single `index.html` + images).
-Not part of the Matchday26 app — just open `index.html` in a browser, or serve the
-folder from any static host (GitHub Pages, Render static site, Netlify…).
+Not part of the Matchday26 app — just open `index.html` in a browser.
+
+No header at all: the only chrome is a dock of five hand-drawn SVG characters
+(Pikachu, Tanjiro, Sakuragi, Doraemon, Totoro — original chibi interpretations,
+no copyrighted art). Four are category filters, Totoro toggles the music.
+
+## Live URL (Render static site)
+`render.yaml` defines a `alexandra-art` static site (rootDir `alexandra-art/`).
+It goes live once this lands on the branch the Render Blueprint reads (the
+deploy/default branch) and the Blueprint sync is approved in the Render
+dashboard — the URL appears there as `https://alexandra-art-<suffix>.onrender.com`.
 
 ## Adding a new work
 1. Drop the image into `works/` (web-friendly: ≤1600px on the long side, JPG).
