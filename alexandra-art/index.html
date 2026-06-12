@@ -7,14 +7,13 @@
 <meta name="description" content="Alexandra Huang — sketches, studies & visual notes.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #faf7f0;
-    --ink: #2b2722;
-    --muted: #8a8278;
-    --accent: #c96f4a;
-    --card: #fffdf9;
+    --bg: #f4f1ea;        /* warm cream, Tyler Hobbs style */
+    --ink: #1a1815;
+    --muted: #97907f;
+    --accent: #b5552d;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -24,14 +23,14 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ——— character dock (the only chrome on the page) ——— */
+  /* ——— character dock: the only navigation ——— */
   .dock {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-end;
-    gap: clamp(0.7rem, 4vw, 2rem);
-    padding: 2.4rem 1rem 2.6rem;
+    gap: clamp(0.9rem, 4vw, 2.4rem);
+    padding: clamp(2.5rem, 6vh, 4.5rem) 1rem 1.5rem;
   }
   .chibi {
     background: none;
@@ -41,16 +40,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.55rem;
     color: var(--muted);
     position: relative;
   }
   .chibi svg {
-    width: clamp(48px, 9vw, 64px);
-    height: clamp(48px, 9vw, 64px);
-    filter: grayscale(0.5) opacity(0.7);
+    width: clamp(42px, 7vw, 54px);
+    height: clamp(42px, 7vw, 54px);
+    filter: grayscale(0.65) opacity(0.6);
     transition: filter 0.3s ease, transform 0.3s ease;
-    animation: idle 3.4s ease-in-out infinite;
+    animation: idle 3.8s ease-in-out infinite;
   }
   .chibi:nth-child(1) svg { animation-delay: 0s; }
   .chibi:nth-child(2) svg { animation-delay: 0.4s; }
@@ -59,7 +58,7 @@
   .chibi:nth-child(5) svg { animation-delay: 1.6s; }
   @keyframes idle {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-4px); }
+    50% { transform: translateY(-3px); }
   }
   .chibi:hover svg {
     filter: grayscale(0) opacity(1);
@@ -67,38 +66,41 @@
   }
   @keyframes hop {
     0% { transform: translateY(0); }
-    40% { transform: translateY(-12px) rotate(-6deg); }
-    70% { transform: translateY(0) rotate(3deg); }
+    40% { transform: translateY(-10px) rotate(-5deg); }
+    70% { transform: translateY(0) rotate(2deg); }
     100% { transform: translateY(0) rotate(0); }
   }
-  .chibi .lbl { font-size: 0.78rem; letter-spacing: 0.03em; transition: color 0.25s ease; }
+  .chibi .lbl {
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    transition: color 0.25s ease;
+  }
   .chibi.active svg, .chibi.playing svg {
     filter: grayscale(0) opacity(1);
-    transform: scale(1.12);
+    transform: scale(1.08);
   }
-  .chibi.active .lbl, .chibi.playing .lbl { color: var(--accent); font-weight: 500; }
+  .chibi.active .lbl, .chibi.playing .lbl { color: var(--ink); }
   .chibi.active::after {
     content: '';
     position: absolute;
-    bottom: -8px;
+    bottom: -7px;
     left: 50%;
-    width: 26px;
-    height: 3px;
-    margin-left: -13px;
-    background: var(--accent);
-    border-radius: 99px;
-    transform: rotate(-1.5deg);
+    width: 22px;
+    height: 1px;
+    margin-left: -11px;
+    background: var(--ink);
   }
   .chibi.playing svg { animation: dance 0.9s ease-in-out infinite; }
   @keyframes dance {
-    0%, 100% { transform: scale(1.12) rotate(-7deg); }
-    50% { transform: scale(1.12) rotate(7deg) translateY(-4px); }
+    0%, 100% { transform: scale(1.08) rotate(-6deg); }
+    50% { transform: scale(1.08) rotate(6deg) translateY(-3px); }
   }
   .chibi .notes {
     position: absolute;
     top: -6px;
     right: -10px;
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--accent);
     opacity: 0;
     pointer-events: none;
@@ -107,62 +109,65 @@
   @keyframes floatnotes {
     0% { opacity: 0; transform: translateY(4px) rotate(0); }
     25% { opacity: 1; }
-    100% { opacity: 0; transform: translateY(-18px) rotate(14deg); }
+    100% { opacity: 0; transform: translateY(-16px) rotate(12deg); }
   }
 
-  /* ——— work grid ——— */
+  /* ——— scattered gallery: asymmetric, lots of air, no chrome ——— */
   .grid {
-    max-width: 1080px;
+    max-width: 1180px;
     margin: 0 auto;
-    padding: 0 1.2rem 5rem;
+    padding: clamp(2rem, 6vh, 5rem) clamp(1.2rem, 4vw, 3rem) 7rem;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 2.2rem;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: clamp(1rem, 3vw, 2.5rem);
+    row-gap: clamp(3.5rem, 9vh, 7rem);
+    align-items: start;
   }
-  .work {
-    background: var(--card);
-    border-radius: 10px;
-    padding: 0.8rem 0.8rem 1rem;
-    box-shadow: 0 1px 3px rgba(43, 39, 34, 0.08);
-    cursor: zoom-in;
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  .work { cursor: zoom-in; }
+  /* a repeating six-step scatter: varied widths, varied vertical offsets */
+  .work:nth-child(6n+1) { grid-column: 1 / span 6; }
+  .work:nth-child(6n+2) { grid-column: 8 / span 5; margin-top: clamp(3rem, 10vh, 7rem); }
+  .work:nth-child(6n+3) { grid-column: 2 / span 5; margin-top: clamp(-2rem, -4vh, -1rem); }
+  .work:nth-child(6n+4) { grid-column: 8 / span 4; margin-top: clamp(2rem, 7vh, 5rem); }
+  .work:nth-child(6n+5) { grid-column: 4 / span 6; }
+  .work:nth-child(6n+6) { grid-column: 1 / span 4; margin-top: clamp(2rem, 6vh, 4rem); }
+  .work img {
+    width: 100%;
+    display: block;
+    transition: opacity 0.35s ease;
   }
-  .work:nth-child(odd) { transform: rotate(-1deg); }
-  .work:nth-child(even) { transform: rotate(1.1deg); }
-  .work:hover {
-    transform: rotate(0deg) translateY(-6px) scale(1.02);
-    box-shadow: 0 14px 30px rgba(43, 39, 34, 0.16);
-  }
+  .work:hover img { opacity: 0.88; }
   .work.hidden { display: none; }
-  .work img { width: 100%; display: block; border-radius: 6px; }
   .work figcaption {
-    padding-top: 0.7rem;
-    font-size: 0.85rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 0.6rem;
+    padding-top: 0.85rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
   }
   .work figcaption .cat {
-    color: var(--accent);
-    font-family: 'Caveat', cursive;
-    font-size: 1.05rem;
-    white-space: nowrap;
+    display: block;
+    margin-top: 0.3rem;
+    color: var(--muted);
+    letter-spacing: 0.18em;
+    font-size: 0.6rem;
   }
 
   .colophon {
     text-align: center;
     color: var(--muted);
-    font-size: 0.78rem;
-    padding: 0 1rem 3rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0 1rem 4rem;
+    line-height: 2;
   }
-  .colophon .name { font-family: 'Caveat', cursive; font-size: 1.15rem; color: var(--ink); }
+  .colophon .name { color: var(--ink); }
 
   /* ——— lightbox ——— */
   .lightbox {
     position: fixed;
     inset: 0;
-    background: rgba(250, 247, 240, 0.96);
+    background: rgba(244, 241, 234, 0.97);
     display: none;
     flex-direction: column;
     align-items: center;
@@ -173,17 +178,26 @@
   }
   .lightbox.open { display: flex; }
   .lightbox img {
-    max-width: min(92vw, 1000px);
-    max-height: 80vh;
-    border-radius: 8px;
-    box-shadow: 0 20px 60px rgba(43, 39, 34, 0.25);
+    max-width: min(94vw, 1100px);
+    max-height: 82vh;
+    box-shadow: 0 12px 50px rgba(26, 24, 21, 0.18);
   }
-  .lightbox .lb-caption { margin-top: 1rem; font-size: 0.9rem; }
-  .lightbox .lb-caption .cat { color: var(--accent); font-family: 'Caveat', cursive; font-size: 1.1rem; margin-left: 0.5rem; }
+  .lightbox .lb-caption {
+    margin-top: 1.2rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .lightbox .lb-caption .cat { color: var(--muted); margin-left: 0.8rem; }
 
+  /* ——— mobile: a quiet single column ——— */
+  @media (max-width: 760px) {
+    .grid { display: block; }
+    .work { margin: 0 0 3.5rem !important; }
+  }
   @media (prefers-reduced-motion: reduce) {
     .chibi svg, .chibi.playing svg, .chibi.playing .notes { animation: none; }
-    .work, .chibi svg { transition: none; }
+    .work img, .chibi svg { transition: none; }
   }
 </style>
 </head>
@@ -282,7 +296,7 @@
       <path d="M30 31 h4 l-2 2.4 Z" fill="#3a3530"/>
       <path d="M12 28 l9 2 M11 33 l10 0.5 M53 28 l-9 2 M54 33 l-10 0.5" stroke="#5d6468" stroke-width="1.1" stroke-linecap="round"/>
     </svg>
-    <span class="lbl">♪ Music</span>
+    <span class="lbl">Music</span>
     <span class="notes" aria-hidden="true">♪♫</span>
   </button>
 
@@ -290,7 +304,7 @@
 
 <main class="grid" id="grid"></main>
 
-<p class="colophon"><span class="name">Alexandra Huang</span><br>sketches · studies · visual notes — drawn in pencil, mostly · © 2026</p>
+<p class="colophon"><span class="name">Alexandra Huang</span><br>sketches · studies · visual notes — pencil, mostly · © 2026</p>
 
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
   <img id="lb-img" src="" alt="">
@@ -300,23 +314,23 @@
 <script>
 // ——— works: add a new piece = drop the image in works/ and add a line here ———
 const WORKS = [
-  { src: 'works/art-do-now.jpg',      title: 'Art Do Now — daily sketch prompts', cat: 'Sketchbook' },
-  { src: 'works/value-scales.jpg',    title: 'Value scales & form shading',       cat: 'Studies' },
-  { src: 'works/texture-studies.jpg', title: 'Texture studies in pencil',         cat: 'Studies' },
-  { src: 'works/elements-of-art.jpg', title: 'The elements of art',               cat: 'Visual Notes' },
-  { src: 'works/color-theory.jpg',    title: 'Color theory',                      cat: 'Visual Notes' },
+  { src: 'works/art-do-now.jpg',      title: 'Art Do Now — daily sketch prompts', cat: 'Sketchbook',   year: 2026 },
+  { src: 'works/value-scales.jpg',    title: 'Value scales & form shading',       cat: 'Studies',      year: 2026 },
+  { src: 'works/texture-studies.jpg', title: 'Texture studies in pencil',         cat: 'Studies',      year: 2026 },
+  { src: 'works/elements-of-art.jpg', title: 'The elements of art',               cat: 'Visual Notes', year: 2026 },
+  { src: 'works/color-theory.jpg',    title: 'Color theory',                      cat: 'Visual Notes', year: 2026 },
 ];
 // set to a file like 'music.mp3' to play a real track instead of the music box
 const MUSIC_SRC = null;
 
-// ——— grid ———
+// ——— gallery ———
 const grid = document.getElementById('grid');
 WORKS.forEach((w, i) => {
   const fig = document.createElement('figure');
   fig.className = 'work';
   fig.dataset.cat = w.cat;
   fig.innerHTML = `<img src="${w.src}" alt="${w.title}" loading="lazy">
-    <figcaption><span>${w.title}</span><span class="cat">${w.cat}</span></figcaption>`;
+    <figcaption>${w.title}<span class="cat">${w.cat} · ${w.year}</span></figcaption>`;
   fig.addEventListener('click', () => openLightbox(i));
   grid.appendChild(fig);
 });
@@ -343,7 +357,7 @@ const openLightbox = (i) => {
   lbImg.src = w.src;
   lbImg.alt = w.title;
   lbTitle.textContent = w.title;
-  lbCat.textContent = w.cat;
+  lbCat.textContent = `${w.cat} · ${w.year}`;
   lightbox.classList.add('open');
 };
 lightbox.addEventListener('click', () => lightbox.classList.remove('open'));
