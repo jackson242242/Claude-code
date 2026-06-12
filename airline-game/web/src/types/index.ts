@@ -48,16 +48,23 @@ export type Route = {
   aircraftIds: string[];
   weeklyFlights: number; // 每个方向每周班次
   fareMult: number; // 0.6–1.6，缺省 1.0
+  cabinMix: CabinMix; // M2.3：占地百分比，三项整数和=100，缺省 {100,0,0}
+  serviceTier: 1 | 2 | 3; // M2.3：1 低成本 / 2 标准 / 3 豪华，缺省 2
   lastQuarter: RouteQuarterStats | null;
 };
+
+export type CabinMix = { economy: number; business: number; first: number };
+
+export type ClassStats = { pax: number; capacity: number; revenue: number };
 
 export type RouteQuarterStats = {
   pax: number;
   capacity: number;
-  loadFactor: number; // 0–1
+  loadFactor: number; // 0–1（按总座位）
   revenue: number;
   cost: number;
   profit: number;
+  classes: { economy: ClassStats; business: ClassStats; first: ClassStats }; // M2.3
 };
 
 export type GameState = {
@@ -104,7 +111,14 @@ export type Command =
   | { type: 'openRoute'; cityA: string; cityB: string }
   | { type: 'closeRoute'; routeId: string }
   | { type: 'assignAircraft'; aircraftId: string; routeId: string | null }
-  | { type: 'updateRoute'; routeId: string; weeklyFlights?: number; fareMult?: number };
+  | {
+      type: 'updateRoute';
+      routeId: string;
+      weeklyFlights?: number;
+      fareMult?: number;
+      cabinMix?: CabinMix; // 三项非负整数和必须=100
+      serviceTier?: 1 | 2 | 3;
+    };
 
 export type TurnReport = {
   turn: number;

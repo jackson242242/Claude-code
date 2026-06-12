@@ -5,7 +5,8 @@ import { SlotBadge } from '@/components/SlotBadge';
 import { CITIES, CITY_BY_ID, MODEL_BY_ID, cityZh } from '@/lib/data';
 import { formatKm, formatMoney, formatPercent } from '@/lib/format';
 import { hasFreeHeldSlot, isPoolFull, slotNegotiationCost } from '@/lib/slots';
-import type { Command, GameState, Route } from '@/types';
+import { CABIN_CLASSES, SERVICE_TIERS, seatBreakdown, validateMix } from '@/lib/cabin';
+import type { CabinMix, Command, GameState, Route } from '@/types';
 
 type RoutesTabProps = {
   state: GameState;
@@ -70,10 +71,22 @@ const RoutePanel = ({ route, state, busy, onCommands }: RoutePanelProps) => {
   const [fareMult, setFareMult] = useState(route.fareMult);
   const [assignPick, setAssignPick] = useState('');
 
+  // Cabin-mix draft state (percentages as strings for input editing).
+  const [cabinDraft, setCabinDraft] = useState<CabinMix>(
+    route.cabinMix ?? { economy: 100, business: 0, first: 0 },
+  );
+  const [serviceTier, setServiceTier] = useState<1 | 2 | 3>(route.serviceTier ?? 2);
+
   // Re-sync local slider state whenever the server state replaces the route.
   useEffect(() => {
     setFareMult(route.fareMult);
   }, [route.fareMult]);
+
+  // Re-sync cabin/tier when server state updates.
+  useEffect(() => {
+    setCabinDraft(route.cabinMix ?? { economy: 100, business: 0, first: 0 });
+    setServiceTier(route.serviceTier ?? 2);
+  }, [route.cabinMix, route.serviceTier]);
 
   const assignable = useMemo(
     () =>
@@ -87,9 +100,40 @@ const RoutePanel = ({ route, state, busy, onCommands }: RoutePanelProps) => {
 
   const assigned = state.fleet.filter((aircraft) => aircraft.routeId === route.id);
 
+  const cabinMixValid = validateMix(cabinDraft);
+  const cabinSum = cabinDraft.economy + cabinDraft.business + cabinDraft.first;
+
+  // Seat preview: average over assigned aircraft (or 0 when none).
+  const assignedSeats = assigned
+    .map((ac) => MODEL_BY_ID.get(ac.modelId)?.seats ?? 0)
+    .filter((s) => s > 0);
+  const previewSeats =
+    assignedSeats.length > 0
+      ? seatBreakdown(Math.round(assignedSeats.reduce((a, b) => a + b, 0) / assignedSeats.length), cabinDraft)
+      : null;
+
   const commitFare = () => {
     if (Math.abs(fareMult - route.fareMult) > 1e-9) {
       onCommands([{ type: 'updateRoute', routeId: route.id, fareMult }]);
+    }
+  };
+
+  const commitCabin = () => {
+    if (!cabinMixValid) return;
+    const mixChanged =
+      cabinDraft.economy !== (route.cabinMix?.economy ?? 100) ||
+      cabinDraft.business !== (route.cabinMix?.business ?? 0) ||
+      cabinDraft.first !== (route.cabinMix?.first ?? 0);
+    const tierChanged = serviceTier !== (route.serviceTier ?? 2);
+    if (mixChanged || tierChanged) {
+      onCommands([
+        {
+          type: 'updateRoute',
+          routeId: route.id,
+          cabinMix: cabinDraft,
+          serviceTier,
+        },
+      ]);
     }
   };
 
@@ -225,6 +269,82 @@ const RoutePanel = ({ route, state, busy, onCommands }: RoutePanelProps) => {
           <span>0.6 低价抢客</span>
           <span>1.6 高价精品</span>
         </div>
+      </section>
+
+      {/* cabin mix editor — M2.3 */}
+      <section aria-label="舱位配置">
+        <h4 className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+          舱位配置
+        </h4>
+        <div className="flex flex-col gap-2">
+          {CABIN_CLASSES.map(({ key, label }) => (
+            <div key={key} className="flex items-center gap-2">
+              <span className="w-8 text-xs text-slate-400">{label}</span>
+              <input
+                type="number"
+                min={0}
+                max={100}
+                step={1}
+                aria-label={`${label} %`}
+                value={cabinDraft[key]}
+                disabled={busy}
+                onChange={(event) => {
+                  const val = Math.max(0, Math.min(100, Math.round(Number(event.target.value))));
+                  setCabinDraft((prev) => ({ ...prev, [key]: isNaN(val) ? 0 : val }));
+                }}
+                className="w-16 rounded-lg border border-ops-600 bg-ops-900 px-2 py-1 text-center text-xs text-slate-200"
+              />
+              <span className="text-xs text-slate-500">%</span>
+              {previewSeats && (
+                <span className="ml-1 text-[11px] text-slate-500">
+                  → {previewSeats[key]} 座
+                </span>
+              )}
+            </div>
+          ))}
+        </div>
+        {!cabinMixValid && cabinSum !== 100 && (
+          <p
+            data-testid="cabin-sum-error"
+            className="mt-1.5 text-[11px] text-red-400"
+          >
+            三舱比例之和须为 100（当前 {cabinSum}）
+          </p>
+        )}
+
+        {/* service tier segmented control */}
+        <h4 className="mb-1.5 mt-3 text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+          服务等级
+        </h4>
+        <div className="flex gap-1.5" role="group" aria-label="服务等级">
+          {SERVICE_TIERS.map(({ tier, label, hint }) => (
+            <button
+              key={tier}
+              type="button"
+              aria-label={label}
+              title={hint}
+              disabled={busy}
+              onClick={() => setServiceTier(tier)}
+              className={`flex-1 rounded-lg border py-1.5 text-xs transition-colors ${
+                serviceTier === tier
+                  ? 'border-accent bg-accent/10 text-accent'
+                  : 'border-ops-600 bg-ops-900 text-slate-400 hover:border-slate-500'
+              }`}
+            >
+              {tier} {label}
+            </button>
+          ))}
+        </div>
+
+        <button
+          type="button"
+          data-testid="cabin-confirm"
+          disabled={busy || !cabinMixValid}
+          onClick={commitCabin}
+          className="btn-ghost mt-2.5 w-full py-1.5 text-xs"
+        >
+          确认舱位配置
+        </button>
       </section>
 
       {/* last quarter stats */}

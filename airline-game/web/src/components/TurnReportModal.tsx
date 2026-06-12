@@ -1,8 +1,40 @@
 'use client';
 
+import { hasPremiumClasses } from '@/lib/cabin';
 import { cityZh } from '@/lib/data';
 import { formatMoney, formatPercent } from '@/lib/format';
-import type { GameState, TurnReport } from '@/types';
+import type { GameState, RouteQuarterStats, TurnReport } from '@/types';
+
+const CLASS_LABELS: Record<string, string> = { economy: '经济', business: '商务', first: '头等' };
+
+const ClassBreakdown = ({ stats }: { stats: RouteQuarterStats }) => (
+  <table
+    data-testid="class-breakdown"
+    className="mt-1.5 w-full text-[10px] text-slate-500"
+  >
+    <thead>
+      <tr>
+        <th className="py-0.5 text-left font-medium">舱位</th>
+        <th className="py-0.5 text-right font-medium">客流</th>
+        <th className="py-0.5 text-right font-medium">容量</th>
+        <th className="py-0.5 text-right font-medium">收入</th>
+      </tr>
+    </thead>
+    <tbody>
+      {(['economy', 'business', 'first'] as const).map((cls) => {
+        const cs = stats.classes[cls];
+        return (
+          <tr key={cls}>
+            <td className="py-0.5 text-slate-400">{CLASS_LABELS[cls]}</td>
+            <td className="py-0.5 text-right tabular-nums">{cs.pax.toLocaleString('en-US')}</td>
+            <td className="py-0.5 text-right tabular-nums">{cs.capacity.toLocaleString('en-US')}</td>
+            <td className="py-0.5 text-right tabular-nums">{formatMoney(cs.revenue)}</td>
+          </tr>
+        );
+      })}
+    </tbody>
+  </table>
+);
 
 type TurnReportModalProps = {
   report: TurnReport;
@@ -62,21 +94,28 @@ export const TurnReportModal = ({ report, state, onClose }: TurnReportModalProps
               {report.routeStats.map((stats) => (
                 <li
                   key={stats.routeId}
-                  className="flex items-center justify-between gap-2 rounded-lg bg-ops-900/80 px-2.5 py-2 text-xs"
+                  className="rounded-lg bg-ops-900/80 px-2.5 py-2 text-xs"
                 >
-                  <span className="min-w-0 flex-1 truncate font-semibold text-slate-200">
-                    {routeName(stats.routeId)}
-                  </span>
-                  <span className="tabular-nums text-glow">
-                    {formatPercent(stats.loadFactor)}
-                  </span>
-                  <span
-                    className={`w-16 text-right font-bold tabular-nums ${
-                      stats.profit >= 0 ? 'text-emerald-400' : 'text-red-400'
-                    }`}
-                  >
-                    {formatMoney(stats.profit)}
-                  </span>
+                  {/* total row */}
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="min-w-0 flex-1 truncate font-semibold text-slate-200">
+                      {routeName(stats.routeId)}
+                    </span>
+                    <span className="tabular-nums text-glow">
+                      {formatPercent(stats.loadFactor)}
+                    </span>
+                    <span
+                      className={`w-16 text-right font-bold tabular-nums ${
+                        stats.profit >= 0 ? 'text-emerald-400' : 'text-red-400'
+                      }`}
+                    >
+                      {formatMoney(stats.profit)}
+                    </span>
+                  </div>
+                  {/* per-class breakdown (M2.3) — shown when premium cabins exist */}
+                  {hasPremiumClasses(stats.classes) && (
+                    <ClassBreakdown stats={stats} />
+                  )}
                 </li>
               ))}
             </ul>
