@@ -1,6 +1,17 @@
 # SkyEmpire（暂名）— 航空霸业2 式网页手游 · 立项计划
 
-> 状态：计划稿（待老板拍板后开工）｜分支：`claude/airline-tycoon-dynamic-events-ps9if8`
+> 状态：**已开工（老板 2026-06-12 拍板）**｜分支：`claude/airline-tycoon-dynamic-events-ps9if8`
+>
+> 老板裁决：① 按建议执行、持续推进；② 新闻用免费源（GDELT/RSS）；③ 机型更新为
+> **2026 年现役主流真机**（数据表见 `airline-game/data/aircraft.json`，13 型：E195-E2 /
+> A220-300 / A320neo / A321neo / A321XLR / 737 MAX 8 / 737 MAX 10 / 787-9 / A330-900neo /
+> A350-900 / A350-1000 / 777-300ER / 777-9）；④ 用**真实飞机素材**保画质。
+>
+> 素材方案（受沙箱网络限制的现实解）：沙箱出口只放行 npm/pypi/GitHub，无法直接下载
+> 图片。采用 Wikimedia Commons 真实摄影作品的 `Special:FilePath` 直链（玩家浏览器加载，
+> CC 授权 + 游戏内署名页，清单在 `airline-game/data/aircraft-images.json`），前端对加载
+> 失败做剪影降级。**待老板**：把 `upload.wikimedia.org`、`commons.wikimedia.org` 加进
+> 环境网络白名单后，可把素材本地化校验、画质更稳。
 > 一句话：复刻《航空霸业2》（KOEI Aerobiz 2）的回合制航空经营玩法，做成手机浏览器
 > 即开即玩的 Web 游戏，并加一个「现实世界新闻 → 游戏内动态事件」的实时管道。
 

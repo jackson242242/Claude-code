@@ -41,3 +41,9 @@ htmlcov/
 
 # voice memo watch app
 voice-memo-watch/backend/var/
+
+# airline-game sub-app
+airline-game/web/node_modules/
+airline-game/web/.next/
+airline-game/web/out/
+airline-game/web/coverage/

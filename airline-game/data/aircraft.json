@@ -1,0 +1,15 @@
+[
+  { "id": "e195-e2", "manufacturer": "Embraer", "name": "E195-E2", "seats": 132, "rangeKm": 4815, "cruiseKmh": 833, "price": 78000000, "fuelKgPerKm": 2.1, "introduced": 2019 },
+  { "id": "a220-300", "manufacturer": "Airbus", "name": "A220-300", "seats": 145, "rangeKm": 6667, "cruiseKmh": 829, "price": 92000000, "fuelKgPerKm": 2.2, "introduced": 2018 },
+  { "id": "a320neo", "manufacturer": "Airbus", "name": "A320neo", "seats": 165, "rangeKm": 6300, "cruiseKmh": 833, "price": 111000000, "fuelKgPerKm": 2.5, "introduced": 2016 },
+  { "id": "b737max8", "manufacturer": "Boeing", "name": "737 MAX 8", "seats": 178, "rangeKm": 6480, "cruiseKmh": 839, "price": 122000000, "fuelKgPerKm": 2.5, "introduced": 2017 },
+  { "id": "a321neo", "manufacturer": "Airbus", "name": "A321neo", "seats": 200, "rangeKm": 7400, "cruiseKmh": 833, "price": 130000000, "fuelKgPerKm": 2.9, "introduced": 2017 },
+  { "id": "b737max10", "manufacturer": "Boeing", "name": "737 MAX 10", "seats": 204, "rangeKm": 5740, "cruiseKmh": 839, "price": 135000000, "fuelKgPerKm": 2.8, "introduced": 2025, "badge": "新近投运" },
+  { "id": "a321xlr", "manufacturer": "Airbus", "name": "A321XLR", "seats": 200, "rangeKm": 8700, "cruiseKmh": 833, "price": 142000000, "fuelKgPerKm": 3.0, "introduced": 2024, "badge": "跨洋窄体" },
+  { "id": "b787-9", "manufacturer": "Boeing", "name": "787-9 Dreamliner", "seats": 296, "rangeKm": 14140, "cruiseKmh": 903, "price": 292000000, "fuelKgPerKm": 5.3, "introduced": 2014 },
+  { "id": "a330-900", "manufacturer": "Airbus", "name": "A330-900neo", "seats": 300, "rangeKm": 13334, "cruiseKmh": 912, "price": 296000000, "fuelKgPerKm": 5.6, "introduced": 2018 },
+  { "id": "a350-900", "manufacturer": "Airbus", "name": "A350-900", "seats": 325, "rangeKm": 15000, "cruiseKmh": 903, "price": 317000000, "fuelKgPerKm": 5.8, "introduced": 2015 },
+  { "id": "b777-300er", "manufacturer": "Boeing", "name": "777-300ER", "seats": 365, "rangeKm": 13650, "cruiseKmh": 892, "price": 320000000, "fuelKgPerKm": 7.5, "introduced": 2004 },
+  { "id": "a350-1000", "manufacturer": "Airbus", "name": "A350-1000", "seats": 375, "rangeKm": 16100, "cruiseKmh": 903, "price": 366000000, "fuelKgPerKm": 6.4, "introduced": 2018 },
+  { "id": "b777-9", "manufacturer": "Boeing", "name": "777-9", "seats": 426, "rangeKm": 13940, "cruiseKmh": 906, "price": 442000000, "fuelKgPerKm": 7.0, "introduced": 2026, "badge": "2026 新机型" }
+]

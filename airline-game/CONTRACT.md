@@ -1,0 +1,189 @@
+# SkyEmpire M1 — API 契约与经济模型（前后端共同遵守）
+
+> 本文件是 `airline-game/api`（FastAPI）与 `airline-game/web`（Next.js）之间的唯一契约。
+> 任何改动必须先改这里。JSON 一律 camelCase（后端用 Pydantic alias generator，
+> 与仓库根项目同一约定）。
+
+## 0. 目录与端口
+- 后端：`airline-game/api`，dev 跑在 **http://localhost:8001**（避开 Matchday26 的 8000）。
+- 前端：`airline-game/web`，dev 跑在 **http://localhost:3001**（`next dev -p 3001`）。
+  API 基址取 `NEXT_PUBLIC_API_URL`，缺省 `http://localhost:8001`。
+- 数据表（两端共用的事实源）：`airline-game/data/cities.json`、`airline-game/data/aircraft.json`。
+  后端启动时加载；前端把它们作为静态导入（构建期复制或直接 import 相对路径均可）。
+- 机型图片清单：`airline-game/data/aircraft-images.json`（schema 见 §6），由主会话维护。
+
+## 1. REST API
+
+所有响应 `Content-Type: application/json`。错误统一
+`{"error": {"message": string, "type": string}}`（HTTP 400/404/422），与根项目同款全局异常处理。
+
+| Method | Path | Body | 返回 |
+|---|---|---|---|
+| GET | `/api/meta` | — | `{ cities: City[], aircraftModels: AircraftModel[] }` |
+| POST | `/api/games` | `{ airlineName: string, hqCityId: string }` | `GameState`（201） |
+| GET | `/api/games/{gameId}` | — | `GameState` |
+| POST | `/api/games/{gameId}/commands` | `{ commands: Command[] }` | `{ state: GameState, results: CommandResult[] }` |
+| POST | `/api/games/{gameId}/end-turn` | `{}` | `{ state: GameState, report: TurnReport }` |
+
+- 命令立即生效（买机即时交付——交付周期留给 M2）。
+- `CommandResult = { index: number, ok: boolean, message?: string }`；单条失败不影响其余命令。
+- 存储：内存 dict + 进程内自增 id（M1 不接 PG；接口留 service 层便于 M5 换存储）。
+
+## 2. 核心类型（TypeScript 形式，后端 Pydantic 同构）
+
+```ts
+type City = {
+  id: string;            // "nyc"
+  name: string;          // "New York"
+  nameZh: string;        // "纽约"
+  country: string;
+  lat: number; lon: number;
+  demandIndex: number;   // 1–10
+  slotFee: number;       // 每次起降的机场费用（美元）
+};
+
+type AircraftModel = {
+  id: string;            // "a320neo"
+  manufacturer: string;  // "Airbus"
+  name: string;          // "A320neo"
+  seats: number;
+  rangeKm: number;
+  cruiseKmh: number;
+  price: number;         // 购置价（美元）
+  fuelKgPerKm: number;   // 巡航油耗
+  introduced: number;    // 投入运营年份（全部为 2026 现役主流机型）
+  badge?: string;        // 例如 "2026 新机型"
+};
+
+type FleetAircraft = {
+  id: string;                 // "ac-1"
+  modelId: string;
+  ownership: "owned" | "leased";
+  routeId: string | null;     // 当前指派的航线
+};
+
+type Route = {
+  id: string;                 // "rt-1"
+  cityA: string; cityB: string;
+  distanceKm: number;
+  aircraftIds: string[];
+  weeklyFlights: number;      // 每个方向每周班次
+  fareMult: number;           // 0.6–1.6，缺省 1.0
+  lastQuarter: RouteQuarterStats | null;
+};
+
+type RouteQuarterStats = {
+  pax: number; capacity: number; loadFactor: number;  // 0–1
+  revenue: number; cost: number; profit: number;
+};
+
+type GameState = {
+  id: string;
+  airlineName: string;
+  hqCityId: string;
+  turn: number;               // 从 1 开始
+  year: number; quarter: 1 | 2 | 3 | 4;   // 起始 2026 Q3
+  cash: number;
+  fleet: FleetAircraft[];
+  routes: Route[];
+  news: NewsItem[];           // 本回合播报（M1 为系统消息，M3 接事件）
+  finance: {
+    lastQuarter: { revenue: number; cost: number; profit: number } | null;
+    history: { turn: number; cash: number; profit: number }[];
+  };
+  status: "active" | "bankrupt";
+};
+
+type NewsItem = { headline: string; detail?: string; kind: "system" | "event" };
+
+type Command =
+  | { type: "buyAircraft";   modelId: string }
+  | { type: "leaseAircraft"; modelId: string }
+  | { type: "sellAircraft";  aircraftId: string }      // 残值 = price × 0.7
+  | { type: "returnLease";   aircraftId: string }
+  | { type: "openRoute";     cityA: string; cityB: string }
+  | { type: "closeRoute";    routeId: string }
+  | { type: "assignAircraft"; aircraftId: string; routeId: string | null }
+  | { type: "updateRoute";   routeId: string; weeklyFlights?: number; fareMult?: number };
+
+type TurnReport = {
+  turn: number; year: number; quarter: number;
+  routeStats: (RouteQuarterStats & { routeId: string })[];
+  totals: { revenue: number; cost: number; profit: number };
+  news: NewsItem[];
+};
+```
+
+## 3. 经济模型（引擎按此实现，常数集中在 `api/app/engine/balance.py`）
+
+- **距离**：haversine(cityA, cityB)，开航线时算好存进 Route。
+- **航线合法性**：开航必有一端为 HQ（M1 简化为枢纽辐射式）；两城唯一航线；
+  指派机型 `rangeKm ≥ distanceKm`。
+- **市场需求**（双向合计，人次/季度）：
+  `marketPax = BASE_K × demandA × demandB × seasonFactor(quarter) × distanceDecay`
+  其中 `distanceDecay = exp(-distanceKm / 9000)`，`seasonFactor = [Q1:0.9, Q2:1.0, Q3:1.15, Q4:0.95]`。
+- **玩家可获份额**：`share = SHARE_BASE`（常数，M1 无对手 AI；M2 改为竞争模型）。
+- **票价**：`fare = (FARE_FIXED + FARE_PER_KM × distanceKm) × fareMult`。
+- **价格弹性**：`demandMult = fareMult ** PRICE_ELASTICITY`（PRICE_ELASTICITY ≈ −1.6）。
+- **运力**：`capacity = Σ(assigned aircraft seats) × weeklyFlights × 2 × 13`（双向、13 周）。
+  约束：每架飞机周飞行小时 ≤ 84：`weeklyFlights × 2 × (distanceKm/cruiseKmh + 0.6) ≤ 84 × nAircraft`，
+  超出时 `updateRoute` 报错。
+- **成交客流**：`pax = min(capacity, marketPax × share × demandMult)`。
+- **季度成本**（按航线）：
+  - 燃油：`distanceKm × fuelKgPerKm × FUEL_USD_PER_KG × flights`（flights = weeklyFlights×2×13）
+  - 机场费：`(slotFeeA + slotFeeB) × flights`
+  - 机组+维护：`blockHours × CREW_MAINT_USD_PER_BH`（blockHours = flights × (distance/cruise + 0.6)）
+- **机队持有成本**（按飞机/季度）：自有 = `price × DEPRECIATION_Q`（1.25%）；
+  租赁 = `price × LEASE_RATE_Q`（2.75%）。未指派的飞机同样产生持有成本。
+- **总部开销**：`HQ_OVERHEAD + ADMIN_PER_AIRCRAFT × fleetSize` 每季度。
+- **破产**：连续 2 个季度结束时 `cash < 0` → `status = "bankrupt"`，拒绝后续命令与回合。
+- **起始条件**：现金 **$420M**，无机队无航线，2026 年 Q3 开局。
+
+**平衡性验收目标（写成 pytest 断言，调常数直到通过）**：
+1. 1 架自有 A320neo、HQ 纽约 ↔ demandIndex≥7 的 ~2,000–4,000km 航线、每周 14 班、
+   fareMult 1.0 → 客座率 70–90%，季度航线利润为正。
+2. 1 架自有 787-9 跑 纽约↔伦敦 每周 7 班 → 客座率 ≥ 75%，含持有成本后仍盈利。
+3. fareMult 1.6 时上述航线客流显著下降（弹性生效），fareMult 0.6 时满载但利润下降。
+4. 全款买 3 架 A320neo 后现金仍 > $80M（起始资金校验）。
+
+## 4. 后端实现要求（`airline-game/api`）
+- FastAPI + Pydantic v2，`alias_generator=to_camel, populate_by_name=True`。
+- **引擎为纯函数**：`app/engine/`（`state.py` 数据类、`commands.py`、`simulate.py`、
+  `balance.py` 常数）。引擎不 import FastAPI/存储。
+- 路由层薄：`app/main.py` + `app/routes/games.py`；全局异常处理同根项目风格。
+- 测试 `api/tests/`：命令校验（非法城市/超航程/现金不足/利用率超限）、回合结算数字
+  可复算、§3 的 4 条平衡性断言、API 烟雾测试（TestClient 全流程：建局→买机→开航→
+  指派→结算→破产路径）。
+- `api/requirements.txt`（fastapi、uvicorn、pytest、httpx）；venv 放 `airline-game/api/.venv`。
+
+## 5. 前端实现要求（`airline-game/web`）
+- Next.js 15 App Router + TS strict + Tailwind 4（依赖版本对齐仓库根 `package.json`），
+  函数组件+箭头函数，无 any，无 Redux/Axios。
+- 手机竖屏优先的单页游戏盘面：
+  - **顶栏**：航司名、现金、`2026 Q3` 回合显示、「下一季度」按钮（结算后弹出季报）。
+  - **地图**：SVG 世界地图（用 npm 包 `world-atlas`(land-110m) + `topojson-client` +
+    `d3-geo` 的 `geoNaturalEarth1` 投影，构建期/模块顶层生成 path，不要运行时拉网络）。
+    城市为可点节点，航线画大圆弧线，HQ 高亮。
+  - **底部抽屉**（移动端 tab）：航线｜机队｜机型市场｜财务｜新闻。
+  - **机型市场**：真实飞机照片卡片（图片清单见 §6，`<img>` 加 `loading="lazy"`、
+    onError 降级为机型剪影占位 SVG + 型号文字），含座位/航程/价格/「购买/租赁」。
+  - **季报弹层**：各航线客座率/利润 + 总损益 + 新闻播报。
+- 状态：每次命令/结算后以服务端返回的 `GameState` 整体替换（单 `useState`），
+  API 封装在 `web/src/services/api.ts`。游戏 id 存 `localStorage` 续局。
+- 视觉基调：深色「航司运营中心」风（深蓝黑底、青色航线光弧、琥珀色强调），
+  画质优先：照片卡片、地图弧线动画（CSS 即可）。页脚/新闻 tab 内含「图片来源与署名」
+  入口（读 aircraft-images.json 的 credit 字段逐条列出）。
+- 测试（Jest + RTL，配置仿根项目）：api service 单测（fetch mock）+ 机型卡片组件
+  渲染测试 + 金额格式化等工具函数测试。`npm run lint`、`npm run typecheck` 必须过。
+
+## 6. aircraft-images.json schema（主会话负责生成数据）
+```jsonc
+{
+  "a350-1000": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/<file>?width=1280",
+    "filePage": "https://commons.wikimedia.org/wiki/File:<file>",
+    "credit": "Photo via Wikimedia Commons（作者与许可证见文件页）"
+  }
+}
+```
+前端按 `modelId` 取图；取不到或加载失败一律走剪影降级，不得破版。

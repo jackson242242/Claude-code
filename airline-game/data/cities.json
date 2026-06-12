@@ -1,0 +1,14 @@
+[
+  { "id": "nyc", "name": "New York", "nameZh": "纽约", "country": "USA", "lat": 40.6413, "lon": -73.7781, "demandIndex": 10, "slotFee": 9500 },
+  { "id": "lax", "name": "Los Angeles", "nameZh": "洛杉矶", "country": "USA", "lat": 33.9416, "lon": -118.4085, "demandIndex": 9, "slotFee": 8500 },
+  { "id": "mex", "name": "Mexico City", "nameZh": "墨西哥城", "country": "Mexico", "lat": 19.4363, "lon": -99.0721, "demandIndex": 7, "slotFee": 5200 },
+  { "id": "gru", "name": "São Paulo", "nameZh": "圣保罗", "country": "Brazil", "lat": -23.4356, "lon": -46.4731, "demandIndex": 7, "slotFee": 5600 },
+  { "id": "lhr", "name": "London", "nameZh": "伦敦", "country": "UK", "lat": 51.4700, "lon": -0.4543, "demandIndex": 10, "slotFee": 11000 },
+  { "id": "cdg", "name": "Paris", "nameZh": "巴黎", "country": "France", "lat": 49.0097, "lon": 2.5479, "demandIndex": 9, "slotFee": 9000 },
+  { "id": "fra", "name": "Frankfurt", "nameZh": "法兰克福", "country": "Germany", "lat": 50.0379, "lon": 8.5622, "demandIndex": 8, "slotFee": 8800 },
+  { "id": "dxb", "name": "Dubai", "nameZh": "迪拜", "country": "UAE", "lat": 25.2532, "lon": 55.3657, "demandIndex": 9, "slotFee": 7000 },
+  { "id": "sin", "name": "Singapore", "nameZh": "新加坡", "country": "Singapore", "lat": 1.3644, "lon": 103.9915, "demandIndex": 8, "slotFee": 7400 },
+  { "id": "hnd", "name": "Tokyo", "nameZh": "东京", "country": "Japan", "lat": 35.5494, "lon": 139.7798, "demandIndex": 9, "slotFee": 9800 },
+  { "id": "pvg", "name": "Shanghai", "nameZh": "上海", "country": "China", "lat": 31.1443, "lon": 121.8083, "demandIndex": 9, "slotFee": 6800 },
+  { "id": "syd", "name": "Sydney", "nameZh": "悉尼", "country": "Australia", "lat": -33.9399, "lon": 151.1753, "demandIndex": 7, "slotFee": 7600 }
+]
