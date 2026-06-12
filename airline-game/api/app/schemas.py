@@ -65,6 +65,22 @@ class Route(CamelModel):
     last_quarter: RouteQuarterStats | None = None
 
 
+class CompetitorRoute(CamelModel):
+    city_a: str
+    city_b: str
+    weekly_seats: int
+
+
+class Competitor(CamelModel):
+    id: str
+    name: str
+    name_zh: str
+    hq_city_id: str
+    fare_mult: float
+    routes: list[CompetitorRoute]
+    market_share: float
+
+
 class NewsItem(CamelModel):
     headline: str
     detail: str | None = None
@@ -98,6 +114,8 @@ class GameState(CamelModel):
     cash: float
     fleet: list[FleetAircraft]
     routes: list[Route]
+    competitors: list[Competitor]
+    market_share: float
     news: list[NewsItem]
     finance: Finance
     status: Literal["active", "bankrupt"]

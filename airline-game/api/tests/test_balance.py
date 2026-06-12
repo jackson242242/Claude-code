@@ -66,7 +66,8 @@ class TestBalanceTargets:
         pricey = open_and_fly(fresh(world), world, "a320neo", "lax", 7, fare_mult=1.6)
         cheap = open_and_fly(fresh(world), world, "a320neo", "lax", 7, fare_mult=0.6)
 
-        # Elasticity bites: 1.6 ** -1.6 ≈ 0.47 of base demand.
+        # Elasticity bites twice in the share model: w = 1.6 ** -1.6 ≈ 0.47
+        # and the share w/(w + W_BG) shrinks too → ≈ 0.29 of base traffic.
         assert pricey.pax < 0.6 * base.pax
         # Discounting fills every seat...
         assert cheap.pax == cheap.capacity

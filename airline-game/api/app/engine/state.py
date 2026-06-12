@@ -86,6 +86,24 @@ class Route:
 
 
 @dataclass
+class CompetitorRoute:
+    city_a: str
+    city_b: str
+    weekly_seats: int  # per direction per week (CONTRACT §2)
+
+
+@dataclass
+class Competitor:
+    id: str
+    name: str
+    name_zh: str
+    hq_city_id: str
+    fare_mult: float  # fixed personality: 0.9 budget / 1.0 balanced / 1.1 premium
+    routes: list[CompetitorRoute] = field(default_factory=list)
+    market_share: float = 0.0  # last quarter's share, 0–1
+
+
+@dataclass
 class NewsItem:
     headline: str
     detail: str | None = None
@@ -123,6 +141,8 @@ class GameState:
     cash: float
     fleet: list[FleetAircraft] = field(default_factory=list)
     routes: list[Route] = field(default_factory=list)
+    competitors: list[Competitor] = field(default_factory=list)
+    market_share: float = 0.0  # player's share of last quarter's served traffic
     news: list[NewsItem] = field(default_factory=list)
     finance: Finance = field(default_factory=Finance)
     status: Literal["active", "bankrupt"] = "active"
@@ -133,7 +153,12 @@ class GameState:
 
 
 def new_game(game_id: str, airline_name: str, hq_city: City) -> GameState:
-    """Starting conditions per CONTRACT §3: $420M cash, no fleet/routes, 2026 Q3."""
+    """Starting conditions per CONTRACT §3: $420M cash, no fleet/routes, 2026 Q3,
+    plus the three fixed AI rival airlines (M2.1)."""
+    # Local import: competitors.py needs the dataclasses above, so importing it
+    # at module top would be circular.
+    from app.engine.competitors import initial_competitors
+
     return GameState(
         id=game_id,
         airline_name=airline_name,
@@ -142,6 +167,7 @@ def new_game(game_id: str, airline_name: str, hq_city: City) -> GameState:
         year=balance.START_YEAR,
         quarter=balance.START_QUARTER,
         cash=balance.STARTING_CASH,
+        competitors=initial_competitors(),
         news=[
             NewsItem(
                 headline=f"{airline_name} 正式成立",

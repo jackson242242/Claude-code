@@ -9,6 +9,7 @@ import math
 from dataclasses import dataclass, field
 
 from app.engine import balance
+from app.engine.competitors import competitor_route_capacity, evolve_competitors
 from app.engine.state import (
     AircraftModel,
     FinanceHistoryEntry,
@@ -20,6 +21,7 @@ from app.engine.state import (
     World,
     ensure_active,
     get_aircraft,
+    haversine_km,
 )
 
 
@@ -87,10 +89,162 @@ def mean_cruise_kmh(models: list[AircraftModel]) -> float:
     return _mean([m.cruise_kmh for m in models])
 
 
+def price_weight(fare_mult: float) -> float:
+    """Price weight of a seller (CONTRACT §3): w = fareMult ** PRICE_ELASTICITY.
+    The weight carries the elasticity; M1's separate demandMult is retired."""
+    return fare_mult ** balance.PRICE_ELASTICITY
+
+
+def route_capacity(state: GameState, world: World, route: Route) -> int:
+    """Quarterly seats on a player route: Σseats × weeklyFlights × 2 × 13."""
+    models = assigned_models(state, route, world)
+    if not models or route.weekly_flights <= 0:
+        return 0
+    return int(
+        round(
+            sum(m.seats for m in models)
+            * route.weekly_flights
+            * 2
+            * balance.WEEKS_PER_QUARTER
+        )
+    )
+
+
+# --- Share competition model (CONTRACT §3, M2.1) -------------------------------
+
+
+@dataclass
+class _Seller:
+    weight: float
+    capacity: float  # math.inf for the background market
+    demand: float = 0.0
+    pax: float = 0.0
+
+
+@dataclass
+class MarketAllocation:
+    """Quarter pax per seller across every served city pair."""
+
+    route_pax: dict[str, int] = field(default_factory=dict)  # player routeId → pax
+    competitor_pax: dict[str, float] = field(default_factory=dict)  # aiId → pax
+    background_pax: float = 0.0
+
+    @property
+    def player_pax(self) -> int:
+        return sum(self.route_pax.values())
+
+    @property
+    def total_pax(self) -> float:
+        return (
+            self.player_pax
+            + sum(self.competitor_pax.values())
+            + self.background_pax
+        )
+
+
+def allocate_city_pair(market: float, sellers: list[_Seller]) -> None:
+    """One city pair (CONTRACT §3): share_i = w_i / Σw (the background, weight
+    W_BG, is one of the sellers), pax_i = min(capacity_i, market × w_i × share_i),
+    then exactly one deterministic redistribution pass that hands the
+    capacity-capped sellers' unmet demand to the non-capped ones, weight-wise."""
+    total_weight = sum(seller.weight for seller in sellers)
+    if total_weight <= 0:
+        return
+    for seller in sellers:
+        seller.demand = market * seller.weight * (seller.weight / total_weight)
+        seller.pax = min(seller.capacity, seller.demand)
+    unmet = sum(seller.demand - seller.pax for seller in sellers)
+    if unmet <= 0:
+        return
+    uncapped = [seller for seller in sellers if seller.pax < seller.capacity]
+    uncapped_weight = sum(seller.weight for seller in uncapped)
+    if uncapped_weight <= 0:
+        return
+    for seller in uncapped:
+        seller.pax = min(
+            seller.capacity, seller.pax + unmet * seller.weight / uncapped_weight
+        )
+
+
+def allocate_market(state: GameState, world: World, quarter: int) -> MarketAllocation:
+    """Run the share competition on every city pair served by the player or an
+    AI. Pairs are independent, so a stable pair order keeps this deterministic."""
+    player_routes: dict[frozenset[str], Route] = {
+        frozenset((route.city_a, route.city_b)): route for route in state.routes
+    }
+    ai_routes: dict[frozenset[str], list[tuple[str, float, int]]] = {}
+    pair_order: list[frozenset[str]] = list(player_routes)
+    for competitor in state.competitors:
+        for ai_route in competitor.routes:
+            pair = frozenset((ai_route.city_a, ai_route.city_b))
+            if pair not in player_routes and pair not in ai_routes:
+                pair_order.append(pair)
+            ai_routes.setdefault(pair, []).append(
+                (
+                    competitor.id,
+                    competitor.fare_mult,
+                    competitor_route_capacity(ai_route),
+                )
+            )
+
+    allocation = MarketAllocation()
+    for pair in pair_order:
+        city_a, city_b = (world.cities[city_id] for city_id in pair)
+        player_route = player_routes.get(pair)
+        distance = (
+            player_route.distance_km
+            if player_route is not None
+            else round(haversine_km(city_a.lat, city_a.lon, city_b.lat, city_b.lon), 1)
+        )
+        market = market_pax(
+            city_a.demand_index, city_b.demand_index, quarter, distance
+        )
+
+        sellers: list[_Seller] = []
+        if player_route is not None:
+            sellers.append(
+                _Seller(
+                    weight=price_weight(player_route.fare_mult),
+                    capacity=route_capacity(state, world, player_route),
+                )
+            )
+        ai_sellers = ai_routes.get(pair, [])
+        for _, fare_mult, capacity in ai_sellers:
+            sellers.append(_Seller(weight=price_weight(fare_mult), capacity=capacity))
+        background = _Seller(weight=balance.W_BG, capacity=math.inf)
+        sellers.append(background)
+
+        allocate_city_pair(market, sellers)
+
+        cursor = 0
+        if player_route is not None:
+            allocation.route_pax[player_route.id] = int(round(sellers[cursor].pax))
+            cursor += 1
+        for (competitor_id, _, _), seller in zip(ai_sellers, sellers[cursor:]):
+            allocation.competitor_pax[competitor_id] = (
+                allocation.competitor_pax.get(competitor_id, 0.0) + seller.pax
+            )
+        allocation.background_pax += background.pax
+    return allocation
+
+
+def update_market_shares(state: GameState, allocation: MarketAllocation) -> None:
+    """marketShare (same yardstick for player and AIs, CONTRACT §3): own pax ÷
+    total pax of every seller incl. the background; 0 with no routes/traffic."""
+    total = allocation.total_pax
+    state.market_share = (
+        round(allocation.player_pax / total, 4) if total > 0 else 0.0
+    )
+    for competitor in state.competitors:
+        pax = allocation.competitor_pax.get(competitor.id, 0.0)
+        competitor.market_share = round(pax / total, 4) if total > 0 else 0.0
+
+
 def simulate_route(
-    state: GameState, world: World, route: Route, quarter: int
+    state: GameState, world: World, route: Route, quarter: int, pax: int
 ) -> RouteQuarterStats:
-    """One route's quarter per CONTRACT §3. A route with no assigned aircraft
+    """One route's quarter per CONTRACT §3; ``pax`` comes from the share
+    competition model (``allocate_market``). A route with no assigned aircraft
     flies nothing and costs nothing."""
     models = assigned_models(state, route, world)
     if not models or route.weekly_flights <= 0:
@@ -101,11 +255,7 @@ def simulate_route(
     distance = route.distance_km
     flights = route.weekly_flights * 2 * balance.WEEKS_PER_QUARTER
 
-    capacity = int(round(sum(m.seats for m in models)
-                         * route.weekly_flights * 2 * balance.WEEKS_PER_QUARTER))
-    market = market_pax(city_a.demand_index, city_b.demand_index, quarter, distance)
-    demand_mult = route.fare_mult ** balance.PRICE_ELASTICITY
-    pax = int(round(min(capacity, market * balance.SHARE_BASE * demand_mult)))
+    capacity = route_capacity(state, world, route)
     load_factor = round(pax / capacity, 4) if capacity else 0.0
 
     revenue = round(pax * fare_usd(distance, route.fare_mult), 2)
@@ -152,11 +302,20 @@ def settle_turn(state: GameState, world: World) -> TurnReport:
     ensure_active(state)
 
     turn, year, quarter = state.turn, state.year, state.quarter
+
+    # AI airlines evolve before settlement (CONTRACT §3, M2.1).
+    ai_news = evolve_competitors(state, world)
+
+    allocation = allocate_market(state, world, quarter)
+    update_market_shares(state, allocation)
+
     route_stats: list[RouteTurnStats] = []
     routes_revenue = 0.0
     routes_cost = 0.0
     for route in state.routes:
-        stats = simulate_route(state, world, route, quarter)
+        stats = simulate_route(
+            state, world, route, quarter, allocation.route_pax.get(route.id, 0)
+        )
         route.last_quarter = stats
         route_stats.append(RouteTurnStats(**vars(stats), route_id=route.id))
         routes_revenue += stats.revenue
@@ -181,7 +340,8 @@ def settle_turn(state: GameState, world: World) -> TurnReport:
                 f"利润 ${profit:,.0f}，现金 ${state.cash:,.0f}。"
             ),
             kind="system",
-        )
+        ),
+        *ai_news,
     ]
 
     if state.cash < 0:

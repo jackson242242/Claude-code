@@ -134,6 +134,35 @@ class TestFullFlow:
         assert len(body["state"]["routes"]) == 1
 
 
+class TestCompetitorsWire:
+    def test_competitors_and_market_share_serialize_camel_case(self, client):
+        state = create_game(client, name="Wire Air", hq="hnd")
+        assert state["marketShare"] == 0
+        assert [c["id"] for c in state["competitors"]] == [
+            "ai-aurora",
+            "ai-meridian",
+            "ai-falcon",
+        ]
+        aurora = state["competitors"][0]
+        assert aurora["name"] == "Aurora Pacific"
+        assert aurora["nameZh"] == "极光太平洋航空"
+        assert aurora["hqCityId"] == "hnd"
+        assert aurora["fareMult"] == 0.9
+        assert aurora["marketShare"] == 0
+        assert aurora["routes"][0] == {
+            "cityA": "hnd",
+            "cityB": "pvg",
+            "weeklySeats": 2200,
+        }
+
+        body = client.post(f"/api/games/{state['id']}/end-turn", json={}).json()
+        settled = body["state"]
+        assert settled["marketShare"] == 0  # player flies no routes yet
+        assert all(c["marketShare"] > 0 for c in settled["competitors"])
+        # Evolution ran: Aurora's largest route grew 2200 → 2376.
+        assert settled["competitors"][0]["routes"][0]["weeklySeats"] == 2376
+
+
 class TestBankruptcyPath:
     def test_overleveraged_airline_goes_bankrupt(self, client):
         game_id = create_game(client, name="Icarus Air")["id"]

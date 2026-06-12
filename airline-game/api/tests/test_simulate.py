@@ -27,7 +27,9 @@ def setup_reference_game(game, world):
 
 
 def expected_route_numbers(world, route, quarter, model_id="a320neo"):
-    """Recompute one route-quarter by hand, straight from CONTRACT §3."""
+    """Recompute one route-quarter by hand, straight from CONTRACT §3 (M2.1
+    share competition model; the NYC pairs used here have no AI sellers, so
+    the only rivals are the background market at weight W_BG)."""
     model = world.aircraft_models[model_id]
     city_a, city_b = world.cities[route.city_a], world.cities[route.city_b]
     d = route.distance_km
@@ -41,8 +43,9 @@ def expected_route_numbers(world, route, quarter, model_id="a320neo"):
         * balance.SEASON_FACTOR[quarter]
         * math.exp(-d / 9000)
     )
-    demand_mult = route.fare_mult ** balance.PRICE_ELASTICITY
-    pax = round(min(capacity, market * balance.SHARE_BASE * demand_mult))
+    weight = route.fare_mult ** balance.PRICE_ELASTICITY
+    share = weight / (weight + balance.W_BG)
+    pax = round(min(capacity, market * weight * share))
     fare = (balance.FARE_FIXED + balance.FARE_PER_KM * d) * route.fare_mult
     revenue = pax * fare
 

@@ -14,10 +14,19 @@ START_QUARTER = 3
 
 # --- Demand model ------------------------------------------------------------
 BASE_K = 800.0  # market size scale (pax/quarter per demandA×demandB unit)
-SHARE_BASE = 0.45  # player's obtainable market share (no AI rivals in M1)
-PRICE_ELASTICITY = -1.6  # demandMult = fareMult ** PRICE_ELASTICITY
+PRICE_ELASTICITY = -1.6  # price weight w_i = fareMult ** PRICE_ELASTICITY
+# Background market weight (CONTRACT §3, M2.1 share competition model). The
+# value 11/9 is exact: a solo seller at fareMult 1.0 gets share
+# 1 / (1 + 11/9) = 0.45, identical to the retired M1 constant SHARE_BASE.
+W_BG = 11.0 / 9.0
 DISTANCE_DECAY_KM = 9_000.0  # distanceDecay = exp(-distanceKm / 9000)
 SEASON_FACTOR = {1: 0.9, 2: 1.0, 3: 1.15, 4: 0.95}
+
+# --- AI competitors (CONTRACT §3, M2.1) ----------------------------------------
+AI_INITIAL_WEEKLY_SEATS = 2_200  # per direction, on each fixed initial route
+AI_NEW_ROUTE_WEEKLY_SEATS = 2_000  # per direction, on routes opened by evolution
+AI_GROWTH_FACTOR = 1.08  # largest route weeklySeats ×1.08 (ceil) every turn
+AI_NEW_ROUTE_EVERY_TURNS = 4  # turn % 4 == 0 → open a new HQ route
 
 # --- Pricing -----------------------------------------------------------------
 FARE_FIXED = 70.0  # USD base fare component
