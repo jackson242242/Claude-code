@@ -55,6 +55,7 @@ export const GameScreen = ({
           <WorldMap
             hqCityId={state.hqCityId}
             routes={state.routes}
+            competitors={state.competitors}
             selectedCityId={selectedCityId}
             onSelectCity={handleSelectCity}
           />

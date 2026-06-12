@@ -11,16 +11,26 @@ import {
   greatCirclePath,
   projectPoint,
 } from '@/lib/map';
-import type { Route } from '@/types';
+import type { Competitor, Route } from '@/types';
 
 type WorldMapProps = {
   hqCityId: string;
   routes: Route[];
+  competitors: Competitor[];
   selectedCityId: string | null;
   onSelectCity: (cityId: string) => void;
 };
 
-export const WorldMap = ({ hqCityId, routes, selectedCityId, onSelectCity }: WorldMapProps) => {
+// Muted strokes for AI arcs — deliberately subdued next to the player's cyan.
+const COMPETITOR_COLORS = ['#64748b', '#7c6f9f', '#5b8a8a'];
+
+export const WorldMap = ({
+  hqCityId,
+  routes,
+  competitors,
+  selectedCityId,
+  onSelectCity,
+}: WorldMapProps) => {
   const cityPoints = useMemo(
     () =>
       CITIES.map((city) => ({
@@ -28,6 +38,25 @@ export const WorldMap = ({ hqCityId, routes, selectedCityId, onSelectCity }: Wor
         point: projectPoint(city.lon, city.lat),
       })),
     [],
+  );
+
+  const competitorArcs = useMemo(
+    () =>
+      competitors.flatMap((competitor, competitorIndex) =>
+        competitor.routes.flatMap((route, routeIndex) => {
+          const a = CITY_BY_ID.get(route.cityA);
+          const b = CITY_BY_ID.get(route.cityB);
+          if (!a || !b) return [];
+          return [
+            {
+              key: `${competitor.id}-${routeIndex}`,
+              d: greatCirclePath(a, b),
+              color: COMPETITOR_COLORS[competitorIndex % COMPETITOR_COLORS.length],
+            },
+          ];
+        }),
+      ),
+    [competitors],
   );
 
   const routeArcs = useMemo(
@@ -59,6 +88,20 @@ export const WorldMap = ({ hqCityId, routes, selectedCityId, onSelectCity }: Wor
       <path d={SPHERE_PATH} fill="url(#ocean)" stroke="#16263f" strokeWidth={1} />
       <path d={GRATICULE_PATH} fill="none" stroke="#0e1a2e" strokeWidth={0.5} />
       <path d={LAND_PATH} fill="#101f36" stroke="#1f3354" strokeWidth={0.6} />
+
+      {/* AI competitor routes — faded, static, painted before (= behind) player arcs */}
+      {competitorArcs.map((arc) => (
+        <path
+          key={arc.key}
+          d={arc.d}
+          data-testid="competitor-arc"
+          fill="none"
+          stroke={arc.color}
+          strokeWidth={0.9}
+          strokeLinecap="round"
+          opacity={0.35}
+        />
+      ))}
 
       {routeArcs.map((arc) => (
         <g key={arc.id}>

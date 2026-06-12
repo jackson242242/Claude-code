@@ -8,6 +8,61 @@ type FinanceTabProps = {
   state: GameState;
 };
 
+const formatShare = (fraction: number): string => `${(fraction * 100).toFixed(1)}%`;
+
+const AI_BAR_COLORS = ['#64748b', '#7c6f9f', '#5b8a8a'];
+
+type ShareRow = { key: string; label: string; share: number; color: string };
+
+const MarketShareSection = ({ state }: { state: GameState }) => {
+  const rows: ShareRow[] = [
+    { key: 'player', label: state.airlineName, share: state.marketShare, color: '#22d3ee' },
+    ...state.competitors.map((competitor, index) => ({
+      key: competitor.id,
+      label: competitor.nameZh,
+      share: competitor.marketShare,
+      color: AI_BAR_COLORS[index % AI_BAR_COLORS.length],
+    })),
+  ];
+  const hasShares = rows.some((row) => row.share > 0);
+  const remainder = Math.max(0, 1 - rows.reduce((sum, row) => sum + row.share, 0));
+
+  return (
+    <section className="panel p-3" data-testid="market-share">
+      <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-400">
+        市场份额
+      </h3>
+      {hasShares ? (
+        <ul className="flex flex-col gap-2">
+          {[...rows, { key: 'background', label: '背景市场/其他航司', share: remainder, color: '#334155' }].map(
+            (row) => (
+              <li key={row.key} className="text-xs">
+                <div className="mb-0.5 flex items-baseline justify-between">
+                  <span className={row.key === 'player' ? 'font-semibold text-accent' : 'text-slate-400'}>
+                    {row.label}
+                  </span>
+                  <span className="tabular-nums text-slate-300">{formatShare(row.share)}</span>
+                </div>
+                <div className="h-1.5 overflow-hidden rounded-full bg-ops-700/60">
+                  <div
+                    className="h-full rounded-full"
+                    style={{
+                      width: `${Math.min(100, row.share * 100)}%`,
+                      backgroundColor: row.color,
+                    }}
+                  />
+                </div>
+              </li>
+            ),
+          )}
+        </ul>
+      ) : (
+        <p className="text-xs text-slate-500">结算一个季度后显示。</p>
+      )}
+    </section>
+  );
+};
+
 export const FinanceTab = ({ state }: FinanceTabProps) => {
   const { lastQuarter, history } = state.finance;
   const cashSeries = history.map((entry) => entry.cash);
@@ -43,6 +98,8 @@ export const FinanceTab = ({ state }: FinanceTabProps) => {
           <p className="text-xs text-slate-500">首个季度尚未结算。</p>
         )}
       </section>
+
+      <MarketShareSection state={state} />
 
       <section className="panel p-3">
         <div className="mb-2 flex items-baseline justify-between">

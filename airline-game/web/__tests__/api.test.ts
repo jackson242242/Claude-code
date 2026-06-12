@@ -13,6 +13,8 @@ const gameStateFixture: GameState = {
   cash: 420_000_000,
   fleet: [],
   routes: [],
+  competitors: [],
+  marketShare: 0,
   news: [],
   finance: { lastQuarter: null, history: [] },
   status: 'active',

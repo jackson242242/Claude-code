@@ -61,12 +61,26 @@ export type GameState = {
   cash: number;
   fleet: FleetAircraft[];
   routes: Route[];
+  competitors: Competitor[]; // M2.1：3 家 AI 航司
+  marketShare: number; // 玩家上季度客流占全市场服务客流比例 0–1（开局 0）
   news: NewsItem[]; // 本回合播报
   finance: {
     lastQuarter: { revenue: number; cost: number; profit: number } | null;
     history: { turn: number; cash: number; profit: number }[];
   };
   status: 'active' | 'bankrupt';
+};
+
+export type CompetitorRoute = { cityA: string; cityB: string; weeklySeats: number }; // 每方向每周座位
+
+export type Competitor = {
+  id: string; // "ai-aurora"
+  name: string; // "Aurora Pacific"（虚构品牌，避开真实航司商标）
+  nameZh: string; // "极光太平洋航空"
+  hqCityId: string;
+  fareMult: number; // 固定性格：0.9 低价 / 1.0 均衡 / 1.1 高端
+  routes: CompetitorRoute[];
+  marketShare: number; // 上季度份额 0–1
 };
 
 export type NewsItem = { headline: string; detail?: string; kind: 'system' | 'event' };
