@@ -135,6 +135,32 @@ class Finance(CamelModel):
     history: list[FinanceHistoryEntry] = Field(default_factory=list)
 
 
+class Lifetime(CamelModel):
+    """M2.4 cumulative lifetime stats (profit + pax across all settled turns)."""
+
+    profit: float = 0.0
+    pax: int = 0
+
+
+class StandingEntry(CamelModel):
+    """One row in the final standings table (CONTRACT §2, M2.4)."""
+
+    name: str
+    is_player: bool
+    market_share: float
+
+
+class FinalResult(CamelModel):
+    """M2.4 end-of-game result; null in GameState until turn 80 settles."""
+
+    rank: int
+    victory: bool
+    standings: list[StandingEntry]
+    cumulative_profit: float
+    cumulative_pax: int
+    ended_turn: int
+
+
 class GameState(CamelModel):
     id: str
     airline_name: str
@@ -152,7 +178,10 @@ class GameState(CamelModel):
     slot_market: dict[str, CitySlotInfo] = Field(default_factory=dict)
     news: list[NewsItem]
     finance: Finance
-    status: Literal["active", "bankrupt"]
+    status: Literal["active", "bankrupt", "finished"]
+    # M2.4: lifetime stats and final result.
+    lifetime: Lifetime = Field(default_factory=Lifetime)
+    final_result: FinalResult | None = None
 
 
 class RouteTurnStats(RouteQuarterStats):

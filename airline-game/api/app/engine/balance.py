@@ -76,5 +76,8 @@ SERVICE_COST_PER_PAX: dict[int, float] = {1: 12.0, 2: 25.0, 3: 45.0}
 # --- Failure conditions ---------------------------------------------------------
 BANKRUPTCY_CONSECUTIVE_QUARTERS = 2  # cash < 0 at N consecutive quarter ends
 
+# --- Game length (M2.4) -------------------------------------------------------
+GAME_LENGTH_TURNS = 80  # 2026 Q3 → 2046 Q2, 20 years (CONTRACT §3)
+
 # --- Geometry --------------------------------------------------------------------
 EARTH_RADIUS_KM = 6_371.0

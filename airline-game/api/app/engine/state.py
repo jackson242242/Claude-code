@@ -14,7 +14,7 @@ from app.engine import balance
 
 
 class GameOverError(Exception):
-    """Raised when commands or settlements are attempted on a bankrupt game."""
+    """Raised when commands or settlements are attempted on a bankrupt or finished game."""
 
 
 # --- Static world data (loaded from airline-game/data/*.json by the app layer) --
@@ -155,6 +155,39 @@ class Finance:
     history: list[FinanceHistoryEntry] = field(default_factory=list)
 
 
+# --- M2.4 endgame types -------------------------------------------------------
+
+
+@dataclass
+class Lifetime:
+    """Cumulative stats across all settled turns (CONTRACT §2, M2.4).
+    Accumulated every settlement; losses included, pax = actual flown."""
+
+    profit: float = 0.0
+    pax: int = 0
+
+
+@dataclass
+class StandingEntry:
+    """One row in FinalResult.standings (CONTRACT §2, M2.4)."""
+
+    name: str
+    is_player: bool
+    market_share: float  # final quarter's marketShare
+
+
+@dataclass
+class FinalResult:
+    """End-of-game result (CONTRACT §2, M2.4).  Null until turn 80 settles."""
+
+    rank: int  # 1–4; player rank among all 4 competitors
+    victory: bool  # rank == 1
+    standings: list[StandingEntry]  # ordered by rank (desc marketShare)
+    cumulative_profit: float
+    cumulative_pax: int
+    ended_turn: int  # = GAME_LENGTH_TURNS
+
+
 @dataclass
 class GameState:
     id: str
@@ -170,7 +203,11 @@ class GameState:
     market_share: float = 0.0  # player's share of last quarter's served traffic
     news: list[NewsItem] = field(default_factory=list)
     finance: Finance = field(default_factory=Finance)
-    status: Literal["active", "bankrupt"] = "active"
+    status: Literal["active", "bankrupt", "finished"] = "active"
+    # M2.4: cumulative lifetime stats (accumulated every settlement).
+    lifetime: Lifetime = field(default_factory=Lifetime)
+    # M2.4: final result — null until turn 80 settles.
+    final_result: FinalResult | None = None
     # M2.2 slot system: slots the player holds per city (used or not), and the
     # turn of the last successful negotiation per city (1-per-city-per-turn
     # cooldown). The API exposes these only through the computed slotMarket
@@ -287,3 +324,5 @@ def find_route_between(state: GameState, city_a: str, city_b: str) -> Route | No
 def ensure_active(state: GameState) -> None:
     if state.status == "bankrupt":
         raise GameOverError("game is bankrupt; no further commands or turns accepted")
+    if state.status == "finished":
+        raise GameOverError("比赛已结束; no further commands or turns accepted")

@@ -15,10 +15,12 @@ from app.engine.state import (
     ClassStats,
     FinanceHistoryEntry,
     FinanceTotals,
+    FinalResult,
     GameState,
     NewsItem,
     Route,
     RouteQuarterStats,
+    StandingEntry,
     World,
     ensure_active,
     get_aircraft,
@@ -398,6 +400,44 @@ def overhead_cost(state: GameState) -> float:
     return balance.HQ_OVERHEAD + balance.ADMIN_PER_AIRCRAFT * len(state.fleet)
 
 
+def _build_final_result(state: GameState) -> FinalResult:
+    """Compute the endgame standings per CONTRACT §3 M2.4.
+
+    Rank by final-quarter marketShare descending.  Ties: player first, then AI
+    roster order (aurora → meridian → falcon) — deterministic."""
+    # Build a list of (marketShare, is_player, name, ai_index) tuples.
+    # ai_index is used as a tie-breaker for AIs (lower roster index = higher priority).
+    entries: list[tuple[float, bool, int, str]] = []
+    # Player entry: is_player=True → tie-break index 0 (player beats all AIs).
+    entries.append((state.market_share, True, 0, state.airline_name))
+    for ai_idx, competitor in enumerate(state.competitors):
+        # ai_index starts at 1 so player (0) always wins ties.
+        entries.append((competitor.market_share, False, ai_idx + 1, competitor.name))
+
+    # Sort: primary = marketShare descending; secondary = roster index ascending
+    # (lower index = higher priority in ties), so player (0) before any AI (1+).
+    entries.sort(key=lambda e: (-e[0], e[2]))
+
+    standings = [
+        StandingEntry(name=name, is_player=is_player, market_share=ms)
+        for ms, is_player, _idx, name in entries
+    ]
+
+    # Find player's rank (1-based position in the sorted standings).
+    player_rank = next(
+        i + 1 for i, s in enumerate(standings) if s.is_player
+    )
+
+    return FinalResult(
+        rank=player_rank,
+        victory=(player_rank == 1),
+        standings=standings,
+        cumulative_profit=state.lifetime.profit,
+        cumulative_pax=state.lifetime.pax,
+        ended_turn=balance.GAME_LENGTH_TURNS,
+    )
+
+
 def settle_turn(state: GameState, world: World) -> TurnReport:
     """Settle the current quarter, mutate state (cash, finance, calendar,
     status, news) and return the TurnReport for that settled quarter."""
@@ -434,6 +474,11 @@ def settle_turn(state: GameState, world: World) -> TurnReport:
         FinanceHistoryEntry(turn=turn, cash=state.cash, profit=profit)
     )
 
+    # M2.4: accumulate lifetime stats every settlement (losses included).
+    total_route_pax = sum(stats.pax for stats in route_stats)
+    state.lifetime.profit = round(state.lifetime.profit + profit, 2)
+    state.lifetime.pax += total_route_pax
+
     news = [
         NewsItem(
             headline=f"{year} 年 Q{quarter} 结算完成",
@@ -467,6 +512,24 @@ def settle_turn(state: GameState, world: World) -> TurnReport:
             )
     else:
         state.negative_cash_quarters = 0
+
+    # M2.4: detect end of game (turn == GAME_LENGTH_TURNS) after bankruptcy check.
+    # If bankruptcy and game-end coincide on turn 80, bankruptcy status is kept
+    # (game is unplayable either way; the distinct messages come from ensure_active).
+    if turn == balance.GAME_LENGTH_TURNS and state.status == "active":
+        state.status = "finished"
+        state.final_result = _build_final_result(state)
+        news.append(
+            NewsItem(
+                headline="终局：比赛结束",
+                detail=(
+                    f"经过 {balance.GAME_LENGTH_TURNS} 个季度，比赛正式落幕。"
+                    f"最终名次：第 {state.final_result.rank} 位，"
+                    f"{'胜利！' if state.final_result.victory else '继续努力！'}"
+                ),
+                kind="system",
+            )
+        )
 
     state.news = news
 
