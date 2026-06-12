@@ -112,7 +112,18 @@ type GameState = {
     lastQuarter: { revenue: number; cost: number; profit: number } | null;
     history: { turn: number; cash: number; profit: number }[];
   };
-  status: "active" | "bankrupt";
+  status: "active" | "bankrupt" | "finished";   // finished：M2.4 到期结算
+  lifetime: { profit: number; pax: number };    // M2.4：累计利润/乘客（每季累加）
+  finalResult: FinalResult | null;              // M2.4：终局前为 null
+};
+
+// M2.4 终局结算
+type FinalResult = {
+  rank: 1 | 2 | 3 | 4;          // 玩家名次（含 3 家 AI 共 4 席）
+  victory: boolean;             // rank === 1
+  standings: { name: string; isPlayer: boolean; marketShare: number }[]; // 按名次排序
+  cumulativeProfit: number; cumulativePax: number;
+  endedTurn: number;            // = GAME_LENGTH_TURNS
 };
 
 type CompetitorRoute = { cityA: string; cityB: string; weeklySeats: number }; // 每方向每周座位
@@ -214,6 +225,12 @@ type TurnReport = {
   租赁 = `price × LEASE_RATE_Q`（2.75%）。未指派的飞机同样产生持有成本。
 - **总部开销**：`HQ_OVERHEAD + ADMIN_PER_AIRCRAFT × fleetSize` 每季度。
 - **破产**：连续 2 个季度结束时 `cash < 0` → `status = "bankrupt"`，拒绝后续命令与回合。
+- **终局（M2.4）**：`GAME_LENGTH_TURNS = 80`（2026 Q3 → 2046 Q2，20 年）。第 80 回合
+  结算完成后 `status = "finished"`，计算 `finalResult` 并随状态返回；此后命令与
+  end-turn 一律拒绝（与破产同语义，错误信息区分「比赛已结束」）。
+  - 名次：按**最终季度 marketShare** 降序排玩家+3 家 AI；并列时玩家优先，
+    AI 间按名册顺序（确定性）。`victory = (rank === 1)`。
+  - `lifetime.profit/pax` 每季度结算时累加（含亏损季，pax 为实际成交客流）。
 - **起始条件**：现金 **$420M**，无机队无航线，2026 年 Q3 开局。
 
 **平衡性验收目标（写成 pytest 断言，调常数直到通过）**。注意：目标里的「每周 N 班」
