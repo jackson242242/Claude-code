@@ -1,4 +1,64 @@
-# Matchday26 — 社区之声调研 · 2026-06-11 12:10 UTC（last30days 式 · 已过滤版）
+# Matchday26 — 社区之声调研 · 2026-06-12 00:15 UTC（last30days 式 · 已过滤版）
+
+> 内容边界不变：只服务品牌/运营/Sheng 设计；**无政治、无签证/入境、无法律声明**；
+> 痛点一律物流/体验/省钱角度。诚实声明：沙箱直连 Reddit/X 受限（本轮 reddit 检索仍主要
+> 返回媒体报道；首批球迷实测长帖预计未来 1–2 天才成规模）；不编造引用与互动数。
+> 本轮为赛果收割轮——上轮（18:10 到期）主动顺延至开球后，现在兑现。
+
+## What I learned（揭幕战打完了，第一波现场信号）
+
+- **赛果落定：墨西哥 2–0 南非**。Quiñones 第 9 分钟打进本届世界杯第一球，Jiménez
+  下半场锁定胜局；80,000+ 人提前数小时入场，Shakira 等揭幕式如期。南非 Sithole 领到
+  本届第一张红牌（✅多源确认）；有搜索摘要称全场共三张红牌、系揭幕战历史首次
+  （⚠️snippet 级，未逐源核实）。来源：
+  [CBS](https://www.cbsnews.com/news/world-cup-opening-ceremony-mexico-shakira/)、
+  [Today](https://www.today.com/news/sports/live-blog/world-cup-2026-opening-ceremony-mexico-shakira-live-updates-rcna347915)、
+  [CNN](https://www.cnn.com/2026/06/11/sport/live-news/world-cup-mexico-south-africa)、
+  [NBC LA 图集](https://www.nbclosangeles.com/world-cup/photos-fans-mexico-city-stadium-fifa-world-cup-opener/3903027/)。
+- **交通实测第一课：早到 + 拆段**。球迷开球前 4 小时就涌向 Azteca；Tren Ligero 赛日
+  开球前 3 小时停常规班次改满载直运；通行套路＝Metro 2 号线到 Tasqueña 换乘轻轨、
+  把「进城」与「最后一公里」拆开走、绝不卡点到场。首批内容多为攻略+新闻视角，
+  球迷亲历长帖还薄（诚实声明）。来源：
+  [Sports Planning Guide](https://sportsplanningguide.com/world-cup-2026/estadio-azteca-guide-mexico-city/)、
+  [Rio Times](https://www.riotimesonline.com/world-cup-2026-mexico-city-azteca-transport/)、
+  [Free Press Journal](https://www.freepressjournal.in/sports/world-cup-fever-grips-mexico-city-as-massive-crowds-descend-on-azteca-stadium-ahead-of-fifa-world-cup-2026-opening-match-video)。✅
+- **Fan Fest 第一天：到处在排长队，气氛拉满**。温哥华 PNE 开门前数千人沿街排队；
+  堪萨斯城队伍绕街角、暴雨没浇灭墨西哥进球时的欢呼；亚特兰大 Centennial Park 挤满看
+  揭幕战大屏。墨西哥球迷是各城第一天的绝对主力。「免费 Fan Fest」从计划变成了被验证
+  的真实体验。来源：
+  [Daily Hive](https://dailyhive.com/vancouver/fifa-world-cup-fan-festival-pne-vancouver-mexico-opening-day-june-11-2026)、
+  [KCUR](https://www.kcur.org/sports/2026-06-11/kansas-city-world-cup-fifa-fan-festival-mexico)、
+  [FOX 5 Atlanta](https://www.fox5atlanta.com/news/fifa-fan-festival-world-cup-kicks-off-today-downtown-atlanta)。✅
+- **美国揭幕战就是今天（6/12 SoFi，美国 vs 巴拉圭，6pm PT）——resale 仍低于官网**：
+  官方门户最便宜 $1,120，而 FIFA resale 低至 $690、SeatPick $710 起、各平台 3,000+ 挂单
+  集中在 $900–1,000——东道主揭幕战开赛当天还能二手捡漏，「smart latecomer」叙事今天
+  到达顶点。来源：
+  [NPR](https://www.npr.org/2026/06/08/nx-s1-5849905/fifa-world-cup-tickets-prices)、
+  [Goal](https://www.goal.com/en/news/usa-vs-paraguay-world-cup-tickets-how-to-buy/blt060e391c4dffa6f1)、
+  [SeatPick](https://seatpick.com/world-cup-tickets/los-angeles)。✅
+- **第二场（韩国 vs 捷克，深夜场）截稿时尚未完赛/无终局比分**——不预判，下轮补记。✅
+
+## KEY PATTERNS from the research
+1. **「早到 3 小时」是第一条被现场验证的物流铁律**：球场轻轨满载直运、Fan Fest 排队
+   绕街——「几点出门」成了比「买什么票」更即时的用户问题。
+2. **smart latecomer 今天收口**：美国揭幕战开赛日 resale（$690–710）仍低于官网（$1,120）；
+   这条钩子过了今晚要换成「下一批捡漏场次」。
+3. **赛果让产品「活」了**：墨西哥 2–0 是 LIVE 条第一个真实 FT——但我们界面只有「FT」
+   标记没有比分回显（产品信号，连续第二轮提及）。
+
+## For Amelia（本轮最值得用的）
+- 钩子①「Day 1 实战结论：开球前 3 小时出门、轻轨拆段走」（Azteca 经验，可泛化到各主办城）；
+- 钩子②「美国队今晚 SoFi 开打：resale 仍低于官网（$690 vs $1,120）」——今晚后过期，即用；
+- 素材：五城 Fan Fest「排队绕街角/雨中欢呼」的真实画面感，比赛程表更有传播力。
+
+## For Sheng（视觉/UX 信号）
+- LIVE 条迎来第一个真实 FT（墨西哥 2–0）——**FT 比分回显**是死标记变活内容的关键
+  （被 Match 模型挡着，连续第二轮提及）；
+- 比赛详情页可加「到场建议」小模块（早到 3h / 公共交通拆段）——day-1 被验证的真实痛点。
+
+---
+
+# （上期）Matchday26 — 社区之声调研 · 2026-06-11 12:10 UTC（last30days 式 · 已过滤版）
 
 > 内容边界不变：只服务品牌/运营/Sheng 设计；**无政治、无签证/入境、无法律声明**；
 > 痛点一律物流/体验/省钱角度。诚实声明：沙箱直连 Reddit/X 受限（本轮 site:reddit.com
