@@ -26,6 +26,8 @@
 | POST | `/api/games/{gameId}/end-turn` | `{}` | `{ state: GameState, report: TurnReport }` |
 
 - 命令立即生效（买机即时交付——交付周期留给 M2）。
+- 缺省值：新开航线 `weeklyFlights = 7`、`fareMult = 1.0`；`leaseAircraft` 无首付，
+  只产生每季度租金；`CommandResult.message` 缺省序列化为 `null`。
 - `CommandResult = { index: number, ok: boolean, message?: string }`；单条失败不影响其余命令。
 - 存储：内存 dict + 进程内自增 id（M1 不接 PG；接口留 service 层便于 M5 换存储）。
 
@@ -139,7 +141,9 @@ type TurnReport = {
 - **破产**：连续 2 个季度结束时 `cash < 0` → `status = "bankrupt"`，拒绝后续命令与回合。
 - **起始条件**：现金 **$420M**，无机队无航线，2026 年 Q3 开局。
 
-**平衡性验收目标（写成 pytest 断言，调常数直到通过）**：
+**平衡性验收目标（写成 pytest 断言，调常数直到通过）**。注意：目标里的「每周 N 班」
+指**双向合计起降班次**，即 `weeklyFlights = N/2`（`weeklyFlights` 字段本身是每方向班次，
+允许小数）；按字面取 `weeklyFlights=N` 会直接撞上 84 小时利用率上限，不可行：
 1. 1 架自有 A320neo、HQ 纽约 ↔ demandIndex≥7 的 ~2,000–4,000km 航线、每周 14 班、
    fareMult 1.0 → 客座率 70–90%，季度航线利润为正。
 2. 1 架自有 787-9 跑 纽约↔伦敦 每周 7 班 → 客座率 ≥ 75%，含持有成本后仍盈利。
