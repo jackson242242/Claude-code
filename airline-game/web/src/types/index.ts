@@ -67,6 +67,16 @@ export type RouteQuarterStats = {
   classes: { economy: ClassStats; business: ClassStats; first: ClassStats }; // M2.3
 };
 
+// M2.4 终局结算
+export type FinalResult = {
+  rank: 1 | 2 | 3 | 4; // 玩家名次（含 3 家 AI 共 4 席）
+  victory: boolean; // rank === 1
+  standings: { name: string; isPlayer: boolean; marketShare: number }[]; // 按名次排序
+  cumulativeProfit: number;
+  cumulativePax: number;
+  endedTurn: number; // = GAME_LENGTH_TURNS
+};
+
 export type GameState = {
   id: string;
   airlineName: string;
@@ -85,7 +95,9 @@ export type GameState = {
     lastQuarter: { revenue: number; cost: number; profit: number } | null;
     history: { turn: number; cash: number; profit: number }[];
   };
-  status: 'active' | 'bankrupt';
+  status: 'active' | 'bankrupt' | 'finished'; // finished：M2.4 到期结算
+  lifetime: { profit: number; pax: number }; // M2.4：累计利润/乘客（每季累加）
+  finalResult: FinalResult | null; // M2.4：终局前为 null
 };
 
 export type CompetitorRoute = { cityA: string; cityB: string; weeklySeats: number }; // 每方向每周座位

@@ -13,8 +13,8 @@ export const TopBar = ({ state, busy, onEndTurn }: TopBarProps) => (
   <header className="flex items-center gap-3 border-b border-ops-700 bg-ops-900/95 px-3 py-2.5 backdrop-blur">
     <div className="min-w-0 flex-1">
       <h1 className="truncate text-sm font-bold text-white">{state.airlineName}</h1>
-      <p className="text-[11px] tracking-wider text-slate-500">
-        {state.year} Q{state.quarter} · 第 {state.turn} 回合
+      <p className="text-[11px] tracking-wider text-slate-500" title={`第 ${state.turn}/80 季`}>
+        {state.year} Q{state.quarter} · 第 {state.turn}/80 季
       </p>
     </div>
     <div className="text-right">

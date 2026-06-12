@@ -19,6 +19,8 @@ const gameStateFixture: GameState = {
   news: [],
   finance: { lastQuarter: null, history: [] },
   status: 'active',
+  lifetime: { profit: 0, pax: 0 },
+  finalResult: null,
 };
 
 const jsonResponse = (body: unknown, ok = true, status = 200): Response =>

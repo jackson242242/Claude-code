@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useState } from 'react';
+import { FinalScreen } from '@/components/FinalScreen';
 import { GameOverScreen } from '@/components/GameOverScreen';
 import { GameScreen } from '@/components/GameScreen';
 import { StartScreen } from '@/components/StartScreen';
@@ -119,6 +120,13 @@ const Page = () => {
       )}
       {!report && state.status === 'bankrupt' && (
         <GameOverScreen airlineName={state.airlineName} onRestart={handleRestart} />
+      )}
+      {!report && state.status === 'finished' && state.finalResult && (
+        <FinalScreen
+          airlineName={state.airlineName}
+          finalResult={state.finalResult}
+          onRestart={handleRestart}
+        />
       )}
     </>
   );
