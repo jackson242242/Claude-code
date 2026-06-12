@@ -9,6 +9,15 @@ export type City = {
   lon: number;
   demandIndex: number; // 1–10
   slotFee: number; // 每次起降的机场费用（美元）
+  slotCapacity: number; // M2.2：机场时刻（slot）总池
+};
+
+// M2.2 slot 市场（服务端每次响应计算好，前端只读）
+export type CitySlotInfo = {
+  capacity: number; // 总池 = city.slotCapacity
+  taken: number; // 已被占用：AI 航线两端各占 1 + 玩家已持有(held)
+  playerHeld: number; // 玩家持有的 slot 数（含已用）
+  playerUsed: number; // 玩家航线占用数（每条航线在两端各用 1）
 };
 
 export type AircraftModel = {
@@ -63,6 +72,7 @@ export type GameState = {
   routes: Route[];
   competitors: Competitor[]; // M2.1：3 家 AI 航司
   marketShare: number; // 玩家上季度客流占全市场服务客流比例 0–1（开局 0）
+  slotMarket: { [cityId: string]: CitySlotInfo }; // M2.2：全城市 slot 市场快照
   news: NewsItem[]; // 本回合播报
   finance: {
     lastQuarter: { revenue: number; cost: number; profit: number } | null;
@@ -90,6 +100,7 @@ export type Command =
   | { type: 'leaseAircraft'; modelId: string }
   | { type: 'sellAircraft'; aircraftId: string } // 残值 = price × 0.7
   | { type: 'returnLease'; aircraftId: string }
+  | { type: 'negotiateSlot'; cityId: string } // M2.2：谈判获取 1 个 slot
   | { type: 'openRoute'; cityA: string; cityB: string }
   | { type: 'closeRoute'; routeId: string }
   | { type: 'assignAircraft'; aircraftId: string; routeId: string | null }

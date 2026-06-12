@@ -15,6 +15,7 @@ const gameStateFixture: GameState = {
   routes: [],
   competitors: [],
   marketShare: 0,
+  slotMarket: { nyc: { capacity: 12, taken: 2, playerHeld: 2, playerUsed: 0 } },
   news: [],
   finance: { lastQuarter: null, history: [] },
   status: 'active',

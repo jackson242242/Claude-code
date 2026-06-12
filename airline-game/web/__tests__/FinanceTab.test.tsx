@@ -25,6 +25,7 @@ const makeState = (overrides: Partial<GameState>): GameState => ({
   routes: [],
   competitors: [],
   marketShare: 0,
+  slotMarket: {},
   news: [],
   finance: { lastQuarter: null, history: [] },
   status: 'active',

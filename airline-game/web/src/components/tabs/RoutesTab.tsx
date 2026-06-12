@@ -1,8 +1,10 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
-import { CITIES, MODEL_BY_ID, cityZh } from '@/lib/data';
+import { SlotBadge } from '@/components/SlotBadge';
+import { CITIES, CITY_BY_ID, MODEL_BY_ID, cityZh } from '@/lib/data';
 import { formatKm, formatMoney, formatPercent } from '@/lib/format';
+import { hasFreeHeldSlot, isPoolFull, slotNegotiationCost } from '@/lib/slots';
 import type { Command, GameState, Route } from '@/types';
 
 type RoutesTabProps = {
@@ -13,6 +15,49 @@ type RoutesTabProps = {
 };
 
 const routeTitle = (route: Route): string => `${cityZh(route.cityA)} ⇌ ${cityZh(route.cityB)}`;
+
+// One end city of the route being opened: slot chips + inline 谈判 when a free
+// held slot is missing (CONTRACT §3 — 开航前两端都必须有空闲持有 slot).
+type SlotEndRowProps = {
+  cityId: string;
+  state: GameState;
+  busy: boolean;
+  onCommands: (commands: Command[]) => void;
+};
+
+const SlotEndRow = ({ cityId, state, busy, onCommands }: SlotEndRowProps) => {
+  const info = state.slotMarket[cityId];
+  const city = CITY_BY_ID.get(cityId);
+  if (!info || !city) return null;
+
+  const full = isPoolFull(info);
+  const cost = slotNegotiationCost(city.slotFee, info);
+
+  return (
+    <div
+      data-testid={`slot-end-${cityId}`}
+      className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1"
+    >
+      <span className="flex items-center gap-2">
+        <span className="text-xs font-semibold text-slate-300">
+          {cityZh(cityId)}
+          {cityId === state.hqCityId ? '（枢纽）' : ''}
+        </span>
+        <SlotBadge cityId={cityId} info={info} />
+      </span>
+      {!hasFreeHeldSlot(info) && (
+        <button
+          type="button"
+          disabled={busy || full || state.cash < cost}
+          onClick={() => onCommands([{ type: 'negotiateSlot', cityId }])}
+          className="btn-ghost px-2.5 py-1 text-[11px]"
+        >
+          {full ? '池已满' : `谈判获取 slot · ${formatMoney(cost)}`}
+        </button>
+      )}
+    </div>
+  );
+};
 
 type RoutePanelProps = {
   route: Route;
@@ -249,6 +294,10 @@ export const RoutesTab = ({ state, busy, selectedCityId, onCommands }: RoutesTab
     }
   }, [candidates, selectedCityId]);
 
+  // M2.2 slot gate: both ends need a free held slot before 开通 unlocks.
+  const routeEnds = destPick === '' ? [state.hqCityId] : [state.hqCityId, destPick];
+  const slotsReady = routeEnds.every((cityId) => hasFreeHeldSlot(state.slotMarket[cityId]));
+
   return (
     <div className="flex flex-col gap-3">
       <section className="panel p-3">
@@ -271,7 +320,7 @@ export const RoutesTab = ({ state, busy, selectedCityId, onCommands }: RoutesTab
           </select>
           <button
             type="button"
-            disabled={busy || destPick === ''}
+            disabled={busy || destPick === '' || !slotsReady}
             onClick={() => {
               onCommands([{ type: 'openRoute', cityA: state.hqCityId, cityB: destPick }]);
               setDestPick('');
@@ -280,6 +329,24 @@ export const RoutesTab = ({ state, busy, selectedCityId, onCommands }: RoutesTab
           >
             开通
           </button>
+        </div>
+
+        {/* M2.2: slot status per route end + inline negotiation */}
+        <div className="mt-2.5 flex flex-col gap-1.5">
+          {routeEnds.map((cityId) => (
+            <SlotEndRow
+              key={cityId}
+              cityId={cityId}
+              state={state}
+              busy={busy}
+              onCommands={onCommands}
+            />
+          ))}
+          {destPick !== '' && !slotsReady && (
+            <p className="text-[11px] text-amber-400/80">
+              两端都需要 1 个空闲持有 slot 才能开航 — 先通过谈判获取。
+            </p>
+          )}
         </div>
       </section>
 

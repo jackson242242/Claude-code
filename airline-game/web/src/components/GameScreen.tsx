@@ -1,8 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+import { SlotBadge } from '@/components/SlotBadge';
 import { TopBar } from '@/components/TopBar';
 import { WorldMap } from '@/components/WorldMap';
+import { cityLabel } from '@/lib/data';
 import { FinanceTab } from '@/components/tabs/FinanceTab';
 import { FleetTab } from '@/components/tabs/FleetTab';
 import { MarketTab } from '@/components/tabs/MarketTab';
@@ -51,7 +53,7 @@ export const GameScreen = ({
 
       <div className="flex min-h-0 flex-1 flex-col md:flex-row">
         {/* map */}
-        <div className="h-[36dvh] flex-none border-b border-ops-700 md:h-auto md:flex-1 md:border-b-0 md:border-r">
+        <div className="relative h-[36dvh] flex-none border-b border-ops-700 md:h-auto md:flex-1 md:border-b-0 md:border-r">
           <WorldMap
             hqCityId={state.hqCityId}
             routes={state.routes}
@@ -59,6 +61,18 @@ export const GameScreen = ({
             selectedCityId={selectedCityId}
             onSelectCity={handleSelectCity}
           />
+          {/* M2.2: tapping a city surfaces its slot market snapshot */}
+          {selectedCityId && (
+            <div
+              data-testid="map-city-slots"
+              className="absolute bottom-2 left-2 flex max-w-[92%] flex-wrap items-center gap-2 rounded-lg border border-ops-700 bg-ops-900/90 px-2.5 py-1.5 backdrop-blur"
+            >
+              <span className="text-xs font-semibold text-slate-200">
+                {cityLabel(selectedCityId)}
+              </span>
+              <SlotBadge cityId={selectedCityId} info={state.slotMarket[selectedCityId]} />
+            </div>
+          )}
         </div>
 
         {/* bottom drawer / side panel */}
