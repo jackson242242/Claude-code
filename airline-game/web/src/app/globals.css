@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+@theme {
+  /* Ops-center palette: deep navy/black, cyan glow, amber accents. */
+  --color-ops-950: #04070f;
+  --color-ops-900: #070d1a;
+  --color-ops-850: #0a1322;
+  --color-ops-800: #0e1a2e;
+  --color-ops-700: #16263f;
+  --color-ops-600: #21355a;
+  --color-glow: #22d3ee;
+  --color-glow-dim: #0e7490;
+  --color-accent: #fbbf24;
+  --color-accent-deep: #d97706;
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--color-ops-950);
+  color: #dbe7f4;
+  font-feature-settings: "tnum";
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- map effects ---------------------------------------------------- */
+
+@keyframes route-dash {
+  to {
+    stroke-dashoffset: -44;
+  }
+}
+
+.route-arc {
+  fill: none;
+  stroke: var(--color-glow);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-dasharray: 8 14;
+  animation: route-dash 1.8s linear infinite;
+}
+
+.route-arc-glow {
+  fill: none;
+  stroke: var(--color-glow);
+  stroke-width: 5;
+  stroke-linecap: round;
+  opacity: 0.16;
+  filter: blur(2.5px);
+}
+
+@keyframes hq-pulse {
+  0% {
+    opacity: 0.85;
+    r: 7;
+  }
+  70% {
+    opacity: 0;
+    r: 17;
+  }
+  100% {
+    opacity: 0;
+    r: 17;
+  }
+}
+
+.hq-pulse {
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-width: 1.4;
+  animation: hq-pulse 2.4s ease-out infinite;
+}
+
+.city-node {
+  cursor: pointer;
+}
+
+.city-node circle.dot {
+  transition: r 0.15s ease, fill 0.15s ease;
+}
+
+/* ---- shared UI ------------------------------------------------------ */
+
+.panel {
+  background: color-mix(in srgb, var(--color-ops-850) 88%, transparent);
+  border: 1px solid var(--color-ops-700);
+  border-radius: 0.75rem;
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: #1a1102;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  transition: filter 0.15s ease, transform 0.05s ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+  filter: brightness(1.1);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.btn-primary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-ghost {
+  border: 1px solid var(--color-ops-600);
+  color: #9fd8e8;
+  border-radius: 0.5rem;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-ghost:hover:not(:disabled) {
+  border-color: var(--color-glow);
+  color: var(--color-glow);
+}
+
+.btn-ghost:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-danger {
+  border: 1px solid #7f1d1d;
+  color: #fca5a5;
+  border-radius: 0.5rem;
+}
+
+.btn-danger:hover:not(:disabled) {
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+input[type="range"] {
+  accent-color: var(--color-accent);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-ops-600);
+  border-radius: 3px;
+}
