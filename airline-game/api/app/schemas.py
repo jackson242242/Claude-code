@@ -56,6 +56,22 @@ class FleetAircraft(CamelModel):
     route_id: str | None = None
 
 
+class CabinMix(CamelModel):
+    """M2.3 floor-space percentages; three fields sum to 100."""
+
+    economy: int
+    business: int
+    first: int
+
+
+class ClassStats(CamelModel):
+    """M2.3 per-cabin-class quarter stats."""
+
+    pax: int
+    capacity: int
+    revenue: float
+
+
 class RouteQuarterStats(CamelModel):
     pax: int
     capacity: int
@@ -63,6 +79,8 @@ class RouteQuarterStats(CamelModel):
     revenue: float
     cost: float
     profit: float
+    # M2.3: per-class breakdown; the engine returns a dict keyed by class name.
+    classes: dict[str, ClassStats] | None = None
 
 
 class Route(CamelModel):
@@ -73,6 +91,8 @@ class Route(CamelModel):
     aircraft_ids: list[str]
     weekly_flights: float
     fare_mult: float
+    cabin_mix: CabinMix = Field(default_factory=lambda: CabinMix(economy=100, business=0, first=0))
+    service_tier: Literal[1, 2, 3] = 2  # M2.3
     last_quarter: RouteQuarterStats | None = None
 
 

@@ -12,6 +12,7 @@ from typing import Any, Callable, Mapping, Sequence
 from app.engine import balance
 from app.engine.simulate import assigned_models, mean_cruise_kmh, weekly_block_hours
 from app.engine.state import (
+    CabinMix,
     FleetAircraft,
     GameState,
     Route,
@@ -258,10 +259,51 @@ def _assign_aircraft(state: GameState, world: World, command: Mapping[str, Any])
     aircraft.route_id = route.id
 
 
+def _parse_cabin_mix(command: Mapping[str, Any]) -> CabinMix | None:
+    """Parse and validate `cabinMix` from a command dict.
+
+    Returns None if the field is absent. Raises CommandError if:
+    - the value is not a dict with economy/business/first keys
+    - any value is not a non-negative integer
+    - the three values do not sum to exactly 100 (per CONTRACT §3 M2.3)
+    """
+    raw = command.get("cabinMix")
+    if raw is None:
+        return None
+    if not isinstance(raw, dict):
+        raise CommandError("cabinMix must be an object {economy, business, first}")
+    result: dict[str, int] = {}
+    for key in ("economy", "business", "first"):
+        val = raw.get(key)
+        if val is None:
+            raise CommandError(f"cabinMix missing field: {key}")
+        if isinstance(val, bool) or not isinstance(val, (int, float)) or int(val) != val or val < 0:
+            raise CommandError(f"cabinMix.{key} must be a non-negative integer")
+        result[key] = int(val)
+    total = result["economy"] + result["business"] + result["first"]
+    if total != 100:
+        raise CommandError(
+            f"cabinMix values must sum to 100, got {total} "
+            f"(economy={result['economy']}, business={result['business']}, first={result['first']})"
+        )
+    return CabinMix(
+        economy=result["economy"],
+        business=result["business"],
+        first=result["first"],
+    )
+
+
 def _update_route(state: GameState, world: World, command: Mapping[str, Any]) -> None:
     route = _require_route(state, _require_str(command, "routeId"))
     weekly_flights = _optional_number(command, "weeklyFlights")
     fare_mult = _optional_number(command, "fareMult")
+    cabin_mix = _parse_cabin_mix(command)
+
+    # serviceTier validation (M2.3): must be 1, 2, or 3 if provided.
+    service_tier_raw = command.get("serviceTier")
+    if service_tier_raw is not None:
+        if service_tier_raw not in (1, 2, 3):
+            raise CommandError("serviceTier must be 1, 2, or 3")
 
     if weekly_flights is not None and weekly_flights <= 0:
         raise CommandError("weeklyFlights must be positive")
@@ -290,6 +332,10 @@ def _update_route(state: GameState, world: World, command: Mapping[str, Any]) ->
         route.weekly_flights = weekly_flights
     if fare_mult is not None:
         route.fare_mult = fare_mult
+    if cabin_mix is not None:
+        route.cabin_mix = cabin_mix
+    if service_tier_raw is not None:
+        route.service_tier = int(service_tier_raw)
 
 
 _HANDLERS: dict[str, Callable[[GameState, World, Mapping[str, Any]], None]] = {

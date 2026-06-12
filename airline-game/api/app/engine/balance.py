@@ -57,6 +57,22 @@ TURNAROUND_HOURS = 0.6  # added to distance/cruise per flight (block time)
 MAX_WEEKLY_BLOCK_HOURS_PER_AIRCRAFT = 84.0  # CONTRACT §3 utilization cap
 DEFAULT_WEEKLY_FLIGHTS = 7  # weeklyFlights default when a route opens
 
+# --- Cabin classes & service tiers (M2.3) ----------------------------------------
+# Floor-space multipliers: 1 biz seat ≡ 2.5 econ spaces; 1 first seat ≡ 5 econ spaces.
+BIZ_SPACE_FACTOR = 2.5  # bizSeats = seats × mixB% / 100 / BIZ_SPACE_FACTOR
+FIRST_SPACE_FACTOR = 5.0  # firstSeats = seats × mixF% / 100 / FIRST_SPACE_FACTOR
+
+# Fare multipliers relative to economy fare (CONTRACT §3).
+BIZ_FARE_MULT = 3.0
+FIRST_FARE_MULT = 6.5
+
+# Demand split across cabin classes (CONTRACT §3).
+DEMAND_SPLIT: dict[str, float] = {"economy": 0.88, "business": 0.09, "first": 0.03}
+
+# Service tier — price-weight adjustment and per-pax service cost (CONTRACT §3).
+SERVICE_WEIGHT: dict[int, float] = {1: 0.85, 2: 1.0, 3: 1.15}
+SERVICE_COST_PER_PAX: dict[int, float] = {1: 12.0, 2: 25.0, 3: 45.0}
+
 # --- Failure conditions ---------------------------------------------------------
 BANKRUPTCY_CONSECUTIVE_QUARTERS = 2  # cash < 0 at N consecutive quarter ends
 

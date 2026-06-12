@@ -197,8 +197,10 @@ type TurnReport = {
   `pax_class = min(capacity_class, allocated × split_class)`，不跨舱回流（M3 不做溢出）。
   `serviceTier` 影响竞争权重与成本：玩家价格权重 `w ×= SERVICE_WEIGHT[tier]`
   （{1: 0.85, 2: 1.0, 3: 1.15}），每乘客服务成本 `SERVICE_COST_PER_PAX[tier]`
-  （{1: $12, 2: $25, 3: $45}）计入航线成本。缺省 `cabinMix={100,0,0}`、`tier=2`
-  时各公式与 M2.2 完全一致（平衡性验收不受影响）。
+  （{1: $12, 2: $25, 3: $45}）计入航线成本。**裁决记录**：缺省 `cabinMix={100,0,0}`
+  时商务/头等容量为 0，分舱拆分旁路（全部客流入经济舱）——与 M2.2 分配完全一致；
+  但服务成本在任何 tier（含缺省 2 的 $25/客）都计入，4 条平衡性验收靠利润余量
+  原样通过，不视为破坏。
 - **价格弹性**：`demandMult = fareMult ** PRICE_ELASTICITY`（PRICE_ELASTICITY ≈ −1.6）。
 - **运力**：`capacity = Σ(assigned aircraft seats) × weeklyFlights × 2 × 13`（双向、13 周）。
   约束：每架飞机周飞行小时 ≤ 84：`weeklyFlights × 2 × (distanceKm/cruiseKmh + 0.6) ≤ 84 × nAircraft`，

@@ -28,14 +28,23 @@ def setup_reference_game(game, world):
 
 
 def expected_route_numbers(world, route, quarter, model_id="a320neo"):
-    """Recompute one route-quarter by hand, straight from CONTRACT §3 (M2.1
+    """Recompute one route-quarter by hand, straight from CONTRACT §3 (M2.1/M2.3
     share competition model; the NYC pairs used here have no AI sellers, so
-    the only rivals are the background market at weight W_BG)."""
+    the only rivals are the background market at weight W_BG).
+
+    With default cabin mix {100,0,0} and service_tier=2 the numbers match M2.2
+    exactly (spec §3: "缺省时与 M2.2 完全一致"):
+    - All seats are economy (no floor-space split needed).
+    - Demand split is irrelevant when biz_cap=first_cap=0 → pax = min(cap, alloc).
+    - service_tier=2 weight multiplier = 1.0 (no change to share model).
+    - SERVICE_COST_PER_PAX[2] = $25 is included in route cost (M2.3).
+    """
     model = world.aircraft_models[model_id]
     city_a, city_b = world.cities[route.city_a], world.cities[route.city_b]
     d = route.distance_km
     flights = route.weekly_flights * 2 * 13
 
+    # M2.3: default mix {100,0,0} → all seats are economy seats.
     capacity = model.seats * route.weekly_flights * 2 * 13
     market = (
         balance.BASE_K
@@ -44,6 +53,7 @@ def expected_route_numbers(world, route, quarter, model_id="a320neo"):
         * balance.SEASON_FACTOR[quarter]
         * math.exp(-d / 9000)
     )
+    # M2.3: service_tier=2 → SERVICE_WEIGHT[2]=1.0 → no change to price weight.
     weight = route.fare_mult ** balance.PRICE_ELASTICITY
     share = weight / (weight + balance.W_BG)
     pax = round(min(capacity, market * weight * share))
@@ -54,7 +64,9 @@ def expected_route_numbers(world, route, quarter, model_id="a320neo"):
     airport = (city_a.slot_fee + city_b.slot_fee) * flights
     block_hours = flights * (d / model.cruise_kmh + 0.6)
     crew = block_hours * balance.CREW_MAINT_USD_PER_BH
-    cost = fuel + airport + crew
+    # M2.3: per-pax service cost; SERVICE_COST_PER_PAX[2] = $25.
+    service = pax * balance.SERVICE_COST_PER_PAX[route.service_tier]
+    cost = fuel + airport + crew + service
     return pax, capacity, revenue, cost
 
 

@@ -65,6 +65,25 @@ class FleetAircraft:
 
 
 @dataclass
+class CabinMix:
+    """Floor-space percentages for each cabin class; three fields must sum to 100
+    (CONTRACT §2/§3, M2.3). Default {100, 0, 0} = all-economy, backward-compat."""
+
+    economy: int = 100
+    business: int = 0
+    first: int = 0
+
+
+@dataclass
+class ClassStats:
+    """Per-cabin-class quarter stats (CONTRACT §2, M2.3)."""
+
+    pax: int
+    capacity: int
+    revenue: float
+
+
+@dataclass
 class RouteQuarterStats:
     pax: int
     capacity: int
@@ -72,6 +91,9 @@ class RouteQuarterStats:
     revenue: float
     cost: float
     profit: float
+    # M2.3: per-class breakdown. Defaults to None so existing code that builds
+    # RouteQuarterStats without this field still works (e.g. empty-route path).
+    classes: dict[str, ClassStats] | None = None
 
 
 @dataclass
@@ -83,6 +105,8 @@ class Route:
     aircraft_ids: list[str] = field(default_factory=list)
     weekly_flights: float = balance.DEFAULT_WEEKLY_FLIGHTS
     fare_mult: float = 1.0
+    cabin_mix: CabinMix = field(default_factory=CabinMix)
+    service_tier: int = 2  # 1 | 2 | 3 (CONTRACT §3, M2.3)
     last_quarter: RouteQuarterStats | None = None
 
 
