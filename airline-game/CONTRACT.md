@@ -316,3 +316,31 @@ type TurnReport = {
 }
 ```
 前端按 `modelId` 取图；取不到或加载失败一律走剪影降级，不得破版。
+
+## 7. 新闻管道（M4：现实新闻 → 游戏事件）
+
+- **M4.1 Provider 抽象**（`api/app/providers/news/`，注册表模式同主仓库）：
+  `NewsProvider.fetch_recent() -> list[NewsArticle]`；
+  `NewsArticle = { title, url, source, publishedAt, summary? }`。
+  选择由环境变量 `NEWS_PROVIDER` 决定（缺省 `mock`）。`mock`：确定性夹具文章。
+  `gdelt`：GDELT 2.0 DOC API（免费无 key）`mode=ArtList&format=json`，
+  查询航空相关关键词（aviation/airline/jet fuel/airport 等），`timespan=6h`，
+  `maxrecords=30`，HTTP 失败返回空表（不抛异常）。
+- **M4.2 LLM 结构化**（`api/app/services/news_events.py`）：用 Claude API
+  （`claude-haiku-4-5`，环境变量 `ANTHROPIC_API_KEY`；未配置则整步跳过返回空表）
+  把文章批量转为 GameEvent JSON：`source:"news"`、`sourceUrl` 原文链接、
+  `id = "news-" + sha1(url)[:10]`、headline 中文化。LLM 输出**必须**通过 M3.1
+  同一套引擎校验（mult/duration 越界、scope 城市 id 不存在 → 整条丢弃），
+  绝不信任原始输出。返回 `{fetched, accepted, rejected}` 统计。
+- **M4.2 注入端点**：`POST /api/ingest/news`，鉴权头 `X-Ingest-Token` 必须等于
+  环境变量 `INGEST_TOKEN`（不匹配 403；未配置 `INGEST_TOKEN` 时端点禁用返回 503）。
+  流程：provider 抓取 → LLM 结构化 → 入**待生效池**（按 id 去重，入池时间戳，
+  超 14 天条目入池时修剪）。
+- **M4.3 待生效池接回合**：池为进程级共享（内存 + JSON 文件持久化，路径
+  `EVENTS_POOL_FILE`，缺省 `api/var/events-pool.json`，目录自动创建）。
+  每局每回合抽取时：若池中存在该局**尚未激活过**的新闻事件 → 本回合抽取候选
+  改为新闻池（最新优先），仍过 `EVENT_CHANCE` 概率门；否则候选 = 静态库。
+  管道全程任一环节失败 → 游戏只见静态库，完全无感。
+- **定时触发**：GitHub Actions 6h cron 模板放 `airline-game/ops/news-ingest.yml`
+  （schedule 只在仓库默认分支生效——部署后需老板/总管把它放进默认分支的
+  `.github/workflows/` 并配 `INGEST_URL`/`INGEST_TOKEN` secrets，见模板注释）。
