@@ -88,12 +88,26 @@ type GameState = {
   cash: number;
   fleet: FleetAircraft[];
   routes: Route[];
+  competitors: Competitor[];  // M2.1：3 家 AI 航司
+  marketShare: number;        // 玩家上季度客流占全市场服务客流比例 0–1（开局 0）
   news: NewsItem[];           // 本回合播报（M1 为系统消息，M3 接事件）
   finance: {
     lastQuarter: { revenue: number; cost: number; profit: number } | null;
     history: { turn: number; cash: number; profit: number }[];
   };
   status: "active" | "bankrupt";
+};
+
+type CompetitorRoute = { cityA: string; cityB: string; weeklySeats: number }; // 每方向每周座位
+
+type Competitor = {
+  id: string;                 // "ai-aurora"
+  name: string;               // "Aurora Pacific"（虚构品牌，避开真实航司商标）
+  nameZh: string;             // "极光太平洋航空"
+  hqCityId: string;
+  fareMult: number;           // 固定性格：0.9 低价 / 1.0 均衡 / 1.1 高端
+  routes: CompetitorRoute[];
+  marketShare: number;        // 上季度份额 0–1
 };
 
 type NewsItem = { headline: string; detail?: string; kind: "system" | "event" };
@@ -124,7 +138,26 @@ type TurnReport = {
 - **市场需求**（双向合计，人次/季度）：
   `marketPax = BASE_K × demandA × demandB × seasonFactor(quarter) × distanceDecay`
   其中 `distanceDecay = exp(-distanceKm / 9000)`，`seasonFactor = [Q1:0.9, Q2:1.0, Q3:1.15, Q4:0.95]`。
-- **玩家可获份额**：`share = SHARE_BASE`（常数，M1 无对手 AI；M2 改为竞争模型）。
+- **份额竞争模型（M2.1，取代旧常数 SHARE_BASE）**：对每条城市对，卖方 = 玩家航线
+  （若有）+ 所有同城市对的 AI 航线 + **背景市场**（其余航司的抽象集合）。
+  - 价格权重：`w_i = fareMult_i ** PRICE_ELASTICITY`；背景权重 `W_BG = 11/9`
+    （精确使「无 AI 竞争、fareMult=1」时玩家份额 = 0.45，与 M1 平衡完全一致）。
+  - 份额：`share_i = w_i / (Σ_j w_j + W_BG)`。
+  - 成交：`pax_i = min(capacity_i, marketPax × w_i × share_i)`（w 同时承担弹性，
+    M1 的 demandMult 不再单独出现）。某卖方撞容量上限时，未满足需求按权重比例
+    **再分配一轮**给未满载卖方（含背景），只做一轮，保持确定性。
+  - AI 航线容量：`weeklySeats × 2 × 13`（双向、13 周，与玩家同口径）。
+- **AI 航司（3 家，纯函数确定性，伪随机种子 = hash(gameId, turn, aiId)）**：
+  - Aurora Pacific／极光太平洋航空（HQ 东京 hnd，fareMult 0.9）、
+    Royal Meridian／皇家子午线航空（HQ 伦敦 lhr，fareMult 1.1）、
+    Falcon Dunes／沙丘猎鹰航空（HQ 迪拜 dxb，fareMult 1.0）。
+  - 初始各 2 条 HQ 航线（固定表，刻意避开 nyc 城市对以不干扰平衡性验收）：
+    hnd-pvg、hnd-sin；lhr-fra、lhr-dxb；dxb-sin、dxb-cdg。初始 weeklySeats=2200。
+  - 每回合结算前演进：最大航线 weeklySeats ×1.08（向上取整）；每第 4 回合
+    （turn%4==0）从 HQ 向其尚未服务的 demandIndex 最高城市开新航线
+    （weeklySeats=2000），并产生 NewsItem（kind:"system"）播报。
+  - `marketShare`（玩家与 AI 同口径）= 该航司本季度 pax ÷ 当季所有卖方
+    （含背景）pax 总和；无任何航线时为 0。
 - **票价**：`fare = (FARE_FIXED + FARE_PER_KM × distanceKm) × fareMult`。
 - **价格弹性**：`demandMult = fareMult ** PRICE_ELASTICITY`（PRICE_ELASTICITY ≈ −1.6）。
 - **运力**：`capacity = Σ(assigned aircraft seats) × weeklyFlights × 2 × 13`（双向、13 周）。
