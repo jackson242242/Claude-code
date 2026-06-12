@@ -8,9 +8,14 @@
 - 后端：`airline-game/api`，dev 跑在 **http://localhost:8001**（避开 Matchday26 的 8000）。
 - 前端：`airline-game/web`，dev 跑在 **http://localhost:3001**（`next dev -p 3001`）。
   API 基址取 `NEXT_PUBLIC_API_URL`，缺省 `http://localhost:8001`。
-- 数据表（两端共用的事实源）：`airline-game/data/cities.json`、`airline-game/data/aircraft.json`。
-  后端启动时加载；前端把它们作为静态导入（构建期复制或直接 import 相对路径均可）。
-- 机型图片清单：`airline-game/data/aircraft-images.json`（schema 见 §6），由主会话维护。
+- 数据表（两端共用的事实源）：`airline-game/data/cities.json`（V2 起 ~95 城，全球任意
+  城市开局）、`airline-game/data/aircraft.json`（V2 起 19 型：13 现役 + 6 经典二手，
+  二手机低价高油耗）。后端启动时加载；前端静态导入。
+- 图片清单：`airline-game/data/aircraft-images.json` + `airline-game/data/city-images.json`
+  （同 schema，见 §6；城市图为天际线/地标，未收录城市前端用渐变占位）。
+- V2 视听层（纯前端，不进 API）：程序化环境配乐（Web Audio 合成，零素材零版权，
+  可静音、偏好存 localStorage）；角色语音用浏览器 SpeechSynthesis——**原创虚构角色**
+  阵容（法务红线：不得使用或模仿真实人物的姓名/声音/人设；不得使用真实航司商标）。
 
 ## 1. REST API
 
