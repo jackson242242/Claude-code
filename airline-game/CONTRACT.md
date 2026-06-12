@@ -42,6 +42,15 @@ type City = {
   lat: number; lon: number;
   demandIndex: number;   // 1–10
   slotFee: number;       // 每次起降的机场费用（美元）
+  slotCapacity: number;  // M2.2：机场时刻（slot）总池
+};
+
+// M2.2 slot 市场（服务端每次响应计算好，前端只读）
+type CitySlotInfo = {
+  capacity: number;      // 总池 = city.slotCapacity
+  taken: number;         // 已被占用：AI 航线两端各占 1 + 玩家已持有(held)
+  playerHeld: number;    // 玩家持有的 slot 数（含已用）
+  playerUsed: number;    // 玩家航线占用数（每条航线在两端各用 1）
 };
 
 type AircraftModel = {
@@ -90,6 +99,7 @@ type GameState = {
   routes: Route[];
   competitors: Competitor[];  // M2.1：3 家 AI 航司
   marketShare: number;        // 玩家上季度客流占全市场服务客流比例 0–1（开局 0）
+  slotMarket: { [cityId: string]: CitySlotInfo };  // M2.2：全城市 slot 市场快照
   news: NewsItem[];           // 本回合播报（M1 为系统消息，M3 接事件）
   finance: {
     lastQuarter: { revenue: number; cost: number; profit: number } | null;
@@ -117,6 +127,7 @@ type Command =
   | { type: "leaseAircraft"; modelId: string }
   | { type: "sellAircraft";  aircraftId: string }      // 残值 = price × 0.7
   | { type: "returnLease";   aircraftId: string }
+  | { type: "negotiateSlot"; cityId: string }   // M2.2：谈判获取 1 个 slot
   | { type: "openRoute";     cityA: string; cityB: string }
   | { type: "closeRoute";    routeId: string }
   | { type: "assignAircraft"; aircraftId: string; routeId: string | null }
@@ -135,6 +146,16 @@ type TurnReport = {
 - **距离**：haversine(cityA, cityB)，开航线时算好存进 Route。
 - **航线合法性**：开航必有一端为 HQ（M1 简化为枢纽辐射式）；两城唯一航线；
   指派机型 `rangeKm ≥ distanceKm`。
+- **slot 制度（M2.2）**：每条玩家航线在两端城市各占用 1 个**已持有** slot；
+  开航前两端都必须有空闲持有 slot（`playerHeld − playerUsed ≥ 1`），否则报错
+  提示先谈判；关航线释放占用（slot 仍持有，可复用）。玩家开局在 HQ 持有 2 个
+  slot，其余城市 0。AI 航线两端各占 1 个池内 slot（AI 开新线时若目标城市池满
+  ——`taken ≥ capacity`——确定性顺延到下一个候选城市）。
+- **slot 谈判**：命令 `negotiateSlot {cityId}`。确定性结算（无 RNG）：
+  - 失败条件（按序检查并报相应错误）：该城市本回合已谈判过（每城每回合 1 次，
+    `lastNegotiationTurn` 记录）；池已满（`taken ≥ capacity`）；现金不足。
+  - 成本：`slotFee × 800 × (1 + taken/capacity)`，立即扣款，`playerHeld + 1`。
+  - 城市池快照 `slotMarket` 由服务端在每次返回 GameState 时重算。
 - **市场需求**（双向合计，人次/季度）：
   `marketPax = BASE_K × demandA × demandB × seasonFactor(quarter) × distanceDecay`
   其中 `distanceDecay = exp(-distanceKm / 9000)`，`seasonFactor = [Q1:0.9, Q2:1.0, Q3:1.15, Q4:0.95]`。
