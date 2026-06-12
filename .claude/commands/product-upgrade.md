@@ -3,7 +3,7 @@ description: Run one 12-hour Product Upgrade cycle per CADENCE.md (Hao-led)
 ---
 
 You are running the **12-hour Product Upgrade** cycle for the Matchday26 project.
-Follow `CADENCE.md` in the repo root exactly. This is an autonomous routine run:
+Follow `ops/CADENCE.md` exactly (agent docs live in `ops/`). This is an autonomous routine run:
 the session is fresh, so the repo is your only memory.
 
 Steps (per CADENCE.md §2):

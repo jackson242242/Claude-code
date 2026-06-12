@@ -5,7 +5,7 @@ description: Run one Design Upgrade cycle per CADENCE.md (on-demand since 2026-0
 You are running a **Design Upgrade** cycle for the Matchday26 project
 (on-demand — the 24h schedule was retired by the boss on 2026-06-10; this runs
 when the boss or /pm-cycle triggers it).
-Follow `CADENCE.md` in the repo root exactly. Fresh session — the repo is your
+Follow `ops/CADENCE.md` exactly (agent docs live in `ops/`). Fresh session — the repo is your
 only memory.
 
 Steps (per CADENCE.md §2 & §6):
