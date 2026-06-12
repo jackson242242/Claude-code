@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { EventTicker } from '@/components/EventTicker';
 import { SlotBadge } from '@/components/SlotBadge';
 import { TopBar } from '@/components/TopBar';
 import { WorldMap } from '@/components/WorldMap';
@@ -50,6 +51,7 @@ export const GameScreen = ({
   return (
     <div className="flex h-dvh flex-col">
       <TopBar state={state} busy={busy} onEndTurn={onEndTurn} />
+      <EventTicker events={state.activeEvents} />
 
       <div className="flex min-h-0 flex-1 flex-col md:flex-row">
         {/* map */}

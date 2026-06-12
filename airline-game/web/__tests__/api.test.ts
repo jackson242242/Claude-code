@@ -21,6 +21,7 @@ const gameStateFixture: GameState = {
   status: 'active',
   lifetime: { profit: 0, pax: 0 },
   finalResult: null,
+  activeEvents: [],
 };
 
 const jsonResponse = (body: unknown, ok = true, status = 200): Response =>

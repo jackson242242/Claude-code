@@ -50,6 +50,7 @@ const makeState = (overrides: Partial<GameState> = {}): GameState => ({
   status: 'active',
   lifetime: { profit: 0, pax: 0 },
   finalResult: null,
+  activeEvents: [],
   ...overrides,
 });
 

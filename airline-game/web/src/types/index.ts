@@ -98,6 +98,7 @@ export type GameState = {
   status: 'active' | 'bankrupt' | 'finished'; // finished：M2.4 到期结算
   lifetime: { profit: number; pax: number }; // M2.4：累计利润/乘客（每季累加）
   finalResult: FinalResult | null; // M2.4：终局前为 null
+  activeEvents: ActiveEvent[]; // M3.1：当前生效事件
 };
 
 export type CompetitorRoute = { cityA: string; cityB: string; weeklySeats: number }; // 每方向每周座位
@@ -113,6 +114,26 @@ export type Competitor = {
 };
 
 export type NewsItem = { headline: string; detail?: string; kind: 'system' | 'event' };
+
+// M3.1 动态事件（静态库与 M4 新闻管道共用同一 schema）
+export type EventEffect = {
+  target: 'fuelCost' | 'demand' | 'slotFee' | 'serviceCost';
+  mult: number; // 单条限 [0.5, 2.0]，越界事件整条作废
+};
+
+export type GameEvent = {
+  id: string; // 静态库内唯一，如 "evt-fuel-spike"
+  source: 'static' | 'news';
+  headline: string; // 中文播报标题
+  detail?: string;
+  sourceUrl?: string; // news 事件的原始新闻链接（M4）
+  scope: { kind: 'global' | 'city' | 'route'; ids: string[] };
+  effects: EventEffect[]; // 1–3 条
+  durationTurns: number; // 限 [1, 8]
+  severity: 'minor' | 'major';
+};
+
+export type ActiveEvent = GameEvent & { startedTurn: number; remainingTurns: number };
 
 export type Command =
   | { type: 'buyAircraft'; modelId: string }
