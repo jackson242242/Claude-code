@@ -70,13 +70,18 @@
   盈利、东京因可达目的地增多转为可活）。
 
 ## 待办（按序取最上面一条可做的）
-- [ ] **M5.2 Render 部署（仅剩老板操作）**：agent 侧已完成——部署方案与冒烟清单
-  见 `DEPLOY.md`（rootDir 双服务，不动根 render.yaml）。待老板在 Render Dashboard
-  按文档建 skyempire-api/skyempire-web 两服务 + 配 env（含 ANTHROPIC_API_KEY/
-  INGEST_TOKEN）+ 把 ops/news-ingest.yml 放进默认分支 workflows。
-- [ ] **素材本地化**（待老板把 upload.wikimedia.org/commons.wikimedia.org 加进环境
-  网络白名单）：下载 13 张机型照片进仓库、逐张校验（含 737 MAX 10 那张未确认文件名的）、
-  补全精确作者署名。
+- [ ] **M5.2 Render 部署（只剩老板 4 次点击）**：agent 侧全部就绪（2026-06-13）——
+  ① 本分支 render.yaml 已改为 SkyEmpire 专属蓝图（INGEST_TOKEN generateValue、
+  API URL fromService 自动接线、前端容忍裸 host）；② 新闻 cron workflow 已由
+  GitHub API 直接落到默认分支（64920d1）。**老板**：Render → New+ → Blueprint →
+  本仓库 → 本分支 → Apply（提示时粘 ANTHROPIC_API_KEY 或留空）；部署完把
+  GitHub Secrets INGEST_URL（完整端点 URL）/INGEST_TOKEN（从 skyempire-api
+  Environment 页复制）配上即激活新闻管道。
+- [ ] **素材本地化（白名单已开，下个会话执行）**：老板已加 wikimedia 两域名
+  （2026-06-12 23:17 确认；对新会话生效，本会话实测仍 403）。下个会话开场即做：
+  下载 43 张图（19 机型+24 城市）进 web/public、逐张校验、manifests 改本地路径、
+  补全署名。建议老板顺手把 `*.onrender.com` 也加进白名单，部署后我才能亲自跑
+  线上冒烟（否则只能老板自己点开网址验证）。
 
 ## 红线（每轮必守）
 - 门禁：api `pytest` ＋ web `lint/typecheck/test/build` 全绿才算完成；
