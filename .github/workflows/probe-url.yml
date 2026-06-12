@@ -1,0 +1,39 @@
+name: Probe a URL (one-off)
+
+# Manual helper for the majordomo: GitHub-hosted runners have open outbound
+# network (the Claude build sandbox cannot reach onrender.com), so this is
+# the way to check a single URL on demand — e.g. right after a new Render
+# service is created, before it's added to the scheduled site-health list.
+
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "URL to probe"
+        required: true
+        type: string
+
+jobs:
+  probe:
+    name: Probe URL
+    runs-on: ubuntu-latest
+    steps:
+      - name: Curl with retries (Render free-tier cold starts)
+        env:
+          URL: ${{ inputs.url }}
+        run: |
+          code=000
+          for attempt in 1 2 3 4; do
+            code=$(curl -sL -o /tmp/body -w "%{http_code}" --max-time 90 "$URL" || echo 000)
+            echo "attempt $attempt: HTTP $code"
+            if [ "$code" -ge 200 ] && [ "$code" -lt 400 ]; then
+              echo "--- first 40 lines of body ---"
+              head -40 /tmp/body
+              exit 0
+            fi
+            sleep $((attempt * 15))
+          done
+          echo "unreachable: last HTTP $code"
+          echo "--- body (if any) ---"
+          head -40 /tmp/body || true
+          exit 1

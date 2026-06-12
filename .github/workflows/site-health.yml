@@ -26,11 +26,13 @@ jobs:
         id: probe
         env:
           # name|url pairs, one per line. VoiceMemoBot's URL is added via the
-          # repo variable VOICEMEMOBOT_URL once its first deploy reveals it.
+          # repo variable VOICEMEMOBOT_URL once its first deploy reveals it;
+          # same for the alexandra-art static site via ALEXANDRA_ART_URL.
           SITES: |
             worldcup-web|https://worldcup-web-03eq.onrender.com
             worldcup-api|https://worldcup-api-6g3t.onrender.com/health
             voicememobot-api|${{ vars.VOICEMEMOBOT_URL }}
+            alexandra-art|${{ vars.ALEXANDRA_ART_URL }}
         run: |
           down=""
           while IFS='|' read -r name url; do
