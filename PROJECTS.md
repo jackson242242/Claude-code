@@ -51,7 +51,19 @@
 看新 commit。该分支基于 4 月旧基线（含 ZombieSpawner 历史），与 Matchday26 分支
 **不要互相合并**。
 
-### P4+ · 新项目占位
+### P4 · Alexandra Art Portfolio — 女儿的作品集静态站
+**位置：本仓库 `alexandra-art/`（已在默认分支，PR #37 squash 合并 6acdaa7）**。
+单 `index.html` + `works/` 五张铅笔作品；无 header，五个原创 SVG 动画小人按钮
+（皮卡丘=All／炭治郎=Sketchbook／樱木=Studies／哆啦A梦=Visual Notes／龙猫=♪），
+Web Audio 八音盒音乐（零版权）。`render.yaml` 已注册 `alexandra-art` 静态站
+（rootDir 限定，无构建无密钥）。
+
+| 工作流 | 周期 | 入口 | 状态 | 最近一轮（证据） | 下一步 |
+|--------|------|------|------|------------------|--------|
+| 内容更新 | 按需 | （老板点单：加作品/换音乐） | ⚪ | 2026-06-12 上线 v2（PR #37） | 加新作品＝图扔进 `works/` + `WORKS` 数组加一行（见 `alexandra-art/README.md`） |
+| 部署确认 | 一次性 | Render Blueprint sync | 🟡 | render.yaml 已含服务定义；沙箱探不到 onrender | **老板**：若 Render 没自动建站，仪表盘批准 Blueprint sync；URL 形如 `alexandra-art-<suffix>.onrender.com`，拿到后可填进 site-health 探测 |
+
+### P5+ · 新项目占位
 尚无。新项目按 §C 登记后启动。
 
 ## B. 状态图例
