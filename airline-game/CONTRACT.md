@@ -80,12 +80,19 @@ type Route = {
   aircraftIds: string[];
   weeklyFlights: number;      // 每个方向每周班次
   fareMult: number;           // 0.6–1.6，缺省 1.0
+  cabinMix: CabinMix;         // M2.3：占地百分比，三项整数和=100，缺省 {100,0,0}
+  serviceTier: 1 | 2 | 3;     // M2.3：1 低成本 / 2 标准 / 3 豪华，缺省 2
   lastQuarter: RouteQuarterStats | null;
 };
 
+type CabinMix = { economy: number; business: number; first: number };
+
+type ClassStats = { pax: number; capacity: number; revenue: number };
+
 type RouteQuarterStats = {
-  pax: number; capacity: number; loadFactor: number;  // 0–1
+  pax: number; capacity: number; loadFactor: number;  // 0–1（按总座位）
   revenue: number; cost: number; profit: number;
+  classes: { economy: ClassStats; business: ClassStats; first: ClassStats }; // M2.3
 };
 
 type GameState = {
@@ -131,7 +138,8 @@ type Command =
   | { type: "openRoute";     cityA: string; cityB: string }
   | { type: "closeRoute";    routeId: string }
   | { type: "assignAircraft"; aircraftId: string; routeId: string | null }
-  | { type: "updateRoute";   routeId: string; weeklyFlights?: number; fareMult?: number };
+  | { type: "updateRoute";   routeId: string; weeklyFlights?: number; fareMult?: number;
+      cabinMix?: CabinMix; serviceTier?: 1 | 2 | 3 };  // cabinMix 三项非负整数和必须=100
 
 type TurnReport = {
   turn: number; year: number; quarter: number;
@@ -179,7 +187,18 @@ type TurnReport = {
     （weeklySeats=2000），并产生 NewsItem（kind:"system"）播报。
   - `marketShare`（玩家与 AI 同口径）= 该航司本季度 pax ÷ 当季所有卖方
     （含背景）pax 总和；无任何航线时为 0。
-- **票价**：`fare = (FARE_FIXED + FARE_PER_KM × distanceKm) × fareMult`。
+- **票价**：经济舱 `fare = (FARE_FIXED + FARE_PER_KM × distanceKm) × fareMult`；
+  商务舱 = 经济舱 × `BIZ_FARE_MULT (3.0)`；头等舱 = 经济舱 × `FIRST_FARE_MULT (6.5)`。
+- **舱位与服务（M2.3）**：`cabinMix` 是**占地百分比**（商务 1 座占 2.5 个经济座
+  位空间、头等占 5 个）：`econSeats = seats×mixE/100`、`bizSeats = seats×mixB/100/2.5`、
+  `firstSeats = seats×mixF/100/5`（各自向下取整）。容量与客座率按**总可售座位**
+  （三舱之和）计。需求按舱位拆分：`DEMAND_SPLIT = {economy: 0.88, business: 0.09,
+  first: 0.03}`——玩家在该城市对分得的总客流按此比例分舱，逐舱
+  `pax_class = min(capacity_class, allocated × split_class)`，不跨舱回流（M3 不做溢出）。
+  `serviceTier` 影响竞争权重与成本：玩家价格权重 `w ×= SERVICE_WEIGHT[tier]`
+  （{1: 0.85, 2: 1.0, 3: 1.15}），每乘客服务成本 `SERVICE_COST_PER_PAX[tier]`
+  （{1: $12, 2: $25, 3: $45}）计入航线成本。缺省 `cabinMix={100,0,0}`、`tier=2`
+  时各公式与 M2.2 完全一致（平衡性验收不受影响）。
 - **价格弹性**：`demandMult = fareMult ** PRICE_ELASTICITY`（PRICE_ELASTICITY ≈ −1.6）。
 - **运力**：`capacity = Σ(assigned aircraft seats) × weeklyFlights × 2 × 13`（双向、13 周）。
   约束：每架飞机周飞行小时 ≤ 84：`weeklyFlights × 2 × (distanceKm/cruiseKmh + 0.6) ≤ 84 × nAircraft`，
