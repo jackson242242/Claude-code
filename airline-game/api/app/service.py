@@ -79,5 +79,15 @@ class GameService:
 
     def end_turn(self, game_id: str) -> tuple[GameState, TurnReport]:
         state = self.get_game(game_id)
-        report = simulate.settle_turn(state, self.world, self._event_pool)
+        # M4.3: gather pending news pool events (if pool is available).
+        # Any failure is silently swallowed — the game sees only the static pool.
+        news_pool_events = None
+        try:
+            from app.services.events_pool import list_pending
+            news_pool_events = list_pending()
+        except Exception:
+            pass
+        report = simulate.settle_turn(
+            state, self.world, self._event_pool, news_pool_events
+        )
         return state, report

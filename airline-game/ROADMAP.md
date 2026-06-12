@@ -34,12 +34,15 @@
   政策/疫情/经济/扩建/劳资/碳税，全数过 schema 校验）；前端 EventTicker 药丸条+
   效果弹层。api 180 测 + web 83 测全绿；e2e 8 回合实测抽取/叠加/消退正常。
 
+- [x] **M4.1–M4.3 新闻管道**（2026-06-12，/airline-cycle）：NewsProvider 注册表
+  （mock+GDELT 免费源）→ Claude Haiku 结构化（裸 httpx、引擎同套校验、id/source/
+  sourceUrl 服务端强制）→ 鉴权 ingest 端点（503/403/200 矩阵实测）→ 待生效池
+  （JSON 持久化、去重、14 天修剪）→ 回合抽取新闻优先 + seen_news_ids 防重复；
+  任何环节失败回落静态库。api 229 测全绿。ops/news-ingest.yml cron 模板就绪
+  （**待老板**：部署后复制进默认分支 workflows + 配 INGEST_URL/INGEST_TOKEN/
+  ANTHROPIC_API_KEY）。
+
 ## 待办（按序取最上面一条可做的）
-- [ ] **M4.1 NewsProvider 抽象**：api/app/providers/（base + mock + GDELT 免费源），
-  注册表模式同主仓库 backend/app/providers。
-- [ ] **M4.2 LLM 结构化管道**：Claude API 把新闻转 GameEvent（Pydantic 强校验 +
-  效果封顶），受保护 ingest 端点 + GitHub Actions 6h cron（仿 site-health.yml）。
-- [ ] **M4.3 事件池接回合**：待生效池→新回合抽取生效，管道断了回落静态库（游戏无感）。
 - [ ] **M5.1 存档持久化**：PG（schema.sql 先行）/JSON 文件双模式，匿名 id 续局。
 - [ ] **M5.2 Render 部署**：render.yaml 加 web+api 双服务；上线冒烟。
 - [ ] **M5.3 平衡性工具**：快进模拟 N 局脚本，调 balance.py 常数不改代码。

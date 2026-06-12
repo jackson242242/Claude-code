@@ -13,7 +13,7 @@ from fastapi.responses import JSONResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from app.engine.state import GameOverError
-from app.routes import games
+from app.routes import games, ingest
 from app.service import GameNotFoundError, InvalidInputError
 
 app = FastAPI(title="SkyEmpire — Airline Tycoon API (M1)", version="0.1.0")
@@ -76,3 +76,4 @@ def health() -> dict[str, str]:
 
 
 app.include_router(games.router)
+app.include_router(ingest.router)

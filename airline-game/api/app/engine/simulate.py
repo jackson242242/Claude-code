@@ -470,6 +470,7 @@ def settle_turn(
     state: GameState,
     world: World,
     event_pool: list | None = None,
+    news_pool_events: list | None = None,
 ) -> TurnReport:
     """Settle the current quarter, mutate state (cash, finance, calendar,
     status, news) and return the TurnReport for that settled quarter.
@@ -477,13 +478,18 @@ def settle_turn(
     event_pool (M3.1): pass an explicit list[GameEvent] to override the global
     static library.  Pass [] to disable events entirely (used by old tests that
     need exact numbers).  Defaults to None → loaded static library.
+
+    news_pool_events (M4.3): pending news GameEvent objects from events_pool.
+    When non-empty and this game has unseen news events, the news pool is
+    prioritised over the static pool.  None → no news pool available (silent
+    fallback to static pool — game never notices).
     """
     ensure_active(state)
 
     turn, year, quarter = state.turn, state.year, state.quarter
 
-    # M3.1: process events at START of settlement (decrement, expire, draw).
-    event_news = process_events(state, turn, event_pool)
+    # M3.1 + M4.3: process events at START of settlement (decrement, expire, draw).
+    event_news = process_events(state, turn, event_pool, news_pool_events)
 
     # AI airlines evolve before settlement (CONTRACT §3, M2.1).
     ai_news = evolve_competitors(state, world)

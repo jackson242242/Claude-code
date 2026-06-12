@@ -156,6 +156,7 @@ def draw_event(
     turn: int,
     active_event_ids: set[str],
     event_pool: list[GameEvent] | None = None,
+    news_candidates: list[GameEvent] | None = None,
 ) -> GameEvent | None:
     """Deterministic draw for one turn.
 
@@ -163,18 +164,28 @@ def draw_event(
         game_id: the game's id string (used in PRNG seed).
         turn: current turn number (1-based).
         active_event_ids: set of event ids that are already active (no re-draw).
-        event_pool: the pool to draw from.  None / empty list → no events drawn.
+        event_pool: the static pool to draw from.  None / empty list → no events drawn.
+        news_candidates: M4.3 — if provided and non-empty, the first candidate
+            (newest first, pre-filtered by caller) is used as the sole candidate
+            instead of the static event_pool.  Still gated by EVENT_CHANCE.
 
     Returns:
         A GameEvent or None (gate miss / no eligible candidates / empty pool).
     """
-    pool = event_pool or []
     rng = random.Random(f"{game_id}:{turn}")
 
     # Gate check — EVENT_CHANCE = 0.45
     if rng.random() >= balance.EVENT_CHANCE:
         return None
 
+    # M4.3: if news_candidates supplied and non-empty, prefer them over static pool.
+    if news_candidates:
+        # Pick the first one (newest first, pre-sorted by caller).
+        # No weighted draw for news events — use deterministic FIFO order.
+        return news_candidates[0]
+
+    # Fall back to static pool
+    pool = event_pool or []
     # Build candidate list (no duplicates of already-active ids)
     candidates = [ev for ev in pool if ev.id not in active_event_ids]
     if not candidates:
@@ -247,10 +258,17 @@ def process_events(
     state: GameState,
     turn: int,
     event_pool: list[GameEvent] | None = None,
+    news_pool_events: list[GameEvent] | None = None,
 ) -> list[NewsItem]:
     """Process events at the START of settlement (CONTRACT §3 M3.1 order):
       1. Decrement remainingTurns; remove expired events.
       2. Draw one new event (deterministic, seeded).
+
+    M4.3: news_pool_events — if provided and non-empty, filter out ids already
+    seen in this game (state.seen_news_ids), then pass remaining as candidates
+    to draw_event (which picks them over the static pool).  If an event is drawn
+    from the news pool, its id is added to state.seen_news_ids.
+
     Returns new NewsItems to append to the turn's news list.
     """
     # Step 1: decrement and expire
@@ -261,12 +279,26 @@ def process_events(
             still_active.append(ev)
     state.active_events = still_active
 
-    # Step 2: draw
+    # Step 2: build news candidates (M4.3)
     active_ids = {ev.id for ev in state.active_events}
-    drawn = draw_event(state.id, turn, active_ids, event_pool)
+    news_candidates: list[GameEvent] | None = None
+    if news_pool_events:
+        unseen = [
+            ev for ev in news_pool_events
+            if ev.id not in state.seen_news_ids and ev.id not in active_ids
+        ]
+        if unseen:
+            news_candidates = unseen  # newest-first order maintained by pool
+
+    # Step 3: draw
+    drawn = draw_event(state.id, turn, active_ids, event_pool, news_candidates)
 
     if drawn is None:
         return []
+
+    # If drawn from news pool, mark as seen so this game never re-draws it.
+    if drawn.source == "news":
+        state.seen_news_ids.add(drawn.id)
 
     # Activate
     activated = ActiveEvent(

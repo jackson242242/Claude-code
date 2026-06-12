@@ -1,0 +1,43 @@
+# SkyEmpire 新闻摄取 GitHub Actions 定时任务模板
+#
+# 使用说明：
+#   - 此工作流仅在仓库默认分支（main/master）生效。
+#     schedule 触发器只对默认分支有效，非默认分支上的更改不会自动运行。
+#   - 部署后需要在仓库 Settings > Secrets and variables > Actions 中配置：
+#       INGEST_URL   : 后端 API 地址，例如 https://api.skyempire.example.com
+#       INGEST_TOKEN : 与后端 INGEST_TOKEN 环境变量一致的鉴权令牌
+#   - 完成 M5.2 部署后，把此文件复制到 .github/workflows/news-ingest.yml
+#     并推送到默认分支，即可激活定时触发。
+#
+# 触发频率：每 6 小时执行一次（北京时间 0/6/12/18 点整附近）。
+
+name: News Ingest
+
+on:
+  schedule:
+    # 每 6 小时触发一次：0:00 / 6:00 / 12:00 / 18:00 UTC
+    - cron: "0 */6 * * *"
+  # 允许手动触发（用于测试）
+  workflow_dispatch:
+
+jobs:
+  ingest:
+    name: 触发新闻摄取
+    # 仅在默认分支运行（schedule 触发器本身只对默认分支生效，此处做双重保险）
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch) || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: 调用新闻摄取端点
+        # 需要 INGEST_URL 和 INGEST_TOKEN secrets
+        # INGEST_URL 示例：https://api.skyempire.example.com
+        # INGEST_TOKEN 须与后端 INGEST_TOKEN 环境变量一致
+        run: |
+          curl -X POST "${{ secrets.INGEST_URL }}/api/ingest/news" \
+            -H "X-Ingest-Token: ${{ secrets.INGEST_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            --fail \
+            --silent \
+            --show-error \
+            --max-time 60

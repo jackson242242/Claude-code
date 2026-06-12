@@ -268,6 +268,9 @@ class GameState:
     last_negotiation_turn: dict[str, int] = field(default_factory=dict)
     # M3.1: currently active events (serialized as camelCase via the schema layer).
     active_events: list[ActiveEvent] = field(default_factory=list)
+    # M4.3: track news event ids that have been activated in this game.
+    # Prevents a game from ever re-drawing the same news event twice.
+    seen_news_ids: set[str] = field(default_factory=set)
     # Engine-internal bookkeeping — not exposed through the API schemas.
     negative_cash_quarters: int = 0
     next_aircraft_seq: int = 1
