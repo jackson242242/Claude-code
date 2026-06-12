@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thomas's Money Adventure 💰</title>
+<style>
+  :root {
+    --bg: #f0f7ff;
+    --card: #ffffff;
+    --ink: #1e2a3a;
+    --blue: #2f6fed;
+    --green: #22a35d;
+    --red: #e25555;
+    --gold: #f5a623;
+    --radius: 18px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Comic Sans MS", "Chalkboard SE", "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  header {
+    background: linear-gradient(135deg, #2f6fed, #6c4fe0);
+    color: #fff;
+    text-align: center;
+    padding: 22px 12px 16px;
+  }
+  header h1 { margin: 0; font-size: 1.8em; }
+  #starbar { font-size: 1.5em; letter-spacing: 6px; margin-top: 6px; }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    background: #e3edff;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
+  nav button {
+    font-family: inherit;
+    font-size: 0.95em;
+    border: 2px solid var(--blue);
+    background: #fff;
+    color: var(--blue);
+    border-radius: 999px;
+    padding: 8px 14px;
+    cursor: pointer;
+  }
+  nav button.active { background: var(--blue); color: #fff; }
+  nav button.done::after { content: " ⭐"; }
+  main { max-width: 760px; margin: 0 auto; padding: 16px; }
+  section.mission { display: none; }
+  section.mission.show { display: block; animation: pop .25s ease; }
+  @keyframes pop { from { transform: scale(.97); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  .card {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin: 14px 0;
+    box-shadow: 0 4px 14px rgba(30,42,58,.08);
+  }
+  h2 { margin-top: 8px; }
+  .bigbtn, .choice {
+    font-family: inherit;
+    font-size: 1.05em;
+    border: none;
+    border-radius: 14px;
+    padding: 12px 18px;
+    cursor: pointer;
+    margin: 6px 4px;
+  }
+  .bigbtn { background: var(--green); color: #fff; }
+  .bigbtn.blue { background: var(--blue); }
+  .bigbtn.red { background: var(--red); }
+  .bigbtn:disabled { background: #b9c4d4; cursor: not-allowed; }
+  .choice {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: #eef3ff;
+    border: 2px solid #cdd9f5;
+  }
+  .choice:hover { border-color: var(--blue); }
+  .choice.correct { background: #d8f5e3; border-color: var(--green); }
+  .choice.wrong { background: #fde2e2; border-color: var(--red); }
+  .feedback { font-weight: bold; min-height: 1.4em; }
+  .good { color: var(--green); }
+  .bad { color: var(--red); }
+  .pill {
+    display: inline-block;
+    background: var(--gold);
+    color: #fff;
+    border-radius: 999px;
+    padding: 2px 12px;
+    font-size: .8em;
+    font-weight: bold;
+  }
+  input[type=range] { width: 100%; }
+  .slider-label { display: flex; justify-content: space-between; font-weight: bold; margin-top: 10px; }
+  .bars { display: flex; align-items: flex-end; gap: 30px; height: 240px; margin: 16px 0 4px; justify-content: center; }
+  .bar-wrap { text-align: center; width: 130px; }
+  .bar {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    transition: height .4s ease;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    padding-top: 6px;
+    min-height: 26px;
+  }
+  .bar.piggy { background: #9aa7b8; }
+  .bar.snow { background: linear-gradient(180deg, #4f9cf7, #2f6fed); }
+  /* pizza */
+  #pizza { display: grid; grid-template-columns: repeat(4, 64px); gap: 8px; justify-content: center; margin: 12px 0; }
+  .slice { font-size: 40px; cursor: pointer; background: #fff7e8; border: 2px dashed #e8c98a; border-radius: 12px; text-align: center; padding: 6px 0; user-select: none; }
+  .slice.mine { background: #ffe2a8; border-style: solid; }
+  /* lemonade chart */
+  #lemChart { display: flex; align-items: flex-end; gap: 3px; height: 120px; background: #fffbe9; border-radius: 10px; padding: 6px; }
+  #lemChart div { flex: 1; background: var(--gold); border-radius: 3px 3px 0 0; min-height: 4px; }
+  .stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 10px 0; }
+  .stat { background: #eef3ff; border-radius: 12px; padding: 8px 14px; font-weight: bold; }
+  .news { background: #fff3cd; border-left: 6px solid var(--gold); padding: 10px 14px; border-radius: 8px; font-weight: bold; min-height: 1.4em; }
+  /* baskets */
+  .baskets { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+  .basket { background: #f6f0ff; border: 2px solid #d8c8f5; border-radius: 14px; padding: 12px; width: 140px; text-align: center; }
+  .hidden { display: none; }
+  footer { text-align: center; color: #7a8aa0; padding: 24px; font-size: .85em; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>💰 Thomas's Money Adventure 💰</h1>
+  <div>Complete all 6 missions to become a <strong>Money Master</strong>!</div>
+  <div id="starbar"></div>
+</header>
+
+<nav id="nav"></nav>
+
+<main>
+
+<!-- ============ MISSION 1 ============ -->
+<section class="mission" id="m0">
+  <div class="card">
+    <span class="pill">MISSION 1</span>
+    <h2>🌱 Spend, Save, or Plant?</h2>
+    <p>It's your birthday! 🎂 Grandma gives you <strong>$10</strong>.
+       You have three choices. Try <strong>all three</strong> to see what
+       happens to your money after <strong>5 years</strong>!</p>
+    <button class="choice" onclick="m1pick(this,'spend')">🍬 <strong>SPEND it</strong> — candy and a toy today!</button>
+    <button class="choice" onclick="m1pick(this,'save')">🐷 <strong>SAVE it</strong> — hide it in your piggy bank.</button>
+    <button class="choice" onclick="m1pick(this,'invest')">🌱 <strong>INVEST it</strong> — plant it like a seed so it can grow.</button>
+    <p class="feedback" id="m1fb"></p>
+    <div class="card hidden" id="m1done" style="background:#d8f5e3">
+      <strong>🎉 You tried all three!</strong> That's the big secret:
+      <em>investing means putting your money to work so it grows while you sleep.</em>
+      Spending is fun, saving is safe, but only investing makes your money GROW.
+      <br><br><button class="bigbtn" onclick="finishMission(0)">⭐ Collect your star!</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MISSION 2 ============ -->
+<section class="mission" id="m1">
+  <div class="card">
+    <span class="pill">MISSION 2</span>
+    <h2>🍕 Own a Slice of Pizza Planet</h2>
+    <p>A company is like a <strong>giant pizza</strong>. A <strong>stock</strong> is
+       one slice. If you own a slice, you own a tiny piece of the whole company!</p>
+    <p><strong>Pizza Planet</strong> is split into 16 slices. Each slice costs
+       <strong id="m2price">$5</strong>. You have <strong>$20</strong> — tap slices to buy them!</p>
+    <div id="pizza"></div>
+    <div class="stats">
+      <div class="stat">💵 Your cash: $<span id="m2cash">20</span></div>
+      <div class="stat">🍕 Your slices: <span id="m2slices">0</span> / 16</div>
+      <div class="stat">📈 Your slices are worth: $<span id="m2worth">0</span></div>
+    </div>
+    <div id="m2news" class="news">Buy at least 1 slice to continue…</div>
+    <div id="m2events" class="hidden">
+      <p>Now see what happens to YOUR slices when the company has good or bad news:</p>
+      <button class="bigbtn" onclick="m2event(1)">📰 Good news: Pizza Planet invents rainbow pizza! 🌈</button>
+      <button class="bigbtn red" onclick="m2event(-1)">📰 Bad news: a customer found a bug in the salad! 🐛</button>
+    </div>
+    <div class="card hidden" id="m2done" style="background:#d8f5e3">
+      <strong>🎉 You get it!</strong> A stock = a slice of a real company.
+      When the company does <em>well</em>, your slice is worth <em>more</em>.
+      When it does badly, it's worth less. You never lost your slices — only
+      their <em>price</em> changed!
+      <br><br><button class="bigbtn" onclick="finishMission(1)">⭐ Collect your star!</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MISSION 3 ============ -->
+<section class="mission" id="m2x">
+  <div class="card">
+    <span class="pill">MISSION 3</span>
+    <h2>❄️ The Snowball Machine (Compound Interest)</h2>
+    <p><strong>Compound interest</strong> means your money earns money…
+       and then THAT new money earns money too! Like a snowball rolling
+       downhill, getting bigger and bigger. ⛄</p>
+    <p>Move the sliders and watch the race: <strong>Piggy Bank</strong> 🐷
+       (money just sits there) vs <strong>Snowball</strong> ❄️ (money grows
+       and the growth grows too)!</p>
+    <div class="slider-label"><span>🏁 Starting money</span><span id="v_start">$100</span></div>
+    <input type="range" id="s_start" min="10" max="500" step="10" value="100" oninput="snowball()">
+    <div class="slider-label"><span>📅 Added every month</span><span id="v_month">$10</span></div>
+    <input type="range" id="s_month" min="0" max="50" step="5" value="10" oninput="snowball()">
+    <div class="slider-label"><span>📈 Growth per year</span><span id="v_rate">8%</span></div>
+    <input type="range" id="s_rate" min="1" max="15" step="1" value="8" oninput="snowball()">
+    <div class="slider-label"><span>⏰ Years (the secret ingredient!)</span><span id="v_years">10 years</span></div>
+    <input type="range" id="s_years" min="1" max="50" step="1" value="10" oninput="snowball()">
+    <div class="bars">
+      <div class="bar-wrap"><div class="bar piggy" id="bar_piggy"></div>🐷 Piggy Bank</div>
+      <div class="bar-wrap"><div class="bar snow" id="bar_snow"></div>❄️ Snowball</div>
+    </div>
+    <p class="feedback" id="m3fb"></p>
+    <div class="card" style="background:#eef3ff">
+      <strong>🔍 Challenge:</strong> slide <strong>Years</strong> all the way to
+      <strong>50</strong> (that's about how long YOUR money can grow, since you're 9!).
+      See how the snowball explodes at the end? That's why starting young is a
+      <strong>superpower</strong>. 🦸
+    </div>
+    <button class="bigbtn" id="m3btn" disabled onclick="finishMission(2)">⭐ Collect your star! (try 50 years first)</button>
+  </div>
+</section>
+
+<!-- ============ MISSION 4 ============ -->
+<section class="mission" id="m3x">
+  <div class="card">
+    <span class="pill">MISSION 4</span>
+    <h2>🧺 Don't Put All Your Eggs in One Basket</h2>
+    <p>Investments don't only go UP — sometimes they go DOWN. That's called
+       <strong>risk</strong>. Smart investors <strong>spread their money out</strong>.
+       Let's test it! You have <strong>100 coins</strong>.</p>
+    <button class="bigbtn red" onclick="m4setup(1)">😬 Put ALL 100 coins in ONE company</button>
+    <button class="bigbtn blue" onclick="m4setup(4)">🧺 Spread 25 coins across FOUR companies</button>
+    <div id="m4game" class="hidden">
+      <div class="baskets" id="m4baskets"></div>
+      <p style="text-align:center"><button class="bigbtn" onclick="m4spin()">🎲 Spin the year!</button></p>
+      <p class="feedback" id="m4fb" style="text-align:center"></p>
+    </div>
+    <div class="card hidden" id="m4done" style="background:#d8f5e3">
+      <strong>🎉 You discovered diversification!</strong> (A fancy word for
+      "spread it out.") With ONE basket, one bad year can smash everything.
+      With FOUR baskets, a winner usually makes up for a loser. Less scary,
+      more steady!
+      <br><br><button class="bigbtn" onclick="finishMission(3)">⭐ Collect your star!</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MISSION 5 ============ -->
+<section class="mission" id="m4x">
+  <div class="card">
+    <span class="pill">MISSION 5</span>
+    <h2>🍋 The Lemonade Stand Stock Market</h2>
+    <p>You're a real investor now! Buy and sell shares of <strong>Lena's
+       Lemonade Stand</strong> for 20 days. Watch the news — it moves the price!
+       Can you end with more than your starting <strong>$100</strong>?</p>
+    <div class="stats">
+      <div class="stat">📅 Day <span id="lemDay">1</span>/20</div>
+      <div class="stat">💵 Cash: $<span id="lemCash">100</span></div>
+      <div class="stat">🧾 Shares: <span id="lemShares">0</span></div>
+      <div class="stat">🍋 Price: $<span id="lemPrice">10</span></div>
+      <div class="stat">💰 Total: $<span id="lemTotal">100</span></div>
+    </div>
+    <div class="news" id="lemNews">☀️ Day 1: The stand opens! Shares cost $10.</div>
+    <div id="lemChart"></div>
+    <p>
+      <button class="bigbtn" id="lemBuy" onclick="lemTrade(1)">🛒 Buy 1 share</button>
+      <button class="bigbtn red" id="lemSell" onclick="lemTrade(-1)">💸 Sell 1 share</button>
+      <button class="bigbtn blue" id="lemNext" onclick="lemNext()">⏭️ Next day</button>
+      <button class="bigbtn" id="lemReset" onclick="lemStart()" style="background:#7a8aa0">🔄 Play again</button>
+    </p>
+    <div class="card hidden" id="m5done" style="background:#d8f5e3">
+      <div id="lemResult"></div>
+      <em>Lesson: prices wiggle every single day and NOBODY can predict every
+      wiggle — not even grown-up experts. That's why patient investors usually
+      beat panicky ones.</em>
+      <br><br><button class="bigbtn" onclick="finishMission(4)">⭐ Collect your star!</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MISSION 6 ============ -->
+<section class="mission" id="m5x">
+  <div class="card">
+    <span class="pill">MISSION 6</span>
+    <h2>🏆 The Big Money Quiz</h2>
+    <p>Answer all 8 questions to win your final star and the
+       <strong>Money Master Trophy</strong>!</p>
+    <div id="quizbox"></div>
+    <p class="feedback" id="quizfb"></p>
+    <div class="card hidden" id="m6done" style="background:#d8f5e3">
+      <div id="quizResult"></div>
+      <button class="bigbtn" id="quizStarBtn" onclick="finishMission(5)">⭐ Collect your final star!</button>
+      <button class="bigbtn blue" onclick="quizStart()">🔄 Try the quiz again</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>Made for Thomas, age 9 · No real money was harmed in this adventure 😄</footer>
+
+<script>
+"use strict";
+
+/* ---------- progress & navigation ---------- */
+const MISSIONS = ["🌱 Invest?", "🍕 Stocks", "❄️ Snowball", "🧺 Baskets", "🍋 Lemonade", "🏆 Quiz"];
+const sections = ["m0", "m1", "m2x", "m3x", "m4x", "m5x"];
+let stars = JSON.parse(localStorage.getItem("thomasStars") || "[false,false,false,false,false,false]");
+
+function renderNav(activeIdx) {
+  const nav = document.getElementById("nav");
+  nav.innerHTML = "";
+  MISSIONS.forEach((name, i) => {
+    const b = document.createElement("button");
+    b.textContent = (i + 1) + ". " + name;
+    if (stars[i]) b.classList.add("done");
+    if (i === activeIdx) b.classList.add("active");
+    b.onclick = () => showMission(i);
+    nav.appendChild(b);
+  });
+  document.getElementById("starbar").textContent =
+    stars.map(s => s ? "⭐" : "☆").join(" ");
+}
+
+function showMission(i) {
+  sections.forEach((id, j) =>
+    document.getElementById(id).classList.toggle("show", i === j));
+  renderNav(i);
+  window.scrollTo({ top: 0 });
+}
+
+function finishMission(i) {
+  stars[i] = true;
+  localStorage.setItem("thomasStars", JSON.stringify(stars));
+  if (stars.every(Boolean)) {
+    alert("🏆🏆🏆 ALL 6 STARS! Thomas, you are officially a MONEY MASTER! 🏆🏆🏆");
+    renderNav(i);
+  } else if (i < 5) {
+    showMission(i + 1);
+  } else {
+    renderNav(i);
+  }
+}
+
+/* ---------- mission 1: spend / save / invest ---------- */
+const m1seen = new Set();
+function m1pick(btn, what) {
+  const fb = document.getElementById("m1fb");
+  m1seen.add(what);
+  btn.classList.add("correct");
+  if (what === "spend") {
+    fb.innerHTML = "🍬 Yum! Fun today… but after 5 years you have <span class='bad'>$0</span>. The candy is loooong gone.";
+  } else if (what === "save") {
+    fb.innerHTML = "🐷 Safe! After 5 years you still have <span class='good'>$10</span>. But it didn't grow at all — it just napped.";
+  } else {
+    fb.innerHTML = "🌱 Whoa! Your money grew while you played. After 5 years it became about <span class='good'>$15</span> — and it keeps growing!";
+  }
+  if (m1seen.size === 3) document.getElementById("m1done").classList.remove("hidden");
+}
+
+/* ---------- mission 2: pizza stocks ---------- */
+let m2 = { cash: 20, slices: 0, price: 5, events: 0 };
+function m2render() {
+  document.getElementById("m2cash").textContent = m2.cash;
+  document.getElementById("m2slices").textContent = m2.slices;
+  document.getElementById("m2price").textContent = "$" + m2.price;
+  document.getElementById("m2worth").textContent = m2.slices * m2.price;
+}
+function m2init() {
+  const grid = document.getElementById("pizza");
+  for (let i = 0; i < 16; i++) {
+    const d = document.createElement("div");
+    d.className = "slice";
+    d.textContent = "🍕";
+    d.onclick = () => {
+      if (d.classList.contains("mine")) return;
+      if (m2.cash < m2.price) {
+        document.getElementById("m2news").textContent = "💸 Not enough cash for another slice!";
+        return;
+      }
+      m2.cash -= m2.price;
+      m2.slices++;
+      d.classList.add("mine");
+      d.textContent = "🍕✨";
+      m2render();
+      document.getElementById("m2news").textContent =
+        "🎉 You own " + m2.slices + " of Pizza Planet's 16 slices — you're a part-OWNER of the company!";
+      document.getElementById("m2events").classList.remove("hidden");
+    };
+    grid.appendChild(d);
+  }
+  m2render();
+}
+function m2event(dir) {
+  m2.price = Math.max(1, m2.price + dir * 2);
+  m2.events++;
+  m2render();
+  document.getElementById("m2news").textContent = dir > 0
+    ? "📈 Everyone wants rainbow pizza! Slice price jumped to $" + m2.price + ". Your slices are worth MORE!"
+    : "📉 Eww, a bug! Slice price fell to $" + m2.price + ". Your slices are worth LESS (but you still own them!)";
+  if (m2.events >= 2) document.getElementById("m2done").classList.remove("hidden");
+}
+
+/* ---------- mission 3: compound interest snowball ---------- */
+let m3triedLong = false;
+function snowball() {
+  const start = +document.getElementById("s_start").value;
+  const monthly = +document.getElementById("s_month").value;
+  const rate = +document.getElementById("s_rate").value;
+  const years = +document.getElementById("s_years").value;
+  document.getElementById("v_start").textContent = "$" + start;
+  document.getElementById("v_month").textContent = "$" + monthly;
+  document.getElementById("v_rate").textContent = rate + "%";
+  document.getElementById("v_years").textContent = years + " year" + (years > 1 ? "s" : "");
+
+  const piggy = start + monthly * 12 * years;
+  let snow = start;
+  const r = rate / 100 / 12;
+  for (let m = 0; m < years * 12; m++) snow = snow * (1 + r) + monthly;
+
+  const max = Math.max(snow, piggy);
+  const fmt = n => "$" + Math.round(n).toLocaleString();
+  const bp = document.getElementById("bar_piggy");
+  const bs = document.getElementById("bar_snow");
+  bp.style.height = Math.max(11, piggy / max * 100) + "%";
+  bs.style.height = Math.max(11, snow / max * 100) + "%";
+  bp.textContent = fmt(piggy);
+  bs.textContent = fmt(snow);
+  document.getElementById("m3fb").innerHTML = "The snowball made an EXTRA <span class='good'>" +
+    fmt(snow - piggy) + "</span> of free money — just for waiting! 🤯";
+
+  if (years >= 50 && !m3triedLong) {
+    m3triedLong = true;
+    const btn = document.getElementById("m3btn");
+    btn.disabled = false;
+    btn.textContent = "⭐ Collect your star!";
+  }
+}
+
+/* ---------- mission 4: eggs & baskets ---------- */
+const M4_NAMES = ["🚀 RocketCo", "🍪 CookieCorp", "🤖 RoboToys", "🎮 GameZone"];
+let m4 = null;
+const m4tried = new Set();
+function m4setup(n) {
+  m4 = { n, values: Array(n).fill(100 / n), spins: 0 };
+  m4tried.add(n);
+  document.getElementById("m4game").classList.remove("hidden");
+  document.getElementById("m4fb").textContent = "";
+  m4render();
+}
+function m4render() {
+  const box = document.getElementById("m4baskets");
+  box.innerHTML = "";
+  m4.values.forEach((v, i) => {
+    const d = document.createElement("div");
+    d.className = "basket";
+    d.innerHTML = "<div style='font-size:1.6em'>" + M4_NAMES[i].split(" ")[0] + "</div>" +
+      M4_NAMES[i].split(" ")[1] + "<br><strong>" + Math.round(v) + " coins</strong>";
+    box.appendChild(d);
+  });
+}
+function m4spin() {
+  m4.spins++;
+  m4.values = m4.values.map(v => {
+    const change = [-0.5, -0.2, 0.1, 0.3, 0.6][Math.floor(Math.random() * 5)];
+    return Math.max(0, v * (1 + change));
+  });
+  m4render();
+  const total = Math.round(m4.values.reduce((a, b) => a + b, 0));
+  const fb = document.getElementById("m4fb");
+  fb.innerHTML = "After the year you have <strong>" + total + " coins</strong> " +
+    (total >= 100 ? "<span class='good'>(you're UP! 📈)</span>" : "<span class='bad'>(you're down 📉 — ouch!)</span>") +
+    "<br>Spin a few more times… then try the OTHER button too!";
+  if (m4tried.size === 2 && m4.spins >= 2)
+    document.getElementById("m4done").classList.remove("hidden");
+}
+
+/* ---------- mission 5: lemonade stand market ---------- */
+const LEM_NEWS = [
+  ["🔥 HEATWAVE! Everyone is thirsty!", +3],
+  ["🌧️ Rainy day… nobody wants lemonade.", -2],
+  ["⚽ A soccer game next door brings a huge crowd!", +2],
+  ["🍋 Lemon prices went up — smaller profits.", -1],
+  ["📺 A famous YouTuber visits the stand!", +4],
+  ["🥤 A rival juice stand opens across the street.", -3],
+  ["🏅 Lena wins 'Best Lemonade in Town'!", +2],
+  ["😴 A quiet, boring day. Not much happens.", 0],
+  ["🐝 Bees scare away some customers!", -1],
+  ["🎪 The town fair is today — crowds everywhere!", +3],
+];
+let lem = null;
+function lemStart() {
+  lem = { day: 1, cash: 100, shares: 0, price: 10, history: [10] };
+  document.getElementById("m5done").classList.add("hidden");
+  document.getElementById("lemNews").textContent = "☀️ Day 1: The stand opens! Shares cost $10.";
+  ["lemBuy", "lemSell", "lemNext"].forEach(id => document.getElementById(id).disabled = false);
+  lemRender();
+}
+function lemRender() {
+  document.getElementById("lemDay").textContent = lem.day;
+  document.getElementById("lemCash").textContent = lem.cash.toFixed(0);
+  document.getElementById("lemShares").textContent = lem.shares;
+  document.getElementById("lemPrice").textContent = lem.price;
+  document.getElementById("lemTotal").textContent = (lem.cash + lem.shares * lem.price).toFixed(0);
+  const chart = document.getElementById("lemChart");
+  chart.innerHTML = "";
+  const max = Math.max(...lem.history);
+  lem.history.forEach(p => {
+    const d = document.createElement("div");
+    d.style.height = (p / max * 100) + "%";
+    chart.appendChild(d);
+  });
+}
+function lemTrade(dir) {
+  if (dir > 0 && lem.cash >= lem.price) { lem.cash -= lem.price; lem.shares++; }
+  if (dir < 0 && lem.shares > 0) { lem.cash += lem.price; lem.shares--; }
+  lemRender();
+}
+function lemNext() {
+  if (lem.day >= 20) return;
+  lem.day++;
+  const [headline, effect] = LEM_NEWS[Math.floor(Math.random() * LEM_NEWS.length)];
+  const wiggle = Math.floor(Math.random() * 3) - 1;
+  lem.price = Math.max(2, lem.price + effect + wiggle);
+  lem.history.push(lem.price);
+  document.getElementById("lemNews").textContent = "📰 Day " + lem.day + ": " + headline;
+  lemRender();
+  if (lem.day === 20) {
+    const total = lem.cash + lem.shares * lem.price;
+    ["lemBuy", "lemSell", "lemNext"].forEach(id => document.getElementById(id).disabled = true);
+    document.getElementById("lemResult").innerHTML =
+      "<h3>" + (total >= 100 ? "🎉 You finished with $" + total.toFixed(0) + " — a PROFIT of $" + (total - 100).toFixed(0) + "!"
+                             : "😅 You finished with $" + total.toFixed(0) + " — down $" + (100 - total).toFixed(0) + ". Even pros have down years!") + "</h3>";
+    document.getElementById("m5done").classList.remove("hidden");
+  }
+}
+
+/* ---------- mission 6: quiz ---------- */
+const QUIZ = [
+  { q: "What does it mean to INVEST your money?",
+    a: ["Hide it under your bed", "Put it to work so it can grow", "Spend it all on candy"], c: 1 },
+  { q: "A stock is…",
+    a: ["A tiny slice of a real company", "A type of soup", "Money the bank prints"], c: 0 },
+  { q: "If you own stock in a company and the company does really WELL, your stock usually…",
+    a: ["Disappears", "Becomes worth less", "Becomes worth more"], c: 2 },
+  { q: "Compound interest means…",
+    a: ["You pay extra taxes", "Your money earns money, and that money earns money too", "Interest that is hard to understand"], c: 1 },
+  { q: "What is the SECRET INGREDIENT that makes the compound interest snowball huge?",
+    a: ["Time — starting young and waiting", "Luck", "Asking nicely"], c: 0 },
+  { q: "'Don't put all your eggs in one basket' means…",
+    a: ["Chickens are bad at investing", "Spread your money across different investments", "Never buy eggs"], c: 1 },
+  { q: "Stock prices wiggle up and down every day. What usually works best?",
+    a: ["Panic and sell everything when it drops", "Be patient and think long-term", "Check prices every 5 minutes and worry"], c: 1 },
+  { q: "Can investments go DOWN as well as up?",
+    a: ["No, never", "Yes — that's called risk, and smart investors plan for it", "Only on Mondays"], c: 1 },
+];
+let quiz = null;
+function quizStart() {
+  quiz = { i: 0, score: 0, locked: false };
+  document.getElementById("m6done").classList.add("hidden");
+  document.getElementById("quizfb").textContent = "";
+  quizRender();
+}
+function quizRender() {
+  const box = document.getElementById("quizbox");
+  const item = QUIZ[quiz.i];
+  box.innerHTML = "<h3>Question " + (quiz.i + 1) + " of " + QUIZ.length + "</h3><p><strong>" + item.q + "</strong></p>";
+  item.a.forEach((text, idx) => {
+    const b = document.createElement("button");
+    b.className = "choice";
+    b.textContent = text;
+    b.onclick = () => quizAnswer(b, idx);
+    box.appendChild(b);
+  });
+}
+function quizAnswer(btn, idx) {
+  if (quiz.locked) return;
+  quiz.locked = true;
+  const item = QUIZ[quiz.i];
+  const fb = document.getElementById("quizfb");
+  if (idx === item.c) {
+    quiz.score++;
+    btn.classList.add("correct");
+    fb.innerHTML = "<span class='good'>✅ Correct! Nice one, Thomas!</span>";
+  } else {
+    btn.classList.add("wrong");
+    fb.innerHTML = "<span class='bad'>❌ Not quite!</span> The answer was: <strong>" + item.a[item.c] + "</strong>";
+  }
+  setTimeout(() => {
+    quiz.locked = false;
+    quiz.i++;
+    if (quiz.i < QUIZ.length) {
+      fb.textContent = "";
+      quizRender();
+    } else {
+      document.getElementById("quizbox").innerHTML = "";
+      const passed = quiz.score >= 6;
+      document.getElementById("quizResult").innerHTML =
+        "<h3>You scored " + quiz.score + " / " + QUIZ.length + "!</h3>" +
+        (passed ? "<p>🏆 AMAZING! You really know your stuff!</p>"
+                : "<p>💪 Good try! Replay the missions and take the quiz again — you'll smash it.</p>");
+      document.getElementById("quizStarBtn").style.display = passed ? "inline-block" : "none";
+      document.getElementById("m6done").classList.remove("hidden");
+      fb.textContent = "";
+    }
+  }, 1600);
+}
+
+/* ---------- boot ---------- */
+m2init();
+snowball();
+lemStart();
+quizStart();
+showMission(stars.findIndex(s => !s) === -1 ? 0 : stars.findIndex(s => !s));
+</script>
+</body>
+</html>
