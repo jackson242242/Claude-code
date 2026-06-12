@@ -1,7 +1,12 @@
-"""Game service + in-memory repository.
+"""Game service — business logic layer (M5.1: pluggable store abstraction).
 
-M1 stores games in a process-local dict (CONTRACT §1); the service interface
-is the seam where M5 swaps in real storage.
+Store selection (CONTRACT §1):
+  - No env vars set  → MemoryStore  (test mode; g-1, g-2 ids)
+  - GAMES_FILE set   → JsonFileStore (uuid4 ids)
+  - DATABASE_URL set → PostgresStore (uuid4 ids; overrides GAMES_FILE)
+
+The service calls store.save() after every mutation so all three persistence
+modes stay consistent without callers needing to think about it.
 """
 from __future__ import annotations
 
@@ -12,6 +17,7 @@ from app.engine import simulate
 from app.engine.commands import CommandResult
 from app.engine.simulate import TurnReport
 from app.engine.state import GameEvent, GameState, World, new_game
+from app.store import AbstractStore, MemoryStore
 
 
 class GameNotFoundError(Exception):
@@ -22,33 +28,25 @@ class InvalidInputError(Exception):
     pass
 
 
-class GameRepository:
-    """In-memory store with a process-local auto-increment id."""
+# ---------------------------------------------------------------------------
+# Legacy shim — kept so existing tests that import GameRepository still work.
+# ---------------------------------------------------------------------------
 
-    def __init__(self) -> None:
-        self._games: dict[str, GameState] = {}
-        self._seq = 0
 
-    def next_id(self) -> str:
-        self._seq += 1
-        return f"g-{self._seq}"
-
-    def add(self, state: GameState) -> None:
-        self._games[state.id] = state
-
-    def get(self, game_id: str) -> GameState | None:
-        return self._games.get(game_id)
+class GameRepository(MemoryStore):
+    """Backward-compatible alias for MemoryStore (used by older tests)."""
 
 
 class GameService:
     def __init__(
         self,
         world: World,
-        repository: GameRepository | None = None,
+        repository: AbstractStore | None = None,
         event_pool: list[GameEvent] | None = None,
     ) -> None:
         self.world = world
-        self.repository = repository or GameRepository()
+        # Accept both the old GameRepository and the new AbstractStore subclasses.
+        self.repository: AbstractStore = repository or MemoryStore()
         # M3.1: the event pool passed to settle_turn on every end-turn call.
         # None here means "use the global default pool" (loaded by app.data.load_events).
         self._event_pool = event_pool
@@ -61,7 +59,7 @@ class GameService:
         if hq_city is None:
             raise InvalidInputError(f"unknown city: {hq_city_id}")
         state = new_game(self.repository.next_id(), name, hq_city)
-        self.repository.add(state)
+        self.repository.add(state)  # add() also persists for file/pg stores
         return state
 
     def get_game(self, game_id: str) -> GameState:
@@ -75,6 +73,7 @@ class GameService:
     ) -> tuple[GameState, list[CommandResult]]:
         state = self.get_game(game_id)
         results = engine_commands.apply_commands(state, self.world, commands)
+        self.repository.save(state)  # M5.1: persist after every mutation
         return state, results
 
     def end_turn(self, game_id: str) -> tuple[GameState, TurnReport]:
@@ -90,4 +89,5 @@ class GameService:
         report = simulate.settle_turn(
             state, self.world, self._event_pool, news_pool_events
         )
+        self.repository.save(state)  # M5.1: persist after every mutation
         return state, report
