@@ -40,6 +40,9 @@
 | GET | `/api/matches/{code}` | `?playerId=...` | `MatchView`·V3.3（**前端轮询此端点**，2s 间隔） |
 | POST | `/api/matches/{code}/commands` | `{ playerId, commands }` | `{ view: MatchView, results: CommandResult[] }`·V3.3 |
 | POST | `/api/matches/{code}/ready` | `{ playerId }` | `MatchView`·V3.3（标记本人本回合就绪） |
+| GET | `/api/weekly` | — | `WeeklyChallenge`·V3.4（本周挑战参数） |
+| POST | `/api/weekly/games` | `{ airlineName }` | `GameState`·V3.4（固定 HQ + 周种子事件） |
+| GET | `/api/leaderboard` | `?weekId=...`（缺省本周） | `{ weekId, entries: LeaderboardEntry[] }`·V3.4 |
 
 - **多人对战（V3.3，房间制同步回合，轮询无 WebSocket）**：
   - 房间内 N 个真人航司（2–4）+ 可选 AI 补位，**共享同一世界/AI/事件/回合计数器**。
@@ -159,6 +162,24 @@ type GameState = {
   brand: number;               // V3.7：品牌声誉 0–100，开局 50
   marketing: Marketing;        // V3.7：当前季度营销投放，开局 {0,0,0}
   pendingDecision: (DecisionEvent & { drawnTurn: number }) | null;  // V3.7
+  seed: string;                // V3.4：事件/抉择/AI 确定性种子源，普通局=id、周挑战=weekId
+  weeklyWeekId: string | null; // V3.4：非空标记周挑战局，到期结算时自动记榜
+};
+
+// V3.4 每周挑战与排行榜
+type WeeklyChallenge = {
+  weekId: string;              // ISO 周，如 "2026-W24"
+  hqCityId: string;            // 本周固定总部（由 weekId 确定性派生）
+  endsAtMs: number;            // 本周结束 epoch ms（信息展示）
+};
+
+type LeaderboardEntry = {
+  rank: number;
+  name: string;                // 航司名
+  score: number;
+  profit: number;              // 累计利润
+  marketShare: number;         // 终局份额 0–1
+  isYou?: boolean;             // 当前请求者自己的条目（按提交时记录的 token 匹配）
 };
 
 // V3.3 多人对战视角（每个玩家轮询自己的 MatchView）
@@ -345,6 +366,20 @@ type TurnReport = {
   - 机场费：`(slotFeeA + slotFeeB) × AIRPORT_FEE_FACTOR × flights`（系数 0.55——
     2026-06-12 平衡模拟：全额机场费使短途航线结构性亏损）
   - 机组+维护：`blockHours × CREW_MAINT_USD_PER_BH`（blockHours = flights × (distance/cruise + 0.6)）
+- **每周挑战与排行榜（V3.4）**：
+  - 确定性派生（无外部数据）：`weekId` = 当前 ISO 周（UTC）；`hqCityId` 从一组
+    ~10 个均衡起步城市（nyc/ord/yyz/lax/mia/gru/mad/sin/dxb/syd）按
+    `hash(weekId) % len` 选定——全周所有玩家同一总部。
+  - 种子统一：周挑战局 `seed = weekId`；引擎所有确定性抽取（事件 `draw_event`、
+    抉择 `draw_decision`、AI 演进随机回退）一律改用 `state.seed`（普通局 seed=id，
+    数值与现有完全一致；测试守恒）——使全周事件序列对所有玩家一致、可比。
+  - 计分：`score = max(0, round(lifetimeProfit/1e6)) + round(finalMarketShare×5000)
+    + (rank===1 ? 2000 : 0)`。仅 `weeklyWeekId` 非空且 `status==="finished"` 时，
+    结算逻辑**自动记一次榜**（防伪造：客户端不能直接提交分数）。
+  - 榜单持久化：Postgres 表 `leaderboard`（week_id/name/score/profit/share/
+    player_token/created_at），首次连接自动建表；无 `DATABASE_URL` 时内存回退。
+    `GET /api/leaderboard` 返回该周 score 降序前 50，`player_token`（建周挑战局时
+    随 GameState 下发的匿名串）匹配则 `isYou=true`。
 - **城市禀赋效果（V3.9，中性值下与旧模型完全一致）**：
   - 税惠：`HQ_OVERHEAD` 与 `ADMIN_PER_AIRCRAFT` ×(1 − HQ城.taxRelief)。
   - 交通：`marketPax ×= (1 + 0.01×(transitA−5)) × (1 + 0.01×(transitB−5))`。
