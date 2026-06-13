@@ -226,6 +226,40 @@ const es: Dict = {
   'tutorial.quest.7.title': 'Abrir una segunda ruta',
   'tutorial.quest.7.hint': 'Expande cuando tu flota esté lista. Elige pares de ciudades complementarios para diversificar.',
   'tutorial.voice.done': '¡Misión completada!',
+
+  // ── V3.7 DecisionModal ────────────────────────────────────────────────────
+  'decision.modal.aria': 'Decisión de PR',
+  'decision.modal.heading': 'Decisión de PR',
+  'decision.modal.expires': 'Se resuelve automáticamente en el turno {turn}',
+  'decision.default.tag': 'Auto',
+  'decision.minimize': 'Minimizar',
+  'decision.restore': 'Restaurar decisión',
+  'decision.brand.impact': 'Marca',
+  'decision.cash.impact': 'Efectivo',
+  'decision.warning.endTurn': '¡Tienes una decisión pendiente! Puedes continuar y se resolverá automáticamente.',
+
+  // ── V3.7 Voice — decision ─────────────────────────────────────────────────
+  'voice.decision': '{name} dice: {prompt}',
+  'voice.decision.praise': '{name} dice: ¡Decisión acertada! Marca {delta} pts.',
+  'voice.decision.tease': '{name} dice: Interesante elección… Marca {delta} pts. Esperemos que valga.',
+
+  // ── V3.7 Brand gauge ─────────────────────────────────────────────────────
+  'brand.pill.label': 'Marca',
+  'brand.finance.heading': 'Reputación de marca',
+  'brand.finance.value': 'Puntuación actual',
+  'brand.finance.effect': 'La marca afecta el peso competitivo (+20% al máx / −20% al mín) y sube con el gasto en «Servicio».',
+
+  // ── V3.7 Marketing panel ─────────────────────────────────────────────────
+  'marketing.heading': 'Inversión en marketing ($M/trim.)',
+  'marketing.digital': 'Publicidad digital',
+  'marketing.sponsor': 'Patrocinio de eventos',
+  'marketing.service': 'Experiencia de servicio',
+  'marketing.digital.hint': 'Aumenta el peso competitivo (+1% por $1M)',
+  'marketing.sponsor.hint': 'Aumenta el peso competitivo (+1.2% por $1M)',
+  'marketing.service.hint': 'Marca +0.4 por $1M por trimestre',
+  'marketing.total': 'Total',
+  'marketing.confirm': 'Confirmar',
+  'marketing.per.quarter': '/trim.',
 };
 
 export default es;

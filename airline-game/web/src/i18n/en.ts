@@ -225,6 +225,40 @@ const en: Dict = {
   'tutorial.quest.7.title': 'Open a Second Route',
   'tutorial.quest.7.hint': 'Expand once your fleet is ready. Choose complementary city pairs to spread risk.',
   'tutorial.voice.done': 'Quest complete!',
+
+  // ── V3.7 DecisionModal ────────────────────────────────────────────────────
+  'decision.modal.aria': 'PR Decision',
+  'decision.modal.heading': 'PR Decision',
+  'decision.modal.expires': 'Auto-resolves at turn {turn}',
+  'decision.default.tag': 'Auto',
+  'decision.minimize': 'Minimize',
+  'decision.restore': 'Restore Decision',
+  'decision.brand.impact': 'Brand',
+  'decision.cash.impact': 'Cash',
+  'decision.warning.endTurn': 'You have a pending decision! You can end the turn and it will be auto-resolved.',
+
+  // ── V3.7 Voice — decision ─────────────────────────────────────────────────
+  'voice.decision': '{name} says: {prompt}',
+  'voice.decision.praise': '{name} says: Wise choice! Brand {delta} pts.',
+  'voice.decision.tease': '{name} says: Interesting call… Brand {delta} pts. Hope it pays off.',
+
+  // ── V3.7 Brand gauge ─────────────────────────────────────────────────────
+  'brand.pill.label': 'Brand',
+  'brand.finance.heading': 'Brand Reputation',
+  'brand.finance.value': 'Current Brand Score',
+  'brand.finance.effect': 'Brand affects competitive weight (+20% at max / −20% at floor) and rises via Service marketing spend.',
+
+  // ── V3.7 Marketing panel ─────────────────────────────────────────────────
+  'marketing.heading': 'Marketing Spend ($M/qtr)',
+  'marketing.digital': 'Digital Ads',
+  'marketing.sponsor': 'Event Sponsorship',
+  'marketing.service': 'Service Experience',
+  'marketing.digital.hint': 'Boosts competitive weight (+1% per $1M)',
+  'marketing.sponsor.hint': 'Boosts competitive weight (+1.2% per $1M)',
+  'marketing.service.hint': 'Brand +0.4 per $1M per quarter',
+  'marketing.total': 'Total',
+  'marketing.confirm': 'Confirm',
+  'marketing.per.quarter': '/qtr',
 };
 
 export default en;

@@ -37,6 +37,9 @@ const baseState: GameState = {
   lifetime: { profit: 0, pax: 0 },
   finalResult: null,
   activeEvents: [],
+  brand: 50,
+  marketing: { digital: 0, sponsor: 0, service: 0 },
+  pendingDecision: null,
 };
 
 const wrap = (node: React.ReactNode) => createElement(I18nProvider, null, node);

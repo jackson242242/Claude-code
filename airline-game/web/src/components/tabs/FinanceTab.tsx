@@ -1,12 +1,14 @@
 'use client';
 
+import { useState } from 'react';
 import { Sparkline } from '@/components/Sparkline';
 import { formatMoney } from '@/lib/format';
 import { useT } from '@/i18n';
-import type { GameState } from '@/types';
+import type { Command, GameState, Marketing } from '@/types';
 
 type FinanceTabProps = {
   state: GameState;
+  onCommands?: (commands: Command[]) => void;
 };
 
 const formatShare = (fraction: number): string => `${(fraction * 100).toFixed(1)}%`;
@@ -65,13 +67,147 @@ const MarketShareSection = ({ state }: { state: GameState }) => {
   );
 };
 
-export const FinanceTab = ({ state }: FinanceTabProps) => {
+// ── V3.7 Brand section ───────────────────────────────────────────────────────
+
+const BrandSection = ({ brand }: { brand: number }) => {
+  const { t } = useT();
+  const colorClass =
+    brand < 35 ? 'text-red-400' : brand > 65 ? 'text-accent' : 'text-slate-300';
+
+  return (
+    <section className="panel p-3" data-testid="brand-section">
+      <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-400">
+        {t('brand.finance.heading')}
+      </h3>
+      <div className="mb-1 flex items-baseline gap-2">
+        <span className="text-[10px] text-slate-500">{t('brand.finance.value')}</span>
+        <span className={`text-lg font-bold tabular-nums ${colorClass}`}>{Math.round(brand)}</span>
+        <span className="text-[10px] text-slate-600">/ 100</span>
+      </div>
+      {/* Visual bar */}
+      <div className="mb-2 h-2 w-full overflow-hidden rounded-full bg-ops-700/60">
+        <div
+          data-testid="brand-bar"
+          className={`h-full rounded-full transition-all ${
+            brand < 35 ? 'bg-red-500' : brand > 65 ? 'bg-accent' : 'bg-slate-400'
+          }`}
+          style={{ width: `${Math.min(100, Math.max(0, brand))}%` }}
+        />
+      </div>
+      <p className="text-[10px] leading-relaxed text-slate-500">{t('brand.finance.effect')}</p>
+    </section>
+  );
+};
+
+// ── V3.7 Marketing panel ─────────────────────────────────────────────────────
+
+type MarketingKey = keyof Marketing;
+
+const MARKETING_KEYS: MarketingKey[] = ['digital', 'sponsor', 'service'];
+
+const MarketingPanel = ({
+  marketing,
+  onCommands,
+}: {
+  marketing: Marketing;
+  onCommands?: (commands: Command[]) => void;
+}) => {
+  const { t } = useT();
+  const [draft, setDraft] = useState<Marketing>({ ...marketing });
+
+  const clamp = (v: number) => Math.min(10, Math.max(0, Math.round(v)));
+
+  const total = draft.digital + draft.sponsor + draft.service;
+
+  const handleChange = (key: MarketingKey, raw: string) => {
+    const n = clamp(parseInt(raw, 10) || 0);
+    setDraft((prev) => ({ ...prev, [key]: n }));
+  };
+
+  const handleStep = (key: MarketingKey, dir: 1 | -1) => {
+    setDraft((prev) => ({ ...prev, [key]: clamp(prev[key] + dir) }));
+  };
+
+  const handleConfirm = () => {
+    onCommands?.([{ type: 'setMarketing', marketing: draft }]);
+  };
+
+  const hintKey = (key: MarketingKey) => `marketing.${key}.hint` as const;
+
+  return (
+    <section className="panel p-3" data-testid="marketing-panel">
+      <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-400">
+        {t('marketing.heading')}
+      </h3>
+      <ul className="flex flex-col gap-3">
+        {MARKETING_KEYS.map((key) => (
+          <li key={key}>
+            <div className="mb-1 flex items-baseline justify-between">
+              <span className="text-xs font-medium text-slate-300">
+                {t(`marketing.${key}` as const)}
+              </span>
+              <span className="text-[10px] text-slate-500">{t(hintKey(key))}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => handleStep(key, -1)}
+                aria-label={`Decrease ${key}`}
+                disabled={draft[key] <= 0}
+                className="flex h-7 w-7 items-center justify-center rounded border border-ops-600 text-slate-400 hover:text-white disabled:opacity-30"
+              >
+                −
+              </button>
+              <input
+                type="number"
+                data-testid={`marketing-input-${key}`}
+                min={0}
+                max={10}
+                value={draft[key]}
+                onChange={(e) => handleChange(key, e.target.value)}
+                className="w-14 rounded border border-ops-600 bg-ops-800 px-2 py-1 text-center text-sm tabular-nums text-slate-100 [appearance:textfield]"
+              />
+              <button
+                type="button"
+                onClick={() => handleStep(key, 1)}
+                aria-label={`Increase ${key}`}
+                disabled={draft[key] >= 10}
+                className="flex h-7 w-7 items-center justify-center rounded border border-ops-600 text-slate-400 hover:text-white disabled:opacity-30"
+              >
+                +
+              </button>
+              <span className="text-xs text-slate-500">$M{t('marketing.per.quarter')}</span>
+            </div>
+          </li>
+        ))}
+      </ul>
+
+      {/* Total + confirm */}
+      <div className="mt-3 flex items-center justify-between border-t border-ops-700 pt-3">
+        <span className="text-sm text-slate-400">
+          {t('marketing.total')}{' '}
+          <span className="font-bold tabular-nums text-slate-200">${total}M</span>
+        </span>
+        <button
+          type="button"
+          data-testid="marketing-confirm"
+          onClick={handleConfirm}
+          className="btn-primary px-3.5 py-1.5 text-sm"
+        >
+          {t('marketing.confirm')}
+        </button>
+      </div>
+    </section>
+  );
+};
+
+export const FinanceTab = ({ state, onCommands }: FinanceTabProps) => {
   const { t } = useT();
   const { lastQuarter, history } = state.finance;
   const cashSeries = history.map((entry) => entry.cash);
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3" data-testid="finance-tab">
       <section className="panel p-3">
         <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-400">
           {t('finance.lastQ.heading')}
@@ -103,6 +239,12 @@ export const FinanceTab = ({ state }: FinanceTabProps) => {
       </section>
 
       <MarketShareSection state={state} />
+
+      {/* V3.7 Brand gauge */}
+      <BrandSection brand={state.brand} />
+
+      {/* V3.7 Marketing panel */}
+      <MarketingPanel marketing={state.marketing} onCommands={onCommands} />
 
       <section className="panel p-3">
         <div className="mb-2 flex items-baseline justify-between">

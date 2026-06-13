@@ -32,6 +32,9 @@ const makeState = (overrides: Partial<GameState>): GameState => ({
   lifetime: { profit: 0, pax: 0 },
   finalResult: null,
   activeEvents: [],
+  brand: 50,
+  marketing: { digital: 0, sponsor: 0, service: 0 },
+  pendingDecision: null,
   ...overrides,
 });
 

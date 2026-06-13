@@ -99,6 +99,9 @@ export type GameState = {
   lifetime: { profit: number; pax: number }; // M2.4：累计利润/乘客（每季累加）
   finalResult: FinalResult | null; // M2.4：终局前为 null
   activeEvents: ActiveEvent[]; // M3.1：当前生效事件
+  brand: number; // V3.7：品牌声誉 0–100，开局 50
+  marketing: Marketing; // V3.7：当前季度营销投放，开局 {0,0,0}
+  pendingDecision: (DecisionEvent & { drawnTurn: number }) | null; // V3.7
 };
 
 export type CompetitorRoute = { cityA: string; cityB: string; weeklySeats: number }; // 每方向每周座位
@@ -139,7 +142,34 @@ export type GameEvent = {
 
 export type ActiveEvent = GameEvent & { startedTurn: number; remainingTurns: number };
 
+// V3.7 互动 PR/营销
+export type DecisionOption = {
+  id: string;
+  label: string;
+  labelEn?: string;
+  labelEs?: string;
+  cashDelta: number; // 立即现金变动（负=花钱），限 [-30M, +10M]
+  brandDelta: number; // 品牌变动，限 [-15, +15]
+  isDefault?: boolean; // 恰一项为 true：超时/结算时自动采用
+};
+
+export type DecisionEvent = {
+  id: string;
+  prompt: string;
+  promptEn?: string;
+  promptEs?: string;
+  detail?: string;
+  detailEn?: string;
+  detailEs?: string;
+  options: DecisionOption[]; // 2–3 项
+  expiresTurn: number; // 抽出回合+1：结算该回合时若未决则按 default 自动采用
+};
+
+export type Marketing = { digital: number; sponsor: number; service: number }; // 各 0–10（$M/季）
+
 export type Command =
+  | { type: 'resolveDecision'; optionId: string } // V3.7：裁决待定抉择
+  | { type: 'setMarketing'; marketing: Marketing } // V3.7：设季度营销投放
   | { type: 'buyAircraft'; modelId: string }
   | { type: 'leaseAircraft'; modelId: string }
   | { type: 'sellAircraft'; aircraftId: string } // 残值 = price × 0.7

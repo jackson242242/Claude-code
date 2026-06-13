@@ -22,6 +22,9 @@ const gameStateFixture: GameState = {
   lifetime: { profit: 0, pax: 0 },
   finalResult: null,
   activeEvents: [],
+  brand: 50,
+  marketing: { digital: 0, sponsor: 0, service: 0 },
+  pendingDecision: null,
 };
 
 const jsonResponse = (body: unknown, ok = true, status = 200): Response =>

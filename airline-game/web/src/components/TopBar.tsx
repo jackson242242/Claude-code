@@ -8,6 +8,30 @@ import { useT, type Locale } from '@/i18n';
 import { useAnimatedNumber } from '@/hooks/useAnimatedNumber';
 import type { GameState } from '@/types';
 
+// Brand gauge color bands: <35 red / 35–65 neutral / >65 cyan
+const brandColor = (brand: number): string => {
+  if (brand < 35) return 'text-red-400 border-red-700 bg-red-950/50';
+  if (brand > 65) return 'text-accent border-accent/50 bg-accent/10';
+  return 'text-slate-300 border-slate-600 bg-ops-800/50';
+};
+
+type BrandPillProps = { brand: number };
+
+const BrandPill = ({ brand }: BrandPillProps) => {
+  const { t } = useT();
+  const animated = useAnimatedNumber(brand);
+  return (
+    <div
+      data-testid="brand-pill"
+      className={`flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] font-semibold transition-colors ${brandColor(animated)}`}
+      title={`${t('brand.pill.label')} ${animated}`}
+    >
+      <span>⭑</span>
+      <span>{Math.round(animated)}</span>
+    </div>
+  );
+};
+
 type TopBarProps = {
   state: GameState;
   busy: boolean;
@@ -60,6 +84,9 @@ export const TopBar = ({ state, busy, onEndTurn }: TopBarProps) => {
         </p>
         <p className="text-[10px] uppercase tracking-widest text-slate-500">{t('topbar.cash')}</p>
       </div>
+
+      {/* V3.7: Brand gauge pill */}
+      <BrandPill brand={state.brand} />
 
       {/* Language switcher */}
       <div

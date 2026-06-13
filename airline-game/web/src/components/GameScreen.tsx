@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { DecisionModal } from '@/components/DecisionModal';
 import { EventTicker } from '@/components/EventTicker';
 import { SlotBadge } from '@/components/SlotBadge';
 import { TopBar } from '@/components/TopBar';
@@ -87,6 +88,7 @@ export const GameScreen = ({
   const [selectedCityId, setSelectedCityId] = useState<string | null>(null);
   const [highlightTab, setHighlightTab] = useState<string | null>(null);
   const [fleetPulse, setFleetPulse] = useState(false);
+  const [showDecisionWarning, setShowDecisionWarning] = useState(false);
   const prevTurnRef = useRef(state.turn);
 
   // Speak major events when they first appear.
@@ -116,9 +118,21 @@ export const GameScreen = ({
     if (cityId !== state.hqCityId) setTab('routes');
   };
 
+  const handleEndTurnWithCheck = () => {
+    if (state.pendingDecision) {
+      setShowDecisionWarning(true);
+      setTimeout(() => setShowDecisionWarning(false), 4000);
+    }
+    onEndTurn();
+  };
+
+  const handleResolveDecision = (optionId: string) => {
+    onCommands([{ type: 'resolveDecision', optionId }]);
+  };
+
   return (
     <div className="flex h-dvh flex-col">
-      <TopBar state={state} busy={busy} onEndTurn={onEndTurn} />
+      <TopBar state={state} busy={busy} onEndTurn={handleEndTurnWithCheck} />
       <EventTicker events={state.activeEvents} />
 
       <div className="flex min-h-0 flex-1 flex-col md:flex-row">
@@ -189,7 +203,7 @@ export const GameScreen = ({
             {tab === 'market' && (
               <MarketTab cash={state.cash} busy={busy} onCommands={onCommands} />
             )}
-            {tab === 'finance' && <FinanceTab state={state} />}
+            {tab === 'finance' && <FinanceTab state={state} onCommands={onCommands} />}
             {tab === 'news' && <NewsTab news={state.news} />}
           </div>
         </div>
@@ -197,6 +211,32 @@ export const GameScreen = ({
 
       {/* Tutorial panel — pinned bottom-left */}
       <TutorialPanel state={state} onHighlightTab={setHighlightTab} />
+
+      {/* V3.7: Decision modal — shown when pendingDecision is not null */}
+      {state.pendingDecision && (
+        <DecisionModal
+          decision={state.pendingDecision}
+          onResolve={handleResolveDecision}
+        />
+      )}
+
+      {/* V3.7: Warning toast when ending turn with pending decision */}
+      {showDecisionWarning && (
+        <div
+          role="alert"
+          data-testid="decision-end-turn-warning"
+          className="fixed bottom-3 left-1/2 z-50 flex w-[min(92vw,28rem)] -translate-x-1/2 items-start gap-2 rounded-lg border border-amber-800 bg-amber-950/95 px-3 py-2.5 text-sm text-amber-200 shadow-xl backdrop-blur"
+        >
+          <span className="flex-1">{t('decision.warning.endTurn')}</span>
+          <button
+            type="button"
+            onClick={() => setShowDecisionWarning(false)}
+            className="text-amber-400 hover:text-white"
+          >
+            ✕
+          </button>
+        </div>
+      )}
 
       {error && (
         <div

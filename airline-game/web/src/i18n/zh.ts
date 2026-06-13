@@ -226,6 +226,40 @@ const zh = {
   'tutorial.quest.7.title': '开通第二条航线',
   'tutorial.quest.7.hint': '扩张前确保机队充足，可考虑互补型城市对，分散竞争风险。',
   'tutorial.voice.done': '任务完成！',
+
+  // ── V3.7 DecisionModal ────────────────────────────────────────────────────
+  'decision.modal.aria': '公关决策',
+  'decision.modal.heading': '公关决策',
+  'decision.modal.expires': '将于第 {turn} 季自动处理',
+  'decision.default.tag': '逾期自动',
+  'decision.minimize': '最小化',
+  'decision.restore': '恢复决策',
+  'decision.brand.impact': '品牌',
+  'decision.cash.impact': '现金',
+  'decision.warning.endTurn': '还有一个待处理的决策！你可以先继续，届时将自动处理。',
+
+  // ── V3.7 Voice — decision ─────────────────────────────────────────────────
+  'voice.decision': '{name}说：{prompt}',
+  'voice.decision.praise': '{name}说：明智之举！品牌{delta}点。',
+  'voice.decision.tease': '{name}说：这个选择嘛……品牌{delta}点，希望值得。',
+
+  // ── V3.7 Brand gauge ─────────────────────────────────────────────────────
+  'brand.pill.label': '品牌',
+  'brand.finance.heading': '品牌声誉',
+  'brand.finance.value': '当前品牌值',
+  'brand.finance.effect': '品牌影响竞争权重（+20%@满分 / −20%@谷底），并通过「服务体验」投放每季提升。',
+
+  // ── V3.7 Marketing panel ─────────────────────────────────────────────────
+  'marketing.heading': '营销投放（$M/季）',
+  'marketing.digital': '数字广告',
+  'marketing.sponsor': '赛事赞助',
+  'marketing.service': '服务体验',
+  'marketing.digital.hint': '提升竞争权重（每 $1M +1%）',
+  'marketing.sponsor.hint': '提升竞争权重（每 $1M +1.2%）',
+  'marketing.service.hint': '每季品牌 +0.4 / $M',
+  'marketing.total': '合计',
+  'marketing.confirm': '确认',
+  'marketing.per.quarter': '每季',
 } as const;
 
 export type DictKeys = keyof typeof zh;

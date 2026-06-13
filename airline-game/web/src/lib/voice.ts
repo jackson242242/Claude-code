@@ -110,6 +110,29 @@ export const voice = {
     speak(line, advisor, locale);
   },
 
+  speakDecision(prompt: string): void {
+    if (typeof window === 'undefined') return;
+    if (!readPref()) return;
+    const advisor = ADVISORS[currentAdvisorIndex];
+    const locale = getLocale();
+    const name = tStandalone(locale, `advisor.${currentAdvisorIndex}.name` as Parameters<typeof tStandalone>[1]);
+    const short = prompt.length > 30 ? prompt.slice(0, 30) + '…' : prompt;
+    const line = tStandalone(locale, 'voice.decision', { name, prompt: short });
+    speak(line, advisor, locale);
+  },
+
+  speakDecisionResult(brandDelta: number): void {
+    if (typeof window === 'undefined') return;
+    if (!readPref()) return;
+    const advisor = ADVISORS[currentAdvisorIndex];
+    const locale = getLocale();
+    const name = tStandalone(locale, `advisor.${currentAdvisorIndex}.name` as Parameters<typeof tStandalone>[1]);
+    const delta = brandDelta >= 0 ? `+${brandDelta}` : String(brandDelta);
+    const key = brandDelta >= 0 ? 'voice.decision.praise' : 'voice.decision.tease';
+    const line = tStandalone(locale, key, { name, delta });
+    speak(line, advisor, locale);
+  },
+
   speakQuestDone(questTitle: string): void {
     if (typeof window === 'undefined') return;
     if (!readPref()) return;
