@@ -431,6 +431,9 @@ const en: Dict = {
 
   // ── V3.4 FinalScreen weekly extension ────────────────────────────────────
   'final.btn.weekly.leaderboard': 'View Weekly Leaderboard',
+
+  // ── S1 session recovery ──────────────────────────────────────────────────
+  'session.expired': 'Your saved game expired (the server may have restarted). Returned to the start screen — just begin a new game.',
 };
 
 export default en;

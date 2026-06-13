@@ -432,6 +432,9 @@ const zh = {
 
   // ── V3.4 FinalScreen weekly extension ────────────────────────────────────
   'final.btn.weekly.leaderboard': '查看本周排行榜',
+
+  // ── S1 会话失效兜底 ──────────────────────────────────────────────────────
+  'session.expired': '存档已失效（服务器可能重启过），已回到开始页，重新开一局即可。',
 } as const;
 
 export type DictKeys = keyof typeof zh;

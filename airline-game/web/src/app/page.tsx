@@ -25,6 +25,8 @@ import {
   startMatch,
   startWeeklyGame,
 } from '@/services/api';
+import { getLocale, tStandalone } from '@/i18n/standalone';
+import { clearKeys, isSessionGoneError } from '@/lib/session';
 import { voice } from '@/lib/voice';
 import type { Command, FinalResult, GameState, MatchView, TurnReport, WeeklyChallenge } from '@/types';
 import type { CreateRoomParams, JoinRoomParams } from '@/components/MultiplayerSetup';
@@ -33,6 +35,19 @@ import type { CreateRoomParams, JoinRoomParams } from '@/components/MultiplayerS
 const STORAGE_KEY = 'skyempire.gameId';
 const MATCH_CODE_KEY = 'skyempire.matchCode';
 const MATCH_PLAYER_KEY = 'skyempire.matchPlayerId';
+
+// S1: every key that pins us to a server-side session — cleared on a 404 so a
+// wiped game/room (server restart, sleep, redeploy) bounces cleanly to the menu
+// instead of dead-ending on "Game not found".
+const SESSION_KEYS = [
+  STORAGE_KEY,
+  MATCH_CODE_KEY,
+  MATCH_PLAYER_KEY,
+  WEEKLY_GAME_ID_KEY,
+  WEEKLY_TOKEN_KEY,
+];
+
+const clearSessionKeys = (): void => clearKeys(SESSION_KEYS);
 
 // ── Phase type ────────────────────────────────────────────────────────────────
 type Phase =
@@ -119,7 +134,22 @@ const Page = () => {
     try {
       await task();
     } catch (err) {
-      setError(err instanceof Error ? err.message : '请求失败，请稍后重试');
+      // S1: a 404 means the server no longer has this game/room (restart, sleep,
+      // redeploy). Recover gracefully instead of dead-ending on "Game not found":
+      // drop the stale session, reset, and bounce to the menu with a friendly note.
+      if (isSessionGoneError(err)) {
+        clearSessionKeys();
+        setState(null);
+        setMatchView(null);
+        setMatchCode(null);
+        setMatchPlayerId(null);
+        setMatchStandings(null);
+        setReport(null);
+        setPhase('mode-select');
+        setError(tStandalone(getLocale(), 'session.expired'));
+      } else {
+        setError(err instanceof Error ? err.message : '请求失败，请稍后重试');
+      }
     } finally {
       setBusy(false);
     }

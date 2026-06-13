@@ -432,6 +432,9 @@ const es: Dict = {
 
   // ── V3.4 FinalScreen weekly extension ────────────────────────────────────
   'final.btn.weekly.leaderboard': 'Ver clasificación semanal',
+
+  // ── S1 recuperación de sesión ────────────────────────────────────────────
+  'session.expired': 'Tu partida guardada caducó (el servidor pudo reiniciarse). Volviste a la pantalla de inicio; solo empieza una nueva partida.',
 };
 
 export default es;
