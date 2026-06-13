@@ -652,8 +652,10 @@ def settle_turn(
     )
 
     # V3.7: draw decision event for next turn (only when no pending decision).
+    # V3.4: use state.seed so weekly challenge games share the same draw sequence.
     if state.pending_decision is None and decision_pool is not None:
-        drawn_decision = draw_decision(state.id, turn, decision_pool)
+        decision_seed = state.seed if state.seed else state.id
+        drawn_decision = draw_decision(state.id, turn, decision_pool, seed=decision_seed)
         if drawn_decision is not None:
             state.pending_decision = drawn_decision
 

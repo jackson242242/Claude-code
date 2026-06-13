@@ -10,7 +10,9 @@ modes stay consistent without callers needing to think about it.
 """
 from __future__ import annotations
 
+import logging
 from typing import Any, Mapping, Sequence
+from uuid import uuid4
 
 from app.engine import commands as engine_commands
 from app.engine import simulate
@@ -19,6 +21,8 @@ from app.engine.decisions import DecisionEvent
 from app.engine.simulate import TurnReport
 from app.engine.state import GameEvent, GameState, World, new_game
 from app.store import AbstractStore, MemoryStore
+
+logger = logging.getLogger(__name__)
 
 
 class GameNotFoundError(Exception):
@@ -67,6 +71,23 @@ class GameService:
         self.repository.add(state)  # add() also persists for file/pg stores
         return state
 
+    def create_weekly_game(self, airline_name: str, week_id: str, hq_city_id: str) -> GameState:
+        """V3.4: Create a weekly challenge game with fixed HQ, seed=weekId, and a
+        unique player_token for leaderboard isYou matching."""
+        name = airline_name.strip()
+        if not name:
+            raise InvalidInputError("airlineName must not be empty")
+        hq_city = self.world.cities.get(hq_city_id)
+        if hq_city is None:
+            raise InvalidInputError(f"unknown city: {hq_city_id}")
+        state = new_game(self.repository.next_id(), name, hq_city)
+        # Override V3.4 fields: seed = weekId so all participants draw the same events.
+        state.seed = week_id
+        state.weekly_week_id = week_id
+        state.player_token = str(uuid4())
+        self.repository.add(state)
+        return state
+
     def get_game(self, game_id: str) -> GameState:
         state = self.repository.get(game_id)
         if state is None:
@@ -95,5 +116,42 @@ class GameService:
             state, self.world, self._event_pool, news_pool_events,
             self._decision_pool,
         )
+        # V3.4: auto-record leaderboard for weekly challenge games that just finished.
+        # Guard: only record once (status transitions from active → finished exactly once).
+        if (
+            state.status == "finished"
+            and state.weekly_week_id is not None
+            and state.player_token is not None
+            and state.final_result is not None
+        ):
+            try:
+                self._record_weekly_score(state)
+            except Exception as exc:
+                logger.warning("leaderboard auto-record failed: %s", exc)
         self.repository.save(state)  # M5.1: persist after every mutation
         return state, report
+
+    def _record_weekly_score(self, state: GameState) -> None:
+        """V3.4: Compute score per CONTRACT §3 and record to leaderboard (once)."""
+        from app.leaderboard_store import get_leaderboard_store
+
+        fr = state.final_result
+        if fr is None:
+            return
+
+        # score = max(0, round(lifetimeProfit/1e6)) + round(finalMarketShare×5000)
+        #         + (rank==1 ? 2000 : 0)
+        profit_pts = max(0, round(state.lifetime.profit / 1_000_000))
+        share_pts = round(state.market_share * 5000)
+        rank_bonus = 2000 if fr.rank == 1 else 0
+        score = profit_pts + share_pts + rank_bonus
+
+        store = get_leaderboard_store()
+        store.record(
+            week_id=state.weekly_week_id,
+            name=state.airline_name,
+            score=score,
+            profit=state.lifetime.profit,
+            share=state.market_share,
+            player_token=state.player_token,
+        )

@@ -241,6 +241,10 @@ def state_from_dict(d: dict) -> "GameState":
         lifetime=lifetime,
         final_result=final_result,
         active_events=active_events,
+        # V3.4: seed/weeklyWeekId/playerToken (default to id/None/None if absent)
+        seed=s.seed if s.seed else s.id,
+        weekly_week_id=s.weekly_week_id,
+        player_token=s.player_token,
     )
 
     # Restore internal fields from _internal block.

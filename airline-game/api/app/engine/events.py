@@ -187,22 +187,27 @@ def draw_event(
     active_event_ids: set[str],
     event_pool: list[GameEvent] | None = None,
     news_candidates: list[GameEvent] | None = None,
+    seed: str | None = None,
 ) -> GameEvent | None:
     """Deterministic draw for one turn.
 
     Args:
-        game_id: the game's id string (used in PRNG seed).
+        game_id: the game's id string (used in PRNG seed when seed is None).
         turn: current turn number (1-based).
         active_event_ids: set of event ids that are already active (no re-draw).
         event_pool: the static pool to draw from.  None / empty list → no events drawn.
         news_candidates: M4.3 — if provided and non-empty, the first candidate
             (newest first, pre-filtered by caller) is used as the sole candidate
             instead of the static event_pool.  Still gated by EVENT_CHANCE.
+        seed: V3.4 — explicit seed source; defaults to game_id when None.
+            Weekly challenge games pass state.seed (= weekId) so all participants
+            share the same event sequence.
 
     Returns:
         A GameEvent or None (gate miss / no eligible candidates / empty pool).
     """
-    rng = random.Random(f"{game_id}:{turn}")
+    seed_str = seed if seed is not None else game_id
+    rng = random.Random(f"{seed_str}:{turn}")
 
     # Gate check — EVENT_CHANCE = 0.45
     if rng.random() >= balance.EVENT_CHANCE:
@@ -320,8 +325,9 @@ def process_events(
         if unseen:
             news_candidates = unseen  # newest-first order maintained by pool
 
-    # Step 3: draw
-    drawn = draw_event(state.id, turn, active_ids, event_pool, news_candidates)
+    # Step 3: draw (V3.4: use state.seed — defaults to state.id for normal games)
+    seed = state.seed if state.seed else state.id
+    drawn = draw_event(state.id, turn, active_ids, event_pool, news_candidates, seed=seed)
 
     if drawn is None:
         return []

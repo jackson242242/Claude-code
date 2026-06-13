@@ -678,6 +678,8 @@ class _SharedEventProxy:
         self.id: str = match.code
         self.turn: int = match.turn
         self.news: list[NewsItem] = []  # we discard this
+        # V3.4: seed is the match code (matches don't have weekly challenge seeds)
+        self.seed: str = match.code
 
 
 class _AIEvolutionProxy:

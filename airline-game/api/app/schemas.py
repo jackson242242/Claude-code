@@ -268,6 +268,12 @@ class GameState(CamelModel):
     brand: float = 50.0
     marketing: Marketing = Field(default_factory=Marketing)
     pending_decision: DecisionEvent | None = None
+    # V3.4: deterministic seed (defaults to id for normal games; weekly = weekId).
+    seed: str = ""
+    # V3.4: non-None marks a weekly challenge game.
+    weekly_week_id: str | None = None
+    # V3.4: anonymous player token for leaderboard isYou matching.
+    player_token: str | None = None
 
 
 class RouteTurnStats(RouteQuarterStats):
@@ -385,3 +391,38 @@ class MatchCommandsResponse(CamelModel):
 
 class MatchReadyRequest(CamelModel):
     player_id: str
+
+
+# --- V3.4 Weekly Challenge & Leaderboard schemas ------------------------------
+
+
+class WeeklyChallenge(CamelModel):
+    """CONTRACT §2 V3.4: weekly challenge parameters derived from the current ISO week."""
+
+    week_id: str       # e.g. "2026-W24"
+    hq_city_id: str   # deterministically derived from week_id
+    ends_at_ms: int   # epoch ms when the week ends (UTC)
+
+
+class LeaderboardEntry(CamelModel):
+    """CONTRACT §2 V3.4: one row in the weekly leaderboard."""
+
+    rank: int
+    name: str           # airline name
+    score: int
+    profit: float       # cumulative lifetime profit
+    market_share: float # final market share 0–1
+    is_you: bool = False  # True when player_token matches request ?token=
+
+
+class LeaderboardResponse(CamelModel):
+    """GET /api/leaderboard response envelope."""
+
+    week_id: str
+    entries: list[LeaderboardEntry]
+
+
+class CreateWeeklyGameRequest(CamelModel):
+    """POST /api/weekly/games request body."""
+
+    airline_name: str

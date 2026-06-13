@@ -147,13 +147,15 @@ def draw_decision(
     game_id: str,
     turn: int,
     decision_pool: list[DecisionEvent] | None = None,
+    seed: str | None = None,
 ) -> DecisionEvent | None:
     """Deterministic draw for one turn (CONTRACT §3 V3.7).
 
     Args:
-        game_id: used in PRNG seed
+        game_id: used in PRNG seed when seed is None
         turn: current turn number
         decision_pool: the pool to draw from.  None / empty → no draw.
+        seed: V3.4 — explicit seed source; defaults to game_id when None.
 
     Returns a *copy* of the chosen DecisionEvent with drawn_turn and
     expires_turn set (expires_turn = turn + 1), or None.
@@ -162,7 +164,8 @@ def draw_decision(
     if not pool:
         return None
 
-    rng = random.Random(f"{game_id}:{turn}:decision")
+    seed_str = seed if seed is not None else game_id
+    rng = random.Random(f"{seed_str}:{turn}:decision")
     if rng.random() >= balance.DECISION_CHANCE:
         return None
 

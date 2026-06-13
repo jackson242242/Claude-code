@@ -344,6 +344,14 @@ class GameState:
     marketing: Marketing = field(default_factory=Marketing)
     # V3.7: pending player decision (drawn from decision pool, None when idle).
     pending_decision: DecisionEvent | None = None
+    # V3.4: deterministic seed for all random draws; defaults to game id so
+    # existing games are numerically unchanged.  Weekly challenge games set
+    # seed = weekId so all participants share the same event sequence.
+    seed: str = ""  # empty string → caller must set to id after construction
+    # V3.4: non-None marks this as a weekly challenge game (auto-records score).
+    weekly_week_id: str | None = None
+    # V3.4: anonymous player token for leaderboard isYou matching.
+    player_token: str | None = None
     # Engine-internal bookkeeping — not exposed through the API schemas.
     negative_cash_quarters: int = 0
     next_aircraft_seq: int = 1
@@ -367,6 +375,7 @@ def new_game(game_id: str, airline_name: str, hq_city: City) -> GameState:
         cash=balance.STARTING_CASH,
         competitors=initial_competitors(),
         slots_held={hq_city.id: balance.HQ_STARTING_SLOTS},
+        seed=game_id,  # V3.4: default seed = id; weekly challenge overrides to weekId
         news=[
             NewsItem(
                 headline=f"{airline_name} 正式成立",
