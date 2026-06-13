@@ -1,4 +1,7 @@
+'use client';
 // Pure-SVG sparkline used for the cash history in the finance tab.
+import { useT } from '@/i18n';
+
 type SparklineProps = {
   values: number[];
   width?: number;
@@ -6,8 +9,10 @@ type SparklineProps = {
 };
 
 export const Sparkline = ({ values, width = 280, height = 64 }: SparklineProps) => {
+  const { t } = useT();
+
   if (values.length === 0) {
-    return <p className="text-xs text-slate-500">暂无历史数据</p>;
+    return <p className="text-xs text-slate-500">{t('sparkline.empty')}</p>;
   }
 
   const min = Math.min(...values, 0);
@@ -32,7 +37,7 @@ export const Sparkline = ({ values, width = 280, height = 64 }: SparklineProps) 
       viewBox={`0 0 ${width} ${height}`}
       className="w-full"
       role="img"
-      aria-label="现金历史曲线"
+      aria-label={t('sparkline.aria')}
       data-testid="sparkline"
     >
       <defs>

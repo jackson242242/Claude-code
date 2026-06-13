@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { CITY_IMAGES } from '@/lib/data';
+import { useT } from '@/i18n';
 import type { City } from '@/types';
 
 // Deterministic gradient based on city id charCode sum — city-themed color pairs.
@@ -21,8 +22,10 @@ const getGradient = (cityId: string): [string, string] => {
   return GRADIENT_PAIRS[sum % GRADIENT_PAIRS.length];
 };
 
-const DemandDots = ({ value }: { value: number }) => (
-  <span className="flex gap-0.5" aria-label={`需求指数 ${value}/10`}>
+const DemandDots = ({ value }: { value: number }) => {
+  const { t } = useT();
+  return (
+  <span className="flex gap-0.5" aria-label={t('city.aria.demand', { value })}>
     {Array.from({ length: 10 }, (_, i) => (
       <span
         key={i}
@@ -30,7 +33,8 @@ const DemandDots = ({ value }: { value: number }) => (
       />
     ))}
   </span>
-);
+  );
+};
 
 type CityCardProps = {
   city: City;
@@ -39,6 +43,7 @@ type CityCardProps = {
 };
 
 export const CityCard = ({ city, selected, onClick }: CityCardProps) => {
+  const { t, locale } = useT();
   const [imgError, setImgError] = useState(false);
   const imageEntry = CITY_IMAGES[city.id];
   const showImage = !!imageEntry && !imgError;
@@ -58,7 +63,7 @@ export const CityCard = ({ city, selected, onClick }: CityCardProps) => {
         {showImage ? (
           <img
             src={imageEntry.url}
-            alt={`${city.nameZh} skyline`}
+            alt={`${locale === 'zh' ? city.nameZh : city.name} skyline`}
             loading="lazy"
             onError={() => setImgError(true)}
             className="h-full w-full object-cover"
@@ -75,20 +80,24 @@ export const CityCard = ({ city, selected, onClick }: CityCardProps) => {
       {/* Info */}
       <div className="flex flex-col gap-1.5 p-3">
         <span className="flex items-baseline justify-between">
-          <span className="text-base font-bold text-white">{city.nameZh}</span>
+          <span className="text-base font-bold text-white">
+            {locale === 'zh' ? city.nameZh : city.name}
+          </span>
           <span className="text-[10px] uppercase tracking-wider text-slate-500">{city.country}</span>
         </span>
-        <span className="text-xs text-slate-400">{city.name}</span>
+        <span className="text-xs text-slate-400">
+          {locale === 'zh' ? city.name : city.nameZh}
+        </span>
         <span className="mt-1 flex items-center justify-between text-[10px] text-slate-500">
           <DemandDots value={city.demandIndex} />
           <span className="text-glow">{city.demandIndex}/10</span>
         </span>
         <span className="flex flex-wrap gap-1 text-[10px] text-slate-500">
           <span className="rounded-full border border-ops-600 bg-ops-800 px-1.5 py-0.5">
-            时刻池 {city.slotCapacity}
+            {t('city.chip.slots', { n: city.slotCapacity })}
           </span>
           <span className="rounded-full border border-ops-600 bg-ops-800 px-1.5 py-0.5">
-            ${(city.slotFee / 1000).toFixed(0)}K/次
+            {t('city.chip.fee', { n: (city.slotFee / 1000).toFixed(0) })}
           </span>
         </span>
       </div>

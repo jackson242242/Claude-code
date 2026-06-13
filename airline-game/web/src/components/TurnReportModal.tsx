@@ -3,38 +3,49 @@
 import { hasPremiumClasses } from '@/lib/cabin';
 import { cityZh } from '@/lib/data';
 import { formatMoney, formatPercent } from '@/lib/format';
+import { useT } from '@/i18n';
 import type { GameState, RouteQuarterStats, TurnReport } from '@/types';
 
-const CLASS_LABELS: Record<string, string> = { economy: '经济', business: '商务', first: '头等' };
+type ClassBreakdownProps = { stats: RouteQuarterStats };
 
-const ClassBreakdown = ({ stats }: { stats: RouteQuarterStats }) => (
-  <table
-    data-testid="class-breakdown"
-    className="mt-1.5 w-full text-[10px] text-slate-500"
-  >
-    <thead>
-      <tr>
-        <th className="py-0.5 text-left font-medium">舱位</th>
-        <th className="py-0.5 text-right font-medium">客流</th>
-        <th className="py-0.5 text-right font-medium">容量</th>
-        <th className="py-0.5 text-right font-medium">收入</th>
-      </tr>
-    </thead>
-    <tbody>
-      {(['economy', 'business', 'first'] as const).map((cls) => {
-        const cs = stats.classes[cls];
-        return (
-          <tr key={cls}>
-            <td className="py-0.5 text-slate-400">{CLASS_LABELS[cls]}</td>
-            <td className="py-0.5 text-right tabular-nums">{cs.pax.toLocaleString('en-US')}</td>
-            <td className="py-0.5 text-right tabular-nums">{cs.capacity.toLocaleString('en-US')}</td>
-            <td className="py-0.5 text-right tabular-nums">{formatMoney(cs.revenue)}</td>
-          </tr>
-        );
-      })}
-    </tbody>
-  </table>
-);
+const ClassBreakdown = ({ stats }: ClassBreakdownProps) => {
+  const { t } = useT();
+  const CLASS_KEYS = ['economy', 'business', 'first'] as const;
+  const CLASS_LABEL_KEYS = {
+    economy: 'cabin.economy',
+    business: 'cabin.business',
+    first: 'cabin.first',
+  } as const;
+
+  return (
+    <table
+      data-testid="class-breakdown"
+      className="mt-1.5 w-full text-[10px] text-slate-500"
+    >
+      <thead>
+        <tr>
+          <th className="py-0.5 text-left font-medium">{t('report.class.cabin')}</th>
+          <th className="py-0.5 text-right font-medium">{t('report.class.pax')}</th>
+          <th className="py-0.5 text-right font-medium">{t('report.class.capacity')}</th>
+          <th className="py-0.5 text-right font-medium">{t('report.class.revenue')}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {CLASS_KEYS.map((cls) => {
+          const cs = stats.classes[cls];
+          return (
+            <tr key={cls}>
+              <td className="py-0.5 text-slate-400">{t(CLASS_LABEL_KEYS[cls])}</td>
+              <td className="py-0.5 text-right tabular-nums">{cs.pax.toLocaleString('en-US')}</td>
+              <td className="py-0.5 text-right tabular-nums">{cs.capacity.toLocaleString('en-US')}</td>
+              <td className="py-0.5 text-right tabular-nums">{formatMoney(cs.revenue)}</td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  );
+};
 
 type TurnReportModalProps = {
   report: TurnReport;
@@ -43,6 +54,7 @@ type TurnReportModalProps = {
 };
 
 export const TurnReportModal = ({ report, state, onClose }: TurnReportModalProps) => {
+  const { t } = useT();
   const routeById = new Map(state.routes.map((route) => [route.id, route]));
   const routeName = (routeId: string): string => {
     const route = routeById.get(routeId);
@@ -54,11 +66,11 @@ export const TurnReportModal = ({ report, state, onClose }: TurnReportModalProps
       className="fixed inset-0 z-50 flex items-end justify-center bg-black/70 backdrop-blur-sm sm:items-center"
       role="dialog"
       aria-modal="true"
-      aria-label="季度报告"
+      aria-label={t('report.aria')}
     >
       <div className="panel max-h-[88dvh] w-full max-w-lg overflow-y-auto rounded-b-none p-4 sm:rounded-xl">
         <header className="mb-3 text-center">
-          <p className="text-[11px] uppercase tracking-[0.3em] text-glow">季度报告</p>
+          <p className="text-[11px] uppercase tracking-[0.3em] text-glow">{t('report.heading')}</p>
           <h2 className="mt-1 text-xl font-bold text-white">
             {report.year} Q{report.quarter}
           </h2>
@@ -66,15 +78,15 @@ export const TurnReportModal = ({ report, state, onClose }: TurnReportModalProps
 
         <section className="mb-3 grid grid-cols-3 gap-2 text-center">
           <div className="panel p-2.5">
-            <p className="text-[10px] text-slate-500">收入</p>
+            <p className="text-[10px] text-slate-500">{t('report.revenue')}</p>
             <p className="text-sm font-bold text-slate-200">{formatMoney(report.totals.revenue)}</p>
           </div>
           <div className="panel p-2.5">
-            <p className="text-[10px] text-slate-500">成本</p>
+            <p className="text-[10px] text-slate-500">{t('report.cost')}</p>
             <p className="text-sm font-bold text-slate-200">{formatMoney(report.totals.cost)}</p>
           </div>
           <div className="panel p-2.5">
-            <p className="text-[10px] text-slate-500">净利</p>
+            <p className="text-[10px] text-slate-500">{t('report.profit')}</p>
             <p
               className={`text-sm font-bold ${
                 report.totals.profit >= 0 ? 'text-emerald-400' : 'text-red-400'
@@ -88,7 +100,7 @@ export const TurnReportModal = ({ report, state, onClose }: TurnReportModalProps
         {report.routeStats.length > 0 && (
           <section className="mb-3">
             <h3 className="mb-1.5 text-xs font-semibold uppercase tracking-wider text-slate-400">
-              航线表现
+              {t('report.section.routes')}
             </h3>
             <ul className="flex flex-col gap-1.5">
               {report.routeStats.map((stats) => (
@@ -125,7 +137,7 @@ export const TurnReportModal = ({ report, state, onClose }: TurnReportModalProps
         {report.news.length > 0 && (
           <section className="mb-3">
             <h3 className="mb-1.5 text-xs font-semibold uppercase tracking-wider text-slate-400">
-              新闻播报
+              {t('report.section.news')}
             </h3>
             <ul className="flex flex-col gap-1.5">
               {report.news.map((item, index) => (
@@ -139,7 +151,7 @@ export const TurnReportModal = ({ report, state, onClose }: TurnReportModalProps
         )}
 
         <button type="button" onClick={onClose} className="btn-primary w-full px-4 py-3 text-sm">
-          继续经营 ▸
+          {t('report.btn.continue')}
         </button>
       </div>
     </div>

@@ -1,0 +1,204 @@
+// Simplified Chinese — canonical source of truth.
+// Every key defined here must also appear (same key) in en.ts and es.ts.
+
+const zh = {
+  // ── StartScreen ──────────────────────────────────────────────────
+  'start.tagline': 'SkyEmpire · 2026 Q3',
+  'start.title': '航空帝国',
+  'start.subtitle': '创建你的航空公司，选择枢纽机场，开启回合制经营。起始资金 $420M。',
+  'start.label.airlineName': '航空公司名称',
+  'start.placeholder.airlineName': '例如：环球之翼航空',
+  'start.heading.hq': '选择总部枢纽（HQ）',
+  'start.placeholder.search': '搜索城市、国家…',
+  'start.aria.search': '搜索城市',
+  'start.empty.cities': '未找到匹配城市',
+  'start.btn.creating': '创建中…',
+  'start.btn.create': '成立航空公司 ✈',
+
+  // ── TopBar ────────────────────────────────────────────────────────
+  'topbar.turn': '第 {turn}/80 季',
+  'topbar.cash': '现金',
+  'topbar.aria.audioOn': '关闭音乐',
+  'topbar.aria.audioOff': '开启音乐',
+  'topbar.aria.voiceOn': '关闭语音',
+  'topbar.aria.voiceOff': '开启语音',
+  'topbar.btn.settling': '结算中…',
+  'topbar.btn.nextTurn': '下一季度 ▸',
+
+  // ── GameScreen ────────────────────────────────────────────────────
+  'game.aria.tabPanel': '操作面板',
+  'game.aria.dismissError': '关闭提示',
+  'game.tab.routes': '航线',
+  'game.tab.fleet': '机队',
+  'game.tab.market': '机型市场',
+  'game.tab.finance': '财务',
+  'game.tab.news': '新闻',
+
+  // ── TurnReportModal ───────────────────────────────────────────────
+  'report.aria': '季度报告',
+  'report.heading': '季度报告',
+  'report.revenue': '收入',
+  'report.cost': '成本',
+  'report.profit': '净利',
+  'report.section.routes': '航线表现',
+  'report.section.news': '新闻播报',
+  'report.btn.continue': '继续经营 ▸',
+  'report.class.cabin': '舱位',
+  'report.class.pax': '客流',
+  'report.class.capacity': '容量',
+  'report.class.revenue': '收入',
+
+  // ── FinalScreen ───────────────────────────────────────────────────
+  'final.aria': '游戏结束 — 终局结算',
+  'final.victory.headline': '称霸蓝天',
+  'final.victory.subtitle': '{airlineName} 以第 1 名傲视群雄',
+  'final.defeat.headline': '航程终止',
+  'final.defeat.subtitle': '{airlineName} 最终排名：第 {rank} 名',
+  'final.standings.heading': '最终排名',
+  'final.stat.profit': '累计利润',
+  'final.stat.pax': '累计乘客',
+  'final.footer': '20 年 / {endedTurn} 回合',
+  'final.btn.restart': '再来一局',
+  'final.pax.M': '{val}M 人次',
+  'final.pax.K': '{val}K 人次',
+  'final.pax.unit': '{val} 人次',
+
+  // ── GameOverScreen ────────────────────────────────────────────────
+  'gameover.aria': '游戏结束',
+  'gameover.heading': '破产清算',
+  'gameover.body': '{airlineName} 连续两个季度现金为负，已进入破产清算。航空帝国之路就此中断。',
+  'gameover.btn.restart': '重新开始',
+
+  // ── EventTicker ───────────────────────────────────────────────────
+  'ticker.aria.region': '当前事件',
+  'ticker.label': '事件',
+  'ticker.severity.major': '严重',
+  'ticker.severity.minor': '轻微',
+  'ticker.effect.demand': '需求',
+  'ticker.effect.fuelCost': '燃油',
+  'ticker.effect.slotFee': '机场费',
+  'ticker.effect.serviceCost': '服务成本',
+  'ticker.scope.global': '全球',
+  'ticker.effects.suffix': '影响 {scope}',
+  'ticker.remaining': '⏳ 剩 {n} 季',
+  'ticker.sourceLink': '原文链接',
+  'ticker.aria.close': '关闭',
+
+  // ── SlotBadge ─────────────────────────────────────────────────────
+  'slot.held': '持有 {n}',
+  'slot.used': '占用 {n}',
+  'slot.pool': '池 {taken}/{capacity}',
+
+  // ── CityCard ──────────────────────────────────────────────────────
+  'city.aria.demand': '需求指数 {value}/10',
+  'city.chip.slots': '时刻池 {n}',
+  'city.chip.fee': '${n}K/次',
+
+  // ── AircraftCard ──────────────────────────────────────────────────
+  'aircraft.spec.seats': '座位',
+  'aircraft.spec.range': '航程',
+  'aircraft.spec.price': '价格',
+  'aircraft.btn.buy': '购买',
+  'aircraft.btn.lease': '租赁',
+
+  // ── RoutesTab ─────────────────────────────────────────────────────
+  'routes.open.heading': '开通新航线 · 枢纽 {hqCity}',
+  'routes.dest.placeholder': '选择目的地（或点击地图城市）…',
+  'routes.dest.option': '{nameZh} {name} · 需求 {demand}/10',
+  'routes.btn.open': '开通',
+  'routes.hq.tag': '（枢纽）',
+  'routes.slot.gate': '两端都需要 1 个空闲持有 slot 才能开航 — 先通过谈判获取。',
+  'routes.slot.full': '池已满',
+  'routes.slot.negotiate': '谈判获取 slot · {cost}',
+  'routes.empty': '还没有航线。开通一条从枢纽出发的航线，并指派飞机开始运营。',
+  'routes.assigned.heading': '已指派飞机（{n}）',
+  'routes.assigned.none': '尚未指派飞机 — 本航线不产生运力。',
+  'routes.aircraft.owned': '自有',
+  'routes.aircraft.leased': '租赁',
+  'routes.aircraft.onOtherRoute': '（已在其他航线）',
+  'routes.assign.placeholder': '选择闲置飞机…',
+  'routes.assign.aria': '选择要指派的飞机',
+  'routes.assign.btn': '指派',
+  'routes.unassign.aria': '取消指派 {aircraftId}',
+  'routes.flights.heading': '每周班次（单向）',
+  'routes.flights.decrement': '减少班次',
+  'routes.flights.increment': '增加班次',
+  'routes.fare.heading': '票价系数',
+  'routes.fare.low': '0.6 低价抢客',
+  'routes.fare.high': '1.6 高价精品',
+  'routes.fare.aria': '票价系数',
+  'routes.cabin.aria': '舱位配置',
+  'routes.cabin.heading': '舱位配置',
+  'routes.cabin.error': '三舱比例之和须为 100（当前 {sum}）',
+  'routes.service.heading': '服务等级',
+  'routes.service.aria': '服务等级',
+  'routes.cabin.confirm': '确认舱位配置',
+  'routes.lastQ.heading': '上季度表现',
+  'routes.lastQ.loadFactor': '客座率',
+  'routes.lastQ.pax': '客流',
+  'routes.lastQ.profit': '利润',
+  'routes.lastQ.empty': '新航线 — 结算后显示数据。',
+  'routes.btn.close': '关闭航线',
+  'routes.subtitle': '{dist} · {aircraft} 架 · {flights} 班/周 · ×{fare}',
+  'routes.dest.aria': '选择目的地城市',
+
+  // ── FleetTab ──────────────────────────────────────────────────────
+  'fleet.empty': '机队为空。前往「机型市场」购买或租赁你的第一架飞机。',
+  'fleet.owned': '自有',
+  'fleet.leased': '租赁',
+  'fleet.idle': '闲置（仍产生持有成本）',
+  'fleet.flying': '执飞 {cityA} ⇌ {cityB}',
+  'fleet.btn.unassign': '取消指派',
+  'fleet.btn.sell': '出售{amount}',
+  'fleet.sell.title': '残值 {amount}',
+  'fleet.btn.return': '退租',
+
+  // ── FinanceTab ────────────────────────────────────────────────────
+  'finance.lastQ.heading': '上季度损益',
+  'finance.lastQ.revenue': '收入',
+  'finance.lastQ.cost': '成本',
+  'finance.lastQ.profit': '净利',
+  'finance.lastQ.empty': '首个季度尚未结算。',
+  'finance.share.heading': '市场份额',
+  'finance.share.empty': '结算一个季度后显示。',
+  'finance.share.background': '背景市场/其他航司',
+  'finance.cash.heading': '现金走势',
+  'finance.history.heading': '季度利润',
+  'finance.history.turn': '回合 {turn}',
+
+  // ── NewsTab ───────────────────────────────────────────────────────
+  'news.heading': '本季播报',
+  'news.empty': '本季暂无新闻。',
+  'news.kind.event': '事件',
+  'news.kind.system': '系统',
+  'news.credits.heading': '图片来源与署名',
+  'news.credits.empty': '机型图片清单尚未生成；图片缺失时界面使用机型剪影占位。',
+  'news.credits.filePage': '文件页',
+
+  // ── Cabin (lib labels) ────────────────────────────────────────────
+  'cabin.economy': '经济',
+  'cabin.business': '商务',
+  'cabin.first': '头等',
+  'cabin.service.economy': '经济型',
+  'cabin.service.standard': '标准',
+  'cabin.service.premium': '豪华',
+
+  // ── Voice lines ───────────────────────────────────────────────────
+  'voice.profit': '{name}说：本季盈利{M}亿，客流{K}K，喜上加喜！',
+  'voice.loss': '{name}说：亏损警报！本季亏损{M}亿，客流{K}K！',
+  'voice.breakeven': '{name}说：本季收支平衡，客流{K}K。',
+  'voice.event': '{name}说：留意事件：{headline}',
+
+  // ── Advisor display names ─────────────────────────────────────────
+  'advisor.0.name': '金满堂',
+  'advisor.1.name': '飞天妹',
+  'advisor.2.name': '云淡风',
+
+  // ── Sparkline ─────────────────────────────────────────────────────────
+  'sparkline.empty': '暂无历史数据',
+  'sparkline.aria': '现金历史曲线',
+} as const;
+
+export type DictKeys = keyof typeof zh;
+export type Dict = Record<DictKeys, string>;
+export default zh as Dict;

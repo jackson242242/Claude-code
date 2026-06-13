@@ -125,7 +125,11 @@ export type GameEvent = {
   id: string; // 静态库内唯一，如 "evt-fuel-spike"
   source: 'static' | 'news';
   headline: string; // 中文播报标题
+  headlineEn?: string; // V3.1：英文标题（缺省回落中文）
+  headlineEs?: string; // V3.1：西语标题（缺省回落中文）
   detail?: string;
+  detailEn?: string; // V3.1：可选英文详情
+  detailEs?: string; // V3.1：可选西语详情
   sourceUrl?: string; // news 事件的原始新闻链接（M4）
   scope: { kind: 'global' | 'city' | 'route'; ids: string[] };
   effects: EventEffect[]; // 1–3 条

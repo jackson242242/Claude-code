@@ -12,17 +12,12 @@ import { FleetTab } from '@/components/tabs/FleetTab';
 import { MarketTab } from '@/components/tabs/MarketTab';
 import { NewsTab } from '@/components/tabs/NewsTab';
 import { RoutesTab } from '@/components/tabs/RoutesTab';
+import { useT } from '@/i18n';
 import type { Command, GameState } from '@/types';
 
 type TabId = 'routes' | 'fleet' | 'market' | 'finance' | 'news';
 
-const TABS: { id: TabId; label: string }[] = [
-  { id: 'routes', label: '航线' },
-  { id: 'fleet', label: '机队' },
-  { id: 'market', label: '机型市场' },
-  { id: 'finance', label: '财务' },
-  { id: 'news', label: '新闻' },
-];
+const TAB_IDS: TabId[] = ['routes', 'fleet', 'market', 'finance', 'news'];
 
 // Deterministic gradient based on id charCode sum.
 const GRADIENT_PAIRS: [string, string][] = [
@@ -86,6 +81,7 @@ export const GameScreen = ({
   onCommands,
   onEndTurn,
 }: GameScreenProps) => {
+  const { t } = useT();
   const [tab, setTab] = useState<TabId>('routes');
   const [selectedCityId, setSelectedCityId] = useState<string | null>(null);
 
@@ -142,8 +138,8 @@ export const GameScreen = ({
 
         {/* bottom drawer / side panel */}
         <div className="flex min-h-0 flex-1 flex-col bg-ops-900/60 md:w-[420px] md:flex-none">
-          <nav className="flex flex-none border-b border-ops-700" role="tablist" aria-label="操作面板">
-            {TABS.map(({ id, label }) => (
+          <nav className="flex flex-none border-b border-ops-700" role="tablist" aria-label={t('game.aria.tabPanel')}>
+            {TAB_IDS.map((id) => (
               <button
                 key={id}
                 type="button"
@@ -156,7 +152,7 @@ export const GameScreen = ({
                     : 'border-b-2 border-transparent text-slate-500 hover:text-slate-300'
                 }`}
               >
-                {label}
+                {t(`game.tab.${id}` as import('@/i18n').DictKeys)}
               </button>
             ))}
           </nav>
@@ -189,7 +185,7 @@ export const GameScreen = ({
           <button
             type="button"
             onClick={onDismissError}
-            aria-label="关闭提示"
+            aria-label={t('game.aria.dismissError')}
             className="text-red-400 hover:text-white"
           >
             ✕

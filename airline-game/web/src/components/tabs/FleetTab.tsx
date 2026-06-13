@@ -2,6 +2,7 @@
 
 import { MODEL_BY_ID, cityZh } from '@/lib/data';
 import { formatMoney } from '@/lib/format';
+import { useT } from '@/i18n';
 import type { Command, GameState } from '@/types';
 
 type FleetTabProps = {
@@ -11,12 +12,13 @@ type FleetTabProps = {
 };
 
 export const FleetTab = ({ state, busy, onCommands }: FleetTabProps) => {
+  const { t } = useT();
   const routeById = new Map(state.routes.map((route) => [route.id, route]));
 
   if (state.fleet.length === 0) {
     return (
       <p className="px-1 text-sm text-slate-500">
-        机队为空。前往「机型市场」购买或租赁你的第一架飞机。
+        {t('fleet.empty')}
       </p>
     );
   }
@@ -39,14 +41,14 @@ export const FleetTab = ({ state, busy, onCommands }: FleetTabProps) => {
                       : 'bg-sky-950 text-sky-300'
                   }`}
                 >
-                  {owned ? '自有' : '租赁'}
+                  {owned ? t('fleet.owned') : t('fleet.leased')}
                 </span>
               </p>
               <p className="mt-0.5 text-[11px] text-slate-500">
                 {aircraft.id} ·{' '}
                 {route
-                  ? `执飞 ${cityZh(route.cityA)} ⇌ ${cityZh(route.cityB)}`
-                  : '闲置（仍产生持有成本）'}
+                  ? t('fleet.flying', { cityA: cityZh(route.cityA), cityB: cityZh(route.cityB) })
+                  : t('fleet.idle')}
               </p>
             </div>
             {aircraft.routeId !== null && (
@@ -58,7 +60,7 @@ export const FleetTab = ({ state, busy, onCommands }: FleetTabProps) => {
                 }
                 className="btn-ghost px-2.5 py-1.5 text-xs"
               >
-                取消指派
+                {t('fleet.btn.unassign')}
               </button>
             )}
             {owned ? (
@@ -67,9 +69,11 @@ export const FleetTab = ({ state, busy, onCommands }: FleetTabProps) => {
                 disabled={busy}
                 onClick={() => onCommands([{ type: 'sellAircraft', aircraftId: aircraft.id }])}
                 className="btn-danger px-2.5 py-1.5 text-xs"
-                title={model ? `残值 ${formatMoney(model.price * 0.7)}` : undefined}
+                title={model ? t('fleet.sell.title', { amount: formatMoney(model.price * 0.7) }) : undefined}
               >
-                出售{model ? ` ${formatMoney(model.price * 0.7)}` : ''}
+                {model
+                  ? t('fleet.btn.sell', { amount: ` ${formatMoney(model.price * 0.7)}` })
+                  : t('fleet.btn.sell', { amount: '' })}
               </button>
             ) : (
               <button
@@ -78,7 +82,7 @@ export const FleetTab = ({ state, busy, onCommands }: FleetTabProps) => {
                 onClick={() => onCommands([{ type: 'returnLease', aircraftId: aircraft.id }])}
                 className="btn-danger px-2.5 py-1.5 text-xs"
               >
-                退租
+                {t('fleet.btn.return')}
               </button>
             )}
           </li>

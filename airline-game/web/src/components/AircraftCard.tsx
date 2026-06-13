@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { AircraftSilhouette } from '@/components/AircraftSilhouette';
 import { formatKm, formatMoney } from '@/lib/format';
+import { useT } from '@/i18n';
 import type { AircraftImageEntry, AircraftModel } from '@/types';
 
 type AircraftCardProps = {
@@ -15,6 +16,7 @@ type AircraftCardProps = {
 };
 
 export const AircraftCard = ({ model, image, cash, busy, onBuy, onLease }: AircraftCardProps) => {
+  const { t } = useT();
   const [imageFailed, setImageFailed] = useState(false);
   const showPhoto = image !== undefined && !imageFailed;
   const label = `${model.manufacturer} ${model.name}`;
@@ -50,15 +52,15 @@ export const AircraftCard = ({ model, image, cash, busy, onBuy, onLease }: Aircr
 
         <dl className="grid grid-cols-3 gap-1 text-center">
           <div>
-            <dt className="text-[10px] text-slate-500">座位</dt>
+            <dt className="text-[10px] text-slate-500">{t('aircraft.spec.seats')}</dt>
             <dd className="text-xs font-semibold text-slate-200">{model.seats}</dd>
           </div>
           <div>
-            <dt className="text-[10px] text-slate-500">航程</dt>
+            <dt className="text-[10px] text-slate-500">{t('aircraft.spec.range')}</dt>
             <dd className="text-xs font-semibold text-slate-200">{formatKm(model.rangeKm)}</dd>
           </div>
           <div>
-            <dt className="text-[10px] text-slate-500">价格</dt>
+            <dt className="text-[10px] text-slate-500">{t('aircraft.spec.price')}</dt>
             <dd className="text-xs font-semibold text-accent">{formatMoney(model.price)}</dd>
           </div>
         </dl>
@@ -70,7 +72,7 @@ export const AircraftCard = ({ model, image, cash, busy, onBuy, onLease }: Aircr
             disabled={busy || cash < model.price}
             className="btn-primary flex-1 px-2 py-1.5 text-xs"
           >
-            购买
+            {t('aircraft.btn.buy')}
           </button>
           <button
             type="button"
@@ -78,7 +80,7 @@ export const AircraftCard = ({ model, image, cash, busy, onBuy, onLease }: Aircr
             disabled={busy}
             className="btn-ghost flex-1 px-2 py-1.5 text-xs"
           >
-            租赁
+            {t('aircraft.btn.lease')}
           </button>
         </div>
       </div>

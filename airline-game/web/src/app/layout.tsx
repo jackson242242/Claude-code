@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
+import { I18nProvider } from '@/i18n';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -15,7 +16,9 @@ export const viewport: Viewport = {
 
 const RootLayout = ({ children }: { children: ReactNode }) => (
   <html lang="zh-CN">
-    <body className="min-h-dvh bg-ops-950 font-sans">{children}</body>
+    <body className="min-h-dvh bg-ops-950 font-sans">
+      <I18nProvider>{children}</I18nProvider>
+    </body>
   </html>
 );
 

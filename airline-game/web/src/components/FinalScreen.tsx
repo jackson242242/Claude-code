@@ -1,6 +1,7 @@
 'use client';
 
 import { formatMoney } from '@/lib/format';
+import { useT } from '@/i18n';
 import type { FinalResult } from '@/types';
 
 type FinalScreenProps = {
@@ -11,35 +12,36 @@ type FinalScreenProps = {
 
 const MEDAL = ['🥇', '🥈', '🥉', '4️⃣'] as const;
 
-const formatPax = (pax: number): string => {
-  if (pax >= 1_000_000) {
-    const val = pax / 1_000_000;
-    const text =
-      val >= 100
-        ? String(Math.round(val))
-        : (Math.round(val * 10) / 10).toFixed(1).replace(/\.0$/, '');
-    return `${text}M 人次`;
-  }
-  if (pax >= 1_000) {
-    const val = pax / 1_000;
-    const text =
-      val >= 100
-        ? String(Math.round(val))
-        : (Math.round(val * 10) / 10).toFixed(1).replace(/\.0$/, '');
-    return `${text}K 人次`;
-  }
-  return `${Math.round(pax)} 人次`;
-};
-
 export const FinalScreen = ({ airlineName, finalResult, onRestart }: FinalScreenProps) => {
+  const { t } = useT();
   const { victory, rank, standings, cumulativeProfit, cumulativePax, endedTurn } = finalResult;
+
+  const formatPax = (pax: number): string => {
+    if (pax >= 1_000_000) {
+      const val = pax / 1_000_000;
+      const text =
+        val >= 100
+          ? String(Math.round(val))
+          : (Math.round(val * 10) / 10).toFixed(1).replace(/\.0$/, '');
+      return t('final.pax.M', { val: text });
+    }
+    if (pax >= 1_000) {
+      const val = pax / 1_000;
+      const text =
+        val >= 100
+          ? String(Math.round(val))
+          : (Math.round(val * 10) / 10).toFixed(1).replace(/\.0$/, '');
+      return t('final.pax.K', { val: text });
+    }
+    return t('final.pax.unit', { val: Math.round(pax) });
+  };
 
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur"
       role="dialog"
       aria-modal="true"
-      aria-label="游戏结束 — 终局结算"
+      aria-label={t('final.aria')}
     >
       <div className="panel mx-4 w-full max-w-md p-6">
         {/* header */}
@@ -51,9 +53,9 @@ export const FinalScreen = ({ airlineName, finalResult, onRestart }: FinalScreen
                 className="mt-3 text-2xl font-bold text-amber-400"
                 data-testid="final-headline"
               >
-                称霸蓝天
+                {t('final.victory.headline')}
               </h2>
-              <p className="mt-1 text-sm text-amber-300/80">{airlineName} 以第 1 名傲视群雄</p>
+              <p className="mt-1 text-sm text-amber-300/80">{t('final.victory.subtitle', { airlineName })}</p>
             </>
           ) : (
             <>
@@ -62,10 +64,10 @@ export const FinalScreen = ({ airlineName, finalResult, onRestart }: FinalScreen
                 className="mt-3 text-xl font-bold text-slate-300"
                 data-testid="final-headline"
               >
-                航程终止
+                {t('final.defeat.headline')}
               </h2>
               <p className="mt-1 text-sm text-slate-400" data-testid="defeat-rank">
-                {airlineName} 最终排名：第 {rank} 名
+                {t('final.defeat.subtitle', { airlineName, rank })}
               </p>
             </>
           )}
@@ -74,7 +76,7 @@ export const FinalScreen = ({ airlineName, finalResult, onRestart }: FinalScreen
         {/* standings */}
         <div className="mt-5" data-testid="standings">
           <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-slate-500">
-            最终排名
+            {t('final.standings.heading')}
           </p>
           <ul className="space-y-1.5">
             {standings.map((entry, i) => (
@@ -100,7 +102,7 @@ export const FinalScreen = ({ airlineName, finalResult, onRestart }: FinalScreen
         {/* lifetime stats */}
         <div className="mt-4 grid grid-cols-2 gap-3">
           <div className="rounded border border-ops-700 bg-ops-900/60 p-2.5 text-center">
-            <p className="text-xs text-slate-500">累计利润</p>
+            <p className="text-xs text-slate-500">{t('final.stat.profit')}</p>
             <p
               className={`mt-0.5 text-base font-bold tabular-nums ${
                 cumulativeProfit < 0 ? 'text-red-400' : 'text-accent'
@@ -111,7 +113,7 @@ export const FinalScreen = ({ airlineName, finalResult, onRestart }: FinalScreen
             </p>
           </div>
           <div className="rounded border border-ops-700 bg-ops-900/60 p-2.5 text-center">
-            <p className="text-xs text-slate-500">累计乘客</p>
+            <p className="text-xs text-slate-500">{t('final.stat.pax')}</p>
             <p
               className="mt-0.5 text-base font-bold tabular-nums text-accent"
               data-testid="cumulative-pax"
@@ -123,7 +125,7 @@ export const FinalScreen = ({ airlineName, finalResult, onRestart }: FinalScreen
 
         {/* footer */}
         <p className="mt-3 text-center text-[11px] text-slate-600">
-          20 年 / {endedTurn} 回合
+          {t('final.footer', { endedTurn })}
         </p>
 
         {/* restart */}
@@ -133,7 +135,7 @@ export const FinalScreen = ({ airlineName, finalResult, onRestart }: FinalScreen
           data-testid="restart-button"
           className="btn-primary mt-4 w-full px-4 py-3 text-sm"
         >
-          再来一局
+          {t('final.btn.restart')}
         </button>
       </div>
     </div>

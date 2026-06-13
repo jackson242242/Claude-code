@@ -2,6 +2,7 @@
 // Shared by the 航线 tab open-route flow and the map's city tap panel — single
 // source of markup, no duplication (M2.2).
 import { isPoolFull } from '@/lib/slots';
+import { useT } from '@/i18n';
 import type { CitySlotInfo } from '@/types';
 
 type SlotBadgeProps = {
@@ -10,6 +11,7 @@ type SlotBadgeProps = {
 };
 
 export const SlotBadge = ({ cityId, info }: SlotBadgeProps) => {
+  const { t } = useT();
   // Older snapshots may lack this city — render nothing rather than guessing.
   if (!info) return null;
   const full = isPoolFull(info);
@@ -20,10 +22,10 @@ export const SlotBadge = ({ cityId, info }: SlotBadgeProps) => {
       className="inline-flex flex-wrap items-center gap-1 text-[10px] leading-none"
     >
       <span className="rounded-full border border-ops-600 bg-ops-800 px-1.5 py-0.5 text-slate-300">
-        持有 {info.playerHeld}
+        {t('slot.held', { n: info.playerHeld })}
       </span>
       <span className="rounded-full border border-ops-600 bg-ops-800 px-1.5 py-0.5 text-slate-400">
-        占用 {info.playerUsed}
+        {t('slot.used', { n: info.playerUsed })}
       </span>
       <span
         className={`rounded-full border px-1.5 py-0.5 ${
@@ -32,7 +34,7 @@ export const SlotBadge = ({ cityId, info }: SlotBadgeProps) => {
             : 'border-ops-600 bg-ops-800 text-slate-400'
         }`}
       >
-        池 {info.taken}/{info.capacity}
+        {t('slot.pool', { taken: info.taken, capacity: info.capacity })}
       </span>
     </span>
   );

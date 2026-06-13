@@ -5,7 +5,8 @@ import { SlotBadge } from '@/components/SlotBadge';
 import { CITIES, CITY_BY_ID, MODEL_BY_ID, cityZh } from '@/lib/data';
 import { formatKm, formatMoney, formatPercent } from '@/lib/format';
 import { hasFreeHeldSlot, isPoolFull, slotNegotiationCost } from '@/lib/slots';
-import { CABIN_CLASSES, SERVICE_TIERS, seatBreakdown, validateMix } from '@/lib/cabin';
+import { SERVICE_TIERS, seatBreakdown, validateMix } from '@/lib/cabin';
+import { useT } from '@/i18n';
 import type { CabinMix, Command, GameState, Route } from '@/types';
 
 type RoutesTabProps = {
@@ -27,6 +28,7 @@ type SlotEndRowProps = {
 };
 
 const SlotEndRow = ({ cityId, state, busy, onCommands }: SlotEndRowProps) => {
+  const { t } = useT();
   const info = state.slotMarket[cityId];
   const city = CITY_BY_ID.get(cityId);
   if (!info || !city) return null;
@@ -42,7 +44,7 @@ const SlotEndRow = ({ cityId, state, busy, onCommands }: SlotEndRowProps) => {
       <span className="flex items-center gap-2">
         <span className="text-xs font-semibold text-slate-300">
           {cityZh(cityId)}
-          {cityId === state.hqCityId ? '（枢纽）' : ''}
+          {cityId === state.hqCityId ? t('routes.hq.tag') : ''}
         </span>
         <SlotBadge cityId={cityId} info={info} />
       </span>
@@ -53,7 +55,9 @@ const SlotEndRow = ({ cityId, state, busy, onCommands }: SlotEndRowProps) => {
           onClick={() => onCommands([{ type: 'negotiateSlot', cityId }])}
           className="btn-ghost px-2.5 py-1 text-[11px]"
         >
-          {full ? '池已满' : `谈判获取 slot · ${formatMoney(cost)}`}
+          {full
+            ? t('routes.slot.full')
+            : t('routes.slot.negotiate', { cost: formatMoney(cost) })}
         </button>
       )}
     </div>
@@ -68,6 +72,7 @@ type RoutePanelProps = {
 };
 
 const RoutePanel = ({ route, state, busy, onCommands }: RoutePanelProps) => {
+  const { t } = useT();
   const [fareMult, setFareMult] = useState(route.fareMult);
   const [assignPick, setAssignPick] = useState('');
 
@@ -144,10 +149,10 @@ const RoutePanel = ({ route, state, busy, onCommands }: RoutePanelProps) => {
       {/* assigned aircraft */}
       <section>
         <h4 className="mb-1.5 text-[11px] font-semibold uppercase tracking-wider text-slate-500">
-          已指派飞机（{assigned.length}）
+          {t('routes.assigned.heading', { n: assigned.length })}
         </h4>
         {assigned.length === 0 && (
-          <p className="text-xs text-amber-400/80">尚未指派飞机 — 本航线不产生运力。</p>
+          <p className="text-xs text-amber-400/80">{t('routes.assigned.none')}</p>
         )}
         <ul className="flex flex-wrap gap-1.5">
           {assigned.map((aircraft) => (
@@ -157,11 +162,11 @@ const RoutePanel = ({ route, state, busy, onCommands }: RoutePanelProps) => {
             >
               {MODEL_BY_ID.get(aircraft.modelId)?.name ?? aircraft.modelId}
               <span className="text-[10px] text-slate-500">
-                {aircraft.ownership === 'owned' ? '自有' : '租赁'}
+                {aircraft.ownership === 'owned' ? t('routes.aircraft.owned') : t('routes.aircraft.leased')}
               </span>
               <button
                 type="button"
-                aria-label={`取消指派 ${aircraft.id}`}
+                aria-label={t('routes.unassign.aria', { aircraftId: aircraft.id })}
                 disabled={busy}
                 onClick={() =>
                   onCommands([{ type: 'assignAircraft', aircraftId: aircraft.id, routeId: null }])
@@ -177,16 +182,16 @@ const RoutePanel = ({ route, state, busy, onCommands }: RoutePanelProps) => {
           <select
             value={assignPick}
             onChange={(event) => setAssignPick(event.target.value)}
-            aria-label="选择要指派的飞机"
+            aria-label={t('routes.assign.aria')}
             className="min-w-0 flex-1 rounded-lg border border-ops-600 bg-ops-900 px-2 py-1.5 text-xs text-slate-200"
           >
-            <option value="">选择闲置飞机…</option>
+            <option value="">{t('routes.assign.placeholder')}</option>
             {assignable.map((aircraft) => {
               const model = MODEL_BY_ID.get(aircraft.modelId);
               return (
                 <option key={aircraft.id} value={aircraft.id}>
-                  {model?.name ?? aircraft.modelId} · {aircraft.ownership === 'owned' ? '自有' : '租赁'}
-                  {aircraft.routeId ? '（已在其他航线）' : ''}
+                  {model?.name ?? aircraft.modelId} · {aircraft.ownership === 'owned' ? t('routes.aircraft.owned') : t('routes.aircraft.leased')}
+                  {aircraft.routeId ? t('routes.aircraft.onOtherRoute') : ''}
                 </option>
               );
             })}
@@ -200,7 +205,7 @@ const RoutePanel = ({ route, state, busy, onCommands }: RoutePanelProps) => {
             }}
             className="btn-ghost px-3 py-1.5 text-xs"
           >
-            指派
+            {t('routes.assign.btn')}
           </button>
         </div>
       </section>
@@ -208,12 +213,12 @@ const RoutePanel = ({ route, state, busy, onCommands }: RoutePanelProps) => {
       {/* weekly flights stepper */}
       <section className="flex items-center justify-between">
         <h4 className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
-          每周班次（单向）
+          {t('routes.flights.heading')}
         </h4>
         <div className="flex items-center gap-2">
           <button
             type="button"
-            aria-label="减少班次"
+            aria-label={t('routes.flights.decrement')}
             disabled={busy || route.weeklyFlights <= 1}
             onClick={() =>
               onCommands([
@@ -229,7 +234,7 @@ const RoutePanel = ({ route, state, busy, onCommands }: RoutePanelProps) => {
           </span>
           <button
             type="button"
-            aria-label="增加班次"
+            aria-label={t('routes.flights.increment')}
             disabled={busy}
             onClick={() =>
               onCommands([
@@ -247,7 +252,7 @@ const RoutePanel = ({ route, state, busy, onCommands }: RoutePanelProps) => {
       <section>
         <div className="mb-1 flex items-center justify-between">
           <h4 className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
-            票价系数
+            {t('routes.fare.heading')}
           </h4>
           <span className="text-sm font-bold tabular-nums text-accent">×{fareMult.toFixed(2)}</span>
         </div>
@@ -258,7 +263,7 @@ const RoutePanel = ({ route, state, busy, onCommands }: RoutePanelProps) => {
           step={0.05}
           value={fareMult}
           disabled={busy}
-          aria-label="票价系数"
+          aria-label={t('routes.fare.aria')}
           onChange={(event) => setFareMult(Number(event.target.value))}
           onPointerUp={commitFare}
           onKeyUp={commitFare}
@@ -266,18 +271,25 @@ const RoutePanel = ({ route, state, busy, onCommands }: RoutePanelProps) => {
           className="w-full"
         />
         <div className="flex justify-between text-[10px] text-slate-600">
-          <span>0.6 低价抢客</span>
-          <span>1.6 高价精品</span>
+          <span>{t('routes.fare.low')}</span>
+          <span>{t('routes.fare.high')}</span>
         </div>
       </section>
 
       {/* cabin mix editor — M2.3 */}
-      <section aria-label="舱位配置">
+      <section aria-label={t('routes.cabin.aria')}>
         <h4 className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-slate-500">
-          舱位配置
+          {t('routes.cabin.heading')}
         </h4>
         <div className="flex flex-col gap-2">
-          {CABIN_CLASSES.map(({ key, label }) => (
+          {(['economy', 'business', 'first'] as const).map((key) => {
+            const cabinLabelKey = {
+              economy: 'cabin.economy',
+              business: 'cabin.business',
+              first: 'cabin.first',
+            } as const;
+            const label = t(cabinLabelKey[key]);
+            return (
             <div key={key} className="flex items-center gap-2">
               <span className="w-8 text-xs text-slate-400">{label}</span>
               <input
@@ -301,39 +313,48 @@ const RoutePanel = ({ route, state, busy, onCommands }: RoutePanelProps) => {
                 </span>
               )}
             </div>
-          ))}
+            );
+          })}
         </div>
         {!cabinMixValid && cabinSum !== 100 && (
           <p
             data-testid="cabin-sum-error"
             className="mt-1.5 text-[11px] text-red-400"
           >
-            三舱比例之和须为 100（当前 {cabinSum}）
+            {t('routes.cabin.error', { sum: cabinSum })}
           </p>
         )}
 
         {/* service tier segmented control */}
         <h4 className="mb-1.5 mt-3 text-[11px] font-semibold uppercase tracking-wider text-slate-500">
-          服务等级
+          {t('routes.service.heading')}
         </h4>
-        <div className="flex gap-1.5" role="group" aria-label="服务等级">
-          {SERVICE_TIERS.map(({ tier, label, hint }) => (
-            <button
-              key={tier}
-              type="button"
-              aria-label={label}
-              title={hint}
-              disabled={busy}
-              onClick={() => setServiceTier(tier)}
-              className={`flex-1 rounded-lg border py-1.5 text-xs transition-colors ${
-                serviceTier === tier
-                  ? 'border-accent bg-accent/10 text-accent'
-                  : 'border-ops-600 bg-ops-900 text-slate-400 hover:border-slate-500'
-              }`}
-            >
-              {tier} {label}
-            </button>
-          ))}
+        <div className="flex gap-1.5" role="group" aria-label={t('routes.service.aria')}>
+          {SERVICE_TIERS.map(({ tier, hint }) => {
+            const serviceLabelKey = {
+              1: 'cabin.service.economy',
+              2: 'cabin.service.standard',
+              3: 'cabin.service.premium',
+            } as const;
+            const serviceLabel = t(serviceLabelKey[tier]);
+            return (
+              <button
+                key={tier}
+                type="button"
+                aria-label={serviceLabel}
+                title={hint}
+                disabled={busy}
+                onClick={() => setServiceTier(tier)}
+                className={`flex-1 rounded-lg border py-1.5 text-xs transition-colors ${
+                  serviceTier === tier
+                    ? 'border-accent bg-accent/10 text-accent'
+                    : 'border-ops-600 bg-ops-900 text-slate-400 hover:border-slate-500'
+                }`}
+              >
+                {tier} {serviceLabel}
+              </button>
+            );
+          })}
         </div>
 
         <button
@@ -343,29 +364,29 @@ const RoutePanel = ({ route, state, busy, onCommands }: RoutePanelProps) => {
           onClick={commitCabin}
           className="btn-ghost mt-2.5 w-full py-1.5 text-xs"
         >
-          确认舱位配置
+          {t('routes.cabin.confirm')}
         </button>
       </section>
 
       {/* last quarter stats */}
       <section className="rounded-lg bg-ops-900/80 p-2.5">
         <h4 className="mb-1.5 text-[11px] font-semibold uppercase tracking-wider text-slate-500">
-          上季度表现
+          {t('routes.lastQ.heading')}
         </h4>
         {stats ? (
           <div className="grid grid-cols-3 gap-1 text-center">
             <div>
-              <p className="text-[10px] text-slate-500">客座率</p>
+              <p className="text-[10px] text-slate-500">{t('routes.lastQ.loadFactor')}</p>
               <p className="text-sm font-bold text-glow">{formatPercent(stats.loadFactor)}</p>
             </div>
             <div>
-              <p className="text-[10px] text-slate-500">客流</p>
+              <p className="text-[10px] text-slate-500">{t('routes.lastQ.pax')}</p>
               <p className="text-sm font-bold text-slate-200">
                 {Math.round(stats.pax).toLocaleString('en-US')}
               </p>
             </div>
             <div>
-              <p className="text-[10px] text-slate-500">利润</p>
+              <p className="text-[10px] text-slate-500">{t('routes.lastQ.profit')}</p>
               <p
                 className={`text-sm font-bold ${stats.profit >= 0 ? 'text-emerald-400' : 'text-red-400'}`}
               >
@@ -374,7 +395,7 @@ const RoutePanel = ({ route, state, busy, onCommands }: RoutePanelProps) => {
             </div>
           </div>
         ) : (
-          <p className="text-xs text-slate-500">新航线 — 结算后显示数据。</p>
+          <p className="text-xs text-slate-500">{t('routes.lastQ.empty')}</p>
         )}
       </section>
 
@@ -384,13 +405,14 @@ const RoutePanel = ({ route, state, busy, onCommands }: RoutePanelProps) => {
         onClick={() => onCommands([{ type: 'closeRoute', routeId: route.id }])}
         className="btn-danger self-end px-3 py-1.5 text-xs"
       >
-        关闭航线
+        {t('routes.btn.close')}
       </button>
     </div>
   );
 };
 
 export const RoutesTab = ({ state, busy, selectedCityId, onCommands }: RoutesTabProps) => {
+  const { t } = useT();
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [destPick, setDestPick] = useState('');
 
@@ -422,19 +444,19 @@ export const RoutesTab = ({ state, busy, selectedCityId, onCommands }: RoutesTab
     <div className="flex flex-col gap-3">
       <section className="panel p-3">
         <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-400">
-          开通新航线 · 枢纽 {cityZh(state.hqCityId)}
+          {t('routes.open.heading', { hqCity: cityZh(state.hqCityId) })}
         </h3>
         <div className="flex gap-2">
           <select
             value={destPick}
             onChange={(event) => setDestPick(event.target.value)}
-            aria-label="选择目的地城市"
+            aria-label={t('routes.dest.aria')}
             className="min-w-0 flex-1 rounded-lg border border-ops-600 bg-ops-900 px-2 py-2 text-sm text-slate-200"
           >
-            <option value="">选择目的地（或点击地图城市）…</option>
+            <option value="">{t('routes.dest.placeholder')}</option>
             {candidates.map((city) => (
               <option key={city.id} value={city.id}>
-                {city.nameZh} {city.name} · 需求 {city.demandIndex}/10
+                {t('routes.dest.option', { nameZh: city.nameZh, name: city.name, demand: city.demandIndex })}
               </option>
             ))}
           </select>
@@ -447,7 +469,7 @@ export const RoutesTab = ({ state, busy, selectedCityId, onCommands }: RoutesTab
             }}
             className="btn-primary px-4 py-2 text-sm"
           >
-            开通
+            {t('routes.btn.open')}
           </button>
         </div>
 
@@ -464,7 +486,7 @@ export const RoutesTab = ({ state, busy, selectedCityId, onCommands }: RoutesTab
           ))}
           {destPick !== '' && !slotsReady && (
             <p className="text-[11px] text-amber-400/80">
-              两端都需要 1 个空闲持有 slot 才能开航 — 先通过谈判获取。
+              {t('routes.slot.gate')}
             </p>
           )}
         </div>
@@ -472,7 +494,7 @@ export const RoutesTab = ({ state, busy, selectedCityId, onCommands }: RoutesTab
 
       {state.routes.length === 0 && (
         <p className="px-1 text-sm text-slate-500">
-          还没有航线。开通一条从枢纽出发的航线，并指派飞机开始运营。
+          {t('routes.empty')}
         </p>
       )}
 
@@ -490,8 +512,12 @@ export const RoutesTab = ({ state, busy, selectedCityId, onCommands }: RoutesTab
                 <div>
                   <p className="text-sm font-bold text-white">{routeTitle(route)}</p>
                   <p className="text-[11px] text-slate-500">
-                    {formatKm(route.distanceKm)} · {route.aircraftIds.length} 架 ·{' '}
-                    {route.weeklyFlights} 班/周 · ×{route.fareMult.toFixed(2)}
+                    {t('routes.subtitle', {
+                      dist: formatKm(route.distanceKm),
+                      aircraft: route.aircraftIds.length,
+                      flights: route.weeklyFlights,
+                      fare: route.fareMult.toFixed(2),
+                    })}
                   </p>
                 </div>
                 <div className="flex items-center gap-2">

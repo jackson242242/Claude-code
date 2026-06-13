@@ -1,6 +1,8 @@
 'use client';
 
 import { AIRCRAFT_IMAGES, modelName } from '@/lib/data';
+import { useT } from '@/i18n';
+import { localizedNewsHeadline } from '@/i18n/localizedEvent';
 import type { NewsItem } from '@/types';
 
 type NewsTabProps = {
@@ -8,15 +10,16 @@ type NewsTabProps = {
 };
 
 export const NewsTab = ({ news }: NewsTabProps) => {
+  const { t, locale } = useT();
   const credits = Object.entries(AIRCRAFT_IMAGES);
 
   return (
     <div className="flex flex-col gap-3">
       <section className="flex flex-col gap-2">
         <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-          本季播报
+          {t('news.heading')}
         </h3>
-        {news.length === 0 && <p className="text-sm text-slate-500">本季暂无新闻。</p>}
+        {news.length === 0 && <p className="text-sm text-slate-500">{t('news.empty')}</p>}
         <ul className="flex flex-col gap-2">
           {news.map((item, index) => (
             <li key={`${index}-${item.headline}`} className="panel p-3">
@@ -28,9 +31,9 @@ export const NewsTab = ({ news }: NewsTabProps) => {
                       : 'bg-ops-700 text-glow'
                   }`}
                 >
-                  {item.kind === 'event' ? '事件' : '系统'}
+                  {item.kind === 'event' ? t('news.kind.event') : t('news.kind.system')}
                 </span>
-                {item.headline}
+                {localizedNewsHeadline(item, locale)}
               </p>
               {item.detail && <p className="mt-1 text-xs text-slate-400">{item.detail}</p>}
             </li>
@@ -40,11 +43,11 @@ export const NewsTab = ({ news }: NewsTabProps) => {
 
       <section className="panel p-3" data-testid="image-credits">
         <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-400">
-          图片来源与署名
+          {t('news.credits.heading')}
         </h3>
         {credits.length === 0 ? (
           <p className="text-xs text-slate-500">
-            机型图片清单尚未生成；图片缺失时界面使用机型剪影占位。
+            {t('news.credits.empty')}
           </p>
         ) : (
           <ul className="flex flex-col gap-1.5">
@@ -58,7 +61,7 @@ export const NewsTab = ({ news }: NewsTabProps) => {
                   rel="noreferrer"
                   className="text-glow underline decoration-dotted underline-offset-2 hover:text-white"
                 >
-                  文件页
+                  {t('news.credits.filePage')}
                 </a>
               </li>
             ))}
