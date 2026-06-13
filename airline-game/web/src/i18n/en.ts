@@ -341,6 +341,18 @@ const en: Dict = {
 
   // Voice badge line
   'voice.badge': '{name} says: Congratulations! New achievement "{badge}" unlocked!',
+
+  // ── V3.2 Map Settings ─────────────────────────────────────────────────────
+  'map.settings.aria': 'Map Settings',
+  'map.settings.heading': 'Map Settings',
+  'map.projection.label': 'Projection',
+  'map.projection.naturalEarth': 'Natural Earth',
+  'map.projection.globe': 'Globe',
+  'map.projection.mercator': 'Mercator',
+  'map.theme.label': 'Theme',
+  'map.theme.dark-ops': 'Dark Ops',
+  'map.theme.light-day': 'Light Day',
+  'map.theme.retro-chart': 'Retro Chart',
 };
 
 export default en;

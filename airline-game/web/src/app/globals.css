@@ -14,6 +14,38 @@
   --color-accent-deep: #d97706;
 }
 
+/* V3.2 Map theme CSS variables (map-related only; panels stay dark) */
+:root,
+[data-theme="dark-ops"] {
+  --map-sea-start: #0a1626;
+  --map-sea-end: #04070f;
+  --map-land: #101f36;
+  --map-land-stroke: #1f3354;
+  --map-graticule: #0e1a2e;
+  --map-route: #22d3ee;
+  --map-city: #7da7c4;
+}
+
+[data-theme="light-day"] {
+  --map-sea-start: #c8ddf0;
+  --map-sea-end: #a0bcd8;
+  --map-land: #d4b896;
+  --map-land-stroke: #a8856a;
+  --map-graticule: #c0cfe0;
+  --map-route: #0369a1;
+  --map-city: #334155;
+}
+
+[data-theme="retro-chart"] {
+  --map-sea-start: #e8d5b0;
+  --map-sea-end: #c8b090;
+  --map-land: #d4b896;
+  --map-land-stroke: #8a6848;
+  --map-graticule: #b8956a;
+  --map-route: #7c3420;
+  --map-city: #5c3a1e;
+}
+
 html,
 body {
   height: 100%;

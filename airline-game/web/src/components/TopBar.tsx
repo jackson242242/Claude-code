@@ -6,6 +6,9 @@ import { audio } from '@/lib/audio';
 import { voice } from '@/lib/voice';
 import { useT, type Locale } from '@/i18n';
 import { useAnimatedNumber } from '@/hooks/useAnimatedNumber';
+import { MapSettingsPopover } from '@/components/MapSettingsPopover';
+import type { ProjectionId } from '@/lib/map';
+import type { MapThemeId } from '@/lib/mapTheme';
 import type { GameState } from '@/types';
 
 // Brand gauge color bands: <35 red / 35–65 neutral / >65 cyan
@@ -36,12 +39,24 @@ type TopBarProps = {
   state: GameState;
   busy: boolean;
   onEndTurn: () => void;
+  projectionId?: ProjectionId;
+  themeId?: MapThemeId;
+  onProjectionChange?: (p: ProjectionId) => void;
+  onThemeChange?: (t: MapThemeId) => void;
 };
 
 const LOCALE_LABELS: Record<Locale, string> = { zh: '中', en: 'EN', es: 'ES' };
 const LOCALES: Locale[] = ['zh', 'en', 'es'];
 
-export const TopBar = ({ state, busy, onEndTurn }: TopBarProps) => {
+export const TopBar = ({
+  state,
+  busy,
+  onEndTurn,
+  projectionId = 'naturalEarth',
+  themeId = 'dark-ops',
+  onProjectionChange = () => undefined,
+  onThemeChange = () => undefined,
+}: TopBarProps) => {
   const { t, locale, setLocale } = useT();
   const [audioPlaying, setAudioPlaying] = useState(() => audio.isPlaying());
   const [voiceOn, setVoiceOn] = useState(() => voice.isEnabled());
@@ -109,6 +124,14 @@ export const TopBar = ({ state, busy, onEndTurn }: TopBarProps) => {
           </button>
         ))}
       </div>
+
+      {/* V3.2: Map settings popover */}
+      <MapSettingsPopover
+        projectionId={projectionId}
+        themeId={themeId}
+        onProjectionChange={onProjectionChange}
+        onThemeChange={onThemeChange}
+      />
 
       {/* Audio toggle */}
       <button

@@ -342,6 +342,18 @@ const es: Dict = {
 
   // Voice badge line
   'voice.badge': '{name} dice: ¡Felicitaciones! ¡Nuevo logro "{badge}" desbloqueado!',
+
+  // ── V3.2 Map Settings ─────────────────────────────────────────────────────
+  'map.settings.aria': 'Configuración del mapa',
+  'map.settings.heading': 'Configuración del mapa',
+  'map.projection.label': 'Proyección',
+  'map.projection.naturalEarth': 'Tierra Natural',
+  'map.projection.globe': 'Globo',
+  'map.projection.mercator': 'Mercator',
+  'map.theme.label': 'Tema',
+  'map.theme.dark-ops': 'Ops Oscuro',
+  'map.theme.light-day': 'Día Claro',
+  'map.theme.retro-chart': 'Carta Retro',
 };
 
 export default es;

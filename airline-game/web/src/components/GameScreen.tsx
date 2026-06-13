@@ -18,6 +18,9 @@ import { useT } from '@/i18n';
 import { BADGES, TIER_COLORS } from '@/lib/badges';
 import { loadProfile, saveProfile, recordBadge, recordPositiveBrandDecision, hasPositiveBrandDecision } from '@/lib/profile';
 import { tStandalone, getLocale } from '@/i18n/standalone';
+import type { ProjectionId } from '@/lib/map';
+import type { MapThemeId } from '@/lib/mapTheme';
+import { PROJECTION_STORAGE_KEY, THEME_STORAGE_KEY } from '@/components/MapSettingsPopover';
 import type { Command, GameState } from '@/types';
 import type { BadgeId } from '@/lib/badges';
 
@@ -101,6 +104,24 @@ export const GameScreen = ({
   const [fleetPulse, setFleetPulse] = useState(false);
   const [showDecisionWarning, setShowDecisionWarning] = useState(false);
   const [badgeToast, setBadgeToast] = useState<BadgeToast | null>(null);
+
+  // V3.2: Projection + theme state — hydrated from localStorage
+  const [projectionId, setProjectionId] = useState<ProjectionId>('naturalEarth');
+  const [themeId, setThemeId] = useState<MapThemeId>('dark-ops');
+
+  // Hydrate from localStorage on mount
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const storedProj = window.localStorage.getItem(PROJECTION_STORAGE_KEY);
+    if (storedProj === 'naturalEarth' || storedProj === 'globe' || storedProj === 'mercator') {
+      setProjectionId(storedProj);
+    }
+    const storedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
+    if (storedTheme === 'dark-ops' || storedTheme === 'light-day' || storedTheme === 'retro-chart') {
+      setThemeId(storedTheme);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const prevTurnRef = useRef(state.turn);
   const badgeToastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -187,7 +208,15 @@ export const GameScreen = ({
 
   return (
     <div className="flex h-dvh flex-col">
-      <TopBar state={state} busy={busy} onEndTurn={handleEndTurnWithCheck} />
+      <TopBar
+        state={state}
+        busy={busy}
+        onEndTurn={handleEndTurnWithCheck}
+        projectionId={projectionId}
+        themeId={themeId}
+        onProjectionChange={setProjectionId}
+        onThemeChange={setThemeId}
+      />
       <EventTicker events={state.activeEvents} />
 
       <div className="flex min-h-0 flex-1 flex-col md:flex-row">
@@ -200,6 +229,8 @@ export const GameScreen = ({
             selectedCityId={selectedCityId}
             onSelectCity={handleSelectCity}
             fleetPulse={fleetPulse}
+            projectionId={projectionId}
+            themeId={themeId}
           />
           {/* M2.2: tapping a city surfaces its slot market snapshot */}
           {selectedCityId && (() => {

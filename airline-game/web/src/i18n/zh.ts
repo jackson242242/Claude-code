@@ -342,6 +342,18 @@ const zh = {
 
   // Voice badge line
   'voice.badge': '{name}说：恭喜！新成就「{badge}」已解锁！',
+
+  // ── V3.2 Map Settings ─────────────────────────────────────────────────────
+  'map.settings.aria': '地图设置',
+  'map.settings.heading': '地图设置',
+  'map.projection.label': '投影方式',
+  'map.projection.naturalEarth': '自然地球',
+  'map.projection.globe': '地球仪',
+  'map.projection.mercator': '墨卡托',
+  'map.theme.label': '地图主题',
+  'map.theme.dark-ops': '暗黑作战',
+  'map.theme.light-day': '明亮日间',
+  'map.theme.retro-chart': '复古航图',
 } as const;
 
 export type DictKeys = keyof typeof zh;
