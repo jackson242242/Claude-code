@@ -197,6 +197,35 @@ const es: Dict = {
   // ── Sparkline ─────────────────────────────────────────────────────────
   'sparkline.empty': 'Sin historial aún',
   'sparkline.aria': 'Gráfico de historial de efectivo',
+
+  // ── V3.5 Tutorial ────────────────────────────────────────────────────────
+  'tutorial.heading': 'Tutorial',
+  'tutorial.progress': '{done}/{total}',
+  'tutorial.collapse': 'Contraer',
+  'tutorial.expand': 'Expandir tutorial',
+  'tutorial.dismiss': 'Omitir tutorial',
+  'tutorial.dismiss.confirm': '¿Omitir el tutorial? El progreso no se guardará.',
+  'tutorial.dismiss.yes': 'Omitir',
+  'tutorial.dismiss.no': 'Continuar',
+  'tutorial.quest.done': 'Hecho',
+  'tutorial.quest.current': 'Tarea actual',
+  'tutorial.quest.0.title': 'Negociar un slot',
+  'tutorial.quest.0.hint': 'Toca una ciudad en el mapa y luego Negociar slot. Elige destinos de corto alcance con alta demanda.',
+  'tutorial.quest.1.title': 'Comprar o arrendar tu primer avión',
+  'tutorial.quest.1.hint': 'Ve al Mercado de aviones y elige un narrowbody (ej. A320neo). Arrienda primero si el efectivo es limitado.',
+  'tutorial.quest.2.title': 'Abrir tu primera ruta',
+  'tutorial.quest.2.hint': 'En la pestaña Rutas, elige un destino y haz clic en Abrir. Prioriza ciudades con demanda 7 o más.',
+  'tutorial.quest.3.title': 'Asignar un avión a la ruta',
+  'tutorial.quest.3.hint': 'En los detalles de la ruta, haz clic en Asignar. Las rutas sin avión no generan ingresos.',
+  'tutorial.quest.4.title': 'Completar el primer trimestre',
+  'tutorial.quest.4.hint': 'Haz clic en Próximo trimestre. Empieza con multiplicador de tarifa 1.0, no lo satures.',
+  'tutorial.quest.5.title': 'Alcanzar 70% de factor de carga',
+  'tutorial.quest.5.hint': 'Baja tarifas o reduce vuelos semanales para llenar asientos. Evita rutas hub de la IA.',
+  'tutorial.quest.6.title': 'Registrar un trimestre rentable',
+  'tutorial.quest.6.hint': 'Mantén costos bajos, vuela rutas de alta demanda y tarifas moderadas (0.9-1.1 es estable).',
+  'tutorial.quest.7.title': 'Abrir una segunda ruta',
+  'tutorial.quest.7.hint': 'Expande cuando tu flota esté lista. Elige pares de ciudades complementarios para diversificar.',
+  'tutorial.voice.done': '¡Misión completada!',
 };
 
 export default es;

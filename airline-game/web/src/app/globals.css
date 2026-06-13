@@ -149,3 +149,57 @@ input[type="range"] {
   background: var(--color-ops-600);
   border-radius: 3px;
 }
+
+/* V3.6 Tab highlight pulse dot */
+.tab-highlight-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #22d3ee;
+  border-radius: 50%;
+  margin-left: 4px;
+  animation: tab-dot-pulse 1s ease-in-out infinite;
+}
+
+@keyframes tab-dot-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+/* V3.6 Fleet pulse (end-turn glow) */
+@keyframes fleet-pulse-anim {
+  0% { filter: brightness(1); }
+  50% { filter: brightness(2.5) drop-shadow(0 0 4px #22d3ee); }
+  100% { filter: brightness(1); }
+}
+
+.fleet-pulse .route-arc {
+  animation: fleet-pulse-anim 0.6s ease-in-out;
+}
+
+/* V3.6 Route draw-in */
+.route-arc-enter {
+  animation: route-draw-in 1.2s ease-out forwards;
+}
+
+@keyframes route-draw-in {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* V3.6 Takeoff pulse */
+@keyframes takeoff-pulse {
+  0% { r: 0; opacity: 0.8; }
+  100% { r: 30; opacity: 0; }
+}
+
+.takeoff-pulse-circle {
+  animation: takeoff-pulse 1.2s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tab-highlight-dot { animation: none; }
+  .fleet-pulse .route-arc { animation: none; }
+  .route-arc-enter { animation: none; }
+  .takeoff-pulse-circle { animation: none; }
+}

@@ -196,6 +196,35 @@ const en: Dict = {
   // ── Sparkline ─────────────────────────────────────────────────────────
   'sparkline.empty': 'No history yet',
   'sparkline.aria': 'Cash history chart',
+
+  // ── V3.5 Tutorial ────────────────────────────────────────────────────────
+  'tutorial.heading': 'Tutorial',
+  'tutorial.progress': '{done}/{total}',
+  'tutorial.collapse': 'Collapse',
+  'tutorial.expand': 'Expand Tutorial',
+  'tutorial.dismiss': 'Skip Tutorial',
+  'tutorial.dismiss.confirm': 'Skip the tutorial? Progress will not be saved.',
+  'tutorial.dismiss.yes': 'Skip',
+  'tutorial.dismiss.no': 'Continue',
+  'tutorial.quest.done': 'Done',
+  'tutorial.quest.current': 'Current Task',
+  'tutorial.quest.0.title': 'Negotiate a Slot',
+  'tutorial.quest.0.hint': 'Tap a city on the map then Negotiate slot. Pick high-demand short-haul destinations.',
+  'tutorial.quest.1.title': 'Buy or Lease Your First Aircraft',
+  'tutorial.quest.1.hint': 'Go to Aircraft Market and pick a narrowbody (e.g. A320neo). Lease first if cash is tight.',
+  'tutorial.quest.2.title': 'Open Your First Route',
+  'tutorial.quest.2.hint': 'In the Routes tab, choose a destination and click Open. Prioritize cities with demand 7 or above.',
+  'tutorial.quest.3.title': 'Assign an Aircraft to the Route',
+  'tutorial.quest.3.hint': 'In the route details, click Assign. Unassigned routes generate zero revenue.',
+  'tutorial.quest.4.title': 'Complete Your First Quarter',
+  'tutorial.quest.4.hint': 'Click Next Quarter to settle. Start with a fare multiplier of 1.0 - do not max it out.',
+  'tutorial.quest.5.title': 'Reach 70% Load Factor',
+  'tutorial.quest.5.hint': 'Lower fares or reduce weekly flights to fill seats. Avoid heavy AI hub routes.',
+  'tutorial.quest.6.title': 'Record a Profitable Quarter',
+  'tutorial.quest.6.hint': 'Keep costs low, fly high-demand routes, and keep fares moderate (0.9-1.1 is stable).',
+  'tutorial.quest.7.title': 'Open a Second Route',
+  'tutorial.quest.7.hint': 'Expand once your fleet is ready. Choose complementary city pairs to spread risk.',
+  'tutorial.voice.done': 'Quest complete!',
 };
 
 export default en;

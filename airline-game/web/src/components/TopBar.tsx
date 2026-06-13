@@ -5,6 +5,7 @@ import { formatMoney } from '@/lib/format';
 import { audio } from '@/lib/audio';
 import { voice } from '@/lib/voice';
 import { useT, type Locale } from '@/i18n';
+import { useAnimatedNumber } from '@/hooks/useAnimatedNumber';
 import type { GameState } from '@/types';
 
 type TopBarProps = {
@@ -20,6 +21,7 @@ export const TopBar = ({ state, busy, onEndTurn }: TopBarProps) => {
   const { t, locale, setLocale } = useT();
   const [audioPlaying, setAudioPlaying] = useState(() => audio.isPlaying());
   const [voiceOn, setVoiceOn] = useState(() => voice.isEnabled());
+  const animatedCash = useAnimatedNumber(state.cash);
 
   const handleEndTurn = () => {
     // Respect browser autoplay policy: start audio on first user gesture.
@@ -54,7 +56,7 @@ export const TopBar = ({ state, busy, onEndTurn }: TopBarProps) => {
           }`}
           data-testid="cash"
         >
-          {formatMoney(state.cash)}
+          {formatMoney(animatedCash)}
         </p>
         <p className="text-[10px] uppercase tracking-widest text-slate-500">{t('topbar.cash')}</p>
       </div>

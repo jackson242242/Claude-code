@@ -110,6 +110,16 @@ export const voice = {
     speak(line, advisor, locale);
   },
 
+  speakQuestDone(questTitle: string): void {
+    if (typeof window === 'undefined') return;
+    if (!readPref()) return;
+    const advisor = ADVISORS[currentAdvisorIndex];
+    const locale = getLocale();
+    const prefix = tStandalone(locale, 'tutorial.voice.done');
+    const line = `${prefix} ${questTitle}`;
+    speak(line, advisor, locale);
+  },
+
   cancel(): void {
     if (typeof window === 'undefined') return;
     window.speechSynthesis.cancel();

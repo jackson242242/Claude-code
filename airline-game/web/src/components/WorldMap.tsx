@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { CITIES, CITY_BY_ID } from '@/lib/data';
 import {
   GRATICULE_PATH,
@@ -19,10 +19,14 @@ type WorldMapProps = {
   competitors: Competitor[];
   selectedCityId: string | null;
   onSelectCity: (cityId: string) => void;
+  newRouteIds?: string[];
+  fleetPulse?: boolean;
 };
 
 // Muted strokes for AI arcs — deliberately subdued next to the player's cyan.
 const COMPETITOR_COLORS = ['#64748b', '#7c6f9f', '#5b8a8a'];
+
+const MAX_PLANES = 12;
 
 export const WorldMap = ({
   hqCityId,
@@ -30,7 +34,17 @@ export const WorldMap = ({
   competitors,
   selectedCityId,
   onSelectCity,
+  newRouteIds = [],
+  fleetPulse = false,
 }: WorldMapProps) => {
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setReducedMotion(window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    }
+  }, []);
+
   const cityPoints = useMemo(
     () =>
       CITIES.map((city) => ({
@@ -65,17 +79,65 @@ export const WorldMap = ({
         const a = CITY_BY_ID.get(route.cityA);
         const b = CITY_BY_ID.get(route.cityB);
         if (!a || !b) return [];
-        return [{ id: route.id, d: greatCirclePath(a, b) }];
+        return [{ id: route.id, d: greatCirclePath(a, b), cityA: route.cityA }];
       }),
     [routes],
   );
+
+  // Build plane glyphs — cap at MAX_PLANES total
+  const planeGlyphs = useMemo(() => {
+    const glyphs: Array<{
+      key: string;
+      pathId: string;
+      dur: string;
+      keyPoints: string;
+    }> = [];
+
+    for (let i = 0; i < routeArcs.length && glyphs.length < MAX_PLANES; i++) {
+      const arc = routeArcs[i];
+      const dur = `${Math.min(8 + i * 2, 20)}s`;
+      // Forward plane
+      if (glyphs.length < MAX_PLANES) {
+        glyphs.push({
+          key: `plane-${arc.id}-fwd`,
+          pathId: `route-path-${arc.id}`,
+          dur,
+          keyPoints: '0;1',
+        });
+      }
+      // Reverse plane
+      if (glyphs.length < MAX_PLANES) {
+        glyphs.push({
+          key: `plane-${arc.id}-rev`,
+          pathId: `route-path-${arc.id}`,
+          dur,
+          keyPoints: '1;0',
+        });
+      }
+    }
+
+    return glyphs;
+  }, [routeArcs]);
+
+  // Takeoff pulse origins for new routes
+  const takeoffPulses = useMemo(() => {
+    return routeArcs
+      .filter((arc) => newRouteIds.includes(arc.id))
+      .map((arc) => {
+        const city = CITY_BY_ID.get(arc.cityA);
+        if (!city) return null;
+        const [x, y] = projectPoint(city.lon, city.lat);
+        return { key: `pulse-${arc.id}`, x, y };
+      })
+      .filter((p): p is { key: string; x: number; y: number } => p !== null);
+  }, [routeArcs, newRouteIds]);
 
   return (
     <svg
       viewBox={`0 0 ${MAP_WIDTH} ${MAP_HEIGHT}`}
       role="img"
       aria-label="世界航线图"
-      className="h-full w-full"
+      className={`h-full w-full${fleetPulse ? ' fleet-pulse' : ''}`}
       data-testid="world-map"
     >
       <defs>
@@ -105,9 +167,47 @@ export const WorldMap = ({
 
       {routeArcs.map((arc) => (
         <g key={arc.id}>
-          <path d={arc.d} className="route-arc-glow" />
+          {/* Named path for animateMotion mpath reference */}
+          <path id={`route-path-${arc.id}`} d={arc.d} className="route-arc-glow" />
           <path d={arc.d} className="route-arc" />
         </g>
+      ))}
+
+      {/* Plane glyphs — animated along route paths */}
+      {planeGlyphs.map((glyph) => (
+        <g key={glyph.key} data-testid="plane-glyph">
+          <path
+            d="M0,-3 L2,1 L0,0 L-2,1 Z"
+            fill="#22d3ee"
+            opacity={0.85}
+          />
+          {!reducedMotion && (
+            <animateMotion
+              dur={glyph.dur}
+              repeatCount="indefinite"
+              keyPoints={glyph.keyPoints}
+              keyTimes="0;1"
+              calcMode="linear"
+              rotate="auto"
+            >
+              <mpath href={`#${glyph.pathId}`} />
+            </animateMotion>
+          )}
+        </g>
+      ))}
+
+      {/* Takeoff pulse circles for new routes */}
+      {takeoffPulses.map((pulse) => (
+        <circle
+          key={pulse.key}
+          cx={pulse.x}
+          cy={pulse.y}
+          r={0}
+          fill="none"
+          stroke="#22d3ee"
+          strokeWidth={1.5}
+          className="takeoff-pulse-circle"
+        />
       ))}
 
       {cityPoints.map(({ city, point: [x, y] }) => {

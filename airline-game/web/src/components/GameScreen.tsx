@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { EventTicker } from '@/components/EventTicker';
 import { SlotBadge } from '@/components/SlotBadge';
 import { TopBar } from '@/components/TopBar';
+import { TutorialPanel } from '@/components/TutorialPanel';
 import { WorldMap } from '@/components/WorldMap';
 import { cityLabel, CITY_IMAGES } from '@/lib/data';
 import { voice } from '@/lib/voice';
@@ -84,6 +85,9 @@ export const GameScreen = ({
   const { t } = useT();
   const [tab, setTab] = useState<TabId>('routes');
   const [selectedCityId, setSelectedCityId] = useState<string | null>(null);
+  const [highlightTab, setHighlightTab] = useState<string | null>(null);
+  const [fleetPulse, setFleetPulse] = useState(false);
+  const prevTurnRef = useRef(state.turn);
 
   // Speak major events when they first appear.
   const spokenEventIds = useRef<Set<string>>(new Set());
@@ -95,6 +99,17 @@ export const GameScreen = ({
       }
     }
   }, [state.activeEvents]);
+
+  // Detect end-turn (turn increment) and trigger fleet pulse animation
+  useEffect(() => {
+    if (state.turn > prevTurnRef.current) {
+      setFleetPulse(true);
+      const timer = setTimeout(() => setFleetPulse(false), 700);
+      prevTurnRef.current = state.turn;
+      return () => clearTimeout(timer);
+    }
+    prevTurnRef.current = state.turn;
+  }, [state.turn]);
 
   const handleSelectCity = (cityId: string) => {
     setSelectedCityId(cityId);
@@ -115,6 +130,7 @@ export const GameScreen = ({
             competitors={state.competitors}
             selectedCityId={selectedCityId}
             onSelectCity={handleSelectCity}
+            fleetPulse={fleetPulse}
           />
           {/* M2.2: tapping a city surfaces its slot market snapshot */}
           {selectedCityId && (
@@ -153,6 +169,9 @@ export const GameScreen = ({
                 }`}
               >
                 {t(`game.tab.${id}` as import('@/i18n').DictKeys)}
+                {highlightTab === id && (
+                  <span className="tab-highlight-dot" data-testid={`tab-highlight-${id}`} />
+                )}
               </button>
             ))}
           </nav>
@@ -175,6 +194,9 @@ export const GameScreen = ({
           </div>
         </div>
       </div>
+
+      {/* Tutorial panel — pinned bottom-left */}
+      <TutorialPanel state={state} onHighlightTab={setHighlightTab} />
 
       {error && (
         <div

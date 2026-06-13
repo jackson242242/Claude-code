@@ -197,6 +197,35 @@ const zh = {
   // ── Sparkline ─────────────────────────────────────────────────────────
   'sparkline.empty': '暂无历史数据',
   'sparkline.aria': '现金历史曲线',
+
+  // ── V3.5 Tutorial (新手任务链) ────────────────────────────────────────
+  'tutorial.heading': '新手引导',
+  'tutorial.progress': '{done}/{total}',
+  'tutorial.collapse': '收起',
+  'tutorial.expand': '展开引导',
+  'tutorial.dismiss': '跳过引导',
+  'tutorial.dismiss.confirm': '确认跳过新手引导？进度将不会保存。',
+  'tutorial.dismiss.yes': '确认跳过',
+  'tutorial.dismiss.no': '继续引导',
+  'tutorial.quest.done': '已完成',
+  'tutorial.quest.current': '当前任务',
+  'tutorial.quest.0.title': '谈判获取时刻',
+  'tutorial.quest.0.hint': '点击地图城市→「谈判获取 slot」，建议选需求高的短途目的地。',
+  'tutorial.quest.1.title': '购买或租赁第一架飞机',
+  'tutorial.quest.1.hint': '前往「机型市场」选一架窄体机（如 A320neo），资金紧时优先租赁。',
+  'tutorial.quest.2.title': '开通第一条航线',
+  'tutorial.quest.2.hint': '在「航线」tab 选目的地后点「开通」，优先选需求≥7 的短途城市。',
+  'tutorial.quest.3.title': '为航线指派飞机',
+  'tutorial.quest.3.hint': '在航线详情中点「指派」，没有指派飞机的航线不产生收入。',
+  'tutorial.quest.4.title': '完成首个季度结算',
+  'tutorial.quest.4.hint': '点「下一季度」结算第一季。建议票价乘数从 1.0 开始，别贸然拉高。',
+  'tutorial.quest.5.title': '客座率达到 70%',
+  'tutorial.quest.5.hint': '调低票价或减少班次可提升客座率，避开竞争激烈的 AI 主场航线。',
+  'tutorial.quest.6.title': '实现首季盈利',
+  'tutorial.quest.6.hint': '盈利关键：控制成本、高需求航线、票价适中（0.9–1.1 最稳）。',
+  'tutorial.quest.7.title': '开通第二条航线',
+  'tutorial.quest.7.hint': '扩张前确保机队充足，可考虑互补型城市对，分散竞争风险。',
+  'tutorial.voice.done': '任务完成！',
 } as const;
 
 export type DictKeys = keyof typeof zh;
