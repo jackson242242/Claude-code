@@ -1,13 +1,22 @@
 # Thomas's Money Adventure 💰
-### A 4-week interactive investing course for a 9-year-old
+### An 8-week interactive investing course for a 9-year-old
 
 **Who it's for:** Thomas, age 9
 **Goal:** By the end, Thomas can explain in his own words what investing is, what a
 stock is, why compound interest is "magic," and why you don't put all your eggs in
-one basket.
-**Format:** 6 short missions (15–25 minutes each) in the interactive app
-(`index.html` — just open it in any browser, no internet needed), plus one
-hands-on offline activity per week. Earn a ⭐ for each completed mission.
+one basket — and (in Part 2) get a kid-friendly first look at how the grown-up
+money world actually works: reading a company's numbers, investment banks, private
+equity and its fund structure, trading, asset management, and family offices.
+**Format:** **13 short missions** (15–25 minutes each) in the interactive app
+(`index.html` — just open it in any browser, no internet needed), split into two
+chapters, plus one hands-on offline activity per week. Earn a ⭐ for each mission.
+
+> **A note on Part 2 (the advanced topics).** Private equity, investment banking,
+> and family offices are normally adult subjects. The missions teach the *real
+> ideas* using kid analogies (a company is a "report card," a buyout is "flip the
+> factory," LPs/GP are "money-givers and money-bosses"). The goal isn't to make
+> Thomas a banker — it's to demystify the words so the whole money world feels
+> friendly and learnable. Numbers are simplified on purpose.
 
 ---
 
@@ -101,6 +110,126 @@ Once a week, look up the share price together and write it on a chart on the
 fridge. No real money needed — watching real prices wiggle for a month
 teaches more than any lecture.
 
+That's the end of **Chapter 1 (the Basics Quiz)** — which unlocks
+**Chapter 2: The Money World** in the app. 🎉
+
+---
+
+# Part 2 — The Money World 🏆
+*Weeks 5–8. The grown-up money jobs, explained for a 9-year-old.*
+
+## Week 5 — What makes a company "good"? 📊
+
+**Mission 7 (app): "A Company's Report Card"**
+Thomas runs a Toy Store with sliders for toys sold, price, and cost. He watches
+the report card fill in: **revenue** (money in), **costs** (money out), **profit**
+(what's left), **profit margin** (cents kept per $1 of sales), and a simple
+**company value** (about 10× a year of profit — a kid version of the
+price-to-earnings, or "P/E," ratio). Challenge: make the store worth $500,000.
+Key idea: *companies are judged by their numbers, and the goal is to sell more
+while keeping costs low.*
+
+**Offline activity: Read a real "report card."**
+Pull up one company Thomas likes (Nintendo, Disney…) and find two numbers
+together: revenue and profit. Ask: "Did they keep a lot or a little out of every
+dollar?" That's profit margin in real life.
+
+**Ask him:** "What two things can a company do to make more profit?"
+(Sell more · spend less.)
+
+---
+
+## Week 6 — Who helps companies, and who buys them? 🏦🔧
+
+**Mission 8 (app): "The Investment Bank"**
+Thomas is the banker for Bouncy Castle Co, which needs $1,000,000. He learns the
+three big tools an investment bank uses: an **IPO** (sell shares to the public for
+the first time), a **bond/loan** (borrow and repay with interest), and a **merger**
+(join with another company) — then recommends the right one. Key idea:
+*investment banks help companies raise money and combine, and earn a fee for it.*
+
+**Mission 9 (app): "Private Equity: Buy → Fix → Sell"**
+Thomas buys the Sleepy Toy Factory using $40 of his own money + a $60 loan
+(**leverage**), spends a budget on upgrades, then sells it 3 years later for a
+profit. He sees how borrowing magnified the return on the money he actually
+risked. Key idea: *private equity firms buy whole companies, improve them, and
+sell them for more — and leverage makes the wins (and losses) bigger.*
+
+**Offline activity: "Buy, fix, sell" in real life.**
+Find something around the house that could be "improved and sold for more" — a
+bike that needs cleaning, LEGO sets that are worth more built and complete. That's
+the whole private-equity idea in one afternoon.
+
+**Ask him:** "If you borrow money to buy something and it goes UP, that's great.
+What happens if it goes DOWN?" (The loan still has to be repaid — leverage cuts
+both ways.)
+
+---
+
+## Week 7 — How the big money is organized 🏗️⚡
+
+**Mission 10 (app): "How a Private Equity Fund is Built"**
+A flow diagram + quiz. **LPs** (Limited Partners — pension funds, universities,
+rich families) put the money IN; the **GP** (General Partner) makes the decisions;
+profits flow back to the LPs while the GP keeps a slice called **carry** (~20%)
+plus a yearly fee (~2%). Thomas presses "run the fund" and watches $100M turn into
+$200M and split up. Key idea: *big money is pooled into a fund — some people supply
+it, others manage it, and they share the profits by clear rules.*
+
+**Mission 11 (app): "Trading: Buy Low, Sell High… FAST!"**
+A real-time reaction game: ZAP stock's price changes every second for 15 ticks
+and Thomas tries to buy low and sell high. Key idea: *traders move fast to catch
+tiny price wiggles — it's exciting, hard, and risky, which is why most people
+invest patiently instead.*
+
+**Offline activity: The 60-second trader.**
+Play a quick game where you call out a "price" every few seconds and Thomas
+shouts BUY or SELL. After a minute, tally his pretend profit. He'll feel how
+stressful and unpredictable fast trading is.
+
+**Ask him:** "What's the difference between an investor and a trader?"
+(Investor = patient, years. Trader = fast, seconds/minutes.)
+
+---
+
+## Week 8 — Looking after other people's money 🧑‍💼👑
+
+**Mission 12 (app): "Asset Management"**
+A client, Mr. Penny, gives Thomas $1,000 and a goal ("grow it, but don't scare
+me"). Thomas builds a **mix** (portfolio) of stocks, bonds, and cash with
+auto-balancing sliders, then runs 10 years to see the result. Key idea: *asset
+managers invest money for lots of people, match the mix to what each client wants,
+and charge a small fee — that's what mutual funds and ETFs are.*
+
+**Mission 13 (app): "The Family Office"**
+The Goldberg family has $10,000,000 and Thomas runs their private money team. He
+splits the fortune across five buckets — **Grow, Protect, Give, Enjoy, Future** —
+and presents the plan. Key idea: *a family office manages EVERYTHING for one
+wealthy family — investing, saving, giving, and planning for kids and grandkids
+generations ahead.*
+
+**Offline activity: The family-office plan.**
+Give Thomas a pretend $100 (or his real savings) and the same five buckets. Let
+him decide the split and *explain why*. Talk about why a family might give some
+away or save some for people who aren't even born yet.
+
+**Ask him:** "Why would a super-rich family hire a whole team just for their
+money?" (So someone can look after all of it — and think decades ahead.)
+
+When he collects all 13 stars, the app crowns him a **Money Master**. 🏆
+
+---
+
+## The Money World in one breath (for you, the grown-up)
+
+If Thomas asks "how do these all fit together?", here's the one-paragraph map:
+A **company** makes products and is judged by its **financials**. When it needs
+to grow, an **investment bank** helps it raise money (IPO/bonds) or merge.
+**Private equity** firms buy whole companies, fix them, and sell them, using
+money pooled from **LPs** into a **fund** run by a **GP**. **Traders** make fast
+buy/sell bets on prices; **asset managers** invest patiently on behalf of many
+people; and a **family office** does all of the above for a single wealthy family.
+
 ---
 
 ## The 5 big ideas (cheat sheet)
@@ -111,6 +240,22 @@ teaches more than any lecture.
    too. Time is the secret ingredient — starting young is a superpower.
 4. **Risk** = investments go down sometimes. Spread your eggs across baskets.
 5. **Patience wins** = prices wiggle daily; long-term thinking beats panic.
+
+## Part 2 words (kid-friendly glossary)
+
+- **Revenue / profit / margin** = money in / money kept / how much you keep per $1.
+- **Investment bank** = a company's coach and matchmaker; helps it raise money
+  (IPO, bonds) or merge, for a fee.
+- **IPO** = the first time a company sells its slices (shares) to the public.
+- **Private equity (PE)** = firms that buy a whole company, fix it, and sell it.
+- **Leverage** = borrowing money to buy something; it makes wins *and* losses bigger.
+- **Fund** = a big shared pot of money used to invest.
+- **LP / GP** = the money-givers (Limited Partners) / the money-bosses who decide
+  (General Partner).
+- **Carry** = the slice of profit the GP keeps (often ~20%).
+- **Trading** = buying and selling fast to catch price wiggles.
+- **Asset management** = investing money on behalf of many people (mutual funds, ETFs).
+- **Family office** = a private team that manages everything for one wealthy family.
 
 ## Tips for the grown-up
 

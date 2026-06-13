@@ -13,6 +13,7 @@
     --green: #22a35d;
     --red: #e25555;
     --gold: #f5a623;
+    --purple: #6c4fe0;
     --radius: 18px;
   }
   * { box-sizing: border-box; }
@@ -31,7 +32,7 @@
     padding: 22px 12px 16px;
   }
   header h1 { margin: 0; font-size: 1.8em; }
-  #starbar { font-size: 1.5em; letter-spacing: 6px; margin-top: 6px; }
+  #starbar { font-size: 1.3em; letter-spacing: 3px; margin-top: 6px; }
   nav {
     display: flex;
     flex-wrap: wrap;
@@ -43,19 +44,26 @@
     top: 0;
     z-index: 5;
   }
+  nav .chapter {
+    flex-basis: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: var(--purple);
+    margin: 4px 0 0;
+  }
   nav button {
     font-family: inherit;
-    font-size: 0.95em;
+    font-size: 0.9em;
     border: 2px solid var(--blue);
     background: #fff;
     color: var(--blue);
     border-radius: 999px;
-    padding: 8px 14px;
+    padding: 7px 12px;
     cursor: pointer;
   }
   nav button.active { background: var(--blue); color: #fff; }
   nav button.done::after { content: " ⭐"; }
-  main { max-width: 760px; margin: 0 auto; padding: 16px; }
+  main { max-width: 780px; margin: 0 auto; padding: 16px; }
   section.mission { display: none; }
   section.mission.show { display: block; animation: pop .25s ease; }
   @keyframes pop { from { transform: scale(.97); opacity: 0; } to { transform: scale(1); opacity: 1; } }
@@ -79,6 +87,7 @@
   .bigbtn { background: var(--green); color: #fff; }
   .bigbtn.blue { background: var(--blue); }
   .bigbtn.red { background: var(--red); }
+  .bigbtn.purple { background: var(--purple); }
   .bigbtn:disabled { background: #b9c4d4; cursor: not-allowed; }
   .choice {
     display: block;
@@ -102,6 +111,7 @@
     font-size: .8em;
     font-weight: bold;
   }
+  .pill.adv { background: var(--purple); }
   input[type=range] { width: 100%; }
   .slider-label { display: flex; justify-content: space-between; font-weight: bold; margin-top: 10px; }
   .bars { display: flex; align-items: flex-end; gap: 30px; height: 240px; margin: 16px 0 4px; justify-content: center; }
@@ -121,20 +131,34 @@
   }
   .bar.piggy { background: #9aa7b8; }
   .bar.snow { background: linear-gradient(180deg, #4f9cf7, #2f6fed); }
-  /* pizza */
   #pizza { display: grid; grid-template-columns: repeat(4, 64px); gap: 8px; justify-content: center; margin: 12px 0; }
   .slice { font-size: 40px; cursor: pointer; background: #fff7e8; border: 2px dashed #e8c98a; border-radius: 12px; text-align: center; padding: 6px 0; user-select: none; }
   .slice.mine { background: #ffe2a8; border-style: solid; }
-  /* lemonade chart */
-  #lemChart { display: flex; align-items: flex-end; gap: 3px; height: 120px; background: #fffbe9; border-radius: 10px; padding: 6px; }
-  #lemChart div { flex: 1; background: var(--gold); border-radius: 3px 3px 0 0; min-height: 4px; }
+  #lemChart, #tradeChart { display: flex; align-items: flex-end; gap: 3px; height: 120px; background: #fffbe9; border-radius: 10px; padding: 6px; }
+  #lemChart div, #tradeChart div { flex: 1; background: var(--gold); border-radius: 3px 3px 0 0; min-height: 4px; }
   .stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 10px 0; }
   .stat { background: #eef3ff; border-radius: 12px; padding: 8px 14px; font-weight: bold; }
+  .stat.big { font-size: 1.15em; background: #d8f5e3; }
   .news { background: #fff3cd; border-left: 6px solid var(--gold); padding: 10px 14px; border-radius: 8px; font-weight: bold; min-height: 1.4em; }
-  /* baskets */
   .baskets { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
   .basket { background: #f6f0ff; border: 2px solid #d8c8f5; border-radius: 14px; padding: 12px; width: 140px; text-align: center; }
   .hidden { display: none; }
+  /* report card ledger */
+  .ledger { font-size: 1.1em; }
+  .ledger div { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px dashed #d8e0ee; }
+  .ledger .total { font-weight: bold; border-bottom: 3px solid var(--ink); }
+  /* upgrade chips */
+  .upgrade { display: inline-block; background: #eef3ff; border: 2px solid #cdd9f5; border-radius: 12px; padding: 10px 14px; margin: 5px; cursor: pointer; }
+  .upgrade.bought { background: #d8f5e3; border-color: var(--green); cursor: default; }
+  /* flow diagram */
+  .flow { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .flowbox { background: #eef3ff; border: 2px solid var(--blue); border-radius: 12px; padding: 10px 16px; text-align: center; font-weight: bold; max-width: 460px; }
+  .flowbox.gp { border-color: var(--purple); background: #f1ecff; }
+  .flowbox.lp { border-color: var(--green); background: #e7f7ee; }
+  .arrow { font-size: 1.4em; color: #7a8aa0; }
+  .mix-row { display: flex; align-items: center; gap: 10px; margin: 8px 0; }
+  .mix-row .lbl { width: 160px; font-weight: bold; }
+  .mix-row .amt { width: 90px; text-align: right; font-weight: bold; }
   footer { text-align: center; color: #7a8aa0; padding: 24px; font-size: .85em; }
 </style>
 </head>
@@ -142,7 +166,7 @@
 
 <header>
   <h1>💰 Thomas's Money Adventure 💰</h1>
-  <div>Complete all 6 missions to become a <strong>Money Master</strong>!</div>
+  <div>13 missions from piggy banks all the way to billion-dollar funds!</div>
   <div id="starbar"></div>
 </header>
 
@@ -298,15 +322,241 @@
 <section class="mission" id="m5x">
   <div class="card">
     <span class="pill">MISSION 6</span>
-    <h2>🏆 The Big Money Quiz</h2>
-    <p>Answer all 8 questions to win your final star and the
-       <strong>Money Master Trophy</strong>!</p>
+    <h2>🏆 The Basics Quiz</h2>
+    <p>Answer all 8 questions to win your star and unlock
+       <strong>Chapter 2: The Money World</strong>!</p>
     <div id="quizbox"></div>
     <p class="feedback" id="quizfb"></p>
     <div class="card hidden" id="m6done" style="background:#d8f5e3">
       <div id="quizResult"></div>
-      <button class="bigbtn" id="quizStarBtn" onclick="finishMission(5)">⭐ Collect your final star!</button>
+      <button class="bigbtn" id="quizStarBtn" onclick="finishMission(5)">⭐ Collect your star!</button>
       <button class="bigbtn blue" onclick="quizStart()">🔄 Try the quiz again</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MISSION 7 — FINANCIALS ============ -->
+<section class="mission" id="m6">
+  <div class="card">
+    <span class="pill adv">MISSION 7</span>
+    <h2>📊 A Company's Report Card (Financials & Metrics)</h2>
+    <p>Grown-ups decide if a company is good by reading its <strong>report card</strong>
+       — its numbers. You run the <strong>Toy Store</strong>! Move the sliders and
+       watch the report card fill in.</p>
+    <div class="slider-label"><span>🧸 Toys sold each day</span><span id="v_units">50</span></div>
+    <input type="range" id="s_units" min="0" max="200" step="5" value="50" oninput="reportCard()">
+    <div class="slider-label"><span>🏷️ Price per toy</span><span id="v_pprice">$4</span></div>
+    <input type="range" id="s_pprice" min="1" max="5" step="1" value="4" oninput="reportCard()">
+    <div class="slider-label"><span>📦 What each toy costs YOU to buy</span><span id="v_pcost">$2</span></div>
+    <input type="range" id="s_pcost" min="0" max="3" step="1" value="2" oninput="reportCard()">
+    <div class="card ledger" style="background:#fbfcff">
+      <div><span>💵 REVENUE <small>(all the money coming in)</small></span><span id="r_rev">$200</span></div>
+      <div><span>💸 COSTS <small>(toys + $10/day rent)</small></span><span id="r_cost">−$110</span></div>
+      <div class="total"><span>✅ PROFIT <small>(what's left to keep)</small></span><span id="r_profit">$90</span></div>
+      <div><span>📐 PROFIT MARGIN <small>(profit out of every $1 of sales)</small></span><span id="r_margin">45%</span></div>
+      <div><span>🏰 COMPANY VALUE <small>(P/E ≈ 10 × a year of profit)</small></span><span id="r_value">$324,000</span></div>
+    </div>
+    <p class="feedback" id="m7fb"></p>
+    <div class="card" style="background:#f1ecff">
+      <strong>🎯 Challenge:</strong> Make your Toy Store worth at least
+      <strong>$500,000</strong>! Hint: sell more, charge a bit more, and keep
+      your costs LOW. (That's exactly what real CEOs try to do.)
+    </div>
+    <button class="bigbtn purple" id="m7btn" disabled onclick="finishMission(6)">⭐ Collect your star! (reach $500,000 first)</button>
+  </div>
+</section>
+
+<!-- ============ MISSION 8 — INVESTMENT BANK ============ -->
+<section class="mission" id="m7">
+  <div class="card">
+    <span class="pill adv">MISSION 8</span>
+    <h2>🏦 The Investment Bank (Helping Companies Get Big)</h2>
+    <p>An <strong>investment bank</strong> is like a company's coach and matchmaker.
+       When a company needs LOTS of money to grow, the bank helps it get that money —
+       and earns a <strong>fee</strong> for the help.</p>
+    <p><strong>Bouncy Castle Co</strong> 🏰 wants <strong>$1,000,000</strong> to build
+       a giant new factory. As their banker, click each tool to learn how it works:</p>
+    <button class="choice" onclick="bankLearn(this,'ipo')">📣 <strong>IPO</strong> — sell slices (shares) to the public for the first time</button>
+    <button class="choice" onclick="bankLearn(this,'bond')">💳 <strong>Bond / Loan</strong> — borrow the money and pay it back later</button>
+    <button class="choice" onclick="bankLearn(this,'merge')">🤝 <strong>Merger</strong> — join up with another big company</button>
+    <div class="news" id="bankInfo">👆 Tap a tool to see what it does.</div>
+    <div id="bankQ" class="hidden">
+      <div class="card" style="background:#f1ecff">
+        <strong>🧠 Banker decision:</strong> The founders say:
+        <em>"We want to grow FAST and we hate owing money."</em> Which tool do you recommend?
+        <button class="choice" onclick="bankAnswer(this,'ipo')">📣 Do an IPO — sell shares to the public</button>
+        <button class="choice" onclick="bankAnswer(this,'bond')">💳 Take a big loan</button>
+        <button class="choice" onclick="bankAnswer(this,'merge')">🤝 Merge with a rival</button>
+        <p class="feedback" id="bankFb"></p>
+      </div>
+    </div>
+    <div class="card hidden" id="m8done" style="background:#d8f5e3">
+      <strong>🎉 Nice work, banker!</strong> Investment banks help companies
+      <em>raise money</em> (IPOs &amp; bonds) and <em>combine</em> (mergers), then
+      take a fee. They're the grown-ups in suits who make the BIG deals happen.
+      <br><br><button class="bigbtn purple" onclick="finishMission(7)">⭐ Collect your star!</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MISSION 9 — PRIVATE EQUITY ============ -->
+<section class="mission" id="m8">
+  <div class="card">
+    <span class="pill adv">MISSION 9</span>
+    <h2>🔧 Private Equity: Buy → Fix → Sell</h2>
+    <p><strong>Private equity (PE)</strong> firms buy a WHOLE company that's a bit
+       sleepy, fix it up to make it better, and sell it later for more money —
+       like flipping an old house. 🏚️➡️🏡</p>
+    <p>You found the <strong>Sleepy Toy Factory</strong> worth <strong>$100</strong>.
+       Clever trick: you pay with <strong>$40 of your own money</strong> + a
+       <strong>$60 loan</strong>. (Borrowing to buy is called <strong>leverage</strong>.)</p>
+    <p>You have <strong>$50</strong> to spend on upgrades. Pick wisely — each one
+       makes the factory worth more!</p>
+    <div id="peUpgrades"></div>
+    <div class="stats">
+      <div class="stat">🛠️ Upgrade budget left: $<span id="peBudget">50</span></div>
+      <div class="stat">🏭 Factory value now: $<span id="peValue">100</span></div>
+    </div>
+    <button class="bigbtn purple" id="peSellBtn" onclick="peSell()">⏩ 3 years later… SELL the factory!</button>
+    <div class="card hidden" id="peResult" style="background:#fff3cd"></div>
+    <div class="card hidden" id="m9done" style="background:#d8f5e3">
+      <strong>🎉 You did a buyout!</strong> PE firms buy, improve, and sell whole
+      companies. Because they used a <em>loan</em> (leverage), a small win on the
+      factory turned into a BIG win on the $40 they actually risked. (But careful —
+      leverage makes losses bigger too!)
+      <br><br><button class="bigbtn purple" onclick="finishMission(8)">⭐ Collect your star!</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MISSION 10 — PE FUND STRUCTURE ============ -->
+<section class="mission" id="m9">
+  <div class="card">
+    <span class="pill adv">MISSION 10</span>
+    <h2>🏗️ How a Private Equity Fund is Built</h2>
+    <p>One person can't buy a whole factory alone — so PE firms build a
+       <strong>fund</strong> (a giant shared pot of money). Two kinds of people make it work:</p>
+    <div class="flow">
+      <div class="flowbox lp">💰 <strong>LPs</strong> = Limited Partners<br><small>The money-givers: pension funds, universities, rich families. They put the cash IN but don't run things.</small></div>
+      <div class="arrow">⬇️ give money to</div>
+      <div class="flowbox">🏦 <strong>THE FUND</strong><br><small>One big pot — say $100,000,000</small></div>
+      <div class="arrow">⬇️ is run by</div>
+      <div class="flowbox gp">🧑‍💼 <strong>GP</strong> = General Partner<br><small>The money-bosses. They DECIDE which companies to buy, fix &amp; sell. They charge a 2% yearly fee + keep 20% of the profits (called <strong>carry</strong>).</small></div>
+    </div>
+    <p style="text-align:center"><button class="bigbtn purple" onclick="peFundRun()">▶️ Run the fund for a few years!</button></p>
+    <div class="news" id="peFundNews">👆 Press play to watch the money flow and split up.</div>
+    <div id="peFundQuiz" class="hidden">
+      <div class="card" style="background:#f1ecff">
+        <strong>🧠 Quick check (answer all 3 to win your star):</strong>
+        <div id="peFundQbox"></div>
+        <p class="feedback" id="peFundFb"></p>
+      </div>
+    </div>
+    <div class="card hidden" id="m10done" style="background:#d8f5e3">
+      <strong>🎉 You understand fund structure!</strong> LPs bring the money,
+      the GP makes the decisions, and profits flow back to the LPs — with the GP
+      keeping a slice called <em>carry</em>. That's how almost every PE fund,
+      and even hedge funds, are built.
+      <br><br><button class="bigbtn purple" onclick="finishMission(9)">⭐ Collect your star!</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MISSION 11 — TRADING ============ -->
+<section class="mission" id="m10">
+  <div class="card">
+    <span class="pill adv">MISSION 11</span>
+    <h2>⚡ Trading: Buy Low, Sell High… FAST!</h2>
+    <p>A <strong>trader</strong> doesn't wait years like an investor. They buy and
+       sell quickly to catch tiny price wiggles — sometimes in seconds! It's
+       exciting but risky. Let's feel it.</p>
+    <p>The price of <strong>ZAP stock</strong> ⚡ changes every second.
+       <strong>Buy when it's LOW, sell when it's HIGH.</strong> You start with $100.
+       You get <strong>15 ticks</strong> — make money!</p>
+    <div class="stats">
+      <div class="stat">⏱️ Tick <span id="trTick">0</span>/15</div>
+      <div class="stat">💵 Cash: $<span id="trCash">100</span></div>
+      <div class="stat">🧾 Shares: <span id="trShares">0</span></div>
+      <div class="stat">⚡ Price: $<span id="trPrice">20</span></div>
+      <div class="stat big">💰 Total: $<span id="trTotal">100</span></div>
+    </div>
+    <div id="tradeChart"></div>
+    <p>
+      <button class="bigbtn" id="trStart" onclick="tradeStart()">▶️ Start trading!</button>
+      <button class="bigbtn blue" id="trBuy" onclick="tradeAct(1)" disabled>🟢 BUY</button>
+      <button class="bigbtn red" id="trSell" onclick="tradeAct(-1)" disabled>🔴 SELL</button>
+    </p>
+    <p class="feedback" id="trFb"></p>
+    <div class="card hidden" id="m11done" style="background:#d8f5e3">
+      <div id="trResult"></div>
+      <em>Trading is fast and stressful, and even pros lose on lots of trades.
+      That's why most people INVEST patiently instead of trading. Both are real
+      jobs — just very different speeds!</em>
+      <br><br><button class="bigbtn purple" onclick="finishMission(10)">⭐ Collect your star!</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MISSION 12 — ASSET MANAGEMENT ============ -->
+<section class="mission" id="m11">
+  <div class="card">
+    <span class="pill adv">MISSION 12</span>
+    <h2>🧑‍💼 Asset Management (Looking After Other People's Money)</h2>
+    <p>An <strong>asset manager</strong> is trusted to invest money for LOTS of
+       people at once. They build a <strong>mix</strong> (a "portfolio") and charge
+       a small fee. Different people want different mixes!</p>
+    <p>Your client, <strong>Mr. Penny</strong>, hands you <strong>$1,000</strong> and says:
+       <em>"Grow my money nicely, but please don't scare me with huge drops."</em>
+       Build his mix (the sliders auto-balance to 100%):</p>
+    <div class="mix-row"><span class="lbl">📈 Stocks <small>(big growth, big swings)</small></span>
+      <input type="range" id="am_stock" min="0" max="100" value="50" oninput="amMix()"><span class="amt" id="am_stock_v">50%</span></div>
+    <div class="mix-row"><span class="lbl">🏛️ Bonds <small>(steady, smaller growth)</small></span>
+      <input type="range" id="am_bond" min="0" max="100" value="30" oninput="amMix()"><span class="amt" id="am_bond_v">30%</span></div>
+    <div class="mix-row"><span class="lbl">💵 Cash <small>(super safe, barely grows)</small></span>
+      <input type="range" id="am_cash" min="0" max="100" value="20" oninput="amMix()"><span class="amt" id="am_cash_v">20%</span></div>
+    <p class="feedback" id="amRisk"></p>
+    <button class="bigbtn purple" onclick="amRun()">⏩ Invest Mr. Penny's money for 10 years!</button>
+    <div class="card hidden" id="amResult" style="background:#fff3cd"></div>
+    <div class="card hidden" id="m12done" style="background:#d8f5e3">
+      <strong>🎉 You're an asset manager!</strong> You matched the MIX to what the
+      client wanted. More stocks = more growth but scarier drops; more bonds &amp;
+      cash = calmer but slower. Real asset managers do exactly this for millions
+      of people (that's what mutual funds and ETFs are!).
+      <br><br><button class="bigbtn purple" onclick="finishMission(11)">⭐ Collect your star!</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MISSION 13 — FAMILY OFFICE ============ -->
+<section class="mission" id="m12">
+  <div class="card">
+    <span class="pill adv">MISSION 13</span>
+    <h2>👑 The Family Office (One Rich Family's Money Team)</h2>
+    <p>When ONE family is SUPER rich, they hire their own private team called a
+       <strong>family office</strong>. It looks after <em>everything</em> —
+       investing, saving, giving to charity, and planning for kids and
+       grandkids far in the future.</p>
+    <p>The <strong>Goldberg family</strong> 👑 has <strong>$10,000,000</strong>.
+       You run their family office. Split the fortune into all 5 buckets
+       (give each one at least a little — that's the job!):</p>
+    <div class="mix-row"><span class="lbl">🌱 Grow <small>(investments)</small></span>
+      <input type="range" id="fo_grow" min="0" max="100" value="40" oninput="foMix()"><span class="amt" id="fo_grow_v"></span></div>
+    <div class="mix-row"><span class="lbl">🛡️ Protect <small>(safe savings)</small></span>
+      <input type="range" id="fo_protect" min="0" max="100" value="20" oninput="foMix()"><span class="amt" id="fo_protect_v"></span></div>
+    <div class="mix-row"><span class="lbl">❤️ Give <small>(charity)</small></span>
+      <input type="range" id="fo_give" min="0" max="100" value="15" oninput="foMix()"><span class="amt" id="fo_give_v"></span></div>
+    <div class="mix-row"><span class="lbl">🏖️ Enjoy <small>(home, travel)</small></span>
+      <input type="range" id="fo_enjoy" min="0" max="100" value="10" oninput="foMix()"><span class="amt" id="fo_enjoy_v"></span></div>
+    <div class="mix-row"><span class="lbl">👶 Future <small>(kids &amp; grandkids)</small></span>
+      <input type="range" id="fo_future" min="0" max="100" value="15" oninput="foMix()"><span class="amt" id="fo_future_v"></span></div>
+    <button class="bigbtn purple" onclick="foPresent()">📋 Present the plan to the family!</button>
+    <p class="feedback" id="foFb"></p>
+    <div class="card hidden" id="m13done" style="background:#d8f5e3">
+      <strong>🎉 You ran a family office!</strong> A family office is like a
+      private bank + investor + planner for ONE family. They think about money for
+      <em>generations</em> — not just this year. It's the fanciest level of the
+      money world… and you just did it! 👑
+      <br><br><button class="bigbtn purple" onclick="finishMission(12)">⭐ Collect your FINAL star!</button>
     </div>
   </div>
 </section>
@@ -319,39 +569,69 @@
 "use strict";
 
 /* ---------- progress & navigation ---------- */
-const MISSIONS = ["🌱 Invest?", "🍕 Stocks", "❄️ Snowball", "🧺 Baskets", "🍋 Lemonade", "🏆 Quiz"];
-const sections = ["m0", "m1", "m2x", "m3x", "m4x", "m5x"];
-let stars = JSON.parse(localStorage.getItem("thomasStars") || "[false,false,false,false,false,false]");
+const MISSIONS = [
+  { t: "🌱 Invest?",     id: "m0"  },
+  { t: "🍕 Stocks",      id: "m1"  },
+  { t: "❄️ Snowball",    id: "m2x" },
+  { t: "🧺 Baskets",     id: "m3x" },
+  { t: "🍋 Lemonade",    id: "m4x" },
+  { t: "🏆 Basics Quiz", id: "m5x" },
+  { t: "📊 Report Card", id: "m6"  },
+  { t: "🏦 Banker",      id: "m7"  },
+  { t: "🔧 Buy-Fix-Sell",id: "m8"  },
+  { t: "🏗️ PE Fund",     id: "m9"  },
+  { t: "⚡ Trading",     id: "m10" },
+  { t: "🧑‍💼 Asset Mgmt", id: "m11" },
+  { t: "👑 Family Office",id: "m12" },
+];
+const CH2_START = 6; // index where "The Money World" begins
+
+let stars = JSON.parse(localStorage.getItem("thomasStars2") || "null")
+         || JSON.parse(localStorage.getItem("thomasStars") || "[]");
+while (stars.length < MISSIONS.length) stars.push(false);
+stars = stars.slice(0, MISSIONS.length);
+
+function saveStars() { localStorage.setItem("thomasStars2", JSON.stringify(stars)); }
 
 function renderNav(activeIdx) {
   const nav = document.getElementById("nav");
   nav.innerHTML = "";
-  MISSIONS.forEach((name, i) => {
+  const ch1 = document.createElement("div");
+  ch1.className = "chapter";
+  ch1.textContent = "📘 Chapter 1 · Money Basics";
+  nav.appendChild(ch1);
+  MISSIONS.forEach((m, i) => {
+    if (i === CH2_START) {
+      const ch2 = document.createElement("div");
+      ch2.className = "chapter";
+      ch2.textContent = "🏆 Chapter 2 · The Money World";
+      nav.appendChild(ch2);
+    }
     const b = document.createElement("button");
-    b.textContent = (i + 1) + ". " + name;
+    b.textContent = (i + 1) + ". " + m.t;
     if (stars[i]) b.classList.add("done");
     if (i === activeIdx) b.classList.add("active");
     b.onclick = () => showMission(i);
     nav.appendChild(b);
   });
   document.getElementById("starbar").textContent =
-    stars.map(s => s ? "⭐" : "☆").join(" ");
+    stars.map(s => s ? "⭐" : "☆").join("");
 }
 
 function showMission(i) {
-  sections.forEach((id, j) =>
-    document.getElementById(id).classList.toggle("show", i === j));
+  MISSIONS.forEach((m, j) =>
+    document.getElementById(m.id).classList.toggle("show", i === j));
   renderNav(i);
   window.scrollTo({ top: 0 });
 }
 
 function finishMission(i) {
   stars[i] = true;
-  localStorage.setItem("thomasStars", JSON.stringify(stars));
+  saveStars();
   if (stars.every(Boolean)) {
-    alert("🏆🏆🏆 ALL 6 STARS! Thomas, you are officially a MONEY MASTER! 🏆🏆🏆");
+    setTimeout(() => alert("🏆🏆🏆 ALL 13 STARS! Thomas, you went from a piggy bank all the way to running a billion-dollar fund and a family office. You are officially a MONEY MASTER! 🏆🏆🏆"), 100);
     renderNav(i);
-  } else if (i < 5) {
+  } else if (i < MISSIONS.length - 1) {
     showMission(i + 1);
   } else {
     renderNav(i);
@@ -551,7 +831,7 @@ function lemNext() {
   }
 }
 
-/* ---------- mission 6: quiz ---------- */
+/* ---------- mission 6: basics quiz ---------- */
 const QUIZ = [
   { q: "What does it mean to INVEST your money?",
     a: ["Hide it under your bed", "Put it to work so it can grow", "Spend it all on candy"], c: 1 },
@@ -622,12 +902,313 @@ function quizAnswer(btn, idx) {
   }, 1600);
 }
 
+/* ======================================================================
+   CHAPTER 2 — THE MONEY WORLD
+====================================================================== */
+
+/* ---------- mission 7: company report card ---------- */
+function reportCard() {
+  const units = +document.getElementById("s_units").value;
+  const price = +document.getElementById("s_pprice").value;
+  const cost  = +document.getElementById("s_pcost").value;
+  document.getElementById("v_units").textContent = units;
+  document.getElementById("v_pprice").textContent = "$" + price;
+  document.getElementById("v_pcost").textContent = "$" + cost;
+
+  const rentPerDay = 10;
+  const revenue = units * price;
+  const costs = units * cost + rentPerDay;
+  const profit = revenue - costs;
+  const margin = revenue > 0 ? Math.round(profit / revenue * 100) : 0;
+  const yearProfit = profit * 360;
+  const value = Math.max(0, yearProfit * 10); // P/E of 10
+
+  const fmt = n => (n < 0 ? "−$" : "$") + Math.abs(Math.round(n)).toLocaleString();
+  document.getElementById("r_rev").textContent = fmt(revenue) + "/day";
+  document.getElementById("r_cost").textContent = "−" + fmt(costs).replace("−", "") + "/day";
+  document.getElementById("r_profit").textContent = fmt(profit) + "/day";
+  document.getElementById("r_margin").textContent = margin + "%";
+  document.getElementById("r_value").textContent = fmt(value);
+
+  const fb = document.getElementById("m7fb");
+  if (profit <= 0) {
+    fb.innerHTML = "<span class='bad'>😬 Uh oh — you're LOSING money! Sell more, or cut your costs.</span>";
+  } else {
+    fb.innerHTML = "Out of every $1 you sell, you keep <strong>" + margin +
+      "¢</strong> as profit. Your store is worth <strong>" + fmt(value) + "</strong>!";
+  }
+  const btn = document.getElementById("m7btn");
+  if (value >= 500000) {
+    btn.disabled = false;
+    btn.textContent = "⭐ Collect your star!";
+  }
+}
+
+/* ---------- mission 8: investment bank ---------- */
+const BANK_INFO = {
+  ipo:  "📣 IPO = Initial Public Offering. The bank helps the company sell brand-new slices (shares) to the public. Tons of money comes in, and NO loan to repay — but the founders now share ownership with everyone who bought in.",
+  bond: "💳 Bond/Loan = the company borrows the money now and pays it back later WITH extra (interest). Good news: the founders keep 100% ownership. Bad news: they owe money, and owing money is risky.",
+  merge:"🤝 Merger = the company joins with another one to instantly become bigger. No cash raised, but now they share control and have to blend two companies together.",
+};
+const bankSeen = new Set();
+function bankLearn(btn, key) {
+  bankSeen.add(key);
+  btn.classList.add("correct");
+  document.getElementById("bankInfo").textContent = BANK_INFO[key];
+  if (bankSeen.size === 3) document.getElementById("bankQ").classList.remove("hidden");
+}
+function bankAnswer(btn, key) {
+  const fb = document.getElementById("bankFb");
+  if (key === "ipo") {
+    btn.classList.add("correct");
+    fb.innerHTML = "<span class='good'>✅ Perfect! An IPO raises lots of money with NO debt — exactly what founders who 'hate owing money' want.</span>";
+    document.getElementById("m8done").classList.remove("hidden");
+  } else {
+    btn.classList.add("wrong");
+    fb.innerHTML = "<span class='bad'>❌ Hmm — they said they HATE owing money, so a loan is out, and a merger doesn't raise cash. Try the IPO!</span>";
+  }
+}
+
+/* ---------- mission 9: private equity buy-fix-sell ---------- */
+const PE_UPGRADES = [
+  { k: "robots",  label: "🤖 New robots ($20)",        cost: 20, add: 60 },
+  { k: "market",  label: "📣 Better marketing ($15)",  cost: 15, add: 45 },
+  { k: "waste",   label: "♻️ Cut waste ($10)",          cost: 10, add: 25 },
+  { k: "train",   label: "🎓 Train the workers ($15)", cost: 15, add: 40 },
+];
+let pe = { budget: 50, value: 100, bought: new Set(), sold: false };
+function peInit() {
+  const box = document.getElementById("peUpgrades");
+  box.innerHTML = "";
+  PE_UPGRADES.forEach(u => {
+    const d = document.createElement("span");
+    d.className = "upgrade";
+    d.id = "pe_" + u.k;
+    d.textContent = u.label + " → +$" + u.add + " value";
+    d.onclick = () => peBuy(u);
+    box.appendChild(d);
+  });
+  peRender();
+}
+function peBuy(u) {
+  if (pe.sold || pe.bought.has(u.k) || pe.budget < u.cost) return;
+  pe.bought.add(u.k);
+  pe.budget -= u.cost;
+  pe.value += u.add;
+  document.getElementById("pe_" + u.k).classList.add("bought");
+  peRender();
+}
+function peRender() {
+  document.getElementById("peBudget").textContent = pe.budget;
+  document.getElementById("peValue").textContent = pe.value;
+}
+function peSell() {
+  if (pe.sold) return;
+  pe.sold = true;
+  const sale = pe.value;
+  const loan = 60;
+  const myMoney = 40;
+  const cashBack = sale - loan;           // after repaying the loan
+  const profit = cashBack - myMoney;      // vs what you put in
+  const ret = Math.round(profit / myMoney * 100);
+  const box = document.getElementById("peResult");
+  box.classList.remove("hidden");
+  box.innerHTML =
+    "<strong>🏭 You sold the factory for $" + sale + "!</strong><br>" +
+    "💳 Pay back the loan: −$" + loan + "<br>" +
+    "💵 Cash in your hand: $" + cashBack + "<br>" +
+    "🟢 You only risked $" + myMoney + ", so your profit is <strong>$" + profit +
+    "</strong> — a <strong>" + ret + "%</strong> return on YOUR money!" +
+    (ret >= 100 ? " 🤯 Leverage supercharged it!" : "");
+  document.getElementById("peSellBtn").disabled = true;
+  document.getElementById("m9done").classList.remove("hidden");
+}
+
+/* ---------- mission 10: PE fund structure ---------- */
+let peFundRan = false;
+function peFundRun() {
+  peFundRan = true;
+  document.getElementById("peFundNews").innerHTML =
+    "💰 LPs put in <strong>$100M</strong> → 🏦 the fund buys &amp; fixes 3 companies → " +
+    "⏳ a few years later it sells them for <strong>$200M</strong>!<br>" +
+    "🟢 LPs get their $100M back + 80% of the $100M profit = <strong>$180M</strong>.<br>" +
+    "🧑‍💼 The GP keeps 20% of the profit (the <strong>carry</strong>) = <strong>$20M</strong> (plus the yearly fee).";
+  document.getElementById("peFundQuiz").classList.remove("hidden");
+  peFundQuizRender();
+}
+const PE_FUND_Q = [
+  { q: "Who puts the MONEY into the fund but doesn't run it?", a: ["The GP", "The LPs", "The bank robber"], c: 1, done: false },
+  { q: "Who DECIDES which companies to buy, fix, and sell?", a: ["The GP", "The LPs", "A magic 8-ball"], c: 0, done: false },
+  { q: "What is the GP's share of the profits called?", a: ["Allowance", "Carry", "Dessert"], c: 1, done: false },
+];
+function peFundQuizRender() {
+  const box = document.getElementById("peFundQbox");
+  box.innerHTML = "";
+  PE_FUND_Q.forEach((item, qi) => {
+    const wrap = document.createElement("div");
+    wrap.innerHTML = "<p><strong>" + (qi + 1) + ". " + item.q + "</strong></p>";
+    item.a.forEach((text, idx) => {
+      const b = document.createElement("button");
+      b.className = "choice";
+      b.textContent = text;
+      if (item.done) { b.disabled = true; if (idx === item.c) b.classList.add("correct"); }
+      b.onclick = () => peFundAnswer(qi, idx, b);
+      wrap.appendChild(b);
+    });
+    box.appendChild(wrap);
+  });
+}
+function peFundAnswer(qi, idx, btn) {
+  const item = PE_FUND_Q[qi];
+  if (item.done) return;
+  const fb = document.getElementById("peFundFb");
+  if (idx === item.c) {
+    item.done = true;
+    fb.innerHTML = "<span class='good'>✅ Correct!</span>";
+    peFundQuizRender();
+    if (PE_FUND_Q.every(q => q.done)) {
+      fb.innerHTML = "<span class='good'>🎉 All correct! You understand how a fund is built.</span>";
+      document.getElementById("m10done").classList.remove("hidden");
+    }
+  } else {
+    btn.classList.add("wrong");
+    fb.innerHTML = "<span class='bad'>❌ Try again!</span>";
+  }
+}
+
+/* ---------- mission 11: trading ---------- */
+let trade = null;
+let tradeTimer = null;
+function tradeStart() {
+  if (tradeTimer) clearInterval(tradeTimer);
+  trade = { tick: 0, cash: 100, shares: 0, price: 20, history: [20], bought: false, soldOnce: false };
+  document.getElementById("m11done").classList.add("hidden");
+  document.getElementById("trFb").textContent = "Buy LOW, sell HIGH — watch the price!";
+  document.getElementById("trStart").disabled = true;
+  document.getElementById("trBuy").disabled = false;
+  document.getElementById("trSell").disabled = false;
+  tradeRender();
+  tradeTimer = setInterval(tradeTick, 1100);
+}
+function tradeRender() {
+  document.getElementById("trTick").textContent = trade.tick;
+  document.getElementById("trCash").textContent = trade.cash.toFixed(0);
+  document.getElementById("trShares").textContent = trade.shares;
+  document.getElementById("trPrice").textContent = trade.price;
+  document.getElementById("trTotal").textContent = (trade.cash + trade.shares * trade.price).toFixed(0);
+  const chart = document.getElementById("tradeChart");
+  chart.innerHTML = "";
+  const max = Math.max(...trade.history);
+  trade.history.forEach(p => {
+    const d = document.createElement("div");
+    d.style.height = (p / max * 100) + "%";
+    chart.appendChild(d);
+  });
+}
+function tradeAct(dir) {
+  if (!trade) return;
+  if (dir > 0 && trade.cash >= trade.price) { trade.cash -= trade.price; trade.shares++; trade.bought = true; }
+  if (dir < 0 && trade.shares > 0) { trade.cash += trade.price; trade.shares--; if (trade.bought) trade.soldOnce = true; }
+  tradeRender();
+}
+function tradeTick() {
+  trade.tick++;
+  const jump = Math.floor(Math.random() * 13) - 6; // -6..+6
+  trade.price = Math.max(4, trade.price + jump);
+  trade.history.push(trade.price);
+  tradeRender();
+  if (trade.tick >= 15) {
+    clearInterval(tradeTimer);
+    tradeTimer = null;
+    document.getElementById("trBuy").disabled = true;
+    document.getElementById("trSell").disabled = true;
+    document.getElementById("trStart").disabled = false;
+    document.getElementById("trStart").textContent = "🔄 Trade again!";
+    const total = trade.cash + trade.shares * trade.price;
+    const profit = total - 100;
+    document.getElementById("trResult").innerHTML =
+      "<h3>" + (profit >= 0 ? "🎉 You ended with $" + total.toFixed(0) + " — up $" + profit.toFixed(0) + "!"
+                            : "😅 You ended with $" + total.toFixed(0) + " — down $" + (-profit).toFixed(0) + ". Trading is HARD!") + "</h3>";
+    document.getElementById("m11done").classList.remove("hidden");
+  }
+}
+
+/* ---------- mission 12: asset management ---------- */
+function amMix() {
+  let s = +document.getElementById("am_stock").value;
+  let b = +document.getElementById("am_bond").value;
+  let c = +document.getElementById("am_cash").value;
+  let sum = s + b + c;
+  if (sum === 0) { s = 1; sum = 1; }
+  const ps = Math.round(s / sum * 100);
+  const pb = Math.round(b / sum * 100);
+  const pc = 100 - ps - pb;
+  document.getElementById("am_stock_v").textContent = ps + "%";
+  document.getElementById("am_bond_v").textContent = pb + "%";
+  document.getElementById("am_cash_v").textContent = pc + "%";
+  const risk = document.getElementById("amRisk");
+  if (ps >= 70) risk.innerHTML = "⚠️ <span class='bad'>Spicy!</span> Lots of stocks = big growth but scary drops. Mr. Penny might get nervous.";
+  else if (ps <= 20) risk.innerHTML = "🛡️ <span style='color:#2f6fed'>Very safe</span>, but it'll grow slooowly. Mr. Penny did want some growth!";
+  else risk.innerHTML = "👍 <span class='good'>Nicely balanced</span> — growth AND calmer nerves. That suits Mr. Penny.";
+  return { ps, pb, pc };
+}
+function amRun() {
+  const { ps, pb, pc } = amMix();
+  // expected-ish 10-year multipliers with a little randomness
+  const stockMult = 2.0 + (Math.random() - 0.4);  // swingy, ~1.6–2.6
+  const bondMult  = 1.4 + (Math.random() - 0.5) * 0.2;
+  const cashMult  = 1.1;
+  const start = 1000;
+  const end = start * (ps/100 * stockMult + pb/100 * bondMult + pc/100 * cashMult);
+  const box = document.getElementById("amResult");
+  box.classList.remove("hidden");
+  box.innerHTML =
+    "<strong>⏳ 10 years later…</strong><br>Mr. Penny's $1,000 grew to <strong>$" +
+    Math.round(end).toLocaleString() + "</strong>!<br><small>(Your fee for managing it: about $" +
+    Math.round(end * 0.01) + " — asset managers charge a small % every year.)</small>";
+  document.getElementById("m12done").classList.remove("hidden");
+}
+
+/* ---------- mission 13: family office ---------- */
+const FO_KEYS = ["grow", "protect", "give", "enjoy", "future"];
+function foMix() {
+  const vals = FO_KEYS.map(k => +document.getElementById("fo_" + k).value);
+  let sum = vals.reduce((a, b) => a + b, 0);
+  if (sum === 0) sum = 1;
+  FO_KEYS.forEach((k, i) => {
+    const dollars = Math.round(vals[i] / sum * 10000000);
+    document.getElementById("fo_" + k + "_v").textContent = "$" + dollars.toLocaleString();
+  });
+  return vals;
+}
+function foPresent() {
+  const vals = foMix();
+  const fb = document.getElementById("foFb");
+  if (vals.some(v => v <= 0)) {
+    fb.innerHTML = "<span class='bad'>🤔 A family office plans for EVERYTHING — give every bucket at least a little before presenting!</span>";
+    return;
+  }
+  const sum = vals.reduce((a, b) => a + b, 0);
+  const growPct = Math.round(vals[0] / sum * 100);
+  let note = "📋 Plan presented! ";
+  if (growPct >= 50) note += "Bold — lots going into growth. 📈 ";
+  else if (growPct <= 15) note += "Very cautious — the fortune is well-protected but grows slowly. 🛡️ ";
+  else note += "A well-rounded plan the whole family can feel good about. 👏 ";
+  fb.innerHTML = "<span class='good'>" + note + "The Goldbergs are thrilled!</span>";
+  document.getElementById("m13done").classList.remove("hidden");
+}
+
 /* ---------- boot ---------- */
 m2init();
 snowball();
 lemStart();
 quizStart();
-showMission(stars.findIndex(s => !s) === -1 ? 0 : stars.findIndex(s => !s));
+reportCard();
+peInit();
+amMix();
+foMix();
+const firstUnfinished = stars.findIndex(s => !s);
+showMission(firstUnfinished === -1 ? 0 : firstUnfinished);
 </script>
 </body>
 </html>
