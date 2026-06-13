@@ -99,6 +99,14 @@ class City:
     demand_index: int
     slot_fee: float
     slot_capacity: int  # M2.2: total airport slot pool
+    # V3.9: city endowment fields
+    iata: str = ""                      # primary airport IATA code (3 uppercase letters)
+    airport: str = ""                   # official English airport name
+    airport_zh: str = ""                # official Chinese airport name
+    population: float = 0.0            # metro population in millions (display only)
+    tax_relief: float = 0.0            # HQ overhead reduction factor [0, 0.3]
+    transit_index: int = 5             # city transit maturity 1–10; 5 = neutral
+    terrain: str = "plain"             # coastal | mountain | island | plain | desert
 
 
 @dataclass(frozen=True)

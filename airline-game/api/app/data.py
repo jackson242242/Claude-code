@@ -30,6 +30,14 @@ def load_world(data_dir: Path | None = None) -> World:
             demand_index=row["demandIndex"],
             slot_fee=row["slotFee"],
             slot_capacity=row["slotCapacity"],
+            # V3.9: city endowment fields (optional, default neutral values)
+            iata=row.get("iata", ""),
+            airport=row.get("airport", ""),
+            airport_zh=row.get("airportZh", ""),
+            population=row.get("population", 0.0),
+            tax_relief=row.get("taxRelief", 0.0),
+            transit_index=row.get("transitIndex", 5),
+            terrain=row.get("terrain", "plain"),
         )
         for row in cities_raw
     }

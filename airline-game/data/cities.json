@@ -8,7 +8,14 @@
     "lon": -73.7781,
     "demandIndex": 10,
     "slotFee": 9500,
-    "slotCapacity": 12
+    "slotCapacity": 12,
+    "iata": "JFK",
+    "airport": "John F. Kennedy International Airport",
+    "airportZh": "肯尼迪国际机场",
+    "population": 19.5,
+    "taxRelief": 0,
+    "transitIndex": 5,
+    "terrain": "coastal"
   },
   {
     "id": "lax",
@@ -19,7 +26,14 @@
     "lon": -118.4085,
     "demandIndex": 9,
     "slotFee": 8500,
-    "slotCapacity": 11
+    "slotCapacity": 11,
+    "iata": "LAX",
+    "airport": "Los Angeles International Airport",
+    "airportZh": "洛杉矶国际机场",
+    "population": 13.2,
+    "taxRelief": 0,
+    "transitIndex": 5,
+    "terrain": "coastal"
   },
   {
     "id": "mex",
@@ -30,7 +44,14 @@
     "lon": -99.0721,
     "demandIndex": 7,
     "slotFee": 5200,
-    "slotCapacity": 9
+    "slotCapacity": 9,
+    "iata": "MEX",
+    "airport": "Benito Juárez International Airport",
+    "airportZh": "贝尼托·华雷斯国际机场",
+    "population": 22.0,
+    "taxRelief": 0,
+    "transitIndex": 5,
+    "terrain": "mountain"
   },
   {
     "id": "gru",
@@ -41,7 +62,14 @@
     "lon": -46.4731,
     "demandIndex": 7,
     "slotFee": 5600,
-    "slotCapacity": 9
+    "slotCapacity": 9,
+    "iata": "GRU",
+    "airport": "São Paulo/Guarulhos International Airport",
+    "airportZh": "圣保罗瓜鲁柳斯国际机场",
+    "population": 21.7,
+    "taxRelief": 0,
+    "transitIndex": 5,
+    "terrain": "plain"
   },
   {
     "id": "lhr",
@@ -52,7 +80,14 @@
     "lon": -0.4543,
     "demandIndex": 10,
     "slotFee": 11000,
-    "slotCapacity": 10
+    "slotCapacity": 10,
+    "iata": "LHR",
+    "airport": "Heathrow Airport",
+    "airportZh": "希思罗机场",
+    "population": 14.0,
+    "taxRelief": 0,
+    "transitIndex": 5,
+    "terrain": "coastal"
   },
   {
     "id": "cdg",
@@ -63,7 +98,14 @@
     "lon": 2.5479,
     "demandIndex": 9,
     "slotFee": 9000,
-    "slotCapacity": 10
+    "slotCapacity": 10,
+    "iata": "CDG",
+    "airport": "Charles de Gaulle Airport",
+    "airportZh": "戴高乐机场",
+    "population": 12.3,
+    "taxRelief": 0,
+    "transitIndex": 8,
+    "terrain": "plain"
   },
   {
     "id": "fra",
@@ -74,7 +116,14 @@
     "lon": 8.5622,
     "demandIndex": 8,
     "slotFee": 8800,
-    "slotCapacity": 10
+    "slotCapacity": 10,
+    "iata": "FRA",
+    "airport": "Frankfurt Airport",
+    "airportZh": "法兰克福机场",
+    "population": 5.7,
+    "taxRelief": 0,
+    "transitIndex": 7,
+    "terrain": "plain"
   },
   {
     "id": "dxb",
@@ -85,7 +134,14 @@
     "lon": 55.3657,
     "demandIndex": 9,
     "slotFee": 7000,
-    "slotCapacity": 12
+    "slotCapacity": 12,
+    "iata": "DXB",
+    "airport": "Dubai International Airport",
+    "airportZh": "迪拜国际机场",
+    "population": 3.5,
+    "taxRelief": 0.25,
+    "transitIndex": 7,
+    "terrain": "desert"
   },
   {
     "id": "sin",
@@ -96,7 +152,14 @@
     "lon": 103.9915,
     "demandIndex": 8,
     "slotFee": 7400,
-    "slotCapacity": 10
+    "slotCapacity": 10,
+    "iata": "SIN",
+    "airport": "Singapore Changi Airport",
+    "airportZh": "新加坡樟宜机场",
+    "population": 6.0,
+    "taxRelief": 0.15,
+    "transitIndex": 9,
+    "terrain": "island"
   },
   {
     "id": "hnd",
@@ -107,7 +170,14 @@
     "lon": 139.7798,
     "demandIndex": 9,
     "slotFee": 9800,
-    "slotCapacity": 9
+    "slotCapacity": 9,
+    "iata": "HND",
+    "airport": "Tokyo Haneda Airport",
+    "airportZh": "东京羽田机场",
+    "population": 37.0,
+    "taxRelief": 0,
+    "transitIndex": 7,
+    "terrain": "coastal"
   },
   {
     "id": "pvg",
@@ -118,7 +188,14 @@
     "lon": 121.8083,
     "demandIndex": 9,
     "slotFee": 6800,
-    "slotCapacity": 11
+    "slotCapacity": 11,
+    "iata": "PVG",
+    "airport": "Shanghai Pudong International Airport",
+    "airportZh": "上海浦东国际机场",
+    "population": 28.5,
+    "taxRelief": 0,
+    "transitIndex": 5,
+    "terrain": "coastal"
   },
   {
     "id": "syd",
@@ -129,7 +206,14 @@
     "lon": 151.1753,
     "demandIndex": 7,
     "slotFee": 7600,
-    "slotCapacity": 8
+    "slotCapacity": 8,
+    "iata": "SYD",
+    "airport": "Sydney Kingsford Smith Airport",
+    "airportZh": "悉尼金斯福德·史密斯机场",
+    "population": 5.3,
+    "taxRelief": 0,
+    "transitIndex": 6,
+    "terrain": "coastal"
   },
   {
     "id": "ord",
@@ -140,7 +224,14 @@
     "lon": -87.9,
     "demandIndex": 9,
     "slotFee": 8800,
-    "slotCapacity": 13
+    "slotCapacity": 13,
+    "iata": "ORD",
+    "airport": "O'Hare International Airport",
+    "airportZh": "奥黑尔国际机场",
+    "population": 9.5,
+    "taxRelief": 0,
+    "transitIndex": 7,
+    "terrain": "plain"
   },
   {
     "id": "mia",
@@ -151,7 +242,14 @@
     "lon": -80.29,
     "demandIndex": 8,
     "slotFee": 8100,
-    "slotCapacity": 12
+    "slotCapacity": 12,
+    "iata": "MIA",
+    "airport": "Miami International Airport",
+    "airportZh": "迈阿密国际机场",
+    "population": 6.2,
+    "taxRelief": 0,
+    "transitIndex": 5,
+    "terrain": "coastal"
   },
   {
     "id": "dfw",
@@ -162,7 +260,14 @@
     "lon": -97.04,
     "demandIndex": 8,
     "slotFee": 8100,
-    "slotCapacity": 12
+    "slotCapacity": 12,
+    "iata": "DFW",
+    "airport": "Dallas/Fort Worth International Airport",
+    "airportZh": "达拉斯沃思堡国际机场",
+    "population": 7.6,
+    "taxRelief": 0,
+    "transitIndex": 4,
+    "terrain": "plain"
   },
   {
     "id": "sfo",
@@ -173,7 +278,14 @@
     "lon": -122.38,
     "demandIndex": 8,
     "slotFee": 8100,
-    "slotCapacity": 12
+    "slotCapacity": 12,
+    "iata": "SFO",
+    "airport": "San Francisco International Airport",
+    "airportZh": "旧金山国际机场",
+    "population": 4.7,
+    "taxRelief": 0,
+    "transitIndex": 6,
+    "terrain": "coastal"
   },
   {
     "id": "sea",
@@ -184,7 +296,14 @@
     "lon": -122.31,
     "demandIndex": 7,
     "slotFee": 7400,
-    "slotCapacity": 11
+    "slotCapacity": 11,
+    "iata": "SEA",
+    "airport": "Seattle-Tacoma International Airport",
+    "airportZh": "西雅图塔科马国际机场",
+    "population": 4.0,
+    "taxRelief": 0,
+    "transitIndex": 6,
+    "terrain": "coastal"
   },
   {
     "id": "atl",
@@ -195,7 +314,14 @@
     "lon": -84.43,
     "demandIndex": 8,
     "slotFee": 8100,
-    "slotCapacity": 12
+    "slotCapacity": 12,
+    "iata": "ATL",
+    "airport": "Hartsfield-Jackson Atlanta International Airport",
+    "airportZh": "哈茨菲尔德-杰克逊亚特兰大国际机场",
+    "population": 6.1,
+    "taxRelief": 0,
+    "transitIndex": 5,
+    "terrain": "plain"
   },
   {
     "id": "bos",
@@ -206,7 +332,14 @@
     "lon": -71.01,
     "demandIndex": 7,
     "slotFee": 7400,
-    "slotCapacity": 11
+    "slotCapacity": 11,
+    "iata": "BOS",
+    "airport": "Boston Logan International Airport",
+    "airportZh": "波士顿洛根国际机场",
+    "population": 4.9,
+    "taxRelief": 0,
+    "transitIndex": 6,
+    "terrain": "coastal"
   },
   {
     "id": "iad",
@@ -217,7 +350,14 @@
     "lon": -77.46,
     "demandIndex": 7,
     "slotFee": 7400,
-    "slotCapacity": 11
+    "slotCapacity": 11,
+    "iata": "IAD",
+    "airport": "Washington Dulles International Airport",
+    "airportZh": "华盛顿杜勒斯国际机场",
+    "population": 6.4,
+    "taxRelief": 0,
+    "transitIndex": 5,
+    "terrain": "plain"
   },
   {
     "id": "den",
@@ -228,7 +368,14 @@
     "lon": -104.67,
     "demandIndex": 7,
     "slotFee": 7400,
-    "slotCapacity": 11
+    "slotCapacity": 11,
+    "iata": "DEN",
+    "airport": "Denver International Airport",
+    "airportZh": "丹佛国际机场",
+    "population": 2.9,
+    "taxRelief": 0,
+    "transitIndex": 5,
+    "terrain": "plain"
   },
   {
     "id": "las",
@@ -239,7 +386,14 @@
     "lon": -115.15,
     "demandIndex": 7,
     "slotFee": 7400,
-    "slotCapacity": 11
+    "slotCapacity": 11,
+    "iata": "LAS",
+    "airport": "Harry Reid International Airport",
+    "airportZh": "哈里·里德国际机场",
+    "population": 2.2,
+    "taxRelief": 0,
+    "transitIndex": 3,
+    "terrain": "desert"
   },
   {
     "id": "hnl",
@@ -250,7 +404,14 @@
     "lon": -157.92,
     "demandIndex": 5,
     "slotFee": 6000,
-    "slotCapacity": 9
+    "slotCapacity": 9,
+    "iata": "HNL",
+    "airport": "Daniel K. Inouye International Airport",
+    "airportZh": "丹尼尔·井上国际机场",
+    "population": 1.0,
+    "taxRelief": 0,
+    "transitIndex": 4,
+    "terrain": "island"
   },
   {
     "id": "anc",
@@ -261,7 +422,14 @@
     "lon": -149.99,
     "demandIndex": 4,
     "slotFee": 5300,
-    "slotCapacity": 8
+    "slotCapacity": 8,
+    "iata": "ANC",
+    "airport": "Ted Stevens Anchorage International Airport",
+    "airportZh": "泰德·史蒂文斯安克雷奇国际机场",
+    "population": 0.4,
+    "taxRelief": 0,
+    "transitIndex": 3,
+    "terrain": "mountain"
   },
   {
     "id": "yyz",
@@ -272,7 +440,14 @@
     "lon": -79.63,
     "demandIndex": 8,
     "slotFee": 8100,
-    "slotCapacity": 12
+    "slotCapacity": 12,
+    "iata": "YYZ",
+    "airport": "Toronto Pearson International Airport",
+    "airportZh": "多伦多皮尔逊国际机场",
+    "population": 7.0,
+    "taxRelief": 0,
+    "transitIndex": 6,
+    "terrain": "plain"
   },
   {
     "id": "yvr",
@@ -283,7 +458,14 @@
     "lon": -123.18,
     "demandIndex": 7,
     "slotFee": 7400,
-    "slotCapacity": 11
+    "slotCapacity": 11,
+    "iata": "YVR",
+    "airport": "Vancouver International Airport",
+    "airportZh": "温哥华国际机场",
+    "population": 2.6,
+    "taxRelief": 0,
+    "transitIndex": 6,
+    "terrain": "coastal"
   },
   {
     "id": "yul",
@@ -294,7 +476,14 @@
     "lon": -73.74,
     "demandIndex": 6,
     "slotFee": 6700,
-    "slotCapacity": 10
+    "slotCapacity": 10,
+    "iata": "YUL",
+    "airport": "Montréal-Trudeau International Airport",
+    "airportZh": "蒙特利尔特鲁多国际机场",
+    "population": 4.2,
+    "taxRelief": 0,
+    "transitIndex": 6,
+    "terrain": "plain"
   },
   {
     "id": "cun",
@@ -305,7 +494,14 @@
     "lon": -86.87,
     "demandIndex": 6,
     "slotFee": 6700,
-    "slotCapacity": 10
+    "slotCapacity": 10,
+    "iata": "CUN",
+    "airport": "Cancún International Airport",
+    "airportZh": "坎昆国际机场",
+    "population": 0.9,
+    "taxRelief": 0.05,
+    "transitIndex": 4,
+    "terrain": "coastal"
   },
   {
     "id": "pty",
@@ -316,7 +512,14 @@
     "lon": -79.38,
     "demandIndex": 6,
     "slotFee": 6700,
-    "slotCapacity": 10
+    "slotCapacity": 10,
+    "iata": "PTY",
+    "airport": "Tocumen International Airport",
+    "airportZh": "托库门国际机场",
+    "population": 1.5,
+    "taxRelief": 0.15,
+    "transitIndex": 5,
+    "terrain": "coastal"
   },
   {
     "id": "hav",
@@ -327,7 +530,14 @@
     "lon": -82.41,
     "demandIndex": 4,
     "slotFee": 5300,
-    "slotCapacity": 8
+    "slotCapacity": 8,
+    "iata": "HAV",
+    "airport": "José Martí International Airport",
+    "airportZh": "何塞·马蒂国际机场",
+    "population": 2.2,
+    "taxRelief": 0,
+    "transitIndex": 4,
+    "terrain": "island"
   },
   {
     "id": "bog",
@@ -338,7 +548,14 @@
     "lon": -74.14,
     "demandIndex": 6,
     "slotFee": 6700,
-    "slotCapacity": 10
+    "slotCapacity": 10,
+    "iata": "BOG",
+    "airport": "El Dorado International Airport",
+    "airportZh": "埃尔多拉多国际机场",
+    "population": 11.0,
+    "taxRelief": 0,
+    "transitIndex": 5,
+    "terrain": "mountain"
   },
   {
     "id": "lim",
@@ -349,7 +566,14 @@
     "lon": -77.11,
     "demandIndex": 6,
     "slotFee": 6700,
-    "slotCapacity": 10
+    "slotCapacity": 10,
+    "iata": "LIM",
+    "airport": "Jorge Chávez International Airport",
+    "airportZh": "豪尔赫·查韦斯国际机场",
+    "population": 11.5,
+    "taxRelief": 0,
+    "transitIndex": 4,
+    "terrain": "coastal"
   },
   {
     "id": "scl",
@@ -360,7 +584,14 @@
     "lon": -70.79,
     "demandIndex": 6,
     "slotFee": 6700,
-    "slotCapacity": 10
+    "slotCapacity": 10,
+    "iata": "SCL",
+    "airport": "Arturo Merino Benítez International Airport",
+    "airportZh": "阿图罗·梅里诺·贝尼特斯国际机场",
+    "population": 7.1,
+    "taxRelief": 0,
+    "transitIndex": 5,
+    "terrain": "mountain"
   },
   {
     "id": "eze",
@@ -371,7 +602,14 @@
     "lon": -58.54,
     "demandIndex": 7,
     "slotFee": 7400,
-    "slotCapacity": 11
+    "slotCapacity": 11,
+    "iata": "EZE",
+    "airport": "Ministro Pistarini International Airport",
+    "airportZh": "皮斯塔里尼国际机场",
+    "population": 15.5,
+    "taxRelief": 0,
+    "transitIndex": 5,
+    "terrain": "plain"
   },
   {
     "id": "gig",
@@ -382,7 +620,14 @@
     "lon": -43.25,
     "demandIndex": 6,
     "slotFee": 6700,
-    "slotCapacity": 10
+    "slotCapacity": 10,
+    "iata": "GIG",
+    "airport": "Rio de Janeiro/Galeão International Airport",
+    "airportZh": "里约热内卢加利昂国际机场",
+    "population": 13.5,
+    "taxRelief": 0,
+    "transitIndex": 5,
+    "terrain": "coastal"
   },
   {
     "id": "ams",
@@ -393,7 +638,14 @@
     "lon": 4.76,
     "demandIndex": 9,
     "slotFee": 8800,
-    "slotCapacity": 13
+    "slotCapacity": 13,
+    "iata": "AMS",
+    "airport": "Amsterdam Airport Schiphol",
+    "airportZh": "阿姆斯特丹史基浦机场",
+    "population": 2.4,
+    "taxRelief": 0,
+    "transitIndex": 8,
+    "terrain": "plain"
   },
   {
     "id": "mad",
@@ -404,7 +656,14 @@
     "lon": -3.57,
     "demandIndex": 8,
     "slotFee": 8100,
-    "slotCapacity": 12
+    "slotCapacity": 12,
+    "iata": "MAD",
+    "airport": "Adolfo Suárez Madrid–Barajas Airport",
+    "airportZh": "马德里巴拉哈斯机场",
+    "population": 6.7,
+    "taxRelief": 0,
+    "transitIndex": 7,
+    "terrain": "plain"
   },
   {
     "id": "bcn",
@@ -415,7 +674,14 @@
     "lon": 2.08,
     "demandIndex": 7,
     "slotFee": 7400,
-    "slotCapacity": 11
+    "slotCapacity": 11,
+    "iata": "BCN",
+    "airport": "Barcelona–El Prat Airport",
+    "airportZh": "巴塞罗那普拉特机场",
+    "population": 5.6,
+    "taxRelief": 0,
+    "transitIndex": 7,
+    "terrain": "coastal"
   },
   {
     "id": "fco",
@@ -426,7 +692,14 @@
     "lon": 12.25,
     "demandIndex": 7,
     "slotFee": 7400,
-    "slotCapacity": 11
+    "slotCapacity": 11,
+    "iata": "FCO",
+    "airport": "Leonardo da Vinci–Fiumicino Airport",
+    "airportZh": "达芬奇菲乌米奇诺机场",
+    "population": 4.3,
+    "taxRelief": 0,
+    "transitIndex": 6,
+    "terrain": "coastal"
   },
   {
     "id": "mxp",
@@ -437,7 +710,14 @@
     "lon": 8.72,
     "demandIndex": 7,
     "slotFee": 7400,
-    "slotCapacity": 11
+    "slotCapacity": 11,
+    "iata": "MXP",
+    "airport": "Milan Malpensa Airport",
+    "airportZh": "米兰马尔彭萨机场",
+    "population": 5.3,
+    "taxRelief": 0,
+    "transitIndex": 6,
+    "terrain": "plain"
   },
   {
     "id": "muc",
@@ -448,7 +728,14 @@
     "lon": 11.79,
     "demandIndex": 8,
     "slotFee": 8100,
-    "slotCapacity": 12
+    "slotCapacity": 12,
+    "iata": "MUC",
+    "airport": "Munich Airport",
+    "airportZh": "慕尼黑机场",
+    "population": 2.9,
+    "taxRelief": 0,
+    "transitIndex": 8,
+    "terrain": "plain"
   },
   {
     "id": "zrh",
@@ -459,7 +746,14 @@
     "lon": 8.55,
     "demandIndex": 7,
     "slotFee": 7400,
-    "slotCapacity": 11
+    "slotCapacity": 11,
+    "iata": "ZRH",
+    "airport": "Zurich Airport",
+    "airportZh": "苏黎世机场",
+    "population": 1.4,
+    "taxRelief": 0,
+    "transitIndex": 8,
+    "terrain": "mountain"
   },
   {
     "id": "vie",
@@ -470,7 +764,14 @@
     "lon": 16.57,
     "demandIndex": 6,
     "slotFee": 6700,
-    "slotCapacity": 10
+    "slotCapacity": 10,
+    "iata": "VIE",
+    "airport": "Vienna International Airport",
+    "airportZh": "维也纳国际机场",
+    "population": 2.0,
+    "taxRelief": 0,
+    "transitIndex": 8,
+    "terrain": "plain"
   },
   {
     "id": "cph",
@@ -481,7 +782,14 @@
     "lon": 12.66,
     "demandIndex": 6,
     "slotFee": 6700,
-    "slotCapacity": 10
+    "slotCapacity": 10,
+    "iata": "CPH",
+    "airport": "Copenhagen Airport",
+    "airportZh": "哥本哈根机场",
+    "population": 1.3,
+    "taxRelief": 0,
+    "transitIndex": 8,
+    "terrain": "coastal"
   },
   {
     "id": "arn",
@@ -492,7 +800,14 @@
     "lon": 17.92,
     "demandIndex": 6,
     "slotFee": 6700,
-    "slotCapacity": 10
+    "slotCapacity": 10,
+    "iata": "ARN",
+    "airport": "Stockholm Arlanda Airport",
+    "airportZh": "斯德哥尔摩阿兰达机场",
+    "population": 2.4,
+    "taxRelief": 0,
+    "transitIndex": 7,
+    "terrain": "plain"
   },
   {
     "id": "osl",
@@ -503,7 +818,14 @@
     "lon": 11.1,
     "demandIndex": 5,
     "slotFee": 6000,
-    "slotCapacity": 9
+    "slotCapacity": 9,
+    "iata": "OSL",
+    "airport": "Oslo Gardermoen Airport",
+    "airportZh": "奥斯陆加尔德莫恩机场",
+    "population": 1.1,
+    "taxRelief": 0,
+    "transitIndex": 7,
+    "terrain": "plain"
   },
   {
     "id": "hel",
@@ -514,7 +836,14 @@
     "lon": 24.96,
     "demandIndex": 5,
     "slotFee": 6000,
-    "slotCapacity": 9
+    "slotCapacity": 9,
+    "iata": "HEL",
+    "airport": "Helsinki Airport",
+    "airportZh": "赫尔辛基机场",
+    "population": 1.4,
+    "taxRelief": 0,
+    "transitIndex": 7,
+    "terrain": "coastal"
   },
   {
     "id": "dub",
@@ -525,7 +854,14 @@
     "lon": -6.27,
     "demandIndex": 6,
     "slotFee": 6700,
-    "slotCapacity": 10
+    "slotCapacity": 10,
+    "iata": "DUB",
+    "airport": "Dublin Airport",
+    "airportZh": "都柏林机场",
+    "population": 1.3,
+    "taxRelief": 0.05,
+    "transitIndex": 5,
+    "terrain": "coastal"
   },
   {
     "id": "lis",
@@ -536,7 +872,14 @@
     "lon": -9.13,
     "demandIndex": 6,
     "slotFee": 6700,
-    "slotCapacity": 10
+    "slotCapacity": 10,
+    "iata": "LIS",
+    "airport": "Humberto Delgado Airport",
+    "airportZh": "温贝托·德尔加多机场",
+    "population": 2.9,
+    "taxRelief": 0.05,
+    "transitIndex": 6,
+    "terrain": "coastal"
   },
   {
     "id": "ath",
@@ -547,7 +890,14 @@
     "lon": 23.95,
     "demandIndex": 6,
     "slotFee": 6700,
-    "slotCapacity": 10
+    "slotCapacity": 10,
+    "iata": "ATH",
+    "airport": "Athens International Airport Eleftherios Venizelos",
+    "airportZh": "雅典埃莱夫塞里奥斯·韦尼泽洛斯国际机场",
+    "population": 3.8,
+    "taxRelief": 0,
+    "transitIndex": 5,
+    "terrain": "coastal"
   },
   {
     "id": "ist",
@@ -558,7 +908,14 @@
     "lon": 28.74,
     "demandIndex": 9,
     "slotFee": 8800,
-    "slotCapacity": 13
+    "slotCapacity": 13,
+    "iata": "IST",
+    "airport": "Istanbul Airport",
+    "airportZh": "伊斯坦布尔机场",
+    "population": 15.8,
+    "taxRelief": 0,
+    "transitIndex": 6,
+    "terrain": "coastal"
   },
   {
     "id": "waw",
@@ -569,7 +926,14 @@
     "lon": 20.97,
     "demandIndex": 5,
     "slotFee": 6000,
-    "slotCapacity": 9
+    "slotCapacity": 9,
+    "iata": "WAW",
+    "airport": "Warsaw Chopin Airport",
+    "airportZh": "华沙肖邦机场",
+    "population": 3.1,
+    "taxRelief": 0,
+    "transitIndex": 6,
+    "terrain": "plain"
   },
   {
     "id": "prg",
@@ -580,7 +944,14 @@
     "lon": 14.26,
     "demandIndex": 5,
     "slotFee": 6000,
-    "slotCapacity": 9
+    "slotCapacity": 9,
+    "iata": "PRG",
+    "airport": "Václav Havel Airport Prague",
+    "airportZh": "瓦茨拉夫·哈维尔布拉格机场",
+    "population": 2.2,
+    "taxRelief": 0,
+    "transitIndex": 7,
+    "terrain": "plain"
   },
   {
     "id": "bud",
@@ -591,7 +962,14 @@
     "lon": 19.26,
     "demandIndex": 5,
     "slotFee": 6000,
-    "slotCapacity": 9
+    "slotCapacity": 9,
+    "iata": "BUD",
+    "airport": "Budapest Ferenc Liszt International Airport",
+    "airportZh": "布达佩斯李斯特·费伦茨国际机场",
+    "population": 3.3,
+    "taxRelief": 0,
+    "transitIndex": 6,
+    "terrain": "plain"
   },
   {
     "id": "bru",
@@ -602,7 +980,14 @@
     "lon": 4.48,
     "demandIndex": 6,
     "slotFee": 6700,
-    "slotCapacity": 10
+    "slotCapacity": 10,
+    "iata": "BRU",
+    "airport": "Brussels Airport",
+    "airportZh": "布鲁塞尔机场",
+    "population": 2.1,
+    "taxRelief": 0,
+    "transitIndex": 7,
+    "terrain": "plain"
   },
   {
     "id": "man",
@@ -613,7 +998,14 @@
     "lon": -2.28,
     "demandIndex": 6,
     "slotFee": 6700,
-    "slotCapacity": 10
+    "slotCapacity": 10,
+    "iata": "MAN",
+    "airport": "Manchester Airport",
+    "airportZh": "曼彻斯特机场",
+    "population": 2.8,
+    "taxRelief": 0,
+    "transitIndex": 6,
+    "terrain": "plain"
   },
   {
     "id": "edi",
@@ -624,7 +1016,14 @@
     "lon": -3.36,
     "demandIndex": 5,
     "slotFee": 6000,
-    "slotCapacity": 9
+    "slotCapacity": 9,
+    "iata": "EDI",
+    "airport": "Edinburgh Airport",
+    "airportZh": "爱丁堡机场",
+    "population": 1.3,
+    "taxRelief": 0,
+    "transitIndex": 6,
+    "terrain": "coastal"
   },
   {
     "id": "doh",
@@ -635,7 +1034,14 @@
     "lon": 51.61,
     "demandIndex": 8,
     "slotFee": 8100,
-    "slotCapacity": 12
+    "slotCapacity": 12,
+    "iata": "DOH",
+    "airport": "Hamad International Airport",
+    "airportZh": "哈马德国际机场",
+    "population": 2.8,
+    "taxRelief": 0.2,
+    "transitIndex": 6,
+    "terrain": "desert"
   },
   {
     "id": "auh",
@@ -646,7 +1052,14 @@
     "lon": 54.65,
     "demandIndex": 7,
     "slotFee": 7400,
-    "slotCapacity": 11
+    "slotCapacity": 11,
+    "iata": "AUH",
+    "airport": "Abu Dhabi International Airport",
+    "airportZh": "阿布扎比国际机场",
+    "population": 2.9,
+    "taxRelief": 0.2,
+    "transitIndex": 5,
+    "terrain": "desert"
   },
   {
     "id": "ruh",
@@ -657,7 +1070,14 @@
     "lon": 46.7,
     "demandIndex": 7,
     "slotFee": 7400,
-    "slotCapacity": 11
+    "slotCapacity": 11,
+    "iata": "RUH",
+    "airport": "King Khalid International Airport",
+    "airportZh": "哈立德国王国际机场",
+    "population": 7.6,
+    "taxRelief": 0.1,
+    "transitIndex": 5,
+    "terrain": "desert"
   },
   {
     "id": "jed",
@@ -668,7 +1088,14 @@
     "lon": 39.16,
     "demandIndex": 6,
     "slotFee": 6700,
-    "slotCapacity": 10
+    "slotCapacity": 10,
+    "iata": "JED",
+    "airport": "King Abdulaziz International Airport",
+    "airportZh": "阿卜杜勒阿齐兹国王国际机场",
+    "population": 4.7,
+    "taxRelief": 0.1,
+    "transitIndex": 4,
+    "terrain": "desert"
   },
   {
     "id": "tlv",
@@ -679,7 +1106,14 @@
     "lon": 34.89,
     "demandIndex": 6,
     "slotFee": 6700,
-    "slotCapacity": 10
+    "slotCapacity": 10,
+    "iata": "TLV",
+    "airport": "Ben Gurion International Airport",
+    "airportZh": "本·古里安国际机场",
+    "population": 4.2,
+    "taxRelief": 0,
+    "transitIndex": 6,
+    "terrain": "coastal"
   },
   {
     "id": "cai",
@@ -690,7 +1124,14 @@
     "lon": 31.41,
     "demandIndex": 6,
     "slotFee": 6700,
-    "slotCapacity": 10
+    "slotCapacity": 10,
+    "iata": "CAI",
+    "airport": "Cairo International Airport",
+    "airportZh": "开罗国际机场",
+    "population": 21.3,
+    "taxRelief": 0,
+    "transitIndex": 4,
+    "terrain": "desert"
   },
   {
     "id": "jnb",
@@ -701,7 +1142,14 @@
     "lon": 28.25,
     "demandIndex": 6,
     "slotFee": 6700,
-    "slotCapacity": 10
+    "slotCapacity": 10,
+    "iata": "JNB",
+    "airport": "O.R. Tambo International Airport",
+    "airportZh": "奥利弗·坦博国际机场",
+    "population": 9.6,
+    "taxRelief": 0,
+    "transitIndex": 5,
+    "terrain": "plain"
   },
   {
     "id": "cpt",
@@ -712,7 +1160,14 @@
     "lon": 18.6,
     "demandIndex": 5,
     "slotFee": 6000,
-    "slotCapacity": 9
+    "slotCapacity": 9,
+    "iata": "CPT",
+    "airport": "Cape Town International Airport",
+    "airportZh": "开普敦国际机场",
+    "population": 4.6,
+    "taxRelief": 0,
+    "transitIndex": 4,
+    "terrain": "coastal"
   },
   {
     "id": "nbo",
@@ -723,7 +1178,14 @@
     "lon": 36.93,
     "demandIndex": 5,
     "slotFee": 6000,
-    "slotCapacity": 9
+    "slotCapacity": 9,
+    "iata": "NBO",
+    "airport": "Jomo Kenyatta International Airport",
+    "airportZh": "乔莫·肯雅塔国际机场",
+    "population": 5.1,
+    "taxRelief": 0,
+    "transitIndex": 4,
+    "terrain": "plain"
   },
   {
     "id": "los",
@@ -734,7 +1196,14 @@
     "lon": 3.32,
     "demandIndex": 5,
     "slotFee": 6000,
-    "slotCapacity": 9
+    "slotCapacity": 9,
+    "iata": "LOS",
+    "airport": "Murtala Muhammed International Airport",
+    "airportZh": "穆尔塔拉·穆罕默德国际机场",
+    "population": 15.3,
+    "taxRelief": 0,
+    "transitIndex": 3,
+    "terrain": "coastal"
   },
   {
     "id": "add",
@@ -745,7 +1214,14 @@
     "lon": 38.8,
     "demandIndex": 5,
     "slotFee": 6000,
-    "slotCapacity": 9
+    "slotCapacity": 9,
+    "iata": "ADD",
+    "airport": "Addis Ababa Bole International Airport",
+    "airportZh": "亚的斯亚贝巴博莱国际机场",
+    "population": 5.0,
+    "taxRelief": 0,
+    "transitIndex": 4,
+    "terrain": "mountain"
   },
   {
     "id": "cmn",
@@ -756,7 +1232,14 @@
     "lon": -7.59,
     "demandIndex": 5,
     "slotFee": 6000,
-    "slotCapacity": 9
+    "slotCapacity": 9,
+    "iata": "CMN",
+    "airport": "Mohammed V International Airport",
+    "airportZh": "穆罕默德五世国际机场",
+    "population": 4.2,
+    "taxRelief": 0,
+    "transitIndex": 4,
+    "terrain": "coastal"
   },
   {
     "id": "pek",
@@ -767,7 +1250,14 @@
     "lon": 116.58,
     "demandIndex": 9,
     "slotFee": 8800,
-    "slotCapacity": 13
+    "slotCapacity": 13,
+    "iata": "PEK",
+    "airport": "Beijing Capital International Airport",
+    "airportZh": "北京首都国际机场",
+    "population": 22.5,
+    "taxRelief": 0,
+    "transitIndex": 9,
+    "terrain": "plain"
   },
   {
     "id": "can",
@@ -778,7 +1268,14 @@
     "lon": 113.3,
     "demandIndex": 8,
     "slotFee": 8100,
-    "slotCapacity": 12
+    "slotCapacity": 12,
+    "iata": "CAN",
+    "airport": "Guangzhou Baiyun International Airport",
+    "airportZh": "广州白云国际机场",
+    "population": 18.8,
+    "taxRelief": 0,
+    "transitIndex": 8,
+    "terrain": "plain"
   },
   {
     "id": "szx",
@@ -789,7 +1286,14 @@
     "lon": 113.81,
     "demandIndex": 8,
     "slotFee": 8100,
-    "slotCapacity": 12
+    "slotCapacity": 12,
+    "iata": "SZX",
+    "airport": "Shenzhen Bao'an International Airport",
+    "airportZh": "深圳宝安国际机场",
+    "population": 17.6,
+    "taxRelief": 0.05,
+    "transitIndex": 8,
+    "terrain": "coastal"
   },
   {
     "id": "ctu",
@@ -800,7 +1304,14 @@
     "lon": 103.95,
     "demandIndex": 7,
     "slotFee": 7400,
-    "slotCapacity": 11
+    "slotCapacity": 11,
+    "iata": "TFU",
+    "airport": "Chengdu Tianfu International Airport",
+    "airportZh": "成都天府国际机场",
+    "population": 21.0,
+    "taxRelief": 0,
+    "transitIndex": 7,
+    "terrain": "plain"
   },
   {
     "id": "hkg",
@@ -811,7 +1322,14 @@
     "lon": 113.91,
     "demandIndex": 9,
     "slotFee": 8800,
-    "slotCapacity": 13
+    "slotCapacity": 13,
+    "iata": "HKG",
+    "airport": "Hong Kong International Airport",
+    "airportZh": "香港国际机场",
+    "population": 7.5,
+    "taxRelief": 0.1,
+    "transitIndex": 9,
+    "terrain": "island"
   },
   {
     "id": "tpe",
@@ -822,7 +1340,14 @@
     "lon": 121.23,
     "demandIndex": 7,
     "slotFee": 7400,
-    "slotCapacity": 11
+    "slotCapacity": 11,
+    "iata": "TPE",
+    "airport": "Taiwan Taoyuan International Airport",
+    "airportZh": "台湾桃园国际机场",
+    "population": 7.1,
+    "taxRelief": 0,
+    "transitIndex": 7,
+    "terrain": "island"
   },
   {
     "id": "icn",
@@ -833,7 +1358,14 @@
     "lon": 126.44,
     "demandIndex": 9,
     "slotFee": 8800,
-    "slotCapacity": 13
+    "slotCapacity": 13,
+    "iata": "ICN",
+    "airport": "Incheon International Airport",
+    "airportZh": "仁川国际机场",
+    "population": 25.5,
+    "taxRelief": 0,
+    "transitIndex": 9,
+    "terrain": "coastal"
   },
   {
     "id": "kix",
@@ -844,7 +1376,14 @@
     "lon": 135.23,
     "demandIndex": 7,
     "slotFee": 7400,
-    "slotCapacity": 11
+    "slotCapacity": 11,
+    "iata": "KIX",
+    "airport": "Kansai International Airport",
+    "airportZh": "关西国际机场",
+    "population": 19.3,
+    "taxRelief": 0,
+    "transitIndex": 9,
+    "terrain": "island"
   },
   {
     "id": "bkk",
@@ -855,7 +1394,14 @@
     "lon": 100.75,
     "demandIndex": 8,
     "slotFee": 8100,
-    "slotCapacity": 12
+    "slotCapacity": 12,
+    "iata": "BKK",
+    "airport": "Suvarnabhumi Airport",
+    "airportZh": "素万那普机场",
+    "population": 17.0,
+    "taxRelief": 0,
+    "transitIndex": 6,
+    "terrain": "plain"
   },
   {
     "id": "kul",
@@ -866,7 +1412,14 @@
     "lon": 101.71,
     "demandIndex": 7,
     "slotFee": 7400,
-    "slotCapacity": 11
+    "slotCapacity": 11,
+    "iata": "KUL",
+    "airport": "Kuala Lumpur International Airport",
+    "airportZh": "吉隆坡国际机场",
+    "population": 8.6,
+    "taxRelief": 0.1,
+    "transitIndex": 6,
+    "terrain": "plain"
   },
   {
     "id": "cgk",
@@ -877,7 +1430,14 @@
     "lon": 106.66,
     "demandIndex": 7,
     "slotFee": 7400,
-    "slotCapacity": 11
+    "slotCapacity": 11,
+    "iata": "CGK",
+    "airport": "Soekarno-Hatta International Airport",
+    "airportZh": "苏加诺-哈达国际机场",
+    "population": 34.5,
+    "taxRelief": 0,
+    "transitIndex": 5,
+    "terrain": "coastal"
   },
   {
     "id": "mnl",
@@ -888,7 +1448,14 @@
     "lon": 121.02,
     "demandIndex": 6,
     "slotFee": 6700,
-    "slotCapacity": 10
+    "slotCapacity": 10,
+    "iata": "MNL",
+    "airport": "Ninoy Aquino International Airport",
+    "airportZh": "尼诺伊·阿基诺国际机场",
+    "population": 23.5,
+    "taxRelief": 0,
+    "transitIndex": 4,
+    "terrain": "island"
   },
   {
     "id": "sgn",
@@ -899,7 +1466,14 @@
     "lon": 106.66,
     "demandIndex": 6,
     "slotFee": 6700,
-    "slotCapacity": 10
+    "slotCapacity": 10,
+    "iata": "SGN",
+    "airport": "Tan Son Nhat International Airport",
+    "airportZh": "新山一国际机场",
+    "population": 9.3,
+    "taxRelief": 0,
+    "transitIndex": 4,
+    "terrain": "plain"
   },
   {
     "id": "han",
@@ -910,7 +1484,14 @@
     "lon": 105.81,
     "demandIndex": 5,
     "slotFee": 6000,
-    "slotCapacity": 9
+    "slotCapacity": 9,
+    "iata": "HAN",
+    "airport": "Noi Bai International Airport",
+    "airportZh": "内排国际机场",
+    "population": 8.3,
+    "taxRelief": 0,
+    "transitIndex": 4,
+    "terrain": "plain"
   },
   {
     "id": "del",
@@ -921,7 +1502,14 @@
     "lon": 77.1,
     "demandIndex": 8,
     "slotFee": 8100,
-    "slotCapacity": 12
+    "slotCapacity": 12,
+    "iata": "DEL",
+    "airport": "Indira Gandhi International Airport",
+    "airportZh": "英迪拉·甘地国际机场",
+    "population": 32.9,
+    "taxRelief": 0,
+    "transitIndex": 7,
+    "terrain": "plain"
   },
   {
     "id": "bom",
@@ -932,7 +1520,14 @@
     "lon": 72.87,
     "demandIndex": 8,
     "slotFee": 8100,
-    "slotCapacity": 12
+    "slotCapacity": 12,
+    "iata": "BOM",
+    "airport": "Chhatrapati Shivaji Maharaj International Airport",
+    "airportZh": "查特拉帕蒂·希瓦吉·马哈拉吉国际机场",
+    "population": 21.3,
+    "taxRelief": 0,
+    "transitIndex": 6,
+    "terrain": "coastal"
   },
   {
     "id": "blr",
@@ -943,7 +1538,14 @@
     "lon": 77.71,
     "demandIndex": 6,
     "slotFee": 6700,
-    "slotCapacity": 10
+    "slotCapacity": 10,
+    "iata": "BLR",
+    "airport": "Kempegowda International Airport",
+    "airportZh": "坎佩戈达国际机场",
+    "population": 13.2,
+    "taxRelief": 0,
+    "transitIndex": 5,
+    "terrain": "plain"
   },
   {
     "id": "maa",
@@ -954,7 +1556,14 @@
     "lon": 80.17,
     "demandIndex": 5,
     "slotFee": 6000,
-    "slotCapacity": 9
+    "slotCapacity": 9,
+    "iata": "MAA",
+    "airport": "Chennai International Airport",
+    "airportZh": "金奈国际机场",
+    "population": 11.2,
+    "taxRelief": 0,
+    "transitIndex": 5,
+    "terrain": "coastal"
   },
   {
     "id": "dac",
@@ -965,7 +1574,14 @@
     "lon": 90.4,
     "demandIndex": 5,
     "slotFee": 6000,
-    "slotCapacity": 9
+    "slotCapacity": 9,
+    "iata": "DAC",
+    "airport": "Hazrat Shahjalal International Airport",
+    "airportZh": "沙贾拉尔国际机场",
+    "population": 22.5,
+    "taxRelief": 0,
+    "transitIndex": 4,
+    "terrain": "plain"
   },
   {
     "id": "cmb",
@@ -976,7 +1592,14 @@
     "lon": 79.88,
     "demandIndex": 4,
     "slotFee": 5300,
-    "slotCapacity": 8
+    "slotCapacity": 8,
+    "iata": "CMB",
+    "airport": "Bandaranaike International Airport",
+    "airportZh": "班达拉奈克国际机场",
+    "population": 4.0,
+    "taxRelief": 0,
+    "transitIndex": 4,
+    "terrain": "island"
   },
   {
     "id": "khi",
@@ -987,7 +1610,14 @@
     "lon": 67.16,
     "demandIndex": 5,
     "slotFee": 6000,
-    "slotCapacity": 9
+    "slotCapacity": 9,
+    "iata": "KHI",
+    "airport": "Jinnah International Airport",
+    "airportZh": "真纳国际机场",
+    "population": 16.1,
+    "taxRelief": 0,
+    "transitIndex": 4,
+    "terrain": "coastal"
   },
   {
     "id": "svo",
@@ -998,7 +1628,14 @@
     "lon": 37.41,
     "demandIndex": 7,
     "slotFee": 7400,
-    "slotCapacity": 11
+    "slotCapacity": 11,
+    "iata": "SVO",
+    "airport": "Sheremetyevo International Airport",
+    "airportZh": "谢列梅捷沃国际机场",
+    "population": 17.4,
+    "taxRelief": 0,
+    "transitIndex": 8,
+    "terrain": "plain"
   },
   {
     "id": "mel",
@@ -1009,7 +1646,14 @@
     "lon": 144.84,
     "demandIndex": 7,
     "slotFee": 7400,
-    "slotCapacity": 11
+    "slotCapacity": 11,
+    "iata": "MEL",
+    "airport": "Melbourne Airport",
+    "airportZh": "墨尔本机场",
+    "population": 5.1,
+    "taxRelief": 0,
+    "transitIndex": 5,
+    "terrain": "plain"
   },
   {
     "id": "bne",
@@ -1020,7 +1664,14 @@
     "lon": 153.12,
     "demandIndex": 6,
     "slotFee": 6700,
-    "slotCapacity": 10
+    "slotCapacity": 10,
+    "iata": "BNE",
+    "airport": "Brisbane Airport",
+    "airportZh": "布里斯班机场",
+    "population": 2.6,
+    "taxRelief": 0,
+    "transitIndex": 5,
+    "terrain": "coastal"
   },
   {
     "id": "per",
@@ -1031,7 +1682,14 @@
     "lon": 115.97,
     "demandIndex": 5,
     "slotFee": 6000,
-    "slotCapacity": 9
+    "slotCapacity": 9,
+    "iata": "PER",
+    "airport": "Perth Airport",
+    "airportZh": "珀斯机场",
+    "population": 2.2,
+    "taxRelief": 0,
+    "transitIndex": 4,
+    "terrain": "coastal"
   },
   {
     "id": "akl",
@@ -1042,6 +1700,13 @@
     "lon": 174.79,
     "demandIndex": 6,
     "slotFee": 6700,
-    "slotCapacity": 10
+    "slotCapacity": 10,
+    "iata": "AKL",
+    "airport": "Auckland Airport",
+    "airportZh": "奥克兰机场",
+    "population": 1.7,
+    "taxRelief": 0,
+    "transitIndex": 5,
+    "terrain": "island"
   }
 ]

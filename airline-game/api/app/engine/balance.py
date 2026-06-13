@@ -105,6 +105,17 @@ DECISION_CASH_DELTA_MAX = 10_000_000    # cashDelta upper bound
 DECISION_BRAND_DELTA_MIN = -15          # brandDelta lower bound
 DECISION_BRAND_DELTA_MAX = 15           # brandDelta upper bound
 
+# --- V3.9: City endowment effect constants ----------------------------------------
+# Terrain multiplier on slot negotiation cost (CONTRACT §3 V3.9).
+# mountain/island = 1.15 (harder construction), desert = 1.05, coastal/plain = 1.0.
+TERRAIN_SLOT_MULT: dict[str, float] = {
+    "mountain": 1.15,
+    "island": 1.15,
+    "desert": 1.05,
+    "coastal": 1.0,
+    "plain": 1.0,
+}
+
 # --- Dynamic events (M3.1) -------------------------------------------------------
 EVENT_CHANCE = 0.45            # probability per turn of drawing one new event
 EVENT_SEVERITY_WEIGHTS = {"minor": 3, "major": 1}  # draw weights by severity

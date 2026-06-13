@@ -65,16 +65,27 @@ def fare_usd(distance_km: float, fare_mult: float) -> float:
 
 
 def market_pax(
-    demand_a: int, demand_b: int, quarter: int, distance_km: float
+    demand_a: int,
+    demand_b: int,
+    quarter: int,
+    distance_km: float,
+    transit_a: int = 5,
+    transit_b: int = 5,
 ) -> float:
-    """Two-way total addressable demand, pax per quarter."""
+    """Two-way total addressable demand, pax per quarter.
+
+    V3.9: transit factor = (1 + 0.01×(transitA−5)) × (1 + 0.01×(transitB−5)).
+    With default transitIndex=5 the factor is 1.0 × 1.0 = 1.0 (neutral).
+    """
     distance_decay = math.exp(-distance_km / balance.DISTANCE_DECAY_KM)
+    transit_factor = (1.0 + 0.01 * (transit_a - 5)) * (1.0 + 0.01 * (transit_b - 5))
     return (
         balance.BASE_K
         * demand_a
         * demand_b
         * balance.SEASON_FACTOR[quarter]
         * distance_decay
+        * transit_factor
     )
 
 
@@ -254,7 +265,12 @@ def allocate_market(
             else round(haversine_km(city_a.lat, city_a.lon, city_b.lat, city_b.lon), 1)
         )
         base_market = market_pax(
-            city_a.demand_index, city_b.demand_index, quarter, distance
+            city_a.demand_index,
+            city_b.demand_index,
+            quarter,
+            distance,
+            transit_a=city_a.transit_index,
+            transit_b=city_b.transit_index,
         )
         # M3.1: apply in-scope demand event mults (affects all sellers including AI).
         demand_mult = get_demand_mult(active_events, city_a.id, city_b.id)
@@ -457,8 +473,19 @@ def fleet_holding_cost(state: GameState, world: World) -> float:
     return total
 
 
-def overhead_cost(state: GameState) -> float:
-    return balance.HQ_OVERHEAD + balance.ADMIN_PER_AIRCRAFT * len(state.fleet)
+def overhead_cost(state: GameState, world: World | None = None) -> float:
+    """Quarterly HQ overhead + admin cost.
+
+    V3.9: when world is provided, applies the HQ city's taxRelief so that
+    total overhead is multiplied by (1 − taxRelief).  With taxRelief=0 (neutral)
+    the result is identical to the pre-V3.9 formula.
+    """
+    raw = balance.HQ_OVERHEAD + balance.ADMIN_PER_AIRCRAFT * len(state.fleet)
+    if world is not None:
+        hq_city = world.cities.get(state.hq_city_id)
+        if hq_city is not None and hq_city.tax_relief > 0:
+            raw *= (1.0 - hq_city.tax_relief)
+    return raw
 
 
 def _build_final_result(state: GameState) -> FinalResult:
@@ -568,7 +595,7 @@ def settle_turn(
     cost = round(
         routes_cost
         + fleet_holding_cost(state, world)
-        + overhead_cost(state)
+        + overhead_cost(state, world)
         + marketing_cost,
         2,
     )

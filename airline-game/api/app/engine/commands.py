@@ -184,8 +184,10 @@ def _negotiate_slot(state: GameState, world: World, command: Mapping[str, Any]) 
             f"slot pool at {city.id} is full ({taken}/{city.slot_capacity}); "
             "no slots left to negotiate"
         )
+    terrain_mult = balance.TERRAIN_SLOT_MULT.get(city.terrain, 1.0)
     cost = round(
-        city.slot_fee * balance.SLOT_COST_MULT * (1 + taken / city.slot_capacity), 2
+        city.slot_fee * balance.SLOT_COST_MULT * (1 + taken / city.slot_capacity) * terrain_mult,
+        2,
     )
     if state.cash < cost:
         raise CommandError(

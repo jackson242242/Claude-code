@@ -24,6 +24,14 @@ class City(CamelModel):
     demand_index: int
     slot_fee: float
     slot_capacity: int
+    # V3.9: city endowment fields
+    iata: str = ""
+    airport: str = ""
+    airport_zh: str = ""
+    population: float = 0.0
+    tax_relief: float = 0.0
+    transit_index: int = 5
+    terrain: str = "plain"
 
 
 class CitySlotInfo(CamelModel):
