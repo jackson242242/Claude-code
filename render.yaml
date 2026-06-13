@@ -43,9 +43,7 @@ services:
     envVars:
       - key: NODE_VERSION
         value: "22"
-      # 裸主机名（xxx.onrender.com），前端代码自动补 https://
+      # 公网地址写死（fromService 的 host 实测注入内部短名 "skyempire-api"，
+      # 浏览器无法解析；2026-06-13 线上探针确认本地址 200）
       - key: NEXT_PUBLIC_API_URL
-        fromService:
-          type: web
-          name: skyempire-api
-          property: host
+        value: https://skyempire-api.onrender.com

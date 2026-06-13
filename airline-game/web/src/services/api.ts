@@ -7,9 +7,15 @@ import type {
 } from '@/types';
 
 // airline-game/data is the source of truth; backend dev server runs on :8001.
-// Render 蓝图通过 fromService 注入裸主机名（xxx.onrender.com），这里自动补协议。
+// 容错两种注入形态：裸主机名（补 https://）和 Render fromService 的内部短名
+// （无点、非 localhost，补 .onrender.com——线上实测它只给 "skyempire-api"）。
 const rawBase = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8001';
-const API_BASE = rawBase.startsWith('http') ? rawBase : `https://${rawBase}`;
+const withProto = rawBase.startsWith('http') ? rawBase : `https://${rawBase}`;
+const bareHost = withProto.replace(/^https?:\/\//, '').split('/')[0];
+const API_BASE =
+  bareHost.includes('.') || bareHost.startsWith('localhost')
+    ? withProto
+    : `${withProto}.onrender.com`;
 
 export class ApiError extends Error {
   readonly type: string;
