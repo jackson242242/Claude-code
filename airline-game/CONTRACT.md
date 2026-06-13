@@ -59,6 +59,14 @@ type City = {
   demandIndex: number;   // 1–10
   slotFee: number;       // 每次起降的机场费用（美元）
   slotCapacity: number;  // M2.2：机场时刻（slot）总池
+  // V3.9 城市禀赋（寓教于乐 + 开局差异化）
+  iata: string;          // "JFK"——真实主机场 IATA 代码
+  airport: string;       // "John F. Kennedy International Airport"
+  airportZh: string;     // "肯尼迪国际机场"
+  population: number;    // 都会区人口（百万，1 位小数）——展示与教学用，不进公式
+  taxRelief: number;     // 0–0.3：HQ 设此城时总部/管理开销 ×(1−taxRelief)
+  transitIndex: number;  // 1–10：城市公共交通成熟度，5 为中性
+  terrain: "coastal" | "mountain" | "island" | "plain" | "desert";
 };
 
 // M2.2 slot 市场（服务端每次响应计算好，前端只读）
@@ -288,6 +296,14 @@ type TurnReport = {
   - 机场费：`(slotFeeA + slotFeeB) × AIRPORT_FEE_FACTOR × flights`（系数 0.55——
     2026-06-12 平衡模拟：全额机场费使短途航线结构性亏损）
   - 机组+维护：`blockHours × CREW_MAINT_USD_PER_BH`（blockHours = flights × (distance/cruise + 0.6)）
+- **城市禀赋效果（V3.9，中性值下与旧模型完全一致）**：
+  - 税惠：`HQ_OVERHEAD` 与 `ADMIN_PER_AIRCRAFT` ×(1 − HQ城.taxRelief)。
+  - 交通：`marketPax ×= (1 + 0.01×(transitA−5)) × (1 + 0.01×(transitB−5))`。
+  - 地势：slot 谈判成本 ×TERRAIN_SLOT_MULT（mountain/island 1.15、desert 1.05、
+    coastal/plain 1.0——扩建难度差异）。
+  - population 仅展示（demandIndex 已承载需求，不重复计入）。
+  - **数据校准红线**：4 条平衡验收涉及的城市（nyc/mex/lhr + T1 目的地候选）
+    禀赋取值必须使验收原样通过（taxRelief=0、transitIndex 贴近 5 优先满足）。
 - **品牌与营销（V3.7，缺省值下与旧模型完全一致）**：
   - 玩家价格权重追加两个因子：`w ×= BRAND_FACTOR ** ((brand − 50) / 50)`
     （BRAND_FACTOR=1.2，即品牌满分 +20% 权重、谷底 −20%；brand=50 时为 1）；
