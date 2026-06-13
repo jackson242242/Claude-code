@@ -132,6 +132,9 @@ type GameState = {
   lifetime: { profit: number; pax: number };    // M2.4：累计利润/乘客（每季累加）
   finalResult: FinalResult | null;              // M2.4：终局前为 null
   activeEvents: ActiveEvent[];                  // M3.1：当前生效事件
+  brand: number;               // V3.7：品牌声誉 0–100，开局 50
+  marketing: Marketing;        // V3.7：当前季度营销投放，开局 {0,0,0}
+  pendingDecision: (DecisionEvent & { drawnTurn: number }) | null;  // V3.7
 };
 
 // M2.4 终局结算
@@ -180,7 +183,28 @@ type GameEvent = {
 
 type ActiveEvent = GameEvent & { startedTurn: number; remainingTurns: number };
 
+// V3.7 互动 PR/营销
+type DecisionOption = {
+  id: string;                  // "apologize"
+  label: string; labelEn?: string; labelEs?: string;
+  cashDelta: number;           // 立即现金变动（负=花钱），限 [-30M, +10M]
+  brandDelta: number;          // 品牌变动，限 [-15, +15]
+  isDefault?: boolean;         // 恰一项为 true：超时/结算时自动采用
+};
+
+type DecisionEvent = {
+  id: string;                  // "dec-delay-storm"
+  prompt: string; promptEn?: string; promptEs?: string;
+  detail?: string; detailEn?: string; detailEs?: string;
+  options: DecisionOption[];   // 2–3 项
+  expiresTurn: number;         // 抽出回合+1：结算该回合时若未决则按 default 自动采用
+};
+
+type Marketing = { digital: number; sponsor: number; service: number }; // 各 0–10（$M/季）
+
 type Command =
+  | { type: "resolveDecision"; optionId: string }            // V3.7：裁决待定抉择
+  | { type: "setMarketing";    marketing: Marketing }        // V3.7：设季度营销投放
   | { type: "buyAircraft";   modelId: string }
   | { type: "leaseAircraft"; modelId: string }
   | { type: "sellAircraft";  aircraftId: string }      // 残值 = price × 0.7
@@ -264,6 +288,21 @@ type TurnReport = {
   - 机场费：`(slotFeeA + slotFeeB) × AIRPORT_FEE_FACTOR × flights`（系数 0.55——
     2026-06-12 平衡模拟：全额机场费使短途航线结构性亏损）
   - 机组+维护：`blockHours × CREW_MAINT_USD_PER_BH`（blockHours = flights × (distance/cruise + 0.6)）
+- **品牌与营销（V3.7，缺省值下与旧模型完全一致）**：
+  - 玩家价格权重追加两个因子：`w ×= BRAND_FACTOR ** ((brand − 50) / 50)`
+    （BRAND_FACTOR=1.2，即品牌满分 +20% 权重、谷底 −20%；brand=50 时为 1）；
+    `w ×= 1 + 0.010×digital + 0.012×sponsor`（marketing 为 0 时为 1）。
+  - `service` 投放不进权重：每季 `brand += 0.4×service`。
+  - 品牌均值回归：每季结算后 `brand += (50 − brand) × 0.05`，再夹紧 [0,100]。
+  - 营销费用 `(digital+sponsor+service) × $1M` 计入每季总成本。
+  - 服务等级联动：航线 serviceTier 3 每季 brand +0.3、tier 1 −0.3（按航线数累计，
+    封顶 ±1.5/季）。
+- **抉择事件（V3.7）**：独立池 `data/events-decisions.json`（≥8 条三语），每回合
+  无待决时以 `DECISION_CHANCE=0.15` 确定性种子抽取（种子同 M3.1 体系，加盐
+  "decision"）；抽中后置入 `pendingDecision`，**不立即生效**。`resolveDecision`
+  应用所选项的 cashDelta/brandDelta 并清空；若到 `expiresTurn` 结算时仍未决，
+  自动采用 `isDefault` 项并在 news 播报「自动处理」。待决期间不抽新抉择，
+  普通事件照常。
 - **机队持有成本**（按飞机/季度）：自有 = `price × DEPRECIATION_Q`（1.25%）；
   租赁 = `price × LEASE_RATE_Q`（2.75%）。未指派的飞机同样产生持有成本。
 - **总部开销**：`HQ_OVERHEAD + ADMIN_PER_AIRCRAFT × fleetSize` 每季度。
