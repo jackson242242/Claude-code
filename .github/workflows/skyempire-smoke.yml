@@ -25,12 +25,13 @@ jobs:
         run: |
           echo "== Web =="
           curl -sS -m 60 -w "HTTP %{http_code}\n" "$WEB" -o /tmp/page.html || echo "WEB UNREACHABLE"
-          grep -oE '/_next/static/chunks/[a-zA-Z0-9._-]+\.js' /tmp/page.html | sort -u | head -12 > /tmp/chunks.txt
+          grep -oE '/_next/static/[a-zA-Z0-9._/-]+\.js' /tmp/page.html | sort -u | head -20 > /tmp/chunks.txt
           echo "chunks: $(wc -l < /tmp/chunks.txt)"
           while read -r c; do
             curl -sS -m 60 "$WEB$c" -o /tmp/chunk.js || continue
-            grep -oE 'localhost:8001|[a-z0-9-]+\.onrender\.com' /tmp/chunk.js | sort -u | sed "s|^|BAKED: |"
+            grep -oE 'localhost:8001|https?://[a-z0-9.-]*onrender[a-z0-9.-]*|skyempire-api[a-z0-9.-]*' /tmp/chunk.js | sort -u | sed "s|^|BAKED: |"
           done < /tmp/chunks.txt | sort -u
+          echo "(若无 BAKED 行 = 两种地址都没烧进首页 chunks)" 
 
       - name: 全流程可玩性测试
         run: |
