@@ -1,0 +1,362 @@
+[
+  {
+    "id": "dec-delay-storm",
+    "prompt": "暴风雪导致我司多条航线延误超 4 小时，数百名旅客滞留机场，社交媒体怒火蔓延。",
+    "promptEn": "A blizzard has delayed dozens of your flights by over 4 hours. Hundreds of passengers are stranded and social media anger is growing.",
+    "promptEs": "Una tormenta de nieve ha causado retrasos de más de 4 horas en varias rutas. Cientos de pasajeros están varados y las redes sociales se incendian.",
+    "detail": "选择如何回应这场公关危机将直接影响品牌形象和短期财务。",
+    "detailEn": "How you respond to this PR crisis will directly affect brand image and short-term finances.",
+    "detailEs": "Cómo respondas a esta crisis de relaciones públicas afectará directamente la imagen de marca y las finanzas a corto plazo.",
+    "options": [
+      {
+        "id": "apologize-vouchers",
+        "label": "公开道歉并发放补偿券（每客$200）",
+        "labelEn": "Public apology with $200 compensation vouchers per passenger",
+        "labelEs": "Disculpa pública con vales de $200 por pasajero",
+        "cashDelta": -12000000,
+        "brandDelta": 8
+      },
+      {
+        "id": "cold-shoulder",
+        "label": "仅发官方声明，声称不可抗力",
+        "labelEn": "Issue only a brief force-majeure statement",
+        "labelEs": "Emitir solo un breve comunicado de fuerza mayor",
+        "cashDelta": 0,
+        "brandDelta": -6,
+        "isDefault": true
+      },
+      {
+        "id": "premium-rescue",
+        "label": "包机接驳 + 五星酒店安置，全程直播",
+        "labelEn": "Charter rescue flights + 5-star hotel accommodation, live-streamed",
+        "labelEs": "Vuelos de rescate fletados + hotel de 5 estrellas, transmitido en vivo",
+        "cashDelta": -25000000,
+        "brandDelta": 15
+      }
+    ]
+  },
+  {
+    "id": "dec-baggage-viral",
+    "prompt": "一段旅客行李被工作人员随意抛掷的视频在网络爆红，48小时内播放量破千万，评论区一片骂声。",
+    "promptEn": "A viral video of your baggage handlers throwing luggage has hit 10 million views in 48 hours. Comment sections are brutal.",
+    "promptEs": "Un video viral de tus manejadores de equipaje lanzando maletas alcanzó 10 millones de vistas en 48 horas. Los comentarios son devastadores.",
+    "detail": "此类事件对品牌的长期伤害往往超过即时经济损失，处置态度至关重要。",
+    "detailEn": "The long-term brand damage from such incidents often exceeds the immediate financial cost — how you respond matters enormously.",
+    "detailEs": "El daño a largo plazo en la marca suele superar el costo financiero inmediato — la actitud de respuesta es crucial.",
+    "options": [
+      {
+        "id": "full-investigation",
+        "label": "立即停职涉事人员并公开道歉，设立专项赔偿基金",
+        "labelEn": "Suspend implicated staff, public apology, set up a dedicated compensation fund",
+        "labelEs": "Suspender al personal implicado, disculpa pública, crear fondo de compensación",
+        "cashDelta": -8000000,
+        "brandDelta": 10
+      },
+      {
+        "id": "deny-minimize",
+        "label": "发声明称视频断章取义，已内部调查",
+        "labelEn": "Claim the video is taken out of context; internal review underway",
+        "labelEs": "Alegar que el video está descontextualizado; revisión interna en curso",
+        "cashDelta": 0,
+        "brandDelta": -10,
+        "isDefault": true
+      },
+      {
+        "id": "retrain-program",
+        "label": "全员行李操作培训 + 感谢视频监督的旅客",
+        "labelEn": "Company-wide baggage handling retraining + thank passengers for oversight",
+        "labelEs": "Reentrenamiento completo + agradecer a los pasajeros por su vigilancia",
+        "cashDelta": -4000000,
+        "brandDelta": 6
+      }
+    ]
+  },
+  {
+    "id": "dec-crew-strike-threat",
+    "prompt": "机组工会宣布若薪资谈判在两周内无果将发起全面罢工，届时所有航班面临停飞风险。",
+    "promptEn": "The crew union threatens a full strike in two weeks if salary negotiations fail, risking all flights.",
+    "promptEs": "El sindicato de tripulación amenaza con una huelga total en dos semanas si fallan las negociaciones salariales.",
+    "detail": "罢工将严重损害品牌，而过度让步将推高长期运营成本。",
+    "detailEn": "A strike would severely damage the brand, while excessive concessions would inflate long-term operating costs.",
+    "detailEs": "Una huelga dañaría gravemente la marca, mientras que concesiones excesivas inflarían los costos operativos a largo plazo.",
+    "options": [
+      {
+        "id": "full-concession",
+        "label": "接受工会全部条款，立即签约",
+        "labelEn": "Accept all union terms and sign immediately",
+        "labelEs": "Aceptar todos los términos del sindicato y firmar de inmediato",
+        "cashDelta": -20000000,
+        "brandDelta": 7
+      },
+      {
+        "id": "mediate-partial",
+        "label": "聘请第三方调解，接受部分加薪",
+        "labelEn": "Hire a third-party mediator, accept partial pay increases",
+        "labelEs": "Contratar mediador externo, aceptar incrementos salariales parciales",
+        "cashDelta": -8000000,
+        "brandDelta": 3,
+        "isDefault": true
+      },
+      {
+        "id": "hold-firm",
+        "label": "拒绝让步，公开表态立场强硬",
+        "labelEn": "Hold firm publicly, refuse concessions",
+        "labelEs": "Mantener postura firme públicamente, sin concesiones",
+        "cashDelta": 0,
+        "brandDelta": -12
+      }
+    ]
+  },
+  {
+    "id": "dec-influencer-sponsorship",
+    "prompt": "一位拥有 2000 万粉丝的旅行网红主动联系，愿以专属代言换取免费机票及年度赞助费。",
+    "promptEn": "A travel influencer with 20 million followers has reached out, offering exclusive endorsement for free tickets and a sponsorship fee.",
+    "promptEs": "Un influencer de viajes con 20 millones de seguidores ofrece un respaldo exclusivo a cambio de boletos gratuitos y una tarifa de patrocinio.",
+    "detail": "网红营销效果参差不齐，但头部网红的曝光量往往远超传统广告。",
+    "detailEn": "Influencer marketing results vary wildly, but top-tier creators often deliver far more reach than traditional advertising.",
+    "detailEs": "Los resultados del marketing de influencers varían mucho, pero los creadores de primer nivel suelen generar más alcance que la publicidad tradicional.",
+    "options": [
+      {
+        "id": "sign-full-deal",
+        "label": "全额签约：年费代言 + 专属内容合作",
+        "labelEn": "Sign the full deal: annual endorsement fee + exclusive content partnership",
+        "labelEs": "Firmar el contrato completo: cuota anual + asociación de contenido exclusivo",
+        "cashDelta": -6000000,
+        "brandDelta": 12
+      },
+      {
+        "id": "one-off-campaign",
+        "label": "仅做一次性活动合作，控制风险",
+        "labelEn": "One-off campaign collaboration only, limiting risk",
+        "labelEs": "Solo una colaboración puntual, limitando el riesgo",
+        "cashDelta": -2000000,
+        "brandDelta": 5,
+        "isDefault": true
+      },
+      {
+        "id": "decline",
+        "label": "婉拒，维持品牌独立性",
+        "labelEn": "Decline politely, preserve brand independence",
+        "labelEs": "Rechazar con cortesía, preservar la independencia de la marca",
+        "cashDelta": 0,
+        "brandDelta": 0
+      }
+    ]
+  },
+  {
+    "id": "dec-pilot-poaching",
+    "prompt": "竞争对手航司以高出 30% 薪资挖走我司 12 名资深机长，短期内部分航线将面临运力紧张。",
+    "promptEn": "A rival airline has poached 12 of your senior captains with 30% salary increases, causing short-term capacity pressure.",
+    "promptEs": "Una aerolínea rival ha captado a 12 de tus capitanes senior con aumentos salariales del 30%, generando presión de capacidad a corto plazo.",
+    "detail": "如何留住剩余飞行员并修复运营信心，是当务之急。",
+    "detailEn": "Retaining remaining pilots and restoring operational confidence is the immediate priority.",
+    "detailEs": "Retener a los pilotos restantes y restaurar la confianza operacional es la prioridad inmediata.",
+    "options": [
+      {
+        "id": "raise-salaries",
+        "label": "全体飞行员涨薪 20% + 留任奖金",
+        "labelEn": "20% salary raise for all pilots + retention bonuses",
+        "labelEs": "Aumento salarial del 20% para todos los pilotos + bonos de retención",
+        "cashDelta": -15000000,
+        "brandDelta": 5
+      },
+      {
+        "id": "targeted-retention",
+        "label": "仅对高风险人员发放定向留任包",
+        "labelEn": "Targeted retention packages for high-risk pilots only",
+        "labelEs": "Paquetes de retención dirigidos solo a pilotos de alto riesgo",
+        "cashDelta": -6000000,
+        "brandDelta": 2,
+        "isDefault": true
+      },
+      {
+        "id": "recruit-junior",
+        "label": "加速招聘培训年轻飞行员，接受短期阵痛",
+        "labelEn": "Accelerate junior pilot recruitment and accept short-term disruption",
+        "labelEs": "Acelerar la contratación de pilotos junior y aceptar la disrupción a corto plazo",
+        "cashDelta": -3000000,
+        "brandDelta": -5
+      }
+    ]
+  },
+  {
+    "id": "dec-eco-protest",
+    "prompt": "环保团体在我司总部及各主要机场外发起抗议，要求大幅减少短途航班并购入可持续航空燃料。",
+    "promptEn": "Environmental groups are protesting outside your HQ and major airports, demanding significant short-haul cuts and sustainable fuel adoption.",
+    "promptEs": "Grupos ambientalistas protestan frente a tu sede y principales aeropuertos, exigiendo reducción de vuelos cortos y combustible sostenible.",
+    "detail": "公众对航空业环保议题的关注持续升温，回应方式将影响品牌的长期定位。",
+    "detailEn": "Public attention on aviation's environmental impact is rising — your response will shape your brand's long-term positioning.",
+    "detailEs": "La atención pública sobre el impacto ambiental de la aviación está aumentando — tu respuesta definirá el posicionamiento de la marca a largo plazo.",
+    "options": [
+      {
+        "id": "green-pledge",
+        "label": "发布绿色承诺：2030年前可持续燃料占比10%，设立碳抵消基金",
+        "labelEn": "Green pledge: 10% sustainable fuel by 2030, launch carbon offset fund",
+        "labelEs": "Compromiso verde: 10% combustible sostenible para 2030, fondo de compensación de carbono",
+        "cashDelta": -10000000,
+        "brandDelta": 13
+      },
+      {
+        "id": "dialogue-committee",
+        "label": "邀请环保团体代表加入顾问委员会，承诺研究方案",
+        "labelEn": "Invite protest leaders onto an advisory committee, commit to studying options",
+        "labelEs": "Invitar a líderes del movimiento a un comité asesor, comprometerse a estudiar opciones",
+        "cashDelta": -1000000,
+        "brandDelta": 4,
+        "isDefault": true
+      },
+      {
+        "id": "ignore-protest",
+        "label": "发声明坚守商业立场，不作实质让步",
+        "labelEn": "Issue a statement defending commercial operations, no substantive concessions",
+        "labelEs": "Emitir comunicado defendiendo las operaciones comerciales, sin concesiones sustanciales",
+        "cashDelta": 0,
+        "brandDelta": -8
+      }
+    ]
+  },
+  {
+    "id": "dec-oversale-video",
+    "prompt": "一段因超售被强行清机的旅客视频迅速登上热搜，国内外媒体纷纷报道，舆论一边倒批评我司。",
+    "promptEn": "A video of a passenger being forcibly removed due to overbooking has gone viral internationally. Media coverage is overwhelmingly negative.",
+    "promptEs": "Un video de un pasajero siendo removido a la fuerza por sobreventa se ha viralizado internacionalmente. La cobertura mediática es abrumadoramente negativa.",
+    "detail": "此类事件可能引发监管审查及集体诉讼，第一时间的公关回应往往决定最终走向。",
+    "detailEn": "Such incidents can trigger regulatory scrutiny and class-action lawsuits. The first-hour PR response often determines the final outcome.",
+    "detailEs": "Estos incidentes pueden desencadenar escrutinio regulatorio y demandas colectivas. La respuesta de relaciones públicas en la primera hora suele determinar el resultado final.",
+    "options": [
+      {
+        "id": "ceo-apology",
+        "label": "CEO亲自道歉，宣布修改超售政策并赔偿当事旅客$30万",
+        "labelEn": "CEO personal apology, revise overbooking policy, $300K compensation to the affected passenger",
+        "labelEs": "Disculpa personal del CEO, revisar política de sobreventa, compensación de $300K al pasajero afectado",
+        "cashDelta": -9000000,
+        "brandDelta": 11
+      },
+      {
+        "id": "legal-settlement",
+        "label": "通过法律途径私下和解，官方不承认错误",
+        "labelEn": "Settle privately through legal channels; no official admission of fault",
+        "labelEs": "Acuerdo privado a través de canales legales; sin admisión oficial de culpa",
+        "cashDelta": -4000000,
+        "brandDelta": -4,
+        "isDefault": true
+      },
+      {
+        "id": "blame-passenger",
+        "label": "发表声明指旅客违反登机规定，坚持公司立场",
+        "labelEn": "Issue statement blaming the passenger for violating boarding rules",
+        "labelEs": "Emitir comunicado culpando al pasajero por violar las reglas de embarque",
+        "cashDelta": 0,
+        "brandDelta": -15
+      }
+    ]
+  },
+  {
+    "id": "dec-sports-sponsorship",
+    "prompt": "某国家级足球俱乐部邀请我司成为官方指定航空合作伙伴，赞助为期三年，曝光覆盖全球直播。",
+    "promptEn": "A national-level soccer club has invited you to become their official airline partner for three years, with global broadcast exposure.",
+    "promptEs": "Un club de fútbol de nivel nacional te invita a convertirte en su socio aéreo oficial por tres años, con exposición en transmisiones globales.",
+    "detail": "体育赞助可带来大量品牌曝光，但投资回报期较长且不确定性较高。",
+    "detailEn": "Sports sponsorship delivers massive brand exposure but has a long and uncertain ROI horizon.",
+    "detailEs": "El patrocinio deportivo genera gran exposición de marca, pero con un horizonte de ROI largo e incierto.",
+    "options": [
+      {
+        "id": "sign-sponsorship",
+        "label": "签约三年全额赞助，获得球衣品牌露出",
+        "labelEn": "Sign the three-year full sponsorship, secure jersey brand placement",
+        "labelEs": "Firmar el patrocinio completo de tres años, asegurar presencia en camiseta",
+        "cashDelta": -18000000,
+        "brandDelta": 14
+      },
+      {
+        "id": "limited-sponsor",
+        "label": "仅赞助主场比赛，限定预算",
+        "labelEn": "Sponsor home games only, limited budget",
+        "labelEs": "Patrocinar solo partidos en casa, presupuesto limitado",
+        "cashDelta": -5000000,
+        "brandDelta": 6,
+        "isDefault": true
+      },
+      {
+        "id": "pass-sponsorship",
+        "label": "婉拒，将预算用于数字营销",
+        "labelEn": "Decline and redirect budget to digital marketing",
+        "labelEs": "Rechazar y redirigir el presupuesto al marketing digital",
+        "cashDelta": 0,
+        "brandDelta": 0
+      }
+    ]
+  },
+  {
+    "id": "dec-safety-audit-leak",
+    "prompt": "内部安全审计报告遭到泄露，媒体报道显示部分机型维护记录存在记录缺失，监管部门已要求解释。",
+    "promptEn": "An internal safety audit has been leaked. Media reports allege missing maintenance records on several aircraft types; regulators demand explanations.",
+    "promptEs": "Una auditoría de seguridad interna fue filtrada. Los medios informan sobre registros de mantenimiento faltantes; los reguladores exigen explicaciones.",
+    "detail": "安全问题是航空业的红线，任何应对迟缓都可能引发更大的监管风暴。",
+    "detailEn": "Safety is aviation's absolute red line — any slow response risks triggering a far larger regulatory storm.",
+    "detailEs": "La seguridad es la línea roja absoluta de la aviación — cualquier respuesta lenta arriesga desencadenar una tormenta regulatoria mayor.",
+    "options": [
+      {
+        "id": "proactive-disclosure",
+        "label": "主动全面披露审计结果，与监管机构合作整改",
+        "labelEn": "Full proactive disclosure of audit findings, cooperate fully with regulators on remediation",
+        "labelEs": "Divulgación proactiva y completa de los hallazgos de la auditoría, cooperar plenamente con los reguladores",
+        "cashDelta": -7000000,
+        "brandDelta": 9
+      },
+      {
+        "id": "partial-response",
+        "label": "承认部分问题，以内部改进计划回应监管",
+        "labelEn": "Acknowledge partial issues, respond with an internal improvement plan",
+        "labelEs": "Reconocer problemas parciales, responder con un plan de mejora interno",
+        "cashDelta": -3000000,
+        "brandDelta": 1,
+        "isDefault": true
+      },
+      {
+        "id": "deny-leak",
+        "label": "否认泄露文件的真实性，主张媒体造谣",
+        "labelEn": "Deny the authenticity of the leaked documents, accuse media of fabrication",
+        "labelEs": "Negar la autenticidad de los documentos filtrados, acusar a los medios de fabricación",
+        "cashDelta": 0,
+        "brandDelta": -14
+      }
+    ]
+  },
+  {
+    "id": "dec-mileage-revamp",
+    "prompt": "董事会提议大幅削减里程计划兑换比例以降低负债，但此举将令高价值常旅客感到被背刺。",
+    "promptEn": "The board proposes slashing frequent flyer mileage redemption rates to cut liabilities, but this will alienate your most valuable customers.",
+    "promptEs": "La junta propone recortar drásticamente las tasas de canje de millas para reducir pasivos, pero esto alienará a los clientes más valiosos.",
+    "detail": "常旅客忠诚度是航空公司的核心资产，但里程负债同样是真实的财务压力。",
+    "detailEn": "Frequent flyer loyalty is a core airline asset, but mileage liabilities are a real financial pressure.",
+    "detailEs": "La lealtad de los viajeros frecuentes es un activo central, pero los pasivos de millas son una presión financiera real.",
+    "options": [
+      {
+        "id": "preserve-rates",
+        "label": "维持原有兑换比例，推出限时双倍积分活动稳固忠诚度",
+        "labelEn": "Preserve redemption rates; launch double-miles campaign to reinforce loyalty",
+        "labelEs": "Mantener tasas de canje; lanzar campaña de millas dobles para reforzar la lealtad",
+        "cashDelta": -5000000,
+        "brandDelta": 10
+      },
+      {
+        "id": "gradual-reduce",
+        "label": "分阶段小幅下调，提前通知常旅客",
+        "labelEn": "Gradual phased reduction with advance notice to frequent flyers",
+        "labelEs": "Reducción gradual por fases con aviso previo a los viajeros frecuentes",
+        "cashDelta": 4000000,
+        "brandDelta": -3,
+        "isDefault": true
+      },
+      {
+        "id": "slash-rates",
+        "label": "立即执行大幅削减，利用法律窗口期",
+        "labelEn": "Immediate drastic cut, exploit legal notice window",
+        "labelEs": "Recorte drástico inmediato, aprovechar la ventana legal de notificación",
+        "cashDelta": 10000000,
+        "brandDelta": -15
+      }
+    ]
+  }
+]

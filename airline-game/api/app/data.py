@@ -78,3 +78,28 @@ def load_events(data_dir: Path | None = None) -> list:
             pool.append(ev)
 
     return pool
+
+
+def load_decisions(data_dir: Path | None = None) -> list:
+    """Load and validate the decision event pool from events-decisions.json (V3.7).
+
+    Returns a list of validated DecisionEvent objects.  Invalid entries are
+    silently skipped (same policy as M3.1 static events).
+    """
+    from app.engine.decisions import validate_decision
+
+    base = data_dir or DATA_DIR
+    decisions_path = base / "events-decisions.json"
+    if not decisions_path.exists():
+        return []
+
+    with open(decisions_path, encoding="utf-8") as fh:
+        raw_list = json.load(fh)
+
+    pool = []
+    for raw in raw_list:
+        dec = validate_decision(raw)
+        if dec is not None:
+            pool.append(dec)
+
+    return pool

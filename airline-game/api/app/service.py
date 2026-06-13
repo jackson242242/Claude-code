@@ -15,6 +15,7 @@ from typing import Any, Mapping, Sequence
 from app.engine import commands as engine_commands
 from app.engine import simulate
 from app.engine.commands import CommandResult
+from app.engine.decisions import DecisionEvent
 from app.engine.simulate import TurnReport
 from app.engine.state import GameEvent, GameState, World, new_game
 from app.store import AbstractStore, MemoryStore
@@ -43,6 +44,7 @@ class GameService:
         world: World,
         repository: AbstractStore | None = None,
         event_pool: list[GameEvent] | None = None,
+        decision_pool: list[DecisionEvent] | None = None,
     ) -> None:
         self.world = world
         # Accept both the old GameRepository and the new AbstractStore subclasses.
@@ -50,6 +52,9 @@ class GameService:
         # M3.1: the event pool passed to settle_turn on every end-turn call.
         # None here means "use the global default pool" (loaded by app.data.load_events).
         self._event_pool = event_pool
+        # V3.7: the decision event pool passed to settle_turn on every end-turn call.
+        # None here means "use the global default pool" (loaded by app.data.load_decisions).
+        self._decision_pool = decision_pool
 
     def create_game(self, airline_name: str, hq_city_id: str) -> GameState:
         name = airline_name.strip()
@@ -87,7 +92,8 @@ class GameService:
         except Exception:
             pass
         report = simulate.settle_turn(
-            state, self.world, self._event_pool, news_pool_events
+            state, self.world, self._event_pool, news_pool_events,
+            self._decision_pool,
         )
         self.repository.save(state)  # M5.1: persist after every mutation
         return state, report

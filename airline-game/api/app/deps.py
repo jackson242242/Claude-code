@@ -4,7 +4,7 @@ from __future__ import annotations
 import os
 from functools import lru_cache
 
-from app.data import load_events, load_world
+from app.data import load_decisions, load_events, load_world
 from app.service import GameService
 
 
@@ -38,5 +38,9 @@ def get_service() -> GameService:
     # M3.1: load the static event library and pass it explicitly to the service.
     # This avoids mutating a global, keeping the engine testable in isolation.
     event_pool = load_events()
+    # V3.7: load the decision event pool.
+    decision_pool = load_decisions()
     store = _make_store()
-    return GameService(world, repository=store, event_pool=event_pool)
+    return GameService(
+        world, repository=store, event_pool=event_pool, decision_pool=decision_pool
+    )

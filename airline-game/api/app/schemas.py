@@ -193,6 +193,44 @@ class FinalResult(CamelModel):
     ended_turn: int
 
 
+# --- V3.7 Brand / Marketing / Decision schemas --------------------------------
+
+
+class Marketing(CamelModel):
+    """V3.7 marketing channel allocation (each 0–10 = $M/quarter)."""
+
+    digital: int = 0
+    sponsor: int = 0
+    service: int = 0
+
+
+class DecisionOption(CamelModel):
+    """V3.7 one option inside a DecisionEvent."""
+
+    id: str
+    label: str
+    cash_delta: float
+    brand_delta: float
+    is_default: bool = False
+    label_en: str | None = None
+    label_es: str | None = None
+
+
+class DecisionEvent(CamelModel):
+    """V3.7 pending interactive decision in GameState.pendingDecision."""
+
+    id: str
+    prompt: str
+    options: list[DecisionOption]
+    expires_turn: int
+    drawn_turn: int
+    prompt_en: str | None = None
+    prompt_es: str | None = None
+    detail: str | None = None
+    detail_en: str | None = None
+    detail_es: str | None = None
+
+
 class GameState(CamelModel):
     id: str
     airline_name: str
@@ -216,6 +254,10 @@ class GameState(CamelModel):
     final_result: FinalResult | None = None
     # M3.1: active events.
     active_events: list[ActiveEvent] = Field(default_factory=list)
+    # V3.7: brand, marketing, pending decision.
+    brand: float = 50.0
+    marketing: Marketing = Field(default_factory=Marketing)
+    pending_decision: DecisionEvent | None = None
 
 
 class RouteTurnStats(RouteQuarterStats):

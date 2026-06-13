@@ -203,6 +203,48 @@ class NewsItem:
     kind: Literal["system", "event"] = "system"
 
 
+# --- V3.7 Brand / Marketing / Decision types ------------------------------------
+
+
+@dataclass
+class Marketing:
+    """Quarterly marketing spend allocation per channel (each 0–10 = $M/quarter).
+    CONTRACT §2 V3.7: digital / sponsor / service."""
+
+    digital: int = 0
+    sponsor: int = 0
+    service: int = 0
+
+
+@dataclass
+class DecisionOption:
+    """One branch of a DecisionEvent (CONTRACT §2 V3.7)."""
+
+    id: str
+    label: str
+    cash_delta: float       # immediate cash change; negative = outlay
+    brand_delta: float      # brand score change
+    is_default: bool = False
+    label_en: str | None = None
+    label_es: str | None = None
+
+
+@dataclass
+class DecisionEvent:
+    """An interactive PR/marketing dilemma the player must resolve (CONTRACT §2 V3.7)."""
+
+    id: str
+    prompt: str
+    options: list[DecisionOption]
+    expires_turn: int       # if unresolved at this turn's settlement → auto-resolve
+    drawn_turn: int = 0    # set when drawn into pendingDecision
+    prompt_en: str | None = None
+    prompt_es: str | None = None
+    detail: str | None = None
+    detail_en: str | None = None
+    detail_es: str | None = None
+
+
 @dataclass
 class FinanceTotals:
     revenue: float
@@ -287,6 +329,11 @@ class GameState:
     # M4.3: track news event ids that have been activated in this game.
     # Prevents a game from ever re-drawing the same news event twice.
     seen_news_ids: set[str] = field(default_factory=set)
+    # V3.7: brand reputation 0–100 (default 50) and marketing allocation.
+    brand: float = field(default_factory=lambda: balance.BRAND_INITIAL)
+    marketing: Marketing = field(default_factory=Marketing)
+    # V3.7: pending player decision (drawn from decision pool, None when idle).
+    pending_decision: DecisionEvent | None = None
     # Engine-internal bookkeeping — not exposed through the API schemas.
     negative_cash_quarters: int = 0
     next_aircraft_seq: int = 1

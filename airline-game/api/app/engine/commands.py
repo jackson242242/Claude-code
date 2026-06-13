@@ -10,11 +10,13 @@ from dataclasses import dataclass
 from typing import Any, Callable, Mapping, Sequence
 
 from app.engine import balance
+from app.engine.decisions import resolve_decision as _resolve_decision_action
 from app.engine.simulate import assigned_models, mean_cruise_kmh, weekly_block_hours
 from app.engine.state import (
     CabinMix,
     FleetAircraft,
     GameState,
+    Marketing,
     Route,
     World,
     ensure_active,
@@ -338,7 +340,44 @@ def _update_route(state: GameState, world: World, command: Mapping[str, Any]) ->
         route.service_tier = int(service_tier_raw)
 
 
+def _resolve_decision(state: GameState, world: World, command: Mapping[str, Any]) -> None:
+    """V3.7: resolveDecision — apply chosen option, clear pending decision."""
+    option_id = _require_str(command, "optionId")
+    try:
+        _resolve_decision_action(state, option_id)
+    except ValueError as exc:
+        raise CommandError(str(exc)) from exc
+
+
+def _set_marketing(state: GameState, world: World, command: Mapping[str, Any]) -> None:
+    """V3.7: setMarketing — validate and update seasonal marketing allocation.
+
+    Each channel (digital, sponsor, service) must be an integer in [0, 10].
+    """
+    raw = command.get("marketing")
+    if not isinstance(raw, dict):
+        raise CommandError("marketing must be an object {digital, sponsor, service}")
+    result: dict[str, int] = {}
+    for key in ("digital", "sponsor", "service"):
+        val = raw.get(key)
+        if val is None:
+            raise CommandError(f"marketing missing field: {key}")
+        # Must be a non-negative integer in [0, 10]
+        if isinstance(val, bool) or not isinstance(val, (int, float)):
+            raise CommandError(f"marketing.{key} must be an integer 0–10")
+        if int(val) != val or not (0 <= int(val) <= 10):
+            raise CommandError(f"marketing.{key} must be an integer between 0 and 10")
+        result[key] = int(val)
+    state.marketing = Marketing(
+        digital=result["digital"],
+        sponsor=result["sponsor"],
+        service=result["service"],
+    )
+
+
 _HANDLERS: dict[str, Callable[[GameState, World, Mapping[str, Any]], None]] = {
+    "resolveDecision": _resolve_decision,
+    "setMarketing": _set_marketing,
     "buyAircraft": _buy_aircraft,
     "leaseAircraft": _lease_aircraft,
     "sellAircraft": _sell_aircraft,

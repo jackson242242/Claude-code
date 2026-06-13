@@ -10,6 +10,7 @@ from dataclasses import dataclass, field
 
 from app.engine import balance
 from app.engine.competitors import competitor_route_capacity, evolve_competitors
+from app.engine.decisions import auto_resolve_decision, draw_decision
 from app.engine.events import get_cost_mult, get_demand_mult, process_events
 from app.engine.state import (
     AircraftModel,
@@ -94,10 +95,36 @@ def mean_cruise_kmh(models: list[AircraftModel]) -> float:
     return _mean([m.cruise_kmh for m in models])
 
 
-def price_weight(fare_mult: float, service_tier: int = 2) -> float:
-    """Price weight of a seller (CONTRACT §3 M2.3): w = fareMult**PRICE_ELASTICITY
-    × SERVICE_WEIGHT[tier]. With tier=2 the multiplier is 1.0 — identical to M2.2."""
-    return fare_mult ** balance.PRICE_ELASTICITY * balance.SERVICE_WEIGHT[service_tier]
+def price_weight(
+    fare_mult: float,
+    service_tier: int = 2,
+    brand: float = 50.0,
+    marketing_digital: int = 0,
+    marketing_sponsor: int = 0,
+) -> float:
+    """Price weight of a seller (CONTRACT §3 M2.3 + V3.7).
+
+    w = fareMult**PRICE_ELASTICITY
+      × SERVICE_WEIGHT[tier]
+      × BRAND_FACTOR**((brand-50)/50)        ← V3.7: brand factor
+      × (1 + 0.010×digital + 0.012×sponsor) ← V3.7: marketing factor
+
+    With defaults (brand=50, digital=0, sponsor=0) the brand factor is
+    1.0 and the marketing factor is 1.0 — identical to the pre-V3.7 weight.
+    AI sellers always use defaults so the formula does not change their weights.
+    """
+    brand_factor = balance.BRAND_FACTOR ** ((brand - 50.0) / 50.0)
+    marketing_factor = (
+        1.0
+        + balance.MARKETING_DIGITAL_WEIGHT * marketing_digital
+        + balance.MARKETING_SPONSOR_WEIGHT * marketing_sponsor
+    )
+    return (
+        fare_mult ** balance.PRICE_ELASTICITY
+        * balance.SERVICE_WEIGHT[service_tier]
+        * brand_factor
+        * marketing_factor
+    )
 
 
 def cabin_seats(total_seats: int, mix_e: int, mix_b: int, mix_f: int) -> tuple[int, int, int]:
@@ -237,7 +264,13 @@ def allocate_market(
         if player_route is not None:
             sellers.append(
                 _Seller(
-                    weight=price_weight(player_route.fare_mult, player_route.service_tier),
+                    weight=price_weight(
+                        player_route.fare_mult,
+                        player_route.service_tier,
+                        brand=state.brand,
+                        marketing_digital=state.marketing.digital,
+                        marketing_sponsor=state.marketing.sponsor,
+                    ),
                     capacity=route_capacity(state, world, player_route),
                 )
             )
@@ -471,6 +504,7 @@ def settle_turn(
     world: World,
     event_pool: list | None = None,
     news_pool_events: list | None = None,
+    decision_pool: list | None = None,
 ) -> TurnReport:
     """Settle the current quarter, mutate state (cash, finance, calendar,
     status, news) and return the TurnReport for that settled quarter.
@@ -483,10 +517,22 @@ def settle_turn(
     When non-empty and this game has unseen news events, the news pool is
     prioritised over the static pool.  None → no news pool available (silent
     fallback to static pool — game never notices).
+
+    decision_pool (V3.7): pool of DecisionEvent templates.  None → loaded from
+    data/events-decisions.json (handled by service layer).  Pass [] to disable
+    decisions (used by tests needing exact numbers).
     """
     ensure_active(state)
 
     turn, year, quarter = state.turn, state.year, state.quarter
+
+    # V3.7: auto-resolve expired pending decision BEFORE settlement financials.
+    decision_news: list[NewsItem] = []
+    if (
+        state.pending_decision is not None
+        and turn >= state.pending_decision.expires_turn
+    ):
+        decision_news = auto_resolve_decision(state)
 
     # M3.1 + M4.3: process events at START of settlement (decrement, expire, draw).
     event_news = process_events(state, turn, event_pool, news_pool_events)
@@ -512,8 +558,20 @@ def settle_turn(
         routes_revenue += stats.revenue
         routes_cost += stats.cost
 
+    # V3.7: marketing cost = (digital + sponsor + service) × $1M
+    marketing_cost = (
+        (state.marketing.digital + state.marketing.sponsor + state.marketing.service)
+        * balance.MARKETING_COST_PER_UNIT
+    )
+
     revenue = round(routes_revenue, 2)
-    cost = round(routes_cost + fleet_holding_cost(state, world) + overhead_cost(state), 2)
+    cost = round(
+        routes_cost
+        + fleet_holding_cost(state, world)
+        + overhead_cost(state)
+        + marketing_cost,
+        2,
+    )
     profit = round(revenue - cost, 2)
     totals = FinanceTotals(revenue=revenue, cost=cost, profit=profit)
 
@@ -528,7 +586,36 @@ def settle_turn(
     state.lifetime.profit = round(state.lifetime.profit + profit, 2)
     state.lifetime.pax += total_route_pax
 
+    # V3.7: brand updates after settlement financials.
+    # 1. Service drip from marketing.service spend
+    state.brand += balance.BRAND_SERVICE_DRIP_PER_SERVICE_UNIT * state.marketing.service
+
+    # 2. Service tier drip: +0.3 per tier-3 route, -0.3 per tier-1 route,
+    #    net capped to ±1.5 per quarter
+    tier_drip = 0.0
+    for route in state.routes:
+        if route.service_tier == 3:
+            tier_drip += balance.BRAND_TIER3_PER_ROUTE
+        elif route.service_tier == 1:
+            tier_drip += balance.BRAND_TIER1_PER_ROUTE
+    # Clamp tier drip to [-1.5, +1.5]
+    tier_drip = max(-balance.BRAND_TIER_CAP, min(balance.BRAND_TIER_CAP, tier_drip))
+    state.brand += tier_drip
+
+    # 3. Mean reversion: brand += (50 - brand) × 0.05, then clamp [0, 100]
+    state.brand += (balance.BRAND_INITIAL - state.brand) * balance.BRAND_MEAN_REVERSION
+    state.brand = round(
+        max(balance.BRAND_MIN, min(balance.BRAND_MAX, state.brand)), 4
+    )
+
+    # V3.7: draw decision event for next turn (only when no pending decision).
+    if state.pending_decision is None and decision_pool is not None:
+        drawn_decision = draw_decision(state.id, turn, decision_pool)
+        if drawn_decision is not None:
+            state.pending_decision = drawn_decision
+
     news = [
+        *decision_news,
         *event_news,
         NewsItem(
             headline=f"{year} 年 Q{quarter} 结算完成",

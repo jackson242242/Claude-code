@@ -84,6 +84,27 @@ GAME_LENGTH_TURNS = 80  # 2026 Q3 → 2046 Q2, 20 years (CONTRACT §3)
 # --- Geometry --------------------------------------------------------------------
 EARTH_RADIUS_KM = 6_371.0
 
+# --- Brand & Marketing (V3.7) -------------------------------------------------------
+BRAND_INITIAL = 50.0           # starting brand score
+BRAND_FACTOR = 1.2             # w ×= BRAND_FACTOR ** ((brand-50)/50); brand=50 → 1
+BRAND_MIN = 0.0
+BRAND_MAX = 100.0
+BRAND_MEAN_REVERSION = 0.05    # (50 - brand) × 0.05 applied after settlement, then clamp
+BRAND_SERVICE_DRIP_PER_SERVICE_UNIT = 0.4  # brand += 0.4 × marketing.service each quarter
+BRAND_TIER3_PER_ROUTE = 0.3   # brand += 0.3 per tier-3 route per quarter
+BRAND_TIER1_PER_ROUTE = -0.3  # brand -= 0.3 per tier-1 route per quarter
+BRAND_TIER_CAP = 1.5           # max absolute brand change from service tier drip per quarter
+MARKETING_DIGITAL_WEIGHT = 0.010   # w ×= 1 + 0.010×digital + 0.012×sponsor
+MARKETING_SPONSOR_WEIGHT = 0.012
+MARKETING_COST_PER_UNIT = 1_000_000.0  # $1M per unit of digital+sponsor+service
+
+# --- Decision Events (V3.7) -------------------------------------------------------
+DECISION_CHANCE = 0.15         # probability per turn of drawing a decision event
+DECISION_CASH_DELTA_MIN = -30_000_000   # cashDelta lower bound
+DECISION_CASH_DELTA_MAX = 10_000_000    # cashDelta upper bound
+DECISION_BRAND_DELTA_MIN = -15          # brandDelta lower bound
+DECISION_BRAND_DELTA_MAX = 15           # brandDelta upper bound
+
 # --- Dynamic events (M3.1) -------------------------------------------------------
 EVENT_CHANCE = 0.45            # probability per turn of drawing one new event
 EVENT_SEVERITY_WEIGHTS = {"minor": 3, "major": 1}  # draw weights by severity
