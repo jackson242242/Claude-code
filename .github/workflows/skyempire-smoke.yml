@@ -1,0 +1,45 @@
+# SkyEmpire 线上冒烟（本分支每次 push 自动跑；也可手动触发）
+name: SkyEmpire Smoke
+
+on:
+  push:
+    branches: ["claude/airline-tycoon-dynamic-events-ps9if8"]
+  workflow_dispatch:
+
+env:
+  API: https://skyempire-api.onrender.com
+  WEB: https://skyempire-web.onrender.com
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: API /api/meta
+        run: |
+          echo "== API meta =="
+          curl -sS -m 60 -w "\nHTTP %{http_code}\n" "$API/api/meta" -o /tmp/meta.json || echo "API UNREACHABLE"
+          head -c 300 /tmp/meta.json; echo
+
+      - name: Web homepage + 解剖构建产物中的 API 基址
+        run: |
+          echo "== Web =="
+          curl -sS -m 60 -w "HTTP %{http_code}\n" "$WEB" -o /tmp/page.html || echo "WEB UNREACHABLE"
+          grep -oE '/_next/static/chunks/[a-zA-Z0-9._-]+\.js' /tmp/page.html | sort -u | head -12 > /tmp/chunks.txt
+          echo "chunks: $(wc -l < /tmp/chunks.txt)"
+          while read -r c; do
+            curl -sS -m 60 "$WEB$c" -o /tmp/chunk.js || continue
+            grep -oE 'localhost:8001|[a-z0-9-]+\.onrender\.com' /tmp/chunk.js | sort -u | sed "s|^|BAKED: |"
+          done < /tmp/chunks.txt | sort -u
+
+      - name: 全流程可玩性测试
+        run: |
+          set -e
+          GID=$(curl -sS -m 60 -X POST "$API/api/games" -H 'content-type: application/json' -d '{"airlineName":"审计航空","hqCityId":"hkg"}' | python3 -c "import sys,json;print(json.load(sys.stdin)['id'])")
+          echo "game id: $GID"
+          curl -sS -m 60 -X POST "$API/api/games/$GID/commands" -H 'content-type: application/json' \
+            -d '{"commands":[{"type":"buyAircraft","modelId":"b737-800"},{"type":"negotiateSlot","cityId":"tpe"},{"type":"openRoute","cityA":"hkg","cityB":"tpe"},{"type":"assignAircraft","aircraftId":"ac-1","routeId":"rt-1"}]}' \
+            | python3 -c "import sys,json;[print('cmd',r['index'],'OK' if r['ok'] else r['message']) for r in json.load(sys.stdin)['results']]"
+          curl -sS -m 60 -X POST "$API/api/games/$GID/end-turn" -H 'content-type: application/json' -d '{}' \
+            | python3 -c "import sys,json;d=json.load(sys.stdin);r=d['report']['routeStats'][0];print('LF %.0f%% profit %.2fM cash %.0fM' % (r['loadFactor']*100, r['profit']/1e6, d['state']['cash']/1e6))"
+          echo "PLAYABLE: YES"
