@@ -316,3 +316,72 @@ class CommandsResponse(CamelModel):
 class EndTurnResponse(CamelModel):
     state: GameState
     report: TurnReport
+
+
+# --- V3.3 Multiplayer match schemas -------------------------------------------
+
+
+class MatchPlayerLite(CamelModel):
+    """CONTRACT §2 V3.3: lightweight player entry visible to all match participants."""
+
+    player_id: str
+    name: str
+    hq_city_id: str
+    ready: bool
+    market_share: float
+    bankrupt: bool
+
+
+class MatchView(CamelModel):
+    """CONTRACT §2 V3.3: the view returned to each player from GET /api/matches/{code}."""
+
+    code: str
+    phase: Literal["lobby", "active", "finished"]
+    turn: int
+    year: int
+    quarter: Literal[1, 2, 3, 4]
+    max_players: int
+    players: list[MatchPlayerLite]
+    you: GameState                             # your airline (competitors = AI + others)
+    turn_deadline_ms: float | None = None      # epoch ms; null in lobby/finished
+    last_report: TurnReport | None = None      # last settled turn report for you
+    final_standings: list[StandingEntry] | None = None
+
+
+class CreateMatchRequest(CamelModel):
+    host_name: str
+    host_hq_city_id: str
+    max_players: int = 4
+    fill_with_ai: bool = True
+
+
+class CreateMatchResponse(CamelModel):
+    code: str
+    player_id: str
+
+
+class JoinMatchRequest(CamelModel):
+    name: str
+    hq_city_id: str
+
+
+class JoinMatchResponse(CamelModel):
+    player_id: str
+
+
+class StartMatchRequest(CamelModel):
+    player_id: str
+
+
+class MatchCommandsRequest(CamelModel):
+    player_id: str
+    commands: list[dict[str, Any]]
+
+
+class MatchCommandsResponse(CamelModel):
+    view: MatchView
+    results: list[CommandResult]
+
+
+class MatchReadyRequest(CamelModel):
+    player_id: str

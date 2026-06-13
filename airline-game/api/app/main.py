@@ -12,8 +12,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
+from app.engine.match import MatchError
 from app.engine.state import GameOverError
-from app.routes import games, ingest
+from app.match_service import MatchNotFoundError
+from app.routes import games, ingest, matches
 from app.service import GameNotFoundError, InvalidInputError
 
 app = FastAPI(title="SkyEmpire — Airline Tycoon API (M1)", version="0.1.0")
@@ -49,6 +51,16 @@ async def game_over_handler(_request: Request, exc: GameOverError) -> JSONRespon
     return _error(str(exc), "game_over", 400)
 
 
+@app.exception_handler(MatchNotFoundError)
+async def match_not_found_handler(_request: Request, exc: MatchNotFoundError) -> JSONResponse:
+    return _error(str(exc), "not_found", 404)
+
+
+@app.exception_handler(MatchError)
+async def match_error_handler(_request: Request, exc: MatchError) -> JSONResponse:
+    return _error(str(exc), "match_error", 400)
+
+
 @app.exception_handler(StarletteHTTPException)
 async def http_exception_handler(
     _request: Request, exc: StarletteHTTPException
@@ -77,3 +89,4 @@ def health() -> dict[str, str]:
 
 app.include_router(games.router)
 app.include_router(ingest.router)
+app.include_router(matches.router)
