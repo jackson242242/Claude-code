@@ -383,11 +383,27 @@ class PostgresStore(AbstractStore):
     def __init__(self, dsn: str) -> None:
         self._dsn = dsn
         self._conn = None  # lazy connection
+        self._schema_ready = False
 
     def _connect(self):
         if self._conn is None or self._conn.closed:
             import psycopg  # type: ignore[import-untyped]
             self._conn = psycopg.connect(self._dsn, autocommit=True)
+            self._schema_ready = False
+        if not self._schema_ready:
+            # Idempotent: a fresh Render free Postgres has no table, and nothing
+            # runs schema.sql for us — create it on first connect so games persist
+            # without a manual migration step.
+            self._conn.execute(
+                """
+                CREATE TABLE IF NOT EXISTS games (
+                    id TEXT PRIMARY KEY,
+                    state JSONB NOT NULL,
+                    updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+                )
+                """
+            )
+            self._schema_ready = True
         return self._conn
 
     def next_id(self) -> str:

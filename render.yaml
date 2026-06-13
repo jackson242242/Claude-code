@@ -30,8 +30,13 @@ services:
       # 新闻注入端点令牌：Render 自动生成强随机值；配 cron 时从面板复制。
       - key: INGEST_TOKEN
         generateValue: true
-      # 免费实例无持久盘：存档/事件池在重启时清零（升级 Starter+Disk 后把
-      # GAMES_FILE/EVENTS_POOL_FILE 指到挂载路径即可持久化，见 airline-game/DEPLOY.md）。
+      # 存档持久化（免费 Postgres）：DATABASE_URL 一旦设置即启用 PostgresStore，
+      # 单人存档跨重启/休眠/重新部署保留——解决「Game not found」。表自动创建。
+      - key: DATABASE_URL
+        fromDatabase:
+          name: skyempire-db
+          property: connectionString
+      # 注：多人对战房间仍在内存（match_store），重新部署会清空进行中的房间。
 
   - type: web
     name: skyempire-web
@@ -47,3 +52,9 @@ services:
       # 浏览器无法解析；2026-06-13 线上探针确认本地址 200）
       - key: NEXT_PUBLIC_API_URL
         value: https://skyempire-api.onrender.com
+
+databases:
+  # 免费 Postgres——存档持久化。Blueprint 同步时自动创建并把连接串注入
+  # skyempire-api 的 DATABASE_URL；表由 PostgresStore 首次连接时自动建。
+  - name: skyempire-db
+    plan: free
