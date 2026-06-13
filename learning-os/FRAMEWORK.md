@@ -6,7 +6,10 @@
 > 这份框架不是凭空设计的——它是把已经验证有效的 **「Thomas's Money Adventure」**(PR #41,
 > `kids-investing-course/`)里那套教学 DNA 抽象出来,变成可复用的母版。任何新课程都按这套来建。
 >
-> **配套文档:** [`ENGAGEMENT.md`](./ENGAGEMENT.md) — 留存引擎(心理学钩子、通知/邮件、小组榜、badge、伦理护栏)。
+> **配套文档:**
+> - [`ENGAGEMENT.md`](./ENGAGEMENT.md) — 留存引擎(心理学钩子、通知/邮件、小组榜、badge、伦理护栏)
+> - [`ARCHITECTURE.md`](./ARCHITECTURE.md) — 可行性 / 稳定性 / 可扩展(内容即数据)/ 排名系统 / 技术栈
+> - [`MONETIZATION.md`](./MONETIZATION.md) — 盈利模式(订阅 vs 广告,推荐 freemium + 家庭版)
 
 ---
 
