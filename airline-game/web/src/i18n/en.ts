@@ -437,6 +437,11 @@ const en: Dict = {
 
   // ── S2 cold-start friendly state ─────────────────────────────────────────
   'server.waking': 'Waking the server… (free instance was asleep, ~30s — hang tight)',
+
+  // ── S4 error boundary ────────────────────────────────────────────────────
+  'boundary.title': 'Oops, something went wrong',
+  'boundary.body': 'The game hit an unexpected error. Tap below to start a fresh game — your saved progress is unaffected.',
+  'boundary.restart': 'Start a new game',
 };
 
 export default en;

@@ -438,6 +438,11 @@ const es: Dict = {
 
   // ── S2 estado de arranque en frío ────────────────────────────────────────
   'server.waking': 'Despertando el servidor… (la instancia gratuita estaba en reposo, ~30 s, espera un momento)',
+
+  // ── S4 límite de error ───────────────────────────────────────────────────
+  'boundary.title': 'Vaya, algo salió mal',
+  'boundary.body': 'El juego tuvo un error inesperado. Toca abajo para empezar una nueva partida; tu progreso guardado no se ve afectado.',
+  'boundary.restart': 'Empezar una nueva partida',
 };
 
 export default es;
