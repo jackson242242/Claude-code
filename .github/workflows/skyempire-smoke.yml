@@ -1,0 +1,53 @@
+# SkyEmpire 线上冒烟探针（手动触发，agent 读日志诊断用）
+name: SkyEmpire Smoke
+
+on:
+  workflow_dispatch:
+    inputs:
+      api_url:
+        description: "API base URL"
+        default: "https://skyempire-api.onrender.com"
+      web_url:
+        description: "Web base URL"
+        default: "https://skyempire-web.onrender.com"
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: API /api/meta
+        run: |
+          echo "== API meta =="
+          curl -sS -m 60 -w "\nHTTP %{http_code}\n" "${{ inputs.api_url }}/api/meta" | head -c 500 || echo "API UNREACHABLE"
+
+      - name: Web homepage
+        run: |
+          echo "== Web HTML =="
+          curl -sS -m 60 -w "\nHTTP %{http_code}\n" "${{ inputs.web_url }}" -o /tmp/page.html -D /tmp/headers.txt || echo "WEB UNREACHABLE"
+          cat /tmp/headers.txt | head -5
+          head -c 300 /tmp/page.html; echo
+
+      - name: 解剖前端构建产物中的 API 基址
+        run: |
+          echo "== Baked API base in JS bundles =="
+          grep -oE '/_next/static/chunks/[a-zA-Z0-9._-]+\.js' /tmp/page.html | sort -u | head -12 > /tmp/chunks.txt
+          cat /tmp/chunks.txt
+          while read -r c; do
+            curl -sS -m 60 "${{ inputs.web_url }}$c" -o /tmp/chunk.js || continue
+            grep -oE 'localhost:8001|NEXT_PUBLIC[A-Z_]*|[a-z0-9-]+\.onrender\.com' /tmp/chunk.js | sort -u | sed "s|^|$c: |"
+          done < /tmp/chunks.txt
+          echo "== done =="
+
+      - name: 全流程可玩性测试（建局→买机→谈slot→开航→指派→结算）
+        run: |
+          set -e
+          API="${{ inputs.api_url }}"
+          GID=$(curl -sS -m 60 -X POST "$API/api/games" -H 'content-type: application/json' -d '{"airlineName":"审计航空","hqCityId":"hkg"}' | python3 -c "import sys,json;print(json.load(sys.stdin)['id'])")
+          echo "game id: $GID"
+          curl -sS -m 60 -X POST "$API/api/games/$GID/commands" -H 'content-type: application/json' \
+            -d '{"commands":[{"type":"buyAircraft","modelId":"b737-800"},{"type":"negotiateSlot","cityId":"tpe"},{"type":"openRoute","cityA":"hkg","cityB":"tpe"},{"type":"assignAircraft","aircraftId":"ac-1","routeId":"rt-1"}]}' \
+            | python3 -c "import sys,json;[print('cmd',r['index'],'OK' if r['ok'] else r['message']) for r in json.load(sys.stdin)['results']]"
+          curl -sS -m 60 -X POST "$API/api/games/$GID/end-turn" -H 'content-type: application/json' -d '{}' \
+            | python3 -c "import sys,json;d=json.load(sys.stdin);r=d['report']['routeStats'][0];print('LF %.0f%% profit %.2fM cash %.0fM' % (r['loadFactor']*100, r['profit']/1e6, d['state']['cash']/1e6))"
+          echo "PLAYABLE: YES"
