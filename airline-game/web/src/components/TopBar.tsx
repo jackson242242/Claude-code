@@ -43,6 +43,10 @@ type TopBarProps = {
   themeId?: MapThemeId;
   onProjectionChange?: (p: ProjectionId) => void;
   onThemeChange?: (t: MapThemeId) => void;
+  /** V3.3: When provided, changes the action button to 「准备结算」 semantics. */
+  matchMode?: {
+    isReady: boolean;
+  };
 };
 
 const LOCALE_LABELS: Record<Locale, string> = { zh: '中', en: 'EN', es: 'ES' };
@@ -56,6 +60,7 @@ export const TopBar = ({
   themeId = 'dark-ops',
   onProjectionChange = () => undefined,
   onThemeChange = () => undefined,
+  matchMode,
 }: TopBarProps) => {
   const { t, locale, setLocale } = useT();
   const [audioPlaying, setAudioPlaying] = useState(() => audio.isPlaying());
@@ -156,10 +161,17 @@ export const TopBar = ({
       <button
         type="button"
         onClick={handleEndTurn}
-        disabled={busy || state.status !== 'active'}
+        disabled={busy || state.status !== 'active' || (matchMode?.isReady ?? false)}
         className="btn-primary px-3.5 py-2 text-sm"
+        data-testid={matchMode ? 'match-settle-btn' : undefined}
       >
-        {busy ? t('topbar.btn.settling') : t('topbar.btn.nextTurn')}
+        {busy
+          ? t('topbar.btn.settling')
+          : matchMode
+            ? matchMode.isReady
+              ? t('match.hud.ready.done')
+              : t('match.settle.btn')
+            : t('topbar.btn.nextTurn')}
       </button>
     </header>
   );

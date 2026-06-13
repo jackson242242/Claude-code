@@ -1,8 +1,12 @@
 import type {
   Command,
   CommandsResponse,
+  CreateMatchResponse,
   EndTurnResponse,
   GameState,
+  JoinMatchResponse,
+  MatchCommandsResponse,
+  MatchView,
   Meta,
 } from '@/types';
 
@@ -69,4 +73,52 @@ export const endTurn = (gameId: string): Promise<EndTurnResponse> =>
   request<EndTurnResponse>(`/api/games/${gameId}/end-turn`, {
     method: 'POST',
     body: JSON.stringify({}),
+  });
+
+// ── V3.3 Multiplayer match endpoints ──────────────────────────────────────────
+
+export const createMatch = (
+  hostName: string,
+  hostHqCityId: string,
+  maxPlayers: 2 | 3 | 4,
+  fillWithAI: boolean,
+): Promise<CreateMatchResponse> =>
+  request<CreateMatchResponse>('/api/matches', {
+    method: 'POST',
+    body: JSON.stringify({ hostName, hostHqCityId, maxPlayers, fillWithAI }),
+  });
+
+export const joinMatch = (
+  code: string,
+  name: string,
+  hqCityId: string,
+): Promise<JoinMatchResponse> =>
+  request<JoinMatchResponse>(`/api/matches/${code}/join`, {
+    method: 'POST',
+    body: JSON.stringify({ name, hqCityId }),
+  });
+
+export const startMatch = (code: string, playerId: string): Promise<MatchView> =>
+  request<MatchView>(`/api/matches/${code}/start`, {
+    method: 'POST',
+    body: JSON.stringify({ playerId }),
+  });
+
+export const getMatch = (code: string, playerId: string): Promise<MatchView> =>
+  request<MatchView>(`/api/matches/${code}?playerId=${encodeURIComponent(playerId)}`);
+
+export const sendMatchCommands = (
+  code: string,
+  playerId: string,
+  commands: Command[],
+): Promise<MatchCommandsResponse> =>
+  request<MatchCommandsResponse>(`/api/matches/${code}/commands`, {
+    method: 'POST',
+    body: JSON.stringify({ playerId, commands }),
+  });
+
+export const readyMatch = (code: string, playerId: string): Promise<MatchView> =>
+  request<MatchView>(`/api/matches/${code}/ready`, {
+    method: 'POST',
+    body: JSON.stringify({ playerId }),
   });

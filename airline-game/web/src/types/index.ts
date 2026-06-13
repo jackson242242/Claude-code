@@ -214,6 +214,42 @@ export type CommandsResponse = { state: GameState; results: CommandResult[] };
 
 export type EndTurnResponse = { state: GameState; report: TurnReport };
 
+// V3.3 多人对战 ──────────────────────────────────────────────────────────────
+
+/** Lite summary of one player visible to all peers in a match. */
+export type MatchPlayerLite = {
+  playerId: string;   // own id appears in you.id; others may be opaque
+  name: string;
+  hqCityId: string;
+  ready: boolean;     // 本回合是否已就绪
+  marketShare: number;
+  bankrupt: boolean;
+};
+
+/** Per-player poll response — the player sees their own full GameState as `you`. */
+export type MatchView = {
+  code: string;
+  phase: 'lobby' | 'active' | 'finished';
+  turn: number;
+  year: number;
+  quarter: 1 | 2 | 3 | 4;
+  maxPlayers: number;
+  players: MatchPlayerLite[];         // includes self + other humans (join order)
+  you: GameState;                      // own airline; competitors = AI + other humans
+  turnDeadlineMs: number | null;       // epoch ms soft deadline; null in lobby/finished
+  lastReport: TurnReport | null;       // populated right after settlement
+  finalStandings: FinalResult['standings'] | null; // non-null when phase='finished'
+};
+
+/** POST /api/matches — create room response */
+export type CreateMatchResponse = { code: string; playerId: string };
+
+/** POST /api/matches/{code}/join — join room response */
+export type JoinMatchResponse = { playerId: string };
+
+/** POST /api/matches/{code}/commands — match command response */
+export type MatchCommandsResponse = { view: MatchView; results: CommandResult[] };
+
 // aircraft-images.json manifest entry — CONTRACT §6.
 export type AircraftImageEntry = {
   url: string;

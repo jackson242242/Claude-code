@@ -87,6 +87,12 @@ type GameScreenProps = {
   onDismissError: () => void;
   onCommands: (commands: Command[]) => void;
   onEndTurn: () => void;
+  /** V3.3: When set, the end-turn button label switches to 「准备结算」
+   *  and calls onReady instead of onEndTurn. */
+  matchMode?: {
+    isReady: boolean;
+    onReady: () => void;
+  };
 };
 
 export const GameScreen = ({
@@ -96,6 +102,7 @@ export const GameScreen = ({
   onDismissError,
   onCommands,
   onEndTurn,
+  matchMode,
 }: GameScreenProps) => {
   const { t, locale } = useT();
   const [tab, setTab] = useState<TabId>('routes');
@@ -192,7 +199,12 @@ export const GameScreen = ({
       setShowDecisionWarning(true);
       setTimeout(() => setShowDecisionWarning(false), 4000);
     }
-    onEndTurn();
+    // V3.3: in match mode, the end-turn button calls ready instead.
+    if (matchMode) {
+      matchMode.onReady();
+    } else {
+      onEndTurn();
+    }
   };
 
   const handleResolveDecision = (optionId: string) => {
@@ -216,6 +228,7 @@ export const GameScreen = ({
         themeId={themeId}
         onProjectionChange={setProjectionId}
         onThemeChange={setThemeId}
+        matchMode={matchMode ? { isReady: matchMode.isReady } : undefined}
       />
       <EventTicker events={state.activeEvents} />
 
