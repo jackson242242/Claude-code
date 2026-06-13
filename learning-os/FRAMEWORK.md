@@ -10,6 +10,8 @@
 > - [`ENGAGEMENT.md`](./ENGAGEMENT.md) — 留存引擎(心理学钩子、通知/邮件、小组榜、badge、伦理护栏)
 > - [`ARCHITECTURE.md`](./ARCHITECTURE.md) — 可行性 / 稳定性 / 可扩展(内容即数据)/ 排名系统 / 技术栈
 > - [`MONETIZATION.md`](./MONETIZATION.md) — 盈利模式(订阅 vs 广告,推荐 freemium + 家庭版)
+> - [`COURSE-DESIGN.md`](./COURSE-DESIGN.md) — 怎么设计一门"又深又有结构"的课(依赖图 / Bloom / 螺旋 / 阈值概念)
+> - [`curriculum/`](./curriculum/) — 各领域深度知识大纲(已有:`money-and-markets.md`)
 
 ---
 
