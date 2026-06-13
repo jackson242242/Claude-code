@@ -25,9 +25,36 @@ SEASON_FACTOR = {1: 0.9, 2: 1.0, 3: 1.15, 4: 0.95}
 # --- AI competitors (CONTRACT §3, M2.1) ----------------------------------------
 AI_INITIAL_WEEKLY_SEATS = 1_600  # per direction, on each fixed initial route
 AI_NEW_ROUTE_WEEKLY_SEATS = 2_000  # per direction, on routes opened by evolution
-AI_GROWTH_FACTOR = 1.05  # largest route weeklySeats ×1.05 (ceil) every turn
+AI_GROWTH_FACTOR = 1.05  # largest route weeklySeats ×1.05 (ceil) every turn (default)
 AI_ROUTE_MAX_WEEKLY_SEATS = 3200  # per-route cap — uncapped compounding bankrupted every strategy (balance_sim 2026-06-12)
-AI_NEW_ROUTE_EVERY_TURNS = 6  # turn % 6 == 0 → open a new HQ route
+AI_NEW_ROUTE_EVERY_TURNS = 6  # turn % 6 == 0 → open a new HQ route (default)
+
+# V3.10: Per-style parameters keyed by style name (CONTRACT §3 V3.10).
+# Each dict entry may override: growth_factor, route_max_weekly_seats,
+# new_route_every_turns, max_routes, weight_bonus, price_war_threshold.
+AI_STYLES: dict[str, dict] = {
+    "aggressive": {
+        # 激进扩张派 — opens routes every 4 turns, grows faster, higher cap.
+        "new_route_every_turns": 4,
+        "growth_factor": 1.07,
+        "route_max_weekly_seats": 3600,
+    },
+    "premium": {
+        # 精品保守派 — slow growth, max 8 routes, +5% share-weight bonus.
+        "growth_factor": 1.03,
+        "max_routes": 8,
+        "weight_bonus": 1.05,   # multiply competitor weight by this factor in share competition
+    },
+    "budget": {
+        # 价格屠夫 — price-war trigger: if marketShare < threshold → lower fareMult.
+        "price_war_threshold": 0.12,   # if last marketShare < this → use price_war_fare_mult
+        "price_war_fare_mult": 0.92,   # effective fareMult during price war
+    },
+    "network": {
+        # 网络枢纽派 — prefers destinations already served by other carriers.
+        "prefer_served_by_others": True,
+    },
+}
 
 # --- Airport slots (CONTRACT §3, M2.2) ----------------------------------------
 SLOT_COST_MULT = 800.0  # negotiation cost = slotFee × 800 × (1 + taken/capacity)

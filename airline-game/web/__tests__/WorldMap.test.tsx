@@ -9,6 +9,7 @@ const competitorsFixture: Competitor[] = [
     nameZh: '极光太平洋航空',
     hqCityId: 'hnd',
     fareMult: 0.9,
+    style: 'budget',
     routes: [
       { cityA: 'hnd', cityB: 'pvg', weeklySeats: 2200 },
       { cityA: 'hnd', cityB: 'sin', weeklySeats: 2200 },
@@ -21,6 +22,7 @@ const competitorsFixture: Competitor[] = [
     nameZh: '沙丘猎鹰航空',
     hqCityId: 'dxb',
     fareMult: 1.0,
+    style: 'network',
     routes: [{ cityA: 'dxb', cityB: 'cdg', weeklySeats: 2000 }],
     marketShare: 0.08,
   },

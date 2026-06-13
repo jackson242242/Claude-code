@@ -77,7 +77,7 @@ export type RouteQuarterStats = {
 
 // M2.4 终局结算
 export type FinalResult = {
-  rank: 1 | 2 | 3 | 4; // 玩家名次（含 3 家 AI 共 4 席）
+  rank: number; // 玩家名次（含 4 家 AI 共 5 席，V3.10 起）
   victory: boolean; // rank === 1
   standings: { name: string; isPlayer: boolean; marketShare: number }[]; // 按名次排序
   cumulativeProfit: number;
@@ -120,6 +120,8 @@ export type Competitor = {
   nameZh: string; // "极光太平洋航空"
   hqCityId: string;
   fareMult: number; // 固定性格：0.9 低价 / 1.0 均衡 / 1.1 高端
+  style: 'aggressive' | 'premium' | 'budget' | 'network'; // V3.10：AI 管理风格
+  styleZh?: string; // V3.10：风格中文显示名
   routes: CompetitorRoute[];
   marketShare: number; // 上季度份额 0–1
 };

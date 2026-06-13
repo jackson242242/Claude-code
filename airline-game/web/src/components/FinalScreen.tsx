@@ -13,7 +13,7 @@ type FinalScreenProps = {
   onRestart: () => void;
 };
 
-const MEDAL = ['🥇', '🥈', '🥉', '4️⃣'] as const;
+const MEDAL = ['🥇', '🥈', '🥉', '4️⃣', '5️⃣'] as const;
 
 export const FinalScreen = ({ airlineName, gameId, finalResult, onRestart }: FinalScreenProps) => {
   const { t } = useT();

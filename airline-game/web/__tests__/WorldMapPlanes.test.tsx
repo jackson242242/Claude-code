@@ -167,6 +167,7 @@ describe('WorldMap plane glyphs', () => {
         nameZh: '极光太平洋航空',
         hqCityId: 'hnd',
         fareMult: 0.9,
+        style: 'budget',
         routes: [{ cityA: 'hnd', cityB: 'pvg', weeklySeats: 2200 }],
         marketShare: 0.12,
       },

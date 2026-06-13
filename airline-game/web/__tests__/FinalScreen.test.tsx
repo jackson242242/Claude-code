@@ -10,10 +10,11 @@ const makeFinalResult = (overrides: Partial<FinalResult> = {}): FinalResult => (
   rank: 1,
   victory: true,
   standings: [
-    { name: '环球之翼', isPlayer: true, marketShare: 0.38 },
-    { name: '极光太平洋航空', isPlayer: false, marketShare: 0.27 },
-    { name: '皇家子午线航空', isPlayer: false, marketShare: 0.22 },
-    { name: '沙丘猎鹰航空', isPlayer: false, marketShare: 0.13 },
+    { name: '环球之翼', isPlayer: true, marketShare: 0.35 },
+    { name: '极光太平洋航空', isPlayer: false, marketShare: 0.25 },
+    { name: '皇家子午线航空', isPlayer: false, marketShare: 0.20 },
+    { name: '沙丘猎鹰航空', isPlayer: false, marketShare: 0.12 },
+    { name: '矢量天空航空', isPlayer: false, marketShare: 0.08 },
   ],
   cumulativeProfit: 1_200_000_000,
   cumulativePax: 1_230_000,
@@ -46,12 +47,13 @@ describe('FinalScreen — victory variant', () => {
     const standingsEl = screen.getByTestId('standings');
     const rows = within(standingsEl).getAllByRole('listitem');
 
-    // 4 rows, first is player
-    expect(rows).toHaveLength(4);
+    // 5 rows (1 player + 4 AI), first is player (V3.10)
+    expect(rows).toHaveLength(5);
     expect(rows[0]).toHaveTextContent('环球之翼');
     expect(rows[1]).toHaveTextContent('极光太平洋航空');
     expect(rows[2]).toHaveTextContent('皇家子午线航空');
     expect(rows[3]).toHaveTextContent('沙丘猎鹰航空');
+    expect(rows[4]).toHaveTextContent('矢量天空航空');
 
     // Player row is highlighted cyan
     expect(rows[0]).toHaveClass('text-cyan-300');
@@ -69,10 +71,11 @@ describe('FinalScreen — victory variant', () => {
       />,
     );
     const standingsEl = screen.getByTestId('standings');
-    expect(within(standingsEl).getByText('38.0%')).toBeInTheDocument();
-    expect(within(standingsEl).getByText('27.0%')).toBeInTheDocument();
-    expect(within(standingsEl).getByText('22.0%')).toBeInTheDocument();
-    expect(within(standingsEl).getByText('13.0%')).toBeInTheDocument();
+    expect(within(standingsEl).getByText('35.0%')).toBeInTheDocument();
+    expect(within(standingsEl).getByText('25.0%')).toBeInTheDocument();
+    expect(within(standingsEl).getByText('20.0%')).toBeInTheDocument();
+    expect(within(standingsEl).getByText('12.0%')).toBeInTheDocument();
+    expect(within(standingsEl).getByText('8.0%')).toBeInTheDocument();
   });
 
   it('shows cumulative profit and pax', () => {
@@ -108,10 +111,11 @@ describe('FinalScreen — defeat variant', () => {
     rank: 3,
     victory: false,
     standings: [
-      { name: '极光太平洋航空', isPlayer: false, marketShare: 0.38 },
-      { name: '皇家子午线航空', isPlayer: false, marketShare: 0.3 },
-      { name: '联星航空', isPlayer: true, marketShare: 0.2 },
-      { name: '沙丘猎鹰航空', isPlayer: false, marketShare: 0.12 },
+      { name: '极光太平洋航空', isPlayer: false, marketShare: 0.35 },
+      { name: '皇家子午线航空', isPlayer: false, marketShare: 0.28 },
+      { name: '联星航空', isPlayer: true, marketShare: 0.20 },
+      { name: '沙丘猎鹰航空', isPlayer: false, marketShare: 0.11 },
+      { name: '矢量天空航空', isPlayer: false, marketShare: 0.06 },
     ],
     cumulativeProfit: -50_000_000,
     cumulativePax: 400_000,

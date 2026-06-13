@@ -8,6 +8,7 @@ const makeCompetitor = (overrides: Partial<Competitor>): Competitor => ({
   nameZh: '极光太平洋航空',
   hqCityId: 'hnd',
   fareMult: 0.9,
+  style: 'budget',
   routes: [],
   marketShare: 0,
   ...overrides,

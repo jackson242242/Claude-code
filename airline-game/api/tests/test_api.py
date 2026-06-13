@@ -160,6 +160,7 @@ class TestCompetitorsWire:
             "ai-aurora",
             "ai-meridian",
             "ai-falcon",
+            "ai-vector",
         ]
         aurora = state["competitors"][0]
         assert aurora["name"] == "Aurora Pacific"

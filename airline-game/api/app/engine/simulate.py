@@ -9,7 +9,12 @@ import math
 from dataclasses import dataclass, field
 
 from app.engine import balance
-from app.engine.competitors import competitor_route_capacity, evolve_competitors
+from app.engine.competitors import (
+    competitor_route_capacity,
+    effective_fare_mult,
+    evolve_competitors,
+    get_competitor_weight_bonus,
+)
 from app.engine.decisions import auto_resolve_decision, draw_decision
 from app.engine.events import get_cost_mult, get_demand_mult, process_events
 from app.engine.state import (
@@ -240,9 +245,13 @@ def allocate_market(
     player_routes: dict[frozenset[str], Route] = {
         frozenset((route.city_a, route.city_b)): route for route in state.routes
     }
-    ai_routes: dict[frozenset[str], list[tuple[str, float, int]]] = {}
+    # V3.10: each AI entry stores (competitor_id, effective_fare_mult,
+    # capacity, weight_bonus) to support budget price-war and premium bonus.
+    ai_routes: dict[frozenset[str], list[tuple[str, float, int, float]]] = {}
     pair_order: list[frozenset[str]] = list(player_routes)
     for competitor in state.competitors:
+        ai_fare = effective_fare_mult(competitor)
+        ai_bonus = get_competitor_weight_bonus(competitor)
         for ai_route in competitor.routes:
             pair = frozenset((ai_route.city_a, ai_route.city_b))
             if pair not in player_routes and pair not in ai_routes:
@@ -250,8 +259,9 @@ def allocate_market(
             ai_routes.setdefault(pair, []).append(
                 (
                     competitor.id,
-                    competitor.fare_mult,
+                    ai_fare,
                     competitor_route_capacity(ai_route),
+                    ai_bonus,
                 )
             )
 
@@ -291,8 +301,14 @@ def allocate_market(
                 )
             )
         ai_sellers = ai_routes.get(pair, [])
-        for _, fare_mult, capacity in ai_sellers:
-            sellers.append(_Seller(weight=price_weight(fare_mult), capacity=capacity))
+        for _, fare_mult, capacity, weight_bonus in ai_sellers:
+            # V3.10: premium weight_bonus multiplies the base price weight.
+            sellers.append(
+                _Seller(
+                    weight=price_weight(fare_mult) * weight_bonus,
+                    capacity=capacity,
+                )
+            )
         background = _Seller(weight=balance.W_BG, capacity=math.inf)
         sellers.append(background)
 
@@ -302,7 +318,7 @@ def allocate_market(
         if player_route is not None:
             allocation.route_pax[player_route.id] = int(round(sellers[cursor].pax))
             cursor += 1
-        for (competitor_id, _, _), seller in zip(ai_sellers, sellers[cursor:]):
+        for (competitor_id, _, _, _), seller in zip(ai_sellers, sellers[cursor:]):
             allocation.competitor_pax[competitor_id] = (
                 allocation.competitor_pax.get(competitor_id, 0.0) + seller.pax
             )

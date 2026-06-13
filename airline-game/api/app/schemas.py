@@ -116,6 +116,8 @@ class Competitor(CamelModel):
     name_zh: str
     hq_city_id: str
     fare_mult: float
+    style: str = "budget"  # V3.10: "aggressive" | "premium" | "budget" | "network"
+    style_zh: str | None = None  # V3.10: optional Chinese display name for style
     routes: list[CompetitorRoute]
     market_share: float
 

@@ -200,6 +200,8 @@ class Competitor:
     name_zh: str
     hq_city_id: str
     fare_mult: float  # fixed personality: 0.9 budget / 1.0 balanced / 1.1 premium
+    style: str = "budget"  # V3.10: "aggressive" | "premium" | "budget" | "network"
+    style_zh: str | None = None  # V3.10: optional Chinese display name for style
     routes: list[CompetitorRoute] = field(default_factory=list)
     market_share: float = 0.0  # last quarter's share, 0–1
 

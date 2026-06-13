@@ -192,31 +192,33 @@ class TestAIPoolConsumption:
             return game
 
         game = play()
-        aurora, meridian, falcon = game.competitors
+        aurora, meridian, falcon, vector = game.competitors
         # Without the full pool these would all target nyc (demandIndex 10);
         # the skip rule moves each to its next candidate in demand/table order.
         assert (aurora.routes[-1].city_a, aurora.routes[-1].city_b) == ("hnd", "lhr")
         assert (meridian.routes[-1].city_a, meridian.routes[-1].city_b) == ("lhr", "lax")
         assert (falcon.routes[-1].city_a, falcon.routes[-1].city_b) == ("dxb", "lhr")
+        # Vector (aggressive, icn) skips nyc (full) and picks its best available.
+        assert vector.routes[-1].city_a == "icn"
 
         # Determinism: an identical replay lands on identical routes.
         replay = play()
         assert replay.competitors == game.competitors
 
     def test_ai_routes_consume_pool_and_raise_negotiation_cost(self, game, world):
-        # nyc starts at taken 2 (the player's HQ-held slots, no AI ends). At
-        # turn 4 every AI's best unserved city is nyc and its pool is not full
-        # (2 of 12), so all three open a route there: taken 2 → 5.
+        # nyc starts at taken 2 (the player's HQ-held slots, no AI ends).
+        # V3.10: Vector Sky (aggressive, cadence 4) opens icn-nyc at turn 4 → taken 3.
+        # At turn 6 aurora/meridian/falcon each open a route to nyc → taken 6.
         before = compute_slot_market(game, world)["nyc"].taken
         for _ in range(balance.AI_NEW_ROUTE_EVERY_TURNS):
             settle_turn(game, world)
         after = compute_slot_market(game, world)["nyc"].taken
         assert before == 2
-        assert after == 5  # 3 new AI route ends each took a pool slot
-        # Negotiation cost follows the pool: 9500 × 800 × (1 + 5/12).
+        assert after == 6  # Vector at turn 4 (→3) + 3 others at turn 6 (→6)
+        # Negotiation cost follows the pool: 9500 × 800 × (1 + 6/12) = 11,400,000.
         cash_before = game.cash
         run(game, world, {"type": "negotiateSlot", "cityId": "nyc"})
-        assert cash_before - game.cash == pytest.approx(10_766_666.67, abs=0.01)
+        assert cash_before - game.cash == pytest.approx(11_400_000.00, abs=0.01)
 
 
 class TestSlotMarketWire:

@@ -147,7 +147,7 @@ type GameState = {
 
 // M2.4 终局结算
 type FinalResult = {
-  rank: 1 | 2 | 3 | 4;          // 玩家名次（含 3 家 AI 共 4 席）
+  rank: number;                  // 玩家名次（含 4 家 AI 共 5 席，V3.10 起）
   victory: boolean;             // rank === 1
   standings: { name: string; isPlayer: boolean; marketShare: number }[]; // 按名次排序
   cumulativeProfit: number; cumulativePax: number;
@@ -162,6 +162,8 @@ type Competitor = {
   nameZh: string;             // "极光太平洋航空"
   hqCityId: string;
   fareMult: number;           // 固定性格：0.9 低价 / 1.0 均衡 / 1.1 高端
+  style: "aggressive" | "premium" | "budget" | "network";  // V3.10：AI 管理风格
+  styleZh?: string;           // V3.10：风格中文显示名（可选，例如「激进扩张派」）
   routes: CompetitorRoute[];
   marketShare: number;        // 上季度份额 0–1
 };
@@ -259,17 +261,26 @@ type TurnReport = {
     M1 的 demandMult 不再单独出现）。某卖方撞容量上限时，未满足需求按权重比例
     **再分配一轮**给未满载卖方（含背景），只做一轮，保持确定性。
   - AI 航线容量：`weeklySeats × 2 × 13`（双向、13 周，与玩家同口径）。
-- **AI 航司（3 家，纯函数确定性，伪随机种子 = hash(gameId, turn, aiId)）**：
-  - Aurora Pacific／极光太平洋航空（HQ 东京 hnd，fareMult 0.95，调参前 0.9）、
-    Royal Meridian／皇家子午线航空（HQ 伦敦 lhr，fareMult 1.1）、
-    Falcon Dunes／沙丘猎鹰航空（HQ 迪拜 dxb，fareMult 1.0）。
+- **AI 航司（V3.10 起 4 家，纯函数确定性，伪随机种子 = hash(gameId, turn, aiId)）**：
+  - Aurora Pacific／极光太平洋航空（HQ 东京 hnd，fareMult 0.95，style: "budget"）
+  - Royal Meridian／皇家子午线航空（HQ 伦敦 lhr，fareMult 1.1，style: "premium"）
+  - Falcon Dunes／沙丘猎鹰航空（HQ 迪拜 dxb，fareMult 1.0，style: "network"）
+  - Vector Sky／矢量天空航空（新增，HQ 首尔 icn，fareMult 1.0，style: "aggressive"）
   - 初始各 2 条 HQ 航线（固定表，刻意避开 nyc 城市对以不干扰平衡性验收）：
-    hnd-pvg、hnd-sin；lhr-fra、lhr-dxb；dxb-sin、dxb-cdg。初始 weeklySeats=1600（2026-06-12 调参：2200 时 AI 主场玩家无法生存）。
+    hnd-pvg、hnd-sin；lhr-fra、lhr-dxb；dxb-sin、dxb-cdg；icn-pvg、icn-bkk。
+    初始 weeklySeats=1600（2026-06-12 调参：2200 时 AI 主场玩家无法生存）。
   - 每回合结算前演进：最大航线 weeklySeats ×`AI_GROWTH_FACTOR`（向上取整），
-    单航线封顶 `AI_ROUTE_MAX_WEEKLY_SEATS`（防 80 回合复利碾压玩家——2026-06-12
-    平衡模拟器实测无上限时全策略破产）；每第 4 回合（turn%4==0）从 HQ 向其
-    尚未服务的 demandIndex 最高城市开新航线（weeklySeats=2000），并产生
-    NewsItem（kind:"system"）播报。常数现值：增长 1.05/季、封顶 3200、开新线节奏 6 回合（调参前 4）。
+    单航线封顶 `AI_ROUTE_MAX_WEEKLY_SEATS`；每隔 N 回合（由风格决定）从 HQ 向
+    尚未服务的城市开新航线（weeklySeats=2000），并产生 NewsItem（kind:"system"）播报。
+  - **V3.10 风格参数（集中在 balance.py 的 AI_STYLES 字典）**：
+    - aggressive 激进扩张派（Vector Sky）：开新线节奏 4 回合，增长×1.07，封顶 3600。
+    - premium 精品保守派（Royal Meridian）：增长×1.03，最多 8 条航线；
+      份额竞争权重 ×1.05（multiply its weight by 1.05，对所有城市对）。
+    - budget 价格屠夫（Aurora Pacific）：增长×1.05，封顶 3200；
+      当 marketShare < 0.12 时有效 fareMult 降为 0.92，否则 0.95。
+    - network 网络枢纽派（Falcon Dunes）：从 HQ 开新线时优先选择其他航司已运营的城市
+      （served-by-others 优先，再按 demandIndex，再按城市表顺序——确定性）。
+  - 常数默认值（非风格覆盖时）：增长 1.05/季、封顶 3200、开新线节奏 6 回合。
   - `marketShare`（玩家与 AI 同口径）= 该航司本季度 pax ÷ 当季所有卖方
     （含背景）pax 总和；无任何航线时为 0。
 - **票价**：经济舱 `fare = (FARE_FIXED + FARE_PER_KM × distanceKm) × fareMult`；

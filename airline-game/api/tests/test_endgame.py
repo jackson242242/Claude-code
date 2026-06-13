@@ -137,9 +137,9 @@ class TestTurn80Finish:
         assert game.final_result is not None
         assert game.final_result.ended_turn == balance.GAME_LENGTH_TURNS
 
-    def test_standings_has_four_entries(self, game, world):
+    def test_standings_has_five_entries(self, game, world):
         _fast_forward(game, world, 80)
-        assert len(game.final_result.standings) == 4  # 1 player + 3 AI
+        assert len(game.final_result.standings) == 5  # 1 player + 4 AI (V3.10)
 
     def test_standings_ordered_by_market_share_desc(self, game, world):
         _setup_with_route(game, world)
@@ -160,9 +160,9 @@ class TestTurn80Finish:
         fr = game.final_result
         assert fr.victory == (fr.rank == 1)
 
-    def test_rank_is_between_1_and_4(self, game, world):
+    def test_rank_is_between_1_and_5(self, game, world):
         _fast_forward(game, world, 80)
-        assert 1 <= game.final_result.rank <= 4
+        assert 1 <= game.final_result.rank <= 5  # 1 player + 4 AI (V3.10)
 
     def test_turn_advances_past_80_to_81(self, game, world):
         """Calendar still advances after the last settle (state.turn = 81)."""
@@ -179,7 +179,8 @@ def _make_state_with_shares(
     player_share: float,
     ai_shares: list[float],
 ) -> GameState:
-    """Build a minimal GameState with custom marketShare values for ranking tests."""
+    """Build a minimal GameState with custom marketShare values for ranking tests.
+    V3.10: 4 AIs expected; ai_shares should have 4 values."""
     from app.engine.competitors import initial_competitors
 
     state = GameState(
@@ -200,7 +201,7 @@ def _make_state_with_shares(
 
 class TestRankingLogic:
     def test_player_wins_when_highest_share(self):
-        state = _make_state_with_shares(0.5, [0.2, 0.1, 0.05])
+        state = _make_state_with_shares(0.5, [0.2, 0.1, 0.05, 0.03])
         fr = _build_final_result(state)
         assert fr.rank == 1
         assert fr.victory is True
@@ -208,35 +209,35 @@ class TestRankingLogic:
         assert fr.standings[0].name == "Test Air"
 
     def test_player_loses_when_all_ais_higher(self):
-        state = _make_state_with_shares(0.05, [0.4, 0.3, 0.2])
+        state = _make_state_with_shares(0.04, [0.4, 0.3, 0.2, 0.1])
         fr = _build_final_result(state)
-        assert fr.rank == 4
+        assert fr.rank == 5
         assert fr.victory is False
-        assert fr.standings[3].is_player is True
+        assert fr.standings[4].is_player is True
 
     def test_player_ranked_correctly_in_middle(self):
-        # AI-0 > player > AI-1 > AI-2
-        state = _make_state_with_shares(0.3, [0.4, 0.2, 0.1])
+        # AI-0 > player > AI-1 > AI-2 > AI-3
+        state = _make_state_with_shares(0.3, [0.4, 0.2, 0.1, 0.05])
         fr = _build_final_result(state)
         assert fr.rank == 2
         assert fr.standings[1].is_player is True
 
     def test_tie_player_beats_all_ais(self):
         """With an equal share, the player ranks above every AI."""
-        share = 0.25
-        state = _make_state_with_shares(share, [share, share, share])
+        share = 0.2
+        state = _make_state_with_shares(share, [share, share, share, share])
         fr = _build_final_result(state)
         assert fr.rank == 1
         assert fr.standings[0].is_player is True
 
     def test_tie_between_ais_respects_roster_order(self):
-        """Among AIs with equal share, aurora (index 0) beats meridian (1) beats
-        falcon (2) per CONTRACT §3 M2.4 deterministic roster order."""
-        # Player clearly last; all 3 AIs are tied.
-        share = 0.25
-        state = _make_state_with_shares(0.0, [share, share, share])
+        """Among AIs with equal share, aurora beats meridian beats falcon beats
+        vector per CONTRACT §3 M2.4 deterministic roster order."""
+        # Player clearly last; all 4 AIs are tied.
+        share = 0.2
+        state = _make_state_with_shares(0.0, [share, share, share, share])
         fr = _build_final_result(state)
-        # Standings positions 0-2 are the three AIs in roster order
+        # Standings positions 0-3 are the four AIs in roster order
         ai_standings = [s for s in fr.standings if not s.is_player]
         ai_names = [s.name for s in ai_standings]
         expected_names = [c.name for c in state.competitors]
@@ -245,7 +246,7 @@ class TestRankingLogic:
     def test_partial_tie_player_first_then_ai_roster(self):
         """Player and AI-0 tie for first; player wins that tie."""
         share = 0.3
-        state = _make_state_with_shares(share, [share, 0.2, 0.1])
+        state = _make_state_with_shares(share, [share, 0.2, 0.1, 0.05])
         fr = _build_final_result(state)
         assert fr.standings[0].is_player is True
         assert fr.standings[1].is_player is False
@@ -254,11 +255,11 @@ class TestRankingLogic:
 
     def test_standings_market_shares_are_correct(self):
         """Each StandingEntry carries the correct marketShare value."""
-        state = _make_state_with_shares(0.3, [0.4, 0.2, 0.1])
+        state = _make_state_with_shares(0.3, [0.4, 0.2, 0.1, 0.05])
         fr = _build_final_result(state)
-        # All four marketShare values should appear in the standings
+        # All five marketShare values should appear in the standings (V3.10)
         all_shares = sorted([s.market_share for s in fr.standings], reverse=True)
-        assert all_shares == [0.4, 0.3, 0.2, 0.1]
+        assert all_shares == [0.4, 0.3, 0.2, 0.1, 0.05]
 
 
 # ---------------------------------------------------------------------------
@@ -369,7 +370,7 @@ class TestCamelCaseWire:
         assert "endedTurn" in fr
         assert fr["endedTurn"] == 80
         # standings camelCase
-        assert len(fr["standings"]) == 4
+        assert len(fr["standings"]) == 5  # 1 player + 4 AI (V3.10)
         first_standing = fr["standings"][0]
         assert "name" in first_standing
         assert "isPlayer" in first_standing

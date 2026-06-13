@@ -31,21 +31,24 @@ def fly_hnd_pvg(game, world, fare_mult=1.0):
 
 
 class TestSeeding:
-    def test_new_game_seeds_the_three_fixed_ais(self, world):
+    def test_new_game_seeds_the_four_fixed_ais(self, world):
         game = fresh(world)
         assert [c.id for c in game.competitors] == [
             "ai-aurora",
             "ai-meridian",
             "ai-falcon",
+            "ai-vector",
         ]
-        aurora, meridian, falcon = game.competitors
-        assert (aurora.name_zh, aurora.hq_city_id, aurora.fare_mult) == (
+        aurora, meridian, falcon, vector = game.competitors
+        assert (aurora.name_zh, aurora.hq_city_id, aurora.fare_mult, aurora.style) == (
             "极光太平洋航空",
             "hnd",
             0.95,
+            "budget",
         )
-        assert (meridian.hq_city_id, meridian.fare_mult) == ("lhr", 1.1)
-        assert (falcon.hq_city_id, falcon.fare_mult) == ("dxb", 1.0)
+        assert (meridian.hq_city_id, meridian.fare_mult, meridian.style) == ("lhr", 1.1, "premium")
+        assert (falcon.hq_city_id, falcon.fare_mult, falcon.style) == ("dxb", 1.0, "network")
+        assert (vector.hq_city_id, vector.fare_mult, vector.style) == ("icn", 1.0, "aggressive")
         assert [(r.city_a, r.city_b, r.weekly_seats) for r in aurora.routes] == [
             ("hnd", "pvg", 1600),
             ("hnd", "sin", 1600),
@@ -57,6 +60,10 @@ class TestSeeding:
         assert [(r.city_a, r.city_b) for r in falcon.routes] == [
             ("dxb", "sin"),
             ("dxb", "cdg"),
+        ]
+        assert [(r.city_a, r.city_b, r.weekly_seats) for r in vector.routes] == [
+            ("icn", "pvg", 1600),
+            ("icn", "bkk", 1600),
         ]
         assert game.market_share == 0.0
         assert all(c.market_share == 0.0 for c in game.competitors)
@@ -77,16 +84,18 @@ class TestShareCompetition:
         assert contested_stats.pax < solo_stats.pax
 
     def test_lower_fare_ai_takes_bigger_slice_at_equal_capacity(self, world):
+        # Use style="network" (no fare override logic) so that fare_mult is the
+        # only differentiator and the test verifies pure price elasticity.
         game = fresh(world, game_id="g-fare")
         game.competitors = [
             Competitor(
                 id="ai-cheap", name="Cheap Air", name_zh="低价航空",
-                hq_city_id="hnd", fare_mult=0.9,
+                hq_city_id="hnd", fare_mult=0.9, style="network",
                 routes=[CompetitorRoute("hnd", "pvg", 1600)],
             ),
             Competitor(
                 id="ai-posh", name="Posh Air", name_zh="高端航空",
-                hq_city_id="hnd", fare_mult=1.1,
+                hq_city_id="hnd", fare_mult=1.1, style="network",
                 routes=[CompetitorRoute("hnd", "pvg", 1600)],
             ),
         ]
@@ -102,7 +111,7 @@ class TestShareCompetition:
         game.competitors = [
             Competitor(
                 id="ai-tiny", name="Tiny Air", name_zh="迷你航空",
-                hq_city_id="hnd", fare_mult=0.9,
+                hq_city_id="hnd", fare_mult=0.9, style="network",
                 routes=[CompetitorRoute("hnd", "pvg", 10)],
             ),
         ]
@@ -137,6 +146,7 @@ class TestEvolution:
     def test_largest_route_grows_every_turn(self, world):
         game = fresh(world, game_id="g-grow")
         aurora = game.competitors[0]
+        # aurora (budget style) uses default growth factor 1.05
         settle_turn(game, world)
         # 1600 × 1.05 = 1680 (exact); only the largest route grows.
         assert [r.weekly_seats for r in aurora.routes] == [1680, 1600]
@@ -145,23 +155,69 @@ class TestEvolution:
         assert [r.weekly_seats for r in aurora.routes] == [1764, 1600]
         assert aurora.routes[0].weekly_seats == math.ceil(round(1680 * 1.05, 6))
 
-    def test_new_hq_route_opens_on_cadence_turn_with_news(self, world):
-        game = fresh(world, game_id="g-open")
-        for _ in range(balance.AI_NEW_ROUTE_EVERY_TURNS - 1):
-            report = settle_turn(game, world)
-            assert all(len(c.routes) == 2 for c in game.competitors)
-            assert not any("开通" in item.headline for item in report.news)
+    def test_aggressive_ai_opens_on_turn_4(self, world):
+        """Vector Sky (aggressive) opens every 4 turns (not 6)."""
+        from app.engine import balance as bal
+        game = fresh(world, game_id="g-aggressive")
+        vector = game.competitors[3]  # ai-vector
+        assert vector.style == "aggressive"
+        # After 3 turns no new routes for Vector.
+        for _ in range(3):
+            settle_turn(game, world)
+        assert len(vector.routes) == 2
+        # Turn 4: aggressive cadence fires.
+        report = settle_turn(game, world)
+        assert len(vector.routes) == 3
+        openings = [item for item in report.news if "开通" in item.headline and "矢量天空" in item.headline]
+        assert len(openings) == 1
 
-        report = settle_turn(game, world)  # cadence turn: turn % AI_NEW_ROUTE_EVERY_TURNS == 0
-        assert all(len(c.routes) == 3 for c in game.competitors)
-        aurora = game.competitors[0]
+    def test_new_hq_route_opens_on_cadence_turn_with_news(self, world):
+        """At turn 6 the non-aggressive AIs (aurora/meridian/falcon) open new routes.
+        Vector Sky (aggressive, cadence 4) already opened at turn 4."""
+        game = fresh(world, game_id="g-open")
+        # Turns 1–3: no openings for aurora/meridian/falcon; Vector has 2 routes still.
+        for t in range(1, 4):
+            report = settle_turn(game, world)
+            aurora, meridian, falcon, vector = game.competitors
+            assert len(aurora.routes) == 2
+            assert len(meridian.routes) == 2
+            assert len(falcon.routes) == 2
+            # No opening news for the 3 standard-cadence AIs
+            base_openings = [
+                item for item in report.news
+                if "开通" in item.headline and "矢量天空" not in item.headline
+            ]
+            assert len(base_openings) == 0
+
+        # Turn 4: Vector (aggressive) opens a route; others still 2 routes.
+        report4 = settle_turn(game, world)
+        aurora, meridian, falcon, vector = game.competitors
+        assert len(vector.routes) == 3
+        assert len(aurora.routes) == 2
+        assert len(meridian.routes) == 2
+        assert len(falcon.routes) == 2
+
+        # Turn 5: no new openings.
+        report5 = settle_turn(game, world)
+        aurora, meridian, falcon, vector = game.competitors
+        assert len(aurora.routes) == 2
+        assert len(meridian.routes) == 2
+        assert len(falcon.routes) == 2
+
+        # Turn 6: aurora/meridian/falcon open new routes (cadence 6).
+        report6 = settle_turn(game, world)
+        aurora, meridian, falcon, vector = game.competitors
+        assert len(aurora.routes) == 3
+        assert len(meridian.routes) == 3
+        assert len(falcon.routes) == 3
+
         new_route = aurora.routes[-1]
-        # nyc is the highest-demandIndex city Aurora doesn't serve yet (the
-        # tie with lhr is broken deterministically by city-table order).
+        # nyc is the highest-demandIndex city Aurora doesn't serve yet.
         assert (new_route.city_a, new_route.city_b) == ("hnd", "nyc")
         assert new_route.weekly_seats == balance.AI_NEW_ROUTE_WEEKLY_SEATS == 2000
-        openings = [item for item in report.news if "开通" in item.headline]
-        assert len(openings) == 3
+
+        openings = [item for item in report6.news if "开通" in item.headline]
+        assert len(openings) == 3  # aurora + meridian + falcon on turn 6
         assert all(item.kind == "system" for item in openings)
         assert any(
             item.headline == "极光太平洋航空 开通 东京 — 纽约 航线"
