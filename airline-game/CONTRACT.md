@@ -16,6 +16,11 @@
 - V2 视听层（纯前端，不进 API）：程序化环境配乐（Web Audio 合成，零素材零版权，
   可静音、偏好存 localStorage）；角色语音用浏览器 SpeechSynthesis——**原创虚构角色**
   阵容（法务红线：不得使用或模仿真实人物的姓名/声音/人设；不得使用真实航司商标）。
+- V3.1 多语言（前端主导）：UI 三语 zh/en/es，词典在 `web/src/i18n/`（key 化文案，
+  缺译回落 zh），语言偏好存 localStorage；事件标题用 GameEvent 的三语字段按语言
+  取值、缺省回落 `headline`；AI 航司播报（开通新航线等 NewsItem）保持中文——
+  V3.1 范围内 NewsItem 不加多语字段，前端对 kind:"system" 的固定句式做本地化
+  模板匹配，匹配不上原样显示；角色语音按当前语言选 TTS 音色与台词词典。
 
 ## 1. REST API
 
@@ -162,7 +167,10 @@ type GameEvent = {
   id: string;                 // 静态库内唯一，如 "evt-fuel-spike"
   source: "static" | "news";
   headline: string;           // 中文播报标题
+  headlineEn?: string;        // V3.1：英文标题（缺省回落中文）
+  headlineEs?: string;        // V3.1：西语标题（缺省回落中文）
   detail?: string;
+  detailEn?: string; detailEs?: string;  // V3.1：可选三语详情
   sourceUrl?: string;         // news 事件的原始新闻链接（M4）
   scope: { kind: "global" | "city" | "route"; ids: string[] };
   effects: EventEffect[];     // 1–3 条
