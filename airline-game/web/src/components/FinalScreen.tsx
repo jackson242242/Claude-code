@@ -1,20 +1,30 @@
 'use client';
 
+import { useEffect } from 'react';
 import { formatMoney } from '@/lib/format';
 import { useT } from '@/i18n';
+import { loadProfile, saveProfile, awardGameEnd } from '@/lib/profile';
 import type { FinalResult } from '@/types';
 
 type FinalScreenProps = {
   airlineName: string;
+  gameId: string;
   finalResult: FinalResult;
   onRestart: () => void;
 };
 
 const MEDAL = ['🥇', '🥈', '🥉', '4️⃣'] as const;
 
-export const FinalScreen = ({ airlineName, finalResult, onRestart }: FinalScreenProps) => {
+export const FinalScreen = ({ airlineName, gameId, finalResult, onRestart }: FinalScreenProps) => {
   const { t } = useT();
   const { victory, rank, standings, cumulativeProfit, cumulativePax, endedTurn } = finalResult;
+
+  // Award game-end XP once per game id.
+  useEffect(() => {
+    const profile = loadProfile();
+    const { profile: updated, awarded } = awardGameEnd(profile, gameId, victory);
+    if (awarded) saveProfile(updated);
+  }, [gameId, victory]);
 
   const formatPax = (pax: number): string => {
     if (pax >= 1_000_000) {

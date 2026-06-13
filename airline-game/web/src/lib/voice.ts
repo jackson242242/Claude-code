@@ -143,6 +143,16 @@ export const voice = {
     speak(line, advisor, locale);
   },
 
+  speakBadge(badgeName: string): void {
+    if (typeof window === 'undefined') return;
+    if (!readPref()) return;
+    const advisor = ADVISORS[currentAdvisorIndex];
+    const locale = getLocale();
+    const name = tStandalone(locale, `advisor.${currentAdvisorIndex}.name` as Parameters<typeof tStandalone>[1]);
+    const line = tStandalone(locale, 'voice.badge', { name, badge: badgeName });
+    speak(line, advisor, locale);
+  },
+
   cancel(): void {
     if (typeof window === 'undefined') return;
     window.speechSynthesis.cancel();

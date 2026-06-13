@@ -260,6 +260,74 @@ const zh = {
   'marketing.total': '合计',
   'marketing.confirm': '确认',
   'marketing.per.quarter': '每季',
+
+  // ── V3.8 Badge & CEO Level ────────────────────────────────────────────────
+  'badge.toast.prefix': '成就解锁！',
+  'badge.tier.bronze': '铜牌',
+  'badge.tier.silver': '银牌',
+  'badge.tier.gold': '金牌',
+
+  // Badge names
+  'badge.firstFlight.name': '首航',
+  'badge.firstFlight.hint': '开通第一条航线',
+  'badge.firstProfit.name': '首季盈利',
+  'badge.firstProfit.hint': '实现第一个盈利季度',
+  'badge.loadFactor90.name': '客座率90%+',
+  'badge.loadFactor90.hint': '任一航线客座率达到 90%',
+  'badge.fleet5.name': '五机机队',
+  'badge.fleet5.hint': '同时拥有 5 架飞机',
+  'badge.fleet10.name': '十机机队',
+  'badge.fleet10.hint': '同时拥有 10 架飞机',
+  'badge.transOcean.name': '跨洋开拓',
+  'badge.transOcean.hint': '开通距离超过 8000km 的航线',
+  'badge.brandAmbassador.name': '品牌大使',
+  'badge.brandAmbassador.hint': '品牌声誉达到 75 分',
+  'badge.marketingGuru.name': '营销大师',
+  'badge.marketingGuru.hint': '任意营销投放达到 8',
+  'badge.crisisPR.name': '危机公关',
+  'badge.crisisPR.hint': '在决策中选择提升品牌的选项',
+  'badge.tier3Route.name': '满级服务',
+  'badge.tier3Route.hint': '运营一条三级服务航线',
+  'badge.slotTycoon.name': 'Slot 大亨',
+  'badge.slotTycoon.hint': '持有 8 个以上时刻',
+  'badge.share5.name': '份额 5%',
+  'badge.share5.hint': '市场份额达到 5%',
+  'badge.share10.name': '份额 10%',
+  'badge.share10.hint': '市场份额达到 10%',
+  'badge.victory.name': '击败AI夺冠',
+  'badge.victory.hint': '以第 1 名完成游戏',
+  'badge.century.name': '世纪航司',
+  'badge.century.hint': '到达第 80 回合且未破产',
+  'badge.billionaire.name': '亿万现金',
+  'badge.billionaire.hint': '现金达到 10 亿美元',
+
+  // CEO levels
+  'ceo.level.0': '实习调度',
+  'ceo.level.1': '区域经理',
+  'ceo.level.2': '运营总监',
+  'ceo.level.3': '航司CEO',
+  'ceo.level.4': '航空大亨',
+
+  // Profile UI
+  'profile.heading': 'CEO 档案',
+  'profile.xp': '{xp} XP',
+  'profile.level': '等级 {level}',
+  'profile.badges.count': '{n} 个徽章',
+  'profile.games': '完成 {n} 局',
+  'profile.victories': '胜利 {n} 次',
+  'profile.xp.nextLevel': '距下一级 {remaining} XP',
+  'profile.xp.maxLevel': '已达最高等级',
+
+  // Achievements modal
+  'achievements.heading': '成就',
+  'achievements.btn.open': '成就',
+  'achievements.btn.close': '关闭',
+  'achievements.earned': '已解锁',
+  'achievements.unearned': '未解锁',
+  'achievements.empty': '暂无成就',
+
+  // Voice badge line
+  'voice.badge': '{name}说：恭喜！新成就「{badge}」已解锁！',
 } as const;
 
 export type DictKeys = keyof typeof zh;

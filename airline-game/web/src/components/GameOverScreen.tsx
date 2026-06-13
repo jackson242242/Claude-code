@@ -1,14 +1,24 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useT } from '@/i18n';
+import { loadProfile, saveProfile, awardGameEnd } from '@/lib/profile';
 
 type GameOverScreenProps = {
   airlineName: string;
+  gameId: string;
   onRestart: () => void;
 };
 
-export const GameOverScreen = ({ airlineName, onRestart }: GameOverScreenProps) => {
+export const GameOverScreen = ({ airlineName, gameId, onRestart }: GameOverScreenProps) => {
   const { t } = useT();
+
+  // Award game-end XP (no victory) once per game id.
+  useEffect(() => {
+    const profile = loadProfile();
+    const { profile: updated, awarded } = awardGameEnd(profile, gameId, false);
+    if (awarded) saveProfile(updated);
+  }, [gameId]);
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur"

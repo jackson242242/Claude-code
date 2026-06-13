@@ -259,6 +259,74 @@ const en: Dict = {
   'marketing.total': 'Total',
   'marketing.confirm': 'Confirm',
   'marketing.per.quarter': '/qtr',
+
+  // ── V3.8 Badge & CEO Level ────────────────────────────────────────────────
+  'badge.toast.prefix': 'Achievement Unlocked!',
+  'badge.tier.bronze': 'Bronze',
+  'badge.tier.silver': 'Silver',
+  'badge.tier.gold': 'Gold',
+
+  // Badge names
+  'badge.firstFlight.name': 'First Flight',
+  'badge.firstFlight.hint': 'Open your first route',
+  'badge.firstProfit.name': 'First Profit',
+  'badge.firstProfit.hint': 'Record a profitable quarter',
+  'badge.loadFactor90.name': '90%+ Load Factor',
+  'badge.loadFactor90.hint': 'Reach 90% load factor on any route',
+  'badge.fleet5.name': 'Fleet of 5',
+  'badge.fleet5.hint': 'Own 5 aircraft simultaneously',
+  'badge.fleet10.name': 'Fleet of 10',
+  'badge.fleet10.hint': 'Own 10 aircraft simultaneously',
+  'badge.transOcean.name': 'Trans-Ocean Pioneer',
+  'badge.transOcean.hint': 'Open a route longer than 8,000 km',
+  'badge.brandAmbassador.name': 'Brand Ambassador',
+  'badge.brandAmbassador.hint': 'Reach brand reputation of 75',
+  'badge.marketingGuru.name': 'Marketing Guru',
+  'badge.marketingGuru.hint': 'Set any marketing channel to 8 or above',
+  'badge.crisisPR.name': 'Crisis PR',
+  'badge.crisisPR.hint': 'Choose a brand-positive option in a decision',
+  'badge.tier3Route.name': 'Full-Service Route',
+  'badge.tier3Route.hint': 'Operate a tier-3 service route',
+  'badge.slotTycoon.name': 'Slot Tycoon',
+  'badge.slotTycoon.hint': 'Hold 8 or more airport slots',
+  'badge.share5.name': '5% Market Share',
+  'badge.share5.hint': 'Reach 5% market share',
+  'badge.share10.name': '10% Market Share',
+  'badge.share10.hint': 'Reach 10% market share',
+  'badge.victory.name': 'Champion',
+  'badge.victory.hint': 'Finish the game in 1st place',
+  'badge.century.name': 'Century Airline',
+  'badge.century.hint': 'Reach turn 80 without going bankrupt',
+  'badge.billionaire.name': 'Billionaire',
+  'badge.billionaire.hint': 'Accumulate $1 billion in cash',
+
+  // CEO levels
+  'ceo.level.0': 'Intern Dispatcher',
+  'ceo.level.1': 'Regional Manager',
+  'ceo.level.2': 'Operations Director',
+  'ceo.level.3': 'Airline CEO',
+  'ceo.level.4': 'Aviation Tycoon',
+
+  // Profile UI
+  'profile.heading': 'CEO Profile',
+  'profile.xp': '{xp} XP',
+  'profile.level': 'Level {level}',
+  'profile.badges.count': '{n} badges',
+  'profile.games': '{n} games played',
+  'profile.victories': '{n} victories',
+  'profile.xp.nextLevel': '{remaining} XP to next level',
+  'profile.xp.maxLevel': 'Max level reached',
+
+  // Achievements modal
+  'achievements.heading': 'Achievements',
+  'achievements.btn.open': 'Achievements',
+  'achievements.btn.close': 'Close',
+  'achievements.earned': 'Earned',
+  'achievements.unearned': 'Not yet earned',
+  'achievements.empty': 'No achievements yet',
+
+  // Voice badge line
+  'voice.badge': '{name} says: Congratulations! New achievement "{badge}" unlocked!',
 };
 
 export default en;

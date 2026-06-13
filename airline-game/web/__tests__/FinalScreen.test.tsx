@@ -26,6 +26,7 @@ describe('FinalScreen — victory variant', () => {
     render(
       <FinalScreen
         airlineName="环球之翼"
+        gameId="test-game-id"
         finalResult={makeFinalResult()}
         onRestart={jest.fn()}
       />,
@@ -37,6 +38,7 @@ describe('FinalScreen — victory variant', () => {
     render(
       <FinalScreen
         airlineName="环球之翼"
+        gameId="test-game-id"
         finalResult={makeFinalResult()}
         onRestart={jest.fn()}
       />,
@@ -61,6 +63,7 @@ describe('FinalScreen — victory variant', () => {
     render(
       <FinalScreen
         airlineName="环球之翼"
+        gameId="test-game-id"
         finalResult={makeFinalResult()}
         onRestart={jest.fn()}
       />,
@@ -76,6 +79,7 @@ describe('FinalScreen — victory variant', () => {
     render(
       <FinalScreen
         airlineName="环球之翼"
+        gameId="test-game-id"
         finalResult={makeFinalResult()}
         onRestart={jest.fn()}
       />,
@@ -89,6 +93,7 @@ describe('FinalScreen — victory variant', () => {
     render(
       <FinalScreen
         airlineName="环球之翼"
+        gameId="test-game-id"
         finalResult={makeFinalResult()}
         onRestart={onRestart}
       />,
@@ -114,7 +119,7 @@ describe('FinalScreen — defeat variant', () => {
 
   it('shows defeat headline (not 称霸蓝天) and rank text when rank > 1', () => {
     render(
-      <FinalScreen airlineName="联星航空" finalResult={defeatResult} onRestart={jest.fn()} />,
+      <FinalScreen airlineName="联星航空" gameId="test-game-id" finalResult={defeatResult} onRestart={jest.fn()} />,
     );
     expect(screen.getByTestId('final-headline')).not.toHaveTextContent('称霸蓝天');
     // Defeat rank indicator
@@ -123,7 +128,7 @@ describe('FinalScreen — defeat variant', () => {
 
   it('shows cumulative profit in red when negative', () => {
     render(
-      <FinalScreen airlineName="联星航空" finalResult={defeatResult} onRestart={jest.fn()} />,
+      <FinalScreen airlineName="联星航空" gameId="test-game-id" finalResult={defeatResult} onRestart={jest.fn()} />,
     );
     expect(screen.getByTestId('cumulative-profit')).toHaveClass('text-red-400');
     expect(screen.getByTestId('cumulative-profit')).toHaveTextContent('-$50M');
@@ -131,7 +136,7 @@ describe('FinalScreen — defeat variant', () => {
 
   it('player row highlighted at rank 3 position', () => {
     render(
-      <FinalScreen airlineName="联星航空" finalResult={defeatResult} onRestart={jest.fn()} />,
+      <FinalScreen airlineName="联星航空" gameId="test-game-id" finalResult={defeatResult} onRestart={jest.fn()} />,
     );
     const standingsEl = screen.getByTestId('standings');
     const rows = within(standingsEl).getAllByRole('listitem');
@@ -147,6 +152,7 @@ describe('FinalScreen — page-level status="finished" renders FinalScreen', () 
     render(
       <FinalScreen
         airlineName="环球之翼"
+        gameId="test-game-id"
         finalResult={makeFinalResult()}
         onRestart={jest.fn()}
       />,

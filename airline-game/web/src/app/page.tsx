@@ -121,11 +121,12 @@ const Page = () => {
         <TurnReportModal report={report} state={state} onClose={() => setReport(null)} />
       )}
       {!report && state.status === 'bankrupt' && (
-        <GameOverScreen airlineName={state.airlineName} onRestart={handleRestart} />
+        <GameOverScreen airlineName={state.airlineName} gameId={state.id} onRestart={handleRestart} />
       )}
       {!report && state.status === 'finished' && state.finalResult && (
         <FinalScreen
           airlineName={state.airlineName}
+          gameId={state.id}
           finalResult={state.finalResult}
           onRestart={handleRestart}
         />

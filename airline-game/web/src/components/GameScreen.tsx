@@ -15,7 +15,11 @@ import { MarketTab } from '@/components/tabs/MarketTab';
 import { NewsTab } from '@/components/tabs/NewsTab';
 import { RoutesTab } from '@/components/tabs/RoutesTab';
 import { useT } from '@/i18n';
+import { BADGES, TIER_COLORS } from '@/lib/badges';
+import { loadProfile, saveProfile, recordBadge, recordPositiveBrandDecision, hasPositiveBrandDecision } from '@/lib/profile';
+import { tStandalone, getLocale } from '@/i18n/standalone';
 import type { Command, GameState } from '@/types';
+import type { BadgeId } from '@/lib/badges';
 
 type TabId = 'routes' | 'fleet' | 'market' | 'finance' | 'news';
 
@@ -66,6 +70,13 @@ const CityPhoto = ({ cityId }: CityPhotoProps) => {
   );
 };
 
+type BadgeToast = {
+  id: BadgeId;
+  name: string;
+  tier: 'bronze' | 'silver' | 'gold';
+  color: string;
+};
+
 type GameScreenProps = {
   state: GameState;
   busy: boolean;
@@ -89,7 +100,9 @@ export const GameScreen = ({
   const [highlightTab, setHighlightTab] = useState<string | null>(null);
   const [fleetPulse, setFleetPulse] = useState(false);
   const [showDecisionWarning, setShowDecisionWarning] = useState(false);
+  const [badgeToast, setBadgeToast] = useState<BadgeToast | null>(null);
   const prevTurnRef = useRef(state.turn);
+  const badgeToastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Speak major events when they first appear.
   const spokenEventIds = useRef<Set<string>>(new Set());
@@ -101,6 +114,41 @@ export const GameScreen = ({
       }
     }
   }, [state.activeEvents]);
+
+  // Badge detection: run after each state change, toast new earns.
+  useEffect(() => {
+    const extra = { hasPositiveBrandDecision: hasPositiveBrandDecision() };
+    let profile = loadProfile();
+    const queue: BadgeToast[] = [];
+
+    for (const badge of BADGES) {
+      if (!profile.badges[badge.id] && badge.earned(state, extra)) {
+        const locale = getLocale();
+        const badgeName = tStandalone(locale, badge.nameKey);
+        profile = recordBadge(profile, badge.id, badge.tier);
+        queue.push({
+          id: badge.id,
+          name: badgeName,
+          tier: badge.tier,
+          color: TIER_COLORS[badge.tier],
+        });
+      }
+    }
+
+    if (queue.length > 0) {
+      saveProfile(profile);
+      // Show toasts sequentially, 2.5s apart.
+      queue.forEach((toast, i) => {
+        setTimeout(() => {
+          setBadgeToast(toast);
+          voice.speakBadge(toast.name);
+          if (badgeToastTimerRef.current) clearTimeout(badgeToastTimerRef.current);
+          badgeToastTimerRef.current = setTimeout(() => setBadgeToast(null), 3000);
+        }, i * 2500);
+      });
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state]);
 
   // Detect end-turn (turn increment) and trigger fleet pulse animation
   useEffect(() => {
@@ -127,6 +175,13 @@ export const GameScreen = ({
   };
 
   const handleResolveDecision = (optionId: string) => {
+    // Check if the chosen option has a positive brandDelta — if so, record it.
+    if (state.pendingDecision) {
+      const chosen = state.pendingDecision.options.find((o) => o.id === optionId);
+      if (chosen && chosen.brandDelta > 0) {
+        recordPositiveBrandDecision();
+      }
+    }
     onCommands([{ type: 'resolveDecision', optionId }]);
   };
 
@@ -252,6 +307,24 @@ export const GameScreen = ({
           >
             ✕
           </button>
+        </div>
+      )}
+
+      {/* V3.8: Badge toast notification */}
+      {badgeToast && (
+        <div
+          role="status"
+          data-testid="badge-toast"
+          className="fixed right-3 top-16 z-50 flex items-center gap-2.5 rounded-lg border bg-ops-900/95 px-3.5 py-2.5 text-sm shadow-xl backdrop-blur"
+          style={{ borderColor: badgeToast.color }}
+        >
+          <span className="text-lg" style={{ color: badgeToast.color }}>🏅</span>
+          <div>
+            <p className="text-[10px] uppercase tracking-widest" style={{ color: badgeToast.color }}>
+              {t('badge.toast.prefix')} · {t(`badge.tier.${badgeToast.tier}` as import('@/i18n').DictKeys)}
+            </p>
+            <p className="font-semibold text-white">{badgeToast.name}</p>
+          </div>
         </div>
       )}
     </div>

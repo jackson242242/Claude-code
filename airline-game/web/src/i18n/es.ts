@@ -260,6 +260,74 @@ const es: Dict = {
   'marketing.total': 'Total',
   'marketing.confirm': 'Confirmar',
   'marketing.per.quarter': '/trim.',
+
+  // ── V3.8 Badge & CEO Level ────────────────────────────────────────────────
+  'badge.toast.prefix': '¡Logro desbloqueado!',
+  'badge.tier.bronze': 'Bronce',
+  'badge.tier.silver': 'Plata',
+  'badge.tier.gold': 'Oro',
+
+  // Badge names
+  'badge.firstFlight.name': 'Primer vuelo',
+  'badge.firstFlight.hint': 'Abre tu primera ruta',
+  'badge.firstProfit.name': 'Primer beneficio',
+  'badge.firstProfit.hint': 'Registra un trimestre rentable',
+  'badge.loadFactor90.name': 'Factor de carga 90%+',
+  'badge.loadFactor90.hint': 'Alcanza 90% de factor de carga en cualquier ruta',
+  'badge.fleet5.name': 'Flota de 5',
+  'badge.fleet5.hint': 'Posee 5 aviones simultáneamente',
+  'badge.fleet10.name': 'Flota de 10',
+  'badge.fleet10.hint': 'Posee 10 aviones simultáneamente',
+  'badge.transOcean.name': 'Pionero transoceánico',
+  'badge.transOcean.hint': 'Abre una ruta de más de 8.000 km',
+  'badge.brandAmbassador.name': 'Embajador de marca',
+  'badge.brandAmbassador.hint': 'Alcanza 75 de reputación de marca',
+  'badge.marketingGuru.name': 'Gurú del marketing',
+  'badge.marketingGuru.hint': 'Establece cualquier canal de marketing en 8 o más',
+  'badge.crisisPR.name': 'Relaciones públicas de crisis',
+  'badge.crisisPR.hint': 'Elige una opción positiva para la marca en una decisión',
+  'badge.tier3Route.name': 'Servicio completo',
+  'badge.tier3Route.hint': 'Opera una ruta con servicio de nivel 3',
+  'badge.slotTycoon.name': 'Magnate de slots',
+  'badge.slotTycoon.hint': 'Mantén 8 o más slots aeroportuarios',
+  'badge.share5.name': 'Cuota del 5%',
+  'badge.share5.hint': 'Alcanza el 5% de cuota de mercado',
+  'badge.share10.name': 'Cuota del 10%',
+  'badge.share10.hint': 'Alcanza el 10% de cuota de mercado',
+  'badge.victory.name': 'Campeón',
+  'badge.victory.hint': 'Termina el juego en primer lugar',
+  'badge.century.name': 'Aerolínea centenaria',
+  'badge.century.hint': 'Llega al turno 80 sin quebrar',
+  'badge.billionaire.name': 'Multimillonario',
+  'badge.billionaire.hint': 'Acumula $1.000 millones en efectivo',
+
+  // CEO levels
+  'ceo.level.0': 'Despachador en prácticas',
+  'ceo.level.1': 'Gerente regional',
+  'ceo.level.2': 'Director de operaciones',
+  'ceo.level.3': 'CEO de aerolínea',
+  'ceo.level.4': 'Magnate de la aviación',
+
+  // Profile UI
+  'profile.heading': 'Perfil CEO',
+  'profile.xp': '{xp} XP',
+  'profile.level': 'Nivel {level}',
+  'profile.badges.count': '{n} insignias',
+  'profile.games': '{n} partidas jugadas',
+  'profile.victories': '{n} victorias',
+  'profile.xp.nextLevel': '{remaining} XP para el siguiente nivel',
+  'profile.xp.maxLevel': 'Nivel máximo alcanzado',
+
+  // Achievements modal
+  'achievements.heading': 'Logros',
+  'achievements.btn.open': 'Logros',
+  'achievements.btn.close': 'Cerrar',
+  'achievements.earned': 'Obtenido',
+  'achievements.unearned': 'Aún sin obtener',
+  'achievements.empty': 'Sin logros todavía',
+
+  // Voice badge line
+  'voice.badge': '{name} dice: ¡Felicitaciones! ¡Nuevo logro "{badge}" desbloqueado!',
 };
 
 export default es;

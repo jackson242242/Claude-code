@@ -1,9 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CityCard } from '@/components/CityCard';
 import { CITIES } from '@/lib/data';
 import { useT } from '@/i18n';
+import { BADGES, TIER_COLORS } from '@/lib/badges';
+import { loadProfile, getCeoLevel, getLevelProgress, CEO_LEVELS } from '@/lib/profile';
+import { tStandalone, getLocale } from '@/i18n/standalone';
+import type { CeoProfile } from '@/lib/profile';
 
 type StartScreenProps = {
   busy: boolean;
@@ -16,6 +20,13 @@ export const StartScreen = ({ busy, error, onCreate }: StartScreenProps) => {
   const [airlineName, setAirlineName] = useState('');
   const [hqCityId, setHqCityId] = useState<string | null>(null);
   const [search, setSearch] = useState('');
+  const [profile, setProfile] = useState<CeoProfile | null>(null);
+  const [showAchievements, setShowAchievements] = useState(false);
+
+  // Load profile on mount (client-only localStorage).
+  useEffect(() => {
+    setProfile(loadProfile());
+  }, []);
   const canCreate = airlineName.trim().length > 0 && hqCityId !== null && !busy;
 
   const query = search.trim().toLowerCase();
@@ -28,6 +39,15 @@ export const StartScreen = ({ busy, error, onCreate }: StartScreenProps) => {
     );
   }).sort((a, b) => b.demandIndex - a.demandIndex);
 
+  // Compute CEO level display from profile.
+  const locale = getLocale();
+  const ceoLevel = profile ? getCeoLevel(profile.xp) : 0;
+  const levelTitle = tStandalone(locale, CEO_LEVELS[ceoLevel].titleKey);
+  const { fraction, remaining, isMax } = profile
+    ? getLevelProgress(profile.xp)
+    : { fraction: 0, remaining: 0, isMax: false };
+  const badgeCount = profile ? Object.keys(profile.badges).length : 0;
+
   return (
     <main className="mx-auto flex min-h-dvh max-w-3xl flex-col gap-6 px-4 py-8">
       <header className="text-center">
@@ -37,6 +57,139 @@ export const StartScreen = ({ busy, error, onCreate }: StartScreenProps) => {
           {t('start.subtitle')}
         </p>
       </header>
+
+      {/* V3.8: CEO Profile panel */}
+      {profile !== null && (
+        <section
+          data-testid="ceo-profile-panel"
+          className="panel flex items-center gap-4 p-4"
+        >
+          <div className="flex-1 min-w-0">
+            <div className="flex items-baseline gap-2">
+              <span
+                data-testid="ceo-level-title"
+                className="text-sm font-bold text-accent"
+              >
+                {levelTitle}
+              </span>
+              <span className="text-xs text-slate-500">
+                {t('profile.xp', { xp: profile.xp })}
+              </span>
+            </div>
+
+            {/* XP bar */}
+            <div
+              className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-ops-700"
+              aria-label={
+                isMax
+                  ? t('profile.xp.maxLevel')
+                  : t('profile.xp.nextLevel', { remaining })
+              }
+            >
+              <div
+                data-testid="xp-bar"
+                className="h-full rounded-full bg-accent transition-all duration-500"
+                style={{ width: `${Math.round(fraction * 100)}%` }}
+              />
+            </div>
+
+            <p className="mt-1 text-[11px] text-slate-500">
+              {isMax
+                ? t('profile.xp.maxLevel')
+                : t('profile.xp.nextLevel', { remaining })}
+            </p>
+          </div>
+
+          {/* Badge count + achievements button */}
+          <div className="flex flex-col items-end gap-1">
+            <span className="text-xs text-slate-400" data-testid="badge-count">
+              {t('profile.badges.count', { n: badgeCount })}
+            </span>
+            <button
+              type="button"
+              data-testid="achievements-btn"
+              onClick={() => setShowAchievements(true)}
+              className="rounded bg-ops-700 px-2 py-1 text-[11px] font-semibold text-slate-300 hover:bg-ops-600"
+            >
+              {t('achievements.btn.open')}
+            </button>
+          </div>
+        </section>
+      )}
+
+      {/* V3.8: Achievements modal */}
+      {showAchievements && profile !== null && (
+        <div
+          data-testid="achievements-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-label={t('achievements.heading')}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur"
+        >
+          <div className="panel mx-4 flex w-full max-w-md flex-col gap-3 p-5 max-h-[90dvh] overflow-y-auto">
+            <div className="flex items-center justify-between">
+              <h2 className="text-lg font-bold text-white">{t('achievements.heading')}</h2>
+              <button
+                type="button"
+                data-testid="achievements-close"
+                onClick={() => setShowAchievements(false)}
+                className="text-slate-400 hover:text-white"
+              >
+                ✕
+              </button>
+            </div>
+            <ul className="flex flex-col gap-2">
+              {BADGES.map((badge) => {
+                const earnedAt = profile.badges[badge.id];
+                const badgeName = tStandalone(locale, badge.nameKey);
+                const badgeHint = tStandalone(locale, badge.hintKey);
+                const color = TIER_COLORS[badge.tier];
+                return (
+                  <li
+                    key={badge.id}
+                    data-testid={`achievement-${badge.id}`}
+                    className={`flex items-start gap-3 rounded-lg border p-2.5 ${
+                      earnedAt
+                        ? 'border-ops-600 bg-ops-800/60'
+                        : 'border-ops-700/40 bg-ops-900/40 opacity-50'
+                    }`}
+                  >
+                    <span
+                      className="mt-0.5 text-xl"
+                      style={{ filter: earnedAt ? 'none' : 'grayscale(100%)' }}
+                    >
+                      🏅
+                    </span>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-1.5">
+                        <span
+                          className="text-sm font-semibold"
+                          style={{ color: earnedAt ? color : '#6b7280' }}
+                        >
+                          {badgeName}
+                        </span>
+                        <span
+                          className="rounded px-1 py-0.5 text-[9px] uppercase tracking-wider"
+                          style={{
+                            backgroundColor: `${color}22`,
+                            color: earnedAt ? color : '#6b7280',
+                          }}
+                        >
+                          {t(`badge.tier.${badge.tier}` as import('@/i18n').DictKeys)}
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-slate-500">{badgeHint}</p>
+                    </div>
+                    {earnedAt && (
+                      <span className="text-[10px] text-emerald-400">✓</span>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
+      )}
 
       <section className="panel p-4">
         <label htmlFor="airline-name" className="text-sm font-semibold text-slate-300">
