@@ -34,7 +34,23 @@
 | GET | `/api/games/{gameId}` | — | `GameState` |
 | POST | `/api/games/{gameId}/commands` | `{ commands: Command[] }` | `{ state: GameState, results: CommandResult[] }` |
 | POST | `/api/games/{gameId}/end-turn` | `{}` | `{ state: GameState, report: TurnReport }` |
+| POST | `/api/matches` | `{ hostName, hostHqCityId, maxPlayers(2–4), fillWithAI }` | `{ code, playerId }`（201）·V3.3 |
+| POST | `/api/matches/{code}/join` | `{ name, hqCityId }` | `{ playerId }`·V3.3（仅 lobby 阶段、未满员） |
+| POST | `/api/matches/{code}/start` | `{ playerId }` | `MatchView`·V3.3（仅房主、≥2 人，锁定大厅转 active） |
+| GET | `/api/matches/{code}` | `?playerId=...` | `MatchView`·V3.3（**前端轮询此端点**，2s 间隔） |
+| POST | `/api/matches/{code}/commands` | `{ playerId, commands }` | `{ view: MatchView, results: CommandResult[] }`·V3.3 |
+| POST | `/api/matches/{code}/ready` | `{ playerId }` | `MatchView`·V3.3（标记本人本回合就绪） |
 
+- **多人对战（V3.3，房间制同步回合，轮询无 WebSocket）**：
+  - 房间内 N 个真人航司（2–4）+ 可选 AI 补位，**共享同一世界/AI/事件/回合计数器**。
+  - 同步回合：active 阶段各玩家随时提交命令（即时作用于自己航司），点「就绪」标记
+    本回合完成；**全员就绪即统一结算**并推进一回合。设 `turnDeadlineMs` 软截止，
+    任意 `ready`/`commands`/`GET` 请求到达且已过截止时，自动把未就绪者视为就绪并结算
+    （无后台调度器，惰性触发）。结算到 `GAME_LENGTH_TURNS` 出 `finalStandings`。
+  - **结算复用单人纯函数**：把所有真人玩家航线 + AI 航线汇入同一份额分配
+    （`allocate_city_pair` 逐城对，含背景市场与容量再分配），各玩家财务独立结算
+    （`simulate_route`），AI 演进/事件/抉择对共享世界只跑一次。单人路径与 402 测**零改动**。
+  - 存储：内存 match dict（MVP，重启丢局；持久化留后续）。`code` 为 6 位大写字母数字。
 - 命令立即生效（买机即时交付——交付周期留给 M2）。
 - 缺省值：新开航线 `weeklyFlights = 7`、`fareMult = 1.0`；`leaseAircraft` 无首付，
   只产生每季度租金；`CommandResult.message` 缺省序列化为 `null`。
@@ -143,6 +159,28 @@ type GameState = {
   brand: number;               // V3.7：品牌声誉 0–100，开局 50
   marketing: Marketing;        // V3.7：当前季度营销投放，开局 {0,0,0}
   pendingDecision: (DecisionEvent & { drawnTurn: number }) | null;  // V3.7
+};
+
+// V3.3 多人对战视角（每个玩家轮询自己的 MatchView）
+type MatchPlayerLite = {
+  playerId: string;        // 仅自己的 id 出现在 you.id；列表内他人 id 省略或脱敏
+  name: string;
+  hqCityId: string;
+  ready: boolean;          // 本回合是否已就绪
+  marketShare: number;     // 上季份额 0–1
+  bankrupt: boolean;
+};
+
+type MatchView = {
+  code: string;
+  phase: "lobby" | "active" | "finished";
+  turn: number; year: number; quarter: 1 | 2 | 3 | 4;
+  maxPlayers: number;
+  players: MatchPlayerLite[];          // 含自己与其他真人（按加入序）
+  you: GameState;                       // 自己的航司状态；competitors = AI + 其他真人（只读）
+  turnDeadlineMs: number | null;        // 本回合软截止（epoch ms），lobby/finished 为 null
+  lastReport: TurnReport | null;        // 上一回合结算报告（刚结算后非空）
+  finalStandings: FinalResult["standings"] | null;  // finished 时全员名次
 };
 
 // M2.4 终局结算
