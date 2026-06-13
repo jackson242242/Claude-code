@@ -5,9 +5,11 @@ import type {
   EndTurnResponse,
   GameState,
   JoinMatchResponse,
+  LeaderboardResponse,
   MatchCommandsResponse,
   MatchView,
   Meta,
+  WeeklyChallenge,
 } from '@/types';
 
 // airline-game/data is the source of truth; backend dev server runs on :8001.
@@ -122,3 +124,22 @@ export const readyMatch = (code: string, playerId: string): Promise<MatchView> =
     method: 'POST',
     body: JSON.stringify({ playerId }),
   });
+
+// ── V3.4 Weekly challenge & leaderboard endpoints ──────────────────────────────
+
+export const getWeekly = (): Promise<WeeklyChallenge> =>
+  request<WeeklyChallenge>('/api/weekly');
+
+export const startWeeklyGame = (airlineName: string): Promise<GameState> =>
+  request<GameState>('/api/weekly/games', {
+    method: 'POST',
+    body: JSON.stringify({ airlineName }),
+  });
+
+export const getLeaderboard = (weekId?: string, token?: string): Promise<LeaderboardResponse> => {
+  const params = new URLSearchParams();
+  if (weekId) params.set('weekId', weekId);
+  if (token) params.set('token', token);
+  const qs = params.toString();
+  return request<LeaderboardResponse>(`/api/leaderboard${qs ? `?${qs}` : ''}`);
+};

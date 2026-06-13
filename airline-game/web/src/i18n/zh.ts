@@ -361,6 +361,8 @@ const zh = {
   'mode.select.solo.desc': '对抗 AI，开启你的航空帝国',
   'mode.select.multi': '多人对战',
   'mode.select.multi.desc': '创建或加入房间，与真人玩家对决',
+  'mode.select.weekly': '每周挑战',
+  'mode.select.weekly.desc': '本周固定开局，与全球玩家同台竞技',
   'match.create.heading': '创建多人房间',
   'match.create.btn': '创建房间',
   'match.create.maxPlayers': '最多玩家数',
@@ -395,6 +397,41 @@ const zh = {
   'match.hud.deadline.passed': '已超时',
   'match.settle.btn': '准备结算',
   'match.final.heading': '多人对战结束',
+
+  // ── V3.4 Weekly Challenge ─────────────────────────────────────────────────
+  'weekly.heading': '每周挑战',
+  'weekly.weekId.label': '本周赛期',
+  'weekly.hq.label': '本周总部城市',
+  'weekly.explainer': '本周所有人同一开局 · 公平较量',
+  'weekly.countdown.label': '挑战截止',
+  'weekly.countdown.days': '{d} 天 {h} 时',
+  'weekly.countdown.hours': '{h} 时 {m} 分',
+  'weekly.countdown.ended': '本周挑战已结束',
+  'weekly.airline.label': '你的航司名',
+  'weekly.airline.placeholder': '例如：环球之翼航空',
+  'weekly.btn.start': '开始挑战 ✈',
+  'weekly.btn.starting': '加入中…',
+  'weekly.btn.leaderboard': '查看排行榜',
+  'weekly.loading': '加载本周挑战…',
+  'weekly.error': '无法加载本周挑战，请稍后重试',
+
+  // ── V3.4 Leaderboard ──────────────────────────────────────────────────────
+  'leaderboard.heading': '本周排行榜',
+  'leaderboard.weekId.label': '赛期',
+  'leaderboard.col.rank': '名次',
+  'leaderboard.col.name': '航司名',
+  'leaderboard.col.score': '得分',
+  'leaderboard.col.profit': '累计利润',
+  'leaderboard.col.share': '份额',
+  'leaderboard.empty': '本周还没有人完成挑战，来当第一名',
+  'leaderboard.btn.refresh': '刷新',
+  'leaderboard.btn.back': '返回',
+  'leaderboard.you': '（你）',
+  'leaderboard.loading': '加载排行榜…',
+  'leaderboard.error': '无法加载排行榜，请稍后重试',
+
+  // ── V3.4 FinalScreen weekly extension ────────────────────────────────────
+  'final.btn.weekly.leaderboard': '查看本周排行榜',
 } as const;
 
 export type DictKeys = keyof typeof zh;

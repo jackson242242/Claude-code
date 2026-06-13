@@ -361,6 +361,8 @@ const es: Dict = {
   'mode.select.solo.desc': 'Compite contra la IA para construir tu imperio aéreo',
   'mode.select.multi': 'Multijugador',
   'mode.select.multi.desc': 'Crea o únete a una sala para competir con jugadores reales',
+  'mode.select.weekly': 'Desafío semanal',
+  'mode.select.weekly.desc': 'Misma ciudad de inicio para todos — compite globalmente',
   'match.create.heading': 'Crear sala',
   'match.create.btn': 'Crear sala',
   'match.create.maxPlayers': 'Máximo de jugadores',
@@ -395,6 +397,41 @@ const es: Dict = {
   'match.hud.deadline.passed': 'Vencido',
   'match.settle.btn': 'Listo para liquidar',
   'match.final.heading': 'Fin de la partida',
+
+  // ── V3.4 Weekly Challenge ─────────────────────────────────────────────────
+  'weekly.heading': 'Desafío semanal',
+  'weekly.weekId.label': 'Semana',
+  'weekly.hq.label': 'Ciudad hub de esta semana',
+  'weekly.explainer': 'Todos empiezan desde la misma ciudad — competencia global justa',
+  'weekly.countdown.label': 'El desafío termina en',
+  'weekly.countdown.days': '{d}d {h}h',
+  'weekly.countdown.hours': '{h}h {m}m',
+  'weekly.countdown.ended': 'El desafío de esta semana ha terminado',
+  'weekly.airline.label': 'Nombre de tu aerolínea',
+  'weekly.airline.placeholder': 'Ej.: Alas Globales',
+  'weekly.btn.start': 'Iniciar desafío ✈',
+  'weekly.btn.starting': 'Uniéndose…',
+  'weekly.btn.leaderboard': 'Ver clasificación',
+  'weekly.loading': 'Cargando el desafío de esta semana…',
+  'weekly.error': 'No se pudo cargar el desafío semanal, inténtalo de nuevo',
+
+  // ── V3.4 Leaderboard ──────────────────────────────────────────────────────
+  'leaderboard.heading': 'Clasificación semanal',
+  'leaderboard.weekId.label': 'Semana',
+  'leaderboard.col.rank': 'Pos.',
+  'leaderboard.col.name': 'Aerolínea',
+  'leaderboard.col.score': 'Puntos',
+  'leaderboard.col.profit': 'Beneficio',
+  'leaderboard.col.share': 'Cuota',
+  'leaderboard.empty': 'Nadie ha completado el desafío aún — ¡sé el primero!',
+  'leaderboard.btn.refresh': 'Actualizar',
+  'leaderboard.btn.back': 'Volver',
+  'leaderboard.you': '(Tú)',
+  'leaderboard.loading': 'Cargando clasificación…',
+  'leaderboard.error': 'No se pudo cargar la clasificación, inténtalo de nuevo',
+
+  // ── V3.4 FinalScreen weekly extension ────────────────────────────────────
+  'final.btn.weekly.leaderboard': 'Ver clasificación semanal',
 };
 
 export default es;

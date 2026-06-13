@@ -11,11 +11,13 @@ type FinalScreenProps = {
   gameId: string;
   finalResult: FinalResult;
   onRestart: () => void;
+  /** If provided, shows a "查看本周排行榜" button for weekly games. */
+  onViewLeaderboard?: () => void;
 };
 
 const MEDAL = ['🥇', '🥈', '🥉', '4️⃣', '5️⃣'] as const;
 
-export const FinalScreen = ({ airlineName, gameId, finalResult, onRestart }: FinalScreenProps) => {
+export const FinalScreen = ({ airlineName, gameId, finalResult, onRestart, onViewLeaderboard }: FinalScreenProps) => {
   const { t } = useT();
   const { victory, rank, standings, cumulativeProfit, cumulativePax, endedTurn } = finalResult;
 
@@ -138,12 +140,24 @@ export const FinalScreen = ({ airlineName, gameId, finalResult, onRestart }: Fin
           {t('final.footer', { endedTurn })}
         </p>
 
+        {/* weekly leaderboard */}
+        {onViewLeaderboard && (
+          <button
+            type="button"
+            onClick={onViewLeaderboard}
+            data-testid="final-weekly-leaderboard-btn"
+            className="mt-4 w-full rounded-lg border border-amber-700/60 bg-amber-950/40 px-4 py-3 text-sm font-semibold text-amber-400 hover:bg-amber-900/40 transition"
+          >
+            {t('final.btn.weekly.leaderboard')}
+          </button>
+        )}
+
         {/* restart */}
         <button
           type="button"
           onClick={onRestart}
           data-testid="restart-button"
-          className="btn-primary mt-4 w-full px-4 py-3 text-sm"
+          className="btn-primary mt-3 w-full px-4 py-3 text-sm"
         >
           {t('final.btn.restart')}
         </button>

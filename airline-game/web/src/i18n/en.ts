@@ -360,6 +360,8 @@ const en: Dict = {
   'mode.select.solo.desc': 'Compete against AI to build your airline empire',
   'mode.select.multi': 'Multiplayer',
   'mode.select.multi.desc': 'Create or join a room to compete with real players',
+  'mode.select.weekly': 'Weekly Challenge',
+  'mode.select.weekly.desc': 'Same starting conditions for everyone — compete globally',
   'match.create.heading': 'Create Room',
   'match.create.btn': 'Create Room',
   'match.create.maxPlayers': 'Max Players',
@@ -394,6 +396,41 @@ const en: Dict = {
   'match.hud.deadline.passed': 'Overdue',
   'match.settle.btn': 'Ready to Settle',
   'match.final.heading': 'Match Over',
+
+  // ── V3.4 Weekly Challenge ─────────────────────────────────────────────────
+  'weekly.heading': 'Weekly Challenge',
+  'weekly.weekId.label': 'Week',
+  'weekly.hq.label': 'This Week\'s Hub City',
+  'weekly.explainer': 'Everyone starts from the same city — fair global competition',
+  'weekly.countdown.label': 'Challenge ends in',
+  'weekly.countdown.days': '{d}d {h}h',
+  'weekly.countdown.hours': '{h}h {m}m',
+  'weekly.countdown.ended': 'This week\'s challenge has ended',
+  'weekly.airline.label': 'Your Airline Name',
+  'weekly.airline.placeholder': 'e.g. Global Wings Airlines',
+  'weekly.btn.start': 'Start Challenge ✈',
+  'weekly.btn.starting': 'Joining…',
+  'weekly.btn.leaderboard': 'View Leaderboard',
+  'weekly.loading': 'Loading this week\'s challenge…',
+  'weekly.error': 'Could not load the weekly challenge, please try again',
+
+  // ── V3.4 Leaderboard ──────────────────────────────────────────────────────
+  'leaderboard.heading': 'Weekly Leaderboard',
+  'leaderboard.weekId.label': 'Week',
+  'leaderboard.col.rank': 'Rank',
+  'leaderboard.col.name': 'Airline',
+  'leaderboard.col.score': 'Score',
+  'leaderboard.col.profit': 'Profit',
+  'leaderboard.col.share': 'Share',
+  'leaderboard.empty': 'No one has finished the challenge yet — be the first!',
+  'leaderboard.btn.refresh': 'Refresh',
+  'leaderboard.btn.back': 'Back',
+  'leaderboard.you': '(You)',
+  'leaderboard.loading': 'Loading leaderboard…',
+  'leaderboard.error': 'Could not load leaderboard, please try again',
+
+  // ── V3.4 FinalScreen weekly extension ────────────────────────────────────
+  'final.btn.weekly.leaderboard': 'View Weekly Leaderboard',
 };
 
 export default en;

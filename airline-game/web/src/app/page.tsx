@@ -4,23 +4,29 @@ import { useCallback, useEffect, useState } from 'react';
 import { FinalScreen } from '@/components/FinalScreen';
 import { GameOverScreen } from '@/components/GameOverScreen';
 import { GameScreen } from '@/components/GameScreen';
+import { LeaderboardScreen } from '@/components/LeaderboardScreen';
 import { LobbyScreen } from '@/components/LobbyScreen';
 import { MatchActive } from '@/components/MatchActive';
 import { ModeSelect, MultiplayerSetup } from '@/components/MultiplayerSetup';
 import { StartScreen } from '@/components/StartScreen';
 import { TurnReportModal } from '@/components/TurnReportModal';
+import { WeeklyScreen } from '@/components/WeeklyScreen';
+import { WEEKLY_GAME_ID_KEY, WEEKLY_TOKEN_KEY } from '@/components/WeeklyScreen';
 import {
   createGame,
   createMatch,
   endTurn,
   getGame,
+  getLeaderboard,
   getMatch,
+  getWeekly,
   joinMatch,
   sendCommands,
   startMatch,
+  startWeeklyGame,
 } from '@/services/api';
 import { voice } from '@/lib/voice';
-import type { Command, FinalResult, GameState, MatchView, TurnReport } from '@/types';
+import type { Command, FinalResult, GameState, MatchView, TurnReport, WeeklyChallenge } from '@/types';
 import type { CreateRoomParams, JoinRoomParams } from '@/components/MultiplayerSetup';
 
 // ── localStorage keys ─────────────────────────────────────────────────────────
@@ -37,7 +43,10 @@ type Phase =
   | 'lobby'
   | 'game'
   | 'match-active'
-  | 'match-finished';
+  | 'match-finished'
+  | 'weekly-entry'
+  | 'weekly-game'
+  | 'leaderboard';
 
 // ── Main Page ─────────────────────────────────────────────────────────────────
 
@@ -56,6 +65,13 @@ const Page = () => {
   const [matchPlayerId, setMatchPlayerId] = useState<string | null>(null);
   const [matchStandings, setMatchStandings] = useState<FinalResult['standings'] | null>(null);
 
+  // Weekly challenge state
+  const [weeklyChallenge, setWeeklyChallenge] = useState<WeeklyChallenge | null>(null);
+  const [weeklyLoadError, setWeeklyLoadError] = useState<string | null>(null);
+
+  // Leaderboard context: which weekId and token to show
+  const [leaderboardWeekId, setLeaderboardWeekId] = useState<string | undefined>(undefined);
+
   // Resume an existing game or match from localStorage on load.
   useEffect(() => {
     const savedCode = window.localStorage.getItem(MATCH_CODE_KEY);
@@ -64,6 +80,21 @@ const Page = () => {
       setMatchCode(savedCode);
       setMatchPlayerId(savedPlayerId);
       setPhase('match-active');
+      return;
+    }
+    // Check for a resumed weekly game
+    const weeklyGameId = window.localStorage.getItem(WEEKLY_GAME_ID_KEY);
+    if (weeklyGameId) {
+      getGame(weeklyGameId)
+        .then((resumed) => {
+          setState(resumed);
+          setPhase('weekly-game');
+        })
+        .catch(() => {
+          window.localStorage.removeItem(WEEKLY_GAME_ID_KEY);
+          window.localStorage.removeItem(WEEKLY_TOKEN_KEY);
+          setPhase('mode-select');
+        });
       return;
     }
     const gameId = window.localStorage.getItem(STORAGE_KEY);
@@ -136,6 +167,8 @@ const Page = () => {
     window.localStorage.removeItem(STORAGE_KEY);
     window.localStorage.removeItem(MATCH_CODE_KEY);
     window.localStorage.removeItem(MATCH_PLAYER_KEY);
+    window.localStorage.removeItem(WEEKLY_GAME_ID_KEY);
+    window.localStorage.removeItem(WEEKLY_TOKEN_KEY);
     setState(null);
     setReport(null);
     setError(null);
@@ -143,6 +176,9 @@ const Page = () => {
     setMatchCode(null);
     setMatchPlayerId(null);
     setMatchStandings(null);
+    setWeeklyChallenge(null);
+    setWeeklyLoadError(null);
+    setLeaderboardWeekId(undefined);
     setPhase('mode-select');
   }, []);
 
@@ -209,6 +245,37 @@ const Page = () => {
     setPhase('mode-select');
   }, []);
 
+  // ── Weekly challenge handlers ─────────────────────────────────────────────
+
+  const handleEnterWeekly = useCallback(() => {
+    setWeeklyChallenge(null);
+    setWeeklyLoadError(null);
+    setPhase('weekly-entry');
+    getWeekly()
+      .then((challenge) => setWeeklyChallenge(challenge))
+      .catch(() => setWeeklyLoadError('无法加载本周挑战，请稍后重试'));
+  }, []);
+
+  const handleStartWeekly = useCallback(
+    (airlineName: string) =>
+      run(async () => {
+        const created = await startWeeklyGame(airlineName);
+        // Persist token + gameId for resumption and leaderboard isYou matching
+        window.localStorage.setItem(WEEKLY_GAME_ID_KEY, created.id);
+        if (created.playerToken) {
+          window.localStorage.setItem(WEEKLY_TOKEN_KEY, created.playerToken);
+        }
+        setState(created);
+        setPhase('weekly-game');
+      }),
+    [run],
+  );
+
+  const handleViewLeaderboard = useCallback((weekId?: string) => {
+    setLeaderboardWeekId(weekId);
+    setPhase('leaderboard');
+  }, []);
+
   // ── Render ────────────────────────────────────────────────────────────────
 
   if (phase === 'booting') {
@@ -224,6 +291,7 @@ const Page = () => {
       <ModeSelect
         onSolo={() => setPhase('start')}
         onMulti={() => setPhase('mp-setup')}
+        onWeekly={handleEnterWeekly}
       />
     );
   }
@@ -288,6 +356,105 @@ const Page = () => {
     );
   }
 
+  // ── Weekly entry ──────────────────────────────────────────────────────────
+
+  if (phase === 'weekly-entry') {
+    if (weeklyLoadError) {
+      return (
+        <main className="flex min-h-dvh flex-col items-center justify-center gap-4 px-4">
+          <p className="text-sm text-red-300">{weeklyLoadError}</p>
+          <button
+            type="button"
+            onClick={() => setPhase('mode-select')}
+            className="text-sm text-slate-400 hover:text-white"
+          >
+            返回
+          </button>
+        </main>
+      );
+    }
+    if (!weeklyChallenge) {
+      return (
+        <main className="flex min-h-dvh items-center justify-center text-sm text-slate-400">
+          加载本周挑战…
+        </main>
+      );
+    }
+    return (
+      <WeeklyScreen
+        challenge={weeklyChallenge}
+        busy={busy}
+        error={error}
+        onStart={handleStartWeekly}
+        onViewLeaderboard={() => handleViewLeaderboard(weeklyChallenge.weekId)}
+        onBack={() => setPhase('mode-select')}
+      />
+    );
+  }
+
+  // ── Weekly game (same as single-player game; weeklyWeekId is set on state) ──
+
+  if (phase === 'weekly-game' && state) {
+    const weeklyToken = window.localStorage.getItem(WEEKLY_TOKEN_KEY) ?? undefined;
+    const weekId = state.weeklyWeekId ?? undefined;
+    return (
+      <>
+        <GameScreen
+          state={state}
+          busy={busy}
+          error={error}
+          onDismissError={() => setError(null)}
+          onCommands={handleCommands}
+          onEndTurn={handleEndTurn}
+        />
+        {report && (
+          <TurnReportModal report={report} state={state} onClose={() => setReport(null)} />
+        )}
+        {!report && state.status === 'bankrupt' && (
+          <GameOverScreen
+            airlineName={state.airlineName}
+            gameId={state.id}
+            onRestart={handleRestart}
+          />
+        )}
+        {!report && state.status === 'finished' && state.finalResult && (
+          <FinalScreen
+            airlineName={state.airlineName}
+            gameId={state.id}
+            finalResult={state.finalResult}
+            onRestart={handleRestart}
+            onViewLeaderboard={weekId ? () => {
+              window.localStorage.removeItem(WEEKLY_GAME_ID_KEY);
+              handleViewLeaderboard(weekId);
+              // Pass token to leaderboard via state; weeklyToken already in localStorage
+              void getLeaderboard(weekId, weeklyToken);
+            } : undefined}
+          />
+        )}
+      </>
+    );
+  }
+
+  // ── Leaderboard ───────────────────────────────────────────────────────────
+
+  if (phase === 'leaderboard') {
+    const weeklyToken = window.localStorage.getItem(WEEKLY_TOKEN_KEY) ?? undefined;
+    return (
+      <LeaderboardScreen
+        weekId={leaderboardWeekId}
+        token={weeklyToken}
+        onBack={() => {
+          // Go back to weekly entry if we have a challenge loaded, else mode-select
+          if (weeklyChallenge) {
+            setPhase('weekly-entry');
+          } else {
+            setPhase('mode-select');
+          }
+        }}
+      />
+    );
+  }
+
   if (phase === 'game' && state) {
     return (
       <>
@@ -326,6 +493,7 @@ const Page = () => {
     <ModeSelect
       onSolo={() => setPhase('start')}
       onMulti={() => setPhase('mp-setup')}
+      onWeekly={handleEnterWeekly}
     />
   );
 };

@@ -383,9 +383,10 @@ export const MultiplayerSetup = ({
 type ModeSelectProps = {
   onSolo: () => void;
   onMulti: () => void;
+  onWeekly: () => void;
 };
 
-export const ModeSelect = ({ onSolo, onMulti }: ModeSelectProps) => {
+export const ModeSelect = ({ onSolo, onMulti, onWeekly }: ModeSelectProps) => {
   const { t } = useT();
   return (
     <main
@@ -417,6 +418,16 @@ export const ModeSelect = ({ onSolo, onMulti }: ModeSelectProps) => {
         >
           <span className="text-lg font-bold text-white">👥 {t('mode.select.multi')}</span>
           <span className="mt-1 text-sm text-slate-400">{t('mode.select.multi.desc')}</span>
+        </button>
+
+        <button
+          type="button"
+          data-testid="mode-weekly-btn"
+          onClick={onWeekly}
+          className="panel flex flex-col items-start p-5 hover:border-amber-700 transition text-left border-amber-900/40"
+        >
+          <span className="text-lg font-bold text-amber-400">🏆 {t('mode.select.weekly')}</span>
+          <span className="mt-1 text-sm text-slate-400">{t('mode.select.weekly.desc')}</span>
         </button>
       </div>
     </main>

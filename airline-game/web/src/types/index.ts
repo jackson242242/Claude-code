@@ -110,6 +110,30 @@ export type GameState = {
   brand: number; // V3.7：品牌声誉 0–100，开局 50
   marketing: Marketing; // V3.7：当前季度营销投放，开局 {0,0,0}
   pendingDecision: (DecisionEvent & { drawnTurn: number }) | null; // V3.7
+  seed?: string; // V3.4：事件/抉择/AI 确定性种子源，普通局=id、周挑战=weekId
+  weeklyWeekId?: string | null; // V3.4：非空标记周挑战局，到期结算时自动记榜
+  playerToken?: string; // V3.4：周挑战局的匿名令牌（建局时下发），用于 isYou 匹配
+};
+
+// V3.4 每周挑战与排行榜
+export type WeeklyChallenge = {
+  weekId: string;        // ISO 周，如 "2026-W24"
+  hqCityId: string;      // 本周固定总部（由 weekId 确定性派生）
+  endsAtMs: number;      // 本周结束 epoch ms（信息展示）
+};
+
+export type LeaderboardEntry = {
+  rank: number;
+  name: string;          // 航司名
+  score: number;
+  profit: number;        // 累计利润
+  marketShare: number;   // 终局份额 0–1
+  isYou?: boolean;       // 当前请求者自己的条目（按提交时记录的 token 匹配）
+};
+
+export type LeaderboardResponse = {
+  weekId: string;
+  entries: LeaderboardEntry[];
 };
 
 export type CompetitorRoute = { cityA: string; cityB: string; weeklySeats: number }; // 每方向每周座位
