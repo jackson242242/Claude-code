@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>FinDuo 🐷 — Learn Money, One Lesson a Day</title>
+<style>
+  :root{
+    --green:#58cc02; --green-d:#46a302;
+    --blue:#1cb0f6; --blue-d:#1899d6;
+    --red:#ff4b4b; --red-d:#e63946;
+    --gold:#ffc800; --purple:#ce82ff;
+    --ink:#3c3c3c; --muted:#777; --line:#e5e5e5;
+    --bg:#fff; --panel:#f7f7f7;
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;height:100%;}
+  body{
+    font-family:"Nunito","Segoe UI",system-ui,sans-serif;
+    color:var(--ink); background:var(--bg); font-size:17px;
+    display:flex; flex-direction:column; height:100dvh; overflow:hidden;
+  }
+  button{font-family:inherit; cursor:pointer;}
+  /* ---- 3D push buttons (Duolingo style) ---- */
+  .btn{
+    border:none; border-radius:16px; font-weight:800; letter-spacing:.4px;
+    color:#fff; background:var(--green); padding:14px 18px; font-size:1em;
+    box-shadow:0 4px 0 var(--green-d); text-transform:uppercase; transition:transform .04s, box-shadow .04s;
+    width:100%;
+  }
+  .btn:active{transform:translateY(3px); box-shadow:0 1px 0 var(--green-d);}
+  .btn.blue{background:var(--blue); box-shadow:0 4px 0 var(--blue-d);}
+  .btn.blue:active{box-shadow:0 1px 0 var(--blue-d);}
+  .btn.red{background:var(--red); box-shadow:0 4px 0 var(--red-d);}
+  .btn.gray{background:#e5e5e5; color:#afafaf; box-shadow:0 4px 0 #cfcfcf;}
+  .btn.ghost{background:#fff; color:var(--blue); border:2px solid var(--line); box-shadow:0 4px 0 var(--line);}
+  .btn:disabled{opacity:.6;}
+  /* ---- top bar ---- */
+  header{
+    flex:0 0 auto; display:flex; align-items:center; gap:14px;
+    padding:12px 16px; border-bottom:2px solid var(--line); font-weight:800;
+  }
+  header .brand{font-size:1.15em; color:var(--green); margin-right:auto; display:flex; align-items:center; gap:6px;}
+  header .stat{display:flex; align-items:center; gap:4px;}
+  header .stat.streak{color:var(--gold);}
+  header .stat.hearts{color:var(--red);}
+  header .stat.gems{color:var(--blue);}
+  /* ---- main scroll area ---- */
+  main{flex:1 1 auto; overflow-y:auto; -webkit-overflow-scrolling:touch;}
+  .screen{display:none; padding:18px 16px 90px; max-width:560px; margin:0 auto;}
+  .screen.show{display:block;}
+  /* ---- learning path ---- */
+  .unit-head{
+    border-radius:18px; padding:14px 18px; color:#fff; margin:18px 0 6px;
+    display:flex; justify-content:space-between; align-items:center; box-shadow:0 4px 0 rgba(0,0,0,.12);
+  }
+  .unit-head h2{margin:0; font-size:1.05em;}
+  .unit-head small{opacity:.85; font-weight:700;}
+  .path{display:flex; flex-direction:column; align-items:center; gap:18px; padding:18px 0;}
+  .node{position:relative;}
+  .node .bubble{
+    width:74px; height:74px; border-radius:50%; border:none; color:#fff; font-size:2em;
+    display:flex; align-items:center; justify-content:center; box-shadow:0 6px 0 rgba(0,0,0,.18);
+  }
+  .node.locked .bubble{background:#e5e5e5; color:#b7b7b7; box-shadow:0 6px 0 #cfcfcf;}
+  .node.done .bubble{background:var(--gold); box-shadow:0 6px 0 #d9a900;}
+  .node .crowns{position:absolute; top:-10px; left:50%; transform:translateX(-50%); font-size:.8em;}
+  .node .label{font-size:.78em; font-weight:800; color:var(--muted); text-align:center; margin-top:4px; max-width:120px;}
+  .node.n1{align-self:center;} .node.n2{align-self:flex-start; margin-left:18%;}
+  .node.n3{align-self:flex-start; margin-left:4%;} .node.n4{align-self:flex-end; margin-right:18%;}
+  .node.n5{align-self:flex-end; margin-right:4%;}
+  /* ---- leaderboard ---- */
+  .lbrow{display:flex; align-items:center; gap:12px; padding:12px; border-radius:14px; margin:6px 0; background:var(--panel);}
+  .lbrow.me{background:#e9f9d8; outline:2px solid var(--green);}
+  .lbrow .rank{width:30px; font-weight:900; text-align:center; color:var(--muted);}
+  .lbrow .rank.top{color:var(--gold);}
+  .lbrow .who{flex:1; font-weight:800;}
+  .lbrow .who small{display:block; color:var(--muted); font-weight:600; font-size:.78em;}
+  .lbrow .xp{font-weight:900; color:var(--blue);}
+  /* ---- profile ---- */
+  .pcard{background:var(--panel); border-radius:18px; padding:18px; text-align:center; margin-bottom:14px;}
+  .avatar{width:96px; height:96px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; font-size:3em; margin:0 auto 8px; box-shadow:inset 0 0 0 4px var(--green);}
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .tile{background:var(--panel); border-radius:14px; padding:14px; text-align:center;}
+  .tile .big{font-size:1.6em; font-weight:900;}
+  .tile .lab{color:var(--muted); font-weight:700; font-size:.82em;}
+  .badges{display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-top:8px;}
+  .badge{background:var(--panel); border-radius:14px; padding:10px 4px; text-align:center; font-size:1.8em; position:relative;}
+  .badge.locked{filter:grayscale(1); opacity:.35;}
+  .badge small{display:block; font-size:.42em; font-weight:800; color:var(--muted); margin-top:2px;}
+  /* ---- bottom tabs ---- */
+  nav.tabs{
+    flex:0 0 auto; display:flex; border-top:2px solid var(--line); background:#fff;
+  }
+  nav.tabs button{flex:1; border:none; background:none; padding:10px 4px; font-size:1.7em; color:#bdbdbd;}
+  nav.tabs button.active{color:var(--green);}
+  nav.tabs button span{display:block; font-size:.36em; font-weight:800; margin-top:2px;}
+  /* ---- lesson overlay ---- */
+  #lesson{
+    position:fixed; inset:0; background:#fff; z-index:50; display:none; flex-direction:column;
+  }
+  #lesson.show{display:flex;}
+  .lhead{display:flex; align-items:center; gap:12px; padding:14px 16px;}
+  .lhead .x{background:none;border:none;font-size:1.5em;color:#afafaf;}
+  .pbar{flex:1; height:16px; background:var(--line); border-radius:10px; overflow:hidden;}
+  .pbar > div{height:100%; background:var(--green); width:0; transition:width .3s;}
+  .lbody{flex:1; overflow-y:auto; padding:8px 18px; max-width:560px; margin:0 auto; width:100%;}
+  .qtitle{font-size:1.35em; font-weight:900; margin:10px 0 18px;}
+  .opt{
+    display:block; width:100%; text-align:left; background:#fff; border:2px solid var(--line);
+    border-bottom-width:4px; border-radius:14px; padding:14px 16px; margin:8px 0; font-weight:700; font-size:1em;
+  }
+  .opt.sel{border-color:var(--blue); background:#ddf4ff; color:var(--blue-d);}
+  .opt.good{border-color:var(--green); background:#d7ffb8; color:var(--green-d);}
+  .opt.bad{border-color:var(--red); background:#ffdfe0; color:var(--red-d);}
+  .opt:disabled{opacity:1;}
+  .typebox{width:100%; padding:14px; font-size:1.1em; border:2px solid var(--line); border-radius:14px; font-family:inherit;}
+  .matchwrap{display:flex; gap:10px;}
+  .matchcol{flex:1; display:flex; flex-direction:column; gap:8px;}
+  .mtile{border:2px solid var(--line); border-bottom-width:4px; border-radius:12px; padding:12px; font-weight:700; background:#fff;}
+  .mtile.sel{border-color:var(--blue); background:#ddf4ff;}
+  .mtile.done{border-color:var(--green); background:#d7ffb8; color:var(--green-d); opacity:.7;}
+  .mtile.miss{border-color:var(--red); background:#ffdfe0;}
+  .lfoot{border-top:2px solid var(--line); padding:14px 18px; max-width:560px; margin:0 auto; width:100%;}
+  .feedback{padding:12px 14px; border-radius:12px; font-weight:800; margin-bottom:10px; display:none;}
+  .feedback.good{background:#d7ffb8; color:var(--green-d); display:block;}
+  .feedback.bad{background:#ffdfe0; color:var(--red-d); display:block;}
+  .feedback small{display:block; font-weight:600; color:var(--ink); margin-top:4px;}
+  /* ---- modal ---- */
+  .modal{position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:60; display:none; align-items:center; justify-content:center; padding:20px;}
+  .modal.show{display:flex;}
+  .modal .box{background:#fff; border-radius:20px; padding:24px; max-width:420px; width:100%; text-align:center; max-height:90dvh; overflow:auto;}
+  .flagpick{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:10px 0;}
+  .flagpick button{font-size:1.6em; border:2px solid var(--line); border-radius:12px; background:#fff; padding:6px 8px;}
+  .flagpick button.sel{border-color:var(--green); background:#eaffd6;}
+  .toast{
+    position:fixed; left:50%; bottom:96px; transform:translateX(-50%) translateY(20px);
+    background:#3c3c3c; color:#fff; padding:12px 18px; border-radius:14px; font-weight:800;
+    opacity:0; transition:.3s; z-index:70; pointer-events:none; text-align:center; max-width:90%;
+  }
+  .toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
+  .note{font-size:.8em; color:var(--muted); background:var(--panel); border-radius:12px; padding:10px 12px; margin-top:14px;}
+  h1.scr{font-size:1.4em; margin:6px 0 2px;}
+  .sub{color:var(--muted); font-weight:700; margin:0 0 12px;}
+  .ring{--p:0; width:54px;height:54px;border-radius:50%;
+    background:conic-gradient(var(--gold) calc(var(--p)*1%), var(--line) 0);
+    display:flex;align-items:center;justify-content:center;}
+  .ring > div{width:42px;height:42px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.7em;}
+  .dailycard{display:flex;align-items:center;gap:12px;background:var(--panel);border-radius:16px;padding:12px 16px;margin-bottom:6px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">🐷 FinDuo</div>
+  <div class="stat streak">🔥 <span id="hStreak">0</span></div>
+  <div class="stat gems">💎 <span id="hXp">0</span></div>
+  <div class="stat hearts">❤️ <span id="hHearts">5</span></div>
+</header>
+
+<main>
+  <!-- ===== LEARN ===== -->
+  <section class="screen show" id="scLearn">
+    <h1 class="scr">Your money journey 🚀</h1>
+    <p class="sub">Tap a lesson to start. Learn a little every day!</p>
+    <div class="dailycard">
+      <div class="ring" id="dailyRing"><div id="dailyRingTxt">0/30</div></div>
+      <div>
+        <div style="font-weight:900">Daily goal</div>
+        <small style="color:var(--muted);font-weight:700" id="dailyMsg">Earn 30 XP today</small>
+      </div>
+    </div>
+    <div id="path"></div>
+    <div class="note">💡 FinDuo runs fully in your browser — your progress is saved on this device. The leaderboard learners are simulated demo players; see the Profile tab to learn how real worldwide ranking would work.</div>
+  </section>
+
+  <!-- ===== LEADERBOARD ===== -->
+  <section class="screen" id="scBoard">
+    <h1 class="scr">🏆 <span id="leagueName">Bronze</span> League</h1>
+    <p class="sub">This week's top learners · resets every Monday</p>
+    <div id="board"></div>
+    <div class="note">🌍 <strong>Want to compete with real people worldwide?</strong> This demo league is simulated locally. To make it real, FinDuo connects to a server that stores everyone's weekly XP (the included project has a FastAPI backend pattern ready for exactly this). See Profile → "How global sharing works".</div>
+  </section>
+
+  <!-- ===== PROFILE / SHARE ===== -->
+  <section class="screen" id="scProfile">
+    <div class="pcard">
+      <div class="avatar" id="pAvatar">🐷</div>
+      <div style="font-size:1.3em;font-weight:900" id="pName">You</div>
+      <div style="color:var(--muted);font-weight:700" id="pLeague">Bronze League · joined today</div>
+    </div>
+    <div class="grid">
+      <div class="tile"><div class="big" id="pStreak">0</div><div class="lab">🔥 Day streak</div></div>
+      <div class="tile"><div class="big" id="pXp">0</div><div class="lab">💎 Total XP</div></div>
+      <div class="tile"><div class="big" id="pLessons">0</div><div class="lab">📘 Lessons done</div></div>
+      <div class="tile"><div class="big" id="pLevel">1</div><div class="lab">⭐ Level</div></div>
+    </div>
+    <h2 style="margin:18px 0 6px;font-size:1.1em">🏅 Achievements</h2>
+    <div class="badges" id="badges"></div>
+    <button class="btn" style="margin-top:18px" onclick="openShare()">📣 Share my progress</button>
+    <button class="btn ghost" style="margin-top:10px" onclick="openHowGlobal()">🌍 How global sharing works</button>
+    <button class="btn gray" style="margin-top:10px" onclick="resetAll()">↺ Reset all progress</button>
+    <div class="note">Made to fight financial illiteracy 💪 — the more people learn money, the fewer get left behind.</div>
+  </section>
+</main>
+
+<nav class="tabs">
+  <button id="tabLearn" class="active" onclick="showScreen('Learn')">🏠<span>Learn</span></button>
+  <button id="tabBoard" onclick="showScreen('Board')">🏆<span>League</span></button>
+  <button id="tabProfile" onclick="showScreen('Profile')">🐷<span>Profile</span></button>
+</nav>
+
+<!-- ===== LESSON OVERLAY ===== -->
+<div id="lesson">
+  <div class="lhead">
+    <button class="x" onclick="quitLesson()">✕</button>
+    <div class="pbar"><div id="lProg"></div></div>
+    <div class="stat hearts">❤️ <span id="lHearts">5</span></div>
+  </div>
+  <div class="lbody" id="lBody"></div>
+  <div class="lfoot">
+    <div class="feedback" id="lFb"></div>
+    <button class="btn gray" id="lCheck" disabled onclick="checkAnswer()">Check</button>
+  </div>
+</div>
+
+<!-- ===== MODALS ===== -->
+<div class="modal" id="mSetup">
+  <div class="box">
+    <div style="font-size:3em">🐷</div>
+    <h2 style="margin:6px 0">Welcome to FinDuo!</h2>
+    <p style="color:var(--muted);font-weight:700">Learn personal finance the fun way — and don't get left behind. What should we call you?</p>
+    <input class="typebox" id="setupName" placeholder="Your name or nickname" maxlength="16">
+    <p style="font-weight:800;margin:14px 0 4px">Pick your flag 🌍</p>
+    <div class="flagpick" id="flagPick"></div>
+    <button class="btn" style="margin-top:14px" onclick="finishSetup()">Let's go! 🚀</button>
+  </div>
+</div>
+
+<div class="modal" id="mShare">
+  <div class="box">
+    <h2 style="margin:0 0 10px">📣 Share your progress</h2>
+    <canvas id="shareCanvas" width="640" height="640" style="width:100%;max-width:320px;border-radius:16px;border:1px solid var(--line)"></canvas>
+    <button class="btn" style="margin-top:12px" onclick="doShare()">📤 Share / Save image</button>
+    <button class="btn blue" style="margin-top:10px" onclick="copyShareText()">📋 Copy text summary</button>
+    <button class="btn ghost" style="margin-top:10px" onclick="closeModal('mShare')">Close</button>
+    <div class="note" id="shareNote">Post your card on Instagram, WhatsApp, X — anywhere! Challenge friends to beat your streak.</div>
+  </div>
+</div>
+
+<div class="modal" id="mInfo">
+  <div class="box" style="text-align:left">
+    <h2 style="margin:0 0 10px">🌍 How global sharing works</h2>
+    <p style="font-weight:700">Right now FinDuo is <strong>100% offline</strong> — everything (your XP, streak, league) is saved in this browser, and the other learners on the leaderboard are friendly simulated players. That means it works instantly with no signup and no internet.</p>
+    <p style="font-weight:700">To share progress with <strong>real people around the world</strong>, FinDuo would add a small backend server:</p>
+    <ol style="font-weight:700;line-height:1.6">
+      <li>You sign in (or stay anonymous with a nickname).</li>
+      <li>When you finish a lesson, your weekly XP is sent to the server.</li>
+      <li>The server returns the real global/friends leaderboard.</li>
+      <li>Your shareable card links to a public profile page.</li>
+    </ol>
+    <p style="font-weight:700">The repo this ships in already uses <strong>FastAPI + PostgreSQL</strong>, so the same pattern (an endpoint like <code>POST /xp</code> and <code>GET /leaderboard</code>) drops right in. I kept the front-end's data calls in one place (<code>Store</code>) so swapping localStorage for a real API is a small change.</p>
+    <button class="btn" style="margin-top:8px" onclick="closeModal('mInfo')">Got it</button>
+  </div>
+</div>
+
+<div class="modal" id="mOut">
+  <div class="box">
+    <div style="font-size:3em">💔</div>
+    <h2 style="margin:6px 0">Out of hearts!</h2>
+    <p style="color:var(--muted);font-weight:700">Hearts refill slowly over time. Want to keep learning now? (It's free — this is about learning, not spending!)</p>
+    <button class="btn" onclick="refillHearts()">❤️ Refill hearts (free)</button>
+    <button class="btn ghost" style="margin-top:10px" onclick="closeModal('mOut');quitLesson()">Maybe later</button>
+  </div>
+</div>
+
+<div class="modal" id="mDone">
+  <div class="box">
+    <div style="font-size:3.4em" id="doneEmoji">🎉</div>
+    <h2 style="margin:6px 0" id="doneTitle">Lesson complete!</h2>
+    <div class="grid" style="margin:12px 0">
+      <div class="tile"><div class="big" id="doneXp" style="color:var(--gold)">+0</div><div class="lab">💎 XP earned</div></div>
+      <div class="tile"><div class="big" id="doneAcc" style="color:var(--green)">100%</div><div class="lab">🎯 Accuracy</div></div>
+    </div>
+    <button class="btn" onclick="closeModal('mDone')">Continue</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+"use strict";
+
+/* =========================================================
+   CONTENT — Personal finance curriculum
+   Question types: mc | tf | type | multi | match
+========================================================= */
+const CURRICULUM = [
+ { id:"u1", title:"Budgeting Basics", icon:"💰", color:"#58cc02", lessons:[
+   { id:"l1a", title:"Needs vs Wants", q:[
+     {type:"mc", q:"Which of these is a NEED, not a want?", choices:["The newest phone","Rent / a place to live","A designer jacket","Concert tickets"], answer:1, explain:"Needs keep you alive and working: housing, food, basic transport. Wants are nice extras."},
+     {type:"tf", q:"True or false: paying for somewhere to live is a 'want'.", answer:false, explain:"Shelter is a core NEED. Budget for needs first, then wants."},
+     {type:"multi", q:"Tap ALL the things that are usually WANTS:", choices:["Streaming subscriptions","Basic groceries","Takeout coffee daily","Electricity bill"], answers:[0,2], explain:"Subscriptions and daily takeout coffee are wants you can cut. Groceries and electricity are needs."},
+     {type:"mc", q:"You earn $2,000 a month. Smart budgeting means you first cover…", choices:["The fun stuff","Your needs (rent, food, bills)","Whatever you see online","New clothes"], answer:1, explain:"Always fund needs first — that's the foundation of staying out of trouble."},
+     {type:"type", q:"Fill in: spend on needs first, then ____. (one word)", answer:"wants", accept:["wants","want"], explain:"Needs first, wants second — that single habit prevents most money stress."},
+   ]},
+   { id:"l1b", title:"The 50/30/20 Plan", q:[
+     {type:"mc", q:"In the popular 50/30/20 budget, what does the 50% go to?", choices:["Wants","Needs","Savings","Charity"], answer:1, explain:"50% needs, 30% wants, 20% savings/debt payoff — an easy starter budget."},
+     {type:"mc", q:"How much of 50/30/20 goes to SAVING & paying off debt?", choices:["50%","30%","20%","0%"], answer:2, explain:"20% is for your future: savings, investing, and killing debt."},
+     {type:"type", q:"You take home $2,000/month. With 50/30/20, how many dollars go to SAVINGS? Type the number.", answer:"400", accept:["400","$400"], explain:"20% of $2,000 = $400. Pay your future self every month."},
+     {type:"tf", q:"True or false: a budget means you can never have fun.", answer:false, explain:"A budget GIVES you guilt-free fun money (the 30%). It's permission, not punishment."},
+     {type:"multi", q:"Which belong in the 50% 'needs' bucket?", choices:["Rent","Groceries","Video games","Minimum loan payment"], answers:[0,1,3], explain:"Rent, groceries and required loan payments are needs. Video games are a 'want'."},
+   ]},
+ ]},
+ { id:"u2", title:"Saving & Safety Net", icon:"🏦", color:"#1cb0f6", lessons:[
+   { id:"l2a", title:"Pay Yourself First", q:[
+     {type:"mc", q:"'Pay yourself first' means…", choices:["Buy yourself a treat before bills","Move money to savings BEFORE you spend the rest","Pay your boss","Spend, then save what's left"], answer:1, explain:"Save automatically at the start of the month. What's left is what you spend."},
+     {type:"tf", q:"True or false: it's easier to save 'whatever is left' at month-end.", answer:false, explain:"Usually nothing is left! Automating savings first beats willpower."},
+     {type:"mc", q:"The best way to save consistently is to…", choices:["Rely on willpower","Set up an automatic transfer","Wait for a raise","Keep cash in your wallet"], answer:1, explain:"Automation removes the decision. Set it and forget it."},
+     {type:"type", q:"One word: the secret to saving is to make it ____ (happens by itself).", answer:"automatic", accept:["automatic","auto"], explain:"Automatic saving is the #1 habit of people who build wealth."},
+     {type:"multi", q:"Good reasons to save:", choices:["Emergencies","Big future goals","Peace of mind","To impress strangers"], answers:[0,1,2], explain:"Save for safety, goals and calm — not to impress anyone."},
+   ]},
+   { id:"l2b", title:"Emergency Fund", q:[
+     {type:"mc", q:"An emergency fund is money set aside for…", choices:["A holiday","Surprise costs like a job loss or car repair","Shopping sales","Crypto bets"], answer:1, explain:"It's your shock absorber for life's surprises, so you don't go into debt."},
+     {type:"mc", q:"A common target for an emergency fund is…", choices:["1 day of expenses","3–6 months of expenses","10 years of income","$5"], answer:1, explain:"3–6 months of living costs is the classic goal. Start with even $500."},
+     {type:"tf", q:"True or false: an emergency fund should be hard to reach, like locked in stocks.", answer:false, explain:"Keep it SAFE and easy to access (a savings account) — emergencies don't wait."},
+     {type:"type", q:"Type the number: a starter emergency fund of $____ is a great first milestone.", answer:"500", accept:["500","$500"], explain:"$500–$1,000 covers most small emergencies and stops the debt spiral."},
+     {type:"multi", q:"Which are real emergencies the fund is for?", choices:["Car breaks down","Medical bill","A new phone you 'deserve'","Lost your job"], answers:[0,1,3], explain:"A wanted upgrade isn't an emergency. Keep the fund for true surprises."},
+   ]},
+ ]},
+ { id:"u3", title:"Debt & Credit", icon:"💳", color:"#ce82ff", lessons:[
+   { id:"l3a", title:"Good vs Bad Debt", q:[
+     {type:"mc", q:"Which is usually considered 'good' (productive) debt?", choices:["Credit card balance for shoes","A loan for education or a home","Borrowing for a vacation","Payday loans"], answer:1, explain:"Debt that can increase your income or net worth (education, a home) can be 'good'. High-interest consumer debt is 'bad'."},
+     {type:"mc", q:"Interest is…", choices:["A gift from the bank","The price you pay to borrow money","Free money","A type of tax"], answer:1, explain:"Interest is rent on borrowed money. The higher the rate, the more it costs you."},
+     {type:"tf", q:"True or false: a 24% credit card interest rate is cheap.", answer:false, explain:"24% is very expensive! Credit card debt grows fast — pay it off first."},
+     {type:"type", q:"One word: interest is the ____ you pay to borrow money.", answer:"price", accept:["price","cost","fee","rent"], explain:"Interest = the cost/price of borrowing. Avoid borrowing for things that lose value."},
+     {type:"multi", q:"Which debts are usually 'bad' (avoid if you can)?", choices:["Payday loans","Credit card balances","A reasonable mortgage","Buy-now-pay-later for wants"], answers:[0,1,3], explain:"High-interest, want-based debt is the trap. A reasonable mortgage can be fine."},
+   ]},
+   { id:"l3b", title:"Credit Cards & Score", q:[
+     {type:"mc", q:"To use a credit card wisely you should…", choices:["Pay only the minimum","Pay the FULL balance every month","Max it out","Ignore the bill"], answer:1, explain:"Pay in full and you owe ZERO interest. Pay only the minimum and debt snowballs against you."},
+     {type:"tf", q:"True or false: paying only the minimum each month is a smart long-term plan.", answer:false, explain:"The minimum keeps you in debt for years and costs a fortune in interest."},
+     {type:"mc", q:"A credit score mostly measures…", choices:["How rich you are","How reliably you repay borrowed money","How much you spend","Your age"], answer:1, explain:"It's a trust score for repaying debt. A good score = cheaper loans later."},
+     {type:"multi", q:"Which habits BUILD a good credit score?", choices:["Paying bills on time","Keeping balances low","Missing payments","Using a tiny % of your limit"], answers:[0,1,3], explain:"On-time payments and low usage build score. Missed payments wreck it."},
+     {type:"type", q:"Type the number: aim to pay your card balance in ____ each month (100% = paid off). e.g. 100", answer:"100", accept:["100","100%"], explain:"Paying 100% of the balance means you pay no interest at all."},
+   ]},
+ ]},
+ { id:"u4", title:"Compound Interest", icon:"📈", color:"#ff9600", lessons:[
+   { id:"l4a", title:"The Magic of Compounding", q:[
+     {type:"mc", q:"Compound interest means…", choices:["Your money earns money, and that money earns money too","Interest you can't understand","A bank fee","Money the government adds"], answer:0, explain:"Growth on your growth — the snowball effect. It's the most powerful force in finance."},
+     {type:"tf", q:"True or false: with compounding, the BIGGEST growth happens at the very start.", answer:false, explain:"The opposite! Compounding starts slow and explodes later. Time is the magic ingredient."},
+     {type:"mc", q:"What helps compound interest grow biggest?", choices:["Starting late","More TIME","Spending fast","Checking it daily"], answer:1, explain:"Time beats timing. Starting young is a superpower."},
+     {type:"type", q:"One word: the secret ingredient that makes compounding huge is ____.", answer:"time", accept:["time","patience"], explain:"Time. Money invested for decades snowballs into something massive."},
+     {type:"multi", q:"Compounding works on…", choices:["Savings that earn interest","Investments that grow","Money under your mattress","Reinvested returns"], answers:[0,1,3], explain:"Cash under the mattress earns nothing. Compounding needs a return that gets reinvested."},
+   ]},
+   { id:"l4b", title:"Start Early & Rule of 72", q:[
+     {type:"mc", q:"The 'Rule of 72' estimates…", choices:["Your tax rate","How many years it takes money to DOUBLE","Your credit score","Your rent"], answer:1, explain:"Years to double ≈ 72 ÷ interest rate. A quick mental shortcut."},
+     {type:"type", q:"At 8% growth, money doubles in about ____ years (72 ÷ 8). Type the number.", answer:"9", accept:["9","9 years"], explain:"72 ÷ 8 = 9. So $1,000 becomes ~$2,000 in 9 years at 8%."},
+     {type:"type", q:"At 6% growth, money doubles in about ____ years (72 ÷ 6).", answer:"12", accept:["12","12 years"], explain:"72 ÷ 6 = 12 years to double."},
+     {type:"tf", q:"True or false: someone who starts investing at 20 can end up with more than someone who starts at 30 — even if the 30-year-old invests more.", answer:true, explain:"Extra decades of compounding often beat bigger late contributions. Start now."},
+     {type:"mc", q:"Best time to start investing for the long term?", choices:["When you're rich","As early as possible","Only after age 50","Never"], answer:1, explain:"The earlier you start, the more time compounding has to work."},
+   ]},
+ ]},
+ { id:"u5", title:"Money Traps", icon:"⚠️", color:"#ff4b4b", lessons:[
+   { id:"l5a", title:"Scams & Get-Rich-Quick", q:[
+     {type:"mc", q:"An investment 'guaranteed' to double your money in a week is…", choices:["A great deal","Almost certainly a scam","Normal","Smart"], answer:1, explain:"Guaranteed high returns with no risk = scam. Real investing has no guarantees."},
+     {type:"tf", q:"True or false: if a stranger online promises huge profits and asks you to send money fast, you should do it.", answer:false, explain:"Urgency + guaranteed profit + a stranger = classic fraud. Walk away."},
+     {type:"multi", q:"Red flags of a money scam:", choices:["'Guaranteed' big returns","Pressure to act NOW","Asking for secrecy","A boring, well-known index fund"], answers:[0,1,2], explain:"Guarantees, urgency and secrecy are scam signals. Boring and regulated is good."},
+     {type:"mc", q:"If something sounds too good to be true, it…", choices:["Usually is","Is always real","Should be shared fast","Means you're lucky"], answer:0, explain:"The oldest rule in money: too good to be true usually is."},
+     {type:"type", q:"One word: scammers create false ____ to make you act before thinking. (hint: rush)", answer:"urgency", accept:["urgency","pressure","panic"], explain:"Urgency stops you thinking. Slow down and verify everything."},
+   ]},
+   { id:"l5b", title:"Fees & Lifestyle Creep", q:[
+     {type:"mc", q:"'Lifestyle inflation' (lifestyle creep) is…", choices:["Prices rising","Spending more every time you earn more","Saving more","A type of loan"], answer:1, explain:"When raises vanish into fancier spending, you never get ahead. Save the raise instead."},
+     {type:"tf", q:"True or false: a 2% yearly investment fee is tiny and doesn't matter.", answer:false, explain:"Over decades, a 2% fee can eat a HUGE chunk of your returns. Low fees matter a lot."},
+     {type:"mc", q:"The smart move when you get a pay raise is to…", choices:["Upgrade everything immediately","Save/invest a chunk of it first","Take on more debt","Spend it all"], answer:1, explain:"Bank part of every raise before lifestyle creep eats it."},
+     {type:"multi", q:"Sneaky money drains to watch:", choices:["Forgotten subscriptions","High account fees","Tiny daily splurges","An automatic 20% savings transfer"], answers:[0,1,2], explain:"Subscriptions, fees and small daily splurges add up. Automatic saving is a GOOD drain."},
+     {type:"type", q:"One word: when spending rises with income, that's lifestyle ____.", answer:"creep", accept:["creep","inflation"], explain:"Lifestyle creep/inflation quietly keeps people broke despite raises."},
+   ]},
+ ]},
+ { id:"u6", title:"Growing Wealth", icon:"🚀", color:"#2ec4b6", lessons:[
+   { id:"l6a", title:"Investing & Diversify", q:[
+     {type:"mc", q:"A stock is…", choices:["A loan to a friend","A tiny ownership slice of a company","Cash in a bank","A type of bond"], answer:1, explain:"Owning stock = owning a piece of a real business."},
+     {type:"mc", q:"'Don't put all your eggs in one basket' means…", choices:["Buy one stock","Spread money across many investments (diversify)","Avoid investing","Only buy eggs"], answer:1, explain:"Diversification spreads risk so one loser can't sink you."},
+     {type:"tf", q:"True or false: investments can go DOWN as well as up.", answer:true, explain:"Yes — that's risk. Diversifying and investing long-term manages it."},
+     {type:"multi", q:"Ways to reduce investment risk:", choices:["Diversify across many companies","Invest for the long term","Put everything in one hot tip","Keep an emergency fund separate"], answers:[0,1,3], explain:"Spread out, think long-term, and never invest your emergency fund."},
+     {type:"type", q:"One word: spreading money across many investments is called ____.", answer:"diversification", accept:["diversification","diversify","diversifying"], explain:"Diversification is the closest thing to a free lunch in investing."},
+   ]},
+   { id:"l6b", title:"Index Funds & Retirement", q:[
+     {type:"mc", q:"An index fund lets you…", choices:["Bet on one company","Own a tiny piece of HUNDREDS of companies at once","Avoid the stock market","Guarantee profits"], answer:1, explain:"One index fund = instant diversification across a whole market, usually with low fees."},
+     {type:"tf", q:"True or false: for most people, low-cost index funds held for decades are a sensible core strategy.", answer:true, explain:"Low fees + broad diversification + time is a proven, boring-but-effective approach."},
+     {type:"mc", q:"Why use a retirement account (like a 401(k) or pension) when you can?", choices:["No reason","Tax advantages + long-term compounding","To pay more tax","To lock money forever for fun"], answer:1, explain:"Retirement accounts often give tax breaks and supercharge decades of compounding. Grab any employer match — it's free money."},
+     {type:"multi", q:"Smart long-term wealth habits:", choices:["Invest regularly (automatically)","Keep fees low","Stay invested through ups and downs","Panic-sell every dip"], answers:[0,1,2], explain:"Automate, keep costs low, and stay the course. Panic-selling locks in losses."},
+     {type:"type", q:"Two words (no space ok): a fund that copies a whole market is an ____ fund.", answer:"index", accept:["index","indexfund","index fund"], explain:"Index fund — simple, cheap, diversified. A favorite of many experts."},
+   ]},
+ ]},
+];
+
+const LESSON_ORDER = [];
+CURRICULUM.forEach(u => u.lessons.forEach(l => LESSON_ORDER.push(l.id)));
+
+const BADGE_DEFS = [
+  {id:"first",  icon:"🌱", name:"First Step"},
+  {id:"streak3",icon:"🔥", name:"On Fire"},
+  {id:"xp100",  icon:"💎", name:"Collector"},
+  {id:"perfect",icon:"⚡", name:"Flawless"},
+  {id:"unit",   icon:"🏆", name:"Unit Clear"},
+  {id:"goal",   icon:"🎯", name:"Goal Getter"},
+  {id:"gold",   icon:"👑", name:"Gold League"},
+  {id:"master", icon:"🦉", name:"Money Master"},
+];
+const FLAGS = ["🌍","🇺🇸","🇨🇳","🇬🇧","🇮🇳","🇧🇷","🇳🇬","🇯🇵","🇩🇪","🇫🇷","🇲🇽","🇿🇦","🇰🇷","🇮🇩","🇪🇬"];
+const LEAGUES = ["Bronze","Silver","Gold","Sapphire","Ruby"];
+const DAILY_GOAL = 30;
+const MAX_HEARTS = 5;
+const HEART_REGEN_MS = 20*60*1000; // 1 heart / 20 min
+
+/* =========================================================
+   STORE — single place that reads/writes progress.
+   (Swap this for a real API to enable true global sharing.)
+========================================================= */
+const Store = {
+  KEY:"finduo_v1",
+  load(){
+    let s = null;
+    try { s = JSON.parse(localStorage.getItem(this.KEY)); } catch(e){}
+    if(!s){
+      s = { name:"", flag:"🌍", xp:0, streak:0, lastActive:"", hearts:MAX_HEARTS, heartTs:Date.now(),
+            completed:{}, badges:[], dailyXp:0, dailyDate:"", weeklyXp:0, weekId:weekId(), sim:null, joined:todayStr() };
+    }
+    return s;
+  },
+  save(s){ localStorage.setItem(this.KEY, JSON.stringify(s)); },
+};
+
+function todayStr(){ const d=new Date(); return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate(); }
+function weekId(){ const d=new Date(); const o=new Date(d.getFullYear(),0,1); const day=Math.floor((d-o)/86400000); return d.getFullYear()+"-w"+Math.floor((day+o.getDay())/7); }
+function dayDiff(a,b){ if(!a) return 99; return Math.round((new Date(b)-new Date(a))/86400000); }
+
+let S = Store.load();
+
+/* ---- simulated league players (clearly demo) ---- */
+const SIM_NAMES = ["Maya","Diego","Aiko","Tunde","Lena","Sam","Priya","Carlos","Yuki","Nora","Omar","Bea"];
+function ensureSim(){
+  if(S.weekId !== weekId()){ S.weeklyXp=0; S.weekId=weekId(); S.sim=null; }
+  if(!S.sim){
+    S.sim = SIM_NAMES.map((n,i)=>({name:n, flag:FLAGS[(i%(FLAGS.length-1))+1], xp:Math.floor(20+Math.random()*260)}));
+  } else {
+    // make them feel alive between sessions
+    S.sim.forEach(p=> p.xp += Math.floor(Math.random()*22));
+  }
+  Store.save(S);
+}
+
+/* =========================================================
+   HEARTS, STREAK, LEVELS
+========================================================= */
+function regenHearts(){
+  if(S.hearts >= MAX_HEARTS){ S.heartTs = Date.now(); return; }
+  const gained = Math.floor((Date.now() - (S.heartTs||Date.now()))/HEART_REGEN_MS);
+  if(gained>0){ S.hearts = Math.min(MAX_HEARTS, S.hearts+gained); S.heartTs = Date.now(); }
+}
+function refillHearts(){ S.hearts=MAX_HEARTS; S.heartTs=Date.now(); Store.save(S); closeModal('mOut'); paintHud(); if(session) renderQuestion(); }
+function levelFromXp(xp){ return Math.floor(xp/100)+1; }
+function leagueFromXp(xp){ return LEAGUES[Math.min(LEAGUES.length-1, Math.floor(xp/300))]; }
+
+function touchStreak(){
+  const diff = dayDiff(S.lastActive, todayStr());
+  if(diff===0){ /* same day */ }
+  else if(diff===1){ S.streak += 1; }
+  else { S.streak = 1; }
+  S.lastActive = todayStr();
+}
+function touchDaily(addXp){
+  if(S.dailyDate !== todayStr()){ S.dailyDate = todayStr(); S.dailyXp = 0; }
+  S.dailyXp += addXp;
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+function showScreen(name){
+  ["Learn","Board","Profile"].forEach(n=>{
+    document.getElementById("sc"+n).classList.toggle("show", n===name);
+    document.getElementById("tab"+n).classList.toggle("active", n===name);
+  });
+  if(name==="Board") renderBoard();
+  if(name==="Profile") renderProfile();
+  if(name==="Learn") renderPath();
+  document.querySelector("main").scrollTop=0;
+}
+
+/* =========================================================
+   LEARNING PATH
+========================================================= */
+function isUnlocked(lessonId){
+  const idx = LESSON_ORDER.indexOf(lessonId);
+  if(idx===0) return true;
+  return !!S.completed[LESSON_ORDER[idx-1]];
+}
+function renderPath(){
+  const root = document.getElementById("path");
+  root.innerHTML="";
+  let counter=0;
+  CURRICULUM.forEach(unit=>{
+    const done = unit.lessons.filter(l=>S.completed[l.id]).length;
+    const head = document.createElement("div");
+    head.className="unit-head";
+    head.style.background=unit.color;
+    head.innerHTML = "<div><h2>"+unit.icon+" "+unit.title+"</h2><small>"+done+" / "+unit.lessons.length+" lessons</small></div><div style='font-size:1.6em'>"+(done===unit.lessons.length?"✅":"")+"</div>";
+    root.appendChild(head);
+    unit.lessons.forEach(lesson=>{
+      counter++;
+      const unlocked = isUnlocked(lesson.id);
+      const crowns = S.completed[lesson.id]||0;
+      const node = document.createElement("div");
+      node.className = "node n"+((counter-1)%5+1)+(crowns?" done":(unlocked?"":" locked"));
+      const icon = crowns ? "👑" : (unlocked ? unit.icon : "🔒");
+      node.innerHTML =
+        (crowns?"<div class='crowns'>"+"⭐".repeat(Math.min(crowns,3))+"</div>":"") +
+        "<button class='bubble' style='"+(unlocked&&!crowns?("background:"+unit.color+";box-shadow:0 6px 0 rgba(0,0,0,.18)"):"")+"'>"+icon+"</button>"+
+        "<div class='label'>"+lesson.title+"</div>";
+      if(unlocked) node.querySelector("button").onclick=()=>startLesson(lesson);
+      else node.querySelector("button").onclick=()=>toast("Finish the lesson above first 🔒");
+      root.appendChild(node);
+    });
+  });
+  paintDaily();
+}
+function paintDaily(){
+  if(S.dailyDate!==todayStr()){ S.dailyDate=todayStr(); S.dailyXp=0; }
+  const pct = Math.min(100, Math.round(S.dailyXp/DAILY_GOAL*100));
+  const ring=document.getElementById("dailyRing");
+  ring.style.setProperty("--p", pct);
+  document.getElementById("dailyRingTxt").textContent = Math.min(S.dailyXp,DAILY_GOAL)+"/"+DAILY_GOAL;
+  document.getElementById("dailyMsg").textContent = S.dailyXp>=DAILY_GOAL ? "🎉 Daily goal smashed!" : ("Earn "+(DAILY_GOAL-S.dailyXp)+" more XP today");
+}
+
+/* =========================================================
+   LESSON ENGINE
+========================================================= */
+let session = null;
+function startLesson(lesson){
+  regenHearts();
+  if(S.hearts<=0){ openModal('mOut'); return; }
+  session = { lesson, i:0, correct:0, mistakes:0, answered:false, lastCorrect:false, state:null };
+  document.getElementById("lesson").classList.add("show");
+  renderQuestion();
+}
+function quitLesson(){
+  document.getElementById("lesson").classList.remove("show");
+  session=null; paintHud();
+}
+function curQ(){ return session.lesson.q[session.i]; }
+
+function renderQuestion(){
+  paintHud();
+  const q = curQ();
+  document.getElementById("lHearts").textContent = S.hearts;
+  document.getElementById("lProg").style.width = (session.i/session.lesson.q.length*100)+"%";
+  const body = document.getElementById("lBody");
+  const fb = document.getElementById("lFb"); fb.className="feedback"; fb.innerHTML="";
+  const check = document.getElementById("lCheck");
+  check.textContent="Check"; check.className="btn gray"; check.disabled=true; check.onclick=checkAnswer;
+  session.answered=false; session.state=null;
+
+  let html="";
+  if(q.type==="mc" || q.type==="tf"){
+    const choices = q.type==="tf" ? ["True","False"] : q.choices;
+    html = "<div class='qtitle'>"+q.q+"</div>";
+    choices.forEach((c,idx)=> html += "<button class='opt' data-i='"+idx+"'>"+c+"</button>");
+    body.innerHTML=html;
+    body.querySelectorAll(".opt").forEach(b=> b.onclick=()=>{
+      if(session.answered) return;
+      body.querySelectorAll(".opt").forEach(x=>x.classList.remove("sel"));
+      b.classList.add("sel"); session.state=+b.dataset.i;
+      check.disabled=false; check.className="btn";
+    });
+  }
+  else if(q.type==="multi"){
+    html = "<div class='qtitle'>"+q.q+"</div>";
+    q.choices.forEach((c,idx)=> html += "<button class='opt' data-i='"+idx+"'>"+c+"</button>");
+    body.innerHTML=html; session.state=new Set();
+    body.querySelectorAll(".opt").forEach(b=> b.onclick=()=>{
+      if(session.answered) return;
+      const i=+b.dataset.i;
+      if(session.state.has(i)){ session.state.delete(i); b.classList.remove("sel"); }
+      else { session.state.add(i); b.classList.add("sel"); }
+      check.disabled = session.state.size===0; check.className = session.state.size? "btn":"btn gray";
+    });
+  }
+  else if(q.type==="type"){
+    html = "<div class='qtitle'>"+q.q+"</div><input class='typebox' id='typeIn' autocomplete='off' placeholder='Type your answer'>";
+    body.innerHTML=html;
+    const inp=document.getElementById("typeIn");
+    inp.oninput=()=>{ session.state=inp.value; check.disabled=!inp.value.trim(); check.className=inp.value.trim()?"btn":"btn gray"; };
+    inp.onkeydown=(e)=>{ if(e.key==="Enter" && inp.value.trim()){ if(!session.answered) checkAnswer(); else check.onclick(); } };
+    setTimeout(()=>inp.focus(),50);
+  }
+  else if(q.type==="match"){
+    const left=q.pairs.map(p=>p[0]);
+    const right=q.pairs.map(p=>p[1]).map(x=>x).sort(()=>Math.random()-0.5);
+    html="<div class='qtitle'>"+q.q+"</div><div class='matchwrap'><div class='matchcol' id='mL'></div><div class='matchcol' id='mR'></div></div>";
+    body.innerHTML=html;
+    const mL=document.getElementById("mL"), mR=document.getElementById("mR");
+    left.forEach(t=>{ const b=document.createElement("button"); b.className="mtile"; b.textContent=t; b.dataset.v=t; b.onclick=()=>pickMatch(b,"L"); mL.appendChild(b); });
+    right.forEach(t=>{ const b=document.createElement("button"); b.className="mtile"; b.textContent=t; b.dataset.v=t; b.onclick=()=>pickMatch(b,"R"); mR.appendChild(b); });
+    session.state={selL:null,selR:null,matched:0};
+    check.style.display="none";
+  }
+  if(q.type!=="match") document.getElementById("lCheck").style.display="block";
+}
+
+function pickMatch(btn,side){
+  const q=curQ(); const st=session.state;
+  if(btn.classList.contains("done")) return;
+  if(side==="L"){ if(st.selL) st.selL.classList.remove("sel"); st.selL=btn; btn.classList.add("sel"); }
+  else { if(st.selR) st.selR.classList.remove("sel"); st.selR=btn; btn.classList.add("sel"); }
+  if(st.selL && st.selR){
+    const a=st.selL.dataset.v, b=st.selR.dataset.v;
+    const ok = q.pairs.some(p=>p[0]===a && p[1]===b);
+    if(ok){
+      st.selL.classList.add("done"); st.selR.classList.add("done");
+      st.selL.classList.remove("sel"); st.selR.classList.remove("sel");
+      st.matched++; st.selL=null; st.selR=null;
+      if(st.matched===q.pairs.length){ session.lastCorrect=true; afterAnswer(true,q.explain); }
+    } else {
+      const l=st.selL,r=st.selR; l.classList.add("miss"); r.classList.add("miss");
+      setTimeout(()=>{ l.classList.remove("miss","sel"); r.classList.remove("miss","sel"); },500);
+      st.selL=null; st.selR=null;
+      loseHeart();
+    }
+  }
+}
+
+function normalize(s){ return (s||"").toString().trim().toLowerCase().replace(/[$%,]/g,"").replace(/\s+/g," "); }
+
+function checkAnswer(){
+  if(session.answered) return;
+  const q=curQ(); let correct=false;
+  if(q.type==="mc"){ correct = session.state===q.answer; }
+  else if(q.type==="tf"){ correct = (session.state===0)===q.answer; }
+  else if(q.type==="multi"){
+    const want=new Set(q.answers); const got=session.state;
+    correct = want.size===got.size && [...want].every(x=>got.has(x));
+  }
+  else if(q.type==="type"){
+    const acc=(q.accept||[q.answer]).map(normalize);
+    correct = acc.includes(normalize(session.state));
+  }
+  // reveal
+  const body=document.getElementById("lBody");
+  if(q.type==="mc"||q.type==="tf"){
+    const ans = q.type==="tf" ? (q.answer?0:1) : q.answer;
+    body.querySelectorAll(".opt").forEach(b=>{ b.disabled=true;
+      if(+b.dataset.i===ans) b.classList.add("good");
+      else if(b.classList.contains("sel")) b.classList.add("bad");
+    });
+  } else if(q.type==="multi"){
+    body.querySelectorAll(".opt").forEach(b=>{ b.disabled=true; const i=+b.dataset.i;
+      if(q.answers.includes(i)) b.classList.add("good");
+      else if(session.state.has(i)) b.classList.add("bad");
+    });
+  } else if(q.type==="type"){
+    document.getElementById("typeIn").disabled=true;
+  }
+  session.lastCorrect=correct;
+  if(!correct) loseHeart();
+  afterAnswer(correct,q.explain);
+}
+
+function loseHeart(){
+  S.hearts=Math.max(0,S.hearts-1); S.heartTs=Date.now(); Store.save(S);
+  document.getElementById("lHearts").textContent=S.hearts; paintHud();
+}
+
+function afterAnswer(correct,explain){
+  session.answered=true;
+  if(correct) session.correct++; else session.mistakes++;
+  const fb=document.getElementById("lFb");
+  fb.className="feedback "+(correct?"good":"bad");
+  fb.innerHTML=(correct?"✅ Correct!":"❌ Not quite.")+"<small>"+explain+"</small>";
+  const check=document.getElementById("lCheck");
+  check.style.display="block"; check.disabled=false;
+  check.className="btn "+(correct?"":"red");
+  check.textContent="Continue";
+  check.onclick=nextQuestion;
+  if(S.hearts<=0 && !correct){
+    check.textContent="Out of hearts";
+    check.onclick=()=>openModal('mOut');
+  }
+}
+
+function nextQuestion(){
+  if(S.hearts<=0){ openModal('mOut'); return; }
+  session.i++;
+  if(session.i>=session.lesson.q.length){ finishLesson(); return; }
+  document.getElementById("lCheck").style.display="block";
+  renderQuestion();
+}
+
+function finishLesson(){
+  const total=session.lesson.q.length;
+  const acc=Math.round(session.correct/total*100);
+  const earned = session.correct*10 + (session.mistakes===0?5:0);
+  // update progress
+  const prev=S.completed[session.lesson.id]||0;
+  S.completed[session.lesson.id]=Math.min(3, prev+1);
+  S.xp += earned; S.weeklyXp += earned;
+  ensureSim(); S.weeklyXp = S.weeklyXp; // weekly tracked separately below
+  touchStreak(); touchDaily(earned);
+  Store.save(S);
+  checkBadges(session.mistakes===0);
+  // show summary
+  document.getElementById("doneEmoji").textContent = acc===100?"🌟":(acc>=60?"🎉":"💪");
+  document.getElementById("doneTitle").textContent = acc===100?"Perfect lesson!":"Lesson complete!";
+  document.getElementById("doneXp").textContent="+"+earned;
+  document.getElementById("doneAcc").textContent=acc+"%";
+  quitLesson();
+  openModal('mDone');
+  paintHud(); renderPath();
+}
+
+/* =========================================================
+   BADGES
+========================================================= */
+function award(id){
+  if(S.badges.includes(id)) return false;
+  S.badges.push(id); Store.save(S);
+  const b=BADGE_DEFS.find(x=>x.id===id);
+  toast("🏅 Achievement unlocked: "+b.icon+" "+b.name);
+  return true;
+}
+function checkBadges(perfect){
+  if(Object.keys(S.completed).length>=1) award("first");
+  if(S.streak>=3) award("streak3");
+  if(S.xp>=100) award("xp100");
+  if(perfect) award("perfect");
+  if(S.dailyXp>=DAILY_GOAL) award("goal");
+  // unit clear
+  const anyUnit = CURRICULUM.some(u=>u.lessons.every(l=>S.completed[l.id]));
+  if(anyUnit) award("unit");
+  if(leagueFromXp(S.xp)==="Gold" || LEAGUES.indexOf(leagueFromXp(S.xp))>=2) award("gold");
+  if(LESSON_ORDER.every(id=>S.completed[id])) award("master");
+}
+
+/* =========================================================
+   HUD + LEADERBOARD + PROFILE
+========================================================= */
+function paintHud(){
+  regenHearts();
+  document.getElementById("hStreak").textContent=S.streak;
+  document.getElementById("hXp").textContent=S.xp;
+  document.getElementById("hHearts").textContent=S.hearts;
+  Store.save(S);
+}
+
+function renderBoard(){
+  ensureSim();
+  document.getElementById("leagueName").textContent=leagueFromXp(S.xp);
+  const players = S.sim.map(p=>({name:p.name,flag:p.flag,xp:p.xp,me:false}));
+  players.push({name:S.name||"You",flag:S.flag,xp:S.weeklyXp||0,me:true});
+  players.sort((a,b)=>b.xp-a.xp);
+  const root=document.getElementById("board"); root.innerHTML="";
+  players.forEach((p,i)=>{
+    const row=document.createElement("div");
+    row.className="lbrow"+(p.me?" me":"");
+    const medal = i===0?"🥇":i===1?"🥈":i===2?"🥉":(i+1);
+    row.innerHTML="<div class='rank "+(i<3?"top":"")+"'>"+medal+"</div>"+
+      "<div style='font-size:1.5em'>"+p.flag+"</div>"+
+      "<div class='who'>"+p.name+(p.me?" (you)":"")+"<small>"+(i<3?"Promotion zone ⬆️":"")+"</small></div>"+
+      "<div class='xp'>"+p.xp+" XP</div>";
+    root.appendChild(row);
+  });
+}
+
+function renderProfile(){
+  ensureSim();
+  document.getElementById("pAvatar").textContent=S.flag||"🐷";
+  document.getElementById("pName").textContent=S.name||"You";
+  document.getElementById("pLeague").textContent=leagueFromXp(S.xp)+" League · joined "+(S.joined||"today");
+  document.getElementById("pStreak").textContent=S.streak;
+  document.getElementById("pXp").textContent=S.xp;
+  document.getElementById("pLessons").textContent=Object.keys(S.completed).length;
+  document.getElementById("pLevel").textContent=levelFromXp(S.xp);
+  const root=document.getElementById("badges"); root.innerHTML="";
+  BADGE_DEFS.forEach(b=>{
+    const got=S.badges.includes(b.id);
+    const d=document.createElement("div");
+    d.className="badge"+(got?"":" locked");
+    d.innerHTML=b.icon+"<small>"+b.name+"</small>";
+    root.appendChild(d);
+  });
+}
+
+/* =========================================================
+   SHARE CARD (canvas)
+========================================================= */
+function drawShareCard(){
+  const c=document.getElementById("shareCanvas"); const x=c.getContext("2d");
+  const W=640,H=640;
+  const g=x.createLinearGradient(0,0,0,H); g.addColorStop(0,"#58cc02"); g.addColorStop(1,"#1cb0f6");
+  x.fillStyle=g; x.fillRect(0,0,W,H);
+  x.fillStyle="rgba(255,255,255,.96)"; roundRect(x,40,40,W-80,H-80,32); x.fill();
+  x.textAlign="center"; x.fillStyle="#3c3c3c";
+  x.font="900 44px Nunito,sans-serif"; x.fillText("🐷 FinDuo",W/2,120);
+  x.font="800 26px Nunito,sans-serif"; x.fillStyle="#777"; x.fillText("My personal-finance progress",W/2,158);
+  x.font="120px serif"; x.fillText(S.flag||"🐷",W/2,300);
+  x.font="900 34px Nunito,sans-serif"; x.fillStyle="#3c3c3c"; x.fillText(S.name||"A FinDuo learner",W/2,350);
+  // stats row
+  const stats=[["🔥",S.streak,"day streak"],["💎",S.xp,"total XP"],["⭐","Lv "+levelFromXp(S.xp),"level"]];
+  const bw=160; const startX=W/2-bw*1.5+bw/2;
+  stats.forEach((s,i)=>{
+    const cx=startX+i*bw;
+    x.font="40px serif"; x.fillText(s[0],cx,430);
+    x.font="900 30px Nunito,sans-serif"; x.fillStyle="#1cb0f6"; x.fillText(s[1],cx,468);
+    x.font="700 18px Nunito,sans-serif"; x.fillStyle="#777"; x.fillText(s[2],cx,492);
+  });
+  x.fillStyle="#3c3c3c"; x.font="800 24px Nunito,sans-serif";
+  x.fillText("🏆 "+leagueFromXp(S.xp)+" League · "+S.badges.length+" badges",W/2,548);
+  x.fillStyle="#58cc02"; x.font="900 24px Nunito,sans-serif";
+  x.fillText("Learn money. Don't get left behind. 💪",W/2,592);
+}
+function roundRect(x,X,Y,w,h,r){ x.beginPath(); x.moveTo(X+r,Y); x.arcTo(X+w,Y,X+w,Y+h,r); x.arcTo(X+w,Y+h,X,Y+h,r); x.arcTo(X,Y+h,X,Y,r); x.arcTo(X,Y,X+w,Y,r); x.closePath(); }
+
+function openShare(){ drawShareCard(); openModal('mShare'); }
+function shareText(){
+  return "🐷 I'm learning personal finance on FinDuo!\n🔥 "+S.streak+"-day streak · 💎 "+S.xp+" XP · 🏆 "+leagueFromXp(S.xp)+" League\nLearn money, don't get left behind. 💪";
+}
+async function doShare(){
+  const c=document.getElementById("shareCanvas");
+  c.toBlob(async(blob)=>{
+    const file=new File([blob],"finduo-progress.png",{type:"image/png"});
+    try{
+      if(navigator.canShare && navigator.canShare({files:[file]})){
+        await navigator.share({files:[file], text:shareText(), title:"My FinDuo progress"});
+        return;
+      }
+    }catch(e){}
+    // fallback: download
+    const url=URL.createObjectURL(blob); const a=document.createElement("a");
+    a.href=url; a.download="finduo-progress.png"; a.click(); URL.revokeObjectURL(url);
+    document.getElementById("shareNote").textContent="📥 Saved the image — now post it anywhere you like!";
+  },"image/png");
+}
+async function copyShareText(){
+  try{ await navigator.clipboard.writeText(shareText()); toast("📋 Copied! Paste it anywhere."); }
+  catch(e){ toast("Couldn't copy automatically — long-press to copy from the card."); }
+}
+
+/* =========================================================
+   MODALS / TOAST / SETUP / RESET
+========================================================= */
+function openModal(id){ document.getElementById(id).classList.add("show"); }
+function closeModal(id){ document.getElementById(id).classList.remove("show"); }
+function openHowGlobal(){ openModal('mInfo'); }
+let toastT=null;
+function toast(msg){ const t=document.getElementById("toast"); t.textContent=msg; t.classList.add("show"); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove("show"),2600); }
+
+function buildFlagPicker(){
+  const root=document.getElementById("flagPick"); root.innerHTML="";
+  FLAGS.forEach((f,i)=>{ const b=document.createElement("button"); b.textContent=f; if(i===0)b.classList.add("sel");
+    b.onclick=()=>{ root.querySelectorAll("button").forEach(x=>x.classList.remove("sel")); b.classList.add("sel"); S._pickFlag=f; };
+    root.appendChild(b); });
+  S._pickFlag="🌍";
+}
+function finishSetup(){
+  const n=document.getElementById("setupName").value.trim();
+  S.name=n||"Learner"; S.flag=S._pickFlag||"🌍"; S.joined=todayStr();
+  Store.save(S); closeModal('mSetup'); paintHud(); renderPath();
+  toast("Welcome, "+S.name+"! 🎉 Tap a lesson to begin.");
+}
+function resetAll(){
+  if(!confirm("Reset ALL progress? This can't be undone.")) return;
+  localStorage.removeItem(Store.KEY); S=Store.load(); boot();
+}
+
+/* =========================================================
+   BOOT
+========================================================= */
+function boot(){
+  ensureSim();
+  paintHud();
+  buildFlagPicker();
+  renderPath();
+  if(!S.name){ openModal('mSetup'); }
+  showScreen("Learn");
+}
+boot();
+</script>
+</body>
+</html>
