@@ -143,6 +143,11 @@ class ActiveEvent(CamelModel):
     source_url: str | None = None
     started_turn: int
     remaining_turns: int
+    # V3.1: optional tri-lingual translations (camelCase on the wire)
+    headline_en: str | None = None
+    headline_es: str | None = None
+    detail_en: str | None = None
+    detail_es: str | None = None
 
 
 class FinanceTotals(CamelModel):

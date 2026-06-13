@@ -47,7 +47,11 @@ _SYSTEM_PROMPT = """\
 
 {
   "headline": "中文标题（简洁，≤30字）",
+  "headlineEn": "English headline (concise, ≤20 words)",
+  "headlineEs": "Título en español latinoamericano (conciso, ≤20 palabras)",
   "detail": "可选的补充说明（中文，≤80字）",
+  "detailEn": "Optional English detail (≤60 words, omit if no detail)",
+  "detailEs": "Detalle opcional en español latinoamericano (≤60 palabras, omitir si no hay detalle)",
   "severity": "minor" 或 "major",
   "durationTurns": 整数，范围 [1, 8]，季度数，
   "scope": {
@@ -64,6 +68,9 @@ _SYSTEM_PROMPT = """\
 
 规则：
 - headline 必须是中文
+- headlineEn 必须是英文（如无法翻译可省略）
+- headlineEs 必须是拉丁美洲西班牙语（如无法翻译可省略）
+- detailEn / detailEs 仅在 detail 存在时提供，均为可选
 - effects 必须有 1 到 3 条
 - mult 必须在 [0.5, 2.0] 范围内
 - durationTurns 必须在 [1, 8] 范围内

@@ -39,7 +39,13 @@ class EventScope:
 
 @dataclass
 class GameEvent:
-    """A static or news-sourced event definition (CONTRACT §2, M3.1)."""
+    """A static or news-sourced event definition (CONTRACT §2, M3.1).
+
+    V3.1 tri-lingual fields (all optional):
+      headline_en / headline_es — English and Latin-American Spanish headlines.
+      detail_en / detail_es   — English and Latin-American Spanish details.
+    When absent, the frontend falls back to the Chinese ``headline``/``detail``.
+    """
 
     id: str
     source: str  # "static" | "news"
@@ -50,6 +56,11 @@ class GameEvent:
     severity: str  # "minor" | "major"
     detail: str | None = None
     source_url: str | None = None
+    # V3.1: optional English / Spanish translations
+    headline_en: str | None = None
+    headline_es: str | None = None
+    detail_en: str | None = None
+    detail_es: str | None = None
 
 
 @dataclass
@@ -67,6 +78,11 @@ class ActiveEvent:
     source_url: str | None = None
     started_turn: int = 0
     remaining_turns: int = 0
+    # V3.1: optional English / Spanish translations (inherited from GameEvent)
+    headline_en: str | None = None
+    headline_es: str | None = None
+    detail_en: str | None = None
+    detail_es: str | None = None
 
 
 # --- Static world data (loaded from airline-game/data/*.json by the app layer) --

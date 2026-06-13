@@ -131,6 +131,32 @@ def validate_event(raw: dict[str, Any]) -> GameEvent | None:
                 return None
             effects.append(EventEffect(target=target, mult=mult))
 
+        # V3.1: optional tri-lingual fields (non-empty string or absent/None)
+        def _optional_str(key: str) -> str | None:
+            val = raw.get(key)
+            if val is None:
+                return None
+            s = str(val).strip()
+            if not s:
+                return None  # empty string treated as absent
+            return s
+
+        headline_en = _optional_str("headlineEn")
+        headline_es = _optional_str("headlineEs")
+        detail_en = _optional_str("detailEn")
+        detail_es = _optional_str("detailEs")
+
+        # Validation: if present, must be non-empty (already guaranteed by _optional_str
+        # returning None for empty strings, but we also reject explicit empty string input)
+        for field_name, field_val in [
+            ("headlineEn", raw.get("headlineEn")),
+            ("headlineEs", raw.get("headlineEs")),
+            ("detailEn", raw.get("detailEn")),
+            ("detailEs", raw.get("detailEs")),
+        ]:
+            if field_val is not None and str(field_val).strip() == "":
+                return None  # explicitly empty string → reject whole event
+
         return GameEvent(
             id=event_id,
             source=source,
@@ -141,6 +167,10 @@ def validate_event(raw: dict[str, Any]) -> GameEvent | None:
             severity=severity,
             detail=detail if detail is None else str(detail),
             source_url=source_url if source_url is None else str(source_url),
+            headline_en=headline_en,
+            headline_es=headline_es,
+            detail_en=detail_en,
+            detail_es=detail_es,
         )
     except (KeyError, TypeError, ValueError):
         return None
@@ -300,7 +330,7 @@ def process_events(
     if drawn.source == "news":
         state.seen_news_ids.add(drawn.id)
 
-    # Activate
+    # Activate — propagate all fields including V3.1 tri-lingual translations
     activated = ActiveEvent(
         id=drawn.id,
         source=drawn.source,
@@ -313,6 +343,10 @@ def process_events(
         source_url=drawn.source_url,
         started_turn=turn,
         remaining_turns=drawn.duration_turns,
+        headline_en=drawn.headline_en,
+        headline_es=drawn.headline_es,
+        detail_en=drawn.detail_en,
+        detail_es=drawn.detail_es,
     )
     state.active_events.append(activated)
 

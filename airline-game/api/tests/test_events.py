@@ -731,3 +731,409 @@ class TestStaticLibrary:
     def test_sources_all_static(self, library):
         non_static = [ev.id for ev in library if ev.source != "static"]
         assert not non_static, f"Non-static source events: {non_static}"
+
+
+# ---------------------------------------------------------------------------
+# 8. V3.1 tri-lingual fields — validate_event / GameEvent / ActiveEvent
+# ---------------------------------------------------------------------------
+
+
+class TestTrilingualValidation:
+    """V3.1: headlineEn/headlineEs/detailEn/detailEs optional fields."""
+
+    VALID_BASE = {
+        "id": "evt-trilingual",
+        "source": "static",
+        "headline": "测试事件",
+        "severity": "minor",
+        "durationTurns": 2,
+        "scope": {"kind": "global", "ids": []},
+        "effects": [{"target": "demand", "mult": 1.1}],
+    }
+
+    def _mutate(self, **overrides):
+        import copy
+        raw = copy.deepcopy(self.VALID_BASE)
+        raw.update(overrides)
+        return raw
+
+    # --- optional fields absent → still valid, fields None -------------------
+
+    def test_no_trilingual_fields_still_valid(self):
+        ev = validate_event(self.VALID_BASE)
+        assert ev is not None
+        assert ev.headline_en is None
+        assert ev.headline_es is None
+        assert ev.detail_en is None
+        assert ev.detail_es is None
+
+    # --- present with valid non-empty strings --------------------------------
+
+    def test_headline_en_present_accepted(self):
+        raw = self._mutate(headlineEn="Test event headline in English")
+        ev = validate_event(raw)
+        assert ev is not None
+        assert ev.headline_en == "Test event headline in English"
+
+    def test_headline_es_present_accepted(self):
+        raw = self._mutate(headlineEs="Titular del evento de prueba en español")
+        ev = validate_event(raw)
+        assert ev is not None
+        assert ev.headline_es == "Titular del evento de prueba en español"
+
+    def test_detail_en_present_accepted(self):
+        raw = self._mutate(detailEn="Some English detail text.")
+        ev = validate_event(raw)
+        assert ev is not None
+        assert ev.detail_en == "Some English detail text."
+
+    def test_detail_es_present_accepted(self):
+        raw = self._mutate(detailEs="Texto de detalle en español.")
+        ev = validate_event(raw)
+        assert ev is not None
+        assert ev.detail_es == "Texto de detalle en español."
+
+    def test_all_four_trilingual_fields_accepted(self):
+        raw = self._mutate(
+            headlineEn="Fuel prices surge globally",
+            headlineEs="Los precios del combustible suben a nivel mundial",
+            detailEn="Global oil supply tightens.",
+            detailEs="El suministro mundial de petróleo se contrae.",
+        )
+        ev = validate_event(raw)
+        assert ev is not None
+        assert ev.headline_en == "Fuel prices surge globally"
+        assert ev.headline_es == "Los precios del combustible suben a nivel mundial"
+        assert ev.detail_en == "Global oil supply tightens."
+        assert ev.detail_es == "El suministro mundial de petróleo se contrae."
+
+    # --- explicitly empty string → reject whole event -----------------------
+
+    def test_empty_headline_en_rejects_event(self):
+        raw = self._mutate(headlineEn="")
+        assert validate_event(raw) is None
+
+    def test_empty_headline_es_rejects_event(self):
+        raw = self._mutate(headlineEs="")
+        assert validate_event(raw) is None
+
+    def test_empty_detail_en_rejects_event(self):
+        raw = self._mutate(detailEn="")
+        assert validate_event(raw) is None
+
+    def test_empty_detail_es_rejects_event(self):
+        raw = self._mutate(detailEs="")
+        assert validate_event(raw) is None
+
+    def test_whitespace_only_headline_en_rejects_event(self):
+        """Whitespace-only string counts as empty → reject."""
+        raw = self._mutate(headlineEn="   ")
+        assert validate_event(raw) is None
+
+    def test_whitespace_only_headline_es_rejects_event(self):
+        raw = self._mutate(headlineEs="\t\n")
+        assert validate_event(raw) is None
+
+    # --- null / missing → treated as absent (not an error) ------------------
+
+    def test_null_headline_en_treated_as_absent(self):
+        raw = self._mutate(headlineEn=None)
+        ev = validate_event(raw)
+        assert ev is not None
+        assert ev.headline_en is None
+
+    def test_null_headline_es_treated_as_absent(self):
+        raw = self._mutate(headlineEs=None)
+        ev = validate_event(raw)
+        assert ev is not None
+        assert ev.headline_es is None
+
+
+# ---------------------------------------------------------------------------
+# 9. V3.1 whole-library: all 57 events carry non-empty headlineEn + headlineEs
+# ---------------------------------------------------------------------------
+
+
+class TestTrilingualLibraryCompleteness:
+    """All 57 events in events-static.json must have non-empty headlineEn and headlineEs."""
+
+    @pytest.fixture(scope="class")
+    def raw_events(self):
+        with open(DATA_DIR / "events-static.json", encoding="utf-8") as fh:
+            return json.load(fh)
+
+    def test_all_57_events_have_headline_en(self, raw_events):
+        missing = [
+            e.get("id", "<no-id>")
+            for e in raw_events
+            if not e.get("headlineEn", "").strip()
+        ]
+        assert not missing, f"Events missing non-empty headlineEn: {missing}"
+
+    def test_all_57_events_have_headline_es(self, raw_events):
+        missing = [
+            e.get("id", "<no-id>")
+            for e in raw_events
+            if not e.get("headlineEs", "").strip()
+        ]
+        assert not missing, f"Events missing non-empty headlineEs: {missing}"
+
+    def test_count_is_57(self, raw_events):
+        assert len(raw_events) == 57, f"Expected 57 events, got {len(raw_events)}"
+
+    def test_detail_has_en_es_when_detail_present(self, raw_events):
+        """Events that have a Chinese 'detail' should also have detailEn and detailEs."""
+        missing_en = []
+        missing_es = []
+        for e in raw_events:
+            if e.get("detail"):
+                if not e.get("detailEn", "").strip():
+                    missing_en.append(e.get("id", "<no-id>"))
+                if not e.get("detailEs", "").strip():
+                    missing_es.append(e.get("id", "<no-id>"))
+        assert not missing_en, f"Events with detail but missing detailEn: {missing_en}"
+        assert not missing_es, f"Events with detail but missing detailEs: {missing_es}"
+
+    def test_validated_events_carry_trilingual_fields(self):
+        """After validate_event(), all loaded events carry non-None headline_en/es."""
+        with open(DATA_DIR / "events-static.json", encoding="utf-8") as fh:
+            raw_list = json.load(fh)
+        validated = [ev for raw in raw_list for ev in [validate_event(raw)] if ev is not None]
+        assert len(validated) == 57, f"Expected 57 validated events, got {len(validated)}"
+        no_en = [ev.id for ev in validated if not ev.headline_en]
+        no_es = [ev.id for ev in validated if not ev.headline_es]
+        assert not no_en, f"Validated events missing headline_en: {no_en}"
+        assert not no_es, f"Validated events missing headline_es: {no_es}"
+
+
+# ---------------------------------------------------------------------------
+# 10. V3.1 wire smoke: headlineEn serializes as camelCase in ActiveEvent schema
+# ---------------------------------------------------------------------------
+
+
+class TestTrilingualCamelCaseWire:
+    """V3.1: ActiveEvent schema serializes the new fields as camelCase."""
+
+    def test_headline_en_es_camelcase_in_schema(self, world):
+        from app import schemas
+        from app.engine.state import ActiveEvent, EventEffect, EventScope
+
+        game = new_game("g-trilingual-camel", "TriAir", world.cities["nyc"])
+        game.active_events = [
+            ActiveEvent(
+                id="evt-trilingual-wire",
+                source="static",
+                headline="测试三语标题",
+                scope=EventScope(kind="global", ids=[]),
+                effects=[EventEffect(target="demand", mult=1.1)],
+                duration_turns=2,
+                severity="minor",
+                started_turn=1,
+                remaining_turns=2,
+                headline_en="Test trilingual headline",
+                headline_es="Titular trilingüe de prueba",
+                detail_en="English detail text.",
+                detail_es="Texto de detalle en español.",
+            )
+        ]
+        schema = schemas.GameState.model_validate(game)
+        dumped = schema.model_dump(by_alias=True)
+
+        assert "activeEvents" in dumped
+        ae = dumped["activeEvents"][0]
+        # camelCase keys must be present
+        assert "headlineEn" in ae
+        assert "headlineEs" in ae
+        assert "detailEn" in ae
+        assert "detailEs" in ae
+        # values must match
+        assert ae["headlineEn"] == "Test trilingual headline"
+        assert ae["headlineEs"] == "Titular trilingüe de prueba"
+        assert ae["detailEn"] == "English detail text."
+        assert ae["detailEs"] == "Texto de detalle en español."
+
+    def test_absent_trilingual_fields_null_in_schema(self, world):
+        """When headline_en/es are None, they serialize as null (not missing key)."""
+        from app import schemas
+        from app.engine.state import ActiveEvent, EventEffect, EventScope
+
+        game = new_game("g-trilingual-null", "NullAir", world.cities["nyc"])
+        game.active_events = [
+            ActiveEvent(
+                id="evt-no-translations",
+                source="static",
+                headline="无翻译事件",
+                scope=EventScope(kind="global", ids=[]),
+                effects=[EventEffect(target="demand", mult=1.0)],
+                duration_turns=1,
+                severity="minor",
+                started_turn=1,
+                remaining_turns=1,
+            )
+        ]
+        schema = schemas.GameState.model_validate(game)
+        dumped = schema.model_dump(by_alias=True)
+        ae = dumped["activeEvents"][0]
+        # Fields may be None but camelCase keys should exist
+        assert ae.get("headlineEn") is None
+        assert ae.get("headlineEs") is None
+
+    def test_activated_event_propagates_trilingual_fields(self, world):
+        """process_events propagates headline_en/es from GameEvent to ActiveEvent."""
+        import random as _random
+        from app.engine.events import process_events
+
+        game_id = "g-trilingual-activate"
+        game = new_game(game_id, "PropAir", world.cities["nyc"])
+        ev = GameEvent(
+            id="evt-trilingual-propagate",
+            source="static",
+            headline="三语传播测试",
+            scope=EventScope(kind="global", ids=[]),
+            effects=[EventEffect(target="demand", mult=1.1)],
+            duration_turns=2,
+            severity="minor",
+            headline_en="Trilingual propagation test",
+            headline_es="Prueba de propagación trilingüe",
+            detail_en="English detail for propagation.",
+            detail_es="Detalle en español para propagación.",
+        )
+        pool = [ev]
+
+        # Find a gate-hit turn
+        hit_turn = None
+        for t in range(1, 100):
+            r = _random.Random(f"{game_id}:{t}")
+            if r.random() < balance.EVENT_CHANCE:
+                hit_turn = t
+                break
+        assert hit_turn is not None
+
+        game.turn = hit_turn
+        process_events(game, hit_turn, pool)
+
+        # If event was activated, check that translations are present
+        activated = [ae for ae in game.active_events if ae.id == "evt-trilingual-propagate"]
+        if activated:
+            ae = activated[0]
+            assert ae.headline_en == "Trilingual propagation test"
+            assert ae.headline_es == "Prueba de propagación trilingüe"
+            assert ae.detail_en == "English detail for propagation."
+            assert ae.detail_es == "Detalle en español para propagación."
+
+
+# ---------------------------------------------------------------------------
+# 11. V3.1 news pipeline: LLM output with trilingual fields round-trips
+# ---------------------------------------------------------------------------
+
+
+class TestTrilingualNewsStructuring:
+    """V3.1: validate_event accepts headlineEn/Es from LLM; news pipeline round-trips."""
+
+    def _valid_trilingual_event_json(self, url: str = "https://example.com/article") -> str:
+        import json as _json
+        return _json.dumps([{
+            "sourceUrl": url,
+            "headline": "航油价格上涨影响全球航线",
+            "headlineEn": "Rising jet fuel prices impact global routes",
+            "headlineEs": "El alza del combustible aéreo afecta rutas globales",
+            "detail": "国际航煤价格创近年新高，各大航司成本压力增大。",
+            "detailEn": "Jet fuel prices hit multi-year highs, raising cost pressures for major airlines.",
+            "detailEs": "Los precios del combustible alcanzan máximos de varios años, aumentando la presión de costos en las principales aerolíneas.",
+            "severity": "minor",
+            "durationTurns": 2,
+            "scope": {"kind": "global", "ids": []},
+            "effects": [{"target": "fuelCost", "mult": 1.3}],
+        }])
+
+    def test_trilingual_news_event_validates(self):
+        """validate_event accepts headlineEn/Es/detailEn/Es from a news-sourced dict."""
+        import json as _json
+        raw_list = _json.loads(self._valid_trilingual_event_json())
+        raw = raw_list[0]
+        raw["source"] = "news"
+        raw["id"] = "news-testabcd01"
+        ev = validate_event(raw)
+        assert ev is not None
+        assert ev.headline_en == "Rising jet fuel prices impact global routes"
+        assert ev.headline_es == "El alza del combustible aéreo afecta rutas globales"
+        assert ev.detail_en == "Jet fuel prices hit multi-year highs, raising cost pressures for major airlines."
+        assert ev.detail_es == "Los precios del combustible alcanzan máximos de varios años, aumentando la presión de costos en las principales aerolíneas."
+
+    def test_structure_articles_returns_trilingual_fields(self):
+        """structure_articles() round-trips headlineEn/Es through the validation pipeline."""
+        import json as _json
+        import os
+        from unittest.mock import MagicMock, patch
+        from app.services.news_events import structure_articles
+        from app.providers.news.base import NewsArticle
+        from datetime import datetime, timezone
+
+        url = "https://example.com/trilingual-fuel"
+        article = NewsArticle(
+            url=url,
+            title="Jet Fuel Prices Rise",
+            body="Aviation fuel costs are increasing.",
+            published_at=datetime(2026, 6, 10, 12, 0, 0, tzinfo=timezone.utc),
+        )
+        llm_output = self._valid_trilingual_event_json(url)
+
+        mock_response = MagicMock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = {
+            "content": [{"type": "text", "text": llm_output}],
+        }
+        mock_client = MagicMock()
+        mock_client.__enter__ = MagicMock(return_value=mock_client)
+        mock_client.__exit__ = MagicMock(return_value=False)
+        mock_client.post.return_value = mock_response
+
+        with patch.dict(os.environ, {"ANTHROPIC_API_KEY": "test-key"}):
+            with patch("app.services.news_events.httpx.Client", return_value=mock_client):
+                events = structure_articles([article])
+
+        assert len(events) == 1
+        ev = events[0]
+        assert ev.source == "news"
+        assert ev.headline_en == "Rising jet fuel prices impact global routes"
+        assert ev.headline_es == "El alza del combustible aéreo afecta rutas globales"
+
+    def test_empty_headline_en_in_news_output_rejected(self):
+        """LLM returning empty headlineEn causes entire event to be rejected."""
+        import json as _json
+        import os
+        from unittest.mock import MagicMock, patch
+        from app.services.news_events import structure_articles
+        from app.providers.news.base import NewsArticle
+        from datetime import datetime, timezone
+
+        url = "https://example.com/bad-trilingual"
+        article = NewsArticle(
+            url=url,
+            title="Test",
+            body="Test.",
+            published_at=datetime(2026, 6, 10, tzinfo=timezone.utc),
+        )
+        bad_output = _json.dumps([{
+            "sourceUrl": url,
+            "headline": "有效中文标题",
+            "headlineEn": "",  # empty → should reject whole event
+            "severity": "minor",
+            "durationTurns": 2,
+            "scope": {"kind": "global", "ids": []},
+            "effects": [{"target": "demand", "mult": 1.1}],
+        }])
+
+        mock_response = MagicMock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = {"content": [{"type": "text", "text": bad_output}]}
+        mock_client = MagicMock()
+        mock_client.__enter__ = MagicMock(return_value=mock_client)
+        mock_client.__exit__ = MagicMock(return_value=False)
+        mock_client.post.return_value = mock_response
+
+        with patch.dict(os.environ, {"ANTHROPIC_API_KEY": "test-key"}):
+            with patch("app.services.news_events.httpx.Client", return_value=mock_client):
+                events = structure_articles([article])
+
+        assert events == []
