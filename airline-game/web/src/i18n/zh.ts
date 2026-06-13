@@ -94,6 +94,20 @@ const zh = {
   'city.chip.slots': '时刻池 {n}',
   'city.chip.fee': '${n}K/次',
 
+  // ── V3.9 City endowment chips ─────────────────────────────────────
+  'city.chip.population': '👥{pop}M',
+  'city.chip.taxRelief': '🏛税惠 −{pct}%',
+  'city.chip.transit': '🚇交通 {n}/10',
+  'city.terrain.coastal': '🌊沿海',
+  'city.terrain.mountain': '⛰山地',
+  'city.terrain.island': '🏝岛屿',
+  'city.terrain.plain': '🌾平原',
+  'city.terrain.desert': '🏜沙漠',
+  'city.hq.advantage': '开局优势：税惠 −{tax}% 总部开销 · 交通加成 +{transit}% 客流',
+  'city.hq.advantage.taxOnly': '开局优势：税惠 −{tax}% 总部开销',
+  'city.hq.advantage.transitOnly': '开局优势：交通加成 +{transit}% 客流',
+  'city.hq.advantage.none': '开局优势：标准城市（无特殊加成）',
+
   // ── AircraftCard ──────────────────────────────────────────────────
   'aircraft.spec.seats': '座位',
   'aircraft.spec.range': '航程',

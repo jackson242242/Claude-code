@@ -2,12 +2,55 @@
 
 import { useEffect, useState } from 'react';
 import { CityCard } from '@/components/CityCard';
-import { CITIES } from '@/lib/data';
+import { CITIES, CITY_BY_ID } from '@/lib/data';
 import { useT } from '@/i18n';
 import { BADGES, TIER_COLORS } from '@/lib/badges';
 import { loadProfile, getCeoLevel, getLevelProgress, CEO_LEVELS } from '@/lib/profile';
 import { tStandalone, getLocale } from '@/i18n/standalone';
 import type { CeoProfile } from '@/lib/profile';
+import type { City } from '@/types';
+
+// V3.9: HQ advantage summary line (§3 formulas: taxRelief, transitIndex)
+// transitBonus = (transitIndex - 5) * 1% per endpoint — HQ city alone contributes half
+// (the actual boost is both endpoints × both legs, but for the summary we show the
+//  per-origin contribution from §3: (1 + 0.01×(transit−5)) factor).
+const HqAdvantageSummary = ({ city }: { city: City }) => {
+  const { t } = useT();
+  const taxPct = Math.round(city.taxRelief * 100);
+  // Transit: deviation from 5 expressed as percent (can be negative)
+  const transitBonus = (city.transitIndex - 5) * 1; // per endpoint, so ±1% … ±5%
+  const hasTax = taxPct > 0;
+  const hasTransit = transitBonus !== 0;
+
+  let key: import('@/i18n').DictKeys;
+  let params: Record<string, string | number>;
+
+  if (hasTax && hasTransit) {
+    key = 'city.hq.advantage';
+    params = {
+      tax: taxPct,
+      transit: transitBonus > 0 ? `+${transitBonus}` : String(transitBonus),
+    };
+  } else if (hasTax) {
+    key = 'city.hq.advantage.taxOnly';
+    params = { tax: taxPct };
+  } else if (hasTransit) {
+    key = 'city.hq.advantage.transitOnly';
+    params = { transit: transitBonus > 0 ? `+${transitBonus}` : String(transitBonus) };
+  } else {
+    key = 'city.hq.advantage.none';
+    params = {};
+  }
+
+  return (
+    <p
+      data-testid="hq-advantage-summary"
+      className="mt-2 rounded-lg border border-cyan-900/60 bg-cyan-950/30 px-3 py-2 text-[11px] text-cyan-300"
+    >
+      {t(key, params)}
+    </p>
+  );
+};
 
 type StartScreenProps = {
   busy: boolean;
@@ -232,6 +275,12 @@ export const StartScreen = ({ busy, error, onCreate }: StartScreenProps) => {
             />
           ))}
         </div>
+
+        {/* V3.9: HQ advantage summary — shown when a city is selected */}
+        {hqCityId && (() => {
+          const selectedCity = CITY_BY_ID.get(hqCityId);
+          return selectedCity ? <HqAdvantageSummary city={selectedCity} /> : null;
+        })()}
       </section>
 
       {error && (

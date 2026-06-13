@@ -7,7 +7,7 @@ import { SlotBadge } from '@/components/SlotBadge';
 import { TopBar } from '@/components/TopBar';
 import { TutorialPanel } from '@/components/TutorialPanel';
 import { WorldMap } from '@/components/WorldMap';
-import { cityLabel, CITY_IMAGES } from '@/lib/data';
+import { cityLabel, CITY_IMAGES, CITY_BY_ID } from '@/lib/data';
 import { voice } from '@/lib/voice';
 import { FinanceTab } from '@/components/tabs/FinanceTab';
 import { FleetTab } from '@/components/tabs/FleetTab';
@@ -94,7 +94,7 @@ export const GameScreen = ({
   onCommands,
   onEndTurn,
 }: GameScreenProps) => {
-  const { t } = useT();
+  const { t, locale } = useT();
   const [tab, setTab] = useState<TabId>('routes');
   const [selectedCityId, setSelectedCityId] = useState<string | null>(null);
   const [highlightTab, setHighlightTab] = useState<string | null>(null);
@@ -202,23 +202,72 @@ export const GameScreen = ({
             fleetPulse={fleetPulse}
           />
           {/* M2.2: tapping a city surfaces its slot market snapshot */}
-          {selectedCityId && (
-            <div
-              data-testid="map-city-slots"
-              className="absolute bottom-2 left-2 flex max-w-[92%] items-start gap-2 rounded-lg border border-ops-700 bg-ops-900/90 px-2.5 py-1.5 backdrop-blur"
-            >
-              {/* Skyline thumbnail */}
-              <CityPhoto cityId={selectedCityId} />
+          {selectedCityId && (() => {
+            const tappedCity = CITY_BY_ID.get(selectedCityId);
+            const airportName = tappedCity
+              ? (locale === 'zh' ? tappedCity.airportZh : tappedCity.airport)
+              : null;
+            return (
+              <div
+                data-testid="map-city-slots"
+                className="absolute bottom-2 left-2 flex max-w-[92%] items-start gap-2 rounded-lg border border-ops-700 bg-ops-900/90 px-2.5 py-1.5 backdrop-blur"
+              >
+                {/* Skyline thumbnail */}
+                <CityPhoto cityId={selectedCityId} />
 
-              {/* City name + slot badge */}
-              <div className="flex flex-col gap-1">
-                <span className="text-xs font-semibold text-slate-200">
-                  {cityLabel(selectedCityId)}
-                </span>
-                <SlotBadge cityId={selectedCityId} info={state.slotMarket[selectedCityId]} />
+                {/* City name + slot badge + V3.9 airport + chips */}
+                <div className="flex flex-col gap-1">
+                  <span className="text-xs font-semibold text-slate-200">
+                    {cityLabel(selectedCityId)}
+                    {tappedCity && (
+                      <span
+                        data-testid={`overlay-iata-${selectedCityId}`}
+                        className="ml-1.5 rounded bg-ops-700 px-1 py-0.5 text-[9px] font-bold uppercase tracking-widest text-slate-300"
+                      >
+                        {tappedCity.iata}
+                      </span>
+                    )}
+                  </span>
+                  {airportName && (
+                    <span
+                      data-testid={`overlay-airport-${selectedCityId}`}
+                      className="truncate text-[10px] text-slate-500"
+                    >
+                      {airportName}
+                    </span>
+                  )}
+                  <SlotBadge cityId={selectedCityId} info={state.slotMarket[selectedCityId]} />
+                  {/* V3.9 endowment mini-chips */}
+                  {tappedCity && (
+                    <span className="flex flex-wrap gap-1 text-[10px]">
+                      <span className="rounded-full bg-ops-700 px-1.5 py-0.5 text-slate-400">
+                        {t('city.chip.population', { pop: tappedCity.population.toFixed(1) })}
+                      </span>
+                      {tappedCity.taxRelief > 0 && (
+                        <span className="rounded-full bg-cyan-950/60 px-1.5 py-0.5 text-cyan-400">
+                          {t('city.chip.taxRelief', { pct: Math.round(tappedCity.taxRelief * 100) })}
+                        </span>
+                      )}
+                      <span
+                        className={`rounded-full bg-ops-700 px-1.5 py-0.5 ${
+                          tappedCity.transitIndex > 6
+                            ? 'text-cyan-400'
+                            : tappedCity.transitIndex < 4
+                              ? 'text-slate-600'
+                              : 'text-slate-400'
+                        }`}
+                      >
+                        {t('city.chip.transit', { n: tappedCity.transitIndex })}
+                      </span>
+                      <span className="rounded-full bg-ops-700 px-1.5 py-0.5 text-slate-400">
+                        {t(`city.terrain.${tappedCity.terrain}` as import('@/i18n').DictKeys)}
+                      </span>
+                    </span>
+                  )}
+                </div>
               </div>
-            </div>
-          )}
+            );
+          })()}
         </div>
 
         {/* bottom drawer / side panel */}

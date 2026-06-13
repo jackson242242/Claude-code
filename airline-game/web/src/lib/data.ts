@@ -9,7 +9,10 @@ import type { AircraftImageManifest, AircraftModel, City, CityImageManifest } fr
 
 export type { CityImageEntry, CityImageManifest } from '@/types';
 
-export const CITIES: City[] = citiesJson;
+// citiesJson is typed as plain-string objects by TS inference; the terrain field
+// requires a cast to the union literal type. The cast is safe because cities.json
+// is the CONTRACT §0 source of truth and all terrain values are validated there.
+export const CITIES: City[] = citiesJson as City[];
 
 export const AIRCRAFT_MODELS: AircraftModel[] = aircraftJson;
 

@@ -10,6 +10,14 @@ export type City = {
   demandIndex: number; // 1–10
   slotFee: number; // 每次起降的机场费用（美元）
   slotCapacity: number; // M2.2：机场时刻（slot）总池
+  // V3.9 城市禀赋（寓教于乐 + 开局差异化）
+  iata: string; // "JFK"——真实主机场 IATA 代码
+  airport: string; // "John F. Kennedy International Airport"
+  airportZh: string; // "肯尼迪国际机场"
+  population: number; // 都会区人口（百万，1 位小数）——展示与教学用，不进公式
+  taxRelief: number; // 0–0.3：HQ 设此城时总部/管理开销 ×(1−taxRelief)
+  transitIndex: number; // 1–10：城市公共交通成熟度，5 为中性
+  terrain: 'coastal' | 'mountain' | 'island' | 'plain' | 'desert';
 };
 
 // M2.2 slot 市场（服务端每次响应计算好，前端只读）

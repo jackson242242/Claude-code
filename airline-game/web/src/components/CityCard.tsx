@@ -36,6 +36,59 @@ const DemandDots = ({ value }: { value: number }) => {
   );
 };
 
+// V3.9 endowment chips row
+type EndowmentChipsProps = { city: City };
+
+const EndowmentChips = ({ city }: EndowmentChipsProps) => {
+  const { t, locale } = useT();
+
+  const terrainKey = `city.terrain.${city.terrain}` as import('@/i18n').DictKeys;
+  const terrainLabel = t(terrainKey);
+
+  // transitIndex color: >6 cyan, <4 dim slate
+  const transitColor =
+    city.transitIndex > 6 ? 'text-cyan-400' : city.transitIndex < 4 ? 'text-slate-600' : 'text-slate-400';
+
+  return (
+    <span className="flex flex-wrap gap-1 text-[10px]">
+      {/* Population */}
+      <span className="rounded-full border border-ops-600 bg-ops-800 px-1.5 py-0.5 text-slate-400">
+        {t('city.chip.population', { pop: city.population.toFixed(1) })}
+      </span>
+
+      {/* Tax relief — only when > 0 */}
+      {city.taxRelief > 0 && (
+        <span
+          data-testid={`city-chip-tax-${city.id}`}
+          className="rounded-full border border-cyan-800 bg-cyan-950/60 px-1.5 py-0.5 text-cyan-400"
+        >
+          {t('city.chip.taxRelief', { pct: Math.round(city.taxRelief * 100) })}
+        </span>
+      )}
+
+      {/* Transit index */}
+      <span
+        data-testid={`city-chip-transit-${city.id}`}
+        className={`rounded-full border border-ops-600 bg-ops-800 px-1.5 py-0.5 ${transitColor}`}
+      >
+        {t('city.chip.transit', { n: city.transitIndex })}
+      </span>
+
+      {/* Terrain */}
+      <span
+        data-testid={`city-chip-terrain-${city.id}`}
+        className="rounded-full border border-ops-600 bg-ops-800 px-1.5 py-0.5 text-slate-400"
+      >
+        {locale === 'en'
+          ? terrainLabel
+          : locale === 'es'
+            ? terrainLabel
+            : terrainLabel}
+      </span>
+    </span>
+  );
+};
+
 type CityCardProps = {
   city: City;
   selected: boolean;
@@ -48,6 +101,9 @@ export const CityCard = ({ city, selected, onClick }: CityCardProps) => {
   const imageEntry = CITY_IMAGES[city.id];
   const showImage = !!imageEntry && !imgError;
   const [from, to] = getGradient(city.id);
+
+  // V3.9: airport name — zh locale uses airportZh, otherwise airport
+  const airportName = locale === 'zh' ? city.airportZh : city.airport;
 
   return (
     <button
@@ -75,6 +131,13 @@ export const CityCard = ({ city, selected, onClick }: CityCardProps) => {
             style={{ background: `linear-gradient(135deg, ${from} 0%, ${to} 100%)` }}
           />
         )}
+        {/* V3.9: IATA badge — top-right overlay */}
+        <span
+          data-testid={`city-iata-${city.id}`}
+          className="absolute right-1.5 top-1.5 rounded bg-black/60 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-widest text-white backdrop-blur-sm"
+        >
+          {city.iata}
+        </span>
       </div>
 
       {/* Info */}
@@ -88,6 +151,16 @@ export const CityCard = ({ city, selected, onClick }: CityCardProps) => {
         <span className="text-xs text-slate-400">
           {locale === 'zh' ? city.name : city.nameZh}
         </span>
+
+        {/* V3.9: Localized airport name */}
+        <span
+          data-testid={`city-airport-${city.id}`}
+          className="truncate text-[10px] text-slate-500"
+          title={airportName}
+        >
+          {airportName}
+        </span>
+
         <span className="mt-1 flex items-center justify-between text-[10px] text-slate-500">
           <DemandDots value={city.demandIndex} />
           <span className="text-glow">{city.demandIndex}/10</span>
@@ -100,6 +173,9 @@ export const CityCard = ({ city, selected, onClick }: CityCardProps) => {
             {t('city.chip.fee', { n: (city.slotFee / 1000).toFixed(0) })}
           </span>
         </span>
+
+        {/* V3.9: Endowment chips */}
+        <EndowmentChips city={city} />
       </div>
     </button>
   );

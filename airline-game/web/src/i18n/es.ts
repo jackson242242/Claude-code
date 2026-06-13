@@ -94,6 +94,20 @@ const es: Dict = {
   'city.chip.slots': 'Slots {n}',
   'city.chip.fee': '${n}K/op',
 
+  // ── V3.9 City endowment chips ─────────────────────────────────────
+  'city.chip.population': '👥{pop}M',
+  'city.chip.taxRelief': '🏛Fiscal −{pct}%',
+  'city.chip.transit': '🚇Tránsito {n}/10',
+  'city.terrain.coastal': '🌊Costero',
+  'city.terrain.mountain': '⛰Montaña',
+  'city.terrain.island': '🏝Isla',
+  'city.terrain.plain': '🌾Llanura',
+  'city.terrain.desert': '🏜Desierto',
+  'city.hq.advantage': 'Ventaja inicial: Fiscal −{tax}% gastos · Tránsito +{transit}% pasajeros',
+  'city.hq.advantage.taxOnly': 'Ventaja inicial: Fiscal −{tax}% gastos',
+  'city.hq.advantage.transitOnly': 'Ventaja inicial: Tránsito +{transit}% pasajeros',
+  'city.hq.advantage.none': 'Ventaja inicial: Ciudad estándar (sin bonos especiales)',
+
   // ── AircraftCard ──────────────────────────────────────────────────
   'aircraft.spec.seats': 'Asientos',
   'aircraft.spec.range': 'Alcance',
