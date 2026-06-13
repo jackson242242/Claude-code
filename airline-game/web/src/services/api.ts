@@ -37,21 +37,40 @@ export class ApiError extends Error {
 
 type ErrorEnvelope = { error?: { message?: string; type?: string } };
 
+// S2 冷启动：免费 Render 实例休眠唤醒时（30–50s）前几次请求可能返回 502/503/504
+// 或网络错误。对这些瞬时信号自动重试（退避），让冷启动对玩家透明。业务错误
+// （4xx，如 404 Game not found）不重试——立即抛出交给 S1 兜底。
+const COLD_START_STATUSES = new Set([502, 503, 504]);
+const MAX_ATTEMPTS = 4;
+const BACKOFF_MS = [1500, 3000, 5000];
+
+const sleep = (ms: number): Promise<void> => new Promise((r) => setTimeout(r, ms));
+
 const request = async <T>(path: string, init?: RequestInit): Promise<T> => {
-  const res = await fetch(`${API_BASE}${path}`, {
-    ...init,
-    headers: { 'Content-Type': 'application/json', ...(init?.headers ?? {}) },
-  });
-  const body: unknown = await res.json().catch(() => null);
-  if (!res.ok) {
-    const err = (body as ErrorEnvelope | null)?.error;
-    throw new ApiError(
-      err?.message ?? `请求失败（HTTP ${res.status}）`,
-      err?.type ?? 'http_error',
-      res.status,
-    );
+  for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt += 1) {
+    // Only 502/503/504 (a waking Render instance) are retried; genuine network
+    // failures and 4xx surface immediately (4xx → S1 session recovery).
+    const res = await fetch(`${API_BASE}${path}`, {
+      ...init,
+      headers: { 'Content-Type': 'application/json', ...(init?.headers ?? {}) },
+    });
+    if (COLD_START_STATUSES.has(res.status) && attempt < MAX_ATTEMPTS - 1) {
+      await sleep(BACKOFF_MS[attempt] ?? 5000);
+      continue;
+    }
+    const body: unknown = await res.json().catch(() => null);
+    if (!res.ok) {
+      const err = (body as ErrorEnvelope | null)?.error;
+      throw new ApiError(
+        err?.message ?? `请求失败（HTTP ${res.status}）`,
+        err?.type ?? 'http_error',
+        res.status,
+      );
+    }
+    return body as T;
   }
-  return body as T;
+  // Unreachable in practice (last attempt always parses/returns or throws above).
+  throw new ApiError('请求失败，请稍后重试', 'http_error', 0);
 };
 
 export const getMeta = (): Promise<Meta> => request<Meta>('/api/meta');

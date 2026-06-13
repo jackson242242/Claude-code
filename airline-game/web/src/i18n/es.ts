@@ -435,6 +435,9 @@ const es: Dict = {
 
   // ── S1 recuperación de sesión ────────────────────────────────────────────
   'session.expired': 'Tu partida guardada caducó (el servidor pudo reiniciarse). Volviste a la pantalla de inicio; solo empieza una nueva partida.',
+
+  // ── S2 estado de arranque en frío ────────────────────────────────────────
+  'server.waking': 'Despertando el servidor… (la instancia gratuita estaba en reposo, ~30 s, espera un momento)',
 };
 
 export default es;

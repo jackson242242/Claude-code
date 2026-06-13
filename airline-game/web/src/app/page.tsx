@@ -131,8 +131,15 @@ const Page = () => {
   const run = useCallback(async (task: () => Promise<void>) => {
     setBusy(true);
     setError(null);
+    // S2: if the request is slow (free instance waking, ~30s), surface a friendly
+    // "waking server" hint after 4s instead of a silent spinner. Cleared on success.
+    const wakeTimer = setTimeout(
+      () => setError(tStandalone(getLocale(), 'server.waking')),
+      4000,
+    );
     try {
       await task();
+      setError(null);
     } catch (err) {
       // S1: a 404 means the server no longer has this game/room (restart, sleep,
       // redeploy). Recover gracefully instead of dead-ending on "Game not found":
@@ -151,6 +158,7 @@ const Page = () => {
         setError(err instanceof Error ? err.message : '请求失败，请稍后重试');
       }
     } finally {
+      clearTimeout(wakeTimer);
       setBusy(false);
     }
   }, []);

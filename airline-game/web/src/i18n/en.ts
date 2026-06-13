@@ -434,6 +434,9 @@ const en: Dict = {
 
   // ── S1 session recovery ──────────────────────────────────────────────────
   'session.expired': 'Your saved game expired (the server may have restarted). Returned to the start screen — just begin a new game.',
+
+  // ── S2 cold-start friendly state ─────────────────────────────────────────
+  'server.waking': 'Waking the server… (free instance was asleep, ~30s — hang tight)',
 };
 
 export default en;
