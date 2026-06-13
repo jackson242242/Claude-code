@@ -33,7 +33,7 @@ jobs:
           done < /tmp/chunks.txt | sort -u
           echo "(若无 BAKED 行 = 两种地址都没烧进首页 chunks)" 
 
-      - name: 全流程可玩性测试
+      - name: 全流程可玩性测试（单人）
         run: |
           set -e
           GID=$(curl -sS -m 60 -X POST "$API/api/games" -H 'content-type: application/json' -d '{"airlineName":"审计航空","hqCityId":"hkg"}' | python3 -c "import sys,json;print(json.load(sys.stdin)['id'])")
@@ -44,3 +44,36 @@ jobs:
           curl -sS -m 60 -X POST "$API/api/games/$GID/end-turn" -H 'content-type: application/json' -d '{}' \
             | python3 -c "import sys,json;d=json.load(sys.stdin);r=d['report']['routeStats'][0];print('LF %.0f%% profit %.2fM cash %.0fM' % (r['loadFactor']*100, r['profit']/1e6, d['state']['cash']/1e6))"
           echo "PLAYABLE: YES"
+
+      - name: 每周挑战 + 排行榜（V3.4）
+        run: |
+          set -e
+          echo "== weekly =="
+          curl -sS -m 60 "$API/api/weekly" -o /tmp/wk.json -w "HTTP %{http_code}\n"
+          WK=$(python3 -c "import json;d=json.load(open('/tmp/wk.json'));print(d['weekId']);import sys;sys.stderr.write('固定总部=%s\n'%d['hqCityId'])")
+          echo "weekId: $WK"
+          WID=$(curl -sS -m 60 -X POST "$API/api/weekly/games" -H 'content-type: application/json' -d '{"airlineName":"周榜审计"}' \
+            | python3 -c "import sys,json;d=json.load(sys.stdin);assert d['weeklyWeekId'] and d['seed']==d['weeklyWeekId'];print(d['id'])")
+          echo "weekly game: $WID（seed=weekId 校验通过）"
+          curl -sS -m 60 "$API/api/leaderboard" -o /tmp/lb.json -w "HTTP %{http_code}\n"
+          python3 -c "import json;d=json.load(open('/tmp/lb.json'));print('排行榜本周条目数:', len(d.get('entries',[])))"
+          echo "WEEKLY+LEADERBOARD: OK"
+
+      - name: 多人对战最小流（V3.3）
+        run: |
+          set -e
+          echo "== match =="
+          M=$(curl -sS -m 60 -X POST "$API/api/matches" -H 'content-type: application/json' -d '{"hostName":"红队","hostHqCityId":"sin","maxPlayers":2,"fillWithAI":false}')
+          CODE=$(echo "$M" | python3 -c "import sys,json;print(json.load(sys.stdin)['code'])")
+          A=$(echo "$M" | python3 -c "import sys,json;print(json.load(sys.stdin)['playerId'])")
+          echo "房间码: $CODE"
+          B=$(curl -sS -m 60 -X POST "$API/api/matches/$CODE/join" -H 'content-type: application/json' -d '{"name":"蓝队","hqCityId":"sin"}' | python3 -c "import sys,json;print(json.load(sys.stdin)['playerId'])")
+          curl -sS -m 60 -X POST "$API/api/matches/$CODE/start" -H 'content-type: application/json' -d "{\"playerId\":\"$A\"}" -o /dev/null
+          for P in "$A" "$B"; do
+            curl -sS -m 60 -X POST "$API/api/matches/$CODE/commands" -H 'content-type: application/json' \
+              -d "{\"playerId\":\"$P\",\"commands\":[{\"type\":\"buyAircraft\",\"modelId\":\"b737-800\"},{\"type\":\"negotiateSlot\",\"cityId\":\"hkg\"},{\"type\":\"openRoute\",\"cityA\":\"sin\",\"cityB\":\"hkg\"},{\"type\":\"assignAircraft\",\"aircraftId\":\"ac-1\",\"routeId\":\"rt-1\"}]}" -o /dev/null
+          done
+          curl -sS -m 60 -X POST "$API/api/matches/$CODE/ready" -H 'content-type: application/json' -d "{\"playerId\":\"$A\"}" -o /dev/null
+          curl -sS -m 60 -X POST "$API/api/matches/$CODE/ready" -H 'content-type: application/json' -d "{\"playerId\":\"$B\"}" \
+            | python3 -c "import sys,json;v=json.load(sys.stdin);print('结算后 turn=%d 玩家数=%d'%(v['turn'],len(v['players'])))"
+          echo "MULTIPLAYER: OK"
