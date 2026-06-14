@@ -1,11 +1,10 @@
-"""The real 2026 World Cup host data plus a deterministically generated
-104-match schedule. The generation algorithm mirrors the TypeScript mock layer
-(src/mocks/matches.ts) so the API and the frontend fallback agree.
+"""The real 2026 FIFA World Cup host data and the full 104-match schedule.
 
-Venues, kickoff dates and knockout pairings are representative for this
-foundation build; the tournament window, the Mexico City opener and the MetLife
-final are accurate. Reconcile fixture details with the official FIFA schedule
-before production use.
+The 72 group fixtures come from the 5 Dec 2025 draw; the 32 knockout slots
+are bracket placeholders until results are known. Kickoff UTC is derived
+from each venue's summer UTC offset. This mirrors the TypeScript mock layer
+(src/mocks/matches.ts) one-to-one so the API and the frontend fallback
+agree. Source: openfootball/worldcup.json (public domain).
 """
 from __future__ import annotations
 
@@ -52,67 +51,211 @@ VENUES: list[dict[str, Any]] = [
 ]
 
 GROUP_TEAMS: dict[str, list[str]] = {
-    "A": ["Mexico", "Argentina", "Croatia", "Saudi Arabia"],
-    "B": ["Canada", "Brazil", "Belgium", "Morocco"],
-    "C": ["France", "Switzerland", "Senegal", "Qatar"],
-    "D": ["USA", "Netherlands", "Tunisia", "Iran"],
-    "E": ["England", "Denmark", "Algeria", "Iraq"],
-    "F": ["Spain", "Poland", "Nigeria", "UAE"],
-    "G": ["Portugal", "Serbia", "Ghana", "Japan"],
-    "H": ["Germany", "Austria", "Egypt", "Korea Republic"],
-    "I": ["Uruguay", "Ukraine", "Ivory Coast", "Australia"],
-    "J": ["Colombia", "Wales", "Cameroon", "Ecuador"],
-    "K": ["Italy", "Scotland", "Turkey", "Greece"],
-    "L": ["Norway", "Sweden", "Czechia", "Hungary"],
+    "A": ["Mexico", "South Korea", "South Africa", "Czechia"],
+    "B": ["Canada", "Switzerland", "Qatar", "Bosnia & Herzegovina"],
+    "C": ["Brazil", "Morocco", "Scotland", "Haiti"],
+    "D": ["USA", "Australia", "Paraguay", "Turkey"],
+    "E": ["Germany", "Ecuador", "Ivory Coast", "Curaçao"],
+    "F": ["Netherlands", "Japan", "Tunisia", "Sweden"],
+    "G": ["Belgium", "Iran", "Egypt", "New Zealand"],
+    "H": ["Spain", "Uruguay", "Saudi Arabia", "Cape Verde"],
+    "I": ["France", "Senegal", "Norway", "Iraq"],
+    "J": ["Argentina", "Austria", "Algeria", "Jordan"],
+    "K": ["Portugal", "Colombia", "Uzbekistan", "DR Congo"],
+    "L": ["England", "Croatia", "Panama", "Ghana"],
 }
 
 CONFEDERATIONS: dict[str, str] = {
-    "Mexico": "CONCACAF", "USA": "CONCACAF", "Canada": "CONCACAF",
-    "Argentina": "CONMEBOL", "Brazil": "CONMEBOL", "Uruguay": "CONMEBOL", "Colombia": "CONMEBOL", "Ecuador": "CONMEBOL",
-    "France": "UEFA", "England": "UEFA", "Spain": "UEFA", "Portugal": "UEFA", "Germany": "UEFA", "Netherlands": "UEFA",
-    "Belgium": "UEFA", "Croatia": "UEFA", "Italy": "UEFA", "Switzerland": "UEFA", "Denmark": "UEFA", "Poland": "UEFA",
-    "Serbia": "UEFA", "Austria": "UEFA", "Ukraine": "UEFA", "Wales": "UEFA", "Scotland": "UEFA", "Turkey": "UEFA",
-    "Norway": "UEFA", "Sweden": "UEFA", "Czechia": "UEFA", "Hungary": "UEFA", "Greece": "UEFA",
-    "Japan": "AFC", "Korea Republic": "AFC", "Australia": "AFC", "Iran": "AFC", "Saudi Arabia": "AFC",
-    "Qatar": "AFC", "Iraq": "AFC", "UAE": "AFC",
-    "Morocco": "CAF", "Senegal": "CAF", "Tunisia": "CAF", "Algeria": "CAF", "Nigeria": "CAF", "Ghana": "CAF",
-    "Egypt": "CAF", "Ivory Coast": "CAF", "Cameroon": "CAF",
+    "Mexico": "CONCACAF",
+    "South Korea": "AFC",
+    "South Africa": "CAF",
+    "Czechia": "UEFA",
+    "Canada": "CONCACAF",
+    "Switzerland": "UEFA",
+    "Qatar": "AFC",
+    "Bosnia & Herzegovina": "UEFA",
+    "Brazil": "CONMEBOL",
+    "Morocco": "CAF",
+    "Scotland": "UEFA",
+    "Haiti": "CONCACAF",
+    "USA": "CONCACAF",
+    "Australia": "AFC",
+    "Paraguay": "CONMEBOL",
+    "Turkey": "UEFA",
+    "Germany": "UEFA",
+    "Ecuador": "CONMEBOL",
+    "Ivory Coast": "CAF",
+    "Curaçao": "CONCACAF",
+    "Netherlands": "UEFA",
+    "Japan": "AFC",
+    "Tunisia": "CAF",
+    "Sweden": "UEFA",
+    "Belgium": "UEFA",
+    "Iran": "AFC",
+    "Egypt": "CAF",
+    "New Zealand": "OFC",
+    "Spain": "UEFA",
+    "Uruguay": "CONMEBOL",
+    "Saudi Arabia": "AFC",
+    "Cape Verde": "CAF",
+    "France": "UEFA",
+    "Senegal": "CAF",
+    "Norway": "UEFA",
+    "Iraq": "AFC",
+    "Argentina": "CONMEBOL",
+    "Austria": "UEFA",
+    "Algeria": "CAF",
+    "Jordan": "AFC",
+    "Portugal": "UEFA",
+    "Colombia": "CONMEBOL",
+    "Uzbekistan": "AFC",
+    "DR Congo": "CAF",
+    "England": "UEFA",
+    "Croatia": "UEFA",
+    "Panama": "CONCACAF",
+    "Ghana": "CAF",
 }
-
-VENUE_ORDER = [
-    "mexico-city", "atlanta", "boston", "dallas", "houston", "kansas-city",
-    "los-angeles", "miami", "new-york", "philadelphia", "san-francisco",
-    "seattle", "toronto", "vancouver", "guadalajara", "monterrey",
-]
 
 CITY_UTC_OFFSET: dict[str, int] = {
-    "mexico-city": -6, "guadalajara": -6, "monterrey": -6,
-    "atlanta": -4, "boston": -4, "miami": -4, "new-york": -4, "philadelphia": -4, "toronto": -4,
-    "dallas": -5, "houston": -5, "kansas-city": -5,
-    "los-angeles": -7, "san-francisco": -7, "seattle": -7, "vancouver": -7,
+    "mexico-city": -6,
+    "guadalajara": -6,
+    "monterrey": -6,
+    "atlanta": -4,
+    "boston": -4,
+    "miami": -4,
+    "new-york": -4,
+    "philadelphia": -4,
+    "toronto": -4,
+    "dallas": -5,
+    "houston": -5,
+    "kansas-city": -5,
+    "los-angeles": -7,
+    "san-francisco": -7,
+    "seattle": -7,
+    "vancouver": -7,
 }
 
-GROUP_LETTERS = list("ABCDEFGHIJKL")
-GROUP_KICKOFF_HOURS = [13, 16, 19, 22]
-ROUND_ROBIN = [(0, 1), (2, 3), (0, 2), (1, 3), (0, 3), (1, 2)]
-STAGE_DAY_BASE = {
-    "Round of 32": 17, "Round of 16": 23, "Quarter-final": 28,
-    "Semi-final": 33, "Third-place": 37, "Final": 38,
-}
-_BASE = datetime(2026, 6, 11, tzinfo=timezone.utc)
+# (num, stage, group|None, home, away, venue_id, date, local_time)
+_FIXTURES: list[tuple[Any, ...]] = [
+    (1, "Group Stage", "A", "Mexico", "South Africa", "mexico-city", "2026-06-11", "13:00"),
+    (2, "Group Stage", "A", "South Korea", "Czechia", "guadalajara", "2026-06-11", "20:00"),
+    (3, "Group Stage", "B", "Canada", "Bosnia & Herzegovina", "toronto", "2026-06-12", "15:00"),
+    (4, "Group Stage", "D", "USA", "Paraguay", "los-angeles", "2026-06-12", "18:00"),
+    (5, "Group Stage", "B", "Qatar", "Switzerland", "san-francisco", "2026-06-13", "12:00"),
+    (6, "Group Stage", "C", "Brazil", "Morocco", "new-york", "2026-06-13", "18:00"),
+    (7, "Group Stage", "C", "Haiti", "Scotland", "boston", "2026-06-13", "21:00"),
+    (8, "Group Stage", "D", "Australia", "Turkey", "vancouver", "2026-06-13", "21:00"),
+    (9, "Group Stage", "E", "Germany", "Curaçao", "houston", "2026-06-14", "12:00"),
+    (10, "Group Stage", "F", "Netherlands", "Japan", "dallas", "2026-06-14", "15:00"),
+    (11, "Group Stage", "E", "Ivory Coast", "Ecuador", "philadelphia", "2026-06-14", "19:00"),
+    (12, "Group Stage", "F", "Sweden", "Tunisia", "monterrey", "2026-06-14", "20:00"),
+    (13, "Group Stage", "H", "Spain", "Cape Verde", "atlanta", "2026-06-15", "12:00"),
+    (14, "Group Stage", "G", "Belgium", "Egypt", "seattle", "2026-06-15", "12:00"),
+    (15, "Group Stage", "H", "Saudi Arabia", "Uruguay", "miami", "2026-06-15", "18:00"),
+    (16, "Group Stage", "G", "Iran", "New Zealand", "los-angeles", "2026-06-15", "18:00"),
+    (17, "Group Stage", "I", "France", "Senegal", "new-york", "2026-06-16", "15:00"),
+    (18, "Group Stage", "I", "Iraq", "Norway", "boston", "2026-06-16", "18:00"),
+    (19, "Group Stage", "J", "Argentina", "Algeria", "kansas-city", "2026-06-16", "20:00"),
+    (20, "Group Stage", "J", "Austria", "Jordan", "san-francisco", "2026-06-16", "21:00"),
+    (21, "Group Stage", "K", "Portugal", "DR Congo", "houston", "2026-06-17", "12:00"),
+    (22, "Group Stage", "L", "England", "Croatia", "dallas", "2026-06-17", "15:00"),
+    (23, "Group Stage", "L", "Ghana", "Panama", "toronto", "2026-06-17", "19:00"),
+    (24, "Group Stage", "K", "Uzbekistan", "Colombia", "mexico-city", "2026-06-17", "20:00"),
+    (25, "Group Stage", "A", "Czechia", "South Africa", "atlanta", "2026-06-18", "12:00"),
+    (26, "Group Stage", "B", "Switzerland", "Bosnia & Herzegovina", "los-angeles", "2026-06-18", "12:00"),
+    (27, "Group Stage", "B", "Canada", "Qatar", "vancouver", "2026-06-18", "15:00"),
+    (28, "Group Stage", "A", "Mexico", "South Korea", "guadalajara", "2026-06-18", "19:00"),
+    (29, "Group Stage", "D", "USA", "Australia", "seattle", "2026-06-19", "12:00"),
+    (30, "Group Stage", "C", "Scotland", "Morocco", "boston", "2026-06-19", "18:00"),
+    (31, "Group Stage", "C", "Brazil", "Haiti", "philadelphia", "2026-06-19", "20:30"),
+    (32, "Group Stage", "D", "Turkey", "Paraguay", "san-francisco", "2026-06-19", "20:00"),
+    (33, "Group Stage", "F", "Netherlands", "Sweden", "houston", "2026-06-20", "12:00"),
+    (34, "Group Stage", "E", "Germany", "Ivory Coast", "toronto", "2026-06-20", "16:00"),
+    (35, "Group Stage", "E", "Ecuador", "Curaçao", "kansas-city", "2026-06-20", "19:00"),
+    (36, "Group Stage", "F", "Tunisia", "Japan", "monterrey", "2026-06-20", "22:00"),
+    (37, "Group Stage", "H", "Spain", "Saudi Arabia", "atlanta", "2026-06-21", "12:00"),
+    (38, "Group Stage", "G", "Belgium", "Iran", "los-angeles", "2026-06-21", "12:00"),
+    (39, "Group Stage", "H", "Uruguay", "Cape Verde", "miami", "2026-06-21", "18:00"),
+    (40, "Group Stage", "G", "New Zealand", "Egypt", "vancouver", "2026-06-21", "18:00"),
+    (41, "Group Stage", "J", "Argentina", "Austria", "dallas", "2026-06-22", "12:00"),
+    (42, "Group Stage", "I", "France", "Iraq", "philadelphia", "2026-06-22", "17:00"),
+    (43, "Group Stage", "I", "Norway", "Senegal", "new-york", "2026-06-22", "20:00"),
+    (44, "Group Stage", "J", "Jordan", "Algeria", "san-francisco", "2026-06-22", "20:00"),
+    (45, "Group Stage", "K", "Portugal", "Uzbekistan", "houston", "2026-06-23", "12:00"),
+    (46, "Group Stage", "L", "England", "Ghana", "boston", "2026-06-23", "16:00"),
+    (47, "Group Stage", "L", "Panama", "Croatia", "toronto", "2026-06-23", "19:00"),
+    (48, "Group Stage", "K", "Colombia", "DR Congo", "guadalajara", "2026-06-23", "20:00"),
+    (49, "Group Stage", "B", "Bosnia & Herzegovina", "Qatar", "seattle", "2026-06-24", "12:00"),
+    (50, "Group Stage", "B", "Switzerland", "Canada", "vancouver", "2026-06-24", "12:00"),
+    (51, "Group Stage", "C", "Morocco", "Haiti", "atlanta", "2026-06-24", "18:00"),
+    (52, "Group Stage", "C", "Scotland", "Brazil", "miami", "2026-06-24", "18:00"),
+    (53, "Group Stage", "A", "Czechia", "Mexico", "mexico-city", "2026-06-24", "19:00"),
+    (54, "Group Stage", "A", "South Africa", "South Korea", "monterrey", "2026-06-24", "19:00"),
+    (55, "Group Stage", "E", "Curaçao", "Ivory Coast", "philadelphia", "2026-06-25", "16:00"),
+    (56, "Group Stage", "E", "Ecuador", "Germany", "new-york", "2026-06-25", "16:00"),
+    (57, "Group Stage", "F", "Japan", "Sweden", "dallas", "2026-06-25", "18:00"),
+    (58, "Group Stage", "F", "Tunisia", "Netherlands", "kansas-city", "2026-06-25", "18:00"),
+    (59, "Group Stage", "D", "Paraguay", "Australia", "san-francisco", "2026-06-25", "19:00"),
+    (60, "Group Stage", "D", "Turkey", "USA", "los-angeles", "2026-06-25", "19:00"),
+    (61, "Group Stage", "I", "Norway", "France", "boston", "2026-06-26", "15:00"),
+    (62, "Group Stage", "I", "Senegal", "Iraq", "toronto", "2026-06-26", "15:00"),
+    (63, "Group Stage", "H", "Cape Verde", "Saudi Arabia", "houston", "2026-06-26", "19:00"),
+    (64, "Group Stage", "H", "Uruguay", "Spain", "guadalajara", "2026-06-26", "18:00"),
+    (65, "Group Stage", "G", "Egypt", "Iran", "seattle", "2026-06-26", "20:00"),
+    (66, "Group Stage", "G", "New Zealand", "Belgium", "vancouver", "2026-06-26", "20:00"),
+    (67, "Group Stage", "L", "Croatia", "Ghana", "philadelphia", "2026-06-27", "17:00"),
+    (68, "Group Stage", "L", "Panama", "England", "new-york", "2026-06-27", "17:00"),
+    (69, "Group Stage", "K", "Colombia", "Portugal", "miami", "2026-06-27", "19:30"),
+    (70, "Group Stage", "K", "DR Congo", "Uzbekistan", "atlanta", "2026-06-27", "19:30"),
+    (71, "Group Stage", "J", "Algeria", "Austria", "kansas-city", "2026-06-27", "21:00"),
+    (72, "Group Stage", "J", "Jordan", "Argentina", "dallas", "2026-06-27", "21:00"),
+    (73, "Round of 32", None, "Runner-up Group A", "Runner-up Group B", "los-angeles", "2026-06-28", "12:00"),
+    (74, "Round of 32", None, "Winner Group E", "3rd: A/B/C/D/F", "boston", "2026-06-29", "16:30"),
+    (75, "Round of 32", None, "Winner Group F", "Runner-up Group C", "monterrey", "2026-06-29", "19:00"),
+    (76, "Round of 32", None, "Winner Group C", "Runner-up Group F", "houston", "2026-06-29", "12:00"),
+    (77, "Round of 32", None, "Winner Group I", "3rd: C/D/F/G/H", "new-york", "2026-06-30", "17:00"),
+    (78, "Round of 32", None, "Runner-up Group E", "Runner-up Group I", "dallas", "2026-06-30", "12:00"),
+    (79, "Round of 32", None, "Winner Group A", "3rd: C/E/F/H/I", "mexico-city", "2026-06-30", "19:00"),
+    (80, "Round of 32", None, "Winner Group L", "3rd: E/H/I/J/K", "atlanta", "2026-07-01", "12:00"),
+    (81, "Round of 32", None, "Winner Group D", "3rd: B/E/F/I/J", "san-francisco", "2026-07-01", "17:00"),
+    (82, "Round of 32", None, "Winner Group G", "3rd: A/E/H/I/J", "seattle", "2026-07-01", "12:00"),
+    (83, "Round of 32", None, "Runner-up Group K", "Runner-up Group L", "toronto", "2026-07-02", "19:00"),
+    (84, "Round of 32", None, "Winner Group H", "Runner-up Group J", "los-angeles", "2026-07-02", "12:00"),
+    (85, "Round of 32", None, "Winner Group B", "3rd: E/F/G/I/J", "vancouver", "2026-07-02", "20:00"),
+    (86, "Round of 32", None, "Winner Group J", "Runner-up Group H", "miami", "2026-07-03", "18:00"),
+    (87, "Round of 32", None, "Winner Group K", "3rd: D/E/I/J/L", "kansas-city", "2026-07-03", "20:30"),
+    (88, "Round of 32", None, "Runner-up Group D", "Runner-up Group G", "dallas", "2026-07-03", "13:00"),
+    (89, "Round of 16", None, "Winner Match 74", "Winner Match 77", "philadelphia", "2026-07-04", "17:00"),
+    (90, "Round of 16", None, "Winner Match 73", "Winner Match 75", "houston", "2026-07-04", "12:00"),
+    (91, "Round of 16", None, "Winner Match 76", "Winner Match 78", "new-york", "2026-07-05", "16:00"),
+    (92, "Round of 16", None, "Winner Match 79", "Winner Match 80", "mexico-city", "2026-07-05", "18:00"),
+    (93, "Round of 16", None, "Winner Match 83", "Winner Match 84", "dallas", "2026-07-06", "14:00"),
+    (94, "Round of 16", None, "Winner Match 81", "Winner Match 82", "seattle", "2026-07-06", "17:00"),
+    (95, "Round of 16", None, "Winner Match 86", "Winner Match 88", "atlanta", "2026-07-07", "12:00"),
+    (96, "Round of 16", None, "Winner Match 85", "Winner Match 87", "vancouver", "2026-07-07", "13:00"),
+    (97, "Quarter-final", None, "Winner Match 89", "Winner Match 90", "boston", "2026-07-09", "16:00"),
+    (98, "Quarter-final", None, "Winner Match 93", "Winner Match 94", "los-angeles", "2026-07-10", "12:00"),
+    (99, "Quarter-final", None, "Winner Match 91", "Winner Match 92", "miami", "2026-07-11", "17:00"),
+    (100, "Quarter-final", None, "Winner Match 95", "Winner Match 96", "kansas-city", "2026-07-11", "20:00"),
+    (101, "Semi-final", None, "Winner Match 97", "Winner Match 98", "dallas", "2026-07-14", "14:00"),
+    (102, "Semi-final", None, "Winner Match 99", "Winner Match 100", "atlanta", "2026-07-15", "15:00"),
+    (103, "Third-place", None, "Loser Match 101", "Loser Match 102", "miami", "2026-07-18", "17:00"),
+    (104, "Final", None, "Winner Match 101", "Winner Match 102", "new-york", "2026-07-19", "15:00"),
+]
+
 
 
 def slugify(name: str) -> str:
     return re.sub(r"(^-|-$)", "", re.sub(r"[^a-z0-9]+", "-", name.lower()))
 
 
-def _build_kickoff(day_offset: int, hour_local: int, venue_id: str) -> tuple[str, str]:
-    offset = CITY_UTC_OFFSET.get(venue_id, 0)
-    local_dt = _BASE + timedelta(days=day_offset, hours=hour_local)
-    kickoff_local = local_dt.strftime("%Y-%m-%dT%H:00:00")
-    utc_dt = local_dt - timedelta(hours=offset)
-    kickoff_utc = utc_dt.strftime("%Y-%m-%dT%H:%M:%S.000Z")
-    return kickoff_local, kickoff_utc
+def _build_kickoff(date: str, time: str, venue_id: str) -> tuple[str, str]:
+    """Return (kickoff_local, kickoff_utc) from local wall time + venue offset."""
+    local = datetime.strptime(f"{date} {time}", "%Y-%m-%d %H:%M").replace(
+        tzinfo=timezone.utc
+    )
+    utc = local - timedelta(hours=CITY_UTC_OFFSET.get(venue_id, 0))
+    return f"{date}T{time}:00", utc.strftime("%Y-%m-%dT%H:%M:%S.000Z")
 
 
 def _build_teams() -> list[dict[str, Any]]:
@@ -128,69 +271,16 @@ def _build_teams() -> list[dict[str, Any]]:
     return teams
 
 
-def _build_knockouts() -> list[dict[str, str]]:
-    knockouts: list[dict[str, str]] = []
-    for i in range(16):
-        knockouts.append({
-            "stage": "Round of 32",
-            "home": f"Winner Group {GROUP_LETTERS[i % 12]}",
-            "away": f"Runner-up Group {GROUP_LETTERS[(i + 6) % 12]}",
-        })
-    for i in range(8):
-        knockouts.append({"stage": "Round of 16", "home": f"Winner R32-{2 * i + 1}", "away": f"Winner R32-{2 * i + 2}"})
-    for i in range(4):
-        knockouts.append({"stage": "Quarter-final", "home": f"Winner R16-{2 * i + 1}", "away": f"Winner R16-{2 * i + 2}"})
-    for i in range(2):
-        knockouts.append({"stage": "Semi-final", "home": f"Winner QF-{2 * i + 1}", "away": f"Winner QF-{2 * i + 2}"})
-    knockouts.append({"stage": "Third-place", "home": "Loser SF-1", "away": "Loser SF-2"})
-    knockouts.append({"stage": "Final", "home": "Winner SF-1", "away": "Winner SF-2"})
-    return knockouts
-
-
 def _build_matches() -> list[dict[str, Any]]:
     matches: list[dict[str, Any]] = []
-    index = 0
-
-    for group in GROUP_LETTERS:
-        names = GROUP_TEAMS[group]
-        for home, away in ROUND_ROBIN:
-            venue_id = "mexico-city" if index == 0 else VENUE_ORDER[index % len(VENUE_ORDER)]
-            day_offset = index // 5
-            hour_local = GROUP_KICKOFF_HOURS[index % len(GROUP_KICKOFF_HOURS)]
-            kickoff_local, kickoff_utc = _build_kickoff(day_offset, hour_local, venue_id)
-            matches.append({
-                "id": f"M{index + 1}", "match_number": index + 1, "stage": "Group Stage",
-                "group": group, "home_team": names[home], "away_team": names[away],
-                "venue_id": venue_id, "kickoff_utc": kickoff_utc, "kickoff_local": kickoff_local,
-                "status": "scheduled",
-            })
-            index += 1
-
-    stage_count: dict[str, int] = {}
-    for knockout in _build_knockouts():
-        stage = knockout["stage"]
-        seen = stage_count.get(stage, 0)
-        stage_count[stage] = seen + 1
-
-        venue_id = VENUE_ORDER[index % len(VENUE_ORDER)]
-        if stage == "Final":
-            venue_id = "new-york"
-        elif stage == "Third-place":
-            venue_id = "miami"
-
-        per_day = 3 if stage == "Round of 32" else 2
-        day_offset = STAGE_DAY_BASE[stage] + (seen // per_day)
-        hour_local = 15 if stage == "Final" else [16, 19][seen % 2]
-        kickoff_local, kickoff_utc = _build_kickoff(day_offset, hour_local, venue_id)
-
+    for num, stage, group, home, away, venue_id, date, time in _FIXTURES:
+        kickoff_local, kickoff_utc = _build_kickoff(date, time, venue_id)
         matches.append({
-            "id": f"M{index + 1}", "match_number": index + 1, "stage": stage,
-            "group": None, "home_team": knockout["home"], "away_team": knockout["away"],
-            "venue_id": venue_id, "kickoff_utc": kickoff_utc, "kickoff_local": kickoff_local,
-            "status": "scheduled",
+            "id": f"M{num}", "match_number": num, "stage": stage,
+            "group": group, "home_team": home, "away_team": away,
+            "venue_id": venue_id, "kickoff_utc": kickoff_utc,
+            "kickoff_local": kickoff_local, "status": "scheduled",
         })
-        index += 1
-
     return matches
 
 

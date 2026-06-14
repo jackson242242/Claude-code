@@ -8,6 +8,8 @@ const FLAG_MAP: Record<string, string> = {
   Mexico: '🇲🇽',
   USA: '🇺🇸',
   'United States': '🇺🇸',
+  Haiti: '🇭🇹',
+  'Curaçao': '🇨🇼',
   Honduras: '🇭🇳',
   Jamaica: '🇯🇲',
   Panama: '🇵🇦',
@@ -48,6 +50,7 @@ const FLAG_MAP: Record<string, string> = {
   Turkey: '🇹🇷',
   Ukraine: '🇺🇦',
   Wales: '🏴󠁧󠁢󠁷󠁬󠁳󠁿',
+  'Bosnia & Herzegovina': '🇧🇦',
   // AFC
   Australia: '🇦🇺',
   Iran: '🇮🇷',
@@ -58,6 +61,8 @@ const FLAG_MAP: Record<string, string> = {
   'New Zealand': '🇳🇿',
   Qatar: '🇶🇦',
   'Saudi Arabia': '🇸🇦',
+  Uzbekistan: '🇺🇿',
+  Jordan: '🇯🇴',
   UAE: '🇦🇪',
   // CAF
   Algeria: '🇩🇿',
@@ -69,6 +74,9 @@ const FLAG_MAP: Record<string, string> = {
   Nigeria: '🇳🇬',
   Senegal: '🇸🇳',
   Tunisia: '🇹🇳',
+  'Cape Verde': '🇨🇻',
+  'South Africa': '🇿🇦',
+  'DR Congo': '🇨🇩',
 };
 
 /**
