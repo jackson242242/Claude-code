@@ -7,6 +7,7 @@
 > `kids-investing-course/`)里那套教学 DNA 抽象出来,变成可复用的母版。任何新课程都按这套来建。
 >
 > **配套文档:**
+> - [`OVERVIEW.md`](./OVERVIEW.md) — 🗺️ 总图(flowchart):核心闭环 / 分层架构 / 文档地图,先看这个
 > - [`ENGAGEMENT.md`](./ENGAGEMENT.md) — 留存引擎(心理学钩子、通知/邮件、小组榜、badge、伦理护栏)
 > - [`ECONOMY-AND-GAMES.md`](./ECONOMY-AND-GAMES.md) — 金币经济 + 游戏厅(虚拟金币、1分钟金融小游戏、每日市场、财富榜、动态 feed)
 > - [`ARCHITECTURE.md`](./ARCHITECTURE.md) — 可行性 / 稳定性 / 可扩展(内容即数据)/ 排名系统 / 技术栈
