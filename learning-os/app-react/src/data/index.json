@@ -1,0 +1,9 @@
+{
+  "school": { "id": "money", "title": "钱钱学院", "mascot": "emu" },
+  "modules": [
+    { "id": "budgeting", "file": "content/budgeting.json" },
+    { "id": "investing", "file": "content/investing.json" },
+    { "id": "debt", "file": "content/debt.json" },
+    { "id": "risk", "file": "content/risk.json" }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "module": {
+    "id": "budgeting",
+    "title": "记账预算",
+    "subtitle": "钱会进，也会出 — 学会看住自己的钱",
+    "mascot": "emu",
+    "minAge": 8,
+    "tier": "kid",
+    "authority": "Jump$tart「Spending & Saving」/ CEE「Saving」",
+    "level": "L1"
+  },
+  "atoms": [
+    {
+      "id": "bg-01",
+      "title": "钱会进，也会出",
+      "level": "L1",
+      "bloom": "understand",
+      "coins": 10,
+      "xp": 12,
+      "steps": [
+        {
+          "type": "info",
+          "emu": "happy",
+          "text": "钱像水一样：有时**流进来**（收到零花钱、红包），有时**流出去**（买东西）。",
+          "sub": "进来的叫『收入』，出去的叫『支出』。"
+        },
+        {
+          "type": "choice",
+          "q": "下面哪个是『收入』（钱流进来）？",
+          "options": ["奶奶给你 20 块零花钱", "买了一包薯片花了 5 块", "把玩具借给同学"],
+          "answer": 0,
+          "explain": "别人给你钱、你赚到钱 = 收入。花钱出去 = 支出。"
+        },
+        {
+          "type": "choice",
+          "q": "你有 20 块，买了 5 块的贴纸。现在还剩多少？",
+          "options": ["25 块", "15 块", "20 块"],
+          "answer": 1,
+          "explain": "收入 20 − 支出 5 = 剩下 15。这就是最简单的记账。"
+        }
+      ]
+    },
+    {
+      "id": "bg-02",
+      "title": "想要 vs 需要",
+      "level": "L1",
+      "bloom": "apply",
+      "coins": 10,
+      "xp": 12,
+      "steps": [
+        {
+          "type": "info",
+          "emu": "think",
+          "text": "**需要**：没有它会有麻烦（吃饭、文具、车票）。\n**想要**：有了开心，但没有也没事（第二个玩具、汽水）。",
+          "sub": "钱不够时，先满足『需要』。"
+        },
+        {
+          "type": "sort",
+          "q": "把它们分到两个篮子里",
+          "buckets": ["需要", "想要"],
+          "items": [
+            { "label": "🍚 午饭", "bucket": 0 },
+            { "label": "🎮 第二个游戏", "bucket": 1 },
+            { "label": "✏️ 上学的铅笔", "bucket": 0 },
+            { "label": "🥤 一杯汽水", "bucket": 1 }
+          ]
+        },
+        {
+          "type": "choice",
+          "q": "你只剩 6 块，午饭要 5 块，旁边有个 6 块的小玩具。买哪个？",
+          "options": ["买玩具", "先买午饭", "都买"],
+          "answer": 1,
+          "explain": "先照顾『需要』（午饭），玩具是『想要』，可以以后再说。"
+        }
+      ]
+    },
+    {
+      "id": "bg-03",
+      "title": "先付给自己",
+      "level": "L1",
+      "bloom": "understand",
+      "coins": 12,
+      "xp": 14,
+      "steps": [
+        {
+          "type": "info",
+          "emu": "star",
+          "text": "拿到钱时，**先存一点点给未来的自己**，剩下的再花。",
+          "sub": "这叫『先付给自己 Pay Yourself First』——很多大人都不知道的秘诀。"
+        },
+        {
+          "type": "choice",
+          "q": "下面哪种做法是『先付给自己』？",
+          "options": [
+            "先全部花光，月底有剩才存",
+            "一拿到钱，先存起一小份，剩下的才花",
+            "从来不存"
+          ],
+          "answer": 1,
+          "explain": "先把『存的』拿走，剩下的才是能花的——这样一定存得下来。"
+        }
+      ]
+    },
+    {
+      "id": "bg-04",
+      "title": "我存下了几成？",
+      "level": "L1",
+      "bloom": "apply",
+      "coins": 14,
+      "xp": 16,
+      "steps": [
+        {
+          "type": "info",
+          "emu": "think",
+          "text": "**储蓄率** = 你存下的钱 ÷ 你收到的钱。",
+          "sub": "存得越多，储蓄率越高。试试下面的滑块。"
+        },
+        {
+          "type": "slider",
+          "q": "你这周收到 10 块。拖动滑块，决定存多少。",
+          "total": 10,
+          "unit": "块",
+          "target": "看看你的储蓄率",
+          "showSaveRate": true
+        },
+        {
+          "type": "choice",
+          "q": "小明收入 10 块、存了 3 块；小红收入 10 块、存了 6 块。谁储蓄率高？",
+          "options": ["小明", "小红", "一样"],
+          "answer": 1,
+          "explain": "6÷10 = 60% 比 3÷10 = 30% 高。小红更会存。"
+        }
+      ]
+    },
+    {
+      "id": "bg-05",
+      "title": "做一个小预算",
+      "level": "L1",
+      "bloom": "create",
+      "coins": 20,
+      "xp": 22,
+      "isProject": true,
+      "steps": [
+        {
+          "type": "info",
+          "emu": "star",
+          "text": "**预算**就是『出手前先给钱安排好去处』。",
+          "sub": "现在你来当家：把 10 块分成 存 / 需要 / 想要 三份。"
+        },
+        {
+          "type": "budget",
+          "q": "把这 10 块分成三份（先付给自己哦）",
+          "total": 10,
+          "unit": "块",
+          "categories": ["💰 存起来", "🍚 需要", "🎮 想要"]
+        },
+        {
+          "type": "explainback",
+          "q": "用一句话告诉别人：什么是预算？",
+          "options": [
+            "花钱前，先给每一块钱安排好去处",
+            "把钱全部花光",
+            "把钱藏起来不用"
+          ],
+          "answer": 0,
+          "explain": "对！预算 = 提前安排，不是省到痛苦，是花得明白。"
+        }
+      ]
+    }
+  ]
+}
