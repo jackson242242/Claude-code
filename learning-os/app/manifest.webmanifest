@@ -1,0 +1,14 @@
+{
+  "name": "Money Zoo · 钱钱动物园",
+  "short_name": "Money Zoo",
+  "description": "学得越懂，Emu 长得越大 — 给三年级以上的钱钱启蒙",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ecfeff",
+  "theme_color": "#0f766e",
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
