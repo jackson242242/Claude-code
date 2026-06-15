@@ -1,7 +1,9 @@
-const CACHE = "moneyzoo-v1";
+const CACHE = "moneyzoo-v2";
 const ASSETS = [
   "./", "index.html", "styles.css", "app.js", "mascot.js",
-  "content/budgeting.json", "manifest.webmanifest", "icons/icon.svg",
+  "content/index.json", "content/budgeting.json", "content/investing.json",
+  "content/debt.json", "content/risk.json",
+  "manifest.webmanifest", "icons/icon.svg",
 ];
 
 self.addEventListener("install", (e) => {

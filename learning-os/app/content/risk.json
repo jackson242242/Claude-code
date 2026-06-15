@@ -1,0 +1,42 @@
+{
+  "module": {
+    "id": "risk",
+    "title": "风险保障",
+    "subtitle": "意外会发生 — 怎么保护好自己的钱",
+    "mascot": "emu",
+    "minAge": 8,
+    "tier": "kid",
+    "authority": "Jump$tart「Risk Management & Insurance」/ CEE「Protecting & Insuring」",
+    "level": "L1"
+  },
+  "atoms": [
+    {
+      "id": "rk-01", "title": "意外会发生", "level": "L1", "bloom": "understand", "coins": 10, "xp": 12,
+      "steps": [
+        { "type": "info", "text": "生活里总有**意外**：东西摔坏、丢了、生病……我们挡不住意外，但可以**提前准备**。", "sub": "准备好的人，意外来了也不慌。" },
+        { "type": "choice", "q": "下面哪个是『意外』？", "options": ["手机不小心摔坏了", "按计划买了午饭", "存了零花钱"], "answer": 0, "explain": "意外 = 没想到、又花钱的事。提前准备能少受伤。" }
+      ]
+    },
+    {
+      "id": "rk-02", "title": "以防万一罐", "level": "L1", "bloom": "apply", "coins": 12, "xp": 14,
+      "steps": [
+        { "type": "info", "text": "留一个**『以防万一罐』（应急金）**：平时不动它，专门留给意外。**别把钱全花光。**", "sub": "有了它，意外来了不用借钱、不用慌。" },
+        { "type": "choice", "q": "『以防万一罐』最重要的用处是？", "options": ["意外发生时有钱顶上，不慌", "想买零食时随便花", "拿去炫耀"], "answer": 0, "explain": "应急金是你的安全垫，专门对付意外。" }
+      ]
+    },
+    {
+      "id": "rk-03", "title": "保险：大家一起扛", "level": "L1", "bloom": "understand", "coins": 14, "xp": 16,
+      "steps": [
+        { "type": "info", "text": "**保险** = 很多人**各出一点点**，凑成一大笔；**谁碰上大麻烦，就用这笔钱帮他**。", "sub": "平时出小钱，出大事时不被一次击垮。" },
+        { "type": "choice", "q": "全班每人交 1 块，谁的东西坏了就用这笔钱赔。这像什么？", "options": ["这就是保险的道理", "这是浪费钱", "这是借钱"], "answer": 0, "explain": "对！众人分摊风险，就是保险。" },
+        { "type": "choice", "q": "为什么买保险不算『亏』？", "options": ["平时只出一点点，出大事时帮你扛住", "因为一定会赚钱", "因为不用还"], "answer": 0, "explain": "保险买的是『安心和保护』，不是为了赚钱。" }
+      ]
+    },
+    {
+      "id": "rk-04", "title": "保护钱的两招", "level": "L1", "bloom": "create", "coins": 16, "xp": 16, "isProject": true,
+      "steps": [
+        { "type": "explainback", "q": "保护自己钱的两个办法是？", "options": ["留『以防万一罐』+ 用保险一起扛", "把钱全花光 + 不准备", "只靠运气"], "answer": 0, "explain": "应急金对付小意外，保险对付大意外。两招都备好，最稳。" }
+      ]
+    }
+  ]
+}

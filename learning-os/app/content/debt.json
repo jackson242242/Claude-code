@@ -1,0 +1,50 @@
+{
+  "module": {
+    "id": "debt",
+    "title": "债务管理",
+    "subtitle": "借钱要还，而且常常要多还 — 怎么聪明地借",
+    "mascot": "emu",
+    "minAge": 8,
+    "tier": "kid",
+    "authority": "Jump$tart「Credit & Debt」/ CEE「Using Credit」",
+    "level": "L1"
+  },
+  "atoms": [
+    {
+      "id": "dm-01", "title": "借钱要还", "level": "L1", "bloom": "understand", "coins": 10, "xp": 12,
+      "steps": [
+        { "type": "info", "text": "借钱 = **先用别人的钱**，但**以后要还回去**。借的那笔本金，一分都不能少还。", "sub": "借之前先想清楚：我还得起吗？" },
+        { "type": "choice", "q": "你向同学借了 10 块。光是借来的这笔，至少要还多少？", "options": ["5 块", "10 块", "0 块"], "answer": 1, "explain": "借多少，本金就要还多少。借不是『白拿』。" }
+      ]
+    },
+    {
+      "id": "dm-02", "title": "利息：还的比借的多", "level": "L1", "bloom": "apply", "coins": 12, "xp": 14,
+      "steps": [
+        { "type": "info", "text": "很多时候借钱要付**利息**——就像借东西要付的『租金』。所以**还回去的，比借来的多**。", "sub": "利息越高，越贵。" },
+        { "type": "choice", "q": "借 100 块，要付 10 块利息。一共要还多少？", "options": ["100 块", "110 块", "90 块"], "answer": 1, "explain": "本金 100 + 利息 10 = 还 110。利息就是借钱的代价。" }
+      ]
+    },
+    {
+      "id": "dm-03", "title": "借越久，还越多", "level": "L1", "bloom": "apply", "coins": 14, "xp": 16,
+      "steps": [
+        { "type": "info", "text": "如果不快点还，**利息会一直加上去**——而且会像雪球一样**利滚利**，越拖越多。", "sub": "这就是复利**反过来咬你**。拖得越久越可怕。" },
+        { "type": "grow", "q": "拖动年数，看 100 块的欠款怎么越滚越大（不还的话）", "principal": 100, "rate": 0.2, "years": 12, "label": "你欠的钱" },
+        { "type": "choice", "q": "欠钱不还、拖得越久，要还的会怎样？", "options": ["越来越多", "越来越少", "不变"], "answer": 0, "explain": "利息利滚利，越拖越多。所以坏债要尽快还掉。" }
+      ]
+    },
+    {
+      "id": "dm-04", "title": "好债 vs 坏债", "level": "L1", "bloom": "create", "coins": 18, "xp": 18, "isProject": true,
+      "steps": [
+        { "type": "info", "text": "不是所有借钱都坏。**好债**帮你变得更强/更值钱；**坏债**只为一时爽，很快就没了。", "sub": "借之前问一句：它能帮我变好，还是只让我一时开心？" },
+        { "type": "sort", "q": "把它们分成『好债』和『坏债』", "buckets": ["好债", "坏债"],
+          "items": [
+            { "label": "📚 借钱学一门有用的技能", "bucket": 0 },
+            { "label": "🍬 赊账买一堆很快吃完的零食", "bucket": 1 },
+            { "label": "🚲 借钱买上学要用的车", "bucket": 0 },
+            { "label": "👟 为了炫耀借钱买名牌", "bucket": 1 }
+          ] },
+        { "type": "explainback", "q": "借钱前，最该问自己哪句话？", "options": ["这笔借钱能帮我变得更好或更值钱吗？", "别人有我也要有", "能借就借"], "answer": 0, "explain": "对！好债是投资自己，坏债只是提前花掉未来的钱。" }
+      ]
+    }
+  ]
+}
