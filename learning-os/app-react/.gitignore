@@ -1,12 +1,6 @@
-# dependencies / build output
 node_modules/
 dist/
-*.local
-
-# Capacitor native projects (regenerated via `npx cap add ios/android`)
 ios/
 android/
-
-# misc
+*.local
 .DS_Store
-*.log
