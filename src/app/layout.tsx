@@ -48,6 +48,7 @@ const RootLayout = async ({ children }: RootLayoutProps) => {
             <Link href="/hotels">{t('nav.hotels')}</Link>
             <Link href="/transport">{t('nav.transport')}</Link>
             <Link href="/news">News</Link>
+            <Link href="/fitness">运动</Link>
             <Link href="/trips">{t('nav.trips')}</Link>
             <Link href="/bookings">{t('nav.bookings')}</Link>
             <LanguageSwitcher locale={locale} />
