@@ -10,15 +10,18 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import get_settings
 from app.errors import register_exception_handlers
-from app.providers.registry import build_stock_provider
-from app.routers import quotes, screener, tiers
+from app.providers.registry import build_primary, wrap_provider
+from app.routers import meta, quotes, screener, tiers
 from app.services.tier_cache import TierCache
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     settings = get_settings()
-    app.state.stock_provider = build_stock_provider(settings)
+    primary, is_real = build_primary(settings)
+    app.state.raw_primary = primary  # bare provider for the honest /meta probe
+    app.state.stock_is_real = is_real
+    app.state.stock_provider = wrap_provider(primary, is_real, settings)
     app.state.tier_cache = TierCache(ttl=settings.tier_cache_ttl)
     yield
 
@@ -39,6 +42,7 @@ def create_app() -> FastAPI:
     app.include_router(screener.router)
     app.include_router(quotes.router)
     app.include_router(tiers.router)
+    app.include_router(meta.router)
 
     @app.get("/health", tags=["meta"])
     async def health() -> dict[str, str]:

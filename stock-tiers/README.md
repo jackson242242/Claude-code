@@ -50,6 +50,29 @@ Prereqs: Python 3.11+ and Node 20+. To use the real Claude tier engine, run with
 `ANTHROPIC_API_KEY=... ./run-local.sh`; for live market data add
 `STOCK_PROVIDER=finnhub FINNHUB_API_KEY=...`.
 
+### Using real data (Claude + Finnhub)
+
+Set the keys and run (locally or in Render):
+
+```bash
+STOCK_PROVIDER=finnhub FINNHUB_API_KEY=... ANTHROPIC_API_KEY=... ./run-local.sh
+```
+
+- **Tier engine:** with `ANTHROPIC_API_KEY` set, tiers are generated live by
+  Claude (`claude-opus-4-8`); otherwise the deterministic mock engine runs.
+- **Market data:** you must set **`STOCK_PROVIDER=finnhub`** (not just the key).
+  A free Finnhub key works — the provider uses `/quote`, `/stock/profile2`, and
+  `/stock/metric` (`52WeekPriceReturnDaily` for the 1-yr change); it does **not**
+  use the premium `/stock/candle`. The first screener call scans
+  `SCREENER_CANDIDATE_LIMIT` (default 30) symbols and is then cached 15 min, so
+  the cold call is the slow one. On any upstream error/rate-limit the resilient
+  wrapper silently falls back to mock data.
+- **Confirm real data is live** (it's not obvious, because of the silent fallback):
+  - `GET /api/meta/providers` → `{"stock":"finnhub","tierEngine":"claude","model":"claude-opus-4-8"}`
+  - `GET /api/meta/stock-probe` → `{"ok":true,"provider":"finnhub",...}` (this calls
+    Finnhub directly, bypassing the fallback — `ok:false` with an `error` means your
+    key/network is the problem, and the app is serving mock data).
+
 ## Run the backend
 
 ```bash

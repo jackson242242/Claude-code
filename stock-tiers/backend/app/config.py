@@ -15,6 +15,9 @@ class Settings(BaseSettings):
 
     stock_provider: Literal["mock", "finnhub"] = "mock"
     finnhub_api_key: str | None = None
+    # Max candidates the Finnhub screener scans (keeps the first screen under the
+    # free-tier ~60 calls/min limit).
+    screener_candidate_limit: int = 30
     anthropic_api_key: str | None = None
 
     # auto: use Claude when a key is set, else the deterministic mock engine.

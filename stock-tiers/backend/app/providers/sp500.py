@@ -1,20 +1,28 @@
-"""A bundled candidate symbol list for the Finnhub screener.
+"""Candidate symbol list for the Finnhub screener.
 
-Finnhub has no native "up 50-100%" endpoint, so the screener iterates a fixed
-candidate universe and filters by computed trailing-1yr change. This is a
-representative large-cap slice (not the full index) to keep API-call volume and
-rate-limit pressure manageable; expand as needed.
+Finnhub has no native "up 50-100%" endpoint, so the screener iterates this fixed
+candidate universe and filters by the computed trailing-1yr return. Kept to a
+focused large-cap slice so the first (uncached) screen stays near the free-tier
+~60 calls/min limit; the provider slices it to SCREENER_CANDIDATE_LIMIT.
 """
 
 from __future__ import annotations
 
 SP500_CANDIDATES: tuple[str, ...] = (
-    "AAPL", "MSFT", "NVDA", "AMZN", "GOOGL", "META", "TSLA", "AVGO", "AMD", "TSM",
-    "ARM", "MRVL", "MU", "INTC", "SMCI", "DELL", "QCOM", "TXN", "ADI", "LRCX",
-    "VRT", "ETN", "PWR", "GEV", "CEG", "VST", "NEE", "DUK", "SO", "XOM",
-    "CVX", "FANG", "LNG", "COP", "SLB", "TSLA", "RIVN", "LCID", "ALB", "GM",
-    "F", "LLY", "VKTX", "NVO", "MRK", "PFE", "ABBV", "UNH", "JNJ", "COIN",
-    "HOOD", "SQ", "MSTR", "PYPL", "V", "MA", "JPM", "GS", "BAC", "WFC",
-    "PLTR", "NOW", "CRWD", "NET", "SNOW", "DDOG", "ORCL", "CRM", "ADBE", "UBER",
-    "CAT", "DE", "GE", "HON", "BA", "RTX", "LMT", "MMM", "EMR", "ROK",
+    # AI / semiconductors
+    "NVDA", "AMD", "AVGO", "TSM", "ARM", "MRVL", "MU", "SMCI", "DELL",
+    # power / datacenter / utilities (AI downstream)
+    "VRT", "ETN", "PWR", "GEV", "CEG", "VST",
+    # big tech / software
+    "MSFT", "GOOGL", "META", "AMZN", "PLTR", "NOW", "CRWD", "NET", "ORCL",
+    # energy
+    "XOM", "LNG", "FANG",
+    # EV / mobility
+    "TSLA", "RIVN", "UBER",
+    # fintech / crypto-adjacent
+    "COIN", "HOOD", "MSTR",
+    # healthcare
+    "LLY", "VKTX",
+    # industrials
+    "CAT", "DE", "GE",
 )

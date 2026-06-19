@@ -116,7 +116,8 @@ services:
   # deterministic mock tier engine; stock-tiers-web is the Expo app exported to
   # web (static SPA) pointed at the API via fromService host. Set ANTHROPIC_API_KEY
   # to light up the real Claude tier engine; set STOCK_PROVIDER=finnhub +
-  # FINNHUB_API_KEY for live market data. Lives under stock-tiers/.
+  # FINNHUB_API_KEY for live market data (free key OK). After enabling either,
+  # confirm via GET /api/meta/providers and GET /api/meta/stock-probe. Under stock-tiers/.
   - type: web
     name: stock-tiers-api
     runtime: python
