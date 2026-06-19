@@ -1,5 +1,3 @@
-import Constants from "expo-constants";
-
 import type { ApiErrorBody } from "./types";
 
 export class ApiError extends Error {
@@ -15,8 +13,13 @@ export class ApiError extends Error {
 }
 
 const getBaseUrl = (): string => {
-  const extra = Constants.expoConfig?.extra as { apiBaseUrl?: string } | undefined;
-  return extra?.apiBaseUrl ?? "http://localhost:8000";
+  // EXPO_PUBLIC_* vars are string-inlined into the bundle at build time (web and
+  // native). Render sets this from the API service host. Bare host -> https.
+  const raw = (process.env.EXPO_PUBLIC_API_BASE_URL ?? "http://localhost:8000").trim();
+  if (raw && !raw.includes("://")) {
+    return `https://${raw}`;
+  }
+  return raw;
 };
 
 /**

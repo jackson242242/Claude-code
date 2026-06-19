@@ -51,8 +51,27 @@ Endpoints: `GET /api/screener/hot-stocks?low=0.5&high=1.0`,
 ```bash
 cd app
 npm install
-EXPO_PUBLIC_API_BASE_URL=http://<your-lan-ip>:8000 npx expo start
+EXPO_PUBLIC_API_BASE_URL=http://<your-lan-ip>:8000 npx expo start      # native (Expo Go)
+EXPO_PUBLIC_API_BASE_URL=http://localhost:8000   npx expo start --web  # browser
 ```
+
+## Deploy a testable prototype (zero secrets)
+
+The repo-root `render.yaml` Blueprint includes two services for this app:
+`stock-tiers-api` (FastAPI) and `stock-tiers-web` (the Expo app exported to a
+static web SPA, auto-wired to the API host). **No keys required** — the API runs
+on deterministic seed data and a deterministic mock tier engine, so the whole
+flow (Hot Stocks → S–F Tier List → Ticker Detail) works out of the box.
+
+1. In Render: **New → Blueprint**, connect this repo, pick this branch.
+2. Apply — Render builds both services. (Leave the optional secrets blank.)
+3. Open the **`stock-tiers-web`** URL in any browser.
+
+Optional upgrades (set in the Render dashboard, then redeploy):
+- `ANTHROPIC_API_KEY` on `stock-tiers-api` → real Claude tier engine (auto-detected).
+- `STOCK_PROVIDER=finnhub` + `FINNHUB_API_KEY` → live market data.
+
+Build the web bundle yourself anytime: `cd app && npx expo export -p web` → `dist/`.
 
 ## Test / lint / typecheck
 

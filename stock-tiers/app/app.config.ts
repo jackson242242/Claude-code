@@ -1,8 +1,8 @@
 import type { ExpoConfig } from "expo/config";
 
-// The API base URL is injected from the environment at build/start time and
-// exposed to the app via Constants.expoConfig.extra.apiBaseUrl.
-// Local dev example: EXPO_PUBLIC_API_BASE_URL=http://192.168.1.10:8000
+// The API base URL is read directly from process.env.EXPO_PUBLIC_API_BASE_URL in
+// src/api/client.ts (Expo string-inlines EXPO_PUBLIC_* into the bundle at build
+// time). Local dev example: EXPO_PUBLIC_API_BASE_URL=http://192.168.1.10:8000
 const config: ExpoConfig = {
   name: "Stock Tiers",
   slug: "stock-tiers",
@@ -10,8 +10,9 @@ const config: ExpoConfig = {
   orientation: "portrait",
   scheme: "stocktiers",
   newArchEnabled: true,
-  extra: {
-    apiBaseUrl: process.env.EXPO_PUBLIC_API_BASE_URL ?? "http://localhost:8000",
+  web: {
+    bundler: "metro",
+    output: "single",
   },
 };
 

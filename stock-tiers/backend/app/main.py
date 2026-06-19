@@ -26,10 +26,11 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
 def create_app() -> FastAPI:
     app = FastAPI(title="Stock Alternatives Tier List API", lifespan=lifespan)
 
-    # The Expo client calls this from a device/simulator; allow cross-origin.
+    # The Expo client (web build or device) calls this cross-origin.
+    # Defaults to "*"; set CORS_ORIGINS to the deployed web host to lock it down.
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=["*"],
+        allow_origins=get_settings().cors_origin_list(),
         allow_methods=["*"],
         allow_headers=["*"],
     )

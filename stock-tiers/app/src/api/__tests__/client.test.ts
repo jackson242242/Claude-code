@@ -1,14 +1,9 @@
 import { ApiError, apiFetch } from "../client";
 
-jest.mock("expo-constants", () => ({
-  __esModule: true,
-  default: { expoConfig: { extra: { apiBaseUrl: "http://test.local" } } },
-}));
-
 describe("apiFetch", () => {
   afterEach(() => jest.restoreAllMocks());
 
-  it("returns parsed JSON on success", async () => {
+  it("returns parsed JSON on success and calls the right path with JSON headers", async () => {
     global.fetch = jest.fn().mockResolvedValue({
       ok: true,
       json: async () => ({ ticker: "NVDA" }),
@@ -17,8 +12,10 @@ describe("apiFetch", () => {
     const result = await apiFetch<{ ticker: string }>("/api/quotes/NVDA");
     expect(result).toEqual({ ticker: "NVDA" });
     expect(global.fetch).toHaveBeenCalledWith(
-      "http://test.local/api/quotes/NVDA",
-      expect.objectContaining({ headers: expect.objectContaining({ "Content-Type": "application/json" }) }),
+      expect.stringContaining("/api/quotes/NVDA"),
+      expect.objectContaining({
+        headers: expect.objectContaining({ "Content-Type": "application/json" }),
+      }),
     );
   });
 

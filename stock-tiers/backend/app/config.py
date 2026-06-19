@@ -17,6 +17,8 @@ class Settings(BaseSettings):
     finnhub_api_key: str | None = None
     anthropic_api_key: str | None = None
 
+    # auto: use Claude when a key is set, else the deterministic mock engine.
+    tier_provider: Literal["auto", "mock", "claude"] = "auto"
     tier_model: str = "claude-opus-4-8"
     tier_effort: Literal["low", "medium", "high"] = "high"
 
@@ -25,6 +27,22 @@ class Settings(BaseSettings):
     tier_cache_ttl: int = 86400
 
     resilient_fallback: bool = True
+
+    # Comma-separated allowed CORS origins. "*" allows all (default, dev-friendly).
+    # Bare hosts (no scheme) are normalized to https:// for the deployed web app.
+    cors_origins: str = "*"
+
+    def cors_origin_list(self) -> list[str]:
+        raw = self.cors_origins.strip()
+        if raw == "*" or not raw:
+            return ["*"]
+        origins: list[str] = []
+        for part in raw.split(","):
+            host = part.strip()
+            if not host:
+                continue
+            origins.append(host if "://" in host else f"https://{host}")
+        return origins or ["*"]
 
 
 @lru_cache

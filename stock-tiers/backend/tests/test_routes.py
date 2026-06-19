@@ -47,8 +47,14 @@ def test_quote_unknown_error_shape(client: TestClient) -> None:
     assert body == {"error": {"message": "Unknown ticker: NOPE", "type": "not_found"}}
 
 
-def test_tiers_without_key_is_503(client: TestClient) -> None:
-    # No ANTHROPIC_API_KEY in the test env -> get_tier_engine raises 503.
+def test_tiers_without_key_uses_mock_engine(client: TestClient) -> None:
+    # No ANTHROPIC_API_KEY -> TIER_PROVIDER=auto falls back to the mock engine,
+    # so the full flow returns a populated S-F tier list (zero-secret prototype).
     resp = client.post("/api/tiers", json={"hotStockTicker": "NVDA"})
-    assert resp.status_code == 503
-    assert resp.json()["error"]["type"] == "not_configured"
+    assert resp.status_code == 200
+    body = resp.json()
+    assert body["hotStockTicker"] == "NVDA"
+    assert set(body["tiers"].keys()) == {"S", "A", "B", "C", "D", "F"}
+    assert "not financial advice" in body["disclaimer"].lower()
+    all_entries = [e for bucket in body["tiers"].values() for e in bucket]
+    assert all_entries and all(e["ticker"] != "NVDA" for e in all_entries)
