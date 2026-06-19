@@ -26,5 +26,5 @@
     "jest.config.ts",
     "jest.setup.ts"
   ],
-  "exclude": ["node_modules", "backend"]
+  "exclude": ["node_modules", "backend", "stock-tiers"]
 }
