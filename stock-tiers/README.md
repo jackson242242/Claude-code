@@ -28,6 +28,28 @@ Expo (React Native + TS)  ──HTTP──▶  FastAPI backend  ──▶  Claud
     implementation (offline, no keys) and a real **Finnhub** implementation,
     composed as `Cached(TTL) → Resilient(real, fallback=mock) → Primary`.
 
+## Run it locally (one command, zero secrets)
+
+```bash
+cd stock-tiers
+./run-local.sh            # backend (:8000) + builds & serves the web app (:8081)
+```
+
+Then open **http://localhost:8081** in your browser and click through:
+Hot Stocks → S–F Tier List → Ticker Detail. No API keys needed (deterministic
+mock data + mock tier engine). First run installs the backend venv and app deps.
+
+Other modes:
+
+```bash
+./run-local.sh dev        # Expo web dev server with hot reload
+./run-local.sh native     # Expo Go on your phone (scan the QR code)
+```
+
+Prereqs: Python 3.11+ and Node 20+. To use the real Claude tier engine, run with
+`ANTHROPIC_API_KEY=... ./run-local.sh`; for live market data add
+`STOCK_PROVIDER=finnhub FINNHUB_API_KEY=...`.
+
 ## Run the backend
 
 ```bash
