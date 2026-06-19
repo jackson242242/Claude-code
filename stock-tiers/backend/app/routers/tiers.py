@@ -1,0 +1,20 @@
+"""Tier-list route: LLM-generated S-F ranking for a hot stock."""
+
+from __future__ import annotations
+
+from fastapi import APIRouter, Depends
+
+from app.deps import get_tier_engine
+from app.schemas import TierList, TierListRequest
+from app.services.tier_engine import TierEngine
+
+router = APIRouter(prefix="/api/tiers", tags=["tiers"])
+
+
+@router.post("", response_model=TierList)
+async def create_tier_list(
+    body: TierListRequest,
+    engine: TierEngine = Depends(get_tier_engine),
+) -> TierList:
+    """Generate the S-F tier list of alternatives/downstream for the hot stock."""
+    return await engine.generate(body.hot_stock_ticker)

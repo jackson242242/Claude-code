@@ -1,0 +1,79 @@
+# Stock Alternatives Tier List
+
+A mobile app that surfaces publicly-traded **"hot stocks"** (up **+50%–100%** over
+the trailing 12 months), lets you pick one, and generates an **S–F tier list** of
+the best publicly-traded **alternative or downstream** company stocks that capture
+the *same investment thesis* — each with a rationale and tier justification.
+
+> **Not financial advice.** Tier rankings are AI-generated for informational and
+> educational purposes only.
+
+## Architecture
+
+```
+Expo (React Native + TS)  ──HTTP──▶  FastAPI backend  ──▶  Claude API (tier engine)
+   no secrets in client                holds all keys   └─▶  Finnhub (real market data)
+                                                          └─▶  Mock provider (offline fallback)
+```
+
+- **`app/`** — Expo (React Native, TypeScript strict) client. Screens: Hot Stocks →
+  Tier List → Ticker Detail. Talks to the backend via native `fetch`; no API keys
+  ever live in the client.
+- **`backend/`** — Python + FastAPI. Holds the market-data + Claude keys.
+  - **Tier engine** (`app/services/tier_engine.py`) — calls Claude (`claude-opus-4-8`)
+    with **forced tool use** for structured S–F output, then **validates and
+    re-prices every entry against the market-data provider** so the LLM cannot
+    hallucinate tickers or prices.
+  - **Market data** — a `StockDataProvider` port with a deterministic **mock**
+    implementation (offline, no keys) and a real **Finnhub** implementation,
+    composed as `Cached(TTL) → Resilient(real, fallback=mock) → Primary`.
+
+## Run the backend
+
+```bash
+cd backend
+python3 -m venv .venv && .venv/bin/pip install -e ".[dev]"
+
+# Fully offline (mock data; tier engine needs ANTHROPIC_API_KEY):
+STOCK_PROVIDER=mock .venv/bin/uvicorn app.main:app --reload   # :8000
+
+# Real data:
+export STOCK_PROVIDER=finnhub FINNHUB_API_KEY=... ANTHROPIC_API_KEY=...
+.venv/bin/uvicorn app.main:app --reload
+```
+
+Endpoints: `GET /api/screener/hot-stocks?low=0.5&high=1.0`,
+`GET /api/quotes/{ticker}`, `POST /api/tiers {"hotStockTicker":"NVDA"}`,
+`GET /health`. See `backend/.env.example` for all settings.
+
+## Run the app
+
+```bash
+cd app
+npm install
+EXPO_PUBLIC_API_BASE_URL=http://<your-lan-ip>:8000 npx expo start
+```
+
+## Test / lint / typecheck
+
+```bash
+# backend
+cd backend && .venv/bin/ruff check app tests && .venv/bin/mypy app && .venv/bin/python -m pytest
+
+# app
+cd app && npx tsc --noEmit && npx eslint . && npx jest
+```
+
+CI (`.github/workflows/ci.yml`) runs both suites with `STOCK_PROVIDER=mock` and no
+keys, so the whole project is green offline.
+
+## Notes & limitations
+
+- **Network policy:** the live tier engine and Finnhub need outbound egress to
+  `api.anthropic.com` / `finnhub.io`. If market data is blocked, the resilient
+  wrapper serves mock data; the tier engine has no offline fallback and returns a
+  502 (the app shows an error state).
+- **Universe:** US equities only. The mock universe is ~40 hand-seeded tickers; the
+  Finnhub screener scans a bundled large-cap candidate list (`providers/sp500.py`).
+- **Model:** `claude-opus-4-8` by default (best thesis reasoning); switch via
+  `TIER_MODEL`. Tier results are cached 24h to amortize cost.
