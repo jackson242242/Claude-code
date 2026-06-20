@@ -3,6 +3,7 @@
 
 export type Tier = "S" | "A" | "B" | "C" | "D" | "F";
 export type Relationship = "alternative" | "downstream";
+export type Horizon = "short" | "medium" | "long";
 
 export const TIER_ORDER: readonly Tier[] = ["S", "A", "B", "C", "D", "F"];
 

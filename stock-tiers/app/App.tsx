@@ -4,6 +4,8 @@ import { StatusBar } from "expo-status-bar";
 
 import type { RootStackParamList } from "./src/navigation/types";
 import { HotStocksScreen } from "./src/screens/HotStocksScreen";
+import { ThesisInputScreen } from "./src/screens/ThesisInputScreen";
+import { ThesisResultsScreen } from "./src/screens/ThesisResultsScreen";
 import { TickerDetailScreen } from "./src/screens/TickerDetailScreen";
 import { TierListScreen } from "./src/screens/TierListScreen";
 import { colors } from "./src/theme/colors";
@@ -26,7 +28,17 @@ export default function App() {
   return (
     <NavigationContainer theme={navTheme}>
       <StatusBar style="light" />
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="ThesisInput">
+        <Stack.Screen
+          name="ThesisInput"
+          component={ThesisInputScreen}
+          options={{ title: "Stock Tiers" }}
+        />
+        <Stack.Screen
+          name="ThesisResults"
+          component={ThesisResultsScreen}
+          options={{ title: "投资清单" }}
+        />
         <Stack.Screen
           name="HotStocks"
           component={HotStocksScreen}
