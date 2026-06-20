@@ -10,6 +10,7 @@ from __future__ import annotations
 
 from typing import Any
 
+import anthropic
 from fastapi import APIRouter, Request
 
 from app.config import get_settings
@@ -56,3 +57,26 @@ async def stock_probe(request: Request) -> dict[str, Any]:
     except Exception as exc:  # report the failure, never fall back here
         return {"ok": False, "provider": name, "error": str(exc)}
     return {"ok": True, "provider": name, "ticker": detail.ticker, "price": detail.price}
+
+
+@router.get("/tier-probe")
+async def tier_probe() -> dict[str, Any]:
+    """Minimal Claude call to diagnose the tier engine (auth / credits / model).
+
+    ok:true  -> Claude is reachable; if a tier list still fails it's the request
+                shape, not the key. ok:false -> the error explains why (e.g. a
+                401 auth error, a 400 'credit balance too low', or model access).
+    """
+    settings = get_settings()
+    if not settings.anthropic_api_key:
+        return {"ok": False, "error": "ANTHROPIC_API_KEY not set"}
+    client = anthropic.AsyncAnthropic(api_key=settings.anthropic_api_key)
+    try:
+        await client.messages.create(
+            model=settings.tier_model,
+            max_tokens=16,
+            messages=[{"role": "user", "content": "ping"}],
+        )
+    except Exception as exc:
+        return {"ok": False, "model": settings.tier_model, "error": f"{type(exc).__name__}: {exc}"}
+    return {"ok": True, "model": settings.tier_model}

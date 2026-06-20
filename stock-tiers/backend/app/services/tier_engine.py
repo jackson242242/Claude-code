@@ -100,6 +100,9 @@ class TierEngine:
             change_pct=change_pct,
         )
         try:
+            # NOTE: tool_choice must be "auto" (not a forced tool) because adaptive
+            # thinking is on — Anthropic rejects forced tool use while thinking is
+            # enabled. The prompt instructs the model to answer only via the tool.
             # The SDK's create() overloads use TypedDict unions; our dict literals
             # (tool with `strict`, system cache_control, output_config) are valid at
             # runtime but don't structurally match in strict mode — ignore at the boundary.
@@ -116,12 +119,15 @@ class TierEngine:
                     }
                 ],
                 tools=[TIER_TOOL],
-                tool_choice={"type": "tool", "name": "emit_tier_list"},
+                tool_choice={"type": "auto"},
                 messages=[{"role": "user", "content": user_message}],
             )
         except anthropic.APIError as exc:  # typed SDK error chain
+            detail = (getattr(exc, "message", "") or str(exc))[:300]
             logger.warning("anthropic call failed: %s", exc)
-            raise AppError("Tier engine unavailable", type="upstream_error", status=502) from exc
+            raise AppError(
+                f"Tier engine error: {detail}", type="upstream_error", status=502
+            ) from exc
 
         for block in resp.content:
             if getattr(block, "type", None) == "tool_use" and block.name == "emit_tier_list":
