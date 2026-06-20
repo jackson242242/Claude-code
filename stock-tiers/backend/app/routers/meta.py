@@ -80,3 +80,27 @@ async def tier_probe() -> dict[str, Any]:
     except Exception as exc:
         return {"ok": False, "model": settings.tier_model, "error": f"{type(exc).__name__}: {exc}"}
     return {"ok": True, "model": settings.tier_model}
+
+
+@router.get("/tier-debug")
+async def tier_debug(request: Request, ticker: str = "PWR") -> dict[str, Any]:
+    """Run a real tier generation and report entry counts so an empty tier list
+    can be diagnosed: did Claude return few entries (stopReason/max_tokens) or did
+    market-data validation drop them?"""
+    settings = get_settings()
+    if not settings.anthropic_api_key:
+        return {"ok": False, "error": "ANTHROPIC_API_KEY not set"}
+    # Imported here to avoid a heavy import on the hot path.
+    from app.services.tier_engine import TierEngine
+
+    client = anthropic.AsyncAnthropic(api_key=settings.anthropic_api_key)
+    engine = TierEngine(
+        client=client,
+        provider=request.app.state.raw_primary,
+        cache=request.app.state.tier_cache,
+        settings=settings,
+    )
+    try:
+        return {"ok": True, **(await engine.generate_debug(ticker))}
+    except Exception as exc:
+        return {"ok": False, "error": f"{type(exc).__name__}: {exc}"}

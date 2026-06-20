@@ -96,13 +96,23 @@ async def test_screener_is_metric_first() -> None:
     assert calls.count("profile2") == 2
 
 
-async def test_http_error_becomes_provider_error() -> None:
+async def test_get_wraps_http_error_as_provider_error() -> None:
     def boom(_: httpx.Request) -> httpx.Response:
         return httpx.Response(403, json={"error": "premium only"})
 
     p = _provider(handler=boom)
     with pytest.raises(ProviderError):
-        await p._one_year_change("NVDA")
+        await p._get("/quote", symbol="NVDA")
+
+
+async def test_one_year_change_is_best_effort_on_error() -> None:
+    # A flaky/forbidden metric call returns None (not raise), so it never drops
+    # an otherwise-priceable ticker.
+    def boom(_: httpx.Request) -> httpx.Response:
+        return httpx.Response(403, json={"error": "premium only"})
+
+    p = _provider(handler=boom)
+    assert await p._one_year_change("NVDA") is None
 
 
 async def test_universe_is_candidate_set() -> None:

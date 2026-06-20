@@ -58,9 +58,9 @@ class TierEngine:
                 status=502,
             ) from exc
 
-        # 2. Ask Claude for structured output via forced tool use. Claude may
-        #    suggest any real US-listed ticker; we verify each below.
-        raw = await self._call_claude(
+        # 2. Ask Claude for structured output. Claude may suggest any real
+        #    US-listed ticker; we verify each below.
+        raw, _stop = await self._call_claude(
             ticker=ticker,
             name=hot.name,
             sector=hot.sector,
@@ -92,7 +92,7 @@ class TierEngine:
         name: str,
         sector: str,
         change_pct: float,
-    ) -> dict[str, Any]:
+    ) -> tuple[dict[str, Any], str | None]:
         user_message = build_user_message(
             ticker=ticker,
             name=name,
@@ -103,12 +103,14 @@ class TierEngine:
             # NOTE: tool_choice must be "auto" (not a forced tool) because adaptive
             # thinking is on — Anthropic rejects forced tool use while thinking is
             # enabled. The prompt instructs the model to answer only via the tool.
+            # max_tokens is generous: adaptive thinking consumes the budget too, so a
+            # small cap truncates the tool call (thesis present, entries empty).
             # The SDK's create() overloads use TypedDict unions; our dict literals
             # (tool with `strict`, system cache_control, output_config) are valid at
             # runtime but don't structurally match in strict mode — ignore at the boundary.
             resp = await self._client.messages.create(  # type: ignore[call-overload]
                 model=self._settings.tier_model,
-                max_tokens=4096,
+                max_tokens=16000,
                 thinking={"type": "adaptive"},
                 output_config={"effort": self._settings.tier_effort},
                 system=[
@@ -129,10 +131,11 @@ class TierEngine:
                 f"Tier engine error: {detail}", type="upstream_error", status=502
             ) from exc
 
+        stop_reason = getattr(resp, "stop_reason", None)
         for block in resp.content:
             if getattr(block, "type", None) == "tool_use" and block.name == "emit_tier_list":
                 # block.input is already a parsed object — never raw-string-match it.
-                return dict(block.input)
+                return dict(block.input), stop_reason
         raise AppError("Tier engine returned no result", type="upstream_error", status=502)
 
     async def _validate_entries(
@@ -173,3 +176,34 @@ class TierEngine:
 
         enriched = await asyncio.gather(*(enrich(tk, it) for tk, it in candidates.items()))
         return [e for e in enriched if e is not None]
+
+    async def generate_debug(self, hot_stock_ticker: str) -> dict[str, Any]:
+        """Diagnostic: report how many entries Claude returned vs. how many
+        survived market-data validation, and which tickers were dropped."""
+        ticker = hot_stock_ticker.upper()
+        hot = await self._provider.get_quote(ticker)
+        raw, stop_reason = await self._call_claude(
+            ticker=ticker,
+            name=hot.name,
+            sector=hot.sector,
+            change_pct=hot.one_year_change_pct,
+        )
+        raw_entries = raw.get("entries", [])
+        suggested = [
+            str(e.get("ticker", "")).upper()
+            for e in raw_entries
+            if isinstance(e, dict) and e.get("ticker")
+        ]
+        kept = await self._validate_entries(raw_entries, exclude=ticker)
+        kept_tickers = [e.ticker for e in kept]
+        dropped = [t for t in suggested if t not in kept_tickers and t != ticker]
+        return {
+            "ticker": ticker,
+            "thesisPresent": bool(str(raw.get("thesis", "")).strip()),
+            "stopReason": stop_reason,
+            "claudeEntryCount": len(raw_entries),
+            "suggested": suggested,
+            "keptCount": len(kept_tickers),
+            "kept": kept_tickers,
+            "dropped": dropped,
+        }

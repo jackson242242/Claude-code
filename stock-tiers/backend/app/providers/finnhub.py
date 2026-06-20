@@ -50,8 +50,15 @@ class FinnhubStockDataProvider(StockDataProvider):
             raise ProviderError(f"finnhub {path} failed: {exc}") from exc
 
     async def _one_year_change(self, ticker: str) -> float | None:
-        """Trailing-1yr return from the free basic-financials metric (a percent)."""
-        data = await self._get("/stock/metric", symbol=ticker, metric="all")
+        """Trailing-1yr return from the free basic-financials metric (a percent).
+
+        Best-effort: on any upstream error return None rather than raising, so a
+        flaky metric call doesn't drop an otherwise-priceable ticker.
+        """
+        try:
+            data = await self._get("/stock/metric", symbol=ticker, metric="all")
+        except ProviderError:
+            return None
         metric = data.get("metric") or {}
         raw = metric.get("52WeekPriceReturnDaily")
         if raw is None:
