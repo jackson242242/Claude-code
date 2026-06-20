@@ -102,10 +102,51 @@ TIER_TOOL: dict[str, Any] = {
 
 
 def build_user_message(*, ticker: str, name: str, sector: str, change_pct: float) -> str:
-    """Render the per-request user message."""
+    """Render the per-request user message (hot-stock mode)."""
     return USER_TEMPLATE.format(
         ticker=ticker,
         name=name,
         sector=sector,
         change_pct=f"{change_pct * 100:.0f}%",
+    )
+
+
+# Horizon shapes how candidates are ranked (thesis mode).
+HORIZON_GUIDANCE: dict[str, str] = {
+    "short": (
+        "short-term trading (weeks to a few months) — weight near-term catalysts, "
+        "momentum, and liquidity over deep value; favour the most direct, liquid "
+        "ways to express the thesis right now."
+    ),
+    "medium": (
+        "medium-term (6-18 months) — balance catalysts and momentum against "
+        "fundamentals and valuation."
+    ),
+    "long": (
+        "long-term investing (multi-year) — weight durable competitive advantage, "
+        "structural exposure to the thesis, and whether the thesis is already priced "
+        "in (valuation); a name that has already run up a lot may have less left."
+    ),
+}
+
+USER_THESIS_TEMPLATE = """\
+Investment thesis from the user:
+"{thesis}"
+
+Time horizon: {horizon_desc}
+
+There is no single "hot stock" here — the thesis itself is the anchor. Decompose
+this thesis into its key drivers, then list about 12-20 real US-listed stocks that
+let an investor express it — direct ways to play it AND cross-industry downstream /
+value-chain beneficiaries — each with its specific connection to the thesis. Rank
+the candidates into S-F for this time horizon; tier weaker links low (D/F) rather
+than omitting them, and do not return an empty list.
+"""
+
+
+def build_thesis_message(*, thesis: str, horizon: str) -> str:
+    """Render the per-request user message (thesis mode)."""
+    return USER_THESIS_TEMPLATE.format(
+        thesis=thesis.strip(),
+        horizon_desc=HORIZON_GUIDANCE.get(horizon, HORIZON_GUIDANCE["long"]),
     )

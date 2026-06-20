@@ -13,6 +13,7 @@ from pydantic.alias_generators import to_camel
 
 Tier = Literal["S", "A", "B", "C", "D", "F"]
 Relationship = Literal["alternative", "downstream"]
+Horizon = Literal["short", "medium", "long"]
 TIER_ORDER: tuple[Tier, ...] = ("S", "A", "B", "C", "D", "F")
 
 DISCLAIMER = (
@@ -49,6 +50,11 @@ class TierListRequest(ApiModel):
     hot_stock_ticker: str
 
 
+class ThesisRequest(ApiModel):
+    thesis: str
+    horizon: Horizon = "long"
+
+
 class TierEntry(ApiModel):
     ticker: str
     name: str
@@ -61,7 +67,8 @@ class TierEntry(ApiModel):
 
 
 class TierList(ApiModel):
-    hot_stock_ticker: str
+    # Set in hot-stock mode; None in thesis mode (the thesis itself is the anchor).
+    hot_stock_ticker: str | None = None
     thesis: str
     tiers: dict[Tier, list[TierEntry]]
     disclaimer: str

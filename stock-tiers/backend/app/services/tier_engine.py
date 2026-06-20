@@ -19,7 +19,12 @@ from app.errors import AppError
 from app.providers.base import ProviderError, StockDataProvider
 from app.schemas import DISCLAIMER, TIER_ORDER, Tier, TierEntry, TierList
 from app.services.tier_cache import TierCache
-from app.services.tier_prompt import TIER_SYSTEM_PROMPT, TIER_TOOL, build_user_message
+from app.services.tier_prompt import (
+    TIER_SYSTEM_PROMPT,
+    TIER_TOOL,
+    build_thesis_message,
+    build_user_message,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -60,45 +65,51 @@ class TierEngine:
 
         # 2. Ask Claude for structured output. Claude may suggest any real
         #    US-listed ticker; we verify each below.
-        raw, _stop = await self._call_claude(
-            ticker=ticker,
-            name=hot.name,
-            sector=hot.sector,
-            change_pct=hot.one_year_change_pct,
+        message = build_user_message(
+            ticker=ticker, name=hot.name, sector=hot.sector, change_pct=hot.one_year_change_pct
         )
+        raw, _stop = await self._call_claude(message)
 
         # 3. Validate + enrich every entry against the provider (priceable == real).
         thesis = str(raw.get("thesis", "")).strip()
         entries = await self._validate_entries(raw.get("entries", []), exclude=ticker)
 
+        result = self._assemble(hot_stock_ticker=ticker, thesis=thesis, entries=entries)
+        self._cache.set(ticker, model, result)
+        return result
+
+    async def generate_from_thesis(self, thesis_text: str, horizon: str) -> TierList:
+        """Thesis mode: the user's free-form thesis is the anchor (no hot stock)."""
+        model = self._settings.tier_model
+        cache_key = f"THESIS|{horizon}|{thesis_text.strip()}"
+        cached = self._cache.get(cache_key, model)
+        if cached is not None:
+            return cached
+
+        message = build_thesis_message(thesis=thesis_text, horizon=horizon)
+        raw, _stop = await self._call_claude(message)
+        thesis = str(raw.get("thesis", "")).strip() or thesis_text.strip()
+        entries = await self._validate_entries(raw.get("entries", []), exclude="")
+
+        result = self._assemble(hot_stock_ticker=None, thesis=thesis, entries=entries)
+        self._cache.set(cache_key, model, result)
+        return result
+
+    def _assemble(
+        self, *, hot_stock_ticker: str | None, thesis: str, entries: list[TierEntry]
+    ) -> TierList:
         tiers: dict[Tier, list[TierEntry]] = {t: [] for t in TIER_ORDER}
         for entry in entries:
             tiers[entry.tier].append(entry)
-
-        result = TierList(
-            hot_stock_ticker=ticker,
+        return TierList(
+            hot_stock_ticker=hot_stock_ticker,
             thesis=thesis,
             tiers=tiers,
             disclaimer=DISCLAIMER,
             generated_at=datetime.now(UTC).isoformat(),
         )
-        self._cache.set(ticker, model, result)
-        return result
 
-    async def _call_claude(
-        self,
-        *,
-        ticker: str,
-        name: str,
-        sector: str,
-        change_pct: float,
-    ) -> tuple[dict[str, Any], str | None]:
-        user_message = build_user_message(
-            ticker=ticker,
-            name=name,
-            sector=sector,
-            change_pct=change_pct,
-        )
+    async def _call_claude(self, user_message: str) -> tuple[dict[str, Any], str | None]:
         try:
             # NOTE: tool_choice must be "auto" (not a forced tool) because adaptive
             # thinking is on — Anthropic rejects forced tool use while thinking is
@@ -182,12 +193,10 @@ class TierEngine:
         survived market-data validation, and which tickers were dropped."""
         ticker = hot_stock_ticker.upper()
         hot = await self._provider.get_quote(ticker)
-        raw, stop_reason = await self._call_claude(
-            ticker=ticker,
-            name=hot.name,
-            sector=hot.sector,
-            change_pct=hot.one_year_change_pct,
+        message = build_user_message(
+            ticker=ticker, name=hot.name, sector=hot.sector, change_pct=hot.one_year_change_pct
         )
+        raw, stop_reason = await self._call_claude(message)
         raw_entries = raw.get("entries", [])
         suggested = [
             str(e.get("ticker", "")).upper()

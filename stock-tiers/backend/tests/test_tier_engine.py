@@ -123,3 +123,18 @@ async def test_second_call_is_cache_hit(engine: TierEngine) -> None:
     await engine.generate("NVDA")
     await engine.generate("NVDA")
     assert engine._client.messages.calls == 1  # type: ignore[attr-defined]
+
+
+async def test_generate_from_thesis(engine: TierEngine) -> None:
+    result = await engine.generate_from_thesis("AI compute buildout", "long")
+    assert result.hot_stock_ticker is None  # thesis mode has no hot stock
+    tickers = {e.ticker for bucket in result.tiers.values() for e in bucket}
+    assert tickers  # populated
+    assert "FAKECO" not in tickers  # bogus ticker still dropped
+    assert "not financial advice" in result.disclaimer.lower()
+
+
+async def test_thesis_second_call_is_cache_hit(engine: TierEngine) -> None:
+    await engine.generate_from_thesis("AI compute buildout", "long")
+    await engine.generate_from_thesis("AI compute buildout", "long")
+    assert engine._client.messages.calls == 1  # type: ignore[attr-defined]

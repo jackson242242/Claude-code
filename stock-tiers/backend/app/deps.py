@@ -51,3 +51,22 @@ def get_tier_engine(request: Request) -> TierEngineProtocol:
         cache=request.app.state.tier_cache,
         settings=settings,
     )
+
+
+def get_claude_engine(request: Request) -> TierEngine:
+    """Thesis mode requires real Claude (the mock engine can't reason about a
+    free-form thesis), so this dependency hard-requires ANTHROPIC_API_KEY."""
+    settings = get_settings()
+    if not settings.anthropic_api_key:
+        raise AppError(
+            "Thesis mode needs ANTHROPIC_API_KEY",
+            type="not_configured",
+            status=503,
+        )
+    client = anthropic.AsyncAnthropic(api_key=settings.anthropic_api_key)
+    return TierEngine(
+        client=client,
+        provider=cast(StockDataProvider, request.app.state.raw_primary),
+        cache=request.app.state.tier_cache,
+        settings=settings,
+    )
