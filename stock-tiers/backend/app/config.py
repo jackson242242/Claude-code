@@ -31,6 +31,10 @@ class Settings(BaseSettings):
 
     resilient_fallback: bool = True
 
+    # If set to a directory containing a built web app (Expo web export), the API
+    # also serves it at "/" (single-service "one URL" deploy). Unset in dev.
+    static_web_dir: str | None = None
+
     # Comma-separated allowed CORS origins. "*" allows all (default, dev-friendly).
     # Bare hosts (no scheme) are normalized to https:// for the deployed web app.
     cors_origins: str = "*"

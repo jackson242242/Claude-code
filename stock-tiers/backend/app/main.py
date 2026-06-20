@@ -2,11 +2,13 @@
 
 from __future__ import annotations
 
+import os
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 from app.config import get_settings
 from app.errors import register_exception_handlers
@@ -47,6 +49,12 @@ def create_app() -> FastAPI:
     @app.get("/health", tags=["meta"])
     async def health() -> dict[str, str]:
         return {"status": "ok"}
+
+    # Single-service "one URL" deploy: also serve the built web app at "/".
+    # API routes above take precedence (registered first); this catches the rest.
+    static_dir = get_settings().static_web_dir
+    if static_dir and os.path.isdir(static_dir):
+        app.mount("/", StaticFiles(directory=static_dir, html=True), name="web")
 
     return app
 

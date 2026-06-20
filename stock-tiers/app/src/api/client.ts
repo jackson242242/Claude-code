@@ -13,13 +13,16 @@ export class ApiError extends Error {
 }
 
 const getBaseUrl = (): string => {
-  // EXPO_PUBLIC_* vars are string-inlined into the bundle at build time (web and
-  // native). Render sets this from the API service host. Bare host -> https.
-  const raw = (process.env.EXPO_PUBLIC_API_BASE_URL ?? "http://localhost:8000").trim();
-  if (raw && !raw.includes("://")) {
-    return `https://${raw}`;
+  // EXPO_PUBLIC_* vars are string-inlined into the bundle at build time.
+  const raw = (process.env.EXPO_PUBLIC_API_BASE_URL ?? "").trim();
+  if (raw) {
+    // Bare host (Render fromService injection) -> default to https.
+    return raw.includes("://") ? raw : `https://${raw}`;
   }
-  return raw;
+  // Unset: same-origin on web (the combined single-service deploy serves the
+  // web app and the API from one host, so "" makes fetch("/api/...") relative);
+  // fall back to localhost for native dev.
+  return typeof window !== "undefined" ? "" : "http://localhost:8000";
 };
 
 /**
