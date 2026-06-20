@@ -30,12 +30,19 @@ def _tier_engine_mode() -> tuple[str, str | None]:
 
 @router.get("/providers")
 async def providers(request: Request) -> dict[str, Any]:
+    settings = get_settings()
     is_real = bool(getattr(request.app.state, "stock_is_real", False))
     engine, model = _tier_engine_mode()
     return {
         "stock": "finnhub" if is_real else "mock",
         "tierEngine": engine,
         "model": model,
+        # Diagnostics so misconfig is obvious without exposing secrets:
+        # if stock=="mock" check these — STOCK_PROVIDER must be "finnhub" AND
+        # finnhubKeyPresent must be true.
+        "stockProviderSetting": settings.stock_provider,
+        "finnhubKeyPresent": bool(settings.finnhub_api_key),
+        "anthropicKeyPresent": bool(settings.anthropic_api_key),
     }
 
 

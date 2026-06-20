@@ -17,6 +17,8 @@ def client() -> TestClient:
     app.dependency_overrides[get_stock_provider] = lambda: provider
     # Provide app.state bits normally set by lifespan (lifespan isn't run here).
     app.state.stock_provider = provider
+    app.state.raw_primary = provider  # tier engine enriches via the raw provider
+    app.state.stock_is_real = False
     return TestClient(app)
 
 

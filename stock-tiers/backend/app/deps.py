@@ -25,7 +25,10 @@ def get_settings_dep() -> Settings:
 
 def get_tier_engine(request: Request) -> TierEngineProtocol:
     settings = get_settings()
-    provider = cast(StockDataProvider, request.app.state.stock_provider)
+    # Use the RAW provider (not the resilient/cached wrapper) for tier enrichment:
+    # prices must be real-or-dropped, never silently backfilled with mock values.
+    # The whole tier list is cached 24h, so this isn't a per-request cost.
+    provider = cast(StockDataProvider, request.app.state.raw_primary)
 
     use_claude = settings.tier_provider == "claude" or (
         settings.tier_provider == "auto" and bool(settings.anthropic_api_key)

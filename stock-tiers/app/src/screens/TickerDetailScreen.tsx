@@ -44,7 +44,7 @@ export const TickerDetailScreen = ({ route }: Props) => {
           {tier ? (
             <View style={styles.card}>
               <Field label="Tier" value={tier} />
-              {rationale ? <Field label="Why it fits the thesis" value={rationale} /> : null}
+              {rationale ? <Field label="How it's connected" value={rationale} /> : null}
               {tierJustification ? (
                 <Field label="Why this tier" value={tierJustification} />
               ) : null}

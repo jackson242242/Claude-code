@@ -16,7 +16,7 @@ import anthropic
 
 from app.config import Settings
 from app.errors import AppError
-from app.providers.base import StockDataProvider
+from app.providers.base import ProviderError, StockDataProvider
 from app.schemas import DISCLAIMER, TIER_ORDER, Tier, TierEntry, TierList
 from app.services.tier_cache import TierCache
 from app.services.tier_prompt import TIER_SYSTEM_PROMPT, TIER_TOOL, build_user_message
@@ -48,24 +48,28 @@ class TierEngine:
         if cached is not None:
             return cached
 
-        # 1. Enrich the hot stock and constrain the model to the real universe.
-        hot = await self._provider.get_quote(ticker)
-        universe = await self._provider.get_universe()
+        # 1. Look up the hot stock from the real market-data provider.
+        try:
+            hot = await self._provider.get_quote(ticker)
+        except ProviderError as exc:
+            raise AppError(
+                "Couldn't fetch the hot stock from market data",
+                type="upstream_error",
+                status=502,
+            ) from exc
 
-        # 2. Ask Claude for structured output via forced tool use.
+        # 2. Ask Claude for structured output via forced tool use. Claude may
+        #    suggest any real US-listed ticker; we verify each below.
         raw = await self._call_claude(
             ticker=ticker,
             name=hot.name,
             sector=hot.sector,
             change_pct=hot.one_year_change_pct,
-            universe=universe,
         )
 
-        # 3. Validate + enrich every entry against the provider.
+        # 3. Validate + enrich every entry against the provider (priceable == real).
         thesis = str(raw.get("thesis", "")).strip()
-        entries = await self._validate_entries(
-            raw.get("entries", []), universe=universe, exclude=ticker
-        )
+        entries = await self._validate_entries(raw.get("entries", []), exclude=ticker)
 
         tiers: dict[Tier, list[TierEntry]] = {t: [] for t in TIER_ORDER}
         for entry in entries:
@@ -88,14 +92,12 @@ class TierEngine:
         name: str,
         sector: str,
         change_pct: float,
-        universe: set[str],
     ) -> dict[str, Any]:
         user_message = build_user_message(
             ticker=ticker,
             name=name,
             sector=sector,
             change_pct=change_pct,
-            universe=universe,
         )
         try:
             # The SDK's create() overloads use TypedDict unions; our dict literals
@@ -128,9 +130,12 @@ class TierEngine:
         raise AppError("Tier engine returned no result", type="upstream_error", status=502)
 
     async def _validate_entries(
-        self, raw_entries: list[Any], *, universe: set[str], exclude: str
+        self, raw_entries: list[Any], *, exclude: str
     ) -> list[TierEntry]:
-        # De-dup, drop the hot stock itself and anything not priceable.
+        # De-dup and drop the hot stock itself. Validity is decided by whether the
+        # ticker is priceable by the real provider below — NOT by a fixed list — so
+        # Claude can recommend any real US-listed ticker, while invented/delisted
+        # ones (which can't be priced) are dropped.
         candidates: dict[str, dict[str, Any]] = {}
         for item in raw_entries:
             if not isinstance(item, dict):
@@ -138,7 +143,7 @@ class TierEngine:
             tk = str(item.get("ticker", "")).upper()
             tier = item.get("tier")
             rel = item.get("relationship")
-            if not tk or tk == exclude or tk not in universe:
+            if not tk or tk == exclude:
                 continue
             if tier not in _VALID_TIERS or rel not in _VALID_RELATIONSHIPS:
                 continue
@@ -147,8 +152,8 @@ class TierEngine:
         async def enrich(tk: str, item: dict[str, Any]) -> TierEntry | None:
             try:
                 detail = await self._provider.get_quote(tk)
-            except AppError:
-                return None  # not priceable -> drop (anti-hallucination)
+            except (AppError, ProviderError):
+                return None  # not priceable / upstream error -> drop (anti-hallucination)
             return TierEntry(
                 ticker=detail.ticker,
                 name=detail.name,

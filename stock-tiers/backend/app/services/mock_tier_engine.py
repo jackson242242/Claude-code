@@ -13,7 +13,7 @@ import asyncio
 from datetime import UTC, datetime
 
 from app.errors import AppError
-from app.providers.base import StockDataProvider
+from app.providers.base import ProviderError, StockDataProvider
 from app.providers.seed_data import SEED_UNIVERSE
 from app.schemas import (
     DISCLAIMER,
@@ -93,7 +93,7 @@ class MockTierEngine:
         async def enrich(tk: str, tier: Tier, rel: Relationship) -> TierEntry | None:
             try:
                 detail = await self._provider.get_quote(tk)
-            except AppError:
+            except (AppError, ProviderError):
                 return None
             return TierEntry(
                 ticker=detail.ticker,
@@ -139,10 +139,19 @@ def _bucket(score: float) -> Tier:
 
 
 def _rationale(name: str, sector: str, rel: Relationship) -> str:
+    # Honest about being heuristic: the mock engine only knows sector + momentum,
+    # NOT real business relationships. Set ANTHROPIC_API_KEY for Claude-reasoned,
+    # concretely-explained connections.
     if rel == "alternative":
-        return f"{name} is a direct {sector} peer expressing the same thesis."
-    return f"{name} benefits downstream from the same trend via {sector}."
+        return (
+            f"Same sector ({sector}) — illustrative peer only (offline mock data, "
+            f"not a verified business relationship)."
+        )
+    return (
+        f"Adjacent sector ({sector}) — illustrative thematic link only (offline mock "
+        f"data, not a verified value-chain connection)."
+    )
 
 
 def _justification(tier: Tier, change: float) -> str:
-    return f"Tier {tier} on sector fit and a {change * 100:+.0f}% one-year move."
+    return f"Tier {tier}: heuristic sector fit + a {change * 100:+.0f}% one-year move (mock)."
