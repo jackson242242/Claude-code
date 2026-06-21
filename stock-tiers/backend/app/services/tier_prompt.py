@@ -20,7 +20,11 @@ US-investable stocks that express the same thesis.
 Method:
 1. Thesis: state the core driver(s) in 1-2 sentences and where it sits in the AI
    stack (infrastructure / model / application / ecosystem) and what physical or
-   economic dependencies it pulls.
+   economic dependencies it pulls. When a web_search tool is available, USE IT to
+   verify current facts before finalizing — who invested in / owns whom (for the
+   private->public proxies), recent valuations, whether a name has already run up a
+   lot, and the latest on any policy / geopolitics / macro thesis. Don't rely only
+   on memory for time-sensitive claims.
 2. Map the value chain in LAYERS, walking across industries:
    - UPSTREAM / enablers: foundry, memory, equipment, optics, power, etc.
    - PEERS / alternatives: same business model or same direct exposure, including
@@ -113,6 +117,13 @@ TIER_TOOL: dict[str, Any] = {
         },
         "required": ["thesis", "entries"],
     },
+}
+
+# Anthropic server-side web search (dynamic-filtering variant, Opus 4.6+/Sonnet 4.6).
+WEB_SEARCH_TOOL: dict[str, Any] = {
+    "type": "web_search_20260209",
+    "name": "web_search",
+    "max_uses": 5,
 }
 
 

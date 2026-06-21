@@ -23,6 +23,9 @@ class Settings(BaseSettings):
     # auto: use Claude when a key is set, else the deterministic mock engine.
     tier_provider: Literal["auto", "mock", "claude"] = "auto"
     tier_model: str = "claude-opus-4-8"
+    # Let Claude use web search to ground picks in current facts (set false to
+    # disable, e.g. to cut latency/cost or if the account lacks the tool).
+    tier_web_search: bool = True
     tier_effort: Literal["low", "medium", "high"] = "high"
 
     quote_cache_ttl: int = 60

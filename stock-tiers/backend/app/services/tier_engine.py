@@ -22,6 +22,7 @@ from app.services.tier_cache import TierCache
 from app.services.tier_prompt import (
     TIER_SYSTEM_PROMPT,
     TIER_TOOL,
+    WEB_SEARCH_TOOL,
     build_thesis_message,
     build_user_message,
 )
@@ -30,6 +31,8 @@ logger = logging.getLogger(__name__)
 
 _VALID_TIERS = set(TIER_ORDER)
 _VALID_RELATIONSHIPS = {"alternative", "downstream"}
+# Max model turns to allow for the web-search (pause_turn) loop before giving up.
+_MAX_TURNS = 6
 
 
 class TierEngine:
@@ -110,40 +113,53 @@ class TierEngine:
         )
 
     async def _call_claude(self, user_message: str) -> tuple[dict[str, Any], str | None]:
-        try:
-            # NOTE: tool_choice must be "auto" (not a forced tool) because adaptive
-            # thinking is on — Anthropic rejects forced tool use while thinking is
-            # enabled. The prompt instructs the model to answer only via the tool.
-            # max_tokens is generous: adaptive thinking consumes the budget too, so a
-            # small cap truncates the tool call (thesis present, entries empty).
-            # The SDK's create() overloads use TypedDict unions; our dict literals
-            # (tool with `strict`, system cache_control, output_config) are valid at
-            # runtime but don't structurally match in strict mode — ignore at the boundary.
-            resp = await self._client.messages.create(  # type: ignore[call-overload]
-                model=self._settings.tier_model,
-                max_tokens=16000,
-                thinking={"type": "adaptive"},
-                output_config={"effort": self._settings.tier_effort},
-                system=[
-                    {
-                        "type": "text",
-                        "text": TIER_SYSTEM_PROMPT,
-                        "cache_control": {"type": "ephemeral"},
-                    }
-                ],
-                tools=[TIER_TOOL],
-                tool_choice={"type": "auto"},
-                messages=[{"role": "user", "content": user_message}],
-            )
-        except anthropic.APIError as exc:  # typed SDK error chain
-            detail = (getattr(exc, "message", "") or str(exc))[:300]
-            logger.warning("anthropic call failed: %s", exc)
-            raise AppError(
-                f"Tier engine error: {detail}", type="upstream_error", status=502
-            ) from exc
+        # tool_choice must be "auto" (not forced) because adaptive thinking is on —
+        # Anthropic rejects forced tool use while thinking is enabled. With web
+        # search (a server tool) the model may search across several turns and
+        # return stop_reason="pause_turn"; re-send the accumulated content until it
+        # finishes and calls emit_tier_list. max_tokens is generous because adaptive
+        # thinking shares the budget (a small cap truncates the tool call).
+        tools: list[Any] = [TIER_TOOL]
+        if self._settings.tier_web_search:
+            tools = [WEB_SEARCH_TOOL, TIER_TOOL]
+
+        messages: list[dict[str, Any]] = [{"role": "user", "content": user_message}]
+        resp = None
+        for _ in range(_MAX_TURNS):
+            try:
+                # The SDK's create() overloads use TypedDict unions; our dict literals
+                # are valid at runtime but don't match in strict mode — ignore here.
+                resp = await self._client.messages.create(  # type: ignore[call-overload]
+                    model=self._settings.tier_model,
+                    max_tokens=16000,
+                    thinking={"type": "adaptive"},
+                    output_config={"effort": self._settings.tier_effort},
+                    system=[
+                        {
+                            "type": "text",
+                            "text": TIER_SYSTEM_PROMPT,
+                            "cache_control": {"type": "ephemeral"},
+                        }
+                    ],
+                    tools=tools,
+                    tool_choice={"type": "auto"},
+                    messages=messages,
+                )
+            except anthropic.APIError as exc:  # typed SDK error chain
+                detail = (getattr(exc, "message", "") or str(exc))[:300]
+                logger.warning("anthropic call failed: %s", exc)
+                raise AppError(
+                    f"Tier engine error: {detail}", type="upstream_error", status=502
+                ) from exc
+
+            if getattr(resp, "stop_reason", None) == "pause_turn":
+                # Server tool (web search) paused mid-loop — continue it.
+                messages.append({"role": "assistant", "content": resp.content})
+                continue
+            break
 
         stop_reason = getattr(resp, "stop_reason", None)
-        for block in resp.content:
+        for block in resp.content if resp is not None else []:
             if getattr(block, "type", None) == "tool_use" and block.name == "emit_tier_list":
                 # block.input is already a parsed object — never raw-string-match it.
                 return dict(block.input), stop_reason
