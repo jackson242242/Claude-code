@@ -8,8 +8,13 @@ import { TurnReportModal } from '@/components/TurnReportModal';
 import { FinalScreen } from '@/components/FinalScreen';
 import { readyMatch, sendMatchCommands } from '@/services/api';
 import { useMatchPoll } from '@/hooks/useMatchPoll';
+import { getLocale, tStandalone } from '@/i18n/standalone';
+import { clearKeys } from '@/lib/session';
 import { voice } from '@/lib/voice';
 import type { Command, FinalResult, TurnReport } from '@/types';
+
+// Match-specific localStorage keys (mirrors page.tsx constants — stable strings)
+const MATCH_SESSION_KEYS = ['skyempire.matchCode', 'skyempire.matchPlayerId'] as const;
 
 type MatchActiveProps = {
   code: string;
@@ -26,6 +31,9 @@ type MatchActiveProps = {
  *   - GameScreen (reused directly with view.you as the GameState)
  *   - TurnReportModal (shown on each settled turn)
  * GameScreen's "下一季度" button is replaced by "准备结算" via matchMode prop.
+ * S5: Shows a localized "room expired" screen on 404 (server restart) and
+ *     proactively clears match session keys so a page refresh doesn't loop
+ *     back into the same dead room.
  */
 export const MatchActive = ({
   code,
@@ -33,11 +41,19 @@ export const MatchActive = ({
   onFinished,
   onLeave,
 }: MatchActiveProps) => {
-  const { view, error: pollError } = useMatchPoll(code, playerId);
+  const { view, error: pollError, roomGone } = useMatchPoll(code, playerId);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [report, setReport] = useState<TurnReport | null>(null);
   const prevTurnRef = useRef<number | null>(null);
+
+  // S5: When the room is gone (404 → server restart), clear match session keys
+  // immediately so a page refresh doesn't cycle back into the same dead room.
+  useEffect(() => {
+    if (roomGone) {
+      clearKeys(MATCH_SESSION_KEYS);
+    }
+  }, [roomGone]);
 
   const run = useCallback(async (task: () => Promise<void>) => {
     setBusy(true);
@@ -87,6 +103,28 @@ export const MatchActive = ({
       }),
     [run, code, playerId],
   );
+
+  // S5: Room not found (404 / server restart) — show localized expired screen.
+  if (roomGone) {
+    const locale = getLocale();
+    return (
+      <main
+        data-testid="match-room-expired"
+        className="flex h-dvh flex-col items-center justify-center gap-4 px-4 text-center"
+      >
+        <p className="max-w-sm text-sm text-amber-300">
+          {tStandalone(locale, 'match.room.expired')}
+        </p>
+        <button
+          type="button"
+          onClick={onLeave}
+          className="rounded bg-cyan-800 px-4 py-2 text-sm font-semibold text-white hover:bg-cyan-700"
+        >
+          {tStandalone(locale, 'match.back')}
+        </button>
+      </main>
+    );
+  }
 
   if (!view) {
     return (

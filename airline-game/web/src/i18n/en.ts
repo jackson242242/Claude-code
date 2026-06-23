@@ -435,6 +435,9 @@ const en: Dict = {
   // ── S1 session recovery ──────────────────────────────────────────────────
   'session.expired': 'Your saved game expired (the server may have restarted). Returned to the start screen — just begin a new game.',
 
+  // ── S5 multiplayer room expiry ────────────────────────────────────────────
+  'match.room.expired': 'The multiplayer room expired (server may have restarted). Return to the menu to create or join a new room.',
+
   // ── S2 cold-start friendly state ─────────────────────────────────────────
   'server.waking': 'Waking the server… (free instance was asleep, ~30s — hang tight)',
 

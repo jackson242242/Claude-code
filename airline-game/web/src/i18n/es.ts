@@ -436,6 +436,9 @@ const es: Dict = {
   // ── S1 recuperación de sesión ────────────────────────────────────────────
   'session.expired': 'Tu partida guardada caducó (el servidor pudo reiniciarse). Volviste a la pantalla de inicio; solo empieza una nueva partida.',
 
+  // ── S5 sala multijugador expirada ────────────────────────────────────────
+  'match.room.expired': 'La sala multijugador expiró (el servidor puede haber reiniciado). Vuelve al menú para crear o unirte a una nueva sala.',
+
   // ── S2 estado de arranque en frío ────────────────────────────────────────
   'server.waking': 'Despertando el servidor… (la instancia gratuita estaba en reposo, ~30 s, espera un momento)',
 
@@ -446,3 +449,4 @@ const es: Dict = {
 };
 
 export default es;
+

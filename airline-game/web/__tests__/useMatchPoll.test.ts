@@ -196,6 +196,39 @@ describe('useMatchPoll — error handling', () => {
     expect(result.current.error).toBe('Network error');
     expect(result.current.view).toBeNull();
   });
+
+  it('sets roomGone true when server returns 404 (S5 room expiry)', async () => {
+    mockFetch.mockResolvedValueOnce({
+      ok: false,
+      status: 404,
+      json: async () => ({ error: { message: 'match not found: TEST01', type: 'not_found' } }),
+    } as Response);
+
+    const { result } = renderHook(() => useMatchPoll('TEST01', 'p1'));
+    await act(async () => { await Promise.resolve(); });
+
+    expect(result.current.roomGone).toBe(true);
+    expect(result.current.error).toBeTruthy();
+  });
+
+  it('stops polling permanently after 404 room gone (S5)', async () => {
+    mockFetch.mockResolvedValue({
+      ok: false,
+      status: 404,
+      json: async () => ({ error: { message: 'match not found: TEST01', type: 'not_found' } }),
+    } as Response);
+
+    renderHook(() => useMatchPoll('TEST01', 'p1'));
+    await act(async () => { await Promise.resolve(); });
+    expect(mockFetch).toHaveBeenCalledTimes(1);
+
+    // Advance well beyond poll interval — must NOT poll again when room is gone
+    await act(async () => {
+      jest.advanceTimersByTime(6000);
+      await Promise.resolve();
+    });
+    expect(mockFetch).toHaveBeenCalledTimes(1);
+  });
 });
 
 describe('useMatchPoll — cleanup', () => {
