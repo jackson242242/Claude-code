@@ -139,11 +139,12 @@
   本仓库 → 本分支 → Apply（提示时粘 ANTHROPIC_API_KEY 或留空）；部署完把
   GitHub Secrets INGEST_URL（完整端点 URL）/INGEST_TOKEN（从 skyempire-api
   Environment 页复制）配上即激活新闻管道。
-- [ ] **素材本地化（白名单已开，下个会话执行）**：老板已加 wikimedia 两域名
-  （2026-06-12 23:17 确认；对新会话生效，本会话实测仍 403）。下个会话开场即做：
-  下载 43 张图（19 机型+24 城市）进 web/public、逐张校验、manifests 改本地路径、
-  补全署名。建议老板顺手把 `*.onrender.com` 也加进白名单，部署后我才能亲自跑
-  线上冒烟（否则只能老板自己点开网址验证）。
+- [x] **素材本地化**（2026-06-25，/airline-cycle）：从 Wikimedia Commons 下载
+  19 机型 + 24 城市共 43 张图，存入 web/public/planes/ 和 web/public/cities/；
+  aircraft-images.json 与 city-images.json 改用本地路径（/planes/{id}.jpg，
+  /cities/{id}.jpg），保留 filePage 署名链接。api 468 测 + web 428 测（43 套）
+  全绿；lint/typecheck/build 通过；根项目 typecheck 无回归。commit 64943a9d。
+  建议老板顺手把 `*.onrender.com` 也加进白名单，部署后方可亲自跑线上冒烟。
 
 ## 红线（每轮必守）
 - 门禁：api `pytest` ＋ web `lint/typecheck/test/build` 全绿才算完成；
