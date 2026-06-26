@@ -41,6 +41,9 @@ def get_service() -> GameService:
     # V3.7: load the decision event pool.
     decision_pool = load_decisions()
     store = _make_store()
+    # S6: honour MAX_GAMES env var (default 500) to cap memory usage.
+    max_games = int(os.environ.get("MAX_GAMES", "500"))
     return GameService(
-        world, repository=store, event_pool=event_pool, decision_pool=decision_pool
+        world, repository=store, event_pool=event_pool, decision_pool=decision_pool,
+        max_games=max_games,
     )

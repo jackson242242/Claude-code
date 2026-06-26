@@ -87,6 +87,25 @@ class TestMemoryStore:
         store.save(state)
         assert store.get(state.id).cash == 999.0
 
+    def test_count_empty_store(self):
+        store = MemoryStore()
+        assert store.count() == 0
+
+    def test_count_after_add(self, world):
+        store = MemoryStore()
+        store.add(_fresh_game(world, game_id="g-a"))
+        assert store.count() == 1
+        store.add(_fresh_game(world, game_id="g-b"))
+        assert store.count() == 2
+
+    def test_count_unchanged_by_save(self, world):
+        store = MemoryStore()
+        state = _fresh_game(world)
+        store.add(state)
+        state.cash = 1.0
+        store.save(state)
+        assert store.count() == 1
+
 
 # ---------------------------------------------------------------------------
 # state_to_dict / state_from_dict round-trip
@@ -290,6 +309,17 @@ class TestJsonFileStore:
         store2 = JsonFileStore(path)
         for gid in ids:
             assert store2.get(gid) is not None
+
+    def test_count_empty_store(self, tmp_path):
+        store = JsonFileStore(tmp_path / "games.json")
+        assert store.count() == 0
+
+    def test_count_after_add(self, tmp_path, world):
+        store = JsonFileStore(tmp_path / "games.json")
+        store.add(_fresh_game(world, game_id=store.next_id()))
+        assert store.count() == 1
+        store.add(_fresh_game(world, game_id=store.next_id()))
+        assert store.count() == 2
 
 
 # ---------------------------------------------------------------------------

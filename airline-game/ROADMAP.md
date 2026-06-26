@@ -124,12 +124,23 @@
 - [x] **S3 冒烟探针扩面**（2026-06-13）：线上 smoke 增加每周挑战（seed=weekId 校验）
   + 排行榜 + 双人对战最小流（建房→加入→开始→双方开航→就绪结算），每次推送回归
   覆盖 V3.3/V3.4，不再只测单人。
+- [x] **S4 全局错误边界**（已实现，2026-06-26 补录）：React `ErrorBoundary` 类组件
+  捕获渲染期未处理异常 → 显示三语「哎呀出了点状况」降级画面 + 「重开一局」按钮；
+  `tStandalone` 绕过 React context 独立读 locale；套在 `layout.tsx` 根级防止整页白屏。
+  web 三语词条 `boundary.title/body/restart` 全配；`ErrorBoundary.test.tsx` 覆盖
+  抛错→降级→重置完整流程。（实现时漏记 ROADMAP，本轮补录。）
 - [x] **S5 多人房间优雅失效**（2026-06-23，/airline-cycle）：采用「优雅失效」方案——
   useMatchPoll 新增 `roomGone` flag（404 时置 true，停止轮询）；MatchActive 检测
   roomGone → 立即清 matchCode/matchPlayerId 两个 localStorage 键（防刷新回死房间）
   → 展示三语「房间已失效，请返回主菜单新建或加入」提示 + 返回按钮；i18n 新增
   `match.room.expired` 中/英/西三语词条。api 测试数不变（无后端改动）；
   web 新增 2 测（roomGone 置位 + 轮询停止），全绿（commit 08e2e0c）。
+- [x] **S6 游戏数量上限保护**（2026-06-26，/airline-cycle）：`AbstractStore.count()`
+  抽象方法 + MemoryStore/JsonFileStore/PostgresStore 三实现；`GameService.max_games`
+  参数（默认 500，可由 `MAX_GAMES` 环境变量覆盖）；`create_game`/`create_weekly_game`
+  超限时抛 `ServiceUnavailableError` → FastAPI 全局处理器返回 503；防止免费实例因
+  无限游戏累积导致 OOM。api 475 测全绿（+7：count 测 ×5 + 503 测 ×2）；
+  web 428 测 + lint/typecheck/build 无回归。
 
 ## 待办（按序取最上面一条可做的）
 - [ ] **M5.2 Render 部署（只剩老板 4 次点击）**：agent 侧全部就绪（2026-06-13）——

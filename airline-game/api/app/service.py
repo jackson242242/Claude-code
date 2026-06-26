@@ -33,6 +33,10 @@ class InvalidInputError(Exception):
     pass
 
 
+class ServiceUnavailableError(Exception):
+    pass
+
+
 # ---------------------------------------------------------------------------
 # Legacy shim — kept so existing tests that import GameRepository still work.
 # ---------------------------------------------------------------------------
@@ -42,6 +46,9 @@ class GameRepository(MemoryStore):
     """Backward-compatible alias for MemoryStore (used by older tests)."""
 
 
+_DEFAULT_MAX_GAMES = 500
+
+
 class GameService:
     def __init__(
         self,
@@ -49,6 +56,7 @@ class GameService:
         repository: AbstractStore | None = None,
         event_pool: list[GameEvent] | None = None,
         decision_pool: list[DecisionEvent] | None = None,
+        max_games: int = _DEFAULT_MAX_GAMES,
     ) -> None:
         self.world = world
         # Accept both the old GameRepository and the new AbstractStore subclasses.
@@ -59,6 +67,8 @@ class GameService:
         # V3.7: the decision event pool passed to settle_turn on every end-turn call.
         # None here means "use the global default pool" (loaded by app.data.load_decisions).
         self._decision_pool = decision_pool
+        # S6: upper bound on simultaneous in-memory games (default 500).
+        self._max_games = max_games
 
     def create_game(self, airline_name: str, hq_city_id: str) -> GameState:
         name = airline_name.strip()
@@ -67,6 +77,10 @@ class GameService:
         hq_city = self.world.cities.get(hq_city_id)
         if hq_city is None:
             raise InvalidInputError(f"unknown city: {hq_city_id}")
+        if self.repository.count() >= self._max_games:
+            raise ServiceUnavailableError(
+                f"服务器游戏数量已达上限（{self._max_games}），请稍后重试"
+            )
         state = new_game(self.repository.next_id(), name, hq_city)
         self.repository.add(state)  # add() also persists for file/pg stores
         return state
@@ -80,6 +94,10 @@ class GameService:
         hq_city = self.world.cities.get(hq_city_id)
         if hq_city is None:
             raise InvalidInputError(f"unknown city: {hq_city_id}")
+        if self.repository.count() >= self._max_games:
+            raise ServiceUnavailableError(
+                f"服务器游戏数量已达上限（{self._max_games}），请稍后重试"
+            )
         state = new_game(self.repository.next_id(), name, hq_city)
         # Override V3.4 fields: seed = weekId so all participants draw the same events.
         state.seed = week_id

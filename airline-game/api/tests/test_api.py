@@ -212,3 +212,64 @@ class TestBankruptcyPath:
 
         # The state remains fetchable for the post-mortem.
         assert client.get(f"/api/games/{game_id}").json()["status"] == "bankrupt"
+
+
+# ---------------------------------------------------------------------------
+# S6 — game count limit (prevents OOM on free-tier servers)
+# ---------------------------------------------------------------------------
+
+
+class TestGameCountLimit:
+    """S6: POST /api/games returns 503 when the store has reached MAX_GAMES."""
+
+    def test_create_game_503_when_at_limit(self):
+        from app.data import load_decisions, load_events, load_world
+        from app.deps import get_service
+        from app.service import GameService
+        from app.store import MemoryStore
+
+        world = load_world()
+        store = MemoryStore()
+        limited_service = GameService(
+            world,
+            repository=store,
+            event_pool=load_events(),
+            decision_pool=load_decisions(),
+            max_games=1,
+        )
+        # Fill the store to the limit first.
+        limited_service.create_game("First Air", "nyc")
+
+        app.dependency_overrides[get_service] = lambda: limited_service
+        try:
+            c = TestClient(app, raise_server_exceptions=False)
+            resp = c.post("/api/games", json={"airlineName": "Over Limit", "hqCityId": "lax"})
+            assert resp.status_code == 503
+            body = resp.json()
+            assert body["error"]["type"] == "service_unavailable"
+        finally:
+            app.dependency_overrides.clear()
+
+    def test_create_game_succeeds_when_under_limit(self):
+        from app.data import load_decisions, load_events, load_world
+        from app.deps import get_service
+        from app.service import GameService
+        from app.store import MemoryStore
+
+        world = load_world()
+        store = MemoryStore()
+        limited_service = GameService(
+            world,
+            repository=store,
+            event_pool=load_events(),
+            decision_pool=load_decisions(),
+            max_games=5,
+        )
+
+        app.dependency_overrides[get_service] = lambda: limited_service
+        try:
+            c = TestClient(app, raise_server_exceptions=False)
+            resp = c.post("/api/games", json={"airlineName": "Under Limit", "hqCityId": "lax"})
+            assert resp.status_code == 201
+        finally:
+            app.dependency_overrides.clear()

@@ -280,6 +280,9 @@ class AbstractStore(ABC):
     @abstractmethod
     def save(self, state: "GameState") -> None: ...
 
+    @abstractmethod
+    def count(self) -> int: ...
+
 
 # ---------------------------------------------------------------------------
 # MemoryStore — test / pure-memory mode
@@ -305,6 +308,9 @@ class MemoryStore(AbstractStore):
 
     def save(self, state: "GameState") -> None:
         self._games[state.id] = state
+
+    def count(self) -> int:
+        return len(self._games)
 
 
 # ---------------------------------------------------------------------------
@@ -370,6 +376,9 @@ class JsonFileStore(AbstractStore):
     def save(self, state: "GameState") -> None:
         self._games[state.id] = state
         self._persist()
+
+    def count(self) -> int:
+        return len(self._games)
 
 
 # ---------------------------------------------------------------------------
@@ -440,3 +449,8 @@ class PostgresStore(AbstractStore):
             """,
             (state.id, _json.dumps(payload)),
         )
+
+    def count(self) -> int:
+        conn = self._connect()
+        row = conn.execute("SELECT COUNT(*) FROM games").fetchone()
+        return int(row[0]) if row else 0

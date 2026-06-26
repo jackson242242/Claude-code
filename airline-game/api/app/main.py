@@ -16,7 +16,7 @@ from app.engine.match import MatchError
 from app.engine.state import GameOverError
 from app.match_service import MatchNotFoundError
 from app.routes import games, ingest, matches, weekly
-from app.service import GameNotFoundError, InvalidInputError
+from app.service import GameNotFoundError, InvalidInputError, ServiceUnavailableError
 
 app = FastAPI(title="SkyEmpire — Airline Tycoon API (M1)", version="0.1.0")
 
@@ -49,6 +49,13 @@ async def invalid_input_handler(_request: Request, exc: InvalidInputError) -> JS
 @app.exception_handler(GameOverError)
 async def game_over_handler(_request: Request, exc: GameOverError) -> JSONResponse:
     return _error(str(exc), "game_over", 400)
+
+
+@app.exception_handler(ServiceUnavailableError)
+async def service_unavailable_handler(
+    _request: Request, exc: ServiceUnavailableError
+) -> JSONResponse:
+    return _error(str(exc), "service_unavailable", 503)
 
 
 @app.exception_handler(MatchNotFoundError)
