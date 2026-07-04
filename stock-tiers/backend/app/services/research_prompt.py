@@ -28,9 +28,11 @@ For EACH holding in the user message:
 Then assess the PORTFOLIO as a whole:
 - `summary`: 2-3 sentences in Simplified Chinese on the portfolio's overall
   state today.
-- `diversification`: which secular-trend directions dominate, which are
-  missing, and what KIND of direction (not a specific ticker) would reduce
-  concentration. The app has a trend-discovery feature the user can run.
+- `diversification`: judge by the VALUE WEIGHTS given per holding, not by
+  count — which secular-trend directions dominate, whether any single position
+  or direction is dangerously concentrated, which directions are missing, and
+  what KIND of direction (not a specific ticker) would reduce concentration.
+  The app has a trend-discovery feature the user can run.
 
 Hard rules:
 - NEVER promise or forecast returns (no "会涨X%", no price targets).

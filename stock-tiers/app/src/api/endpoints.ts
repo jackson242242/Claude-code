@@ -1,5 +1,6 @@
 import { ApiError, apiFetch } from "./client";
 import type {
+  AddPositionOptions,
   Horizon,
   HotStock,
   PortfolioPosition,
@@ -8,6 +9,7 @@ import type {
   SecularTrend,
   TickerDetail,
   TierList,
+  UpdatePositionFields,
 } from "./types";
 
 export const getHotStocks = (): Promise<HotStock[]> =>
@@ -35,12 +37,28 @@ export const getPortfolio = (): Promise<PortfolioView> =>
 
 export const addToPortfolio = (
   ticker: string,
-  trend?: string | null,
-  thesis?: string | null,
+  options: AddPositionOptions = {},
 ): Promise<PortfolioPosition> =>
   apiFetch<PortfolioPosition>("/api/portfolio/positions", {
     method: "POST",
-    body: JSON.stringify({ ticker, trend: trend ?? null, thesis: thesis ?? null }),
+    body: JSON.stringify({
+      ticker,
+      trend: options.trend ?? null,
+      thesis: options.thesis ?? null,
+      // Omitted fields default server-side (1 share, live price, today).
+      ...(options.shares !== undefined ? { shares: options.shares } : {}),
+      ...(options.entryPrice !== undefined ? { entryPrice: options.entryPrice } : {}),
+      ...(options.entryDate !== undefined ? { entryDate: options.entryDate } : {}),
+    }),
+  });
+
+export const updatePosition = (
+  ticker: string,
+  fields: UpdatePositionFields,
+): Promise<PortfolioPosition> =>
+  apiFetch<PortfolioPosition>(`/api/portfolio/positions/${encodeURIComponent(ticker)}`, {
+    method: "PATCH",
+    body: JSON.stringify(fields),
   });
 
 export const removeFromPortfolio = (ticker: string): Promise<{ removed: string }> =>

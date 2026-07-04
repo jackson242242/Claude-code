@@ -122,11 +122,17 @@ Build the web bundle yourself anytime: `cd app && npx expo export -p web` → `d
 
 The app tracks a **long-term, buy-and-hold portfolio** and researches it daily:
 
-- **加入组合**: on any stock detail page, 「加入长期组合」 freezes the entry price
-  from live market data (raw provider — a mock price would lie) and tags the pick
-  with the thesis/trend it came from.
-- **我的组合** (`GET /api/portfolio`): live prices, change since entry, and a
-  **方向分布** view grouping holdings by secular trend — the diversification lens.
+- **加入组合**: on any stock detail page, 「加入长期组合」 records the pick with
+  the thesis/trend it came from. Enter your **real fill** (shares / entry price /
+  entry date) to mirror your actual account, or leave blank to freeze the entry
+  price from live market data (raw provider — a mock price would lie).
+- **编辑持仓** (`PATCH /api/portfolio/positions/{ticker}`): fix shares, entry
+  price/date, or the trend tag any time without losing the position's history.
+- **我的组合** (`GET /api/portfolio`): totals (market value / cost / P&L), live
+  prices, per-position weight, and a **方向分布** view — all **value-weighted**
+  by real position size, plus deterministic **经理提示** guardrails: single-position
+  concentration (>30%), single-trend concentration (>60%), thesis flagged
+  weakening/broken by the latest research, unpriceable holdings, stale research.
 - **每日研究** (`POST /api/portfolio/research/run`): Claude + web search re-checks
   each holding's ORIGINAL thesis (strengthening / intact / weakening / broken —
   judged on the thesis, not the price) plus a portfolio-level diversification

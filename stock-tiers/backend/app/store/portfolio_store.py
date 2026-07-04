@@ -61,6 +61,23 @@ class PortfolioStore:
             data["positions"].append(position.model_dump(by_alias=True))
             self._write(data)
 
+    async def update_position(self, ticker: str, fields: dict[str, Any]) -> PortfolioPosition:
+        """Partially update one position (`fields` uses Python field names)."""
+        wanted = ticker.upper()
+        async with self._lock:
+            data = self._read()
+            for i, raw in enumerate(data["positions"]):
+                if str(raw.get("ticker", "")).upper() != wanted:
+                    continue
+                current = PortfolioPosition.model_validate(raw)
+                updated = current.model_copy(update=fields)
+                data["positions"][i] = updated.model_dump(by_alias=True)
+                self._write(data)
+                return updated
+            raise AppError(
+                f"{wanted} is not in the portfolio", type="not_found", status=404
+            )
+
     async def remove_position(self, ticker: str) -> bool:
         wanted = ticker.upper()
         async with self._lock:

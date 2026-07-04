@@ -55,6 +55,23 @@ async def test_duplicate_position_conflicts(tmp_path: Path) -> None:
     assert exc.value.status == 409
 
 
+async def test_update_position_partial_and_persistent(tmp_path: Path) -> None:
+    path = tmp_path / "p.json"
+    store = PortfolioStore(path)
+    await store.add_position(_position("NVDA"))
+    updated = await store.update_position("nvda", {"shares": 30.0, "entry_price": 95.5})
+    assert updated.shares == 30.0
+    assert updated.entry_price == 95.5
+    assert updated.trend == "AI 平台迁移"  # untouched field survives
+
+    reopened = await PortfolioStore(path).list_positions()
+    assert reopened[0].shares == 30.0  # persisted
+
+    with pytest.raises(AppError) as exc:
+        await store.update_position("GONE", {"shares": 1.0})
+    assert exc.value.status == 404
+
+
 async def test_remove_position(tmp_path: Path) -> None:
     store = PortfolioStore(tmp_path / "p.json")
     await store.add_position(_position("NVDA"))

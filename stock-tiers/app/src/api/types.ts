@@ -56,9 +56,26 @@ export interface PortfolioPosition {
   name: string;
   entryPrice: number;
   entryDate: string;
+  shares: number;
   trend: string | null;
   thesis: string | null;
   addedAt: string;
+}
+
+export interface AddPositionOptions {
+  trend?: string | null;
+  thesis?: string | null;
+  shares?: number;
+  entryPrice?: number;
+  entryDate?: string;
+}
+
+export interface UpdatePositionFields {
+  shares?: number;
+  entryPrice?: number;
+  entryDate?: string;
+  trend?: string;
+  thesis?: string;
 }
 
 export interface PortfolioHolding {
@@ -66,11 +83,16 @@ export interface PortfolioHolding {
   name: string;
   entryPrice: number;
   entryDate: string;
+  shares: number;
   trend: string | null;
   thesis: string | null;
   currentPrice: number | null;
   sinceEntryPct: number | null;
   oneYearChangePct: number | null;
+  costBasis: number;
+  marketValue: number | null;
+  pnl: number | null;
+  weightPct: number | null;
 }
 
 export interface TrendSlice {
@@ -79,9 +101,19 @@ export interface TrendSlice {
   weightPct: number;
 }
 
+export interface PortfolioAlert {
+  level: "info" | "warning";
+  message: string;
+}
+
 export interface PortfolioView {
   holdings: PortfolioHolding[];
   trendSlices: TrendSlice[];
+  totalCost: number;
+  totalValue: number;
+  totalPnl: number;
+  totalPnlPct: number | null;
+  alerts: PortfolioAlert[];
   disclaimer: string;
   generatedAt: string;
 }

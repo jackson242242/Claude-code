@@ -39,7 +39,57 @@ def test_add_position_freezes_provider_entry_price(client: TestClient) -> None:
     body = resp.json()
     assert body["ticker"] == "NVDA"
     assert body["entryPrice"] == 178.34  # provider seed price, camelCase wire
+    assert body["shares"] == 1.0  # default position size
     assert body["trend"] == "AI 平台迁移"
+
+
+def test_add_position_with_manual_fill(client: TestClient) -> None:
+    resp = client.post(
+        "/api/portfolio/positions",
+        json={"ticker": "NVDA", "shares": 25, "entryPrice": 95.5, "entryDate": "2025-11-03"},
+    )
+    assert resp.status_code == 201
+    body = resp.json()
+    assert body["entryPrice"] == 95.5  # the real fill, not today's price
+    assert body["entryDate"] == "2025-11-03"
+    assert body["shares"] == 25
+
+
+def test_add_position_rejects_bad_manual_values(client: TestClient) -> None:
+    bad_shares = client.post("/api/portfolio/positions", json={"ticker": "NVDA", "shares": 0})
+    assert bad_shares.status_code == 422
+    bad_price = client.post(
+        "/api/portfolio/positions", json={"ticker": "NVDA", "entryPrice": -1}
+    )
+    assert bad_price.status_code == 422
+    bad_date = client.post(
+        "/api/portfolio/positions", json={"ticker": "NVDA", "entryDate": "03/11/2025"}
+    )
+    assert bad_date.status_code == 422
+
+
+def test_update_position(client: TestClient) -> None:
+    client.post("/api/portfolio/positions", json={"ticker": "NVDA"})
+    resp = client.patch(
+        "/api/portfolio/positions/nvda",
+        json={"shares": 40, "entryPrice": 110.0, "trend": "AI 平台迁移"},
+    )
+    assert resp.status_code == 200
+    body = resp.json()
+    assert body["shares"] == 40
+    assert body["entryPrice"] == 110.0
+    assert body["trend"] == "AI 平台迁移"
+
+    # Partial edit leaves other fields alone; empty string clears a tag.
+    resp = client.patch("/api/portfolio/positions/NVDA", json={"trend": ""})
+    assert resp.json()["trend"] is None
+    assert resp.json()["shares"] == 40
+
+    assert client.patch("/api/portfolio/positions/NVDA", json={}).status_code == 422
+    assert client.patch("/api/portfolio/positions/NVDA", json={"shares": -1}).status_code == 422
+    assert (
+        client.patch("/api/portfolio/positions/GONE", json={"shares": 1}).status_code == 404
+    )
 
 
 def test_add_duplicate_conflicts(client: TestClient) -> None:
@@ -54,7 +104,7 @@ def test_add_unknown_ticker_404(client: TestClient) -> None:
     assert resp.status_code == 404
 
 
-def test_portfolio_view_groups_by_trend(client: TestClient) -> None:
+def test_portfolio_view_value_weights_totals_and_alerts(client: TestClient) -> None:
     client.post("/api/portfolio/positions", json={"ticker": "NVDA", "trend": "AI 平台迁移"})
     client.post("/api/portfolio/positions", json={"ticker": "AMD", "trend": "AI 平台迁移"})
     client.post("/api/portfolio/positions", json={"ticker": "ETN"})  # untagged
@@ -66,11 +116,24 @@ def test_portfolio_view_groups_by_trend(client: TestClient) -> None:
     nvda = next(h for h in body["holdings"] if h["ticker"] == "NVDA")
     assert nvda["currentPrice"] == 178.34
     assert nvda["sinceEntryPct"] == 0.0  # added just now at the same price
+    assert nvda["marketValue"] == pytest.approx(178.34)  # 1 share
+
+    total = 178.34 + 168.20 + 372.40  # seed prices, 1 share each
+    assert body["totalValue"] == pytest.approx(total)
+    assert body["totalCost"] == pytest.approx(total)
+    assert body["totalPnl"] == pytest.approx(0.0)
 
     slices = {s["trend"]: s for s in body["trendSlices"]}
-    assert slices["AI 平台迁移"]["weightPct"] == pytest.approx(2 / 3)
+    # Value-weighted, not count-weighted.
+    assert slices["AI 平台迁移"]["weightPct"] == pytest.approx((178.34 + 168.20) / total)
     assert slices["未分类"]["tickers"] == ["ETN"]
     assert "not financial advice" in body["disclaimer"].lower()
+
+    # Manager guardrails: ETN alone is ~37% of value -> concentration warning,
+    # plus the "no research yet" info nudge.
+    warnings = [a["message"] for a in body["alerts"] if a["level"] == "warning"]
+    assert any("ETN" in m for m in warnings)
+    assert any(a["level"] == "info" and "研究" in a["message"] for a in body["alerts"])
 
 
 def test_remove_position(client: TestClient) -> None:

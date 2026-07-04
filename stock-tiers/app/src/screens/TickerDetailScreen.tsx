@@ -1,6 +1,6 @@
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { useState } from "react";
-import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 
 import { ApiError } from "../api/client";
 import { addToPortfolio } from "../api/endpoints";
@@ -27,12 +27,35 @@ export const TickerDetailScreen = ({ route }: Props) => {
   const { data, loading, error, reload } = useQuote(ticker);
   const [addState, setAddState] = useState<AddState>("idle");
   const [addError, setAddError] = useState<string | null>(null);
+  // Optional real-fill fields; blank = server defaults (1 share, live price, today).
+  const [sharesText, setSharesText] = useState("");
+  const [entryPriceText, setEntryPriceText] = useState("");
+  const [entryDateText, setEntryDateText] = useState("");
+
+  const parsePositive = (raw: string): number | undefined | null => {
+    const trimmed = raw.trim();
+    if (!trimmed) return undefined; // not provided
+    const value = Number(trimmed);
+    return Number.isFinite(value) && value > 0 ? value : null; // null = invalid
+  };
 
   const handleAdd = async () => {
+    const shares = parsePositive(sharesText);
+    const entryPrice = parsePositive(entryPriceText);
+    if (shares === null || entryPrice === null) {
+      setAddError("股数和买入价必须是大于 0 的数字");
+      return;
+    }
     setAddState("adding");
     setAddError(null);
     try {
-      await addToPortfolio(ticker, trendName ?? null, thesis ?? null);
+      await addToPortfolio(ticker, {
+        trend: trendName ?? null,
+        thesis: thesis ?? null,
+        shares,
+        entryPrice,
+        entryDate: entryDateText.trim() || undefined,
+      });
       setAddState("added");
     } catch (err) {
       if (err instanceof ApiError && err.status === 409) {
@@ -77,6 +100,46 @@ export const TickerDetailScreen = ({ route }: Props) => {
             </View>
           ) : null}
 
+          {addState === "idle" || addState === "adding" ? (
+            <View style={styles.fillRow}>
+              <View style={styles.fillField}>
+                <Text style={styles.fillLabel}>股数</Text>
+                <TextInput
+                  style={styles.fillInput}
+                  value={sharesText}
+                  onChangeText={setSharesText}
+                  placeholder="1"
+                  placeholderTextColor={colors.textMuted}
+                  keyboardType="decimal-pad"
+                  testID="shares-input"
+                />
+              </View>
+              <View style={styles.fillField}>
+                <Text style={styles.fillLabel}>买入价 $</Text>
+                <TextInput
+                  style={styles.fillInput}
+                  value={entryPriceText}
+                  onChangeText={setEntryPriceText}
+                  placeholder="现价"
+                  placeholderTextColor={colors.textMuted}
+                  keyboardType="decimal-pad"
+                  testID="entry-price-input"
+                />
+              </View>
+              <View style={styles.fillField}>
+                <Text style={styles.fillLabel}>买入日期</Text>
+                <TextInput
+                  style={styles.fillInput}
+                  value={entryDateText}
+                  onChangeText={setEntryDateText}
+                  placeholder="今天"
+                  placeholderTextColor={colors.textMuted}
+                  testID="entry-date-input"
+                />
+              </View>
+            </View>
+          ) : null}
+
           <TouchableOpacity
             style={[styles.addBtn, addState !== "idle" && styles.addBtnDone]}
             onPress={handleAdd}
@@ -87,8 +150,11 @@ export const TickerDetailScreen = ({ route }: Props) => {
               {addState === "adding" ? "加入中…" : addLabel}
             </Text>
           </TouchableOpacity>
-          {trendName && addState === "idle" ? (
-            <Text style={styles.addHint}>将记录在「{trendName}」方向下,买入价按当前价冻结</Text>
+          {addState === "idle" ? (
+            <Text style={styles.addHint}>
+              按真实成交填股数/买入价/日期(留空则按 1 股、当前价、今天记录)
+              {trendName ? `,归入「${trendName}」方向` : ""}
+            </Text>
           ) : null}
           {addError ? <Text style={styles.addError}>{addError}</Text> : null}
 
@@ -120,6 +186,19 @@ const styles = StyleSheet.create({
   field: { marginTop: 10 },
   label: { color: colors.textMuted, fontSize: 12, textTransform: "uppercase" },
   value: { color: colors.text, fontSize: 15, lineHeight: 21, marginTop: 2 },
+  fillRow: { flexDirection: "row", gap: 8, marginBottom: 10 },
+  fillField: { flex: 1 },
+  fillLabel: { color: colors.textMuted, fontSize: 11, marginBottom: 4 },
+  fillInput: {
+    backgroundColor: colors.surface,
+    borderColor: colors.border,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderRadius: 8,
+    color: colors.text,
+    fontSize: 14,
+    paddingHorizontal: 10,
+    paddingVertical: 8,
+  },
   addBtn: {
     backgroundColor: colors.accent,
     borderRadius: 10,

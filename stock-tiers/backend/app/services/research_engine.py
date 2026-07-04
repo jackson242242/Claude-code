@@ -25,6 +25,7 @@ from app.schemas import (
     ResearchReport,
 )
 from app.services.claude_runner import call_claude_tool
+from app.services.portfolio_view import apply_weights
 from app.services.research_prompt import (
     RESEARCH_SYSTEM_PROMPT,
     RESEARCH_TOOL,
@@ -51,16 +52,22 @@ async def enrich_position(
         if current is not None and position.entry_price > 0
         else None
     )
+    cost_basis = position.entry_price * position.shares
+    market_value = current * position.shares if current is not None else None
     return PortfolioHolding(
         ticker=position.ticker,
         name=position.name,
         entry_price=position.entry_price,
         entry_date=position.entry_date,
+        shares=position.shares,
         trend=position.trend,
         thesis=position.thesis,
         current_price=current,
         since_entry_pct=since_entry,
         one_year_change_pct=one_year,
+        cost_basis=cost_basis,
+        market_value=market_value,
+        pnl=market_value - cost_basis if market_value is not None else None,
     )
 
 
@@ -73,10 +80,12 @@ async def enrich_positions(
 def _holding_line(h: PortfolioHolding) -> str:
     price = f"${h.current_price:.2f}" if h.current_price is not None else "n/a"
     since = f" ({h.since_entry_pct:+.0%} since entry)" if h.since_entry_pct is not None else ""
+    weight = f" | weight {h.weight_pct:.0%} of portfolio" if h.weight_pct is not None else ""
     return (
         f"- {h.ticker} — {h.name} | trend: {h.trend or '(untagged)'} | "
         f"thesis: {h.thesis or '(none recorded)'} | "
-        f"entry ${h.entry_price:.2f} on {h.entry_date} | latest {price}{since}"
+        f"entry ${h.entry_price:.2f} x {h.shares:g} shares on {h.entry_date} | "
+        f"latest {price}{since}{weight}"
     )
 
 
@@ -100,6 +109,7 @@ class ResearchEngine:
             )
 
         holdings = await enrich_positions(self._provider, positions)
+        apply_weights(holdings)  # so the model sees real position sizing
         message = build_research_message(
             holdings_block="\n".join(_holding_line(h) for h in holdings),
             count=len(holdings),

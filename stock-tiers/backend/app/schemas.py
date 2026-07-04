@@ -86,15 +86,32 @@ class AddPositionRequest(ApiModel):
     trend: str | None = None
     # The thesis text the pick came from, if any.
     thesis: str | None = None
+    # Real position size; defaults to 1 share.
+    shares: float | None = None
+    # Manual fill price/date (match your real trade); default: live price + today.
+    entry_price: float | None = None
+    entry_date: str | None = None  # ISO date
+
+
+class UpdatePositionRequest(ApiModel):
+    """Partial edit of a stored position — only the fields sent are changed."""
+
+    shares: float | None = None
+    entry_price: float | None = None
+    entry_date: str | None = None
+    trend: str | None = None
+    thesis: str | None = None
 
 
 class PortfolioPosition(ApiModel):
-    """A buy-and-hold pick as stored: entry price is frozen at add time."""
+    """A buy-and-hold pick as stored: entry price is frozen at add time
+    (or supplied manually to match the real fill)."""
 
     ticker: str
     name: str
     entry_price: float
-    entry_date: str  # ISO date the position was added
+    entry_date: str  # ISO date of the (real or recorded) entry
+    shares: float = 1.0
     trend: str | None = None
     thesis: str | None = None
     added_at: str
@@ -107,24 +124,42 @@ class PortfolioHolding(ApiModel):
     name: str
     entry_price: float
     entry_date: str
+    shares: float = 1.0
     trend: str | None = None
     thesis: str | None = None
     current_price: float | None = None
     since_entry_pct: float | None = None
     one_year_change_pct: float | None = None
+    cost_basis: float = 0.0
+    market_value: float | None = None
+    pnl: float | None = None
+    # Share of total portfolio value; filled in by the view builder.
+    weight_pct: float | None = None
 
 
 class TrendSlice(ApiModel):
-    """Share of the portfolio expressing one secular trend (count-based)."""
+    """Share of the portfolio expressing one secular trend (value-weighted)."""
 
     trend: str
     tickers: list[str]
     weight_pct: float
 
 
+class PortfolioAlert(ApiModel):
+    """A manager-style guardrail flag (concentration, stale research, ...)."""
+
+    level: Literal["info", "warning"]
+    message: str
+
+
 class PortfolioView(ApiModel):
     holdings: list[PortfolioHolding]
     trend_slices: list[TrendSlice]
+    total_cost: float
+    total_value: float
+    total_pnl: float
+    total_pnl_pct: float | None = None
+    alerts: list[PortfolioAlert]
     disclaimer: str
     generated_at: str
 
