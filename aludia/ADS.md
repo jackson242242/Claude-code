@@ -19,6 +19,7 @@
 
 ## 2. 冷启动筹备清单（每轮推进一格，完成打勾）
 - [ ] Meta Business Suite + 商务管理平台建好，IG @aludia_jewelry 与 FB 主页绑定
+      （📬 操作指引已交付 → briefs/2026-07-04.md Phase B，等老板执行）
 - [ ] 网站装 Meta Pixel + Conversions API（Shopify 应用一键装），验证 Purchase 事件
 - [ ] 商品目录（Catalog）同步，开 Advantage+ 目录广告的前提
 - [ ] 首个 Campaign：**销售目标 · Advantage+ 或 1 个宽泛受众 CBO**，
