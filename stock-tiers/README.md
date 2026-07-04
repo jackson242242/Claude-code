@@ -118,6 +118,53 @@ Optional upgrades (set in the Render dashboard, then redeploy):
 
 Build the web bundle yourself anytime: `cd app && npx expo export -p web` → `dist/`.
 
+## 我的组合 · 每日研究 · 趋势发现 (portfolio + daily research + trend loop)
+
+The app tracks a **long-term, buy-and-hold portfolio** and researches it daily:
+
+- **加入组合**: on any stock detail page, 「加入长期组合」 freezes the entry price
+  from live market data (raw provider — a mock price would lie) and tags the pick
+  with the thesis/trend it came from.
+- **我的组合** (`GET /api/portfolio`): live prices, change since entry, and a
+  **方向分布** view grouping holdings by secular trend — the diversification lens.
+- **每日研究** (`POST /api/portfolio/research/run`): Claude + web search re-checks
+  each holding's ORIGINAL thesis (strengthening / intact / weakening / broken —
+  judged on the thesis, not the price) plus a portfolio-level diversification
+  read. The latest report is stored and served by `GET /api/portfolio/research`.
+- **趋势方向** (`GET /api/trends`, `POST /api/trends/discover`): the
+  **diversification loop**. Trend #1 is the app's AI anchor; every discovery pass
+  feeds the tracked trends back into the prompt and asks for NEW directions from
+  different drivers (energy, policy, geopolitics, demographics, healthcare…), so
+  repeated runs walk the portfolio into more independent secular trends. Each
+  trend's thesis feeds `POST /api/tiers/thesis` directly.
+
+> This is research & monitoring tooling, **not financial advice** — the engine is
+> hard-prompted to never promise or forecast returns, and every response carries
+> the disclaimer.
+
+### Scheduling the daily run (Render Cron Job)
+
+The research pass runs whenever `POST /api/portfolio/research/run` is hit — the
+app's 「立即更新」 button does it manually; a Render **Cron Job** automates it:
+
+1. Render dashboard → **New → Cron Job** (same account as the web service).
+2. Schedule: e.g. `30 13 * * 1-5` (13:30 UTC ≈ 9:30 ET, weekdays).
+3. Command:
+   ```bash
+   curl -fsS -X POST https://<your-app>.onrender.com/api/portfolio/research/run \
+     -H "x-cron-secret: $CRON_SECRET"
+   ```
+4. Set the same `CRON_SECRET` env var on **both** the web service and the cron
+   job. If `CRON_SECRET` is unset on the service, the endpoint is open (fine for
+   a single-user prototype; the in-app button uses it too).
+
+### Storage caveat (Render free tier)
+
+The portfolio/trends/research live in one JSON file at `DATA_DIR/portfolio.json`
+(default `data/`). **Render's free-tier disk is ephemeral** — the file resets on
+every deploy/restart. Options: accept re-adding picks after deploys (prototype),
+or attach a Render persistent disk and point `DATA_DIR` at its mount path.
+
 ## Test / lint / typecheck
 
 ```bash

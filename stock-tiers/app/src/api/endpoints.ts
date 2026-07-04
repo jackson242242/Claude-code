@@ -1,5 +1,14 @@
-import { apiFetch } from "./client";
-import type { Horizon, HotStock, TickerDetail, TierList } from "./types";
+import { ApiError, apiFetch } from "./client";
+import type {
+  Horizon,
+  HotStock,
+  PortfolioPosition,
+  PortfolioView,
+  ResearchReport,
+  SecularTrend,
+  TickerDetail,
+  TierList,
+} from "./types";
 
 export const getHotStocks = (): Promise<HotStock[]> =>
   apiFetch<HotStock[]>("/api/screener/hot-stocks");
@@ -18,3 +27,41 @@ export const getThesisTiers = (thesis: string, horizon: Horizon): Promise<TierLi
     method: "POST",
     body: JSON.stringify({ thesis, horizon }),
   });
+
+// --- Long-term portfolio + daily research + secular trends -------------------
+
+export const getPortfolio = (): Promise<PortfolioView> =>
+  apiFetch<PortfolioView>("/api/portfolio");
+
+export const addToPortfolio = (
+  ticker: string,
+  trend?: string | null,
+  thesis?: string | null,
+): Promise<PortfolioPosition> =>
+  apiFetch<PortfolioPosition>("/api/portfolio/positions", {
+    method: "POST",
+    body: JSON.stringify({ ticker, trend: trend ?? null, thesis: thesis ?? null }),
+  });
+
+export const removeFromPortfolio = (ticker: string): Promise<{ removed: string }> =>
+  apiFetch<{ removed: string }>(`/api/portfolio/positions/${encodeURIComponent(ticker)}`, {
+    method: "DELETE",
+  });
+
+/** Latest daily research report, or null if none has been run yet. */
+export const getResearch = async (): Promise<ResearchReport | null> => {
+  try {
+    return await apiFetch<ResearchReport>("/api/portfolio/research");
+  } catch (err) {
+    if (err instanceof ApiError && err.status === 404) return null;
+    throw err;
+  }
+};
+
+export const runResearch = (): Promise<ResearchReport> =>
+  apiFetch<ResearchReport>("/api/portfolio/research/run", { method: "POST" });
+
+export const getTrends = (): Promise<SecularTrend[]> => apiFetch<SecularTrend[]>("/api/trends");
+
+export const discoverTrends = (): Promise<SecularTrend[]> =>
+  apiFetch<SecularTrend[]>("/api/trends/discover", { method: "POST" });

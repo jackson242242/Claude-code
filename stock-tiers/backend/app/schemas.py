@@ -73,3 +73,91 @@ class TierList(ApiModel):
     tiers: dict[Tier, list[TierEntry]]
     disclaimer: str
     generated_at: str
+
+
+# --- Long-term portfolio + daily research + secular trends -------------------
+
+ThesisStatus = Literal["strengthening", "intact", "weakening", "broken"]
+
+
+class AddPositionRequest(ApiModel):
+    ticker: str
+    # Secular-trend label this pick expresses (used for diversification view).
+    trend: str | None = None
+    # The thesis text the pick came from, if any.
+    thesis: str | None = None
+
+
+class PortfolioPosition(ApiModel):
+    """A buy-and-hold pick as stored: entry price is frozen at add time."""
+
+    ticker: str
+    name: str
+    entry_price: float
+    entry_date: str  # ISO date the position was added
+    trend: str | None = None
+    thesis: str | None = None
+    added_at: str
+
+
+class PortfolioHolding(ApiModel):
+    """A stored position enriched with live market data (None if unavailable)."""
+
+    ticker: str
+    name: str
+    entry_price: float
+    entry_date: str
+    trend: str | None = None
+    thesis: str | None = None
+    current_price: float | None = None
+    since_entry_pct: float | None = None
+    one_year_change_pct: float | None = None
+
+
+class TrendSlice(ApiModel):
+    """Share of the portfolio expressing one secular trend (count-based)."""
+
+    trend: str
+    tickers: list[str]
+    weight_pct: float
+
+
+class PortfolioView(ApiModel):
+    holdings: list[PortfolioHolding]
+    trend_slices: list[TrendSlice]
+    disclaimer: str
+    generated_at: str
+
+
+class SecularTrend(ApiModel):
+    """A multi-year structural direction the portfolio can diversify into.
+
+    `thesis` is written in the same shape a user would type on the home screen,
+    so it feeds POST /api/tiers/thesis directly.
+    """
+
+    id: str
+    name: str
+    category: str
+    thesis: str
+    why_now: str
+    horizon: Horizon = "long"
+    discovered_at: str
+
+
+class HoldingNote(ApiModel):
+    ticker: str
+    headline: str
+    thesis_status: ThesisStatus
+    note: str
+
+
+class ResearchReport(ApiModel):
+    """Daily research pass over the portfolio: notes per holding + a
+    diversification read across the tagged trends. Research, NOT advice."""
+
+    summary: str
+    notes: list[HoldingNote]
+    diversification: str
+    generated_at: str
+    disclaimer: str

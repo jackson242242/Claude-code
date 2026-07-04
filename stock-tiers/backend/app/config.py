@@ -32,6 +32,16 @@ class Settings(BaseSettings):
     screener_cache_ttl: int = 900
     tier_cache_ttl: int = 86400
 
+    # Where the portfolio/trends/research JSON store lives. On hosts with
+    # ephemeral disks (Render free tier) this resets on redeploy — point it at
+    # a persistent disk mount to keep the portfolio across deploys.
+    data_dir: str = "data"
+    # If set, POST /api/portfolio/research/run requires the x-cron-secret
+    # header to match (protects the daily Render Cron endpoint). Unset = open.
+    cron_secret: str | None = None
+    # How many NEW secular trends one discovery pass proposes.
+    trend_discover_count: int = 4
+
     resilient_fallback: bool = True
 
     # If set to a directory containing a built web app (Expo web export), the API

@@ -12,7 +12,7 @@ import { colors } from "../theme/colors";
 type Props = NativeStackScreenProps<RootStackParamList, "ThesisResults">;
 
 export const ThesisResultsScreen = ({ route, navigation }: Props) => {
-  const { thesis, horizon } = route.params;
+  const { thesis, horizon, trendName } = route.params;
   const { data, loading, error, reload } = useThesisTiers(thesis, horizon);
 
   const openEntry = (entry: TierEntry) =>
@@ -22,6 +22,9 @@ export const ThesisResultsScreen = ({ route, navigation }: Props) => {
       rationale: entry.rationale,
       tierJustification: entry.tierJustification,
       tier: entry.tier,
+      // Context for "add to portfolio": the pick expresses this thesis/trend.
+      thesis,
+      trendName,
     });
 
   return (

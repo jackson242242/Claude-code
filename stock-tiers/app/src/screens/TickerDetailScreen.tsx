@@ -1,6 +1,9 @@
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { useState } from "react";
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
+import { ApiError } from "../api/client";
+import { addToPortfolio } from "../api/endpoints";
 import { ChangeBadge } from "../components/ChangeBadge";
 import { AsyncState } from "../components/AsyncState";
 import { Disclaimer } from "../components/Disclaimer";
@@ -10,6 +13,8 @@ import { colors } from "../theme/colors";
 
 type Props = NativeStackScreenProps<RootStackParamList, "TickerDetail">;
 
+type AddState = "idle" | "adding" | "added" | "held";
+
 const Field = ({ label, value }: { label: string; value: string }) => (
   <View style={styles.field}>
     <Text style={styles.label}>{label}</Text>
@@ -18,8 +23,29 @@ const Field = ({ label, value }: { label: string; value: string }) => (
 );
 
 export const TickerDetailScreen = ({ route }: Props) => {
-  const { ticker, name, rationale, tierJustification, tier } = route.params;
+  const { ticker, name, rationale, tierJustification, tier, thesis, trendName } = route.params;
   const { data, loading, error, reload } = useQuote(ticker);
+  const [addState, setAddState] = useState<AddState>("idle");
+  const [addError, setAddError] = useState<string | null>(null);
+
+  const handleAdd = async () => {
+    setAddState("adding");
+    setAddError(null);
+    try {
+      await addToPortfolio(ticker, trendName ?? null, thesis ?? null);
+      setAddState("added");
+    } catch (err) {
+      if (err instanceof ApiError && err.status === 409) {
+        setAddState("held"); // already in the portfolio
+      } else {
+        setAddState("idle");
+        setAddError(err instanceof ApiError ? err.message : "加入组合失败");
+      }
+    }
+  };
+
+  const addLabel =
+    addState === "added" ? "已加入组合 ✓" : addState === "held" ? "已在组合里" : "加入长期组合";
 
   return (
     <View style={styles.container}>
@@ -51,6 +77,21 @@ export const TickerDetailScreen = ({ route }: Props) => {
             </View>
           ) : null}
 
+          <TouchableOpacity
+            style={[styles.addBtn, addState !== "idle" && styles.addBtnDone]}
+            onPress={handleAdd}
+            disabled={addState !== "idle"}
+            testID="add-to-portfolio"
+          >
+            <Text style={styles.addBtnText}>
+              {addState === "adding" ? "加入中…" : addLabel}
+            </Text>
+          </TouchableOpacity>
+          {trendName && addState === "idle" ? (
+            <Text style={styles.addHint}>将记录在「{trendName}」方向下,买入价按当前价冻结</Text>
+          ) : null}
+          {addError ? <Text style={styles.addError}>{addError}</Text> : null}
+
           <Disclaimer />
         </ScrollView>
       </AsyncState>
@@ -79,4 +120,15 @@ const styles = StyleSheet.create({
   field: { marginTop: 10 },
   label: { color: colors.textMuted, fontSize: 12, textTransform: "uppercase" },
   value: { color: colors.text, fontSize: 15, lineHeight: 21, marginTop: 2 },
+  addBtn: {
+    backgroundColor: colors.accent,
+    borderRadius: 10,
+    padding: 14,
+    alignItems: "center",
+    marginTop: 4,
+  },
+  addBtnDone: { opacity: 0.6 },
+  addBtnText: { color: colors.text, fontSize: 15, fontWeight: "700" },
+  addHint: { color: colors.textMuted, fontSize: 12, textAlign: "center", marginTop: 8 },
+  addError: { color: colors.negative, fontSize: 13, textAlign: "center", marginTop: 8 },
 });

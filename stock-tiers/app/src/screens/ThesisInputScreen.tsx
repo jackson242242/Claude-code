@@ -96,6 +96,25 @@ export const ThesisInputScreen = ({ navigation }: Props) => {
         <Text style={styles.ctaText}>生成投资清单</Text>
       </TouchableOpacity>
 
+      <View style={styles.linksRow}>
+        <TouchableOpacity
+          style={styles.linkCard}
+          onPress={() => navigation.navigate("Portfolio")}
+          testID="open-portfolio"
+        >
+          <Text style={styles.linkTitle}>我的组合</Text>
+          <Text style={styles.linkHint}>持仓 · 每日研究</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.linkCard}
+          onPress={() => navigation.navigate("Trends")}
+          testID="open-trends"
+        >
+          <Text style={styles.linkTitle}>趋势方向</Text>
+          <Text style={styles.linkHint}>发现新的 secular trend</Text>
+        </TouchableOpacity>
+      </View>
+
       <TouchableOpacity
         style={styles.secondary}
         onPress={() => navigation.navigate("HotStocks")}
@@ -159,6 +178,17 @@ const styles = StyleSheet.create({
   },
   ctaDisabled: { opacity: 0.4 },
   ctaText: { color: colors.text, fontSize: 16, fontWeight: "700" },
+  linksRow: { flexDirection: "row", gap: 8, marginTop: 12 },
+  linkCard: {
+    flex: 1,
+    backgroundColor: colors.surface,
+    borderColor: colors.border,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderRadius: 10,
+    padding: 12,
+  },
+  linkTitle: { color: colors.text, fontSize: 15, fontWeight: "700" },
+  linkHint: { color: colors.textMuted, fontSize: 12, marginTop: 3 },
   secondary: { alignItems: "center", padding: 14 },
   secondaryText: { color: colors.textMuted, fontSize: 14 },
 });

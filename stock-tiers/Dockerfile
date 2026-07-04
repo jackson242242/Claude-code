@@ -20,6 +20,8 @@ COPY backend/ ./
 COPY --from=web /web/dist ./web
 ENV STATIC_WEB_DIR=/app/web
 ENV STOCK_PROVIDER=mock
+# Portfolio/trends/research JSON store (ephemeral unless a disk is mounted here).
+ENV DATA_DIR=/app/data
 # Render provides $PORT; default to 8000 for local `docker run`.
 ENV PORT=8000
 EXPOSE 8000

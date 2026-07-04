@@ -4,10 +4,12 @@ import { StatusBar } from "expo-status-bar";
 
 import type { RootStackParamList } from "./src/navigation/types";
 import { HotStocksScreen } from "./src/screens/HotStocksScreen";
+import { PortfolioScreen } from "./src/screens/PortfolioScreen";
 import { ThesisInputScreen } from "./src/screens/ThesisInputScreen";
 import { ThesisResultsScreen } from "./src/screens/ThesisResultsScreen";
 import { TickerDetailScreen } from "./src/screens/TickerDetailScreen";
 import { TierListScreen } from "./src/screens/TierListScreen";
+import { TrendsScreen } from "./src/screens/TrendsScreen";
 import { colors } from "./src/theme/colors";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -54,6 +56,12 @@ export default function App() {
           component={TickerDetailScreen}
           options={{ title: "Stock Detail" }}
         />
+        <Stack.Screen
+          name="Portfolio"
+          component={PortfolioScreen}
+          options={{ title: "我的组合" }}
+        />
+        <Stack.Screen name="Trends" component={TrendsScreen} options={{ title: "趋势方向" }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
