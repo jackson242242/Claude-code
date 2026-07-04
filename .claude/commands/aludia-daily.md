@@ -57,12 +57,14 @@ cannot publish to Instagram; the boss posts.
    checklist verbatim. If blockers in STATE.md remain unresolved for 3+ days,
    ask about them once, plainly.
 
-## Monday variant — 调研日 (only if the boss has approved vidIQ spend)
-Before Phase A, spend ≤30 credits: `vidiq_ig_profile` + `vidiq_ig_profile_reels`
-snapshot of @aludia_jewelry, and 2–3 `vidiq_ig_outlier_reels_search` calls
-(concept/hook embeddings, jewelry niche, followersMax ≈ 10× our size) →
-update `BRAND.md` §3 hook library and note findings in the brief.
-If permission is denied or balance < 40, skip silently and note it.
+## Monday variant — 调研日
+Boss decision 2026-07-04: paid vidIQ research is NOT approved (`INBOX.md`).
+Run the ZERO-COST variant instead: before Phase A, use WebSearch (free) to
+research current jewelry-brand Reels trends, hooks, and formats (e.g. searches
+like "jewelry brand reels trend <month> <year>", "small jewelry business
+viral reel hook") → update `BRAND.md` §3 hook library and note findings +
+sources in the brief. Never spend vidIQ credits unless the boss explicitly
+orders it in chat after a cost quote.
 
 ## 诚实红线 (from repo Operating Principles)
 - 不能直接发 IG / 不能碰 Ads Manager / 不保证流量或 ROAS 数字。
