@@ -13,7 +13,21 @@ domains (ML, deep learning, LLMs, AI agents, private equity, art, design).
 | File | What it is |
 |---|---|
 | `index.html` | The full app — open it in any browser. No install, no internet, no signup. |
-| `LEARNING_FRAMEWORK.md` | The **backbone**: value system, learning architecture, the 6-tier mastery ladder, all 8 domain tracks, and a multi-year long-term plan. Read this first to understand *why* the courses are shaped the way they are. |
+| `AGE_LEVELS.md` | **How Personal Finance is split into 5 age stages (ages 6–20)** — content *and* a distinct visual skin per stage. The direct answer to "分级给不同年龄" / age-appropriate design. |
+| `LEARNING_FRAMEWORK.md` | The **backbone**: value system, learning architecture, the 6-tier mastery ladder, all 8 domain tracks, and a multi-year long-term plan. Read this to understand *why* the courses are shaped the way they are. |
+
+## Age levels (6–20) 🎚️
+
+Personal Finance is split into **5 developmental stages**, and each one
+**re-skins the entire app** to match that age's aesthetics:
+
+| 🐣 Sprouts 6–8 | 🦊 Explorers 9–11 | 🐲 Trailblazers 12–14 | 🦅 Founders 15–17 | 🦉 Navigators 18–20 |
+|---|---|---|---|---|
+| candy-bright, huge, picture-led | adventure-quest green | bold gamer purple | sleek indigo | clean adult fintech |
+
+Pick a stage on first launch (it previews live as you tap), or switch later via
+**Profile → 🎚️ Change age level**. XP, streak, and badges follow the learner.
+Full rationale, palettes, and per-stage curricula are in `AGE_LEVELS.md`.
 
 ## Run it
 
