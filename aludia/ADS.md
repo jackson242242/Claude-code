@@ -37,6 +37,27 @@
 3. 输出写进当日 brief：**逐条"在 Ads Manager 里做什么"**（老板照做即可），
    附下一轮想验证的一个假设。
 
+## 5. 首个 Campaign 文案库 v1（2026-07-05 备好；产品信息到位后出 v2 精准版）
+**Primary text（3 选 1 或轮换测试）：**
+1. Fine jewelry made to be worn every day — and loved for years. Designed in
+   New York, delivered to your door with care. ✨
+2. The piece you'll reach for every single morning. Elegant, everyday
+   jewelry from a small New York studio — shop the collection.
+3. Gift-ready, heart-approved. Every Aludia order ships from New York
+   beautifully wrapped — because the moment matters as much as the piece.
+
+**Headline（3 选 1）：**
+1. Everyday Fine Jewelry, Made in NY
+2. Your New Signature Piece Awaits
+3. Elegant Jewelry, Wrapped With Love
+
+**Description（2 选 1）：**
+1. Free-to-browse collection. Ships from New York.
+2. Small brand. Big sparkle. Shop Aludia New York.
+
+> 使用规则：首轮 1 campaign / 1 ad set（宽泛受众）/ 3 ads——三条 primary
+> text 各配最强的 Reels 素材跑对比；CTR 最低的一条 5–7 天后换掉。
+
 ## 4. 免费流量（预算外的每日动作，写进 brief 的老板清单）
 - Reels 是免费流量主引擎：每天 1 条、hook 用调研库、发布后 1 小时内回评论
 - IG SEO：昵称含 "jewelry"、bio 关键词、帖子文案前 125 字符含搜索词
