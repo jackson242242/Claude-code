@@ -13,8 +13,21 @@ export const apiBaseUrl = (): string => {
 export const mocksEnabled = (): boolean =>
   process.env.NEXT_PUBLIC_USE_MOCKS === 'true';
 
-export const getJson = async <T>(path: string): Promise<T> => {
-  const res = await fetch(`${apiBaseUrl()}${path}`, { cache: 'no-store' });
+/**
+ * GET helper. Pass `revalidate` (seconds) to let Next.js cache the response
+ * across requests — right for slow-moving reference data (schedule, cities,
+ * teams). Omit it for per-user or must-be-fresh reads, which stay `no-store`.
+ */
+export const getJson = async <T>(
+  path: string,
+  revalidate?: number,
+): Promise<T> => {
+  const res = await fetch(
+    `${apiBaseUrl()}${path}`,
+    revalidate === undefined
+      ? { cache: 'no-store' }
+      : ({ next: { revalidate } } as RequestInit),
+  );
   if (!res.ok) {
     throw new Error(`GET ${path} failed with status ${res.status}`);
   }

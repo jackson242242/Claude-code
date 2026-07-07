@@ -119,31 +119,47 @@ const mapPexelsVideo = (
 // Pexels fetch — cap total results to ~10 across all queries
 // ---------------------------------------------------------------------------
 
-const fetchFromPexels = async (key: string): Promise<TouristVideo[]> => {
-  const results: TouristVideo[] = [];
-  const perQuery = 2; // 7 queries × 2 ≈ 14, deduped down to ~10
-
-  for (const { cityId, term } of CURATED_QUERIES) {
-    if (results.length >= 10) break;
-    const url = `https://api.pexels.com/videos/search?query=${encodeURIComponent(term)}&per_page=${perQuery}&orientation=portrait`;
+/** One Pexels search; failures are non-fatal and yield no videos. */
+const searchPexels = async (
+  key: string,
+  term: string,
+  params: string,
+): Promise<PexelsVideo[]> => {
+  const url = `https://api.pexels.com/videos/search?query=${encodeURIComponent(term)}&${params}`;
+  try {
     const res = await fetch(url, {
       headers: { Authorization: key },
       // Next.js 15 fetch cache hint — revalidate every hour
       next: { revalidate: 3600 },
     } as RequestInit);
-
-    if (!res.ok) {
-      // Non-fatal per-query failure; skip this term
-      continue;
-    }
-
+    if (!res.ok) return [];
     const data = (await res.json()) as PexelsVideosResponse;
-    for (const video of data.videos) {
-      if (results.length >= 10) break;
+    return data.videos;
+  } catch {
+    return [];
+  }
+};
+
+const fetchFromPexels = async (key: string): Promise<TouristVideo[]> => {
+  const perQuery = 2; // 7 queries × 2 ≈ 14, capped down to ~10
+
+  // All queries fire concurrently (they were awaited one-by-one before, which
+  // made the home page block on up to 7 sequential Pexels round-trips); the
+  // curated order is preserved when collecting results.
+  const perQueryVideos = await Promise.all(
+    CURATED_QUERIES.map(({ term }) =>
+      searchPexels(key, term, `per_page=${perQuery}&orientation=portrait`),
+    ),
+  );
+
+  const results: TouristVideo[] = [];
+  for (const [queryIndex, videos] of perQueryVideos.entries()) {
+    const { cityId, term } = CURATED_QUERIES[queryIndex];
+    for (const video of videos) {
+      if (results.length >= 10) return results;
       results.push(mapPexelsVideo(video, cityId, term, results.length));
     }
   }
-
   return results;
 };
 
@@ -227,21 +243,19 @@ const pickLandscapeVideoUrl = (files: PexelsVideoFile[]): string | null => {
 };
 
 const fetchHeroFromPexels = async (key: string): Promise<TouristVideo[]> => {
+  // Same concurrency treatment as fetchFromPexels — 6 queries in parallel
+  // instead of a sequential await chain.
+  const perQueryVideos = await Promise.all(
+    HERO_QUERIES.map((term) =>
+      searchPexels(key, term, 'per_page=1&orientation=landscape&size=medium'),
+    ),
+  );
+
   const results: TouristVideo[] = [];
-
-  for (const term of HERO_QUERIES) {
-    if (results.length >= 6) break;
-    const url = `https://api.pexels.com/videos/search?query=${encodeURIComponent(term)}&per_page=1&orientation=landscape&size=medium`;
-    const res = await fetch(url, {
-      headers: { Authorization: key },
-      next: { revalidate: 3600 },
-    } as RequestInit);
-
-    if (!res.ok) continue;
-
-    const data = (await res.json()) as PexelsVideosResponse;
-    for (const video of data.videos) {
-      if (results.length >= 6) break;
+  for (const [queryIndex, videos] of perQueryVideos.entries()) {
+    const term = HERO_QUERIES[queryIndex];
+    for (const video of videos) {
+      if (results.length >= 6) return results;
       const videoUrl = pickLandscapeVideoUrl(video.video_files);
       if (videoUrl == null) continue;
       results.push({

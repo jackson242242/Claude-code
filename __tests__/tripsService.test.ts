@@ -1,3 +1,4 @@
+/** @jest-environment jsdom */
 import { createTrip, listTrips } from '@/services/tripsService';
 
 describe('tripsService', () => {

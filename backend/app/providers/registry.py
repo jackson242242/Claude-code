@@ -48,6 +48,11 @@ def _locate_city(city_id: str) -> tuple[float, float] | None:
 
 
 _TIMEOUT = settings.provider_timeout_seconds
+
+# One shared client for all real providers: keeps connections (TCP + TLS)
+# pooled across requests instead of a fresh handshake per search. httpx.Client
+# is thread-safe, so FastAPI's threadpool workers can share it.
+_http_client = httpx.Client(timeout=_TIMEOUT)
 _flight_cache: TtlCache[list[schemas.FlightOffer]] = TtlCache(
     settings.provider_cache_ttl_seconds
 )
@@ -65,10 +70,14 @@ def _flight_primary() -> FlightProvider | None:
             settings.duffel_api_key,
             base_url=settings.duffel_base_url,
             timeout=_TIMEOUT,
+            client=_http_client,
         )
     if settings.flight_provider == "http" and settings.flights_api_url:
         return HttpFlightProvider(
-            settings.flights_api_url, settings.flights_api_key, timeout=_TIMEOUT
+            settings.flights_api_url,
+            settings.flights_api_key,
+            timeout=_TIMEOUT,
+            client=_http_client,
         )
     return None
 
@@ -80,6 +89,7 @@ def _hotel_primary() -> HotelProvider | None:
             _locate_city,
             base_url=settings.duffel_base_url,
             timeout=_TIMEOUT,
+            client=_http_client,
         )
     if settings.hotel_provider == "liteapi" and settings.liteapi_api_key:
         return LiteApiHotelProvider(
@@ -87,10 +97,14 @@ def _hotel_primary() -> HotelProvider | None:
             _locate_city,
             base_url=settings.liteapi_base_url,
             timeout=_TIMEOUT,
+            client=_http_client,
         )
     if settings.hotel_provider == "http" and settings.hotels_api_url:
         return HttpHotelProvider(
-            settings.hotels_api_url, settings.hotels_api_key, timeout=_TIMEOUT
+            settings.hotels_api_url,
+            settings.hotels_api_key,
+            timeout=_TIMEOUT,
+            client=_http_client,
         )
     return None
 
@@ -101,6 +115,7 @@ def _transport_primary() -> TransportProvider | None:
             settings.transport_api_url,
             settings.transport_api_key,
             timeout=_TIMEOUT,
+            client=_http_client,
         )
     return None
 

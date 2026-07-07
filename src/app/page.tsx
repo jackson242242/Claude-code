@@ -21,25 +21,26 @@ const TOURNAMENT_END_UTC = Date.UTC(2026, 6, 20);
 
 const HomePage = async () => {
   const locale = await getLocale();
-  const [cities, fanFootage, heroVideos, liveNews] = await Promise.all([
-    getCities(),
-    getTouristVideos(),
-    getHeroVideos(),
-    getLiveNews(locale),
-  ]);
+  const now = Date.now();
+  const tournamentLive = now >= KICKOFF_UTC && now < TOURNAMENT_END_UTC;
+  const [cities, fanFootage, heroVideos, liveNews, todayMatches] =
+    await Promise.all([
+      getCities(),
+      getTouristVideos(),
+      getHeroVideos(),
+      getLiveNews(locale),
+      tournamentLive
+        ? getMatches({ date: new Date(now).toISOString().slice(0, 10) })
+        : Promise.resolve([]),
+    ]);
   const t = translator(locale);
   // Top live headlines for the "Latest" rail (falls back to the curated seed
   // when the feed is unreachable).
   const videoStories = liveNews.items.slice(0, 10);
-  const now = Date.now();
   const daysUntilKickoff = Math.max(
     0,
     Math.ceil((KICKOFF_UTC - now) / 86_400_000),
   );
-  const tournamentLive = now >= KICKOFF_UTC && now < TOURNAMENT_END_UTC;
-  const todayMatches = tournamentLive
-    ? await getMatches({ date: new Date(now).toISOString().slice(0, 10) })
-    : [];
 
   const hasHeroVideo = heroVideos.length > 0;
 

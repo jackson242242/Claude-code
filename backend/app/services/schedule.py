@@ -26,6 +26,31 @@ def _query(sql: str) -> list[dict[str, Any]] | None:
         return None
 
 
+# Seed data is static and the feed overlay only changes when the feed refreshes
+# (schedule_feed.version()), so the built Pydantic models are cached instead of
+# being re-instantiated on every request. DB-backed reads stay uncached — the
+# database is the live source of truth when configured.
+_seed_match_cache: tuple[int, list[schemas.Match]] | None = None
+_seed_cities: list[schemas.City] | None = None
+_seed_teams: list[schemas.Team] | None = None
+
+
+def _seed_matches() -> list[schemas.Match]:
+    global _seed_match_cache
+    feed_version = schedule_feed.version()
+    cache = _seed_match_cache
+    if cache is None or cache[0] != feed_version:
+        cache = (
+            feed_version,
+            [
+                schemas.Match(**match)
+                for match in schedule_feed.overlay_matches(seed.MATCHES)
+            ],
+        )
+        _seed_match_cache = cache
+    return cache[1]
+
+
 def _all_matches() -> list[schemas.Match]:
     rows = _query(
         'SELECT id, match_number, stage, group_label AS "group", home_team, '
@@ -34,10 +59,7 @@ def _all_matches() -> list[schemas.Match]:
     )
     if rows is not None:
         return [schemas.Match(**row) for row in rows]
-    return [
-        schemas.Match(**match)
-        for match in schedule_feed.overlay_matches(seed.MATCHES)
-    ]
+    return _seed_matches()
 
 
 def list_matches(
@@ -79,13 +101,16 @@ def get_match(match_id: str) -> schemas.Match | None:
 
 
 def list_cities() -> list[schemas.City]:
+    global _seed_cities
     rows = _query(
         "SELECT id, name, country, lat, lng, airports, transport_notes "
         "FROM cities ORDER BY name"
     )
     if rows is not None:
         return [schemas.City(**row) for row in rows]
-    return [schemas.City(**city) for city in seed.CITIES]
+    if _seed_cities is None:
+        _seed_cities = [schemas.City(**city) for city in seed.CITIES]
+    return _seed_cities
 
 
 def get_city(city_id: str) -> schemas.City | None:
@@ -96,10 +121,13 @@ def get_city(city_id: str) -> schemas.City | None:
 
 
 def list_teams() -> list[schemas.Team]:
+    global _seed_teams
     rows = _query(
         'SELECT id, name, group_label AS "group", confederation '
         "FROM teams ORDER BY group_label, name"
     )
     if rows is not None:
         return [schemas.Team(**row) for row in rows]
-    return [schemas.Team(**team) for team in seed.TEAMS]
+    if _seed_teams is None:
+        _seed_teams = [schemas.Team(**team) for team in seed.TEAMS]
+    return _seed_teams

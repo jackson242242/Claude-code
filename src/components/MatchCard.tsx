@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Match } from '@/types';
-import { getVenueById } from '@/services/scheduleService';
+import { getVenueById } from '@/services/venues';
 import { formatKickoff } from '@/lib/format';
 import { getFlag } from '@/lib/flags';
 

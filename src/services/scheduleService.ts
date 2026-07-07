@@ -1,18 +1,19 @@
-import type {
-  City,
-  Match,
-  MatchFilters,
-  NearbyCity,
-  Team,
-  Venue,
-} from '@/types';
+import type { City, Match, MatchFilters, NearbyCity, Team } from '@/types';
 import { MOCK_CITIES } from '@/mocks/cities';
 import { MOCK_MATCHES } from '@/mocks/matches';
 import { MOCK_TEAMS } from '@/mocks/teams';
-import { MOCK_VENUES } from '@/mocks/venues';
 import { nearestCities } from '@/lib/geo';
 import { getJson, mocksEnabled } from './apiClient';
 import { filterMatches, sortByKickoff } from './matchFilters';
+
+// Venue lookups live in ./venues (venues-only import) so client components can
+// resolve venue names without bundling the match/city/team mock datasets.
+export { getVenueById, getVenues } from './venues';
+
+/** Matches carry live status during the tournament — cache briefly. */
+const MATCH_REVALIDATE_SECONDS = 300;
+/** Host cities and teams are fixed reference data — cache for an hour. */
+const REFERENCE_REVALIDATE_SECONDS = 3600;
 
 const toQuery = (filters: MatchFilters): string => {
   const params = new URLSearchParams();
@@ -33,7 +34,10 @@ export const getMatches = async (
 ): Promise<Match[]> => {
   if (mocksEnabled()) return mockMatches(filters);
   try {
-    return await getJson<Match[]>(`/matches${toQuery(filters)}`);
+    return await getJson<Match[]>(
+      `/matches${toQuery(filters)}`,
+      MATCH_REVALIDATE_SECONDS,
+    );
   } catch {
     return mockMatches(filters);
   }
@@ -42,7 +46,7 @@ export const getMatches = async (
 export const getMatchById = async (id: string): Promise<Match | null> => {
   if (!mocksEnabled()) {
     try {
-      return await getJson<Match>(`/matches/${id}`);
+      return await getJson<Match>(`/matches/${id}`, MATCH_REVALIDATE_SECONDS);
     } catch {
       // fall through to the mock layer
     }
@@ -53,7 +57,7 @@ export const getMatchById = async (id: string): Promise<Match | null> => {
 export const getCities = async (): Promise<City[]> => {
   if (!mocksEnabled()) {
     try {
-      return await getJson<City[]>('/cities');
+      return await getJson<City[]>('/cities', REFERENCE_REVALIDATE_SECONDS);
     } catch {
       // fall through to the mock layer
     }
@@ -64,7 +68,10 @@ export const getCities = async (): Promise<City[]> => {
 export const getCityById = async (id: string): Promise<City | null> => {
   if (!mocksEnabled()) {
     try {
-      return await getJson<City>(`/cities/${id}`);
+      return await getJson<City>(
+        `/cities/${id}`,
+        REFERENCE_REVALIDATE_SECONDS,
+      );
     } catch {
       // fall through to the mock layer
     }
@@ -75,7 +82,7 @@ export const getCityById = async (id: string): Promise<City | null> => {
 export const getTeams = async (): Promise<Team[]> => {
   if (!mocksEnabled()) {
     try {
-      return await getJson<Team[]>('/teams');
+      return await getJson<Team[]>('/teams', REFERENCE_REVALIDATE_SECONDS);
     } catch {
       // fall through to the mock layer
     }
@@ -89,7 +96,10 @@ export const getNearbyCities = async (
 ): Promise<NearbyCity[]> => {
   if (!mocksEnabled()) {
     try {
-      return await getJson<NearbyCity[]>(`/cities/${id}/nearby?limit=${limit}`);
+      return await getJson<NearbyCity[]>(
+        `/cities/${id}/nearby?limit=${limit}`,
+        REFERENCE_REVALIDATE_SECONDS,
+      );
     } catch {
       // fall through to the local geo computation
     }
@@ -97,8 +107,3 @@ export const getNearbyCities = async (
   return nearestCities(MOCK_CITIES, id, limit);
 };
 
-/** Venues are static reference data, resolved locally on both server and client. */
-export const getVenueById = (id: string): Venue | null =>
-  MOCK_VENUES.find((venue) => venue.id === id) ?? null;
-
-export const getVenues = (): Venue[] => MOCK_VENUES;

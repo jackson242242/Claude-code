@@ -167,10 +167,15 @@ def _diff_days(start: str, end: str) -> int:
 def suggest_itinerary(user_id: str, trip_id: str) -> schemas.TripSuggestions:
     trip = _owned_trip(user_id, trip_id)
 
+    # One schedule/city load for the whole suggestion pass — per-item
+    # get_match/get_city calls would re-read the full dataset every time.
+    match_by_id = {match.id: match for match in schedule_service.list_matches()}
+    city_by_id = {city.id: city for city in schedule_service.list_cities()}
+
     matches = []
     for item in trip.items:
         if item.kind == "match" and item.match_id:
-            match = schedule_service.get_match(item.match_id)
+            match = match_by_id.get(item.match_id)
             if match is not None:
                 matches.append(match)
     matches.sort(key=lambda match: match.kickoff_utc)
@@ -195,7 +200,7 @@ def suggest_itinerary(user_id: str, trip_id: str) -> schemas.TripSuggestions:
         city_id = str(group["city_id"])
         dates = group["dates"]
         assert isinstance(dates, list)
-        city = schedule_service.get_city(city_id)
+        city = city_by_id.get(city_id)
         check_in = min(dates)
         check_out = _add_day(max(dates))
         hotels = hotel_provider.search(
@@ -218,8 +223,8 @@ def suggest_itinerary(user_id: str, trip_id: str) -> schemas.TripSuggestions:
     for index in range(1, len(grouped)):
         previous = grouped[index - 1]
         current = grouped[index]
-        from_city = schedule_service.get_city(str(previous["city_id"]))
-        to_city = schedule_service.get_city(str(current["city_id"]))
+        from_city = city_by_id.get(str(previous["city_id"]))
+        to_city = city_by_id.get(str(current["city_id"]))
         current_dates = current["dates"]
         assert isinstance(current_dates, list)
         travel_date = min(current_dates)

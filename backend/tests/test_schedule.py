@@ -40,3 +40,16 @@ def test_cities_and_teams(client: TestClient) -> None:
     assert len(client.get("/teams").json()) == 48
     city = client.get("/cities/new-york").json()
     assert city["name"].startswith("New York")
+
+
+def test_seed_models_are_cached_and_invalidated_by_feed_reset() -> None:
+    """Seed-built models are reused across calls (no per-request rebuild) but
+    a feed refresh/reset must invalidate the cached matches."""
+    from app.services import schedule, schedule_feed
+
+    first = schedule._all_matches()
+    assert schedule._all_matches() is first
+    assert schedule.list_cities() is schedule.list_cities()
+
+    schedule_feed.reset()
+    assert schedule._all_matches() is not first

@@ -27,14 +27,26 @@ _UTC_FORMATS = ("%Y-%m-%d %H:%M:%SZ", "%Y-%m-%dT%H:%M:%SZ", "%Y-%m-%dT%H:%M:%S.0
 _lock = threading.Lock()
 _rows: dict[int, dict[str, Any]] | None = None
 _next_refresh = 0.0
+_version = 0
 
 
 def reset() -> None:
     """Clear cached feed state (used by tests)."""
-    global _rows, _next_refresh
+    global _rows, _next_refresh, _version
     with _lock:
         _rows = None
         _next_refresh = 0.0
+        _version += 1
+
+
+def version() -> int:
+    """Monotonic token that changes whenever the overlay data may have changed.
+
+    Triggers the TTL refresh check as a side effect, so callers can cache
+    derived data keyed on this value and stay consistent with the feed.
+    """
+    _feed_rows()
+    return _version
 
 
 def _venue_id_by_name() -> dict[str, str]:
@@ -86,7 +98,7 @@ def _parse_feed(payload: Any) -> dict[int, dict[str, Any]]:
 
 
 def _feed_rows() -> dict[int, dict[str, Any]] | None:
-    global _rows, _next_refresh
+    global _rows, _next_refresh, _version
     url = settings.schedule_feed_url
     if not url:
         return None
@@ -103,6 +115,7 @@ def _feed_rows() -> dict[int, dict[str, Any]] | None:
             response.raise_for_status()
             _rows = _parse_feed(response.json())
             _next_refresh = now + settings.schedule_feed_ttl_seconds
+            _version += 1
         except Exception:
             _next_refresh = now + _FAILURE_RETRY_SECONDS
         return _rows

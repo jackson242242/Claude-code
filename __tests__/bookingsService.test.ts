@@ -1,3 +1,4 @@
+/** @jest-environment jsdom */
 import { checkoutTrip, listBookings } from '@/services/bookingsService';
 
 describe('bookingsService', () => {

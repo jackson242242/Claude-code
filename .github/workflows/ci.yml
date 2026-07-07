@@ -4,8 +4,11 @@ on:
   push:
   pull_request:
 
+# Key the group on the branch name (head_ref for PR events, ref_name for push
+# events) so a push to a branch with an open PR doesn't run the whole pipeline
+# twice — the duplicate run is cancelled instead.
 concurrency:
-  group: ci-${{ github.workflow }}-${{ github.ref }}
+  group: ci-${{ github.workflow }}-${{ github.head_ref || github.ref_name }}
   cancel-in-progress: true
 
 jobs:
@@ -27,8 +30,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
       - run: npm run lint
-      - run: npx tsc --noEmit
       - run: npm test -- --ci --coverage
+      # `next build` type-checks the project (tsconfig strict), so a separate
+      # `tsc --noEmit` step here would run the same full check twice.
       - run: npm run build
       - name: Upload frontend coverage
         if: always()
@@ -68,7 +72,8 @@ jobs:
           cache: pip
           cache-dependency-path: backend/requirements.txt
       - run: pip install -r requirements.txt
-      - run: python -m pytest -q
+      # Coverage flags live here (not pytest.ini) so local runs stay fast.
+      - run: python -m pytest -q --cov=app --cov-report=xml --cov-fail-under=80
       - name: Upload backend coverage
         if: always()
         uses: actions/upload-artifact@v4
