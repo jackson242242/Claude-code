@@ -52,13 +52,22 @@ const HomePage = async () => {
         {daysUntilKickoff > 0 ? (
           <div
             className="hero__countdown"
-            aria-label={`${daysUntilKickoff} days until kickoff`}
+            aria-label={`${daysUntilKickoff} ${
+              daysUntilKickoff === 1
+                ? t('home.countdown.day')
+                : t('home.countdown.days')
+            } ${t('home.countdown.until')}`}
           >
-            {daysUntilKickoff} {daysUntilKickoff === 1 ? 'DAY' : 'DAYS'}
-            <small>until kickoff · June 11</small>
+            {daysUntilKickoff}{' '}
+            {daysUntilKickoff === 1
+              ? t('home.countdown.day')
+              : t('home.countdown.days')}
+            <small>{t('home.countdown.until')}</small>
           </div>
         ) : (
-          tournamentLive && <HeroLiveStrip matches={todayMatches} now={now} />
+          tournamentLive && (
+            <HeroLiveStrip matches={todayMatches} now={now} locale={locale} />
+          )
         )}
         <h1>{t('home.title')}</h1>
         <p>{t('home.subtitle')}</p>
@@ -72,13 +81,13 @@ const HomePage = async () => {
         </div>
         <div className="hero__trust">
           <span>
-            <strong>104</strong> matches
+            <strong>104</strong> {t('home.trust.matches')}
           </span>
           <span>
-            <strong>{cities.length}</strong> host cities
+            <strong>{cities.length}</strong> {t('home.trust.hostCities')}
           </span>
           <span>
-            <strong>3</strong> countries
+            <strong>3</strong> {t('home.trust.countries')}
           </span>
         </div>
       </section>
@@ -88,6 +97,7 @@ const HomePage = async () => {
         bloopers={BLOOPER_VIDEOS}
         videoStories={videoStories}
         fanFootage={fanFootage}
+        locale={locale}
       />
 
       <section>
@@ -100,22 +110,20 @@ const HomePage = async () => {
       </section>
 
       <section>
-        <h2>Plan your trip</h2>
+        <h2>{t('home.plan.title')}</h2>
         <div className="plan-grid">
           <Link className="plan-tile plan-tile--flights" href="/flights">
             <span className="plan-tile__label">{t('nav.flights')} →</span>
-            <span className="plan-tile__sub">
-              Search fares to every host city
-            </span>
+            <span className="plan-tile__sub">{t('home.plan.flightsSub')}</span>
           </Link>
           <Link className="plan-tile plan-tile--hotels" href="/hotels">
             <span className="plan-tile__label">{t('nav.hotels')} →</span>
-            <span className="plan-tile__sub">Stay near the stadiums</span>
+            <span className="plan-tile__sub">{t('home.plan.hotelsSub')}</span>
           </Link>
           <Link className="plan-tile plan-tile--transport" href="/transport">
             <span className="plan-tile__label">{t('nav.transport')} →</span>
             <span className="plan-tile__sub">
-              Get between cities and venues
+              {t('home.plan.transportSub')}
             </span>
           </Link>
         </div>

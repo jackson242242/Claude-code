@@ -20,4 +20,12 @@ describe('i18n', () => {
   it('exposes a full dictionary per locale', () => {
     expect(getDictionary('fr')['home.hostCities']).toBe('Villes hôtes');
   });
+
+  it('covers the home page plan/live/news-window strings in every locale', () => {
+    expect(translate('es', 'home.plan.title')).toBe('Planifica tu viaje');
+    expect(translate('fr', 'live.badge')).toBe('EN DIRECT');
+    expect(translate('es', 'newsWindow.tabLatest')).toBe('Lo último');
+    // en stays the source copy
+    expect(translate('en', 'home.plan.title')).toBe('Plan your trip');
+  });
 });

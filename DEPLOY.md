@@ -51,6 +51,9 @@ just means that vertical serves mock data.
   raw upstream result or error, so they're the source of truth):
   - `https://<worldcup-api-url>/meta/flight-probe` → `{"ok":true,…,"provider":"Duffel"}`
   - `https://<worldcup-api-url>/meta/hotel-probe` → `{"ok":true,…,"provider":"LiteAPI"}`
+  - The probes hit the paid upstream APIs directly (no cache). To stop anonymous
+    callers burning quota, optionally set `META_PROBE_TOKEN` — the probes then
+    require an `X-Probe-Token` header with that value.
 - Health check: `https://<worldcup-api-url>/health` → `{"status":"ok"}`.
 
 If a provider is unreachable or errors, the resilient wrapper falls back to mock

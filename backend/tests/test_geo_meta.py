@@ -54,3 +54,20 @@ def test_flight_probe_reports_unconfigured_on_default(client: TestClient) -> Non
     body = res.json()
     assert body["ok"] is False
     assert body["configured"] == "mock"
+
+
+def test_probes_require_token_when_configured(client: TestClient) -> None:
+    """With META_PROBE_TOKEN set, the live-provider probes reject callers
+    without the X-Probe-Token header; unset (default) keeps them open."""
+    from app.config import settings
+
+    object.__setattr__(settings, "meta_probe_token", "sekret")
+    try:
+        assert client.get("/meta/hotel-probe").status_code == 403
+        assert client.get("/meta/flight-probe").status_code == 403
+        res = client.get(
+            "/meta/hotel-probe", headers={"X-Probe-Token": "sekret"}
+        )
+        assert res.status_code == 200
+    finally:
+        object.__setattr__(settings, "meta_probe_token", None)

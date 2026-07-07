@@ -1,9 +1,10 @@
 """Pluggable payment gateway.
 
 Default is the affiliate / no-charge model: a booking is "reserved" and the
-user completes purchases via the per-line deep links. Setting
-PAYMENT_GATEWAY=stripe with a key swaps in a charge step that marks bookings
-"paid" (a real PaymentIntent call would live in StripePaymentGateway.charge).
+user completes purchases via the per-line deep links. PAYMENT_GATEWAY=stripe
+selects the Stripe gateway, which is still a stub: until a real PaymentIntent
+call is implemented it also returns "reserved" — a booking must never be
+recorded as "paid" when no money actually moved.
 """
 from __future__ import annotations
 
@@ -41,8 +42,10 @@ class StripePaymentGateway(PaymentGateway):
     def charge(
         self, amount_usd: float, currency: str, description: str
     ) -> PaymentResult:
-        # A real integration would create a Stripe PaymentIntent here.
-        return PaymentResult(status="paid", provider="stripe")
+        # Stub: a real integration would create a Stripe PaymentIntent here and
+        # only report "paid" on a confirmed charge. Until then, stay honest —
+        # flipping PAYMENT_GATEWAY=stripe must not fabricate paid bookings.
+        return PaymentResult(status="reserved", provider="stripe")
 
 
 def payment_gateway() -> PaymentGateway:

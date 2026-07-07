@@ -78,5 +78,10 @@ class Settings:
     payment_gateway: str = os.getenv("PAYMENT_GATEWAY", "none")
     stripe_secret_key: str | None = os.getenv("STRIPE_SECRET_KEY") or None
 
+    # Optional gate for /meta/*-probe (they hit paid upstreams directly,
+    # bypassing cache and fallback). Unset = probes stay open for debugging;
+    # set = callers must send the X-Probe-Token header.
+    meta_probe_token: str | None = os.getenv("META_PROBE_TOKEN") or None
+
 
 settings = Settings()

@@ -57,4 +57,13 @@ describe('HeroLiveStrip', () => {
     expect(screen.getByText(/rest day/i)).toBeInTheDocument();
     expect(screen.queryByRole('list')).not.toBeInTheDocument();
   });
+
+  it('localizes the badge and phase labels', () => {
+    render(
+      <HeroLiveStrip matches={[match]} now={KICKOFF + HOUR} locale="es" />,
+    );
+    expect(screen.getByText('EN VIVO')).toBeInTheDocument();
+    expect(screen.getByText('En juego')).toBeInTheDocument();
+    expect(screen.queryByText('LIVE NOW')).not.toBeInTheDocument();
+  });
 });

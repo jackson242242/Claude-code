@@ -19,6 +19,7 @@ import Link from 'next/link';
 import type { NewsItem } from '@/types/news';
 import type { TouristVideo } from '@/types/touristVideo';
 import type { SuperstarVideo } from '@/mocks/superstars';
+import { DEFAULT_LOCALE, translator, type Locale } from '@/i18n';
 import { SuperstarCard } from './SuperstarCard';
 import { VideoStoryCard } from './VideoStoryCard';
 import { FootageTile } from './FootageTile';
@@ -39,12 +40,14 @@ const tabClass = (active: boolean): string =>
 interface HomeNewsWindowProps {
   /** Different-nation superstar links (external YouTube). */
   superstars: SuperstarVideo[];
-  /** National-team video stories (NEWS_ITEMS where category === 'video'). */
+  /** Latest stories (live news articles and curated video stories). */
   videoStories: NewsItem[];
   /** Fan footage from getTouristVideos() (Pexels → cache → seed). */
   fanFootage: TouristVideo[];
   /** Bloopers / funny-moment links (external YouTube) — eyeball bait. */
   bloopers?: SuperstarVideo[];
+  /** Viewer locale for the window's chrome (title, tabs, aria labels). */
+  locale?: Locale;
 }
 
 export const HomeNewsWindow = ({
@@ -52,7 +55,9 @@ export const HomeNewsWindow = ({
   videoStories,
   fanFootage,
   bloopers = [],
+  locale = DEFAULT_LOCALE,
 }: HomeNewsWindowProps) => {
+  const t = translator(locale);
   const hasStars = superstars.length > 0;
   const hasBloopers = bloopers.length > 0;
   const hasTeams = videoStories.length > 0;
@@ -73,7 +78,7 @@ export const HomeNewsWindow = ({
 
   return (
     <section
-      aria-label="Matchday news videos"
+      aria-label={t('newsWindow.aria')}
       className="overflow-hidden rounded-[1.5rem] border border-[#243042] shadow-[0_16px_48px_rgba(0,0,0,0.5)]"
     >
       {/* Dark "video theater" header band — pops against the light page */}
@@ -95,27 +100,26 @@ export const HomeNewsWindow = ({
               <span className="absolute inline-flex h-full w-full rounded-full bg-[#3d8bff] opacity-75 motion-safe:animate-ping" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-[#3d8bff]" />
             </span>
-            ▶ Watch
+            {t('newsWindow.kicker')}
           </span>
           <h2 className="m-0 mt-1 text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
-            Matchday News
+            {t('newsWindow.title')}
           </h2>
           <p className="m-0 mt-1 text-sm text-white/70">
-            Superstars, bloopers, national teams and fan-zone clips — tap to
-            watch.
+            {t('newsWindow.subtitle')}
           </p>
         </div>
         <Link
           href="/news"
           className="shrink-0 rounded-full bg-white/15 px-3.5 py-2 text-sm font-semibold text-white backdrop-blur transition-colors hover:bg-white/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         >
-          View all →
+          {t('newsWindow.viewAll')}
         </Link>
       </div>
 
       {/* Body */}
       <div className="bg-[#141d2b] px-5 py-5 sm:px-7">
-        <div role="tablist" aria-label="News stream" className="mb-5 flex gap-2">
+        <div role="tablist" aria-label={t('newsWindow.tabsAria')} className="mb-5 flex gap-2">
           {hasStars && (
             <button
               type="button"
@@ -124,7 +128,7 @@ export const HomeNewsWindow = ({
               onClick={() => setTab('stars')}
               className={tabClass(tab === 'stars')}
             >
-              Superstars
+              {t('newsWindow.tabStars')}
             </button>
           )}
           {hasBloopers && (
@@ -135,7 +139,7 @@ export const HomeNewsWindow = ({
               onClick={() => setTab('bloopers')}
               className={tabClass(tab === 'bloopers')}
             >
-              Bloopers 😂
+              {t('newsWindow.tabBloopers')}
             </button>
           )}
           {hasTeams && (
@@ -146,7 +150,7 @@ export const HomeNewsWindow = ({
               onClick={() => setTab('teams')}
               className={tabClass(tab === 'teams')}
             >
-              Latest
+              {t('newsWindow.tabLatest')}
             </button>
           )}
           {hasFans && (
@@ -157,7 +161,7 @@ export const HomeNewsWindow = ({
               onClick={() => setTab('fans')}
               className={tabClass(tab === 'fans')}
             >
-              Fan Zone
+              {t('newsWindow.tabFans')}
             </button>
           )}
         </div>
@@ -167,7 +171,7 @@ export const HomeNewsWindow = ({
           <div
             className={RAIL_CLASS}
             style={{ scrollbarWidth: 'none' }}
-            aria-label="Superstar highlights — scroll for more"
+            aria-label={t('newsWindow.starsRailAria')}
           >
             {superstars.map((item) => (
               <div key={item.id} className="shrink-0 snap-start">
@@ -182,7 +186,7 @@ export const HomeNewsWindow = ({
           <div
             className={RAIL_CLASS}
             style={{ scrollbarWidth: 'none' }}
-            aria-label="Soccer bloopers — scroll for more"
+            aria-label={t('newsWindow.bloopersRailAria')}
           >
             {bloopers.map((item) => (
               <div key={item.id} className="shrink-0 snap-start">
@@ -197,7 +201,7 @@ export const HomeNewsWindow = ({
           <div
             className={RAIL_CLASS}
             style={{ scrollbarWidth: 'none' }}
-            aria-label="National team videos — scroll for more"
+            aria-label={t('newsWindow.latestRailAria')}
           >
             {videoStories.map((item) => (
               <div key={item.id} className="shrink-0 snap-start">
@@ -212,7 +216,7 @@ export const HomeNewsWindow = ({
           <div
             className={RAIL_CLASS}
             style={{ scrollbarWidth: 'none' }}
-            aria-label="Fan footage — scroll for more"
+            aria-label={t('newsWindow.fansRailAria')}
           >
             {fanFootage.map((video) => (
               <div key={video.id} className="w-[164px] shrink-0 snap-start">

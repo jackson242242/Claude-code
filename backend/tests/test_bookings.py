@@ -88,3 +88,13 @@ def test_booking_ownership_enforced(client: TestClient) -> None:
     ).json()["id"]
 
     assert client.get(f"/bookings/{booking_id}", headers=other).status_code == 404
+
+
+def test_stripe_stub_never_reports_paid() -> None:
+    """The Stripe gateway is a stub — until a real PaymentIntent flow exists it
+    must not record bookings as paid when no money moved."""
+    from app.services.payments import StripePaymentGateway
+
+    result = StripePaymentGateway("sk_test_x").charge(100.0, "USD", "test")
+    assert result.status == "reserved"
+    assert result.provider == "stripe"

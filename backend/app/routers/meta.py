@@ -2,15 +2,28 @@ from __future__ import annotations
 
 from urllib.parse import parse_qs, urlparse
 
-from fastapi import APIRouter
+from fastapi import APIRouter, Header, HTTPException
 
 from app import schemas
+from app.config import settings
 from app.observability import metrics
 from app.providers import mock_hotels, registry
 from app.seed import schedule_2026 as _seed
 from app.services import deeplinks
 
 router = APIRouter(prefix="/meta", tags=["meta"])
+
+
+def _check_probe_access(header_token: str | None) -> None:
+    """Optionally gate the live-provider probes behind META_PROBE_TOKEN.
+
+    The probes bypass the cache and resilient fallback and hit paid upstream
+    APIs directly, so a public deployment may want them locked down. Unset
+    (the default) keeps them open for browser debugging per DEPLOY.md.
+    """
+    expected = settings.meta_probe_token
+    if expected and header_token != expected:
+        raise HTTPException(status_code=403, detail="Invalid or missing probe token")
 
 
 def _ss_param(url: str) -> str:
@@ -35,10 +48,12 @@ def hotel_probe(
     city_id: str = "new-york",
     check_in: str = "2026-06-15",
     check_out: str = "2026-06-18",
+    x_probe_token: str | None = Header(default=None),
 ) -> dict[str, object]:
     """Diagnostic: call the live hotel provider directly and report the raw
     result or error. Bypasses the resilient fallback that would otherwise mask a
     misconfigured integration (e.g. a token without Stays access)."""
+    _check_probe_access(x_probe_token)
     query = schemas.HotelSearchQuery(
         city_id=city_id, check_in=check_in, check_out=check_out, guests=2
     )
@@ -99,9 +114,11 @@ def flight_probe(
     origin: str = "JFK",
     destination: str = "LAX",
     date: str = "2026-06-15",
+    x_probe_token: str | None = Header(default=None),
 ) -> dict[str, object]:
     """Diagnostic counterpart to /hotel-probe for flights (Duffel Air). Calls
     the live flight provider directly and reports the raw result or error."""
+    _check_probe_access(x_probe_token)
     query = schemas.FlightSearchQuery(
         origin=origin, destination=destination, date=date, passengers=1
     )

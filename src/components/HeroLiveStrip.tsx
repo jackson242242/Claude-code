@@ -3,11 +3,14 @@ import type { Match } from '@/types';
 import { getVenueById } from '@/services/venues';
 import { getMatchPhase } from '@/services/matchPhase';
 import { getFlag } from '@/lib/flags';
+import { DEFAULT_LOCALE, translator, type Locale } from '@/i18n';
 
 interface HeroLiveStripProps {
   matches: Match[];
   /** Server render instant (ms epoch) — keeps phase derivation testable. */
   now: number;
+  /** Viewer locale for the strip's labels (badge, phases, rest-day copy). */
+  locale?: Locale;
 }
 
 /** Local wall-clock kickoff time ("HH:MM") for the compact strip. */
@@ -19,14 +22,20 @@ const kickoffTime = (local: string): string => local.slice(11, 16);
  * Each match shows its current phase — kickoff time while upcoming, a pulsing
  * "In progress" while underway, "FT" once finished.
  */
-export const HeroLiveStrip = ({ matches, now }: HeroLiveStripProps) => (
+export const HeroLiveStrip = ({
+  matches,
+  now,
+  locale = DEFAULT_LOCALE,
+}: HeroLiveStripProps) => {
+  const t = translator(locale);
+  return (
   <div className="hero__live" data-testid="hero-live-strip">
     <span className="hero__live-badge">
       <span className="hero__live-dot" aria-hidden="true" />
-      LIVE NOW
+      {t('live.badge')}
     </span>
     {matches.length > 0 ? (
-      <ul className="hero__live-matches" aria-label="Today's matches">
+      <ul className="hero__live-matches" aria-label={t('live.todaysMatches')}>
         {matches.map((match) => {
           const venue = getVenueById(match.venueId);
           const phase = getMatchPhase(match, now);
@@ -52,9 +61,11 @@ export const HeroLiveStrip = ({ matches, now }: HeroLiveStripProps) => (
                 </span>
                 <span className="hero__live-meta">
                   {phase === 'inProgress' ? (
-                    <span className="hero__live-now">In progress</span>
+                    <span className="hero__live-now">
+                      {t('live.inProgress')}
+                    </span>
                   ) : phase === 'fullTime' ? (
-                    'FT'
+                    t('live.fullTime')
                   ) : (
                     kickoffTime(match.kickoffLocal)
                   )}
@@ -66,12 +77,11 @@ export const HeroLiveStrip = ({ matches, now }: HeroLiveStripProps) => (
         })}
       </ul>
     ) : (
-      <span className="hero__live-rest">
-        Rest day — knockout action resumes soon
-      </span>
+      <span className="hero__live-rest">{t('live.restDay')}</span>
     )}
     <Link className="hero__live-all" href="/schedule">
-      Full schedule →
+      {t('live.fullSchedule')}
     </Link>
   </div>
-);
+  );
+};
