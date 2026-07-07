@@ -1,6 +1,7 @@
 import { ApiError, apiFetch } from "./client";
 import type {
   AddPositionOptions,
+  DailyBrief,
   Horizon,
   HotStock,
   PortfolioPosition,
@@ -83,3 +84,16 @@ export const getTrends = (): Promise<SecularTrend[]> => apiFetch<SecularTrend[]>
 
 export const discoverTrends = (): Promise<SecularTrend[]> =>
   apiFetch<SecularTrend[]>("/api/trends/discover", { method: "POST" });
+
+/** Latest daily audio brief, or null if none has been generated yet. */
+export const getLatestBrief = async (): Promise<DailyBrief | null> => {
+  try {
+    return await apiFetch<DailyBrief>("/api/briefs/latest");
+  } catch (err) {
+    if (err instanceof ApiError && err.status === 404) return null;
+    throw err;
+  }
+};
+
+export const runBrief = (): Promise<DailyBrief> =>
+  apiFetch<DailyBrief>("/api/briefs/run", { method: "POST" });

@@ -5,3 +5,5 @@ pydantic>=2.9
 pydantic-settings>=2.6
 anthropic>=0.69
 httpx>=0.27
+# Free neural TTS (Microsoft Edge voices) for the daily audio brief.
+edge-tts>=7.0

@@ -114,6 +114,14 @@ export const ThesisInputScreen = ({ navigation }: Props) => {
           <Text style={styles.linkHint}>发现新的 secular trend</Text>
         </TouchableOpacity>
       </View>
+      <TouchableOpacity
+        style={styles.wideLinkCard}
+        onPress={() => navigation.navigate("Brief")}
+        testID="open-brief"
+      >
+        <Text style={styles.linkTitle}>每日简报 🎧</Text>
+        <Text style={styles.linkHint}>股市 · 宏观 · 地缘政治 · 播客观点,开车也能听</Text>
+      </TouchableOpacity>
 
       <TouchableOpacity
         style={styles.secondary}
@@ -189,6 +197,14 @@ const styles = StyleSheet.create({
   },
   linkTitle: { color: colors.text, fontSize: 15, fontWeight: "700" },
   linkHint: { color: colors.textMuted, fontSize: 12, marginTop: 3 },
+  wideLinkCard: {
+    backgroundColor: colors.surface,
+    borderColor: colors.border,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderRadius: 10,
+    padding: 12,
+    marginTop: 8,
+  },
   secondary: { alignItems: "center", padding: 14 },
   secondaryText: { color: colors.textMuted, fontSize: 14 },
 });

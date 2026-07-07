@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StatusBar } from "expo-status-bar";
 
 import type { RootStackParamList } from "./src/navigation/types";
+import { BriefScreen } from "./src/screens/BriefScreen";
 import { HotStocksScreen } from "./src/screens/HotStocksScreen";
 import { PortfolioScreen } from "./src/screens/PortfolioScreen";
 import { ThesisInputScreen } from "./src/screens/ThesisInputScreen";
@@ -62,6 +63,7 @@ export default function App() {
           options={{ title: "我的组合" }}
         />
         <Stack.Screen name="Trends" component={TrendsScreen} options={{ title: "趋势方向" }} />
+        <Stack.Screen name="Brief" component={BriefScreen} options={{ title: "每日简报" }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

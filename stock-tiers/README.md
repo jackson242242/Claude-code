@@ -164,6 +164,42 @@ app's 「立即更新」 button does it manually; a Render **Cron Job** automate
    job. If `CRON_SECRET` is unset on the service, the endpoint is open (fine for
    a single-user prototype; the in-app button uses it too).
 
+## 每日简报 (daily audio brief — 开车可听)
+
+One loop per day (`POST /api/briefs/run`, same `x-cron-secret` guard):
+
+1. **Podcast scan** (optional): with free Spotify client credentials
+   (`SPOTIFY_CLIENT_ID`/`SECRET`), fresh episodes of the shows in
+   `PODCAST_SHOWS` are pulled (metadata only — Spotify's API has no
+   transcripts) and fed to the prompt as search targets.
+2. **Claude + web search** covers 股市 / 金融宏观 / 地缘政治 / 播客里的大佬观点
+   (quotes are verified via recaps/transcripts and always attributed), then
+   distills 1–3 swing-trade theses — each tappable in the app to generate a
+   full S–F list via the thesis pipeline.
+3. **TTS**: the spoken script is rendered to mp3 with edge-tts (free Microsoft
+   neural voices, `TTS_VOICE`). TTS failure degrades to a text-only brief.
+4. Served at `GET /api/briefs/latest`, audio at `/api/briefs/audio/...`, and as
+   a **podcast RSS feed at `/podcast.xml`**.
+
+### Listening in the car
+
+- **Spotify**: Spotify only plays shows in its catalog — go to
+  [Spotify for Creators](https://creators.spotify.com), add a show with RSS
+  feed URL `https://<your-app>.onrender.com/podcast.xml` (set
+  `PUBLIC_BASE_URL` so enclosure URLs are absolute). Note this makes the
+  show publicly listed.
+- **Private alternative**: Apple Podcasts ("Follow a Show by URL…") and
+  Pocket Casts accept the RSS URL directly without publishing.
+- **Simplest**: open the web app's 每日简报 page and press play (works over
+  car Bluetooth).
+
+Add a second daily Render Cron (or extend the research one):
+
+```bash
+curl -fsS -X POST https://<your-app>.onrender.com/api/briefs/run \
+  -H "x-cron-secret: $CRON_SECRET"
+```
+
 ### Storage caveat (Render free tier)
 
 The portfolio/trends/research live in one JSON file at `DATA_DIR/portfolio.json`

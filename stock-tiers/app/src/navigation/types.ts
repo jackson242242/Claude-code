@@ -17,4 +17,5 @@ export type RootStackParamList = {
   };
   Portfolio: undefined;
   Trends: undefined;
+  Brief: undefined;
 };

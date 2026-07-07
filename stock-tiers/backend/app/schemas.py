@@ -196,3 +196,48 @@ class ResearchReport(ApiModel):
     diversification: str
     generated_at: str
     disclaimer: str
+
+
+# --- Daily audio brief (市场/金融/地缘政治 + 播客观点 + 波段 thesis) ------------
+
+BriefTopic = Literal["股市", "金融宏观", "地缘政治", "播客观点"]
+
+
+class BriefHighlight(ApiModel):
+    topic: BriefTopic
+    headline: str
+    detail: str
+
+
+class SwingThesis(ApiModel):
+    """A swing-trade (波段) thesis candidate; feeds POST /api/tiers/thesis."""
+
+    name: str
+    thesis: str
+    horizon: Horizon = "short"
+    why_now: str = ""
+
+
+class DailyBrief(ApiModel):
+    """One day's spoken-word market brief. `script` is the narration text;
+    `audio_url` is set when TTS succeeded (relative path served by this API)."""
+
+    id: str  # ISO date, one brief per day (latest run wins)
+    title: str
+    date: str
+    script: str
+    highlights: list[BriefHighlight]
+    swing_theses: list[SwingThesis]
+    audio_url: str | None = None
+    generated_at: str
+    disclaimer: str
+
+
+class BriefSummary(ApiModel):
+    """Listing entry (no script body)."""
+
+    id: str
+    title: str
+    date: str
+    audio_url: str | None = None
+    generated_at: str

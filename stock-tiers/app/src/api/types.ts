@@ -142,3 +142,32 @@ export interface ResearchReport {
   generatedAt: string;
   disclaimer: string;
 }
+
+// --- Daily audio brief --------------------------------------------------------
+
+export type BriefTopic = "股市" | "金融宏观" | "地缘政治" | "播客观点";
+
+export interface BriefHighlight {
+  topic: BriefTopic;
+  headline: string;
+  detail: string;
+}
+
+export interface SwingThesis {
+  name: string;
+  thesis: string;
+  horizon: Horizon;
+  whyNow: string;
+}
+
+export interface DailyBrief {
+  id: string;
+  title: string;
+  date: string;
+  script: string;
+  highlights: BriefHighlight[];
+  swingTheses: SwingThesis[];
+  audioUrl: string | null;
+  generatedAt: string;
+  disclaimer: string;
+}

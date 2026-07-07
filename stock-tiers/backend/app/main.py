@@ -14,8 +14,9 @@ from fastapi.staticfiles import StaticFiles
 from app.config import get_settings
 from app.errors import register_exception_handlers
 from app.providers.registry import build_primary, wrap_provider
-from app.routers import meta, portfolio, quotes, screener, tiers, trends
+from app.routers import briefs, meta, portfolio, quotes, screener, tiers, trends
 from app.services.tier_cache import TierCache
+from app.store.brief_store import BriefStore
 from app.store.portfolio_store import PortfolioStore
 
 
@@ -28,6 +29,7 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     app.state.stock_provider = wrap_provider(primary, is_real, settings)
     app.state.tier_cache = TierCache(ttl=settings.tier_cache_ttl)
     app.state.portfolio_store = PortfolioStore(Path(settings.data_dir) / "portfolio.json")
+    app.state.brief_store = BriefStore(Path(settings.data_dir) / "briefs", keep=settings.brief_keep)
     yield
 
 
@@ -49,6 +51,8 @@ def create_app() -> FastAPI:
     app.include_router(tiers.router)
     app.include_router(portfolio.router)
     app.include_router(trends.router)
+    app.include_router(briefs.router)
+    app.include_router(briefs.feed_router)
     app.include_router(meta.router)
 
     @app.get("/health", tags=["meta"])

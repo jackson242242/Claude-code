@@ -10,11 +10,13 @@ from fastapi import Request
 from app.config import Settings, get_settings
 from app.errors import AppError
 from app.providers.base import StockDataProvider
+from app.services.brief_engine import BriefEngine
 from app.services.mock_tier_engine import MockTierEngine
 from app.services.research_engine import ResearchEngine
 from app.services.tier_engine import TierEngine
 from app.services.tier_engine_base import TierEngineProtocol
 from app.services.trend_engine import TrendEngine
+from app.store.brief_store import BriefStore
 from app.store.portfolio_store import PortfolioStore
 
 
@@ -105,5 +107,17 @@ def get_trend_engine_dep() -> TrendEngine:
     settings = get_settings()
     return TrendEngine(
         client=_require_anthropic(settings, "Trend discovery"),
+        settings=settings,
+    )
+
+
+def get_brief_store(request: Request) -> BriefStore:
+    return cast(BriefStore, request.app.state.brief_store)
+
+
+def get_brief_engine() -> BriefEngine:
+    settings = get_settings()
+    return BriefEngine(
+        client=_require_anthropic(settings, "Daily brief"),
         settings=settings,
     )

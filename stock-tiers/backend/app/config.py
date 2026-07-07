@@ -42,6 +42,28 @@ class Settings(BaseSettings):
     # How many NEW secular trends one discovery pass proposes.
     trend_discover_count: int = 4
 
+    # --- Daily audio brief ---------------------------------------------------
+    # edge-tts neural voice for the spoken brief (Chinese narration).
+    tts_voice: str = "zh-CN-YunxiNeural"
+    # How many past briefs (and mp3s) to keep on disk.
+    brief_keep: int = 14
+    # Absolute base URL of the deployed service — required for the podcast RSS
+    # enclosure URLs (e.g. https://stock-tiers.onrender.com). Falls back to the
+    # request's own base URL when unset.
+    public_base_url: str | None = None
+    # Optional Spotify client-credentials pair: enables the podcast episode
+    # scanner that feeds fresh episode metadata into the brief prompt.
+    spotify_client_id: str | None = None
+    spotify_client_secret: str | None = None
+    # Comma-separated show names to scan for fresh episodes.
+    podcast_shows: str = (
+        "All-In Podcast,BG2 Pod,Odd Lots,Invest Like the Best,"
+        "Dwarkesh Podcast,Masters in Business"
+    )
+
+    def podcast_show_list(self) -> list[str]:
+        return [s.strip() for s in self.podcast_shows.split(",") if s.strip()]
+
     resilient_fallback: bool = True
 
     # If set to a directory containing a built web app (Expo web export), the API
