@@ -205,7 +205,7 @@ export const HomeNewsWindow = ({
           >
             {videoStories.map((item) => (
               <div key={item.id} className="shrink-0 snap-start">
-                <VideoStoryCard item={item} size="md" />
+                <VideoStoryCard item={item} size="md" locale={locale} />
               </div>
             ))}
           </div>

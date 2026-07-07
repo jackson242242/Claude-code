@@ -1,6 +1,7 @@
 'use client';
 
 import type { NewsItem, ThumbnailKind } from '@/types/news';
+import { DEFAULT_LOCALE, translator, type Locale } from '@/i18n';
 
 const GRADIENT_MAP: Record<ThumbnailKind, string> = {
   'teal-to-turquoise': 'from-[#3d8bff] to-[#2f6fe0]',
@@ -21,9 +22,16 @@ interface VideoStoryCardProps {
   item: NewsItem;
   /** 'md' enlarges the card for prominent placements (e.g. the home window). */
   size?: 'sm' | 'md';
+  /** Viewer locale for the card's labels (badge, aria prefix). */
+  locale?: Locale;
 }
 
-export const VideoStoryCard = ({ item, size = 'sm' }: VideoStoryCardProps) => {
+export const VideoStoryCard = ({
+  item,
+  size = 'sm',
+  locale = DEFAULT_LOCALE,
+}: VideoStoryCardProps) => {
+  const t = translator(locale);
   const gradient = GRADIENT_MAP[item.thumbnailKind];
   // Live RSS items are text articles (category 'team' etc.); only genuine
   // video stories get video affordances. Dressing an article up with a play
@@ -48,7 +56,7 @@ export const VideoStoryCard = ({ item, size = 'sm' }: VideoStoryCardProps) => {
       {...(external
         ? { target: '_blank', rel: 'noopener noreferrer' }
         : {})}
-      aria-label={`${isVideo ? 'Watch' : 'Read'}: ${item.title}`}
+      aria-label={`${isVideo ? t('newsCard.watch') : t('newsCard.read')}: ${item.title}`}
       className={`relative flex-shrink-0 ${widthClass} rounded-[1.125rem] overflow-hidden shadow-[0_6px_24px_rgba(0,0,0,0.45)] focus-visible:outline-2 focus-visible:outline-[#5a9dff] focus-visible:outline-offset-2 block`}
       style={{ aspectRatio: '9/16' }}
     >
@@ -89,7 +97,7 @@ export const VideoStoryCard = ({ item, size = 'sm' }: VideoStoryCardProps) => {
       {/* Corner badge: Muted for playable videos, NEWS for article links */}
       <div className="absolute top-2 right-2" aria-hidden="true">
         <span className="bg-black/60 text-white text-[0.6rem] font-bold uppercase tracking-wide px-1.5 py-0.5 rounded">
-          {isVideo ? 'Muted' : 'News'}
+          {isVideo ? t('newsCard.muted') : t('newsCard.news')}
         </span>
       </div>
 

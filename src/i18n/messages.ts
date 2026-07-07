@@ -50,6 +50,10 @@ export type MessageKey =
   | 'newsWindow.bloopersRailAria'
   | 'newsWindow.latestRailAria'
   | 'newsWindow.fansRailAria'
+  | 'newsCard.watch'
+  | 'newsCard.read'
+  | 'newsCard.muted'
+  | 'newsCard.news'
   | 'common.skipToContent'
   | 'footer.tagline';
 
@@ -98,6 +102,10 @@ export const MESSAGES: Record<Locale, Record<MessageKey, string>> = {
     'newsWindow.bloopersRailAria': 'Soccer bloopers — scroll for more',
     'newsWindow.latestRailAria': 'Latest World Cup stories — scroll for more',
     'newsWindow.fansRailAria': 'Fan footage — scroll for more',
+    'newsCard.watch': 'Watch',
+    'newsCard.read': 'Read',
+    'newsCard.muted': 'Muted',
+    'newsCard.news': 'News',
     'common.skipToContent': 'Skip to content',
     'footer.tagline': '2026 FIFA World Cup · United States · Canada · Mexico',
   },
@@ -146,6 +154,10 @@ export const MESSAGES: Record<Locale, Record<MessageKey, string>> = {
     'newsWindow.latestRailAria':
       'Últimas historias del Mundial — desliza para ver más',
     'newsWindow.fansRailAria': 'Vídeos de hinchas — desliza para ver más',
+    'newsCard.watch': 'Ver',
+    'newsCard.read': 'Leer',
+    'newsCard.muted': 'Sin sonido',
+    'newsCard.news': 'Noticia',
     'common.skipToContent': 'Saltar al contenido',
     'footer.tagline': 'Copa Mundial FIFA 2026 · Estados Unidos · Canadá · México',
   },
@@ -193,6 +205,10 @@ export const MESSAGES: Record<Locale, Record<MessageKey, string>> = {
     'newsWindow.bloopersRailAria': 'Bêtisiers foot — faites défiler',
     'newsWindow.latestRailAria': 'Dernières actus du Mondial — faites défiler',
     'newsWindow.fansRailAria': 'Vidéos des fans — faites défiler',
+    'newsCard.watch': 'Regarder',
+    'newsCard.read': 'Lire',
+    'newsCard.muted': 'Muet',
+    'newsCard.news': 'Actu',
     'common.skipToContent': 'Aller au contenu',
     'footer.tagline': 'Coupe du monde FIFA 2026 · États-Unis · Canada · Mexique',
   },
