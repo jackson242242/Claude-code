@@ -102,22 +102,36 @@ def _feed_rows() -> dict[int, dict[str, Any]] | None:
     url = settings.schedule_feed_url
     if not url:
         return None
+
+    # Decide whether to refresh, and claim the refresh slot, under the lock —
+    # but perform the blocking HTTP fetch OUTSIDE it. Holding the global lock
+    # across a network call (up to provider_timeout_seconds) would serialize
+    # every schedule read behind one slow feed. Other threads keep serving the
+    # current (possibly stale) rows meanwhile — "stale beats absent".
     with _lock:
         now = time.monotonic()
         if now < _next_refresh:
             return _rows
-        try:
-            response = httpx.get(
-                url,
-                timeout=settings.provider_timeout_seconds,
-                follow_redirects=True,
-            )
-            response.raise_for_status()
-            _rows = _parse_feed(response.json())
-            _next_refresh = now + settings.schedule_feed_ttl_seconds
-            _version += 1
-        except Exception:
-            _next_refresh = now + _FAILURE_RETRY_SECONDS
+        # Claim the slot: push _next_refresh out so concurrent callers serve
+        # stale data instead of stampeding the upstream.
+        _next_refresh = now + _FAILURE_RETRY_SECONDS
+
+    try:
+        response = httpx.get(
+            url,
+            timeout=settings.provider_timeout_seconds,
+            follow_redirects=True,
+        )
+        response.raise_for_status()
+        parsed = _parse_feed(response.json())
+    except Exception:
+        # _next_refresh already set to the short retry window above.
+        return _rows
+
+    with _lock:
+        _rows = parsed
+        _next_refresh = time.monotonic() + settings.schedule_feed_ttl_seconds
+        _version += 1
         return _rows
 
 
@@ -140,7 +154,10 @@ def overlay_matches(matches: list[dict[str, Any]]) -> list[dict[str, Any]]:
             merged.append(match)
             continue
         updated = {**match, **row}
-        if "kickoff_utc" in row:
+        # Recompute the local kickoff whenever the UTC time OR the venue moved —
+        # a relocated match keeps the seed's kickoff_local otherwise, which was
+        # localized with the old city's UTC offset.
+        if "kickoff_utc" in row or "venue_id" in row:
             updated["kickoff_local"] = _localize(
                 updated["kickoff_utc"], updated["venue_id"]
             )

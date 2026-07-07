@@ -128,10 +128,12 @@ class DuffelStaysHotelProvider(HotelProvider):
             acc = {}
 
         # Star rating is an int; fall back to a rounded /10 guest score, else 3.
+        # Check `is None` explicitly so a genuine 0 score isn't treated as
+        # "missing" and bumped to the 3 default.
         rating = acc.get("rating")
         if rating is None:
             review = acc.get("review_score")
-            rating = round(float(review) / 2) if review else 3
+            rating = round(float(review) / 2) if review is not None else 3
         rating = max(1, min(5, int(rating)))
 
         # Distance from city center, when the accommodation exposes coordinates.

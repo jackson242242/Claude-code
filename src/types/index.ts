@@ -23,6 +23,7 @@ export type {
   TripItem,
   Trip,
   TripSummary,
+  SharedTrip,
   AddTripItemInput,
   CityStay,
   TravelLeg,

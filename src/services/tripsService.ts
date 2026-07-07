@@ -1,5 +1,6 @@
 import type {
   AddTripItemInput,
+  SharedTrip,
   Trip,
   TripSuggestions,
   TripSummary,
@@ -50,5 +51,5 @@ export const removeTripItem = (id: string, itemId: string): Promise<Trip> =>
 export const getTripSuggestions = (id: string): Promise<TripSuggestions> =>
   authedFetch<TripSuggestions>(`/trips/${id}/suggestions`);
 
-export const getSharedTrip = (token: string): Promise<Trip> =>
-  authedFetch<Trip>(`/shared/${token}`);
+export const getSharedTrip = (token: string): Promise<SharedTrip> =>
+  authedFetch<SharedTrip>(`/shared/${token}`);

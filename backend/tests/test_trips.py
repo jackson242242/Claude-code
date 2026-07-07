@@ -119,7 +119,12 @@ def test_shared_trip_is_readable_without_auth(client: TestClient) -> None:
 
     res = client.get(f"/shared/{share_token}")
     assert res.status_code == 200
-    assert res.json()["name"] == "Shareable"
+    body = res.json()
+    assert body["name"] == "Shareable"
+    # The public share link must never expose the owner's user id (which is the
+    # X-User-Id auth credential) or the share token itself.
+    assert "userId" not in body
+    assert "shareToken" not in body
 
     assert client.get("/shared/not-a-real-token").status_code == 404
 

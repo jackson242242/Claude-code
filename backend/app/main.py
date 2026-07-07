@@ -6,6 +6,8 @@ project-wide "wrap all API routes in a global try/catch" rule, implemented once.
 """
 from __future__ import annotations
 
+import logging
+
 from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
@@ -24,6 +26,8 @@ from app.routers import (
     transport,
     trips,
 )
+
+logger = logging.getLogger("app")
 
 _CACHEABLE_GETS = {"/matches", "/cities", "/teams"}
 
@@ -61,8 +65,14 @@ async def validation_exception_handler(
 
 @app.exception_handler(Exception)
 async def unhandled_exception_handler(
-    _request: Request, _exc: Exception
+    request: Request, exc: Exception
 ) -> JSONResponse:
+    # Registering an Exception handler suppresses FastAPI's default traceback
+    # logging, so log it here — otherwise real backend bugs become silent 500s.
+    # The client still gets only the sanitized message.
+    logger.exception(
+        "Unhandled error on %s %s", request.method, request.url.path, exc_info=exc
+    )
     return _error("Internal server error", "internal_error", 500)
 
 

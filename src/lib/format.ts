@@ -13,12 +13,6 @@ export const formatKickoff = (local: string): string => {
   return `${weekday}, ${MONTHS[month - 1]} ${day} · ${time}`;
 };
 
-export const formatDateLong = (ymd: string): string => {
-  const [year, month, day] = ymd.split('-').map(Number);
-  const weekday = WEEKDAYS[new Date(Date.UTC(year, month - 1, day)).getUTCDay()];
-  return `${weekday}, ${MONTHS[month - 1]} ${day}, ${year}`;
-};
-
 export const formatPriceUsd = (value: number): string =>
   new Intl.NumberFormat('en-US', {
     style: 'currency',

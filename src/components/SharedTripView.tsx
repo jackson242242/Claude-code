@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import type { Trip } from '@/types';
+import type { SharedTrip } from '@/types';
 import { getSharedTrip } from '@/services/tripsService';
 import { sortTripItems } from '@/services/itinerary';
 import { formatPriceUsd } from '@/lib/format';
@@ -13,7 +13,7 @@ interface SharedTripViewProps {
 }
 
 export const SharedTripView = ({ token }: SharedTripViewProps) => {
-  const [trip, setTrip] = useState<Trip | null>(null);
+  const [trip, setTrip] = useState<SharedTrip | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 

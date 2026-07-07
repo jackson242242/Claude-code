@@ -44,6 +44,19 @@ export interface TripSummary {
   updatedAt: string;
 }
 
+/**
+ * Public projection returned by the `/shared/{token}` link. Intentionally has
+ * no `userId` or `shareToken` — the backend withholds them because `userId`
+ * doubles as the auth credential.
+ */
+export interface SharedTrip {
+  id: string;
+  name: string;
+  items: TripItem[];
+  itemCount: number;
+  totalUsd: number;
+}
+
 export interface AddTripItemInput {
   kind: TripItemKind;
   matchId?: string;

@@ -13,6 +13,7 @@ import { BLOOPER_VIDEOS } from '@/mocks/bloopers';
 import { HomeNewsWindow } from '@/components/news/HomeNewsWindow';
 import { HeroVideoBackground } from '@/components/HeroVideoBackground';
 import { HeroLiveStrip } from '@/components/HeroLiveStrip';
+import { tournamentToday } from '@/lib/tournamentTime';
 
 /** Kickoff: 2026 World Cup opening match, June 11 2026. */
 const KICKOFF_UTC = Date.UTC(2026, 5, 11);
@@ -30,7 +31,7 @@ const HomePage = async () => {
       getHeroVideos(),
       getLiveNews(locale),
       tournamentLive
-        ? getMatches({ date: new Date(now).toISOString().slice(0, 10) })
+        ? getMatches({ date: tournamentToday(now) })
         : Promise.resolve([]),
     ]);
   const t = translator(locale);

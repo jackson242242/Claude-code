@@ -166,6 +166,21 @@ class TripSummary(CamelModel):
     updated_at: str
 
 
+class SharedTrip(CamelModel):
+    """Public, read-only projection of a Trip for the share-link endpoint.
+
+    Deliberately omits ``user_id`` and ``share_token``: the user id doubles as
+    the X-User-Id auth credential, so leaking it via a public link would let a
+    recipient impersonate the owner. Only display fields are exposed.
+    """
+
+    id: str
+    name: str
+    items: list[TripItem] = Field(default_factory=list)
+    item_count: int = 0
+    total_usd: float = 0.0
+
+
 class CreateTripRequest(CamelModel):
     name: str
 

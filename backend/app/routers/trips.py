@@ -77,6 +77,6 @@ def suggest(
     return trips_service.suggest_itinerary(user_id, trip_id)
 
 
-@router.get("/shared/{share_token}", response_model=schemas.Trip)
-def get_shared(share_token: str) -> schemas.Trip:
+@router.get("/shared/{share_token}", response_model=schemas.SharedTrip)
+def get_shared(share_token: str) -> schemas.SharedTrip:
     return trips_service.get_shared_trip(share_token)

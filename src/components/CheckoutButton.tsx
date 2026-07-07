@@ -21,7 +21,7 @@ export const CheckoutButton = ({ tripId, disabled }: CheckoutButtonProps) => {
       const booking = await checkoutTrip(tripId);
       router.push(`/bookings/${booking.id}`);
     } catch {
-      setError('Could not reserve this trip. Add at least one item first.');
+      setError('Could not reserve this trip. Please try again in a moment.');
       setBusy(false);
     }
   };

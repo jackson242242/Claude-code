@@ -19,7 +19,12 @@ export const GET = async (req: Request): Promise<NextResponse> => {
   const locale = isLocale(requested) ? requested : DEFAULT_LOCALE;
 
   const news = await getLiveNews(locale);
-  const liveCount = news.items.filter((item) => item.url != null).length;
+  // Count only genuinely-live items (feed-sourced, id-prefixed `live-`). Seed
+  // fallback items also carry `url`, so counting by url would report a
+  // non-zero liveCount even when live:false.
+  const liveCount = news.live
+    ? news.items.filter((item) => item.id.startsWith('live-')).length
+    : 0;
 
   return NextResponse.json(
     {

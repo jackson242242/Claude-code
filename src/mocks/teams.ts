@@ -73,7 +73,7 @@ const CONFEDERATIONS: Record<string, Confederation> = {
   Cameroon: 'CAF',
 };
 
-export const slugify = (name: string): string =>
+const slugify = (name: string): string =>
   name
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')

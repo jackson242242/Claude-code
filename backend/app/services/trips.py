@@ -105,11 +105,20 @@ def delete_trip(user_id: str, trip_id: str) -> None:
     trip_repository().delete_trip(trip_id)
 
 
-def get_shared_trip(share_token: str) -> schemas.Trip:
+def get_shared_trip(share_token: str) -> schemas.SharedTrip:
     trip = trip_repository().get_trip_by_share_token(share_token)
     if trip is None:
         raise HTTPException(status_code=404, detail="Shared trip not found")
-    return _finalize(trip)
+    trip = _finalize(trip)
+    # Project to the public shape — never expose user_id (the auth credential)
+    # or the share_token itself through the public link.
+    return schemas.SharedTrip(
+        id=trip.id,
+        name=trip.name,
+        items=trip.items,
+        item_count=trip.item_count,
+        total_usd=trip.total_usd,
+    )
 
 
 # --- items ----------------------------------------------------------------

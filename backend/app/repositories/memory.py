@@ -41,15 +41,21 @@ class InMemoryTripRepository(TripRepository):
         return trip.model_copy(deep=True) if trip else None
 
     def get_trip_by_share_token(self, share_token: str) -> schemas.Trip | None:
-        for trip in self._trips.values():
+        # Snapshot under the lock: sync endpoints run on a threadpool, so a
+        # concurrent create/delete could mutate the dict mid-iteration.
+        with self._lock:
+            trips = list(self._trips.values())
+        for trip in trips:
             if trip.share_token == share_token:
                 return trip.model_copy(deep=True)
         return None
 
     def list_trips_for_user(self, user_id: str) -> list[schemas.Trip]:
+        with self._lock:
+            snapshot = list(self._trips.values())
         trips = [
             trip.model_copy(deep=True)
-            for trip in self._trips.values()
+            for trip in snapshot
             if trip.user_id == user_id
         ]
         trips.sort(key=lambda trip: trip.updated_at, reverse=True)
