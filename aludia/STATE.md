@@ -16,6 +16,11 @@
   且报价确认后执行**（sora-2 约 20 积分/秒，一条 8s ≈ 160 > 全月额度）。
 
 ## 运行日志（最新在上）
+- 2026-07-07 11:01 UTC · 第 4 轮：搭配支柱——"One necklace, 3 ways"
+  carousel 规格 + "Same outfit, three vibes" transformation Reels 包；
+  Phase B 交付欢迎邮件流 v1（email-flows.md，3 封欢迎 + 2 封弃购备用）。
+  Canva 授权仍未恢复（第 3 天，不催）。积分 0（余额 150）。
+  下一轮：支柱①产品特写（若仍无产品照→改支柱⑥ UGC 征集帖）。
 - 2026-07-06 11:00 UTC · 第 3 轮（周一调研日）：零成本 WebSearch 调研→
   hook 库写入 BRAND.md §3（叠戴趋势、My Inner Voice 等 7 月格式）；
   Canva 授权仍未恢复→降级交付 stacking carousel 规格 + My Inner Voice
