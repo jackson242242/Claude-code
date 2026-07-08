@@ -236,6 +236,30 @@
       "addedAt": "2026-07-08",
       "addedBy": "owner test-line directive",
       "status": "queued"
+    },
+    {
+      "id": "test-td-01",
+      "title": "东北话第一课：'嘎哈呢？' 学会你就是半个东北人",
+      "pillar": "test-teach-chinese-dialects",
+      "format": "short",
+      "angle": "Teach 嘎哈呢 (what are you doing): slow -> natural -> mini-scene (phone call). Mandarin narrator teaching, dialect text big on screen, honest audio label.",
+      "whyNow": "teach line pilot #1 — 东北话 is the most meme-friendly dialect on Chinese internet",
+      "sources": [],
+      "addedAt": "2026-07-08",
+      "addedBy": "owner test-line directive",
+      "status": "queued"
+    },
+    {
+      "id": "test-td-02",
+      "title": "四川话の幸福感：'巴适得板' 到底有多巴适？",
+      "pillar": "test-teach-chinese-dialects",
+      "format": "short",
+      "angle": "Teach 巴适得板 (extremely comfortable/great): hotpot mini-scene; note 四川话 chill culture.",
+      "whyNow": "teach line pilot #2",
+      "sources": [],
+      "addedAt": "2026-07-08",
+      "addedBy": "owner test-line directive",
+      "status": "queued"
     }
   ]
 }

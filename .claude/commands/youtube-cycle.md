@@ -57,6 +57,11 @@ run; put the source links in the video description.
    r/ApplyingToCollege / r/Professors / education press), (b) fresh dated hooks.
    Write 2-4 lines of findings into `state/research.md` (newest first): what
    resonates, which angles feel tired, any queue topic that now looks stale.
+   **Plus dialect-bank deepening (1 WebSearch, free):** pick the least-recently
+   updated region in `state/dialect-bank.md` (11 regions, header lists them),
+   search its current internet 梗/流行语, append 1-3 verified entries in the
+   file's format (mark 敏感度 honestly; skip anything political or
+   group-targeting). All three test lines pull from this bank.
 2. **vidIQ rotation (budget-capped, see budgets):** Mon & Thu add the analytics
    pulse (step 6); Sat add ONE `vidiq_trending_videos` or `vidiq_outliers` call
    (education niche) and note in research.md which formats/angles over-perform.
@@ -66,11 +71,12 @@ run; put the source links in the video description.
    relevance + beautiful b-roll potential + rules). A topic that fails the gate is
    either re-angled on the spot (note it) or moved to the bottom with a `fitNote`,
    taking the next candidate.
-   **Slot c = TEST SLOT (config `testLines`):** odd UTC day-of-month →
-   `cantonese-comedy`, even → `china-travel`. Take the top queue item with that
-   pillar; if none, generate one from today's research; if the line is blocked
-   (e.g. Cantonese voice unavailable), use the other line; if both blocked, fall
-   back to an education short and log why.
+   **Slot c = TEST SLOT (config `testLines`):** UTC day-of-month % 3 →
+   0 = `cantonese-comedy`, 1 = `china-travel`, 2 = `teach-chinese-dialects`.
+   Take the top queue item with that pillar; if none, generate one from today's
+   research + `state/dialect-bank.md`; if the line is blocked (e.g. Cantonese
+   voice unavailable), rotate to the next line; if all blocked, fall back to an
+   education short and log why.
 4. **Replenish:** if fewer than 5 items remain after taking 3, generate 5-8 new
    seeds from today's research findings. Every seed needs a dated `whyNow` hook,
    must pass the topicFitGate and `strategy.contentRules` (no visa/immigration
@@ -103,6 +109,12 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
      zero profanity, no exceptions.
    - `china-travel`: follow `dialectLadder` top-down; label the actual language in
      the on-screen intro + description (e.g. 「普通话·京味」). Never fake a dialect.
+     Weave 1-2 clean entries from `state/dialect-bank.md` for the spot's region
+     into the script (hook or closing wink).
+   - `teach-chinese-dialects`: pick one bank entry (clean only), teach it 3x
+     (slow → natural → mini-scene). Voice per config voiceRules: 粤语 via
+     eleven_v3; other dialects = Mandarin narrator teaching, dialect text big
+     on screen, honest on-screen label of what the audio is.
    **Subtitles (both test lines):** write `subs.srt` in the run folder — one cue
    per sentence, timed proportionally to character count over the vo.mp3 duration
    (ffprobe), each cue = local-language line + English line. Pass `--srt` in step 3.

@@ -60,9 +60,12 @@ providers:
   upload: [youtube-data-api]                # the only posting lane; no credentials = dry-run
   analytics: [vidiq, youtube-analytics]
 
-# Owner directive 2026-07-08: two experimental content lines, tested on slot c
-# (odd/even day rotation). Education pillars stay on slots a+b. Judge results after
-# ~2 weeks of Mon/Thu analytics; a winning line may earn its own slot or channel.
+# Owner directives 2026-07-08: experimental content lines tested on slot c,
+# rotating by UTC day-of-month % 3 (0=cantonese-comedy, 1=china-travel,
+# 2=teach-chinese-dialects). Education pillars stay on slots a+b. Judge results
+# after ~2 weeks of Mon/Thu analytics; a winning line may earn its own slot or
+# channel. Shared resource: state/dialect-bank.md (全国方言梗库) — the daily
+# research step deepens one region per day; ALL lines pull from it.
 testLines:
   cantonese-comedy:
     what: "搞笑广东话 — teach funny Cantonese; e.g. spoof interviews of foreigners speaking Cantonese; playful, self-aware humor"
@@ -82,6 +85,21 @@ testLines:
       - "Standard Mandarin — label plainly"
     subtitles: { mode: burned, languages: [zh, en] }
     style: "styleGuide.aesthetic applies double: slow pans, golden hour, mist, water reflections; one poem line or cultural note per video; calm pacing"
+    memes: "weave 1-2 entries from state/dialect-bank.md matching the spot's region into every video (a local phrase as the hook or the closing wink); clean entries only"
+  teach-chinese-dialects:
+    what: "教人说不同的中文 — one dialect phrase/梗 per Short: how to say it, what it means, when to use it, why it's funny/characteristic; sourced from state/dialect-bank.md"
+    language: dialect-of-the-day
+    voiceRules: |
+      Authentic audio ladder (never fake): 粤语 episodes via eleven_v3; other
+      dialects use a standard-Mandarin narrator TEACHING the phrase — dialect
+      shown big on screen with romanization, narrator explains; on-screen label
+      states what the audio actually is. Native dialect audio unlocks when the
+      owner adds a Chinese dialect-TTS provider key (e.g. Volcano Engine 豆包 /
+      MiniMax — they carry 东北/四川/粤/台 voices); note this in research.md
+      whenever a dialect we can't voice keeps performing well.
+    profanity: none   # profanity stays exclusive to cantonese-comedy (owner rule)
+    subtitles: { mode: burned, languages: [zh, en] }
+    style: "fast, playful, meme-native pacing; one phrase per video, repeated 3x (slow → natural → in a mini-scene)"
 
 budgets:
   vidiqCreditsPerRun: 10       # hard per-run cap on vidIQ credit spend
