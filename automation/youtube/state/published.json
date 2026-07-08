@@ -1,3 +1,37 @@
 {
-  "videos": []
+  "videos": [
+    {
+      "date": "2026-07-08",
+      "slot": "a",
+      "title": "MIT Just Scored a Perfect 100 — 15 Years at #1 (QS 2027)",
+      "videoId": "hMOTS07qqcw",
+      "url": "https://www.youtube.com/watch?v=hMOTS07qqcw",
+      "pillar": "world-colleges",
+      "lane": "elevenlabs+pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-08T13:00:00Z"
+    },
+    {
+      "date": "2026-07-08",
+      "slot": "b",
+      "title": "Why the SATs Are Suddenly Mandatory Again (Even Harvard Changed Its Mind)",
+      "videoId": "c9uBqC4hiz8",
+      "url": "https://www.youtube.com/watch?v=c9uBqC4hiz8",
+      "pillar": "education-trends",
+      "lane": "elevenlabs+pexels-ffmpeg+openai-thumb+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-08T17:00:00Z"
+    },
+    {
+      "date": "2026-07-08",
+      "slot": "c",
+      "title": "12.9 Million Teenagers Just Took the Hardest Exam on Earth",
+      "videoId": "LEC4kPhi0uw",
+      "url": "https://www.youtube.com/watch?v=LEC4kPhi0uw",
+      "pillar": "world-colleges",
+      "lane": "elevenlabs+pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-08T22:00:00Z"
+    }
+  ]
 }
