@@ -30,28 +30,30 @@ run still replenishes the topic queue and produces script packages (dry-run).
 
 The original request named specific tools. Honest assessment (verified 2026-07):
 
-| Requested | Official API? | In this pipeline | Notes |
+| Requested | Official API? | In this pipeline | Notes (verified 2026-07-08) |
 |---|---|---|---|
-| Claude / GetPoppy (ideas & scripts) | Claude: yes (this session) · Poppy: no public API | ✅ **Claude native** — ideation, scripting, fact-checking | Poppy is a browser whiteboard tool; no headless surface. Claude covers it. |
-| copy.ai (YT scripts) | Workflows API (paid plans) | 🔌 Optional lane via `COPYAI_API_KEY` | Redundant with Claude for scripts; enable only if you already pay for it. |
-| jasper.ai (YT content) | Enterprise/business-gated API | 🔌 Optional lane via `JASPER_API_KEY` | Same capability covered by Claude at zero marginal cost. |
-| nichesss (niches & ideas) | No public API | ✅ Replaced: vidIQ `keyword_research` + `trending_videos` + Claude | Web-app only. |
-| "SM suite" viral idea finder | No identifiable API product | ✅ Replaced: vidIQ `outliers`/`trending_videos` (MCP, connected) | vidIQ's outlier finder is exactly this. |
-| invideo.io (text-to-video) | No public API | ✅ Replaced: **Pexels b-roll + ffmpeg** (`scripts/assemble-video.mjs`) | invideo is app-only; our lane is free and headless. |
-| kling.ai (video gen) | Yes — official developer API (access-key + secret JWT) | 🔌 Optional lane via `KLING_ACCESS_KEY`/`KLING_SECRET_KEY` | Paid per-generation; use for hero videos, not 3x/day. |
-| elevenlabs (voiceover) | Yes | ✅ Primary voice lane (`scripts/elevenlabs-tts.mjs`, `ELEVENLABS_API_KEY`) | Free tier ~10k chars/mo covers ~2 Shorts/day; starter plan recommended for 3/day. Fallback: vidIQ voiceover. |
+| Claude / GetPoppy (ideas & scripts) | Claude: yes (this session) · Poppy: yes, text-only (Power User plan ~$760/yr) | ✅ **Claude native** — ideation, scripting, fact-checking | Poppy's API only repurposes existing content into text; Claude covers this at zero extra cost. |
+| copy.ai (YT scripts) | Workflows API — gated to Growth plan (**$1,000/mo minimum**) | 🔌 Optional lane via `COPYAI_API_KEY` | Headless-legal, but the price gate makes it pointless unless you already pay for Growth. |
+| jasper.ai (YT content) | API on Business plans ($900+/mo) — but **ToS prohibits automated access** beyond human-rate requests | ❌ Not wired — ToS friction + price | Claude covers scripts at zero marginal cost. |
+| nichesss (niches & ideas) | API exists, but ToS bans "automated systems" (ambiguous, unverifiable — ToS page 403s) | ✅ Replaced: vidIQ `keyword_research` + `trending_videos` + Claude | Not worth the ToS ambiguity. |
+| "SM suite" viral idea finder | No identifiable product/API under that name | ✅ Replaced: vidIQ `outliers`/`trending_videos` (MCP, connected) | If you meant a specific tool, tell us; Virlo (pay-as-you-go trend API, $5 min) is a clean optional add-on. |
+| invideo.io (text-to-video) | API exists (docs.invideo.io, credit-based) but ToS vaguely bans "bots/automated tools" | ✅ Replaced: **Pexels b-roll + ffmpeg** (`scripts/assemble-video.mjs`) | Our lane is free, headless, and ToS-clean. |
+| kling.ai (video gen) | Yes — official API (JWT via access+secret key, ~$0.075/sec, $9.80 min prepaid); also via fal.ai/Replicate with simpler billing | 🔌 Optional lane via `KLING_ACCESS_KEY`/`KLING_SECRET_KEY` | Paid per-generation; use for hero videos, not 3x/day. fal.ai is the lower-friction route if you go this way. |
+| elevenlabs (voiceover) | Yes (`api.elevenlabs.io`, xi-api-key header; models incl. eleven_v3 / multilingual_v2) | ✅ Primary voice lane (`scripts/elevenlabs-tts.mjs`, `ELEVENLABS_API_KEY`) | ⚠️ **Free tier prohibits commercial use / monetized YouTube.** Starter $5/mo is the legal minimum; ~$14/mo covers 3 videos/day. Fallback: vidIQ voiceover (credits). |
 | vidIQ (analytics) | ✅ MCP server connected to this workspace | ✅ Analytics + keyword research + title scoring (+ generation fallbacks) | Account: 150 credits/mo — the loop budgets ≤10/run, floor 40 (see config.yaml). |
 | Midjourney (cover design) | **No official API**; Discord automation violates their ToS | ❌ Not automated — replaced by OpenAI Images (`scripts/generate-asset.mjs`) or vidIQ thumbnail gen | We don't do ToS-violating automation. |
 | Canva (thumbnails) | Connect API exists; the Canva MCP connector needs owner OAuth | 🔌 Available after you authorize Canva in claude.ai connector settings | Headless routine runs may not carry the connector; primary lane is OpenAI Images. |
 | YouTube posting | YouTube Data API v3 | ✅ `scripts/youtube-upload.mjs` (resumable upload, scheduling, thumbnails) | See quota + audit caveats below. |
 
 **YouTube caveats (important, honest):**
-- `videos.insert` costs ~1600 quota units; default project quota 10,000/day → 3 uploads
-  (4,800) fit comfortably.
+- Quota: historically `videos.insert` cost 1,600 units of a 10,000/day pool; Google's
+  newer quota model reportedly caps uploads at ~100 calls/day instead. Under either
+  model, 3 uploads/day fits comfortably. Thumbnails: JPEG/PNG ≤ 2 MB.
 - **New/unverified Google Cloud projects get API uploads locked private** until the
-  project passes YouTube's API compliance audit. Until then the loop still uploads
-  (private) and records the real status; flip them public in Studio, or complete the
-  audit (form linked from the API console) to unlock direct public posting.
+  project passes YouTube's API compliance audit (community reports: approval can take
+  months — apply early, form is linked from the API console). Until then the loop
+  still uploads (private) and records the real status; flip each video public in
+  Studio (~30 seconds/day) as the interim path.
 - AI disclosure: descriptions state AI narration; for realistic synthetic scenes tick
   "altered content" in Studio (no public API field for it yet).
 - An OAuth consent screen left in "Testing" mode issues refresh tokens that die after

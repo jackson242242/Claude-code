@@ -62,8 +62,10 @@ run; put the source links in the video description.
    --title "<short overlay title>"`. Optional lanes (Kling / vidiq_generate_video)
    only per PIPELINE.md and budget — never for all 3 daily slots.
 3. Thumbnail (longform only; Shorts don't need one): `node scripts/generate-asset.mjs
-   --prompt "<clean, text-light 16:9 concept>" --out .../thumb.png --size 1536x1024`,
-   else grab a strong frame: `ffmpeg -ss <t> -i final.mp4 -frames:v 1 thumb.png`.
+   --prompt "<clean, text-light 16:9 concept>" --out .../thumb.jpeg --size 1536x1024`,
+   else grab a strong frame: `ffmpeg -ss <t> -i final.mp4 -frames:v 1 thumb.jpeg`.
+   YouTube caps thumbnails at 2 MB — if larger, recompress:
+   `ffmpeg -i thumb.jpeg -q:v 4 thumb-small.jpeg`.
 4. Append the Pexels credits from `final.mp4.credits.json` to the description in
    `meta.json` ("Footage: Pexels — <urls>").
 

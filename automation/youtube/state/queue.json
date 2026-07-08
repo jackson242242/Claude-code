@@ -1,0 +1,225 @@
+{
+  "note": "Topic backlog for /youtube-cycle. Top item matching the slot format is used next. Owner may edit/reorder freely.",
+  "queue": [
+    {
+      "id": "seed-02",
+      "title": "MIT Is #1 Again... For the 15th Year Straight",
+      "pillar": "world-colleges",
+      "format": "short",
+      "angle": "Short explaining what changed (and didn't) in the newly released QS World University Rankings 2027, MIT's 15-year streak with a perfect 100 score, and the surprise Imperial College London/Stanford tie for No. 2.",
+      "whyNow": "QS World University Rankings 2027 were released June 18, 2026, covering 1,500+ institutions with 98 new entrants.",
+      "sources": [
+        "topuniversities.com QS World University Rankings 2027 release summary"
+      ],
+      "addedAt": "2026-07-08",
+      "addedBy": "platform-research workflow (sonnet seed agent)",
+      "status": "queued"
+    },
+    {
+      "id": "seed-01",
+      "title": "Why the SATs Are Suddenly Mandatory Again (Even Harvard Changed Its Mind)",
+      "pillar": "education-trends",
+      "format": "longform",
+      "angle": "Longform explainer walking through why 7 of 8 Ivies plus Stanford, Caltech, JHU, UT Austin reversed test-optional policies in 2025-2026, using Ohio State's own data showing test scores predict GPA better than high school grades, then contrasting this with the 90%+ of US colleges still test-optional.",
+      "whyNow": "Class of 2030 Ivy Day results (March 26, 2026) showed record-low sub-5% acceptance rates at Columbia (4.23%) and Yale (4.24%), amid the confirmed wave of test-required reinstatements at Dartmouth, Yale, Brown, Harvard, Caltech, Stanford, JHU and UT Austin.",
+      "sources": [
+        "orieladmissions.com Ivy Day 2026 Results",
+        "carnegieprep.com testing policy updates"
+      ],
+      "addedAt": "2026-07-08",
+      "addedBy": "platform-research workflow (sonnet seed agent)",
+      "status": "queued"
+    },
+    {
+      "id": "seed-03",
+      "title": "12.9 Million Teenagers Just Took the Hardest Exam on Earth",
+      "pillar": "world-colleges",
+      "format": "short",
+      "angle": "Short profiling China's 2026 gaokao registration numbers, what the multi-day exam covers, and why it single-handedly determines university admission for millions, set against a shifting Chinese job market.",
+      "whyNow": "Around 12.9 million students registered for China's 2026 gaokao per the Ministry of Education, sitting the exam amid a widely reported shifting job market for graduates.",
+      "sources": [
+        "gulfnews.com China Gaokao 2026",
+        "britishcouncil.org record numbers gaokao"
+      ],
+      "addedAt": "2026-07-08",
+      "addedBy": "platform-research workflow (sonnet seed agent)",
+      "status": "queued"
+    },
+    {
+      "id": "seed-07",
+      "title": "Boston College Now Costs $95,258 a Year. Here's What's Actually Driving It Up.",
+      "pillar": "whats-latest",
+      "format": "short",
+      "angle": "Short breaking down one sticker-shock number (BC's 2026-27 cost of attendance) against the national average tuition increase of ~2.28% for 4-year schools, contrasted with Stanford freezing tuition \u2014 a quick 'why is college getting more expensive' explainer.",
+      "whyNow": "Boston College announced a 3.78% increase to $95,258 for 2026-27 this spring, while Stanford announced it would hold 2026-27 tuition flat \u2014 both confirmed in 2026 reporting.",
+      "sources": [
+        "bcheights.com Boston College Raises Cost of Attendance",
+        "forbes.com college tuition increases of 3% or more"
+      ],
+      "addedAt": "2026-07-08",
+      "addedBy": "platform-research workflow (sonnet seed agent)",
+      "status": "queued"
+    },
+    {
+      "id": "seed-04",
+      "title": "The Country Paying Students to Go to College (While the US Debates Free Tuition)",
+      "pillar": "education-systems",
+      "format": "longform",
+      "angle": "Short/comparative piece on Singapore's new Higher Education Student Loan (HESL) scheme launching July 2026, covering up to 100% of subsidised tuition, plus raised income eligibility for financial aid benefiting 31,000 more students.",
+      "whyNow": "From July 2026 Singaporean students can apply for the new HESL scheme, part of MOE's Academic Year 2026 financial-support expansion announced this year.",
+      "sources": [
+        "moe.gov.sg worried about cost of higher education"
+      ],
+      "addedAt": "2026-07-08",
+      "addedBy": "platform-research workflow (sonnet seed agent)",
+      "status": "queued"
+    },
+    {
+      "id": "seed-11",
+      "title": "The World's Toughest Exam Just Happened \u2014 and It's Not the SAT",
+      "pillar": "education-systems",
+      "format": "short",
+      "angle": "Short comparing gaokao (China), Suneung (Korea), and A-Levels (UK) side by side \u2014 stakes, format, and what happens if you fail \u2014 as a quick, curiosity-driven ranking video.",
+      "whyNow": "China's 2026 gaokao (12.9M registrants) just concluded this summer, giving a timely peg to compare it against other countries' single-shot university entrance exams.",
+      "sources": [
+        "gulfnews.com China Gaokao 2026 millions sit exams"
+      ],
+      "addedAt": "2026-07-08",
+      "addedBy": "platform-research workflow (sonnet seed agent)",
+      "status": "queued"
+    },
+    {
+      "id": "seed-12",
+      "title": "Singapore Just Raised Teacher Pay 9%. What Does That Buy?",
+      "pillar": "education-systems",
+      "format": "short",
+      "angle": "Short on Singapore's October 2026 teacher salary increase (up to 9% for ~36,000 educators) paired with its 'rethink teachers' duties' workload-reduction program using AI-enhanced tools \u2014 a quick 'how a top-ranked system treats its teachers' piece.",
+      "whyNow": "Singapore's MOE confirmed the salary increase takes effect October 1, 2026, alongside its 2026 teacher-workload reform announced this year.",
+      "sources": [
+        "mothership.sg 36,000 MOE teachers salary increase",
+        "blog.maxthon.com MOE 2026 initiatives redesign teacher duties"
+      ],
+      "addedAt": "2026-07-08",
+      "addedBy": "platform-research workflow (sonnet seed agent)",
+      "status": "queued"
+    },
+    {
+      "id": "seed-05",
+      "title": "50 UK Universities Could Close This Year \u2014 Here's Why",
+      "pillar": "whats-latest",
+      "format": "longform",
+      "angle": "Longform explainer on the 2026 UK higher-education financial crisis: capped \u00a39,250 tuition losing 25% real value since 2017, the new international-fee levy from January 2026, mass job cuts (13,300 in one year), and what it means for students choosing UK schools.",
+      "whyNow": "Reports through mid-2026 show ~50 UK universities at high risk of closure, 45% of providers projected to run a deficit in 2025-26, and a new international-tuition levy in effect since January 2026.",
+      "sources": [
+        "academicjobs.com UK Universities Financial Crisis 2026",
+        "thepienews.com UK universities face rising deficits"
+      ],
+      "addedAt": "2026-07-08",
+      "addedBy": "platform-research workflow (sonnet seed agent)",
+      "status": "queued"
+    },
+    {
+      "id": "seed-13",
+      "title": "Why Nevada Tuition Is Jumping 12% While Stanford Freezes Its Price",
+      "pillar": "whats-latest",
+      "format": "short",
+      "angle": "Short contrasting two extremes in the 2026-27 tuition-setting season \u2014 Nevada's public universities raising up to 12% versus Stanford holding flat \u2014 as a hook into how wildly tuition-setting varies by state and institution type.",
+      "whyNow": "Nevada's Board of Regents confirmed tuition rising up to 12% for 2026-27 in reporting this spring, alongside Stanford's flat-tuition announcement the same season.",
+      "sources": [
+        "lasvegasweekly.com Nevada college tuition to rise up to 12 percent",
+        "forbes.com college tuition increases of 3% or more"
+      ],
+      "addedAt": "2026-07-08",
+      "addedBy": "platform-research workflow (sonnet seed agent)",
+      "status": "queued"
+    },
+    {
+      "id": "seed-14",
+      "title": "8 Million College Applications: Why Everyone Is Applying to Everywhere Now",
+      "pillar": "education-trends",
+      "format": "short",
+      "angle": "Longform explainer on the Common App processing over 8 million submissions this cycle (up from 7.1M), examining how application-volume inflation is warping how we read 'record-low acceptance rates' and what it means for how students should actually apply.",
+      "whyNow": "The 2026 Ivy Day cycle confirmed Common App volume crossed 8 million submissions, up from 7.1 million the prior year, per admissions-consulting reporting this spring.",
+      "sources": [
+        "toptieradmissions.com 2026 Ivy League college admission statistics"
+      ],
+      "addedAt": "2026-07-08",
+      "addedBy": "platform-research workflow (sonnet seed agent)",
+      "status": "queued"
+    },
+    {
+      "id": "seed-06",
+      "title": "Why International Students Might Avoid US Colleges This Year",
+      "pillar": "education-trends",
+      "format": "longform",
+      "angle": "Educational (non-legal-advice) explainer on 2026 US visa policy shifts affecting international students \u2014 the proposed end of 'Duration of Status' for F-1s, shorter grace periods, and a new $250 Visa Integrity Fee \u2014 framed around what it means for the student experience and enrollment trends, not legal advice.",
+      "whyNow": "NAFSA's 2026 estimate of a 30-40% drop in new international enrollment follows the proposed 'Duration of Status' rule change and new visa fees reported through spring 2026.",
+      "sources": [
+        "forbes.com how 2026 immigration crackdown is changing US higher ed",
+        "cis.org new regulation duration of status"
+      ],
+      "addedAt": "2026-07-08",
+      "addedBy": "platform-research workflow (sonnet seed agent)",
+      "status": "queued"
+    },
+    {
+      "id": "seed-08",
+      "title": "Finland vs. South Korea: The Two Opposite 'Best' Education Systems in the World",
+      "pillar": "education-systems",
+      "format": "longform",
+      "angle": "Longform comparative explainer contrasting Finland's low-homework, no-standardized-testing model with South Korea's high-intensity, memorization-heavy system and its 2026 push to train a million 'digital talents' \u2014 asking which model actually produces better outcomes.",
+      "whyNow": "South Korea's Ministry of Education is mid-way through its 2026 target to cultivate one million digital talents and expand Glocal Colleges to 30 by year's end, giving a fresh 2026 data point against Finland's steady-state model.",
+      "sources": [
+        "english.moe.go.kr key policies",
+        "educationbycountry.org South Korea 2026"
+      ],
+      "addedAt": "2026-07-08",
+      "addedBy": "platform-research workflow (sonnet seed agent)",
+      "status": "queued"
+    },
+    {
+      "id": "seed-09",
+      "title": "Every State Is Suddenly Writing Laws About AI in Schools",
+      "pillar": "education-trends",
+      "format": "longform",
+      "angle": "Longform explainer surveying the 2026 legislative wave \u2014 134+ bills across 31 states \u2014 covering data-privacy bills like California's AB 1159 (banning student data used to train AI) and South Carolina's proposed parental opt-in law, explaining what's actually being regulated and why.",
+      "whyNow": "FutureEd's 2026 legislative tracker counts 71+ AI-in-education bills across 27 states this session, with California AB 1159 and South Carolina H.B. 5253 both active in 2026.",
+      "sources": [
+        "future-ed.org legislative tracker 2026 state AI bills",
+        "multistate.us how states are regulating AI in education"
+      ],
+      "addedAt": "2026-07-08",
+      "addedBy": "platform-research workflow (sonnet seed agent)",
+      "status": "queued"
+    },
+    {
+      "id": "seed-10",
+      "title": "86% of Students Are Already Using AI for School. Are Teachers Keeping Up?",
+      "pillar": "education-trends",
+      "format": "longform",
+      "angle": "Short pulling the 2025-2026 school year data point (85% of teachers, 86% of students using AI; 25% of students daily) and asking what schools are actually doing about it in 2026 \u2014 quick, punchy stat-driven video.",
+      "whyNow": "The Center for Democracy and Technology's cited 2025-2026 school year survey data is being actively referenced in 2026 policy debates and news coverage on AI classroom guidelines.",
+      "sources": [
+        "cbsnews.com AI use in schools and classrooms is booming"
+      ],
+      "addedAt": "2026-07-08",
+      "addedBy": "platform-research workflow (sonnet seed agent)",
+      "status": "queued"
+    },
+    {
+      "id": "seed-15",
+      "title": "Should Schools Ban AI or Teach It? Inside the 2026 Fight",
+      "pillar": "education-trends",
+      "format": "longform",
+      "angle": "Longform explainer laying out the two competing camps in 2026 US education policy \u2014 states mandating AI-literacy curriculum (Georgia, Mississippi) vs. states restricting classroom AI use and banning AI-trained student data (California, South Carolina) \u2014 a balanced, non-partisan tour of the policy landscape.",
+      "whyNow": "Both tracks are simultaneously active in 2026 state legislatures per FutureEd's and ExcelinEd's 2026 trackers, alongside the federal AI-literacy executive order cited as a tailwind.",
+      "sources": [
+        "excelined.org state K-12 AI policy in 2026",
+        "future-ed.org legislative tracker 2026 state AI bills"
+      ],
+      "addedAt": "2026-07-08",
+      "addedBy": "platform-research workflow (sonnet seed agent)",
+      "status": "queued"
+    }
+  ]
+}
