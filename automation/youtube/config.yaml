@@ -1,0 +1,48 @@
+# YouTube automation config — @NYneighborhood (channel UCSU99qan7oWIEY-c8uYmuSQ)
+# Read by the /youtube-cycle skill each run. Owner edits this file to steer the loop.
+
+channel:
+  handle: "@NYneighborhood"
+  channelId: "UCSU99qan7oWIEY-c8uYmuSQ"
+  language: en
+  categoryId: "27" # YouTube category: Education
+
+cadence:
+  postsPerDay: 3
+  # Slot names map to the Routine cron `0 13,17,22 * * *` (UTC) = 9am / 1pm / 6pm New York (EDT).
+  slots:
+    - { name: a, utc: "13:00", format: short }     # 9:16 vertical, <= 60s
+    - { name: b, utc: "17:00", format: longform }  # 16:9, 6-10 min
+    - { name: c, utc: "22:00", format: short }
+
+strategy:
+  pillars:
+    - education-trends      # AI in classrooms, edtech, policy shifts
+    - world-colleges        # university profiles, rankings, admissions
+    - education-systems     # country-vs-country comparisons (Finland/Korea/SG/US/UK/CN...)
+    - whats-latest          # dated news hooks, "this week in education"
+  contentRules:
+    - "Educational/comparative framing only; no visa/immigration legal advice, no political takes."
+    - "Every claim sourced during scripting; cite sources in the video description."
+    - "Disclose AI narration in the description; mark 'altered or synthetic content' in Studio when realistic scenes are generated."
+    - "Preserve Pexels attribution links emitted by assemble-video.mjs in the description."
+
+providers:
+  # Lanes are tried in order; a lane is skipped when its credential/tool is absent.
+  ideation: [claude, vidiq-research]        # vidIQ keyword/trending only when MCP present AND credits >= floor
+  script: [claude, copyai, jasper]          # copy.ai / Jasper only if their API keys are configured
+  voiceover: [elevenlabs, vidiq]            # ELEVENLABS_API_KEY, else vidiq_voiceover_generate (credits)
+  visuals: [pexels-ffmpeg, kling, vidiq]    # default zero-cost; Kling needs KLING_ACCESS_KEY/KLING_SECRET_KEY
+  thumbnail: [openai-images, vidiq, ffmpeg-frame]
+  upload: [youtube-data-api]                # the only posting lane; no credentials = dry-run
+  analytics: [vidiq, youtube-analytics]
+
+budgets:
+  vidiqCreditsPerRun: 10       # hard per-run cap on vidIQ credit spend
+  vidiqCreditsFloor: 40        # below this balance, stop ALL vidIQ generation; keep analytics only
+  maxUploadUnitsPerDay: 4800   # 3 x videos.insert (1600) — fits the default 10000 quota
+
+runtime:
+  runsDir: automation/youtube/runs
+  stateDir: automation/youtube/state
+  keepMediaInRepo: false       # media stays in the container; only manifests/scripts are committed

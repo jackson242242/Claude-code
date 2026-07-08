@@ -1,0 +1,8 @@
+# Media artifacts stay in the ephemeral container — only text manifests are committed.
+*.mp4
+*.mp3
+*.wav
+*.png
+*.jpg
+*.jpeg
+*.webp
