@@ -14,10 +14,16 @@ cadence:
   # publishing (status.publishAt) at the slot times below (= 9am/1pm/6pm New York EDT).
   mode: batch-daily
   routineUtc: "12:30"
+  # Durations tightened by owner 2026-07-08 (cost control): Shorts <=30s, video <=2min.
   slots:
-    - { name: a, publishAtUtc: "13:00", format: short }     # 9:16 vertical, <= 60s
-    - { name: b, publishAtUtc: "17:00", format: longform }  # 16:9, 6-10 min
+    - { name: a, publishAtUtc: "13:00", format: short }     # 9:16 vertical, <= 30s
+    - { name: b, publishAtUtc: "17:00", format: longform }  # 16:9, <= 2 min
     - { name: c, publishAtUtc: "22:00", format: short }
+
+voice:
+  model: eleven_multilingual_v2   # standard quality (owner choice 2026-07-08) — NOT flash
+  # Daily burn at current lengths: 2 Shorts (~420 chars) + 1 video (~1,700 chars)
+  # ~= 2.6k chars/day ~= 76k chars/month -> fits Creator (100k) with headroom.
 
 strategy:
   pillars:

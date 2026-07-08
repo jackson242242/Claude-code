@@ -13,9 +13,9 @@ them with staggered scheduled publishing:
 
 | Slot | Format | publishAt (UTC) |
 |------|--------|-----------------|
-| a | Short, 9:16, ≤60s | 13:00 today |
-| b | longform, 16:9, 6-10 min | 17:00 today |
-| c | Short, 9:16, ≤60s | 22:00 today |
+| a | Short, 9:16, ≤30s | 13:00 today |
+| b | video, 16:9, ≤2 min | 17:00 today |
+| c | Short, 9:16, ≤30s | 22:00 today |
 
 (A manual/test fire may instruct a single slot instead — follow its instructions.)
 
@@ -38,7 +38,7 @@ run; put the source links in the video description.
 3. **ElevenLabs quota self-check (every run):** if `ELEVENLABS_API_KEY` is set,
    `curl -s https://api.elevenlabs.io/v1/user/subscription -H "xi-api-key: $ELEVENLABS_API_KEY"`
    → log tier + `character_count`/`character_limit` (remaining chars) in RUNLOG.
-   A full batch needs ~9k chars (2 Shorts ~850 each + longform ~7k). If remaining
+   A full batch needs ~2.6k chars (2 Shorts ~420 each + video ~1.7k). If remaining
    is short: produce what fits — priority slot a Short → slot c Short → longform
    last — skip the rest with an honest log line, and put a LOW-QUOTA warning at the
    top of the final report so the owner sees it.
@@ -74,8 +74,10 @@ run; put the source links in the video description.
 ## 3-5. Produce each video (loop slots a → b → c)
 For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
 
-1. **Script** — Short: 130-160 spoken words, hook in first 2 lines. Longform:
-   900-1400 words, hook → 3-5 sections → recap → honest CTA. Verify every factual
+1. **Script** — Short: 65-80 spoken words (≤30s), hook in the first line. Video
+   (slot b): 260-300 words (≤2 min), hook → 2-3 tight sections → one-line recap →
+   honest CTA. Voice model: `eleven_multilingual_v2` (standard quality — owner
+   choice; do not switch to flash). Verify every factual
    claim with WebSearch/WebFetch this run; collect source URLs. Produce `script.md`
    (with sources), `voiceover.txt` (clean spoken text), `meta.json` (title ≤100
    chars; description with sources + AI-narration disclosure + credits placeholder;
