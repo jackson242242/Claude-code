@@ -16,6 +16,12 @@
   且报价确认后执行**（sora-2 约 20 积分/秒，一条 8s ≈ 160 > 全月额度）。
 
 ## 运行日志（最新在上）
+- 2026-07-08 11:01 UTC · 第 5 轮：真实感路线——camera roll dump carousel
+  规格（零设计，绕开 Canva 阻塞）+ "Take me to our NY studio" b-roll
+  Reels 包；Phase B 交付 IG 主页 SEO 优化包（name 字段/bio/highlights/
+  置顶策略）。积分 0（余额 150）。阻塞项第 5 天不催。
+  下一轮：周四——送礼支柱④（通用版）或老板数据到位后首次内容复盘
+  （哪条帖/Reels 表现最好→定置顶与下周主打格式）。
 - 2026-07-07 11:01 UTC · 第 4 轮：搭配支柱——"One necklace, 3 ways"
   carousel 规格 + "Same outfit, three vibes" transformation Reels 包；
   Phase B 交付欢迎邮件流 v1（email-flows.md，3 封欢迎 + 2 封弃购备用）。
