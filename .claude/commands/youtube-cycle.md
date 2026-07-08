@@ -35,7 +35,14 @@ run; put the source links in the video description.
    - vidIQ MCP tools present? If yes, call `vidiq_balance` once; vidIQ generation is
      allowed only if balance ≥ `budgets.vidiqCreditsFloor` and per-run spend stays
      ≤ `budgets.vidiqCreditsPerRun`.
-3. **No voice lane AND no vidIQ voiceover → videos cannot be made.** Do a
+3. **ElevenLabs quota self-check (every run):** if `ELEVENLABS_API_KEY` is set,
+   `curl -s https://api.elevenlabs.io/v1/user/subscription -H "xi-api-key: $ELEVENLABS_API_KEY"`
+   → log tier + `character_count`/`character_limit` (remaining chars) in RUNLOG.
+   A full batch needs ~9k chars (2 Shorts ~850 each + longform ~7k). If remaining
+   is short: produce what fits — priority slot a Short → slot c Short → longform
+   last — skip the rest with an honest log line, and put a LOW-QUOTA warning at the
+   top of the final report so the owner sees it.
+4. **No voice lane AND no vidIQ voiceover → videos cannot be made.** Do a
    research-only run: replenish the topic queue (step 2), write state back (step 6),
    log `blocked: no voiceover lane`, and stop. Do not fabricate output.
 
