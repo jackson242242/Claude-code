@@ -15,6 +15,9 @@ run; put the source links in the video description.
 
 ## 0. Setup & lane detection
 1. `apt-get update && apt-get install -y ffmpeg` (container is fresh each run).
+   Also `export NODE_USE_ENV_PROXY=1` before any `node scripts/*.mjs` call — Node's
+   fetch ignores HTTPS_PROXY without it and API calls die on proxied egress
+   (verified 2026-07-08; harmless when no proxy is configured).
 2. Determine the slot: current UTC hour ~13 → slot `a` (Short), ~17 → `b` (longform),
    ~22 → `c` (Short). Off-schedule manual runs default to slot `b`.
 3. Detect available lanes (do NOT print secret values):

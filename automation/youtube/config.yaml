@@ -32,7 +32,7 @@ providers:
   ideation: [claude, vidiq-research]        # vidIQ keyword/trending only when MCP present AND credits >= floor
   script: [claude, copyai, jasper]          # copy.ai / Jasper only if their API keys are configured
   voiceover: [elevenlabs, vidiq]            # ELEVENLABS_API_KEY, else vidiq_voiceover_generate (credits)
-  visuals: [pexels-ffmpeg, kling, vidiq]    # default zero-cost; Kling needs KLING_ACCESS_KEY/KLING_SECRET_KEY
+  visuals: [pexels-ffmpeg, vidiq]           # kling lane PAUSED by owner 2026-07-08 — re-add "kling" here to resume (adapter: scripts/kling-video.mjs)
   thumbnail: [openai-images, vidiq, ffmpeg-frame]
   upload: [youtube-data-api]                # the only posting lane; no credentials = dry-run
   analytics: [vidiq, youtube-analytics]
