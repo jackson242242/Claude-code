@@ -25,7 +25,8 @@ in the run log. All facts stated in a video script must come from sources found 
 run; put the source links in the video description.
 
 ## 0. Setup & lane detection
-1. `apt-get update && apt-get install -y ffmpeg` (container is fresh each run).
+1. `apt-get update && apt-get install -y ffmpeg fonts-noto-cjk` (container is fresh
+   each run; the CJK font is required for burned-in Chinese subtitles).
    Also `export NODE_USE_ENV_PROXY=1` before any `node scripts/*.mjs` call — Node's
    fetch ignores HTTPS_PROXY without it and API calls die on proxied egress
    (verified 2026-07-08; harmless when no proxy is configured).
@@ -60,11 +61,16 @@ run; put the source links in the video description.
    pulse (step 6); Sat add ONE `vidiq_trending_videos` or `vidiq_outliers` call
    (education niche) and note in research.md which formats/angles over-perform.
    Skip all vidIQ when balance < floor.
-3. **Pick slots:** slot a = top queue `format: short`; slot b = top `longform`;
-   slot c = next `short` — but each pick must pass `strategy.topicFitGate`
-   (everyday-life relevance + beautiful b-roll potential + rules). A topic that
-   fails the gate is either re-angled on the spot (note it) or moved to the
-   bottom with a `fitNote`, taking the next candidate.
+3. **Pick slots:** slot a = top queue education `format: short`; slot b = top
+   education `longform` — each must pass `strategy.topicFitGate` (everyday-life
+   relevance + beautiful b-roll potential + rules). A topic that fails the gate is
+   either re-angled on the spot (note it) or moved to the bottom with a `fitNote`,
+   taking the next candidate.
+   **Slot c = TEST SLOT (config `testLines`):** odd UTC day-of-month →
+   `cantonese-comedy`, even → `china-travel`. Take the top queue item with that
+   pillar; if none, generate one from today's research; if the line is blocked
+   (e.g. Cantonese voice unavailable), use the other line; if both blocked, fall
+   back to an education short and log why.
 4. **Replenish:** if fewer than 5 items remain after taking 3, generate 5-8 new
    seeds from today's research findings. Every seed needs a dated `whyNow` hook,
    must pass the topicFitGate and `strategy.contentRules` (no visa/immigration
@@ -86,6 +92,18 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    best (optionally `vidiq_score_title`, 5 credits, within budget).
 2. **Voiceover** — `node scripts/elevenlabs-tts.mjs --text-file .../voiceover.txt
    --out .../vo.mp3` (fallback: `vidiq_voiceover_generate` within credit budget).
+   **Test-line voice rules (config `testLines`):**
+   - `cantonese-comedy`: pass `--model eleven_v3` and write the voiceover text in
+     colloquial 广东话 (口语字: 係/唔/嘅/咗). Pick a voice that carries comedy
+     timing. If the API rejects eleven_v3 or the output is not real Cantonese,
+     SKIP the slot honestly (never pass Mandarin off as Cantonese). Profanity per
+     config: strong 粗口 replaced with a beep (1kHz sine over the word in the srt
+     window) or a tamer word; slang stays.
+   - `china-travel`: follow `dialectLadder` top-down; label the actual language in
+     the on-screen intro + description (e.g. 「普通话·京味」). Never fake a dialect.
+   **Subtitles (both test lines):** write `subs.srt` in the run folder — one cue
+   per sentence, timed proportionally to character count over the vo.mp3 duration
+   (ffprobe), each cue = local-language line + English line. Pass `--srt` in step 3.
 3. **Video** — `node scripts/assemble-video.mjs --audio .../vo.mp3 --out .../final.mp4
    --queries "<3-5 concrete b-roll queries from the script>" --format <9x16|16x9>
    --title "<short overlay title>"`. If `output.extraFormats` in config.yaml is

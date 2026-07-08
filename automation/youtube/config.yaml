@@ -16,9 +16,9 @@ cadence:
   routineUtc: "12:30"
   # Durations tightened by owner 2026-07-08 (cost control): Shorts <=30s, video <=2min.
   slots:
-    - { name: a, publishAtUtc: "13:00", format: short }     # 9:16 vertical, <= 30s
-    - { name: b, publishAtUtc: "17:00", format: longform }  # 16:9, <= 2 min
-    - { name: c, publishAtUtc: "22:00", format: short }
+    - { name: a, publishAtUtc: "13:00", format: short }     # 9:16 vertical, <= 30s — education
+    - { name: b, publishAtUtc: "17:00", format: longform }  # 16:9, <= 2 min — education
+    - { name: c, publishAtUtc: "22:00", format: short, role: test }  # TEST SLOT — rotates testLines (odd day-of-month = cantonese-comedy, even = china-travel)
 
 voice:
   model: eleven_multilingual_v2   # standard quality (owner choice 2026-07-08) — NOT flash
@@ -59,6 +59,29 @@ providers:
   thumbnail: [openai-images, vidiq, ffmpeg-frame]
   upload: [youtube-data-api]                # the only posting lane; no credentials = dry-run
   analytics: [vidiq, youtube-analytics]
+
+# Owner directive 2026-07-08: two experimental content lines, tested on slot c
+# (odd/even day rotation). Education pillars stay on slots a+b. Judge results after
+# ~2 weeks of Mon/Thu analytics; a winning line may earn its own slot or channel.
+testLines:
+  cantonese-comedy:
+    what: "搞笑广东话 — teach funny Cantonese; e.g. spoof interviews of foreigners speaking Cantonese; playful, self-aware humor"
+    language: cantonese
+    voiceModel: eleven_v3   # v3 supports Cantonese; if the API rejects it, log honestly and skip the slot (do NOT fake Cantonese with Mandarin voices)
+    profanity: bleeped      # 俚语/轻度粗俗 OK; strong 粗口 gets beeped. Owner may set "raw" — accepted risk: age-restriction + demonetization + weaker Shorts distribution
+    subtitles: { mode: burned, languages: [yue, en] }  # comedy needs subs for non-speakers
+    rules:
+      - "Punch at situations and language mishaps, never at ethnicities/groups — no hate, no slurs targeting people."
+      - "Comedy quality gate: if the script doesn't read genuinely funny, skip the slot rather than post cringe."
+  china-travel:
+    what: "中国旅游推广 — ONE scenic spot per Short (famous or hidden); 日式唯美 cinematic aesthetic with 中式文化底蕴 (poetry lines, dynasty context, local food/customs)"
+    language: local-dialect-ladder
+    dialectLadder:  # try top to bottom; NEVER fake a dialect — label what it actually is
+      - "True dialect TTS if available (Cantonese via eleven_v3 for粤语区; future: Volcano/MiniMax dialect voices when owner adds keys)"
+      - "Mandarin with authentic local flavor in the SCRIPT (北京儿化/方言词汇/local idioms) — label as 普通话(京味) etc."
+      - "Standard Mandarin — label plainly"
+    subtitles: { mode: burned, languages: [zh, en] }
+    style: "styleGuide.aesthetic applies double: slow pans, golden hour, mist, water reflections; one poem line or cultural note per video; calm pacing"
 
 budgets:
   vidiqCreditsPerRun: 10       # hard per-run cap on vidIQ credit spend

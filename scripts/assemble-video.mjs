@@ -14,7 +14,11 @@
  *     --audio runs/x/vo.mp3 --out runs/x/final.mp4 \
  *     --queries "university campus,students studying,library books" \
  *     [--format 16x9|9x16|1x1] [--title "Why Finland Rethinks Homework"] \
- *     [--seg-seconds 6] [--max-clips 10]
+ *     [--seg-seconds 6] [--max-clips 10] [--srt subs.srt]
+ *
+ * --srt burns subtitles into the frame (bilingual cues supported: put both lines
+ * in one cue). CJK text needs `apt-get install -y fonts-noto-cjk`; the SRT path
+ * must not contain colons/commas (keep it inside the run folder).
  *
  * Also writes <out>.credits.json (Pexels source URLs per clip) so the uploader can
  * append attribution to the video description.
@@ -117,6 +121,13 @@ if (args.title && existsSync(font)) {
   );
 } else if (args.title) {
   process.stderr.write('DejaVuSans-Bold not found; skipping title overlay.\n');
+}
+if (args.srt) {
+  if (!existsSync(args.srt)) fail(`--srt file not found: ${args.srt}`);
+  // Noto Sans CJK covers zh/yue/ja; falls back to default font if not installed.
+  const cjk = existsSync('/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc');
+  if (!cjk) process.stderr.write('WARN: fonts-noto-cjk not installed — CJK subtitles may render as boxes (apt-get install -y fonts-noto-cjk).\n');
+  filters.push(`subtitles=${args.srt}:force_style='FontName=${cjk ? 'Noto Sans CJK SC' : 'DejaVu Sans'},FontSize=${vertical ? 13 : 17},Outline=2,MarginV=${vertical ? 60 : 30}'`);
 }
 
 await mkdir(dirname(outFile), { recursive: true });

@@ -176,6 +176,66 @@
       "addedAt": "2026-07-08",
       "addedBy": "platform-research workflow (sonnet seed agent)",
       "status": "queued"
+    },
+    {
+      "id": "test-cc-01",
+      "title": "外国人第一次讲广东话，係咩感觉？(spoof street interview)",
+      "pillar": "test-cantonese-comedy",
+      "format": "short",
+      "angle": "Spoof 街访: 'foreigner' tries ordering 奶茶/叫小巴 in Cantonese, each mishap teaches one real funny phrase. Self-aware, warm, bleep any strong 粗口.",
+      "whyNow": "evergreen comedy pilot for the test line",
+      "sources": [],
+      "addedAt": "2026-07-08",
+      "addedBy": "owner test-line directive",
+      "status": "queued"
+    },
+    {
+      "id": "test-cc-02",
+      "title": "教你三句最实用嘅搞笑广东话 (港式吐槽入门)",
+      "pillar": "test-cantonese-comedy",
+      "format": "short",
+      "angle": "Three genuinely useful funny Cantonese phrases with literal-translation punchlines in English subs.",
+      "whyNow": "evergreen comedy pilot #2",
+      "sources": [],
+      "addedAt": "2026-07-08",
+      "addedBy": "owner test-line directive",
+      "status": "queued"
+    },
+    {
+      "id": "test-tr-01",
+      "title": "故宫的雪，等了六百年 (北京·京味普通话)",
+      "pillar": "test-china-travel",
+      "format": "short",
+      "angle": "One spot: 故宫. Japanese-cinematic pacing, one poem line, one dynasty note, one 儿化 local phrase. Mandarin with Beijing flavor, labeled 普通话·京味.",
+      "whyNow": "travel line pilot",
+      "sources": [],
+      "addedAt": "2026-07-08",
+      "addedBy": "owner test-line directive",
+      "status": "queued"
+    },
+    {
+      "id": "test-tr-02",
+      "title": "外滩清晨六点，上海还没醒 (上海)",
+      "pillar": "test-china-travel",
+      "format": "short",
+      "angle": "One spot: 外滩 at dawn. Shanghainese TTS unavailable -> Mandarin with 沪语词点缀, honestly labeled; golden-hour b-roll, jazz-era cultural note.",
+      "whyNow": "travel line pilot #2",
+      "sources": [],
+      "addedAt": "2026-07-08",
+      "addedBy": "owner test-line directive",
+      "status": "queued"
+    },
+    {
+      "id": "test-tr-03",
+      "title": "桂林漓江：水墨画活过来的地方",
+      "pillar": "test-china-travel",
+      "format": "short",
+      "angle": "One spot: 漓江. Mist/water-reflection footage, 山水诗 line, cormorant-fishing culture note. Mandarin, labeled.",
+      "whyNow": "travel line pilot #3",
+      "sources": [],
+      "addedAt": "2026-07-08",
+      "addedBy": "owner test-line directive",
+      "status": "queued"
     }
   ]
 }
