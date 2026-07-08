@@ -65,6 +65,10 @@ run; put the source links in the video description.
    --title "<short overlay title>"`. Optional lanes (`scripts/kling-video.mjs` /
    vidiq_generate_video) only per PIPELINE.md and budget — never for all 3 daily
    slots; Kling suits a single 5-10s hero opening shot spliced before the b-roll.
+   If `output.extraFormats` in config.yaml is non-empty, re-run assemble-video once
+   per extra format (same vo.mp3, `--format <fmt>`, out `final-<fmt>.mp4`) and list
+   the variants in the run manifest — they are cross-posting masters for other
+   platforms, NOT uploaded to YouTube.
 3. Thumbnail (longform only; Shorts don't need one): `node scripts/generate-asset.mjs
    --prompt "<clean, text-light 16:9 concept>" --out .../thumb.jpeg --size 1536x1024`,
    else grab a strong frame: `ffmpeg -ss <t> -i final.mp4 -frames:v 1 thumb.jpeg`.

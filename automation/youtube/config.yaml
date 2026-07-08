@@ -42,6 +42,16 @@ budgets:
   vidiqCreditsFloor: 40        # below this balance, stop ALL vidIQ generation; keep analytics only
   maxUploadUnitsPerDay: 4800   # 3 x videos.insert (1600) — fits the default 10000 quota
 
+output:
+  # Native format per slot stays as defined in cadence.slots (Short=9x16, longform=16x9).
+  # Formats listed here are ALSO rendered for every video (same narration, re-searched
+  # b-roll in the right orientation) as cross-posting variants: 9x16 fits TikTok /
+  # Reels / 抖音 / 小红书, 16x9 fits Bilibili / X, 1x1 fits Instagram feed.
+  # Variants land in the run folder as final-<format>.mp4 and are listed in the run
+  # manifest; they are NOT auto-posted anywhere (see PIPELINE.md — other platforms'
+  # posting APIs are separate, gated projects).
+  extraFormats: []   # e.g. [16x9] or [16x9, 1x1]; empty = native format only
+
 runtime:
   runsDir: automation/youtube/runs
   stateDir: automation/youtube/state

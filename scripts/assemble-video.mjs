@@ -13,7 +13,7 @@
  *   node scripts/assemble-video.mjs \
  *     --audio runs/x/vo.mp3 --out runs/x/final.mp4 \
  *     --queries "university campus,students studying,library books" \
- *     [--format 16x9|9x16] [--title "Why Finland Rethinks Homework"] \
+ *     [--format 16x9|9x16|1x1] [--title "Why Finland Rethinks Homework"] \
  *     [--seg-seconds 6] [--max-clips 10]
  *
  * Also writes <out>.credits.json (Pexels source URLs per clip) so the uploader can
@@ -35,8 +35,11 @@ const queries = (args.queries || '').split(',').map((q) => q.trim()).filter(Bool
 if (!audioFile || !outFile || queries.length === 0) {
   fail('Usage: node scripts/assemble-video.mjs --audio <mp3> --out <mp4> --queries "a,b,c" [--format 16x9|9x16] [--title "..."]');
 }
-const vertical = (args.format || '16x9') === '9x16';
-const [W, H] = vertical ? [1080, 1920] : [1920, 1080];
+const FORMATS = { '16x9': [1920, 1080], '9x16': [1080, 1920], '1x1': [1080, 1080] };
+const fmtName = args.format || '16x9';
+if (!FORMATS[fmtName]) fail(`Unknown --format "${fmtName}". Supported: ${Object.keys(FORMATS).join(', ')}`);
+const [W, H] = FORMATS[fmtName];
+const vertical = H > W;
 const SEG = Number(args['seg-seconds'] || 6);
 const MAX_CLIPS = Number(args['max-clips'] || 10);
 
@@ -50,7 +53,8 @@ if (!audioDur || Number.isNaN(audioDur)) fail(`Could not read duration of ${audi
 const nSegs = Math.max(1, Math.ceil((audioDur + 0.5) / SEG));
 process.stderr.write(`Voiceover ${audioDur.toFixed(1)}s -> ${nSegs} segment(s) of ~${SEG}s at ${W}x${H}\n`);
 
-// 1. Find candidate clips on Pexels.
+// 1. Find candidate clips on Pexels. Square renders center-crop from landscape
+// inventory (Pexels has few native square videos).
 const orientation = vertical ? 'portrait' : 'landscape';
 const clips = [];
 const seen = new Set();

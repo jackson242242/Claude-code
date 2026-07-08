@@ -76,6 +76,17 @@ Minimum set to go fully live: **YouTube (3 vars) + ElevenLabs + Pexels.**
 Until those exist the loop runs in dry-run mode (scripts + metadata committed,
 no fake posts).
 
+## Multi-platform formats (added 2026-07-08, owner request)
+Every video can be rendered in any of **9:16 / 16:9 / 1:1** (`assemble-video.mjs
+--format`), and `output.extraFormats` in config.yaml makes the cycle emit extra
+aspect-ratio variants of each video automatically (same narration, orientation-correct
+b-roll) — ready-to-upload masters for TikTok / Reels / 抖音 / 小红书 / Bilibili /
+Instagram. **Honest boundary:** the loop only auto-posts to YouTube. Auto-posting
+elsewhere needs each platform's own API with its own approval process (TikTok Content
+Posting API requires app review; Instagram Graph API requires a Business account +
+review; 小红书 has no public API) — separate gated projects if the owner wants them.
+Until then, variants are for manual upload.
+
 ## Budgets & guardrails
 - vidIQ: ≤10 credits/run, stop generation below 40 balance (150/mo cap — see
   `config.yaml`). Default lanes are zero-marginal-cost by design.
