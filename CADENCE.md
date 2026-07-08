@@ -14,7 +14,7 @@
 | 产品升级 | 每 12h | `/product-upgrade` | 浩哥（实现 agent 落地） | daily×2，相隔 12h（08:00 / 20:00）；cron `0 */12 * * *` |
 | 市场调研 | **每 6h** | `/yifu-research` | Yifu（last30days 式社区之声，喂 Amelia + Sheng） | daily×4（00/06/12/18）；cron `0 */6 * * *` |
 | 新闻健康检查 | 每 6h | `/news-live-check` | 总管（retest + 确认 prod 新闻在流） | 随 `/pm-cycle` 体检覆盖，或单独 cron `0 */6 * * *` |
-| YouTube 内容循环 | 每日 3 次 | `/youtube-cycle` | 主控（教育频道 @NYneighborhood，独立于 Matchday26） | cron `0 13,17,22 * * *`（Routine 由 agent 经 API 代建，2026-07-08）；playbook 见 `automation/youtube/PIPELINE.md`。⚠️ 基建目前在分支 `claude/youtube-automation-workflow-v8egf3`——Routine prompt 已写成"先 checkout 该分支再执行"；老板把分支合入默认分支后可简化为直接 `/youtube-cycle` |
+| YouTube 内容循环 | **每日 1 次（一轮做 3 支，定时发布错峰上线）** | `/youtube-cycle` | 主控（教育频道 @NYneighborhood，独立于 Matchday26） | daily 12:30 UTC（**老板在 UI 建**——API 代建的 trigger 开出的 session 会卡权限确认，2026-07-08 实测两次均无写回，已删）；3 支视频用 YouTube `publishAt` 定时到 13/17/22 UTC 上线；playbook 见 `automation/youtube/PIPELINE.md`。⚠️ 基建在分支 `claude/youtube-automation-workflow-v8egf3`——Routine prompt 写成"先 checkout 该分支再执行"；分支合入默认分支后可简化 |
 
 **按需（不再定时，老板或 /pm-cycle 触发；命令保留）：**
 | 工作流 | 入口 | 原周期（已撤） |

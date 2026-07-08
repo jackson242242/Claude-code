@@ -110,7 +110,11 @@ Until then, variants are for manual upload.
   `scripts/generate-asset.mjs` (existing)
 
 ## Scheduling
-One Routine, 3 fires/day: cron `0 13,17,22 * * *`, each fire opens a fresh session
-that runs `/youtube-cycle` (slot resolved from the UTC hour). Created via the
-Claude Code Routines API from the session that built this pipeline; manage it at
-claude.ai/code/routines (pause/delete there too).
+**One Routine, one fire/day at 12:30 UTC (batch mode, owner decision 2026-07-08):**
+the run produces all 3 videos and uploads them with `publishAt` staggered to
+13:00 / 17:00 / 22:00 UTC — YouTube's own scheduler publishes them on time. This
+costs 1 cloud session/day instead of 3 (or 24 for hourly polling).
+⚠️ The Routine must be created by the owner in the claude.ai/code/routines UI —
+triggers created via the API spawn sessions that stall on permission prompts
+(observed 2026-07-08: two consecutive fired sessions produced no write-back; the
+repo's UI-created Routines run fine). The API-created trigger was deleted.

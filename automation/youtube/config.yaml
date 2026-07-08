@@ -9,11 +9,15 @@ channel:
 
 cadence:
   postsPerDay: 3
-  # Slot names map to the Routine cron `0 13,17,22 * * *` (UTC) = 9am / 1pm / 6pm New York (EDT).
+  # Batch mode (owner decision 2026-07-08): ONE daily Routine at 12:30 UTC produces
+  # all 3 videos in a single run; publishing is staggered via YouTube scheduled
+  # publishing (status.publishAt) at the slot times below (= 9am/1pm/6pm New York EDT).
+  mode: batch-daily
+  routineUtc: "12:30"
   slots:
-    - { name: a, utc: "13:00", format: short }     # 9:16 vertical, <= 60s
-    - { name: b, utc: "17:00", format: longform }  # 16:9, 6-10 min
-    - { name: c, utc: "22:00", format: short }
+    - { name: a, publishAtUtc: "13:00", format: short }     # 9:16 vertical, <= 60s
+    - { name: b, publishAtUtc: "17:00", format: longform }  # 16:9, 6-10 min
+    - { name: c, publishAtUtc: "22:00", format: short }
 
 strategy:
   pillars:
