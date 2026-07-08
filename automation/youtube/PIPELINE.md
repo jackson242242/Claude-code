@@ -95,6 +95,7 @@ no fake posts).
 - `runs/<date>-<slot>/` — per-video packages (script.md, voiceover.txt, meta.json)
 - `scripts/elevenlabs-tts.mjs` · `scripts/assemble-video.mjs` ·
   `scripts/youtube-upload.mjs` · `scripts/youtube-oauth-helper.mjs` ·
+  `scripts/kling-video.mjs` (optional hero-shot lane) ·
   `scripts/generate-asset.mjs` (existing)
 
 ## Scheduling

@@ -59,8 +59,9 @@ run; put the source links in the video description.
    (fallback: `vidiq_voiceover_generate` within credit budget; save the returned audio).
 2. Video: `node scripts/assemble-video.mjs --audio .../vo.mp3 --out .../final.mp4
    --queries "<3-5 concrete b-roll queries from the script>" --format <9x16|16x9>
-   --title "<short overlay title>"`. Optional lanes (Kling / vidiq_generate_video)
-   only per PIPELINE.md and budget — never for all 3 daily slots.
+   --title "<short overlay title>"`. Optional lanes (`scripts/kling-video.mjs` /
+   vidiq_generate_video) only per PIPELINE.md and budget — never for all 3 daily
+   slots; Kling suits a single 5-10s hero opening shot spliced before the b-roll.
 3. Thumbnail (longform only; Shorts don't need one): `node scripts/generate-asset.mjs
    --prompt "<clean, text-light 16:9 concept>" --out .../thumb.jpeg --size 1536x1024`,
    else grab a strong frame: `ffmpeg -ss <t> -i final.mp4 -frames:v 1 thumb.jpeg`.
