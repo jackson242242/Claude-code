@@ -96,9 +96,11 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    - `cantonese-comedy`: pass `--model eleven_v3` and write the voiceover text in
      colloquial 广东话 (口语字: 係/唔/嘅/咗). Pick a voice that carries comedy
      timing. If the API rejects eleven_v3 or the output is not real Cantonese,
-     SKIP the slot honestly (never pass Mandarin off as Cantonese). Profanity per
-     config: strong 粗口 replaced with a beep (1kHz sine over the word in the srt
-     window) or a tamer word; slang stays.
+     SKIP the slot honestly (never pass Mandarin off as Cantonese). Profanity
+     (owner-approved raw, THIS line only): real 粤语粗口 allowed in spoken audio +
+     burned subs; titles/descriptions/tags/thumbnails MUST stay 100% clean; EN
+     subtitle line may soften with asterisks. Education and china-travel lines:
+     zero profanity, no exceptions.
    - `china-travel`: follow `dialectLadder` top-down; label the actual language in
      the on-screen intro + description (e.g. 「普通话·京味」). Never fake a dialect.
    **Subtitles (both test lines):** write `subs.srt` in the run folder — one cue

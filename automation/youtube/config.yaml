@@ -68,7 +68,7 @@ testLines:
     what: "搞笑广东话 — teach funny Cantonese; e.g. spoof interviews of foreigners speaking Cantonese; playful, self-aware humor"
     language: cantonese
     voiceModel: eleven_v3   # v3 supports Cantonese; if the API rejects it, log honestly and skip the slot (do NOT fake Cantonese with Mandarin voices)
-    profanity: bleeped      # 俚语/轻度粗俗 OK; strong 粗口 gets beeped. Owner may set "raw" — accepted risk: age-restriction + demonetization + weaker Shorts distribution
+    profanity: raw          # OWNER-APPROVED 2026-07-08: real 粤语粗口 allowed in THIS line only (spoken audio + burned subs). Owner accepts age-restriction/demonetization risk. HARD limits: titles/descriptions/tags/thumbnails stay 100% clean (that's what the algorithm scans hardest); EN subtitle line may soften with asterisks to keep the joke readable. ALL other lines/pillars (education, china-travel): zero profanity.
     subtitles: { mode: burned, languages: [yue, en] }  # comedy needs subs for non-speakers
     rules:
       - "Punch at situations and language mishaps, never at ethnicities/groups — no hate, no slurs targeting people."
