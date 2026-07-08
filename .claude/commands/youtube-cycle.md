@@ -43,14 +43,26 @@ run; put the source links in the video description.
 `automation/youtube/state/queue.json` (topic backlog), `state/published.json`,
 `state/RUNLOG.md` (yesterday's outcomes), `config.yaml` (pillars, rules, budgets).
 
-## 2. Pick today's 3 topics (+ replenish queue when low)
-- Slot a: top queue item with `format: short`; slot b: top `format: longform`;
-  slot c: next `format: short`.
-- If fewer than 5 queue items remain after taking 3: generate 5-8 new seeds —
-  WebSearch for what is current in global education this week; if vidIQ is available
-  and within budget, one `vidiq_keyword_research` call to pick stronger phrasing.
-  Every seed needs a dated `whyNow` hook and must pass `strategy.contentRules`
-  (no visa/immigration advice, no political takes).
+## 2. Daily direction research + pick today's 3 topics
+1. **Direction research (every run, ~5 min, free):** 2-3 WebSearch passes on
+   (a) what education stories people are actually discussing this week (Reddit
+   r/ApplyingToCollege / r/Professors / education press), (b) fresh dated hooks.
+   Write 2-4 lines of findings into `state/research.md` (newest first): what
+   resonates, which angles feel tired, any queue topic that now looks stale.
+2. **vidIQ rotation (budget-capped, see budgets):** Mon & Thu add the analytics
+   pulse (step 6); Sat add ONE `vidiq_trending_videos` or `vidiq_outliers` call
+   (education niche) and note in research.md which formats/angles over-perform.
+   Skip all vidIQ when balance < floor.
+3. **Pick slots:** slot a = top queue `format: short`; slot b = top `longform`;
+   slot c = next `short` — but each pick must pass `strategy.topicFitGate`
+   (everyday-life relevance + beautiful b-roll potential + rules). A topic that
+   fails the gate is either re-angled on the spot (note it) or moved to the
+   bottom with a `fitNote`, taking the next candidate.
+4. **Replenish:** if fewer than 5 items remain after taking 3, generate 5-8 new
+   seeds from today's research findings. Every seed needs a dated `whyNow` hook,
+   must pass the topicFitGate and `strategy.contentRules` (no visa/immigration
+   advice, no political takes), and should honor `strategy.styleGuide` in its
+   angle (lived experience over institution-speak).
 
 ## 3-5. Produce each video (loop slots a → b → c)
 For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
@@ -89,10 +101,13 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    starting the next slot (protects against mid-run session death). Media never
    enters git (runs/.gitignore).
 
-## 6. Analytics pulse (once per run)
-If vidIQ MCP is present: `vidiq_channel_analytics` (channel UCSU99qan7oWIEY-c8uYmuSQ,
-last 7 days, 5 credits) → append one summary line to `state/analytics.md`; if a
-pillar clearly outperforms, reorder the queue and say so. If absent: skip silently.
+## 6. Analytics pulse (Mon & Thu only — credit budget)
+If vidIQ MCP is present AND today is Monday or Thursday (UTC):
+`vidiq_channel_analytics` (channel UCSU99qan7oWIEY-c8uYmuSQ, last 7 days, 5 credits)
+→ append one summary line to `state/analytics.md`; if a pillar or style clearly
+outperforms, reorder the queue and say so in research.md. Other days / absent: skip
+silently. (~15 credits/week total with the Sat trend call — sustainable within the
+150/month cap.)
 
 ## 7. Write state back (never skip)
 1. Dequeue the 3 used topics; save replenished queue to `state/queue.json`.

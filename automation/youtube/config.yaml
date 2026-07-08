@@ -25,6 +25,19 @@ strategy:
     - world-colleges        # university profiles, rankings, admissions
     - education-systems     # country-vs-country comparisons (Finland/Korea/SG/US/UK/CN...)
     - whats-latest          # dated news hooks, "this week in education"
+  # Owner directive 2026-07-08: 唯美主义 + 贴近生活 (aesthetic + everyday-life relevance)
+  styleGuide:
+    aesthetic: # 唯美 — the channel should LOOK and SOUND beautiful
+      - "B-roll queries prefer cinematic/beautiful imagery: golden-hour campuses, quiet libraries, rain on windows, city dawn, students in soft light — not stock 'business people' clichés."
+      - "Narration tone: calm, warm, unhurried; no shouting hooks. Titles curious but elegant — no ALL-CAPS bait."
+      - "Thumbnails: minimal, one strong image, muted palette, little or no text."
+    everydayLife: # 贴近生活 — every topic must touch the viewer's real life
+      - "Frame every topic through lived experience: what it means for a student's day, a family's budget, a commute, a dinner-table conversation — not policy abstractions."
+      - "Prefer concrete humans and scenes ('a Seoul student's 10pm hagwon run') over institution-speak ('the ministry announced')."
+  topicFitGate: # every topic picked for production must pass ALL of these
+    - "Can you state in one sentence how this touches an ordinary person's daily life? If not, rewrite the angle or skip."
+    - "Does it have b-roll potential that is genuinely beautiful (not just news footage)? If not, skip."
+    - "Does it fit a pillar and contentRules? If not, drop."
   contentRules:
     - "Educational/comparative framing only; no visa/immigration legal advice, no political takes."
     - "Every claim sourced during scripting; cite sources in the video description."
