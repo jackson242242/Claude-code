@@ -54,8 +54,9 @@ for (const bin of ['ffmpeg', 'ffprobe']) {
 
 const audioDur = Number(run('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', audioFile]));
 if (!audioDur || Number.isNaN(audioDur)) fail(`Could not read duration of ${audioFile}`);
-const nSegs = Math.max(1, Math.ceil((audioDur + 0.5) / SEG));
-process.stderr.write(`Voiceover ${audioDur.toFixed(1)}s -> ${nSegs} segment(s) of ~${SEG}s at ${W}x${H}\n`);
+const XFADE = 0.45; // crossfade between shots; each join consumes this much footage
+const nSegs = Math.max(1, Math.ceil((audioDur + 1) / (SEG - XFADE)));
+process.stderr.write(`Voiceover ${audioDur.toFixed(1)}s -> ${nSegs} segment(s) of ~${SEG}s at ${W}x${H} (crossfaded)\n`);
 
 // 1. Find candidate clips on Pexels. Square renders center-crop from landscape
 // inventory (Pexels has few native square videos).
@@ -93,24 +94,47 @@ for (let i = 0; i < nSegs; i++) {
     await writeFile(raw, Buffer.from(await res.arrayBuffer()));
     downloaded.set(clip.id, raw);
   }
-  const segLen = i === nSegs - 1 ? audioDur + 0.5 - SEG * (nSegs - 1) : SEG;
+  const segLen = SEG; // -shortest trims trailing excess against the voiceover
   // Reuse of the same clip in a later cycle starts deeper into the clip for variety.
   const start = Math.min(Math.floor(i / clips.length) * SEG, Math.max(0, (clip.duration || SEG) - segLen));
   const seg = join(tmp, `seg-${String(i).padStart(3, '0')}.mp4`);
+  // Gentle Ken Burns drift: cover-scale 12% over target, then pan across it —
+  // alternating direction per shot — so even static footage has camera motion.
+  const W2 = Math.ceil((W * 1.12) / 2) * 2;
+  const H2 = Math.ceil((H * 1.12) / 2) * 2;
+  const drift = i % 2 === 0 ? `(in_w-out_w)*(t/${segLen})` : `(in_w-out_w)*(1-t/${segLen})`;
   run('ffmpeg', ['-y', '-ss', String(start), '-i', downloaded.get(clip.id), '-t', segLen.toFixed(2),
-    '-vf', `scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H},fps=30,format=yuv420p`,
+    '-vf', `scale=${W2}:${H2}:force_original_aspect_ratio=increase,crop=${W2}:${H2},fps=30,crop=${W}:${H}:x='${drift}':y='(in_h-out_h)/2',format=yuv420p`,
     '-an', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '22', seg]);
   segFiles.push(seg);
 }
 
-// 3. Concat segments, then mux voiceover (+ optional title card overlay).
-const listFile = join(tmp, 'list.txt');
-await writeFile(listFile, segFiles.map((f) => `file '${f}'`).join('\n'));
+// 3. Crossfade segments into one silent reel, then mux voiceover (+ overlays).
 const silent = join(tmp, 'silent.mp4');
-run('ffmpeg', ['-y', '-f', 'concat', '-safe', '0', '-i', listFile, '-c', 'copy', silent]);
+if (segFiles.length === 1) {
+  run('ffmpeg', ['-y', '-i', segFiles[0], '-c', 'copy', silent]);
+} else {
+  const durs = segFiles.map((f) => Number(run('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', f])));
+  const inputs = segFiles.flatMap((f) => ['-i', f]);
+  let chain = '';
+  let prev = '0:v';
+  let offset = 0;
+  for (let i = 1; i < segFiles.length; i++) {
+    offset += durs[i - 1] - XFADE;
+    const out = i === segFiles.length - 1 ? 'vout' : `v${i}`;
+    chain += `[${prev}][${i}:v]xfade=transition=fade:duration=${XFADE}:offset=${offset.toFixed(2)}[${out}];`;
+    prev = out;
+  }
+  run('ffmpeg', ['-y', ...inputs, '-filter_complex', chain.slice(0, -1), '-map', '[vout]',
+    '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '21', silent]);
+}
 
-const filters = [`fade=t=in:st=0:d=0.5,fade=t=out:st=${(audioDur - 0.4).toFixed(2)}:d=0.4`];
-const font = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf';
+// Cinematic grade first, overlays next, fade appended last (after subtitles).
+const filters = ['eq=contrast=1.05:saturation=1.12:brightness=0.01'];
+const CJK_FONT = '/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc';
+const LATIN_FONT = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf';
+// CJK titles need the Noto font or they render as boxes.
+const font = /[^\x00-\x7F]/.test(args.title || '') && existsSync(CJK_FONT) ? CJK_FONT : LATIN_FONT;
 if (args.title && existsSync(font)) {
   const titleFile = join(tmp, 'title.txt');
   await writeFile(titleFile, wrap(args.title, 24));
@@ -130,6 +154,7 @@ if (args.srt) {
   filters.push(`subtitles=${args.srt}:force_style='FontName=${cjk ? 'Noto Sans CJK SC' : 'DejaVu Sans'},FontSize=${vertical ? 13 : 17},Outline=2,MarginV=${vertical ? 60 : 30}'`);
 }
 
+filters.push(`fade=t=in:st=0:d=0.5,fade=t=out:st=${(audioDur - 0.4).toFixed(2)}:d=0.4`);
 await mkdir(dirname(outFile), { recursive: true });
 run('ffmpeg', ['-y', '-i', silent, '-i', audioFile, '-vf', filters.join(','),
   '-map', '0:v', '-map', '1:a', '-c:v', 'libx264', '-preset', 'medium', '-crf', '21',

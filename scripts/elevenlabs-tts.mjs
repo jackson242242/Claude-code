@@ -10,7 +10,12 @@
  *   node scripts/elevenlabs-tts.mjs \
  *     --text-file automation/youtube/runs/2026-07-08-a/voiceover.txt \
  *     --out automation/youtube/runs/2026-07-08-a/vo.mp3 \
- *     [--voice 21m00Tcm4TlvDq8ikWAM] [--model eleven_multilingual_v2]
+ *     [--voice 21m00Tcm4TlvDq8ikWAM] [--model eleven_multilingual_v2] \
+ *     [--stability 0.45] [--similarity 0.75] [--style 0.35]
+ *
+ * Voice settings default to a more human, less monotone delivery (lower stability
+ * = more expressive variation; style adds performance color). Raise stability
+ * toward 0.7 if a voice gets too erratic.
  *
  * Long texts are split on paragraph boundaries into <=2400-char chunks (free/starter
  * tiers cap request size); the MP3 parts are concatenated in order.
@@ -37,6 +42,12 @@ if (!textFile || !outFile) {
 // Default voice: "Rachel" (a standard ElevenLabs premade voice).
 const voiceId = args.voice || process.env.ELEVENLABS_VOICE_ID || '21m00Tcm4TlvDq8ikWAM';
 const modelId = args.model || 'eleven_multilingual_v2';
+const voiceSettings = {
+  stability: Number(args.stability ?? 0.45),
+  similarity_boost: Number(args.similarity ?? 0.75),
+  style: Number(args.style ?? 0.35),
+  use_speaker_boost: true,
+};
 
 const text = (await readFile(textFile, 'utf8')).trim();
 if (!text) fail(`Voiceover text file is empty: ${textFile}`);
@@ -58,7 +69,7 @@ async function tts(chunk, attempt = 1) {
     {
       method: 'POST',
       headers: { 'xi-api-key': API_KEY, 'content-type': 'application/json' },
-      body: JSON.stringify({ text: chunk, model_id: modelId }),
+      body: JSON.stringify({ text: chunk, model_id: modelId, voice_settings: voiceSettings }),
     },
   );
   if (res.status >= 500 && attempt <= 4) {
