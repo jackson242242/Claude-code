@@ -13,7 +13,7 @@
       ],
       "addedAt": "2026-07-08",
       "addedBy": "platform-research workflow (sonnet seed agent)",
-      "status": "queued"
+      "status": "paused-pivot-2026-07-09"
     },
     {
       "id": "seed-12",
@@ -28,7 +28,7 @@
       ],
       "addedAt": "2026-07-08",
       "addedBy": "platform-research workflow (sonnet seed agent)",
-      "status": "queued"
+      "status": "paused-pivot-2026-07-09"
     },
     {
       "id": "seed-05",
@@ -43,7 +43,7 @@
       ],
       "addedAt": "2026-07-08",
       "addedBy": "platform-research workflow (sonnet seed agent)",
-      "status": "queued"
+      "status": "paused-pivot-2026-07-09"
     },
     {
       "id": "seed-13",
@@ -58,7 +58,7 @@
       ],
       "addedAt": "2026-07-08",
       "addedBy": "platform-research workflow (sonnet seed agent)",
-      "status": "queued"
+      "status": "paused-pivot-2026-07-09"
     },
     {
       "id": "seed-14",
@@ -72,7 +72,7 @@
       ],
       "addedAt": "2026-07-08",
       "addedBy": "platform-research workflow (sonnet seed agent)",
-      "status": "queued"
+      "status": "paused-pivot-2026-07-09"
     },
     {
       "id": "seed-06",
@@ -87,7 +87,7 @@
       ],
       "addedAt": "2026-07-08",
       "addedBy": "platform-research workflow (sonnet seed agent)",
-      "status": "queued"
+      "status": "paused-pivot-2026-07-09"
     },
     {
       "id": "seed-08",
@@ -102,7 +102,7 @@
       ],
       "addedAt": "2026-07-08",
       "addedBy": "platform-research workflow (sonnet seed agent)",
-      "status": "queued"
+      "status": "paused-pivot-2026-07-09"
     },
     {
       "id": "seed-09",
@@ -117,7 +117,7 @@
       ],
       "addedAt": "2026-07-08",
       "addedBy": "platform-research workflow (sonnet seed agent)",
-      "status": "queued"
+      "status": "paused-pivot-2026-07-09"
     },
     {
       "id": "seed-10",
@@ -131,7 +131,7 @@
       ],
       "addedAt": "2026-07-08",
       "addedBy": "platform-research workflow (sonnet seed agent)",
-      "status": "queued"
+      "status": "paused-pivot-2026-07-09"
     },
     {
       "id": "seed-15",
@@ -146,7 +146,7 @@
       ],
       "addedAt": "2026-07-08",
       "addedBy": "platform-research workflow (sonnet seed agent)",
-      "status": "queued"
+      "status": "paused-pivot-2026-07-09"
     },
     {
       "id": "test-cc-01",
@@ -158,7 +158,7 @@
       "sources": [],
       "addedAt": "2026-07-08",
       "addedBy": "owner test-line directive",
-      "status": "queued"
+      "status": "paused-pivot-2026-07-09"
     },
     {
       "id": "test-cc-02",
@@ -170,12 +170,12 @@
       "sources": [],
       "addedAt": "2026-07-08",
       "addedBy": "owner test-line directive",
-      "status": "queued"
+      "status": "paused-pivot-2026-07-09"
     },
     {
       "id": "test-tr-02",
       "title": "外滩清晨六点，上海还没醒 (上海)",
-      "pillar": "test-china-travel",
+      "pillar": "city-travel",
       "format": "short",
       "angle": "One spot: 外滩 at dawn. Shanghainese TTS unavailable -> Mandarin with 沪语词点缀, honestly labeled; golden-hour b-roll, jazz-era cultural note.",
       "whyNow": "travel line pilot #2",
@@ -187,7 +187,7 @@
     {
       "id": "test-tr-03",
       "title": "桂林漓江：水墨画活过来的地方",
-      "pillar": "test-china-travel",
+      "pillar": "city-travel",
       "format": "short",
       "angle": "One spot: 漓江. Mist/water-reflection footage, 山水诗 line, cormorant-fishing culture note. Mandarin, labeled.",
       "whyNow": "travel line pilot #3",
@@ -206,7 +206,7 @@
       "sources": [],
       "addedAt": "2026-07-08",
       "addedBy": "owner test-line directive",
-      "status": "queued"
+      "status": "paused-pivot-2026-07-09"
     },
     {
       "id": "test-td-02",
@@ -218,6 +218,114 @@
       "sources": [],
       "addedAt": "2026-07-08",
       "addedBy": "owner test-line directive",
+      "status": "paused-pivot-2026-07-09"
+    },
+    {
+      "id": "cf-01",
+      "title": "成都火锅的第一口，为什么要先烫毛肚？",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "One dish: 毛肚, 七上八下 ritual, steam close-ups, 四川话彩蛋 巴适.",
+      "whyNow": "channel pivot seed 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-09",
+      "addedBy": "owner pivot directive",
+      "status": "queued"
+    },
+    {
+      "id": "cf-02",
+      "title": "广州早茶：一盅两件，慢的艺术",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "Teahouse morning: 虾饺/凤爪 close-ups, 粤语彩蛋 饮茶先啦.",
+      "whyNow": "channel pivot seed 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-09",
+      "addedBy": "owner pivot directive",
+      "status": "queued"
+    },
+    {
+      "id": "cf-03",
+      "title": "西安回民街，一个肉夹馍的排队哲学",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "Roujiamo craft: 剁肉声/馍出炉 steam; 陕西话彩蛋.",
+      "whyNow": "channel pivot seed 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-09",
+      "addedBy": "owner pivot directive",
+      "status": "queued"
+    },
+    {
+      "id": "cf-04",
+      "title": "长沙夜市，臭豆腐为什么越臭越香？",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "Black tofu frying close-ups; 长沙话彩蛋 恰饭.",
+      "whyNow": "channel pivot seed 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-09",
+      "addedBy": "owner pivot directive",
+      "status": "queued"
+    },
+    {
+      "id": "ct-05",
+      "title": "西湖的清晨，比传说更安静",
+      "pillar": "city-travel",
+      "format": "short",
+      "angle": "West Lake dawn mist, 断桥, one poem line.",
+      "whyNow": "channel pivot seed 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-09",
+      "addedBy": "owner pivot directive",
+      "status": "queued"
+    },
+    {
+      "id": "cw-01",
+      "title": "苏州平江路的一天：从晨光到灯笼",
+      "pillar": "city-walk",
+      "format": "longform",
+      "angle": "Dawn-to-dusk canal walk, 评弹声, lantern dusk.",
+      "whyNow": "channel pivot seed 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-09",
+      "addedBy": "owner pivot directive",
+      "status": "queued"
+    },
+    {
+      "id": "cw-02",
+      "title": "重庆不是一座城市，是一座立体迷宫",
+      "pillar": "city-walk",
+      "format": "longform",
+      "angle": "山城步道, cable car over river, hotpot alley steam, 重庆话彩蛋 要得.",
+      "whyNow": "channel pivot seed 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-09",
+      "addedBy": "owner pivot directive",
+      "status": "queued"
+    },
+    {
+      "id": "cc2-01",
+      "title": "景德镇：一件瓷器的诞生",
+      "pillar": "china-culture",
+      "format": "longform",
+      "angle": "Clay to kiln: wheel hands close-up, glaze, fire; one 宋词 line.",
+      "whyNow": "channel pivot seed 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-09",
+      "addedBy": "owner pivot directive",
+      "status": "queued"
+    },
+    {
+      "id": "cc2-02",
+      "title": "潮汕功夫茶：三只杯子里的宇宙",
+      "pillar": "china-culture",
+      "format": "longform",
+      "angle": "Gongfu tea ritual, 关公巡城 pouring, why three cups.",
+      "whyNow": "channel pivot seed 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-09",
+      "addedBy": "owner pivot directive",
       "status": "queued"
     }
   ]

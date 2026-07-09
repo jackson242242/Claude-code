@@ -15,10 +15,11 @@ cadence:
   mode: batch-daily
   routineUtc: "12:30"
   # Durations tightened by owner 2026-07-08 (cost control): Shorts <=30s, video <=2min.
+  # Slot mapping since 2026-07-09 pivot (day = UTC day-of-month):
   slots:
-    - { name: a, publishAtUtc: "13:00", format: short }     # 9:16 vertical, <= 30s — education
-    - { name: b, publishAtUtc: "17:00", format: longform }  # 16:9, <= 2 min — education
-    - { name: c, publishAtUtc: "22:00", format: short, role: test }  # TEST SLOT — rotates testLines (odd day-of-month = cantonese-comedy, even = china-travel)
+    - { name: a, publishAtUtc: "13:00", format: short }     # 9:16 <=30s — odd day: city-travel, even day: china-food
+    - { name: b, publishAtUtc: "17:00", format: longform }  # 16:9 <=2min — odd day: city-walk, even day: china-culture
+    - { name: c, publishAtUtc: "22:00", format: short }     # 9:16 <=30s — opposite of slot a (even day: city-travel, odd day: china-food)
 
 voice:
   model: eleven_multilingual_v2   # standard quality (owner choice 2026-07-08) — NOT flash
@@ -26,11 +27,18 @@ voice:
   # ~= 2.6k chars/day ~= 76k chars/month -> fits Creator (100k) with headroom.
 
 strategy:
+  # ================= PIVOT 2026-07-09 (owner directive) =================
+  # Education content PAUSED. Channel now focuses on China:
+  #   Shorts   -> city tourism + food (城市旅游/美食)
+  #   Longform -> culture + city walks (文化/城市漫游)
+  # Aesthetic: 日系唯美 filming feel x 中式文化底蕴 — style upgrade in progress
+  # (research 2026-07-09), specs land in styleGuide as they are verified.
   pillars:
-    - education-trends      # AI in classrooms, edtech, policy shifts
-    - world-colleges        # university profiles, rankings, admissions
-    - education-systems     # country-vs-country comparisons (Finland/Korea/SG/US/UK/CN...)
-    - whats-latest          # dated news hooks, "this week in education"
+    - city-travel     # Shorts: one city/scenic spot per video, 日式唯美 pacing
+    - china-food      # Shorts: one dish/snack/food street per video (火锅/早茶/夜市...)
+    - china-culture   # Longform: crafts, opera, tea, porcelain, festivals — cultural depth
+    - city-walk       # Longform: 城市漫游 — one street/district, dawn-to-dusk feel
+  pausedPillars: [education-trends, world-colleges, education-systems, whats-latest]
   # Owner directive 2026-07-08: 唯美主义 + 贴近生活 (aesthetic + everyday-life relevance)
   styleGuide:
     aesthetic: # 唯美 — the channel should LOOK and SOUND beautiful
@@ -63,13 +71,15 @@ providers:
   upload: [youtube-data-api]                # the only posting lane; no credentials = dry-run
   analytics: [vidiq, youtube-analytics]
 
-# Owner directives 2026-07-08: experimental content lines tested on slot c,
-# rotating by UTC day-of-month % 3 (0=cantonese-comedy, 1=china-travel,
-# 2=teach-chinese-dialects). Education pillars stay on slots a+b. Judge results
-# after ~2 weeks of Mon/Thu analytics; a winning line may earn its own slot or
-# channel. Shared resource: state/dialect-bank.md (全国方言梗库) — the daily
-# research step deepens one region per day; ALL lines pull from it.
-testLines:
+# Since the 2026-07-09 pivot the china-travel spirit lives in the main pillars.
+# cantonese-comedy and teach-chinese-dialects are PAUSED (owner focus shift);
+# their specs are kept for possible revival. state/dialect-bank.md stays ACTIVE —
+# travel/food/culture videos weave local phrases and 梗 from it (local-language
+# flavor per city was an explicit owner directive), and the daily research step
+# still deepens one region per day.
+testLines: # PAUSED except as reference material
+  _status: paused-2026-07-09
+
   cantonese-comedy:
     what: "搞笑广东话 — teach funny Cantonese; e.g. spoof interviews of foreigners speaking Cantonese; playful, self-aware humor"
     language: cantonese

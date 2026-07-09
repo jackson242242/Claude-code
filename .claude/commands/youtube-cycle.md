@@ -2,8 +2,11 @@
 description: Run one YouTube content cycle for @NYneighborhood — produce the day's 3 education videos in one run, staggered via scheduled publishing (daily Routine, 12:30 UTC)
 ---
 
-You are running the **daily YouTube content cycle** for the @NYneighborhood channel
-(education niche: education trends, world colleges, education systems, what's latest).
+You are running the **daily YouTube content cycle** for the @NYneighborhood channel.
+**CHANNEL PIVOT 2026-07-09 (owner directive):** education content is PAUSED — ignore
+any "education channel" phrasing in the firing prompt. The channel now covers CHINA:
+Shorts = city tourism & food; longform = culture & 城市漫游 city walks. Aesthetic =
+日系唯美 pacing/look with 中式文化底蕴 (see config styleGuide).
 This is an autonomous routine run in a fresh session: the repo is your only memory.
 Read `automation/youtube/PIPELINE.md` and `automation/youtube/config.yaml` first —
 they are the source of truth; this file is the executable summary.
@@ -70,17 +73,18 @@ log `skipped: batch already published today` and stop. (Protects against manual
    pulse (step 6); Sat add ONE `vidiq_trending_videos` or `vidiq_outliers` call
    (education niche) and note in research.md which formats/angles over-perform.
    Skip all vidIQ when balance < floor.
-3. **Pick slots:** slot a = top queue education `format: short`; slot b = top
-   education `longform` — each must pass `strategy.topicFitGate` (everyday-life
-   relevance + beautiful b-roll potential + rules). A topic that fails the gate is
-   either re-angled on the spot (note it) or moved to the bottom with a `fitNote`,
-   taking the next candidate.
-   **Slot c = TEST SLOT (config `testLines`):** UTC day-of-month % 3 →
-   0 = `cantonese-comedy`, 1 = `china-travel`, 2 = `teach-chinese-dialects`.
-   Take the top queue item with that pillar; if none, generate one from today's
-   research + `state/dialect-bank.md`; if the line is blocked (e.g. Cantonese
-   voice unavailable), rotate to the next line; if all blocked, fall back to an
-   education short and log why.
+3. **Pick slots (post-pivot mapping, day = UTC day-of-month):**
+   - slot a (Short): odd day `city-travel`, even day `china-food`
+   - slot b (longform): odd day `city-walk`, even day `china-culture`
+   - slot c (Short): the opposite of slot a
+   Take the top queue item with that pillar (skip items whose pillar is in
+   `pausedPillars`); if none, generate one from today's research +
+   `state/dialect-bank.md`. Each pick must pass `strategy.topicFitGate`
+   (everyday-life relevance + beautiful b-roll potential + rules); fail → re-angle
+   on the spot or defer with a `fitNote`.
+   Every travel/food/culture video weaves 1-2 clean local phrases/梗 from
+   `state/dialect-bank.md` for its city's region (hook or closing wink), and
+   follows the dialect ladder for narration flavor (honest labeling, never fake).
 4. **Replenish:** if fewer than 5 items remain after taking 3, generate 5-8 new
    seeds from today's research findings. Every seed needs a dated `whyNow` hook,
    must pass the topicFitGate and `strategy.contentRules` (no visa/immigration
@@ -102,28 +106,13 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    best (optionally `vidiq_score_title`, 5 credits, within budget).
 2. **Voiceover** — `node scripts/elevenlabs-tts.mjs --text-file .../voiceover.txt
    --out .../vo.mp3` (fallback: `vidiq_voiceover_generate` within credit budget).
-   **Test-line voice rules (config `testLines`):**
-   - `cantonese-comedy`: requires `ELEVENLABS_CANTONESE_VOICE_ID` env (a native
-     广府话 voice the owner picked/cloned — owner rejected non-native output
-     2026-07-08). If unset, SKIP this line (rotate to the next test line) and
-     note `blocked: no native Cantonese voice` in the run log. When set: pass
-     `--voice $ELEVENLABS_CANTONESE_VOICE_ID --model eleven_v3`, write the
-     voiceover in colloquial 广州话 (口语字: 係/唔/嘅/咗; prefer 广府 vocabulary
-     over 港式 where they differ). If the API rejects eleven_v3, SKIP honestly
-     (never pass Mandarin off as Cantonese). Profanity
-     (owner-approved raw, THIS line only): real 粤语粗口 allowed in spoken audio +
-     burned subs; titles/descriptions/tags/thumbnails MUST stay 100% clean; EN
-     subtitle line may soften with asterisks. Education and china-travel lines:
-     zero profanity, no exceptions.
-   - `china-travel`: follow `dialectLadder` top-down; label the actual language in
-     the on-screen intro + description (e.g. 「普通话·京味」). Never fake a dialect.
-     Weave 1-2 clean entries from `state/dialect-bank.md` for the spot's region
-     into the script (hook or closing wink).
-   - `teach-chinese-dialects`: pick one bank entry (clean only), teach it 3x
-     (slow → natural → mini-scene). Voice per config voiceRules: 粤语 via
-     eleven_v3; other dialects = Mandarin narrator teaching, dialect text big
-     on screen, honest on-screen label of what the audio is.
-   **Subtitles (both test lines):** write `subs.srt` in the run folder — one cue
+   **Narration language (all pillars, post-pivot):** follow the dialect ladder —
+   Mandarin narration with the city's local flavor in the wording (京味儿化 in
+   Beijing, 沪语词 in Shanghai...), honest on-screen label of what the audio is
+   (e.g.「普通话·京味」); true-dialect audio only where a native voice exists
+   (粤语 requires `ELEVENLABS_CANTONESE_VOICE_ID` + eleven_v3). Never fake a
+   dialect. Zero profanity in all active pillars.
+   **Subtitles (all videos):** write `subs.srt` in the run folder — one cue
    per sentence, timed proportionally to character count over the vo.mp3 duration
    (ffprobe), each cue = local-language line + English line. Pass `--srt` in step 3.
 3. **Video** — `node scripts/assemble-video.mjs --audio .../vo.mp3 --out .../final.mp4

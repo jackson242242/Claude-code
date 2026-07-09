@@ -2,7 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-07-09 (deepened: 广西 — 栓Q / 表哥·老表 / 我真的会谢)  
+**Today:** 2026-07-08  
 **Verification:** All phrases verified via WebSearch; marked with region coverage notes.  
 **Content Tags:** [comedy] [travel] [teach] | Sensitivity: clean / 轻度粗俗 / 粗口
 
@@ -97,9 +97,6 @@
 - **螺蛳粉梗** | cultural tag | 南宁螺蛳粉的谐音与方言梗融合，"螺蛳粉"="螺西汾"等 | 美食与方言文化的结合；代表新兴网络梗 | [comedy] [travel] [teach] | clean
 - **白话** (bai2 hua4) | "plain talk / Baihua" | 南宁白话，介于粤语与普通话之间的方言 | 南宁本地身份认同的表现 | [teach] | clean
 - **老表** (lao3 biao3) | "buddy" | 广西人对朋友的称呼，带有亲昵感 | 广西人的热情好客特点 | [comedy] | clean
-- **栓Q** (shuan1 Q) | "thank you (exasperated)" | 源自桂林阳朔"刘老师"用广西口音英语介绍风景，结尾"thank you"魔性走红；现多表无语/崩溃 | 2022爆红、2026仍高频；抖音方言梗代表作，桂林山水+乡音意外出圈 | [comedy] [travel] | clean（更新 2026-07-09）
-- **表哥 / 老表** (biao3 ge1) | "table brother / buddy" | 南宁招呼语"老表"演化，非亲属间的兄弟称呼，非真表亲 | 体现广西人自来熟、热络的社交风格 | [comedy] [teach] | clean（更新 2026-07-09）
-- **我真的会谢** (wo3 zhen1 de hui4 xie4) | "I'll really be grateful (sarcastic)" | 与"栓Q"配套的网络反语，表面感谢实则无奈 | 与广西"栓Q"同源流行，2026仍常见于吐槽语境 | [comedy] | clean（更新 2026-07-09）
 
 ## 台湾腔 (Taiwan Accent — Taiwanese Mandarin)
 
