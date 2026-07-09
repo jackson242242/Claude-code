@@ -103,10 +103,14 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
 2. **Voiceover** — `node scripts/elevenlabs-tts.mjs --text-file .../voiceover.txt
    --out .../vo.mp3` (fallback: `vidiq_voiceover_generate` within credit budget).
    **Test-line voice rules (config `testLines`):**
-   - `cantonese-comedy`: pass `--model eleven_v3` and write the voiceover text in
-     colloquial 广东话 (口语字: 係/唔/嘅/咗). Pick a voice that carries comedy
-     timing. If the API rejects eleven_v3 or the output is not real Cantonese,
-     SKIP the slot honestly (never pass Mandarin off as Cantonese). Profanity
+   - `cantonese-comedy`: requires `ELEVENLABS_CANTONESE_VOICE_ID` env (a native
+     广府话 voice the owner picked/cloned — owner rejected non-native output
+     2026-07-08). If unset, SKIP this line (rotate to the next test line) and
+     note `blocked: no native Cantonese voice` in the run log. When set: pass
+     `--voice $ELEVENLABS_CANTONESE_VOICE_ID --model eleven_v3`, write the
+     voiceover in colloquial 广州话 (口语字: 係/唔/嘅/咗; prefer 广府 vocabulary
+     over 港式 where they differ). If the API rejects eleven_v3, SKIP honestly
+     (never pass Mandarin off as Cantonese). Profanity
      (owner-approved raw, THIS line only): real 粤语粗口 allowed in spoken audio +
      burned subs; titles/descriptions/tags/thumbnails MUST stay 100% clean; EN
      subtitle line may soften with asterisks. Education and china-travel lines:
