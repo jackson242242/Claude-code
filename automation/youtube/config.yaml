@@ -36,6 +36,7 @@ strategy:
     aesthetic: # 唯美 — the channel should LOOK and SOUND beautiful
       - "B-roll queries prefer cinematic/beautiful imagery: golden-hour campuses, quiet libraries, rain on windows, city dawn, students in soft light — not stock 'business people' clichés."
       - "Camera feel (owner 2026-07-08: better 运镜): append motion words to queries — aerial, drone, slow motion, dolly, timelapse; the assembler adds crossfades + slow drift + grade, but footage that already MOVES beats any filter. Travel line uses --seg-seconds 8 (slower cuts)."
+      - "Shot selection (owner 2026-07-08): avoid night scenes; prefer DAYTIME footage with PEOPLE in frame — close-ups of faces/hands/reactions IN MOTION (talking, laughing, eating, walking) over empty wide cityscapes. Human close-ups hold attention."
       - "Narration tone: calm, warm, unhurried; no shouting hooks. Titles curious but elegant — no ALL-CAPS bait."
       - "Anti-AI voice (owner 2026-07-08): write for the EAR — contractions, varied sentence lengths, one rhetorical question, natural pauses via em-dashes/ellipses, a specific human detail per script; never listicle cadence ('here are 5 reasons'), never robotic parallel sentences. TTS uses expressive settings (stability 0.45/style 0.35 defaults in elevenlabs-tts.mjs)."
       - "Thumbnails: minimal, one strong image, muted palette, little or no text."

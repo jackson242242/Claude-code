@@ -50,6 +50,10 @@ run; put the source links in the video description.
 ## 1. Read state
 `automation/youtube/state/queue.json` (topic backlog), `state/published.json`,
 `state/RUNLOG.md` (yesterday's outcomes), `config.yaml` (pillars, rules, budgets).
+**Idempotency guard:** if `published.json` already has 3 entries for TODAY (UTC)
+and this fire carries no explicit override instructions, today's batch is done —
+log `skipped: batch already published today` and stop. (Protects against manual
+"Run now" double-posting.)
 
 ## 2. Daily direction research + pick today's 3 topics
 1. **Direction research (every run, ~5 min, free):** 2-3 WebSearch passes on
