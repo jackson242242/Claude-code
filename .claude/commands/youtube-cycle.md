@@ -29,7 +29,15 @@ run; put the source links in the video description.
 
 ## 0. Setup & lane detection
 1. `apt-get update && apt-get install -y ffmpeg fonts-noto-cjk` (container is fresh
-   each run; the CJK font is required for burned-in Chinese subtitles).
+   each run; the CJK font is required for burned-in Chinese subtitles). Then fetch
+   the 中式 title fonts (both OFL-licensed; skip gracefully on download failure):
+   ```
+   mkdir -p /usr/share/fonts/truetype/custom-cjk
+   curl -sL -o /usr/share/fonts/truetype/custom-cjk/MaShanZheng-Regular.ttf \
+     https://github.com/google/fonts/raw/main/ofl/mashanzheng/MaShanZheng-Regular.ttf
+   curl -sL -o /usr/share/fonts/truetype/custom-cjk/LXGWWenKai-Regular.ttf \
+     https://github.com/lxgw/LxgwWenKai/releases/latest/download/LXGWWenKai-Regular.ttf
+   ```
    Also `export NODE_USE_ENV_PROXY=1` before any `node scripts/*.mjs` call — Node's
    fetch ignores HTTPS_PROXY without it and API calls die on proxied egress
    (verified 2026-07-08; harmless when no proxy is configured).
@@ -94,10 +102,17 @@ log `skipped: batch already published today` and stop. (Protects against manual
 ## 3-5. Produce each video (loop slots a → b → c)
 For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
 
-1. **Script** — Short: 65-80 spoken words (≤30s), hook in the first line. Video
-   (slot b): 260-300 words (≤2 min), hook → 2-3 tight sections → one-line recap →
-   honest CTA. Voice model: `eleven_multilingual_v2` (standard quality — owner
-   choice; do not switch to flash). Verify every factual
+1. **Script** — structure per 起承转合 (style research 2026-07-09):
+   - Short (≤30s, ~60-75 words): 起 establish the place with one image-rich line →
+     承 develop (walking/making/steam) → 转 the surprise/discovery/taste → 合 a
+     quiet closing line (poem fragment or local phrase from the dialect bank).
+   - Video (slot b, ≤2 min, 240-280 words): 0-15s establish city + poetic opening
+     → 15-50s walk + one history/dynasty beat → 50-100s food/discovery twist →
+     100-120s dusk wide + closing reflection. One 成语 or poem line per video.
+   - Narration is SPARSE (日系): write pause beats (…) between sections — the
+     b-roll breathes without voice for 1-2s; aim ~140-160 wpm feel, not radio-host
+     density. Voice model: `eleven_multilingual_v2` (standard quality — owner
+     choice; do not switch to flash). Verify every factual
    claim with WebSearch/WebFetch this run; collect source URLs. Produce `script.md`
    (with sources), `voiceover.txt` (clean spoken text), `meta.json` (title ≤100
    chars; description with sources + AI-narration disclosure + credits placeholder;
@@ -116,10 +131,21 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    per sentence, timed proportionally to character count over the vo.mp3 duration
    (ffprobe), each cue = local-language line + English line. Pass `--srt` in step 3.
 3. **Video** — `node scripts/assemble-video.mjs --audio .../vo.mp3 --out .../final.mp4
-   --queries "<3-5 concrete b-roll queries from the script>" --format <9x16|16x9>
-   --title "<short overlay title>"`. If `output.extraFormats` in config.yaml is
-   non-empty, re-run once per extra format (same vo.mp3, out `final-<fmt>.mp4`) —
-   cross-posting masters, NOT uploaded to YouTube.
+   --queries "<3-5 concrete b-roll queries>" --format <9x16|16x9>
+   --title "<short overlay title>" --style riben
+   --seg-seconds <7 for Shorts, 8 for longform>`.
+   B-roll queries per styleGuide: soft morning light / mist / steam / lantern dusk;
+   people close-ups in motion (hands making food, faces reacting); NO night scenes,
+   no stock-cliché business shots. 中式 checklist per video: at least one of —
+   poem/成语 line in the subs, local phrase from the dialect bank, craft/food
+   close-up with cultural note.
+   **Music bed (longform only, budget-permitting):** if vidIQ MCP is present and
+   within credit budget, `vidiq_generate_music` (calm guzheng/lofi, 60-80 BPM,
+   ~30-60s loopable) → save the file → re-run assemble with `--music <file>`. If
+   unavailable, ship without music (honest silence beats > wrong music).
+   If `output.extraFormats` in config.yaml is non-empty, re-run once per extra
+   format (same vo.mp3, out `final-<fmt>.mp4`) — cross-posting masters, NOT
+   uploaded to YouTube.
 4. **Thumbnail** (longform only) — `node scripts/generate-asset.mjs --prompt
    "<clean, text-light 16:9 concept>" --out .../thumb.jpeg --size 1536x1024`, else
    frame-grab: `ffmpeg -ss <t> -i final.mp4 -frames:v 1 thumb.jpeg`. YouTube cap

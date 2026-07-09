@@ -48,6 +48,9 @@ strategy:
       - "Narration tone: calm, warm, unhurried; no shouting hooks. Titles curious but elegant — no ALL-CAPS bait."
       - "Anti-AI voice (owner 2026-07-08): write for the EAR — contractions, varied sentence lengths, one rhetorical question, natural pauses via em-dashes/ellipses, a specific human detail per script; never listicle cadence ('here are 5 reasons'), never robotic parallel sentences. TTS uses expressive settings (stability 0.45/style 0.35 defaults in elevenlabs-tts.mjs)."
       - "Thumbnails: minimal, one strong image, muted palette, little or no text."
+      - "日系唯美 v2 (researched 2026-07-09, implemented): assemble --style riben = lifted milky blacks + muted saturation + teal-green shadows / warm golden highlights; longer holds (--seg-seconds 7-8); narration sparse with silence beats (~140-160wpm); titles fade in 0.5s / hold 3-5s / fade out; footage keywords lean soft morning light / mist / steam / rain-by-day / lantern dusk."
+      - "中式落地 v1 (implemented): 书法标题字体 Ma Shan Zheng → 文楷 → Noto fallback (OFL, auto-downloaded per run); every video carries ≥1 of {poem/成语 line, dialect-bank local phrase, craft/food close-up + cultural note}; narrative = 起承转合 four-beat structure."
+      - "中式 phase-2 backlog (not yet implemented): 印章 red-seal corner stamp PNG overlay; 竖排 vertical poetry text; ink-wash 水墨 transitions; traditional-palette LUT (故宫红/黛青/月白 #D6ECF0); richer music via Pixabay (needs owner PIXABAY key) — currently vidiq_generate_music within budget, longform only."
     everydayLife: # 贴近生活 — every topic must touch the viewer's real life
       - "Frame every topic through lived experience: what it means for a student's day, a family's budget, a commute, a dinner-table conversation — not policy abstractions."
       - "Prefer concrete humans and scenes ('a Seoul student's 10pm hagwon run') over institution-speak ('the ministry announced')."

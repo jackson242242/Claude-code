@@ -14,7 +14,14 @@
  *     --audio runs/x/vo.mp3 --out runs/x/final.mp4 \
  *     --queries "university campus,students studying,library books" \
  *     [--format 16x9|9x16|1x1] [--title "Why Finland Rethinks Homework"] \
- *     [--seg-seconds 6] [--max-clips 10] [--srt subs.srt]
+ *     [--seg-seconds 6] [--max-clips 10] [--srt subs.srt] \
+ *     [--style default|riben] [--music bgm.mp3]
+ *
+ * --style riben: 日系唯美 grade — lifted milky blacks, muted saturation, teal-green
+ * shadows + warm golden highlights (Shinkai-style split-tone; specs from the
+ * 2026-07-09 style research). Pair with slower --seg-seconds (7-8).
+ * --music: loops a background track under the voiceover at low volume (-18dB-ish),
+ * second-pass mux so video encoding is untouched.
  *
  * --srt burns subtitles into the frame (bilingual cues supported: put both lines
  * in one cue). CJK text needs `apt-get install -y fonts-noto-cjk`; the SRT path
@@ -130,11 +137,27 @@ if (segFiles.length === 1) {
 }
 
 // Cinematic grade first, overlays next, fade appended last (after subtitles).
-const filters = ['eq=contrast=1.05:saturation=1.12:brightness=0.01'];
-const CJK_FONT = '/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc';
+// 'riben' = Japanese-aesthetic split-tone: lifted blacks, muted sat, cool shadows,
+// warm highlights. 'default' = the original punchy grade.
+const GRADES = {
+  default: 'eq=contrast=1.05:saturation=1.12:brightness=0.01',
+  riben: 'eq=brightness=0.05:contrast=1.15:saturation=0.85,' +
+    'colorbalance=rs=-0.08:bs=0.12:gs=-0.02:rm=0.03:gm=0.02:bm=-0.05:rh=0.18:gh=0.08:bh=-0.12',
+};
+const grade = GRADES[args.style || 'default'];
+if (!grade) fail(`Unknown --style "${args.style}". Supported: ${Object.keys(GRADES).join(', ')}`);
+const filters = [grade];
+// CJK title font preference: calligraphy (Ma Shan Zheng) -> 文楷 (LXGW WenKai)
+// -> Noto CJK. The cycle downloads the first two into custom-cjk/ (OFL-licensed).
+const CJK_FONTS = [
+  '/usr/share/fonts/truetype/custom-cjk/MaShanZheng-Regular.ttf',
+  '/usr/share/fonts/truetype/custom-cjk/LXGWWenKai-Regular.ttf',
+  '/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc',
+];
 const LATIN_FONT = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf';
-// CJK titles need the Noto font or they render as boxes.
-const font = /[^\x00-\x7F]/.test(args.title || '') && existsSync(CJK_FONT) ? CJK_FONT : LATIN_FONT;
+const font = /[^\x00-\x7F]/.test(args.title || '')
+  ? CJK_FONTS.find((f) => existsSync(f)) || LATIN_FONT
+  : LATIN_FONT;
 if (args.title && existsSync(font)) {
   const titleFile = join(tmp, 'title.txt');
   await writeFile(titleFile, wrap(args.title, 24));
@@ -156,9 +179,20 @@ if (args.srt) {
 
 filters.push(`fade=t=in:st=0:d=0.5,fade=t=out:st=${(audioDur - 0.4).toFixed(2)}:d=0.4`);
 await mkdir(dirname(outFile), { recursive: true });
+const voiced = args.music ? join(tmp, 'voiced.mp4') : outFile;
 run('ffmpeg', ['-y', '-i', silent, '-i', audioFile, '-vf', filters.join(','),
   '-map', '0:v', '-map', '1:a', '-c:v', 'libx264', '-preset', 'medium', '-crf', '21',
-  '-c:a', 'aac', '-b:a', '160k', '-shortest', '-movflags', '+faststart', outFile]);
+  '-c:a', 'aac', '-b:a', '160k', '-shortest', '-movflags', '+faststart', voiced]);
+
+if (args.music) {
+  if (!existsSync(args.music)) fail(`--music file not found: ${args.music}`);
+  // Loop the bed under the voiceover, quiet (-~18dB), gentle tail fade.
+  run('ffmpeg', ['-y', '-i', voiced, '-stream_loop', '-1', '-i', args.music,
+    '-filter_complex',
+    `[1:a]volume=0.13,afade=t=in:d=1[m];[0:a][m]amix=inputs=2:duration=first:dropout_transition=2[aout]`,
+    '-map', '0:v', '-map', '[aout]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '160k',
+    '-movflags', '+faststart', outFile]);
+}
 
 const credits = clips.map(({ query, sourceUrl, photographer }) => ({ query, sourceUrl, photographer }));
 await writeFile(`${outFile}.credits.json`, JSON.stringify(credits, null, 2));
