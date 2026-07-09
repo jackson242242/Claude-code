@@ -2,35 +2,6 @@
   "note": "Topic backlog for /youtube-cycle. Top item matching the slot format is used next. Owner may edit/reorder freely.",
   "queue": [
     {
-      "id": "seed-07",
-      "title": "Boston College Now Costs $95,258 a Year. Here's What's Actually Driving It Up.",
-      "pillar": "whats-latest",
-      "format": "short",
-      "angle": "Short breaking down one sticker-shock number (BC's 2026-27 cost of attendance) against the national average tuition increase of ~2.28% for 4-year schools, contrasted with Stanford freezing tuition — a quick 'why is college getting more expensive' explainer.",
-      "whyNow": "Boston College announced a 3.78% increase to $95,258 for 2026-27 this spring, while Stanford announced it would hold 2026-27 tuition flat — both confirmed in 2026 reporting.",
-      "sources": [
-        "bcheights.com Boston College Raises Cost of Attendance",
-        "forbes.com college tuition increases of 3% or more"
-      ],
-      "addedAt": "2026-07-08",
-      "addedBy": "platform-research workflow (sonnet seed agent)",
-      "status": "queued"
-    },
-    {
-      "id": "seed-04",
-      "title": "The Country Paying Students to Go to College (While the US Debates Free Tuition)",
-      "pillar": "education-systems",
-      "format": "longform",
-      "angle": "Short/comparative piece on Singapore's new Higher Education Student Loan (HESL) scheme launching July 2026, covering up to 100% of subsidised tuition, plus raised income eligibility for financial aid benefiting 31,000 more students.",
-      "whyNow": "From July 2026 Singaporean students can apply for the new HESL scheme, part of MOE's Academic Year 2026 financial-support expansion announced this year.",
-      "sources": [
-        "moe.gov.sg worried about cost of higher education"
-      ],
-      "addedAt": "2026-07-08",
-      "addedBy": "platform-research workflow (sonnet seed agent)",
-      "status": "queued"
-    },
-    {
       "id": "seed-11",
       "title": "The World's Toughest Exam Just Happened — and It's Not the SAT",
       "pillar": "education-systems",
@@ -196,18 +167,6 @@
       "format": "short",
       "angle": "Three genuinely useful funny Cantonese phrases with literal-translation punchlines in English subs.",
       "whyNow": "evergreen comedy pilot #2",
-      "sources": [],
-      "addedAt": "2026-07-08",
-      "addedBy": "owner test-line directive",
-      "status": "queued"
-    },
-    {
-      "id": "test-tr-01",
-      "title": "故宫的雪，等了六百年 (北京·京味普通话)",
-      "pillar": "test-china-travel",
-      "format": "short",
-      "angle": "One spot: 故宫. Japanese-cinematic pacing, one poem line, one dynasty note, one 儿化 local phrase. Mandarin with Beijing flavor, labeled 普通话·京味.",
-      "whyNow": "travel line pilot",
       "sources": [],
       "addedAt": "2026-07-08",
       "addedBy": "owner test-line directive",

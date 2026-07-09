@@ -32,6 +32,39 @@
       "lane": "elevenlabs+pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-07-08T22:00:00Z"
+    },
+    {
+      "date": "2026-07-09",
+      "slot": "a",
+      "title": "One Year at Boston College Now Costs $95,258. Stanford Just Froze Its Price.",
+      "videoId": "FXhE4NjuQ1c",
+      "url": "https://www.youtube.com/watch?v=FXhE4NjuQ1c",
+      "pillar": "whats-latest",
+      "lane": "elevenlabs+pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-09T13:00:00Z"
+    },
+    {
+      "date": "2026-07-09",
+      "slot": "b",
+      "title": "The Country Making College Loans Interest-Free (While America Still Debates Free Tuition)",
+      "videoId": "4VDWQO6wS_g",
+      "url": "https://www.youtube.com/watch?v=4VDWQO6wS_g",
+      "pillar": "education-systems",
+      "lane": "elevenlabs+pexels-ffmpeg+openai-thumb+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-09T17:00:00Z"
+    },
+    {
+      "date": "2026-07-09",
+      "slot": "c",
+      "title": "故宫的雪，等了六百年｜北京 Forbidden City in Snow (普通话·京味)",
+      "videoId": "Q6QL21qmDjM",
+      "url": "https://www.youtube.com/watch?v=Q6QL21qmDjM",
+      "pillar": "test-china-travel",
+      "lane": "elevenlabs+pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-09T22:00:00Z"
     }
   ]
 }
