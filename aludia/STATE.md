@@ -16,6 +16,12 @@
   且报价确认后执行**（sora-2 约 20 积分/秒，一条 8s ≈ 160 > 全月额度）。
 
 ## 运行日志（最新在上）
+- 2026-07-09 11:01 UTC · 第 6 轮：送礼支柱④——"How to buy jewelry as a
+  gift" carousel（分享型 CTA）+ "POV: he got it right" 开箱 Reels 包
+  （真情绪格式）；Phase B 交付 Pinterest 起步包（Business 开号/4 Board/
+  首批 5 Pin 复用本周内容）。积分 0（余额 150）。阻塞项第 6 天不催。
+  **下一轮（周五）＝首个周复盘**：向老板要一次 IG insights 数据
+  （完播/收藏/分享）→ 数据定下周主打格式；无数据则按内容理论排下周日历。
 - 2026-07-08 11:01 UTC · 第 5 轮：真实感路线——camera roll dump carousel
   规格（零设计，绕开 Canva 阻塞）+ "Take me to our NY studio" b-roll
   Reels 包；Phase B 交付 IG 主页 SEO 优化包（name 字段/bio/highlights/
