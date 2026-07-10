@@ -173,18 +173,6 @@
       "status": "paused-pivot-2026-07-09"
     },
     {
-      "id": "test-tr-02",
-      "title": "外滩清晨六点，上海还没醒 (上海)",
-      "pillar": "city-travel",
-      "format": "short",
-      "angle": "One spot: 外滩 at dawn. Shanghainese TTS unavailable -> Mandarin with 沪语词点缀, honestly labeled; golden-hour b-roll, jazz-era cultural note.",
-      "whyNow": "travel line pilot #2",
-      "sources": [],
-      "addedAt": "2026-07-08",
-      "addedBy": "owner test-line directive",
-      "status": "queued"
-    },
-    {
       "id": "test-tr-03",
       "title": "桂林漓江：水墨画活过来的地方",
       "pillar": "city-travel",
@@ -219,18 +207,6 @@
       "addedAt": "2026-07-08",
       "addedBy": "owner test-line directive",
       "status": "paused-pivot-2026-07-09"
-    },
-    {
-      "id": "cf-01",
-      "title": "成都火锅的第一口，为什么要先烫毛肚？",
-      "pillar": "china-food",
-      "format": "short",
-      "angle": "One dish: 毛肚, 七上八下 ritual, steam close-ups, 四川话彩蛋 巴适.",
-      "whyNow": "channel pivot seed 2026-07-09",
-      "sources": [],
-      "addedAt": "2026-07-09",
-      "addedBy": "owner pivot directive",
-      "status": "queued"
     },
     {
       "id": "cf-02",
@@ -298,18 +274,6 @@
       "pillar": "city-walk",
       "format": "longform",
       "angle": "山城步道, cable car over river, hotpot alley steam, 重庆话彩蛋 要得.",
-      "whyNow": "channel pivot seed 2026-07-09",
-      "sources": [],
-      "addedAt": "2026-07-09",
-      "addedBy": "owner pivot directive",
-      "status": "queued"
-    },
-    {
-      "id": "cc2-01",
-      "title": "景德镇：一件瓷器的诞生",
-      "pillar": "china-culture",
-      "format": "longform",
-      "angle": "Clay to kiln: wheel hands close-up, glaze, fire; one 宋词 line.",
       "whyNow": "channel pivot seed 2026-07-09",
       "sources": [],
       "addedAt": "2026-07-09",

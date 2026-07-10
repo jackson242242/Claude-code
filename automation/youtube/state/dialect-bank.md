@@ -2,7 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-07-08  
+**Today:** 2026-07-10 (last deepened: 四川话 — +巴适得板 / 安逸 / 扎起)  
 **Verification:** All phrases verified via WebSearch; marked with region coverage notes.  
 **Content Tags:** [comedy] [travel] [teach] | Sensitivity: clean / 轻度粗俗 / 粗口
 
@@ -52,6 +52,9 @@
 - **老火** (lao3 huo3) | "severe/serious/amazing" | 厉害、严重、难。"这题老火哦" = "这题太难了" | 四川话形容程度的经典用法 | [comedy] [teach] | clean
 - **尕娃** (ga3 wa2) | "small kid / term of endearment" | 小孩子，或称呼年轻人时的昵称 | 可爱、亲切的用法；四川方言中的代表词 | [comedy] [teach] | clean
 - **整蛊 / 算坛子** (zheng3 gu3 / suan4 tan2 zi0) | "prank / calculate / tease" | 爱开玩笑、爱捉弄人。"四川人爱算坛子" = "四川人爱开玩笑" | 体现四川人风趣、好玩的性格特点 | [comedy] | clean
+- **巴适得板** (ba1 shi4 de2 ban3) | "perfectly great" | 「巴适」的加强说法，极舒服/极地道。"这顿饭巴适得板" | 四川人表达满意的最高级口头禅；火锅/美食语境百搭 | [comedy] [teach] [travel] | clean  <!-- added 2026-07-10 -->
+- **安逸** (an1 yi4) | "comfortable / (ironic) served-you-right" | 多指主观舒服惬意；负面语境可反讽，"冷安逸了" = 冻惨了 | 与「巴适」并列的高频词——巴适偏客观（形容物），安逸偏主观（形容人的感受） | [comedy] [teach] | clean  <!-- added 2026-07-10 -->
+- **扎起** (zha1 qi3) | "back someone up / show support" | 挺你、给你撑腰。"兄弟些，扎起！" | 江湖义气式的支持表达，四川网络常用 | [comedy] [teach] | clean  <!-- added 2026-07-10 -->
 
 ## 东北话 (Northeast Dialect)
 

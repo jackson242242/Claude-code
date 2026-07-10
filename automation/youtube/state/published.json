@@ -54,6 +54,17 @@
       "lane": "elevenlabs+pexels-ffmpeg+openai-thumb+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-07-10T17:00:00Z"
+    },
+    {
+      "date": "2026-07-10",
+      "slot": "c",
+      "title": "外滩清晨六点，上海还没醒｜Dawn at the Bund 上海",
+      "videoId": "Co9Udciigb0",
+      "url": "https://www.youtube.com/watch?v=Co9Udciigb0",
+      "pillar": "city-travel",
+      "lane": "elevenlabs+pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-10T22:00:00Z"
     }
   ]
 }
