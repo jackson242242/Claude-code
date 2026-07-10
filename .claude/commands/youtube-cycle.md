@@ -81,7 +81,14 @@ log `skipped: batch already published today` and stop. (Protects against manual
    pulse (step 6); Sat add ONE `vidiq_trending_videos` or `vidiq_outliers` call
    (education niche) and note in research.md which formats/angles over-perform.
    Skip all vidIQ when balance < floor.
-3. **Pick slots (post-pivot mapping, day = UTC day-of-month):**
+3. **Pick slots:**
+   **Theme-week override (config `strategy.themeWeeks`):** if today falls in a
+   theme week (weekStartUtc Monday through Sunday), ALL slots draw from that
+   theme's pillar (topics tagged `pillar: <theme>`); replenishment (step 4)
+   generates within-theme. Formats unchanged (a/c Short, b longform). If the
+   theme queue is empty and research can't fill it, fall back to general pillars
+   and log why.
+   **General mapping (non-theme days, day = UTC day-of-month):**
    - slot a (Short): odd day `city-travel`, even day `china-food`
    - slot b (longform): odd day `city-walk`, even day `china-culture`
    - slot c (Short): the opposite of slot a

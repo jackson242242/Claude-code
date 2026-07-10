@@ -39,6 +39,19 @@ strategy:
     - china-culture   # Longform: crafts, opera, tea, porcelain, festivals — cultural depth
     - city-walk       # Longform: 城市漫游 — one street/district, dawn-to-dusk feel
   pausedPillars: [education-trends, world-colleges, education-systems, whats-latest]
+  # THEMED WEEKS (owner plan 2026-07-09). During a theme week ALL slots draw from
+  # the theme (formats unchanged: a/c Shorts, b longform); daily research
+  # replenishes WITHIN the theme; general pillars resume between/after themes.
+  themeWeeks:
+    - weekStartUtc: "2026-07-13"
+      theme: china-coffee
+      brief: "中国咖啡：云南种植园(普洱/保山/大理)到北上广深特色 café。Shorts=一支一店/一园(手冲特写、拉花、烘豆)；longform=产业故事(从种子到杯子、中国咖啡消费革命、独立咖啡师人物感)。"
+    - weekStartUtc: "2026-07-20"
+      theme: china-wine
+      brief: "中国葡萄酒：宁夏贺兰山东麓、云南高原葡萄园、新疆产区。聚焦全中国团队种植/酿造/品牌/市场的酒庄——'纯中资'类表述必须逐家查证属实才可用，叙事框架=从土地到品牌的匠心全产业链，严禁民族主义对立框架(内容硬规则)。Shorts=一支一酒庄/一景(采收手部特写、橡木桶窖)；longform=产区风土故事。"
+    - weekStartUtc: "2026-07-27"
+      theme: young-china
+      brief: "年轻中国：创意年轻餐厅、潮玩潮物(谷子店/设计师品牌)、国漫(哪吒/雾山五行)、游戏(黑神话悟空)、网文小说产业。Shorts=一支一店/一物/一作品；longform=一个青年文化现象的来龙去脉。风格可比主线更快半拍，但仍守日系唯美底色。"
   # Owner directive 2026-07-08: 唯美主义 + 贴近生活 (aesthetic + everyday-life relevance)
   styleGuide:
     aesthetic: # 唯美 — the channel should LOOK and SOUND beautiful
