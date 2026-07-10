@@ -32,6 +32,39 @@
       "lane": "elevenlabs+pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-07-08T22:00:00Z"
+    },
+    {
+      "date": "2026-07-10",
+      "slot": "a",
+      "title": "成都火锅第一口，先烫毛肚｜七上八下十五秒 First Bite of Chengdu Hotpot",
+      "videoId": "q6wX-LYDut8",
+      "url": "https://www.youtube.com/watch?v=q6wX-LYDut8",
+      "pillar": "china-food",
+      "lane": "elevenlabs+pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-10T13:00:00Z"
+    },
+    {
+      "date": "2026-07-10",
+      "slot": "b",
+      "title": "为什么 China 也是瓷器？千年瓷都景德镇 Why \"china\" Means Porcelain",
+      "videoId": "PNi8fMIhbTw",
+      "url": "https://www.youtube.com/watch?v=PNi8fMIhbTw",
+      "pillar": "china-culture",
+      "lane": "elevenlabs+pexels-ffmpeg+openai-thumb+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-10T17:00:00Z"
+    },
+    {
+      "date": "2026-07-10",
+      "slot": "c",
+      "title": "外滩清晨六点，上海还没醒｜Dawn at the Bund 上海",
+      "videoId": "Co9Udciigb0",
+      "url": "https://www.youtube.com/watch?v=Co9Udciigb0",
+      "pillar": "city-travel",
+      "lane": "elevenlabs+pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-10T22:00:00Z"
     }
   ]
 }
