@@ -32,6 +32,17 @@
       "lane": "elevenlabs+pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-07-08T22:00:00Z"
+    },
+    {
+      "date": "2026-07-10",
+      "slot": "a",
+      "title": "成都火锅第一口，先烫毛肚｜七上八下十五秒 First Bite of Chengdu Hotpot",
+      "videoId": "q6wX-LYDut8",
+      "url": "https://www.youtube.com/watch?v=q6wX-LYDut8",
+      "pillar": "china-food",
+      "lane": "elevenlabs+pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-10T13:00:00Z"
     }
   ]
 }
