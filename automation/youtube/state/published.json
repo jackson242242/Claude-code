@@ -43,6 +43,17 @@
       "lane": "elevenlabs+pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-07-10T13:00:00Z"
+    },
+    {
+      "date": "2026-07-10",
+      "slot": "b",
+      "title": "为什么 China 也是瓷器？千年瓷都景德镇 Why \"china\" Means Porcelain",
+      "videoId": "PNi8fMIhbTw",
+      "url": "https://www.youtube.com/watch?v=PNi8fMIhbTw",
+      "pillar": "china-culture",
+      "lane": "elevenlabs+pexels-ffmpeg+openai-thumb+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-10T17:00:00Z"
     }
   ]
 }
