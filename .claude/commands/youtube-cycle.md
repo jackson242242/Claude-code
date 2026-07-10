@@ -29,15 +29,11 @@ run; put the source links in the video description.
 
 ## 0. Setup & lane detection
 1. `apt-get update && apt-get install -y ffmpeg fonts-noto-cjk` (container is fresh
-   each run; the CJK font is required for burned-in Chinese subtitles). Then fetch
-   the 中式 title fonts (both OFL-licensed; skip gracefully on download failure):
-   ```
-   mkdir -p /usr/share/fonts/truetype/custom-cjk
-   curl -sL -o /usr/share/fonts/truetype/custom-cjk/MaShanZheng-Regular.ttf \
-     https://github.com/google/fonts/raw/main/ofl/mashanzheng/MaShanZheng-Regular.ttf
-   curl -sL -o /usr/share/fonts/truetype/custom-cjk/LXGWWenKai-Regular.ttf \
-     https://github.com/lxgw/LxgwWenKai/releases/latest/download/LXGWWenKai-Regular.ttf
-   ```
+   each run; the CJK font is required for burned-in Chinese subtitles). The 书法
+   title font ships IN THE REPO (`automation/youtube/assets/fonts/
+   MaShanZheng-Regular.ttf`, OFL) — assemble-video finds it automatically when
+   run from the repo root; no download needed (github.com is proxy-blocked in
+   routine sessions, verified 2026-07-10).
    Also `export NODE_USE_ENV_PROXY=1` before any `node scripts/*.mjs` call — Node's
    fetch ignores HTTPS_PROXY without it and API calls die on proxied egress
    (verified 2026-07-08; harmless when no proxy is configured).
@@ -146,10 +142,11 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    no stock-cliché business shots. 中式 checklist per video: at least one of —
    poem/成语 line in the subs, local phrase from the dialect bank, craft/food
    close-up with cultural note.
-   **Music bed (longform only, budget-permitting):** if vidIQ MCP is present and
-   within credit budget, `vidiq_generate_music` (calm guzheng/lofi, 60-80 BPM,
-   ~30-60s loopable) → save the file → re-run assemble with `--music <file>`. If
-   unavailable, ship without music (honest silence beats > wrong music).
+   **Music bed (ALL videos):** pass
+   `--music automation/youtube/assets/music/guzheng-calm-01.mp3` (repo-shipped
+   guzheng/flute ambient bed, generated once via vidIQ — do NOT regenerate per
+   run; 25 credits each). When more beds land in assets/music/, pick by mood
+   (calm spot → guzheng; young-china → the lofi bed when it exists).
    If `output.extraFormats` in config.yaml is non-empty, re-run once per extra
    format (same vo.mp3, out `final-<fmt>.mp4`) — cross-posting masters, NOT
    uploaded to YouTube.

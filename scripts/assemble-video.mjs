@@ -150,6 +150,7 @@ const filters = [grade];
 // CJK title font preference: calligraphy (Ma Shan Zheng) -> 文楷 (LXGW WenKai)
 // -> Noto CJK. The cycle downloads the first two into custom-cjk/ (OFL-licensed).
 const CJK_FONTS = [
+  'automation/youtube/assets/fonts/MaShanZheng-Regular.ttf', // committed in-repo (OFL)
   '/usr/share/fonts/truetype/custom-cjk/MaShanZheng-Regular.ttf',
   '/usr/share/fonts/truetype/custom-cjk/LXGWWenKai-Regular.ttf',
   '/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc',
