@@ -103,9 +103,14 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
 1. **Subtitle script (NO VOICEOVER — owner directive 2026-07-10):** the video
    speaks through burned bilingual subtitles + music. Write `subs.srt` directly
    as the narrative, structured per 起承转合:
-   - Short (25-32s): 7-9 cues, each 2.5-4s — 起 one image-rich opening line →
-     承 2-3 development beats → 转 the surprise/taste/discovery → 合 a quiet
-     closing line (poem fragment or dialect-bank local phrase).
+   - Short (20-28s — 7-day data 2026-07-11: 22s cut doubled retention vs 55s):
+     7-8 cues, each 2.5-4s — 起 opening cue lands at 0.0-0.5s AND the first shot
+     is the single most striking clip (steam/water/light — never an establishing
+     wide); the first cue poses a curiosity gap the last cue answers → 承 2-3
+     development beats → 转 the surprise/taste/discovery → 合 a closing line that
+     LOOPS back to the opening (rewatches push view% past 100 — the Shorts
+     algorithm's strongest signal). Final cue doubles as a soft CTA where
+     natural: 「关注，带你去下一座城 / Follow for the next city」.
    - Video (slot b, 90-120s): 22-30 cues in four movements (establish → walk +
      history beat → food/discovery twist → dusk reflection). One 成语 or poem
      line per video.
@@ -154,6 +159,16 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    2 MB — recompress with `ffmpeg -i thumb.jpeg -q:v 4 thumb-small.jpeg` if larger.
 5. **Append Pexels credits** from `final.mp4.credits.json` to the description in
    `meta.json` ("Footage: Pexels — <urls>").
+   **Description engagement format:** first line = ONE genuine question to the
+   viewer (comment bait, honest — e.g. 「你会先烫毛肚还是黄喉？」); then the
+   bilingual summary; hashtags at the end: #shorts (Shorts only) #china + city
+   and topic tags (≤6 total).
+6. **Playlist filing:** ensure a playlist exists per pillar (中国美食 / 城市旅行 /
+   城市漫游 / 中国文化 + one per theme week) via `playlists.insert`, and add each
+   uploaded video via `playlistItems.insert` (both work with the current OAuth
+   scope; create-once, reuse by title match). Playlists give the channel page
+   structure — this week's data shows 15 channel-page visits converting to 0
+   subs partly for lack of coherent shelves.
 6. **Upload** — if the upload lane is available:
    `node scripts/youtube-upload.mjs --video .../final.mp4 --meta .../meta.json
    [--thumbnail .../thumb.jpeg]`
