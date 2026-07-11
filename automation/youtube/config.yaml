@@ -25,9 +25,12 @@ voice:
   status: paused-2026-07-10   # owner: "voice over 好差" — format is now burned
   # bilingual subtitles (the narrative) + full-presence music from assets/music/.
   # ElevenLabs scripts/keys kept for possible revival; monthly TTS cost now $0.
-  # Trending-music reality: commercial trending tracks are ONLY legal via the
-  # YouTube app's Shorts remix (manual, owner-side). The pipeline uses
-  # trend-STYLE royalty-free beds; Saturday trend scans track which styles are hot.
+  # Trending/licensed music (verified 2026-07-10): YouTube's own licensed library
+  # CAN be added to already-published Shorts via studio.youtube.com -> Content ->
+  # Editor -> Audio (no re-upload, keeps views; fullest pop catalog is in the
+  # mobile Shorts flow). No API exists, so the daily report prints a Studio
+  # deep-link + suggested style per Short for the owner's optional 1-min upgrade.
+  # The pipeline's royalty-free beds remain the default audio.
 
 strategy:
   # ================= PIVOT 2026-07-09 (owner directive) =================

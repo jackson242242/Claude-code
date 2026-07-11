@@ -190,3 +190,9 @@ silently. (~15 credits/week total with the Sat trend call — sustainable within
 ## 8. Report
 End with three lines (one per slot): slot / topic / lanes used / posted-or-scheduled
 URL or degrade reason — plus vidIQ credits spent and queue depth remaining.
+**Music upgrade shortcuts (owner's optional 1-min/Short step):** for each Short,
+also print a line:
+`🎵 studio.youtube.com/video/<videoId>/editor — 建议曲风: <style, e.g. chill lofi / 古风 / upbeat pop>`
+— the owner can open Studio's Editor → Audio, add a YouTube-licensed track over
+(or instead of) our bed, and lower the original audio. The pipeline's bed stays
+as the default so untouched videos still sound finished.
