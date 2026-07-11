@@ -43,16 +43,11 @@ run; put the source links in the video description.
    - vidIQ MCP tools present? If yes, call `vidiq_balance` once; vidIQ generation is
      allowed only if balance ≥ `budgets.vidiqCreditsFloor` and per-run spend stays
      ≤ `budgets.vidiqCreditsPerRun`.
-3. **ElevenLabs quota self-check (every run):** if `ELEVENLABS_API_KEY` is set,
-   `curl -s https://api.elevenlabs.io/v1/user/subscription -H "xi-api-key: $ELEVENLABS_API_KEY"`
-   → log tier + `character_count`/`character_limit` (remaining chars) in RUNLOG.
-   A full batch needs ~2.6k chars (2 Shorts ~420 each + video ~1.7k). If remaining
-   is short: produce what fits — priority slot a Short → slot c Short → longform
-   last — skip the rest with an honest log line, and put a LOW-QUOTA warning at the
-   top of the final report so the owner sees it.
-4. **No voice lane AND no vidIQ voiceover → videos cannot be made.** Do a
-   research-only run: replenish the topic queue (step 2), write state back (step 6),
-   log `blocked: no voiceover lane`, and stop. Do not fabricate output.
+3. **Voiceover lanes are PAUSED (owner 2026-07-10)** — videos are subtitle-driven
+   with a music main track. Do not call ElevenLabs or vidIQ voiceover; no quota
+   check needed. The only hard requirement to make videos is `PEXELS_API_KEY` —
+   if it's missing, do a research-only run (replenish queue, write state back,
+   log `blocked: no footage lane`) and stop. Do not fabricate output.
 
 ## 1. Read state
 `automation/youtube/state/queue.json` (topic backlog), `state/published.json`,
@@ -105,48 +100,51 @@ log `skipped: batch already published today` and stop. (Protects against manual
 ## 3-5. Produce each video (loop slots a → b → c)
 For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
 
-1. **Script** — structure per 起承转合 (style research 2026-07-09):
-   - Short (≤30s, ~60-75 words): 起 establish the place with one image-rich line →
-     承 develop (walking/making/steam) → 转 the surprise/discovery/taste → 合 a
-     quiet closing line (poem fragment or local phrase from the dialect bank).
-   - Video (slot b, ≤2 min, 240-280 words): 0-15s establish city + poetic opening
-     → 15-50s walk + one history/dynasty beat → 50-100s food/discovery twist →
-     100-120s dusk wide + closing reflection. One 成语 or poem line per video.
-   - Narration is SPARSE (日系): write pause beats (…) between sections — the
-     b-roll breathes without voice for 1-2s; aim ~140-160 wpm feel, not radio-host
-     density. Voice model: `eleven_multilingual_v2` (standard quality — owner
-     choice; do not switch to flash). Verify every factual
+1. **Subtitle script (NO VOICEOVER — owner directive 2026-07-10):** the video
+   speaks through burned bilingual subtitles + music. Write `subs.srt` directly
+   as the narrative, structured per 起承转合:
+   - Short (25-32s): 7-9 cues, each 2.5-4s — 起 one image-rich opening line →
+     承 2-3 development beats → 转 the surprise/taste/discovery → 合 a quiet
+     closing line (poem fragment or dialect-bank local phrase).
+   - Video (slot b, 90-120s): 22-30 cues in four movements (establish → walk +
+     history beat → food/discovery twist → dusk reflection). One 成语 or poem
+     line per video.
+   - Each cue = 中文 line (≤16 字, punchy) + English line (≤9 words). Leave 1-2
+     cue-free seconds between movements — the footage breathes.
+   - Set total duration from the cue plan (Shorts ≤32s, video ≤120s).
+   Verify every factual
    claim with WebSearch/WebFetch this run; collect source URLs. Produce `script.md`
    (with sources), `voiceover.txt` (clean spoken text), `meta.json` (title ≤100
    chars; description with sources + AI-narration disclosure + credits placeholder;
    10-15 tags; categoryId 27; `publishAt` set to the slot's UTC time today;
    privacyStatus private — scheduling requires it). Title: write 3 candidates, pick
    best (optionally `vidiq_score_title`, 5 credits, within budget).
-2. **Voiceover** — `node scripts/elevenlabs-tts.mjs --text-file .../voiceover.txt
-   --out .../vo.mp3` (fallback: `vidiq_voiceover_generate` within credit budget).
-   **Narration language (all pillars, post-pivot):** follow the dialect ladder —
-   Mandarin narration with the city's local flavor in the wording (京味儿化 in
-   Beijing, 沪语词 in Shanghai...), honest on-screen label of what the audio is
-   (e.g.「普通话·京味」); true-dialect audio only where a native voice exists
-   (粤语 requires `ELEVENLABS_CANTONESE_VOICE_ID` + eleven_v3). Never fake a
-   dialect. Zero profanity in all active pillars.
-   **Subtitles (all videos):** write `subs.srt` in the run folder — one cue
-   per sentence, timed proportionally to character count over the vo.mp3 duration
-   (ffprobe), each cue = local-language line + English line. Pass `--srt` in step 3.
-3. **Video** — `node scripts/assemble-video.mjs --audio .../vo.mp3 --out .../final.mp4
+2. **Voiceover: NONE.** ElevenLabs is paused (scripts kept for possible revival —
+   do not call them). Local flavor now lives in the SUBTITLE text: use the city's
+   words from the dialect bank (京味儿化 / 沪语词 / 川话 巴适...) in the 中文 line
+   with the English line translating the spirit. Zero profanity in all active
+   pillars.
+3. **Video** — `node scripts/assemble-video.mjs --out .../final.mp4
+   --duration <total seconds from the cue plan>
+   --music <see music rules below> --srt .../subs.srt
    --queries "<3-5 concrete b-roll queries>" --format <9x16|16x9>
    --title "<short overlay title>" --style riben
    --seg-seconds <7 for Shorts, 8 for longform>`.
+   (No --audio: subtitle-driven mode — music is the full-presence main track.)
    B-roll queries per styleGuide: soft morning light / mist / steam / lantern dusk;
    people close-ups in motion (hands making food, faces reacting); NO night scenes,
    no stock-cliché business shots. 中式 checklist per video: at least one of —
    poem/成语 line in the subs, local phrase from the dialect bank, craft/food
    close-up with cultural note.
-   **Music bed (ALL videos):** pass
-   `--music automation/youtube/assets/music/guzheng-calm-01.mp3` (repo-shipped
-   guzheng/flute ambient bed, generated once via vidIQ — do NOT regenerate per
-   run; 25 credits each). When more beds land in assets/music/, pick by mood
-   (calm spot → guzheng; young-china → the lofi bed when it exists).
+   **Music rules (music IS the audio now):** pick from
+   `automation/youtube/assets/music/` by mood — `guzheng-calm-01.mp3` for serene
+   travel/culture/city-walk, `lofi-chill-01.mp3` for food/young-china/upbeat
+   spots. Do NOT regenerate via vidIQ per run (25 credits). Trend alignment: the
+   Saturday vidIQ trend scan notes which music STYLES dominate top Shorts —
+   record in research.md; when a needed style is missing from assets/, flag it
+   in the report for the owner (real trending commercial tracks are only usable
+   via the YouTube app's Shorts remix — manual, owner-side — never attach
+   copyrighted music in the pipeline).
    If `output.extraFormats` in config.yaml is non-empty, re-run once per extra
    format (same vo.mp3, out `final-<fmt>.mp4`) — cross-posting masters, NOT
    uploaded to YouTube.

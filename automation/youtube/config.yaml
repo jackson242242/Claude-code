@@ -22,9 +22,12 @@ cadence:
     - { name: c, publishAtUtc: "22:00", format: short }     # 9:16 <=30s — opposite of slot a (even day: city-travel, odd day: china-food)
 
 voice:
-  model: eleven_multilingual_v2   # standard quality (owner choice 2026-07-08) — NOT flash
-  # Daily burn at current lengths: 2 Shorts (~420 chars) + 1 video (~1,700 chars)
-  # ~= 2.6k chars/day ~= 76k chars/month -> fits Creator (100k) with headroom.
+  status: paused-2026-07-10   # owner: "voice over 好差" — format is now burned
+  # bilingual subtitles (the narrative) + full-presence music from assets/music/.
+  # ElevenLabs scripts/keys kept for possible revival; monthly TTS cost now $0.
+  # Trending-music reality: commercial trending tracks are ONLY legal via the
+  # YouTube app's Shorts remix (manual, owner-side). The pipeline uses
+  # trend-STYLE royalty-free beds; Saturday trend scans track which styles are hot.
 
 strategy:
   # ================= PIVOT 2026-07-09 (owner directive) =================

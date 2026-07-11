@@ -40,11 +40,14 @@ const API_KEY = process.env.PEXELS_API_KEY;
 if (!API_KEY) fail('Missing PEXELS_API_KEY (environment secret). Free key: https://www.pexels.com/api/');
 
 const args = parseArgs(process.argv.slice(2));
-const audioFile = args.audio;
+const audioFile = args.audio; // optional since 2026-07-10: subtitle-driven mode
 const outFile = args.out;
 const queries = (args.queries || '').split(',').map((q) => q.trim()).filter(Boolean);
-if (!audioFile || !outFile || queries.length === 0) {
-  fail('Usage: node scripts/assemble-video.mjs --audio <mp3> --out <mp4> --queries "a,b,c" [--format 16x9|9x16] [--title "..."]');
+if (!outFile || queries.length === 0 || (!audioFile && !(args.duration && args.music))) {
+  fail('Usage: node scripts/assemble-video.mjs --out <mp4> --queries "a,b,c" ' +
+    '(--audio <vo.mp3> | --duration <sec> --music <bgm.mp3>) [--format 16x9|9x16|1x1] ' +
+    '[--title "..."] [--srt subs.srt] [--style riben] [--music bgm.mp3]\n' +
+    'No --audio = subtitle-driven mode: music becomes the main track at full presence.');
 }
 const FORMATS = { '16x9': [1920, 1080], '9x16': [1080, 1920], '1x1': [1080, 1080] };
 const fmtName = args.format || '16x9';
@@ -59,8 +62,10 @@ for (const bin of ['ffmpeg', 'ffprobe']) {
   catch { fail(`${bin} not found. Install with: apt-get update && apt-get install -y ffmpeg`); }
 }
 
-const audioDur = Number(run('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', audioFile]));
-if (!audioDur || Number.isNaN(audioDur)) fail(`Could not read duration of ${audioFile}`);
+const audioDur = audioFile
+  ? Number(run('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', audioFile]))
+  : Number(args.duration);
+if (!audioDur || Number.isNaN(audioDur)) fail(audioFile ? `Could not read duration of ${audioFile}` : '--duration must be a number of seconds');
 const XFADE = 0.45; // crossfade between shots; each join consumes this much footage
 const nSegs = Math.max(1, Math.ceil((audioDur + 1) / (SEG - XFADE)));
 process.stderr.write(`Voiceover ${audioDur.toFixed(1)}s -> ${nSegs} segment(s) of ~${SEG}s at ${W}x${H} (crossfaded)\n`);
@@ -175,24 +180,38 @@ if (args.srt) {
   // Noto Sans CJK covers zh/yue/ja; falls back to default font if not installed.
   const cjk = existsSync('/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc');
   if (!cjk) process.stderr.write('WARN: fonts-noto-cjk not installed — CJK subtitles may render as boxes (apt-get install -y fonts-noto-cjk).\n');
-  filters.push(`subtitles=${args.srt}:force_style='FontName=${cjk ? 'Noto Sans CJK SC' : 'DejaVu Sans'},FontSize=${vertical ? 13 : 17},Outline=2,MarginV=${vertical ? 60 : 30}'`);
+  // Subtitles carry the narrative in no-VO mode — larger and bolder than typical CC.
+  const subSize = audioFile ? (vertical ? 13 : 17) : (vertical ? 17 : 21);
+  filters.push(`subtitles=${args.srt}:force_style='FontName=${cjk ? 'Noto Sans CJK SC' : 'DejaVu Sans'},FontSize=${subSize},Bold=1,Outline=2,Shadow=1,MarginV=${vertical ? 110 : 40}'`);
 }
 
 filters.push(`fade=t=in:st=0:d=0.5,fade=t=out:st=${(audioDur - 0.4).toFixed(2)}:d=0.4`);
 await mkdir(dirname(outFile), { recursive: true });
-const voiced = args.music ? join(tmp, 'voiced.mp4') : outFile;
-run('ffmpeg', ['-y', '-i', silent, '-i', audioFile, '-vf', filters.join(','),
-  '-map', '0:v', '-map', '1:a', '-c:v', 'libx264', '-preset', 'medium', '-crf', '21',
-  '-c:a', 'aac', '-b:a', '160k', '-shortest', '-movflags', '+faststart', voiced]);
+if (args.music && !existsSync(args.music)) fail(`--music file not found: ${args.music}`);
 
-if (args.music) {
-  if (!existsSync(args.music)) fail(`--music file not found: ${args.music}`);
-  // Loop the bed under the voiceover, quiet (-~18dB), gentle tail fade.
-  run('ffmpeg', ['-y', '-i', voiced, '-stream_loop', '-1', '-i', args.music,
+if (audioFile) {
+  // Voiceover mode: VO is the main track; optional music bed mixed in quiet.
+  const voiced = args.music ? join(tmp, 'voiced.mp4') : outFile;
+  run('ffmpeg', ['-y', '-i', silent, '-i', audioFile, '-vf', filters.join(','),
+    '-map', '0:v', '-map', '1:a', '-c:v', 'libx264', '-preset', 'medium', '-crf', '21',
+    '-c:a', 'aac', '-b:a', '160k', '-shortest', '-movflags', '+faststart', voiced]);
+  if (args.music) {
+    run('ffmpeg', ['-y', '-i', voiced, '-stream_loop', '-1', '-i', args.music,
+      '-filter_complex',
+      `[1:a]volume=0.13,afade=t=in:d=1[m];[0:a][m]amix=inputs=2:duration=first:dropout_transition=2[aout]`,
+      '-map', '0:v', '-map', '[aout]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '160k',
+      '-movflags', '+faststart', outFile]);
+  }
+} else {
+  // Subtitle-driven mode (owner directive 2026-07-10): no narration — the music
+  // IS the audio, at full presence, looped/trimmed to the target duration.
+  run('ffmpeg', ['-y', '-i', silent, '-stream_loop', '-1', '-i', args.music,
     '-filter_complex',
-    `[1:a]volume=0.13,afade=t=in:d=1[m];[0:a][m]amix=inputs=2:duration=first:dropout_transition=2[aout]`,
-    '-map', '0:v', '-map', '[aout]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '160k',
-    '-movflags', '+faststart', outFile]);
+    `[0:v]${filters.join(',')}[vout];` +
+    `[1:a]volume=0.85,afade=t=in:d=1,afade=t=out:st=${Math.max(0, audioDur - 1.6).toFixed(2)}:d=1.5[aout]`,
+    '-map', '[vout]', '-map', '[aout]', '-t', audioDur.toFixed(2),
+    '-c:v', 'libx264', '-preset', 'medium', '-crf', '21',
+    '-c:a', 'aac', '-b:a', '160k', '-movflags', '+faststart', outFile]);
 }
 
 const credits = clips.map(({ query, sourceUrl, photographer }) => ({ query, sourceUrl, photographer }));
