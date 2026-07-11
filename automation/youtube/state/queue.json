@@ -173,18 +173,6 @@
       "status": "paused-pivot-2026-07-09"
     },
     {
-      "id": "test-tr-03",
-      "title": "桂林漓江：水墨画活过来的地方",
-      "pillar": "city-travel",
-      "format": "short",
-      "angle": "One spot: 漓江. Mist/water-reflection footage, 山水诗 line, cormorant-fishing culture note. Mandarin, labeled.",
-      "whyNow": "travel line pilot #3",
-      "sources": [],
-      "addedAt": "2026-07-08",
-      "addedBy": "owner test-line directive",
-      "status": "queued"
-    },
-    {
       "id": "test-td-01",
       "title": "东北话第一课：'嘎哈呢？' 学会你就是半个东北人",
       "pillar": "test-teach-chinese-dialects",
@@ -207,18 +195,6 @@
       "addedAt": "2026-07-08",
       "addedBy": "owner test-line directive",
       "status": "paused-pivot-2026-07-09"
-    },
-    {
-      "id": "cf-02",
-      "title": "广州早茶：一盅两件，慢的艺术",
-      "pillar": "china-food",
-      "format": "short",
-      "angle": "Teahouse morning: 虾饺/凤爪 close-ups, 粤语彩蛋 饮茶先啦.",
-      "whyNow": "channel pivot seed 2026-07-09",
-      "sources": [],
-      "addedAt": "2026-07-09",
-      "addedBy": "owner pivot directive",
-      "status": "queued"
     },
     {
       "id": "cf-03",
@@ -250,18 +226,6 @@
       "pillar": "city-travel",
       "format": "short",
       "angle": "West Lake dawn mist, 断桥, one poem line.",
-      "whyNow": "channel pivot seed 2026-07-09",
-      "sources": [],
-      "addedAt": "2026-07-09",
-      "addedBy": "owner pivot directive",
-      "status": "queued"
-    },
-    {
-      "id": "cw-01",
-      "title": "苏州平江路的一天：从晨光到灯笼",
-      "pillar": "city-walk",
-      "format": "longform",
-      "angle": "Dawn-to-dusk canal walk, 评弹声, lantern dusk.",
       "whyNow": "channel pivot seed 2026-07-09",
       "sources": [],
       "addedAt": "2026-07-09",
@@ -518,6 +482,42 @@
       "sources": [],
       "addedAt": "2026-07-10",
       "addedBy": "owner theme directive",
+      "status": "queued"
+    },
+    {
+      "id": "cc2-03",
+      "title": "宣纸：一张纸，一百道工序",
+      "pillar": "china-culture",
+      "format": "longform",
+      "angle": "泾县宣纸手工制作：青檀树皮+沙田稻草，捞纸、晒纸、剪纸；一张纸的百工。everyday-life: 每一幅水墨画、每一本古籍下面，都是这张纸。beautiful b-roll: 纸浆纤维、竹帘捞纸、火墙晒纸的手部特写。",
+      "whyNow": "backlog refill — china-culture pillar thin (only cc2-02 left after 2026-07-11); 宣纸制作技艺 is UNESCO 人类非遗, evergreen craft-depth topic. Verify craft steps at scripting.",
+      "sources": [],
+      "addedAt": "2026-07-11",
+      "addedBy": "cycle replenish (culture backlog flag 2026-07-10)",
+      "status": "queued"
+    },
+    {
+      "id": "cc2-04",
+      "title": "龙泉青瓷：把一片天青，烧进釉里",
+      "pillar": "china-culture",
+      "format": "longform",
+      "angle": "龙泉青瓷 celadon: 拉坯、上釉、1300°C 还原焰烧制出粉青/梅子青。everyday-life: 我们说的\"青色\"到底是什么颜色。beautiful b-roll: 釉色特写、开片、窑火。",
+      "whyNow": "backlog refill — second culture-longform seed; 龙泉青瓷烧制技艺 is UNESCO 人类非遗. Verify temperature/glaze facts at scripting.",
+      "sources": [],
+      "addedAt": "2026-07-11",
+      "addedBy": "cycle replenish (culture backlog flag 2026-07-10)",
+      "status": "queued"
+    },
+    {
+      "id": "ct-06",
+      "title": "黄山云海：站在云的上面",
+      "pillar": "city-travel",
+      "format": "short",
+      "angle": "黄山日出云海：迎客松、奇松怪石、云海翻涌。日系唯美 dawn pacing, one poem line (李白/徐霞客 note). 安徽话/徽州文化 note.",
+      "whyNow": "backlog refill — travel-short seed to keep slot a/c depth after dequeue; verify any named-peak/poem attribution at scripting.",
+      "sources": [],
+      "addedAt": "2026-07-11",
+      "addedBy": "cycle replenish",
       "status": "queued"
     }
   ]

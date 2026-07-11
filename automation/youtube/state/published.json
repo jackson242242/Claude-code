@@ -98,6 +98,39 @@
       "lane": "elevenlabs+pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-07-10T22:00:00Z"
+    },
+    {
+      "date": "2026-07-11",
+      "slot": "a",
+      "title": "漓江清晨：你钱包里的那座山｜Li River, Guilin (桂林·兴坪)",
+      "videoId": "mdJyK4X6HVg",
+      "url": "https://www.youtube.com/watch?v=mdJyK4X6HVg",
+      "pillar": "city-travel",
+      "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, guzheng bed)",
+      "status": "scheduled",
+      "publishAt": "2026-07-11T13:00:00Z"
+    },
+    {
+      "date": "2026-07-11",
+      "slot": "b",
+      "title": "苏州平江路的一天：从晨光到灯笼｜A Day on Pingjiang Road, Suzhou",
+      "videoId": "7QgN6KFozMI",
+      "url": "https://www.youtube.com/watch?v=7QgN6KFozMI",
+      "pillar": "city-walk",
+      "lane": "pexels-ffmpeg+openai-thumb+youtube-data-api (subtitle-driven, guzheng bed)",
+      "status": "scheduled",
+      "publishAt": "2026-07-11T17:00:00Z"
+    },
+    {
+      "date": "2026-07-11",
+      "slot": "c",
+      "title": "广州早茶：一盅两件，慢的艺术｜Cantonese Yum Cha (饮茶先啦)",
+      "videoId": "MwxYdEOprl8",
+      "url": "https://www.youtube.com/watch?v=MwxYdEOprl8",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, lofi bed)",
+      "status": "scheduled",
+      "publishAt": "2026-07-11T22:00:00Z"
     }
   ]
 }

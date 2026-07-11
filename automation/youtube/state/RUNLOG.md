@@ -2,6 +2,10 @@
 
 One line per run, newest first: `date slot | topic | lane used | outcome (posted videoId / dry-run / blocked-why) | vidIQ credits spent`.
 
+2026-07-11 c | 广州早茶·一盅两件 (china-food, 粤语彩蛋 饮茶先啦; +Guangzhou 早茶立法 May-1-2026 national-first hook) | pexels-ffmpeg+youtube-data-api (subtitle-driven, lofi bed, no VO) | scheduled 22:00Z (MwxYdEOprl8) | 0 vidIQ credits
+2026-07-11 b | 苏州平江路·从晨光到灯笼 (city-walk longform, 1229《平江图》/评弹·吴侬软语/杜荀鹤; openai thumb) | pexels-ffmpeg+openai-thumb+youtube-data-api (subtitle-driven, guzheng bed, no VO) | scheduled 17:00Z (7QgN6KFozMI) | 0 vidIQ credits
+2026-07-11 a | 漓江清晨·你钱包里的那座山 (city-travel, ¥20背面=兴坪 hook, 鸬鹚千年; 广西彩蛋 老表) | pexels-ffmpeg+youtube-data-api (subtitle-driven, guzheng bed, no VO) | scheduled 13:00Z (mdJyK4X6HVg) | 0 vidIQ credits
+2026-07-11 * | setup: ffmpeg+Noto-CJK installed OK; 书法 title font MaShanZheng shipped in repo (used). vidIQ balance AT FLOOR 40/150 → skipped optional Sat trend scan (no gen at/below floor; reset 2026-07-29). Dialect bank deepened 客家话/梅县 (+食饭冇/汝好/承蒙你). Replenished 3 seeds (2 culture-longform 宣纸/龙泉青瓷 + 1 travel-short 黄山) — culture backlog 1→3. Theme week (china-coffee) starts Mon 07-13. | 0 vidIQ credits
 2026-07-10 c | 外滩清晨六点 (上海 city-travel, 普通话·沪味) | elevenlabs+pexels-ffmpeg+youtube-data-api | scheduled 22:00Z (Co9Udciigb0) | 0 vidIQ credits
 2026-07-10 b | 景德镇·一件瓷器的诞生 (china-culture, 普通话) | elevenlabs+pexels-ffmpeg+openai-thumb+youtube-data-api | scheduled 17:00Z (PNi8fMIhbTw) | 0 vidIQ credits
 2026-07-10 a | 成都火锅·毛肚七上八下 (china-food, 普通话·川味) | elevenlabs+pexels-ffmpeg+youtube-data-api | scheduled 13:00Z (q6wX-LYDut8) | 0 vidIQ credits
