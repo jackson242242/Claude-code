@@ -2,7 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-07-10 (last deepened: 四川话 — +巴适得板 / 安逸 / 扎起)  
+**Today:** 2026-07-11 (last deepened: 客家话/梅县 — +食饭冇 / 汝好 / 承蒙你)  
 **Verification:** All phrases verified via WebSearch; marked with region coverage notes.  
 **Content Tags:** [comedy] [travel] [teach] | Sensitivity: clean / 轻度粗俗 / 粗口
 
@@ -91,6 +91,9 @@
 - **剞 / 撑起** (qi1 / cheng1 qi3) | "cut / support" | 客家话特有的动词用法 | 方言动词的多样性 | [teach] | clean
 - **兜舞** (dou1 wu3) | "spin around" | 客家话特有的运动表达 | 文化特色词汇 | [teach] | clean
 - **得意** (de2 yi4) | "happy / proud" | 满足、得意。梅州客家人的常用词 | 反映性格特点 | [comedy] [teach] | clean
+- **食饭冇** (sit8 fan6 mo5) | "have you eaten yet?" | 客家问候语，"食饭"=吃饭，"冇"=没有/了吗。"食饭冇？" 见面寒暄 | 与粤语「食饭」同源；体现客家人以饭问候的人情味 | [teach] [travel] | clean  <!-- added 2026-07-11, verified -->
+- **汝好** (nyi2 ho3) | "hello / you good" | "你好" 的客家说法，"汝"=你（保留古汉语用字） | 客家话保留大量中古汉语词，"汝"是典型例证 | [teach] | clean  <!-- added 2026-07-11, verified -->
+- **承蒙你** (sang2 mung2 nyi2) | "much obliged / thank you" | 传统客家致谢语，"承蒙"=承受恩惠。比直译"谢谢"更古雅 | 梅县客家的谦逊礼数；直接说"谢谢"梅县音近 qia qia | [teach] | clean  <!-- added 2026-07-11, verified -->
 
 ## 广西话 (Guangxi — Gui-Liu Dialect / Southern Mandarin)
 
