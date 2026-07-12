@@ -131,6 +131,39 @@
       "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, lofi bed)",
       "status": "scheduled",
       "publishAt": "2026-07-11T22:00:00Z"
+    },
+    {
+      "date": "2026-07-12",
+      "slot": "a",
+      "title": "肉夹馍为什么不叫馍夹肉？西安回民街的答案｜Xi'an Roujiamo",
+      "videoId": "TFsvTCj3Q38",
+      "url": "https://www.youtube.com/watch?v=TFsvTCj3Q38",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, lofi bed)",
+      "status": "scheduled",
+      "publishAt": "2026-07-12T13:00:00Z"
+    },
+    {
+      "date": "2026-07-12",
+      "slot": "b",
+      "title": "潮汕功夫茶：三只杯子里的宇宙｜关公巡城·韩信点兵 Chaoshan Gongfu Tea",
+      "videoId": "CvyHU_Kof6k",
+      "url": "https://www.youtube.com/watch?v=CvyHU_Kof6k",
+      "pillar": "china-culture",
+      "lane": "pexels-ffmpeg+openai-thumb+youtube-data-api (subtitle-driven, guzheng bed)",
+      "status": "scheduled",
+      "publishAt": "2026-07-12T17:00:00Z"
+    },
+    {
+      "date": "2026-07-12",
+      "slot": "c",
+      "title": "西湖清晨：比传说更安静｜断桥·欲把西湖比西子 West Lake at Dawn",
+      "videoId": "v7k01y8EsXo",
+      "url": "https://www.youtube.com/watch?v=v7k01y8EsXo",
+      "pillar": "city-travel",
+      "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, guzheng bed)",
+      "status": "scheduled",
+      "publishAt": "2026-07-12T22:00:00Z"
     }
   ]
 }

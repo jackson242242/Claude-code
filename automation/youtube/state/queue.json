@@ -197,18 +197,6 @@
       "status": "paused-pivot-2026-07-09"
     },
     {
-      "id": "cf-03",
-      "title": "西安回民街，一个肉夹馍的排队哲学",
-      "pillar": "china-food",
-      "format": "short",
-      "angle": "Roujiamo craft: 剁肉声/馍出炉 steam; 陕西话彩蛋.",
-      "whyNow": "channel pivot seed 2026-07-09",
-      "sources": [],
-      "addedAt": "2026-07-09",
-      "addedBy": "owner pivot directive",
-      "status": "queued"
-    },
-    {
       "id": "cf-04",
       "title": "长沙夜市，臭豆腐为什么越臭越香？",
       "pillar": "china-food",
@@ -221,35 +209,11 @@
       "status": "queued"
     },
     {
-      "id": "ct-05",
-      "title": "西湖的清晨，比传说更安静",
-      "pillar": "city-travel",
-      "format": "short",
-      "angle": "West Lake dawn mist, 断桥, one poem line.",
-      "whyNow": "channel pivot seed 2026-07-09",
-      "sources": [],
-      "addedAt": "2026-07-09",
-      "addedBy": "owner pivot directive",
-      "status": "queued"
-    },
-    {
       "id": "cw-02",
       "title": "重庆不是一座城市，是一座立体迷宫",
       "pillar": "city-walk",
       "format": "longform",
       "angle": "山城步道, cable car over river, hotpot alley steam, 重庆话彩蛋 要得.",
-      "whyNow": "channel pivot seed 2026-07-09",
-      "sources": [],
-      "addedAt": "2026-07-09",
-      "addedBy": "owner pivot directive",
-      "status": "queued"
-    },
-    {
-      "id": "cc2-02",
-      "title": "潮汕功夫茶：三只杯子里的宇宙",
-      "pillar": "china-culture",
-      "format": "longform",
-      "angle": "Gongfu tea ritual, 关公巡城 pouring, why three cups.",
       "whyNow": "channel pivot seed 2026-07-09",
       "sources": [],
       "addedAt": "2026-07-09",

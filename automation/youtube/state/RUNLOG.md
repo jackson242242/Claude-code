@@ -2,6 +2,10 @@
 
 One line per run, newest first: `date slot | topic | lane used | outcome (posted videoId / dry-run / blocked-why) | vidIQ credits spent`.
 
+2026-07-12 c | 西湖清晨·比传说更安静 (city-travel, 断桥/白蛇传 folklore, 苏轼「欲把西湖比西子」·饮湖上初晴后雨) | pexels-ffmpeg+youtube-data-api (subtitle-driven, guzheng bed, no VO) | scheduled 22:00Z (v7k01y8EsXo) | 0 vidIQ credits
+2026-07-12 b | 潮汕功夫茶·三只杯里的宇宙 (china-culture longform, 关公巡城/韩信点兵, 工夫≠功夫·国家级非遗, 苏轼「从来佳茗似佳人」; 潮汕彩蛋 食茶/家己人; openai thumb set OK) | pexels-ffmpeg+openai-thumb+youtube-data-api (subtitle-driven, guzheng bed, no VO) | scheduled 17:00Z (CvyHU_Kof6k) | 0 vidIQ credits
+2026-07-12 a | 西安肉夹馍·「肉夹馍 vs 馍夹肉」 (china-food, 西安话 馍夹肉≈没夹肉 name-riddle hook, 腊汁肉/白吉馍; 陕西彩蛋 嫽扎咧) | pexels-ffmpeg+youtube-data-api (subtitle-driven, lofi bed, no VO) | scheduled 13:00Z (TFsvTCj3Q38) | 0 vidIQ credits
+2026-07-12 * | setup: ffmpeg+Noto-CJK installed OK; 书法 title font MaShanZheng shipped in repo (used — verified in slot-b ffmpeg cmd). vidIQ balance 20/150 → BELOW floor 40 → all vidIQ gen+title-scoring skipped (resets 07-29). No analytics pulse (Sun; Mon/Thu only), no Sat trend scan. Dialect bank deepened 福建/闽南话 (+食饱未/好呷/多谢, verified). Queue: dequeued 3 (41→38); general-pillar backlog=5 at floor, but ALL slots switch to china-coffee THEME WEEK tomorrow (07-13, 8 seeds healthy) → held replenishment; also 07-13 is an analytics-pulse day (Mon). | 0 vidIQ credits
 2026-07-11 c | 广州早茶·一盅两件 (china-food, 粤语彩蛋 饮茶先啦; +Guangzhou 早茶立法 May-1-2026 national-first hook) | pexels-ffmpeg+youtube-data-api (subtitle-driven, lofi bed, no VO) | scheduled 22:00Z (MwxYdEOprl8) | 0 vidIQ credits
 2026-07-11 b | 苏州平江路·从晨光到灯笼 (city-walk longform, 1229《平江图》/评弹·吴侬软语/杜荀鹤; openai thumb) | pexels-ffmpeg+openai-thumb+youtube-data-api (subtitle-driven, guzheng bed, no VO) | scheduled 17:00Z (7QgN6KFozMI) | 0 vidIQ credits
 2026-07-11 a | 漓江清晨·你钱包里的那座山 (city-travel, ¥20背面=兴坪 hook, 鸬鹚千年; 广西彩蛋 老表) | pexels-ffmpeg+youtube-data-api (subtitle-driven, guzheng bed, no VO) | scheduled 13:00Z (mdJyK4X6HVg) | 0 vidIQ credits
