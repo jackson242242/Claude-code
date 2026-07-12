@@ -13,6 +13,19 @@
 - **Instagram**：@aludia_jewelry（老板每天发 post + reels）
 - **老板邮箱**：minjihuang1983@gmail.com
 
+## 2a. 账号实测基线（2026-07-12 vidIQ 快照，花 10 积分·老板点单）
+- **@aludia_jewelry：523 粉丝 · 202 关注 · 69 帖**；bio："demi-fine jewelry,
+  born in New York / designed with intention, worn with attitude"；外链已挂官网
+- **品类确认：demi-fine jewelry**（戒指/项链/耳环；材质涉金色调、珍珠、
+  彩宝 peridot、diamond 字样——具体材质档位仍待老板确认）
+- **Reels 基线（12 条样本）**：播放 134–734，中位 ~220；点赞率/播放 4–6%
+  （健康）；**评论几乎为零（0–2）**；无置顶策略（仅 1 条 3 月旧片置顶）
+- **表现最好**：Mother's Day 情感片 734 · "Confidence" 518 · 项链反光 459 ·
+  BTS 捕光 419 → **情感/场景/幕后 > 纯产品微距**（后者 134–250）
+- **节奏**：3 月密集 → 4/5 月各 1 条 → 6 月回升 → 间隔最长 3 周+（不稳定）
+- **短板确认**：无 hook 文字层、caption 诗意短句无 CTA 无提问、hashtag
+  仅 2–4 个、无人脸/真人出镜比例低、未见趋势格式使用
+
 ## 2. 产品与定位（⚠️ 待老板补全 — 循环每轮检查，缺就在 brief 里追问）
 - [ ] 产品线与主推款（材质：纯银/镀金/K金？风格：日常极简/轻奢/定制？）
 - [ ] 价格带与客单价（AOV）——广告预算测算必需
