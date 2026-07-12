@@ -2,7 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-07-11 (last deepened: 客家话/梅县 — +食饭冇 / 汝好 / 承蒙你)  
+**Today:** 2026-07-12 (last deepened: 福建/闽南话 — +食饱未 / 好呷 / 多谢)  
 **Verification:** All phrases verified via WebSearch; marked with region coverage notes.  
 **Content Tags:** [comedy] [travel] [teach] | Sensitivity: clean / 轻度粗俗 / 粗口
 
@@ -82,6 +82,9 @@
 - **呣** (m4) | "huh / what" | 疑问词，非常方言特色 | 闽南语的独特音系特征 | [teach] | clean
 - **鬼鬼祟祟 / 偷偷摸摸** | cautious behavior | 闽南话特色的贬低表达，比普通话更具体 | 形容行为不当的讽刺用语 | [comedy] | 轻度粗俗
 - **冻蒜 / 几罢昏** (tang3 sou3 / gui2 ba4 hun1) | "elected / 100 points" | 谐音梗，"冻蒜"="当选"，"几罢昏"="一百分" | 闽南文化中利用谐音造字造词的高级玩法 | [comedy] | clean
+- **食饱未** (chia̍h-pá--bōe) | "have you eaten yet?" | 见面寒暄语，"食饭没"；闽南人以饭问候，等同北京话"吃了吗您" | 温情的日常招呼；与客家「食饭冇」、粤语「食饭」同源同构 | [teach] [travel] | clean  <!-- added 2026-07-12, verified (chinanews/新浪 "呷饱未") -->
+- **好呷** (hó-tsia̍h) | "delicious / tasty" | 夸食物好吃，"呷"(tsia̍h)=吃。"这碗面线足好呷" | 闽南/台湾夜市最实用的一句；美食短片的天然彩蛋 | [travel] [teach] | clean  <!-- added 2026-07-12, verified (wikivoyage 闽南语会话) -->
+- **多谢** (to-siā) | "thank you" | 致谢，"多谢"比国语更古雅，闽南日常常用 | 保留古汉语的谦礼用词；待客场景百搭 | [teach] | clean  <!-- added 2026-07-12, verified (wikivoyage 闽南语会话) -->
 
 ## 客家话 (Hakka)
 
