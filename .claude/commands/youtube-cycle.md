@@ -136,11 +136,15 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    --title "<short overlay title>" --style riben
    --seg-seconds <7 for Shorts, 8 for longform>`.
    (No --audio: subtitle-driven mode — music is the full-presence main track.)
-   B-roll queries per styleGuide: soft morning light / mist / steam / lantern dusk;
-   people close-ups in motion (hands making food, faces reacting); NO night scenes,
-   no stock-cliché business shots. 中式 checklist per video: at least one of —
-   poem/成语 line in the subs, local phrase from the dialect bank, craft/food
-   close-up with cultural note.
+   B-roll queries per styleGuide 生活感 quota (hard): >=50% of shots show people
+   mid-action — query in people-action language ('<place> street food vendor
+   cooking', 'family dinner table', 'night market crowd eating', 'people cycling
+   alley'); atmosphere shots (mist/steam/lantern dusk) only for the establish and
+   close. NO night scenes, no stock-cliché business shots. Footage sources:
+   Pexels + Pixabay (auto when PIXABAY_API_KEY exists) ONLY — never scraped/
+   crawled online clips. 中式 checklist per video: at least one of — poem/成语
+   line in the subs, local phrase from the dialect bank, craft/food close-up
+   with cultural note.
    **Music rules (music IS the audio now):** pick from
    `automation/youtube/assets/music/` by mood — `guzheng-calm-01.mp3` for serene
    travel/culture/city-walk, `lofi-chill-01.mp3` for food/young-china/upbeat

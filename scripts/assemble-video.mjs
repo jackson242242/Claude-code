@@ -70,28 +70,48 @@ const XFADE = 0.45; // crossfade between shots; each join consumes this much foo
 const nSegs = Math.max(1, Math.ceil((audioDur + 1) / (SEG - XFADE)));
 process.stderr.write(`Voiceover ${audioDur.toFixed(1)}s -> ${nSegs} segment(s) of ~${SEG}s at ${W}x${H} (crossfaded)\n`);
 
-// 1. Find candidate clips on Pexels. Square renders center-crop from landscape
-// inventory (Pexels has few native square videos).
+// 1. Find candidate clips — Pexels always; Pixabay too when PIXABAY_API_KEY is
+// set (both free-for-commercial-use, no attribution required; sources recorded
+// in credits regardless). Square renders center-crop from landscape inventory.
 const orientation = vertical ? 'portrait' : 'landscape';
+const PIXABAY_KEY = process.env.PIXABAY_API_KEY;
 const clips = [];
 const seen = new Set();
-for (const q of queries) {
+
+async function searchPexels(q) {
   const res = await fetch(
     `https://api.pexels.com/videos/search?query=${encodeURIComponent(q)}&orientation=${orientation}&size=medium&per_page=6`,
     { headers: { Authorization: API_KEY } },
   );
   if (!res.ok) fail(`Pexels API error ${res.status} for "${q}": ${await res.text()}`);
-  const data = await res.json();
-  for (const v of data.videos || []) {
-    if (seen.has(v.id) || clips.length >= MAX_CLIPS) continue;
+  return ((await res.json()).videos || []).map((v) => {
     const file = pickFile(v.video_files);
-    if (!file) continue;
-    seen.add(v.id);
-    clips.push({ id: v.id, query: q, url: file.link, duration: v.duration, sourceUrl: v.url, photographer: v.user?.name || '' });
+    return file && { id: `px-${v.id}`, query: q, url: file.link, duration: v.duration, sourceUrl: v.url, photographer: v.user?.name || '', source: 'Pexels' };
+  }).filter(Boolean);
+}
+
+async function searchPixabay(q) {
+  const res = await fetch(`https://pixabay.com/api/videos/?key=${PIXABAY_KEY}&q=${encodeURIComponent(q)}&per_page=6&safesearch=true`);
+  if (!res.ok) { process.stderr.write(`Pixabay error ${res.status} for "${q}" — continuing with Pexels only\n`); return []; }
+  return ((await res.json()).hits || []).map((v) => {
+    // Prefer the smallest variant that still covers the target resolution.
+    const variants = Object.values(v.videos || {}).filter((f) => f.url && Math.max(f.width || 0, f.height || 0) >= Math.max(W, H) * 0.9)
+      .sort((a, b) => Math.max(a.width, a.height) - Math.max(b.width, b.height));
+    const file = variants[0] || Object.values(v.videos || {}).sort((a, b) => Math.max(b.width || 0, b.height || 0) - Math.max(a.width || 0, a.height || 0))[0];
+    return file && { id: `pb-${v.id}`, query: q, url: file.url, duration: v.duration, sourceUrl: v.pageURL, photographer: v.user || '', source: 'Pixabay' };
+  }).filter(Boolean);
+}
+
+for (const q of queries) {
+  const found = [...(await searchPexels(q)), ...(PIXABAY_KEY ? await searchPixabay(q) : [])];
+  for (const c of found) {
+    if (seen.has(c.id) || clips.length >= MAX_CLIPS) continue;
+    seen.add(c.id);
+    clips.push(c);
   }
 }
-if (clips.length === 0) fail('Pexels returned no usable clips for the given queries.');
-process.stderr.write(`Using ${clips.length} unique clip(s) from Pexels\n`);
+if (clips.length === 0) fail('No usable clips found for the given queries.');
+process.stderr.write(`Using ${clips.length} unique clip(s) (${clips.filter((c) => c.source === 'Pixabay').length} from Pixabay)\n`);
 
 // 2. Download and normalize each needed segment (cycle clips if fewer than segments).
 const tmp = await mkdtemp(join(tmpdir(), 'assemble-'));
@@ -214,7 +234,7 @@ if (audioFile) {
     '-c:a', 'aac', '-b:a', '160k', '-movflags', '+faststart', outFile]);
 }
 
-const credits = clips.map(({ query, sourceUrl, photographer }) => ({ query, sourceUrl, photographer }));
+const credits = clips.map(({ query, sourceUrl, photographer, source }) => ({ query, sourceUrl, photographer, source }));
 await writeFile(`${outFile}.credits.json`, JSON.stringify(credits, null, 2));
 const outDur = Number(run('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', outFile]));
 console.log(`Wrote ${outFile} (${outDur.toFixed(1)}s, ${W}x${H}) + ${outFile}.credits.json (${credits.length} clip credits)`);
