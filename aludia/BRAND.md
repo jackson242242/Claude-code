@@ -59,6 +59,16 @@
 - **互动权重**：收藏/分享/回复 > 点赞（Story 回复年增 88%，Story 拿信任、
   Reels 拿新流量）。发帖节奏理想值：每周 4–5 条 Reels。
 
+**7/13 周增量（当周热格式/音频，来源见 2026-07-13 brief）：**
+- **"Wait, let me wipe the camera" 转场**——当下最干净的产品揭示格式：
+  擦镜头动作 = 硬切点，切后产品成品出现。天生适合珠宝（模糊→擦→闪光）
+- **"Everything Hallelujah"（Justin Bieber）**：柔软 b-roll"浪漫化小事"
+  格式——晨间戴首饰、包装、写卡片，贴合品牌 quiet luxury 声线
+- **"Respect"（Aretha Franklin）对口型**："What you want, baby, I got it"
+  ——商家展示产品的真人出镜格式，补"有人味"配额
+- **"A Sprinkle of Happiness"**：cozy 晨间例程音——"morning stack routine"
+  选题现成可拍
+
 ## 4. 品牌声音
 英文为主（美国市场）；温暖、自信、不堆砌形容词；像闺蜜推荐而不是导购推销。
 禁止：虚假稀缺（"only 2 left" 若非真实）、医疗/功效声明、贬低竞品。

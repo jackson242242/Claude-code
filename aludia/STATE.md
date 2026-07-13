@@ -17,6 +17,11 @@
   且报价确认后执行**（sora-2 约 20 积分/秒，一条 8s ≈ 160 > 全月额度）。
 
 ## 运行日志（最新在上）
+- 2026-07-13 11:01 UTC · 第 10 轮（周一调研日）：零成本调研增量入库
+  （wipe 转场/Everything Hallelujah/Respect 对口型/Sprinkle 晨间音）；
+  "From sketch to sparkle" design-day Reels 包（wipe 转场 reveal）+
+  10 秒备选两个 + 本周音频菜单。积分 0（余额 140）。
+  下一轮：周二 My Inner Voice 试戴（分镜 7/6 已有，补音频与 caption 微调）。
 - 2026-07-12 12:06 UTC · 第 9 轮（诊断落地日）：12 条旧 Reels caption
   翻新包 + bio/name 字段定稿 + 下周日历按爆款公式重排（情感/幕后≥60%，
   每条强制 hook+问题CTA+15 标签+1h 回评）。积分 0（余额 140）。
