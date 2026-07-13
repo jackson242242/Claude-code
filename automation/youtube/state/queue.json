@@ -221,30 +221,6 @@
       "status": "queued"
     },
     {
-      "id": "cof-01",
-      "title": "云南普洱的咖啡林里，藏着中国咖啡的答案",
-      "pillar": "china-coffee",
-      "format": "short",
-      "angle": "Plantation morning mist, cherry-picking hands close-up, drying beds.",
-      "whyNow": "owner theme-week plan 2026-07-09",
-      "sources": [],
-      "addedAt": "2026-07-10",
-      "addedBy": "owner theme directive",
-      "status": "queued"
-    },
-    {
-      "id": "cof-02",
-      "title": "上海永康路：全世界咖啡店密度最高的街区之一",
-      "pillar": "china-coffee",
-      "format": "short",
-      "angle": "Street café hop, latte art close-ups, window seats, 上海话彩蛋.",
-      "whyNow": "owner theme-week plan 2026-07-09",
-      "sources": [],
-      "addedAt": "2026-07-10",
-      "addedBy": "owner theme directive",
-      "status": "queued"
-    },
-    {
       "id": "cof-03",
       "title": "北京胡同里的咖啡香",
       "pillar": "china-coffee",
@@ -286,18 +262,6 @@
       "pillar": "china-coffee",
       "format": "short",
       "angle": "Cangshan-view farms, farmstay cafés.",
-      "whyNow": "owner theme-week plan 2026-07-09",
-      "sources": [],
-      "addedAt": "2026-07-10",
-      "addedBy": "owner theme directive",
-      "status": "queued"
-    },
-    {
-      "id": "cof-07",
-      "title": "从种子到杯子：中国咖啡的三十年",
-      "pillar": "china-coffee",
-      "format": "longform",
-      "angle": "Industry story: Yunnan terroir, specialty wave; one farmer + one barista thread.",
       "whyNow": "owner theme-week plan 2026-07-09",
       "sources": [],
       "addedAt": "2026-07-10",
@@ -482,6 +446,90 @@
       "sources": [],
       "addedAt": "2026-07-11",
       "addedBy": "cycle replenish",
+      "status": "queued"
+    },
+    {
+      "id": "cof-09",
+      "title": "云南保山：一杯小粒咖啡的风味地图",
+      "pillar": "china-coffee",
+      "format": "longform",
+      "angle": "Baoshan terroir deep-dive: high-altitude small-bean arabica, 'strong but not bitter, mildly fruity'; washing station + drying beds; one farmer's flavor story. everyday-life: why your cup tastes the way it does. beautiful b-roll: cherry-picking hands, washing channels, sun-drying beds, cupping table.",
+      "whyNow": "Theme-week china-coffee (07-13..19) needs longform b-slots; Baoshan small-bean gained international recognition through 2025 (People's Daily / STDaily). Verify altitude/flavor facts at scripting.",
+      "sources": [],
+      "addedAt": "2026-07-13",
+      "addedBy": "cycle replenish (coffee theme-week longform gap)",
+      "status": "queued"
+    },
+    {
+      "id": "cof-10",
+      "title": "独立咖啡师的一天：从烘豆到拉花",
+      "pillar": "china-coffee",
+      "format": "longform",
+      "angle": "A day with one independent barista/roaster: green beans -> roast -> grind -> pour, closing on latte art. everyday-life: the person behind the counter. beautiful b-roll: roaster drum, bean cooling tray, tamping, milk pour close-ups. One craft note per stage.",
+      "whyNow": "Owner brief calls for '独立咖啡师人物感' in the coffee week; evergreen craft/human story to anchor a b-slot. Verify roast-stage terms at scripting.",
+      "sources": [],
+      "addedAt": "2026-07-13",
+      "addedBy": "cycle replenish (coffee theme-week longform gap)",
+      "status": "queued"
+    },
+    {
+      "id": "cof-11",
+      "title": "从速溶到手冲：中国人喝咖啡的三次浪潮",
+      "pillar": "china-coffee",
+      "format": "longform",
+      "angle": "Three-waves framing of Chinese coffee: 1) 三合一速溶 (late-80s->2010), 2) chain espresso (Starbucks/Luckin scale), 3) specialty/单品手冲. everyday-life: which wave is your daily cup? beautiful b-roll: instant-sachet stir, chain-cup queue, slow hand-pour. One 成语/俗语 line.",
+      "whyNow": "Complements cof-07 (30-year arc) with a consumer-side lens; timely against Luckin's 20,000-store scale (2024) + specialty premiumization (Mordor/USDA 2026). Verify wave-dates at scripting.",
+      "sources": [],
+      "addedAt": "2026-07-13",
+      "addedBy": "cycle replenish (coffee theme-week longform gap)",
+      "status": "queued"
+    },
+    {
+      "id": "cof-12",
+      "title": "咖啡进县城：小镇青年的第三空间",
+      "pillar": "china-coffee",
+      "format": "longform",
+      "angle": "County-town cafe boom as rural revitalization + third-place culture: young returnees opening shops, cafes as social hubs beyond first-tier cities. everyday-life: a small-town afternoon. beautiful b-roll: small-town street cafe, friends chatting, latte pour, courtyard light. Zero politics.",
+      "whyNow": "USDA FAS (Jan 2026) + reporting note cafe expansion into county towns as a livelihood/revitalization story; strong everyday-life longform. Verify any named town/shop at scripting.",
+      "sources": [],
+      "addedAt": "2026-07-13",
+      "addedBy": "cycle replenish (coffee theme-week longform gap)",
+      "status": "queued"
+    },
+    {
+      "id": "cof-13",
+      "title": "日晒还是水洗？一颗咖啡豆的两种命运",
+      "pillar": "china-coffee",
+      "format": "short",
+      "angle": "Natural (日晒) vs washed (水洗) processing shown side by side: how the same cherry becomes two flavors. everyday-life: what those cafe-menu words mean. beautiful b-roll: cherries on drying beds vs washing channel, hands turning beans. 云南话彩蛋 honestly labeled if used.",
+      "whyNow": "Coffee theme-week short slot; processing explainer is high-retention curiosity + beautiful b-roll. Verify process descriptions at scripting.",
+      "sources": [],
+      "addedAt": "2026-07-13",
+      "addedBy": "cycle replenish (coffee theme-week short depth)",
+      "status": "queued"
+    },
+    {
+      "id": "cof-14",
+      "title": "成都的咖啡馆，就开在茶馆隔壁",
+      "pillar": "china-coffee",
+      "format": "short",
+      "angle": "Chengdu's coffee-meets-teahouse street culture: espresso next to 盖碗茶, same 巴适 slow pace. everyday-life: two drinks, one afternoon. beautiful b-roll: teahouse bamboo chairs + latte pour, street life. 四川话彩蛋 巴适 (from dialect-bank).",
+      "whyNow": "Coffee theme-week short slot; ties coffee to a distinct city + dialect-bank phrase. Verify any specific venue claim at scripting.",
+      "sources": [],
+      "addedAt": "2026-07-13",
+      "addedBy": "cycle replenish (coffee theme-week short depth)",
+      "status": "queued"
+    },
+    {
+      "id": "cof-15",
+      "title": "杭州西湖边的一杯手冲",
+      "pillar": "china-coffee",
+      "format": "short",
+      "angle": "Lakeside specialty coffee in Hangzhou: hand-pour with West Lake calm; 日系唯美 pacing. everyday-life: coffee as a pause. beautiful b-roll: pour-over steam, lake light, window seat. One poem/景 note (西湖).",
+      "whyNow": "Coffee theme-week short slot; pairs the coffee theme with a scenic city for beautiful b-roll. Verify any cafe/venue claim at scripting.",
+      "sources": [],
+      "addedAt": "2026-07-13",
+      "addedBy": "cycle replenish (coffee theme-week short depth)",
       "status": "queued"
     }
   ]

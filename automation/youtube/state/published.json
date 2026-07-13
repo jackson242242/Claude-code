@@ -164,6 +164,39 @@
       "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, guzheng bed)",
       "status": "scheduled",
       "publishAt": "2026-07-12T22:00:00Z"
+    },
+    {
+      "date": "2026-07-13",
+      "slot": "a",
+      "title": "云南普洱：中国 98% 的咖啡都从这里来｜Yunnan Pu'er Coffee",
+      "videoId": "pK2ljtJD2pY",
+      "url": "https://www.youtube.com/watch?v=pK2ljtJD2pY",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, guzheng bed, no VO)",
+      "status": "scheduled",
+      "publishAt": "2026-07-13T13:00:00Z"
+    },
+    {
+      "date": "2026-07-13",
+      "slot": "b",
+      "title": "从种子到杯子：中国咖啡的三十年｜Seed to Cup — China's Coffee Story",
+      "videoId": "y7vDtyjm4GI",
+      "url": "https://www.youtube.com/watch?v=y7vDtyjm4GI",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+openai-thumb+youtube-data-api (subtitle-driven, guzheng bed, no VO)",
+      "status": "scheduled",
+      "publishAt": "2026-07-13T17:00:00Z"
+    },
+    {
+      "date": "2026-07-13",
+      "slot": "c",
+      "title": "上海永康路：全世界咖啡店最多的城市｜Shanghai, the World's Café Capital",
+      "videoId": "6dzYns0A0dc",
+      "url": "https://www.youtube.com/watch?v=6dzYns0A0dc",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, lofi bed, no VO)",
+      "status": "scheduled",
+      "publishAt": "2026-07-13T22:00:00Z"
     }
   ]
 }
