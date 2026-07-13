@@ -2,7 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-07-12 (last deepened: 福建/闽南话 — +食饱未 / 好呷 / 多谢)  
+**Today:** 2026-07-13 (last deepened: 山东话/济南 — +杠赛来 / 木乱)  
 **Verification:** All phrases verified via WebSearch; marked with region coverage notes.  
 **Content Tags:** [comedy] [travel] [teach] | Sensitivity: clean / 轻度粗俗 / 粗口
 
@@ -73,6 +73,8 @@
 - **球球 / 闷闷** (qiu2 qiu2 / men4 men4) | "QQ / car" | 谐音缩写，"球球"=QQ，"闷闷"=汽车 | 土味谐音梗；体现山东方言谐音文化 | [comedy] | clean
 - **倍儿倍儿哩** (bei4 er0 bei4 er0 li0) | "very very" | 程度词，"倍儿"=非常。"倍儿倍儿哩舒服" | 济宁话典型表达；重叠强调 | [comedy] [teach] | clean
 - **宇宙中心菏泽** | meme phrase | 网红梗，自嘲性吹捧菏泽。"曹县是宇宙中心" | 山东各地互相调侃的网络梗；2024年大火 | [comedy] | clean
+- **杠赛来** (gàng sài lái) | "great fun / really good" | 济南话，意为"很好玩、有意思、特别棒"。"这地儿杠赛来！" | 济南方言典型褒义习语；夸赞语气强 | [comedy] [travel] [teach] | clean
+- **木乱** (mù luàn) | "fretful / vexed" | 济南话，"心里很烦、心烦意乱"。"这两天心里木乱得慌" | 济南日常情绪词；体现方言的生活感 | [teach] | clean
 
 ## 福建 / 闽南话 (Fujian / Min South Dialect)
 
