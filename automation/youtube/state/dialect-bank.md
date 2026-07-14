@@ -2,7 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-07-13 (last deepened: 山东话/济南 — +杠赛来 / 木乱)  
+**Today:** 2026-07-14 (last deepened: 广西话/南宁 — +蓝瘦香菇 / 得啵 / 颠颠向上)  
 **Verification:** All phrases verified via WebSearch; marked with region coverage notes.  
 **Content Tags:** [comedy] [travel] [teach] | Sensitivity: clean / 轻度粗俗 / 粗口
 
@@ -108,6 +108,9 @@
 - **螺蛳粉梗** | cultural tag | 南宁螺蛳粉的谐音与方言梗融合，"螺蛳粉"="螺西汾"等 | 美食与方言文化的结合；代表新兴网络梗 | [comedy] [travel] [teach] | clean
 - **白话** (bai2 hua4) | "plain talk / Baihua" | 南宁白话，介于粤语与普通话之间的方言 | 南宁本地身份认同的表现 | [teach] | clean
 - **老表** (lao3 biao3) | "buddy" | 广西人对朋友的称呼，带有亲昵感 | 广西人的热情好客特点 | [comedy] | clean
+- **蓝瘦香菇** (lan2 shou4 xiang1 gu1) | "blue-thin mushroom" = 难受想哭 | 2016年南宁小哥失恋视频，"难受，想哭"被口音念成"蓝瘦，香菇"，成为初代全国性方言网络梗 | 广西南普送气音/前后鼻音混淆的经典体现；表情包始祖级 | [comedy] | clean
+- **得啵** (de2 bo0) | sentence-final particle | 南宁普通话高频语气词，"得啵？"≈"行吗？/好吗？"；南普语气词（啵/咩/捏/得）密度远高于标准普通话 | 南普"魔性"口音的核心来源之一 | [teach] [comedy] | clean
+- **颠颠向上** (dian1 dian1 xiang4 shang4) | "day-day up (mis-said)" | "天天向上"因送气音混淆被念成"颠颠向上"（天→颠） | 广西普通话送气/不送气特征的自嘲式玩法 | [comedy] | clean
 
 ## 台湾腔 (Taiwan Accent — Taiwanese Mandarin)
 

@@ -208,6 +208,28 @@
       "lane": "pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-07-14T13:00:00Z"
+    },
+    {
+      "date": "2026-07-14",
+      "slot": "b",
+      "title": "中国人为什么突然爱上咖啡？| Why China Fell for Coffee",
+      "videoId": "yFj2psl9ngw",
+      "url": "https://www.youtube.com/watch?v=yFj2psl9ngw",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+openai-thumb+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-14T17:00:00Z"
+    },
+    {
+      "date": "2026-07-14",
+      "slot": "c",
+      "title": "老洋房里喝手冲：广州东山口 | Coffee in Guangzhou's Old Villas",
+      "videoId": "1LpZA0pafP8",
+      "url": "https://www.youtube.com/watch?v=1LpZA0pafP8",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-14T22:00:00Z"
     }
   ]
 }

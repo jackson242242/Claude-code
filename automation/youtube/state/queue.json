@@ -221,30 +221,6 @@
       "status": "queued"
     },
     {
-      "id": "cof-03",
-      "title": "北京胡同里的咖啡香",
-      "pillar": "china-coffee",
-      "format": "short",
-      "angle": "Hutong café: courtyard light, hand-pour steam, 京味彩蛋.",
-      "whyNow": "owner theme-week plan 2026-07-09",
-      "sources": [],
-      "addedAt": "2026-07-10",
-      "addedBy": "owner theme directive",
-      "status": "queued"
-    },
-    {
-      "id": "cof-04",
-      "title": "广州东山口，老洋房里喝手冲",
-      "pillar": "china-coffee",
-      "format": "short",
-      "angle": "Heritage-house cafés, 粤语彩蛋 饮咖啡.",
-      "whyNow": "owner theme-week plan 2026-07-09",
-      "sources": [],
-      "addedAt": "2026-07-10",
-      "addedBy": "owner theme directive",
-      "status": "queued"
-    },
-    {
       "id": "cof-05",
       "title": "深圳的咖啡速度：从图纸到风味",
       "pillar": "china-coffee",
@@ -262,18 +238,6 @@
       "pillar": "china-coffee",
       "format": "short",
       "angle": "Cangshan-view farms, farmstay cafés.",
-      "whyNow": "owner theme-week plan 2026-07-09",
-      "sources": [],
-      "addedAt": "2026-07-10",
-      "addedBy": "owner theme directive",
-      "status": "queued"
-    },
-    {
-      "id": "cof-08",
-      "title": "中国咖啡消费革命：谁在喝、为什么喝",
-      "pillar": "china-coffee",
-      "format": "longform",
-      "angle": "Consumption culture deep-dive: city café scenes, third-place culture.",
       "whyNow": "owner theme-week plan 2026-07-09",
       "sources": [],
       "addedAt": "2026-07-10",
@@ -530,6 +494,102 @@
       "sources": [],
       "addedAt": "2026-07-13",
       "addedBy": "cycle replenish (coffee theme-week short depth)",
+      "status": "queued"
+    },
+    {
+      "id": "cof-16",
+      "title": "厦门鼓浪屿，老别墅里的一杯咖啡",
+      "pillar": "china-coffee",
+      "format": "short",
+      "angle": "Gulangyu heritage-villa cafés — colonial architecture + sea light + hand-pour; 闽南彩蛋 好呷.",
+      "whyNow": "owner china-coffee theme-week plan 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-14",
+      "addedBy": "youtube-cycle replenish (within-theme)",
+      "status": "queued"
+    },
+    {
+      "id": "cof-17",
+      "title": "长沙的咖啡有多卷？",
+      "pillar": "china-coffee",
+      "format": "short",
+      "angle": "Changsha's hyper-competitive café scene (茶颜悦色 hometown) — one street, many shops; 塑普彩蛋 蛮.",
+      "whyNow": "owner china-coffee theme-week plan 2026-07-09; Changsha is a bellwether new-tea/coffee city",
+      "sources": [],
+      "addedAt": "2026-07-14",
+      "addedBy": "youtube-cycle replenish (within-theme)",
+      "status": "queued"
+    },
+    {
+      "id": "cof-18",
+      "title": "一杯 dirty 是怎么诞生的？",
+      "pillar": "china-coffee",
+      "format": "short",
+      "angle": "How a 'dirty' is built — espresso poured over ice-cold milk, layered temperature contrast; craft close-up.",
+      "whyNow": "owner china-coffee theme-week plan 2026-07-09; dirty is China Gen Z signature drink",
+      "sources": [],
+      "addedAt": "2026-07-14",
+      "addedBy": "youtube-cycle replenish (within-theme)",
+      "status": "queued"
+    },
+    {
+      "id": "cof-19",
+      "title": "武汉过早，配一杯手冲",
+      "pillar": "china-coffee",
+      "format": "short",
+      "angle": "Wuhan breakfast (过早) street culture meeting specialty coffee; people-action food b-roll; 武汉话彩蛋.",
+      "whyNow": "owner china-coffee theme-week plan 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-14",
+      "addedBy": "youtube-cycle replenish (within-theme)",
+      "status": "queued"
+    },
+    {
+      "id": "cof-20",
+      "title": "苏州园林边，一杯拿铁",
+      "pillar": "china-coffee",
+      "format": "short",
+      "angle": "Café by a Suzhou garden wall — 白墙黛瓦 + latte; 吴侬软语 flavor via 评弹 note (never fake a dialect).",
+      "whyNow": "owner china-coffee theme-week plan 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-14",
+      "addedBy": "youtube-cycle replenish (within-theme)",
+      "status": "queued"
+    },
+    {
+      "id": "cof-21",
+      "title": "手冲、意式、还是挂耳？",
+      "pillar": "china-coffee",
+      "format": "short",
+      "angle": "Quick explainer Short: pour-over vs espresso vs drip-bag — how Chinese drinkers choose; satisfying brew close-ups.",
+      "whyNow": "owner china-coffee theme-week plan 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-14",
+      "addedBy": "youtube-cycle replenish (within-theme)",
+      "status": "queued"
+    },
+    {
+      "id": "cof-22",
+      "title": "精品咖啡为什么这么贵？",
+      "pillar": "china-coffee",
+      "format": "longform",
+      "angle": "Why specialty coffee costs what it does — bean grade, hand-processing, small-batch roast, café rent as third-space; honest, sourced.",
+      "whyNow": "owner china-coffee theme-week plan 2026-07-09; price is the top everyday question",
+      "sources": [],
+      "addedAt": "2026-07-14",
+      "addedBy": "youtube-cycle replenish (within-theme)",
+      "status": "queued"
+    },
+    {
+      "id": "cof-23",
+      "title": "从瑞幸到独立小店：中国咖啡的两条路",
+      "pillar": "china-coffee",
+      "format": "longform",
+      "angle": "Two roads of China's coffee — chain scale (Luckin) vs independent craft cafés; who each serves, everyday-life lens; sourced, no politics.",
+      "whyNow": "owner china-coffee theme-week plan 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-14",
+      "addedBy": "youtube-cycle replenish (within-theme)",
       "status": "queued"
     }
   ]
