@@ -197,6 +197,17 @@
       "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, lofi bed, no VO)",
       "status": "scheduled",
       "publishAt": "2026-07-13T22:00:00Z"
+    },
+    {
+      "date": "2026-07-14",
+      "slot": "a",
+      "title": "北京胡同里，藏着一杯咖啡香 | Coffee in a Beijing Hutong",
+      "videoId": "Ud1XuOsyvbg",
+      "url": "https://www.youtube.com/watch?v=Ud1XuOsyvbg",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-14T13:00:00Z"
     }
   ]
 }
