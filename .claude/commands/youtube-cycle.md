@@ -79,10 +79,14 @@ log `skipped: batch already published today` and stop. (Protects against manual
    generates within-theme. Formats unchanged (a/c Short, b longform). If the
    theme queue is empty and research can't fill it, fall back to general pillars
    and log why.
-   **General mapping (non-theme days, day = UTC day-of-month):**
+   **General mapping (non-theme days, day = UTC day-of-month; owner decision
+   2026-07-15 — slot b longform is SUNDAY-ONLY, weekdays it's a third Short):**
    - slot a (Short): odd day `city-travel`, even day `china-food`
-   - slot b (longform): odd day `city-walk`, even day `china-culture`
+   - slot b weekdays (Short): odd day `china-culture`, even day `china-coffee`
+   - slot b Sunday (longform ≤2min): odd day `city-walk`, even day `china-culture`
    - slot c (Short): the opposite of slot a
+   During theme weeks all slots draw from the theme; slot b still follows the
+   Sunday-longform rule.
    Take the top queue item with that pillar (skip items whose pillar is in
    `pausedPillars`); if none, generate one from today's research +
    `state/dialect-bank.md`. Each pick must pass `strategy.topicFitGate`

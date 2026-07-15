@@ -14,12 +14,14 @@ cadence:
   # publishing (status.publishAt) at the slot times below (= 9am/1pm/6pm New York EDT).
   mode: batch-daily
   routineUtc: "12:30"
-  # Durations tightened by owner 2026-07-08 (cost control): Shorts <=30s, video <=2min.
-  # Slot mapping since 2026-07-09 pivot (day = UTC day-of-month):
+  # Durations: Shorts <=30s, longform <=2min.
+  # OWNER DECISION 2026-07-15 (data: 5 longforms = 0-3 views each while Shorts
+  # broke into wave-2): slot b is a THIRD SHORT on weekdays; longform survives
+  # as SUNDAY-ONLY slot b (search/catalog asset, zero daily cost).
   slots:
-    - { name: a, publishAtUtc: "13:00", format: short }     # 9:16 <=30s — odd day: city-travel, even day: china-food
-    - { name: b, publishAtUtc: "17:00", format: longform }  # 16:9 <=2min — odd day: city-walk, even day: china-culture
-    - { name: c, publishAtUtc: "22:00", format: short }     # 9:16 <=30s — opposite of slot a (even day: city-travel, odd day: china-food)
+    - { name: a, publishAtUtc: "13:00", format: short }  # odd day: city-travel, even day: china-food
+    - { name: b, publishAtUtc: "17:00", format: short, sundayFormat: longform }  # weekdays: china-culture/china-coffee short (odd/even); Sunday: longform (odd: city-walk, even: china-culture)
+    - { name: c, publishAtUtc: "22:00", format: short }  # opposite of slot a
 
 voice:
   status: paused-2026-07-10   # owner: "voice over 好差" — format is now burned
@@ -42,8 +44,11 @@ strategy:
   pillars:
     - city-travel     # Shorts: one city/scenic spot per video, 日式唯美 pacing
     - china-food      # Shorts: one dish/snack/food street per video (火锅/早茶/夜市...)
-    - china-culture   # Longform: crafts, opera, tea, porcelain, festivals — cultural depth
-    - city-walk       # Longform: 城市漫游 — one street/district, dawn-to-dusk feel
+    - china-culture   # Shorts weekdays + Sunday longform: crafts, opera, tea, porcelain
+    - city-walk       # Sunday longform: 城市漫游 — one street/district, dawn-to-dusk
+    - china-coffee    # STANDING pillar since 2026-07-15 (owner: keep mining coffee after theme week) — three lanes: brands (瑞幸/Manner/Seesaw etc., factual & sourced, no endorsement), farms (云南庄园/咖农人物), economy (9.9价格战/县城咖啡/咖啡师职业/收购价)
+  brandRules: # applies to any pillar covering companies (coffee brands, wineries...)
+    - "Factual and sourced only; no endorsements, no sponsorship implications, no stock/investment takes; criticism must be well-sourced and proportionate."
   pausedPillars: [education-trends, world-colleges, education-systems, whats-latest]
   # THEMED WEEKS (owner plan 2026-07-09). During a theme week ALL slots draw from
   # the theme (formats unchanged: a/c Shorts, b longform); daily research
