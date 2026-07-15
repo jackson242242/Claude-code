@@ -425,18 +425,6 @@
       "status": "queued"
     },
     {
-      "id": "cof-10",
-      "title": "独立咖啡师的一天：从烘豆到拉花",
-      "pillar": "china-coffee",
-      "format": "longform",
-      "angle": "A day with one independent barista/roaster: green beans -> roast -> grind -> pour, closing on latte art. everyday-life: the person behind the counter. beautiful b-roll: roaster drum, bean cooling tray, tamping, milk pour close-ups. One craft note per stage.",
-      "whyNow": "Owner brief calls for '独立咖啡师人物感' in the coffee week; evergreen craft/human story to anchor a b-slot. Verify roast-stage terms at scripting.",
-      "sources": [],
-      "addedAt": "2026-07-13",
-      "addedBy": "cycle replenish (coffee theme-week longform gap)",
-      "status": "queued"
-    },
-    {
       "id": "cof-11",
       "title": "从速溶到手冲：中国人喝咖啡的三次浪潮",
       "pillar": "china-coffee",
@@ -458,30 +446,6 @@
       "sources": [],
       "addedAt": "2026-07-13",
       "addedBy": "cycle replenish (coffee theme-week longform gap)",
-      "status": "queued"
-    },
-    {
-      "id": "cof-13",
-      "title": "日晒还是水洗？一颗咖啡豆的两种命运",
-      "pillar": "china-coffee",
-      "format": "short",
-      "angle": "Natural (日晒) vs washed (水洗) processing shown side by side: how the same cherry becomes two flavors. everyday-life: what those cafe-menu words mean. beautiful b-roll: cherries on drying beds vs washing channel, hands turning beans. 云南话彩蛋 honestly labeled if used.",
-      "whyNow": "Coffee theme-week short slot; processing explainer is high-retention curiosity + beautiful b-roll. Verify process descriptions at scripting.",
-      "sources": [],
-      "addedAt": "2026-07-13",
-      "addedBy": "cycle replenish (coffee theme-week short depth)",
-      "status": "queued"
-    },
-    {
-      "id": "cof-14",
-      "title": "成都的咖啡馆，就开在茶馆隔壁",
-      "pillar": "china-coffee",
-      "format": "short",
-      "angle": "Chengdu's coffee-meets-teahouse street culture: espresso next to 盖碗茶, same 巴适 slow pace. everyday-life: two drinks, one afternoon. beautiful b-roll: teahouse bamboo chairs + latte pour, street life. 四川话彩蛋 巴适 (from dialect-bank).",
-      "whyNow": "Coffee theme-week short slot; ties coffee to a distinct city + dialect-bank phrase. Verify any specific venue claim at scripting.",
-      "sources": [],
-      "addedAt": "2026-07-13",
-      "addedBy": "cycle replenish (coffee theme-week short depth)",
       "status": "queued"
     },
     {

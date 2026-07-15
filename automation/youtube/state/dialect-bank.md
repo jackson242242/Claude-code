@@ -2,7 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-07-14 (last deepened: 广西话/南宁 — +蓝瘦香菇 / 得啵 / 颠颠向上)  
+**Today:** 2026-07-15 (last deepened: 东北话 — +贼 / 要啥自行车 / 老妹儿·老弟)  
 **Verification:** All phrases verified via WebSearch; marked with region coverage notes.  
 **Content Tags:** [comedy] [travel] [teach] | Sensitivity: clean / 轻度粗俗 / 粗口
 
@@ -64,6 +64,9 @@
 - **得嘞** (de2 le0) | "got it / okay" | 应允、同意。"得嘞，我这就给你整" | 东北人爽快、肯定的应答 | [comedy] | clean
 - **不好意思** (bu4 hao3 yi4 si0) | "sorry / embarrassed" | 道歉/不好意思，但东北人说时常带有自嘲感 | 看似礼貌实则调侃；体现东北人自黑幽默 | [comedy] | clean
 - **东北硬糖** | generic | 东北人独有的硬朗、直白、豪爽的说话风格 | 代表整个东北文化的"铁血"气质 | [comedy] [teach] | clean
+- **贼** (zei2) | "super / very" | 万能加强副词，形容词前一加就顶格。"贼好吃""贼漂亮""贼窝囊" | 东北话最上头的副词，一个字带出说话人的表情；全网通用 | [comedy] [teach] | clean  <!-- added 2026-07-15 -->
+- **要啥自行车** (yao4 sha2 zi4 xing2 che1) | "what more do you want / don't be greedy" | 劝人知足、别有非分之想。源自赵本山·范伟 2001 央视春晚小品《卖拐》 | 二十多年长红的国民梗；调侃"已经不错了还想咋" | [comedy] [teach] | clean  <!-- added 2026-07-15 -->
+- **老妹儿 / 老弟** (lao3 mei4 er0 / lao3 di4) | "dear sis / lil bro" | 初次见面也能这么叫，不论年纪，套近乎的亲切称呼 | "老"字前缀是东北话的招牌，一叫就自来熟；显热络 | [comedy] [teach] | clean  <!-- added 2026-07-15 -->
 
 ## 山东话 (Shandong Dialect)
 

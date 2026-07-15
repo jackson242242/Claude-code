@@ -230,6 +230,39 @@
       "lane": "pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-07-14T22:00:00Z"
+    },
+    {
+      "date": "2026-07-15",
+      "slot": "a",
+      "title": "日晒还是水洗？同一颗豆，两种命运 | Natural vs Washed Coffee ☕",
+      "videoId": "tUbpsi291WE",
+      "url": "https://www.youtube.com/watch?v=tUbpsi291WE",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, no VO), guzheng bed",
+      "status": "scheduled",
+      "publishAt": "2026-07-15T13:00:00Z"
+    },
+    {
+      "date": "2026-07-15",
+      "slot": "b",
+      "title": "独立咖啡师的一天：从烘豆到拉花 | A Day With a Chinese Independent Barista ☕",
+      "videoId": "nIFaEe80h-c",
+      "url": "https://www.youtube.com/watch?v=nIFaEe80h-c",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+openai-thumb+youtube-data-api (subtitle-driven, no VO), guzheng bed",
+      "status": "scheduled",
+      "publishAt": "2026-07-15T17:00:00Z"
+    },
+    {
+      "date": "2026-07-15",
+      "slot": "c",
+      "title": "成都的咖啡馆，就开在茶馆隔壁 | In Chengdu, Coffee Sits Next to the Teahouse ☕",
+      "videoId": "mGRRuSr3Uoo",
+      "url": "https://www.youtube.com/watch?v=mGRRuSr3Uoo",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, no VO), lofi bed",
+      "status": "scheduled",
+      "publishAt": "2026-07-15T22:00:00Z"
     }
   ]
 }
