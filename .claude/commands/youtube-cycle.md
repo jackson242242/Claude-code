@@ -109,8 +109,16 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
      wide); the first cue poses a curiosity gap the last cue answers → 承 2-3
      development beats → 转 the surprise/taste/discovery → 合 a closing line that
      LOOPS back to the opening (rewatches push view% past 100 — the Shorts
-     algorithm's strongest signal). Final cue doubles as a soft CTA where
-     natural: 「关注，带你去下一座城 / Follow for the next city」.
+     algorithm's strongest signal). Final cue alternates between a soft CTA
+     (「关注，带你去下一座城 / Follow for the next city」) and a direct either-or
+     question ON SCREEN (「你会先加糖还是先闻香？评论区见」) — 07-15 data: likes
+     arrived but comments are still 0; nobody reads Shorts descriptions, the
+     question must live in the video.
+   - **Fact-first hooks beat place-first hooks (07-15 data):** 云南98%咖啡 (836
+     views/2d) and 漓江¥20纸币 (840/4d) broke into wave-2; 北京胡同 (148) and
+     永康路 (242) with place-name openers lagged. Open every Short with the
+     surprising NUMBER/FACT, not the place name — re-angle queue titles at pick
+     time accordingly.
    - Video (slot b, 90-120s): 22-30 cues in four movements (establish → walk +
      history beat → food/discovery twist → dusk reflection). One 成语 or poem
      line per video.
@@ -167,12 +175,13 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    viewer (comment bait, honest — e.g. 「你会先烫毛肚还是黄喉？」); then the
    bilingual summary; hashtags at the end: #shorts (Shorts only) #china + city
    and topic tags (≤6 total).
-6. **Playlist filing:** ensure a playlist exists per pillar (中国美食 / 城市旅行 /
-   城市漫游 / 中国文化 + one per theme week) via `playlists.insert`, and add each
-   uploaded video via `playlistItems.insert` (both work with the current OAuth
-   scope; create-once, reuse by title match). Playlists give the channel page
-   structure — this week's data shows 15 channel-page visits converting to 0
-   subs partly for lack of coherent shelves.
+6. **Playlist filing:** after each upload, run
+   `node scripts/youtube-playlist.mjs --title "<playlist>" --video <videoId>`
+   (script wired 2026-07-15 — reuses by exact title, creates public if missing).
+   Playlists: 中国美食 China Food / 城市旅行 China Travel / 城市漫游 City Walks /
+   中国文化 Chinese Culture, plus one per theme week (e.g. 中国咖啡 China Coffee).
+   Backfill note: on first use, also file this week's earlier theme videos (see
+   published.json) so the shelf isn't a single video.
 6. **Upload** — if the upload lane is available:
    `node scripts/youtube-upload.mjs --video .../final.mp4 --meta .../meta.json
    [--thumbnail .../thumb.jpeg]`
