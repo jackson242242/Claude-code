@@ -110,3 +110,60 @@ services:
       # Optional: enables real AI generation (melody-conditioned MusicGen).
       - key: REPLICATE_API_TOKEN
         sync: false
+
+  # Stock Alternatives Tier List — a testable prototype with ZERO secrets.
+  # stock-tiers-api serves the JSON API on deterministic seed data and a
+  # deterministic mock tier engine; stock-tiers-web is the Expo app exported to
+  # web (static SPA) pointed at the API via fromService host. Set ANTHROPIC_API_KEY
+  # to light up the real Claude tier engine; set STOCK_PROVIDER=finnhub +
+  # FINNHUB_API_KEY for live market data (free key OK). After enabling either,
+  # confirm via GET /api/meta/providers and GET /api/meta/stock-probe. Under stock-tiers/.
+  - type: web
+    name: stock-tiers-api
+    runtime: python
+    plan: free
+    rootDir: stock-tiers/backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11"
+      # Deterministic seed market data — no key needed. Set to "finnhub" (and
+      # supply FINNHUB_API_KEY below) for live prices.
+      - key: STOCK_PROVIDER
+        value: mock
+      # Optional — light up the real Claude tier engine (TIER_PROVIDER=auto uses
+      # it whenever this is set; otherwise the deterministic mock engine runs).
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      # Optional — live market data; only used when STOCK_PROVIDER=finnhub.
+      - key: FINNHUB_API_KEY
+        sync: false
+      - key: CORS_ORIGINS
+        fromService:
+          type: web
+          name: stock-tiers-web
+          property: host
+
+  - type: web
+    name: stock-tiers-web
+    runtime: static
+    rootDir: stock-tiers/app
+    buildCommand: npm ci && npx expo export -p web
+    staticPublishPath: dist
+    # SPA: in-memory navigation, single served route — fall back to index.html.
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      # Inlined into the web bundle at build time (bare host -> the client
+      # normalizes to https). Render provides this during the build.
+      - key: EXPO_PUBLIC_API_BASE_URL
+        fromService:
+          type: web
+          name: stock-tiers-api
+          property: host
