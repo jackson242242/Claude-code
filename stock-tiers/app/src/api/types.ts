@@ -171,3 +171,56 @@ export interface DailyBrief {
   generatedAt: string;
   disclaimer: string;
 }
+
+// --- X KOL tracker --------------------------------------------------------------
+
+export type KolPostType = "trade_call" | "pnl_boast" | "market_view" | "other";
+export type KolClaimedResult = "gain" | "loss" | "neutral" | "unknown";
+export type CallDirection = "long" | "short";
+
+export interface KolPost {
+  id: string;
+  handle: string;
+  date: string;
+  url: string | null;
+  excerpt: string;
+  postType: KolPostType;
+  claimedResult: KolClaimedResult;
+  tickers: string[];
+}
+
+export interface KolCall {
+  id: string;
+  handle: string;
+  ticker: string;
+  direction: CallDirection;
+  date: string;
+  sourceExcerpt: string;
+  entryPrice: number;
+  currentPrice: number | null;
+  returnPct: number | null;
+}
+
+export interface KolScoreboard {
+  handle: string;
+  postsAnalyzed: number;
+  gainPosts: number;
+  lossPosts: number;
+  boastGainRatio: number | null;
+  callsTracked: number;
+  wins: number;
+  losses: number;
+  winRate: number | null;
+  avgReturnPct: number | null;
+  updatedAt: string;
+}
+
+export interface KolReport {
+  handle: string;
+  summary: string;
+  scoreboard: KolScoreboard;
+  recentPosts: KolPost[];
+  calls: KolCall[];
+  generatedAt: string;
+  disclaimer: string;
+}

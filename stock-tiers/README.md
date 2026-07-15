@@ -200,6 +200,26 @@ curl -fsS -X POST https://<your-app>.onrender.com/api/briefs/run \
   -H "x-cron-secret: $CRON_SECRET"
 ```
 
+## 大V战绩 (X KOL audit)
+
+Daily loop (`POST /api/kol/run`, same cron guard) for each handle in
+`KOL_HANDLES` (set the **exact** X handle, no @ — many accounts share a name):
+
+1. **Find posts** via Claude web search (quotes, aggregators, caches).
+   Honest limits: X blocks most crawlers and the official API tier that can
+   read tweets costs ~$200/mo, so coverage is **best-effort** — the prompt
+   hard-forbids invented posts, and an empty day is reported as empty.
+2. **报喜率**:每 post 分类(喊单/晒单/观点)+ 他"自称"赚还是亏 —
+   报喜率 >85% 会在 app 里插旗:典型只晒赚不晒亏。
+3. **实测胜率**: every concrete call (ticker + long/short) gets its entry
+   price **frozen from live market data at first sighting**; every later run
+   reprices it (direction-adjusted). Win rate & avg return are computed from
+   real prices — never from the poster's claims.
+
+`GET /api/kol` serves scoreboards (works without an Anthropic key); the app's
+「大V战绩」 page shows the audit. For guaranteed full coverage later, plug a
+pay-as-you-go X data API (e.g. twitterapi.io) in as a post source.
+
 ### Storage caveat (Render free tier)
 
 The portfolio/trends/research live in one JSON file at `DATA_DIR/portfolio.json`

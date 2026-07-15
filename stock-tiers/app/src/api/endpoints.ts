@@ -4,6 +4,7 @@ import type {
   DailyBrief,
   Horizon,
   HotStock,
+  KolReport,
   PortfolioPosition,
   PortfolioView,
   ResearchReport,
@@ -97,3 +98,8 @@ export const getLatestBrief = async (): Promise<DailyBrief | null> => {
 
 export const runBrief = (): Promise<DailyBrief> =>
   apiFetch<DailyBrief>("/api/briefs/run", { method: "POST" });
+
+export const getKolReports = (): Promise<KolReport[]> => apiFetch<KolReport[]>("/api/kol");
+
+export const runKolScan = (): Promise<KolReport[]> =>
+  apiFetch<KolReport[]>("/api/kol/run", { method: "POST" });

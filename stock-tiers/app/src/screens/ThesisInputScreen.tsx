@@ -122,6 +122,14 @@ export const ThesisInputScreen = ({ navigation }: Props) => {
         <Text style={styles.linkTitle}>每日简报 🎧</Text>
         <Text style={styles.linkHint}>股市 · 宏观 · 地缘政治 · 播客观点,开车也能听</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.wideLinkCard}
+        onPress={() => navigation.navigate("Kol")}
+        testID="open-kol"
+      >
+        <Text style={styles.linkTitle}>大V战绩 🔍</Text>
+        <Text style={styles.linkHint}>跟踪 X 大V:报喜率 vs 真实行情实测胜率</Text>
+      </TouchableOpacity>
 
       <TouchableOpacity
         style={styles.secondary}

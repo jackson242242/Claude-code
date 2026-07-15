@@ -11,12 +11,14 @@ from app.config import Settings, get_settings
 from app.errors import AppError
 from app.providers.base import StockDataProvider
 from app.services.brief_engine import BriefEngine
+from app.services.kol_engine import KolEngine
 from app.services.mock_tier_engine import MockTierEngine
 from app.services.research_engine import ResearchEngine
 from app.services.tier_engine import TierEngine
 from app.services.tier_engine_base import TierEngineProtocol
 from app.services.trend_engine import TrendEngine
 from app.store.brief_store import BriefStore
+from app.store.kol_store import KolStore
 from app.store.portfolio_store import PortfolioStore
 
 
@@ -119,5 +121,18 @@ def get_brief_engine() -> BriefEngine:
     settings = get_settings()
     return BriefEngine(
         client=_require_anthropic(settings, "Daily brief"),
+        settings=settings,
+    )
+
+
+def get_kol_store(request: Request) -> KolStore:
+    return cast(KolStore, request.app.state.kol_store)
+
+
+def get_kol_engine(request: Request) -> KolEngine:
+    settings = get_settings()
+    return KolEngine(
+        client=_require_anthropic(settings, "KOL tracker"),
+        provider=cast(StockDataProvider, request.app.state.raw_primary),
         settings=settings,
     )

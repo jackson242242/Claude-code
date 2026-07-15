@@ -64,6 +64,14 @@ class Settings(BaseSettings):
     def podcast_show_list(self) -> list[str]:
         return [s.strip() for s in self.podcast_shows.split(",") if s.strip()]
 
+    # --- X (Twitter) KOL tracker ---------------------------------------------
+    # Comma-separated X handles to audit daily (no @). Coverage is best-effort
+    # via Claude web search — X blocks most crawlers.
+    kol_handles: str = "serenity"
+
+    def kol_handle_list(self) -> list[str]:
+        return [h.strip().lstrip("@") for h in self.kol_handles.split(",") if h.strip()]
+
     resilient_fallback: bool = True
 
     # If set to a directory containing a built web app (Expo web export), the API

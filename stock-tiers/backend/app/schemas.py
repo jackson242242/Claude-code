@@ -241,3 +241,66 @@ class BriefSummary(ApiModel):
     date: str
     audio_url: str | None = None
     generated_at: str
+
+
+# --- X (Twitter) KOL tracker ---------------------------------------------------
+
+KolPostType = Literal["trade_call", "pnl_boast", "market_view", "other"]
+KolClaimedResult = Literal["gain", "loss", "neutral", "unknown"]
+CallDirection = Literal["long", "short"]
+
+
+class KolPost(ApiModel):
+    """One observed X post, classified. `claimed_result` is what the POSTER
+    claims (报喜/报忧), independent of whether it was actually true."""
+
+    id: str
+    handle: str
+    date: str
+    url: str | None = None
+    excerpt: str
+    post_type: KolPostType
+    claimed_result: KolClaimedResult
+    tickers: list[str]
+
+
+class KolCall(ApiModel):
+    """A concrete trade call extracted from a post. Entry price is frozen from
+    live market data when FIRST seen; return is direction-adjusted and computed
+    from real prices ever after — never from the poster's claims."""
+
+    id: str
+    handle: str
+    ticker: str
+    direction: CallDirection
+    date: str
+    source_excerpt: str
+    entry_price: float
+    current_price: float | None = None
+    return_pct: float | None = None
+
+
+class KolScoreboard(ApiModel):
+    handle: str
+    posts_analyzed: int
+    gain_posts: int
+    loss_posts: int
+    # Share of result-claiming posts that claim a GAIN (报喜率). Near 1.0 with
+    # many posts = classic survivorship-bias posting.
+    boast_gain_ratio: float | None = None
+    calls_tracked: int
+    wins: int
+    losses: int
+    win_rate: float | None = None
+    avg_return_pct: float | None = None
+    updated_at: str
+
+
+class KolReport(ApiModel):
+    handle: str
+    summary: str
+    scoreboard: KolScoreboard
+    recent_posts: list[KolPost]
+    calls: list[KolCall]
+    generated_at: str
+    disclaimer: str

@@ -5,6 +5,7 @@ import { StatusBar } from "expo-status-bar";
 import type { RootStackParamList } from "./src/navigation/types";
 import { BriefScreen } from "./src/screens/BriefScreen";
 import { HotStocksScreen } from "./src/screens/HotStocksScreen";
+import { KolScreen } from "./src/screens/KolScreen";
 import { PortfolioScreen } from "./src/screens/PortfolioScreen";
 import { ThesisInputScreen } from "./src/screens/ThesisInputScreen";
 import { ThesisResultsScreen } from "./src/screens/ThesisResultsScreen";
@@ -64,6 +65,7 @@ export default function App() {
         />
         <Stack.Screen name="Trends" component={TrendsScreen} options={{ title: "趋势方向" }} />
         <Stack.Screen name="Brief" component={BriefScreen} options={{ title: "每日简报" }} />
+        <Stack.Screen name="Kol" component={KolScreen} options={{ title: "大V战绩" }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
