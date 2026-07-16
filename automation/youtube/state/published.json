@@ -263,6 +263,18 @@
       "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, no VO), lofi bed",
       "status": "scheduled",
       "publishAt": "2026-07-15T22:00:00Z"
+    },
+    {
+      "date": "2026-07-16",
+      "slot": "a",
+      "title": "9.9元一杯：烧出两万家店，今年却踩了刹车 | China's 9.9 Coffee War ☕",
+      "videoId": "cTET5tblQ88",
+      "url": "https://www.youtube.com/watch?v=cTET5tblQ88",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, no VO), lofi bed",
+      "status": "scheduled",
+      "publishAt": "2026-07-16T13:00:00Z",
+      "playlist": "中国咖啡 China Coffee (PLLExmpQ7O00U)"
     }
   ]
 }
