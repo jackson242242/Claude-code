@@ -275,6 +275,18 @@
       "status": "scheduled",
       "publishAt": "2026-07-16T13:00:00Z",
       "playlist": "中国咖啡 China Coffee (PLLExmpQ7O00U)"
+    },
+    {
+      "date": "2026-07-16",
+      "slot": "b",
+      "title": "一公斤咖啡果10块钱：云南咖农的三十年最高价 | Yunnan Coffee's Best Harvest ☕",
+      "videoId": "zrqt11wpjyk",
+      "url": "https://www.youtube.com/watch?v=zrqt11wpjyk",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, no VO), guzheng bed",
+      "status": "scheduled",
+      "publishAt": "2026-07-16T17:00:00Z",
+      "playlist": "中国咖啡 China Coffee (PLLExmpQ7O00U)"
     }
   ]
 }
