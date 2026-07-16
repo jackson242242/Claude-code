@@ -2,7 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-07-15 (last deepened: 东北话 — +贼 / 要啥自行车 / 老妹儿·老弟)  
+**Today:** 2026-07-16 (last deepened: 湖南话/长沙 — +霸得蛮 / 恰饭)  
 **Verification:** All phrases verified via WebSearch; marked with region coverage notes.  
 **Content Tags:** [comedy] [travel] [teach] | Sensitivity: clean / 轻度粗俗 / 粗口
 
@@ -43,6 +43,8 @@
 - **咯 / 塞 / 啵 / 嘞** | various particles | 句末助词堆积，"咯""塞""啵""嘞"频繁出现 | 塑普的核心特征；抑扬顿挫、像唱歌般的音调 | [comedy] [teach] | clean
 - **不过呃** (bu4 guo4 er0) | "however / but" | 转折词，带有塑普特有的儿化韵尾 | 塑普的音调变化体现 | [teach] | clean
 - **塑普腔** | generic tag | 整体用高音调讲普通话，"像唱歌一样"的语言特征 | 抖音爆款；湖南网红文化的标志 | [comedy] [teach] | clean
+- **霸得蛮** (ba4 de2 man2) | "gutsy / stubbornly tough" | 做事执拗坚韧、不到目的不罢休。与"吃得苦、耐得烦"并称，概括湖湘性格（湘军曾国藩即以此闻名） | 湖南精神的代名词；用来夸人有股不服输的狠劲，正面褒义 | [comedy] [teach] [travel] | clean（verified 百度百科/知乎/华声在线）
+- **恰饭** (qia4 fan4) | "eat / make a living" | 西南官话（含长沙）把"吃"念作"qia"，"吃饭"写作"恰饭"；网络上引申为"赚钱谋生/接广告恰饭" | 从方言音变成全网热词；长沙人日常"恰了冇？"＝"吃了吗？" | [comedy] [teach] | clean（verified 百度百科/维基·长沙话）
 
 ## 四川话 (Sichuan Dialect)
 
