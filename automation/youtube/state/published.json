@@ -287,6 +287,18 @@
       "status": "scheduled",
       "publishAt": "2026-07-16T17:00:00Z",
       "playlist": "中国咖啡 China Coffee (PLLExmpQ7O00U)"
+    },
+    {
+      "date": "2026-07-16",
+      "slot": "c",
+      "title": "中国人一年喝多少杯咖啡？答案没你想的多 | How Much Coffee China Drinks ☕",
+      "videoId": "doTvCxN8eSc",
+      "url": "https://www.youtube.com/watch?v=doTvCxN8eSc",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, no VO), lofi bed",
+      "status": "scheduled",
+      "publishAt": "2026-07-16T22:00:00Z",
+      "playlist": "中国咖啡 China Coffee (PLLExmpQ7O00U)"
     }
   ]
 }
