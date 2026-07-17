@@ -79,14 +79,16 @@ log `skipped: batch already published today` and stop. (Protects against manual
    generates within-theme. Formats unchanged (a/c Short, b longform). If the
    theme queue is empty and research can't fill it, fall back to general pillars
    and log why.
-   **General mapping (non-theme days, day = UTC day-of-month; owner decision
-   2026-07-15 — slot b longform is SUNDAY-ONLY, weekdays it's a third Short):**
-   - slot a (Short): odd day `city-travel`, even day `china-food`
-   - slot b weekdays (Short): odd day `china-culture`, even day `china-coffee`
+   **General mapping (owner re-prioritization 2026-07-15 evening: core = 中国
+   旅游资源 + 美食; day = UTC day-of-month):**
+   - slot a (Short): `city-travel` — scenic resources: 名山大川/古镇/秘境/世遗
+   - slot b Mon-Fri (Short): `china-food`
+   - slot b Saturday (Short): wildcard — best available `china-coffee` or
+     `china-culture` topic (keeps those pillars alive as minority)
    - slot b Sunday (longform ≤2min): odd day `city-walk`, even day `china-culture`
-   - slot c (Short): the opposite of slot a
+   - slot c (Short): odd day `china-food`, even day `city-travel`
    During theme weeks all slots draw from the theme; slot b still follows the
-   Sunday-longform rule.
+   Saturday-wildcard/Sunday-longform rules.
    Take the top queue item with that pillar (skip items whose pillar is in
    `pausedPillars`); if none, generate one from today's research +
    `state/dialect-bank.md`. Each pick must pass `strategy.topicFitGate`
@@ -157,15 +159,18 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    crawled online clips. 中式 checklist per video: at least one of — poem/成语
    line in the subs, local phrase from the dialect bank, craft/food close-up
    with cultural note.
-   **Music rules (music IS the audio now):** pick from
-   `automation/youtube/assets/music/` by mood — `guzheng-calm-01.mp3` for serene
-   travel/culture/city-walk, `lofi-chill-01.mp3` for food/young-china/upbeat
-   spots. Do NOT regenerate via vidIQ per run (25 credits). Trend alignment: the
-   Saturday vidIQ trend scan notes which music STYLES dominate top Shorts —
-   record in research.md; when a needed style is missing from assets/, flag it
-   in the report for the owner (real trending commercial tracks are only usable
-   via the YouTube app's Shorts remix — manual, owner-side — never attach
-   copyrighted music in the pipeline).
+   **Music rules (music IS the audio; owner 2026-07-15: beds sound AI-heavy —
+   modernize):** pick from `automation/youtube/assets/music/` by mood —
+   DEFAULT for travel/food Shorts = the most modern/upbeat bed available
+   (currently `lofi-chill-01.mp3`); `guzheng-calm-01.mp3` ONLY for
+   culture/heritage/city-walk pieces (guzheng-on-everything reads as template).
+   Owner-supplied tracks (YouTube Audio Library downloads committed to
+   assets/music/, named `yal-<style>-NN.mp3`) take priority over generated beds
+   — rotate so consecutive videos don't share a track. After the 07-29 vidIQ
+   reset, generate 2-3 modern beds (upbeat pop-instrumental / phonk-lite /
+   acoustic warm) ONCE and commit them. Never attach copyrighted commercial
+   music in the pipeline (Content ID) — real trending tracks remain the owner's
+   1-min Studio/app step per Short.
    If `output.extraFormats` in config.yaml is non-empty, re-run once per extra
    format (same vo.mp3, out `final-<fmt>.mp4`) — cross-posting masters, NOT
    uploaded to YouTube.

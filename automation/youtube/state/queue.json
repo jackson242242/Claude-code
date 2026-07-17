@@ -663,6 +663,126 @@
       "addedAt": "2026-07-15",
       "addedBy": "owner directive",
       "status": "queued"
+    },
+    {
+      "id": "ctr-01",
+      "title": "张家界：阿凡达悬浮山的原型在中国",
+      "pillar": "city-travel",
+      "format": "short",
+      "angle": "Avatar Hallelujah Mountain fact-hook; pillar forests in mist.",
+      "whyNow": "owner core-shift 2026-07-15: travel resources + food",
+      "sources": [],
+      "addedAt": "2026-07-15",
+      "addedBy": "owner directive",
+      "status": "queued"
+    },
+    {
+      "id": "ctr-02",
+      "title": "黄山迎客松：一棵树凭什么值一个亿保险",
+      "pillar": "city-travel",
+      "format": "short",
+      "angle": "Insurance-value fact hook; cloud sea, dawn watchers crowd.",
+      "whyNow": "owner core-shift 2026-07-15: travel resources + food",
+      "sources": [],
+      "addedAt": "2026-07-15",
+      "addedBy": "owner directive",
+      "status": "queued"
+    },
+    {
+      "id": "ctr-03",
+      "title": "九寨沟的水为什么是五种颜色",
+      "pillar": "city-travel",
+      "format": "short",
+      "angle": "Calcium carbonate science hook; turquoise pools.",
+      "whyNow": "owner core-shift 2026-07-15: travel resources + food",
+      "sources": [],
+      "addedAt": "2026-07-15",
+      "addedBy": "owner directive",
+      "status": "queued"
+    },
+    {
+      "id": "ctr-04",
+      "title": "敦煌莫高窟：一千年的画到底谁画的",
+      "pillar": "city-travel",
+      "format": "short",
+      "angle": "735 caves fact; desert dunes + camel bells.",
+      "whyNow": "owner core-shift 2026-07-15: travel resources + food",
+      "sources": [],
+      "addedAt": "2026-07-15",
+      "addedBy": "owner directive",
+      "status": "queued"
+    },
+    {
+      "id": "ctr-05",
+      "title": "重庆洪崖洞：千与千寻的现实版",
+      "pillar": "city-travel",
+      "format": "short",
+      "angle": "Spirited-Away lookalike hook; stilt houses (吊脚楼) at dusk—daytime shots per rules, dusk golden only.",
+      "whyNow": "owner core-shift 2026-07-15: travel resources + food",
+      "sources": [],
+      "addedAt": "2026-07-15",
+      "addedBy": "owner directive",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-01",
+      "title": "兰州牛肉面：一清二白三红四绿五黄",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "The 5-standard formula as hook; hand-pulling close-ups.",
+      "whyNow": "owner core-shift 2026-07-15: travel resources + food",
+      "sources": [],
+      "addedAt": "2026-07-15",
+      "addedBy": "owner directive",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-02",
+      "title": "北京烤鸭为什么要吹气？",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "Air-pump craft hook; carving 108 slices fact.",
+      "whyNow": "owner core-shift 2026-07-15: travel resources + food",
+      "sources": [],
+      "addedAt": "2026-07-15",
+      "addedBy": "owner directive",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-03",
+      "title": "柳州螺蛳粉：闻着臭吃着香的百亿产业",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "¥10B+ industry fact hook; 酸笋 the real culprit.",
+      "whyNow": "owner core-shift 2026-07-15: travel resources + food",
+      "sources": [],
+      "addedAt": "2026-07-15",
+      "addedBy": "owner directive",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-04",
+      "title": "一笼小笼包的十八个褶",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "18 pleats standard; soup-inside engineering; 上海话彩蛋.",
+      "whyNow": "owner core-shift 2026-07-15: travel resources + food",
+      "sources": [],
+      "addedAt": "2026-07-15",
+      "addedBy": "owner directive",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-05",
+      "title": "潮汕牛肉火锅：一头牛分出十二个部位",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "12-cut beef map hook; 手打牛肉丸 bounce test.",
+      "whyNow": "owner core-shift 2026-07-15: travel resources + food",
+      "sources": [],
+      "addedAt": "2026-07-15",
+      "addedBy": "owner directive",
+      "status": "queued"
     }
   ]
 }
