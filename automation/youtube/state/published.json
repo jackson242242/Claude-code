@@ -299,6 +299,39 @@
       "status": "scheduled",
       "publishAt": "2026-07-16T22:00:00Z",
       "playlist": "中国咖啡 China Coffee (PLLExmpQ7O00U)"
+    },
+    {
+      "date": "2026-07-17",
+      "slot": "a",
+      "title": "50℃的浓缩，倒进0℃的牛奶 | What Makes a Dirty Coffee ☕",
+      "videoId": "parsr4DfN2g",
+      "url": "https://www.youtube.com/watch?v=parsr4DfN2g",
+      "pillar": "china-coffee",
+      "lane": "pexels+ffmpeg+youtube",
+      "status": "scheduled",
+      "publishAt": "2026-07-17T13:00:00Z"
+    },
+    {
+      "date": "2026-07-17",
+      "slot": "b",
+      "title": "1904年，中国第一棵咖啡树种在这个村 | China's First Coffee Tree ☕",
+      "videoId": "n0CNAyX1r5g",
+      "url": "https://www.youtube.com/watch?v=n0CNAyX1r5g",
+      "pillar": "china-coffee",
+      "lane": "pexels+ffmpeg+youtube",
+      "status": "scheduled",
+      "publishAt": "2026-07-17T17:00:00Z"
+    },
+    {
+      "date": "2026-07-17",
+      "slot": "c",
+      "title": "900栋老别墅的小岛，把咖啡馆开进百年洋楼 | Coffee in Gulangyu ☕",
+      "videoId": "XD1DPL28svw",
+      "url": "https://www.youtube.com/watch?v=XD1DPL28svw",
+      "pillar": "china-coffee",
+      "lane": "pexels+ffmpeg+youtube",
+      "status": "scheduled",
+      "publishAt": "2026-07-17T22:00:00Z"
     }
   ]
 }

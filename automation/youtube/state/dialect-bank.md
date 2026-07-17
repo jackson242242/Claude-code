@@ -2,7 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-07-17 (last deepened: 山东话/济南 — +不赛 / 恣儿)  
+**Today:** 2026-07-17 (last deepened: 上海话 — +结棍 / 适意; bonus 山东话 +不赛 / 恣儿)  
 **Verification:** All phrases verified via WebSearch; marked with region coverage notes.  
 **Content Tags:** [comedy] [travel] [teach] | Sensitivity: clean / 轻度粗俗 / 粗口
 
@@ -34,6 +34,8 @@
 - **伐开心** (fa4 kai1 xin1) | "not happy" | 上海话特有表达，"伐" = "不"。"我伐开心啊" | 可爱、萌系的撒娇表达；女性用法较多 | [comedy] | clean
 - **软耙子** (ruan3 pa2 zi0) | "soft mush person" | 形容人太软弱、没主见。带有贬低意味 | 上海话直率、评价人物的特点 | [comedy] [teach] | 轻度粗俗
 - **搭讪** (da1 shan1) | "strike up conversation" | 主动和陌生人聊天。"他又来搭讪" | 上海人社交的轻松态度 | [comedy] [teach] | clean
+- **结棍** (jie2 gun4) | "impressive / tough / really good" | 厉害、牢靠、能力强。"答得上来算侬结棍！" | 上海话夸人「够本事」的招牌褒义词；也可形容事情难搞 | [comedy] [teach] | clean  <!-- added 2026-07-17, verified (周到上海/lingoace 沪语) -->
+- **适意** (seh2 yi3) | "cozy / blissfully comfortable" | 舒服惬意，形容生活状态。"孵在屋里向,老适意额" | 上海人表达"日子过得舒坦"的高频词；与川话「巴适」、山东「恣儿」同义异调 | [comedy] [teach] [travel] | clean  <!-- added 2026-07-17, verified (lingoace 沪语常用语) -->
 
 ## 湖南话 (Hunan — Changsha / Plasticized Mandarin 塑普)
 

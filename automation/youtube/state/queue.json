@@ -233,18 +233,6 @@
       "status": "queued"
     },
     {
-      "id": "cof-06",
-      "title": "大理咖啡村：把家搬进咖啡园的人",
-      "pillar": "china-coffee",
-      "format": "short",
-      "angle": "Cangshan-view farms, farmstay cafés.",
-      "whyNow": "owner theme-week plan 2026-07-09",
-      "sources": [],
-      "addedAt": "2026-07-10",
-      "addedBy": "owner theme directive",
-      "status": "queued"
-    },
-    {
       "id": "win-01",
       "title": "贺兰山东麓：石头地里长出的葡萄酒",
       "pillar": "china-wine",
@@ -461,36 +449,12 @@
       "status": "queued"
     },
     {
-      "id": "cof-16",
-      "title": "厦门鼓浪屿，老别墅里的一杯咖啡",
-      "pillar": "china-coffee",
-      "format": "short",
-      "angle": "Gulangyu heritage-villa cafés — colonial architecture + sea light + hand-pour; 闽南彩蛋 好呷.",
-      "whyNow": "owner china-coffee theme-week plan 2026-07-09",
-      "sources": [],
-      "addedAt": "2026-07-14",
-      "addedBy": "youtube-cycle replenish (within-theme)",
-      "status": "queued"
-    },
-    {
       "id": "cof-17",
       "title": "长沙的咖啡有多卷？",
       "pillar": "china-coffee",
       "format": "short",
       "angle": "Changsha's hyper-competitive café scene (茶颜悦色 hometown) — one street, many shops; 塑普彩蛋 蛮.",
       "whyNow": "owner china-coffee theme-week plan 2026-07-09; Changsha is a bellwether new-tea/coffee city",
-      "sources": [],
-      "addedAt": "2026-07-14",
-      "addedBy": "youtube-cycle replenish (within-theme)",
-      "status": "queued"
-    },
-    {
-      "id": "cof-18",
-      "title": "一杯 dirty 是怎么诞生的？",
-      "pillar": "china-coffee",
-      "format": "short",
-      "angle": "How a 'dirty' is built — espresso poured over ice-cold milk, layered temperature contrast; craft close-up.",
-      "whyNow": "owner china-coffee theme-week plan 2026-07-09; dirty is China Gen Z signature drink",
       "sources": [],
       "addedAt": "2026-07-14",
       "addedBy": "youtube-cycle replenish (within-theme)",
