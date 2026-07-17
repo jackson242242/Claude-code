@@ -182,8 +182,21 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    `meta.json` ("Footage: Pexels — <urls>").
    **Description engagement format:** first line = ONE genuine question to the
    viewer (comment bait, honest — e.g. 「你会先烫毛肚还是黄喉？」); then the
-   bilingual summary; hashtags at the end: #shorts (Shorts only) #china + city
-   and topic tags (≤6 total).
+   bilingual summary; hashtags at the END of the description.
+   **Hashtag ladder (research-verified 2026-07-16: 3-5 tags beat 10+ — over-
+   tagging triggers spam signals and dilutes reach; hashtags matter most as a
+   COLD-START categorization signal for Shorts): exactly 4-5, structured:**
+   1. #Shorts
+   2. one broad niche: #ChinaTravel or #ChineseFood (match the pillar)
+   3. two specific: city + subject, bilingual ok (#Guilin #桂林 / #HotPot #火锅)
+   4. optional 5th ONLY if a genuinely relevant trending topical tag exists (from
+      the Sat trend scan) — never force it. Titles stay hashtag-free (elegant).
+   **Metadata tags (snippet.tags, invisible — small search/clustering value,
+   fill them anyway):** every video carries the CHANNEL CORE SET first
+   ["china travel","中国旅游","china food","中国美食","china shorts","travel china"]
+   (consistent core tags help YouTube cluster our videos as related → session
+   watching), then 6-10 video-specific bilingual keywords incl. one common
+   misspelling; stay under ~450 chars total.
 6. **Playlist filing:** after each upload, run
    `node scripts/youtube-playlist.mjs --title "<playlist>" --video <videoId>`
    (script wired 2026-07-15 — reuses by exact title, creates public if missing).
