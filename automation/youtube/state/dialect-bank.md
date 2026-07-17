@@ -2,7 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-07-16 (last deepened: 湖南话/长沙 — +霸得蛮 / 恰饭)  
+**Today:** 2026-07-17 (last deepened: 山东话/济南 — +不赛 / 恣儿)  
 **Verification:** All phrases verified via WebSearch; marked with region coverage notes.  
 **Content Tags:** [comedy] [travel] [teach] | Sensitivity: clean / 轻度粗俗 / 粗口
 
@@ -80,6 +80,8 @@
 - **宇宙中心菏泽** | meme phrase | 网红梗，自嘲性吹捧菏泽。"曹县是宇宙中心" | 山东各地互相调侃的网络梗；2024年大火 | [comedy] | clean
 - **杠赛来** (gàng sài lái) | "great fun / really good" | 济南话，意为"很好玩、有意思、特别棒"。"这地儿杠赛来！" | 济南方言典型褒义习语；夸赞语气强 | [comedy] [travel] [teach] | clean
 - **木乱** (mù luàn) | "fretful / vexed" | 济南话，"心里很烦、心烦意乱"。"这两天心里木乱得慌" | 济南日常情绪词；体现方言的生活感 | [teach] | clean
+- **不赛** (bù sài) | "no fun / lame / absurd" | 济南话，"赛"=有意思/好玩，"不赛"=没意思、离谱。"这事办得真不赛" | 与褒义「杠赛来」正好相反的口头禅；日常吐槽百搭 | [comedy] [teach] | clean  <!-- added 2026-07-17, verified (济南话/维基济南话 "赛/不赛") -->
+- **恣儿** (zì er) | "blissfully comfy / pleased" | 鲁中鲁南片，"舒服惬意、得意"。"晒着太阳喝口茶，恣儿了" | 山东人表达满足的招牌字，一个「恣」把惬意说满 | [comedy] [teach] [travel] | clean  <!-- added 2026-07-17, widely documented Shandong term -->
 
 ## 福建 / 闽南话 (Fujian / Min South Dialect)
 
