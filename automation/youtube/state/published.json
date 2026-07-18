@@ -332,6 +332,39 @@
       "lane": "pexels+ffmpeg+youtube",
       "status": "scheduled",
       "publishAt": "2026-07-17T22:00:00Z"
+    },
+    {
+      "date": "2026-07-18",
+      "slot": "a",
+      "title": "造假退市五年后，它成了中国咖啡第一 | Luckin's Wild Ride ☕",
+      "videoId": "jd4gXkoGfhE",
+      "url": "https://www.youtube.com/watch?v=jd4gXkoGfhE",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-18T13:00:00Z"
+    },
+    {
+      "date": "2026-07-18",
+      "slot": "b",
+      "title": "精品率71%，云南这个边境小县全省第一 | China's Specialty-Coffee County ☕",
+      "videoId": "FBUNRO3Odtk",
+      "url": "https://www.youtube.com/watch?v=FBUNRO3Odtk",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-18T17:00:00Z"
+    },
+    {
+      "date": "2026-07-18",
+      "slot": "c",
+      "title": "在中国，咖啡师是国家认证的正经职业 | Barista Is an Official Job in China ☕",
+      "videoId": "gNI4qWz-RI8",
+      "url": "https://www.youtube.com/watch?v=gNI4qWz-RI8",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-18T22:00:00Z"
     }
   ]
 }

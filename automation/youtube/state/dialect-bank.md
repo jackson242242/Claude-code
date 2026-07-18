@@ -2,7 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-07-17 (last deepened: 上海话 — +结棍 / 适意; bonus 山东话 +不赛 / 恣儿)  
+**Today:** 2026-07-18 (last deepened: 台湾腔 — +酱紫 / 好康 / 阿不就好棒棒)  
 **Verification:** All phrases verified via WebSearch; marked with region coverage notes.  
 **Content Tags:** [comedy] [travel] [teach] | Sensitivity: clean / 轻度粗俗 / 粗口
 
@@ -129,6 +129,9 @@
 - **无影啦 / 呀** (bu2 ying3 la0 / ya0) | "no way / never mind" or particle | "没这回事儿""没什么"；"呀"是常见语助词 | 台湾闽南语的典型句尾粒子；轻松、否定的语气 | [comedy] | clean
 - **咧** (le0) | sentence particle | 句尾语气词，"那么你咧？" | 台湾国语的核心特征；来自闽南语影响 | [teach] | clean
 - **草莓族** (cao3 mei2 zu2) | "strawberry generation" | 指1980-1990年代出生的台湾人，空有外表难承受压力 | 社会评价梗；带有讽刺但被广泛认知 | [comedy] [teach] | 轻度粗俗
+- **酱紫** (jiang4 zi3) | "like this / this way" | "这样子"的连音缩读，"就酱紫啦"="就这样啦" | 台湾腔连音的招牌梗，网络化后两岸通用；软萌语速的典型产物 | [comedy] [teach] | clean  <!-- added 2026-07-18, verified (维基·台湾网路用语列表 / 知乎台湾腔速成) -->
+- **好康** (hao3 kang1) | "a good deal / good stuff" | 来自闽南语，"好康的"=好的优惠/好东西。"报你一个好康" | 台湾日常高频词，购物/美食语境百搭；闽南语入国语的典型 | [travel] [teach] | clean  <!-- added 2026-07-18, verified (维基·台湾网路用语 / 百度百科台湾腔) -->
+- **阿不就好棒棒** (a1 bu2 jiu4 hao3 bang4 bang4) | "oh, aren't you just wonderful" (sarcastic) | 反讽他人自以为厉害、其实不怎么样 | 极具嘲讽意味的台湾网络流行语；"好棒棒"叠词是台湾腔标志 | [comedy] | clean  <!-- added 2026-07-18, verified (维基·台湾网路用语列表) -->
 
 ---
 
