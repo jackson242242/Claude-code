@@ -230,7 +230,7 @@
       "sources": [],
       "addedAt": "2026-07-10",
       "addedBy": "owner theme directive",
-      "status": "queued"
+      "status": "paused-coffee-2026-07-18"
     },
     {
       "id": "win-01",
@@ -242,7 +242,7 @@
       "sources": [],
       "addedAt": "2026-07-10",
       "addedBy": "owner theme directive",
-      "status": "queued"
+      "status": "paused-themeweek-cancelled-2026-07-18"
     },
     {
       "id": "win-02",
@@ -254,7 +254,7 @@
       "sources": [],
       "addedAt": "2026-07-10",
       "addedBy": "owner theme directive",
-      "status": "queued"
+      "status": "paused-themeweek-cancelled-2026-07-18"
     },
     {
       "id": "win-03",
@@ -266,7 +266,7 @@
       "sources": [],
       "addedAt": "2026-07-10",
       "addedBy": "owner theme directive",
-      "status": "queued"
+      "status": "paused-themeweek-cancelled-2026-07-18"
     },
     {
       "id": "win-04",
@@ -278,7 +278,7 @@
       "sources": [],
       "addedAt": "2026-07-10",
       "addedBy": "owner theme directive",
-      "status": "queued"
+      "status": "paused-themeweek-cancelled-2026-07-18"
     },
     {
       "id": "win-05",
@@ -290,7 +290,7 @@
       "sources": [],
       "addedAt": "2026-07-10",
       "addedBy": "owner theme directive",
-      "status": "queued"
+      "status": "paused-themeweek-cancelled-2026-07-18"
     },
     {
       "id": "win-06",
@@ -302,7 +302,7 @@
       "sources": [],
       "addedAt": "2026-07-10",
       "addedBy": "owner theme directive",
-      "status": "queued"
+      "status": "paused-themeweek-cancelled-2026-07-18"
     },
     {
       "id": "yng-01",
@@ -314,7 +314,7 @@
       "sources": [],
       "addedAt": "2026-07-10",
       "addedBy": "owner theme directive",
-      "status": "queued"
+      "status": "paused-themeweek-cancelled-2026-07-18"
     },
     {
       "id": "yng-02",
@@ -326,7 +326,7 @@
       "sources": [],
       "addedAt": "2026-07-10",
       "addedBy": "owner theme directive",
-      "status": "queued"
+      "status": "paused-themeweek-cancelled-2026-07-18"
     },
     {
       "id": "yng-03",
@@ -338,7 +338,7 @@
       "sources": [],
       "addedAt": "2026-07-10",
       "addedBy": "owner theme directive",
-      "status": "queued"
+      "status": "paused-themeweek-cancelled-2026-07-18"
     },
     {
       "id": "yng-04",
@@ -350,7 +350,7 @@
       "sources": [],
       "addedAt": "2026-07-10",
       "addedBy": "owner theme directive",
-      "status": "queued"
+      "status": "paused-themeweek-cancelled-2026-07-18"
     },
     {
       "id": "yng-05",
@@ -362,7 +362,7 @@
       "sources": [],
       "addedAt": "2026-07-10",
       "addedBy": "owner theme directive",
-      "status": "queued"
+      "status": "paused-themeweek-cancelled-2026-07-18"
     },
     {
       "id": "cc2-03",
@@ -410,7 +410,7 @@
       "sources": [],
       "addedAt": "2026-07-13",
       "addedBy": "cycle replenish (coffee theme-week longform gap)",
-      "status": "queued"
+      "status": "paused-coffee-2026-07-18"
     },
     {
       "id": "cof-11",
@@ -422,7 +422,7 @@
       "sources": [],
       "addedAt": "2026-07-13",
       "addedBy": "cycle replenish (coffee theme-week longform gap)",
-      "status": "queued"
+      "status": "paused-coffee-2026-07-18"
     },
     {
       "id": "cof-12",
@@ -434,7 +434,7 @@
       "sources": [],
       "addedAt": "2026-07-13",
       "addedBy": "cycle replenish (coffee theme-week longform gap)",
-      "status": "queued"
+      "status": "paused-coffee-2026-07-18"
     },
     {
       "id": "cof-15",
@@ -446,7 +446,7 @@
       "sources": [],
       "addedAt": "2026-07-13",
       "addedBy": "cycle replenish (coffee theme-week short depth)",
-      "status": "queued"
+      "status": "paused-coffee-2026-07-18"
     },
     {
       "id": "cof-17",
@@ -458,7 +458,7 @@
       "sources": [],
       "addedAt": "2026-07-14",
       "addedBy": "youtube-cycle replenish (within-theme)",
-      "status": "queued"
+      "status": "paused-coffee-2026-07-18"
     },
     {
       "id": "cof-19",
@@ -470,7 +470,7 @@
       "sources": [],
       "addedAt": "2026-07-14",
       "addedBy": "youtube-cycle replenish (within-theme)",
-      "status": "queued"
+      "status": "paused-coffee-2026-07-18"
     },
     {
       "id": "cof-20",
@@ -482,7 +482,7 @@
       "sources": [],
       "addedAt": "2026-07-14",
       "addedBy": "youtube-cycle replenish (within-theme)",
-      "status": "queued"
+      "status": "paused-coffee-2026-07-18"
     },
     {
       "id": "cof-21",
@@ -494,7 +494,7 @@
       "sources": [],
       "addedAt": "2026-07-14",
       "addedBy": "youtube-cycle replenish (within-theme)",
-      "status": "queued"
+      "status": "paused-coffee-2026-07-18"
     },
     {
       "id": "cof-22",
@@ -506,7 +506,7 @@
       "sources": [],
       "addedAt": "2026-07-14",
       "addedBy": "youtube-cycle replenish (within-theme)",
-      "status": "queued"
+      "status": "paused-coffee-2026-07-18"
     },
     {
       "id": "cof-23",
@@ -518,7 +518,7 @@
       "sources": [],
       "addedAt": "2026-07-14",
       "addedBy": "youtube-cycle replenish (within-theme)",
-      "status": "queued"
+      "status": "paused-coffee-2026-07-18"
     },
     {
       "id": "cofb-03",
@@ -530,7 +530,7 @@
       "sources": [],
       "addedAt": "2026-07-15",
       "addedBy": "owner directive",
-      "status": "queued"
+      "status": "paused-coffee-2026-07-18"
     },
     {
       "id": "cofb-04",
@@ -542,7 +542,7 @@
       "sources": [],
       "addedAt": "2026-07-15",
       "addedBy": "owner directive",
-      "status": "queued"
+      "status": "paused-coffee-2026-07-18"
     },
     {
       "id": "coff-02",
@@ -554,7 +554,7 @@
       "sources": [],
       "addedAt": "2026-07-15",
       "addedBy": "owner directive",
-      "status": "queued"
+      "status": "paused-coffee-2026-07-18"
     },
     {
       "id": "coff-04",
@@ -566,7 +566,7 @@
       "sources": [],
       "addedAt": "2026-07-15",
       "addedBy": "owner directive",
-      "status": "queued"
+      "status": "paused-coffee-2026-07-18"
     },
     {
       "id": "cofe-02",
@@ -578,7 +578,7 @@
       "sources": [],
       "addedAt": "2026-07-15",
       "addedBy": "owner directive",
-      "status": "queued"
+      "status": "paused-coffee-2026-07-18"
     },
     {
       "id": "cofe-04",
@@ -590,7 +590,7 @@
       "sources": [],
       "addedAt": "2026-07-15",
       "addedBy": "owner directive",
-      "status": "queued"
+      "status": "paused-coffee-2026-07-18"
     },
     {
       "id": "ctr-01",
@@ -709,6 +709,66 @@
       "whyNow": "owner core-shift 2026-07-15: travel resources + food",
       "sources": [],
       "addedAt": "2026-07-15",
+      "addedBy": "owner directive",
+      "status": "queued"
+    },
+    {
+      "id": "str-01",
+      "title": "重庆的楼里穿轻轨：李子坝 8 秒",
+      "pillar": "city-travel",
+      "format": "short",
+      "angle": "Street icon: train-through-building, crowds filming below; fact hook 8-second pass.",
+      "whyNow": "owner 2026-07-18: street scenery joins the core",
+      "sources": [],
+      "addedAt": "2026-07-18",
+      "addedBy": "owner directive",
+      "status": "queued"
+    },
+    {
+      "id": "str-02",
+      "title": "上海弄堂的早晨：晾衣杆下的早餐摊",
+      "pillar": "city-travel",
+      "format": "short",
+      "angle": "Longtang street life: laundry poles, 粢饭团 stall steam, bikes squeezing by.",
+      "whyNow": "owner 2026-07-18: street scenery joins the core",
+      "sources": [],
+      "addedAt": "2026-07-18",
+      "addedBy": "owner directive",
+      "status": "queued"
+    },
+    {
+      "id": "str-03",
+      "title": "菜市场的中国：凌晨四点最热闹的地方",
+      "pillar": "city-travel",
+      "format": "short",
+      "angle": "Wet-market dawn: haggling hands, fish splash, scale close-ups; 烟火气 heavy.",
+      "whyNow": "owner 2026-07-18: street scenery joins the core",
+      "sources": [],
+      "addedAt": "2026-07-18",
+      "addedBy": "owner directive",
+      "status": "queued"
+    },
+    {
+      "id": "str-04",
+      "title": "西安回民街的一百种声音",
+      "pillar": "city-travel",
+      "format": "short",
+      "angle": "Street soundscape as concept: hammering 芝麻糖, biang biang 面 slap, vendor calls.",
+      "whyNow": "owner 2026-07-18: street scenery joins the core",
+      "sources": [],
+      "addedAt": "2026-07-18",
+      "addedBy": "owner directive",
+      "status": "queued"
+    },
+    {
+      "id": "str-05",
+      "title": "广州骑楼下：一条街走了一百年",
+      "pillar": "city-travel",
+      "format": "short",
+      "angle": "Qilou arcades street scene: rain shelter life, 凉茶铺, old signage.",
+      "whyNow": "owner 2026-07-18: street scenery joins the core",
+      "sources": [],
+      "addedAt": "2026-07-18",
       "addedBy": "owner directive",
       "status": "queued"
     }

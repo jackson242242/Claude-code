@@ -79,16 +79,17 @@ log `skipped: batch already published today` and stop. (Protects against manual
    generates within-theme. Formats unchanged (a/c Short, b longform). If the
    theme queue is empty and research can't fill it, fall back to general pillars
    and log why.
-   **General mapping (owner re-prioritization 2026-07-15 evening: core = 中国
-   旅游资源 + 美食; day = UTC day-of-month):**
-   - slot a (Short): `city-travel` — scenic resources: 名山大川/古镇/秘境/世遗
+   **General mapping (owner 2026-07-18: coffee ended, core = 美食 + 旅游 + 街头
+   风景; theme weeks all cancelled — this mapping applies EVERY day):**
+   - slot a (Short): `city-travel` — alternate by day between scenic resources
+     (名山大川/古镇/世遗) and 街头风景 street scenes (street life, wet markets,
+     alleys, skylines, 烟火气 moments — odd day scenic, even day street)
    - slot b Mon-Fri (Short): `china-food`
-   - slot b Saturday (Short): wildcard — best available `china-coffee` or
-     `china-culture` topic (keeps those pillars alive as minority)
+   - slot b Saturday (Short): `china-culture`
    - slot b Sunday (longform ≤2min): odd day `city-walk`, even day `china-culture`
-   - slot c (Short): odd day `china-food`, even day `city-travel`
-   During theme weeks all slots draw from the theme; slot b still follows the
-   Saturday-wildcard/Sunday-longform rules.
+   - slot c (Short): odd day `china-food`, even day `city-travel`(street flavor ok)
+   china-coffee is PAUSED (owner 2026-07-18) — skip its queue items; seeds
+   retained for revival.
    Take the top queue item with that pillar (skip items whose pillar is in
    `pausedPillars`); if none, generate one from today's research +
    `state/dialect-bank.md`. Each pick must pass `strategy.topicFitGate`
