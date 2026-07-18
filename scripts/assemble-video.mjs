@@ -66,9 +66,13 @@ const audioDur = audioFile
   ? Number(run('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', audioFile]))
   : Number(args.duration);
 if (!audioDur || Number.isNaN(audioDur)) fail(audioFile ? `Could not read duration of ${audioFile}` : '--duration must be a number of seconds');
-const XFADE = 0.45; // crossfade between shots; each join consumes this much footage
+// Pace engine (owner 2026-07-17: "太慢，拖拉"): fast = hard cuts, no drift, no
+// fade-in (the first frame IS the hook); slow = crossfades + Ken Burns (Sunday
+// longform / heritage pieces only).
+const FAST = (args.pace || 'fast') === 'fast';
+const XFADE = FAST ? 0 : 0.45;
 const nSegs = Math.max(1, Math.ceil((audioDur + 1) / (SEG - XFADE)));
-process.stderr.write(`Voiceover ${audioDur.toFixed(1)}s -> ${nSegs} segment(s) of ~${SEG}s at ${W}x${H} (crossfaded)\n`);
+process.stderr.write(`Audio ${audioDur.toFixed(1)}s -> ${nSegs} segment(s) of ~${SEG}s at ${W}x${H} (${FAST ? 'hard cuts' : 'crossfaded'})\n`);
 
 // 1. Find candidate clips — Pexels always; Pixabay too when PIXABAY_API_KEY is
 // set (both free-for-commercial-use, no attribution required; sources recorded
@@ -130,21 +134,33 @@ for (let i = 0; i < nSegs; i++) {
   // Reuse of the same clip in a later cycle starts deeper into the clip for variety.
   const start = Math.min(Math.floor(i / clips.length) * SEG, Math.max(0, (clip.duration || SEG) - segLen));
   const seg = join(tmp, `seg-${String(i).padStart(3, '0')}.mp4`);
-  // Gentle Ken Burns drift: cover-scale 12% over target, then pan across it —
-  // alternating direction per shot — so even static footage has camera motion.
-  const W2 = Math.ceil((W * 1.12) / 2) * 2;
-  const H2 = Math.ceil((H * 1.12) / 2) * 2;
-  const drift = i % 2 === 0 ? `(in_w-out_w)*(t/${segLen})` : `(in_w-out_w)*(1-t/${segLen})`;
-  run('ffmpeg', ['-y', '-ss', String(start), '-i', downloaded.get(clip.id), '-t', segLen.toFixed(2),
-    '-vf', `scale=${W2}:${H2}:force_original_aspect_ratio=increase,crop=${W2}:${H2},fps=30,crop=${W}:${H}:x='${drift}':y='(in_h-out_h)/2',format=yuv420p`,
-    '-an', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '22', seg]);
+  if (FAST) {
+    // Crisp: straight cover-crop, rely on the footage's own motion (queries
+    // demand people/action shots) — uniform drift on every shot reads sleepy.
+    run('ffmpeg', ['-y', '-ss', String(start), '-i', downloaded.get(clip.id), '-t', segLen.toFixed(2),
+      '-vf', `scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H},fps=30,format=yuv420p`,
+      '-an', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '22', seg]);
+  } else {
+    // Gentle Ken Burns drift for slow-cinema pieces.
+    const W2 = Math.ceil((W * 1.12) / 2) * 2;
+    const H2 = Math.ceil((H * 1.12) / 2) * 2;
+    const drift = i % 2 === 0 ? `(in_w-out_w)*(t/${segLen})` : `(in_w-out_w)*(1-t/${segLen})`;
+    run('ffmpeg', ['-y', '-ss', String(start), '-i', downloaded.get(clip.id), '-t', segLen.toFixed(2),
+      '-vf', `scale=${W2}:${H2}:force_original_aspect_ratio=increase,crop=${W2}:${H2},fps=30,crop=${W}:${H}:x='${drift}':y='(in_h-out_h)/2',format=yuv420p`,
+      '-an', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '22', seg]);
+  }
   segFiles.push(seg);
 }
 
-// 3. Crossfade segments into one silent reel, then mux voiceover (+ overlays).
+// 3. Join segments into one silent reel: hard cuts (concat) in fast mode,
+// crossfade chain in slow mode. Then mux audio (+ overlays).
 const silent = join(tmp, 'silent.mp4');
 if (segFiles.length === 1) {
   run('ffmpeg', ['-y', '-i', segFiles[0], '-c', 'copy', silent]);
+} else if (FAST) {
+  const listFile = join(tmp, 'list.txt');
+  await writeFile(listFile, segFiles.map((f) => `file '${f}'`).join('\n'));
+  run('ffmpeg', ['-y', '-f', 'concat', '-safe', '0', '-i', listFile, '-c', 'copy', silent]);
 } else {
   const durs = segFiles.map((f) => Number(run('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', f])));
   const inputs = segFiles.flatMap((f) => ['-i', f]);
@@ -166,10 +182,19 @@ if (segFiles.length === 1) {
 // warm highlights. 'default' = the original punchy grade.
 const GRADES = {
   default: 'eq=contrast=1.05:saturation=1.12:brightness=0.01',
+  // legacy riben (v1): warm-highlight push reads YELLOW on already-warm footage
+  // (owner 2026-07-17: "contrast 好黄") — kept for reference, not for new videos.
   riben: 'eq=brightness=0.05:contrast=1.15:saturation=0.85,' +
     'colorbalance=rs=-0.08:bs=0.12:gs=-0.02:rm=0.03:gm=0.02:bm=-0.05:rh=0.18:gh=0.08:bh=-0.12',
+  // v2 grades (STYLE.md v2.0): neutral-clean base, cast-corrected.
+  clean: 'eq=contrast=1.07:saturation=1.06:brightness=0.015,' +
+    'colorbalance=rs=-0.03:bs=0.05,colortemperature=temperature=6900:mix=0.4',
+  warmfood: 'eq=contrast=1.06:saturation=1.10:brightness=0.01,' +
+    'colorbalance=bs=0.04:rh=0.04:bh=-0.01,colortemperature=temperature=6650:mix=0.25',
+  heritage: 'eq=brightness=0.03:contrast=1.10:saturation=0.92,' +
+    'colorbalance=rs=-0.05:bs=0.08:rh=0.07:gh=0.03:bh=-0.04',
 };
-const grade = GRADES[args.style || 'default'];
+const grade = GRADES[args.style || 'clean'];
 if (!grade) fail(`Unknown --style "${args.style}". Supported: ${Object.keys(GRADES).join(', ')}`);
 const filters = [grade];
 // CJK title font preference: calligraphy (Ma Shan Zheng) -> 文楷 (LXGW WenKai)
@@ -205,7 +230,10 @@ if (args.srt) {
   filters.push(`subtitles=${args.srt}:force_style='FontName=${cjk ? 'Noto Sans CJK SC' : 'DejaVu Sans'},FontSize=${subSize},Bold=1,Outline=2,Shadow=1,MarginV=${vertical ? 110 : 40}'`);
 }
 
-filters.push(`fade=t=in:st=0:d=0.5,fade=t=out:st=${(audioDur - 0.4).toFixed(2)}:d=0.4`);
+// Fast mode: NO fade-in — frame one is the hook; only a short tail fade.
+filters.push(FAST
+  ? `fade=t=out:st=${(audioDur - 0.3).toFixed(2)}:d=0.3`
+  : `fade=t=in:st=0:d=0.5,fade=t=out:st=${(audioDur - 0.4).toFixed(2)}:d=0.4`);
 await mkdir(dirname(outFile), { recursive: true });
 if (args.music && !existsSync(args.music)) fail(`--music file not found: ${args.music}`);
 

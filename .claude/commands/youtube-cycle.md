@@ -110,7 +110,8 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    speaks through burned bilingual subtitles + music. Write `subs.srt` directly
    as the narrative, structured per 起承转合:
    - Short (20-28s — 7-day data 2026-07-11: 22s cut doubled retention vs 55s):
-     7-8 cues, each 2.5-4s — 起 opening cue lands at 0.0-0.5s AND the first shot
+     9-12 cues, each 2-2.5s, 中文行 ≤12 字 (STYLE.md v2 fast rhythm — information
+     density beats lingering) — 起 opening cue lands at 0.0-0.5s AND the first shot
      is the single most striking clip (steam/water/light — never an establishing
      wide); the first cue poses a curiosity gap the last cue answers → 承 2-3
      development beats → 转 the surprise/taste/discovery → 合 a closing line that
@@ -145,11 +146,14 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    pillars.
 3. **Video** — `node scripts/assemble-video.mjs --out .../final.mp4
    --duration <total seconds from the cue plan>
-   --music <see music rules below> --srt .../subs.srt
+   --music <per STYLE.md music-energy table> --srt .../subs.srt
    --queries "<3-5 concrete b-roll queries>" --format <9x16|16x9>
-   --title "<short overlay title>" --style riben
-   --seg-seconds <7 for Shorts, 8 for longform>`.
-   (No --audio: subtitle-driven mode — music is the full-presence main track.)
+   --title "<short overlay title>"
+   --style <STYLE.md v2: clean default | warmfood for food close-up pieces | heritage for culture/Sunday>
+   --pace <fast for ALL Shorts (default) | slow ONLY for Sunday longform/heritage>
+   --seg-seconds <2.5-3 fast, 7-8 slow>`.
+   STYLE.md is the visual authority — riben is retired (yellow cast), fade-in is
+   gone in fast mode (frame one IS the hook), hard cuts only on Shorts.
    B-roll queries per styleGuide 生活感 quota (hard): >=50% of shots show people
    mid-action — query in people-action language ('<place> street food vendor
    cooking', 'family dinner table', 'night market crowd eating', 'people cycling
@@ -161,9 +165,10 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    with cultural note.
    **Music rules (music IS the audio; owner 2026-07-15: beds sound AI-heavy —
    modernize):** pick from `automation/youtube/assets/music/` by mood —
-   DEFAULT for travel/food Shorts = the most modern/upbeat bed available
-   (currently `lofi-chill-01.mp3`); `guzheng-calm-01.mp3` ONLY for
-   culture/heritage/city-walk pieces (guzheng-on-everything reads as template).
+   DEFAULT for travel/food/economy Shorts = `lofi-upbeat-01.mp3` (≥95 BPM per
+   STYLE.md energy table); `lofi-chill-01.mp3` for mellow young-china pieces;
+   `guzheng-calm-01.mp3` ONLY for culture/heritage/Sunday longform
+   (guzheng-on-everything reads as template).
    Owner-supplied tracks (YouTube Audio Library downloads committed to
    assets/music/, named `yal-<style>-NN.mp3`) take priority over generated beds
    — rotate so consecutive videos don't share a track. After the 07-29 vidIQ
@@ -237,7 +242,11 @@ silently. (~15 credits/week total with the Sat trend call — sustainable within
    (`git push -u origin claude/youtube-automation-workflow-v8egf3`, retry 4x with
    backoff on network errors).
 
-## 8. Report
+## 8. Report (+ style spot-check)
+Before the text report, extract each video's hook frame
+(`ffmpeg -ss 0.2 -i final.mp4 -frames:v 1 hook.jpg`), hstack the day's three
+into one contact sheet, and send it to the owner via SendUserFile (caption:
+date + titles) — STYLE.md governance: the owner spot-checks look/pacing daily.
 End with three lines (one per slot): slot / topic / lanes used / posted-or-scheduled
 URL or degrade reason — plus vidIQ credits spent and queue depth remaining.
 **Music upgrade shortcuts (owner's optional 1-min/Short step):** for each Short,
