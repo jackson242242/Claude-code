@@ -2,6 +2,90 @@
   "note": "Topic backlog for /youtube-cycle. Top item matching the slot format is used next. Owner may edit/reorder freely.",
   "queue": [
     {
+      "id": "cw-03",
+      "title": "泉州：一条街，走过半部海上丝绸之路",
+      "pillar": "city-walk",
+      "format": "longform",
+      "angle": "泉州古城漫游：西街开元寺、红砖古厝、骑楼、面线糊早餐；宋元海丝起点。人物：逛街吃早茶的手与脸。闽南彩蛋 好呷 hó-tsia̍h。",
+      "whyNow": "泉州「宋元中国的世界海洋商贸中心」2021年列入UNESCO世遗后持续走红，城市漫游长片素材充足；verify 22处遗产点/开元寺东西塔 at scripting.",
+      "sources": [
+        "UNESCO 泉州:宋元中国的世界海洋商贸中心 2021"
+      ],
+      "addedAt": "2026-07-19",
+      "addedBy": "cycle replenish (city-walk lane hit 0)",
+      "status": "queued"
+    },
+    {
+      "id": "cw-04",
+      "title": "苏州平江路：一条水巷，走进《平江图》八百年",
+      "pillar": "city-walk",
+      "format": "longform",
+      "angle": "平江历史街区：小桥流水人家、评弹茶馆、河边人家晾晒、船娘摇橹。诗句 君到姑苏见，人家尽枕河（杜荀鹤）。人物：河边喝茶听曲。",
+      "whyNow": "平江历史街区常年霸榜城市漫游/citywalk话题；对照南宋《平江图》仍在的水巷格局是强钩子；verify 平江图/年代 at scripting.",
+      "sources": [
+        "苏州平江历史街区 平江图 南宋"
+      ],
+      "addedAt": "2026-07-19",
+      "addedBy": "cycle replenish (city-walk lane hit 0)",
+      "status": "queued"
+    },
+    {
+      "id": "cc2-05",
+      "title": "苏绣：一根丝线，能劈成多少分？",
+      "pillar": "china-culture",
+      "format": "short",
+      "angle": "苏绣双面绣：绣娘手部特写、劈丝、绷架、成品猫眼。非遗craft。诗意收尾。fact-first hook=一根丝线劈成几十分。",
+      "whyNow": "苏绣双面绣与非遗手作在短视频持续出圈；fact-first 钩子 劈丝根数；verify 劈丝可分至1/48或更细 at scripting.",
+      "sources": [
+        "苏绣 双面绣 劈丝 非遗"
+      ],
+      "addedAt": "2026-07-19",
+      "addedBy": "cycle replenish (china-culture lane low)",
+      "status": "queued"
+    },
+    {
+      "id": "cc2-06",
+      "title": "景德镇：一千年，只做一件事",
+      "pillar": "china-culture",
+      "format": "short",
+      "angle": "景德镇制瓷：拉坯、利坯、画青花、窑火；陶溪川年轻人回流。fact-first=一件瓷器七十二道工序。人物：拉坯的手/赶集的年轻人。",
+      "whyNow": "景德镇陶溪川「景漂」年轻人回流做瓷持续是热点；fact-first 钩子 七十二道工序；verify 《天工开物》七十二道 at scripting.",
+      "sources": [
+        "景德镇 陶溪川 景漂 七十二道工序 天工开物"
+      ],
+      "addedAt": "2026-07-19",
+      "addedBy": "cycle replenish (china-culture lane low)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-06",
+      "title": "沙县小吃：四个招牌，开遍全国八万家",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "沙县小吃四大金刚：拌面、扁肉、蒸饺、炖罐。fact-first=全国门店超8万家(超过多数连锁快餐)。人物：拌面拌动/端炖罐的手。",
+      "whyNow": "「沙县小吃」国民下饭话题常青，门店数远超头部洋快餐是反差钩子；verify 全国门店8万+ at scripting.",
+      "sources": [
+        "沙县小吃 全国门店 8万家"
+      ],
+      "addedAt": "2026-07-19",
+      "addedBy": "cycle replenish (food depth)",
+      "status": "queued"
+    },
+    {
+      "id": "ct-08",
+      "title": "平遥古城：一座活着的明清县城，城墙走一圈六公里",
+      "pillar": "city-travel",
+      "format": "short",
+      "angle": "平遥：古城墙、日昇昌票号、明清街、碗托小吃。fact-first=一圈城墙六公里、中国第一家票号。街头风景+人物赶集。",
+      "whyNow": "平遥古城 UNESCO 世遗、晋商票号故事持续热；fact-first 钩子 城墙周长/中国第一家票号；verify 城墙约6.4公里/日昇昌1823 at scripting.",
+      "sources": [
+        "平遥古城 城墙 6.4公里 日昇昌票号 1823"
+      ],
+      "addedAt": "2026-07-19",
+      "addedBy": "cycle replenish (travel depth)",
+      "status": "queued"
+    },
+    {
       "id": "seed-11",
       "title": "The World's Toughest Exam Just Happened — and It's Not the SAT",
       "pillar": "education-systems",
@@ -197,30 +281,6 @@
       "status": "paused-pivot-2026-07-09"
     },
     {
-      "id": "cf-04",
-      "title": "长沙夜市，臭豆腐为什么越臭越香？",
-      "pillar": "china-food",
-      "format": "short",
-      "angle": "Black tofu frying close-ups; 长沙话彩蛋 恰饭.",
-      "whyNow": "channel pivot seed 2026-07-09",
-      "sources": [],
-      "addedAt": "2026-07-09",
-      "addedBy": "owner pivot directive",
-      "status": "queued"
-    },
-    {
-      "id": "cw-02",
-      "title": "重庆不是一座城市，是一座立体迷宫",
-      "pillar": "city-walk",
-      "format": "longform",
-      "angle": "山城步道, cable car over river, hotpot alley steam, 重庆话彩蛋 要得.",
-      "whyNow": "channel pivot seed 2026-07-09",
-      "sources": [],
-      "addedAt": "2026-07-09",
-      "addedBy": "owner pivot directive",
-      "status": "queued"
-    },
-    {
       "id": "cof-05",
       "title": "深圳的咖啡速度：从图纸到风味",
       "pillar": "china-coffee",
@@ -386,18 +446,6 @@
       "sources": [],
       "addedAt": "2026-07-11",
       "addedBy": "cycle replenish (culture backlog flag 2026-07-10)",
-      "status": "queued"
-    },
-    {
-      "id": "ct-06",
-      "title": "黄山云海：站在云的上面",
-      "pillar": "city-travel",
-      "format": "short",
-      "angle": "黄山日出云海：迎客松、奇松怪石、云海翻涌。日系唯美 dawn pacing, one poem line (李白/徐霞客 note). 安徽话/徽州文化 note.",
-      "whyNow": "backlog refill — travel-short seed to keep slot a/c depth after dequeue; verify any named-peak/poem attribution at scripting.",
-      "sources": [],
-      "addedAt": "2026-07-11",
-      "addedBy": "cycle replenish",
       "status": "queued"
     },
     {

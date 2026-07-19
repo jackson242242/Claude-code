@@ -365,6 +365,39 @@
       "lane": "pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-07-18T22:00:00Z"
+    },
+    {
+      "date": "2026-07-19",
+      "slot": "a",
+      "title": "爬遍中国五岳，他却说黄山之后无岳可看 | Huangshan Ended His Search 🏔️",
+      "videoId": "rsHaPG_Xets",
+      "url": "https://www.youtube.com/watch?v=rsHaPG_Xets",
+      "pillar": "city-travel",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-19T13:00:00Z"
+    },
+    {
+      "date": "2026-07-19",
+      "slot": "b",
+      "title": "重庆不是一座城市，是一座立体迷宫 | Chongqing: A City Built in 3D 🏙️",
+      "videoId": "4u0ycJopL18",
+      "url": "https://www.youtube.com/watch?v=4u0ycJopL18",
+      "pillar": "city-walk",
+      "lane": "pexels-ffmpeg+openai-thumb+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-19T17:00:00Z"
+    },
+    {
+      "date": "2026-07-19",
+      "slot": "c",
+      "title": "长沙臭豆腐为什么是黑的？一锅卤水发酵两年 | Why Changsha's Stinky Tofu Is Black 🖤",
+      "videoId": "F_EVPtmd4ZA",
+      "url": "https://www.youtube.com/watch?v=F_EVPtmd4ZA",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-19T22:00:00Z"
     }
   ]
 }
