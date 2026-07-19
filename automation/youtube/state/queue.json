@@ -13,7 +13,7 @@
       ],
       "addedAt": "2026-07-19",
       "addedBy": "cycle replenish (city-walk lane hit 0)",
-      "status": "queued"
+      "status": "paused-food-sprint-2026-07-18"
     },
     {
       "id": "cw-04",
@@ -27,7 +27,7 @@
       ],
       "addedAt": "2026-07-19",
       "addedBy": "cycle replenish (city-walk lane hit 0)",
-      "status": "queued"
+      "status": "paused-food-sprint-2026-07-18"
     },
     {
       "id": "cc2-05",
@@ -41,7 +41,7 @@
       ],
       "addedAt": "2026-07-19",
       "addedBy": "cycle replenish (china-culture lane low)",
-      "status": "queued"
+      "status": "paused-food-sprint-2026-07-18"
     },
     {
       "id": "cc2-06",
@@ -55,7 +55,7 @@
       ],
       "addedAt": "2026-07-19",
       "addedBy": "cycle replenish (china-culture lane low)",
-      "status": "queued"
+      "status": "paused-food-sprint-2026-07-18"
     },
     {
       "id": "cfd-06",
@@ -83,7 +83,7 @@
       ],
       "addedAt": "2026-07-19",
       "addedBy": "cycle replenish (travel depth)",
-      "status": "queued"
+      "status": "paused-food-sprint-2026-07-18"
     },
     {
       "id": "seed-11",
@@ -434,7 +434,7 @@
       "sources": [],
       "addedAt": "2026-07-11",
       "addedBy": "cycle replenish (culture backlog flag 2026-07-10)",
-      "status": "queued"
+      "status": "paused-food-sprint-2026-07-18"
     },
     {
       "id": "cc2-04",
@@ -446,7 +446,7 @@
       "sources": [],
       "addedAt": "2026-07-11",
       "addedBy": "cycle replenish (culture backlog flag 2026-07-10)",
-      "status": "queued"
+      "status": "paused-food-sprint-2026-07-18"
     },
     {
       "id": "cof-09",
@@ -650,7 +650,7 @@
       "sources": [],
       "addedAt": "2026-07-15",
       "addedBy": "owner directive",
-      "status": "queued"
+      "status": "paused-food-sprint-2026-07-18"
     },
     {
       "id": "ctr-02",
@@ -662,7 +662,7 @@
       "sources": [],
       "addedAt": "2026-07-15",
       "addedBy": "owner directive",
-      "status": "queued"
+      "status": "paused-food-sprint-2026-07-18"
     },
     {
       "id": "ctr-03",
@@ -674,7 +674,7 @@
       "sources": [],
       "addedAt": "2026-07-15",
       "addedBy": "owner directive",
-      "status": "queued"
+      "status": "paused-food-sprint-2026-07-18"
     },
     {
       "id": "ctr-04",
@@ -686,7 +686,7 @@
       "sources": [],
       "addedAt": "2026-07-15",
       "addedBy": "owner directive",
-      "status": "queued"
+      "status": "paused-food-sprint-2026-07-18"
     },
     {
       "id": "ctr-05",
@@ -698,7 +698,7 @@
       "sources": [],
       "addedAt": "2026-07-15",
       "addedBy": "owner directive",
-      "status": "queued"
+      "status": "paused-food-sprint-2026-07-18"
     },
     {
       "id": "cfd-01",
@@ -770,7 +770,7 @@
       "sources": [],
       "addedAt": "2026-07-18",
       "addedBy": "owner directive",
-      "status": "queued"
+      "status": "paused-food-sprint-2026-07-18"
     },
     {
       "id": "str-02",
@@ -782,7 +782,7 @@
       "sources": [],
       "addedAt": "2026-07-18",
       "addedBy": "owner directive",
-      "status": "queued"
+      "status": "paused-food-sprint-2026-07-18"
     },
     {
       "id": "str-03",
@@ -794,7 +794,7 @@
       "sources": [],
       "addedAt": "2026-07-18",
       "addedBy": "owner directive",
-      "status": "queued"
+      "status": "paused-food-sprint-2026-07-18"
     },
     {
       "id": "str-04",
@@ -806,7 +806,7 @@
       "sources": [],
       "addedAt": "2026-07-18",
       "addedBy": "owner directive",
-      "status": "queued"
+      "status": "paused-food-sprint-2026-07-18"
     },
     {
       "id": "str-05",
@@ -817,6 +817,186 @@
       "whyNow": "owner 2026-07-18: street scenery joins the core",
       "sources": [],
       "addedAt": "2026-07-18",
+      "addedBy": "owner directive",
+      "status": "paused-food-sprint-2026-07-18"
+    },
+    {
+      "id": "sA-1",
+      "title": "中国早餐宇宙 P1：上海人的四大金刚",
+      "pillar": "china-food",
+      "format": "short",
+      "series": "中国早餐宇宙",
+      "part": 1,
+      "nextTease": "下集：武汉人用一碗面过早",
+      "angle": "大饼油条粢饭豆浆; money shot=油条出锅; ¥5 数字条",
+      "whyNow": "4-week food sprint (owner 2026-07-18), 小红书连载 format",
+      "sources": [],
+      "addedAt": "2026-07-19",
+      "addedBy": "owner directive",
+      "status": "queued"
+    },
+    {
+      "id": "sA-2",
+      "title": "中国早餐宇宙 P2：武汉过早，一碗热干面",
+      "pillar": "china-food",
+      "format": "short",
+      "series": "中国早餐宇宙",
+      "part": 2,
+      "nextTease": "下集：广州肠粉的绸缎功夫",
+      "angle": "过早文化; 芝麻酱拌面 money shot; 30种过早数字条",
+      "whyNow": "4-week food sprint (owner 2026-07-18), 小红书连载 format",
+      "sources": [],
+      "addedAt": "2026-07-19",
+      "addedBy": "owner directive",
+      "status": "queued"
+    },
+    {
+      "id": "sA-3",
+      "title": "中国早餐宇宙 P3：广州肠粉，一匹白绸缎",
+      "pillar": "china-food",
+      "format": "short",
+      "series": "中国早餐宇宙",
+      "part": 3,
+      "nextTease": "下集：西安人早上喝什么汤",
+      "angle": "拉肠出屉 money shot; 布拉肠工艺",
+      "whyNow": "4-week food sprint (owner 2026-07-18), 小红书连载 format",
+      "sources": [],
+      "addedAt": "2026-07-19",
+      "addedBy": "owner directive",
+      "status": "queued"
+    },
+    {
+      "id": "sA-4",
+      "title": "中国早餐宇宙 P4：西安的早晨从馍开始",
+      "pillar": "china-food",
+      "format": "short",
+      "series": "中国早餐宇宙",
+      "part": 4,
+      "nextTease": "新系列预告：火锅分几派",
+      "angle": "肉夹馍剁肉声+胡辣汤; 收官集回扣P1",
+      "whyNow": "4-week food sprint (owner 2026-07-18), 小红书连载 format",
+      "sources": [],
+      "addedAt": "2026-07-19",
+      "addedBy": "owner directive",
+      "status": "queued"
+    },
+    {
+      "id": "sB-1",
+      "title": "火锅分几派 P1：重庆九宫格是干嘛的",
+      "pillar": "china-food",
+      "format": "short",
+      "series": "火锅分几派",
+      "part": 1,
+      "nextTease": "下集：潮汕人按部位涮牛肉",
+      "angle": "九宫格功能分区冷知识; 红油翻滚 money shot",
+      "whyNow": "4-week food sprint (owner 2026-07-18), 小红书连载 format",
+      "sources": [],
+      "addedAt": "2026-07-19",
+      "addedBy": "owner directive",
+      "status": "queued"
+    },
+    {
+      "id": "sB-2",
+      "title": "火锅分几派 P2：潮汕牛肉火锅的十二个部位",
+      "pillar": "china-food",
+      "format": "short",
+      "series": "火锅分几派",
+      "part": 2,
+      "nextTease": "下集：北京铜锅只涮一样东西",
+      "angle": "吊龙/匙柄部位图; 手打牛肉丸弹跳",
+      "whyNow": "4-week food sprint (owner 2026-07-18), 小红书连载 format",
+      "sources": [],
+      "addedAt": "2026-07-19",
+      "addedBy": "owner directive",
+      "status": "queued"
+    },
+    {
+      "id": "sB-3",
+      "title": "火锅分几派 P3：北京铜锅，清水涮羊肉",
+      "pillar": "china-food",
+      "format": "short",
+      "series": "火锅分几派",
+      "part": 3,
+      "nextTease": "下集：贵州人往锅里放酸汤",
+      "angle": "铜锅炭火 money shot; 麻酱蘸碟",
+      "whyNow": "4-week food sprint (owner 2026-07-18), 小红书连载 format",
+      "sources": [],
+      "addedAt": "2026-07-19",
+      "addedBy": "owner directive",
+      "status": "queued"
+    },
+    {
+      "id": "sB-4",
+      "title": "火锅分几派 P4：贵州酸汤，红汤界的新顶流",
+      "pillar": "china-food",
+      "format": "short",
+      "series": "火锅分几派",
+      "part": 4,
+      "nextTease": "新系列预告：新中式饮品战争",
+      "angle": "凯里红酸汤; 酸汤赛道近两年爆火; 木姜子",
+      "whyNow": "4-week food sprint (owner 2026-07-18), 小红书连载 format",
+      "sources": [],
+      "addedAt": "2026-07-19",
+      "addedBy": "owner directive",
+      "status": "queued"
+    },
+    {
+      "id": "sC-1",
+      "title": "新中式饮品战争 P1：茶饮为什么这么卷",
+      "pillar": "china-food",
+      "format": "short",
+      "series": "新中式饮品战争",
+      "part": 1,
+      "nextTease": "下集：现制酸奶是智商税吗",
+      "angle": "新茶饮万店时代; 排队与联名; 上新速度数字条",
+      "whyNow": "4-week food sprint (owner 2026-07-18), 小红书连载 format",
+      "sources": [],
+      "addedAt": "2026-07-19",
+      "addedBy": "owner directive",
+      "status": "queued"
+    },
+    {
+      "id": "sC-2",
+      "title": "新中式饮品战争 P2：现制酸奶，贵得明明白白？",
+      "pillar": "china-food",
+      "format": "short",
+      "series": "新中式饮品战争",
+      "part": 2,
+      "nextTease": "下集：一杯拿铁里的酱香",
+      "angle": "现制酸奶价格争议; 配料表画面",
+      "whyNow": "4-week food sprint (owner 2026-07-18), 小红书连载 format",
+      "sources": [],
+      "addedAt": "2026-07-19",
+      "addedBy": "owner directive",
+      "status": "queued"
+    },
+    {
+      "id": "sC-3",
+      "title": "新中式饮品战争 P3：酱香拿铁那一天发生了什么",
+      "pillar": "china-food",
+      "format": "short",
+      "series": "新中式饮品战争",
+      "part": 3,
+      "nextTease": "下集：9.9和30块的终极对决",
+      "angle": "2023-09-04 联名现象级单品 (verify all numbers)",
+      "whyNow": "4-week food sprint (owner 2026-07-18), 小红书连载 format",
+      "sources": [],
+      "addedAt": "2026-07-19",
+      "addedBy": "owner directive",
+      "status": "queued"
+    },
+    {
+      "id": "sC-4",
+      "title": "新中式饮品战争 P4：9.9 元和 30 元，谁赢了",
+      "pillar": "china-food",
+      "format": "short",
+      "series": "新中式饮品战争",
+      "part": 4,
+      "nextTease": "新系列预告：深夜食堂",
+      "angle": "价格带两极分化; 中性商业观察, zero politics",
+      "whyNow": "4-week food sprint (owner 2026-07-18), 小红书连载 format",
+      "sources": [],
+      "addedAt": "2026-07-19",
       "addedBy": "owner directive",
       "status": "queued"
     }

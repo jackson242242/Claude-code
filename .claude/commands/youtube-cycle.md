@@ -79,17 +79,17 @@ log `skipped: batch already published today` and stop. (Protects against manual
    generates within-theme. Formats unchanged (a/c Short, b longform). If the
    theme queue is empty and research can't fill it, fall back to general pillars
    and log why.
-   **General mapping (owner 2026-07-18: coffee ended, core = 美食 + 旅游 + 街头
-   风景; theme weeks all cancelled — this mapping applies EVERY day):**
-   - slot a (Short): `city-travel` — alternate by day between scenic resources
-     (名山大川/古镇/世遗) and 街头风景 street scenes (street life, wet markets,
-     alleys, skylines, 烟火气 moments — odd day scenic, even day street)
-   - slot b Mon-Fri (Short): `china-food`
-   - slot b Saturday (Short): `china-culture`
-   - slot b Sunday (longform ≤2min): odd day `city-walk`, even day `china-culture`
-   - slot c (Short): odd day `china-food`, even day `city-travel`(street flavor ok)
-   china-coffee is PAUSED (owner 2026-07-18) — skip its queue items; seeds
-   retained for revival.
+   **4-WEEK FOOD SPRINT (owner 2026-07-18, 07-19..08-15 — overrides everything):**
+   ALL FOUR slots (a 13:00 / b 16:00 / c 19:00 / d 22:00 UTC) = `china-food`
+   Shorts. Longform fully paused. Non-food pillars paused (seeds retained).
+   **连载 format (小红书 style):** each day = ONE 4-part series or TWO 2-part
+   series. Parts of a series share a subject (one dish / one food street / one
+   food question) but each part must stand alone AND end with a next-part tease
+   as the closing cue (「下集：汤底的秘密」…). Titles carry the series name +
+   (上)(下) or Part 1/2/3/4; every series gets its own playlist in addition to
+   中国美食. Modern + 贴近生活 topics first: 新中式茶饮, 现制酸奶, 街头早餐,
+   夜市, 外卖时代, 网红店排队学, 家常菜革命 — not museum food history.
+   Slot order within a day = story order (morning slot = Part 1).
    Take the top queue item with that pillar (skip items whose pillar is in
    `pausedPillars`); if none, generate one from today's research +
    `state/dialect-bank.md`. Each pick must pass `strategy.topicFitGate`

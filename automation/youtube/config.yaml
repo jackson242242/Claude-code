@@ -8,20 +8,23 @@ channel:
   categoryId: "27" # YouTube category: Education
 
 cadence:
-  postsPerDay: 3
+  # ============ 4-WEEK FOOD SPRINT (owner 2026-07-18, runs 07-19..08-15) ============
+  # 4 Shorts/day, ALL china-food (modern, 贴近生活, 小红书-style). Longform PAUSED
+  # entirely. Multi-part 连载 format: each day = 1-2 series totaling 4 parts; every
+  # part teases the next (下集…). After 08-15: owner review before reverting.
+  postsPerDay: 4
   # Batch mode (owner decision 2026-07-08): ONE daily Routine at 12:30 UTC produces
   # all 3 videos in a single run; publishing is staggered via YouTube scheduled
   # publishing (status.publishAt) at the slot times below (= 9am/1pm/6pm New York EDT).
   mode: batch-daily
   routineUtc: "12:30"
-  # Durations: Shorts <=30s, longform <=2min.
-  # OWNER DECISION 2026-07-15 (data: 5 longforms = 0-3 views each while Shorts
-  # broke into wave-2): slot b is a THIRD SHORT on weekdays; longform survives
-  # as SUNDAY-ONLY slot b (search/catalog asset, zero daily cost).
+  # Durations: Shorts <=28s. Longform PAUSED (owner 2026-07-18, food sprint).
+  # 4 slots = ET 9am / noon / 3pm / 6pm.
   slots:
-    - { name: a, publishAtUtc: "13:00", format: short }  # odd day: city-travel, even day: china-food
-    - { name: b, publishAtUtc: "17:00", format: short, sundayFormat: longform }  # weekdays: china-culture/china-coffee short (odd/even); Sunday: longform (odd: city-walk, even: china-culture)
-    - { name: c, publishAtUtc: "22:00", format: short }  # opposite of slot a
+    - { name: a, publishAtUtc: "13:00", format: short }  # china-food
+    - { name: b, publishAtUtc: "16:00", format: short }  # china-food
+    - { name: c, publishAtUtc: "19:00", format: short }  # china-food
+    - { name: d, publishAtUtc: "22:00", format: short }  # china-food
 
 voice:
   status: paused-2026-07-10   # owner: "voice over 好差" — format is now burned
