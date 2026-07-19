@@ -2,7 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-07-18 (last deepened: 台湾腔 — +酱紫 / 好康 / 阿不就好棒棒)  
+**Today:** 2026-07-19 (last deepened: 广西话/桂柳话 — +克 / +得~~~; prior 07-18 台湾腔)  
 **Verification:** All phrases verified via WebSearch; marked with region coverage notes.  
 **Content Tags:** [comedy] [travel] [teach] | Sensitivity: clean / 轻度粗俗 / 粗口
 
@@ -120,6 +120,11 @@
 - **蓝瘦香菇** (lan2 shou4 xiang1 gu1) | "blue-thin mushroom" = 难受想哭 | 2016年南宁小哥失恋视频，"难受，想哭"被口音念成"蓝瘦，香菇"，成为初代全国性方言网络梗 | 广西南普送气音/前后鼻音混淆的经典体现；表情包始祖级 | [comedy] | clean
 - **得啵** (de2 bo0) | sentence-final particle | 南宁普通话高频语气词，"得啵？"≈"行吗？/好吗？"；南普语气词（啵/咩/捏/得）密度远高于标准普通话 | 南普"魔性"口音的核心来源之一 | [teach] [comedy] | clean
 - **颠颠向上** (dian1 dian1 xiang4 shang4) | "day-day up (mis-said)" | "天天向上"因送气音混淆被念成"颠颠向上"（天→颠） | 广西普通话送气/不送气特征的自嘲式玩法 | [comedy] | clean
+- **克** (kè) | "go" | 桂柳话（桂中桂北官话，属西南官话）把"去"念作"克"，"上街"叫"上该"；"克哪点？"＝"去哪儿？" | 桂柳话与云南话、四川话同属西南官话，听感相近；travel 里问路/招呼的活口彩蛋 | [comedy] [teach] [travel] | clean（verified 澎湃/复旦医学人类学"广西话"·桂柳话西南官话特征）  <!-- added 2026-07-19 -->
+- **得~~~** (dé, 拖长音) | "so / very (drawn-out)" | 桂柳/南普高频语气词，表"非常"，精髓是把音拉长到 2-3 倍："螺蛳粉好吃得~~~" | 广西"魔性"口音的招牌之一；美食语境百搭 | [comedy] [teach] [travel] | clean（verified 澎湃·广西老表的普通话）  <!-- added 2026-07-19 -->
+- **表哥我出来了喔** | meme phrase | 源自广西梧州抖音博主"表妹李kk"的开场白；"表哥/老表"是广西对无血缘关系者的亲昵称呼＝兄弟 | 2023-24 广西方言梗代表；亲切、招呼式 | [comedy] | clean（verified 百度百科·表哥我出来了喔）  <!-- added 2026-07-19 -->
+
+<!-- 07-19 deepened 广西话/桂柳话: prior section skewed 南宁南普; added the 桂柳话 (西南官话) branch (克/得~~~) + 表妹李kk 招呼梗. 老表/蓝瘦香菇 already present. Skipped 窃格瓦拉 "打工是不可能" meme — criminal-origin, keep off a family-safe channel. -->
 
 ## 台湾腔 (Taiwan Accent — Taiwanese Mandarin)
 
