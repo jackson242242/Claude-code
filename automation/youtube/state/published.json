@@ -420,6 +420,17 @@
       "lane": "pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-07-20T16:00:00Z"
+    },
+    {
+      "date": "2026-07-20",
+      "slot": "c",
+      "title": "新中式饮品战争③：一天卖542万杯的咖啡 | China's Drink Wars P3 ☕",
+      "videoId": "OWTTnizy45s",
+      "url": "https://www.youtube.com/watch?v=OWTTnizy45s",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-20T19:00:00Z"
     }
   ]
 }
