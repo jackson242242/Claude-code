@@ -398,6 +398,17 @@
       "lane": "pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-07-19T22:00:00Z"
+    },
+    {
+      "date": "2026-07-20",
+      "slot": "a",
+      "title": "新中式饮品战争①：一家奶茶店，开了46479家 | China's Drink Wars P1 🧋",
+      "videoId": "3LfJPEtC9RI",
+      "url": "https://www.youtube.com/watch?v=3LfJPEtC9RI",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-20T13:00:00Z"
     }
   ]
 }
