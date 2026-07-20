@@ -23,6 +23,9 @@
 - Headline / description 同库；CTA 按钮 **Shop Now**
 - 落地页：产品集合页（不是首页）+ UTM：
   `?utm_source=ig&utm_medium=paid&utm_campaign=ald-sales-1`
+- **⚠️ 音频合规（2026-07-20 补）**：organic 用的趋势原声/版权曲不能直接
+  拿来投广告——投放版素材需替换为 Meta 免版税音乐库的曲子（Ads Manager
+  上传时用"音频库"选曲，或导出无音轨版再配）
 - 开启"标准优化"（Advantage+ 创意增强可开，先不开音乐替换）
 
 ## 3. 开机后 7 天纪律（最重要的一节）
