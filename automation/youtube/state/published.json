@@ -409,6 +409,17 @@
       "lane": "pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-07-20T13:00:00Z"
+    },
+    {
+      "date": "2026-07-20",
+      "slot": "b",
+      "title": "新中式饮品战争②：一杯酸奶45元，凭啥？| China's Drink Wars P2 🥤",
+      "videoId": "QVWRzg-auhw",
+      "url": "https://www.youtube.com/watch?v=QVWRzg-auhw",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-20T16:00:00Z"
     }
   ]
 }
