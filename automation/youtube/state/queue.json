@@ -939,66 +939,6 @@
       "addedAt": "2026-07-19",
       "addedBy": "owner directive",
       "status": "queued"
-    },
-    {
-      "id": "sC-1",
-      "title": "新中式饮品战争 P1：茶饮为什么这么卷",
-      "pillar": "china-food",
-      "format": "short",
-      "series": "新中式饮品战争",
-      "part": 1,
-      "nextTease": "下集：现制酸奶是智商税吗",
-      "angle": "新茶饮万店时代; 排队与联名; 上新速度数字条",
-      "whyNow": "4-week food sprint (owner 2026-07-18), 小红书连载 format",
-      "sources": [],
-      "addedAt": "2026-07-19",
-      "addedBy": "owner directive",
-      "status": "queued"
-    },
-    {
-      "id": "sC-2",
-      "title": "新中式饮品战争 P2：现制酸奶，贵得明明白白？",
-      "pillar": "china-food",
-      "format": "short",
-      "series": "新中式饮品战争",
-      "part": 2,
-      "nextTease": "下集：一杯拿铁里的酱香",
-      "angle": "现制酸奶价格争议; 配料表画面",
-      "whyNow": "4-week food sprint (owner 2026-07-18), 小红书连载 format",
-      "sources": [],
-      "addedAt": "2026-07-19",
-      "addedBy": "owner directive",
-      "status": "queued"
-    },
-    {
-      "id": "sC-3",
-      "title": "新中式饮品战争 P3：酱香拿铁那一天发生了什么",
-      "pillar": "china-food",
-      "format": "short",
-      "series": "新中式饮品战争",
-      "part": 3,
-      "nextTease": "下集：9.9和30块的终极对决",
-      "angle": "2023-09-04 联名现象级单品 (verify all numbers)",
-      "whyNow": "4-week food sprint (owner 2026-07-18), 小红书连载 format",
-      "sources": [],
-      "addedAt": "2026-07-19",
-      "addedBy": "owner directive",
-      "status": "queued"
-    },
-    {
-      "id": "sC-4",
-      "title": "新中式饮品战争 P4：9.9 元和 30 元，谁赢了",
-      "pillar": "china-food",
-      "format": "short",
-      "series": "新中式饮品战争",
-      "part": 4,
-      "nextTease": "新系列预告：深夜食堂",
-      "angle": "价格带两极分化; 中性商业观察, zero politics",
-      "whyNow": "4-week food sprint (owner 2026-07-18), 小红书连载 format",
-      "sources": [],
-      "addedAt": "2026-07-19",
-      "addedBy": "owner directive",
-      "status": "queued"
     }
   ]
 }

@@ -431,6 +431,17 @@
       "lane": "pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-07-20T19:00:00Z"
+    },
+    {
+      "date": "2026-07-20",
+      "slot": "d",
+      "title": "新中式饮品战争④收官：9块9 和 30块，谁赢了 | China's Drink Wars P4 ☕",
+      "videoId": "E2sXl4v8ttc",
+      "url": "https://www.youtube.com/watch?v=E2sXl4v8ttc",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-20T22:00:00Z"
     }
   ]
 }
