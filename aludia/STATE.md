@@ -17,6 +17,10 @@
   且报价确认后执行**（sora-2 约 20 积分/秒，一条 8s ≈ 160 > 全月额度）。
 
 ## 运行日志（最新在上）
+- 2026-07-21 11:02 UTC · 第 18 轮（周二）：My Inner Voice 发布位提醒 +
+  filling-boxes 窗口倒计时；主交付＝UGC creator 外联工具包 v1
+  （渠道/DM 模板/paid-usage 合同要点/创意 brief/验收清单）。
+  积分 0（余额 140）。下一轮：周三耳环×脸型 carousel 发布位。
 - 2026-07-20 11:01 UTC · 第 17 轮（周一调研日）：周调研增量（filling
   boxes 格式/My Inner Voice 窗口确认/3–5 天入场规律/广告音频合规）→
   hook 库 + 开机手册补丁；耳环×脸型 carousel 规格（周三位）；
