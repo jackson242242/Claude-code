@@ -442,6 +442,50 @@
       "lane": "pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-07-20T22:00:00Z"
+    },
+    {
+      "date": "2026-07-21",
+      "slot": "a",
+      "title": "中国早餐宇宙①上海四大金刚：一顿早饭，吵了半世纪 | Shanghai's Big Four Breakfast 🥢",
+      "videoId": "RLMCDnDXoyM",
+      "url": "https://www.youtube.com/watch?v=RLMCDnDXoyM",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-21T13:00:00Z"
+    },
+    {
+      "date": "2026-07-21",
+      "slot": "b",
+      "title": "中国早餐宇宙②武汉热干面：一壶打翻的油，成就一座城的早饭 | Wuhan Hot-Dry Noodles 🍜",
+      "videoId": "No9yyegiivo",
+      "url": "https://www.youtube.com/watch?v=No9yyegiivo",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-21T16:00:00Z"
+    },
+    {
+      "date": "2026-07-21",
+      "slot": "c",
+      "title": "中国早餐宇宙③广州肠粉：薄如纸、白如雪，一匹白绸缎 | Guangzhou Cheung Fun 🥢",
+      "videoId": "0tZq3N0sUI0",
+      "url": "https://www.youtube.com/watch?v=0tZq3N0sUI0",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-21T19:00:00Z"
+    },
+    {
+      "date": "2026-07-21",
+      "slot": "d",
+      "title": "中国早餐宇宙④完结·西安肉夹馍：一个馍，夹了两千年 | Xi'an Rou Jia Mo 🥙",
+      "videoId": "3M8JBKp4BBU",
+      "url": "https://www.youtube.com/watch?v=3M8JBKp4BBU",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-21T22:00:00Z"
     }
   ]
 }
