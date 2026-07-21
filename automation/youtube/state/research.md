@@ -5,6 +5,15 @@ which angles feel tired, stale queue topics, and (Sat) vidIQ trend/outlier notes
 Strategy lens (owner directive 2026-07-08): 唯美主义 aesthetic + 贴近生活 everyday-life
 relevance — see `strategy.styleGuide` / `topicFitGate` in config.yaml.
 
+## 2026-07-21 (Tue) — 4-week FOOD SPRINT day 3 · 连载 series #2《中国早餐宇宙》
+
+- **Direction (早餐/过早 resonance):** "街头早餐/过早"是 config 点名的现代+贴近生活选题，也是小红书节奏最吃的日常料——人人吃过、城市各有一套、money-shot 天然（浇浆/拌面/爆汁）。今日取 queue 现成 4 集连载 **sA《中国早餐宇宙》**：a=上海四大金刚 / b=武汉热干面 / c=广州肠粉 / d=西安馍，story order=slot order（晨→午→傍晚→夜）。每集独立成篇又以"下座城市早餐"收尾预告。
+- **Fact-first hooks（延续 07-15 数字/事实钩＞地名钩规律，逐集查证）：** P1=上海人吵了大半个世纪的"四大金刚"到底哪四样(大饼/油条/粢饭/豆浆，名字借自佛教四大天王，1980s定型；报纸载1936年已排队买大饼油条豆浆)；P2=一碗打翻油壶的意外→热干面(1930s初汉口李包拌油晾面；蔡明纬约1937年加芝麻酱，1945"双木成林"取名蔡林记)；P3=薄如纸、白如雪的"一匹白绸缎"(西关泮塘荷仙馆约1930s-40s创布拉肠；布拉肠 vs 抽屉肠两派)；P4=夹了2000年的馍(腊汁肉战国称"寒肉"，秦灭韩传入长安；白吉馍"铁圈虎背菊花心"；1904樊氏父子把肉与馍合一→单手可吃的肉夹馍)。
+- **Angle 诚实边界:** 全部美食民俗/工艺，zero politics、无健康断言、无 endorsement；起源"众说纷纭"处如实标注（肠粉起源无定论）。所有事实本 run 查证，来源写进各集描述。
+- **vidIQ:** 余额预计仍 **0/150 < floor 40**(07-29 renews) → 周二非 Mon/Thu 无 analytics pulse、非 Sat 无 trend scan、所有 vidIQ 生成/打分 **诚实跳过**(0 credits)。
+- **Dialect bank:** 深化 **粤语**（与四川(07-20)/广西(07-19)/台湾(07-18)/上海·山东(07-17)相比，粤语与北京同为无日期深化的最久未更新档；粤语并直接服务今日 P3 广州肠粉）—— +唔该(点单礼貌语)/+抵食(好吃又便宜，"抵食夹大件")/+得闲饮茶(早茶文化邀约/告别)，verified 腾讯新闻·广式口头禅/百度百科/羊城网。北京话留作次日。P3 收尾眨眼用「得闲饮茶」。
+- **FORMAT-CONFLICT FLAG (repeat, owner):** firing prompt 仍说"三格含 b longform 16:9 @13/17/22"——那是食物冲刺前的旧schedule。Repo source-of-truth（config `cadence.postsPerDay=4` + youtube-cycle.md 食物冲刺"overrides everything" + "ignore stale firing-prompt phrasing"，owner 2026-07-18）判定 **4 格全 china-food Shorts @13/16/19/22Z、longform 暂停**。与 07-19/07-20 一致，续跑 4 Shorts。已为老板标记。
+
 ## 2026-07-20 (Mon) — 4-week FOOD SPRINT day 2 · 连载 series #1
 
 - **Direction (drinks-war resonance):** 新中式饮品/咖啡"价格与卷"话题在中文财经+社媒持续高热且高度"贴近生活"——蜜雪46,479店登顶全球现制饮品门店第一(2024-12-31,超星巴克)、现制酸奶"酸奶刺客"(Blueglass~45元/杯,茉酸奶含植脂末降价)、酱香拿铁542万杯/破亿(2023-09-04)、9.9元咖啡战2025分道扬镳(瑞幸涨价/库迪坚持)。这些"人人喝过、价格有痛感"的选题正是小红书节奏最吃的料 → 今日选 sC《新中式饮品战争》4集连载(P1茶饮卷→P2酸奶刺客→P3酱香拿铁→P4 9.9vs30收官回扣P1)。

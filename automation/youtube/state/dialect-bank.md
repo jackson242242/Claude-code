@@ -2,7 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-07-20 (last deepened: 四川话 — +抻抖 / +鼓到 / +杀搁; prior 07-19 广西话/桂柳话)  
+**Today:** 2026-07-21 (last deepened: 粤语 — +唔该 / +抵食 / +得闲饮茶; prior 07-20 四川话 抻抖/鼓到/杀搁)  
 **Verification:** All phrases verified via WebSearch; marked with region coverage notes.  
 **Content Tags:** [comedy] [travel] [teach] | Sensitivity: clean / 轻度粗俗 / 粗口
 
@@ -16,6 +16,9 @@
 - **俾心机** (bei2 sam1 gei1) | "put in effort/be serious" | 用心、认真。"要俾心机读书" = "要认真读书" | 强调努力和专注，常见于鼓励语境 | [comedy] [teach] | clean
 - **坦白讲** (taan2 baak6 gong2) | "honestly speaking" | 诚实说话。"坦白讲，…" 开头常见于真诚表达 | 网红用法频繁；粤语谦逊且直率的特点 | [comedy] [teach] | clean
 - **靠脑** (kao3 nao2) | "rely on brain/intelligence" | 要靠智慧解决。"靠脑揾食" = "靠聪明赚钱" | 体现聪慧、机灵的生活态度 | [comedy] [teach] | clean
+- **唔该** (m4 goi1) | "excuse me / thank you (for a favor)" | 最常用礼貌语，"劳驾/麻烦你"兼"多谢"。点单、借过都说"唔该" | 广式商业文明的边界感——你本不必帮我，帮了便谢；美食/服务场景天然彩蛋 | [teach] [travel] | clean  <!-- added 2026-07-21, verified (腾讯新闻·广式口头禅/百度百科 唔该) -->
+- **抵食** (dai2 sik6) | "great value food / worth eating" | "抵"=值得划算，"抵食"=好吃又便宜；"抵食夹大件"=物美价廉分量足 | 广东人夸美食的招牌句，早餐/夜市短片百搭 | [travel] [teach] | clean  <!-- added 2026-07-21, verified (百度百科 抵食/腾讯新闻) -->
+- **得闲饮茶** (dak1 haan4 jam2 caa4) | "let's do tea when you're free" | 有空一起喝早茶——既是邀约也是客气的告别语 | 广府早茶文化的灵魂口头禅；温和、重人情的生活节奏 | [travel] [teach] | clean  <!-- added 2026-07-21, verified (羊城网/粤语早茶文化) -->
 
 ## 北京话 (Beijing Dialect)
 
