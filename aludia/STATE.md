@@ -17,6 +17,11 @@
   且报价确认后执行**（sora-2 约 20 积分/秒，一条 8s ≈ 160 > 全月额度）。
 
 ## 运行日志（最新在上）
+- 2026-07-22 11:02 UTC · 第 19 轮（周三）：耳环×脸型 carousel 发布位 +
+  Leo season 应景钩子（7/23 起，轻帖/Reels 两版）+ 主交付＝八月
+  "Everyday armor" 返校季 mini-campaign 蓝图（窗口 8/3 铺 → 8/15–31
+  高峰 → Labor Day 收尾；starter-stack bundle offer 建议）。
+  积分 0（余额 140）。下一轮：周四 sketch-to-sparkle 发布位。
 - 2026-07-21 11:02 UTC · 第 18 轮（周二）：My Inner Voice 发布位提醒 +
   filling-boxes 窗口倒计时；主交付＝UGC creator 外联工具包 v1
   （渠道/DM 模板/paid-usage 合同要点/创意 brief/验收清单）。
