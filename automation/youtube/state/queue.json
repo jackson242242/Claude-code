@@ -819,66 +819,6 @@
       "addedAt": "2026-07-18",
       "addedBy": "owner directive",
       "status": "paused-food-sprint-2026-07-18"
-    },
-    {
-      "id": "sB-1",
-      "title": "火锅分几派 P1：重庆九宫格是干嘛的",
-      "pillar": "china-food",
-      "format": "short",
-      "series": "火锅分几派",
-      "part": 1,
-      "nextTease": "下集：潮汕人按部位涮牛肉",
-      "angle": "九宫格功能分区冷知识; 红油翻滚 money shot",
-      "whyNow": "4-week food sprint (owner 2026-07-18), 小红书连载 format",
-      "sources": [],
-      "addedAt": "2026-07-19",
-      "addedBy": "owner directive",
-      "status": "queued"
-    },
-    {
-      "id": "sB-2",
-      "title": "火锅分几派 P2：潮汕牛肉火锅的十二个部位",
-      "pillar": "china-food",
-      "format": "short",
-      "series": "火锅分几派",
-      "part": 2,
-      "nextTease": "下集：北京铜锅只涮一样东西",
-      "angle": "吊龙/匙柄部位图; 手打牛肉丸弹跳",
-      "whyNow": "4-week food sprint (owner 2026-07-18), 小红书连载 format",
-      "sources": [],
-      "addedAt": "2026-07-19",
-      "addedBy": "owner directive",
-      "status": "queued"
-    },
-    {
-      "id": "sB-3",
-      "title": "火锅分几派 P3：北京铜锅，清水涮羊肉",
-      "pillar": "china-food",
-      "format": "short",
-      "series": "火锅分几派",
-      "part": 3,
-      "nextTease": "下集：贵州人往锅里放酸汤",
-      "angle": "铜锅炭火 money shot; 麻酱蘸碟",
-      "whyNow": "4-week food sprint (owner 2026-07-18), 小红书连载 format",
-      "sources": [],
-      "addedAt": "2026-07-19",
-      "addedBy": "owner directive",
-      "status": "queued"
-    },
-    {
-      "id": "sB-4",
-      "title": "火锅分几派 P4：贵州酸汤，红汤界的新顶流",
-      "pillar": "china-food",
-      "format": "short",
-      "series": "火锅分几派",
-      "part": 4,
-      "nextTease": "新系列预告：新中式饮品战争",
-      "angle": "凯里红酸汤; 酸汤赛道近两年爆火; 木姜子",
-      "whyNow": "4-week food sprint (owner 2026-07-18), 小红书连载 format",
-      "sources": [],
-      "addedAt": "2026-07-19",
-      "addedBy": "owner directive",
-      "status": "queued"
     }
   ]
 }

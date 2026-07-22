@@ -5,6 +5,16 @@ which angles feel tired, stale queue topics, and (Sat) vidIQ trend/outlier notes
 Strategy lens (owner directive 2026-07-08): 唯美主义 aesthetic + 贴近生活 everyday-life
 relevance — see `strategy.styleGuide` / `topicFitGate` in config.yaml.
 
+## 2026-07-22 (Wed) — 4-week FOOD SPRINT day 4 · 连载 series #3《火锅分几派 China Hotpot Schools》
+
+- **Direction (火锅"分派/地域差异"resonance):** 火锅是抖音/小红书常青的高互动品类，而"火锅分几派/一头牛/清水锅底/新顶流"这类**对比+知识型**钩子最能引发站队评论。今日取 queue 现成 4 集连载 **sB《火锅分几派》**：a=重庆九宫格 / b=潮汕牛肉 / c=北京铜锅 / d=贵州酸汤(完结)。story order=slot order；四集分别对应 **麻辣/鲜甜/清水/酸** 四种锅底逻辑，P4 收尾回扣前三集并抛"你站哪派"either-or 问句 CTA。
+- **Fact-first hooks（延续"数字/反差事实钩＞地名钩"规律，逐集查证）:** P1=九宫格**不分辣度、分火候**（隔板导热分层：中心涮毛肚几秒/十字格丸子/四角慢炖；源自码头船工分格而食）——破除普遍误解；P2=**一头牛不到三成**能涮火锅，潮汕切出十几部位（吊龙涮6-8秒 vs 胸口朥5分钟；当天现宰不隔夜）；P3=**锅底居然是清水**（葱姜海米枸杞，紫铜炭火锅，二八麻酱蘸料，1903东来顺摆摊起家）；P4=**红汤界新顶流**+苗族"以酸代盐"（红酸汤番茄辣椒发酵5-6月再磨浆发酵半月；木姜子；凯里酸汤鱼国家级非遗）。
+- **Fresh dated hook (P4 趋势背书):** 新华网《云贵火锅发展报告2026》(2026-04-24)+《区域火锅观察报告2026》(2026-03-20)：2025 云贵火锅市场约**1450亿元/同比+16%**，2026预计约1600亿；截至2026-03 抖音/小红书"酸汤火锅"等相关话题**播放破百亿**；云贵菜增速约14.8%——酸汤确为"新顶流"有据。中性趋势观察、非投资建议。
+- **Angle 诚实边界:** 全部美食民俗/工艺，zero politics、无健康断言、无 endorsement；起源/传说处如实标注（重庆火锅"码头说"为主流传说；红酸汤发酵月数取报告口径）。所有事实本 run 查证，来源写进各集描述。
+- **vidIQ:** 余额仍预计 **0/150 < floor 40**(07-29 renews) → 周三非 Mon/Thu 无 analytics pulse、非 Sat 无 trend scan、所有 vidIQ 生成/打分 **诚实跳过**(0 credits)。
+- **Dialect bank:** 深化 **北京话**（07-21 已把粤语补齐后，北京话成为最久未更新档，且直接服务 P3 北京铜锅）—— +局气(仗义守规矩讲义气)/+敞亮(心里开阔亮堂大方，与清水锅底"清亮"双关)/+得嘞(爽快应答)，verified 网易《北京话三宝》/lingoace 北京话/墙根网。P1 重庆话彩蛋「莽起整」、P2 潮汕话「正」、P4 贵州话「板扎」均如实标注方言（苗侗语不在 Han 库→P4 不强行造苗语彩蛋，honesty 同 07-18 孟连）。
+- **FORMAT-CONFLICT FLAG (repeat, owner):** firing prompt 仍说"三格含 b longform 16:9 @13/17/22"——那是食物冲刺前的旧 schedule。Repo source-of-truth（config `cadence.postsPerDay=4` + youtube-cycle.md 食物冲刺"overrides everything" + "ignore stale firing-prompt phrasing"，owner 2026-07-18）判定 **4 格全 china-food Shorts @13/16/19/22Z、longform 暂停**。与 07-19/20/21 一致，续跑 4 Shorts。已为老板持续标记——建议老板更新 Routine firing prompt 以消除每日冲突。
+
 ## 2026-07-21 (Tue) — 4-week FOOD SPRINT day 3 · 连载 series #2《中国早餐宇宙》
 
 - **Direction (早餐/过早 resonance):** "街头早餐/过早"是 config 点名的现代+贴近生活选题，也是小红书节奏最吃的日常料——人人吃过、城市各有一套、money-shot 天然（浇浆/拌面/爆汁）。今日取 queue 现成 4 集连载 **sA《中国早餐宇宙》**：a=上海四大金刚 / b=武汉热干面 / c=广州肠粉 / d=西安馍，story order=slot order（晨→午→傍晚→夜）。每集独立成篇又以"下座城市早餐"收尾预告。

@@ -2,7 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-07-21 (last deepened: 粤语 — +唔该 / +抵食 / +得闲饮茶; prior 07-20 四川话 抻抖/鼓到/杀搁)  
+**Today:** 2026-07-22 (last deepened: 北京话 — +局气 / +敞亮 / +得嘞; prior 07-21 粤语 唔该/抵食/得闲饮茶, 07-20 四川话 抻抖/鼓到/杀搁)  
 **Verification:** All phrases verified via WebSearch; marked with region coverage notes.  
 **Content Tags:** [comedy] [travel] [teach] | Sensitivity: clean / 轻度粗俗 / 粗口
 
@@ -28,6 +28,9 @@
 - **出门儿** (chu1 men2 er0) | "go out" | 北京儿化音典型；"我得出门儿" | 体现北京话儿化韵尾特征 | [teach] | clean
 - **唉哟妈呀** (ai1 yo3 ma1 ya0) | "oh my goodness" | 惊讶/感叹。"唉哟妈呀，这怎么搞的！" | 北京老人常用感叹语，魔性十足 | [comedy] | clean
 - **扛不住** (kang2 bu4 zhu4) | "can't bear it" | 承受不了、太累。"这活儿我扛不住" | 实在、直白的北方表达风格 | [comedy] [teach] | clean
+- **局气** (ju2 qi0) | "stand-up / loyal & fair" | 仗义、守规矩、讲义气、大方厚道。"这人特局气" = 够朋友、讲究 | 老北京对人品的最高褒奖之一；饭桌/朋友情谊短片天然彩蛋 | [comedy] [teach] [travel] | clean  <!-- added 2026-07-22, verified (网易《北京话里有三宝：局气、瓷器、大飒蜜》/lingoace 北京话词汇) -->
+- **敞亮** (chang3 liang4) | "open & bright / clear-hearted & generous" | 本义屋子亮堂宽敞，引申为人心里开阔、明白、爽快大方。"这事办得敞亮" | 与清水锅底的「清亮」双关；北京人夸人爽快磊落的招牌词 | [comedy] [teach] [travel] | clean  <!-- added 2026-07-22, verified (lingoace 北京话/墙根网 京韵遗风) -->
+- **得嘞** (dei2 le0) | "alright, done! / you got it" | 爽快答应，"行嘞/好嘞"，答应得痛快。"帮我带瓶醋——得嘞！" | 京片子干脆利落的应答语；服务/买卖场景传神 | [comedy] [teach] | clean  <!-- added 2026-07-22, verified (lingoace 北京话词汇例句) -->
 
 ## 上海话 (Shanghai Dialect)
 
