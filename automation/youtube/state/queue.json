@@ -701,35 +701,11 @@
       "status": "paused-food-sprint-2026-07-18"
     },
     {
-      "id": "cfd-01",
-      "title": "兰州牛肉面：一清二白三红四绿五黄",
-      "pillar": "china-food",
-      "format": "short",
-      "angle": "The 5-standard formula as hook; hand-pulling close-ups.",
-      "whyNow": "owner core-shift 2026-07-15: travel resources + food",
-      "sources": [],
-      "addedAt": "2026-07-15",
-      "addedBy": "owner directive",
-      "status": "queued"
-    },
-    {
       "id": "cfd-02",
       "title": "北京烤鸭为什么要吹气？",
       "pillar": "china-food",
       "format": "short",
       "angle": "Air-pump craft hook; carving 108 slices fact.",
-      "whyNow": "owner core-shift 2026-07-15: travel resources + food",
-      "sources": [],
-      "addedAt": "2026-07-15",
-      "addedBy": "owner directive",
-      "status": "queued"
-    },
-    {
-      "id": "cfd-03",
-      "title": "柳州螺蛳粉：闻着臭吃着香的百亿产业",
-      "pillar": "china-food",
-      "format": "short",
-      "angle": "¥10B+ industry fact hook; 酸笋 the real culprit.",
       "whyNow": "owner core-shift 2026-07-15: travel resources + food",
       "sources": [],
       "addedAt": "2026-07-15",
@@ -819,6 +795,90 @@
       "addedAt": "2026-07-18",
       "addedBy": "owner directive",
       "status": "paused-food-sprint-2026-07-18"
+    },
+    {
+      "id": "cfd-07",
+      "title": "云南菌子季：一朵野生菌，凭什么卖上千",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "7-8月云南野生菌上市季：松茸、鸡枞、见手青；市集人潮+雨后松林money shot。fact-first=一朵松茸的身价。安全诚实点出'必须彻底炒熟'，不猎奇中毒梗。人物：赶菌市、翻炒的手。",
+      "whyNow": "每年7-8月云南野生菌大量上市，正值当季（2026-07）；菌子季是短视频高热美食话题。verify 松茸/鸡枞价格区间、见手青须炒熟 at scripting.",
+      "sources": [
+        "云南野生菌 上市季 松茸 见手青 安全"
+      ],
+      "addedAt": "2026-07-23",
+      "addedBy": "cycle replenish (food sprint, seasonal 当季菌子)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-08",
+      "title": "天水麻辣烫：一座甘肃小城，靠一碗麻辣烫出圈",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "天水麻辣烫：甘谷辣椒油泼、手擀粉、菜串；网红小城烟火。fact-first=让一座小城火起来的一碗麻辣烫。人物：油泼辣子、串菜的手、排队人群。",
+      "whyNow": "天水麻辣烫2024年现象级爆火、带动文旅，热度延续；'网红小城美食'是持续话题。verify 甘谷辣椒/麻辣烫做法/文旅数据 at scripting.",
+      "sources": [
+        "天水麻辣烫 甘谷辣椒 网红 文旅"
+      ],
+      "addedAt": "2026-07-23",
+      "addedBy": "cycle replenish (food sprint, 网红小城)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-09",
+      "title": "淄博烧烤：小饼卷一切，一座城的烟火气",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "淄博烧烤三件套：小炉子、小饼、蘸料；自己动手卷。fact-first=一张小饼卷起一座城。people-action：烤串、卷饼、撸串人群。",
+      "whyNow": "淄博烧烤2023爆火后成为'烟火经济'长尾符号，'小饼小炉'模式持续被模仿；夏季烧烤当季。verify 淄博烧烤三件套/兴起时间 at scripting.",
+      "sources": [
+        "淄博烧烤 小饼 炉子 蘸料 三件套"
+      ],
+      "addedAt": "2026-07-23",
+      "addedBy": "cycle replenish (food sprint, 夏季烧烤)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-10",
+      "title": "新中式茶饮：一杯奶茶，怎么成了年轻人的社交货币",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "新中式茶饮：原叶鲜奶茶、伯牙绝弦式国风命名、门店排队。fact-first=一年卖出多少杯。people-action：递杯、举杯拍照、排队。中式=国风包装+茶文化底蕴。",
+      "whyNow": "新中式茶饮（霸王茶姬等）2024-25持续高增长、成为年轻人日常与社交货币；贴近生活。verify 品类规模/年销杯数 at scripting.",
+      "sources": [
+        "新中式茶饮 霸王茶姬 原叶鲜奶茶 增长"
+      ],
+      "addedAt": "2026-07-23",
+      "addedBy": "cycle replenish (food sprint, 现制饮品/年轻)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-11",
+      "title": "街头煎饼果子：三分钟一套，早餐摊的手上功夫",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "煎饼果子：摊糊、磕蛋、刷酱、脆果子一裹一叠。fact-first=一套三分钟出摊。people-action：摊主转铲、递饼、通勤人流。街头早餐烟火。",
+      "whyNow": "街头早餐（煎饼果子/杂粮煎饼）常青高互动、通勤生活强共鸣；可组'中国街头早餐'系列。verify 起源/流派(天津vs山东) at scripting.",
+      "sources": [
+        "煎饼果子 天津 山东 街头早餐 做法"
+      ],
+      "addedAt": "2026-07-23",
+      "addedBy": "cycle replenish (food sprint, 街头早餐)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-12",
+      "title": "潮汕砂锅粥：夜里那锅粥，海鲜下得毫不手软",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "潮汕砂锅粥（夜糜）：生米现熬、螃蟹虾贝下锅、葱花芹菜末收尾。fact-first=一锅粥的鲜从哪来。people-action：搅粥、下料、夜宵桌。夜宵烟火（白天素材优先，避免纯夜景空镜）。",
+      "whyNow": "潮汕砂锅粥/夜糜作为夜宵文化代表持续热度；'一锅鲜'钩子强。verify 生滚粥做法/潮汕夜糜 at scripting.",
+      "sources": [
+        "潮汕砂锅粥 夜糜 生滚 海鲜"
+      ],
+      "addedAt": "2026-07-23",
+      "addedBy": "cycle replenish (food sprint, 潮汕夜宵)",
+      "status": "queued"
     }
   ]
 }

@@ -530,6 +530,50 @@
       "lane": "pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-07-22T22:00:00Z"
+    },
+    {
+      "date": "2026-07-23",
+      "slot": "a",
+      "title": "中国粉面几大派①兰州牛肉面：一碗面，五种颜色都是规矩 | China Noodle Schools P1 · Lanzhou 🍜",
+      "videoId": "JA2sKtadlr4",
+      "url": "https://www.youtube.com/watch?v=JA2sKtadlr4",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-23T13:00:00Z"
+    },
+    {
+      "date": "2026-07-23",
+      "slot": "b",
+      "title": "中国粉面几大派②武汉热干面：一碗一滴汤都没有的面 | China Noodle Schools P2 · Wuhan 🍜",
+      "videoId": "whAd13Czlyk",
+      "url": "https://www.youtube.com/watch?v=whAd13Czlyk",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-23T16:00:00Z"
+    },
+    {
+      "date": "2026-07-23",
+      "slot": "c",
+      "title": "中国粉面几大派③柳州螺蛳粉：闻着臭，嗦出七百多亿 | China Noodle Schools P3 · Liuzhou 🍜",
+      "videoId": "UM79YPsSBFM",
+      "url": "https://www.youtube.com/watch?v=UM79YPsSBFM",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-23T19:00:00Z"
+    },
+    {
+      "date": "2026-07-23",
+      "slot": "d",
+      "title": "中国粉面几大派④完结·重庆小面：面素，料一点都不素 | China Noodle Schools P4 · Chongqing 🌶️🍜",
+      "videoId": "j3e5_xsq144",
+      "url": "https://www.youtube.com/watch?v=j3e5_xsq144",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-23T22:00:00Z"
     }
   ]
 }
