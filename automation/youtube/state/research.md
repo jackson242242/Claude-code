@@ -5,6 +5,15 @@ which angles feel tired, stale queue topics, and (Sat) vidIQ trend/outlier notes
 Strategy lens (owner directive 2026-07-08): 唯美主义 aesthetic + 贴近生活 everyday-life
 relevance — see `strategy.styleGuide` / `topicFitGate` in config.yaml.
 
+## 2026-07-23 (Thu) — 4-week FOOD SPRINT day 5 · 连载 series #4《中国粉面几大派 China Noodle Schools》
+
+- **Direction（"粉面/嗦粉嗦面"品类 resonance）:** 面/粉是抖音·小红书最下饭的常青流量池，"一碗XX面凭什么"这类**地域对比＋知识型**钩子延续火锅系列的高互动逻辑。今日搭 4 集连载《中国粉面几大派》，用**汤/拌/酸/麻辣**四种性格轴串起四座城，story order=slot order，P4 收尾回扣前三集并抛"你站哪碗"either-or CTA（延续 07-22 火锅站队打法，07-15 数据：评论仍是短板，问句必须进画面）。
+- **Fact-first hooks（逐集本run查证，延续"数字/反差事实钩＞地名钩"）:** P1 兰州牛肉面=**一清二白三红四绿五黄**＋一碗面能拉出毛细/二细/韭叶/大宽等十几种粗细（国家级非遗制作技艺）；P2 武汉热干面=**不带一滴汤**的碱水面，八分熟掸凉淋油、芝麻酱拌开，武汉"过早"之魂（蔡林记 1928，2011 湖北省级非遗——**省级非遗，如实标注，不吹国家级**）；P3 柳州螺蛳粉=一碗嗦出**全产业链 759.6 亿**（2024，+13.4%；袋装 169 亿），闻着臭吃着香靠发酵酸笋这口"灵魂"，2021 国家级非遗；P4 重庆小面（完结）=一碗二两小面**十几种调料**打底（地方标准《重庆小面烹饪技术指南》近 20 道工序、14 种调料），花椒管麻、海椒管辣。
+- **Angle 复用/re-angle:** cfd-01 兰州牛肉面 & cfd-03 柳州螺蛳粉 从 queue 取用并 re-angle 成连载集；P2 武汉热干面、P4 重庆小面 依今日 research 现生成（补齐"汤/拌/酸/麻辣"四轴闭环）。cfd-05 潮汕牛肉火锅与昨日 P2 撞题，今日不取、留作 backlog。
+- **Dialect bank:** 深化最久未更新的 **湖南话**（此前无 dated 深化记录）：+策（闲聊/调侃，《越策越开心》带火）/+耐得烦（凑齐"吃得苦·耐得烦·霸得蛮"三件套）/+越策越开心（方言综艺 IP 梗）。今日四城属西北官话/西南官话/桂柳话/川渝话，Han 方言库里无兰州话专档，P1 narration 用普通话如实标注、不强造西北彩蛋；P3 桂柳话"嗦粉"、P4 川渝味可点到。
+- **vidIQ:** 余额 **0/150（低于 floor 40，renews 07-29）** → 周四 analytics pulse 需 5 credits 无法执行、Sat trend 非今日 → 全部 vidIQ 生成/打分/分析 **诚实跳过（0 credits）**。
+- **Fresh dated fact backbone（本run WebSearch 查证，来源入各集 description）:** 柳州螺蛳粉 2024 全产业链 759.6 亿/+13.4%（中新网/湖北日报 2025-01-10）；重庆小面地方标准近 20 道工序 14 种调料（重庆市政府网 2022-10-13）；中性行业事实、非投资建议。
+
 ## 2026-07-22 (Wed) — 4-week FOOD SPRINT day 4 · 连载 series #3《火锅分几派 China Hotpot Schools》
 
 - **Direction (火锅"分派/地域差异"resonance):** 火锅是抖音/小红书常青的高互动品类，而"火锅分几派/一头牛/清水锅底/新顶流"这类**对比+知识型**钩子最能引发站队评论。今日取 queue 现成 4 集连载 **sB《火锅分几派》**：a=重庆九宫格 / b=潮汕牛肉 / c=北京铜锅 / d=贵州酸汤(完结)。story order=slot order；四集分别对应 **麻辣/鲜甜/清水/酸** 四种锅底逻辑，P4 收尾回扣前三集并抛"你站哪派"either-or 问句 CTA。

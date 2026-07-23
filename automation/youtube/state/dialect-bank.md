@@ -2,7 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-07-22 (last deepened: 北京话 — +局气 / +敞亮 / +得嘞; prior 07-21 粤语 唔该/抵食/得闲饮茶, 07-20 四川话 抻抖/鼓到/杀搁)  
+**Today:** 2026-07-23 (last deepened: 湖南话 — +策 / +耐得烦 / +越策越开心; prior 07-22 北京话 局气/敞亮/得嘞, 07-21 粤语 唔该/抵食/得闲饮茶, 07-20 四川话 抻抖/鼓到/杀搁)  
 **Verification:** All phrases verified via WebSearch; marked with region coverage notes.  
 **Content Tags:** [comedy] [travel] [teach] | Sensitivity: clean / 轻度粗俗 / 粗口
 
@@ -53,6 +53,9 @@
 - **塑普腔** | generic tag | 整体用高音调讲普通话，"像唱歌一样"的语言特征 | 抖音爆款；湖南网红文化的标志 | [comedy] [teach] | clean
 - **霸得蛮** (ba4 de2 man2) | "gutsy / stubbornly tough" | 做事执拗坚韧、不到目的不罢休。与"吃得苦、耐得烦"并称，概括湖湘性格（湘军曾国藩即以此闻名） | 湖南精神的代名词；用来夸人有股不服输的狠劲，正面褒义 | [comedy] [teach] [travel] | clean（verified 百度百科/知乎/华声在线）
 - **恰饭** (qia4 fan4) | "eat / make a living" | 西南官话（含长沙）把"吃"念作"qia"，"吃饭"写作"恰饭"；网络上引申为"赚钱谋生/接广告恰饭" | 从方言音变成全网热词；长沙人日常"恰了冇？"＝"吃了吗？" | [comedy] [teach] | clean（verified 百度百科/维基·长沙话）
+- **策** (cè) | "chat / banter / tease" | 长沙话核心动词，闲聊、调侃、逗趣三合一；"我们策一下"＝聊会儿天，"策神"＝会聊会逗的人 | 由湖南经视《越策越开心》带火全国；长沙市井幽默的灵魂，饭桌/夜市/摆龙门阵语境百搭 | [comedy] [teach] [travel] | clean（verified 澎湃·"港"长沙话 / 百度百科·长沙话）  <!-- added 2026-07-23 -->
+- **耐得烦** (nai4 de2 fan2) | "patient / unbothered by tedium" | 湘人性格三件套"吃得苦、耐得烦、霸得蛮"之一；能沉住气、不怕琐碎麻烦 | 与已有的霸得蛮互补，凑齐湖南人自我概括的经典三连；夸人有耐性的褒义 | [comedy] [teach] | clean（verified 华声在线/知乎·湖南人性格）  <!-- added 2026-07-23 -->
+- **越策越开心** | meme phrase | 湖南经济电视台同名王牌节目（2000s 起），把方言动词"策"送成全国口头禅；引申"越聊越起劲、越逗越乐" | 湖南方言综艺输出的标志性 IP；招呼观众互动/评论区玩梗的现成句式 | [comedy] [teach] | clean（verified 百度百科·长沙话/越策越开心）  <!-- added 2026-07-23 -->
 
 ## 四川话 (Sichuan Dialect)
 
