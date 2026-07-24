@@ -797,20 +797,6 @@
       "status": "paused-food-sprint-2026-07-18"
     },
     {
-      "id": "cfd-07",
-      "title": "云南菌子季：一朵野生菌，凭什么卖上千",
-      "pillar": "china-food",
-      "format": "short",
-      "angle": "7-8月云南野生菌上市季：松茸、鸡枞、见手青；市集人潮+雨后松林money shot。fact-first=一朵松茸的身价。安全诚实点出'必须彻底炒熟'，不猎奇中毒梗。人物：赶菌市、翻炒的手。",
-      "whyNow": "每年7-8月云南野生菌大量上市，正值当季（2026-07）；菌子季是短视频高热美食话题。verify 松茸/鸡枞价格区间、见手青须炒熟 at scripting.",
-      "sources": [
-        "云南野生菌 上市季 松茸 见手青 安全"
-      ],
-      "addedAt": "2026-07-23",
-      "addedBy": "cycle replenish (food sprint, seasonal 当季菌子)",
-      "status": "queued"
-    },
-    {
       "id": "cfd-08",
       "title": "天水麻辣烫：一座甘肃小城，靠一碗麻辣烫出圈",
       "pillar": "china-food",

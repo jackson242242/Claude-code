@@ -574,6 +574,50 @@
       "lane": "pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-07-23T22:00:00Z"
+    },
+    {
+      "date": "2026-07-24",
+      "slot": "a",
+      "title": "云南菌子季①见手青：炒不够时间，真会\"见小人\" | Yunnan Wild Mushrooms P1 · Jianshouqing 🍄",
+      "videoId": "o8MuiqDU_oo",
+      "url": "https://www.youtube.com/watch?v=o8MuiqDU_oo",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-24T13:00:00Z"
+    },
+    {
+      "date": "2026-07-24",
+      "slot": "b",
+      "title": "云南菌子季②松茸：一斤上千，为什么种不出来 | Yunnan Wild Mushrooms P2 · Matsutake 🍄",
+      "videoId": "0I3kO59mzMk",
+      "url": "https://www.youtube.com/watch?v=0I3kO59mzMk",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-24T16:00:00Z"
+    },
+    {
+      "date": "2026-07-24",
+      "slot": "c",
+      "title": "云南菌子季③鸡枞：蚂蚁\"种\"出来的菌中之王 | Yunnan Wild Mushrooms P3 · Termite Mushroom 🐜🍄",
+      "videoId": "9aNU5YrMdAA",
+      "url": "https://www.youtube.com/watch?v=9aNU5YrMdAA",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-24T19:00:00Z"
+    },
+    {
+      "date": "2026-07-24",
+      "slot": "d",
+      "title": "云南菌子季④完结·干巴菌：长得最丑，卖得最贵 | Yunnan Wild Mushrooms P4 · Ganba Fungus 🍄",
+      "videoId": "h1bXgMgbCz8",
+      "url": "https://www.youtube.com/watch?v=h1bXgMgbCz8",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-24T22:00:00Z"
     }
   ]
 }
