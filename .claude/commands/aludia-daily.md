@@ -66,6 +66,15 @@ viral reel hook") → update `BRAND.md` §3 hook library and note findings +
 sources in the brief. Never spend vidIQ credits unless the boss explicitly
 orders it in chat after a cost quote.
 
+## Light-mode rule (added 2026-07-24, weekly review #3)
+If there has been NO boss input and NO data since the previous cycle,
+Tue/Thu/Sat/Sun cycles run LIGHT: publish-slot reminders + INDEX pointer
+in a short brief only — no new content specs. Mon (research+content),
+Wed (content), Fri (review) stay full. Any boss message, data, "查",
+Canva reauth, or product info immediately restores full cycles.
+Rationale: 3 weeks of supply exceeded execution visibility; convert
+overproduction into on-call readiness. Boss can veto anytime.
+
 ## 诚实红线 (from repo Operating Principles)
 - 不能直接发 IG / 不能碰 Ads Manager / 不保证流量或 ROAS 数字。
 - 不编造任何 metric；没有数据就说没有数据。
