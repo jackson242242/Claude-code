@@ -2,7 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-07-23 (last deepened: 湖南话 — +策 / +耐得烦 / +越策越开心; prior 07-22 北京话 局气/敞亮/得嘞, 07-21 粤语 唔该/抵食/得闲饮茶, 07-20 四川话 抻抖/鼓到/杀搁)  
+**Today:** 2026-07-24 (last deepened: 客家话 — +食早/食夜 / +命兮靓 / +命兮俚; prior 07-23 湖南话 策/耐得烦/越策越开心, 07-22 北京话 局气/敞亮/得嘞, 07-21 粤语 唔该/抵食/得闲饮茶)  
 **Verification:** All phrases verified via WebSearch; marked with region coverage notes.  
 **Content Tags:** [comedy] [travel] [teach] | Sensitivity: clean / 轻度粗俗 / 粗口
 
@@ -120,6 +120,9 @@
 - **食饭冇** (sit8 fan6 mo5) | "have you eaten yet?" | 客家问候语，"食饭"=吃饭，"冇"=没有/了吗。"食饭冇？" 见面寒暄 | 与粤语「食饭」同源；体现客家人以饭问候的人情味 | [teach] [travel] | clean  <!-- added 2026-07-11, verified -->
 - **汝好** (nyi2 ho3) | "hello / you good" | "你好" 的客家说法，"汝"=你（保留古汉语用字） | 客家话保留大量中古汉语词，"汝"是典型例证 | [teach] | clean  <!-- added 2026-07-11, verified -->
 - **承蒙你** (sang2 mung2 nyi2) | "much obliged / thank you" | 传统客家致谢语，"承蒙"=承受恩惠。比直译"谢谢"更古雅 | 梅县客家的谦逊礼数；直接说"谢谢"梅县音近 qia qia | [teach] | clean  <!-- added 2026-07-11, verified -->
+- **食早 / 食夜** (sit8 zau3 / sit8 ya6) | "breakfast / dinner (as a greeting)" | 客家以吃饭问候，按三餐细分——"食早冇？"=吃早饭没，"食夜冇？"=吃晚饭没；桂东南/两广客家常用 | 与"食饭冇"同一人情逻辑，比普通话更分时段 | [teach] [travel] | clean  <!-- added 2026-07-24, verified (维基·客家话/桂东南客家 食早食夜) -->
+- **命兮靓** (miang6 he1 liang3) | "gorgeous / drop-dead pretty" | 客家加强式赞美，"命兮靓毕矣"=漂亮极了；"命兮"作程度副词，比单说"靓"更夸张 | 客家话独特的程度表达法 | [comedy] [teach] | clean  <!-- added 2026-07-24, verified (客家话日常用语大全) -->
+- **命兮俚** (miang6 he1 li1) | "downright ugly" | "命兮俚毕矣"=丑死了，"俚"=丑，与"命兮靓"正反成对 | 客家程度副词的一正一反对照，打趣常用（对号入座需谨慎） | [comedy] [teach] | clean  <!-- added 2026-07-24, verified (客家话日常用语大全) -->
 
 ## 广西话 (Guangxi — Gui-Liu Dialect / Southern Mandarin)
 

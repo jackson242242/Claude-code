@@ -5,6 +5,17 @@ which angles feel tired, stale queue topics, and (Sat) vidIQ trend/outlier notes
 Strategy lens (owner directive 2026-07-08): 唯美主义 aesthetic + 贴近生活 everyday-life
 relevance — see `strategy.styleGuide` / `topicFitGate` in config.yaml.
 
+## 2026-07-24 (Fri) — 4-week FOOD SPRINT day 6 · 连载 series #5《云南菌子季 Yunnan Wild Mushroom Season》
+
+- **Direction（"菌子季/野生菌"当季 resonance）:** 现在正是云南野生菌上市旺季（雨季 7-8 月，2026-07 正当季），"吃菌自由/见手青见小人/菌子刺客"是抖音·小红书夏季顶流话题，天然贴近生活又反差强。今日搭 4 集连载《云南菌子季》，用**规矩(危险)→贵(野生)→鲜(共生)→香(至味)**四条性格轴串起四朵菌，story order=slot order，P4 收尾回扣前三集并抛"你先夹哪一朵"either-or CTA（延续 07-22/07-23 站队打法；07-15 数据：评论仍是短板，问句必须进画面）。
+- **Fact-first hooks（逐集本run WebSearch 查证，延续"数字/反差事实钩＞地名钩"）:** P1 见手青=牛肝菌俗称(切开氧化变靛蓝"见手就青")，未炒熟含毒素、潜伏 6–72h、中毒会"看见小人"(幻觉)，须**炒够 20 分钟趁热吃**，网传"3 刀 16 秒"快炒有风险，2026-06 云大附院一医生因没炒熟中毒昏迷两天；P2 松茸=**无法人工种植**(与松栎树根共生)，香格里拉/迪庆国家地理标志，品相好**一斤 1000–1500 元**，冷链仅保鲜约 5 天；P3 鸡枞菌="菌中之王"、与**白蚁共生**(白蚁筑巢育菌丝、恒温恒湿)，长期难以大规模人工栽培，**直到 2024-05 昆明才首次人工蚁巢出菇**(如实标注突破、不吹"永远种不出")，吃不完做油鸡枞久存；P4 干巴菌(完结)=其貌不扬像一撮枯草，却**每公斤 2500–3200 元**(2024)、"人间至味"，最大特点是"香"、指甲盖大一块提香一锅、极难采、择洗费工。
+- **Angle 诚实边界:** 全部美食民俗/工艺，zero politics、无健康断言(见手青只讲"必须炒熟"的常识安全提醒、不作医疗建议)、无 endorsement；价格/突破时间/中毒案例均本 run 查证并写进各集 description(brandRules)。见手青安全提示如实、鸡枞人工化如实(2024 突破而非"绝不可能")。
+- **B-roll 诚实边界:** Pexels 无云南特定菌种专属素材，用通用"野生菌/牛肝菌/松林采菌/下锅爆炒/市场菌摊/手部择洗"镜头承载，warmfood 暖调、fast 硬切；≥50% 人物在动作中(炒/采/择/端)。菌种画面为示意，不谎称实拍某云南菌。
+- **Dialect bank:** 深化最久未更新的 **客家话**(上次深化 2026-07-11，为 11 区最旧)——+食早/食夜(按三餐细分的吃饭招呼语，桂东南客家)/+命兮靓(漂亮极了，"命兮"作程度副词)/+命兮俚(丑死了，与命兮靓正反成对)，verified 维基·客家话/客家话日常用语大全(食饭冇·汝好 07-11 已收，今日补新词)。云南话不在 11 区方言库→本系列 narration 用普通话如实标注、不强造云南彩蛋(honesty 同 07-18 孟连/07-23 兰州)。
+- **vidIQ:** 余额预计仍 **0/150 < floor 40**(07-29 renews) → 周五非 Mon/Thu 无 analytics pulse、非 Sat 无 trend scan、所有 vidIQ 生成/打分 **诚实跳过**(0 credits)。
+- **Fresh dated fact backbone（本run WebSearch 查证，来源入各集 description）:** 见手青中毒潜伏 6–72h/须煮 20min+(云南省卫健委·野生菌食用宝典 2025-06-26)、2026-06 云大附院医生见手青中毒昏迷两天(大纪元 2026-06-07)；松茸不可人工种植/香格里拉一斤 1000–1500 元(中国江苏网/21 经济网 2024-08)；鸡枞与白蚁共生、2024-05 昆明首次人工出菇(农业农村部 2024-05-14)；干巴菌每公斤约 2500–3200 元/"最名贵野生菌"(界面新闻/云南网 2024)。中性行业事实、非投资建议。
+- **FORMAT-CONFLICT FLAG (repeat, owner):** firing prompt 仍说"三格含 b longform 16:9 @13/17/22"、并称"education channel"——那是 2026-07-09 pivot 与 07-18 食物冲刺之前的**旧 schedule 措辞**。Repo source-of-truth（config `cadence.postsPerDay=4` + youtube-cycle.md 食物冲刺"overrides everything" + 明令"ignore stale firing-prompt phrasing / education channel"，owner 2026-07-18）判定 **4 格全 china-food Shorts @13/16/19/22Z、longform 暂停**。与 07-19..07-23 五天一致，续跑 4 Shorts。已连续为老板标记——**建议老板更新 Routine 的 firing prompt**（改为 4 格 china-food、去掉 education/longform 措辞）以消除每日冲突。
+
 ## 2026-07-23 (Thu) — 4-week FOOD SPRINT day 5 · 连载 series #4《中国粉面几大派 China Noodle Schools》
 
 - **Direction（"粉面/嗦粉嗦面"品类 resonance）:** 面/粉是抖音·小红书最下饭的常青流量池，"一碗XX面凭什么"这类**地域对比＋知识型**钩子延续火锅系列的高互动逻辑。今日搭 4 集连载《中国粉面几大派》，用**汤/拌/酸/麻辣**四种性格轴串起四座城，story order=slot order，P4 收尾回扣前三集并抛"你站哪碗"either-or CTA（延续 07-22 火锅站队打法，07-15 数据：评论仍是短板，问句必须进画面）。
