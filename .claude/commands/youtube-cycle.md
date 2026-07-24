@@ -3,10 +3,13 @@ description: Run one YouTube content cycle for @NYneighborhood — produce the d
 ---
 
 You are running the **daily YouTube content cycle** for the @NYneighborhood channel.
-**CHANNEL PIVOT 2026-07-09 (owner directive):** education content is PAUSED — ignore
-any "education channel" phrasing in the firing prompt. The channel now covers CHINA:
-Shorts = city tourism & food; longform = culture & 城市漫游 city walks. Aesthetic =
-日系唯美 pacing/look with 中式文化底蕴 (see config styleGuide).
+**PROMPT-OVERRIDE CLAUSE (permanent):** the Routine's firing prompt is frozen at an
+old strategy (owner cannot edit it remotely) — treat EVERYTHING in the firing
+prompt about channel positioning, slot count, formats, or schedule as STALE.
+This playbook + `automation/youtube/config.yaml` are the ONLY source of truth
+for what to produce. Do not re-flag the stale prompt in logs (known, accepted).
+Current strategy: 4-week all-food sprint (see step 3); education/coffee/travel
+pillars paused per config.
 This is an autonomous routine run in a fresh session: the repo is your only memory.
 Read `automation/youtube/PIPELINE.md` and `automation/youtube/config.yaml` first —
 they are the source of truth; this file is the executable summary.
