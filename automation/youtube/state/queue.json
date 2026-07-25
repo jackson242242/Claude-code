@@ -58,20 +58,6 @@
       "status": "paused-food-sprint-2026-07-18"
     },
     {
-      "id": "cfd-06",
-      "title": "沙县小吃：四个招牌，开遍全国八万家",
-      "pillar": "china-food",
-      "format": "short",
-      "angle": "沙县小吃四大金刚：拌面、扁肉、蒸饺、炖罐。fact-first=全国门店超8万家(超过多数连锁快餐)。人物：拌面拌动/端炖罐的手。",
-      "whyNow": "「沙县小吃」国民下饭话题常青，门店数远超头部洋快餐是反差钩子；verify 全国门店8万+ at scripting.",
-      "sources": [
-        "沙县小吃 全国门店 8万家"
-      ],
-      "addedAt": "2026-07-19",
-      "addedBy": "cycle replenish (food depth)",
-      "status": "queued"
-    },
-    {
       "id": "ct-08",
       "title": "平遥古城：一座活着的明清县城，城墙走一圈六公里",
       "pillar": "city-travel",
@@ -797,34 +783,6 @@
       "status": "paused-food-sprint-2026-07-18"
     },
     {
-      "id": "cfd-08",
-      "title": "天水麻辣烫：一座甘肃小城，靠一碗麻辣烫出圈",
-      "pillar": "china-food",
-      "format": "short",
-      "angle": "天水麻辣烫：甘谷辣椒油泼、手擀粉、菜串；网红小城烟火。fact-first=让一座小城火起来的一碗麻辣烫。人物：油泼辣子、串菜的手、排队人群。",
-      "whyNow": "天水麻辣烫2024年现象级爆火、带动文旅，热度延续；'网红小城美食'是持续话题。verify 甘谷辣椒/麻辣烫做法/文旅数据 at scripting.",
-      "sources": [
-        "天水麻辣烫 甘谷辣椒 网红 文旅"
-      ],
-      "addedAt": "2026-07-23",
-      "addedBy": "cycle replenish (food sprint, 网红小城)",
-      "status": "queued"
-    },
-    {
-      "id": "cfd-09",
-      "title": "淄博烧烤：小饼卷一切，一座城的烟火气",
-      "pillar": "china-food",
-      "format": "short",
-      "angle": "淄博烧烤三件套：小炉子、小饼、蘸料；自己动手卷。fact-first=一张小饼卷起一座城。people-action：烤串、卷饼、撸串人群。",
-      "whyNow": "淄博烧烤2023爆火后成为'烟火经济'长尾符号，'小饼小炉'模式持续被模仿；夏季烧烤当季。verify 淄博烧烤三件套/兴起时间 at scripting.",
-      "sources": [
-        "淄博烧烤 小饼 炉子 蘸料 三件套"
-      ],
-      "addedAt": "2026-07-23",
-      "addedBy": "cycle replenish (food sprint, 夏季烧烤)",
-      "status": "queued"
-    },
-    {
       "id": "cfd-10",
       "title": "新中式茶饮：一杯奶茶，怎么成了年轻人的社交货币",
       "pillar": "china-food",
@@ -864,6 +822,63 @@
       ],
       "addedAt": "2026-07-23",
       "addedBy": "cycle replenish (food sprint, 潮汕夜宵)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-13",
+      "title": "贵州酸汤：一锅红酸汤，酸出一个省的味觉",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "贵州红酸汤(番茄发酵)+木姜子(山胡椒)风味；酸汤鱼/酸汤牛肉；苗侗'三天不吃酸，走路打蹿蹿'。fact-first=红酸汤靠自然发酵非加醋。人物：舀酸汤/涮肉的手。",
+      "whyNow": "2025 餐饮/文旅报告点名'贵州酸汤'为地域美食出圈旗舰之一（新浪财经/腾讯《2025餐饮趋势》2025-03）；verify 木姜子/红酸汤发酵工艺 at scripting.",
+      "sources": [
+        "新浪财经/腾讯 2025餐饮趋势 贵州酸汤"
+      ],
+      "addedAt": "2026-07-25",
+      "addedBy": "cycle replenish (viral-food research)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-14",
+      "title": "云南山野火锅：一锅汤里，涮的是整座山",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "云南山野火锅：野生菌/山茅野菜/香料入锅，清汤见本味；菌汤锅底。fact-first=一锅涮几十种山野食材。人物：采菜/涮菌的手。",
+      "whyNow": "2025 报告与'云南山野火锅'走红同列（新浪财经/腾讯 2025-03）；夏季正当云南菌季（延续 07-24 菌子季热度）；verify 山野菜种类/菌汤 at scripting.",
+      "sources": [
+        "新浪财经/腾讯 2025餐饮趋势 云南山野火锅"
+      ],
+      "addedAt": "2026-07-25",
+      "addedBy": "cycle replenish (viral-food research)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-15",
+      "title": "徐州伏羊：三伏天，为什么偏要喝一碗滚烫羊汤",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "徐州伏羊节：入伏吃羊肉喝羊汤'以热制热'；乳白羊汤、羊肉汤配饼。fact-first=最热的三伏天吃最烫的羊汤。人物：盛汤/掰饼/喝汤的脸与手。",
+      "whyNow": "2025暑期网红城市报告点名徐州靠本地IP/夜市烟火聚热度（新京报2025暑期篇 2025-07）；正值三伏(2026-07)伏羊季当令；verify 徐州伏羊节起源 at scripting.",
+      "sources": [
+        "新京报网红城市潜力报告2025暑期篇",
+        "大众点评宝藏小城榜 徐州"
+      ],
+      "addedAt": "2026-07-25",
+      "addedBy": "cycle replenish (viral-food research)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-16",
+      "title": "威海鲅鱼饺子：一条海鱼，包进北方人的年味",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "胶东威海鲅鱼(马鲛鱼)水饺：现挖鱼肉、韭菜提鲜、个大皮薄；胶东'鲅鱼跳丈人笑'习俗。fact-first=一个饺子塞满半条鱼。人物：剁鱼馅/包饺子的手。",
+      "whyNow": "2025暑期网红城市报告点名威海等二三线城市文旅出圈（新京报2025暑期篇 2025-07）；verify 鲅鱼水饺/胶东孝亲习俗 at scripting.",
+      "sources": [
+        "新京报网红城市潜力报告2025暑期篇 威海"
+      ],
+      "addedAt": "2026-07-25",
+      "addedBy": "cycle replenish (viral-food research)",
       "status": "queued"
     }
   ]

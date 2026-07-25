@@ -618,6 +618,50 @@
       "lane": "pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-07-24T22:00:00Z"
+    },
+    {
+      "date": "2026-07-25",
+      "slot": "a",
+      "title": "一道菜带火一座城①沙县小吃：一个县城，开出8万家店 | One Dish One Town P1 · Shaxian 🥡",
+      "videoId": "pJrmZ8PGt0k",
+      "url": "https://www.youtube.com/watch?v=pJrmZ8PGt0k",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "posted",
+      "publishAt": null
+    },
+    {
+      "date": "2026-07-25",
+      "slot": "b",
+      "title": "一道菜带火一座城②淄博烧烤：民宿一夜暴涨865%，小饼卷一切 | One Dish One Town P2 · Zibo BBQ 🍢",
+      "videoId": "dvSV77Se3uQ",
+      "url": "https://www.youtube.com/watch?v=dvSV77Se3uQ",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-25T16:00:00Z"
+    },
+    {
+      "date": "2026-07-25",
+      "slot": "c",
+      "title": "一道菜带火一座城③天水麻辣烫：一条视频118万赞，烫红一座城 | One Dish One Town P3 · Tianshui 🌶️",
+      "videoId": "JEAyhG0UESM",
+      "url": "https://www.youtube.com/watch?v=JEAyhG0UESM",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-25T19:00:00Z"
+    },
+    {
+      "date": "2026-07-25",
+      "slot": "d",
+      "title": "一道菜带火一座城④完结·荣昌卤鹅：五一卖爆752%，火遍32国 | One Dish One Town P4 · Rongchang 🦢",
+      "videoId": "_ZihaTK_s2c",
+      "url": "https://www.youtube.com/watch?v=_ZihaTK_s2c",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-25T22:00:00Z"
     }
   ]
 }
