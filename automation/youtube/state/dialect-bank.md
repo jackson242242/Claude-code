@@ -2,7 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-07-24 (last deepened: 客家话 — +食早/食夜 / +命兮靓 / +命兮俚; prior 07-23 湖南话 策/耐得烦/越策越开心, 07-22 北京话 局气/敞亮/得嘞, 07-21 粤语 唔该/抵食/得闲饮茶)  
+**Today:** 2026-07-25 (last deepened: 上海话 — +忒灵光 / +灵 / +嗲; prior 07-24 客家话 食早·食夜·命兮靓·命兮俚, 07-23 湖南话 策/耐得烦/越策越开心, 07-22 北京话 局气/敞亮/得嘞)  
 **Verification:** All phrases verified via WebSearch; marked with region coverage notes.  
 **Content Tags:** [comedy] [travel] [teach] | Sensitivity: clean / 轻度粗俗 / 粗口
 
@@ -42,6 +42,9 @@
 - **搭讪** (da1 shan1) | "strike up conversation" | 主动和陌生人聊天。"他又来搭讪" | 上海人社交的轻松态度 | [comedy] [teach] | clean
 - **结棍** (jie2 gun4) | "impressive / tough / really good" | 厉害、牢靠、能力强。"答得上来算侬结棍！" | 上海话夸人「够本事」的招牌褒义词；也可形容事情难搞 | [comedy] [teach] | clean  <!-- added 2026-07-17, verified (周到上海/lingoace 沪语) -->
 - **适意** (seh2 yi3) | "cozy / blissfully comfortable" | 舒服惬意，形容生活状态。"孵在屋里向,老适意额" | 上海人表达"日子过得舒坦"的高频词；与川话「巴适」、山东「恣儿」同义异调 | [comedy] [teach] [travel] | clean  <!-- added 2026-07-17, verified (lingoace 沪语常用语) -->
+- **灵** (lin2) | "great / works / excellent" | 好、棒、行得通。"灵额!" = "太棒了/可以"；"侬只手机蛮灵额" | 上海话最百搭的褒义单字，夸东西好用/好吃/漂亮都能一个「灵」搞定；美食短片天然彩蛋 | [comedy] [teach] [travel] | clean  <!-- added 2026-07-25, verified (lingoace 上海话常用语/经典上海话) -->
+- **忒灵光** (theh2 lin2 kuaon1) | "super clever / sharp" | 特别聪明、机灵。"迭个小囡忒灵光" = "这孩子太机灵了"；"忒"=太 | 上海话夸人脑子活络的招牌句；"灵光"本义好用/管用，加"忒"到顶格 | [comedy] [teach] | clean  <!-- added 2026-07-25, verified (lingoace 上海话常用语) -->
+- **嗲** (dia1) | "coquettish / charmingly lovely" | 撒娇、柔媚有魅力；也泛指"好·地道"。"伊老嗲额" = "她真嗲/真有味道"；"味道嗲" = 味道正 | 上海腔的灵魂字，从形容女子娇媚扩展到夸一切精致有品；已进普通话网络语 | [comedy] [teach] [travel] | clean  <!-- added 2026-07-25, verified (lingoace 沪语/经典上海话) -->
 
 ## 湖南话 (Hunan — Changsha / Plasticized Mandarin 塑普)
 
