@@ -811,63 +811,6 @@
       "status": "queued"
     },
     {
-      "id": "cfd-12",
-      "title": "潮汕砂锅粥：夜里那锅粥，海鲜下得毫不手软",
-      "pillar": "china-food",
-      "format": "short",
-      "angle": "潮汕砂锅粥（夜糜）：生米现熬、螃蟹虾贝下锅、葱花芹菜末收尾。fact-first=一锅粥的鲜从哪来。people-action：搅粥、下料、夜宵桌。夜宵烟火（白天素材优先，避免纯夜景空镜）。",
-      "whyNow": "潮汕砂锅粥/夜糜作为夜宵文化代表持续热度；'一锅鲜'钩子强。verify 生滚粥做法/潮汕夜糜 at scripting.",
-      "sources": [
-        "潮汕砂锅粥 夜糜 生滚 海鲜"
-      ],
-      "addedAt": "2026-07-23",
-      "addedBy": "cycle replenish (food sprint, 潮汕夜宵)",
-      "status": "queued"
-    },
-    {
-      "id": "cfd-13",
-      "title": "贵州酸汤：一锅红酸汤，酸出一个省的味觉",
-      "pillar": "china-food",
-      "format": "short",
-      "angle": "贵州红酸汤(番茄发酵)+木姜子(山胡椒)风味；酸汤鱼/酸汤牛肉；苗侗'三天不吃酸，走路打蹿蹿'。fact-first=红酸汤靠自然发酵非加醋。人物：舀酸汤/涮肉的手。",
-      "whyNow": "2025 餐饮/文旅报告点名'贵州酸汤'为地域美食出圈旗舰之一（新浪财经/腾讯《2025餐饮趋势》2025-03）；verify 木姜子/红酸汤发酵工艺 at scripting.",
-      "sources": [
-        "新浪财经/腾讯 2025餐饮趋势 贵州酸汤"
-      ],
-      "addedAt": "2026-07-25",
-      "addedBy": "cycle replenish (viral-food research)",
-      "status": "queued"
-    },
-    {
-      "id": "cfd-14",
-      "title": "云南山野火锅：一锅汤里，涮的是整座山",
-      "pillar": "china-food",
-      "format": "short",
-      "angle": "云南山野火锅：野生菌/山茅野菜/香料入锅，清汤见本味；菌汤锅底。fact-first=一锅涮几十种山野食材。人物：采菜/涮菌的手。",
-      "whyNow": "2025 报告与'云南山野火锅'走红同列（新浪财经/腾讯 2025-03）；夏季正当云南菌季（延续 07-24 菌子季热度）；verify 山野菜种类/菌汤 at scripting.",
-      "sources": [
-        "新浪财经/腾讯 2025餐饮趋势 云南山野火锅"
-      ],
-      "addedAt": "2026-07-25",
-      "addedBy": "cycle replenish (viral-food research)",
-      "status": "queued"
-    },
-    {
-      "id": "cfd-15",
-      "title": "徐州伏羊：三伏天，为什么偏要喝一碗滚烫羊汤",
-      "pillar": "china-food",
-      "format": "short",
-      "angle": "徐州伏羊节：入伏吃羊肉喝羊汤'以热制热'；乳白羊汤、羊肉汤配饼。fact-first=最热的三伏天吃最烫的羊汤。人物：盛汤/掰饼/喝汤的脸与手。",
-      "whyNow": "2025暑期网红城市报告点名徐州靠本地IP/夜市烟火聚热度（新京报2025暑期篇 2025-07）；正值三伏(2026-07)伏羊季当令；verify 徐州伏羊节起源 at scripting.",
-      "sources": [
-        "新京报网红城市潜力报告2025暑期篇",
-        "大众点评宝藏小城榜 徐州"
-      ],
-      "addedAt": "2026-07-25",
-      "addedBy": "cycle replenish (viral-food research)",
-      "status": "queued"
-    },
-    {
       "id": "cfd-16",
       "title": "威海鲅鱼饺子：一条海鱼，包进北方人的年味",
       "pillar": "china-food",
@@ -879,6 +822,66 @@
       ],
       "addedAt": "2026-07-25",
       "addedBy": "cycle replenish (viral-food research)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-17",
+      "title": "夜市小龙虾：一盆麻辣，撑起中国人的夏夜",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "夏夜夜市小龙虾：麻辣/蒜蓉/十三香，剥虾的手、举盆、啤酒配。fact-first=一个夏天全国吃掉多少吨小龙虾/夜宵顶流。people-action：剥虾、端盆、夜市人群。夏季当季强共鸣。",
+      "whyNow": "小龙虾是夏季夜宵/夜市的年度顶流品类，社媒每年夏天翻红；正值2026盛夏当季。verify 年消费量/产业规模/口味流派(麻辣vs蒜蓉vs十三香) at scripting.",
+      "sources": [],
+      "addedAt": "2026-07-26",
+      "addedBy": "cycle replenish (summer night-market flagship)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-18",
+      "title": "云南过桥米线：一碗滚汤，端上桌自己烫熟",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "过桥米线：滚烫鸡汤上盖一层油锁温，生片/鹌鹑蛋/米线依次下碗自烫。fact-first=汤面一层油让滚汤不冒气却能烫熟生肉。people-action：下料、烫肉的手。传说书生娘子送饭故事(如实标注传说)。",
+      "whyNow": "过桥米线是云南头牌、全国连锁常青，\"一层油锁住高温\"的反差科普钩子强、贴近生活。verify 起源传说/油封保温原理 at scripting.",
+      "sources": [],
+      "addedAt": "2026-07-26",
+      "addedBy": "cycle replenish (food sprint, 云南米线)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-19",
+      "title": "东北铁锅炖：一口大锅，炖下一整个冬天的豪爽",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "东北铁锅炖：柴火大铁锅炖鱼/炖大鹅，锅边贴玉米饼子，一锅出。fact-first=一口锅同时炖菜和贴饼子。people-action：贴饼子的手、掀锅、围炉分食。东北豪爽烟火。",
+      "whyNow": "\"铁锅炖+贴饼子\"是东北地方菜代表、社媒围炉一锅出的高互动画面；组\"中国大锅菜\"系列可扩展。verify 铁锅炖流派/贴饼子做法 at scripting.",
+      "sources": [],
+      "addedAt": "2026-07-26",
+      "addedBy": "cycle replenish (food sprint, 东北地方菜)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-20",
+      "title": "重庆酸辣粉：一碗红薯粉，酸辣到跺脚",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "重庆酸辣粉：手工红薯粉，酸(醋)辣(油辣子)麻(花椒)+酥花生黄豆，挑起拉丝。fact-first=红薯做的粉为什么这么Q弹。people-action：挑粉、拌料、嗦粉的脸。街头小吃烟火。",
+      "whyNow": "酸辣粉是街头/外卖常青嗦粉品类，\"红薯粉\"原料反差钩子好、贴近生活。verify 红薯粉工艺/重庆酸辣粉调味 at scripting.",
+      "sources": [],
+      "addedAt": "2026-07-26",
+      "addedBy": "cycle replenish (food sprint, 街头嗦粉)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-21",
+      "title": "现制酸奶：一杯三十块，年轻人的\"酸奶刺客\"",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "现制酸奶：厚椰乳/加坚果果干、现打现卖，主打\"健康\"却价格不菲。fact-first=一杯现制酸奶为什么能卖到二三十块。people-action：打料、递杯、举杯拍照。中性价格观察，无投资/品牌背书。",
+      "whyNow": "现制酸奶(\"酸奶刺客\")是新中式饮品里持续被讨论的价格话题、贴近年轻人日常消费。verify 品类价格带/健康宣称边界 at scripting；brandRules 中性无背书。",
+      "sources": [],
+      "addedAt": "2026-07-26",
+      "addedBy": "cycle replenish (food sprint, 现制饮品/年轻)",
       "status": "queued"
     }
   ]

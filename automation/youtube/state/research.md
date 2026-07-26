@@ -5,6 +5,17 @@ which angles feel tired, stale queue topics, and (Sat) vidIQ trend/outlier notes
 Strategy lens (owner directive 2026-07-08): 唯美主义 aesthetic + 贴近生活 everyday-life
 relevance — see `strategy.styleGuide` / `topicFitGate` in config.yaml.
 
+## 2026-07-26 (Sun) — 4-week FOOD SPRINT day 8 · 连载 series #7《这个夏天·地方菜正在出圈 Rising Regional Flavors》
+
+- **Direction（"地方菜出圈/新顶流"延续顶流母题 + 夏季当季，本run WebSearch 验证）:** 昨日《一道菜带火一座城》讲已出圈四城；今日顺势做**正在出圈**的四种当红地方味，并借今日=**三伏(2026 三伏约7/17–8/15)**给 P1 加当季钩。四集按 **热/酸/鲜山/鲜海** 四味轴串（story order=slot order），P4 完结回扣四味 + 多选 CTA。选题全部来自 07-25 补的"viral-food"新seed（cfd-13/14/15/12），且 07-24《云南菌子季》已讲单菌物种、今日 P3 改讲**山野火锅品类趋势**(2025新顶流)以区分角度。
+- **Fact-first hooks（逐集本run WebSearch 查证，延续"数字/反差事实钩＞地名钩"）:** P1 徐州伏羊=一年最热三伏天排队喝滚烫羊汤·"以热制热"发汗排暑(冬病夏治)·伏羊食俗**2021国家级非遗**·始祖彭祖=中华厨祖(羊方藏鱼)·2004起彭祖伏羊节(第21届2024)；P2 贵州红酸汤=**不放一滴醋**却酸掉一个省·番茄辣椒装坛发酵5-6月再磨浆发酵半月·苗侗"三天不吃酸走路打蹿蹿"(以酸代盐)·木姜子·凯里酸汤鱼**国家级非遗**·黔东南酸汤产业2024超25亿/玉梦8.5万吨；P3 云南山野火锅=一锅涮整座山·锅底是**菌汤**(牛肝菌松茸片)+几十种山茅野菜·**菌菇火锅年增速超60%**·健康食材消费较2020升~32%·2025餐饮新顶流；P4 潮汕砂锅粥=潮汕不叫粥叫**"糜"**·生滚见米粒似烂非烂·蟹虾整只下锅鲜融粥水·夜宵头牌地都蟹粥。
+- **Angle 诚实边界:** 全部美食民俗/产业事实，zero politics、无 endorsement、无投资/加盟/医疗建议(伏羊只讲传统"发汗"说不作健康断言；酸汤/山野产业数据为中性行业观察)；价格·产值·非遗·日期均本 run 查证写进各集 description(brandRules)。
+- **B-roll 诚实边界:** Pexels 无这四地专属素材(尤缺**潮汕白粥**)，用通用 羊汤/红汤火锅/切菌·菌汤/蟹虾下锅 镜头承载，warmfood 暖调、fast 硬切、≥50% 人物在动作(炒/切/涮/下锅/吃)。P3 首帧曾与 P2 撞同一 boiling-pot 空镜→改"切菌"人物首帧重 assemble 差异化；P4 首帧曾误召红汤 stew/燕麦早餐→终以"螃蟹整只下锅"蟹粥 money-shot 定稿。画面为示意品类，不谎称实拍某地某店。
+- **Dialect bank:** 深化最久未更新的 **福建/闽南话**（上次 07-12，11 区最旧）——+爱拼才会赢(努力奋斗才会赢·叶启田1988歌·闽南拼搏图腾)/+疼惜 thiànn-sioh(疼爱珍惜·内敛深情)/+𨑨迌 tshit-thô(玩耍游玩)，verified 教育部台湾台语常用词辞典·维基台湾闽南语流行语·zhihu。今日四地：徐州(中原/江淮官话)·贵州(苗侗)·云南均**不在11区Han库→普通话如实不强造彩蛋**(honesty 同 07-25 天水/07-24 云南)；唯 **潮汕话=闽南语分支→P4"食糜 chia̍h muê"为真实诚实彩蛋**，与今日闽南深化同源，一举两得。
+- **vidIQ:** 余额预计仍 **0/150 < floor 40**(07-29 renews) → 周日非 Mon/Thu 无 analytics pulse、非 Sat 无 trend scan、所有 vidIQ 生成/打分/分析 **诚实跳过**(0 credits)。
+- **Queue health:** dequeued cfd-12/13/14/15；补货 5 新 seed cfd-17 夜市小龙虾(夏季当季旗舰)/cfd-18 云南过桥米线/cfd-19 东北铁锅炖/cfd-20 重庆酸辣粉/cfd-21 现制酸奶(各带 dated whyNow·verify-at-scripting)；active-queued **11 china-food** ≥5(冲刺剩~20天,补足更稳)。
+- **FORMAT-CONFLICT FLAG (repeat, owner):** firing prompt 今日**又**说"三格含 b longform 16:9 @13/17/22"、并称"education channel"——2026-07-09 pivot 与 07-18 食物冲刺前的**旧措辞**。Repo source-of-truth(config `cadence.postsPerDay=4` + youtube-cycle.md 食物冲刺"overrides everything")判定 **4 格全 china-food Shorts @13/16/19/22Z、longform 暂停**，与 07-19..07-25 **连续第 8 天**一致。**强烈建议老板更新 Routine firing prompt**(4 格 china-food、去掉 education/longform/3-slot 措辞)以终结每日冲突。
+
 ## 2026-07-25 (Sat) — 4-week FOOD SPRINT day 7 · 连载 series #6《一道菜带火一座城 One Dish, One Town》
 
 - **Direction（"小城出圈"正是当下顶流母题，本run WebSearch 验证）:** 2025 餐饮/文旅报告明确点名"地域美食进一步出圈""小城出圈势头持续强劲"（徐州/威海/太原/德州等二三线城市靠本地 IP·夜市烟火·文旅创意聚热度），并**直接以重庆荣昌卤鹅为旗舰案例**（爆红后深挖鹅产业、甚至招商引资）。母题本身就是全网热题，天然贴近生活+强反差。今日搭 4 集连载，用**时间轴讲"一座城怎样靠一道菜出圈"**：P1 沙县（靠几十年，8.8 万家）→P2 淄博（2023，靠社交网络）→P3 天水（2024，靠一条视频）→P4 荣昌（2025，靠一个人+一个网红，完结回扣+站队 CTA）。story order=slot order（越晚越快、越"一夜爆红"）。

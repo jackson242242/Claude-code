@@ -662,6 +662,50 @@
       "lane": "pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-07-25T22:00:00Z"
+    },
+    {
+      "date": "2026-07-26",
+      "slot": "a",
+      "title": "地方菜正在出圈①徐州伏羊：最热的三伏天，为什么喝最烫的羊汤 | Rising Flavors P1 · Xuzhou 🐑",
+      "videoId": "JUEO32DodBg",
+      "url": "https://www.youtube.com/watch?v=JUEO32DodBg",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-26T13:00:00Z"
+    },
+    {
+      "date": "2026-07-26",
+      "slot": "b",
+      "title": "地方菜正在出圈②贵州酸汤：不放一滴醋，酸掉一个省 | Rising Flavors P2 · Guizhou Sour Soup 🍲",
+      "videoId": "iVuEIkqFSNQ",
+      "url": "https://www.youtube.com/watch?v=iVuEIkqFSNQ",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-26T16:00:00Z"
+    },
+    {
+      "date": "2026-07-26",
+      "slot": "c",
+      "title": "地方菜正在出圈③云南山野火锅：一锅汤，涮下整座山 | Rising Flavors P3 · Yunnan Mountain Hotpot 🍄",
+      "videoId": "93w-F32Ra34",
+      "url": "https://www.youtube.com/watch?v=93w-F32Ra34",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-26T19:00:00Z"
+    },
+    {
+      "date": "2026-07-26",
+      "slot": "d",
+      "title": "地方菜正在出圈④完结·潮汕砂锅粥：夜里那锅粥，海鲜下得毫不手软 | Rising Flavors P4 · Chaoshan 🦀",
+      "videoId": "tYgCGawuQNQ",
+      "url": "https://www.youtube.com/watch?v=tYgCGawuQNQ",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-26T22:00:00Z"
     }
   ]
 }

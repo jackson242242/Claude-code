@@ -2,7 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-07-25 (last deepened: 上海话 — +忒灵光 / +灵 / +嗲; prior 07-24 客家话 食早·食夜·命兮靓·命兮俚, 07-23 湖南话 策/耐得烦/越策越开心, 07-22 北京话 局气/敞亮/得嘞)  
+**Today:** 2026-07-26 (last deepened: 福建/闽南话 — +爱拼才会赢 / +疼惜 / +𨑨迌 tshit-thô; prior 07-25 上海话 忒灵光·灵·嗲, 07-24 客家话 食早·食夜·命兮靓·命兮俚, 07-23 湖南话 策/耐得烦/越策越开心) — 闽南话上次深化2026-07-12，为11区最久未更新  
 **Verification:** All phrases verified via WebSearch; marked with region coverage notes.  
 **Content Tags:** [comedy] [travel] [teach] | Sensitivity: clean / 轻度粗俗 / 粗口
 
@@ -111,6 +111,9 @@
 - **食饱未** (chia̍h-pá--bōe) | "have you eaten yet?" | 见面寒暄语，"食饭没"；闽南人以饭问候，等同北京话"吃了吗您" | 温情的日常招呼；与客家「食饭冇」、粤语「食饭」同源同构 | [teach] [travel] | clean  <!-- added 2026-07-12, verified (chinanews/新浪 "呷饱未") -->
 - **好呷** (hó-tsia̍h) | "delicious / tasty" | 夸食物好吃，"呷"(tsia̍h)=吃。"这碗面线足好呷" | 闽南/台湾夜市最实用的一句；美食短片的天然彩蛋 | [travel] [teach] | clean  <!-- added 2026-07-12, verified (wikivoyage 闽南语会话) -->
 - **多谢** (to-siā) | "thank you" | 致谢，"多谢"比国语更古雅，闽南日常常用 | 保留古汉语的谦礼用词；待客场景百搭 | [teach] | clean  <!-- added 2026-07-12, verified (wikivoyage 闽南语会话) -->
+- **爱拼才会赢** (Ài piànn tsiah ē iânn) | "you have to fight to win" | 唯有努力奋斗才能克服困难、成就一番事业。叶启田同名闽南语歌1988年传唱至今 | 闽南人\"拼\"的精神图腾，几乎是闽南文化的一句座右铭；创业/奋斗/美食摊主故事的天然彩蛋 | [teach] [travel] | clean  <!-- added 2026-07-26, verified (教育部台湾台语常用词辞典 sutian.moe.edu.tw/su/27161 / 维基·台湾闽南语常见流行语) -->
+- **疼惜** (thiànn-sioh) | "to cherish & be tender to" | 疼爱又珍惜、心疼呵护，比\"疼\"更细腻，含舍不得之意。\"翁某着相疼惜\"=夫妻要互相珍惜 | 闽南人重情、内敛而深的表达；家庭/人情类内容的暖色彩蛋 | [teach] | clean  <!-- added 2026-07-26, verified (教育部台湾台语常用词辞典 / zhihu 闽南语常用词) -->
+- **𨑨迌** (tshit-thô) | "to play / hang out / have fun" | 玩耍、游玩、消遣。\"来去𨑨迌\"=出去玩；\"𨑨迌人\"则引申指混社会的人（语境决定） | 闽南语最生活化的动词之一，旅游/日常短片百搭；写字用本字\"𨑨迌\"，读音 tshit-thô | [teach] [travel] | clean  <!-- added 2026-07-26, verified (维基·台湾闽南语常见流行语 / zhihu 354816171 tshit-thô) -->
 
 ## 客家话 (Hakka)
 
