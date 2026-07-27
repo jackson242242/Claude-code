@@ -2,7 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-07-26 (last deepened: 福建/闽南话 — +爱拼才会赢 / +疼惜 / +𨑨迌 tshit-thô; prior 07-25 上海话 忒灵光·灵·嗲, 07-24 客家话 食早·食夜·命兮靓·命兮俚, 07-23 湖南话 策/耐得烦/越策越开心) — 闽南话上次深化2026-07-12，为11区最久未更新  
+**Today:** 2026-07-27 (last deepened: 东北话 — +整 zhěng / +带派 dài pài / +尔滨 Ěr bīn; prior 07-26 福建/闽南话 爱拼才会赢·疼惜·𨑨迌, 07-25 上海话 忒灵光·灵·嗲, 07-24 客家话) — 东北话上次深化2026-07-15，为11区最久未更新；07-26 曾是 福建/闽南话 — +爱拼才会赢 / +疼惜 / +𨑨迌 tshit-thô; prior 07-25 上海话 忒灵光·灵·嗲, 07-24 客家话 食早·食夜·命兮靓·命兮俚, 07-23 湖南话 策/耐得烦/越策越开心) — 闽南话上次深化2026-07-12，为11区最久未更新  
 **Verification:** All phrases verified via WebSearch; marked with region coverage notes.  
 **Content Tags:** [comedy] [travel] [teach] | Sensitivity: clean / 轻度粗俗 / 粗口
 
@@ -87,6 +87,9 @@
 - **要啥自行车** (yao4 sha2 zi4 xing2 che1) | "what more do you want / don't be greedy" | 劝人知足、别有非分之想。源自赵本山·范伟 2001 央视春晚小品《卖拐》 | 二十多年长红的国民梗；调侃"已经不错了还想咋" | [comedy] [teach] | clean  <!-- added 2026-07-15 -->
 - **老妹儿 / 老弟** (lao3 mei4 er0 / lao3 di4) | "dear sis / lil bro" | 初次见面也能这么叫，不论年纪，套近乎的亲切称呼 | "老"字前缀是东北话的招牌，一叫就自来熟；显热络 | [comedy] [teach] | clean  <!-- added 2026-07-15 -->
 
+- **整** (zhěng) | "do / get / handle (all-purpose verb)" | 东北话万能动词，几乎能替一切动作：吃喝拿弄修都能"整"。"整点串儿"=来点烤串，"整两口"=喝两口，"咋整"=咋办 | 一个"整"字包打天下，东北话最上头的口头禅；夜市/烧烤/唠嗑场景天然彩蛋 | [comedy] [teach] [travel] | clean  <!-- added 2026-07-27, verified (lingoace 东北话/百度百科 东北方言"整") -->
+- **带派** (dài pài) | "stylish / got swagger" | 由东北话"带派头"简写，形容人/物有派头、够气派、有范儿。2024 年经东北主播直播间高频使用从地域俚语变全民热词；可真诚夸赞也可反讽调侃 | 2024 一代网络热词，东北主播输出方言的代表；夸场面/穿搭/美食"够排面"皆可 | [comedy] [teach] | clean  <!-- added 2026-07-27, verified (单词乎 带派/2024网络流行语盘点) -->
+- **尔滨** (Ěr bīn) | "dear Harbin (affectionate)" | 对黑龙江哈尔滨的亲昵爱称，2023-24 冰雪季爆火；同期东北人把南方游客热情唤作"南方小土豆"待客 | 2024 现象级文旅梗，东北好客与"讨好型市格"的招牌；旅游/城市短片高识别度 | [comedy] [teach] [travel] | clean  <!-- added 2026-07-27, verified (腾讯 2024 十大网络流行语/lingoace) -->
 ## 山东话 (Shandong Dialect)
 
 - **进淄赶烤 / 赴青请醉** | tourism phrase | 方言谐音梗旅游slogan。"进淄赶烤" = "进到淄博去吃烤肉" | 2024年爆火的山东方言旅游梗；结合地方美食文化 | [comedy] [travel] | clean
