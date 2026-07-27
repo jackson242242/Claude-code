@@ -59,6 +59,14 @@
 - **互动权重**：收藏/分享/回复 > 点赞（Story 回复年增 88%，Story 拿信任、
   Reels 拿新流量）。发帖节奏理想值：每周 4–5 条 Reels。
 
+**7/27 周增量（来源见 2026-07-27 brief）：**
+- **"House Tour"（Sabrina Carpenter）**：巡游类内容标配音——studio tour
+  正好接上 7/13 Reels 评论区投票（packing day vs design day）
+- **"一把抓"格式**：单手抓一把产品的 5–8 秒静止镜头——史上最省力
+  Reels，适合上新/合集（"everything new this month in one hand"）
+- **月度确认**：低制作、单镜头内容持续跑赢精修（第三周验证同方向）
+- 无声观看比例高 → 所有 Reels 必配文字层（已是我们的默认）
+
 **7/20 周增量（来源见 2026-07-20 brief）：**
 - **"One Less Lonely Girl"（Justin Bieber）**："每个商家都在填满什么"
   格式——boutique filling carts 变体：镜头扫过打包台/订单堆，文字
