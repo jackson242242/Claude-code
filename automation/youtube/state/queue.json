@@ -825,18 +825,6 @@
       "status": "queued"
     },
     {
-      "id": "cfd-17",
-      "title": "夜市小龙虾：一盆麻辣，撑起中国人的夏夜",
-      "pillar": "china-food",
-      "format": "short",
-      "angle": "夏夜夜市小龙虾：麻辣/蒜蓉/十三香，剥虾的手、举盆、啤酒配。fact-first=一个夏天全国吃掉多少吨小龙虾/夜宵顶流。people-action：剥虾、端盆、夜市人群。夏季当季强共鸣。",
-      "whyNow": "小龙虾是夏季夜宵/夜市的年度顶流品类，社媒每年夏天翻红；正值2026盛夏当季。verify 年消费量/产业规模/口味流派(麻辣vs蒜蓉vs十三香) at scripting.",
-      "sources": [],
-      "addedAt": "2026-07-26",
-      "addedBy": "cycle replenish (summer night-market flagship)",
-      "status": "queued"
-    },
-    {
       "id": "cfd-18",
       "title": "云南过桥米线：一碗滚汤，端上桌自己烫熟",
       "pillar": "china-food",

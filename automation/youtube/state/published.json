@@ -706,6 +706,70 @@
       "lane": "pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-07-26T22:00:00Z"
+    },
+    {
+      "date": "2026-07-27",
+      "slot": "a",
+      "title": "中国人的夏夜①麻辣小龙虾：6万家店，卖的是一整个夏天",
+      "videoId": "Vpy1vrr5f2I",
+      "url": "https://www.youtube.com/watch?v=Vpy1vrr5f2I",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "published",
+      "publishAt": "2026-07-27T13:00:00Z",
+      "series": "中国人的夏夜 Chinese Summer Nights",
+      "playlists": [
+        "中国美食 (PLayZuFjrAEfk)",
+        "中国人的夏夜 Chinese Summer Nights (PLAdcCAPUlSW0)"
+      ]
+    },
+    {
+      "date": "2026-07-27",
+      "slot": "b",
+      "title": "中国人的夏夜②夜市烧烤：一年三千多亿，一半的夏夜是烤炉给的",
+      "videoId": "moZsu4yVfS4",
+      "url": "https://www.youtube.com/watch?v=moZsu4yVfS4",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-27T16:00:00Z",
+      "series": "中国人的夏夜 Chinese Summer Nights",
+      "playlists": [
+        "中国美食 (PLayZuFjrAEfk)",
+        "中国人的夏夜 Chinese Summer Nights (PLAdcCAPUlSW0)"
+      ]
+    },
+    {
+      "date": "2026-07-27",
+      "slot": "c",
+      "title": "中国人的夏夜③冰粉：一碗透心凉，居然是用手\"搓\"出来的",
+      "videoId": "Xyw_6TGdsao",
+      "url": "https://www.youtube.com/watch?v=Xyw_6TGdsao",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-27T19:00:00Z",
+      "series": "中国人的夏夜 Chinese Summer Nights",
+      "playlists": [
+        "中国美食 (PLayZuFjrAEfk)",
+        "中国人的夏夜 Chinese Summer Nights (PLAdcCAPUlSW0)"
+      ]
+    },
+    {
+      "date": "2026-07-27",
+      "slot": "d",
+      "title": "中国人的夏夜④完结·酸梅汤：最家常的解暑饮料，曾是清宫御膳的方子",
+      "videoId": "qHxGiPOlIi8",
+      "url": "https://www.youtube.com/watch?v=qHxGiPOlIi8",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-27T22:00:00Z",
+      "series": "中国人的夏夜 Chinese Summer Nights",
+      "playlists": [
+        "中国美食 (PLayZuFjrAEfk)",
+        "中国人的夏夜 Chinese Summer Nights (PLAdcCAPUlSW0)"
+      ]
     }
   ]
 }
