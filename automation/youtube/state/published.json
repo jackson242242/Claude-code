@@ -770,6 +770,70 @@
         "中国美食 (PLayZuFjrAEfk)",
         "中国人的夏夜 Chinese Summer Nights (PLAdcCAPUlSW0)"
       ]
+    },
+    {
+      "date": "2026-07-28",
+      "slot": "a",
+      "title": "中国早餐宇宙⑤北京豆汁儿焦圈：外地人闻着想逃的早餐",
+      "videoId": "DbH_p6B-2fM",
+      "url": "https://www.youtube.com/watch?v=DbH_p6B-2fM",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "published",
+      "publishAt": null,
+      "series": "中国早餐宇宙 China Breakfast Universe (S2)",
+      "playlists": [
+        "中国美食 (PLayZuFjrAEfk)",
+        "中国早餐宇宙 China Breakfast Universe (PLA26zs0p0T6k)"
+      ]
+    },
+    {
+      "date": "2026-07-28",
+      "slot": "b",
+      "title": "中国早餐宇宙⑥河南胡辣汤：一碗糊辣鲜香，河南人的早晨",
+      "videoId": "ooRELjkhWZY",
+      "url": "https://www.youtube.com/watch?v=ooRELjkhWZY",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-28T16:00:00Z",
+      "series": "中国早餐宇宙 China Breakfast Universe (S2)",
+      "playlists": [
+        "中国美食 (PLayZuFjrAEfk)",
+        "中国早餐宇宙 China Breakfast Universe (PLA26zs0p0T6k)"
+      ]
+    },
+    {
+      "date": "2026-07-28",
+      "slot": "c",
+      "title": "中国早餐宇宙⑦广州及第粥：一碗粥，讨的是\"状元\"好意头",
+      "videoId": "KReveLyFWn0",
+      "url": "https://www.youtube.com/watch?v=KReveLyFWn0",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-28T19:00:00Z",
+      "series": "中国早餐宇宙 China Breakfast Universe (S2)",
+      "playlists": [
+        "中国美食 (PLayZuFjrAEfk)",
+        "中国早餐宇宙 China Breakfast Universe (PLA26zs0p0T6k)"
+      ]
+    },
+    {
+      "date": "2026-07-28",
+      "slot": "d",
+      "title": "中国早餐宇宙⑧完结·天津煎饼馃子：放生菜会被\"骂\"的早餐",
+      "videoId": "yIKQRGjf58s",
+      "url": "https://www.youtube.com/watch?v=yIKQRGjf58s",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-28T22:00:00Z",
+      "series": "中国早餐宇宙 China Breakfast Universe (S2)",
+      "playlists": [
+        "中国美食 (PLayZuFjrAEfk)",
+        "中国早餐宇宙 China Breakfast Universe (PLA26zs0p0T6k)"
+      ]
     }
   ]
 }

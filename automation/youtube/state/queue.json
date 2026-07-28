@@ -808,7 +808,8 @@
       ],
       "addedAt": "2026-07-23",
       "addedBy": "cycle replenish (food sprint, 街头早餐)",
-      "status": "queued"
+      "status": "covered-2026-07-28",
+      "coveredBy": "2026-07-28 slot d 天津煎饼馃子 (中国早餐宇宙S2⑧)"
     },
     {
       "id": "cfd-16",

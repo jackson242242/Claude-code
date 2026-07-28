@@ -5,6 +5,19 @@ which angles feel tired, stale queue topics, and (Sat) vidIQ trend/outlier notes
 Strategy lens (owner directive 2026-07-08): 唯美主义 aesthetic + 贴近生活 everyday-life
 relevance — see `strategy.styleGuide` / `topicFitGate` in config.yaml.
 
+## 2026-07-28 (Tue) — 4-week FOOD SPRINT day 10 · 连载 series #9《中国早餐宇宙·第二季 China Breakfast Universe S2》
+
+- **Direction（"中国早餐地图"母题，本run WebSearch 逐项验证）:** 早餐=最贴近生活的母题，晨间烟火 b-roll 天然好看。做《中国早餐宇宙》第二季（承接 07-21 第一季①-④，playlist PLA26zs0p0T6k），四味按"重口→治愈"轴串：北京豆汁儿（劝退）→河南胡辣汤（糊辣）→广州及第粥（好意头）→天津煎饼馃子（执念·完结回扣四味+CTA）。story order=slot order。
+- **⚠️ 去重关键决策（诚实记录，供后续run参照）：** 初稿曾选 广式早茶/西安肉夹馍/上海四大金刚/天津煎饼，assemble+上传4条后，核对 published.json 发现 **7天前 07-21《中国早餐宇宙》第一季已覆盖 上海四大金刚(①) 与 西安肉夹馍(④)**，且 07-11 广州早茶、07-12 肉夹馍 亦有单条——即初稿 a/b/c **三格都是近7-17天内重复题**。遂 **API 删除已上传的4条(ZioKmMfbrHI/jvnZsVhtLxg/UwMCxYVgDIY/zFqjxsxdUdI，均在 publish 前删除、无一走公开)**，重做为 豆汁/胡辣汤/及第粥/煎饼 四道**全新未覆盖**题（煎饼保留、其余全换），续第一季编号⑤-⑧。**教训：选题前必须先 grep published.json 查历史，早餐/粉面/火锅等大类已多次成系列，易撞题。**
+- **Fact-first hooks（逐集本run WebSearch 查证，数字/反差钩＞地名钩）:** ⑤北京豆汁儿=绿豆制粉的**残渣发酵**而成·酸冲味"劝退"外地人却让北京人上瘾·**三百多年历史**·乾隆年间入宫御膳·标配焦圈儿("小油鬼",清宫御膳房传出)+辣咸菜丝·占酸辣甜咸四味（豆汁/焦圈百度百科·澎湃·visitbeijing）；⑥河南胡辣汤=**十几味料**熬底·胡椒管辣骨汤打底·面筋粉条牛肉越搅越稠·讲究"糊辣鲜香"·两大门派**逍遥镇(周口西华)vs北舞渡(漯河舞阳)**·诚实纠正：胡椒唐代才传入,故不早于唐,"周朝起源"是传说（胡辣汤百度百科·腾讯2024）；⑦广州及第粥=状元/三及第粥·本质**猪杂粥**(猪肝/瘦肉丸/猪粉肠)·名取科举"三及第"(状元榜眼探花)·穷孩子**伦文叙**高中状元命名的传说(广州西关)·考生考前讨吉利（及第粥百度百科·广州大学广府文化中心·维基）；⑧天津煎饼馃子=**绿豆面糊(可掺小米面)**摊"月亮"·直径**38-45cm**·磕蛋撒葱裹馃子/馃箅儿·甜面酱腐乳辣酱"铁三角"·**绝不放生菜火腿**·2018年"煎饼馃子分会"立标准·起源传说与山东侠士"老刀"有关（澎湃·新华网·煎饼馃子百度百科）。
+- **Angle 诚实边界:** 全部美食民俗/产业事实，zero politics、无 endorsement、无投资/加盟建议；豆汁不作健康断言、及第粥"讨吉利"只讲民俗、胡辣汤古籍源流如实纠偏；产值/非遗/古籍/日期均本 run 查证写进各集 description(brandRules)。
+- **B-roll 诚实边界:** Pexels 无这四味中式专属素材（尤缺豆汁/胡辣汤/及第粥本体），用通用 油炸/浓稠红汤/煮粥·猪杂/摊煎饼 镜头承载，warmfood 暖调 fast 硬切 ≥50%人物在动作(炸/搅/舀/摊/磕蛋)。各集 description 均声明"画面为示意品类的授权免费素材，非特定店家实拍"。⑦及第粥首帧一版模糊空景→重assemble改"手在锅里给米+肉调味"清晰食材动作定稿（示意猪杂粥品类,honest）；素材里有西式soup/burger/pizza填充镜头属品类近似,已如实标注示意。
+- **Dialect bank:** 深化最久未更新的 **山东话**（上次 07-17，11区最旧,距今11天）——+夜来 yè lái(昨天·保留宋代古语)/+木乱 mù luàn(心烦意乱)/+将将的 jiāng jiāng de(刚刚/刚好)，verified 维基济南话·新浪山东方言汇集。**今日四味彩蛋 honest:** ⑤豆汁=北京→京味儿化(豆汁儿/焦圈儿/咸菜丝儿)本源如实;⑦及第粥=广州→粤语"得闲饮茶·好意头"(库中已有,honest);⑥河南(中原官话)&⑧天津话 **不在11区Han库→普通话如实不强造彩蛋**(honesty);⑧煎饼起源传说涉山东"老刀"与今日山东深化同源(如实标注为传说)。
+- **Overrun 诚实记录:** 因中途去重返工，slot a 重新上传时已过 13:00Z（overrun）→ 按 playbook 去掉 publishAt、设 public 立即发布（videoId DbH_p6B-2fM）；b/c/d(16/19/22Z)仍在未来,正常 scheduled-private。
+- **vidIQ:** 余额预计仍 **0/150 < floor 40**（07-29 renews）→ 周二非 Mon/Thu 无 analytics pulse、非 Sat 无 trend scan、所有 vidIQ 生成/打分/分析 **诚实跳过**(0 credits)。
+- **Queue health:** 今日4题均由 research 现生成（非取自queue）；核对后把 **cfd-11 街头煎饼果子** 标 covered-2026-07-28（与今日⑧煎饼同题,防未来重复）；active-queued china-food 仍 **9** ≥5，无需补货（冲刺剩~18天）。
+- **FORMAT-CONFLICT FLAG (repeat, owner):** firing prompt 今日**又**说"three slots incl. b longform 16:9 @13/17/22"、并称"@NYneighborhood education channel"——pre-pivot/pre-sprint 旧措辞。Repo source-of-truth（config `cadence.postsPerDay=4` 食物冲刺 + youtube-cycle.md PROMPT-OVERRIDE"overrides everything"）判定 **4格全 china-food Shorts @13/16/19/22Z、longform 暂停**，与 07-19..27 一致（连续第 10 天冲突）。**再次建议老板更新 Routine firing prompt**（4格 china-food、去掉 education/longform/3-slot 措辞）以终结每日冲突。
+
 ## 2026-07-27 (Mon) — 4-week FOOD SPRINT day 9 · 连载 series #8《中国人的夏夜 Chinese Summer Nights》
 
 - **Direction（本run WebSearch 验证；顺"夏夜/夜经济"母题，peak 三伏当季）:** 商务部数据今夏全国夜间餐饮消费占比已超40%、部分城市>50%（新浪/CRI 2026-06）。做一条"一个中国夏夜的四口"连载：晚饭→烧烤→甜品→饮子，story order=slot order（虾/烤/冰/酸）。P4 完结回扣四味 + 多选 CTA。**诚实反差:** 2026 小龙虾其实在"降温/理性消费"（价格腰斩、被称"氛围/情绪消费"，网易/长城网 2026-06）——不吹"顶流永动"，P1 以**门店/产量规模事实**立钩，把小龙虾定位成夏夜"氛围担当"，honest。

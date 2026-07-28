@@ -2,7 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-07-27 (last deepened: 东北话 — +整 zhěng / +带派 dài pài / +尔滨 Ěr bīn; prior 07-26 福建/闽南话 爱拼才会赢·疼惜·𨑨迌, 07-25 上海话 忒灵光·灵·嗲, 07-24 客家话) — 东北话上次深化2026-07-15，为11区最久未更新；07-26 曾是 福建/闽南话 — +爱拼才会赢 / +疼惜 / +𨑨迌 tshit-thô; prior 07-25 上海话 忒灵光·灵·嗲, 07-24 客家话 食早·食夜·命兮靓·命兮俚, 07-23 湖南话 策/耐得烦/越策越开心) — 闽南话上次深化2026-07-12，为11区最久未更新  
+**Today:** 2026-07-28 (last deepened: 山东话 — +夜来 yè lái / +木乱 mù luàn / +将将的 jiāng jiāng de; 山东话上次深化2026-07-17，为11区最久未更新；prior 07-27 东北话 整·带派·尔滨, 07-26 福建/闽南话 爱拼才会赢·疼惜·𨑨迌, 07-25 上海话 忒灵光·灵·嗲, 07-24 客家话 食早·食夜·命兮靓·命兮俚, 07-23 湖南话 策/耐得烦/越策越开心)  
 **Verification:** All phrases verified via WebSearch; marked with region coverage notes.  
 **Content Tags:** [comedy] [travel] [teach] | Sensitivity: clean / 轻度粗俗 / 粗口
 
@@ -102,6 +102,9 @@
 - **木乱** (mù luàn) | "fretful / vexed" | 济南话，"心里很烦、心烦意乱"。"这两天心里木乱得慌" | 济南日常情绪词；体现方言的生活感 | [teach] | clean
 - **不赛** (bù sài) | "no fun / lame / absurd" | 济南话，"赛"=有意思/好玩，"不赛"=没意思、离谱。"这事办得真不赛" | 与褒义「杠赛来」正好相反的口头禅；日常吐槽百搭 | [comedy] [teach] | clean  <!-- added 2026-07-17, verified (济南话/维基济南话 "赛/不赛") -->
 - **恣儿** (zì er) | "blissfully comfy / pleased" | 鲁中鲁南片，"舒服惬意、得意"。"晒着太阳喝口茶，恣儿了" | 山东人表达满足的招牌字，一个「恣」把惬意说满 | [comedy] [teach] [travel] | clean  <!-- added 2026-07-17, widely documented Shandong term -->
+- **夜来** (yè lái) | "yesterday" | 济南/山东话把"昨天"叫"夜来"，是保留下来的宋代古语。"夜来俺去赶集了" | 一个词见证方言里的古汉语活化石；讲山东饮食风物时的文化彩蛋 | [teach] [travel] | clean  <!-- added 2026-07-28, verified (维基·济南话 保留宋代"夜来"/新浪 山东地方方言汇集) -->
+- **木乱** (mù luàn) | "fretful / vexed / restless" | 济南话，心里烦躁、乱糟糟不痛快。"这两天心里怪木乱地" | 山东人直白表露情绪的口头语；一个"木乱"把烦闷说透 | [comedy] [teach] | clean  <!-- added 2026-07-28, verified (维基·济南话 常用词/新浪 山东方言汇集) -->
+- **将将的** (jiāng jiāng de) | "just now / just barely" | 济南话，"刚刚、正好"。"我将将的到家""时间将将的够" | 表"刚好/刚才"的高频时间词，山东日常口语特征鲜明 | [teach] | clean  <!-- added 2026-07-28, verified (维基·济南话 常用词 "将将的") -->
 
 ## 福建 / 闽南话 (Fujian / Min South Dialect)
 
