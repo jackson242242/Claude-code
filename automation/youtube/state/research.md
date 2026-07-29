@@ -5,6 +5,18 @@ which angles feel tired, stale queue topics, and (Sat) vidIQ trend/outlier notes
 Strategy lens (owner directive 2026-07-08): 唯美主义 aesthetic + 贴近生活 everyday-life
 relevance — see `strategy.styleGuide` / `topicFitGate` in config.yaml.
 
+## 2026-07-29 (Wed) — 4-week FOOD SPRINT day 11 · 连载 series #10《中国饺子地图 China Dumpling Map》
+
+- **Direction（"一盘饺子里的中国"母题，本run WebSearch 逐项验证）:** 饺子=最贴近生活的团圆母题、包饺子的手是天然 money-shot。做四集连载《中国饺子地图》，用**海之鲜→北之暖→辣之红→家之圆**四味轴串（story order=slot order），P4完结回扣三味+CTA。**去重核对（教训遵循 07-28）：先 grep published.json 全部历史——饺子从未做过 series；早餐/粉面/火锅/夏夜/出圈/地方菜均已成系列，今日避开。** 四题：①威海鲅鱼饺子（取自 queue cfd-16）②东北酸菜猪肉饺（research 现生成，与 queue cfd-19 铁锅炖不同题）③成都钟水饺（research 现生成）④过年团圆饺·完结（research 现生成）。
+- **Fact-first hooks（逐集本run WebSearch 查证，数字/反差钩＞地名钩）:** ①威海鲅鱼饺子=一个饺子塞进半条海鱼·"鲅鱼"是蓝点马鲛鱼·剔骨剁泥+韭菜提鲜·荣成人冲海带高汤·"鲅鱼跳，丈人笑"开春女婿送岳父(鲅谐"爸")·2013 山东省非遗（腾讯·澎湃·途牛）；②东北酸菜猪肉饺=零下三十度院子=天然大冰箱·白菜码盐压大石发酵一个月·五花肉拌酸菜=杀猪菜灵魂·除夕全家包·冻一帘随吃随煮（百度百科·澎湃·新浪）；③成都钟水饺=不蘸醋·1893年荔枝巷钟燮森创·只用全猪肉不加菜·二荆条现炼红油+红糖香料熬"复制酱油"·微甜带咸兼辣·干拌不带汤（澎湃·搜狐·网易）；④过年团圆饺=更岁交子(饺子谐交子·子时新旧年相交)·形似元宝招财·包硬币讨发财·传说张仲景冬至舍"祛寒娇耳汤"治冻耳→娇耳→饺子(如实标注民间传说)·速冻水饺中国一年吃掉两百多万吨(2020产量约254万吨)（人民网·墙根网·报告大厅）。
+- **Angle 诚实边界:** 全部美食民俗/产业事实，zero politics、无 endorsement、无投资/加盟建议；张仲景"娇耳"如实标注为民间传说；非遗/年代/产量均本run查证写进各集 description(brandRules)。
+- **B-roll 诚实边界:** Pexels 无这四味中式专属素材（尤缺鲅鱼饺/红油钟水饺/酸菜饺本体），用通用 包饺子的手/下锅蒸煮/浇酱汁/一家人包饺子 镜头承载，warmfood 暖调 fast 硬切 ≥50%人物在动作(包/剁/浇/煮/吃)。各集 description 声明"画面为示意品类的授权免费素材，非特定店家实拍"；③钟水饺素材含 golden fried dumpling/彩色饺子属品类近似，已如实标注示意。四条首帧均为"包饺子的手/下锅/浇勺"money-shot（本run抽帧核验，无空镜误召，未返工）。
+- **Dialect bank:** 深化最久未更新的 **台湾腔**（上次 07-18，11区最旧，距今11天）——+是在哈啰(困惑/傻眼的反问)/+森77("生气气"谐音撒娇)/+母汤(台语"毋通"=不可以)，verified dailyview/中时/bnext·PTT乡民百科/香港经济日报·维基台湾国语。**今日四味彩蛋 honest:** ①威海=山东胶东→山东话(库中已有)·②东北酸菜饺→东北话(库中已有整/带派)·③成都钟水饺→四川话"巴适得板"(库中已有,honest 川食)·④过年团圆饺=全国普适→普通话如实不强造地域彩蛋。台湾腔本日深化不服务今日选题(饺子四城均非台湾)，按"最久未更新"规则如实轮到，honest。
+- **vidIQ:** balance 本run查证 **0/150 < floor 40**（renewableResetsAt 2026-07-29T18:01Z，写state时尚未 renew）→ 周三非 Mon/Thu 无 analytics pulse、非 Sat 无 trend scan、所有 vidIQ 生成/打分/分析 **诚实跳过**(0 credits)。
+- **Thumbnail 诚实记录:** slot a/b 自定义缩略图 set OK；slot c/d 命中 YouTube 429 "uploaded too many thumbnails recently" 限流→**未设自定义缩略图**（Shorts 本就用视频帧、不显示自定义缩略图，无功能影响），如实记录不谎称已设。
+- **Queue health:** dequeued **cfd-16 威海鲅鱼饺子**(标 covered-2026-07-29)；其余3题 research 现生成。active-queued china-food **8** ≥5 → 无需补货（冲刺剩~17天）。
+- **FORMAT-CONFLICT FLAG (repeat, owner, 连续第11天):** firing prompt 今日**又**说"three slots incl. b longform 16:9 @13/17/22"、并称"@NYneighborhood education channel"——pre-pivot/pre-sprint 旧措辞。Repo source-of-truth（config `cadence.postsPerDay=4` 食物冲刺 + youtube-cycle.md PROMPT-OVERRIDE "overrides everything"）判定 **4格全 china-food Shorts @13/16/19/22Z、longform 暂停**，与 07-19..28 一致。**再次建议老板更新 Routine firing prompt**（4格 china-food、去掉 education/longform/3-slot 措辞）以终结每日冲突。
+
 ## 2026-07-28 (Tue) — 4-week FOOD SPRINT day 10 · 连载 series #9《中国早餐宇宙·第二季 China Breakfast Universe S2》
 
 - **Direction（"中国早餐地图"母题，本run WebSearch 逐项验证）:** 早餐=最贴近生活的母题，晨间烟火 b-roll 天然好看。做《中国早餐宇宙》第二季（承接 07-21 第一季①-④，playlist PLA26zs0p0T6k），四味按"重口→治愈"轴串：北京豆汁儿（劝退）→河南胡辣汤（糊辣）→广州及第粥（好意头）→天津煎饼馃子（执念·完结回扣四味+CTA）。story order=slot order。

@@ -834,6 +834,70 @@
         "中国美食 (PLayZuFjrAEfk)",
         "中国早餐宇宙 China Breakfast Universe (PLA26zs0p0T6k)"
       ]
+    },
+    {
+      "date": "2026-07-29",
+      "slot": "a",
+      "title": "中国饺子地图①威海鲅鱼饺子：一个饺子，塞进半条海鱼 | China Dumpling Map P1 · Weihai 🐟🥟",
+      "videoId": "Jewu8dHux5Y",
+      "url": "https://www.youtube.com/watch?v=Jewu8dHux5Y",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-29T13:00:00Z",
+      "series": "中国饺子地图 China Dumpling Map",
+      "playlists": [
+        "中国美食 China Food (PLNf94OBc_zg0)",
+        "中国饺子地图 China Dumpling Map (PLeYdWxs43Fn8)"
+      ]
+    },
+    {
+      "date": "2026-07-29",
+      "slot": "b",
+      "title": "中国饺子地图②东北酸菜猪肉饺：零下三十度，冻在院子里的年味 | China Dumpling Map P2 · Northeast ❄️🥟",
+      "videoId": "bqUSeDLE5VM",
+      "url": "https://www.youtube.com/watch?v=bqUSeDLE5VM",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-29T16:00:00Z",
+      "series": "中国饺子地图 China Dumpling Map",
+      "playlists": [
+        "中国美食 China Food (PLNf94OBc_zg0)",
+        "中国饺子地图 China Dumpling Map (PLeYdWxs43Fn8)"
+      ]
+    },
+    {
+      "date": "2026-07-29",
+      "slot": "c",
+      "title": "中国饺子地图③成都钟水饺：不蘸醋，浇一勺甜辣红油 | China Dumpling Map P3 · Chengdu 🌶️🥟",
+      "videoId": "IcLCMG9Y9c0",
+      "url": "https://www.youtube.com/watch?v=IcLCMG9Y9c0",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api (thumbnail 429-skipped, Shorts frame used)",
+      "status": "scheduled",
+      "publishAt": "2026-07-29T19:00:00Z",
+      "series": "中国饺子地图 China Dumpling Map",
+      "playlists": [
+        "中国美食 China Food (PLNf94OBc_zg0)",
+        "中国饺子地图 China Dumpling Map (PLeYdWxs43Fn8)"
+      ]
+    },
+    {
+      "date": "2026-07-29",
+      "slot": "d",
+      "title": "中国饺子地图④完结·过年团圆饺：为什么中国人过年都吃它 | China Dumpling Map P4 · Reunion 🧧🥟",
+      "videoId": "D5c4OKz19jw",
+      "url": "https://www.youtube.com/watch?v=D5c4OKz19jw",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api (thumbnail 429-skipped, Shorts frame used)",
+      "status": "scheduled",
+      "publishAt": "2026-07-29T22:00:00Z",
+      "series": "中国饺子地图 China Dumpling Map",
+      "playlists": [
+        "中国美食 China Food (PLNf94OBc_zg0)",
+        "中国饺子地图 China Dumpling Map (PLeYdWxs43Fn8)"
+      ]
     }
   ]
 }

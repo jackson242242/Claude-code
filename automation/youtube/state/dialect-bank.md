@@ -2,7 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-07-28 (last deepened: 山东话 — +夜来 yè lái / +木乱 mù luàn / +将将的 jiāng jiāng de; 山东话上次深化2026-07-17，为11区最久未更新；prior 07-27 东北话 整·带派·尔滨, 07-26 福建/闽南话 爱拼才会赢·疼惜·𨑨迌, 07-25 上海话 忒灵光·灵·嗲, 07-24 客家话 食早·食夜·命兮靓·命兮俚, 07-23 湖南话 策/耐得烦/越策越开心)  
+**Today:** 2026-07-29 (last deepened: 台湾腔 — +是在哈啰 shì zài hā luō / +森77 sēn qī qī / +母汤 mǔ tāng; 台湾腔上次深化2026-07-18，为11区最久未更新；prior 07-28 山东话 夜来·木乱·将将的, 07-27 东北话 整·带派·尔滨, 07-26 福建/闽南话 爱拼才会赢·疼惜·𨑨迌, 07-25 上海话 忒灵光·灵·嗲, 07-24 客家话 食早·食夜·命兮靓·命兮俚, 07-23 湖南话 策/耐得烦/越策越开心)  
 **Verification:** All phrases verified via WebSearch; marked with region coverage notes.  
 **Content Tags:** [comedy] [travel] [teach] | Sensitivity: clean / 轻度粗俗 / 粗口
 
@@ -164,6 +164,9 @@
 - **酱紫** (jiang4 zi3) | "like this / this way" | "这样子"的连音缩读，"就酱紫啦"="就这样啦" | 台湾腔连音的招牌梗，网络化后两岸通用；软萌语速的典型产物 | [comedy] [teach] | clean  <!-- added 2026-07-18, verified (维基·台湾网路用语列表 / 知乎台湾腔速成) -->
 - **好康** (hao3 kang1) | "a good deal / good stuff" | 来自闽南语，"好康的"=好的优惠/好东西。"报你一个好康" | 台湾日常高频词，购物/美食语境百搭；闽南语入国语的典型 | [travel] [teach] | clean  <!-- added 2026-07-18, verified (维基·台湾网路用语 / 百度百科台湾腔) -->
 - **阿不就好棒棒** (a1 bu2 jiu4 hao3 bang4 bang4) | "oh, aren't you just wonderful" (sarcastic) | 反讽他人自以为厉害、其实不怎么样 | 极具嘲讽意味的台湾网络流行语；"好棒棒"叠词是台湾腔标志 | [comedy] | clean  <!-- added 2026-07-18, verified (维基·台湾网路用语列表) -->
+- **是在哈啰** (shi4 zai4 ha1 luo1) | "hello?? / what are you even doing?" | 别人做了令人费解的事、或你完全无法理解时的反问，仿美式"Hello?/Excuse me?"的台式版 | 2019 爆红的九年级生口头禅，表达困惑/傻眼 | [comedy] | clean  <!-- added 2026-07-29, verified (dailyview.tw / 中时 chinatimes / 数位时代 bnext) -->
+- **森77** (sen1 qi1 qi1) | "so angry (cutesy)" | "生气气"的谐音叠字，装可爱、戏谑地说生气，女生向男友撒娇常用 | 源自 PTT／Twitch 聊天室的谐音梗 | [comedy] | clean  <!-- added 2026-07-29, verified (PTT乡民百科 pttpedia / 香港经济日报 topick) -->
+- **母汤** (mu3 tang1) | "don't / you shouldn't" | 台语"毋通"(不可以)的谐音，劝阻、告诫别人别做某事。"母汤喔" | 因"光头哥哥"YouTube 影片流传两岸 | [comedy] [teach] | clean  <!-- added 2026-07-29, verified (维基·台湾国语 / 台湾网路用语列表) -->
 
 ---
 
