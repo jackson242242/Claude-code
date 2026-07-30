@@ -5,6 +5,17 @@ which angles feel tired, stale queue topics, and (Sat) vidIQ trend/outlier notes
 Strategy lens (owner directive 2026-07-08): 唯美主义 aesthetic + 贴近生活 everyday-life
 relevance — see `strategy.styleGuide` / `topicFitGate` in config.yaml.
 
+## 2026-07-30 (Thu) — 4-week FOOD SPRINT day 12 · 连载 series #11《中国辣度地图 China's Spice Map》
+
+- **Direction（"谁才是中国最能吃辣的省"辩题母题，本run WebSearch 逐项验证）:** 辣=最贴近生活、最能引评论对撕的母题；连续11天连载后，本run特意选一个**comment-native 辩题**系列（回应 07-15 数据痛点：赞多但评论仍0，playbook 要求 either-or 问句 CTA 上屏）。四集按**麻→鲜→纯→糊**四味轴串（story order=slot order），把"最出名≠最能吃辣"的反差做成一季的脊柱：P1 四川(以为第一其实第五)→P2 湖南(怕不辣的挑战者)→P3 江西(真·第一黑马 climax)→P4 云南(蘸水糊辣)+收官把"冠军"交给评论区。**去重核对（教训遵循 07-28）：先 grep published.json 全部历史——辣度/省份对比从未做过 series；早餐×2/粉面/火锅/菌子/出圈/夏夜/饺子/地方菜/饮品均已成系列，今日全避开。省份挑选刻意避开已做过的单题：不用重庆(火锅P1/小面)、不重复贵州(火锅P4+出圈P2已两次)，改用四川(以"麻"新角度)/湖南/江西(全新)/云南(以蘸水新角度)。**
+- **Fact-first hooks（逐集本run WebSearch 查证，数字/反差钩＞地名钩）:** P1 四川=公认"辣王"却在**辰智《2024年度辣消费大数据》只排第五**(不敌湘/黔/滇)·四川的辣一半是"麻"·**辣椒明末(万历后期)才经山东/朝鲜半岛传入中国**·传入前川人靠花椒/茱萸/生姜·成都自贡最会调麻辣(聚汇数据·澎湃 辣椒起源考·搜狐)；P2 湖南="怕不辣"·**鲜辣**=新鲜小米辣+剁椒·辣椒炒肉辣椒比肉多/剁椒鱼头·把辣椒当菜吃·吃得苦耐得烦霸得蛮·但全国第一仍非湖南(搜狐·聚汇 湖南重辣区)；P3 江西=**辰智2024全国辣消费第一(黑马·climax)**·辣最"纯"不加麻不加糖·**萍乡=江西辣天花板**·炒粉辣椒比粉多/煮粥炖汤放辣椒/招牌"红辣椒炒青辣椒"/莲花血鸭(聚汇·搜狐 四座最能吃辣城市·gzstv 江西菜)；P4 云南=辣不在锅在**一碟蘸水**·**糊辣椒**=干辣椒埋柴火灰烤糊再舂成面·顿顿离不开蘸水·德宏**涮涮辣**号称最辣之一涮一下辣一桌(昆明信息港 蘸水江湖·搜狐 单山蘸水·知乎 11种蘸水)。
+- **Angle 诚实边界:** 全部美食民俗/产业事实，zero politics、无 endorsement、无投资/加盟/医疗建议；**排名依单一2024辣消费报告**，如实用"2024榜/多份榜单常把江西排前列"措辞不作绝对断言；"麻=花椒 numbing ≠ 辣椒热辣"未混淆；涮涮辣"最辣之一"用"号称/据说"；P4收官如实说"没有官方冠军·评委是你"。省份对撕仅限饮食玩笑，非地域歧视/政治。
+- **B-roll 诚实边界:** Pexels 无这四省中式辣菜专属素材（尤缺萍乡炒粉/云南蘸水/剁椒鱼头本体），用通用 红油炒锅/剁椒/炒粉/糊辣椒/蘸食/吃辣人物 镜头承载，warmfood 暖调 fast 硬切 ≥50%人物在动作(炒/剁/浇/涮/吃)。各集 description 声明"画面为示意品类的授权免费素材，非特定省份/店家实拍"；P1素材含地中海/印尼sambal等品类近似辣味镜头，已如实标注示意。四条首帧均为红油/辣椒 money-shot（本run抽帧核验 slot a=浇红油入炒锅无空镜）。
+- **Dialect bank:** 深化最久未更新的 **广西话**（上次 07-19，11区最旧，距今11天）——+友仔/友女 yǒu zǎi/yǒu nǚ(南宁受壮语影响的特色称呼)/+是公的=是空的(g/k不分的经典误听魔性梗)，verified 中新网 闲话广西汉语方言·知乎 广西语言/最魔性方言。**今日四味彩蛋 honest:** P1四川→四川话「巴适」(cue9 麻得巴适,库中已有 honest)·P2湖南→湖南话「霸得蛮/怕不辣」(cue8,库中已有 honest)·P3江西(赣语/萍乡话不在11区Han库)&P4云南(西南官话非专列区)→**普通话如实不强造地域彩蛋**(honesty)。广西话本日深化不服务今日选题(辣四省无广西)，按"最久未更新"规则如实轮到，honest。
+- **vidIQ:** balance 本run查证(见下 lane 记录)——周四(Mon/Thu)本应加 analytics pulse，但余额若 < floor 40 则**诚实跳过所有 vidIQ**(0 credits)，仅当 ≥floor 才拉 channel analytics。详见 RUNLOG 本日行。
+- **Queue health:** 今日4题(四川/湖南/江西/云南辣)均由 research 现生成（非取自queue，queue 内 china-food 多为具体菜品非省份辣对比）；active-queued china-food 仍 ≥5（冲刺剩~16天）→ 无需补货。queue 顶部 city-walk/culture 长片项仍标 paused-food-sprint。
+- **FORMAT-CONFLICT FLAG (repeat, owner, 连续第12天):** firing prompt 今日**又**说"three slots incl. b longform 16:9 @13/17/22"、并称"@NYneighborhood education channel"——pre-pivot/pre-sprint 旧措辞。Repo source-of-truth（config `cadence.postsPerDay=4` 食物冲刺 + youtube-cycle.md PROMPT-OVERRIDE"overrides everything"）判定 **4格全 china-food Shorts @13/16/19/22Z、longform 暂停**，与 07-19..29 一致。**再次建议老板更新 Routine firing prompt**（4格 china-food、去掉 education/longform/3-slot 措辞）以终结每日冲突。
+
 ## 2026-07-29 (Wed) — 4-week FOOD SPRINT day 11 · 连载 series #10《中国饺子地图 China Dumpling Map》
 
 - **Direction（"一盘饺子里的中国"母题，本run WebSearch 逐项验证）:** 饺子=最贴近生活的团圆母题、包饺子的手是天然 money-shot。做四集连载《中国饺子地图》，用**海之鲜→北之暖→辣之红→家之圆**四味轴串（story order=slot order），P4完结回扣三味+CTA。**去重核对（教训遵循 07-28）：先 grep published.json 全部历史——饺子从未做过 series；早餐/粉面/火锅/夏夜/出圈/地方菜均已成系列，今日避开。** 四题：①威海鲅鱼饺子（取自 queue cfd-16）②东北酸菜猪肉饺（research 现生成，与 queue cfd-19 铁锅炖不同题）③成都钟水饺（research 现生成）④过年团圆饺·完结（research 现生成）。

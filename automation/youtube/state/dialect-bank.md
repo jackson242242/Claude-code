@@ -2,7 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-07-29 (last deepened: 台湾腔 — +是在哈啰 shì zài hā luō / +森77 sēn qī qī / +母汤 mǔ tāng; 台湾腔上次深化2026-07-18，为11区最久未更新；prior 07-28 山东话 夜来·木乱·将将的, 07-27 东北话 整·带派·尔滨, 07-26 福建/闽南话 爱拼才会赢·疼惜·𨑨迌, 07-25 上海话 忒灵光·灵·嗲, 07-24 客家话 食早·食夜·命兮靓·命兮俚, 07-23 湖南话 策/耐得烦/越策越开心)  
+**Today:** 2026-07-30 (last deepened: 广西话 — +友仔/友女 yǒu zǎi/yǒu nǚ / +是公的=是空的 shì gōng de; 广西话上次深化2026-07-19，为11区最久未更新；prior 07-29 台湾腔 是在哈啰·森77·母汤, 07-28 山东话 夜来·木乱·将将的, 07-27 东北话 整·带派·尔滨, 07-26 福建/闽南话 爱拼才会赢·疼惜·𨑨迌, 07-25 上海话 忒灵光·灵·嗲, 07-24 客家话 食早·食夜·命兮靓·命兮俚, 07-23 湖南话 策/耐得烦/越策越开心)  
 **Verification:** All phrases verified via WebSearch; marked with region coverage notes.  
 **Content Tags:** [comedy] [travel] [teach] | Sensitivity: clean / 轻度粗俗 / 粗口
 
@@ -150,8 +150,11 @@
 - **克** (kè) | "go" | 桂柳话（桂中桂北官话，属西南官话）把"去"念作"克"，"上街"叫"上该"；"克哪点？"＝"去哪儿？" | 桂柳话与云南话、四川话同属西南官话，听感相近；travel 里问路/招呼的活口彩蛋 | [comedy] [teach] [travel] | clean（verified 澎湃/复旦医学人类学"广西话"·桂柳话西南官话特征）  <!-- added 2026-07-19 -->
 - **得~~~** (dé, 拖长音) | "so / very (drawn-out)" | 桂柳/南普高频语气词，表"非常"，精髓是把音拉长到 2-3 倍："螺蛳粉好吃得~~~" | 广西"魔性"口音的招牌之一；美食语境百搭 | [comedy] [teach] [travel] | clean（verified 澎湃·广西老表的普通话）  <!-- added 2026-07-19 -->
 - **表哥我出来了喔** | meme phrase | 源自广西梧州抖音博主"表妹李kk"的开场白；"表哥/老表"是广西对无血缘关系者的亲昵称呼＝兄弟 | 2023-24 广西方言梗代表；亲切、招呼式 | [comedy] | clean（verified 百度百科·表哥我出来了喔）  <!-- added 2026-07-19 -->
+- **友仔 / 友女** (yǒu zǎi / yǒu nǚ) | "young guy / young girl; buddy" | 南宁人最熟的特色称呼，受壮语构词影响，泛指小伙子/小姑娘，也用来叫朋友 | 广西壮汉语言交融的活化石；招呼年轻人、摊主的市井彩蛋 | [comedy] [teach] [travel] | clean（verified 中新网·闲话广西汉语方言 / 知乎·广西语言背后的故事）  <!-- added 2026-07-30 -->
+- **是公的（=是空的）** (shì gōng de = shì kōng de) | "'it's male' — actually 'it's empty'" | 广西不少地方 g/k 不分，"是空的"常被念成"是公的"，外地人一头雾水 | 广西"最魔性"口音的经典误听梗，聊语言差异的现成笑点 | [comedy] [teach] | clean（verified 知乎·广西方言全国最魔性）  <!-- added 2026-07-30 -->
 
 <!-- 07-19 deepened 广西话/桂柳话: prior section skewed 南宁南普; added the 桂柳话 (西南官话) branch (克/得~~~) + 表妹李kk 招呼梗. 老表/蓝瘦香菇 already present. Skipped 窃格瓦拉 "打工是不可能" meme — criminal-origin, keep off a family-safe channel. -->
+<!-- 07-30 deepened 广西话 again (11区最久未更新, 上次07-19): +友仔/友女 (南宁壮语影响称呼) +是公的=是空的 (g/k不分误听梗). 蓝瘦香菇/老表/克/得~~~ already present, not duplicated. -->
 
 ## 台湾腔 (Taiwan Accent — Taiwanese Mandarin)
 
