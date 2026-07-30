@@ -898,6 +898,70 @@
         "中国美食 China Food (PLNf94OBc_zg0)",
         "中国饺子地图 China Dumpling Map (PLeYdWxs43Fn8)"
       ]
+    },
+    {
+      "date": "2026-07-30",
+      "slot": "a",
+      "title": "中国辣度地图①四川：最出名的\"辣王\"，为什么只排第五？| China's Spice Map P1 · Sichuan 🌶️",
+      "videoId": "Eqzr3ufWC-c",
+      "url": "https://www.youtube.com/watch?v=Eqzr3ufWC-c",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-30T13:00:00Z",
+      "series": "中国辣度地图 China's Spice Map",
+      "playlists": [
+        "中国美食 China Food (PLNf94OBc_zg0)",
+        "中国辣度地图 China Spice Map (PLNs_2s-mhyRI)"
+      ]
+    },
+    {
+      "date": "2026-07-30",
+      "slot": "b",
+      "title": "中国辣度地图②湖南：不怕辣，是\"怕不辣\"| China's Spice Map P2 · Hunan 🌶️",
+      "videoId": "0GN0WIA7Gu0",
+      "url": "https://www.youtube.com/watch?v=0GN0WIA7Gu0",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-30T16:00:00Z",
+      "series": "中国辣度地图 China's Spice Map",
+      "playlists": [
+        "中国美食 China Food (PLNf94OBc_zg0)",
+        "中国辣度地图 China Spice Map (PLNs_2s-mhyRI)"
+      ]
+    },
+    {
+      "date": "2026-07-30",
+      "slot": "c",
+      "title": "中国辣度地图③江西：全国第一，居然是最低调的它 | China's Spice Map P3 · Jiangxi 🔥",
+      "videoId": "nmrDIphvDA4",
+      "url": "https://www.youtube.com/watch?v=nmrDIphvDA4",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-30T19:00:00Z",
+      "series": "中国辣度地图 China's Spice Map",
+      "playlists": [
+        "中国美食 China Food (PLNf94OBc_zg0)",
+        "中国辣度地图 China Spice Map (PLNs_2s-mhyRI)"
+      ]
+    },
+    {
+      "date": "2026-07-30",
+      "slot": "d",
+      "title": "中国辣度地图④完结·云南：最狠的辣，藏在一碟蘸水里 | China's Spice Map P4 · Yunnan 🌶️",
+      "videoId": "vFxXejSQwbU",
+      "url": "https://www.youtube.com/watch?v=vFxXejSQwbU",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api (re-assembled 3x for on-topic red-chili b-roll; first upload L855vc8jzs0 deleted before publish)",
+      "status": "scheduled",
+      "publishAt": "2026-07-30T22:00:00Z",
+      "series": "中国辣度地图 China's Spice Map",
+      "playlists": [
+        "中国美食 China Food (PLNf94OBc_zg0)",
+        "中国辣度地图 China Spice Map (PLNs_2s-mhyRI)"
+      ]
     }
   ]
 }
