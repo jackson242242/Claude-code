@@ -962,6 +962,50 @@
         "中国美食 China Food (PLNf94OBc_zg0)",
         "中国辣度地图 China Spice Map (PLNs_2s-mhyRI)"
       ]
+    },
+    {
+      "date": "2026-07-31",
+      "slot": "a",
+      "title": "中国厨房必有的酱①老干妈：一瓶辣酱，一年卖出54亿 | China's Kitchen Sauces P1 · Lao Gan Ma 🌶️",
+      "videoId": "mrPUcD0qj7M",
+      "url": "https://www.youtube.com/watch?v=mrPUcD0qj7M",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-31T13:00:00Z"
+    },
+    {
+      "date": "2026-07-31",
+      "slot": "b",
+      "title": "中国厨房必有的酱②郫县豆瓣：川菜的魂，不是辣椒是它 | China's Kitchen Sauces P2 · Doubanjiang 🥢",
+      "videoId": "EXBJRsHANys",
+      "url": "https://www.youtube.com/watch?v=EXBJRsHANys",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-31T16:00:00Z"
+    },
+    {
+      "date": "2026-07-31",
+      "slot": "c",
+      "title": "中国厨房必有的酱③蚝油：一次忘了关火，鲜了一百年 | China's Kitchen Sauces P3 · Oyster Sauce 🦪",
+      "videoId": "Qw02l9EY7Go",
+      "url": "https://www.youtube.com/watch?v=Qw02l9EY7Go",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-31T19:00:00Z"
+    },
+    {
+      "date": "2026-07-31",
+      "slot": "d",
+      "title": "中国厨房必有的酱④完结·酱油：一滴酱油，晒足一百八十天 | China's Kitchen Sauces P4 · Soy Sauce 🍶",
+      "videoId": "Iyy7AoZX62A",
+      "url": "https://www.youtube.com/watch?v=Iyy7AoZX62A",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-31T22:00:00Z"
     }
   ]
 }

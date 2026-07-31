@@ -2,7 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-07-30 (last deepened: 广西话 — +友仔/友女 yǒu zǎi/yǒu nǚ / +是公的=是空的 shì gōng de; 广西话上次深化2026-07-19，为11区最久未更新；prior 07-29 台湾腔 是在哈啰·森77·母汤, 07-28 山东话 夜来·木乱·将将的, 07-27 东北话 整·带派·尔滨, 07-26 福建/闽南话 爱拼才会赢·疼惜·𨑨迌, 07-25 上海话 忒灵光·灵·嗲, 07-24 客家话 食早·食夜·命兮靓·命兮俚, 07-23 湖南话 策/耐得烦/越策越开心)  
+**Today:** 2026-07-31 (last deepened: 四川话 — +假打 jiǎ dǎ 虚伪吹牛(李伯清梗) / +打牙祭 dǎ yá jì 改善伙食 / +撑花儿 chēng huā er 伞; 四川话上次深化2026-07-20，为11区最久未更新，且与今日郫县豆瓣川菜主题相扣；prior 07-30 广西话 友仔/友女·是公的, 07-29 台湾腔 是在哈啰·森77·母汤, 07-28 山东话 夜来·木乱·将将的, 07-27 东北话 整·带派·尔滨, 07-26 福建/闽南话 爱拼才会赢·疼惜·𨑨迌, 07-25 上海话 忒灵光·灵·嗲, 07-24 客家话 食早·食夜·命兮靓, 07-23 湖南话 策/耐得烦)  
 **Verification:** All phrases verified via WebSearch; marked with region coverage notes.  
 **Content Tags:** [comedy] [travel] [teach] | Sensitivity: clean / 轻度粗俗 / 粗口
 
@@ -74,6 +74,9 @@
 - **抻抖** (chen1 dou3) | "sort it out clearly / comfy" | 把事情弄清楚、搞妥帖；也指人舒服安逸。"这事儿抻抖了没？" | 一词两义（把事办妥＋身心舒坦）体现川人务实又爱安逸 | [comedy] [teach] | clean  <!-- added 2026-07-20 -->
 - **鼓到** (gu3 dao4) | "to force / pressure someone" | 强迫、硬要某人做。"莫鼓到我喝酒" = "别逼我喝酒" | 日常拒绝/推让语境高频，语气直白 | [comedy] [teach] | clean  <!-- added 2026-07-20 -->
 - **杀搁** (sha1 ge2) | "finished / it's a wrap" | 结束了、收工了。"活路杀搁咯" = "活儿干完了" | 干脆利落的收尾语，四川人做事讲究的语感 | [comedy] [teach] | clean  <!-- added 2026-07-20 -->
+- **假打** (jia3 da3) | "phony / all talk / boastful" | 虚伪、吹牛、不实在——悬乎到大家都知是假、却博人一笑。源自成都评书名家李伯清的口头禅 | 四川人调侃"不实在"的招牌词，饭桌闲聊/吐槽场景传神；「假打」的反面就是「巴适、实在」 | [comedy] [teach] | clean  <!-- added 2026-07-31, verified (喜马拉雅 四川话假打是什么意思/民俗四川方言) -->
+- **打牙祭** (da3 ya2 ji4) | "treat oneself to a good meal" | 改善伙食、难得吃顿好的。"今天打牙祭" = "今天加个菜/开荤" | 川渝西南日常高频，美食/家常菜短片天然彩蛋——一勺豆瓣、一碗回锅肉就是打牙祭 | [comedy] [teach] [travel] | clean  <!-- added 2026-07-31, verified (百度百科 打牙祭/四川方言集锦) -->
+- **撑花儿** (cheng1 hua1 er0) | "umbrella (lit. 'blooming prop')" | 四川话把伞叫"撑花儿/撑子"——避"伞/散"同音的忌讳、说得更好听 | 生活化词汇，雨天/市井/赶集短片彩蛋，体现川人图吉利的语言习惯 | [teach] [travel] | clean  <!-- added 2026-07-31, verified (四川方言词汇集/维基 四川话) -->
 
 ## 东北话 (Northeast Dialect)
 

@@ -5,6 +5,17 @@ which angles feel tired, stale queue topics, and (Sat) vidIQ trend/outlier notes
 Strategy lens (owner directive 2026-07-08): 唯美主义 aesthetic + 贴近生活 everyday-life
 relevance — see `strategy.styleGuide` / `topicFitGate` in config.yaml.
 
+## 2026-07-31 (Fri) — 4-week FOOD SPRINT day 13 · 连载 series #12《中国厨房必有的酱 China's Kitchen Sauces》
+
+- **Direction（从"辣度对撕"转到"每个中国厨房都有的那几瓶"——最贴近生活的 comment-native 母题；本run WebSearch 逐项验证）:** 连续12天做"地图/派系/对撕"后，本run换一个**人人有共鸣、评论门槛极低**的切口：厨房里那几瓶酱。四集按**现代/全球→手艺→意外→最日常**的叙事弧串（story order=slot order）：P1 老干妈(国民辣酱·全球现象)→P2 郫县豆瓣(川菜之魂·非遗手艺)→P3 蚝油(一次"忘关火"的意外·百年)→P4 酱油(古法180天·生抽老抽·收官回扣「开门七件事」)。每集 either-or/清点式 CTA 上屏（"你冰箱有没有这瓶""你炒菜放不放""这四瓶你家有几瓶"）直击 07-15 数据痛点(赞多评论少)。**去重（教训遵循 07-28）：grep published.json 全史——饮品(饮品战争)/早餐×2/火锅/粉面/菌子/出圈/夏夜/饺子/地方菜/辣度地图均已成系列，"调味酱"母题从未做过；避免与"饮品战争"重叠（本季讲酱不讲饮）。**
+- **Fact-first hooks（逐集本run WebSearch 查证，数字/反差钩＞品名钩）:** P1 老干妈=**2024营收逼近54亿元**·陶华碧**50岁摆摊起家**·配方朴素(辣椒/豆豉/菜籽油)·"有华人的地方就有老干妈"·被称"中国的可口可乐"(香港01·澎湃·数英)；P2 郫县豆瓣="川菜的魂**不是辣椒**是它"·**三百余年**·辣椒+蚕豆·**"日晒夜露"**十二字真诀·**中国地理标志+国家级非遗**·发酵少则半年久则数年(中国日报四川·驻欧盟使团·搜狐/川菜研究中心)；P3 蚝油=**1888年**李锦裳在广东香山南水(今珠海)**煮蚝忘关火**、蚝汁浓缩成褐色意外发明·分销**五大洲100多国**(维基《李锦记》·百科·灯塔水母)；P4 酱油=古法**"春曲夏酱秋油"·晒足约180天**·生抽=头抽提鲜/老抽晾晒上色红烧·**「开门七件事：柴米油盐酱醋茶」**收官回扣(知乎/观察者·腾讯新闻)。
+- **Angle 诚实边界（brandRules 关键）:** P1老干妈/P3李锦记蚝油涉具体品牌——严格**仅陈述可查事实**(营收/创立/发明由来/分销规模)、**中性、无背书/无投资加盟/无医疗建议**；"卖到全世界"仅依"有华人地方就有它"的公开说法、未编具体国家数；54亿为2024单一口径、100多国为企业分销口径，均如实标注；"意外发明"为多来源一致的流传由来；晒180天为传统古法常见口径、注明部分酱油晒更久。zero politics。
+- **B-roll 诚实边界:** Pexels 无老干妈/豆瓣/蚝油/酱油**实拍或实物专属素材**，用通用 浇酱下饭/红酱炒锅/发酵陶缸/淋酱提亮青菜/红烧上色/家庭晚餐 镜头承载品类，warmfood 暖调 fast 硬切。各集 description 声明"画面为示意品类的授权免费素材，非该品牌/店家/酱园实拍"。**抽帧核验(4条 money-shot 首帧)：a=浇亮褐酱盖浇饭(on-topic)·b=铁锅红酱翻炒(on-topic·最佳)·c=手端热气腾腾红烧砂锅(on-topic)·d=红烧盖浇饭(on-topic·首版与a撞同一Pexels片→已重召"红烧肉打头"改出不同首帧)。诚实记录：a/c/d 各含1-2条泛用近似镜头(咖啡冲煮/汉堡薯条/寿司拼盘等 Pexels 兜底)，非跑题主体、已在描述声明示意。**
+- **Dialect bank:** 深化最久未更新的 **四川话**（上次 07-20，11区最旧，且与今日**郫县豆瓣/川菜**主题相扣）——+**假打** jiǎ dǎ(虚伪吹牛·成都评书李伯清梗)/+**打牙祭** dǎ yá jì(改善伙食·美食短片天然彩蛋)/+**撑花儿** chēng huā er(伞·避"散"忌讳)，verified 喜马拉雅/民俗四川·百度百科·维基 四川话。今日选题为调味酱、非按城市走，故**未在视频里强塞地域彩蛋**(honesty)；四川话深化服务 backlog 与未来川菜集。
+- **vidIQ:** 周五非 Mon/Thu → 不拉 analytics pulse；非周六 → 无 trend/outlier 调用。**本run vidIQ 0 credits**（余额未查询，无生成需求；voiceover 已 paused 无需配额）。
+- **Queue health:** 今日4题(老干妈/豆瓣/蚝油/酱油)由 research 现生成；其中豆瓣≈cfd 队列"川菜"精神、老干妈呼应 cfd-10/21 饮品邻域但本季专攻酱。queue 内 china-food 仍有 10 项(北京烤鸭/小笼包/潮汕牛肉火锅/过桥米线/铁锅炖/酸辣粉/煎饼果子/鲅鱼饺/现制酸奶/新中式茶饮)→ **≥5，无需补货**（冲刺剩~15天）。
+- **FORMAT-CONFLICT FLAG (owner, 连续第13天，概述从简):** 今日 firing prompt 仍是 pre-pivot/pre-sprint 旧措辞("three slots incl. b longform 16:9 @13/17/22"、"@NYneighborhood education channel")。按 repo source-of-truth（config `cadence.postsPerDay=4` 食物冲刺 + youtube-cycle.md PROMPT-OVERRIDE"overrides everything"）执行 **4格全 china-food Shorts @13/16/19/22Z、longform 暂停**。恳请老板在 claude.ai/code/routines UI 更新该 Routine 的 firing prompt（改为 4格 china-food、去掉 education/longform/3-slot 字样）以终结每日冲突。
+
 ## 2026-07-30 (Thu) — 4-week FOOD SPRINT day 12 · 连载 series #11《中国辣度地图 China's Spice Map》
 
 - **Direction（"谁才是中国最能吃辣的省"辩题母题，本run WebSearch 逐项验证）:** 辣=最贴近生活、最能引评论对撕的母题；连续11天连载后，本run特意选一个**comment-native 辩题**系列（回应 07-15 数据痛点：赞多但评论仍0，playbook 要求 either-or 问句 CTA 上屏）。四集按**麻→鲜→纯→糊**四味轴串（story order=slot order），把"最出名≠最能吃辣"的反差做成一季的脊柱：P1 四川(以为第一其实第五)→P2 湖南(怕不辣的挑战者)→P3 江西(真·第一黑马 climax)→P4 云南(蘸水糊辣)+收官把"冠军"交给评论区。**去重核对（教训遵循 07-28）：先 grep published.json 全部历史——辣度/省份对比从未做过 series；早餐×2/粉面/火锅/菌子/出圈/夏夜/饺子/地方菜/饮品均已成系列，今日全避开。省份挑选刻意避开已做过的单题：不用重庆(火锅P1/小面)、不重复贵州(火锅P4+出圈P2已两次)，改用四川(以"麻"新角度)/湖南/江西(全新)/云南(以蘸水新角度)。**
