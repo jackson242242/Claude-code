@@ -93,6 +93,13 @@ log `skipped: batch already published today` and stop. (Protects against manual
    中国美食. Modern + 贴近生活 topics first: 新中式茶饮, 现制酸奶, 街头早餐,
    夜市, 外卖时代, 网红店排队学, 家常菜革命 — not museum food history.
    Slot order within a day = story order (morning slot = Part 1).
+   **Owner-footage slot claims (check FIRST):** read
+   `state/owner-slots.json` — if today's date has claimed slots (owner real
+   footage already uploaded/scheduled by an interactive session, lane
+   `owner-footage`), those slots are TAKEN: produce NO stock video for them,
+   count them toward the day's total, and note the claim in RUNLOG. 实拍永远
+   优先于库存快剪 (see `automation/youtube/REAL-FOOTAGE.md`). Missing file or
+   no entry for today = no claims.
    Take the top queue item with that pillar (skip items whose pillar is in
    `pausedPillars`); if none, generate one from today's research +
    `state/dialect-bank.md`. Each pick must pass `strategy.topicFitGate`

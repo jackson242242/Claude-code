@@ -19,6 +19,9 @@
    价格/数字弹条照 STYLE.md v2.1
 4. 成片 <30MB 压缩版发对话框预览 → 老板一句 OK → 上传（排期或即发）→ 歌单归档
    → published.json/RUNLOG 记录（lane 标 `owner-footage`）
+   → **同时写 `state/owner-slots.json`** 认领槽位：
+   `{"YYYY-MM-DD": {"a": {"videoId": "...", "title": "..."}}}` —— 例行 run 的
+   选题步骤会先读此文件，被认领的槽位当天不再生产库存视频（已写入 playbook）
 5. 出镜授权：老外朋友需口头同意出镜发布（拍进素材里最佳）；路人以背景虚化为原
    则。无授权的正脸特写不用。
 
