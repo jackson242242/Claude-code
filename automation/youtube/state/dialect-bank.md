@@ -2,7 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-07-31 (last deepened: 四川话 — +假打 jiǎ dǎ 虚伪吹牛(李伯清梗) / +打牙祭 dǎ yá jì 改善伙食 / +撑花儿 chēng huā er 伞; 四川话上次深化2026-07-20，为11区最久未更新，且与今日郫县豆瓣川菜主题相扣；prior 07-30 广西话 友仔/友女·是公的, 07-29 台湾腔 是在哈啰·森77·母汤, 07-28 山东话 夜来·木乱·将将的, 07-27 东北话 整·带派·尔滨, 07-26 福建/闽南话 爱拼才会赢·疼惜·𨑨迌, 07-25 上海话 忒灵光·灵·嗲, 07-24 客家话 食早·食夜·命兮靓, 07-23 湖南话 策/耐得烦)  
+**Today:** 2026-08-01 (last deepened: 粤语 — +一盅两件 jat1 zung1 loeng5 gin6 一壶茶两笼点心/广式早茶 / +糖水 tong4 seoi2 广式甜品统称/去饮糖水 / +叹茶 taan3 caa4 慢享叹世界; 粤语自07-21后最久未深化，且与今日「广东糖水」主题直接相扣；prior 07-31 四川话 假打·打牙祭·撑花儿, 07-30 广西话 友仔/友女·是公的, 07-29 台湾腔 是在哈啰·森77·母汤, 07-28 山东话 夜来·木乱·将将的, 07-27 东北话 整·带派·尔滨, 07-26 福建/闽南话 爱拼才会赢·疼惜·𨑨迌, 07-25 上海话 忒灵光·灵·嗲, 07-24 客家话 食早·食夜·命兮靓, 07-23 湖南话 策/耐得烦)  
 **Verification:** All phrases verified via WebSearch; marked with region coverage notes.  
 **Content Tags:** [comedy] [travel] [teach] | Sensitivity: clean / 轻度粗俗 / 粗口
 
@@ -19,6 +19,9 @@
 - **唔该** (m4 goi1) | "excuse me / thank you (for a favor)" | 最常用礼貌语，"劳驾/麻烦你"兼"多谢"。点单、借过都说"唔该" | 广式商业文明的边界感——你本不必帮我，帮了便谢；美食/服务场景天然彩蛋 | [teach] [travel] | clean  <!-- added 2026-07-21, verified (腾讯新闻·广式口头禅/百度百科 唔该) -->
 - **抵食** (dai2 sik6) | "great value food / worth eating" | "抵"=值得划算，"抵食"=好吃又便宜；"抵食夹大件"=物美价廉分量足 | 广东人夸美食的招牌句，早餐/夜市短片百搭 | [travel] [teach] | clean  <!-- added 2026-07-21, verified (百度百科 抵食/腾讯新闻) -->
 - **得闲饮茶** (dak1 haan4 jam2 caa4) | "let's do tea when you're free" | 有空一起喝早茶——既是邀约也是客气的告别语 | 广府早茶文化的灵魂口头禅；温和、重人情的生活节奏 | [travel] [teach] | clean  <!-- added 2026-07-21, verified (羊城网/粤语早茶文化) -->
+- **一盅两件** (jat1 zung1 loeng5 gin6) | "one pot of tea + two dim sum" | 广式早茶的经典点法：一盅茶、两笼点心；泛指叹早茶的惬意 | 广府「叹茶」慢生活的招牌短语；早茶/糖水/城市漫游短片天然彩蛋 | [travel] [teach] | clean  <!-- added 2026-08-01, verified (广式早茶文化/搜狐 粤语成语) -->
+- **糖水** (tong4 seoi2) | "sweet soup / Cantonese dessert" | 广式甜品的统称（红豆沙/杨枝甘露/双皮奶…），"去饮糖水"=去吃甜品 | 岭南饮食的独有词；一切糖水/甜品短片的母词，非广东人常不识 | [travel] [teach] | clean  <!-- added 2026-08-01, verified (粵典 words.hk 糖水/维基 糖水) -->
+- **叹茶** (taan3 caa4) | "to savor tea leisurely" | "叹"=慢慢享受；叹茶=悠然品茶，引申"叹世界"享受生活 | 广东慢生活哲学的关键字，"叹"最能点出广府人的松弛感 | [travel] [teach] | clean  <!-- added 2026-08-01, verified (羊城网/粤语「叹」用法) -->
 
 ## 北京话 (Beijing Dialect)
 

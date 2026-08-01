@@ -1006,6 +1006,50 @@
       "lane": "pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-07-31T22:00:00Z"
+    },
+    {
+      "date": "2026-08-01",
+      "slot": "a",
+      "title": "广东糖水①杨枝甘露：这碗芒果甜品，其实只有40岁 | Canton Sweet Soups P1 · Mango Pomelo Sago 🥭",
+      "videoId": "_wxzuB8d2qU",
+      "url": "https://www.youtube.com/watch?v=_wxzuB8d2qU",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-01T13:00:00Z"
+    },
+    {
+      "date": "2026-08-01",
+      "slot": "b",
+      "title": "广东糖水②双皮奶：一碗牛奶，凭\"两层皮\"封神 | Canton Sweet Soups P2 · Double-Skin Milk 🥛",
+      "videoId": "ZVZ2hC-sE0w",
+      "url": "https://www.youtube.com/watch?v=ZVZ2hC-sE0w",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-01T16:00:00Z"
+    },
+    {
+      "date": "2026-08-01",
+      "slot": "c",
+      "title": "广东糖水③姜撞奶：一碗热牛奶，被姜一\"撞\"20秒凝住 | Canton Sweet Soups P3 · Ginger Milk Curd 🫚",
+      "videoId": "WqTzV6mxwQE",
+      "url": "https://www.youtube.com/watch?v=WqTzV6mxwQE",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-01T19:00:00Z"
+    },
+    {
+      "date": "2026-08-01",
+      "slot": "d",
+      "title": "广东糖水④完结·绿豆沙：广东人消暑，靠煮到\"起沙\"的绿豆 | Canton Sweet Soups P4 · Mung Bean 🫛",
+      "videoId": "0ujPQD1AFUQ",
+      "url": "https://www.youtube.com/watch?v=0ujPQD1AFUQ",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-01T22:00:00Z"
     }
   ]
 }
