@@ -5,6 +5,17 @@ which angles feel tired, stale queue topics, and (Sat) vidIQ trend/outlier notes
 Strategy lens (owner directive 2026-07-08): 唯美主义 aesthetic + 贴近生活 everyday-life
 relevance — see `strategy.styleGuide` / `topicFitGate` in config.yaml.
 
+## 2026-08-02 (Sun) — 4-week FOOD SPRINT day 15 · 连载 series #14《中国人怎么吃一只鸡 How China Eats a Chicken》
+
+**今日方向 findings（newest first）:**
+- **母题选择「一只鸡」= 最贴近生活 + comment-native:** 承接昨日(08-01)research 列的下一步候选，选「中国人怎么吃一只鸡」——鸡是全国普适食材、人人对"哪种做法最好吃"有意见、评论门槛极低(直击 07-15 数据痛点:赞多评论少)，且四大做法 b-roll 天然好看。四集按 **现代公路→极简功夫→名字反差→传说手艺** 叙事弧串(story order=slot order): P1 新疆大盘鸡(现代/全国现象)→P2 广东白切鸡(极简即功夫)→P3 四川口水鸡(名字反差 curiosity gap 最强)→P4 常熟叫花鸡(泥火传说·完结回扣). 每集独立成篇 + 下集预告(连载 小红书式).
+- **去重核对（遵循 07-28 教训，grep published.json 全史92条）:** 咖啡/饮品战争/早餐宇宙×2/火锅/粉面/云南菌子/城市出圈/夏夜/饺子地图/辣度地图/厨房酱/广东糖水 均已成系列;**「一只鸡/怎么吃鸡」母题从未做过**(仅 07-24《云南菌子季③鸡枞》为同名野生菌，非鸡菜);四道具体菜(大盘鸡/白切鸡/口水鸡/叫花鸡)此前均未单独做过。安全。
+- **fact-first 反差钩逐集本run WebSearch 验证（数字/反差＞菜名钩，延续 07-15 数据）:** P1 大盘鸡=看似百年名吃**其实才约40岁**·1980s后期新疆沙湾312国道旁·创制者是**四川籍**厨师李士林(1987开店)·给卡车司机的量大实惠·大托盘得名·吃到底再下皮带面=一鸡两吃(维基《大盘鸡》/新华网·澎湃《要从40多年前说起》/百度百科);P2 白切鸡=**最讲究的鸡什么都不加**·清水浸熟随吃随斩·"无鸡不成宴"·清代民间食肆·越简单越考火候·1981清平饭店卤水浸=清平鸡(广州日报/腾讯《岭南无鸡不成宴》/羊城网);P3 口水鸡=**名字居然来自郭沫若**《洪波曲》"故乡白砍鸡…想来还口水长流"→取"口水"命名·川式冷盘·二十多种调料·四川花椒的麻(维基《口水鸡》/百度百科);P4 叫花鸡=**一只裹泥巴的鸡是乞丐发明的**·清代常熟荷叶黄泥裹柴火煨·剥壳鸡毛随脱·虞山山景园精工创制·传说受皇帝赞赏得名"富贵鸡"(百度百科/搜狐/china.com). 四集均以数字/反差开场(才40岁/什么都不加/名字来自郭沫若/一身泥)，符合 fact-first。
+- **诚实边界:** 全部美食民俗/年代/典故事实，中性、无 endorsement/加盟/投资/医疗建议、zero politics;乞丐/皇帝由来如实标注"相传/传说";"约40岁""100多年"用多来源一致口径。B-roll 无四道专属实拍，用泛用品类镜头承载并在 description 声明示意(含少量 biriyani/teriyaki/curry/lentil 等 Pexels 兜底品类近似镜头，10取1-2)。
+- **queue 观察:** 今日4题由 research 现生成(延续 07-28..08-01 做法)，未消耗队列;china-food active-queued ≥5(北京烤鸭/小笼包/潮汕牛肉火锅/过桥米线/铁锅炖/酸辣粉/现制酸奶/新中式茶饮等)→无需补充(冲刺剩~13天)。**下一步 series 候选(避免撞题):**「一颗蛋的中国吃法」(茶叶蛋/皮蛋/咸鸭蛋/蛋炒饭)、「中国人怎么吃一条鱼」(松鼠鱼/水煮鱼/剁椒鱼头/糖醋)、「广式糖水续集·热甜品」(芝麻糊/番薯糖水/腐竹白果) — 糖水/鸡母题反响可观时可再开一季。
+- **dialect-bank:** 深化最久未更新的 **北京话**(其余10区07-23..08-01均已轮过)——+局气 jú qi(仗义守规矩·《老炮儿》带火)/+底儿掉 dǐr diào(输光·一干二净)/+老炮儿 lǎo pàor(某行当有阅历受敬重的中老年人·本字应作"老泡儿")，verified 知乎北京话经典/百度百科老炮儿/中新网学者考据。今日选题非按城市走，字幕以广府"无鸡不成宴"·四川花椒承载本源、未强塞地域彩蛋(honest)。
+- **FORMAT-CONFLICT FLAG (owner, 连续第15天，概述从简):** 今日 firing prompt 仍是 pre-pivot/pre-sprint 旧措辞("three slots incl b longform 16:9 @13/17/22"、"@NYneighborhood education channel")。按 repo source-of-truth(config `cadence.postsPerDay=4` 食物冲刺 + youtube-cycle.md PROMPT-OVERRIDE "overrides everything")执行 **4格全 china-food Shorts @13/16/19/22Z、longform 暂停**。恳请老板在 claude.ai/code/routines UI 更新该 Routine 的 firing prompt(改为 4格 china-food、去掉 education/longform/3-slot 字样)以终结每日冲突。
+
 ## 2026-08-01 (Sat) — 4-week FOOD SPRINT day 14 · 连载 series #13《广东糖水 Canton Sweet Soups》
 
 **今日方向 findings（newest first）:**

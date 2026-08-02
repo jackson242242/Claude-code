@@ -1050,6 +1050,50 @@
       "lane": "pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-08-01T22:00:00Z"
+    },
+    {
+      "date": "2026-08-02",
+      "slot": "a",
+      "title": "中国人怎么吃一只鸡①大盘鸡：这道'新疆名菜'，其实只有40岁 | How China Eats a Chicken P1 · Xinjiang Big-Plate 🍗",
+      "videoId": "2jS1IzOZSmg",
+      "url": "https://www.youtube.com/watch?v=2jS1IzOZSmg",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-02T13:00:00Z"
+    },
+    {
+      "date": "2026-08-02",
+      "slot": "b",
+      "title": "中国人怎么吃一只鸡②白切鸡：最贵的一道鸡，什么都不加 | How China Eats a Chicken P2 · Cantonese White-Cut 🐔",
+      "videoId": "4wmaacFidno",
+      "url": "https://www.youtube.com/watch?v=4wmaacFidno",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-02T16:00:00Z"
+    },
+    {
+      "date": "2026-08-02",
+      "slot": "c",
+      "title": "中国人怎么吃一只鸡③口水鸡：这名字，居然来自郭沫若 | How China Eats a Chicken P3 · Sichuan Saliva Chicken 🌶️",
+      "videoId": "X6aan5cJvKo",
+      "url": "https://www.youtube.com/watch?v=X6aan5cJvKo",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-02T19:00:00Z"
+    },
+    {
+      "date": "2026-08-02",
+      "slot": "d",
+      "title": "中国人怎么吃一只鸡④完结·叫花鸡：一身泥，剥开却是名菜 | How China Eats a Chicken P4 · Beggar's Chicken 🔥",
+      "videoId": "q4YWjCGgDtw",
+      "url": "https://www.youtube.com/watch?v=q4YWjCGgDtw",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-02T22:00:00Z"
     }
   ]
 }
