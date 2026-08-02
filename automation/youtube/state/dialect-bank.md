@@ -2,7 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-08-01 (last deepened: 粤语 — +一盅两件 jat1 zung1 loeng5 gin6 一壶茶两笼点心/广式早茶 / +糖水 tong4 seoi2 广式甜品统称/去饮糖水 / +叹茶 taan3 caa4 慢享叹世界; 粤语自07-21后最久未深化，且与今日「广东糖水」主题直接相扣；prior 07-31 四川话 假打·打牙祭·撑花儿, 07-30 广西话 友仔/友女·是公的, 07-29 台湾腔 是在哈啰·森77·母汤, 07-28 山东话 夜来·木乱·将将的, 07-27 东北话 整·带派·尔滨, 07-26 福建/闽南话 爱拼才会赢·疼惜·𨑨迌, 07-25 上海话 忒灵光·灵·嗲, 07-24 客家话 食早·食夜·命兮靓, 07-23 湖南话 策/耐得烦)  
+**Today:** 2026-08-02 (last deepened: 北京话 — +局气 jú qi 仗义守规矩/《老炮儿》带火 / +底儿掉 dǐr diào 输光·一干二净 / +老炮儿 lǎo pàor 某行当有阅历受敬重的中老年人·本字应作"老泡儿"; 北京话为11区中最久未深化者（其余10区07-23..08-01均已轮过），故今日轮到；今日选题「中国人怎么吃一只鸡」非按城市走(新疆/广东/四川/常熟)，字幕以广府"无鸡不成宴"·四川花椒承载本源、未强塞地域彩蛋，honest；prior 08-01 粤语 一盅两件·糖水·叹茶, 07-31 四川话 假打·打牙祭·撑花儿, 07-30 广西话 友仔/友女·是公的, 07-29 台湾腔 是在哈啰·森77·母汤, 07-28 山东话 夜来·木乱·将将的, 07-27 东北话 整·带派·尔滨, 07-26 福建/闽南话 爱拼才会赢·疼惜·𨑨迌, 07-25 上海话 忒灵光·灵·嗲, 07-24 客家话 食早·食夜·命兮靓, 07-23 湖南话 策/耐得烦)  
 **Verification:** All phrases verified via WebSearch; marked with region coverage notes.  
 **Content Tags:** [comedy] [travel] [teach] | Sensitivity: clean / 轻度粗俗 / 粗口
 
@@ -28,6 +28,9 @@
 - **您呐** (nin2 na0) | "you (polite)" + particle | 敬语用法，"您呐"=您。"吃了吗您呐？" 典型北京问候 | 体现北京人热络、人情味十足的说话风格 | [comedy] [teach] | clean
 - **抽烟喝酒烫头** (chou1 yan1 he1 jiu3 tang4 tou2) | "smoke, drink, perm hair" | 网络流行用语，形容某人的消遣习惯组合；打趣性表达 | 沙雕、自嘲式幽默；北方人豪爽的调侃方式 | [comedy] | 轻度粗俗
 - **砖家** (zhuan1 jia1) | "brick expert" | 谐音"专家"，讽刺自命不凡的"砖家"（砖块的砖） | 网络梗，北京话俏皮的谐音玩法 | [comedy] | clean
+- **局气** (jú qi) | "stand-up / straight-dealing" | 为人仗义、豪爽守规矩：既不怕自己吃亏，也绝不欺负人 | 老北京最高的做人评价之一，《老炮儿》带火；讲义气/胡同人情的招牌词 | [comedy] [teach] | clean  <!-- added 2026-08-02, verified (知乎 北京话·句句经典/新浪 老炮儿北京话) -->
+- **底儿掉** (dǐr diào) | "clean out / lose it all" | "全输光了/一干二净"，如"昨儿搓麻干我一底儿掉" | 北京儿化的画面感——连底儿都掉了；打趣输赢/见底 | [comedy] [teach] | clean  <!-- added 2026-08-02, verified (知乎 北京话经典/新浪 老北京俚语) -->
+- **老炮儿** (lǎo pàor) | "old hand / seasoned veteran" | 原为贬义（旧时"老泡儿"指蹲过局子的老混子），今引申为某行当曾辉煌、至今仍守自尊与技艺、受人敬重的中老年人 | 2015电影《老炮儿》后成网络流行语；学者考据本字应作"老泡儿" | [comedy] [teach] | clean  <!-- added 2026-08-02, verified (百度百科 老炮儿/中新网 学者称应为老泡儿) -->
 - **出门儿** (chu1 men2 er0) | "go out" | 北京儿化音典型；"我得出门儿" | 体现北京话儿化韵尾特征 | [teach] | clean
 - **唉哟妈呀** (ai1 yo3 ma1 ya0) | "oh my goodness" | 惊讶/感叹。"唉哟妈呀，这怎么搞的！" | 北京老人常用感叹语，魔性十足 | [comedy] | clean
 - **扛不住** (kang2 bu4 zhu4) | "can't bear it" | 承受不了、太累。"这活儿我扛不住" | 实在、直白的北方表达风格 | [comedy] [teach] | clean
