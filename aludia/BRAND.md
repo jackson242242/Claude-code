@@ -59,6 +59,13 @@
 - **互动权重**：收藏/分享/回复 > 点赞（Story 回复年增 88%，Story 拿信任、
   Reels 拿新流量）。发帖节奏理想值：每周 4–5 条 Reels。
 
+**8/3 周增量（来源见 2026-08-03 brief）：**
+- 8 月音频大盘：Sabrina Carpenter 霸榜（130k+ Reels）；Warner Case
+  夏日高能量曲仍活跃 → First day energy 开场曲二选一
+- **返校"妈妈情绪"格式确认存在**——与账号历史最佳（Mother's Day 734）
+  受众重合，campaign 加开妈妈视角支线（见 8/3 brief）
+- 低制作单镜头连续第 4 周跑赢精修（趋势已成结构性）
+
 **7/27 周增量（来源见 2026-07-27 brief）：**
 - **"House Tour"（Sabrina Carpenter）**：巡游类内容标配音——studio tour
   正好接上 7/13 Reels 评论区投票（packing day vs design day）
