@@ -696,7 +696,8 @@
       "sources": [],
       "addedAt": "2026-07-15",
       "addedBy": "owner directive",
-      "status": "queued"
+      "status": "covered-2026-08-03",
+      "coveredBy": "2026-08-03 绝活系列"
     },
     {
       "id": "cfd-04",
@@ -708,7 +709,8 @@
       "sources": [],
       "addedAt": "2026-07-15",
       "addedBy": "owner directive",
-      "status": "queued"
+      "status": "covered-2026-08-03",
+      "coveredBy": "2026-08-03 绝活系列"
     },
     {
       "id": "cfd-05",
@@ -720,7 +722,8 @@
       "sources": [],
       "addedAt": "2026-07-15",
       "addedBy": "owner directive",
-      "status": "queued"
+      "status": "covered-2026-07-22-duplicate",
+      "coveredBy": "dedup: already produced (see status)"
     },
     {
       "id": "str-01",
@@ -794,7 +797,8 @@
       ],
       "addedAt": "2026-07-23",
       "addedBy": "cycle replenish (food sprint, 现制饮品/年轻)",
-      "status": "queued"
+      "status": "covered-2026-07-20-duplicate",
+      "coveredBy": "dedup: already produced (see status)"
     },
     {
       "id": "cfd-11",
@@ -836,7 +840,8 @@
       "sources": [],
       "addedAt": "2026-07-26",
       "addedBy": "cycle replenish (food sprint, 云南米线)",
-      "status": "queued"
+      "status": "covered-2026-08-03",
+      "coveredBy": "2026-08-03 绝活系列"
     },
     {
       "id": "cfd-19",
@@ -872,6 +877,91 @@
       "sources": [],
       "addedAt": "2026-07-26",
       "addedBy": "cycle replenish (food sprint, 现制饮品/年轻)",
+      "status": "covered-2026-07-20-duplicate",
+      "coveredBy": "dedup: already produced (see status)"
+    },
+    {
+      "id": "cfd-22",
+      "title": "黄焖鸡米饭：一只砂锅，统治写字楼午餐",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "外卖时代的国民快餐;一人食砂锅焖鸡+米饭;门店数以万计+近年出海(美/日开店).fact-first=门店/出海数字.人物:端砂锅、拌饭的手.",
+      "whyNow": "'黄焖鸡米饭'常年外卖销量顶流、门店数以万计并加速出海,一人食快餐母题贴近上班族午餐. verify 门店数/出海门店 at scripting.",
+      "sources": [
+        "黄焖鸡米饭 门店数 出海"
+      ],
+      "addedAt": "2026-08-03",
+      "addedBy": "cycle replenish (food sprint day16)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-23",
+      "title": "东北锅包肉：酸甜脆,竟有个'办公室'为它成立",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "锅包肉酸甜金黄脆壳;老式糖醋(琥珀色)vs番茄酱版之争=评论钩;2024吉林市'锅包肉办公室'推广.fact-first反差=一道菜设了个办公室.",
+      "whyNow": "2024年吉林市成立'锅包肉办公室'推广地方菜引发热议,老式vs番茄版是天然评论钩. verify 锅包肉办公室/郑兴文1907起源 at scripting.",
+      "sources": [
+        "吉林 锅包肉办公室 郑兴文 1907"
+      ],
+      "addedAt": "2026-08-03",
+      "addedBy": "cycle replenish (food sprint day16)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-24",
+      "title": "上海生煎:底脆、汁多,一口爆汤",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "生煎底金黄焦脆、一口爆汤;发面vs小笼死面对照(同城不同法);排队顶流.craft近'绝活'系列.人物:铁盘转、咬爆汤.",
+      "whyNow": "生煎是沪上早点顶流、排队店常年出片;与小笼包同宗不同法(发面/褶朝下煎)可对照. verify 发面/褶朝下煎/汤汁来源 at scripting.",
+      "sources": [
+        "上海生煎 发面 褶朝下 做法"
+      ],
+      "addedAt": "2026-08-03",
+      "addedBy": "cycle replenish (food sprint day16; craft-adjacent)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-25",
+      "title": "靖江蟹黄汤包:皮薄如纸,一根吸管喝汤",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "大汤包皮薄如纸、提起像灯笼、插吸管先喝汤;秋蟹季时令钩;淮扬绝活.craft近'绝活'系列.",
+      "whyNow": "'皮薄如纸、一根吸管喝汤'的蟹黄汤包是短视频常青爆款,秋蟹季将至=时令钩. verify 靖江汤包/吸管吃法/皮薄工艺 at scripting.",
+      "sources": [
+        "靖江蟹黄汤包 吸管 皮薄如纸"
+      ],
+      "addedAt": "2026-08-03",
+      "addedBy": "cycle replenish (food sprint day16; craft-adjacent)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-26",
+      "title": "新疆手抓饭:羊肉黄萝卜一锅焖,为什么用手抓",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "抓饭=羊肉+胡萝卜黄萝卜+米一锅焖;'手抓'维吾尔传统吃法是文化钩;油亮米粒money-shot.地域生活.",
+      "whyNow": "新疆美食短视频持续走红,手抓饭(抓饭)是代表;'手抓'传统吃法是天然文化钩. verify 抓饭配料/维吾尔传统/婚宴场合 at scripting.",
+      "sources": [
+        "新疆 手抓饭 抓饭 维吾尔 传统"
+      ],
+      "addedAt": "2026-08-03",
+      "addedBy": "cycle replenish (food sprint day16)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-27",
+      "title": "佛跳墙:几十种山珍海味,煨进一坛",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "闽菜佛跳墙:几十种食材分门别类处理再一坛慢煨;'坛启荤香飘四邻,佛闻弃禅跳墙来'诗句由来=强故事钩;国宴名菜.craft锚点,可作'绝活'第二季.",
+      "whyNow": "佛跳墙工序繁复、'坛启荤香'诗句由来故事性强,国宴名菜,是craft/绝活题材常青款. verify 郑春发/聚春园/坛启荤香诗 at scripting.",
+      "sources": [
+        "佛跳墙 郑春发 聚春园 坛启荤香"
+      ],
+      "addedAt": "2026-08-03",
+      "addedBy": "cycle replenish (food sprint day16; 绝活 season-2 anchor)",
       "status": "queued"
     }
   ]

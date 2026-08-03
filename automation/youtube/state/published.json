@@ -1094,6 +1094,50 @@
       "lane": "pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-08-02T22:00:00Z"
+    },
+    {
+      "date": "2026-08-03",
+      "slot": "a",
+      "title": "中国菜的绝活①小笼包·顶上18个褶 | Signature Skill P1 · 18 Folds in One Dumpling 🥟",
+      "videoId": "3FfvofWUZM8",
+      "url": "https://www.youtube.com/watch?v=3FfvofWUZM8",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-03T13:00:00Z"
+    },
+    {
+      "date": "2026-08-03",
+      "slot": "b",
+      "title": "中国菜的绝活②过桥米线·不冒热气却烫熟生肉 | Signature Skill P2 · Crossing-Bridge Noodles 🍜",
+      "videoId": "TX9cdwTSyQU",
+      "url": "https://www.youtube.com/watch?v=TX9cdwTSyQU",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-03T16:00:00Z"
+    },
+    {
+      "date": "2026-08-03",
+      "slot": "c",
+      "title": "中国菜的绝活③北京烤鸭·先给鸭子吹口气 | Signature Skill P3 · Air-Blown for Crispy Skin 🦆",
+      "videoId": "_ba1T9TKE0I",
+      "url": "https://www.youtube.com/watch?v=_ba1T9TKE0I",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-03T19:00:00Z"
+    },
+    {
+      "date": "2026-08-03",
+      "slot": "d",
+      "title": "中国菜的绝活④完结·文思豆腐·切成几千根丝 | Signature Skill P4 · Tofu into 1,000 Threads 🔪",
+      "videoId": "Fh-1krAiGCY",
+      "url": "https://www.youtube.com/watch?v=Fh-1krAiGCY",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-03T22:00:00Z"
     }
   ]
 }

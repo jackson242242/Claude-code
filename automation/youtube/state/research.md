@@ -5,6 +5,13 @@ which angles feel tired, stale queue topics, and (Sat) vidIQ trend/outlier notes
 Strategy lens (owner directive 2026-07-08): 唯美主义 aesthetic + 贴近生活 everyday-life
 relevance — see `strategy.styleGuide` / `topicFitGate` in config.yaml.
 
+2026-08-03 (Mon) | **FOOD SPRINT day 16.** Content locked to china-food per config (postsPerDay=4, longform paused). Today = new 4-part 连载 **《中国菜的绝活 The Signature Skill》** — the hidden hand-skill in a dish, escalating: 捏(小笼包18褶) → 烫(过桥米线自己烫熟生肉) → 吹+片(北京烤鸭打气/108片) → 切(文思豆腐几千根丝, finale). Fact-first + craft-reveal hooks + on-screen either-or CTA throughout.
+- **Direction (what's resonating):** the craft/绝活 angle is a strong fit for the 小红书 fact-first format — every dish's wow-factor IS a technique, so the number hook (18褶 / 108片 / 几千根丝) and the "how is that even possible" curiosity gap come for free. Analytics ramp (views ~3× over the week) supports staying on fact-first + money-shot@0s; comments still 0 → keep hammering the on-screen either-or question (it's the only lever left for comment conversion).
+- **DEDUP HYGIENE (owner FYI):** while picking today's slots I found 3 queue items that were already produced and should not have stayed "queued": **cfd-05 潮汕牛肉火锅** (done 07-22 火锅分几派②), **cfd-10 新中式茶饮** and **cfd-21 现制酸奶** (both done 07-20 新中式饮品战争 ①②). Marked them covered/duplicate this run so they won't be re-picked. Net fresh china-food queue after replenish = 8 (cfd-19/20 + 6 new seeds cfd-22..27).
+- **Replenish (6 new seeds, all dedup-checked fresh vs 96-entry published.json):** 黄焖鸡米饭(外卖之王) · 东北锅包肉(2024吉林"锅包肉办公室"+老式vs番茄之争) · 上海生煎(发面vs小笼死面·爆汤) · 靖江蟹黄汤包(吸管喝汤·秋蟹季) · 新疆手抓饭(手抓传统) · 佛跳墙(坛启荤香·可作"绝活"第二季锚点). 生煎/汤包/佛跳墙都带手艺卖点 → 绝活 season-2 material.
+- **Dialect bank:** deepened **湖南话** (oldest at 07-23; +韵味/应味·+克/克哪里·+拌蛮). Today's dishes are Shanghai/Yunnan/Beijing/Yangzhou, not Hunan — did NOT force a Hunan wink into the videos (honest); the 湖南 deepening is the routine daily rotation only.
+
+
 ## 2026-08-02 (Sun) — 4-week FOOD SPRINT day 15 · 连载 series #14《中国人怎么吃一只鸡 How China Eats a Chicken》
 
 **今日方向 findings（newest first）:**
