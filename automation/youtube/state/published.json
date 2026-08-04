@@ -1138,6 +1138,50 @@
       "lane": "pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-08-03T22:00:00Z"
+    },
+    {
+      "date": "2026-08-04",
+      "slot": "a",
+      "title": "东北硬菜①锅包肉：这道菜，居然是为外国人发明的 | Northeast Comfort Food P1 · Guobaorou 🍖",
+      "videoId": "s1C7rGSzqes",
+      "url": "https://www.youtube.com/watch?v=s1C7rGSzqes",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-04T13:00:00Z"
+    },
+    {
+      "date": "2026-08-04",
+      "slot": "b",
+      "title": "东北硬菜②铁锅炖：一口锅比脸盆还大，炖下整个冬天 | Northeast Comfort Food P2 · Iron-Pot Stew 🍲",
+      "videoId": "J1bCWk4Xbbo",
+      "url": "https://www.youtube.com/watch?v=J1bCWk4Xbbo",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-04T16:00:00Z"
+    },
+    {
+      "date": "2026-08-04",
+      "slot": "c",
+      "title": "东北硬菜③猪肉炖粉条：一句“馋死野狼嚎”，主角竟不是肉 | Northeast Comfort Food P3 · Pork & Glass Noodles 🍲",
+      "videoId": "FlyjiwMTf_A",
+      "url": "https://www.youtube.com/watch?v=FlyjiwMTf_A",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-04T19:00:00Z"
+    },
+    {
+      "date": "2026-08-04",
+      "slot": "d",
+      "title": "东北硬菜④完结·小鸡炖蘑菇：姑爷进门，为啥小鸡要“断魂” | Northeast Comfort Food P4 · Chicken & Mushroom 🍲",
+      "videoId": "7TUTDPIbbWE",
+      "url": "https://www.youtube.com/watch?v=7TUTDPIbbWE",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-04T22:00:00Z"
     }
   ]
 }

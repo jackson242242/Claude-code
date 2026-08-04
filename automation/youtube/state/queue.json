@@ -853,7 +853,7 @@
       "sources": [],
       "addedAt": "2026-07-26",
       "addedBy": "cycle replenish (food sprint, 东北地方菜)",
-      "status": "queued"
+      "status": "covered-2026-08-04"
     },
     {
       "id": "cfd-20",
@@ -906,7 +906,7 @@
       ],
       "addedAt": "2026-08-03",
       "addedBy": "cycle replenish (food sprint day16)",
-      "status": "queued"
+      "status": "covered-2026-08-04"
     },
     {
       "id": "cfd-24",
