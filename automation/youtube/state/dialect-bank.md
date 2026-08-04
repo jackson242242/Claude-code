@@ -2,7 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-08-03 (last deepened: 湖南话 — +韵味/应味 yìn wèi 正合口味·带劲·惬意 / +克·克哪里 kè 去·去哪儿 / +拌蛮 bàn mán 蛮横不听劝·与褒义"霸得蛮"对照; 湖南话为11区中最久未深化者（上次07-23，其余10区07-24..08-02均已轮过），故今日轮到；今日选题「中国菜的绝活」按菜非按城市走(上海小笼/云南过桥米线/北京烤鸭/扬州文思豆腐)，未强塞湖南彩蛋，honest；prior 08-02 北京话 局气·底儿掉·老炮儿, 08-01 粤语 一盅两件·糖水·叹茶, 07-31 四川话 假打·打牙祭·撑花儿, 07-30 广西话 友仔/友女·是公的, 07-29 台湾腔 是在哈啰·森77·母汤, 07-28 山东话 夜来·木乱·将将的, 07-27 东北话 整·带派·尔滨, 07-26 福建/闽南话 爱拼才会赢·疼惜·𨑨迌, 07-25 上海话 忒灵光·灵·嗲, 07-24 客家话 食早·食夜·命兮靓, 07-23 湖南话 策/耐得烦)  
+**Today:** 2026-08-04 (last deepened: 客家话 — +食饭吂/食饭冇 sṳ̍t fàn màng 吃了没·以食问候 / +承蒙你 sín-mùng ngì 郑重道谢 / +条上条下 tiàu song tiàu ha 忙得片刻不闲; 客家话为11区中最久未深化者（上次07-24，其余10区07-25..08-03均已轮过），故今日轮到；今日选题「东北硬菜」按东北走(锅包肉/铁锅炖/猪肉炖粉条/小鸡炖蘑菇)，字幕自然weave 东北话(尔滨/整/造/杠杠的)，未强塞客家彩蛋，honest；prior 08-03 湖南话 韵味·克·拌蛮, 08-02 北京话 局气·底儿掉·老炮儿, 08-01 粤语 一盅两件·糖水·叹茶, 07-31 四川话 假打·打牙祭·撑花儿, 07-30 广西话 友仔/友女·是公的, 07-29 台湾腔 是在哈啰·森77·母汤, 07-28 山东话 夜来·木乱·将将的, 07-27 东北话 整·带派·尔滨, 07-26 福建/闽南话 爱拼才会赢·疼惜·𨑨迌, 07-25 上海话 忒灵光·灵·嗲, 07-24 客家话 食早·食夜·命兮靓, 07-23 湖南话 策/耐得烦)  
 **Verification:** All phrases verified via WebSearch; marked with region coverage notes.  
 **Content Tags:** [comedy] [travel] [teach] | Sensitivity: clean / 轻度粗俗 / 粗口
 
@@ -147,6 +147,9 @@
 - **食早 / 食夜** (sit8 zau3 / sit8 ya6) | "breakfast / dinner (as a greeting)" | 客家以吃饭问候，按三餐细分——"食早冇？"=吃早饭没，"食夜冇？"=吃晚饭没；桂东南/两广客家常用 | 与"食饭冇"同一人情逻辑，比普通话更分时段 | [teach] [travel] | clean  <!-- added 2026-07-24, verified (维基·客家话/桂东南客家 食早食夜) -->
 - **命兮靓** (miang6 he1 liang3) | "gorgeous / drop-dead pretty" | 客家加强式赞美，"命兮靓毕矣"=漂亮极了；"命兮"作程度副词，比单说"靓"更夸张 | 客家话独特的程度表达法 | [comedy] [teach] | clean  <!-- added 2026-07-24, verified (客家话日常用语大全) -->
 - **命兮俚** (miang6 he1 li1) | "downright ugly" | "命兮俚毕矣"=丑死了，"俚"=丑，与"命兮靓"正反成对 | 客家程度副词的一正一反对照，打趣常用（对号入座需谨慎） | [comedy] [teach] | clean  <!-- added 2026-07-24, verified (客家话日常用语大全) -->
+- **食饭吂 / 食饭冇** (sṳ̍t fàn màng) | "have you eaten yet?" | 客家最日常的见面招呼，等同普通话"吃了没"；以吃饭问候，见人先问一句 | 客家「以食问候」的人情逻辑（与广府"食咗未"、闽南同源），美食/待客短片天然彩蛋 | [teach] [travel] | clean  <!-- added 2026-08-04, verified (喜马拉雅·吃饭没客家话怎么说 / 湘里妹子·各地方言"吃饭了吗") -->
+- **承蒙你** (sín-mùng ngì) | "much obliged / thank you" | 客家郑重的道谢语，"承蒙你帮忙"=多谢你帮忙；比"多谢"更客气、重人情 | 客家谦逊守礼的语言底色；招待/受人恩惠的场景常用 | [teach] [travel] | clean  <!-- added 2026-08-04, verified (教育百科·教育雲線上字典 承蒙你) -->
+- **条上条下** (tiàu song tiàu ha) | "run off one's feet / no free moment" | 忙得团团转、片刻不得闲，"归日条上条下"=整天忙上忙下 | 客家形容忙碌的生动口头禅，勤劳务实的生活写照 | [comedy] [teach] | clean  <!-- added 2026-08-04, verified (查字典方言网·客家话口头语) -->
 
 ## 广西话 (Guangxi — Gui-Liu Dialect / Southern Mandarin)
 
