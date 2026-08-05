@@ -2,7 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-08-04 (last deepened: 客家话 — +食饭吂/食饭冇 sṳ̍t fàn màng 吃了没·以食问候 / +承蒙你 sín-mùng ngì 郑重道谢 / +条上条下 tiàu song tiàu ha 忙得片刻不闲; 客家话为11区中最久未深化者（上次07-24，其余10区07-25..08-03均已轮过），故今日轮到；今日选题「东北硬菜」按东北走(锅包肉/铁锅炖/猪肉炖粉条/小鸡炖蘑菇)，字幕自然weave 东北话(尔滨/整/造/杠杠的)，未强塞客家彩蛋，honest；prior 08-03 湖南话 韵味·克·拌蛮, 08-02 北京话 局气·底儿掉·老炮儿, 08-01 粤语 一盅两件·糖水·叹茶, 07-31 四川话 假打·打牙祭·撑花儿, 07-30 广西话 友仔/友女·是公的, 07-29 台湾腔 是在哈啰·森77·母汤, 07-28 山东话 夜来·木乱·将将的, 07-27 东北话 整·带派·尔滨, 07-26 福建/闽南话 爱拼才会赢·疼惜·𨑨迌, 07-25 上海话 忒灵光·灵·嗲, 07-24 客家话 食早·食夜·命兮靓, 07-23 湖南话 策/耐得烦)  
+**Today:** 2026-08-05 (last deepened: 上海话 — +刮刮叫 kuah-kuah-jiao 棒极了/顶呱呱 / +拎得清·拎不清 明事理会察言观色·糊涂不识相 / +嘎三胡 ga-se-hu 闲聊侃大山; 上海话为11区中最久未深化者（上次07-25，其余10区07-26..08-04均已轮过），故今日轮到；今日选题「中式快餐四巨头」(沙县/兰州/黄焖鸡/麻辣烫)无沪菜，字幕weave 闽南「爱拼才会赢」·济南「杠赛来」·四川「巴适得板」(兰州→方言库无甘肃/西北,honest不强塞)，未强塞沪语彩蛋，honest；prior 08-04 客家话 食饭冇·承蒙你·条上条下, 08-03 湖南话 韵味·克·拌蛮, 08-02 北京话 局气·底儿掉·老炮儿, 08-01 粤语 一盅两件·糖水·叹茶, 07-31 四川话 假打·打牙祭·撑花儿, 07-30 广西话 友仔/友女·是公的, 07-29 台湾腔 是在哈啰·森77·母汤, 07-28 山东话 夜来·木乱·将将的, 07-27 东北话 整·带派·尔滨, 07-26 福建/闽南话 爱拼才会赢·疼惜·𨑨迌, 07-25 上海话 忒灵光·灵·嗲, 07-24 客家话 食早·食夜·命兮靓)  
 **Verification:** All phrases verified via WebSearch; marked with region coverage notes.  
 **Content Tags:** [comedy] [travel] [teach] | Sensitivity: clean / 轻度粗俗 / 粗口
 
@@ -51,6 +51,9 @@
 - **灵** (lin2) | "great / works / excellent" | 好、棒、行得通。"灵额!" = "太棒了/可以"；"侬只手机蛮灵额" | 上海话最百搭的褒义单字，夸东西好用/好吃/漂亮都能一个「灵」搞定；美食短片天然彩蛋 | [comedy] [teach] [travel] | clean  <!-- added 2026-07-25, verified (lingoace 上海话常用语/经典上海话) -->
 - **忒灵光** (theh2 lin2 kuaon1) | "super clever / sharp" | 特别聪明、机灵。"迭个小囡忒灵光" = "这孩子太机灵了"；"忒"=太 | 上海话夸人脑子活络的招牌句；"灵光"本义好用/管用，加"忒"到顶格 | [comedy] [teach] | clean  <!-- added 2026-07-25, verified (lingoace 上海话常用语) -->
 - **嗲** (dia1) | "coquettish / charmingly lovely" | 撒娇、柔媚有魅力；也泛指"好·地道"。"伊老嗲额" = "她真嗲/真有味道"；"味道嗲" = 味道正 | 上海腔的灵魂字，从形容女子娇媚扩展到夸一切精致有品；已进普通话网络语 | [comedy] [teach] [travel] | clean  <!-- added 2026-07-25, verified (lingoace 沪语/经典上海话) -->
+- **刮刮叫** (kuah2 kuah2 jiao1) | "top-notch / first-rate" | 棒极了、顶呱呱，形容质量/本事一流。"格碗面刮刮叫" = "这碗面棒极了" | 上海人夸东西/人到顶格的老派招牌词，比「灵」更响；美食/手艺短片天然彩蛋 | [comedy] [teach] [travel] | clean  <!-- added 2026-08-05, verified (lingoace 上海话常用语/经典上海话转载) -->
+- **拎得清 / 拎不清** (lin1 deh2 qing1 / lin1 beh2 qing1) | "sharp & sensible / clueless" | 「拎得清」=脑子清爽、明事理、会察言观色分轻重；「拎不清」=糊涂、不识相、拎不清爽 | 上海人评价一个人情商/分寸的核心词，几乎是沪语人品判断的关键字 | [comedy] [teach] | clean  <!-- added 2026-08-05, verified (lingoace 上海话/经典上海话转载) -->
+- **嘎三胡** (ga2 se1 hu2) | "chit-chat / shoot the breeze" | 聊天、闲聊、侃大山。"邻居坐辣一道嘎三胡" = "邻居坐一起唠嗑" | 上海弄堂生活感的招牌动词，市井/邻里/生活类短片天然彩蛋 | [comedy] [teach] [travel] | clean  <!-- added 2026-08-05, verified (lingoace 上海话常用语/沪语常识) -->
 
 ## 湖南话 (Hunan — Changsha / Plasticized Mandarin 塑普)
 

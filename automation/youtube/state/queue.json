@@ -892,7 +892,7 @@
       ],
       "addedAt": "2026-08-03",
       "addedBy": "cycle replenish (food sprint day16)",
-      "status": "queued"
+      "status": "covered-2026-08-05"
     },
     {
       "id": "cfd-23",
@@ -962,6 +962,76 @@
       ],
       "addedAt": "2026-08-03",
       "addedBy": "cycle replenish (food sprint day16; 绝活 season-2 anchor)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-28",
+      "title": "沙县小吃：一副担子，开出比洋快餐还多的门店",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "沙县小吃母题（今日slot a已做为『中式快餐四巨头』P1；此seed留作单集深挖：扁肉/拌面/蒸饺/炖罐工艺特写+8.8万家门店数据条）。闽南彩蛋 爱拼才会赢。",
+      "whyNow": "『中式快餐四巨头』系列2026-08-05首播反响待观察；沙县小吃门店8.8万+持续为国民话题，可做单品深挖版。verify 门店数/非遗年份 at scripting.",
+      "sources": [
+        "腾讯新闻 沙县小吃8.8万家门店 2024"
+      ],
+      "addedAt": "2026-08-05",
+      "addedBy": "cycle replenish (food sprint day 18)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-29",
+      "title": "柳州螺蛳粉：闻着臭吃着香，一年卖出几百亿",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "螺蛳粉：酸笋『臭味』反差钩+预包装出海爆款。money shot 红油/嗦粉POV+酸笋特写。桂柳话彩蛋（dialect-bank 广西）。fact-first=闻着臭却卖到全国海外。",
+      "whyNow": "柳州螺蛳粉预包装年产值持续破百亿、出海东南亚/欧美长红；臭味争议是天然comment bait。verify 最新产值数据 at scripting.",
+      "sources": [
+        "柳州螺蛳粉 预包装 产值 出海"
+      ],
+      "addedAt": "2026-08-05",
+      "addedBy": "cycle replenish (food sprint day 18)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-30",
+      "title": "武汉热干面：过早之王，为什么要先『掸面』",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "武汉热干面：芝麻酱拌面、掸面工艺、过早文化。money shot 拌酱拉丝。fact-first=不是汤面也不是拌面，武汉人叫它过早之王。武汉话彩蛋（可深化湖北，dialect-bank未含则honest）。",
+      "whyNow": "武汉『过早』文化与热干面常年霸榜早餐类短视频；掸面工艺是强钩子。verify 掸面/芝麻酱工艺 at scripting.",
+      "sources": [
+        "武汉热干面 掸面 过早 芝麻酱"
+      ],
+      "addedAt": "2026-08-05",
+      "addedBy": "cycle replenish (food sprint day 18)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-31",
+      "title": "河南胡辣汤：一碗辣糊糊，叫醒一座城的早晨",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "逍遥镇/北舞渡胡辣汤：胡椒勾芡、牛肉面筋。money shot 勺子舀起挂糊。fact-first=名字里没有『辣椒』，靠胡椒辣。中原早餐王。",
+      "whyNow": "胡辣汤作为河南早餐符号持续出圈，逍遥镇/北舞渡两派之争是天然either-or CTA。verify 逍遥镇/北舞渡两派 at scripting.",
+      "sources": [
+        "河南胡辣汤 逍遥镇 北舞渡 胡椒"
+      ],
+      "addedAt": "2026-08-05",
+      "addedBy": "cycle replenish (food sprint day 18)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-32",
+      "title": "广式肠粉：一块布上，蒸出一条会呼吸的米浆",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "广式布拉肠：米浆、布拉、酱油。money shot 揭布拉肠瞬间/淋豉油。fact-first=一块布蒸出滑到入口即化。粤语彩蛋 抵食（dialect-bank 粤语）。",
+      "whyNow": "广式早茶/街头肠粉常年热门，布拉肠揭布瞬间是极强money shot。verify 布拉肠工艺 at scripting.",
+      "sources": [
+        "广式肠粉 布拉肠 米浆 豉油"
+      ],
+      "addedAt": "2026-08-05",
+      "addedBy": "cycle replenish (food sprint day 18)",
       "status": "queued"
     }
   ]

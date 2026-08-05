@@ -1182,6 +1182,50 @@
       "lane": "pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-08-04T22:00:00Z"
+    },
+    {
+      "date": "2026-08-05",
+      "slot": "a",
+      "title": "中式快餐四巨头①沙县小吃：8.8万家店，比洋快餐还多 | China's Fast-Food Giants P1 · Shaxian 🥡",
+      "videoId": "2khkDpnWJYU",
+      "url": "https://www.youtube.com/watch?v=2khkDpnWJYU",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-05T13:00:00Z"
+    },
+    {
+      "date": "2026-08-05",
+      "slot": "b",
+      "title": "中式快餐四巨头②兰州牛肉面：一碗面，能拉出九种粗细 | China's Fast-Food Giants P2 · Lanzhou 🍜",
+      "videoId": "JS4UYUSqPss",
+      "url": "https://www.youtube.com/watch?v=JS4UYUSqPss",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-05T16:00:00Z"
+    },
+    {
+      "date": "2026-08-05",
+      "slot": "c",
+      "title": "中式快餐四巨头③黄焖鸡米饭：一只砂锅，统治了写字楼午餐 | China's Fast-Food Giants P3 · Braised Chicken Rice 🍗",
+      "videoId": "ClQw9h13vOY",
+      "url": "https://www.youtube.com/watch?v=ClQw9h13vOY",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-05T19:00:00Z"
+    },
+    {
+      "date": "2026-08-05",
+      "slot": "d",
+      "title": "中式快餐四巨头④麻辣烫：江边纤夫的吃法，被两个东北人开成帝国 | China's Fast-Food Giants P4 · Malatang 🌶️",
+      "videoId": "RzgsJmqpbyc",
+      "url": "https://www.youtube.com/watch?v=RzgsJmqpbyc",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-05T22:00:00Z"
     }
   ]
 }
