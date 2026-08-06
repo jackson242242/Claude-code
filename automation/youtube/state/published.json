@@ -1226,6 +1226,17 @@
       "lane": "pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-08-05T22:00:00Z"
+    },
+    {
+      "date": "2026-08-06",
+      "slot": "a",
+      "title": "广式早茶四大天王①虾饺：一只饺子，要捏够十二道褶 | Cantonese Dim Sum's Four Kings P1 · Har Gow 🦐",
+      "videoId": "AVe4J_4Hrvo",
+      "url": "https://www.youtube.com/watch?v=AVe4J_4Hrvo",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-06T13:00:00Z"
     }
   ]
 }
