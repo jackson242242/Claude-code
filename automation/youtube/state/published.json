@@ -1259,6 +1259,17 @@
       "lane": "pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-08-06T19:00:00Z"
+    },
+    {
+      "date": "2026-08-06",
+      "slot": "d",
+      "title": "广式早茶四大天王④收官·蛋挞：你以为是西点，广州1927年就在卖 | Four Kings P4 · Egg Tart 🥚",
+      "videoId": "LZhIZBBJk7g",
+      "url": "https://www.youtube.com/watch?v=LZhIZBBJk7g",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-06T22:00:00Z"
     }
   ]
 }
