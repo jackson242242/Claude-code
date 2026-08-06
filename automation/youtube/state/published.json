@@ -1248,6 +1248,17 @@
       "lane": "pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-08-06T16:00:00Z"
+    },
+    {
+      "date": "2026-08-06",
+      "slot": "c",
+      "title": "广式早茶四大天王③叉烧包：一个包子，蒸裂了才算成功 | Four Kings P3 · Char Siu Bao 🥟",
+      "videoId": "UovzF7f0uRU",
+      "url": "https://www.youtube.com/watch?v=UovzF7f0uRU",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-06T19:00:00Z"
     }
   ]
 }
