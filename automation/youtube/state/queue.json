@@ -1033,6 +1033,62 @@
       "addedAt": "2026-08-05",
       "addedBy": "cycle replenish (food sprint day 18)",
       "status": "queued"
+    },
+    {
+      "id": "cfd-33",
+      "title": "西安油泼面：一勺滚油，泼出满碗香",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "油泼面/裤带面:面条上铺辣椒面葱花,一勺滚油浇下\"呲啦\"一声激香; fact-first=一碗面全靠一勺热油唤醒; 人物泼油/吃面手部特写; 陕西彩蛋(方言库无陕,标普通话).",
+      "whyNow": "油泼面是陕西面食顶流、短视频高传播,可组「西北面食」未来系列锚点; verify biang字/油温 at scripting.",
+      "sources": [
+        "百度百科 油泼面"
+      ],
+      "addedAt": "2026-08-07",
+      "addedBy": "cycle replenish (day20, 西北面食 series seed)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-34",
+      "title": "biangbiang面：中国笔画最多的字，是一碗面",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "biángbiáng面/裤带面:一根面宽如裤带,\"biang\"字56笔画写不出来只能读; fact-first=这碗面的名字打不出来; 扯面甩案板money-shot.",
+      "whyNow": "biang字梗常年出圈,面食+汉字冷知识双钩子; 「西北面食」系列材料; verify 笔画数/口诀 at scripting.",
+      "sources": [
+        "维基 biangbiang面"
+      ],
+      "addedAt": "2026-08-07",
+      "addedBy": "cycle replenish (day20, 西北面食 series seed)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-35",
+      "title": "剁椒鱼头：一勺红剁椒，盖住整个鱼头",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "湘菜剁椒鱼头:胖鱼头铺满红剁椒清蒸,鲜辣; fact-first=一整个鱼头埋进红剁椒; 蒸制揭盖money-shot; 湖南彩蛋(方言库有湖南话).",
+      "whyNow": "剁椒鱼头是湘菜招牌、宴席硬菜,可组「中国人怎么吃一条鱼」未来系列; verify 起源/谭延闿说 at scripting.",
+      "sources": [
+        "百度百科 剁椒鱼头"
+      ],
+      "addedAt": "2026-08-07",
+      "addedBy": "cycle replenish (day20, 一条鱼 series seed)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-36",
+      "title": "松鼠桂鱼：浇汁那一下，鱼会\"吱吱\"叫",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "苏帮菜松鼠鳜鱼:改花刀炸成松鼠状,热糖醋汁一浇\"吱吱\"响似松鼠叫; fact-first=浇汁会发出松鼠叫声; 浇汁瞬间money-shot.",
+      "whyNow": "松鼠桂鱼刀工+浇汁声效双卖点,可组「中国人怎么吃一条鱼」系列; verify 乾隆/苏州松鹤楼传说 at scripting.",
+      "sources": [
+        "百度百科 松鼠鳜鱼"
+      ],
+      "addedAt": "2026-08-07",
+      "addedBy": "cycle replenish (day20, 一条鱼 series seed)",
+      "status": "queued"
     }
   ]
 }

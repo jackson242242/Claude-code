@@ -1270,6 +1270,51 @@
       "lane": "pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-08-06T22:00:00Z"
+    },
+    {
+      "date": "2026-08-07",
+      "slot": "a",
+      "title": "夏天的一碗凉①陕西凉皮：这碗面，居然是\"洗\"出来的 | China's Cold Noodles for Summer P1 · Shaanxi Liangpi 🥢",
+      "videoId": "cGetRD0s3jU",
+      "url": "https://www.youtube.com/watch?v=cGetRD0s3jU",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "published",
+      "publishAt": null,
+      "note": "overrun: 上传于13:01Z(publishAt 13:00已过)→按playbook去掉publishAt立即public"
+    },
+    {
+      "date": "2026-08-07",
+      "slot": "b",
+      "title": "夏天的一碗凉②延吉朝鲜族冷面：一碗汤，居然要往里加碎冰 | China's Cold Noodles for Summer P2 · Yanji Cold Noodles 🧊",
+      "videoId": "qFT_f5FDbKw",
+      "url": "https://www.youtube.com/watch?v=qFT_f5FDbKw",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-07T16:00:00Z"
+    },
+    {
+      "date": "2026-08-07",
+      "slot": "c",
+      "title": "夏天的一碗凉③川北凉粉：一碗凉粉，竟是豌豆磨出来的 | China's Cold Noodles for Summer P3 · Sichuan Liangfen 🌶️",
+      "videoId": "X5bJuHqxIGY",
+      "url": "https://www.youtube.com/watch?v=X5bJuHqxIGY",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-07T19:00:00Z"
+    },
+    {
+      "date": "2026-08-07",
+      "slot": "d",
+      "title": "夏天的一碗凉④完结·东北大拉皮：土豆淀粉，\"旋\"出一盘凉菜 | China's Cold Noodles for Summer P4 · Northeast Da Lapi 🥢",
+      "videoId": "k6JTqSxNU4Q",
+      "url": "https://www.youtube.com/watch?v=k6JTqSxNU4Q",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-07T22:00:00Z"
     }
   ]
 }
