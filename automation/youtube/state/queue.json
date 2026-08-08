@@ -1074,7 +1074,7 @@
       ],
       "addedAt": "2026-08-07",
       "addedBy": "cycle replenish (day20, 一条鱼 series seed)",
-      "status": "queued"
+      "status": "covered-2026-08-08"
     },
     {
       "id": "cfd-36",
@@ -1088,7 +1088,7 @@
       ],
       "addedAt": "2026-08-07",
       "addedBy": "cycle replenish (day20, 一条鱼 series seed)",
-      "status": "queued"
+      "status": "covered-2026-08-08"
     }
   ]
 }

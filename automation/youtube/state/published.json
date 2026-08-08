@@ -1315,6 +1315,50 @@
       "lane": "pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-08-07T22:00:00Z"
+    },
+    {
+      "date": "2026-08-08",
+      "slot": "a",
+      "title": "中国人怎么吃一条鱼①松鼠桂鱼：一条鱼划128刀，炸出一只\"松鼠\" | How China Eats a Fish P1 · Suzhou Squirrel Fish 🐟",
+      "videoId": "mnt131G6VhA",
+      "url": "https://www.youtube.com/watch?v=mnt131G6VhA",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled-private",
+      "publishAt": "2026-08-08T13:00:00Z"
+    },
+    {
+      "date": "2026-08-08",
+      "slot": "b",
+      "title": "中国人怎么吃一条鱼②剁椒鱼头：湖南人专挑最肥的鱼头，铺满一勺红剁椒 | How China Eats a Fish P2 · Hunan Chopped-Chili Fish Head 🌶️",
+      "videoId": "KICG6CxYBmY",
+      "url": "https://www.youtube.com/watch?v=KICG6CxYBmY",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled-private",
+      "publishAt": "2026-08-08T16:00:00Z"
+    },
+    {
+      "date": "2026-08-08",
+      "slot": "c",
+      "title": "中国人怎么吃一条鱼③水煮鱼：名叫\"水煮\"，端上桌却是一整盆红油 | How China Eats a Fish P3 · Sichuan Boiled Fish in Chili Oil 🔥",
+      "videoId": "kS6pRPe3Qwc",
+      "url": "https://www.youtube.com/watch?v=kS6pRPe3Qwc",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled-private",
+      "publishAt": "2026-08-08T19:00:00Z"
+    },
+    {
+      "date": "2026-08-08",
+      "slot": "d",
+      "title": "中国人怎么吃一条鱼④完结·酸菜鱼：一把酸菜，居然比鱼还出名 | How China Eats a Fish P4 · Chongqing Pickled-Cabbage Fish 🐟",
+      "videoId": "oOy3iWYRv2c",
+      "url": "https://www.youtube.com/watch?v=oOy3iWYRv2c",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled-private",
+      "publishAt": "2026-08-08T22:00:00Z"
     }
   ]
 }
