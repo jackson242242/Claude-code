@@ -120,6 +120,12 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
 1. **Subtitle script (NO VOICEOVER — owner directive 2026-07-10):** the video
    speaks through burned bilingual subtitles + music. Write `subs.srt` directly
    as the narrative, structured per 起承转合:
+   **PERSONA (owner 2026-08-09, see automation/youtube/PERSONA.md — the metadata
+   authority): audience is ENGLISH-SPEAKING. English is the LEAD language in
+   titles, descriptions, tags, and subtitle cues; Chinese is the flavor accent.
+   Every video carries the China-Travel-Expert memorable point: the second-to-last
+   cue is `★ Expert Tip: <one actionable, verified traveler tip>` (ASCII star —
+   burned fonts have no emoji glyph; 🧭 lives in metadata only).**
    - Short (20-28s — 7-day data 2026-07-11: 22s cut doubled retention vs 55s):
      9-12 cues, each 2-2.5s, 中文行 ≤12 字 (STYLE.md v2 fast rhythm — information
      density beats lingering) — 起 opening cue lands at 0.0-0.5s AND the first shot
@@ -140,16 +146,20 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    - Video (slot b, 90-120s): 22-30 cues in four movements (establish → walk +
      history beat → food/discovery twist → dusk reflection). One 成语 or poem
      line per video.
-   - Each cue = 中文 line (≤16 字, punchy) + English line (≤9 words). Leave 1-2
+   - Each cue = ENGLISH line first (≤9 words, the lead) + 中文 line second
+     (≤12 字, punchy — carries the dialect flavor). Leave 1-2
      cue-free seconds between movements — the footage breathes.
    - Set total duration from the cue plan (Shorts ≤32s, video ≤120s).
-   Verify every factual
    claim with WebSearch/WebFetch this run; collect source URLs. Produce `script.md`
-   (with sources), `voiceover.txt` (clean spoken text), `meta.json` (title ≤100
-   chars; description with sources + AI-narration disclosure + credits placeholder;
-   10-15 tags; categoryId 27; `publishAt` set to the slot's UTC time today;
-   privacyStatus private — scheduling requires it). Title: write 3 candidates, pick
-   best (optionally `vidiq_score_title`, 5 credits, within budget).
+   (with sources), `voiceover.txt` (clean spoken text), `meta.json` (title ≤95
+   chars, ENGLISH-FIRST fact hook, optional 2-6字 Chinese accent tail `| 热干面`,
+   series label in English ("How China Eats a Fish P2"); description follows the
+   PERSONA.md §3 template EXACTLY (EN hook → EN facts → 🧭 Expert Tip → one 中文
+   hook line → fixed signature block verbatim → credits/disclosure → 4-5 hashtags);
+   10-15 tags per PERSONA.md §5; categoryId 19 (Travel & Events; 27 only for
+   education pillars); `defaultLanguage: "en"`; `publishAt` set to the slot's UTC
+   time today; privacyStatus private — scheduling requires it). Title: write 3
+   candidates, pick best (optionally `vidiq_score_title`, 5 credits, within budget).
 2. **Voiceover: NONE.** ElevenLabs is paused (scripts kept for possible revival —
    do not call them). Local flavor now lives in the SUBTITLE text: use the city's
    words from the dialect bank (京味儿化 / 沪语词 / 川话 巴适...) in the 中文 line
@@ -195,29 +205,30 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    frame-grab: `ffmpeg -ss <t> -i final.mp4 -frames:v 1 thumb.jpeg`. YouTube cap
    2 MB — recompress with `ffmpeg -i thumb.jpeg -q:v 4 thumb-small.jpeg` if larger.
 5. **Append Pexels credits** from `final.mp4.credits.json` to the description in
-   `meta.json` ("Footage: Pexels — <urls>").
-   **Description engagement format:** first line = ONE genuine question to the
-   viewer (comment bait, honest — e.g. 「你会先烫毛肚还是黄喉？」); then the
-   bilingual summary; hashtags at the END of the description.
-   **Hashtag ladder (research-verified 2026-07-16: 3-5 tags beat 10+ — over-
-   tagging triggers spam signals and dilutes reach; hashtags matter most as a
-   COLD-START categorization signal for Shorts): exactly 4-5, structured:**
+   `meta.json` ("Footage: Pexels — <urls>") — credits sit between the persona
+   signature block and the hashtag line (PERSONA.md §3 order).
+   **Description = PERSONA.md §3 template.** The EN hook line doubles as comment
+   bait where natural; the in-video either-or question stays the primary comment
+   driver (nobody reads Shorts descriptions).
+   **Hashtag ladder (research-verified 2026-07-16: 3-5 tags beat 10+): exactly
+   4-5, ENGLISH-FIRST:**
    1. #Shorts
-   2. one broad niche: #ChinaTravel or #ChineseFood (match the pillar)
-   3. two specific: city + subject, bilingual ok (#Guilin #桂林 / #HotPot #火锅)
-   4. optional 5th ONLY if a genuinely relevant trending topical tag exists (from
-      the Sat trend scan) — never force it. Titles stay hashtag-free (elegant).
-   **Metadata tags (snippet.tags, invisible — small search/clustering value,
-   fill them anyway):** every video carries the CHANNEL CORE SET first
-   ["china travel","中国旅游","china food","中国美食","china shorts","travel china"]
-   (consistent core tags help YouTube cluster our videos as related → session
-   watching), then 6-10 video-specific bilingual keywords incl. one common
-   misspelling; stay under ~450 chars total.
+   2. #ChinaTravel (channel anchor; #ChineseFood allowed for pure food pieces)
+   3. two specific ENGLISH: city + subject (#Wuhan #HotDryNoodles)
+   4. optional 5th: ONE Chinese tag or a verified trending topical tag — never
+      force it. Titles stay hashtag-free (elegant).
+   **Metadata tags (snippet.tags):** CHANNEL CORE SET first, per PERSONA.md §5
+   ["china travel","china travel expert","china food","chinese street food",
+   "china travel guide","travel china"], then 6-10 video-specific ENGLISH
+   keywords (city, dish, topic) + ≤2-3 Chinese; stay under ~450 chars total.
 6. **Playlist filing:** after each upload, run
    `node scripts/youtube-playlist.mjs --title "<playlist>" --video <videoId>`
    (script wired 2026-07-15 — reuses by exact title, creates public if missing).
-   Playlists: 中国美食 China Food / 城市旅行 China Travel / 城市漫游 City Walks /
-   中国文化 Chinese Culture, plus one per theme week (e.g. 中国咖啡 China Coffee).
+   Playlists (EXACT titles — renamed English-first 2026-08-09; the script matches
+   by exact title, a stale name would create a duplicate): "China Food 中国美食" /
+   "China Travel 城市旅行" / "City Walks 城市漫游" / "China Coffee 中国咖啡";
+   new series playlists are created ENGLISH-FIRST: "<English series name> <中文名>"
+   with the PERSONA.md playlist description sign-off.
    Backfill note: on first use, also file this week's earlier theme videos (see
    published.json) so the shelf isn't a single video.
 6. **Upload** — if the upload lane is available:
@@ -229,9 +240,29 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
      honestly — do not claim it is public/scheduled.
    - Upload lane missing → **dry-run**: keep the package, set
      `"status": "awaiting-upload-credentials"` in `meta.json`, continue.
+6c. **Multi-platform clean master (owner 2026-08-09 — TikTok/IG Reels):** after
+   upload, strip the music track (YAL/derived beds are licensed for YouTube ONLY):
+   `ffmpeg -i final.mp4 -c:v copy -an <slot>-clean.mp4` (video track + burned subs
+   intact, zero re-render). Write `social-caption.txt` per PERSONA.md §4 (EN hook +
+   3-5 TikTok-native hashtags, NO #Shorts, ≤300 chars). In the report step,
+   SendUserFile all 4 clean masters + captions to the owner chat (recompress crf 24
+   if a file exceeds 29MB) — the owner posts them adding a platform-native trending
+   sound in-app.
+   **Back-catalog exports:** `state/social-export-queue.json` lists past videos by
+   views desc. Each run, take the top 2 with `"status": "pending"`, re-render each
+   from its `runs/<date>-<slot>/` artifacts (script.md clip list + subs.srt) WITHOUT
+   music, send via SendUserFile alongside the day's masters, mark `"sent"` + date.
+   Missing artifacts → mark `"no-artifacts"` and move on, never fake.
 7. **Commit checkpoint** — commit this slot's text artifacts + state delta before
    starting the next slot (protects against mid-run session death). Media never
    enters git (runs/.gitignore).
+
+## 5b. Persona metadata rollout (until queue empty)
+If `state/metadata-retrofit-queue.json` has `"status": "pending"` items, run
+`NODE_USE_ENV_PROXY=1 node scripts/apply-video-metadata.mjs --limit 40` AFTER all
+of today's uploads complete (uploads eat ~6400 quota units; 40 updates = 2000 —
+stay under the 10k daily quota). The script is resumable and stops itself on
+quota exhaustion. Log done/pending counts in RUNLOG. Commit the queue file.
 
 ## 6. Analytics pulse (Mon & Thu only — credit budget)
 If vidIQ MCP is present AND today is Monday or Thursday (UTC):

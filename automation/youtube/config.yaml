@@ -38,6 +38,14 @@ voice:
   # The pipeline's royalty-free beds remain the default audio.
 
 strategy:
+  # ================= PERSONA 2026-08-09 (owner directive) =================
+  # Channel persona: "Your China Travel Expert 🧭 你的中国旅游专家" — audience is
+  # ENGLISH-SPEAKING. English leads every title/description/tag/subtitle cue;
+  # Chinese is the accent. Every video carries the memorable expert signature
+  # (★ Expert Tip cue + 🧭 metadata block). automation/youtube/PERSONA.md is the
+  # metadata/language authority; STYLE.md v2.2 covers the subtitle flip.
+  persona: china-travel-expert   # see PERSONA.md
+  audienceLanguage: en
   # ================= PIVOT 2026-07-09 (owner directive) =================
   # Education content PAUSED. Channel now focuses on China:
   #   Shorts   -> city tourism + food (城市旅游/美食)
@@ -152,6 +160,9 @@ output:
   # manifest; they are NOT auto-posted anywhere (see PIPELINE.md — other platforms'
   # posting APIs are separate, gated projects).
   extraFormats: []   # e.g. [16x9] or [16x9, 1x1]; empty = native format only
+  socialExports: tiktok-reels-clean-master  # owner 2026-08-09: per-video music-free
+    # master (-clean.mp4) + social-caption.txt, delivered via chat; back-catalog
+    # rolls through state/social-export-queue.json (top-2 per run). PERSONA.md §4.
 
 runtime:
   runsDir: automation/youtube/runs
