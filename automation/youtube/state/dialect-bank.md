@@ -2,7 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-08-08 (last deepened: 山东话 — +俺 ǎn 第一人称"我/我们" / +恁 nèn 第二人称"你/你们" / +一霎儿 yī shà er "一会儿"; 山东话为11区中最久未深化者（上次07-28，其余10区07-29..08-07均已轮过），故今日轮到；今日选题「中国人怎么吃一条鱼」(苏州松鼠桂鱼/湖南剁椒鱼头/川渝水煮鱼/重庆酸菜鱼)中 b=剁椒鱼头 weave 湖南「韵味」，c=水煮鱼 weave 四川「巴适」，a苏州(吴语区方言库无条目)honest不强塞标准普通话；山东今日无鲁菜选题，未强塞山东彩蛋，山东话按"最久未更新"如实轮到深化；prior 08-07 东北话 埋汰·得瑟·磕碜, 08-06 福建/闽南话 输人不输阵·有够·古锥, 08-05 上海话 刮刮叫·拎得清·嘎三胡, 08-04 客家话 食饭冇·承蒙你·条上条下, 08-03 湖南话 韵味·克·拌蛮, 08-02 北京话 局气·底儿掉·老炮儿, 08-01 粤语 一盅两件·糖水·叹茶, 07-31 四川话 假打·打牙祭·撑花儿, 07-30 广西话 友仔/友女·是公的, 07-29 台湾腔 是在哈啰·森77·母汤, 07-28 山东话 夜来·木乱·将将的)  
+**Today:** 2026-08-09 (last deepened: 台湾腔 — +尊嘟假嘟 zūn du jiǎ du「真的假的」撒娇谐音 / +留友看 liú yǒu kàn Threads「留着给朋友看」/ +晕烂 yūn làn 被冲昏头理智全失; 台湾腔为11区中最久未深化者（上次07-29，其余10区07-30..08-08均已轮过），故今日轮到; 今日选题「中国北方面食硬核派」(山西刀削面/陕西油泼面/老北京炸酱面/河南烩面) 中 c=炸酱面 weave 北京话「锅挑儿·菜码」京味儿, 山西/陕西/河南三地方言库无对应区 honest不强塞标准普通话; 台湾今日无台菜选题, 未强塞台湾腔彩蛋(honest), 台湾腔按"最久未更新"如实轮到深化; prior 08-08 山东话 俺·恁·一霎儿, 08-07 东北话 埋汰·得瑟·磕碜, 08-06 福建/闽南话 输人不输阵·有够·古锥, 08-05 上海话 刮刮叫·拎得清·嘎三胡, 08-04 客家话 食饭冇·承蒙你·条上条下, 08-03 湖南话 韵味·克·拌蛮, 08-02 北京话 局气·底儿掉·老炮儿, 08-01 粤语 一盅两件·糖水·叹茶, 07-31 四川话 假打·打牙祭·撑花儿, 07-30 广西话 友仔/友女·是公的, 07-29 台湾腔 是在哈啰·森77·母汤, 07-28 山东话 夜来·木乱·将将的)  
 **Verification:** All phrases verified via WebSearch; marked with region coverage notes.  
 **Content Tags:** [comedy] [travel] [teach] | Sensitivity: clean / 轻度粗俗 / 粗口
 
@@ -197,6 +197,9 @@
 - **是在哈啰** (shi4 zai4 ha1 luo1) | "hello?? / what are you even doing?" | 别人做了令人费解的事、或你完全无法理解时的反问，仿美式"Hello?/Excuse me?"的台式版 | 2019 爆红的九年级生口头禅，表达困惑/傻眼 | [comedy] | clean  <!-- added 2026-07-29, verified (dailyview.tw / 中时 chinatimes / 数位时代 bnext) -->
 - **森77** (sen1 qi1 qi1) | "so angry (cutesy)" | "生气气"的谐音叠字，装可爱、戏谑地说生气，女生向男友撒娇常用 | 源自 PTT／Twitch 聊天室的谐音梗 | [comedy] | clean  <!-- added 2026-07-29, verified (PTT乡民百科 pttpedia / 香港经济日报 topick) -->
 - **母汤** (mu3 tang1) | "don't / you shouldn't" | 台语"毋通"(不可以)的谐音，劝阻、告诫别人别做某事。"母汤喔" | 因"光头哥哥"YouTube 影片流传两岸 | [comedy] [teach] | clean  <!-- added 2026-07-29, verified (维基·台湾国语 / 台湾网路用语列表) -->
+- **尊嘟假嘟** (zun1 du0 jia3 du0) | "really?? (cutesy)" | "真的假的"的谐音撒娇版，念时嘴巴不自觉嘟起来装可爱 | 2024-26 社群装可爱梗，已随台综/短视频两岸通用 | [comedy] | clean  <!-- added 2026-08-09, verified (lingoace 2026网络流行语 / wukongsch 最新热梗) -->
+- **留友看** (liu2 you3 kan4) | "saving it to show a friend" | Threads 上"留着给朋友看"的留言缩写，标记想转分享给某人的内容 | 2025-26 Threads 平台爆红互动语，社群留言高频 | [comedy] [teach] | clean  <!-- added 2026-08-09, verified (lingoace 2026网络流行语) -->
+- **晕烂** (yun1 lan4) | "head-over-heels / smitten" | 被某人某事冲昏头、理智全失（多用于追星、恋爱），"晕到烂掉" | 2025-26 台湾社群情态词，粉丝/恋爱语境百搭 | [comedy] | clean  <!-- added 2026-08-09, verified (lingoace 2026网络流行语) -->
 
 ---
 

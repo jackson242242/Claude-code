@@ -990,7 +990,8 @@
       ],
       "addedAt": "2026-08-05",
       "addedBy": "cycle replenish (food sprint day 18)",
-      "status": "queued"
+      "status": "covered-duplicate",
+      "coveredBy": "dup: 柳州螺蛳粉 already produced 07-23c (中国粉面几大派③)"
     },
     {
       "id": "cfd-30",
@@ -1004,7 +1005,8 @@
       ],
       "addedAt": "2026-08-05",
       "addedBy": "cycle replenish (food sprint day 18)",
-      "status": "queued"
+      "status": "covered-duplicate",
+      "coveredBy": "dup: 武汉热干面 already produced 07-21b & 07-23b"
     },
     {
       "id": "cfd-31",
@@ -1018,7 +1020,8 @@
       ],
       "addedAt": "2026-08-05",
       "addedBy": "cycle replenish (food sprint day 18)",
-      "status": "queued"
+      "status": "covered-duplicate",
+      "coveredBy": "dup: 河南胡辣汤 already produced 07-28b (中国早餐宇宙⑥)"
     },
     {
       "id": "cfd-32",
@@ -1032,7 +1035,8 @@
       ],
       "addedAt": "2026-08-05",
       "addedBy": "cycle replenish (food sprint day 18)",
-      "status": "queued"
+      "status": "covered-duplicate",
+      "coveredBy": "dup: 广式肠粉 already produced 07-21c (中国早餐宇宙③)"
     },
     {
       "id": "cfd-33",
@@ -1046,7 +1050,8 @@
       ],
       "addedAt": "2026-08-07",
       "addedBy": "cycle replenish (day20, 西北面食 series seed)",
-      "status": "queued"
+      "status": "covered-2026-08-09",
+      "coveredBy": "2026-08-09 slot b 陕西油泼面 (中国北方面食②)"
     },
     {
       "id": "cfd-34",
@@ -1089,6 +1094,62 @@
       "addedAt": "2026-08-07",
       "addedBy": "cycle replenish (day20, 一条鱼 series seed)",
       "status": "covered-2026-08-08"
+    },
+    {
+      "id": "cfd-37",
+      "title": "山西刀削面之外：一根面十种削法的面食江湖",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "山西面食深挖(今日只做刀削面单集,留作'山西面食'系列锚点):剔尖/猫耳朵/拨鱼/擦圪斗等,一省面食过百种. fact-first=一个省能做出上百种面. 人物:揉面/剔尖的手.",
+      "whyNow": "2026-08-09《中国北方面食硬核派》山西刀削面单集首播,山西面食'一面百样'可扩为系列; verify 山西面食种类数/剔尖猫耳朵工艺 at scripting.",
+      "sources": [
+        "山西面食 种类 剔尖 猫耳朵"
+      ],
+      "addedAt": "2026-08-09",
+      "addedBy": "cycle replenish (day22, 山西面食 series seed)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-38",
+      "title": "陕西臊子面：一口面三十遍,汤宽面少的'油泼'表亲",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "岐山臊子面:酸辣香煎稀汪, '只吃面不喝汤'(汤回锅)的老礼,红油臊子木耳蛋皮. fact-first=一顿饭一人能吃几十碗(一口一碗). 陕西面食,与油泼面成对照.",
+      "whyNow": "承接08-09陕西油泼面,岐山臊子面'一口一碗/汤回锅'民俗是强钩,可组'陕西面食'系列; verify 岐山臊子面九字诀/回汤旧俗 at scripting.",
+      "sources": [
+        "岐山臊子面 酸辣香 煎稀汪 回汤"
+      ],
+      "addedAt": "2026-08-09",
+      "addedBy": "cycle replenish (day22, 陕西面食 series seed)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-39",
+      "title": "新疆拌面(拉条子):不用擀不用压,全靠两手抻",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "新疆拌面/拉条子:和面醒面后手工抻拉,过油拌菜(过油肉/辣皮子),份量豪迈'加面不加钱'. fact-first=一根面从头到尾不断. money-shot抻面下锅.",
+      "whyNow": "新疆美食短视频长红,拉条子'加面不加钱'贴近生活、抻面画面强; 可组'新疆美食'系列(手抓饭cfd-26同源); verify 拉条子工艺/加面习俗 at scripting.",
+      "sources": [
+        "新疆拌面 拉条子 抻面 过油肉"
+      ],
+      "addedAt": "2026-08-09",
+      "addedBy": "cycle replenish (day22, 新疆美食 series seed)",
+      "status": "queued"
+    },
+    {
+      "id": "cfd-40",
+      "title": "山西刀削面的邻居:大同刀削面为什么配'一窝丝'",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "大同刀削面配羊肉/番茄打卤+黄花,或搭'一窝丝'烙饼. fact-first=削面还分大同派与晋中派. 地域对照,people-action 削面/浇卤.",
+      "whyNow": "刀削面单集反响待观察,大同vs晋中削面流派可做对照续集; verify 大同刀削面浇头/一窝丝 at scripting.",
+      "sources": [
+        "大同刀削面 一窝丝 浇头"
+      ],
+      "addedAt": "2026-08-09",
+      "addedBy": "cycle replenish (day22)",
+      "status": "queued"
     }
   ]
 }

@@ -1359,6 +1359,70 @@
       "lane": "pexels-ffmpeg+youtube-data-api",
       "status": "scheduled-private",
       "publishAt": "2026-08-08T22:00:00Z"
+    },
+    {
+      "date": "2026-08-09",
+      "slot": "a",
+      "title": "中国北方面食①山西刀削面：削面的刀，居然不是菜刀 | Shanxi Knife-Cut Noodles 🔪🍜",
+      "videoId": "IRsNcG-e53U",
+      "url": "https://www.youtube.com/watch?v=IRsNcG-e53U",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-09T13:00:00Z",
+      "series": "中国北方面食硬核派 Northern China Noodles",
+      "playlists": [
+        "中国美食 China Food (PLNf94OBc_zg0)",
+        "中国北方面食硬核派 Northern China Noodles (PLBeBZU1k1tI8)"
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "slot": "b",
+      "title": "中国北方面食②陕西油泼面：一勺滚油，泼出满碗香 | Shaanxi Oil-Splashed Noodles 🌶️🍜",
+      "videoId": "tweIfrUN--k",
+      "url": "https://www.youtube.com/watch?v=tweIfrUN--k",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-09T16:00:00Z",
+      "series": "中国北方面食硬核派 Northern China Noodles",
+      "playlists": [
+        "中国美食 China Food (PLNf94OBc_zg0)",
+        "中国北方面食硬核派 Northern China Noodles (PLBeBZU1k1tI8)"
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "slot": "c",
+      "title": "中国北方面食③老北京炸酱面：一碗面，配八样菜码 | Old Beijing Zhajiang Noodles 🥢🍜",
+      "videoId": "rqdunRBqCx8",
+      "url": "https://www.youtube.com/watch?v=rqdunRBqCx8",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-09T19:00:00Z",
+      "series": "中国北方面食硬核派 Northern China Noodles",
+      "playlists": [
+        "中国美食 China Food (PLNf94OBc_zg0)",
+        "中国北方面食硬核派 Northern China Noodles (PLBeBZU1k1tI8)"
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "slot": "d",
+      "title": "中国北方面食④完结·河南烩面：一片面扯成宽带下羊汤 | Henan Hui Mian 🐑🍜",
+      "videoId": "ddZkxC3iPy4",
+      "url": "https://www.youtube.com/watch?v=ddZkxC3iPy4",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-09T22:00:00Z",
+      "series": "中国北方面食硬核派 Northern China Noodles",
+      "playlists": [
+        "中国美食 China Food (PLNf94OBc_zg0)",
+        "中国北方面食硬核派 Northern China Noodles (PLBeBZU1k1tI8)"
+      ]
     }
   ]
 }
