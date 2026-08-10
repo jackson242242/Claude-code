@@ -959,7 +959,8 @@
    "sources": [],
    "addedAt": "2026-07-26",
    "addedBy": "cycle replenish (food sprint, 街头嗦粉)",
-   "status": "queued"
+   "status": "paused-food-decentered-2026-08-11",
+   "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
   },
   {
    "id": "cfd-21",
@@ -1014,7 +1015,8 @@
    ],
    "addedAt": "2026-08-03",
    "addedBy": "cycle replenish (food sprint day16; craft-adjacent)",
-   "status": "queued"
+   "status": "paused-food-decentered-2026-08-11",
+   "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
   },
   {
    "id": "cfd-25",
@@ -1028,7 +1030,8 @@
    ],
    "addedAt": "2026-08-03",
    "addedBy": "cycle replenish (food sprint day16; craft-adjacent)",
-   "status": "queued"
+   "status": "paused-food-decentered-2026-08-11",
+   "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
   },
   {
    "id": "cfd-26",
@@ -1042,7 +1045,8 @@
    ],
    "addedAt": "2026-08-03",
    "addedBy": "cycle replenish (food sprint day16)",
-   "status": "queued"
+   "status": "paused-food-decentered-2026-08-11",
+   "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
   },
   {
    "id": "cfd-27",
@@ -1056,7 +1060,8 @@
    ],
    "addedAt": "2026-08-03",
    "addedBy": "cycle replenish (food sprint day16; 绝活 season-2 anchor)",
-   "status": "queued"
+   "status": "paused-food-decentered-2026-08-11",
+   "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
   },
   {
    "id": "cfd-28",
@@ -1070,7 +1075,8 @@
    ],
    "addedAt": "2026-08-05",
    "addedBy": "cycle replenish (food sprint day 18)",
-   "status": "queued"
+   "status": "paused-food-decentered-2026-08-11",
+   "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
   },
   {
    "id": "cfd-29",
@@ -1159,7 +1165,8 @@
    ],
    "addedAt": "2026-08-07",
    "addedBy": "cycle replenish (day20, 西北面食 series seed)",
-   "status": "queued"
+   "status": "paused-food-decentered-2026-08-11",
+   "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
   },
   {
    "id": "cfd-35",
@@ -1201,7 +1208,8 @@
    ],
    "addedAt": "2026-08-09",
    "addedBy": "cycle replenish (day22, 山西面食 series seed)",
-   "status": "queued"
+   "status": "paused-food-decentered-2026-08-11",
+   "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
   },
   {
    "id": "cfd-38",
@@ -1215,7 +1223,8 @@
    ],
    "addedAt": "2026-08-09",
    "addedBy": "cycle replenish (day22, 陕西面食 series seed)",
-   "status": "queued"
+   "status": "paused-food-decentered-2026-08-11",
+   "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
   },
   {
    "id": "cfd-39",
@@ -1229,7 +1238,8 @@
    ],
    "addedAt": "2026-08-09",
    "addedBy": "cycle replenish (day22, 新疆美食 series seed)",
-   "status": "queued"
+   "status": "paused-food-decentered-2026-08-11",
+   "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
   },
   {
    "id": "cfd-40",
@@ -1243,7 +1253,8 @@
    ],
    "addedAt": "2026-08-09",
    "addedBy": "cycle replenish (day22)",
-   "status": "queued"
+   "status": "paused-food-decentered-2026-08-11",
+   "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
   },
   {
    "id": "gzh-07",
