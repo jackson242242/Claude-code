@@ -20,11 +20,15 @@ cadence:
   routineUtc: "12:30"
   # Durations: Shorts <=28s. Longform PAUSED (owner 2026-07-18, food sprint).
   # 4 slots = ET 9am / noon / 3pm / 6pm.
+  # Slot times tuned for EU/US audience (owner 2026-08-10: 观众是欧美时区,不是华人):
+  # a 9am ET / EU afternoon · b 1pm ET / 6-7pm EU prime · c 4pm ET / 9-10pm EU prime
+  # · d 7pm ET US evening prime / 4pm PT. Slot a must stay >=13:00Z (routine fires
+  # 12:30Z; earlier would always overrun into immediate-publish).
   slots:
-    - { name: a, publishAtUtc: "13:00", format: short }  # china-food
-    - { name: b, publishAtUtc: "16:00", format: short }  # china-food
-    - { name: c, publishAtUtc: "19:00", format: short }  # china-food
-    - { name: d, publishAtUtc: "22:00", format: short }  # china-food
+    - { name: a, publishAtUtc: "13:00", format: short }  # china-culture
+    - { name: b, publishAtUtc: "17:00", format: short }  # china-culture
+    - { name: c, publishAtUtc: "20:00", format: short }  # city-travel (heritage)
+    - { name: d, publishAtUtc: "23:00", format: short }  # china-food
 
 voice:
   status: paused-2026-07-10   # owner: "voice over 好差" — format is now burned

@@ -14,14 +14,16 @@ This is an autonomous routine run in a fresh session: the repo is your only memo
 Read `automation/youtube/PIPELINE.md` and `automation/youtube/config.yaml` first —
 they are the source of truth; this file is the executable summary.
 
-**Batch mode (default):** one run produces ALL THREE of today's videos and uploads
-them with staggered scheduled publishing:
+**Batch mode (default):** one run produces ALL FOUR of today's videos and uploads
+them with staggered scheduled publishing (times tuned for the EU/US audience,
+owner 2026-08-10; config.yaml `cadence.slots` is authoritative):
 
-| Slot | Format | publishAt (UTC) |
-|------|--------|-----------------|
-| a | Short, 9:16, ≤30s | 13:00 today |
-| b | video, 16:9, ≤2 min | 17:00 today |
-| c | Short, 9:16, ≤30s | 22:00 today |
+| Slot | Format | publishAt (UTC) | audience moment |
+|------|--------|-----------------|-----------------|
+| a | Short, 9:16, ≤30s | 13:00 today | 9am ET / EU afternoon |
+| b | Short, 9:16, ≤30s | 17:00 today | 1pm ET / 6-7pm EU prime |
+| c | Short, 9:16, ≤30s | 20:00 today | 4pm ET / 9-10pm EU prime |
+| d | Short, 9:16, ≤30s | 23:00 today | 7pm ET US evening prime |
 
 (A manual/test fire may instruct a single slot instead — follow its instructions.)
 
@@ -86,15 +88,15 @@ log `skipped: batch already published today` and stop. (Protects against manual
    ended early on 08-09; overrides everything):** the China-Travel-Expert persona
    is built on 中国古文化产物 — the architecture, history, and traditional customs
    that make China UNLIKE anywhere else — not on food volume. Slot mix:
-   - a 13:00 + b 16:00 UTC = `china-culture` Shorts (ancient-culture products:
+   - a 13:00 + b 17:00 UTC = `china-culture` Shorts (ancient-culture products:
      heritage architecture 陈家祠/骑楼/园林/寺庙, crafts 非遗 porcelain/silk/
      embroidery, opera/calligraphy/tea ceremony, festivals & customs, history
      stories). Serve THREE audiences and rotate explicitly: 打卡 check-in
      tourists (visually stunning spots), true culture lovers (depth/craft
      stories), families with kids (fun "why does China do this?" explainers).
-   - c 19:00 UTC = `city-travel` with HERITAGE priority (古迹/古镇/historic
+   - c 20:00 UTC = `city-travel` with HERITAGE priority (古迹/古镇/historic
      districts/old streets; modern city only as contrast shots).
-   - d 22:00 UTC = `china-food` (proven traffic driver; food-as-culture angle
+   - d 23:00 UTC = `china-food` (proven traffic driver; food-as-culture angle
      welcome — 早茶 heritage, 老字号, dish origin stories).
    Longform still paused. 连载 series format stays (1×4-part or 2×2-part daily).
    **连载 format (小红书 style):** each day = ONE 4-part series or TWO 2-part
