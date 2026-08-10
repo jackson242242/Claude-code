@@ -6,6 +6,10 @@
 
 ## 1. 人设核心
 - 一句话：*"Real food, real streets, real prices — mapping ALL of China, zero tourist traps."*
+- **内容重心（owner 2026-08-09）：古文化产物优先** —— 建筑、历史、传统风俗这些
+  "中国跟其他文化不一样的地方"是专家名号的根基；美食降为辅助（每日 1 槽）。
+  三类受众轮转：打卡游客（视觉震撼点）/ 真爱好者（工艺与历史深度）/
+  亲子（带孩子了解中国文化的趣味讲解）。
 - 记忆点签名（三件套，处处出现）：
   1. **🧭 Expert Tip** — 每条视频描述里一条可执行的旅行内行建议（视频内为倒数第二条
      字幕 cue，前缀 `★ Expert Tip:`，烧录字体无 emoji 字形故用 ★）
@@ -40,7 +44,9 @@
   音轨授权仅限 YouTube，不得带去别的平台）+ `social-caption.txt`（英文钩子 + 3-5 个
   tag：#chinatravel #traveltok (+#foodtok) + 专属，无 #Shorts，≤300 字符）；
   当日 4 条母带经对话框发老板，老板端上传时**在 App 内加平台热门音乐**（授权干净
-  且对推荐更有利）
+  且对推荐更有利；owner 2026-08-09 确认此流程——风格、格式匹配即可）。
+  `social-caption.txt` 末尾附一行 `Suggested sound:`（如 "lofi/chill beats" 文化片
+  配 "guzheng-style / cinematic oriental"），帮老板在 App 内快速选对风格
 - **存量 120 条**：runs/ 目录存有每条的剪辑脚本+字幕 → 可忠实重渲干净母带。
   队列 `state/social-export-queue.json`（按播放量降序）；例行 run 每天顺带重渲 2 条
   发对话框；老板也可随时在对话里点名要某几条（互动会话一次可出 ~10 条）。

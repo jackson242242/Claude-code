@@ -82,9 +82,21 @@ log `skipped: batch already published today` and stop. (Protects against manual
    generates within-theme. Formats unchanged (a/c Short, b longform). If the
    theme queue is empty and research can't fill it, fall back to general pillars
    and log why.
-   **4-WEEK FOOD SPRINT (owner 2026-07-18, 07-19..08-15 — overrides everything):**
-   ALL FOUR slots (a 13:00 / b 16:00 / c 19:00 / d 22:00 UTC) = `china-food`
-   Shorts. Longform fully paused. Non-food pillars paused (seeds retained).
+   **CULTURE-FIRST ERA (owner 2026-08-09 — supersedes the food sprint, which
+   ended early on 08-09; overrides everything):** the China-Travel-Expert persona
+   is built on 中国古文化产物 — the architecture, history, and traditional customs
+   that make China UNLIKE anywhere else — not on food volume. Slot mix:
+   - a 13:00 + b 16:00 UTC = `china-culture` Shorts (ancient-culture products:
+     heritage architecture 陈家祠/骑楼/园林/寺庙, crafts 非遗 porcelain/silk/
+     embroidery, opera/calligraphy/tea ceremony, festivals & customs, history
+     stories). Serve THREE audiences and rotate explicitly: 打卡 check-in
+     tourists (visually stunning spots), true culture lovers (depth/craft
+     stories), families with kids (fun "why does China do this?" explainers).
+   - c 19:00 UTC = `city-travel` with HERITAGE priority (古迹/古镇/historic
+     districts/old streets; modern city only as contrast shots).
+   - d 22:00 UTC = `china-food` (proven traffic driver; food-as-culture angle
+     welcome — 早茶 heritage, 老字号, dish origin stories).
+   Longform still paused. 连载 series format stays (1×4-part or 2×2-part daily).
    **连载 format (小红书 style):** each day = ONE 4-part series or TWO 2-part
    series. Parts of a series share a subject (one dish / one food street / one
    food question) but each part must stand alone AND end with a next-part tease

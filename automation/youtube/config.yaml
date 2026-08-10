@@ -52,11 +52,15 @@ strategy:
   #   Longform -> culture + city walks (文化/城市漫游)
   # Aesthetic: 日系唯美 filming feel x 中式文化底蕴 — style upgrade in progress
   # (research 2026-07-09), specs land in styleGuide as they are verified.
+  # CULTURE-FIRST (owner 2026-08-09): 古文化产物 is the persona's backbone —
+  # architecture/history/traditional customs that make China unlike anywhere else.
+  # Slot mix: a+b china-culture, c city-travel(heritage), d china-food. Audiences
+  # rotate: 打卡 tourists / culture lovers / families with kids.
   pillars:
-    - city-travel     # Shorts: scenic spots AND 街头风景 street scenes (owner 2026-07-18) — street life, markets, alleys, skylines, 烟火气 city moments
-    - china-food      # Shorts: one dish/snack/food street per video (火锅/早茶/夜市...)
-    - china-culture   # Saturday Short + Sunday longform: crafts, opera, tea, porcelain
-    - city-walk       # Sunday longform: 城市漫游 — one street/district, dawn-to-dusk
+    - china-culture   # PRIMARY (2 slots/day): heritage architecture, 非遗 crafts, opera, tea, porcelain, festivals, customs, history stories
+    - city-travel     # heritage-priority: 古迹/古镇/historic districts/old streets; modern city as contrast only
+    - china-food      # 1 slot/day traffic driver; food-as-culture angle welcome
+    - city-walk       # (longform lane, still paused)
   pausedPillarsExtra: [china-coffee]  # paused by owner 2026-07-18 (咖啡收官); ~20 seeds retained for revival
   brandRules: # applies to any pillar covering companies (coffee brands, wineries...)
     - "Factual and sourced only; no endorsements, no sponsorship implications, no stock/investment takes; criticism must be well-sourced and proportionate."
