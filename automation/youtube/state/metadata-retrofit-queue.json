@@ -644,7 +644,8 @@
     "过早"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:30.835Z"
   },
   {
    "videoId": "tUbpsi291WE",
@@ -668,7 +669,8 @@
     "手冲咖啡"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:31.256Z"
   },
   {
    "videoId": "AVe4J_4Hrvo",
@@ -692,7 +694,8 @@
     "广式早茶"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:31.752Z"
   },
   {
    "videoId": "WqTzV6mxwQE",
@@ -716,7 +719,8 @@
     "广东糖水"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:32.147Z"
   },
   {
    "videoId": "cGetRD0s3jU",
@@ -740,7 +744,8 @@
     "陕西美食"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:32.954Z"
   },
   {
    "videoId": "v7k01y8EsXo",
@@ -762,7 +767,8 @@
     "杭州"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:33.351Z"
   },
   {
    "videoId": "X6aan5cJvKo",
@@ -784,7 +790,8 @@
     "川菜"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:33.847Z"
   },
   {
    "videoId": "6dzYns0A0dc",
@@ -806,7 +813,8 @@
     "永康路"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:34.749Z"
   },
   {
    "videoId": "OWTTnizy45s",
@@ -828,7 +836,8 @@
     "瑞幸"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:35.155Z"
   },
   {
    "videoId": "UM79YPsSBFM",
@@ -850,7 +859,8 @@
     "广西美食"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:35.749Z"
   },
   {
    "videoId": "3LfJPEtC9RI",
@@ -872,7 +882,8 @@
     "奶茶"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:36.148Z"
   },
   {
    "videoId": "o8MuiqDU_oo",
@@ -894,7 +905,8 @@
     "见手青"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:36.876Z"
   },
   {
    "videoId": "Jewu8dHux5Y",
@@ -916,7 +928,8 @@
     "威海"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:37.331Z"
   },
   {
    "videoId": "FlyjiwMTf_A",
@@ -938,7 +951,8 @@
     "东北菜"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:37.881Z"
   },
   {
    "videoId": "7qRmhQ9Dg20",
@@ -960,7 +974,8 @@
     "广式早茶"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:38.345Z"
   },
   {
    "videoId": "DbH_p6B-2fM",
@@ -982,7 +997,8 @@
     "焦圈"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:38.930Z"
   },
   {
    "videoId": "4wmaacFidno",
@@ -1004,7 +1020,8 @@
     "广东美食"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:39.291Z"
   },
   {
    "videoId": "pJrmZ8PGt0k",
@@ -1026,7 +1043,8 @@
     "拌面"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:39.519Z"
   },
   {
    "videoId": "JA2sKtadlr4",
@@ -1048,7 +1066,8 @@
     "拉面"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:39.964Z"
   },
   {
    "videoId": "RLMCDnDXoyM",
@@ -1070,7 +1089,8 @@
     "上海早餐"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:40.429Z"
   },
   {
    "videoId": "moZsu4yVfS4",
@@ -1092,7 +1112,8 @@
     "夜市"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:40.930Z"
   },
   {
    "videoId": "parsr4DfN2g",
@@ -1114,7 +1135,8 @@
     "咖啡"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:41.496Z"
   },
   {
    "videoId": "ClQw9h13vOY",
@@ -1136,7 +1158,8 @@
     "山东美食"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:42.122Z"
   },
   {
    "videoId": "ZVZ2hC-sE0w",
@@ -1158,7 +1181,8 @@
     "广东糖水"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:42.428Z"
   },
   {
    "videoId": "KICG6CxYBmY",
@@ -1180,7 +1204,8 @@
     "湖南菜"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:42.926Z"
   },
   {
    "videoId": "kS6pRPe3Qwc",
@@ -1202,7 +1227,8 @@
     "重庆美食"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:44.060Z"
   },
   {
    "videoId": "UovzF7f0uRU",
@@ -1224,7 +1250,8 @@
     "广式早茶"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:44.380Z"
   },
   {
    "videoId": "bqUSeDLE5VM",
@@ -1246,7 +1273,8 @@
     "东北"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:44.709Z"
   },
   {
    "videoId": "ooRELjkhWZY",
@@ -1268,7 +1296,8 @@
     "河南早餐"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:45.015Z"
   },
   {
    "videoId": "0I3kO59mzMk",
@@ -1290,7 +1319,8 @@
     "云南菌子"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:45.407Z"
   },
   {
    "videoId": "tweIfrUN--k",
@@ -1312,7 +1342,8 @@
     "陕西美食"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:45.998Z"
   },
   {
    "videoId": "3FfvofWUZM8",
@@ -1334,7 +1365,8 @@
     "南翔小笼"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:46.573Z"
   },
   {
    "videoId": "iVuEIkqFSNQ",
@@ -1356,7 +1388,8 @@
     "凯里酸汤鱼"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:46.976Z"
   },
   {
    "videoId": "rsHaPG_Xets",
@@ -1378,7 +1411,8 @@
     "云海"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:47.340Z"
   },
   {
    "videoId": "JEAyhG0UESM",
@@ -1400,7 +1434,8 @@
     "甘谷辣椒"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:48.675Z"
   },
   {
    "videoId": "hMOTS07qqcw",
@@ -1423,7 +1458,8 @@
     "世界大学排名"
    ],
    "categoryId": "27",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:48.908Z"
   },
   {
    "videoId": "0GN0WIA7Gu0",
@@ -1445,7 +1481,8 @@
     "剁椒鱼头"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:49.921Z"
   },
   {
    "videoId": "QVWRzg-auhw",
@@ -1467,7 +1504,8 @@
     "酸奶刺客"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:50.283Z"
   },
   {
    "videoId": "Ud1XuOsyvbg",
@@ -1490,7 +1528,8 @@
     "咖啡"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:51.092Z"
   },
   {
    "videoId": "Eqzr3ufWC-c",
@@ -1513,7 +1552,8 @@
     "花椒"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:52.299Z"
   },
   {
    "videoId": "_wxzuB8d2qU",
@@ -1535,7 +1575,8 @@
     "广东糖水"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:52.706Z"
   },
   {
    "videoId": "Q6QL21qmDjM",
@@ -1557,7 +1598,8 @@
     "北京"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:53.619Z"
   },
   {
    "videoId": "Vpy1vrr5f2I",
@@ -1579,7 +1621,8 @@
     "夜宵"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:54.356Z"
   },
   {
    "videoId": "LEC4kPhi0uw",
@@ -1601,7 +1644,8 @@
     "高考"
    ],
    "categoryId": "27",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:54.789Z"
   },
   {
    "videoId": "Xyw_6TGdsao",
@@ -1623,7 +1667,8 @@
     "四川美食"
    ],
    "categoryId": "19",
-   "status": "pending"
+   "status": "done",
+   "appliedAt": "2026-08-10T07:42:55.072Z"
   },
   {
    "videoId": "_ba1T9TKE0I",
