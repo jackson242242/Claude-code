@@ -2,6 +2,50 @@
  "note": "Topic backlog for /youtube-cycle. Top item matching the slot format is used next. Owner may edit/reorder freely.",
  "queue": [
   {
+   "id": "rt-01",
+   "title": "Route: Guangzhou Heritage Day①光孝寺——比广州还老的寺",
+   "pillar": "china-route",
+   "format": "short",
+   "angle": "《First-Timer's Guangzhou Heritage Day》4集连载 P1。线路: 光孝寺→陈家祠→永庆坊骑楼→上下九早茶收官。P1 光孝寺开场(未有羊城先有光孝),片尾预告下一站陈家祠。奖励站预告:走到最后一站才有早茶。frame0=红墙古殿。",
+   "whyNow": "owner 2026-08-11 线路化直令+广州系列进行中; facts verify at scripting",
+   "addedAt": "2026-08-11",
+   "addedBy": "owner directive",
+   "status": "active"
+  },
+  {
+   "id": "rt-02",
+   "title": "Route: Guangzhou Heritage Day②陈家祠——一座祠堂七种手艺",
+   "pillar": "china-route",
+   "format": "short",
+   "angle": "P2 陈家祠(岭南建筑装饰巅峰,木雕砖雕灰塑陶塑);承接P1,预告P3骑楼街。",
+   "whyNow": "同上",
+   "addedAt": "2026-08-11",
+   "addedBy": "owner directive",
+   "status": "active"
+  },
+  {
+   "id": "rt-03",
+   "title": "Route: Guangzhou Heritage Day③永庆坊骑楼——下雨不打伞的街",
+   "pillar": "china-route",
+   "format": "short",
+   "angle": "P3 骑楼(商住一体+遮雨长廊,南洋混血建筑);预告P4完结:走饿了,上下九的一盅两件在等你。",
+   "whyNow": "同上",
+   "addedAt": "2026-08-11",
+   "addedBy": "owner directive",
+   "status": "active"
+  },
+  {
+   "id": "rt-04",
+   "title": "Route: Guangzhou Heritage Day④完结·上下九早茶——线路的奖励",
+   "pillar": "china-route",
+   "format": "short",
+   "angle": "P4 完结=美食奖励站(早茶一盅两件,食在广州收官)+全线路回顾一屏(4站徒步可达)+CTA: full route on the channel page(私域钩)。美食只在完结集且作为线路奖励出现。",
+   "whyNow": "同上",
+   "addedAt": "2026-08-11",
+   "addedBy": "owner directive",
+   "status": "active"
+  },
+  {
    "id": "gzh-03",
    "title": "光孝寺：未有羊城，先有光孝",
    "pillar": "china-culture",

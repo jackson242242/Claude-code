@@ -63,8 +63,9 @@ strategy:
   pillars:
     - china-culture   # PRIMARY (2 slots/day): heritage architecture, 非遗 crafts, opera, tea, porcelain, festivals, customs, history stories
     - city-travel     # heritage-priority: 古迹/古镇/historic districts/old streets; modern city as contrast only
-    - china-food      # 1 slot/day traffic driver; food-as-culture angle welcome
+    - china-route     # slot d (owner 2026-08-11): travel routes stop-by-stop; architecture leads, food = reward stops only — never the subject
     - city-walk       # (longform lane, still paused)
+  pausedPillarsFood: [china-food]  # owner 2026-08-11: no standalone food videos; seeds recyclable as route stops
   pausedPillarsExtra: [china-coffee]  # paused by owner 2026-07-18 (咖啡收官); ~20 seeds retained for revival
   brandRules: # applies to any pillar covering companies (coffee brands, wineries...)
     - "Factual and sourced only; no endorsements, no sponsorship implications, no stock/investment takes; criticism must be well-sourced and proportionate."

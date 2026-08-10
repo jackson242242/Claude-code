@@ -96,8 +96,16 @@ log `skipped: batch already published today` and stop. (Protects against manual
      stories), families with kids (fun "why does China do this?" explainers).
    - c 20:00 UTC = `city-travel` with HERITAGE priority (古迹/古镇/historic
      districts/old streets; modern city only as contrast shots).
-   - d 23:00 UTC = `china-food` (proven traffic driver; food-as-culture angle
-     welcome — 早茶 heritage, 老字号, dish origin stories).
+   - d 23:00 UTC = `china-route` (owner 2026-08-11: routes, NOT standalone food —
+     each series = one travel route told stop-by-stop; architecture/heritage stops
+     lead, food appears only as a "reward stop" ON the route (「走完这段城墙，
+     城根下正好这碗面」). This lane feeds the 私域 route-guide funnel directly.
+     Old china-food seeds may be recycled as route stops, never as the subject.)
+   **HOOK DOCTRINE (owner 2026-08-11 + 07-15 data: fact-first beats place-first
+   ~4x):** frame 0 = a visual that exists NOWHERE outside China (hanging temple,
+   tulou ring, nail-free pagoda, red walls) + first cue = a surprise FACT about
+   it. Food is never the opening hook in culture/route videos — it is the
+   mid-route reward beat.
    Longform still paused. 连载 series format stays (1×4-part or 2×2-part daily).
    **连载 format (小红书 style):** each day = ONE 4-part series or TWO 2-part
    series. Parts of a series share a subject (one dish / one food street / one
