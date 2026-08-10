@@ -21,6 +21,14 @@
      🧭 Your China Travel Expert | 你的中国旅游专家
      ```
   3. **🧭 图标** — 频道描述、歌单描述、置顶评论（待 force-ssl 授权）统一使用
+  4. **品牌标题语 + 画面角标（owner 2026-08-10，为算法精准定位"想去中国的外国人"）**：
+     - 标题：只要 ≤95 字符就追加 ` | China Travel Expert`
+     - 话题标签：#ChinaTravelExpert 固定进 hashtag 阶梯第 3 位（YouTube）；
+       TikTok/IG 文案固定 #chinatravelexpert 且首行以 `China Travel Expert 🧭 |` 开头
+     - 画面：所有新片 + 社媒重渲版烧录常驻小角标 `CHINA TRAVEL EXPERT`
+       （assemble `--badge`，顶部居中 34px 白 82% 透明度，不碰第 0 秒钩子）
+     统一信号 = 让 YouTube/TikTok/IG 的推荐系统把每条视频稳定归入
+     china-travel 兴趣簇，精准推给想去中国旅游的外国观众。
 - 诚实边界不变：不编造事实/价格/数字；不承诺流量；AI/库存素材照旧披露。
 
 ## 2. 语言规则（owner 2026-08-09：面向英语观众）

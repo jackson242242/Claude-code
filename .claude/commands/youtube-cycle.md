@@ -167,7 +167,11 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    claim with WebSearch/WebFetch this run; collect source URLs. Produce `script.md`
    (with sources), `voiceover.txt` (clean spoken text), `meta.json` (title ≤95
    chars, ENGLISH-FIRST fact hook, optional 2-6字 Chinese accent tail `| 热干面`,
-   series label in English ("How China Eats a Fish P2"); description follows the
+   series label in English ("How China Eats a Fish P2"); **brand tagline (owner
+   2026-08-10, algorithmic identity — MANDATORY on every new video): title =
+   `<hook + series label, ≤72 chars> | China Travel Expert`. Write the hook to
+   fit; the brand suffix is never dropped — the platforms' recommenders must
+   associate every upload with the china-travel niche**; description follows the
    PERSONA.md §3 template EXACTLY (EN hook → EN facts → 🧭 Expert Tip → one 中文
    hook line → fixed signature block verbatim → credits/disclosure → 4-5 hashtags);
    10-15 tags per PERSONA.md §5; categoryId 19 (Travel & Events; 27 only for
@@ -183,7 +187,7 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    --duration <total seconds from the cue plan>
    --music <per STYLE.md music-energy table> --srt .../subs.srt
    --queries "<3-5 concrete b-roll queries>" --format <9x16|16x9>
-   --title "<short overlay title>"
+   --title "<short overlay title>" --badge "CHINA TRAVEL EXPERT"
    --style <STYLE.md v2: clean default | warmfood for food close-up pieces | heritage for culture/Sunday>
    --pace <fast for ALL Shorts (default) | slow ONLY for Sunday longform/heritage>
    --seg-seconds <2.5-3 fast, 7-8 slow>`.
@@ -225,12 +229,12 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    bait where natural; the in-video either-or question stays the primary comment
    driver (nobody reads Shorts descriptions).
    **Hashtag ladder (research-verified 2026-07-16: 3-5 tags beat 10+): exactly
-   4-5, ENGLISH-FIRST:**
+   5, ENGLISH-FIRST, brand fixed:**
    1. #Shorts
-   2. #ChinaTravel (channel anchor; #ChineseFood allowed for pure food pieces)
-   3. two specific ENGLISH: city + subject (#Wuhan #HotDryNoodles)
-   4. optional 5th: ONE Chinese tag or a verified trending topical tag — never
-      force it. Titles stay hashtag-free (elegant).
+   2. #ChinaTravel (channel anchor)
+   3. #ChinaTravelExpert (FIXED brand tag on every video — owner 2026-08-10)
+   4.-5. two specific ENGLISH: city + subject (#Wuhan #HotDryNoodles); a Chinese
+      tag may replace one. Titles stay hashtag-free.
    **Metadata tags (snippet.tags):** CHANNEL CORE SET first, per PERSONA.md §5
    ["china travel","china travel expert","china food","chinese street food",
    "china travel guide","travel china"], then 6-10 video-specific ENGLISH
@@ -257,15 +261,17 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
 6c. **Multi-platform clean master (owner 2026-08-09 — TikTok/IG Reels):** after
    upload, strip the music track (YAL/derived beds are licensed for YouTube ONLY):
    `ffmpeg -i final.mp4 -c:v copy -an <slot>-clean.mp4` (video track + burned subs
-   intact, zero re-render). Write `social-caption.txt` per PERSONA.md §4 (EN hook +
-   3-5 TikTok-native hashtags, NO #Shorts, ≤300 chars). In the report step,
+   intact, zero re-render). Write `social-caption.txt` per PERSONA.md §4: first
+   line starts `China Travel Expert 🧭 | <hook>`; hashtags always include
+   #chinatravelexpert (+ #chinatravel #traveltok etc., NO #Shorts, ≤300 chars). In the report step,
    SendUserFile all 4 clean masters + captions to the owner chat (recompress crf 24
    if a file exceeds 29MB) — the owner posts them adding a platform-native trending
    sound in-app.
    **Back-catalog exports:** `state/social-export-queue.json` lists past videos by
    views desc. Each run, take the top 2 with `"status": "pending"`, re-render each
    from its `runs/<date>-<slot>/` artifacts (script.md clip list + subs.srt) WITHOUT
-   music, send via SendUserFile alongside the day's masters, mark `"sent"` + date.
+   music and WITH `--badge "CHINA TRAVEL EXPERT"`, send via SendUserFile alongside
+   the day's masters, mark `"sent"` + date.
    Missing artifacts → mark `"no-artifacts"` and move on, never fake.
 7. **Commit checkpoint** — commit this slot's text artifacts + state delta before
    starting the next slot (protects against mid-run session death). Media never

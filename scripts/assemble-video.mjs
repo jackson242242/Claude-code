@@ -220,6 +220,15 @@ if (args.title && existsSync(font)) {
 } else if (args.title) {
   process.stderr.write('DejaVuSans-Bold not found; skipping title overlay.\n');
 }
+if (args.badge && existsSync(LATIN_FONT)) {
+  // Persistent brand badge (persona 2026-08-10): small, whole video, top strip —
+  // brands every frame so TikTok/IG algorithms and viewers tie the clip to the IP
+  // without touching the 0-second hook.
+  filters.push(
+    `drawtext=fontfile=${LATIN_FONT}:text='${args.badge.replace(/'/g, '')}':fontsize=${vertical ? 34 : 30}:` +
+    `fontcolor=white@0.82:borderw=2:bordercolor=black@0.35:x=(w-text_w)/2:y=${vertical ? 118 : 40}`,
+  );
+}
 if (args.srt) {
   if (!existsSync(args.srt)) fail(`--srt file not found: ${args.srt}`);
   // Noto Sans CJK covers zh/yue/ja; falls back to default font if not installed.
