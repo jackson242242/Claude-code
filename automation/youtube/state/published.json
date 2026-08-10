@@ -2,6 +2,39 @@
  "videos": [
   {
    "date": "2026-08-10",
+   "slot": "a",
+   "title": "China's Only Silk-Sewn Jade Suit: 2,291 Plaques | Buried Empire P1 · 丝缕玉衣",
+   "videoId": "31YhzTHBmCA",
+   "url": "https://www.youtube.com/watch?v=31YhzTHBmCA",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-10T13:00:00Z"
+  },
+  {
+   "date": "2026-08-10",
+   "slot": "b",
+   "title": "His Gold Seal Said \"Emperor\" — and a Persian Box Beside It | Buried Empire P2 · 文帝行玺",
+   "videoId": "XQdt9dBhl1k",
+   "url": "https://www.youtube.com/watch?v=XQdt9dBhl1k",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-10T16:00:00Z"
+  },
+  {
+   "date": "2026-08-10",
+   "slot": "c",
+   "title": "China's First Bank Sat Inside This 6-km Ming Wall — Pingyao | 平遥古城",
+   "videoId": "jHFUVYEqeIM",
+   "url": "https://www.youtube.com/watch?v=jHFUVYEqeIM",
+   "pillar": "city-travel",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-10T19:00:00Z"
+  },
+  {
+   "date": "2026-08-10",
    "slot": "d",
    "title": "In Guangzhou, even fruit is luxury — Lychee King season | Guangzhou Ate First EP1",
    "videoId": "O3MPquBKc-g",

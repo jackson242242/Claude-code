@@ -2,30 +2,6 @@
  "note": "Topic backlog for /youtube-cycle. Top item matching the slot format is used next. Owner may edit/reorder freely.",
  "queue": [
   {
-   "id": "gzh-01",
-   "title": "南越王墓①丝缕玉衣：全中国只有这一件",
-   "pillar": "china-culture",
-   "format": "short",
-   "angle": "西汉南越王博物院。1983年象岗山施工意外发现、两千年未被盗;墓主赵眜(第二代南越王);丝缕玉衣为全国唯一(丝线串玉,对比金缕玉衣)。受众:爱好者+打卡(就在市中心,可参观)。亲子钩:玉衣是怎么'穿'上的?",
-   "whyNow": "owner 2026-08-09 广州历史深挖直令(南越王墓/寺庙)+culture-first era 开启;所有事实 verify at scripting(两独立来源)",
-   "seriesNote": "2-part series day1 with gzh-02",
-   "addedAt": "2026-08-09",
-   "addedBy": "owner directive via interactive session",
-   "status": "active"
-  },
-  {
-   "id": "gzh-02",
-   "title": "南越王墓②帝玺与波斯银盒：2000年前的海淘",
-   "pillar": "china-culture",
-   "format": "short",
-   "angle": "'文帝行玺'金印=考古发掘出土的汉代龙钮帝玺;墓中波斯风格银盒、非洲象牙=广州两千年前已是海上贸易港的实物证据(海上丝绸之路叙事锚点)。",
-   "whyNow": "owner 2026-08-09 广州历史深挖直令(南越王墓/寺庙)+culture-first era 开启;所有事实 verify at scripting(两独立来源)",
-   "seriesNote": "2-part series day1 with gzh-01",
-   "addedAt": "2026-08-09",
-   "addedBy": "owner directive via interactive session",
-   "status": "active"
-  },
-  {
    "id": "gzh-03",
    "title": "光孝寺：未有羊城，先有光孝",
    "pillar": "china-culture",
@@ -130,21 +106,6 @@
    ],
    "addedAt": "2026-07-19",
    "addedBy": "cycle replenish (china-culture lane low)",
-   "status": "active",
-   "note": "reactivated 2026-08-09 culture-first era"
-  },
-  {
-   "id": "ct-08",
-   "title": "平遥古城：一座活着的明清县城，城墙走一圈六公里",
-   "pillar": "city-travel",
-   "format": "short",
-   "angle": "平遥：古城墙、日昇昌票号、明清街、碗托小吃。fact-first=一圈城墙六公里、中国第一家票号。街头风景+人物赶集。",
-   "whyNow": "平遥古城 UNESCO 世遗、晋商票号故事持续热；fact-first 钩子 城墙周长/中国第一家票号；verify 城墙约6.4公里/日昇昌1823 at scripting.",
-   "sources": [
-    "平遥古城 城墙 6.4公里 日昇昌票号 1823"
-   ],
-   "addedAt": "2026-07-19",
-   "addedBy": "cycle replenish (travel depth)",
    "status": "active",
    "note": "reactivated 2026-08-09 culture-first era"
   },
@@ -1239,6 +1200,30 @@
    "addedAt": "2026-08-09",
    "addedBy": "cycle replenish (day22)",
    "status": "queued"
+  },
+  {
+   "id": "gzh-07",
+   "title": "陈家祠：一座祠堂，把岭南所有手艺都刻上了墙",
+   "pillar": "china-culture",
+   "format": "short",
+   "angle": "广州陈家祠(陈氏书院)1894建;木雕/砖雕/石雕/陶塑/灰塑/铜铁铸/彩绘 岭南七绝集大成;打卡(屋脊陶塑震撼)+爱好者(非遗工艺深度)+亲子(找屋顶上的小人)。fact-first 钩:一条屋脊上塑了几百个人物。",
+   "whyNow": "culture-first era 广州古文化产物主线(owner 2026-08-09);陈家祠常年citywalk/非遗热门;事实 verify at scripting(两来源)",
+   "seriesNote": "standalone or 岭南非遗系列锚点",
+   "addedAt": "2026-08-10",
+   "addedBy": "research auto-replenish (culture-first)",
+   "status": "active"
+  },
+  {
+   "id": "gzh-08",
+   "title": "广彩：一只瓷盘，如何把广州画进欧洲的客厅",
+   "pillar": "china-culture",
+   "format": "short",
+   "angle": "广州织金彩瓷(广彩)清代外销瓷;为欧洲订单而生的'来样加工';十三行外销、海上丝路;爱好者(工艺:白瓷上二次施彩烧制)+打卡+亲子(中国瓷怎么卖到全世界)。fact-first 钩:三百年前广州就在做'外贸定制'。",
+   "whyNow": "culture-first era 古文化产物+海丝主线;呼应南越王波斯银盒的海丝母题;事实 verify at scripting(两来源)",
+   "seriesNote": "海丝/外销工艺系列候选",
+   "addedAt": "2026-08-10",
+   "addedBy": "research auto-replenish (culture-first)",
+   "status": "active"
   }
  ]
 }
