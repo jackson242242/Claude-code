@@ -2,7 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-08-09 (last deepened: 台湾腔 — +尊嘟假嘟 zūn du jiǎ du「真的假的」撒娇谐音 / +留友看 liú yǒu kàn Threads「留着给朋友看」/ +晕烂 yūn làn 被冲昏头理智全失; 台湾腔为11区中最久未深化者（上次07-29，其余10区07-30..08-08均已轮过），故今日轮到; 今日选题「中国北方面食硬核派」(山西刀削面/陕西油泼面/老北京炸酱面/河南烩面) 中 c=炸酱面 weave 北京话「锅挑儿·菜码」京味儿, 山西/陕西/河南三地方言库无对应区 honest不强塞标准普通话; 台湾今日无台菜选题, 未强塞台湾腔彩蛋(honest), 台湾腔按"最久未更新"如实轮到深化; prior 08-08 山东话 俺·恁·一霎儿, 08-07 东北话 埋汰·得瑟·磕碜, 08-06 福建/闽南话 输人不输阵·有够·古锥, 08-05 上海话 刮刮叫·拎得清·嘎三胡, 08-04 客家话 食饭冇·承蒙你·条上条下, 08-03 湖南话 韵味·克·拌蛮, 08-02 北京话 局气·底儿掉·老炮儿, 08-01 粤语 一盅两件·糖水·叹茶, 07-31 四川话 假打·打牙祭·撑花儿, 07-30 广西话 友仔/友女·是公的, 07-29 台湾腔 是在哈啰·森77·母汤, 07-28 山东话 夜来·木乱·将将的)  
+**Today:** 2026-08-10 (last deepened: 广西话 — +老友 lǎo yǒu 南宁铁哥们/老友粉命名由来 / +白话 广西人对粤语的通称·明清粤商入桂形成第一大方言; 广西话为11区中最久未深化者（上次07-30，其余10区07-31..08-09均已轮过），故今日轮到; 今日选题「广州古文化产物」a=南越王墓丝缕玉衣 / b=文帝行玺+波斯银盒 / c=平遥古城城墙(城市旅行·山西), a/b 广州→粤语区, weave 粤语彩蛋(唔该/得闲饮茶); c 平遥属山西晋语, 11区方言库无对应区, honest 不强塞——晋语彩蛋缺位如实标注; 08-09 台湾腔 尊嘟假嘟·留友看·晕烂, prior last deepened: 台湾腔 — +尊嘟假嘟 zūn du jiǎ du「真的假的」撒娇谐音 / +留友看 liú yǒu kàn Threads「留着给朋友看」/ +晕烂 yūn làn 被冲昏头理智全失; 台湾腔为11区中最久未深化者（上次07-29，其余10区07-30..08-08均已轮过），故今日轮到; 今日选题「中国北方面食硬核派」(山西刀削面/陕西油泼面/老北京炸酱面/河南烩面) 中 c=炸酱面 weave 北京话「锅挑儿·菜码」京味儿, 山西/陕西/河南三地方言库无对应区 honest不强塞标准普通话; 台湾今日无台菜选题, 未强塞台湾腔彩蛋(honest), 台湾腔按"最久未更新"如实轮到深化; prior 08-08 山东话 俺·恁·一霎儿, 08-07 东北话 埋汰·得瑟·磕碜, 08-06 福建/闽南话 输人不输阵·有够·古锥, 08-05 上海话 刮刮叫·拎得清·嘎三胡, 08-04 客家话 食饭冇·承蒙你·条上条下, 08-03 湖南话 韵味·克·拌蛮, 08-02 北京话 局气·底儿掉·老炮儿, 08-01 粤语 一盅两件·糖水·叹茶, 07-31 四川话 假打·打牙祭·撑花儿, 07-30 广西话 友仔/友女·是公的, 07-29 台湾腔 是在哈啰·森77·母汤, 07-28 山东话 夜来·木乱·将将的)  
 **Verification:** All phrases verified via WebSearch; marked with region coverage notes.  
 **Content Tags:** [comedy] [travel] [teach] | Sensitivity: clean / 轻度粗俗 / 粗口
 
@@ -179,9 +179,12 @@
 - **表哥我出来了喔** | meme phrase | 源自广西梧州抖音博主"表妹李kk"的开场白；"表哥/老表"是广西对无血缘关系者的亲昵称呼＝兄弟 | 2023-24 广西方言梗代表；亲切、招呼式 | [comedy] | clean（verified 百度百科·表哥我出来了喔）  <!-- added 2026-07-19 -->
 - **友仔 / 友女** (yǒu zǎi / yǒu nǚ) | "young guy / young girl; buddy" | 南宁人最熟的特色称呼，受壮语构词影响，泛指小伙子/小姑娘，也用来叫朋友 | 广西壮汉语言交融的活化石；招呼年轻人、摊主的市井彩蛋 | [comedy] [teach] [travel] | clean（verified 中新网·闲话广西汉语方言 / 知乎·广西语言背后的故事）  <!-- added 2026-07-30 -->
 - **是公的（=是空的）** (shì gōng de = shì kōng de) | "'it's male' — actually 'it's empty'" | 广西不少地方 g/k 不分，"是空的"常被念成"是公的"，外地人一头雾水 | 广西"最魔性"口音的经典误听梗，聊语言差异的现成笑点 | [comedy] [teach] | clean（verified 知乎·广西方言全国最魔性）  <!-- added 2026-07-30 -->
+- **老友** (lǎo yǒu) | "old friend / ride-or-die buddy" | 南宁把铁哥们叫"老友"；名小吃「老友粉/老友面」（酸笋+蒜+豆豉+辣椒）相传就是为老友情谊而做，一碗酸辣醒神的交情 | 南宁市井人情的招牌词，早餐/嗦粉短片天然彩蛋 | [travel] [teach] | clean（verified 搜狐·广西方言分布 / 老友粉命名由来）  <!-- added 2026-08-10 -->
+- **白话** (baak6 waa2 / bái huà) | "'plain speech' = Guangxi Cantonese" | 广西人管粤语叫"白话"，"讲白话"＝说粤语；南宁/梧州/玉林/北海通行，明清粤商入桂形成，是广西第一大汉语方言 | 一句就点破"广西也讲粤语"的冷知识，城市漫游/语言差异短片好用 | [teach] [travel] | clean（verified 搜狐·广西18种方言 / 南宁白话·百度百科）  <!-- added 2026-08-10 -->
 
 <!-- 07-19 deepened 广西话/桂柳话: prior section skewed 南宁南普; added the 桂柳话 (西南官话) branch (克/得~~~) + 表妹李kk 招呼梗. 老表/蓝瘦香菇 already present. Skipped 窃格瓦拉 "打工是不可能" meme — criminal-origin, keep off a family-safe channel. -->
 <!-- 07-30 deepened 广西话 again (11区最久未更新, 上次07-19): +友仔/友女 (南宁壮语影响称呼) +是公的=是空的 (g/k不分误听梗). 蓝瘦香菇/老表/克/得~~~ already present, not duplicated. -->
+<!-- 08-10 deepened 广西话 (11区最久未更新, 上次07-30): +老友 (南宁铁哥们/老友粉命名) +白话 (广西人称粤语为白话, 明清粤商入桂形成第一大方言). 只补 clean·verified 条, 不塞政治/群体梗. -->
 
 ## 台湾腔 (Taiwan Accent — Taiwanese Mandarin)
 
