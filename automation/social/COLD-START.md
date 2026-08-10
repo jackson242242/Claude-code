@@ -14,11 +14,10 @@
 | **永远不需要** | 你的账号密码 | 2FA/设备风控/封号风险——只走官方 token |
 
 ## 账号规格（两平台一致）
-- **Handle**（owner 2026-08-10 选定）: `@yourchinatravelexpert`（TikTok ≤24 字符、
-  IG ≤30 字符均合规，21 字符；两平台显示为全小写）。若注册时被占用，备选：
-  `@yourchinaexpert` → `@china.travel.expert` → `@mappingchina`。
-  YouTube handle 之后也可在 Studio 改成同名（@nyneighborhood → @yourchinatravelexpert）
-  实现三平台统一。
+- **Handle（已注册）**: TikTok = **`@chinatravelexpertz`**（owner 2026-08-10 注册，
+  www.tiktok.com/@chinatravelexpertz）。**IG 注册时用同一个 `@chinatravelexpertz`**
+  保持双平台一致；YouTube handle 之后可在 Studio 同步改
+  （@nyneighborhood → @chinatravelexpertz）实现三平台统一。
 - **名称**: `China Travel Expert 🧭`
 - **TikTok bio** (≤80字符): `Real China, zero tourist traps 🧭 Architecture · history · food. Daily.`
 - **IG bio**: 同句 + 第二行 `📍 Mapping ALL of China, one video at a time`；链接位先空着（私域定了再挂）
