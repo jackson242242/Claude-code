@@ -59,6 +59,15 @@
 - **互动权重**：收藏/分享/回复 > 点赞（Story 回复年增 88%，Story 拿信任、
   Reels 拿新流量）。发帖节奏理想值：每周 4–5 条 Reels。
 
+**8/10 周增量（来源见 2026-08-10 brief）：**
+- **"And for the lady..."（Noah Kahan "End of August"）**：按人设揭示
+  完美单品的文字层格式——珠宝送礼/人设内容天配（"And for the lady who
+  never takes off her chain…"）
+- **"My Biggest Flex"（Shakira）**：创始人多重身份自嘲（designer/
+  packer/photographer/CEO）——真人出镜 + 幽默，小商家人味内容现成模板
+- **"Subtitle Gratitude"**：商家无版权风险的字幕感谢格式（广告可用）
+- 大盘：荒诞音频 bits + tribute carousels + 低制作单镜头继续统治
+
 **8/3 周增量（来源见 2026-08-03 brief）：**
 - 8 月音频大盘：Sabrina Carpenter 霸榜（130k+ Reels）；Warner Case
   夏日高能量曲仍活跃 → First day energy 开场曲二选一
