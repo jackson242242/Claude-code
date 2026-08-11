@@ -100,7 +100,12 @@ log `skipped: batch already published today` and stop. (Protects against manual
      each series = one travel route told stop-by-stop; architecture/heritage stops
      lead, food appears only as a "reward stop" ON the route (「走完这段城墙，
      城根下正好这碗面」). This lane feeds the 私域 route-guide funnel directly.
-     Old china-food seeds may be recycled as route stops, never as the subject.)
+     Old china-food seeds may be recycled as route stops, never as the subject.
+     Route portfolio, market positioning, premium-audience language rules and
+     honesty boundaries: `automation/youtube/plans/route-products.md` — route
+     episodes use its §3 selling mechanics: expertise-proof framing, premium
+     filtering words (private/bespoke/worth-it, never budget/hack), CTA to
+     channel page only.)
    **HOOK DOCTRINE (owner 2026-08-11 + 07-15 data: fact-first beats place-first
    ~4x):** frame 0 = a visual that exists NOWHERE outside China (hanging temple,
    tulou ring, nail-free pagoda, red walls) + first cue = a surprise FACT about
