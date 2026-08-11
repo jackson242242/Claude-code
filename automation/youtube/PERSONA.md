@@ -21,7 +21,11 @@
      🧭 Your China Travel Expert | 你的中国旅游专家
      ```
   3. **🧭 图标** — 频道描述、歌单描述、置顶评论（待 force-ssl 授权）统一使用
-  4. **品牌标题语 + 画面角标（owner 2026-08-10，为算法精准定位"想去中国的外国人"）**：
+  4. **固定开场句（owner 2026-08-11：第一句永远说"我是中国旅游专家"）**：
+     每条视频 cue 1 固定 `I'm your China Travel Expert.` / `我是你的中国旅游专家`，
+     0.0-1.6 秒内压短、叠在第 0 帧奇观画面上；反差事实钩子紧跟 cue 2。
+     留存影响每周数据核查（对比 avg view%），如实汇报。
+  5. **品牌标题语 + 画面角标（owner 2026-08-10，为算法精准定位"想去中国的外国人"）**：
      - 标题：只要 ≤95 字符就追加 ` | China Travel Expert`
      - 话题标签：#ChinaTravelExpert 固定进 hashtag 阶梯第 3 位（YouTube）；
        TikTok/IG 文案固定 #chinatravelexpert 且首行以 `China Travel Expert 🧭 |` 开头

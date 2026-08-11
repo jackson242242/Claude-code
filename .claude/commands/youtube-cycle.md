@@ -150,9 +150,12 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    burned fonts have no emoji glyph; 🧭 lives in metadata only).**
    - Short (20-28s — 7-day data 2026-07-11: 22s cut doubled retention vs 55s):
      9-12 cues, each 2-2.5s, 中文行 ≤12 字 (STYLE.md v2 fast rhythm — information
-     density beats lingering) — 起 opening cue lands at 0.0-0.5s AND the first shot
-     is the single most striking clip (steam/water/light — never an establishing
-     wide); the first cue poses a curiosity gap the last cue answers → 承 2-3
+     density beats lingering) — **CUE 1 IS FIXED (owner 2026-08-11: 第一句永远
+     自报家门): `I'm your China Travel Expert.` / `我是你的中国旅游专家`, at
+     0.0-1.6s MAX, laid OVER the frame-0 wow visual (the visual hooks while the
+     brand line brands — never a talking-head intro card)**; cue 2 (≤1.6s in)
+     delivers the curiosity-gap fact the last cue answers; the first shot is
+     still the single most striking clip (never an establishing wide) → 承 2-3
      development beats → 转 the surprise/taste/discovery → 合 a closing line that
      LOOPS back to the opening (rewatches push view% past 100 — the Shorts
      algorithm's strongest signal). Final cue alternates between a soft CTA
