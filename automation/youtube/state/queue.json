@@ -2,17 +2,6 @@
  "note": "Topic backlog for /youtube-cycle. Top item matching the slot format is used next. Owner may edit/reorder freely.",
  "queue": [
   {
-   "id": "rt-01",
-   "title": "Route: Guangzhou Heritage Day①光孝寺——比广州还老的寺",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "《First-Timer's Guangzhou Heritage Day》4集连载 P1。线路: 光孝寺→陈家祠→永庆坊骑楼→上下九早茶收官。P1 光孝寺开场(未有羊城先有光孝),片尾预告下一站陈家祠。奖励站预告:走到最后一站才有早茶。frame0=红墙古殿。",
-   "whyNow": "owner 2026-08-11 线路化直令+广州系列进行中; facts verify at scripting",
-   "addedAt": "2026-08-11",
-   "addedBy": "owner directive",
-   "status": "active"
-  },
-  {
    "id": "rt-02",
    "title": "Route: Guangzhou Heritage Day②陈家祠——一座祠堂七种手艺",
    "pillar": "china-route",
@@ -120,36 +109,6 @@
    ],
    "addedAt": "2026-07-19",
    "addedBy": "cycle replenish (city-walk lane hit 0)",
-   "status": "active",
-   "note": "reactivated 2026-08-09 culture-first era"
-  },
-  {
-   "id": "cc2-05",
-   "title": "苏绣：一根丝线，能劈成多少分？",
-   "pillar": "china-culture",
-   "format": "short",
-   "angle": "苏绣双面绣：绣娘手部特写、劈丝、绷架、成品猫眼。非遗craft。诗意收尾。fact-first hook=一根丝线劈成几十分。",
-   "whyNow": "苏绣双面绣与非遗手作在短视频持续出圈；fact-first 钩子 劈丝根数；verify 劈丝可分至1/48或更细 at scripting.",
-   "sources": [
-    "苏绣 双面绣 劈丝 非遗"
-   ],
-   "addedAt": "2026-07-19",
-   "addedBy": "cycle replenish (china-culture lane low)",
-   "status": "active",
-   "note": "reactivated 2026-08-09 culture-first era"
-  },
-  {
-   "id": "cc2-06",
-   "title": "景德镇：一千年，只做一件事",
-   "pillar": "china-culture",
-   "format": "short",
-   "angle": "景德镇制瓷：拉坯、利坯、画青花、窑火；陶溪川年轻人回流。fact-first=一件瓷器七十二道工序。人物：拉坯的手/赶集的年轻人。",
-   "whyNow": "景德镇陶溪川「景漂」年轻人回流做瓷持续是热点；fact-first 钩子 七十二道工序；verify 《天工开物》七十二道 at scripting.",
-   "sources": [
-    "景德镇 陶溪川 景漂 七十二道工序 天工开物"
-   ],
-   "addedAt": "2026-07-19",
-   "addedBy": "cycle replenish (china-culture lane low)",
    "status": "active",
    "note": "reactivated 2026-08-09 culture-first era"
   },
@@ -750,19 +709,6 @@
    "note": "reactivated 2026-08-09 culture-first era"
   },
   {
-   "id": "ctr-04",
-   "title": "敦煌莫高窟：一千年的画到底谁画的",
-   "pillar": "city-travel",
-   "format": "short",
-   "angle": "735 caves fact; desert dunes + camel bells.",
-   "whyNow": "owner core-shift 2026-07-15: travel resources + food",
-   "sources": [],
-   "addedAt": "2026-07-15",
-   "addedBy": "owner directive",
-   "status": "active",
-   "note": "reactivated 2026-08-09 culture-first era"
-  },
-  {
    "id": "ctr-05",
    "title": "重庆洪崖洞：千与千寻的现实版",
    "pillar": "city-travel",
@@ -1278,6 +1224,62 @@
    "seriesNote": "海丝/外销工艺系列候选",
    "addedAt": "2026-08-10",
    "addedBy": "research auto-replenish (culture-first)",
+   "status": "active"
+  },
+  {
+   "id": "rt-05",
+   "title": "Route: Beijing Central Axis①永定门——中轴线的起点",
+   "pillar": "china-route",
+   "format": "short",
+   "angle": "《Beijing Central Axis 帝都中轴》4集连载 P1。线路: 永定门→天坛→前门→故宫→钟鼓楼。P1 永定门开场(7.8km中轴南起点),片尾预告天坛。奖励站(老北京小吃)留到线路中段。frame0=中轴航拍/古城门。",
+   "whyNow": "owner 2026-08-11 线路化直令(route-products §5 下一条=北京中轴); 北京中轴线2024入世界遗产是持续热点; facts verify at scripting",
+   "sources": [
+    "北京中轴线 世界遗产 永定门 7.8公里"
+   ],
+   "addedAt": "2026-08-11",
+   "addedBy": "cycle replenish (china-route next series)",
+   "status": "active"
+  },
+  {
+   "id": "rt-06",
+   "title": "Route: Beijing Central Axis②天坛——皇帝祭天的圆与方",
+   "pillar": "china-route",
+   "format": "short",
+   "angle": "P2 天坛: 圜丘/祈年殿·天圆地方·回音壁声学。片尾预告前门/正阳门。fact-first=祈年殿无一根铁钉/一块砖。verify at scripting。",
+   "whyNow": "北京中轴线系列 P2; 天坛为中轴核心礼制建筑; facts verify at scripting",
+   "sources": [
+    "天坛 祈年殿 无钉 天圆地方 回音壁"
+   ],
+   "addedAt": "2026-08-11",
+   "addedBy": "cycle replenish (china-route next series)",
+   "status": "active"
+  },
+  {
+   "id": "rt-07",
+   "title": "Route: Beijing Central Axis③故宫——中轴线上的紫禁城",
+   "pillar": "china-route",
+   "format": "short",
+   "angle": "P3 故宫: 中轴对称·三大殿·9999间之说。片尾预告钟鼓楼。fact-first=紫禁城恰在7.8km中轴正中。verify at scripting。",
+   "whyNow": "北京中轴线系列 P3; 故宫是中轴线视觉高潮; facts verify at scripting",
+   "sources": [
+    "故宫 紫禁城 中轴对称 房间数"
+   ],
+   "addedAt": "2026-08-11",
+   "addedBy": "cycle replenish (china-route next series)",
+   "status": "active"
+  },
+  {
+   "id": "rt-08",
+   "title": "Route: Beijing Central Axis④完结·钟鼓楼——中轴线的终点报时",
+   "pillar": "china-route",
+   "format": "short",
+   "angle": "P4 完结 钟鼓楼: 中轴北端·晨钟暮鼓报时·俯瞰全轴。收官串讲全线+full route on channel page(私域钩)。fact-first=一口大钟报时全城可闻。verify at scripting。",
+   "whyNow": "北京中轴线系列完结集; 承接私域漏斗; facts verify at scripting",
+   "sources": [
+    "北京 钟鼓楼 晨钟暮鼓 报时 中轴线终点"
+   ],
+   "addedAt": "2026-08-11",
+   "addedBy": "cycle replenish (china-route next series)",
    "status": "active"
   }
  ]

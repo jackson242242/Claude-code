@@ -25,7 +25,9 @@
    "views": 1114,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "sent",
+   "sentDate": "2026-08-11",
+   "note": "re-rendered clean master from runs artifacts (subs.srt) + badge, no music; delivered to owner chat 2026-08-11"
   },
   {
    "videoId": "s1C7rGSzqes",
@@ -33,7 +35,9 @@
    "views": 1071,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "sent",
+   "sentDate": "2026-08-11",
+   "note": "re-rendered clean master from runs artifacts (subs.srt) + badge, no music; delivered to owner chat 2026-08-11"
   },
   {
    "videoId": "0tZq3N0sUI0",

@@ -1,3 +1,9 @@
+## 2026-08-11 (culture-first day, Tue — no vidIQ)
+- **Hook doctrine 持续验证**: 4条全部 fact-first 开在数字/反差上(劈成48份 / 过手七十二 / 45000㎡无署名 / 比广州还老), 地名后置, 延续 07-15 数据「fact-first ~4x place-first」。culture 选题自身留存数据需 3-5 天累积后再复盘。
+- **Craft-depth 选题**（苏绣劈丝、景德镇72工序）天然带「难以置信的数字+手部特写」结构，适配 fact-first + 小红书节奏；作为 china-culture 主力可持续产出。
+- **Route 化 slot d 起步**: 广州古迹一日 P1 光孝寺 上线，route-products §3 卖点框架（专家证明式、premium 用词、CTA 仅指 channel page）已落到脚本；下一条 route 已排 北京中轴 rt-05..08（承 §5 顺序）。
+- **队列**: china-route 原仅3条(rt-02..04)偏薄 → 本 run 补 北京中轴 4 seeds; china-culture=8 / city-travel=9 / china-route=7 健康。
+
 # Direction research log — @NYneighborhood
 
 Written by every daily run (newest first): what education stories resonate this week,

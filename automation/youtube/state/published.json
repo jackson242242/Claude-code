@@ -1467,6 +1467,67 @@
     "中国美食 China Food (PLNf94OBc_zg0)",
     "中国北方面食硬核派 Northern China Noodles (PLBeBZU1k1tI8)"
    ]
+  },
+  {
+   "date": "2026-08-11",
+   "slot": "a",
+   "title": "One Silk Thread, Split 48 Times — Suzhou Embroidery | China Travel Expert",
+   "videoId": "_0lUw_jWaIs",
+   "url": "https://www.youtube.com/watch?v=_0lUw_jWaIs",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-11T13:00:00Z",
+   "topicId": "cc2-05",
+   "playlists": [
+    "China Culture 中国文化 (PLD1FxVheQkWA)"
+   ]
+  },
+  {
+   "date": "2026-08-11",
+   "slot": "b",
+   "title": "72 Hands to Make One Bowl — Jingdezhen Porcelain | China Travel Expert",
+   "videoId": "vdRPp4BKTbw",
+   "url": "https://www.youtube.com/watch?v=vdRPp4BKTbw",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-11T17:00:00Z",
+   "topicId": "cc2-06",
+   "playlists": [
+    "China Culture 中国文化 (PLD1FxVheQkWA)"
+   ]
+  },
+  {
+   "date": "2026-08-11",
+   "slot": "c",
+   "title": "45,000㎡ of Murals, Not One Signed — Dunhuang Mogao Caves | China Travel Expert",
+   "videoId": "4jurM3rCY-0",
+   "url": "https://www.youtube.com/watch?v=4jurM3rCY-0",
+   "pillar": "city-travel",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-11T20:00:00Z",
+   "topicId": "ctr-04",
+   "playlists": [
+    "China Travel 城市旅行 (PLI6LsqzQ-cjU)"
+   ]
+  },
+  {
+   "date": "2026-08-11",
+   "slot": "d",
+   "title": "This Temple Is Older Than Its City — Guangzhou Heritage Day P1 光孝寺 | China Travel Expert",
+   "videoId": "cXmbIjJ1hpQ",
+   "url": "https://www.youtube.com/watch?v=cXmbIjJ1hpQ",
+   "pillar": "china-route",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-11T23:00:00Z",
+   "topicId": "rt-01",
+   "series": "Guangzhou Heritage Day 广州古迹一日",
+   "playlists": [
+    "Guangzhou Heritage Day 广州古迹一日 (PLDCZIH5Dm0QQ)"
+   ]
   }
  ]
 }
