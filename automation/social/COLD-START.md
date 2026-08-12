@@ -21,7 +21,8 @@
 - **名称**: `China Travel Expert 🧭`
 - **TikTok bio** (≤80字符): `Real China, zero tourist traps 🧭 Architecture · history · food. Daily.`
 - **IG bio**: 同句 + 第二行 `📍 Mapping ALL of China, one video at a time`；链接位先空着（私域定了再挂）
-- **头像**: 红漆罗盘/庙檐罗盘方案（已生成候选图，老板选一）；两平台+将来 YouTube 统一
+- **头像（已定 2026-08-11）**: 红墙圆窗真实摄影版（`automation/social/brand/real-1-redwall.jpg`，
+  Pexels 授权实拍，摄影师 Vlado Paunovic）；TikTok/IG/YouTube 三平台统一
 - **类别/标签**: IG Creator→Travel；TikTok 兴趣选 travel/culture/education
 
 ## 起号 14 天节奏
