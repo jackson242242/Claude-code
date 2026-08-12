@@ -1,3 +1,10 @@
+## 2026-08-12 (culture-first day, Wed — no vidIQ)
+- **Guangzhou heritage cluster (a/b/d 三条广州)**: 队列 china-culture 现存活跃 short 全为 gzh-* 广州系列，故今日 a/b 与 route d 同城；各主体不同（六榕寺花塔 / 怀圣寺光塔 / 陈家祠），无 dedup 冲突。当作"广州古建周"处理，与 route d 广州古迹一日主题统一而非割裂——可视作城市深耕。c 取西安回民街做地理错开。若明日 china-culture 仍无非广州短片，建议补 1-2 条外城 seeds（如南京/成都/大理古建）以免观感过度集中。
+- **Hook doctrine 延续 fact-first**: a=外九内十七(反差) / b=引航1300年后揭示"其实是宣礼塔"(curiosity-gap) / c=商队住了1200年 / d=一座祠堂七种绝技(数字)。地名一律后置。
+- **宗教题材边界**: b 怀圣寺(伊斯兰)/c 化觉巷清真大寺——纯历史/建筑/海丝贸易视角，无任何宗教评判或政治内容，Expert Tip 提醒"仍在使用·着装从简"体现尊重。符合 contentRules(no political takes)。
+- **粤语 dialect deepening（最久未更新 08-01→今日）**: +落雨/扮嘢，落雨天然接 route P3 骑楼"下雨不打伞"。
+- **队列健康度（取3后）**: china-culture 4(gzh-05..08，均广州) / city-travel 8 / china-route 6(rt-03..08)。china-culture 广州外选题偏薄，见首条建议。
+
 ## 2026-08-11 (culture-first day, Tue — no vidIQ)
 - **Hook doctrine 持续验证**: 4条全部 fact-first 开在数字/反差上(劈成48份 / 过手七十二 / 45000㎡无署名 / 比广州还老), 地名后置, 延续 07-15 数据「fact-first ~4x place-first」。culture 选题自身留存数据需 3-5 天累积后再复盘。
 - **Craft-depth 选题**（苏绣劈丝、景德镇72工序）天然带「难以置信的数字+手部特写」结构，适配 fact-first + 小红书节奏；作为 china-culture 主力可持续产出。

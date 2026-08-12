@@ -1,0 +1,72 @@
+# d — 陈家祠 Chen Clan Ancestral Hall — Guangzhou Heritage Day P2
+
+- **pillar:** china-route
+- **format:** Short 9:16, subtitle-driven (voice PAUSED per owner 2026-07-10)
+- **date:** 2026-08-12
+
+## Narrative (burned bilingual subs = the video)
+
+```
+1
+00:00:00,000 --> 00:00:01,600
+I'm your China Travel Expert.
+我是你的中国旅游专家
+
+2
+00:00:01,600 --> 00:00:04,000
+One hall. Seven master crafts.
+一座祠堂,七种绝技
+
+3
+00:00:04,000 --> 00:00:06,400
+Wood, stone, brick — all carved.
+木雕,石雕,砖雕
+
+4
+00:00:06,400 --> 00:00:08,600
+Clay and lime — sculpted by hand.
+陶塑,灰塑,手上功夫
+
+5
+00:00:08,600 --> 00:00:10,800
+Iron cast, then painted in color.
+铁铸,再手绘上色
+
+6
+00:00:10,800 --> 00:00:13,200
+All on one ancestral hall's walls.
+全刻在一座祠堂墙上
+
+7
+00:00:13,200 --> 00:00:15,800
+Guangdong's Chen clans built it, 1894.
+广东陈氏合族,1894年建
+
+8
+00:00:15,800 --> 00:00:18,200
+"The pearl of Lingnan architecture."
+岭南建筑艺术明珠
+
+9
+00:00:18,200 --> 00:00:20,600
+Stop two on my Guangzhou Heritage Day.
+广州古迹一日,第二站
+
+10
+00:00:20,600 --> 00:00:23,800
+★ Expert Tip: come at 4pm — low sun rakes the roof ridges.
+内行提示:下午四点,斜阳照屋脊
+
+11
+00:00:23,800 --> 00:00:27,000
+Next stop: the arcades where you walk rain-free.
+下一站:骑楼,落雨都唔使打遮
+```
+
+## Verified facts / sources (checked this run via WebSearch)
+
+- 百度百科 陈家祠堂 (1888筹1894成; 合族祠; 15000㎡/19座; 七绝: 三雕两塑一铸一画)
+- 广东省侨办《陈家祠：百粤祠之冠》
+- 荔湾区政府 陈家祠 (岭南建筑艺术明珠)
+
+> Footage honesty: Pexels licensed free stock illustrating the theme; clips are representative, not the actual site/relic — disclosed in the video description.

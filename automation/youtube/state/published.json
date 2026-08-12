@@ -1528,6 +1528,71 @@
    "playlists": [
     "Guangzhou Heritage Day 广州古迹一日 (PLDCZIH5Dm0QQ)"
    ]
+  },
+  {
+   "date": "2026-08-12",
+   "slot": "a",
+   "title": "This Pagoda Looks 9 Floors — Secretly It's 17 | China Travel Expert",
+   "videoId": "xiSIJS8_2fA",
+   "url": "https://www.youtube.com/watch?v=xiSIJS8_2fA",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "posted",
+   "publishAt": null,
+   "topicId": "gzh-04",
+   "music": "cinema-orient-01",
+   "playlists": [
+    "China Culture 中国文化 (PLD1FxVheQkWA)"
+   ]
+  },
+  {
+   "date": "2026-08-12",
+   "slot": "b",
+   "title": "A Tower That Was Both Lighthouse and Minaret | China Travel Expert",
+   "videoId": "gFapeTjltPM",
+   "url": "https://www.youtube.com/watch?v=gFapeTjltPM",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-12T17:00:00Z",
+   "topicId": "gzh-05",
+   "music": "lofi-upbeat-01",
+   "playlists": [
+    "China Culture 中国文化 (PLD1FxVheQkWA)"
+   ]
+  },
+  {
+   "date": "2026-08-12",
+   "slot": "c",
+   "title": "A Street Silk Road Traders Settled 1,200 Years Ago | China Travel Expert",
+   "videoId": "FV4z1EUf8nU",
+   "url": "https://www.youtube.com/watch?v=FV4z1EUf8nU",
+   "pillar": "city-travel",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-12T20:00:00Z",
+   "topicId": "str-04",
+   "music": "cpop-groove-01",
+   "playlists": [
+    "China Travel 城市旅行 (PLI6LsqzQ-cjU)"
+   ]
+  },
+  {
+   "date": "2026-08-12",
+   "slot": "d",
+   "title": "One Hall, Seven Master Crafts | Guangzhou Heritage Day P2 | China Travel Expert",
+   "videoId": "NJrWyn-U9HU",
+   "url": "https://www.youtube.com/watch?v=NJrWyn-U9HU",
+   "pillar": "china-route",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-12T23:00:00Z",
+   "topicId": "rt-02",
+   "music": "oriental-edm-01",
+   "playlists": [
+    "Guangzhou Heritage Day 广州古迹一日 (PLDCZIH5Dm0QQ)"
+   ],
+   "series": "Guangzhou Heritage Day 广州古迹一日"
   }
  ]
 }
