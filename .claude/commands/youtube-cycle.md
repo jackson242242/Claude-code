@@ -218,12 +218,14 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    crawled online clips. 中式 checklist per video: at least one of — poem/成语
    line in the subs, local phrase from the dialect bank, craft/food close-up
    with cultural note.
-   **Music rules (music IS the audio; owner 2026-07-15: beds sound AI-heavy —
-   modernize):** pick from `automation/youtube/assets/music/` by mood —
-   DEFAULT for travel/food/economy Shorts = `lofi-upbeat-01.mp3` (≥95 BPM per
-   STYLE.md energy table); `lofi-chill-01.mp3` for mellow young-china pieces;
-   `guzheng-calm-01.mp3` ONLY for culture/heritage/Sunday longform
-   (guzheng-on-everything reads as template).
+   **Music rules — `automation/youtube/MUSIC.md` is the authority (owner
+   2026-08-11 delegated music strategy fully):** pick by the style↔pillar map
+   (oriental-edm → route/travel; cinema-orient → culture reveals; cpop-groove →
+   city-life/food beats; lofi-* general fallback; guzheng slow culture only).
+   HARD rotation rules: no track repeats within the same day's 4 slots; no track
+   repeats in the same slot on adjacent days (check published.json). Match
+   `--seg-seconds` to the track's bar length per MUSIC.md §3 (105BPM→2.3s,
+   90BPM→2.7s, 100BPM→2.4s) so cuts land on beats.
    Owner-supplied tracks (YouTube Audio Library downloads committed to
    assets/music/, named `yal-<style>-NN.mp3`) take priority over generated beds
    — rotate so consecutive videos don't share a track. After the 07-29 vidIQ
