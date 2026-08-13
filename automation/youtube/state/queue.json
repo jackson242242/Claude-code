@@ -2,28 +2,6 @@
  "note": "Topic backlog for /youtube-cycle. Top item matching the slot format is used next. Owner may edit/reorder freely.",
  "queue": [
   {
-   "id": "cc3-01",
-   "title": "应县木塔：一颗钉子没用，站了近千年",
-   "pillar": "china-culture",
-   "format": "short",
-   "angle": "辽代全木塔(1056),斗拱54种、无一钉,九百余年抗震不倒;fact-first钩=零钉子。受众:爱好者+亲子(为什么中国木建不用钉)。非广州,补地理广度。",
-   "whyNow": "2026-08-12 research: china-culture 队列仅广州系列→补外城世界级古建;所有事实制作时双源核实",
-   "addedAt": "2026-08-12",
-   "addedBy": "auto-replenish (culture geo-breadth)",
-   "status": "active"
-  },
-  {
-   "id": "cc3-02",
-   "title": "南京云锦：一天只织5厘米的皇家织物",
-   "pillar": "china-culture",
-   "format": "short",
-   "angle": "南京云锦'寸锦寸金',大花楼织机两人配合一天仅5-6厘米,曾专供皇室;fact-first钩=5厘米/天。非遗手作+手部特写。",
-   "whyNow": "2026-08-12 research: 非遗工艺题材天然带'难以置信数字+手部特写',适配 fact-first;补非广州文化",
-   "addedAt": "2026-08-12",
-   "addedBy": "auto-replenish (culture geo-breadth)",
-   "status": "active"
-  },
-  {
    "id": "cc3-03",
    "title": "苏州园林：一堵墙为什么要开'漏窗'",
    "pillar": "china-culture",
@@ -55,17 +33,6 @@
    "addedAt": "2026-08-11",
    "addedBy": "owner directive",
    "status": "covered-2026-08-12"
-  },
-  {
-   "id": "rt-03",
-   "title": "Route: Guangzhou Heritage Day③永庆坊骑楼——下雨不打伞的街",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "P3 骑楼(商住一体+遮雨长廊,南洋混血建筑);预告P4完结:走饿了,上下九的一盅两件在等你。",
-   "whyNow": "同上",
-   "addedAt": "2026-08-11",
-   "addedBy": "owner directive",
-   "status": "active"
   },
   {
    "id": "rt-04",
@@ -810,19 +777,6 @@
    "pillar": "city-travel",
    "format": "short",
    "angle": "Street icon: train-through-building, crowds filming below; fact hook 8-second pass.",
-   "whyNow": "owner 2026-07-18: street scenery joins the core",
-   "sources": [],
-   "addedAt": "2026-07-18",
-   "addedBy": "owner directive",
-   "status": "active",
-   "note": "reactivated 2026-08-09 culture-first era"
-  },
-  {
-   "id": "str-02",
-   "title": "上海弄堂的早晨：晾衣杆下的早餐摊",
-   "pillar": "city-travel",
-   "format": "short",
-   "angle": "Longtang street life: laundry poles, 粢饭团 stall steam, bikes squeezing by.",
    "whyNow": "owner 2026-07-18: street scenery joins the core",
    "sources": [],
    "addedAt": "2026-07-18",

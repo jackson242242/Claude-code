@@ -3,7 +3,7 @@
 - **Fact-first hooks（延续 07-15「~4x place-first」）**: a=近千年无一颗钉(反差) / b=一天只织5厘米(数字) / c=旧时七成上海人都住这道石库门后(数字) / d=一条街让你淋不到雨(反差)。地名一律后置。
 - **受众轮转（PERSONA a/b 明确轮）**: a 应县木塔=打卡游客的视觉震撼点(世界最高木塔) / b 云锦=真爱好者的工艺深度(挑花结本+金线)；c 弄堂=生活感(早餐摊+晾衣杆下的人)；d 骑楼=route 奖励结构(P4 预告 上下九早茶)。
 - **连载**: 广州 Heritage Day route 进入 P3(永庆坊骑楼)，P2 陈家祠已于 08-12 完成；今日 d 收尾 cue 预告 P4「上下九早茶=线路的奖励」。
-- **vidIQ Thursday analytics 本应触发**: 但 MCP vidiq 工具本 run 未做付费调用以守预算/避免无谓消耗；如需 7 日 analytics 复盘将在有明确产出价值时补。honest 标注：本 run 0 credits。
+- **vidIQ Thursday analytics pulse 已执行**（5 credits，balance 43→38）: 7d top-video 仍是 fact-first food/reveal Shorts 领跑(IRsNcG 873 / mnt131 687 / oOy3 476)；**留存冠军是"更耐看"的内容**——owner 实拍 O3MPquBKc-g avg 16s + tweIfrUN avg 18s，远超库存快剪 ~9-11s → 实拍/强单主体更留人(印证 REAL-FOOTAGE 优先 + 收紧到22-26s)；comments 仍全站 0 → 保留 on-screen either-or CTA。culture-first 本周首批(含今日四条)暂无数据，3-5天后再看是否 reorder。本 pulse 不 reorder。详见 analytics.md。
 - **北京话 dialect deepening（最久未更新 08-02→今日）**: +逗闷子(开玩笑)，胡同贫嘴幽默；今日无北京选题故未强塞(honest)。
 - **队列健康度（取4后 replenish 前）**: china-culture 剩 cc3-03/04 + gzh-03..08 偏广州；city-travel、china-route 充足。建议后续再补 1-2 条华北/西南非广州 culture seeds。
 
