@@ -1625,6 +1625,23 @@
    "playlists": [
     "China Culture 中国文化 (PLD1FxVheQkWA)"
    ]
+  },
+  {
+   "date": "2026-08-13",
+   "slot": "c",
+   "title": "70% of Old Shanghai Lived Behind This Stone Gate | China Travel Expert",
+   "videoId": "JXR5lTpGLnE",
+   "url": "https://www.youtube.com/watch?v=JXR5lTpGLnE",
+   "pillar": "city-travel",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-13T20:00:00Z",
+   "topicId": "str-02",
+   "music": "oriental-edm-01",
+   "playlists": [
+    "China Travel 城市旅行 (PLI6LsqzQ-cjU)",
+    "City Walks 城市漫游"
+   ]
   }
  ]
 }
