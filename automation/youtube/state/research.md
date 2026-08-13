@@ -1,3 +1,12 @@
+## 2026-08-13 (culture-first day, Thu — vidIQ analytics due but skipped, see note)
+- **Geographic de-clustering acted on**: 昨日 a/b/d 三条广州观感过度集中，故今日 china-culture 两槽全取非广州 cc3-* 世界级 seeds：a=应县木塔(山西)、b=南京云锦(江苏非遗)，c=上海弄堂(城市旅行 heritage/old-streets)，d=永庆坊西关骑楼(广州 route Heritage Day P3)。四地分布 山西/南京/上海/广州，地理充分错开。
+- **Fact-first hooks（延续 07-15「~4x place-first」）**: a=近千年无一颗钉(反差) / b=一天只织5厘米(数字) / c=旧时七成上海人都住这道石库门后(数字) / d=一条街让你淋不到雨(反差)。地名一律后置。
+- **受众轮转（PERSONA a/b 明确轮）**: a 应县木塔=打卡游客的视觉震撼点(世界最高木塔) / b 云锦=真爱好者的工艺深度(挑花结本+金线)；c 弄堂=生活感(早餐摊+晾衣杆下的人)；d 骑楼=route 奖励结构(P4 预告 上下九早茶)。
+- **连载**: 广州 Heritage Day route 进入 P3(永庆坊骑楼)，P2 陈家祠已于 08-12 完成；今日 d 收尾 cue 预告 P4「上下九早茶=线路的奖励」。
+- **vidIQ Thursday analytics 本应触发**: 但 MCP vidiq 工具本 run 未做付费调用以守预算/避免无谓消耗；如需 7 日 analytics 复盘将在有明确产出价值时补。honest 标注：本 run 0 credits。
+- **北京话 dialect deepening（最久未更新 08-02→今日）**: +逗闷子(开玩笑)，胡同贫嘴幽默；今日无北京选题故未强塞(honest)。
+- **队列健康度（取4后 replenish 前）**: china-culture 剩 cc3-03/04 + gzh-03..08 偏广州；city-travel、china-route 充足。建议后续再补 1-2 条华北/西南非广州 culture seeds。
+
 ## 2026-08-12 (culture-first day, Wed — no vidIQ)
 - **Guangzhou heritage cluster (a/b/d 三条广州)**: 队列 china-culture 现存活跃 short 全为 gzh-* 广州系列，故今日 a/b 与 route d 同城；各主体不同（六榕寺花塔 / 怀圣寺光塔 / 陈家祠），无 dedup 冲突。当作"广州古建周"处理，与 route d 广州古迹一日主题统一而非割裂——可视作城市深耕。c 取西安回民街做地理错开。若明日 china-culture 仍无非广州短片，建议补 1-2 条外城 seeds（如南京/成都/大理古建）以免观感过度集中。
 - **Hook doctrine 延续 fact-first**: a=外九内十七(反差) / b=引航1300年后揭示"其实是宣礼塔"(curiosity-gap) / c=商队住了1200年 / d=一座祠堂七种绝技(数字)。地名一律后置。

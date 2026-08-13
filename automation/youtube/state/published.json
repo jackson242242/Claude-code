@@ -1593,6 +1593,22 @@
     "Guangzhou Heritage Day 广州古迹一日 (PLDCZIH5Dm0QQ)"
    ],
    "series": "Guangzhou Heritage Day 广州古迹一日"
+  },
+  {
+   "date": "2026-08-13",
+   "slot": "a",
+   "title": "A 1,000-Year Wooden Tower With Zero Nails | China Travel Expert",
+   "videoId": "zOqZQu8SML8",
+   "url": "https://www.youtube.com/watch?v=zOqZQu8SML8",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-13T13:00:00Z",
+   "topicId": "cc3-01",
+   "music": "lofi-upbeat-01",
+   "playlists": [
+    "China Culture 中国文化 (PLD1FxVheQkWA)"
+   ]
   }
  ]
 }
