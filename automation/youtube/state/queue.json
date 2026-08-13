@@ -1505,6 +1505,102 @@
    "addedAt": "2026-08-11",
    "addedBy": "cycle replenish (china-route next series)",
    "status": "active"
+  },
+  {
+   "id": "edge-a01",
+   "title": "Route: China's Edge 东北边境篇 EP1 丹东鸭绿江断桥:一江之隔两个世界",
+   "pillar": "china-route",
+   "format": "short",
+   "angle": "鸭绿江断桥(朝战遗迹)走到'断点';中朝界河;江畔步道。地理事实陈述,不碰政治。 每集含徒步/步道点+许可诚实提示;素材稀缺站用地图动画+泛用边境素材照常声明;音乐 oriental-edm/cinema-orient 轮换。",
+   "whyNow": "owner 2026-08-12 大环绕中国边境徒步 IP(plans/china-edge.md S1);facts verify at scripting 双源",
+   "seriesNote": "China's Edge S1 连载",
+   "addedAt": "2026-08-12",
+   "addedBy": "owner directive",
+   "status": "active"
+  },
+  {
+   "id": "edge-a02",
+   "title": "Route: China's Edge 东北边境篇 EP2 珲春防川:一眼望三国",
+   "pillar": "china-route",
+   "format": "short",
+   "angle": "中俄朝三国交界瞭望;'东方第一村'木栈道;图们江出海口叙事(事实核实)。 每集含徒步/步道点+许可诚实提示;素材稀缺站用地图动画+泛用边境素材照常声明;音乐 oriental-edm/cinema-orient 轮换。",
+   "whyNow": "owner 2026-08-12 大环绕中国边境徒步 IP(plans/china-edge.md S1);facts verify at scripting 双源",
+   "seriesNote": "China's Edge S1 连载",
+   "addedAt": "2026-08-12",
+   "addedBy": "owner directive",
+   "status": "active"
+  },
+  {
+   "id": "edge-a03",
+   "title": "Route: China's Edge 东北边境篇 EP3 长白山天池:中朝界湖火山口",
+   "pillar": "china-route",
+   "format": "short",
+   "angle": "火山口湖海拔2189m(核实);北坡台阶徒步登顶;云开概率诚实提示。 每集含徒步/步道点+许可诚实提示;素材稀缺站用地图动画+泛用边境素材照常声明;音乐 oriental-edm/cinema-orient 轮换。",
+   "whyNow": "owner 2026-08-12 大环绕中国边境徒步 IP(plans/china-edge.md S1);facts verify at scripting 双源",
+   "seriesNote": "China's Edge S1 连载",
+   "addedAt": "2026-08-12",
+   "addedBy": "owner directive",
+   "status": "active"
+  },
+  {
+   "id": "edge-a04",
+   "title": "Route: China's Edge 东北边境篇 EP4 抚远黑瞎子岛:中国最东点的第一缕阳光",
+   "pillar": "china-route",
+   "format": "short",
+   "angle": "中国陆地最东点;全国最早日出;湿地木栈道。 每集含徒步/步道点+许可诚实提示;素材稀缺站用地图动画+泛用边境素材照常声明;音乐 oriental-edm/cinema-orient 轮换。",
+   "whyNow": "owner 2026-08-12 大环绕中国边境徒步 IP(plans/china-edge.md S1);facts verify at scripting 双源",
+   "seriesNote": "China's Edge S1 连载",
+   "addedAt": "2026-08-12",
+   "addedBy": "owner directive",
+   "status": "active"
+  },
+  {
+   "id": "edge-a05",
+   "title": "Route: China's Edge 东北边境篇 EP5 漠河北极村:到中国最北'找北'",
+   "pillar": "china-route",
+   "format": "short",
+   "angle": "中国最北点;'找北'梗;极光偶见不承诺(诚实);冬季极寒装备提示。 每集含徒步/步道点+许可诚实提示;素材稀缺站用地图动画+泛用边境素材照常声明;音乐 oriental-edm/cinema-orient 轮换。",
+   "whyNow": "owner 2026-08-12 大环绕中国边境徒步 IP(plans/china-edge.md S1);facts verify at scripting 双源",
+   "seriesNote": "China's Edge S1 连载",
+   "addedAt": "2026-08-12",
+   "addedBy": "owner directive",
+   "status": "active"
+  },
+  {
+   "id": "edge-a06",
+   "title": "Route: China's Edge 东北边境篇 EP6 满洲里国门:欧亚铁路在此换轨",
+   "pillar": "china-route",
+   "format": "short",
+   "angle": "中俄最大陆路口岸;宽轨/标准轨换轨;中俄边城建筑反差。 每集含徒步/步道点+许可诚实提示;素材稀缺站用地图动画+泛用边境素材照常声明;音乐 oriental-edm/cinema-orient 轮换。",
+   "whyNow": "owner 2026-08-12 大环绕中国边境徒步 IP(plans/china-edge.md S1);facts verify at scripting 双源",
+   "seriesNote": "China's Edge S1 连载",
+   "addedAt": "2026-08-12",
+   "addedBy": "owner directive",
+   "status": "active"
+  },
+  {
+   "id": "edge-a07",
+   "title": "Route: China's Edge 东北边境篇 EP7 额尔古纳界河:G331最美自驾段",
+   "pillar": "china-route",
+   "format": "short",
+   "angle": "呼伦贝尔草原+中俄界河;草原徒步;边境公路公路片感。 每集含徒步/步道点+许可诚实提示;素材稀缺站用地图动画+泛用边境素材照常声明;音乐 oriental-edm/cinema-orient 轮换。",
+   "whyNow": "owner 2026-08-12 大环绕中国边境徒步 IP(plans/china-edge.md S1);facts verify at scripting 双源",
+   "seriesNote": "China's Edge S1 连载",
+   "addedAt": "2026-08-12",
+   "addedBy": "owner directive",
+   "status": "active"
+  },
+  {
+   "id": "edge-a08",
+   "title": "Route: China's Edge 东北边境篇 EP8 东北边境篇完结:全线串讲",
+   "pillar": "china-route",
+   "format": "short",
+   "angle": "G331东段8站回顾;边境通行证/季节/装备 Expert Tips;full route CTA。 每集含徒步/步道点+许可诚实提示;素材稀缺站用地图动画+泛用边境素材照常声明;音乐 oriental-edm/cinema-orient 轮换。",
+   "whyNow": "owner 2026-08-12 大环绕中国边境徒步 IP(plans/china-edge.md S1);facts verify at scripting 双源",
+   "seriesNote": "China's Edge S1 连载",
+   "addedAt": "2026-08-12",
+   "addedBy": "owner directive",
+   "status": "active"
   }
  ]
 }
