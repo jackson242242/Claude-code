@@ -1642,6 +1642,23 @@
     "China Travel 城市旅行 (PLI6LsqzQ-cjU)",
     "City Walks 城市漫游"
    ]
+  },
+  {
+   "date": "2026-08-13",
+   "slot": "d",
+   "title": "Walk a Mile in the Rain, No Umbrella | Guangzhou Heritage Day P3 | China Travel Expert",
+   "videoId": "CmyJ-l1yFKE",
+   "url": "https://www.youtube.com/watch?v=CmyJ-l1yFKE",
+   "pillar": "china-route",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-13T23:00:00Z",
+   "topicId": "rt-03",
+   "music": "cpop-groove-01",
+   "playlists": [
+    "Guangzhou Heritage Day 广州古迹一日 (PLDCZIH5Dm0QQ)"
+   ],
+   "series": "Guangzhou Heritage Day 广州古迹一日"
   }
  ]
 }
