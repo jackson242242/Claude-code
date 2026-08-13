@@ -281,7 +281,13 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    `ffmpeg -i final.mp4 -c:v copy -an <slot>-clean.mp4` (video track + burned subs
    intact, zero re-render). Write `social-caption.txt` per PERSONA.md §4: first
    line starts `China Travel Expert 🧭 | <hook>`; hashtags always include
-   #chinatravelexpert (+ #chinatravel #traveltok etc., NO #Shorts, ≤300 chars). In the report step,
+   #chinatravelexpert (+ #chinatravel #traveltok etc., NO #Shorts, ≤300 chars).
+   **TikTok draft push (owner 2026-08-12):** if TIKTOK_CLIENT_KEY +
+   TIKTOK_CLIENT_SECRET + TIKTOK_REFRESH_TOKEN env secrets exist, also run
+   `NODE_USE_ENV_PROXY=1 node scripts/tiktok-draft-upload.mjs --video
+   <slot>-clean.mp4` per video (max 4/day; on API error log verbatim in RUNLOG
+   and fall back to chat delivery — never fake a push). Captions still travel
+   via chat/ammo pack (inbox uploads carry no caption; owner pastes in-app). In the report step,
    SendUserFile all 4 clean masters + captions to the owner chat (recompress crf 24
    if a file exceeds 29MB) — the owner posts them adding a platform-native trending
    sound in-app.
