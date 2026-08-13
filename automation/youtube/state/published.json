@@ -1609,6 +1609,22 @@
    "playlists": [
     "China Culture 中国文化 (PLD1FxVheQkWA)"
    ]
+  },
+  {
+   "date": "2026-08-13",
+   "slot": "b",
+   "title": "China's Rarest Silk Grows Just 5cm a Day | China Travel Expert",
+   "videoId": "8eSA6m5CDuI",
+   "url": "https://www.youtube.com/watch?v=8eSA6m5CDuI",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-13T17:00:00Z",
+   "topicId": "cc3-02",
+   "music": "cinema-orient-01",
+   "playlists": [
+    "China Culture 中国文化 (PLD1FxVheQkWA)"
+   ]
   }
  ]
 }
