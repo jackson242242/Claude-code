@@ -81,7 +81,8 @@
    "views": 770,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "sent",
+   "sentDate": "2026-08-14"
   },
   {
    "videoId": "jd4gXkoGfhE",
@@ -89,7 +90,8 @@
    "views": 742,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "sent",
+   "sentDate": "2026-08-14"
   },
   {
    "videoId": "XD1DPL28svw",
