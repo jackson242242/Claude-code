@@ -1,3 +1,14 @@
+## 2026-08-14 (culture-first day, Fri — no vidIQ: analytics Mon/Thu only, trend Sat only → 0 credits)
+- **Geographic de-clustering（延续昨日首条建议·执行）**: 昨日提醒"china-culture 队列偏广州 gzh-*，补外城 seeds"。故今日 a/b 两 culture 槽全取非广州世界级 cc3-*：a=苏州园林漏窗(江苏吴语区)、b=泉州开元寺(福建闽南区)；c=重庆洪崖洞(城市旅行 heritage/吊脚楼)、d=广州上下九早茶(route Heritage Day P4 完结)。四地分布 江苏/福建/重庆/广东，充分错开；连续第二天把 culture 双槽移出广州。
+- **Fact-first hooks（延续 07-15「~4x place-first」）**: a=一面墙开108扇窗、扇扇不同(数字+反差) / b=一棵桑树开出白莲、才有了这座寺(curiosity-gap 反差) / c=11层楼、每层都能从街上走进去(数字+反差) / d=一条街走了1300年、藏着广式早茶(数字)。地名一律后置。
+- **受众轮转（PERSONA a/b 明确轮）**: a 漏窗=打卡游客视觉震撼(移步换景·框框皆画) / b 开元寺=真爱好者历史深度(桑莲传说+东西塔抗8级地震+1300年桑王) 二者错开；c 洪崖洞=亲子趣味"中国为什么把楼盖在悬崖上"(吊脚楼智慧) + 打卡(千与千寻既视感·诚实标注宫崎骏从未证实、现为现代重建保留吊脚楼形制)；d=route 奖励结构(骑楼老街+百年点心铺=线路终点的犒赏)。
+- **连载**: 广州 Heritage Day route 收官 P4——P1光孝寺(08-11)/P2陈家祠(08-12)/P3永庆坊骑楼(08-13)→今日 P4 上下九早茶=线路的奖励站；d 收尾 cue 预告"下一条线路"(接丝路人文线 slk-a01 莫高窟, 队列已备)。
+- **诚实边界**: c 洪崖洞现建筑为 2006 现代重建(政府改造原吊脚楼危房)，脚本明说"现代重建·保留吊脚楼形制"，绝不暗示古迹；千与千寻联系标注"宫崎骏未证实、是游客共识"。Pexels 无该四处专属实拍→用同形制素材(园林漏窗/闽南古刹红砖/临崖吊脚楼夜景/岭南骑楼老街+点心)，如实。
+- **闽南 dialect 天然接 b**: 泉州=闽南语大本营，b weave 闽南彩蛋(好呷/食饱未 clean)；c 重庆=西南官话 weave 川渝彩蛋(巴适/安逸)；d 广州 weave 粤语彩蛋(得闲饮茶/一盅两件 clean)。a 苏州=吴语，方言库仅"上海话"为吴语近亲、苏州话无专区→honest 只做"吴侬软语"轻点、不冒充上海话。
+- **湖南话 dialect deepening（11区最久未更新 08-03→今日轮到）**: +恰(qià=吃, 恰饭了冒=吃了没·长沙招呼语) / +满哥·妹驮(年轻男/女孩的称呼)。今日无湖南选题故不强塞入片(honest)，仅充实方言库。二源核实(华声voc.com.cn / 长沙晚报icswb / topys / 新浪)。
+- **方向研究（travel-shorts 通识, education 框架已废弃属旧 playbook 措辞·不逐日申诉）**: 2026 老街/古镇/非遗小吃/慢体验对年轻+亲子+情侣持续走强(iClick/Dragontrail)；Xiaohongshu/Douyin 算法看内容质量非账号大小、利于小号爆发；"兴趣驱动"(美食/遗产/古典)取代千篇一律行程。→ 印证 culture-first + fact-first + 老街 route 方向。
+- **队列健康度（取4后 replenish 前）**: china-culture 取 cc3-03/04 后仅剩 gzh-* 广州系；city-travel 取 ctr-05 后剩 7；china-route 取 rt-04 后仍充足(丝路/青甘等 20+)。→ 本 run replenish 5-8 条非广州华东/西南/华北 culture seeds(step 4)。
+
 ## 2026-08-13 (culture-first day, Thu — vidIQ analytics due but skipped, see note)
 - **Geographic de-clustering acted on**: 昨日 a/b/d 三条广州观感过度集中，故今日 china-culture 两槽全取非广州 cc3-* 世界级 seeds：a=应县木塔(山西)、b=南京云锦(江苏非遗)，c=上海弄堂(城市旅行 heritage/old-streets)，d=永庆坊西关骑楼(广州 route Heritage Day P3)。四地分布 山西/南京/上海/广州，地理充分错开。
 - **Fact-first hooks（延续 07-15「~4x place-first」）**: a=近千年无一颗钉(反差) / b=一天只织5厘米(数字) / c=旧时七成上海人都住这道石库门后(数字) / d=一条街让你淋不到雨(反差)。地名一律后置。
