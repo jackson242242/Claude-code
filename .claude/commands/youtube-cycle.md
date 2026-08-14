@@ -111,6 +111,20 @@ log `skipped: batch already published today` and stop. (Protects against manual
    tulou ring, nail-free pagoda, red walls) + first cue = a surprise FACT about
    it. Food is never the opening hook in culture/route videos — it is the
    mid-route reward beat.
+   **HOOK FORMULA v2 (2026-08-13 weekly data):** best performers are
+   PARADOX/SUPERLATIVE NUMBER hooks about the site itself — "45,000㎡ of murals,
+   not one signed" (988v) / "older than its city" (865v) / "grows 5cm a day"
+   (631v). Process-count framings ("72 hands to make one bowl" 301v, "one hall
+   seven crafts" 113v) underperform as TITLES — keep craft-count facts in the
+   body, title on the paradox. **SINGLE-SUBJECT rule (Thu 08-13 retention data:
+   single-subject holds ~16-18s vs montage ~9-11s): one Short = ONE site/object;
+   every b-roll query is about IT — no montage drift.**
+   **GUESS-CHAIN format (comments lever, 2-3×/week on slot c):** title/hook =
+   "Guess ..." (dynasty/price/city), answer WITHHELD in that video —
+   "answer in tomorrow's episode" as the closing cue; next day's slot c OPENS
+   with the reveal. Chains dailies + gives viewers a real reason to comment.
+   **Sub-CTA variant (rotate into the soft-CTA final cue):** "Follow your China
+   Travel Expert — one China secret daily / 关注你的中国旅游专家".
    Longform still paused. 连载 series format stays (1×4-part or 2×2-part daily).
    **连载 format (小红书 style):** each day = ONE 4-part series or TWO 2-part
    series. Parts of a series share a subject (one dish / one food street / one
