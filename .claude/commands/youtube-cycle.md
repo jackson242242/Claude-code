@@ -141,6 +141,19 @@ log `skipped: batch already published today` and stop. (Protects against manual
    count them toward the day's total, and note the claim in RUNLOG. 实拍永远
    优先于库存快剪 (see `automation/youtube/REAL-FOOTAGE.md`). Missing file or
    no entry for today = no claims.
+   **FOOTAGE-FIRST GATE (owner 2026-08-14, HARD — after 洪崖洞 takedown: subs
+   claimed "this building" over generic city b-roll):** BEFORE committing to any
+   site-specific topic, actually search Pexels (+Pixabay if keyed) for the site
+   (Chinese + English names). PASS = ≥3 usable clips whose Pexels title/slug
+   identifies THE SITE ITSELF → proceed; the script may then say "this
+   temple/building". FAIL = pick one: (a) RE-ANGLE to what the footage really
+   shows (city-level story, honestly framed), (b) MAP-FORMAT episode (3D-map/
+   route-facts framing where generic b-roll is honest — the benchmark account's
+   validated style), or (c) DEFER the topic (real footage later beats fake now).
+   **Subtitle honesty rule: "this X" / 指认式 phrasing is ONLY allowed over
+   confirmed site-specific footage. Generic footage → generic claims.** Night
+   queries stay banned. Every run COMMITS final.mp4.credits.json (recent runs
+   skipped it — it is the audit trail for this gate).
    Take the top queue item with that pillar (skip items whose pillar is in
    `pausedPillars`); if none, generate one from today's research +
    `state/dialect-bank.md`. Each pick must pass `strategy.topicFitGate`
