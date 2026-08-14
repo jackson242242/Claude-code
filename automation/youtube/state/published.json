@@ -1659,6 +1659,72 @@
     "Guangzhou Heritage Day 广州古迹一日 (PLDCZIH5Dm0QQ)"
    ],
    "series": "Guangzhou Heritage Day 广州古迹一日"
+  },
+  {
+   "date": "2026-08-14",
+   "slot": "a",
+   "title": "One Wall, 108 Windows — No Two Alike | Suzhou Gardens | China Travel Expert",
+   "videoId": "-OBhEgMUm88",
+   "url": "https://www.youtube.com/watch?v=-OBhEgMUm88",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "posted",
+   "publishAt": null,
+   "topicId": "cc3-03",
+   "music": "cinema-orient-01",
+   "playlists": [
+    "China Culture 中国文化 (PLD1FxVheQkWA)"
+   ],
+   "note": "overrun (uploaded 13:08Z > 13:00Z slot) -> publishAt removed, published public immediately"
+  },
+  {
+   "date": "2026-08-14",
+   "slot": "b",
+   "title": "A Mulberry Tree Grew Lotus — So They Built This Temple | Quanzhou | China Travel Expert",
+   "videoId": "ej9EqAKXCk0",
+   "url": "https://www.youtube.com/watch?v=ej9EqAKXCk0",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-14T17:00:00Z",
+   "topicId": "cc3-04",
+   "music": "lofi-upbeat-01",
+   "playlists": [
+    "China Culture 中国文化 (PLD1FxVheQkWA)"
+   ]
+  },
+  {
+   "date": "2026-08-14",
+   "slot": "c",
+   "title": "11 Floors, and You Enter From the Street on Most of Them | Chongqing | China Travel Expert",
+   "videoId": "aaj6h55G6Bw",
+   "url": "https://www.youtube.com/watch?v=aaj6h55G6Bw",
+   "pillar": "city-travel",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-14T20:00:00Z",
+   "topicId": "ctr-05",
+   "music": "cpop-groove-01",
+   "playlists": [
+    "China Travel 城市旅行 (PLI6LsqzQ-cjU)"
+   ]
+  },
+  {
+   "date": "2026-08-14",
+   "slot": "d",
+   "title": "The Reward at the End of a 1,300-Year-Old Street | Guangzhou Heritage Day P4 | China Travel Expert",
+   "videoId": "sLX5b5uwu2Q",
+   "url": "https://www.youtube.com/watch?v=sLX5b5uwu2Q",
+   "pillar": "china-route",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-14T23:00:00Z",
+   "topicId": "rt-04",
+   "music": "oriental-edm-01",
+   "playlists": [
+    "Guangzhou Heritage Day 广州古迹一日 (PLDCZIH5Dm0QQ)"
+   ],
+   "series": "Guangzhou Heritage Day 广州古迹一日"
   }
  ]
 }
