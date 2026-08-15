@@ -79,6 +79,22 @@
 - **多平台干净母带**：每条成片产出 `-clean.mp4`（去音乐轨，字幕保留）供
   TikTok/IG Reels，平台内配热门音乐；YAL/衍生音轨绝不出 YouTube。
 
+## v2.3 附录：走线博主风格（owner 2026-08-14 "学走这条路线的博主"）
+- **叙事声音换挡**：百科体 → 第一人称旅程体。字幕 cue 用 expert 亲历口吻写：
+  "Follow me into the oldest temple in Guangzhou" / "My first stop: ..." /
+  "I always come here before 8am" —— 与固定开场句 "I'm your China Travel
+  Expert" 天然衔接成一个"带你走"的人。事实纪律不变（数字仍需双源核实），
+  只是从"讲解员"变成"带路人"。
+- **镜头语言**：b-roll 查询优先 POV/行走/手持感 —— `pov walking`, `first person
+  walking street`, `gimbal walk`, `handheld market walk`；镜头间保持行进
+  连续性（推门→进院→细节→抬头 reveal），拒绝无关空镜拼贴。
+- **结构**：旅程节拍（到达→走近→进入→细节→奖励/reveal）取代主题图集；
+  每集像走完一小段路，结尾自然指向"下一站"。
+- **天花板诚实说明**：库存素材只能近似"走路感"；真正的走线风格上限 =
+  老板实拍（已证留存 2×）。实拍天 > 库存天；库存天用本附录逼近。
+- 配合 FOOTAGE-FIRST GATE：指认式内容无站点素材时走 MAP-FORMAT，
+  地图动画本身就是走线博主的常用语言（对标账号已验证）。
+
 ## 变更记录
 - **v2.1（2026-07-18）**：4 周美食冲刺附录 —— 小红书式节奏/money-shot 钩子/
   数字弹出条/连载语法；长视频与非美食支柱暂停。

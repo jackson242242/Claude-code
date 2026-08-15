@@ -206,6 +206,12 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    - Each cue = ENGLISH line first (≤9 words, the lead) + 中文 line second
      (≤12 字, punchy — carries the dialect flavor). Leave 1-2
      cue-free seconds between movements — the footage breathes.
+   - **JOURNEY VOICE (owner 2026-08-14, STYLE.md v2.3):** write cues as a
+     first-person route-walking creator, not an encyclopedia — "Follow me
+     into...", "My first stop...", "I'd come back just for this". Structure =
+     journey beats (arrive → approach → inside → detail → reward), b-roll
+     queries prefer POV/walking/handheld motion with progression continuity.
+     Facts discipline unchanged.
    - Set total duration from the cue plan (Shorts ≤32s, video ≤120s).
    claim with WebSearch/WebFetch this run; collect source URLs. Produce `script.md`
    (with sources), `voiceover.txt` (clean spoken text), `meta.json` (title ≤95
