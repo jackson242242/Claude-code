@@ -1,1558 +1,1511 @@
 {
- "note": "Topic backlog for /youtube-cycle. Top item matching the slot format is used next. Owner may edit/reorder freely.",
- "queue": [
-  {
-   "id": "cc4-01",
-   "title": "山西悬空寺：把整座寺庙钉在悬崖上",
-   "pillar": "china-culture",
-   "format": "short",
-   "angle": "fact-first钩=一座悬在半空1500年的寺;木梁插进崖壁,横梁承重. 打卡震撼+建筑智慧. 山西非广州.",
-   "whyNow": "2026-08-14 research: 补华北 culture 建筑奇观(承 china-culture 去广州化建议)",
-   "addedAt": "2026-08-14",
-   "addedBy": "auto-replenish (culture geo-breadth)",
-   "status": "active"
-  },
-  {
-   "id": "cc4-02",
-   "title": "洛阳龙门石窟：一面崖壁上十万尊佛",
-   "pillar": "china-culture",
-   "format": "short",
-   "angle": "fact-first钩=10万+造像凿在崖壁;卢舍那大佛17米. 世遗·北魏至唐. 河南非广州. 爱好者深度.",
-   "whyNow": "2026-08-14 research: 补华中 culture 石窟/世遗",
-   "addedAt": "2026-08-14",
-   "addedBy": "auto-replenish (culture geo-breadth)",
-   "status": "active"
-  },
-  {
-   "id": "cc4-03",
-   "title": "安徽宏村：为什么整座村子是一头'牛'",
-   "pillar": "china-culture",
-   "format": "short",
-   "angle": "fact-first钩=村落按牛形规划,水系当'牛肠'引活水入户;徽派马头墙. 世遗. 安徽非广州. 亲子+打卡.",
-   "whyNow": "2026-08-14 research: 补华东 徽派水乡/世遗古村",
-   "addedAt": "2026-08-14",
-   "addedBy": "auto-replenish (culture geo-breadth)",
-   "status": "active"
-  },
-  {
-   "id": "cc4-04",
-   "title": "龙泉青瓷：把石头烧成一汪湖水的颜色",
-   "pillar": "china-culture",
-   "format": "short",
-   "angle": "fact-first钩=千年配方让瓷器呈现'雨过天青'的玉色;非遗·南宋官窑. 浙江非广州. 爱好者工艺.",
-   "whyNow": "2026-08-14 research: 补浙江 非遗青瓷 craft(接景德镇/云锦 craft 线)",
-   "addedAt": "2026-08-14",
-   "addedBy": "auto-replenish (culture geo-breadth)",
-   "status": "active"
-  },
-  {
-   "id": "rt-02",
-   "title": "Route: Guangzhou Heritage Day②陈家祠——一座祠堂七种手艺",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "P2 陈家祠(岭南建筑装饰巅峰,木雕砖雕灰塑陶塑);承接P1,预告P3骑楼街。",
-   "whyNow": "同上",
-   "addedAt": "2026-08-11",
-   "addedBy": "owner directive",
-   "status": "covered-2026-08-12"
-  },
-  {
-   "id": "gzh-03",
-   "title": "光孝寺：未有羊城，先有光孝",
-   "pillar": "china-culture",
-   "format": "short",
-   "angle": "广州最老古建群之一:三国虞翻故宅改寺;禅宗六祖慧能在此剃度(瘗发塔);'未有羊城先有光孝'民谚做钩。受众:爱好者+亲子(中国寺庙入门:山门/大雄宝殿怎么看)。",
-   "whyNow": "owner 2026-08-09 广州历史深挖直令(南越王墓/寺庙)+culture-first era 开启;所有事实 verify at scripting(两独立来源)",
-   "seriesNote": "2-part series day2 with gzh-04",
-   "addedAt": "2026-08-09",
-   "addedBy": "owner directive via interactive session",
-   "status": "active"
-  },
-  {
-   "id": "gzh-04",
-   "title": "六榕寺花塔:苏轼起的名字",
-   "pillar": "china-culture",
-   "format": "short",
-   "angle": "北宋苏轼过广州题'六榕'二字得名;千年花塔;寺塔同城联动光孝寺做'广州佛寺双篇'。打卡轨:花塔外观极上镜。",
-   "whyNow": "owner 2026-08-09 广州历史深挖直令(南越王墓/寺庙)+culture-first era 开启;所有事实 verify at scripting(两独立来源)",
-   "seriesNote": "2-part series day2 with gzh-03",
-   "addedAt": "2026-08-09",
-   "addedBy": "owner directive via interactive session",
-   "status": "covered-2026-08-12"
-  },
-  {
-   "id": "gzh-05",
-   "title": "怀圣寺光塔：一座塔，既是宣礼塔又是灯塔",
-   "pillar": "china-culture",
-   "format": "short",
-   "angle": "中国现存最早清真寺之一(相传唐代);光塔千年前兼作珠江航运灯塔=海上丝绸之路活证据。'为什么广州有中国最老的清真寺?'=海丝叙事最强钩。",
-   "whyNow": "owner 2026-08-09 广州历史深挖直令(南越王墓/寺庙)+culture-first era 开启;所有事实 verify at scripting(两独立来源)",
-   "seriesNote": "2-part series day3 with gzh-06",
-   "addedAt": "2026-08-09",
-   "addedBy": "owner directive via interactive session",
-   "status": "covered-2026-08-12"
-  },
-  {
-   "id": "gzh-06",
-   "title": "镇海楼：1380年的'岭南第一胜览'",
-   "pillar": "china-culture",
-   "format": "short",
-   "angle": "明洪武十三年(1380)建,五层楼;今为广州博物馆;登楼看老城中轴。打卡+历史轨;与珠江新城天际线同框做古今对比收尾。",
-   "whyNow": "owner 2026-08-09 广州历史深挖直令(南越王墓/寺庙)+culture-first era 开启;所有事实 verify at scripting(两独立来源)",
-   "seriesNote": "2-part series day3 with gzh-05",
-   "addedAt": "2026-08-09",
-   "addedBy": "owner directive via interactive session",
-   "status": "active"
-  },
-  {
-   "id": "cw-03",
-   "title": "泉州：一条街，走过半部海上丝绸之路",
-   "pillar": "city-walk",
-   "format": "longform",
-   "angle": "泉州古城漫游：西街开元寺、红砖古厝、骑楼、面线糊早餐；宋元海丝起点。人物：逛街吃早茶的手与脸。闽南彩蛋 好呷 hó-tsia̍h。",
-   "whyNow": "泉州「宋元中国的世界海洋商贸中心」2021年列入UNESCO世遗后持续走红，城市漫游长片素材充足；verify 22处遗产点/开元寺东西塔 at scripting.",
-   "sources": [
-    "UNESCO 泉州:宋元中国的世界海洋商贸中心 2021"
-   ],
-   "addedAt": "2026-07-19",
-   "addedBy": "cycle replenish (city-walk lane hit 0)",
-   "status": "active",
-   "note": "reactivated 2026-08-09 culture-first era"
-  },
-  {
-   "id": "cw-04",
-   "title": "苏州平江路：一条水巷，走进《平江图》八百年",
-   "pillar": "city-walk",
-   "format": "longform",
-   "angle": "平江历史街区：小桥流水人家、评弹茶馆、河边人家晾晒、船娘摇橹。诗句 君到姑苏见，人家尽枕河（杜荀鹤）。人物：河边喝茶听曲。",
-   "whyNow": "平江历史街区常年霸榜城市漫游/citywalk话题；对照南宋《平江图》仍在的水巷格局是强钩子；verify 平江图/年代 at scripting.",
-   "sources": [
-    "苏州平江历史街区 平江图 南宋"
-   ],
-   "addedAt": "2026-07-19",
-   "addedBy": "cycle replenish (city-walk lane hit 0)",
-   "status": "active",
-   "note": "reactivated 2026-08-09 culture-first era"
-  },
-  {
-   "id": "seed-11",
-   "title": "The World's Toughest Exam Just Happened — and It's Not the SAT",
-   "pillar": "education-systems",
-   "format": "short",
-   "angle": "Short comparing gaokao (China), Suneung (Korea), and A-Levels (UK) side by side — stakes, format, and what happens if you fail — as a quick, curiosity-driven ranking video.",
-   "whyNow": "China's 2026 gaokao (12.9M registrants) just concluded this summer, giving a timely peg to compare it against other countries' single-shot university entrance exams.",
-   "sources": [
-    "gulfnews.com China Gaokao 2026 millions sit exams"
-   ],
-   "addedAt": "2026-07-08",
-   "addedBy": "platform-research workflow (sonnet seed agent)",
-   "status": "paused-pivot-2026-07-09"
-  },
-  {
-   "id": "seed-12",
-   "title": "Singapore Just Raised Teacher Pay 9%. What Does That Buy?",
-   "pillar": "education-systems",
-   "format": "short",
-   "angle": "Short on Singapore's October 2026 teacher salary increase (up to 9% for ~36,000 educators) paired with its 'rethink teachers' duties' workload-reduction program using AI-enhanced tools — a quick 'how a top-ranked system treats its teachers' piece.",
-   "whyNow": "Singapore's MOE confirmed the salary increase takes effect October 1, 2026, alongside its 2026 teacher-workload reform announced this year.",
-   "sources": [
-    "mothership.sg 36,000 MOE teachers salary increase",
-    "blog.maxthon.com MOE 2026 initiatives redesign teacher duties"
-   ],
-   "addedAt": "2026-07-08",
-   "addedBy": "platform-research workflow (sonnet seed agent)",
-   "status": "paused-pivot-2026-07-09"
-  },
-  {
-   "id": "seed-05",
-   "title": "50 UK Universities Could Close This Year — Here's Why",
-   "pillar": "whats-latest",
-   "format": "longform",
-   "angle": "Longform explainer on the 2026 UK higher-education financial crisis: capped £9,250 tuition losing 25% real value since 2017, the new international-fee levy from January 2026, mass job cuts (13,300 in one year), and what it means for students choosing UK schools.",
-   "whyNow": "Reports through mid-2026 show ~50 UK universities at high risk of closure, 45% of providers projected to run a deficit in 2025-26, and a new international-tuition levy in effect since January 2026.",
-   "sources": [
-    "academicjobs.com UK Universities Financial Crisis 2026",
-    "thepienews.com UK universities face rising deficits"
-   ],
-   "addedAt": "2026-07-08",
-   "addedBy": "platform-research workflow (sonnet seed agent)",
-   "status": "paused-pivot-2026-07-09"
-  },
-  {
-   "id": "seed-13",
-   "title": "Why Nevada Tuition Is Jumping 12% While Stanford Freezes Its Price",
-   "pillar": "whats-latest",
-   "format": "short",
-   "angle": "Short contrasting two extremes in the 2026-27 tuition-setting season — Nevada's public universities raising up to 12% versus Stanford holding flat — as a hook into how wildly tuition-setting varies by state and institution type.",
-   "whyNow": "Nevada's Board of Regents confirmed tuition rising up to 12% for 2026-27 in reporting this spring, alongside Stanford's flat-tuition announcement the same season.",
-   "sources": [
-    "lasvegasweekly.com Nevada college tuition to rise up to 12 percent",
-    "forbes.com college tuition increases of 3% or more"
-   ],
-   "addedAt": "2026-07-08",
-   "addedBy": "platform-research workflow (sonnet seed agent)",
-   "status": "paused-pivot-2026-07-09"
-  },
-  {
-   "id": "seed-14",
-   "title": "8 Million College Applications: Why Everyone Is Applying to Everywhere Now",
-   "pillar": "education-trends",
-   "format": "short",
-   "angle": "Longform explainer on the Common App processing over 8 million submissions this cycle (up from 7.1M), examining how application-volume inflation is warping how we read 'record-low acceptance rates' and what it means for how students should actually apply.",
-   "whyNow": "The 2026 Ivy Day cycle confirmed Common App volume crossed 8 million submissions, up from 7.1 million the prior year, per admissions-consulting reporting this spring.",
-   "sources": [
-    "toptieradmissions.com 2026 Ivy League college admission statistics"
-   ],
-   "addedAt": "2026-07-08",
-   "addedBy": "platform-research workflow (sonnet seed agent)",
-   "status": "paused-pivot-2026-07-09"
-  },
-  {
-   "id": "seed-06",
-   "title": "Why International Students Might Avoid US Colleges This Year",
-   "pillar": "education-trends",
-   "format": "longform",
-   "angle": "Educational (non-legal-advice) explainer on 2026 US visa policy shifts affecting international students — the proposed end of 'Duration of Status' for F-1s, shorter grace periods, and a new $250 Visa Integrity Fee — framed around what it means for the student experience and enrollment trends, not legal advice.",
-   "whyNow": "NAFSA's 2026 estimate of a 30-40% drop in new international enrollment follows the proposed 'Duration of Status' rule change and new visa fees reported through spring 2026.",
-   "sources": [
-    "forbes.com how 2026 immigration crackdown is changing US higher ed",
-    "cis.org new regulation duration of status"
-   ],
-   "addedAt": "2026-07-08",
-   "addedBy": "platform-research workflow (sonnet seed agent)",
-   "status": "paused-pivot-2026-07-09"
-  },
-  {
-   "id": "seed-08",
-   "title": "Finland vs. South Korea: The Two Opposite 'Best' Education Systems in the World",
-   "pillar": "education-systems",
-   "format": "longform",
-   "angle": "Longform comparative explainer contrasting Finland's low-homework, no-standardized-testing model with South Korea's high-intensity, memorization-heavy system and its 2026 push to train a million 'digital talents' — asking which model actually produces better outcomes.",
-   "whyNow": "South Korea's Ministry of Education is mid-way through its 2026 target to cultivate one million digital talents and expand Glocal Colleges to 30 by year's end, giving a fresh 2026 data point against Finland's steady-state model.",
-   "sources": [
-    "english.moe.go.kr key policies",
-    "educationbycountry.org South Korea 2026"
-   ],
-   "addedAt": "2026-07-08",
-   "addedBy": "platform-research workflow (sonnet seed agent)",
-   "status": "paused-pivot-2026-07-09"
-  },
-  {
-   "id": "seed-09",
-   "title": "Every State Is Suddenly Writing Laws About AI in Schools",
-   "pillar": "education-trends",
-   "format": "longform",
-   "angle": "Longform explainer surveying the 2026 legislative wave — 134+ bills across 31 states — covering data-privacy bills like California's AB 1159 (banning student data used to train AI) and South Carolina's proposed parental opt-in law, explaining what's actually being regulated and why.",
-   "whyNow": "FutureEd's 2026 legislative tracker counts 71+ AI-in-education bills across 27 states this session, with California AB 1159 and South Carolina H.B. 5253 both active in 2026.",
-   "sources": [
-    "future-ed.org legislative tracker 2026 state AI bills",
-    "multistate.us how states are regulating AI in education"
-   ],
-   "addedAt": "2026-07-08",
-   "addedBy": "platform-research workflow (sonnet seed agent)",
-   "status": "paused-pivot-2026-07-09"
-  },
-  {
-   "id": "seed-10",
-   "title": "86% of Students Are Already Using AI for School. Are Teachers Keeping Up?",
-   "pillar": "education-trends",
-   "format": "longform",
-   "angle": "Short pulling the 2025-2026 school year data point (85% of teachers, 86% of students using AI; 25% of students daily) and asking what schools are actually doing about it in 2026 — quick, punchy stat-driven video.",
-   "whyNow": "The Center for Democracy and Technology's cited 2025-2026 school year survey data is being actively referenced in 2026 policy debates and news coverage on AI classroom guidelines.",
-   "sources": [
-    "cbsnews.com AI use in schools and classrooms is booming"
-   ],
-   "addedAt": "2026-07-08",
-   "addedBy": "platform-research workflow (sonnet seed agent)",
-   "status": "paused-pivot-2026-07-09"
-  },
-  {
-   "id": "seed-15",
-   "title": "Should Schools Ban AI or Teach It? Inside the 2026 Fight",
-   "pillar": "education-trends",
-   "format": "longform",
-   "angle": "Longform explainer laying out the two competing camps in 2026 US education policy — states mandating AI-literacy curriculum (Georgia, Mississippi) vs. states restricting classroom AI use and banning AI-trained student data (California, South Carolina) — a balanced, non-partisan tour of the policy landscape.",
-   "whyNow": "Both tracks are simultaneously active in 2026 state legislatures per FutureEd's and ExcelinEd's 2026 trackers, alongside the federal AI-literacy executive order cited as a tailwind.",
-   "sources": [
-    "excelined.org state K-12 AI policy in 2026",
-    "future-ed.org legislative tracker 2026 state AI bills"
-   ],
-   "addedAt": "2026-07-08",
-   "addedBy": "platform-research workflow (sonnet seed agent)",
-   "status": "paused-pivot-2026-07-09"
-  },
-  {
-   "id": "test-cc-01",
-   "title": "外国人第一次讲广东话，係咩感觉？(spoof street interview)",
-   "pillar": "test-cantonese-comedy",
-   "format": "short",
-   "angle": "Spoof 街访: 'foreigner' tries ordering 奶茶/叫小巴 in Cantonese, each mishap teaches one real funny phrase. Self-aware, warm, bleep any strong 粗口.",
-   "whyNow": "evergreen comedy pilot for the test line",
-   "sources": [],
-   "addedAt": "2026-07-08",
-   "addedBy": "owner test-line directive",
-   "status": "paused-pivot-2026-07-09"
-  },
-  {
-   "id": "test-cc-02",
-   "title": "教你三句最实用嘅搞笑广东话 (港式吐槽入门)",
-   "pillar": "test-cantonese-comedy",
-   "format": "short",
-   "angle": "Three genuinely useful funny Cantonese phrases with literal-translation punchlines in English subs.",
-   "whyNow": "evergreen comedy pilot #2",
-   "sources": [],
-   "addedAt": "2026-07-08",
-   "addedBy": "owner test-line directive",
-   "status": "paused-pivot-2026-07-09"
-  },
-  {
-   "id": "test-td-01",
-   "title": "东北话第一课：'嘎哈呢？' 学会你就是半个东北人",
-   "pillar": "test-teach-chinese-dialects",
-   "format": "short",
-   "angle": "Teach 嘎哈呢 (what are you doing): slow -> natural -> mini-scene (phone call). Mandarin narrator teaching, dialect text big on screen, honest audio label.",
-   "whyNow": "teach line pilot #1 — 东北话 is the most meme-friendly dialect on Chinese internet",
-   "sources": [],
-   "addedAt": "2026-07-08",
-   "addedBy": "owner test-line directive",
-   "status": "paused-pivot-2026-07-09"
-  },
-  {
-   "id": "test-td-02",
-   "title": "四川话の幸福感：'巴适得板' 到底有多巴适？",
-   "pillar": "test-teach-chinese-dialects",
-   "format": "short",
-   "angle": "Teach 巴适得板 (extremely comfortable/great): hotpot mini-scene; note 四川话 chill culture.",
-   "whyNow": "teach line pilot #2",
-   "sources": [],
-   "addedAt": "2026-07-08",
-   "addedBy": "owner test-line directive",
-   "status": "paused-pivot-2026-07-09"
-  },
-  {
-   "id": "cof-05",
-   "title": "深圳的咖啡速度：从图纸到风味",
-   "pillar": "china-coffee",
-   "format": "short",
-   "angle": "Specialty roasters, minimalist shops, city-of-makers angle.",
-   "whyNow": "owner theme-week plan 2026-07-09",
-   "sources": [],
-   "addedAt": "2026-07-10",
-   "addedBy": "owner theme directive",
-   "status": "paused-coffee-2026-07-18"
-  },
-  {
-   "id": "win-01",
-   "title": "贺兰山东麓：石头地里长出的葡萄酒",
-   "pillar": "china-wine",
-   "format": "short",
-   "angle": "Ningxia vineyard dawn, rocky soil close-up, harvest hands. Verify ownership before any '纯中资' claim.",
-   "whyNow": "owner theme-week plan 2026-07-09",
-   "sources": [],
-   "addedAt": "2026-07-10",
-   "addedBy": "owner theme directive",
-   "status": "paused-themeweek-cancelled-2026-07-18"
-  },
-  {
-   "id": "win-02",
-   "title": "云南高原上的葡萄园，海拔两千米的甜",
-   "pillar": "china-wine",
-   "format": "short",
-   "angle": "Shangri-La highland vines, snow-mountain backdrop.",
-   "whyNow": "owner theme-week plan 2026-07-09",
-   "sources": [],
-   "addedAt": "2026-07-10",
-   "addedBy": "owner theme directive",
-   "status": "paused-themeweek-cancelled-2026-07-18"
-  },
-  {
-   "id": "win-03",
-   "title": "新疆的日照，酿进一瓶酒里",
-   "pillar": "china-wine",
-   "format": "short",
-   "angle": "Sun-drenched vineyards, barrel cellar cool light.",
-   "whyNow": "owner theme-week plan 2026-07-09",
-   "sources": [],
-   "addedAt": "2026-07-10",
-   "addedBy": "owner theme directive",
-   "status": "paused-themeweek-cancelled-2026-07-18"
-  },
-  {
-   "id": "win-04",
-   "title": "一串葡萄的二十四小时：采收季的酒庄",
-   "pillar": "china-wine",
-   "format": "short",
-   "angle": "Harvest-day rhythm: dawn picking, sorting table, crush.",
-   "whyNow": "owner theme-week plan 2026-07-09",
-   "sources": [],
-   "addedAt": "2026-07-10",
-   "addedBy": "owner theme directive",
-   "status": "paused-themeweek-cancelled-2026-07-18"
-  },
-  {
-   "id": "win-05",
-   "title": "从土地到酒标：一家全中国团队酒庄的诞生",
-   "pillar": "china-wine",
-   "format": "longform",
-   "angle": "One winery end-to-end Chinese team story (verify per winery; craft narrative, zero politics).",
-   "whyNow": "owner theme-week plan 2026-07-09",
-   "sources": [],
-   "addedAt": "2026-07-10",
-   "addedBy": "owner theme directive",
-   "status": "paused-themeweek-cancelled-2026-07-18"
-  },
-  {
-   "id": "win-06",
-   "title": "贺兰山风土：为什么世界开始谈论宁夏",
-   "pillar": "china-wine",
-   "format": "longform",
-   "angle": "Terroir deep-dive: climate, altitude, awards.",
-   "whyNow": "owner theme-week plan 2026-07-09",
-   "sources": [],
-   "addedAt": "2026-07-10",
-   "addedBy": "owner theme directive",
-   "status": "paused-themeweek-cancelled-2026-07-18"
-  },
-  {
-   "id": "yng-01",
-   "title": "中国年轻人的餐厅，不止是吃饭",
-   "pillar": "young-china",
-   "format": "short",
-   "angle": "Creative young restaurant: open kitchen, plating close-ups, design space.",
-   "whyNow": "owner theme-week plan 2026-07-09",
-   "sources": [],
-   "addedAt": "2026-07-10",
-   "addedBy": "owner theme directive",
-   "status": "paused-themeweek-cancelled-2026-07-18"
-  },
-  {
-   "id": "yng-02",
-   "title": "谷子店里的快乐经济学",
-   "pillar": "young-china",
-   "format": "short",
-   "angle": "Anime-merch shop shelves, badge close-ups, 潮玩 culture.",
-   "whyNow": "owner theme-week plan 2026-07-09",
-   "sources": [],
-   "addedAt": "2026-07-10",
-   "addedBy": "owner theme directive",
-   "status": "paused-themeweek-cancelled-2026-07-18"
-  },
-  {
-   "id": "yng-03",
-   "title": "黑神话之后：中国游戏的新想象",
-   "pillar": "young-china",
-   "format": "short",
-   "angle": "Game-culture visuals, esports café energy.",
-   "whyNow": "owner theme-week plan 2026-07-09",
-   "sources": [],
-   "addedAt": "2026-07-10",
-   "addedBy": "owner theme directive",
-   "status": "paused-themeweek-cancelled-2026-07-18"
-  },
-  {
-   "id": "yng-04",
-   "title": "国漫爆发：从哪吒到雾山五行",
-   "pillar": "young-china",
-   "format": "longform",
-   "angle": "Chinese animation wave: studio craft, ink-wash aesthetic link.",
-   "whyNow": "owner theme-week plan 2026-07-09",
-   "sources": [],
-   "addedAt": "2026-07-10",
-   "addedBy": "owner theme directive",
-   "status": "paused-themeweek-cancelled-2026-07-18"
-  },
-  {
-   "id": "yng-05",
-   "title": "一部网文的诞生：中国网络小说工厂",
-   "pillar": "young-china",
-   "format": "longform",
-   "angle": "Web-novel industry: writers, platforms, IP-to-screen pipeline.",
-   "whyNow": "owner theme-week plan 2026-07-09",
-   "sources": [],
-   "addedAt": "2026-07-10",
-   "addedBy": "owner theme directive",
-   "status": "paused-themeweek-cancelled-2026-07-18"
-  },
-  {
-   "id": "cc2-03",
-   "title": "宣纸：一张纸，一百道工序",
-   "pillar": "china-culture",
-   "format": "longform",
-   "angle": "泾县宣纸手工制作：青檀树皮+沙田稻草，捞纸、晒纸、剪纸；一张纸的百工。everyday-life: 每一幅水墨画、每一本古籍下面，都是这张纸。beautiful b-roll: 纸浆纤维、竹帘捞纸、火墙晒纸的手部特写。",
-   "whyNow": "backlog refill — china-culture pillar thin (only cc2-02 left after 2026-07-11); 宣纸制作技艺 is UNESCO 人类非遗, evergreen craft-depth topic. Verify craft steps at scripting.",
-   "sources": [],
-   "addedAt": "2026-07-11",
-   "addedBy": "cycle replenish (culture backlog flag 2026-07-10)",
-   "status": "active",
-   "note": "reactivated 2026-08-09 culture-first era"
-  },
-  {
-   "id": "cc2-04",
-   "title": "龙泉青瓷：把一片天青，烧进釉里",
-   "pillar": "china-culture",
-   "format": "longform",
-   "angle": "龙泉青瓷 celadon: 拉坯、上釉、1300°C 还原焰烧制出粉青/梅子青。everyday-life: 我们说的\"青色\"到底是什么颜色。beautiful b-roll: 釉色特写、开片、窑火。",
-   "whyNow": "backlog refill — second culture-longform seed; 龙泉青瓷烧制技艺 is UNESCO 人类非遗. Verify temperature/glaze facts at scripting.",
-   "sources": [],
-   "addedAt": "2026-07-11",
-   "addedBy": "cycle replenish (culture backlog flag 2026-07-10)",
-   "status": "active",
-   "note": "reactivated 2026-08-09 culture-first era"
-  },
-  {
-   "id": "cof-09",
-   "title": "云南保山：一杯小粒咖啡的风味地图",
-   "pillar": "china-coffee",
-   "format": "longform",
-   "angle": "Baoshan terroir deep-dive: high-altitude small-bean arabica, 'strong but not bitter, mildly fruity'; washing station + drying beds; one farmer's flavor story. everyday-life: why your cup tastes the way it does. beautiful b-roll: cherry-picking hands, washing channels, sun-drying beds, cupping table.",
-   "whyNow": "Theme-week china-coffee (07-13..19) needs longform b-slots; Baoshan small-bean gained international recognition through 2025 (People's Daily / STDaily). Verify altitude/flavor facts at scripting.",
-   "sources": [],
-   "addedAt": "2026-07-13",
-   "addedBy": "cycle replenish (coffee theme-week longform gap)",
-   "status": "paused-coffee-2026-07-18"
-  },
-  {
-   "id": "cof-11",
-   "title": "从速溶到手冲：中国人喝咖啡的三次浪潮",
-   "pillar": "china-coffee",
-   "format": "longform",
-   "angle": "Three-waves framing of Chinese coffee: 1) 三合一速溶 (late-80s->2010), 2) chain espresso (Starbucks/Luckin scale), 3) specialty/单品手冲. everyday-life: which wave is your daily cup? beautiful b-roll: instant-sachet stir, chain-cup queue, slow hand-pour. One 成语/俗语 line.",
-   "whyNow": "Complements cof-07 (30-year arc) with a consumer-side lens; timely against Luckin's 20,000-store scale (2024) + specialty premiumization (Mordor/USDA 2026). Verify wave-dates at scripting.",
-   "sources": [],
-   "addedAt": "2026-07-13",
-   "addedBy": "cycle replenish (coffee theme-week longform gap)",
-   "status": "paused-coffee-2026-07-18"
-  },
-  {
-   "id": "cof-12",
-   "title": "咖啡进县城：小镇青年的第三空间",
-   "pillar": "china-coffee",
-   "format": "longform",
-   "angle": "County-town cafe boom as rural revitalization + third-place culture: young returnees opening shops, cafes as social hubs beyond first-tier cities. everyday-life: a small-town afternoon. beautiful b-roll: small-town street cafe, friends chatting, latte pour, courtyard light. Zero politics.",
-   "whyNow": "USDA FAS (Jan 2026) + reporting note cafe expansion into county towns as a livelihood/revitalization story; strong everyday-life longform. Verify any named town/shop at scripting.",
-   "sources": [],
-   "addedAt": "2026-07-13",
-   "addedBy": "cycle replenish (coffee theme-week longform gap)",
-   "status": "paused-coffee-2026-07-18"
-  },
-  {
-   "id": "cof-15",
-   "title": "杭州西湖边的一杯手冲",
-   "pillar": "china-coffee",
-   "format": "short",
-   "angle": "Lakeside specialty coffee in Hangzhou: hand-pour with West Lake calm; 日系唯美 pacing. everyday-life: coffee as a pause. beautiful b-roll: pour-over steam, lake light, window seat. One poem/景 note (西湖).",
-   "whyNow": "Coffee theme-week short slot; pairs the coffee theme with a scenic city for beautiful b-roll. Verify any cafe/venue claim at scripting.",
-   "sources": [],
-   "addedAt": "2026-07-13",
-   "addedBy": "cycle replenish (coffee theme-week short depth)",
-   "status": "paused-coffee-2026-07-18"
-  },
-  {
-   "id": "cof-17",
-   "title": "长沙的咖啡有多卷？",
-   "pillar": "china-coffee",
-   "format": "short",
-   "angle": "Changsha's hyper-competitive café scene (茶颜悦色 hometown) — one street, many shops; 塑普彩蛋 蛮.",
-   "whyNow": "owner china-coffee theme-week plan 2026-07-09; Changsha is a bellwether new-tea/coffee city",
-   "sources": [],
-   "addedAt": "2026-07-14",
-   "addedBy": "youtube-cycle replenish (within-theme)",
-   "status": "paused-coffee-2026-07-18"
-  },
-  {
-   "id": "cof-19",
-   "title": "武汉过早，配一杯手冲",
-   "pillar": "china-coffee",
-   "format": "short",
-   "angle": "Wuhan breakfast (过早) street culture meeting specialty coffee; people-action food b-roll; 武汉话彩蛋.",
-   "whyNow": "owner china-coffee theme-week plan 2026-07-09",
-   "sources": [],
-   "addedAt": "2026-07-14",
-   "addedBy": "youtube-cycle replenish (within-theme)",
-   "status": "paused-coffee-2026-07-18"
-  },
-  {
-   "id": "cof-20",
-   "title": "苏州园林边，一杯拿铁",
-   "pillar": "china-coffee",
-   "format": "short",
-   "angle": "Café by a Suzhou garden wall — 白墙黛瓦 + latte; 吴侬软语 flavor via 评弹 note (never fake a dialect).",
-   "whyNow": "owner china-coffee theme-week plan 2026-07-09",
-   "sources": [],
-   "addedAt": "2026-07-14",
-   "addedBy": "youtube-cycle replenish (within-theme)",
-   "status": "paused-coffee-2026-07-18"
-  },
-  {
-   "id": "cof-21",
-   "title": "手冲、意式、还是挂耳？",
-   "pillar": "china-coffee",
-   "format": "short",
-   "angle": "Quick explainer Short: pour-over vs espresso vs drip-bag — how Chinese drinkers choose; satisfying brew close-ups.",
-   "whyNow": "owner china-coffee theme-week plan 2026-07-09",
-   "sources": [],
-   "addedAt": "2026-07-14",
-   "addedBy": "youtube-cycle replenish (within-theme)",
-   "status": "paused-coffee-2026-07-18"
-  },
-  {
-   "id": "cof-22",
-   "title": "精品咖啡为什么这么贵？",
-   "pillar": "china-coffee",
-   "format": "longform",
-   "angle": "Why specialty coffee costs what it does — bean grade, hand-processing, small-batch roast, café rent as third-space; honest, sourced.",
-   "whyNow": "owner china-coffee theme-week plan 2026-07-09; price is the top everyday question",
-   "sources": [],
-   "addedAt": "2026-07-14",
-   "addedBy": "youtube-cycle replenish (within-theme)",
-   "status": "paused-coffee-2026-07-18"
-  },
-  {
-   "id": "cof-23",
-   "title": "从瑞幸到独立小店：中国咖啡的两条路",
-   "pillar": "china-coffee",
-   "format": "longform",
-   "angle": "Two roads of China's coffee — chain scale (Luckin) vs independent craft cafés; who each serves, everyday-life lens; sourced, no politics.",
-   "whyNow": "owner china-coffee theme-week plan 2026-07-09",
-   "sources": [],
-   "addedAt": "2026-07-14",
-   "addedBy": "youtube-cycle replenish (within-theme)",
-   "status": "paused-coffee-2026-07-18"
-  },
-  {
-   "id": "cofb-03",
-   "title": "Manner：上海小窗口，一年千店",
-   "pillar": "china-coffee",
-   "format": "short",
-   "angle": "Manner's tiny-window model, self-brew discount culture; 上海话彩蛋.",
-   "whyNow": "owner coffee-expansion directive 2026-07-15 (brands/farms/economy lanes)",
-   "sources": [],
-   "addedAt": "2026-07-15",
-   "addedBy": "owner directive",
-   "status": "paused-coffee-2026-07-18"
-  },
-  {
-   "id": "cofb-04",
-   "title": "中国咖啡品牌出海第一站为什么是东南亚",
-   "pillar": "china-coffee",
-   "format": "longform",
-   "angle": "Luckin SG/US, Cotti expansion — brand-goes-global story for a Sunday longform; sourced.",
-   "whyNow": "owner coffee-expansion directive 2026-07-15 (brands/farms/economy lanes)",
-   "sources": [],
-   "addedAt": "2026-07-15",
-   "addedBy": "owner directive",
-   "status": "paused-coffee-2026-07-18"
-  },
-  {
-   "id": "coff-02",
-   "title": "一亩咖啡林能养活一个家吗？",
-   "pillar": "china-coffee",
-   "format": "short",
-   "angle": "Farm economics fact-hook: yield per mu, purchase price per kg, specialty premium; sourced 云南日报/USDA.",
-   "whyNow": "owner coffee-expansion directive 2026-07-15 (brands/farms/economy lanes)",
-   "sources": [],
-   "addedAt": "2026-07-15",
-   "addedBy": "owner directive",
-   "status": "paused-coffee-2026-07-18"
-  },
-  {
-   "id": "coff-04",
-   "title": "把咖啡庄园开成民宿：云南新玩法",
-   "pillar": "china-coffee",
-   "format": "short",
-   "angle": "Farm-stay coffee estates (庄园+民宿), travel×coffee crossover.",
-   "whyNow": "owner coffee-expansion directive 2026-07-15 (brands/farms/economy lanes)",
-   "sources": [],
-   "addedAt": "2026-07-15",
-   "addedBy": "owner directive",
-   "status": "paused-coffee-2026-07-18"
-  },
-  {
-   "id": "cofe-02",
-   "title": "县城咖啡：五线小城的第一家咖啡馆",
-   "pillar": "china-coffee",
-   "format": "short",
-   "angle": "County-town café boom — where growth actually is; human scene of first café opening.",
-   "whyNow": "owner coffee-expansion directive 2026-07-15 (brands/farms/economy lanes)",
-   "sources": [],
-   "addedAt": "2026-07-15",
-   "addedBy": "owner directive",
-   "status": "paused-coffee-2026-07-18"
-  },
-  {
-   "id": "cofe-04",
-   "title": "云南豆价十年翻倍：谁在定价一杯咖啡",
-   "pillar": "china-coffee",
-   "format": "longform",
-   "angle": "Sunday longform: bean price chain farm→cup, specialty premium economics; strictly sourced.",
-   "whyNow": "owner coffee-expansion directive 2026-07-15 (brands/farms/economy lanes)",
-   "sources": [],
-   "addedAt": "2026-07-15",
-   "addedBy": "owner directive",
-   "status": "paused-coffee-2026-07-18"
-  },
-  {
-   "id": "ctr-01",
-   "title": "张家界：阿凡达悬浮山的原型在中国",
-   "pillar": "city-travel",
-   "format": "short",
-   "angle": "Avatar Hallelujah Mountain fact-hook; pillar forests in mist.",
-   "whyNow": "owner core-shift 2026-07-15: travel resources + food",
-   "sources": [],
-   "addedAt": "2026-07-15",
-   "addedBy": "owner directive",
-   "status": "active",
-   "note": "reactivated 2026-08-09 culture-first era"
-  },
-  {
-   "id": "ctr-02",
-   "title": "黄山迎客松：一棵树凭什么值一个亿保险",
-   "pillar": "city-travel",
-   "format": "short",
-   "angle": "Insurance-value fact hook; cloud sea, dawn watchers crowd.",
-   "whyNow": "owner core-shift 2026-07-15: travel resources + food",
-   "sources": [],
-   "addedAt": "2026-07-15",
-   "addedBy": "owner directive",
-   "status": "active",
-   "note": "reactivated 2026-08-09 culture-first era"
-  },
-  {
-   "id": "ctr-03",
-   "title": "九寨沟的水为什么是五种颜色",
-   "pillar": "city-travel",
-   "format": "short",
-   "angle": "Calcium carbonate science hook; turquoise pools.",
-   "whyNow": "owner core-shift 2026-07-15: travel resources + food",
-   "sources": [],
-   "addedAt": "2026-07-15",
-   "addedBy": "owner directive",
-   "status": "active",
-   "note": "reactivated 2026-08-09 culture-first era"
-  },
-  {
-   "id": "cfd-02",
-   "title": "北京烤鸭为什么要吹气？",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "Air-pump craft hook; carving 108 slices fact.",
-   "whyNow": "owner core-shift 2026-07-15: travel resources + food",
-   "sources": [],
-   "addedAt": "2026-07-15",
-   "addedBy": "owner directive",
-   "status": "covered-2026-08-03",
-   "coveredBy": "2026-08-03 绝活系列"
-  },
-  {
-   "id": "cfd-04",
-   "title": "一笼小笼包的十八个褶",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "18 pleats standard; soup-inside engineering; 上海话彩蛋.",
-   "whyNow": "owner core-shift 2026-07-15: travel resources + food",
-   "sources": [],
-   "addedAt": "2026-07-15",
-   "addedBy": "owner directive",
-   "status": "covered-2026-08-03",
-   "coveredBy": "2026-08-03 绝活系列"
-  },
-  {
-   "id": "cfd-05",
-   "title": "潮汕牛肉火锅：一头牛分出十二个部位",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "12-cut beef map hook; 手打牛肉丸 bounce test.",
-   "whyNow": "owner core-shift 2026-07-15: travel resources + food",
-   "sources": [],
-   "addedAt": "2026-07-15",
-   "addedBy": "owner directive",
-   "status": "covered-2026-07-22-duplicate",
-   "coveredBy": "dedup: already produced (see status)"
-  },
-  {
-   "id": "str-01",
-   "title": "重庆的楼里穿轻轨：李子坝 8 秒",
-   "pillar": "city-travel",
-   "format": "short",
-   "angle": "Street icon: train-through-building, crowds filming below; fact hook 8-second pass.",
-   "whyNow": "owner 2026-07-18: street scenery joins the core",
-   "sources": [],
-   "addedAt": "2026-07-18",
-   "addedBy": "owner directive",
-   "status": "active",
-   "note": "reactivated 2026-08-09 culture-first era"
-  },
-  {
-   "id": "str-03",
-   "title": "菜市场的中国：凌晨四点最热闹的地方",
-   "pillar": "city-travel",
-   "format": "short",
-   "angle": "Wet-market dawn: haggling hands, fish splash, scale close-ups; 烟火气 heavy.",
-   "whyNow": "owner 2026-07-18: street scenery joins the core",
-   "sources": [],
-   "addedAt": "2026-07-18",
-   "addedBy": "owner directive",
-   "status": "active",
-   "note": "reactivated 2026-08-09 culture-first era"
-  },
-  {
-   "id": "str-04",
-   "title": "西安回民街的一百种声音",
-   "pillar": "city-travel",
-   "format": "short",
-   "angle": "Street soundscape as concept: hammering 芝麻糖, biang biang 面 slap, vendor calls.",
-   "whyNow": "owner 2026-07-18: street scenery joins the core",
-   "sources": [],
-   "addedAt": "2026-07-18",
-   "addedBy": "owner directive",
-   "status": "covered-2026-08-12",
-   "note": "reactivated 2026-08-09 culture-first era"
-  },
-  {
-   "id": "str-05",
-   "title": "广州骑楼下：一条街走了一百年",
-   "pillar": "city-travel",
-   "format": "short",
-   "angle": "Qilou arcades street scene: rain shelter life, 凉茶铺, old signage.",
-   "whyNow": "owner 2026-07-18: street scenery joins the core",
-   "sources": [],
-   "addedAt": "2026-07-18",
-   "addedBy": "owner directive",
-   "status": "active",
-   "note": "reactivated 2026-08-09 culture-first era"
-  },
-  {
-   "id": "cfd-10",
-   "title": "新中式茶饮：一杯奶茶，怎么成了年轻人的社交货币",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "新中式茶饮：原叶鲜奶茶、伯牙绝弦式国风命名、门店排队。fact-first=一年卖出多少杯。people-action：递杯、举杯拍照、排队。中式=国风包装+茶文化底蕴。",
-   "whyNow": "新中式茶饮（霸王茶姬等）2024-25持续高增长、成为年轻人日常与社交货币；贴近生活。verify 品类规模/年销杯数 at scripting.",
-   "sources": [
-    "新中式茶饮 霸王茶姬 原叶鲜奶茶 增长"
-   ],
-   "addedAt": "2026-07-23",
-   "addedBy": "cycle replenish (food sprint, 现制饮品/年轻)",
-   "status": "covered-2026-07-20-duplicate",
-   "coveredBy": "dedup: already produced (see status)"
-  },
-  {
-   "id": "cfd-11",
-   "title": "街头煎饼果子：三分钟一套，早餐摊的手上功夫",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "煎饼果子：摊糊、磕蛋、刷酱、脆果子一裹一叠。fact-first=一套三分钟出摊。people-action：摊主转铲、递饼、通勤人流。街头早餐烟火。",
-   "whyNow": "街头早餐（煎饼果子/杂粮煎饼）常青高互动、通勤生活强共鸣；可组'中国街头早餐'系列。verify 起源/流派(天津vs山东) at scripting.",
-   "sources": [
-    "煎饼果子 天津 山东 街头早餐 做法"
-   ],
-   "addedAt": "2026-07-23",
-   "addedBy": "cycle replenish (food sprint, 街头早餐)",
-   "status": "covered-2026-07-28",
-   "coveredBy": "2026-07-28 slot d 天津煎饼馃子 (中国早餐宇宙S2⑧)"
-  },
-  {
-   "id": "cfd-16",
-   "title": "威海鲅鱼饺子：一条海鱼，包进北方人的年味",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "胶东威海鲅鱼(马鲛鱼)水饺：现挖鱼肉、韭菜提鲜、个大皮薄；胶东'鲅鱼跳丈人笑'习俗。fact-first=一个饺子塞满半条鱼。人物：剁鱼馅/包饺子的手。",
-   "whyNow": "2025暑期网红城市报告点名威海等二三线城市文旅出圈（新京报2025暑期篇 2025-07）；verify 鲅鱼水饺/胶东孝亲习俗 at scripting.",
-   "sources": [
-    "新京报网红城市潜力报告2025暑期篇 威海"
-   ],
-   "addedAt": "2026-07-25",
-   "addedBy": "cycle replenish (viral-food research)",
-   "status": "covered-2026-07-29",
-   "coveredBy": "2026-07-29 slot a 威海鲅鱼饺子 (中国饺子地图①)"
-  },
-  {
-   "id": "cfd-18",
-   "title": "云南过桥米线：一碗滚汤，端上桌自己烫熟",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "过桥米线：滚烫鸡汤上盖一层油锁温，生片/鹌鹑蛋/米线依次下碗自烫。fact-first=汤面一层油让滚汤不冒气却能烫熟生肉。people-action：下料、烫肉的手。传说书生娘子送饭故事(如实标注传说)。",
-   "whyNow": "过桥米线是云南头牌、全国连锁常青，\"一层油锁住高温\"的反差科普钩子强、贴近生活。verify 起源传说/油封保温原理 at scripting.",
-   "sources": [],
-   "addedAt": "2026-07-26",
-   "addedBy": "cycle replenish (food sprint, 云南米线)",
-   "status": "covered-2026-08-03",
-   "coveredBy": "2026-08-03 绝活系列"
-  },
-  {
-   "id": "cfd-19",
-   "title": "东北铁锅炖：一口大锅，炖下一整个冬天的豪爽",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "东北铁锅炖：柴火大铁锅炖鱼/炖大鹅，锅边贴玉米饼子，一锅出。fact-first=一口锅同时炖菜和贴饼子。people-action：贴饼子的手、掀锅、围炉分食。东北豪爽烟火。",
-   "whyNow": "\"铁锅炖+贴饼子\"是东北地方菜代表、社媒围炉一锅出的高互动画面；组\"中国大锅菜\"系列可扩展。verify 铁锅炖流派/贴饼子做法 at scripting.",
-   "sources": [],
-   "addedAt": "2026-07-26",
-   "addedBy": "cycle replenish (food sprint, 东北地方菜)",
-   "status": "covered-2026-08-04"
-  },
-  {
-   "id": "cfd-20",
-   "title": "重庆酸辣粉：一碗红薯粉，酸辣到跺脚",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "重庆酸辣粉：手工红薯粉，酸(醋)辣(油辣子)麻(花椒)+酥花生黄豆，挑起拉丝。fact-first=红薯做的粉为什么这么Q弹。people-action：挑粉、拌料、嗦粉的脸。街头小吃烟火。",
-   "whyNow": "酸辣粉是街头/外卖常青嗦粉品类，\"红薯粉\"原料反差钩子好、贴近生活。verify 红薯粉工艺/重庆酸辣粉调味 at scripting.",
-   "sources": [],
-   "addedAt": "2026-07-26",
-   "addedBy": "cycle replenish (food sprint, 街头嗦粉)",
-   "status": "paused-food-decentered-2026-08-11",
-   "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
-  },
-  {
-   "id": "cfd-21",
-   "title": "现制酸奶：一杯三十块，年轻人的\"酸奶刺客\"",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "现制酸奶：厚椰乳/加坚果果干、现打现卖，主打\"健康\"却价格不菲。fact-first=一杯现制酸奶为什么能卖到二三十块。people-action：打料、递杯、举杯拍照。中性价格观察，无投资/品牌背书。",
-   "whyNow": "现制酸奶(\"酸奶刺客\")是新中式饮品里持续被讨论的价格话题、贴近年轻人日常消费。verify 品类价格带/健康宣称边界 at scripting；brandRules 中性无背书。",
-   "sources": [],
-   "addedAt": "2026-07-26",
-   "addedBy": "cycle replenish (food sprint, 现制饮品/年轻)",
-   "status": "covered-2026-07-20-duplicate",
-   "coveredBy": "dedup: already produced (see status)"
-  },
-  {
-   "id": "cfd-22",
-   "title": "黄焖鸡米饭：一只砂锅，统治写字楼午餐",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "外卖时代的国民快餐;一人食砂锅焖鸡+米饭;门店数以万计+近年出海(美/日开店).fact-first=门店/出海数字.人物:端砂锅、拌饭的手.",
-   "whyNow": "'黄焖鸡米饭'常年外卖销量顶流、门店数以万计并加速出海,一人食快餐母题贴近上班族午餐. verify 门店数/出海门店 at scripting.",
-   "sources": [
-    "黄焖鸡米饭 门店数 出海"
-   ],
-   "addedAt": "2026-08-03",
-   "addedBy": "cycle replenish (food sprint day16)",
-   "status": "covered-2026-08-05"
-  },
-  {
-   "id": "cfd-23",
-   "title": "东北锅包肉：酸甜脆,竟有个'办公室'为它成立",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "锅包肉酸甜金黄脆壳;老式糖醋(琥珀色)vs番茄酱版之争=评论钩;2024吉林市'锅包肉办公室'推广.fact-first反差=一道菜设了个办公室.",
-   "whyNow": "2024年吉林市成立'锅包肉办公室'推广地方菜引发热议,老式vs番茄版是天然评论钩. verify 锅包肉办公室/郑兴文1907起源 at scripting.",
-   "sources": [
-    "吉林 锅包肉办公室 郑兴文 1907"
-   ],
-   "addedAt": "2026-08-03",
-   "addedBy": "cycle replenish (food sprint day16)",
-   "status": "covered-2026-08-04"
-  },
-  {
-   "id": "cfd-24",
-   "title": "上海生煎:底脆、汁多,一口爆汤",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "生煎底金黄焦脆、一口爆汤;发面vs小笼死面对照(同城不同法);排队顶流.craft近'绝活'系列.人物:铁盘转、咬爆汤.",
-   "whyNow": "生煎是沪上早点顶流、排队店常年出片;与小笼包同宗不同法(发面/褶朝下煎)可对照. verify 发面/褶朝下煎/汤汁来源 at scripting.",
-   "sources": [
-    "上海生煎 发面 褶朝下 做法"
-   ],
-   "addedAt": "2026-08-03",
-   "addedBy": "cycle replenish (food sprint day16; craft-adjacent)",
-   "status": "paused-food-decentered-2026-08-11",
-   "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
-  },
-  {
-   "id": "cfd-25",
-   "title": "靖江蟹黄汤包:皮薄如纸,一根吸管喝汤",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "大汤包皮薄如纸、提起像灯笼、插吸管先喝汤;秋蟹季时令钩;淮扬绝活.craft近'绝活'系列.",
-   "whyNow": "'皮薄如纸、一根吸管喝汤'的蟹黄汤包是短视频常青爆款,秋蟹季将至=时令钩. verify 靖江汤包/吸管吃法/皮薄工艺 at scripting.",
-   "sources": [
-    "靖江蟹黄汤包 吸管 皮薄如纸"
-   ],
-   "addedAt": "2026-08-03",
-   "addedBy": "cycle replenish (food sprint day16; craft-adjacent)",
-   "status": "paused-food-decentered-2026-08-11",
-   "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
-  },
-  {
-   "id": "cfd-26",
-   "title": "新疆手抓饭:羊肉黄萝卜一锅焖,为什么用手抓",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "抓饭=羊肉+胡萝卜黄萝卜+米一锅焖;'手抓'维吾尔传统吃法是文化钩;油亮米粒money-shot.地域生活.",
-   "whyNow": "新疆美食短视频持续走红,手抓饭(抓饭)是代表;'手抓'传统吃法是天然文化钩. verify 抓饭配料/维吾尔传统/婚宴场合 at scripting.",
-   "sources": [
-    "新疆 手抓饭 抓饭 维吾尔 传统"
-   ],
-   "addedAt": "2026-08-03",
-   "addedBy": "cycle replenish (food sprint day16)",
-   "status": "paused-food-decentered-2026-08-11",
-   "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
-  },
-  {
-   "id": "cfd-27",
-   "title": "佛跳墙:几十种山珍海味,煨进一坛",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "闽菜佛跳墙:几十种食材分门别类处理再一坛慢煨;'坛启荤香飘四邻,佛闻弃禅跳墙来'诗句由来=强故事钩;国宴名菜.craft锚点,可作'绝活'第二季.",
-   "whyNow": "佛跳墙工序繁复、'坛启荤香'诗句由来故事性强,国宴名菜,是craft/绝活题材常青款. verify 郑春发/聚春园/坛启荤香诗 at scripting.",
-   "sources": [
-    "佛跳墙 郑春发 聚春园 坛启荤香"
-   ],
-   "addedAt": "2026-08-03",
-   "addedBy": "cycle replenish (food sprint day16; 绝活 season-2 anchor)",
-   "status": "paused-food-decentered-2026-08-11",
-   "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
-  },
-  {
-   "id": "cfd-28",
-   "title": "沙县小吃：一副担子，开出比洋快餐还多的门店",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "沙县小吃母题（今日slot a已做为『中式快餐四巨头』P1；此seed留作单集深挖：扁肉/拌面/蒸饺/炖罐工艺特写+8.8万家门店数据条）。闽南彩蛋 爱拼才会赢。",
-   "whyNow": "『中式快餐四巨头』系列2026-08-05首播反响待观察；沙县小吃门店8.8万+持续为国民话题，可做单品深挖版。verify 门店数/非遗年份 at scripting.",
-   "sources": [
-    "腾讯新闻 沙县小吃8.8万家门店 2024"
-   ],
-   "addedAt": "2026-08-05",
-   "addedBy": "cycle replenish (food sprint day 18)",
-   "status": "paused-food-decentered-2026-08-11",
-   "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
-  },
-  {
-   "id": "cfd-29",
-   "title": "柳州螺蛳粉：闻着臭吃着香，一年卖出几百亿",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "螺蛳粉：酸笋『臭味』反差钩+预包装出海爆款。money shot 红油/嗦粉POV+酸笋特写。桂柳话彩蛋（dialect-bank 广西）。fact-first=闻着臭却卖到全国海外。",
-   "whyNow": "柳州螺蛳粉预包装年产值持续破百亿、出海东南亚/欧美长红；臭味争议是天然comment bait。verify 最新产值数据 at scripting.",
-   "sources": [
-    "柳州螺蛳粉 预包装 产值 出海"
-   ],
-   "addedAt": "2026-08-05",
-   "addedBy": "cycle replenish (food sprint day 18)",
-   "status": "covered-duplicate",
-   "coveredBy": "dup: 柳州螺蛳粉 already produced 07-23c (中国粉面几大派③)"
-  },
-  {
-   "id": "cfd-30",
-   "title": "武汉热干面：过早之王，为什么要先『掸面』",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "武汉热干面：芝麻酱拌面、掸面工艺、过早文化。money shot 拌酱拉丝。fact-first=不是汤面也不是拌面，武汉人叫它过早之王。武汉话彩蛋（可深化湖北，dialect-bank未含则honest）。",
-   "whyNow": "武汉『过早』文化与热干面常年霸榜早餐类短视频；掸面工艺是强钩子。verify 掸面/芝麻酱工艺 at scripting.",
-   "sources": [
-    "武汉热干面 掸面 过早 芝麻酱"
-   ],
-   "addedAt": "2026-08-05",
-   "addedBy": "cycle replenish (food sprint day 18)",
-   "status": "covered-duplicate",
-   "coveredBy": "dup: 武汉热干面 already produced 07-21b & 07-23b"
-  },
-  {
-   "id": "cfd-31",
-   "title": "河南胡辣汤：一碗辣糊糊，叫醒一座城的早晨",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "逍遥镇/北舞渡胡辣汤：胡椒勾芡、牛肉面筋。money shot 勺子舀起挂糊。fact-first=名字里没有『辣椒』，靠胡椒辣。中原早餐王。",
-   "whyNow": "胡辣汤作为河南早餐符号持续出圈，逍遥镇/北舞渡两派之争是天然either-or CTA。verify 逍遥镇/北舞渡两派 at scripting.",
-   "sources": [
-    "河南胡辣汤 逍遥镇 北舞渡 胡椒"
-   ],
-   "addedAt": "2026-08-05",
-   "addedBy": "cycle replenish (food sprint day 18)",
-   "status": "covered-duplicate",
-   "coveredBy": "dup: 河南胡辣汤 already produced 07-28b (中国早餐宇宙⑥)"
-  },
-  {
-   "id": "cfd-32",
-   "title": "广式肠粉：一块布上，蒸出一条会呼吸的米浆",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "广式布拉肠：米浆、布拉、酱油。money shot 揭布拉肠瞬间/淋豉油。fact-first=一块布蒸出滑到入口即化。粤语彩蛋 抵食（dialect-bank 粤语）。",
-   "whyNow": "广式早茶/街头肠粉常年热门，布拉肠揭布瞬间是极强money shot。verify 布拉肠工艺 at scripting.",
-   "sources": [
-    "广式肠粉 布拉肠 米浆 豉油"
-   ],
-   "addedAt": "2026-08-05",
-   "addedBy": "cycle replenish (food sprint day 18)",
-   "status": "covered-duplicate",
-   "coveredBy": "dup: 广式肠粉 already produced 07-21c (中国早餐宇宙③)"
-  },
-  {
-   "id": "cfd-33",
-   "title": "西安油泼面：一勺滚油，泼出满碗香",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "油泼面/裤带面:面条上铺辣椒面葱花,一勺滚油浇下\"呲啦\"一声激香; fact-first=一碗面全靠一勺热油唤醒; 人物泼油/吃面手部特写; 陕西彩蛋(方言库无陕,标普通话).",
-   "whyNow": "油泼面是陕西面食顶流、短视频高传播,可组「西北面食」未来系列锚点; verify biang字/油温 at scripting.",
-   "sources": [
-    "百度百科 油泼面"
-   ],
-   "addedAt": "2026-08-07",
-   "addedBy": "cycle replenish (day20, 西北面食 series seed)",
-   "status": "covered-2026-08-09",
-   "coveredBy": "2026-08-09 slot b 陕西油泼面 (中国北方面食②)"
-  },
-  {
-   "id": "cfd-34",
-   "title": "biangbiang面：中国笔画最多的字，是一碗面",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "biángbiáng面/裤带面:一根面宽如裤带,\"biang\"字56笔画写不出来只能读; fact-first=这碗面的名字打不出来; 扯面甩案板money-shot.",
-   "whyNow": "biang字梗常年出圈,面食+汉字冷知识双钩子; 「西北面食」系列材料; verify 笔画数/口诀 at scripting.",
-   "sources": [
-    "维基 biangbiang面"
-   ],
-   "addedAt": "2026-08-07",
-   "addedBy": "cycle replenish (day20, 西北面食 series seed)",
-   "status": "paused-food-decentered-2026-08-11",
-   "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
-  },
-  {
-   "id": "cfd-35",
-   "title": "剁椒鱼头：一勺红剁椒，盖住整个鱼头",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "湘菜剁椒鱼头:胖鱼头铺满红剁椒清蒸,鲜辣; fact-first=一整个鱼头埋进红剁椒; 蒸制揭盖money-shot; 湖南彩蛋(方言库有湖南话).",
-   "whyNow": "剁椒鱼头是湘菜招牌、宴席硬菜,可组「中国人怎么吃一条鱼」未来系列; verify 起源/谭延闿说 at scripting.",
-   "sources": [
-    "百度百科 剁椒鱼头"
-   ],
-   "addedAt": "2026-08-07",
-   "addedBy": "cycle replenish (day20, 一条鱼 series seed)",
-   "status": "covered-2026-08-08"
-  },
-  {
-   "id": "cfd-36",
-   "title": "松鼠桂鱼：浇汁那一下，鱼会\"吱吱\"叫",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "苏帮菜松鼠鳜鱼:改花刀炸成松鼠状,热糖醋汁一浇\"吱吱\"响似松鼠叫; fact-first=浇汁会发出松鼠叫声; 浇汁瞬间money-shot.",
-   "whyNow": "松鼠桂鱼刀工+浇汁声效双卖点,可组「中国人怎么吃一条鱼」系列; verify 乾隆/苏州松鹤楼传说 at scripting.",
-   "sources": [
-    "百度百科 松鼠鳜鱼"
-   ],
-   "addedAt": "2026-08-07",
-   "addedBy": "cycle replenish (day20, 一条鱼 series seed)",
-   "status": "covered-2026-08-08"
-  },
-  {
-   "id": "cfd-37",
-   "title": "山西刀削面之外：一根面十种削法的面食江湖",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "山西面食深挖(今日只做刀削面单集,留作'山西面食'系列锚点):剔尖/猫耳朵/拨鱼/擦圪斗等,一省面食过百种. fact-first=一个省能做出上百种面. 人物:揉面/剔尖的手.",
-   "whyNow": "2026-08-09《中国北方面食硬核派》山西刀削面单集首播,山西面食'一面百样'可扩为系列; verify 山西面食种类数/剔尖猫耳朵工艺 at scripting.",
-   "sources": [
-    "山西面食 种类 剔尖 猫耳朵"
-   ],
-   "addedAt": "2026-08-09",
-   "addedBy": "cycle replenish (day22, 山西面食 series seed)",
-   "status": "paused-food-decentered-2026-08-11",
-   "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
-  },
-  {
-   "id": "cfd-38",
-   "title": "陕西臊子面：一口面三十遍,汤宽面少的'油泼'表亲",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "岐山臊子面:酸辣香煎稀汪, '只吃面不喝汤'(汤回锅)的老礼,红油臊子木耳蛋皮. fact-first=一顿饭一人能吃几十碗(一口一碗). 陕西面食,与油泼面成对照.",
-   "whyNow": "承接08-09陕西油泼面,岐山臊子面'一口一碗/汤回锅'民俗是强钩,可组'陕西面食'系列; verify 岐山臊子面九字诀/回汤旧俗 at scripting.",
-   "sources": [
-    "岐山臊子面 酸辣香 煎稀汪 回汤"
-   ],
-   "addedAt": "2026-08-09",
-   "addedBy": "cycle replenish (day22, 陕西面食 series seed)",
-   "status": "paused-food-decentered-2026-08-11",
-   "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
-  },
-  {
-   "id": "cfd-39",
-   "title": "新疆拌面(拉条子):不用擀不用压,全靠两手抻",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "新疆拌面/拉条子:和面醒面后手工抻拉,过油拌菜(过油肉/辣皮子),份量豪迈'加面不加钱'. fact-first=一根面从头到尾不断. money-shot抻面下锅.",
-   "whyNow": "新疆美食短视频长红,拉条子'加面不加钱'贴近生活、抻面画面强; 可组'新疆美食'系列(手抓饭cfd-26同源); verify 拉条子工艺/加面习俗 at scripting.",
-   "sources": [
-    "新疆拌面 拉条子 抻面 过油肉"
-   ],
-   "addedAt": "2026-08-09",
-   "addedBy": "cycle replenish (day22, 新疆美食 series seed)",
-   "status": "paused-food-decentered-2026-08-11",
-   "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
-  },
-  {
-   "id": "cfd-40",
-   "title": "山西刀削面的邻居:大同刀削面为什么配'一窝丝'",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "大同刀削面配羊肉/番茄打卤+黄花,或搭'一窝丝'烙饼. fact-first=削面还分大同派与晋中派. 地域对照,people-action 削面/浇卤.",
-   "whyNow": "刀削面单集反响待观察,大同vs晋中削面流派可做对照续集; verify 大同刀削面浇头/一窝丝 at scripting.",
-   "sources": [
-    "大同刀削面 一窝丝 浇头"
-   ],
-   "addedAt": "2026-08-09",
-   "addedBy": "cycle replenish (day22)",
-   "status": "paused-food-decentered-2026-08-11",
-   "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
-  },
-  {
-   "id": "gzh-07",
-   "title": "陈家祠：一座祠堂，把岭南所有手艺都刻上了墙",
-   "pillar": "china-culture",
-   "format": "short",
-   "angle": "广州陈家祠(陈氏书院)1894建;木雕/砖雕/石雕/陶塑/灰塑/铜铁铸/彩绘 岭南七绝集大成;打卡(屋脊陶塑震撼)+爱好者(非遗工艺深度)+亲子(找屋顶上的小人)。fact-first 钩:一条屋脊上塑了几百个人物。",
-   "whyNow": "culture-first era 广州古文化产物主线(owner 2026-08-09);陈家祠常年citywalk/非遗热门;事实 verify at scripting(两来源)",
-   "seriesNote": "standalone or 岭南非遗系列锚点",
-   "addedAt": "2026-08-10",
-   "addedBy": "research auto-replenish (culture-first)",
-   "status": "active"
-  },
-  {
-   "id": "gzh-08",
-   "title": "广彩：一只瓷盘，如何把广州画进欧洲的客厅",
-   "pillar": "china-culture",
-   "format": "short",
-   "angle": "广州织金彩瓷(广彩)清代外销瓷;为欧洲订单而生的'来样加工';十三行外销、海上丝路;爱好者(工艺:白瓷上二次施彩烧制)+打卡+亲子(中国瓷怎么卖到全世界)。fact-first 钩:三百年前广州就在做'外贸定制'。",
-   "whyNow": "culture-first era 古文化产物+海丝主线;呼应南越王波斯银盒的海丝母题;事实 verify at scripting(两来源)",
-   "seriesNote": "海丝/外销工艺系列候选",
-   "addedAt": "2026-08-10",
-   "addedBy": "research auto-replenish (culture-first)",
-   "status": "active"
-  },
-  {
-   "id": "slk-a01",
-   "title": "Route: Silk Road Heritage 丝路人文线EP1 莫高窟：被封存900年的图书馆",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "藏经洞1900年发现/735窟/4.5万㎡壁画/营造约千年。frame0=九层楼外观或沙漠石窟崖面。窟内壁画素材稀缺→外景+声明示意素材。 受众轨:爱好者。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。 ★DEDUP警告(2026-08-13): 08-11 city-travel 已用'4.5万㎡壁画无一署名'角度爆了988v——本集严格走藏经洞角度(被封存900年的图书馆/1900道士发现/流散文物),不得重复壁画数字钩。",
-   "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
-   "seriesNote": "Silk Road Heritage 丝路人文线 连载",
-   "addedAt": "2026-08-12",
-   "addedBy": "owner directive",
-   "status": "active"
-  },
-  {
-   "id": "slk-a02",
-   "title": "Route: Silk Road Heritage 丝路人文线EP2 鸣沙山月牙泉：沙漠里千年不涸的月牙",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "月牙泉被鸣沙山包围千年不涸;沙子滑动会'鸣'。frame0=沙丘环抱月牙泉航拍感。 受众轨:打卡。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。 可用 guess-chain 变体:'猜猜泉水多少年没干过'留到下集揭晓。",
-   "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
-   "seriesNote": "Silk Road Heritage 丝路人文线 连载",
-   "addedAt": "2026-08-12",
-   "addedBy": "owner directive",
-   "status": "active"
-  },
-  {
-   "id": "slk-a03",
-   "title": "Route: Silk Road Heritage 丝路人文线EP3 玉门关：春风不度的汉帝国西大门",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "王之涣诗钩;和田玉入关得名;汉长城遗址戈壁孤台。 受众轨:爱好者。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。 ★FOOTAGE-GATE(2026-08-14): 此站点 Pexels 大概率无实拍素材——按 playbook 闸门走 MAP-FORMAT(3D地图+路线事实框架,泛用素材诚实定位为'旅途'而非'该址') 或再选角,禁止指认式字幕配泛用画面。",
-   "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
-   "seriesNote": "Silk Road Heritage 丝路人文线 连载",
-   "addedAt": "2026-08-12",
-   "addedBy": "owner directive",
-   "status": "active"
-  },
-  {
-   "id": "slk-a04",
-   "title": "Route: Silk Road Heritage 丝路人文线EP4 榆林窟:莫高窟的安静兄弟",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "西夏壁画巅峰/游客极少/水月观音。 受众轨:爱好者。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。 ★FOOTAGE-GATE(2026-08-14): 此站点 Pexels 大概率无实拍素材——按 playbook 闸门走 MAP-FORMAT(3D地图+路线事实框架,泛用素材诚实定位为'旅途'而非'该址') 或再选角,禁止指认式字幕配泛用画面。",
-   "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
-   "seriesNote": "Silk Road Heritage 丝路人文线 连载",
-   "addedAt": "2026-08-12",
-   "addedBy": "owner directive",
-   "status": "active"
-  },
-  {
-   "id": "slk-a05",
-   "title": "Route: Silk Road Heritage 丝路人文线EP5 大地之子:戈壁上最孤独的婴儿",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "2016董书兵红砂岩巨婴雕塑,瓜州戈壁;'地球最孤独婴儿'钩。 受众轨:打卡。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。 ★FOOTAGE-GATE(2026-08-14): 此站点 Pexels 大概率无实拍素材——按 playbook 闸门走 MAP-FORMAT(3D地图+路线事实框架,泛用素材诚实定位为'旅途'而非'该址') 或再选角,禁止指认式字幕配泛用画面。",
-   "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
-   "seriesNote": "Silk Road Heritage 丝路人文线 连载",
-   "addedAt": "2026-08-12",
-   "addedBy": "owner directive",
-   "status": "active"
-  },
-  {
-   "id": "slk-a06",
-   "title": "Route: Silk Road Heritage 丝路人文线EP6 嘉峪关:天下第一雄关+多出来的一块砖",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "长城最西端明代要塞;定城砖传说(亲子友好讲法)。 受众轨:亲子。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。",
-   "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
-   "seriesNote": "Silk Road Heritage 丝路人文线 连载",
-   "addedAt": "2026-08-12",
-   "addedBy": "owner directive",
-   "status": "active"
-  },
-  {
-   "id": "slk-a07",
-   "title": "Route: Silk Road Heritage 丝路人文线EP7 马蹄寺:凿进悬崖的寺庙",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "崖壁石窟走廊+天马蹄印传说;张掖祁连山下。 受众轨:打卡。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。 ★FOOTAGE-GATE(2026-08-14): 此站点 Pexels 大概率无实拍素材——按 playbook 闸门走 MAP-FORMAT(3D地图+路线事实框架,泛用素材诚实定位为'旅途'而非'该址') 或再选角,禁止指认式字幕配泛用画面。",
-   "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
-   "seriesNote": "Silk Road Heritage 丝路人文线 连载",
-   "addedAt": "2026-08-12",
-   "addedBy": "owner directive",
-   "status": "active"
-  },
-  {
-   "id": "slk-a08",
-   "title": "Route: Silk Road Heritage 丝路人文线EP8 七彩丹霞·完结:彩虹山+全线串讲",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "张掖丹霞收官;全线8站一屏回顾+最佳季节+route CTA。 受众轨:全部。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。",
-   "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
-   "seriesNote": "Silk Road Heritage 丝路人文线 连载",
-   "addedAt": "2026-08-12",
-   "addedBy": "owner directive",
-   "status": "active"
-  },
-  {
-   "id": "slk-b01",
-   "title": "Route: Qinghai-Gansu Loop 青甘大环线EP1 塔尔寺:用会融化的材料做最精细的艺术",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "酥油花/青海西宁环线大本营。 受众轨:爱好者。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。",
-   "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
-   "seriesNote": "Qinghai-Gansu Loop 青甘大环线 连载",
-   "addedAt": "2026-08-12",
-   "addedBy": "owner directive",
-   "status": "active"
-  },
-  {
-   "id": "slk-b02",
-   "title": "Route: Qinghai-Gansu Loop 青甘大环线EP2 青海湖:海拔3200米的中国最大湖",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "环湖骑行/油菜花季(制作时核实季节)。 受众轨:打卡。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。",
-   "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
-   "seriesNote": "Qinghai-Gansu Loop 青甘大环线 连载",
-   "addedAt": "2026-08-12",
-   "addedBy": "owner directive",
-   "status": "active"
-  },
-  {
-   "id": "slk-b03",
-   "title": "Route: Qinghai-Gansu Loop 青甘大环线EP3 茶卡盐湖:踩在天空之镜上",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "盐湖倒影'天空之镜'。 受众轨:打卡。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。",
-   "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
-   "seriesNote": "Qinghai-Gansu Loop 青甘大环线 连载",
-   "addedAt": "2026-08-12",
-   "addedBy": "owner directive",
-   "status": "active"
-  },
-  {
-   "id": "slk-b04",
-   "title": "Route: Qinghai-Gansu Loop 青甘大环线EP4 大柴旦翡翠湖:无人区的调色盘",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "戈壁翡翠色盐池群。 受众轨:打卡。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。",
-   "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
-   "seriesNote": "Qinghai-Gansu Loop 青甘大环线 连载",
-   "addedAt": "2026-08-12",
-   "addedBy": "owner directive",
-   "status": "active"
-  },
-  {
-   "id": "slk-b05",
-   "title": "Route: Qinghai-Gansu Loop 青甘大环线EP5 夜敦煌:白天看窟 晚上看星",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "沙洲夜市/驼队剪影/沙漠星空(与A系列子景点严格去重)。 受众轨:打卡。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。",
-   "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
-   "seriesNote": "Qinghai-Gansu Loop 青甘大环线 连载",
-   "addedAt": "2026-08-12",
-   "addedBy": "owner directive",
-   "status": "active"
-  },
-  {
-   "id": "slk-b06",
-   "title": "Route: Qinghai-Gansu Loop 青甘大环线EP6 张掖大佛寺:中国最大室内卧佛",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "约34m卧佛(核实)/西夏皇家寺院(与A去重)。 受众轨:爱好者。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。",
-   "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
-   "seriesNote": "Qinghai-Gansu Loop 青甘大环线 连载",
-   "addedAt": "2026-08-12",
-   "addedBy": "owner directive",
-   "status": "active"
-  },
-  {
-   "id": "slk-b07",
-   "title": "Route: Qinghai-Gansu Loop 青甘大环线EP7 青甘大环线·完结:全环线串讲",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "海拔/季节/自驾提示+route CTA。 受众轨:全部。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。",
-   "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
-   "seriesNote": "Qinghai-Gansu Loop 青甘大环线 连载",
-   "addedAt": "2026-08-12",
-   "addedBy": "owner directive",
-   "status": "active"
-  },
-  {
-   "id": "rt-05",
-   "title": "Route: Beijing Central Axis①永定门——中轴线的起点",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "《Beijing Central Axis 帝都中轴》4集连载 P1。线路: 永定门→天坛→前门→故宫→钟鼓楼。P1 永定门开场(7.8km中轴南起点),片尾预告天坛。奖励站(老北京小吃)留到线路中段。frame0=中轴航拍/古城门。",
-   "whyNow": "owner 2026-08-11 线路化直令(route-products §5 下一条=北京中轴); 北京中轴线2024入世界遗产是持续热点; facts verify at scripting",
-   "sources": [
-    "北京中轴线 世界遗产 永定门 7.8公里"
-   ],
-   "addedAt": "2026-08-11",
-   "addedBy": "cycle replenish (china-route next series)",
-   "status": "active"
-  },
-  {
-   "id": "rt-06",
-   "title": "Route: Beijing Central Axis②天坛——皇帝祭天的圆与方",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "P2 天坛: 圜丘/祈年殿·天圆地方·回音壁声学。片尾预告前门/正阳门。fact-first=祈年殿无一根铁钉/一块砖。verify at scripting。",
-   "whyNow": "北京中轴线系列 P2; 天坛为中轴核心礼制建筑; facts verify at scripting",
-   "sources": [
-    "天坛 祈年殿 无钉 天圆地方 回音壁"
-   ],
-   "addedAt": "2026-08-11",
-   "addedBy": "cycle replenish (china-route next series)",
-   "status": "active"
-  },
-  {
-   "id": "rt-07",
-   "title": "Route: Beijing Central Axis③故宫——中轴线上的紫禁城",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "P3 故宫: 中轴对称·三大殿·9999间之说。片尾预告钟鼓楼。fact-first=紫禁城恰在7.8km中轴正中。verify at scripting。",
-   "whyNow": "北京中轴线系列 P3; 故宫是中轴线视觉高潮; facts verify at scripting",
-   "sources": [
-    "故宫 紫禁城 中轴对称 房间数"
-   ],
-   "addedAt": "2026-08-11",
-   "addedBy": "cycle replenish (china-route next series)",
-   "status": "active"
-  },
-  {
-   "id": "rt-08",
-   "title": "Route: Beijing Central Axis④完结·钟鼓楼——中轴线的终点报时",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "P4 完结 钟鼓楼: 中轴北端·晨钟暮鼓报时·俯瞰全轴。收官串讲全线+full route on channel page(私域钩)。fact-first=一口大钟报时全城可闻。verify at scripting。",
-   "whyNow": "北京中轴线系列完结集; 承接私域漏斗; facts verify at scripting",
-   "sources": [
-    "北京 钟鼓楼 晨钟暮鼓 报时 中轴线终点"
-   ],
-   "addedAt": "2026-08-11",
-   "addedBy": "cycle replenish (china-route next series)",
-   "status": "active"
-  },
-  {
-   "id": "edge-a01",
-   "title": "Route: China's Edge 东北边境篇 EP1 丹东鸭绿江断桥:一江之隔两个世界",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "鸭绿江断桥(朝战遗迹)走到'断点';中朝界河;江畔步道。地理事实陈述,不碰政治。 每集含徒步/步道点+许可诚实提示;素材稀缺站用地图动画+泛用边境素材照常声明;音乐 oriental-edm/cinema-orient 轮换。",
-   "whyNow": "owner 2026-08-12 大环绕中国边境徒步 IP(plans/china-edge.md S1);facts verify at scripting 双源",
-   "seriesNote": "China's Edge S1 连载",
-   "addedAt": "2026-08-12",
-   "addedBy": "owner directive",
-   "status": "active"
-  },
-  {
-   "id": "edge-a02",
-   "title": "Route: China's Edge 东北边境篇 EP2 珲春防川:一眼望三国",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "中俄朝三国交界瞭望;'东方第一村'木栈道;图们江出海口叙事(事实核实)。 每集含徒步/步道点+许可诚实提示;素材稀缺站用地图动画+泛用边境素材照常声明;音乐 oriental-edm/cinema-orient 轮换。",
-   "whyNow": "owner 2026-08-12 大环绕中国边境徒步 IP(plans/china-edge.md S1);facts verify at scripting 双源",
-   "seriesNote": "China's Edge S1 连载",
-   "addedAt": "2026-08-12",
-   "addedBy": "owner directive",
-   "status": "active"
-  },
-  {
-   "id": "edge-a03",
-   "title": "Route: China's Edge 东北边境篇 EP3 长白山天池:中朝界湖火山口",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "火山口湖海拔2189m(核实);北坡台阶徒步登顶;云开概率诚实提示。 每集含徒步/步道点+许可诚实提示;素材稀缺站用地图动画+泛用边境素材照常声明;音乐 oriental-edm/cinema-orient 轮换。",
-   "whyNow": "owner 2026-08-12 大环绕中国边境徒步 IP(plans/china-edge.md S1);facts verify at scripting 双源",
-   "seriesNote": "China's Edge S1 连载",
-   "addedAt": "2026-08-12",
-   "addedBy": "owner directive",
-   "status": "active"
-  },
-  {
-   "id": "edge-a04",
-   "title": "Route: China's Edge 东北边境篇 EP4 抚远黑瞎子岛:中国最东点的第一缕阳光",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "中国陆地最东点;全国最早日出;湿地木栈道。 每集含徒步/步道点+许可诚实提示;素材稀缺站用地图动画+泛用边境素材照常声明;音乐 oriental-edm/cinema-orient 轮换。",
-   "whyNow": "owner 2026-08-12 大环绕中国边境徒步 IP(plans/china-edge.md S1);facts verify at scripting 双源",
-   "seriesNote": "China's Edge S1 连载",
-   "addedAt": "2026-08-12",
-   "addedBy": "owner directive",
-   "status": "active"
-  },
-  {
-   "id": "edge-a05",
-   "title": "Route: China's Edge 东北边境篇 EP5 漠河北极村:到中国最北'找北'",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "中国最北点;'找北'梗;极光偶见不承诺(诚实);冬季极寒装备提示。 每集含徒步/步道点+许可诚实提示;素材稀缺站用地图动画+泛用边境素材照常声明;音乐 oriental-edm/cinema-orient 轮换。",
-   "whyNow": "owner 2026-08-12 大环绕中国边境徒步 IP(plans/china-edge.md S1);facts verify at scripting 双源",
-   "seriesNote": "China's Edge S1 连载",
-   "addedAt": "2026-08-12",
-   "addedBy": "owner directive",
-   "status": "active"
-  },
-  {
-   "id": "edge-a06",
-   "title": "Route: China's Edge 东北边境篇 EP6 满洲里国门:欧亚铁路在此换轨",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "中俄最大陆路口岸;宽轨/标准轨换轨;中俄边城建筑反差。 每集含徒步/步道点+许可诚实提示;素材稀缺站用地图动画+泛用边境素材照常声明;音乐 oriental-edm/cinema-orient 轮换。",
-   "whyNow": "owner 2026-08-12 大环绕中国边境徒步 IP(plans/china-edge.md S1);facts verify at scripting 双源",
-   "seriesNote": "China's Edge S1 连载",
-   "addedAt": "2026-08-12",
-   "addedBy": "owner directive",
-   "status": "active"
-  },
-  {
-   "id": "edge-a07",
-   "title": "Route: China's Edge 东北边境篇 EP7 额尔古纳界河:G331最美自驾段",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "呼伦贝尔草原+中俄界河;草原徒步;边境公路公路片感。 每集含徒步/步道点+许可诚实提示;素材稀缺站用地图动画+泛用边境素材照常声明;音乐 oriental-edm/cinema-orient 轮换。",
-   "whyNow": "owner 2026-08-12 大环绕中国边境徒步 IP(plans/china-edge.md S1);facts verify at scripting 双源",
-   "seriesNote": "China's Edge S1 连载",
-   "addedAt": "2026-08-12",
-   "addedBy": "owner directive",
-   "status": "active"
-  },
-  {
-   "id": "edge-a08",
-   "title": "Route: China's Edge 东北边境篇 EP8 东北边境篇完结:全线串讲",
-   "pillar": "china-route",
-   "format": "short",
-   "angle": "G331东段8站回顾;边境通行证/季节/装备 Expert Tips;full route CTA。 每集含徒步/步道点+许可诚实提示;素材稀缺站用地图动画+泛用边境素材照常声明;音乐 oriental-edm/cinema-orient 轮换。",
-   "whyNow": "owner 2026-08-12 大环绕中国边境徒步 IP(plans/china-edge.md S1);facts verify at scripting 双源",
-   "seriesNote": "China's Edge S1 连载",
-   "addedAt": "2026-08-12",
-   "addedBy": "owner directive",
-   "status": "active"
-  }
- ]
+  "note": "Topic backlog for /youtube-cycle. Top item matching the slot format is used next. Owner may edit/reorder freely.",
+  "queue": [
+    {
+      "id": "cc4-03",
+      "title": "安徽宏村：为什么整座村子是一头'牛'",
+      "pillar": "china-culture",
+      "format": "short",
+      "angle": "fact-first钩=村落按牛形规划,水系当'牛肠'引活水入户;徽派马头墙. 世遗. 安徽非广州. 亲子+打卡.",
+      "whyNow": "2026-08-14 research: 补华东 徽派水乡/世遗古村",
+      "addedAt": "2026-08-14",
+      "addedBy": "auto-replenish (culture geo-breadth)",
+      "status": "active"
+    },
+    {
+      "id": "cc4-04",
+      "title": "龙泉青瓷：把石头烧成一汪湖水的颜色",
+      "pillar": "china-culture",
+      "format": "short",
+      "angle": "fact-first钩=千年配方让瓷器呈现'雨过天青'的玉色;非遗·南宋官窑. 浙江非广州. 爱好者工艺.",
+      "whyNow": "2026-08-14 research: 补浙江 非遗青瓷 craft(接景德镇/云锦 craft 线)",
+      "addedAt": "2026-08-14",
+      "addedBy": "auto-replenish (culture geo-breadth)",
+      "status": "active"
+    },
+    {
+      "id": "rt-02",
+      "title": "Route: Guangzhou Heritage Day②陈家祠——一座祠堂七种手艺",
+      "pillar": "china-route",
+      "format": "short",
+      "angle": "P2 陈家祠(岭南建筑装饰巅峰,木雕砖雕灰塑陶塑);承接P1,预告P3骑楼街。",
+      "whyNow": "同上",
+      "addedAt": "2026-08-11",
+      "addedBy": "owner directive",
+      "status": "covered-2026-08-12"
+    },
+    {
+      "id": "gzh-03",
+      "title": "光孝寺：未有羊城，先有光孝",
+      "pillar": "china-culture",
+      "format": "short",
+      "angle": "广州最老古建群之一:三国虞翻故宅改寺;禅宗六祖慧能在此剃度(瘗发塔);'未有羊城先有光孝'民谚做钩。受众:爱好者+亲子(中国寺庙入门:山门/大雄宝殿怎么看)。",
+      "whyNow": "owner 2026-08-09 广州历史深挖直令(南越王墓/寺庙)+culture-first era 开启;所有事实 verify at scripting(两独立来源)",
+      "seriesNote": "2-part series day2 with gzh-04",
+      "addedAt": "2026-08-09",
+      "addedBy": "owner directive via interactive session",
+      "status": "active"
+    },
+    {
+      "id": "gzh-04",
+      "title": "六榕寺花塔:苏轼起的名字",
+      "pillar": "china-culture",
+      "format": "short",
+      "angle": "北宋苏轼过广州题'六榕'二字得名;千年花塔;寺塔同城联动光孝寺做'广州佛寺双篇'。打卡轨:花塔外观极上镜。",
+      "whyNow": "owner 2026-08-09 广州历史深挖直令(南越王墓/寺庙)+culture-first era 开启;所有事实 verify at scripting(两独立来源)",
+      "seriesNote": "2-part series day2 with gzh-03",
+      "addedAt": "2026-08-09",
+      "addedBy": "owner directive via interactive session",
+      "status": "covered-2026-08-12"
+    },
+    {
+      "id": "gzh-05",
+      "title": "怀圣寺光塔：一座塔，既是宣礼塔又是灯塔",
+      "pillar": "china-culture",
+      "format": "short",
+      "angle": "中国现存最早清真寺之一(相传唐代);光塔千年前兼作珠江航运灯塔=海上丝绸之路活证据。'为什么广州有中国最老的清真寺?'=海丝叙事最强钩。",
+      "whyNow": "owner 2026-08-09 广州历史深挖直令(南越王墓/寺庙)+culture-first era 开启;所有事实 verify at scripting(两独立来源)",
+      "seriesNote": "2-part series day3 with gzh-06",
+      "addedAt": "2026-08-09",
+      "addedBy": "owner directive via interactive session",
+      "status": "covered-2026-08-12"
+    },
+    {
+      "id": "gzh-06",
+      "title": "镇海楼：1380年的'岭南第一胜览'",
+      "pillar": "china-culture",
+      "format": "short",
+      "angle": "明洪武十三年(1380)建,五层楼;今为广州博物馆;登楼看老城中轴。打卡+历史轨;与珠江新城天际线同框做古今对比收尾。",
+      "whyNow": "owner 2026-08-09 广州历史深挖直令(南越王墓/寺庙)+culture-first era 开启;所有事实 verify at scripting(两独立来源)",
+      "seriesNote": "2-part series day3 with gzh-05",
+      "addedAt": "2026-08-09",
+      "addedBy": "owner directive via interactive session",
+      "status": "active"
+    },
+    {
+      "id": "cw-03",
+      "title": "泉州：一条街，走过半部海上丝绸之路",
+      "pillar": "city-walk",
+      "format": "longform",
+      "angle": "泉州古城漫游：西街开元寺、红砖古厝、骑楼、面线糊早餐；宋元海丝起点。人物：逛街吃早茶的手与脸。闽南彩蛋 好呷 hó-tsia̍h。",
+      "whyNow": "泉州「宋元中国的世界海洋商贸中心」2021年列入UNESCO世遗后持续走红，城市漫游长片素材充足；verify 22处遗产点/开元寺东西塔 at scripting.",
+      "sources": [
+        "UNESCO 泉州:宋元中国的世界海洋商贸中心 2021"
+      ],
+      "addedAt": "2026-07-19",
+      "addedBy": "cycle replenish (city-walk lane hit 0)",
+      "status": "active",
+      "note": "reactivated 2026-08-09 culture-first era"
+    },
+    {
+      "id": "cw-04",
+      "title": "苏州平江路：一条水巷，走进《平江图》八百年",
+      "pillar": "city-walk",
+      "format": "longform",
+      "angle": "平江历史街区：小桥流水人家、评弹茶馆、河边人家晾晒、船娘摇橹。诗句 君到姑苏见，人家尽枕河（杜荀鹤）。人物：河边喝茶听曲。",
+      "whyNow": "平江历史街区常年霸榜城市漫游/citywalk话题；对照南宋《平江图》仍在的水巷格局是强钩子；verify 平江图/年代 at scripting.",
+      "sources": [
+        "苏州平江历史街区 平江图 南宋"
+      ],
+      "addedAt": "2026-07-19",
+      "addedBy": "cycle replenish (city-walk lane hit 0)",
+      "status": "active",
+      "note": "reactivated 2026-08-09 culture-first era"
+    },
+    {
+      "id": "seed-11",
+      "title": "The World's Toughest Exam Just Happened — and It's Not the SAT",
+      "pillar": "education-systems",
+      "format": "short",
+      "angle": "Short comparing gaokao (China), Suneung (Korea), and A-Levels (UK) side by side — stakes, format, and what happens if you fail — as a quick, curiosity-driven ranking video.",
+      "whyNow": "China's 2026 gaokao (12.9M registrants) just concluded this summer, giving a timely peg to compare it against other countries' single-shot university entrance exams.",
+      "sources": [
+        "gulfnews.com China Gaokao 2026 millions sit exams"
+      ],
+      "addedAt": "2026-07-08",
+      "addedBy": "platform-research workflow (sonnet seed agent)",
+      "status": "paused-pivot-2026-07-09"
+    },
+    {
+      "id": "seed-12",
+      "title": "Singapore Just Raised Teacher Pay 9%. What Does That Buy?",
+      "pillar": "education-systems",
+      "format": "short",
+      "angle": "Short on Singapore's October 2026 teacher salary increase (up to 9% for ~36,000 educators) paired with its 'rethink teachers' duties' workload-reduction program using AI-enhanced tools — a quick 'how a top-ranked system treats its teachers' piece.",
+      "whyNow": "Singapore's MOE confirmed the salary increase takes effect October 1, 2026, alongside its 2026 teacher-workload reform announced this year.",
+      "sources": [
+        "mothership.sg 36,000 MOE teachers salary increase",
+        "blog.maxthon.com MOE 2026 initiatives redesign teacher duties"
+      ],
+      "addedAt": "2026-07-08",
+      "addedBy": "platform-research workflow (sonnet seed agent)",
+      "status": "paused-pivot-2026-07-09"
+    },
+    {
+      "id": "seed-05",
+      "title": "50 UK Universities Could Close This Year — Here's Why",
+      "pillar": "whats-latest",
+      "format": "longform",
+      "angle": "Longform explainer on the 2026 UK higher-education financial crisis: capped £9,250 tuition losing 25% real value since 2017, the new international-fee levy from January 2026, mass job cuts (13,300 in one year), and what it means for students choosing UK schools.",
+      "whyNow": "Reports through mid-2026 show ~50 UK universities at high risk of closure, 45% of providers projected to run a deficit in 2025-26, and a new international-tuition levy in effect since January 2026.",
+      "sources": [
+        "academicjobs.com UK Universities Financial Crisis 2026",
+        "thepienews.com UK universities face rising deficits"
+      ],
+      "addedAt": "2026-07-08",
+      "addedBy": "platform-research workflow (sonnet seed agent)",
+      "status": "paused-pivot-2026-07-09"
+    },
+    {
+      "id": "seed-13",
+      "title": "Why Nevada Tuition Is Jumping 12% While Stanford Freezes Its Price",
+      "pillar": "whats-latest",
+      "format": "short",
+      "angle": "Short contrasting two extremes in the 2026-27 tuition-setting season — Nevada's public universities raising up to 12% versus Stanford holding flat — as a hook into how wildly tuition-setting varies by state and institution type.",
+      "whyNow": "Nevada's Board of Regents confirmed tuition rising up to 12% for 2026-27 in reporting this spring, alongside Stanford's flat-tuition announcement the same season.",
+      "sources": [
+        "lasvegasweekly.com Nevada college tuition to rise up to 12 percent",
+        "forbes.com college tuition increases of 3% or more"
+      ],
+      "addedAt": "2026-07-08",
+      "addedBy": "platform-research workflow (sonnet seed agent)",
+      "status": "paused-pivot-2026-07-09"
+    },
+    {
+      "id": "seed-14",
+      "title": "8 Million College Applications: Why Everyone Is Applying to Everywhere Now",
+      "pillar": "education-trends",
+      "format": "short",
+      "angle": "Longform explainer on the Common App processing over 8 million submissions this cycle (up from 7.1M), examining how application-volume inflation is warping how we read 'record-low acceptance rates' and what it means for how students should actually apply.",
+      "whyNow": "The 2026 Ivy Day cycle confirmed Common App volume crossed 8 million submissions, up from 7.1 million the prior year, per admissions-consulting reporting this spring.",
+      "sources": [
+        "toptieradmissions.com 2026 Ivy League college admission statistics"
+      ],
+      "addedAt": "2026-07-08",
+      "addedBy": "platform-research workflow (sonnet seed agent)",
+      "status": "paused-pivot-2026-07-09"
+    },
+    {
+      "id": "seed-06",
+      "title": "Why International Students Might Avoid US Colleges This Year",
+      "pillar": "education-trends",
+      "format": "longform",
+      "angle": "Educational (non-legal-advice) explainer on 2026 US visa policy shifts affecting international students — the proposed end of 'Duration of Status' for F-1s, shorter grace periods, and a new $250 Visa Integrity Fee — framed around what it means for the student experience and enrollment trends, not legal advice.",
+      "whyNow": "NAFSA's 2026 estimate of a 30-40% drop in new international enrollment follows the proposed 'Duration of Status' rule change and new visa fees reported through spring 2026.",
+      "sources": [
+        "forbes.com how 2026 immigration crackdown is changing US higher ed",
+        "cis.org new regulation duration of status"
+      ],
+      "addedAt": "2026-07-08",
+      "addedBy": "platform-research workflow (sonnet seed agent)",
+      "status": "paused-pivot-2026-07-09"
+    },
+    {
+      "id": "seed-08",
+      "title": "Finland vs. South Korea: The Two Opposite 'Best' Education Systems in the World",
+      "pillar": "education-systems",
+      "format": "longform",
+      "angle": "Longform comparative explainer contrasting Finland's low-homework, no-standardized-testing model with South Korea's high-intensity, memorization-heavy system and its 2026 push to train a million 'digital talents' — asking which model actually produces better outcomes.",
+      "whyNow": "South Korea's Ministry of Education is mid-way through its 2026 target to cultivate one million digital talents and expand Glocal Colleges to 30 by year's end, giving a fresh 2026 data point against Finland's steady-state model.",
+      "sources": [
+        "english.moe.go.kr key policies",
+        "educationbycountry.org South Korea 2026"
+      ],
+      "addedAt": "2026-07-08",
+      "addedBy": "platform-research workflow (sonnet seed agent)",
+      "status": "paused-pivot-2026-07-09"
+    },
+    {
+      "id": "seed-09",
+      "title": "Every State Is Suddenly Writing Laws About AI in Schools",
+      "pillar": "education-trends",
+      "format": "longform",
+      "angle": "Longform explainer surveying the 2026 legislative wave — 134+ bills across 31 states — covering data-privacy bills like California's AB 1159 (banning student data used to train AI) and South Carolina's proposed parental opt-in law, explaining what's actually being regulated and why.",
+      "whyNow": "FutureEd's 2026 legislative tracker counts 71+ AI-in-education bills across 27 states this session, with California AB 1159 and South Carolina H.B. 5253 both active in 2026.",
+      "sources": [
+        "future-ed.org legislative tracker 2026 state AI bills",
+        "multistate.us how states are regulating AI in education"
+      ],
+      "addedAt": "2026-07-08",
+      "addedBy": "platform-research workflow (sonnet seed agent)",
+      "status": "paused-pivot-2026-07-09"
+    },
+    {
+      "id": "seed-10",
+      "title": "86% of Students Are Already Using AI for School. Are Teachers Keeping Up?",
+      "pillar": "education-trends",
+      "format": "longform",
+      "angle": "Short pulling the 2025-2026 school year data point (85% of teachers, 86% of students using AI; 25% of students daily) and asking what schools are actually doing about it in 2026 — quick, punchy stat-driven video.",
+      "whyNow": "The Center for Democracy and Technology's cited 2025-2026 school year survey data is being actively referenced in 2026 policy debates and news coverage on AI classroom guidelines.",
+      "sources": [
+        "cbsnews.com AI use in schools and classrooms is booming"
+      ],
+      "addedAt": "2026-07-08",
+      "addedBy": "platform-research workflow (sonnet seed agent)",
+      "status": "paused-pivot-2026-07-09"
+    },
+    {
+      "id": "seed-15",
+      "title": "Should Schools Ban AI or Teach It? Inside the 2026 Fight",
+      "pillar": "education-trends",
+      "format": "longform",
+      "angle": "Longform explainer laying out the two competing camps in 2026 US education policy — states mandating AI-literacy curriculum (Georgia, Mississippi) vs. states restricting classroom AI use and banning AI-trained student data (California, South Carolina) — a balanced, non-partisan tour of the policy landscape.",
+      "whyNow": "Both tracks are simultaneously active in 2026 state legislatures per FutureEd's and ExcelinEd's 2026 trackers, alongside the federal AI-literacy executive order cited as a tailwind.",
+      "sources": [
+        "excelined.org state K-12 AI policy in 2026",
+        "future-ed.org legislative tracker 2026 state AI bills"
+      ],
+      "addedAt": "2026-07-08",
+      "addedBy": "platform-research workflow (sonnet seed agent)",
+      "status": "paused-pivot-2026-07-09"
+    },
+    {
+      "id": "test-cc-01",
+      "title": "外国人第一次讲广东话，係咩感觉？(spoof street interview)",
+      "pillar": "test-cantonese-comedy",
+      "format": "short",
+      "angle": "Spoof 街访: 'foreigner' tries ordering 奶茶/叫小巴 in Cantonese, each mishap teaches one real funny phrase. Self-aware, warm, bleep any strong 粗口.",
+      "whyNow": "evergreen comedy pilot for the test line",
+      "sources": [],
+      "addedAt": "2026-07-08",
+      "addedBy": "owner test-line directive",
+      "status": "paused-pivot-2026-07-09"
+    },
+    {
+      "id": "test-cc-02",
+      "title": "教你三句最实用嘅搞笑广东话 (港式吐槽入门)",
+      "pillar": "test-cantonese-comedy",
+      "format": "short",
+      "angle": "Three genuinely useful funny Cantonese phrases with literal-translation punchlines in English subs.",
+      "whyNow": "evergreen comedy pilot #2",
+      "sources": [],
+      "addedAt": "2026-07-08",
+      "addedBy": "owner test-line directive",
+      "status": "paused-pivot-2026-07-09"
+    },
+    {
+      "id": "test-td-01",
+      "title": "东北话第一课：'嘎哈呢？' 学会你就是半个东北人",
+      "pillar": "test-teach-chinese-dialects",
+      "format": "short",
+      "angle": "Teach 嘎哈呢 (what are you doing): slow -> natural -> mini-scene (phone call). Mandarin narrator teaching, dialect text big on screen, honest audio label.",
+      "whyNow": "teach line pilot #1 — 东北话 is the most meme-friendly dialect on Chinese internet",
+      "sources": [],
+      "addedAt": "2026-07-08",
+      "addedBy": "owner test-line directive",
+      "status": "paused-pivot-2026-07-09"
+    },
+    {
+      "id": "test-td-02",
+      "title": "四川话の幸福感：'巴适得板' 到底有多巴适？",
+      "pillar": "test-teach-chinese-dialects",
+      "format": "short",
+      "angle": "Teach 巴适得板 (extremely comfortable/great): hotpot mini-scene; note 四川话 chill culture.",
+      "whyNow": "teach line pilot #2",
+      "sources": [],
+      "addedAt": "2026-07-08",
+      "addedBy": "owner test-line directive",
+      "status": "paused-pivot-2026-07-09"
+    },
+    {
+      "id": "cof-05",
+      "title": "深圳的咖啡速度：从图纸到风味",
+      "pillar": "china-coffee",
+      "format": "short",
+      "angle": "Specialty roasters, minimalist shops, city-of-makers angle.",
+      "whyNow": "owner theme-week plan 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-10",
+      "addedBy": "owner theme directive",
+      "status": "paused-coffee-2026-07-18"
+    },
+    {
+      "id": "win-01",
+      "title": "贺兰山东麓：石头地里长出的葡萄酒",
+      "pillar": "china-wine",
+      "format": "short",
+      "angle": "Ningxia vineyard dawn, rocky soil close-up, harvest hands. Verify ownership before any '纯中资' claim.",
+      "whyNow": "owner theme-week plan 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-10",
+      "addedBy": "owner theme directive",
+      "status": "paused-themeweek-cancelled-2026-07-18"
+    },
+    {
+      "id": "win-02",
+      "title": "云南高原上的葡萄园，海拔两千米的甜",
+      "pillar": "china-wine",
+      "format": "short",
+      "angle": "Shangri-La highland vines, snow-mountain backdrop.",
+      "whyNow": "owner theme-week plan 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-10",
+      "addedBy": "owner theme directive",
+      "status": "paused-themeweek-cancelled-2026-07-18"
+    },
+    {
+      "id": "win-03",
+      "title": "新疆的日照，酿进一瓶酒里",
+      "pillar": "china-wine",
+      "format": "short",
+      "angle": "Sun-drenched vineyards, barrel cellar cool light.",
+      "whyNow": "owner theme-week plan 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-10",
+      "addedBy": "owner theme directive",
+      "status": "paused-themeweek-cancelled-2026-07-18"
+    },
+    {
+      "id": "win-04",
+      "title": "一串葡萄的二十四小时：采收季的酒庄",
+      "pillar": "china-wine",
+      "format": "short",
+      "angle": "Harvest-day rhythm: dawn picking, sorting table, crush.",
+      "whyNow": "owner theme-week plan 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-10",
+      "addedBy": "owner theme directive",
+      "status": "paused-themeweek-cancelled-2026-07-18"
+    },
+    {
+      "id": "win-05",
+      "title": "从土地到酒标：一家全中国团队酒庄的诞生",
+      "pillar": "china-wine",
+      "format": "longform",
+      "angle": "One winery end-to-end Chinese team story (verify per winery; craft narrative, zero politics).",
+      "whyNow": "owner theme-week plan 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-10",
+      "addedBy": "owner theme directive",
+      "status": "paused-themeweek-cancelled-2026-07-18"
+    },
+    {
+      "id": "win-06",
+      "title": "贺兰山风土：为什么世界开始谈论宁夏",
+      "pillar": "china-wine",
+      "format": "longform",
+      "angle": "Terroir deep-dive: climate, altitude, awards.",
+      "whyNow": "owner theme-week plan 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-10",
+      "addedBy": "owner theme directive",
+      "status": "paused-themeweek-cancelled-2026-07-18"
+    },
+    {
+      "id": "yng-01",
+      "title": "中国年轻人的餐厅，不止是吃饭",
+      "pillar": "young-china",
+      "format": "short",
+      "angle": "Creative young restaurant: open kitchen, plating close-ups, design space.",
+      "whyNow": "owner theme-week plan 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-10",
+      "addedBy": "owner theme directive",
+      "status": "paused-themeweek-cancelled-2026-07-18"
+    },
+    {
+      "id": "yng-02",
+      "title": "谷子店里的快乐经济学",
+      "pillar": "young-china",
+      "format": "short",
+      "angle": "Anime-merch shop shelves, badge close-ups, 潮玩 culture.",
+      "whyNow": "owner theme-week plan 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-10",
+      "addedBy": "owner theme directive",
+      "status": "paused-themeweek-cancelled-2026-07-18"
+    },
+    {
+      "id": "yng-03",
+      "title": "黑神话之后：中国游戏的新想象",
+      "pillar": "young-china",
+      "format": "short",
+      "angle": "Game-culture visuals, esports café energy.",
+      "whyNow": "owner theme-week plan 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-10",
+      "addedBy": "owner theme directive",
+      "status": "paused-themeweek-cancelled-2026-07-18"
+    },
+    {
+      "id": "yng-04",
+      "title": "国漫爆发：从哪吒到雾山五行",
+      "pillar": "young-china",
+      "format": "longform",
+      "angle": "Chinese animation wave: studio craft, ink-wash aesthetic link.",
+      "whyNow": "owner theme-week plan 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-10",
+      "addedBy": "owner theme directive",
+      "status": "paused-themeweek-cancelled-2026-07-18"
+    },
+    {
+      "id": "yng-05",
+      "title": "一部网文的诞生：中国网络小说工厂",
+      "pillar": "young-china",
+      "format": "longform",
+      "angle": "Web-novel industry: writers, platforms, IP-to-screen pipeline.",
+      "whyNow": "owner theme-week plan 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-10",
+      "addedBy": "owner theme directive",
+      "status": "paused-themeweek-cancelled-2026-07-18"
+    },
+    {
+      "id": "cc2-03",
+      "title": "宣纸：一张纸，一百道工序",
+      "pillar": "china-culture",
+      "format": "longform",
+      "angle": "泾县宣纸手工制作：青檀树皮+沙田稻草，捞纸、晒纸、剪纸；一张纸的百工。everyday-life: 每一幅水墨画、每一本古籍下面，都是这张纸。beautiful b-roll: 纸浆纤维、竹帘捞纸、火墙晒纸的手部特写。",
+      "whyNow": "backlog refill — china-culture pillar thin (only cc2-02 left after 2026-07-11); 宣纸制作技艺 is UNESCO 人类非遗, evergreen craft-depth topic. Verify craft steps at scripting.",
+      "sources": [],
+      "addedAt": "2026-07-11",
+      "addedBy": "cycle replenish (culture backlog flag 2026-07-10)",
+      "status": "active",
+      "note": "reactivated 2026-08-09 culture-first era"
+    },
+    {
+      "id": "cc2-04",
+      "title": "龙泉青瓷：把一片天青，烧进釉里",
+      "pillar": "china-culture",
+      "format": "longform",
+      "angle": "龙泉青瓷 celadon: 拉坯、上釉、1300°C 还原焰烧制出粉青/梅子青。everyday-life: 我们说的\"青色\"到底是什么颜色。beautiful b-roll: 釉色特写、开片、窑火。",
+      "whyNow": "backlog refill — second culture-longform seed; 龙泉青瓷烧制技艺 is UNESCO 人类非遗. Verify temperature/glaze facts at scripting.",
+      "sources": [],
+      "addedAt": "2026-07-11",
+      "addedBy": "cycle replenish (culture backlog flag 2026-07-10)",
+      "status": "active",
+      "note": "reactivated 2026-08-09 culture-first era"
+    },
+    {
+      "id": "cof-09",
+      "title": "云南保山：一杯小粒咖啡的风味地图",
+      "pillar": "china-coffee",
+      "format": "longform",
+      "angle": "Baoshan terroir deep-dive: high-altitude small-bean arabica, 'strong but not bitter, mildly fruity'; washing station + drying beds; one farmer's flavor story. everyday-life: why your cup tastes the way it does. beautiful b-roll: cherry-picking hands, washing channels, sun-drying beds, cupping table.",
+      "whyNow": "Theme-week china-coffee (07-13..19) needs longform b-slots; Baoshan small-bean gained international recognition through 2025 (People's Daily / STDaily). Verify altitude/flavor facts at scripting.",
+      "sources": [],
+      "addedAt": "2026-07-13",
+      "addedBy": "cycle replenish (coffee theme-week longform gap)",
+      "status": "paused-coffee-2026-07-18"
+    },
+    {
+      "id": "cof-11",
+      "title": "从速溶到手冲：中国人喝咖啡的三次浪潮",
+      "pillar": "china-coffee",
+      "format": "longform",
+      "angle": "Three-waves framing of Chinese coffee: 1) 三合一速溶 (late-80s->2010), 2) chain espresso (Starbucks/Luckin scale), 3) specialty/单品手冲. everyday-life: which wave is your daily cup? beautiful b-roll: instant-sachet stir, chain-cup queue, slow hand-pour. One 成语/俗语 line.",
+      "whyNow": "Complements cof-07 (30-year arc) with a consumer-side lens; timely against Luckin's 20,000-store scale (2024) + specialty premiumization (Mordor/USDA 2026). Verify wave-dates at scripting.",
+      "sources": [],
+      "addedAt": "2026-07-13",
+      "addedBy": "cycle replenish (coffee theme-week longform gap)",
+      "status": "paused-coffee-2026-07-18"
+    },
+    {
+      "id": "cof-12",
+      "title": "咖啡进县城：小镇青年的第三空间",
+      "pillar": "china-coffee",
+      "format": "longform",
+      "angle": "County-town cafe boom as rural revitalization + third-place culture: young returnees opening shops, cafes as social hubs beyond first-tier cities. everyday-life: a small-town afternoon. beautiful b-roll: small-town street cafe, friends chatting, latte pour, courtyard light. Zero politics.",
+      "whyNow": "USDA FAS (Jan 2026) + reporting note cafe expansion into county towns as a livelihood/revitalization story; strong everyday-life longform. Verify any named town/shop at scripting.",
+      "sources": [],
+      "addedAt": "2026-07-13",
+      "addedBy": "cycle replenish (coffee theme-week longform gap)",
+      "status": "paused-coffee-2026-07-18"
+    },
+    {
+      "id": "cof-15",
+      "title": "杭州西湖边的一杯手冲",
+      "pillar": "china-coffee",
+      "format": "short",
+      "angle": "Lakeside specialty coffee in Hangzhou: hand-pour with West Lake calm; 日系唯美 pacing. everyday-life: coffee as a pause. beautiful b-roll: pour-over steam, lake light, window seat. One poem/景 note (西湖).",
+      "whyNow": "Coffee theme-week short slot; pairs the coffee theme with a scenic city for beautiful b-roll. Verify any cafe/venue claim at scripting.",
+      "sources": [],
+      "addedAt": "2026-07-13",
+      "addedBy": "cycle replenish (coffee theme-week short depth)",
+      "status": "paused-coffee-2026-07-18"
+    },
+    {
+      "id": "cof-17",
+      "title": "长沙的咖啡有多卷？",
+      "pillar": "china-coffee",
+      "format": "short",
+      "angle": "Changsha's hyper-competitive café scene (茶颜悦色 hometown) — one street, many shops; 塑普彩蛋 蛮.",
+      "whyNow": "owner china-coffee theme-week plan 2026-07-09; Changsha is a bellwether new-tea/coffee city",
+      "sources": [],
+      "addedAt": "2026-07-14",
+      "addedBy": "youtube-cycle replenish (within-theme)",
+      "status": "paused-coffee-2026-07-18"
+    },
+    {
+      "id": "cof-19",
+      "title": "武汉过早，配一杯手冲",
+      "pillar": "china-coffee",
+      "format": "short",
+      "angle": "Wuhan breakfast (过早) street culture meeting specialty coffee; people-action food b-roll; 武汉话彩蛋.",
+      "whyNow": "owner china-coffee theme-week plan 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-14",
+      "addedBy": "youtube-cycle replenish (within-theme)",
+      "status": "paused-coffee-2026-07-18"
+    },
+    {
+      "id": "cof-20",
+      "title": "苏州园林边，一杯拿铁",
+      "pillar": "china-coffee",
+      "format": "short",
+      "angle": "Café by a Suzhou garden wall — 白墙黛瓦 + latte; 吴侬软语 flavor via 评弹 note (never fake a dialect).",
+      "whyNow": "owner china-coffee theme-week plan 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-14",
+      "addedBy": "youtube-cycle replenish (within-theme)",
+      "status": "paused-coffee-2026-07-18"
+    },
+    {
+      "id": "cof-21",
+      "title": "手冲、意式、还是挂耳？",
+      "pillar": "china-coffee",
+      "format": "short",
+      "angle": "Quick explainer Short: pour-over vs espresso vs drip-bag — how Chinese drinkers choose; satisfying brew close-ups.",
+      "whyNow": "owner china-coffee theme-week plan 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-14",
+      "addedBy": "youtube-cycle replenish (within-theme)",
+      "status": "paused-coffee-2026-07-18"
+    },
+    {
+      "id": "cof-22",
+      "title": "精品咖啡为什么这么贵？",
+      "pillar": "china-coffee",
+      "format": "longform",
+      "angle": "Why specialty coffee costs what it does — bean grade, hand-processing, small-batch roast, café rent as third-space; honest, sourced.",
+      "whyNow": "owner china-coffee theme-week plan 2026-07-09; price is the top everyday question",
+      "sources": [],
+      "addedAt": "2026-07-14",
+      "addedBy": "youtube-cycle replenish (within-theme)",
+      "status": "paused-coffee-2026-07-18"
+    },
+    {
+      "id": "cof-23",
+      "title": "从瑞幸到独立小店：中国咖啡的两条路",
+      "pillar": "china-coffee",
+      "format": "longform",
+      "angle": "Two roads of China's coffee — chain scale (Luckin) vs independent craft cafés; who each serves, everyday-life lens; sourced, no politics.",
+      "whyNow": "owner china-coffee theme-week plan 2026-07-09",
+      "sources": [],
+      "addedAt": "2026-07-14",
+      "addedBy": "youtube-cycle replenish (within-theme)",
+      "status": "paused-coffee-2026-07-18"
+    },
+    {
+      "id": "cofb-03",
+      "title": "Manner：上海小窗口，一年千店",
+      "pillar": "china-coffee",
+      "format": "short",
+      "angle": "Manner's tiny-window model, self-brew discount culture; 上海话彩蛋.",
+      "whyNow": "owner coffee-expansion directive 2026-07-15 (brands/farms/economy lanes)",
+      "sources": [],
+      "addedAt": "2026-07-15",
+      "addedBy": "owner directive",
+      "status": "paused-coffee-2026-07-18"
+    },
+    {
+      "id": "cofb-04",
+      "title": "中国咖啡品牌出海第一站为什么是东南亚",
+      "pillar": "china-coffee",
+      "format": "longform",
+      "angle": "Luckin SG/US, Cotti expansion — brand-goes-global story for a Sunday longform; sourced.",
+      "whyNow": "owner coffee-expansion directive 2026-07-15 (brands/farms/economy lanes)",
+      "sources": [],
+      "addedAt": "2026-07-15",
+      "addedBy": "owner directive",
+      "status": "paused-coffee-2026-07-18"
+    },
+    {
+      "id": "coff-02",
+      "title": "一亩咖啡林能养活一个家吗？",
+      "pillar": "china-coffee",
+      "format": "short",
+      "angle": "Farm economics fact-hook: yield per mu, purchase price per kg, specialty premium; sourced 云南日报/USDA.",
+      "whyNow": "owner coffee-expansion directive 2026-07-15 (brands/farms/economy lanes)",
+      "sources": [],
+      "addedAt": "2026-07-15",
+      "addedBy": "owner directive",
+      "status": "paused-coffee-2026-07-18"
+    },
+    {
+      "id": "coff-04",
+      "title": "把咖啡庄园开成民宿：云南新玩法",
+      "pillar": "china-coffee",
+      "format": "short",
+      "angle": "Farm-stay coffee estates (庄园+民宿), travel×coffee crossover.",
+      "whyNow": "owner coffee-expansion directive 2026-07-15 (brands/farms/economy lanes)",
+      "sources": [],
+      "addedAt": "2026-07-15",
+      "addedBy": "owner directive",
+      "status": "paused-coffee-2026-07-18"
+    },
+    {
+      "id": "cofe-02",
+      "title": "县城咖啡：五线小城的第一家咖啡馆",
+      "pillar": "china-coffee",
+      "format": "short",
+      "angle": "County-town café boom — where growth actually is; human scene of first café opening.",
+      "whyNow": "owner coffee-expansion directive 2026-07-15 (brands/farms/economy lanes)",
+      "sources": [],
+      "addedAt": "2026-07-15",
+      "addedBy": "owner directive",
+      "status": "paused-coffee-2026-07-18"
+    },
+    {
+      "id": "cofe-04",
+      "title": "云南豆价十年翻倍：谁在定价一杯咖啡",
+      "pillar": "china-coffee",
+      "format": "longform",
+      "angle": "Sunday longform: bean price chain farm→cup, specialty premium economics; strictly sourced.",
+      "whyNow": "owner coffee-expansion directive 2026-07-15 (brands/farms/economy lanes)",
+      "sources": [],
+      "addedAt": "2026-07-15",
+      "addedBy": "owner directive",
+      "status": "paused-coffee-2026-07-18"
+    },
+    {
+      "id": "ctr-02",
+      "title": "黄山迎客松：一棵树凭什么值一个亿保险",
+      "pillar": "city-travel",
+      "format": "short",
+      "angle": "Insurance-value fact hook; cloud sea, dawn watchers crowd.",
+      "whyNow": "owner core-shift 2026-07-15: travel resources + food",
+      "sources": [],
+      "addedAt": "2026-07-15",
+      "addedBy": "owner directive",
+      "status": "active",
+      "note": "reactivated 2026-08-09 culture-first era"
+    },
+    {
+      "id": "ctr-03",
+      "title": "九寨沟的水为什么是五种颜色",
+      "pillar": "city-travel",
+      "format": "short",
+      "angle": "Calcium carbonate science hook; turquoise pools.",
+      "whyNow": "owner core-shift 2026-07-15: travel resources + food",
+      "sources": [],
+      "addedAt": "2026-07-15",
+      "addedBy": "owner directive",
+      "status": "active",
+      "note": "reactivated 2026-08-09 culture-first era"
+    },
+    {
+      "id": "cfd-02",
+      "title": "北京烤鸭为什么要吹气？",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "Air-pump craft hook; carving 108 slices fact.",
+      "whyNow": "owner core-shift 2026-07-15: travel resources + food",
+      "sources": [],
+      "addedAt": "2026-07-15",
+      "addedBy": "owner directive",
+      "status": "covered-2026-08-03",
+      "coveredBy": "2026-08-03 绝活系列"
+    },
+    {
+      "id": "cfd-04",
+      "title": "一笼小笼包的十八个褶",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "18 pleats standard; soup-inside engineering; 上海话彩蛋.",
+      "whyNow": "owner core-shift 2026-07-15: travel resources + food",
+      "sources": [],
+      "addedAt": "2026-07-15",
+      "addedBy": "owner directive",
+      "status": "covered-2026-08-03",
+      "coveredBy": "2026-08-03 绝活系列"
+    },
+    {
+      "id": "cfd-05",
+      "title": "潮汕牛肉火锅：一头牛分出十二个部位",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "12-cut beef map hook; 手打牛肉丸 bounce test.",
+      "whyNow": "owner core-shift 2026-07-15: travel resources + food",
+      "sources": [],
+      "addedAt": "2026-07-15",
+      "addedBy": "owner directive",
+      "status": "covered-2026-07-22-duplicate",
+      "coveredBy": "dedup: already produced (see status)"
+    },
+    {
+      "id": "str-01",
+      "title": "重庆的楼里穿轻轨：李子坝 8 秒",
+      "pillar": "city-travel",
+      "format": "short",
+      "angle": "Street icon: train-through-building, crowds filming below; fact hook 8-second pass.",
+      "whyNow": "owner 2026-07-18: street scenery joins the core",
+      "sources": [],
+      "addedAt": "2026-07-18",
+      "addedBy": "owner directive",
+      "status": "active",
+      "note": "reactivated 2026-08-09 culture-first era"
+    },
+    {
+      "id": "str-03",
+      "title": "菜市场的中国：凌晨四点最热闹的地方",
+      "pillar": "city-travel",
+      "format": "short",
+      "angle": "Wet-market dawn: haggling hands, fish splash, scale close-ups; 烟火气 heavy.",
+      "whyNow": "owner 2026-07-18: street scenery joins the core",
+      "sources": [],
+      "addedAt": "2026-07-18",
+      "addedBy": "owner directive",
+      "status": "active",
+      "note": "reactivated 2026-08-09 culture-first era"
+    },
+    {
+      "id": "str-04",
+      "title": "西安回民街的一百种声音",
+      "pillar": "city-travel",
+      "format": "short",
+      "angle": "Street soundscape as concept: hammering 芝麻糖, biang biang 面 slap, vendor calls.",
+      "whyNow": "owner 2026-07-18: street scenery joins the core",
+      "sources": [],
+      "addedAt": "2026-07-18",
+      "addedBy": "owner directive",
+      "status": "covered-2026-08-12",
+      "note": "reactivated 2026-08-09 culture-first era"
+    },
+    {
+      "id": "str-05",
+      "title": "广州骑楼下：一条街走了一百年",
+      "pillar": "city-travel",
+      "format": "short",
+      "angle": "Qilou arcades street scene: rain shelter life, 凉茶铺, old signage.",
+      "whyNow": "owner 2026-07-18: street scenery joins the core",
+      "sources": [],
+      "addedAt": "2026-07-18",
+      "addedBy": "owner directive",
+      "status": "active",
+      "note": "reactivated 2026-08-09 culture-first era"
+    },
+    {
+      "id": "cfd-10",
+      "title": "新中式茶饮：一杯奶茶，怎么成了年轻人的社交货币",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "新中式茶饮：原叶鲜奶茶、伯牙绝弦式国风命名、门店排队。fact-first=一年卖出多少杯。people-action：递杯、举杯拍照、排队。中式=国风包装+茶文化底蕴。",
+      "whyNow": "新中式茶饮（霸王茶姬等）2024-25持续高增长、成为年轻人日常与社交货币；贴近生活。verify 品类规模/年销杯数 at scripting.",
+      "sources": [
+        "新中式茶饮 霸王茶姬 原叶鲜奶茶 增长"
+      ],
+      "addedAt": "2026-07-23",
+      "addedBy": "cycle replenish (food sprint, 现制饮品/年轻)",
+      "status": "covered-2026-07-20-duplicate",
+      "coveredBy": "dedup: already produced (see status)"
+    },
+    {
+      "id": "cfd-11",
+      "title": "街头煎饼果子：三分钟一套，早餐摊的手上功夫",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "煎饼果子：摊糊、磕蛋、刷酱、脆果子一裹一叠。fact-first=一套三分钟出摊。people-action：摊主转铲、递饼、通勤人流。街头早餐烟火。",
+      "whyNow": "街头早餐（煎饼果子/杂粮煎饼）常青高互动、通勤生活强共鸣；可组'中国街头早餐'系列。verify 起源/流派(天津vs山东) at scripting.",
+      "sources": [
+        "煎饼果子 天津 山东 街头早餐 做法"
+      ],
+      "addedAt": "2026-07-23",
+      "addedBy": "cycle replenish (food sprint, 街头早餐)",
+      "status": "covered-2026-07-28",
+      "coveredBy": "2026-07-28 slot d 天津煎饼馃子 (中国早餐宇宙S2⑧)"
+    },
+    {
+      "id": "cfd-16",
+      "title": "威海鲅鱼饺子：一条海鱼，包进北方人的年味",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "胶东威海鲅鱼(马鲛鱼)水饺：现挖鱼肉、韭菜提鲜、个大皮薄；胶东'鲅鱼跳丈人笑'习俗。fact-first=一个饺子塞满半条鱼。人物：剁鱼馅/包饺子的手。",
+      "whyNow": "2025暑期网红城市报告点名威海等二三线城市文旅出圈（新京报2025暑期篇 2025-07）；verify 鲅鱼水饺/胶东孝亲习俗 at scripting.",
+      "sources": [
+        "新京报网红城市潜力报告2025暑期篇 威海"
+      ],
+      "addedAt": "2026-07-25",
+      "addedBy": "cycle replenish (viral-food research)",
+      "status": "covered-2026-07-29",
+      "coveredBy": "2026-07-29 slot a 威海鲅鱼饺子 (中国饺子地图①)"
+    },
+    {
+      "id": "cfd-18",
+      "title": "云南过桥米线：一碗滚汤，端上桌自己烫熟",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "过桥米线：滚烫鸡汤上盖一层油锁温，生片/鹌鹑蛋/米线依次下碗自烫。fact-first=汤面一层油让滚汤不冒气却能烫熟生肉。people-action：下料、烫肉的手。传说书生娘子送饭故事(如实标注传说)。",
+      "whyNow": "过桥米线是云南头牌、全国连锁常青，\"一层油锁住高温\"的反差科普钩子强、贴近生活。verify 起源传说/油封保温原理 at scripting.",
+      "sources": [],
+      "addedAt": "2026-07-26",
+      "addedBy": "cycle replenish (food sprint, 云南米线)",
+      "status": "covered-2026-08-03",
+      "coveredBy": "2026-08-03 绝活系列"
+    },
+    {
+      "id": "cfd-19",
+      "title": "东北铁锅炖：一口大锅，炖下一整个冬天的豪爽",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "东北铁锅炖：柴火大铁锅炖鱼/炖大鹅，锅边贴玉米饼子，一锅出。fact-first=一口锅同时炖菜和贴饼子。people-action：贴饼子的手、掀锅、围炉分食。东北豪爽烟火。",
+      "whyNow": "\"铁锅炖+贴饼子\"是东北地方菜代表、社媒围炉一锅出的高互动画面；组\"中国大锅菜\"系列可扩展。verify 铁锅炖流派/贴饼子做法 at scripting.",
+      "sources": [],
+      "addedAt": "2026-07-26",
+      "addedBy": "cycle replenish (food sprint, 东北地方菜)",
+      "status": "covered-2026-08-04"
+    },
+    {
+      "id": "cfd-20",
+      "title": "重庆酸辣粉：一碗红薯粉，酸辣到跺脚",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "重庆酸辣粉：手工红薯粉，酸(醋)辣(油辣子)麻(花椒)+酥花生黄豆，挑起拉丝。fact-first=红薯做的粉为什么这么Q弹。people-action：挑粉、拌料、嗦粉的脸。街头小吃烟火。",
+      "whyNow": "酸辣粉是街头/外卖常青嗦粉品类，\"红薯粉\"原料反差钩子好、贴近生活。verify 红薯粉工艺/重庆酸辣粉调味 at scripting.",
+      "sources": [],
+      "addedAt": "2026-07-26",
+      "addedBy": "cycle replenish (food sprint, 街头嗦粉)",
+      "status": "paused-food-decentered-2026-08-11",
+      "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
+    },
+    {
+      "id": "cfd-21",
+      "title": "现制酸奶：一杯三十块，年轻人的\"酸奶刺客\"",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "现制酸奶：厚椰乳/加坚果果干、现打现卖，主打\"健康\"却价格不菲。fact-first=一杯现制酸奶为什么能卖到二三十块。people-action：打料、递杯、举杯拍照。中性价格观察，无投资/品牌背书。",
+      "whyNow": "现制酸奶(\"酸奶刺客\")是新中式饮品里持续被讨论的价格话题、贴近年轻人日常消费。verify 品类价格带/健康宣称边界 at scripting；brandRules 中性无背书。",
+      "sources": [],
+      "addedAt": "2026-07-26",
+      "addedBy": "cycle replenish (food sprint, 现制饮品/年轻)",
+      "status": "covered-2026-07-20-duplicate",
+      "coveredBy": "dedup: already produced (see status)"
+    },
+    {
+      "id": "cfd-22",
+      "title": "黄焖鸡米饭：一只砂锅，统治写字楼午餐",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "外卖时代的国民快餐;一人食砂锅焖鸡+米饭;门店数以万计+近年出海(美/日开店).fact-first=门店/出海数字.人物:端砂锅、拌饭的手.",
+      "whyNow": "'黄焖鸡米饭'常年外卖销量顶流、门店数以万计并加速出海,一人食快餐母题贴近上班族午餐. verify 门店数/出海门店 at scripting.",
+      "sources": [
+        "黄焖鸡米饭 门店数 出海"
+      ],
+      "addedAt": "2026-08-03",
+      "addedBy": "cycle replenish (food sprint day16)",
+      "status": "covered-2026-08-05"
+    },
+    {
+      "id": "cfd-23",
+      "title": "东北锅包肉：酸甜脆,竟有个'办公室'为它成立",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "锅包肉酸甜金黄脆壳;老式糖醋(琥珀色)vs番茄酱版之争=评论钩;2024吉林市'锅包肉办公室'推广.fact-first反差=一道菜设了个办公室.",
+      "whyNow": "2024年吉林市成立'锅包肉办公室'推广地方菜引发热议,老式vs番茄版是天然评论钩. verify 锅包肉办公室/郑兴文1907起源 at scripting.",
+      "sources": [
+        "吉林 锅包肉办公室 郑兴文 1907"
+      ],
+      "addedAt": "2026-08-03",
+      "addedBy": "cycle replenish (food sprint day16)",
+      "status": "covered-2026-08-04"
+    },
+    {
+      "id": "cfd-24",
+      "title": "上海生煎:底脆、汁多,一口爆汤",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "生煎底金黄焦脆、一口爆汤;发面vs小笼死面对照(同城不同法);排队顶流.craft近'绝活'系列.人物:铁盘转、咬爆汤.",
+      "whyNow": "生煎是沪上早点顶流、排队店常年出片;与小笼包同宗不同法(发面/褶朝下煎)可对照. verify 发面/褶朝下煎/汤汁来源 at scripting.",
+      "sources": [
+        "上海生煎 发面 褶朝下 做法"
+      ],
+      "addedAt": "2026-08-03",
+      "addedBy": "cycle replenish (food sprint day16; craft-adjacent)",
+      "status": "paused-food-decentered-2026-08-11",
+      "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
+    },
+    {
+      "id": "cfd-25",
+      "title": "靖江蟹黄汤包:皮薄如纸,一根吸管喝汤",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "大汤包皮薄如纸、提起像灯笼、插吸管先喝汤;秋蟹季时令钩;淮扬绝活.craft近'绝活'系列.",
+      "whyNow": "'皮薄如纸、一根吸管喝汤'的蟹黄汤包是短视频常青爆款,秋蟹季将至=时令钩. verify 靖江汤包/吸管吃法/皮薄工艺 at scripting.",
+      "sources": [
+        "靖江蟹黄汤包 吸管 皮薄如纸"
+      ],
+      "addedAt": "2026-08-03",
+      "addedBy": "cycle replenish (food sprint day16; craft-adjacent)",
+      "status": "paused-food-decentered-2026-08-11",
+      "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
+    },
+    {
+      "id": "cfd-26",
+      "title": "新疆手抓饭:羊肉黄萝卜一锅焖,为什么用手抓",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "抓饭=羊肉+胡萝卜黄萝卜+米一锅焖;'手抓'维吾尔传统吃法是文化钩;油亮米粒money-shot.地域生活.",
+      "whyNow": "新疆美食短视频持续走红,手抓饭(抓饭)是代表;'手抓'传统吃法是天然文化钩. verify 抓饭配料/维吾尔传统/婚宴场合 at scripting.",
+      "sources": [
+        "新疆 手抓饭 抓饭 维吾尔 传统"
+      ],
+      "addedAt": "2026-08-03",
+      "addedBy": "cycle replenish (food sprint day16)",
+      "status": "paused-food-decentered-2026-08-11",
+      "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
+    },
+    {
+      "id": "cfd-27",
+      "title": "佛跳墙:几十种山珍海味,煨进一坛",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "闽菜佛跳墙:几十种食材分门别类处理再一坛慢煨;'坛启荤香飘四邻,佛闻弃禅跳墙来'诗句由来=强故事钩;国宴名菜.craft锚点,可作'绝活'第二季.",
+      "whyNow": "佛跳墙工序繁复、'坛启荤香'诗句由来故事性强,国宴名菜,是craft/绝活题材常青款. verify 郑春发/聚春园/坛启荤香诗 at scripting.",
+      "sources": [
+        "佛跳墙 郑春发 聚春园 坛启荤香"
+      ],
+      "addedAt": "2026-08-03",
+      "addedBy": "cycle replenish (food sprint day16; 绝活 season-2 anchor)",
+      "status": "paused-food-decentered-2026-08-11",
+      "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
+    },
+    {
+      "id": "cfd-28",
+      "title": "沙县小吃：一副担子，开出比洋快餐还多的门店",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "沙县小吃母题（今日slot a已做为『中式快餐四巨头』P1；此seed留作单集深挖：扁肉/拌面/蒸饺/炖罐工艺特写+8.8万家门店数据条）。闽南彩蛋 爱拼才会赢。",
+      "whyNow": "『中式快餐四巨头』系列2026-08-05首播反响待观察；沙县小吃门店8.8万+持续为国民话题，可做单品深挖版。verify 门店数/非遗年份 at scripting.",
+      "sources": [
+        "腾讯新闻 沙县小吃8.8万家门店 2024"
+      ],
+      "addedAt": "2026-08-05",
+      "addedBy": "cycle replenish (food sprint day 18)",
+      "status": "paused-food-decentered-2026-08-11",
+      "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
+    },
+    {
+      "id": "cfd-29",
+      "title": "柳州螺蛳粉：闻着臭吃着香，一年卖出几百亿",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "螺蛳粉：酸笋『臭味』反差钩+预包装出海爆款。money shot 红油/嗦粉POV+酸笋特写。桂柳话彩蛋（dialect-bank 广西）。fact-first=闻着臭却卖到全国海外。",
+      "whyNow": "柳州螺蛳粉预包装年产值持续破百亿、出海东南亚/欧美长红；臭味争议是天然comment bait。verify 最新产值数据 at scripting.",
+      "sources": [
+        "柳州螺蛳粉 预包装 产值 出海"
+      ],
+      "addedAt": "2026-08-05",
+      "addedBy": "cycle replenish (food sprint day 18)",
+      "status": "covered-duplicate",
+      "coveredBy": "dup: 柳州螺蛳粉 already produced 07-23c (中国粉面几大派③)"
+    },
+    {
+      "id": "cfd-30",
+      "title": "武汉热干面：过早之王，为什么要先『掸面』",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "武汉热干面：芝麻酱拌面、掸面工艺、过早文化。money shot 拌酱拉丝。fact-first=不是汤面也不是拌面，武汉人叫它过早之王。武汉话彩蛋（可深化湖北，dialect-bank未含则honest）。",
+      "whyNow": "武汉『过早』文化与热干面常年霸榜早餐类短视频；掸面工艺是强钩子。verify 掸面/芝麻酱工艺 at scripting.",
+      "sources": [
+        "武汉热干面 掸面 过早 芝麻酱"
+      ],
+      "addedAt": "2026-08-05",
+      "addedBy": "cycle replenish (food sprint day 18)",
+      "status": "covered-duplicate",
+      "coveredBy": "dup: 武汉热干面 already produced 07-21b & 07-23b"
+    },
+    {
+      "id": "cfd-31",
+      "title": "河南胡辣汤：一碗辣糊糊，叫醒一座城的早晨",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "逍遥镇/北舞渡胡辣汤：胡椒勾芡、牛肉面筋。money shot 勺子舀起挂糊。fact-first=名字里没有『辣椒』，靠胡椒辣。中原早餐王。",
+      "whyNow": "胡辣汤作为河南早餐符号持续出圈，逍遥镇/北舞渡两派之争是天然either-or CTA。verify 逍遥镇/北舞渡两派 at scripting.",
+      "sources": [
+        "河南胡辣汤 逍遥镇 北舞渡 胡椒"
+      ],
+      "addedAt": "2026-08-05",
+      "addedBy": "cycle replenish (food sprint day 18)",
+      "status": "covered-duplicate",
+      "coveredBy": "dup: 河南胡辣汤 already produced 07-28b (中国早餐宇宙⑥)"
+    },
+    {
+      "id": "cfd-32",
+      "title": "广式肠粉：一块布上，蒸出一条会呼吸的米浆",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "广式布拉肠：米浆、布拉、酱油。money shot 揭布拉肠瞬间/淋豉油。fact-first=一块布蒸出滑到入口即化。粤语彩蛋 抵食（dialect-bank 粤语）。",
+      "whyNow": "广式早茶/街头肠粉常年热门，布拉肠揭布瞬间是极强money shot。verify 布拉肠工艺 at scripting.",
+      "sources": [
+        "广式肠粉 布拉肠 米浆 豉油"
+      ],
+      "addedAt": "2026-08-05",
+      "addedBy": "cycle replenish (food sprint day 18)",
+      "status": "covered-duplicate",
+      "coveredBy": "dup: 广式肠粉 already produced 07-21c (中国早餐宇宙③)"
+    },
+    {
+      "id": "cfd-33",
+      "title": "西安油泼面：一勺滚油，泼出满碗香",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "油泼面/裤带面:面条上铺辣椒面葱花,一勺滚油浇下\"呲啦\"一声激香; fact-first=一碗面全靠一勺热油唤醒; 人物泼油/吃面手部特写; 陕西彩蛋(方言库无陕,标普通话).",
+      "whyNow": "油泼面是陕西面食顶流、短视频高传播,可组「西北面食」未来系列锚点; verify biang字/油温 at scripting.",
+      "sources": [
+        "百度百科 油泼面"
+      ],
+      "addedAt": "2026-08-07",
+      "addedBy": "cycle replenish (day20, 西北面食 series seed)",
+      "status": "covered-2026-08-09",
+      "coveredBy": "2026-08-09 slot b 陕西油泼面 (中国北方面食②)"
+    },
+    {
+      "id": "cfd-34",
+      "title": "biangbiang面：中国笔画最多的字，是一碗面",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "biángbiáng面/裤带面:一根面宽如裤带,\"biang\"字56笔画写不出来只能读; fact-first=这碗面的名字打不出来; 扯面甩案板money-shot.",
+      "whyNow": "biang字梗常年出圈,面食+汉字冷知识双钩子; 「西北面食」系列材料; verify 笔画数/口诀 at scripting.",
+      "sources": [
+        "维基 biangbiang面"
+      ],
+      "addedAt": "2026-08-07",
+      "addedBy": "cycle replenish (day20, 西北面食 series seed)",
+      "status": "paused-food-decentered-2026-08-11",
+      "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
+    },
+    {
+      "id": "cfd-35",
+      "title": "剁椒鱼头：一勺红剁椒，盖住整个鱼头",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "湘菜剁椒鱼头:胖鱼头铺满红剁椒清蒸,鲜辣; fact-first=一整个鱼头埋进红剁椒; 蒸制揭盖money-shot; 湖南彩蛋(方言库有湖南话).",
+      "whyNow": "剁椒鱼头是湘菜招牌、宴席硬菜,可组「中国人怎么吃一条鱼」未来系列; verify 起源/谭延闿说 at scripting.",
+      "sources": [
+        "百度百科 剁椒鱼头"
+      ],
+      "addedAt": "2026-08-07",
+      "addedBy": "cycle replenish (day20, 一条鱼 series seed)",
+      "status": "covered-2026-08-08"
+    },
+    {
+      "id": "cfd-36",
+      "title": "松鼠桂鱼：浇汁那一下，鱼会\"吱吱\"叫",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "苏帮菜松鼠鳜鱼:改花刀炸成松鼠状,热糖醋汁一浇\"吱吱\"响似松鼠叫; fact-first=浇汁会发出松鼠叫声; 浇汁瞬间money-shot.",
+      "whyNow": "松鼠桂鱼刀工+浇汁声效双卖点,可组「中国人怎么吃一条鱼」系列; verify 乾隆/苏州松鹤楼传说 at scripting.",
+      "sources": [
+        "百度百科 松鼠鳜鱼"
+      ],
+      "addedAt": "2026-08-07",
+      "addedBy": "cycle replenish (day20, 一条鱼 series seed)",
+      "status": "covered-2026-08-08"
+    },
+    {
+      "id": "cfd-37",
+      "title": "山西刀削面之外：一根面十种削法的面食江湖",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "山西面食深挖(今日只做刀削面单集,留作'山西面食'系列锚点):剔尖/猫耳朵/拨鱼/擦圪斗等,一省面食过百种. fact-first=一个省能做出上百种面. 人物:揉面/剔尖的手.",
+      "whyNow": "2026-08-09《中国北方面食硬核派》山西刀削面单集首播,山西面食'一面百样'可扩为系列; verify 山西面食种类数/剔尖猫耳朵工艺 at scripting.",
+      "sources": [
+        "山西面食 种类 剔尖 猫耳朵"
+      ],
+      "addedAt": "2026-08-09",
+      "addedBy": "cycle replenish (day22, 山西面食 series seed)",
+      "status": "paused-food-decentered-2026-08-11",
+      "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
+    },
+    {
+      "id": "cfd-38",
+      "title": "陕西臊子面：一口面三十遍,汤宽面少的'油泼'表亲",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "岐山臊子面:酸辣香煎稀汪, '只吃面不喝汤'(汤回锅)的老礼,红油臊子木耳蛋皮. fact-first=一顿饭一人能吃几十碗(一口一碗). 陕西面食,与油泼面成对照.",
+      "whyNow": "承接08-09陕西油泼面,岐山臊子面'一口一碗/汤回锅'民俗是强钩,可组'陕西面食'系列; verify 岐山臊子面九字诀/回汤旧俗 at scripting.",
+      "sources": [
+        "岐山臊子面 酸辣香 煎稀汪 回汤"
+      ],
+      "addedAt": "2026-08-09",
+      "addedBy": "cycle replenish (day22, 陕西面食 series seed)",
+      "status": "paused-food-decentered-2026-08-11",
+      "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
+    },
+    {
+      "id": "cfd-39",
+      "title": "新疆拌面(拉条子):不用擀不用压,全靠两手抻",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "新疆拌面/拉条子:和面醒面后手工抻拉,过油拌菜(过油肉/辣皮子),份量豪迈'加面不加钱'. fact-first=一根面从头到尾不断. money-shot抻面下锅.",
+      "whyNow": "新疆美食短视频长红,拉条子'加面不加钱'贴近生活、抻面画面强; 可组'新疆美食'系列(手抓饭cfd-26同源); verify 拉条子工艺/加面习俗 at scripting.",
+      "sources": [
+        "新疆拌面 拉条子 抻面 过油肉"
+      ],
+      "addedAt": "2026-08-09",
+      "addedBy": "cycle replenish (day22, 新疆美食 series seed)",
+      "status": "paused-food-decentered-2026-08-11",
+      "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
+    },
+    {
+      "id": "cfd-40",
+      "title": "山西刀削面的邻居:大同刀削面为什么配'一窝丝'",
+      "pillar": "china-food",
+      "format": "short",
+      "angle": "大同刀削面配羊肉/番茄打卤+黄花,或搭'一窝丝'烙饼. fact-first=削面还分大同派与晋中派. 地域对照,people-action 削面/浇卤.",
+      "whyNow": "刀削面单集反响待观察,大同vs晋中削面流派可做对照续集; verify 大同刀削面浇头/一窝丝 at scripting.",
+      "sources": [
+        "大同刀削面 一窝丝 浇头"
+      ],
+      "addedAt": "2026-08-09",
+      "addedBy": "cycle replenish (day22)",
+      "status": "paused-food-decentered-2026-08-11",
+      "note": "recyclable as china-route reward stop only (owner 2026-08-11)"
+    },
+    {
+      "id": "gzh-07",
+      "title": "陈家祠：一座祠堂，把岭南所有手艺都刻上了墙",
+      "pillar": "china-culture",
+      "format": "short",
+      "angle": "广州陈家祠(陈氏书院)1894建;木雕/砖雕/石雕/陶塑/灰塑/铜铁铸/彩绘 岭南七绝集大成;打卡(屋脊陶塑震撼)+爱好者(非遗工艺深度)+亲子(找屋顶上的小人)。fact-first 钩:一条屋脊上塑了几百个人物。",
+      "whyNow": "culture-first era 广州古文化产物主线(owner 2026-08-09);陈家祠常年citywalk/非遗热门;事实 verify at scripting(两来源)",
+      "seriesNote": "standalone or 岭南非遗系列锚点",
+      "addedAt": "2026-08-10",
+      "addedBy": "research auto-replenish (culture-first)",
+      "status": "active"
+    },
+    {
+      "id": "gzh-08",
+      "title": "广彩：一只瓷盘，如何把广州画进欧洲的客厅",
+      "pillar": "china-culture",
+      "format": "short",
+      "angle": "广州织金彩瓷(广彩)清代外销瓷;为欧洲订单而生的'来样加工';十三行外销、海上丝路;爱好者(工艺:白瓷上二次施彩烧制)+打卡+亲子(中国瓷怎么卖到全世界)。fact-first 钩:三百年前广州就在做'外贸定制'。",
+      "whyNow": "culture-first era 古文化产物+海丝主线;呼应南越王波斯银盒的海丝母题;事实 verify at scripting(两来源)",
+      "seriesNote": "海丝/外销工艺系列候选",
+      "addedAt": "2026-08-10",
+      "addedBy": "research auto-replenish (culture-first)",
+      "status": "active"
+    },
+    {
+      "id": "slk-a01",
+      "title": "Route: Silk Road Heritage 丝路人文线EP1 莫高窟：被封存900年的图书馆",
+      "pillar": "china-route",
+      "format": "short",
+      "angle": "藏经洞1900年发现/735窟/4.5万㎡壁画/营造约千年。frame0=九层楼外观或沙漠石窟崖面。窟内壁画素材稀缺→外景+声明示意素材。 受众轨:爱好者。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。 ★DEDUP警告(2026-08-13): 08-11 city-travel 已用'4.5万㎡壁画无一署名'角度爆了988v——本集严格走藏经洞角度(被封存900年的图书馆/1900道士发现/流散文物),不得重复壁画数字钩。",
+      "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
+      "seriesNote": "Silk Road Heritage 丝路人文线 连载",
+      "addedAt": "2026-08-12",
+      "addedBy": "owner directive",
+      "status": "active"
+    },
+    {
+      "id": "slk-a02",
+      "title": "Route: Silk Road Heritage 丝路人文线EP2 鸣沙山月牙泉：沙漠里千年不涸的月牙",
+      "pillar": "china-route",
+      "format": "short",
+      "angle": "月牙泉被鸣沙山包围千年不涸;沙子滑动会'鸣'。frame0=沙丘环抱月牙泉航拍感。 受众轨:打卡。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。 可用 guess-chain 变体:'猜猜泉水多少年没干过'留到下集揭晓。",
+      "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
+      "seriesNote": "Silk Road Heritage 丝路人文线 连载",
+      "addedAt": "2026-08-12",
+      "addedBy": "owner directive",
+      "status": "active"
+    },
+    {
+      "id": "slk-a03",
+      "title": "Route: Silk Road Heritage 丝路人文线EP3 玉门关：春风不度的汉帝国西大门",
+      "pillar": "china-route",
+      "format": "short",
+      "angle": "王之涣诗钩;和田玉入关得名;汉长城遗址戈壁孤台。 受众轨:爱好者。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。 ★FOOTAGE-GATE(2026-08-14): 此站点 Pexels 大概率无实拍素材——按 playbook 闸门走 MAP-FORMAT(3D地图+路线事实框架,泛用素材诚实定位为'旅途'而非'该址') 或再选角,禁止指认式字幕配泛用画面。",
+      "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
+      "seriesNote": "Silk Road Heritage 丝路人文线 连载",
+      "addedAt": "2026-08-12",
+      "addedBy": "owner directive",
+      "status": "active"
+    },
+    {
+      "id": "slk-a04",
+      "title": "Route: Silk Road Heritage 丝路人文线EP4 榆林窟:莫高窟的安静兄弟",
+      "pillar": "china-route",
+      "format": "short",
+      "angle": "西夏壁画巅峰/游客极少/水月观音。 受众轨:爱好者。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。 ★FOOTAGE-GATE(2026-08-14): 此站点 Pexels 大概率无实拍素材——按 playbook 闸门走 MAP-FORMAT(3D地图+路线事实框架,泛用素材诚实定位为'旅途'而非'该址') 或再选角,禁止指认式字幕配泛用画面。",
+      "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
+      "seriesNote": "Silk Road Heritage 丝路人文线 连载",
+      "addedAt": "2026-08-12",
+      "addedBy": "owner directive",
+      "status": "active"
+    },
+    {
+      "id": "slk-a05",
+      "title": "Route: Silk Road Heritage 丝路人文线EP5 大地之子:戈壁上最孤独的婴儿",
+      "pillar": "china-route",
+      "format": "short",
+      "angle": "2016董书兵红砂岩巨婴雕塑,瓜州戈壁;'地球最孤独婴儿'钩。 受众轨:打卡。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。 ★FOOTAGE-GATE(2026-08-14): 此站点 Pexels 大概率无实拍素材——按 playbook 闸门走 MAP-FORMAT(3D地图+路线事实框架,泛用素材诚实定位为'旅途'而非'该址') 或再选角,禁止指认式字幕配泛用画面。",
+      "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
+      "seriesNote": "Silk Road Heritage 丝路人文线 连载",
+      "addedAt": "2026-08-12",
+      "addedBy": "owner directive",
+      "status": "active"
+    },
+    {
+      "id": "slk-a06",
+      "title": "Route: Silk Road Heritage 丝路人文线EP6 嘉峪关:天下第一雄关+多出来的一块砖",
+      "pillar": "china-route",
+      "format": "short",
+      "angle": "长城最西端明代要塞;定城砖传说(亲子友好讲法)。 受众轨:亲子。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。",
+      "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
+      "seriesNote": "Silk Road Heritage 丝路人文线 连载",
+      "addedAt": "2026-08-12",
+      "addedBy": "owner directive",
+      "status": "active"
+    },
+    {
+      "id": "slk-a07",
+      "title": "Route: Silk Road Heritage 丝路人文线EP7 马蹄寺:凿进悬崖的寺庙",
+      "pillar": "china-route",
+      "format": "short",
+      "angle": "崖壁石窟走廊+天马蹄印传说;张掖祁连山下。 受众轨:打卡。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。 ★FOOTAGE-GATE(2026-08-14): 此站点 Pexels 大概率无实拍素材——按 playbook 闸门走 MAP-FORMAT(3D地图+路线事实框架,泛用素材诚实定位为'旅途'而非'该址') 或再选角,禁止指认式字幕配泛用画面。",
+      "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
+      "seriesNote": "Silk Road Heritage 丝路人文线 连载",
+      "addedAt": "2026-08-12",
+      "addedBy": "owner directive",
+      "status": "active"
+    },
+    {
+      "id": "slk-a08",
+      "title": "Route: Silk Road Heritage 丝路人文线EP8 七彩丹霞·完结:彩虹山+全线串讲",
+      "pillar": "china-route",
+      "format": "short",
+      "angle": "张掖丹霞收官;全线8站一屏回顾+最佳季节+route CTA。 受众轨:全部。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。",
+      "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
+      "seriesNote": "Silk Road Heritage 丝路人文线 连载",
+      "addedAt": "2026-08-12",
+      "addedBy": "owner directive",
+      "status": "active"
+    },
+    {
+      "id": "slk-b02",
+      "title": "Route: Qinghai-Gansu Loop 青甘大环线EP2 青海湖:海拔3200米的中国最大湖",
+      "pillar": "china-route",
+      "format": "short",
+      "angle": "环湖骑行/油菜花季(制作时核实季节)。 受众轨:打卡。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。",
+      "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
+      "seriesNote": "Qinghai-Gansu Loop 青甘大环线 连载",
+      "addedAt": "2026-08-12",
+      "addedBy": "owner directive",
+      "status": "active"
+    },
+    {
+      "id": "slk-b03",
+      "title": "Route: Qinghai-Gansu Loop 青甘大环线EP3 茶卡盐湖:踩在天空之镜上",
+      "pillar": "china-route",
+      "format": "short",
+      "angle": "盐湖倒影'天空之镜'。 受众轨:打卡。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。",
+      "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
+      "seriesNote": "Qinghai-Gansu Loop 青甘大环线 连载",
+      "addedAt": "2026-08-12",
+      "addedBy": "owner directive",
+      "status": "active"
+    },
+    {
+      "id": "slk-b04",
+      "title": "Route: Qinghai-Gansu Loop 青甘大环线EP4 大柴旦翡翠湖:无人区的调色盘",
+      "pillar": "china-route",
+      "format": "short",
+      "angle": "戈壁翡翠色盐池群。 受众轨:打卡。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。",
+      "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
+      "seriesNote": "Qinghai-Gansu Loop 青甘大环线 连载",
+      "addedAt": "2026-08-12",
+      "addedBy": "owner directive",
+      "status": "active"
+    },
+    {
+      "id": "slk-b05",
+      "title": "Route: Qinghai-Gansu Loop 青甘大环线EP5 夜敦煌:白天看窟 晚上看星",
+      "pillar": "china-route",
+      "format": "short",
+      "angle": "沙洲夜市/驼队剪影/沙漠星空(与A系列子景点严格去重)。 受众轨:打卡。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。",
+      "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
+      "seriesNote": "Qinghai-Gansu Loop 青甘大环线 连载",
+      "addedAt": "2026-08-12",
+      "addedBy": "owner directive",
+      "status": "active"
+    },
+    {
+      "id": "slk-b06",
+      "title": "Route: Qinghai-Gansu Loop 青甘大环线EP6 张掖大佛寺:中国最大室内卧佛",
+      "pillar": "china-route",
+      "format": "short",
+      "angle": "约34m卧佛(核实)/西夏皇家寺院(与A去重)。 受众轨:爱好者。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。",
+      "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
+      "seriesNote": "Qinghai-Gansu Loop 青甘大环线 连载",
+      "addedAt": "2026-08-12",
+      "addedBy": "owner directive",
+      "status": "active"
+    },
+    {
+      "id": "slk-b07",
+      "title": "Route: Qinghai-Gansu Loop 青甘大环线EP7 青甘大环线·完结:全环线串讲",
+      "pillar": "china-route",
+      "format": "short",
+      "angle": "海拔/季节/自驾提示+route CTA。 受众轨:全部。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。",
+      "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
+      "seriesNote": "Qinghai-Gansu Loop 青甘大环线 连载",
+      "addedAt": "2026-08-12",
+      "addedBy": "owner directive",
+      "status": "active"
+    },
+    {
+      "id": "rt-05",
+      "title": "Route: Beijing Central Axis①永定门——中轴线的起点",
+      "pillar": "china-route",
+      "format": "short",
+      "angle": "《Beijing Central Axis 帝都中轴》4集连载 P1。线路: 永定门→天坛→前门→故宫→钟鼓楼。P1 永定门开场(7.8km中轴南起点),片尾预告天坛。奖励站(老北京小吃)留到线路中段。frame0=中轴航拍/古城门。",
+      "whyNow": "owner 2026-08-11 线路化直令(route-products §5 下一条=北京中轴); 北京中轴线2024入世界遗产是持续热点; facts verify at scripting",
+      "sources": [
+        "北京中轴线 世界遗产 永定门 7.8公里"
+      ],
+      "addedAt": "2026-08-11",
+      "addedBy": "cycle replenish (china-route next series)",
+      "status": "active"
+    },
+    {
+      "id": "rt-06",
+      "title": "Route: Beijing Central Axis②天坛——皇帝祭天的圆与方",
+      "pillar": "china-route",
+      "format": "short",
+      "angle": "P2 天坛: 圜丘/祈年殿·天圆地方·回音壁声学。片尾预告前门/正阳门。fact-first=祈年殿无一根铁钉/一块砖。verify at scripting。",
+      "whyNow": "北京中轴线系列 P2; 天坛为中轴核心礼制建筑; facts verify at scripting",
+      "sources": [
+        "天坛 祈年殿 无钉 天圆地方 回音壁"
+      ],
+      "addedAt": "2026-08-11",
+      "addedBy": "cycle replenish (china-route next series)",
+      "status": "active"
+    },
+    {
+      "id": "rt-07",
+      "title": "Route: Beijing Central Axis③故宫——中轴线上的紫禁城",
+      "pillar": "china-route",
+      "format": "short",
+      "angle": "P3 故宫: 中轴对称·三大殿·9999间之说。片尾预告钟鼓楼。fact-first=紫禁城恰在7.8km中轴正中。verify at scripting。",
+      "whyNow": "北京中轴线系列 P3; 故宫是中轴线视觉高潮; facts verify at scripting",
+      "sources": [
+        "故宫 紫禁城 中轴对称 房间数"
+      ],
+      "addedAt": "2026-08-11",
+      "addedBy": "cycle replenish (china-route next series)",
+      "status": "active"
+    },
+    {
+      "id": "rt-08",
+      "title": "Route: Beijing Central Axis④完结·钟鼓楼——中轴线的终点报时",
+      "pillar": "china-route",
+      "format": "short",
+      "angle": "P4 完结 钟鼓楼: 中轴北端·晨钟暮鼓报时·俯瞰全轴。收官串讲全线+full route on channel page(私域钩)。fact-first=一口大钟报时全城可闻。verify at scripting。",
+      "whyNow": "北京中轴线系列完结集; 承接私域漏斗; facts verify at scripting",
+      "sources": [
+        "北京 钟鼓楼 晨钟暮鼓 报时 中轴线终点"
+      ],
+      "addedAt": "2026-08-11",
+      "addedBy": "cycle replenish (china-route next series)",
+      "status": "active"
+    },
+    {
+      "id": "edge-a01",
+      "title": "Route: China's Edge 东北边境篇 EP1 丹东鸭绿江断桥:一江之隔两个世界",
+      "pillar": "china-route",
+      "format": "short",
+      "angle": "鸭绿江断桥(朝战遗迹)走到'断点';中朝界河;江畔步道。地理事实陈述,不碰政治。 每集含徒步/步道点+许可诚实提示;素材稀缺站用地图动画+泛用边境素材照常声明;音乐 oriental-edm/cinema-orient 轮换。",
+      "whyNow": "owner 2026-08-12 大环绕中国边境徒步 IP(plans/china-edge.md S1);facts verify at scripting 双源",
+      "seriesNote": "China's Edge S1 连载",
+      "addedAt": "2026-08-12",
+      "addedBy": "owner directive",
+      "status": "active"
+    },
+    {
+      "id": "edge-a02",
+      "title": "Route: China's Edge 东北边境篇 EP2 珲春防川:一眼望三国",
+      "pillar": "china-route",
+      "format": "short",
+      "angle": "中俄朝三国交界瞭望;'东方第一村'木栈道;图们江出海口叙事(事实核实)。 每集含徒步/步道点+许可诚实提示;素材稀缺站用地图动画+泛用边境素材照常声明;音乐 oriental-edm/cinema-orient 轮换。",
+      "whyNow": "owner 2026-08-12 大环绕中国边境徒步 IP(plans/china-edge.md S1);facts verify at scripting 双源",
+      "seriesNote": "China's Edge S1 连载",
+      "addedAt": "2026-08-12",
+      "addedBy": "owner directive",
+      "status": "active"
+    },
+    {
+      "id": "edge-a03",
+      "title": "Route: China's Edge 东北边境篇 EP3 长白山天池:中朝界湖火山口",
+      "pillar": "china-route",
+      "format": "short",
+      "angle": "火山口湖海拔2189m(核实);北坡台阶徒步登顶;云开概率诚实提示。 每集含徒步/步道点+许可诚实提示;素材稀缺站用地图动画+泛用边境素材照常声明;音乐 oriental-edm/cinema-orient 轮换。",
+      "whyNow": "owner 2026-08-12 大环绕中国边境徒步 IP(plans/china-edge.md S1);facts verify at scripting 双源",
+      "seriesNote": "China's Edge S1 连载",
+      "addedAt": "2026-08-12",
+      "addedBy": "owner directive",
+      "status": "active"
+    },
+    {
+      "id": "edge-a04",
+      "title": "Route: China's Edge 东北边境篇 EP4 抚远黑瞎子岛:中国最东点的第一缕阳光",
+      "pillar": "china-route",
+      "format": "short",
+      "angle": "中国陆地最东点;全国最早日出;湿地木栈道。 每集含徒步/步道点+许可诚实提示;素材稀缺站用地图动画+泛用边境素材照常声明;音乐 oriental-edm/cinema-orient 轮换。",
+      "whyNow": "owner 2026-08-12 大环绕中国边境徒步 IP(plans/china-edge.md S1);facts verify at scripting 双源",
+      "seriesNote": "China's Edge S1 连载",
+      "addedAt": "2026-08-12",
+      "addedBy": "owner directive",
+      "status": "active"
+    },
+    {
+      "id": "edge-a05",
+      "title": "Route: China's Edge 东北边境篇 EP5 漠河北极村:到中国最北'找北'",
+      "pillar": "china-route",
+      "format": "short",
+      "angle": "中国最北点;'找北'梗;极光偶见不承诺(诚实);冬季极寒装备提示。 每集含徒步/步道点+许可诚实提示;素材稀缺站用地图动画+泛用边境素材照常声明;音乐 oriental-edm/cinema-orient 轮换。",
+      "whyNow": "owner 2026-08-12 大环绕中国边境徒步 IP(plans/china-edge.md S1);facts verify at scripting 双源",
+      "seriesNote": "China's Edge S1 连载",
+      "addedAt": "2026-08-12",
+      "addedBy": "owner directive",
+      "status": "active"
+    },
+    {
+      "id": "edge-a06",
+      "title": "Route: China's Edge 东北边境篇 EP6 满洲里国门:欧亚铁路在此换轨",
+      "pillar": "china-route",
+      "format": "short",
+      "angle": "中俄最大陆路口岸;宽轨/标准轨换轨;中俄边城建筑反差。 每集含徒步/步道点+许可诚实提示;素材稀缺站用地图动画+泛用边境素材照常声明;音乐 oriental-edm/cinema-orient 轮换。",
+      "whyNow": "owner 2026-08-12 大环绕中国边境徒步 IP(plans/china-edge.md S1);facts verify at scripting 双源",
+      "seriesNote": "China's Edge S1 连载",
+      "addedAt": "2026-08-12",
+      "addedBy": "owner directive",
+      "status": "active"
+    },
+    {
+      "id": "edge-a07",
+      "title": "Route: China's Edge 东北边境篇 EP7 额尔古纳界河:G331最美自驾段",
+      "pillar": "china-route",
+      "format": "short",
+      "angle": "呼伦贝尔草原+中俄界河;草原徒步;边境公路公路片感。 每集含徒步/步道点+许可诚实提示;素材稀缺站用地图动画+泛用边境素材照常声明;音乐 oriental-edm/cinema-orient 轮换。",
+      "whyNow": "owner 2026-08-12 大环绕中国边境徒步 IP(plans/china-edge.md S1);facts verify at scripting 双源",
+      "seriesNote": "China's Edge S1 连载",
+      "addedAt": "2026-08-12",
+      "addedBy": "owner directive",
+      "status": "active"
+    },
+    {
+      "id": "edge-a08",
+      "title": "Route: China's Edge 东北边境篇 EP8 东北边境篇完结:全线串讲",
+      "pillar": "china-route",
+      "format": "short",
+      "angle": "G331东段8站回顾;边境通行证/季节/装备 Expert Tips;full route CTA。 每集含徒步/步道点+许可诚实提示;素材稀缺站用地图动画+泛用边境素材照常声明;音乐 oriental-edm/cinema-orient 轮换。",
+      "whyNow": "owner 2026-08-12 大环绕中国边境徒步 IP(plans/china-edge.md S1);facts verify at scripting 双源",
+      "seriesNote": "China's Edge S1 连载",
+      "addedAt": "2026-08-12",
+      "addedBy": "owner directive",
+      "status": "active"
+    }
+  ]
 }

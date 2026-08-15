@@ -1,1730 +1,1803 @@
 {
- "videos": [
-  {
-   "date": "2026-08-10",
-   "slot": "a",
-   "title": "China's Only Silk-Sewn Jade Suit: 2,291 Plaques | Buried Empire P1 · 丝缕玉衣",
-   "videoId": "31YhzTHBmCA",
-   "url": "https://www.youtube.com/watch?v=31YhzTHBmCA",
-   "pillar": "china-culture",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-10T13:00:00Z"
-  },
-  {
-   "date": "2026-08-10",
-   "slot": "b",
-   "title": "His Gold Seal Said \"Emperor\" — and a Persian Box Beside It | Buried Empire P2 · 文帝行玺",
-   "videoId": "XQdt9dBhl1k",
-   "url": "https://www.youtube.com/watch?v=XQdt9dBhl1k",
-   "pillar": "china-culture",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-10T16:00:00Z"
-  },
-  {
-   "date": "2026-08-10",
-   "slot": "c",
-   "title": "China's First Bank Sat Inside This 6-km Ming Wall — Pingyao | 平遥古城",
-   "videoId": "jHFUVYEqeIM",
-   "url": "https://www.youtube.com/watch?v=jHFUVYEqeIM",
-   "pillar": "city-travel",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-10T19:00:00Z"
-  },
-  {
-   "date": "2026-08-10",
-   "slot": "d",
-   "title": "In Guangzhou, even fruit is luxury — Lychee King season | Guangzhou Ate First EP1",
-   "videoId": "O3MPquBKc-g",
-   "url": "https://www.youtube.com/watch?v=O3MPquBKc-g",
-   "pillar": "china-food",
-   "lane": "owner-footage+bespoke-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-10T23:00:00Z"
-  },
-  {
-   "date": "2026-07-08",
-   "slot": "a",
-   "title": "MIT Just Scored a Perfect 100 — 15 Years at #1 (QS 2027)",
-   "videoId": "hMOTS07qqcw",
-   "url": "https://www.youtube.com/watch?v=hMOTS07qqcw",
-   "pillar": "world-colleges",
-   "lane": "elevenlabs+pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-08T13:00:00Z"
-  },
-  {
-   "date": "2026-07-08",
-   "slot": "b",
-   "title": "Why the SATs Are Suddenly Mandatory Again (Even Harvard Changed Its Mind)",
-   "videoId": "c9uBqC4hiz8",
-   "url": "https://www.youtube.com/watch?v=c9uBqC4hiz8",
-   "pillar": "education-trends",
-   "lane": "elevenlabs+pexels-ffmpeg+openai-thumb+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-08T17:00:00Z"
-  },
-  {
-   "date": "2026-07-08",
-   "slot": "c",
-   "title": "12.9 Million Teenagers Just Took the Hardest Exam on Earth",
-   "videoId": "LEC4kPhi0uw",
-   "url": "https://www.youtube.com/watch?v=LEC4kPhi0uw",
-   "pillar": "world-colleges",
-   "lane": "elevenlabs+pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-08T22:00:00Z"
-  },
-  {
-   "date": "2026-07-09",
-   "slot": "a",
-   "title": "One Year at Boston College Now Costs $95,258. Stanford Just Froze Its Price.",
-   "videoId": "FXhE4NjuQ1c",
-   "url": "https://www.youtube.com/watch?v=FXhE4NjuQ1c",
-   "pillar": "whats-latest",
-   "lane": "elevenlabs+pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-09T13:00:00Z"
-  },
-  {
-   "date": "2026-07-09",
-   "slot": "b",
-   "title": "The Country Making College Loans Interest-Free (While America Still Debates Free Tuition)",
-   "videoId": "4VDWQO6wS_g",
-   "url": "https://www.youtube.com/watch?v=4VDWQO6wS_g",
-   "pillar": "education-systems",
-   "lane": "elevenlabs+pexels-ffmpeg+openai-thumb+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-09T17:00:00Z"
-  },
-  {
-   "date": "2026-07-09",
-   "slot": "c",
-   "title": "故宫的雪，等了六百年｜北京 Forbidden City in Snow (普通话·京味)",
-   "videoId": "Q6QL21qmDjM",
-   "url": "https://www.youtube.com/watch?v=Q6QL21qmDjM",
-   "pillar": "test-china-travel",
-   "lane": "elevenlabs+pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-09T22:00:00Z"
-  },
-  {
-   "date": "2026-07-10",
-   "slot": "a",
-   "title": "成都火锅第一口，先烫毛肚｜七上八下十五秒 First Bite of Chengdu Hotpot",
-   "videoId": "q6wX-LYDut8",
-   "url": "https://www.youtube.com/watch?v=q6wX-LYDut8",
-   "pillar": "china-food",
-   "lane": "elevenlabs+pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-10T13:00:00Z"
-  },
-  {
-   "date": "2026-07-10",
-   "slot": "b",
-   "title": "为什么 China 也是瓷器？千年瓷都景德镇 Why \"china\" Means Porcelain",
-   "videoId": "PNi8fMIhbTw",
-   "url": "https://www.youtube.com/watch?v=PNi8fMIhbTw",
-   "pillar": "china-culture",
-   "lane": "elevenlabs+pexels-ffmpeg+openai-thumb+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-10T17:00:00Z"
-  },
-  {
-   "date": "2026-07-10",
-   "slot": "c",
-   "title": "外滩清晨六点，上海还没醒｜Dawn at the Bund 上海",
-   "videoId": "Co9Udciigb0",
-   "url": "https://www.youtube.com/watch?v=Co9Udciigb0",
-   "pillar": "city-travel",
-   "lane": "elevenlabs+pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-10T22:00:00Z"
-  },
-  {
-   "date": "2026-07-11",
-   "slot": "a",
-   "title": "漓江清晨：你钱包里的那座山｜Li River, Guilin (桂林·兴坪)",
-   "videoId": "mdJyK4X6HVg",
-   "url": "https://www.youtube.com/watch?v=mdJyK4X6HVg",
-   "pillar": "city-travel",
-   "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, guzheng bed)",
-   "status": "scheduled",
-   "publishAt": "2026-07-11T13:00:00Z"
-  },
-  {
-   "date": "2026-07-11",
-   "slot": "b",
-   "title": "苏州平江路的一天：从晨光到灯笼｜A Day on Pingjiang Road, Suzhou",
-   "videoId": "7QgN6KFozMI",
-   "url": "https://www.youtube.com/watch?v=7QgN6KFozMI",
-   "pillar": "city-walk",
-   "lane": "pexels-ffmpeg+openai-thumb+youtube-data-api (subtitle-driven, guzheng bed)",
-   "status": "scheduled",
-   "publishAt": "2026-07-11T17:00:00Z"
-  },
-  {
-   "date": "2026-07-11",
-   "slot": "c",
-   "title": "广州早茶：一盅两件，慢的艺术｜Cantonese Yum Cha (饮茶先啦)",
-   "videoId": "MwxYdEOprl8",
-   "url": "https://www.youtube.com/watch?v=MwxYdEOprl8",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, lofi bed)",
-   "status": "scheduled",
-   "publishAt": "2026-07-11T22:00:00Z"
-  },
-  {
-   "date": "2026-07-12",
-   "slot": "a",
-   "title": "肉夹馍为什么不叫馍夹肉？西安回民街的答案｜Xi'an Roujiamo",
-   "videoId": "TFsvTCj3Q38",
-   "url": "https://www.youtube.com/watch?v=TFsvTCj3Q38",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, lofi bed)",
-   "status": "scheduled",
-   "publishAt": "2026-07-12T13:00:00Z"
-  },
-  {
-   "date": "2026-07-12",
-   "slot": "b",
-   "title": "潮汕功夫茶：三只杯子里的宇宙｜关公巡城·韩信点兵 Chaoshan Gongfu Tea",
-   "videoId": "CvyHU_Kof6k",
-   "url": "https://www.youtube.com/watch?v=CvyHU_Kof6k",
-   "pillar": "china-culture",
-   "lane": "pexels-ffmpeg+openai-thumb+youtube-data-api (subtitle-driven, guzheng bed)",
-   "status": "scheduled",
-   "publishAt": "2026-07-12T17:00:00Z"
-  },
-  {
-   "date": "2026-07-12",
-   "slot": "c",
-   "title": "西湖清晨：比传说更安静｜断桥·欲把西湖比西子 West Lake at Dawn",
-   "videoId": "v7k01y8EsXo",
-   "url": "https://www.youtube.com/watch?v=v7k01y8EsXo",
-   "pillar": "city-travel",
-   "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, guzheng bed)",
-   "status": "scheduled",
-   "publishAt": "2026-07-12T22:00:00Z"
-  },
-  {
-   "date": "2026-07-13",
-   "slot": "a",
-   "title": "云南普洱：中国 98% 的咖啡都从这里来｜Yunnan Pu'er Coffee",
-   "videoId": "pK2ljtJD2pY",
-   "url": "https://www.youtube.com/watch?v=pK2ljtJD2pY",
-   "pillar": "china-coffee",
-   "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, guzheng bed, no VO)",
-   "status": "scheduled",
-   "publishAt": "2026-07-13T13:00:00Z"
-  },
-  {
-   "date": "2026-07-13",
-   "slot": "b",
-   "title": "从种子到杯子：中国咖啡的三十年｜Seed to Cup — China's Coffee Story",
-   "videoId": "y7vDtyjm4GI",
-   "url": "https://www.youtube.com/watch?v=y7vDtyjm4GI",
-   "pillar": "china-coffee",
-   "lane": "pexels-ffmpeg+openai-thumb+youtube-data-api (subtitle-driven, guzheng bed, no VO)",
-   "status": "scheduled",
-   "publishAt": "2026-07-13T17:00:00Z"
-  },
-  {
-   "date": "2026-07-13",
-   "slot": "c",
-   "title": "上海永康路：全世界咖啡店最多的城市｜Shanghai, the World's Café Capital",
-   "videoId": "6dzYns0A0dc",
-   "url": "https://www.youtube.com/watch?v=6dzYns0A0dc",
-   "pillar": "china-coffee",
-   "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, lofi bed, no VO)",
-   "status": "scheduled",
-   "publishAt": "2026-07-13T22:00:00Z"
-  },
-  {
-   "date": "2026-07-14",
-   "slot": "a",
-   "title": "北京胡同里，藏着一杯咖啡香 | Coffee in a Beijing Hutong",
-   "videoId": "Ud1XuOsyvbg",
-   "url": "https://www.youtube.com/watch?v=Ud1XuOsyvbg",
-   "pillar": "china-coffee",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-14T13:00:00Z"
-  },
-  {
-   "date": "2026-07-14",
-   "slot": "b",
-   "title": "中国人为什么突然爱上咖啡？| Why China Fell for Coffee",
-   "videoId": "yFj2psl9ngw",
-   "url": "https://www.youtube.com/watch?v=yFj2psl9ngw",
-   "pillar": "china-coffee",
-   "lane": "pexels-ffmpeg+openai-thumb+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-14T17:00:00Z"
-  },
-  {
-   "date": "2026-07-14",
-   "slot": "c",
-   "title": "老洋房里喝手冲：广州东山口 | Coffee in Guangzhou's Old Villas",
-   "videoId": "1LpZA0pafP8",
-   "url": "https://www.youtube.com/watch?v=1LpZA0pafP8",
-   "pillar": "china-coffee",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-14T22:00:00Z"
-  },
-  {
-   "date": "2026-07-15",
-   "slot": "a",
-   "title": "日晒还是水洗？同一颗豆，两种命运 | Natural vs Washed Coffee ☕",
-   "videoId": "tUbpsi291WE",
-   "url": "https://www.youtube.com/watch?v=tUbpsi291WE",
-   "pillar": "china-coffee",
-   "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, no VO), guzheng bed",
-   "status": "scheduled",
-   "publishAt": "2026-07-15T13:00:00Z"
-  },
-  {
-   "date": "2026-07-15",
-   "slot": "b",
-   "title": "独立咖啡师的一天：从烘豆到拉花 | A Day With a Chinese Independent Barista ☕",
-   "videoId": "nIFaEe80h-c",
-   "url": "https://www.youtube.com/watch?v=nIFaEe80h-c",
-   "pillar": "china-coffee",
-   "lane": "pexels-ffmpeg+openai-thumb+youtube-data-api (subtitle-driven, no VO), guzheng bed",
-   "status": "scheduled",
-   "publishAt": "2026-07-15T17:00:00Z"
-  },
-  {
-   "date": "2026-07-15",
-   "slot": "c",
-   "title": "成都的咖啡馆，就开在茶馆隔壁 | In Chengdu, Coffee Sits Next to the Teahouse ☕",
-   "videoId": "mGRRuSr3Uoo",
-   "url": "https://www.youtube.com/watch?v=mGRRuSr3Uoo",
-   "pillar": "china-coffee",
-   "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, no VO), lofi bed",
-   "status": "scheduled",
-   "publishAt": "2026-07-15T22:00:00Z"
-  },
-  {
-   "date": "2026-07-16",
-   "slot": "a",
-   "title": "9.9元一杯：烧出两万家店，今年却踩了刹车 | China's 9.9 Coffee War ☕",
-   "videoId": "cTET5tblQ88",
-   "url": "https://www.youtube.com/watch?v=cTET5tblQ88",
-   "pillar": "china-coffee",
-   "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, no VO), lofi bed",
-   "status": "scheduled",
-   "publishAt": "2026-07-16T13:00:00Z",
-   "playlist": "中国咖啡 China Coffee (PLLExmpQ7O00U)"
-  },
-  {
-   "date": "2026-07-16",
-   "slot": "b",
-   "title": "一公斤咖啡果10块钱：云南咖农的三十年最高价 | Yunnan Coffee's Best Harvest ☕",
-   "videoId": "zrqt11wpjyk",
-   "url": "https://www.youtube.com/watch?v=zrqt11wpjyk",
-   "pillar": "china-coffee",
-   "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, no VO), guzheng bed",
-   "status": "scheduled",
-   "publishAt": "2026-07-16T17:00:00Z",
-   "playlist": "中国咖啡 China Coffee (PLLExmpQ7O00U)"
-  },
-  {
-   "date": "2026-07-16",
-   "slot": "c",
-   "title": "中国人一年喝多少杯咖啡？答案没你想的多 | How Much Coffee China Drinks ☕",
-   "videoId": "doTvCxN8eSc",
-   "url": "https://www.youtube.com/watch?v=doTvCxN8eSc",
-   "pillar": "china-coffee",
-   "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, no VO), lofi bed",
-   "status": "scheduled",
-   "publishAt": "2026-07-16T22:00:00Z",
-   "playlist": "中国咖啡 China Coffee (PLLExmpQ7O00U)"
-  },
-  {
-   "date": "2026-07-17",
-   "slot": "a",
-   "title": "50℃的浓缩，倒进0℃的牛奶 | What Makes a Dirty Coffee ☕",
-   "videoId": "parsr4DfN2g",
-   "url": "https://www.youtube.com/watch?v=parsr4DfN2g",
-   "pillar": "china-coffee",
-   "lane": "pexels+ffmpeg+youtube",
-   "status": "scheduled",
-   "publishAt": "2026-07-17T13:00:00Z"
-  },
-  {
-   "date": "2026-07-17",
-   "slot": "b",
-   "title": "1904年，中国第一棵咖啡树种在这个村 | China's First Coffee Tree ☕",
-   "videoId": "n0CNAyX1r5g",
-   "url": "https://www.youtube.com/watch?v=n0CNAyX1r5g",
-   "pillar": "china-coffee",
-   "lane": "pexels+ffmpeg+youtube",
-   "status": "scheduled",
-   "publishAt": "2026-07-17T17:00:00Z"
-  },
-  {
-   "date": "2026-07-17",
-   "slot": "c",
-   "title": "900栋老别墅的小岛，把咖啡馆开进百年洋楼 | Coffee in Gulangyu ☕",
-   "videoId": "XD1DPL28svw",
-   "url": "https://www.youtube.com/watch?v=XD1DPL28svw",
-   "pillar": "china-coffee",
-   "lane": "pexels+ffmpeg+youtube",
-   "status": "scheduled",
-   "publishAt": "2026-07-17T22:00:00Z"
-  },
-  {
-   "date": "2026-07-18",
-   "slot": "a",
-   "title": "造假退市五年后，它成了中国咖啡第一 | Luckin's Wild Ride ☕",
-   "videoId": "jd4gXkoGfhE",
-   "url": "https://www.youtube.com/watch?v=jd4gXkoGfhE",
-   "pillar": "china-coffee",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-18T13:00:00Z"
-  },
-  {
-   "date": "2026-07-18",
-   "slot": "b",
-   "title": "精品率71%，云南这个边境小县全省第一 | China's Specialty-Coffee County ☕",
-   "videoId": "FBUNRO3Odtk",
-   "url": "https://www.youtube.com/watch?v=FBUNRO3Odtk",
-   "pillar": "china-coffee",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-18T17:00:00Z"
-  },
-  {
-   "date": "2026-07-18",
-   "slot": "c",
-   "title": "在中国，咖啡师是国家认证的正经职业 | Barista Is an Official Job in China ☕",
-   "videoId": "gNI4qWz-RI8",
-   "url": "https://www.youtube.com/watch?v=gNI4qWz-RI8",
-   "pillar": "china-coffee",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-18T22:00:00Z"
-  },
-  {
-   "date": "2026-07-19",
-   "slot": "a",
-   "title": "爬遍中国五岳，他却说黄山之后无岳可看 | Huangshan Ended His Search 🏔️",
-   "videoId": "rsHaPG_Xets",
-   "url": "https://www.youtube.com/watch?v=rsHaPG_Xets",
-   "pillar": "city-travel",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-19T13:00:00Z"
-  },
-  {
-   "date": "2026-07-19",
-   "slot": "b",
-   "title": "重庆不是一座城市，是一座立体迷宫 | Chongqing: A City Built in 3D 🏙️",
-   "videoId": "4u0ycJopL18",
-   "url": "https://www.youtube.com/watch?v=4u0ycJopL18",
-   "pillar": "city-walk",
-   "lane": "pexels-ffmpeg+openai-thumb+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-19T17:00:00Z"
-  },
-  {
-   "date": "2026-07-19",
-   "slot": "c",
-   "title": "长沙臭豆腐为什么是黑的？一锅卤水发酵两年 | Why Changsha's Stinky Tofu Is Black 🖤",
-   "videoId": "F_EVPtmd4ZA",
-   "url": "https://www.youtube.com/watch?v=F_EVPtmd4ZA",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-19T22:00:00Z"
-  },
-  {
-   "date": "2026-07-20",
-   "slot": "a",
-   "title": "新中式饮品战争①：一家奶茶店，开了46479家 | China's Drink Wars P1 🧋",
-   "videoId": "3LfJPEtC9RI",
-   "url": "https://www.youtube.com/watch?v=3LfJPEtC9RI",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-20T13:00:00Z"
-  },
-  {
-   "date": "2026-07-20",
-   "slot": "b",
-   "title": "新中式饮品战争②：一杯酸奶45元，凭啥？| China's Drink Wars P2 🥤",
-   "videoId": "QVWRzg-auhw",
-   "url": "https://www.youtube.com/watch?v=QVWRzg-auhw",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-20T16:00:00Z"
-  },
-  {
-   "date": "2026-07-20",
-   "slot": "c",
-   "title": "新中式饮品战争③：一天卖542万杯的咖啡 | China's Drink Wars P3 ☕",
-   "videoId": "OWTTnizy45s",
-   "url": "https://www.youtube.com/watch?v=OWTTnizy45s",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-20T19:00:00Z"
-  },
-  {
-   "date": "2026-07-20",
-   "slot": "d",
-   "title": "新中式饮品战争④收官：9块9 和 30块，谁赢了 | China's Drink Wars P4 ☕",
-   "videoId": "E2sXl4v8ttc",
-   "url": "https://www.youtube.com/watch?v=E2sXl4v8ttc",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-20T22:00:00Z"
-  },
-  {
-   "date": "2026-07-21",
-   "slot": "a",
-   "title": "中国早餐宇宙①上海四大金刚：一顿早饭，吵了半世纪 | Shanghai's Big Four Breakfast 🥢",
-   "videoId": "RLMCDnDXoyM",
-   "url": "https://www.youtube.com/watch?v=RLMCDnDXoyM",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-21T13:00:00Z"
-  },
-  {
-   "date": "2026-07-21",
-   "slot": "b",
-   "title": "中国早餐宇宙②武汉热干面：一壶打翻的油，成就一座城的早饭 | Wuhan Hot-Dry Noodles 🍜",
-   "videoId": "No9yyegiivo",
-   "url": "https://www.youtube.com/watch?v=No9yyegiivo",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-21T16:00:00Z"
-  },
-  {
-   "date": "2026-07-21",
-   "slot": "c",
-   "title": "中国早餐宇宙③广州肠粉：薄如纸、白如雪，一匹白绸缎 | Guangzhou Cheung Fun 🥢",
-   "videoId": "0tZq3N0sUI0",
-   "url": "https://www.youtube.com/watch?v=0tZq3N0sUI0",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-21T19:00:00Z"
-  },
-  {
-   "date": "2026-07-21",
-   "slot": "d",
-   "title": "中国早餐宇宙④完结·西安肉夹馍：一个馍，夹了两千年 | Xi'an Rou Jia Mo 🥙",
-   "videoId": "3M8JBKp4BBU",
-   "url": "https://www.youtube.com/watch?v=3M8JBKp4BBU",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-21T22:00:00Z"
-  },
-  {
-   "date": "2026-07-22",
-   "slot": "a",
-   "title": "火锅分几派①重庆九宫格：不是分辣度，是分火候 | China Hotpot Schools P1 · Chongqing 🌶️🔥",
-   "videoId": "18Xbl33keUA",
-   "url": "https://www.youtube.com/watch?v=18Xbl33keUA",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-22T13:00:00Z"
-  },
-  {
-   "date": "2026-07-22",
-   "slot": "b",
-   "title": "火锅分几派②潮汕牛肉火锅：一头牛，涮火锅的不到三成 | China Hotpot Schools P2 · Chaoshan 🐮",
-   "videoId": "Ia71ofr1YTs",
-   "url": "https://www.youtube.com/watch?v=Ia71ofr1YTs",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-22T16:00:00Z"
-  },
-  {
-   "date": "2026-07-22",
-   "slot": "c",
-   "title": "火锅分几派③北京铜锅涮羊肉：一锅清水，凭什么封神 | China Hotpot Schools P3 · Beijing 🐑",
-   "videoId": "k-Hv1JqDwM8",
-   "url": "https://www.youtube.com/watch?v=k-Hv1JqDwM8",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-22T19:00:00Z"
-  },
-  {
-   "date": "2026-07-22",
-   "slot": "d",
-   "title": "火锅分几派④完结·贵州酸汤：红汤界的新顶流 | China Hotpot Schools P4 · Guizhou 🍲",
-   "videoId": "bUuF4S54-es",
-   "url": "https://www.youtube.com/watch?v=bUuF4S54-es",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-22T22:00:00Z"
-  },
-  {
-   "date": "2026-07-23",
-   "slot": "a",
-   "title": "中国粉面几大派①兰州牛肉面：一碗面，五种颜色都是规矩 | China Noodle Schools P1 · Lanzhou 🍜",
-   "videoId": "JA2sKtadlr4",
-   "url": "https://www.youtube.com/watch?v=JA2sKtadlr4",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-23T13:00:00Z"
-  },
-  {
-   "date": "2026-07-23",
-   "slot": "b",
-   "title": "中国粉面几大派②武汉热干面：一碗一滴汤都没有的面 | China Noodle Schools P2 · Wuhan 🍜",
-   "videoId": "whAd13Czlyk",
-   "url": "https://www.youtube.com/watch?v=whAd13Czlyk",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-23T16:00:00Z"
-  },
-  {
-   "date": "2026-07-23",
-   "slot": "c",
-   "title": "中国粉面几大派③柳州螺蛳粉：闻着臭，嗦出七百多亿 | China Noodle Schools P3 · Liuzhou 🍜",
-   "videoId": "UM79YPsSBFM",
-   "url": "https://www.youtube.com/watch?v=UM79YPsSBFM",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-23T19:00:00Z"
-  },
-  {
-   "date": "2026-07-23",
-   "slot": "d",
-   "title": "中国粉面几大派④完结·重庆小面：面素，料一点都不素 | China Noodle Schools P4 · Chongqing 🌶️🍜",
-   "videoId": "j3e5_xsq144",
-   "url": "https://www.youtube.com/watch?v=j3e5_xsq144",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-23T22:00:00Z"
-  },
-  {
-   "date": "2026-07-24",
-   "slot": "a",
-   "title": "云南菌子季①见手青：炒不够时间，真会\"见小人\" | Yunnan Wild Mushrooms P1 · Jianshouqing 🍄",
-   "videoId": "o8MuiqDU_oo",
-   "url": "https://www.youtube.com/watch?v=o8MuiqDU_oo",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-24T13:00:00Z"
-  },
-  {
-   "date": "2026-07-24",
-   "slot": "b",
-   "title": "云南菌子季②松茸：一斤上千，为什么种不出来 | Yunnan Wild Mushrooms P2 · Matsutake 🍄",
-   "videoId": "0I3kO59mzMk",
-   "url": "https://www.youtube.com/watch?v=0I3kO59mzMk",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-24T16:00:00Z"
-  },
-  {
-   "date": "2026-07-24",
-   "slot": "c",
-   "title": "云南菌子季③鸡枞：蚂蚁\"种\"出来的菌中之王 | Yunnan Wild Mushrooms P3 · Termite Mushroom 🐜🍄",
-   "videoId": "9aNU5YrMdAA",
-   "url": "https://www.youtube.com/watch?v=9aNU5YrMdAA",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-24T19:00:00Z"
-  },
-  {
-   "date": "2026-07-24",
-   "slot": "d",
-   "title": "云南菌子季④完结·干巴菌：长得最丑，卖得最贵 | Yunnan Wild Mushrooms P4 · Ganba Fungus 🍄",
-   "videoId": "h1bXgMgbCz8",
-   "url": "https://www.youtube.com/watch?v=h1bXgMgbCz8",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-24T22:00:00Z"
-  },
-  {
-   "date": "2026-07-25",
-   "slot": "a",
-   "title": "一道菜带火一座城①沙县小吃：一个县城，开出8万家店 | One Dish One Town P1 · Shaxian 🥡",
-   "videoId": "pJrmZ8PGt0k",
-   "url": "https://www.youtube.com/watch?v=pJrmZ8PGt0k",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "posted",
-   "publishAt": null
-  },
-  {
-   "date": "2026-07-25",
-   "slot": "b",
-   "title": "一道菜带火一座城②淄博烧烤：民宿一夜暴涨865%，小饼卷一切 | One Dish One Town P2 · Zibo BBQ 🍢",
-   "videoId": "dvSV77Se3uQ",
-   "url": "https://www.youtube.com/watch?v=dvSV77Se3uQ",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-25T16:00:00Z"
-  },
-  {
-   "date": "2026-07-25",
-   "slot": "c",
-   "title": "一道菜带火一座城③天水麻辣烫：一条视频118万赞，烫红一座城 | One Dish One Town P3 · Tianshui 🌶️",
-   "videoId": "JEAyhG0UESM",
-   "url": "https://www.youtube.com/watch?v=JEAyhG0UESM",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-25T19:00:00Z"
-  },
-  {
-   "date": "2026-07-25",
-   "slot": "d",
-   "title": "一道菜带火一座城④完结·荣昌卤鹅：五一卖爆752%，火遍32国 | One Dish One Town P4 · Rongchang 🦢",
-   "videoId": "_ZihaTK_s2c",
-   "url": "https://www.youtube.com/watch?v=_ZihaTK_s2c",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-25T22:00:00Z"
-  },
-  {
-   "date": "2026-07-26",
-   "slot": "a",
-   "title": "地方菜正在出圈①徐州伏羊：最热的三伏天，为什么喝最烫的羊汤 | Rising Flavors P1 · Xuzhou 🐑",
-   "videoId": "JUEO32DodBg",
-   "url": "https://www.youtube.com/watch?v=JUEO32DodBg",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-26T13:00:00Z"
-  },
-  {
-   "date": "2026-07-26",
-   "slot": "b",
-   "title": "地方菜正在出圈②贵州酸汤：不放一滴醋，酸掉一个省 | Rising Flavors P2 · Guizhou Sour Soup 🍲",
-   "videoId": "iVuEIkqFSNQ",
-   "url": "https://www.youtube.com/watch?v=iVuEIkqFSNQ",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-26T16:00:00Z"
-  },
-  {
-   "date": "2026-07-26",
-   "slot": "c",
-   "title": "地方菜正在出圈③云南山野火锅：一锅汤，涮下整座山 | Rising Flavors P3 · Yunnan Mountain Hotpot 🍄",
-   "videoId": "93w-F32Ra34",
-   "url": "https://www.youtube.com/watch?v=93w-F32Ra34",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-26T19:00:00Z"
-  },
-  {
-   "date": "2026-07-26",
-   "slot": "d",
-   "title": "地方菜正在出圈④完结·潮汕砂锅粥：夜里那锅粥，海鲜下得毫不手软 | Rising Flavors P4 · Chaoshan 🦀",
-   "videoId": "tYgCGawuQNQ",
-   "url": "https://www.youtube.com/watch?v=tYgCGawuQNQ",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-26T22:00:00Z"
-  },
-  {
-   "date": "2026-07-27",
-   "slot": "a",
-   "title": "中国人的夏夜①麻辣小龙虾：6万家店，卖的是一整个夏天",
-   "videoId": "Vpy1vrr5f2I",
-   "url": "https://www.youtube.com/watch?v=Vpy1vrr5f2I",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "published",
-   "publishAt": "2026-07-27T13:00:00Z",
-   "series": "中国人的夏夜 Chinese Summer Nights",
-   "playlists": [
-    "中国美食 (PLayZuFjrAEfk)",
-    "中国人的夏夜 Chinese Summer Nights (PLAdcCAPUlSW0)"
-   ]
-  },
-  {
-   "date": "2026-07-27",
-   "slot": "b",
-   "title": "中国人的夏夜②夜市烧烤：一年三千多亿，一半的夏夜是烤炉给的",
-   "videoId": "moZsu4yVfS4",
-   "url": "https://www.youtube.com/watch?v=moZsu4yVfS4",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-27T16:00:00Z",
-   "series": "中国人的夏夜 Chinese Summer Nights",
-   "playlists": [
-    "中国美食 (PLayZuFjrAEfk)",
-    "中国人的夏夜 Chinese Summer Nights (PLAdcCAPUlSW0)"
-   ]
-  },
-  {
-   "date": "2026-07-27",
-   "slot": "c",
-   "title": "中国人的夏夜③冰粉：一碗透心凉，居然是用手\"搓\"出来的",
-   "videoId": "Xyw_6TGdsao",
-   "url": "https://www.youtube.com/watch?v=Xyw_6TGdsao",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-27T19:00:00Z",
-   "series": "中国人的夏夜 Chinese Summer Nights",
-   "playlists": [
-    "中国美食 (PLayZuFjrAEfk)",
-    "中国人的夏夜 Chinese Summer Nights (PLAdcCAPUlSW0)"
-   ]
-  },
-  {
-   "date": "2026-07-27",
-   "slot": "d",
-   "title": "中国人的夏夜④完结·酸梅汤：最家常的解暑饮料，曾是清宫御膳的方子",
-   "videoId": "qHxGiPOlIi8",
-   "url": "https://www.youtube.com/watch?v=qHxGiPOlIi8",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-27T22:00:00Z",
-   "series": "中国人的夏夜 Chinese Summer Nights",
-   "playlists": [
-    "中国美食 (PLayZuFjrAEfk)",
-    "中国人的夏夜 Chinese Summer Nights (PLAdcCAPUlSW0)"
-   ]
-  },
-  {
-   "date": "2026-07-28",
-   "slot": "a",
-   "title": "中国早餐宇宙⑤北京豆汁儿焦圈：外地人闻着想逃的早餐",
-   "videoId": "DbH_p6B-2fM",
-   "url": "https://www.youtube.com/watch?v=DbH_p6B-2fM",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "published",
-   "publishAt": null,
-   "series": "中国早餐宇宙 China Breakfast Universe (S2)",
-   "playlists": [
-    "中国美食 (PLayZuFjrAEfk)",
-    "中国早餐宇宙 China Breakfast Universe (PLA26zs0p0T6k)"
-   ]
-  },
-  {
-   "date": "2026-07-28",
-   "slot": "b",
-   "title": "中国早餐宇宙⑥河南胡辣汤：一碗糊辣鲜香，河南人的早晨",
-   "videoId": "ooRELjkhWZY",
-   "url": "https://www.youtube.com/watch?v=ooRELjkhWZY",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-28T16:00:00Z",
-   "series": "中国早餐宇宙 China Breakfast Universe (S2)",
-   "playlists": [
-    "中国美食 (PLayZuFjrAEfk)",
-    "中国早餐宇宙 China Breakfast Universe (PLA26zs0p0T6k)"
-   ]
-  },
-  {
-   "date": "2026-07-28",
-   "slot": "c",
-   "title": "中国早餐宇宙⑦广州及第粥：一碗粥，讨的是\"状元\"好意头",
-   "videoId": "KReveLyFWn0",
-   "url": "https://www.youtube.com/watch?v=KReveLyFWn0",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-28T19:00:00Z",
-   "series": "中国早餐宇宙 China Breakfast Universe (S2)",
-   "playlists": [
-    "中国美食 (PLayZuFjrAEfk)",
-    "中国早餐宇宙 China Breakfast Universe (PLA26zs0p0T6k)"
-   ]
-  },
-  {
-   "date": "2026-07-28",
-   "slot": "d",
-   "title": "中国早餐宇宙⑧完结·天津煎饼馃子：放生菜会被\"骂\"的早餐",
-   "videoId": "yIKQRGjf58s",
-   "url": "https://www.youtube.com/watch?v=yIKQRGjf58s",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-28T22:00:00Z",
-   "series": "中国早餐宇宙 China Breakfast Universe (S2)",
-   "playlists": [
-    "中国美食 (PLayZuFjrAEfk)",
-    "中国早餐宇宙 China Breakfast Universe (PLA26zs0p0T6k)"
-   ]
-  },
-  {
-   "date": "2026-07-29",
-   "slot": "a",
-   "title": "中国饺子地图①威海鲅鱼饺子：一个饺子，塞进半条海鱼 | China Dumpling Map P1 · Weihai 🐟🥟",
-   "videoId": "Jewu8dHux5Y",
-   "url": "https://www.youtube.com/watch?v=Jewu8dHux5Y",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-29T13:00:00Z",
-   "series": "中国饺子地图 China Dumpling Map",
-   "playlists": [
-    "中国美食 China Food (PLNf94OBc_zg0)",
-    "中国饺子地图 China Dumpling Map (PLeYdWxs43Fn8)"
-   ]
-  },
-  {
-   "date": "2026-07-29",
-   "slot": "b",
-   "title": "中国饺子地图②东北酸菜猪肉饺：零下三十度，冻在院子里的年味 | China Dumpling Map P2 · Northeast ❄️🥟",
-   "videoId": "bqUSeDLE5VM",
-   "url": "https://www.youtube.com/watch?v=bqUSeDLE5VM",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-29T16:00:00Z",
-   "series": "中国饺子地图 China Dumpling Map",
-   "playlists": [
-    "中国美食 China Food (PLNf94OBc_zg0)",
-    "中国饺子地图 China Dumpling Map (PLeYdWxs43Fn8)"
-   ]
-  },
-  {
-   "date": "2026-07-29",
-   "slot": "c",
-   "title": "中国饺子地图③成都钟水饺：不蘸醋，浇一勺甜辣红油 | China Dumpling Map P3 · Chengdu 🌶️🥟",
-   "videoId": "IcLCMG9Y9c0",
-   "url": "https://www.youtube.com/watch?v=IcLCMG9Y9c0",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api (thumbnail 429-skipped, Shorts frame used)",
-   "status": "scheduled",
-   "publishAt": "2026-07-29T19:00:00Z",
-   "series": "中国饺子地图 China Dumpling Map",
-   "playlists": [
-    "中国美食 China Food (PLNf94OBc_zg0)",
-    "中国饺子地图 China Dumpling Map (PLeYdWxs43Fn8)"
-   ]
-  },
-  {
-   "date": "2026-07-29",
-   "slot": "d",
-   "title": "中国饺子地图④完结·过年团圆饺：为什么中国人过年都吃它 | China Dumpling Map P4 · Reunion 🧧🥟",
-   "videoId": "D5c4OKz19jw",
-   "url": "https://www.youtube.com/watch?v=D5c4OKz19jw",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api (thumbnail 429-skipped, Shorts frame used)",
-   "status": "scheduled",
-   "publishAt": "2026-07-29T22:00:00Z",
-   "series": "中国饺子地图 China Dumpling Map",
-   "playlists": [
-    "中国美食 China Food (PLNf94OBc_zg0)",
-    "中国饺子地图 China Dumpling Map (PLeYdWxs43Fn8)"
-   ]
-  },
-  {
-   "date": "2026-07-30",
-   "slot": "a",
-   "title": "中国辣度地图①四川：最出名的\"辣王\"，为什么只排第五？| China's Spice Map P1 · Sichuan 🌶️",
-   "videoId": "Eqzr3ufWC-c",
-   "url": "https://www.youtube.com/watch?v=Eqzr3ufWC-c",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-30T13:00:00Z",
-   "series": "中国辣度地图 China's Spice Map",
-   "playlists": [
-    "中国美食 China Food (PLNf94OBc_zg0)",
-    "中国辣度地图 China Spice Map (PLNs_2s-mhyRI)"
-   ]
-  },
-  {
-   "date": "2026-07-30",
-   "slot": "b",
-   "title": "中国辣度地图②湖南：不怕辣，是\"怕不辣\"| China's Spice Map P2 · Hunan 🌶️",
-   "videoId": "0GN0WIA7Gu0",
-   "url": "https://www.youtube.com/watch?v=0GN0WIA7Gu0",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-30T16:00:00Z",
-   "series": "中国辣度地图 China's Spice Map",
-   "playlists": [
-    "中国美食 China Food (PLNf94OBc_zg0)",
-    "中国辣度地图 China Spice Map (PLNs_2s-mhyRI)"
-   ]
-  },
-  {
-   "date": "2026-07-30",
-   "slot": "c",
-   "title": "中国辣度地图③江西：全国第一，居然是最低调的它 | China's Spice Map P3 · Jiangxi 🔥",
-   "videoId": "nmrDIphvDA4",
-   "url": "https://www.youtube.com/watch?v=nmrDIphvDA4",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-30T19:00:00Z",
-   "series": "中国辣度地图 China's Spice Map",
-   "playlists": [
-    "中国美食 China Food (PLNf94OBc_zg0)",
-    "中国辣度地图 China Spice Map (PLNs_2s-mhyRI)"
-   ]
-  },
-  {
-   "date": "2026-07-30",
-   "slot": "d",
-   "title": "中国辣度地图④完结·云南：最狠的辣，藏在一碟蘸水里 | China's Spice Map P4 · Yunnan 🌶️",
-   "videoId": "vFxXejSQwbU",
-   "url": "https://www.youtube.com/watch?v=vFxXejSQwbU",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api (re-assembled 3x for on-topic red-chili b-roll; first upload L855vc8jzs0 deleted before publish)",
-   "status": "scheduled",
-   "publishAt": "2026-07-30T22:00:00Z",
-   "series": "中国辣度地图 China's Spice Map",
-   "playlists": [
-    "中国美食 China Food (PLNf94OBc_zg0)",
-    "中国辣度地图 China Spice Map (PLNs_2s-mhyRI)"
-   ]
-  },
-  {
-   "date": "2026-07-31",
-   "slot": "a",
-   "title": "中国厨房必有的酱①老干妈：一瓶辣酱，一年卖出54亿 | China's Kitchen Sauces P1 · Lao Gan Ma 🌶️",
-   "videoId": "mrPUcD0qj7M",
-   "url": "https://www.youtube.com/watch?v=mrPUcD0qj7M",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-31T13:00:00Z"
-  },
-  {
-   "date": "2026-07-31",
-   "slot": "b",
-   "title": "中国厨房必有的酱②郫县豆瓣：川菜的魂，不是辣椒是它 | China's Kitchen Sauces P2 · Doubanjiang 🥢",
-   "videoId": "EXBJRsHANys",
-   "url": "https://www.youtube.com/watch?v=EXBJRsHANys",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-31T16:00:00Z"
-  },
-  {
-   "date": "2026-07-31",
-   "slot": "c",
-   "title": "中国厨房必有的酱③蚝油：一次忘了关火，鲜了一百年 | China's Kitchen Sauces P3 · Oyster Sauce 🦪",
-   "videoId": "Qw02l9EY7Go",
-   "url": "https://www.youtube.com/watch?v=Qw02l9EY7Go",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-31T19:00:00Z"
-  },
-  {
-   "date": "2026-07-31",
-   "slot": "d",
-   "title": "中国厨房必有的酱④完结·酱油：一滴酱油，晒足一百八十天 | China's Kitchen Sauces P4 · Soy Sauce 🍶",
-   "videoId": "Iyy7AoZX62A",
-   "url": "https://www.youtube.com/watch?v=Iyy7AoZX62A",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-07-31T22:00:00Z"
-  },
-  {
-   "date": "2026-08-01",
-   "slot": "a",
-   "title": "广东糖水①杨枝甘露：这碗芒果甜品，其实只有40岁 | Canton Sweet Soups P1 · Mango Pomelo Sago 🥭",
-   "videoId": "_wxzuB8d2qU",
-   "url": "https://www.youtube.com/watch?v=_wxzuB8d2qU",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-01T13:00:00Z"
-  },
-  {
-   "date": "2026-08-01",
-   "slot": "b",
-   "title": "广东糖水②双皮奶：一碗牛奶，凭\"两层皮\"封神 | Canton Sweet Soups P2 · Double-Skin Milk 🥛",
-   "videoId": "ZVZ2hC-sE0w",
-   "url": "https://www.youtube.com/watch?v=ZVZ2hC-sE0w",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-01T16:00:00Z"
-  },
-  {
-   "date": "2026-08-01",
-   "slot": "c",
-   "title": "广东糖水③姜撞奶：一碗热牛奶，被姜一\"撞\"20秒凝住 | Canton Sweet Soups P3 · Ginger Milk Curd 🫚",
-   "videoId": "WqTzV6mxwQE",
-   "url": "https://www.youtube.com/watch?v=WqTzV6mxwQE",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-01T19:00:00Z"
-  },
-  {
-   "date": "2026-08-01",
-   "slot": "d",
-   "title": "广东糖水④完结·绿豆沙：广东人消暑，靠煮到\"起沙\"的绿豆 | Canton Sweet Soups P4 · Mung Bean 🫛",
-   "videoId": "0ujPQD1AFUQ",
-   "url": "https://www.youtube.com/watch?v=0ujPQD1AFUQ",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-01T22:00:00Z"
-  },
-  {
-   "date": "2026-08-02",
-   "slot": "a",
-   "title": "中国人怎么吃一只鸡①大盘鸡：这道'新疆名菜'，其实只有40岁 | How China Eats a Chicken P1 · Xinjiang Big-Plate 🍗",
-   "videoId": "2jS1IzOZSmg",
-   "url": "https://www.youtube.com/watch?v=2jS1IzOZSmg",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-02T13:00:00Z"
-  },
-  {
-   "date": "2026-08-02",
-   "slot": "b",
-   "title": "中国人怎么吃一只鸡②白切鸡：最贵的一道鸡，什么都不加 | How China Eats a Chicken P2 · Cantonese White-Cut 🐔",
-   "videoId": "4wmaacFidno",
-   "url": "https://www.youtube.com/watch?v=4wmaacFidno",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-02T16:00:00Z"
-  },
-  {
-   "date": "2026-08-02",
-   "slot": "c",
-   "title": "中国人怎么吃一只鸡③口水鸡：这名字，居然来自郭沫若 | How China Eats a Chicken P3 · Sichuan Saliva Chicken 🌶️",
-   "videoId": "X6aan5cJvKo",
-   "url": "https://www.youtube.com/watch?v=X6aan5cJvKo",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-02T19:00:00Z"
-  },
-  {
-   "date": "2026-08-02",
-   "slot": "d",
-   "title": "中国人怎么吃一只鸡④完结·叫花鸡：一身泥，剥开却是名菜 | How China Eats a Chicken P4 · Beggar's Chicken 🔥",
-   "videoId": "q4YWjCGgDtw",
-   "url": "https://www.youtube.com/watch?v=q4YWjCGgDtw",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-02T22:00:00Z"
-  },
-  {
-   "date": "2026-08-03",
-   "slot": "a",
-   "title": "中国菜的绝活①小笼包·顶上18个褶 | Signature Skill P1 · 18 Folds in One Dumpling 🥟",
-   "videoId": "3FfvofWUZM8",
-   "url": "https://www.youtube.com/watch?v=3FfvofWUZM8",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-03T13:00:00Z"
-  },
-  {
-   "date": "2026-08-03",
-   "slot": "b",
-   "title": "中国菜的绝活②过桥米线·不冒热气却烫熟生肉 | Signature Skill P2 · Crossing-Bridge Noodles 🍜",
-   "videoId": "TX9cdwTSyQU",
-   "url": "https://www.youtube.com/watch?v=TX9cdwTSyQU",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-03T16:00:00Z"
-  },
-  {
-   "date": "2026-08-03",
-   "slot": "c",
-   "title": "中国菜的绝活③北京烤鸭·先给鸭子吹口气 | Signature Skill P3 · Air-Blown for Crispy Skin 🦆",
-   "videoId": "_ba1T9TKE0I",
-   "url": "https://www.youtube.com/watch?v=_ba1T9TKE0I",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-03T19:00:00Z"
-  },
-  {
-   "date": "2026-08-03",
-   "slot": "d",
-   "title": "中国菜的绝活④完结·文思豆腐·切成几千根丝 | Signature Skill P4 · Tofu into 1,000 Threads 🔪",
-   "videoId": "Fh-1krAiGCY",
-   "url": "https://www.youtube.com/watch?v=Fh-1krAiGCY",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-03T22:00:00Z"
-  },
-  {
-   "date": "2026-08-04",
-   "slot": "a",
-   "title": "东北硬菜①锅包肉：这道菜，居然是为外国人发明的 | Northeast Comfort Food P1 · Guobaorou 🍖",
-   "videoId": "s1C7rGSzqes",
-   "url": "https://www.youtube.com/watch?v=s1C7rGSzqes",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-04T13:00:00Z"
-  },
-  {
-   "date": "2026-08-04",
-   "slot": "b",
-   "title": "东北硬菜②铁锅炖：一口锅比脸盆还大，炖下整个冬天 | Northeast Comfort Food P2 · Iron-Pot Stew 🍲",
-   "videoId": "J1bCWk4Xbbo",
-   "url": "https://www.youtube.com/watch?v=J1bCWk4Xbbo",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-04T16:00:00Z"
-  },
-  {
-   "date": "2026-08-04",
-   "slot": "c",
-   "title": "东北硬菜③猪肉炖粉条：一句“馋死野狼嚎”，主角竟不是肉 | Northeast Comfort Food P3 · Pork & Glass Noodles 🍲",
-   "videoId": "FlyjiwMTf_A",
-   "url": "https://www.youtube.com/watch?v=FlyjiwMTf_A",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-04T19:00:00Z"
-  },
-  {
-   "date": "2026-08-04",
-   "slot": "d",
-   "title": "东北硬菜④完结·小鸡炖蘑菇：姑爷进门，为啥小鸡要“断魂” | Northeast Comfort Food P4 · Chicken & Mushroom 🍲",
-   "videoId": "7TUTDPIbbWE",
-   "url": "https://www.youtube.com/watch?v=7TUTDPIbbWE",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-04T22:00:00Z"
-  },
-  {
-   "date": "2026-08-05",
-   "slot": "a",
-   "title": "中式快餐四巨头①沙县小吃：8.8万家店，比洋快餐还多 | China's Fast-Food Giants P1 · Shaxian 🥡",
-   "videoId": "2khkDpnWJYU",
-   "url": "https://www.youtube.com/watch?v=2khkDpnWJYU",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-05T13:00:00Z"
-  },
-  {
-   "date": "2026-08-05",
-   "slot": "b",
-   "title": "中式快餐四巨头②兰州牛肉面：一碗面，能拉出九种粗细 | China's Fast-Food Giants P2 · Lanzhou 🍜",
-   "videoId": "JS4UYUSqPss",
-   "url": "https://www.youtube.com/watch?v=JS4UYUSqPss",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-05T16:00:00Z"
-  },
-  {
-   "date": "2026-08-05",
-   "slot": "c",
-   "title": "中式快餐四巨头③黄焖鸡米饭：一只砂锅，统治了写字楼午餐 | China's Fast-Food Giants P3 · Braised Chicken Rice 🍗",
-   "videoId": "ClQw9h13vOY",
-   "url": "https://www.youtube.com/watch?v=ClQw9h13vOY",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-05T19:00:00Z"
-  },
-  {
-   "date": "2026-08-05",
-   "slot": "d",
-   "title": "中式快餐四巨头④麻辣烫：江边纤夫的吃法，被两个东北人开成帝国 | China's Fast-Food Giants P4 · Malatang 🌶️",
-   "videoId": "RzgsJmqpbyc",
-   "url": "https://www.youtube.com/watch?v=RzgsJmqpbyc",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-05T22:00:00Z"
-  },
-  {
-   "date": "2026-08-06",
-   "slot": "a",
-   "title": "广式早茶四大天王①虾饺：一只饺子，要捏够十二道褶 | Cantonese Dim Sum's Four Kings P1 · Har Gow 🦐",
-   "videoId": "AVe4J_4Hrvo",
-   "url": "https://www.youtube.com/watch?v=AVe4J_4Hrvo",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-06T13:00:00Z"
-  },
-  {
-   "date": "2026-08-06",
-   "slot": "b",
-   "title": "广式早茶四大天王②干蒸烧卖：同样叫烧卖，广东和北方差一整个馅 | Four Kings P2 · Siu Mai 🦀",
-   "videoId": "7qRmhQ9Dg20",
-   "url": "https://www.youtube.com/watch?v=7qRmhQ9Dg20",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-06T16:00:00Z"
-  },
-  {
-   "date": "2026-08-06",
-   "slot": "c",
-   "title": "广式早茶四大天王③叉烧包：一个包子，蒸裂了才算成功 | Four Kings P3 · Char Siu Bao 🥟",
-   "videoId": "UovzF7f0uRU",
-   "url": "https://www.youtube.com/watch?v=UovzF7f0uRU",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-06T19:00:00Z"
-  },
-  {
-   "date": "2026-08-06",
-   "slot": "d",
-   "title": "广式早茶四大天王④收官·蛋挞：你以为是西点，广州1927年就在卖 | Four Kings P4 · Egg Tart 🥚",
-   "videoId": "LZhIZBBJk7g",
-   "url": "https://www.youtube.com/watch?v=LZhIZBBJk7g",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-06T22:00:00Z"
-  },
-  {
-   "date": "2026-08-07",
-   "slot": "a",
-   "title": "夏天的一碗凉①陕西凉皮：这碗面，居然是\"洗\"出来的 | China's Cold Noodles for Summer P1 · Shaanxi Liangpi 🥢",
-   "videoId": "cGetRD0s3jU",
-   "url": "https://www.youtube.com/watch?v=cGetRD0s3jU",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "published",
-   "publishAt": null,
-   "note": "overrun: 上传于13:01Z(publishAt 13:00已过)→按playbook去掉publishAt立即public"
-  },
-  {
-   "date": "2026-08-07",
-   "slot": "b",
-   "title": "夏天的一碗凉②延吉朝鲜族冷面：一碗汤，居然要往里加碎冰 | China's Cold Noodles for Summer P2 · Yanji Cold Noodles 🧊",
-   "videoId": "qFT_f5FDbKw",
-   "url": "https://www.youtube.com/watch?v=qFT_f5FDbKw",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-07T16:00:00Z"
-  },
-  {
-   "date": "2026-08-07",
-   "slot": "c",
-   "title": "夏天的一碗凉③川北凉粉：一碗凉粉，竟是豌豆磨出来的 | China's Cold Noodles for Summer P3 · Sichuan Liangfen 🌶️",
-   "videoId": "X5bJuHqxIGY",
-   "url": "https://www.youtube.com/watch?v=X5bJuHqxIGY",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-07T19:00:00Z"
-  },
-  {
-   "date": "2026-08-07",
-   "slot": "d",
-   "title": "夏天的一碗凉④完结·东北大拉皮：土豆淀粉，\"旋\"出一盘凉菜 | China's Cold Noodles for Summer P4 · Northeast Da Lapi 🥢",
-   "videoId": "k6JTqSxNU4Q",
-   "url": "https://www.youtube.com/watch?v=k6JTqSxNU4Q",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-07T22:00:00Z"
-  },
-  {
-   "date": "2026-08-08",
-   "slot": "a",
-   "title": "中国人怎么吃一条鱼①松鼠桂鱼：一条鱼划128刀，炸出一只\"松鼠\" | How China Eats a Fish P1 · Suzhou Squirrel Fish 🐟",
-   "videoId": "mnt131G6VhA",
-   "url": "https://www.youtube.com/watch?v=mnt131G6VhA",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled-private",
-   "publishAt": "2026-08-08T13:00:00Z"
-  },
-  {
-   "date": "2026-08-08",
-   "slot": "b",
-   "title": "中国人怎么吃一条鱼②剁椒鱼头：湖南人专挑最肥的鱼头，铺满一勺红剁椒 | How China Eats a Fish P2 · Hunan Chopped-Chili Fish Head 🌶️",
-   "videoId": "KICG6CxYBmY",
-   "url": "https://www.youtube.com/watch?v=KICG6CxYBmY",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled-private",
-   "publishAt": "2026-08-08T16:00:00Z"
-  },
-  {
-   "date": "2026-08-08",
-   "slot": "c",
-   "title": "中国人怎么吃一条鱼③水煮鱼：名叫\"水煮\"，端上桌却是一整盆红油 | How China Eats a Fish P3 · Sichuan Boiled Fish in Chili Oil 🔥",
-   "videoId": "kS6pRPe3Qwc",
-   "url": "https://www.youtube.com/watch?v=kS6pRPe3Qwc",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled-private",
-   "publishAt": "2026-08-08T19:00:00Z"
-  },
-  {
-   "date": "2026-08-08",
-   "slot": "d",
-   "title": "中国人怎么吃一条鱼④完结·酸菜鱼：一把酸菜，居然比鱼还出名 | How China Eats a Fish P4 · Chongqing Pickled-Cabbage Fish 🐟",
-   "videoId": "oOy3iWYRv2c",
-   "url": "https://www.youtube.com/watch?v=oOy3iWYRv2c",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled-private",
-   "publishAt": "2026-08-08T22:00:00Z"
-  },
-  {
-   "date": "2026-08-09",
-   "slot": "a",
-   "title": "中国北方面食①山西刀削面：削面的刀，居然不是菜刀 | Shanxi Knife-Cut Noodles 🔪🍜",
-   "videoId": "IRsNcG-e53U",
-   "url": "https://www.youtube.com/watch?v=IRsNcG-e53U",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-09T13:00:00Z",
-   "series": "中国北方面食硬核派 Northern China Noodles",
-   "playlists": [
-    "中国美食 China Food (PLNf94OBc_zg0)",
-    "中国北方面食硬核派 Northern China Noodles (PLBeBZU1k1tI8)"
-   ]
-  },
-  {
-   "date": "2026-08-09",
-   "slot": "b",
-   "title": "中国北方面食②陕西油泼面：一勺滚油，泼出满碗香 | Shaanxi Oil-Splashed Noodles 🌶️🍜",
-   "videoId": "tweIfrUN--k",
-   "url": "https://www.youtube.com/watch?v=tweIfrUN--k",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-09T16:00:00Z",
-   "series": "中国北方面食硬核派 Northern China Noodles",
-   "playlists": [
-    "中国美食 China Food (PLNf94OBc_zg0)",
-    "中国北方面食硬核派 Northern China Noodles (PLBeBZU1k1tI8)"
-   ]
-  },
-  {
-   "date": "2026-08-09",
-   "slot": "c",
-   "title": "中国北方面食③老北京炸酱面：一碗面，配八样菜码 | Old Beijing Zhajiang Noodles 🥢🍜",
-   "videoId": "rqdunRBqCx8",
-   "url": "https://www.youtube.com/watch?v=rqdunRBqCx8",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-09T19:00:00Z",
-   "series": "中国北方面食硬核派 Northern China Noodles",
-   "playlists": [
-    "中国美食 China Food (PLNf94OBc_zg0)",
-    "中国北方面食硬核派 Northern China Noodles (PLBeBZU1k1tI8)"
-   ]
-  },
-  {
-   "date": "2026-08-09",
-   "slot": "d",
-   "title": "中国北方面食④完结·河南烩面：一片面扯成宽带下羊汤 | Henan Hui Mian 🐑🍜",
-   "videoId": "ddZkxC3iPy4",
-   "url": "https://www.youtube.com/watch?v=ddZkxC3iPy4",
-   "pillar": "china-food",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-09T22:00:00Z",
-   "series": "中国北方面食硬核派 Northern China Noodles",
-   "playlists": [
-    "中国美食 China Food (PLNf94OBc_zg0)",
-    "中国北方面食硬核派 Northern China Noodles (PLBeBZU1k1tI8)"
-   ]
-  },
-  {
-   "date": "2026-08-11",
-   "slot": "a",
-   "title": "One Silk Thread, Split 48 Times — Suzhou Embroidery | China Travel Expert",
-   "videoId": "_0lUw_jWaIs",
-   "url": "https://www.youtube.com/watch?v=_0lUw_jWaIs",
-   "pillar": "china-culture",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-11T13:00:00Z",
-   "topicId": "cc2-05",
-   "playlists": [
-    "China Culture 中国文化 (PLD1FxVheQkWA)"
-   ]
-  },
-  {
-   "date": "2026-08-11",
-   "slot": "b",
-   "title": "72 Hands to Make One Bowl — Jingdezhen Porcelain | China Travel Expert",
-   "videoId": "vdRPp4BKTbw",
-   "url": "https://www.youtube.com/watch?v=vdRPp4BKTbw",
-   "pillar": "china-culture",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-11T17:00:00Z",
-   "topicId": "cc2-06",
-   "playlists": [
-    "China Culture 中国文化 (PLD1FxVheQkWA)"
-   ]
-  },
-  {
-   "date": "2026-08-11",
-   "slot": "c",
-   "title": "45,000㎡ of Murals, Not One Signed — Dunhuang Mogao Caves | China Travel Expert",
-   "videoId": "4jurM3rCY-0",
-   "url": "https://www.youtube.com/watch?v=4jurM3rCY-0",
-   "pillar": "city-travel",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-11T20:00:00Z",
-   "topicId": "ctr-04",
-   "playlists": [
-    "China Travel 城市旅行 (PLI6LsqzQ-cjU)"
-   ]
-  },
-  {
-   "date": "2026-08-11",
-   "slot": "d",
-   "title": "This Temple Is Older Than Its City — Guangzhou Heritage Day P1 光孝寺 | China Travel Expert",
-   "videoId": "cXmbIjJ1hpQ",
-   "url": "https://www.youtube.com/watch?v=cXmbIjJ1hpQ",
-   "pillar": "china-route",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-11T23:00:00Z",
-   "topicId": "rt-01",
-   "series": "Guangzhou Heritage Day 广州古迹一日",
-   "playlists": [
-    "Guangzhou Heritage Day 广州古迹一日 (PLDCZIH5Dm0QQ)"
-   ]
-  },
-  {
-   "date": "2026-08-12",
-   "slot": "a",
-   "title": "This Pagoda Looks 9 Floors — Secretly It's 17 | China Travel Expert",
-   "videoId": "xiSIJS8_2fA",
-   "url": "https://www.youtube.com/watch?v=xiSIJS8_2fA",
-   "pillar": "china-culture",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "posted",
-   "publishAt": null,
-   "topicId": "gzh-04",
-   "music": "cinema-orient-01",
-   "playlists": [
-    "China Culture 中国文化 (PLD1FxVheQkWA)"
-   ]
-  },
-  {
-   "date": "2026-08-12",
-   "slot": "b",
-   "title": "A Tower That Was Both Lighthouse and Minaret | China Travel Expert",
-   "videoId": "gFapeTjltPM",
-   "url": "https://www.youtube.com/watch?v=gFapeTjltPM",
-   "pillar": "china-culture",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-12T17:00:00Z",
-   "topicId": "gzh-05",
-   "music": "lofi-upbeat-01",
-   "playlists": [
-    "China Culture 中国文化 (PLD1FxVheQkWA)"
-   ]
-  },
-  {
-   "date": "2026-08-12",
-   "slot": "c",
-   "title": "A Street Silk Road Traders Settled 1,200 Years Ago | China Travel Expert",
-   "videoId": "FV4z1EUf8nU",
-   "url": "https://www.youtube.com/watch?v=FV4z1EUf8nU",
-   "pillar": "city-travel",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-12T20:00:00Z",
-   "topicId": "str-04",
-   "music": "cpop-groove-01",
-   "playlists": [
-    "China Travel 城市旅行 (PLI6LsqzQ-cjU)"
-   ]
-  },
-  {
-   "date": "2026-08-12",
-   "slot": "d",
-   "title": "One Hall, Seven Master Crafts | Guangzhou Heritage Day P2 | China Travel Expert",
-   "videoId": "NJrWyn-U9HU",
-   "url": "https://www.youtube.com/watch?v=NJrWyn-U9HU",
-   "pillar": "china-route",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-12T23:00:00Z",
-   "topicId": "rt-02",
-   "music": "oriental-edm-01",
-   "playlists": [
-    "Guangzhou Heritage Day 广州古迹一日 (PLDCZIH5Dm0QQ)"
-   ],
-   "series": "Guangzhou Heritage Day 广州古迹一日"
-  },
-  {
-   "date": "2026-08-13",
-   "slot": "a",
-   "title": "A 1,000-Year Wooden Tower With Zero Nails | China Travel Expert",
-   "videoId": "zOqZQu8SML8",
-   "url": "https://www.youtube.com/watch?v=zOqZQu8SML8",
-   "pillar": "china-culture",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-13T13:00:00Z",
-   "topicId": "cc3-01",
-   "music": "lofi-upbeat-01",
-   "playlists": [
-    "China Culture 中国文化 (PLD1FxVheQkWA)"
-   ]
-  },
-  {
-   "date": "2026-08-13",
-   "slot": "b",
-   "title": "China's Rarest Silk Grows Just 5cm a Day | China Travel Expert",
-   "videoId": "8eSA6m5CDuI",
-   "url": "https://www.youtube.com/watch?v=8eSA6m5CDuI",
-   "pillar": "china-culture",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-13T17:00:00Z",
-   "topicId": "cc3-02",
-   "music": "cinema-orient-01",
-   "playlists": [
-    "China Culture 中国文化 (PLD1FxVheQkWA)"
-   ]
-  },
-  {
-   "date": "2026-08-13",
-   "slot": "c",
-   "title": "70% of Old Shanghai Lived Behind This Stone Gate | China Travel Expert",
-   "videoId": "JXR5lTpGLnE",
-   "url": "https://www.youtube.com/watch?v=JXR5lTpGLnE",
-   "pillar": "city-travel",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-13T20:00:00Z",
-   "topicId": "str-02",
-   "music": "oriental-edm-01",
-   "playlists": [
-    "China Travel 城市旅行 (PLI6LsqzQ-cjU)",
-    "City Walks 城市漫游"
-   ]
-  },
-  {
-   "date": "2026-08-13",
-   "slot": "d",
-   "title": "Walk a Mile in the Rain, No Umbrella | Guangzhou Heritage Day P3 | China Travel Expert",
-   "videoId": "CmyJ-l1yFKE",
-   "url": "https://www.youtube.com/watch?v=CmyJ-l1yFKE",
-   "pillar": "china-route",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-13T23:00:00Z",
-   "topicId": "rt-03",
-   "music": "cpop-groove-01",
-   "playlists": [
-    "Guangzhou Heritage Day 广州古迹一日 (PLDCZIH5Dm0QQ)"
-   ],
-   "series": "Guangzhou Heritage Day 广州古迹一日"
-  },
-  {
-   "date": "2026-08-14",
-   "slot": "a",
-   "title": "One Wall, 108 Windows — No Two Alike | Suzhou Gardens | China Travel Expert",
-   "videoId": "-OBhEgMUm88",
-   "url": "https://www.youtube.com/watch?v=-OBhEgMUm88",
-   "pillar": "china-culture",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "posted",
-   "publishAt": null,
-   "topicId": "cc3-03",
-   "music": "cinema-orient-01",
-   "playlists": [
-    "China Culture 中国文化 (PLD1FxVheQkWA)"
-   ],
-   "note": "overrun (uploaded 13:08Z > 13:00Z slot) -> publishAt removed, published public immediately"
-  },
-  {
-   "date": "2026-08-14",
-   "slot": "b",
-   "title": "A Mulberry Tree Grew Lotus — So They Built This Temple | Quanzhou | China Travel Expert",
-   "videoId": "ej9EqAKXCk0",
-   "url": "https://www.youtube.com/watch?v=ej9EqAKXCk0",
-   "pillar": "china-culture",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-14T17:00:00Z",
-   "topicId": "cc3-04",
-   "music": "lofi-upbeat-01",
-   "playlists": [
-    "China Culture 中国文化 (PLD1FxVheQkWA)"
-   ]
-  },
-  {
-   "date": "2026-08-14",
-   "slot": "c",
-   "title": "11 Floors, and You Enter From the Street on Most of Them | Chongqing | China Travel Expert",
-   "videoId": "aaj6h55G6Bw",
-   "url": "https://www.youtube.com/watch?v=aaj6h55G6Bw",
-   "pillar": "city-travel",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-14T20:00:00Z",
-   "topicId": "ctr-05",
-   "music": "cpop-groove-01",
-   "playlists": [
-    "China Travel 城市旅行 (PLI6LsqzQ-cjU)"
-   ]
-  },
-  {
-   "date": "2026-08-14",
-   "slot": "d",
-   "title": "The Reward at the End of a 1,300-Year-Old Street | Guangzhou Heritage Day P4 | China Travel Expert",
-   "videoId": "sLX5b5uwu2Q",
-   "url": "https://www.youtube.com/watch?v=sLX5b5uwu2Q",
-   "pillar": "china-route",
-   "lane": "pexels-ffmpeg+youtube-data-api",
-   "status": "scheduled",
-   "publishAt": "2026-08-14T23:00:00Z",
-   "topicId": "rt-04",
-   "music": "oriental-edm-01",
-   "playlists": [
-    "Guangzhou Heritage Day 广州古迹一日 (PLDCZIH5Dm0QQ)"
-   ],
-   "series": "Guangzhou Heritage Day 广州古迹一日"
-  }
- ]
+  "videos": [
+    {
+      "date": "2026-08-10",
+      "slot": "a",
+      "title": "China's Only Silk-Sewn Jade Suit: 2,291 Plaques | Buried Empire P1 · 丝缕玉衣",
+      "videoId": "31YhzTHBmCA",
+      "url": "https://www.youtube.com/watch?v=31YhzTHBmCA",
+      "pillar": "china-culture",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-10T13:00:00Z"
+    },
+    {
+      "date": "2026-08-10",
+      "slot": "b",
+      "title": "His Gold Seal Said \"Emperor\" — and a Persian Box Beside It | Buried Empire P2 · 文帝行玺",
+      "videoId": "XQdt9dBhl1k",
+      "url": "https://www.youtube.com/watch?v=XQdt9dBhl1k",
+      "pillar": "china-culture",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-10T16:00:00Z"
+    },
+    {
+      "date": "2026-08-10",
+      "slot": "c",
+      "title": "China's First Bank Sat Inside This 6-km Ming Wall — Pingyao | 平遥古城",
+      "videoId": "jHFUVYEqeIM",
+      "url": "https://www.youtube.com/watch?v=jHFUVYEqeIM",
+      "pillar": "city-travel",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-10T19:00:00Z"
+    },
+    {
+      "date": "2026-08-10",
+      "slot": "d",
+      "title": "In Guangzhou, even fruit is luxury — Lychee King season | Guangzhou Ate First EP1",
+      "videoId": "O3MPquBKc-g",
+      "url": "https://www.youtube.com/watch?v=O3MPquBKc-g",
+      "pillar": "china-food",
+      "lane": "owner-footage+bespoke-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-10T23:00:00Z"
+    },
+    {
+      "date": "2026-07-08",
+      "slot": "a",
+      "title": "MIT Just Scored a Perfect 100 — 15 Years at #1 (QS 2027)",
+      "videoId": "hMOTS07qqcw",
+      "url": "https://www.youtube.com/watch?v=hMOTS07qqcw",
+      "pillar": "world-colleges",
+      "lane": "elevenlabs+pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-08T13:00:00Z"
+    },
+    {
+      "date": "2026-07-08",
+      "slot": "b",
+      "title": "Why the SATs Are Suddenly Mandatory Again (Even Harvard Changed Its Mind)",
+      "videoId": "c9uBqC4hiz8",
+      "url": "https://www.youtube.com/watch?v=c9uBqC4hiz8",
+      "pillar": "education-trends",
+      "lane": "elevenlabs+pexels-ffmpeg+openai-thumb+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-08T17:00:00Z"
+    },
+    {
+      "date": "2026-07-08",
+      "slot": "c",
+      "title": "12.9 Million Teenagers Just Took the Hardest Exam on Earth",
+      "videoId": "LEC4kPhi0uw",
+      "url": "https://www.youtube.com/watch?v=LEC4kPhi0uw",
+      "pillar": "world-colleges",
+      "lane": "elevenlabs+pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-08T22:00:00Z"
+    },
+    {
+      "date": "2026-07-09",
+      "slot": "a",
+      "title": "One Year at Boston College Now Costs $95,258. Stanford Just Froze Its Price.",
+      "videoId": "FXhE4NjuQ1c",
+      "url": "https://www.youtube.com/watch?v=FXhE4NjuQ1c",
+      "pillar": "whats-latest",
+      "lane": "elevenlabs+pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-09T13:00:00Z"
+    },
+    {
+      "date": "2026-07-09",
+      "slot": "b",
+      "title": "The Country Making College Loans Interest-Free (While America Still Debates Free Tuition)",
+      "videoId": "4VDWQO6wS_g",
+      "url": "https://www.youtube.com/watch?v=4VDWQO6wS_g",
+      "pillar": "education-systems",
+      "lane": "elevenlabs+pexels-ffmpeg+openai-thumb+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-09T17:00:00Z"
+    },
+    {
+      "date": "2026-07-09",
+      "slot": "c",
+      "title": "故宫的雪，等了六百年｜北京 Forbidden City in Snow (普通话·京味)",
+      "videoId": "Q6QL21qmDjM",
+      "url": "https://www.youtube.com/watch?v=Q6QL21qmDjM",
+      "pillar": "test-china-travel",
+      "lane": "elevenlabs+pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-09T22:00:00Z"
+    },
+    {
+      "date": "2026-07-10",
+      "slot": "a",
+      "title": "成都火锅第一口，先烫毛肚｜七上八下十五秒 First Bite of Chengdu Hotpot",
+      "videoId": "q6wX-LYDut8",
+      "url": "https://www.youtube.com/watch?v=q6wX-LYDut8",
+      "pillar": "china-food",
+      "lane": "elevenlabs+pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-10T13:00:00Z"
+    },
+    {
+      "date": "2026-07-10",
+      "slot": "b",
+      "title": "为什么 China 也是瓷器？千年瓷都景德镇 Why \"china\" Means Porcelain",
+      "videoId": "PNi8fMIhbTw",
+      "url": "https://www.youtube.com/watch?v=PNi8fMIhbTw",
+      "pillar": "china-culture",
+      "lane": "elevenlabs+pexels-ffmpeg+openai-thumb+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-10T17:00:00Z"
+    },
+    {
+      "date": "2026-07-10",
+      "slot": "c",
+      "title": "外滩清晨六点，上海还没醒｜Dawn at the Bund 上海",
+      "videoId": "Co9Udciigb0",
+      "url": "https://www.youtube.com/watch?v=Co9Udciigb0",
+      "pillar": "city-travel",
+      "lane": "elevenlabs+pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-10T22:00:00Z"
+    },
+    {
+      "date": "2026-07-11",
+      "slot": "a",
+      "title": "漓江清晨：你钱包里的那座山｜Li River, Guilin (桂林·兴坪)",
+      "videoId": "mdJyK4X6HVg",
+      "url": "https://www.youtube.com/watch?v=mdJyK4X6HVg",
+      "pillar": "city-travel",
+      "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, guzheng bed)",
+      "status": "scheduled",
+      "publishAt": "2026-07-11T13:00:00Z"
+    },
+    {
+      "date": "2026-07-11",
+      "slot": "b",
+      "title": "苏州平江路的一天：从晨光到灯笼｜A Day on Pingjiang Road, Suzhou",
+      "videoId": "7QgN6KFozMI",
+      "url": "https://www.youtube.com/watch?v=7QgN6KFozMI",
+      "pillar": "city-walk",
+      "lane": "pexels-ffmpeg+openai-thumb+youtube-data-api (subtitle-driven, guzheng bed)",
+      "status": "scheduled",
+      "publishAt": "2026-07-11T17:00:00Z"
+    },
+    {
+      "date": "2026-07-11",
+      "slot": "c",
+      "title": "广州早茶：一盅两件，慢的艺术｜Cantonese Yum Cha (饮茶先啦)",
+      "videoId": "MwxYdEOprl8",
+      "url": "https://www.youtube.com/watch?v=MwxYdEOprl8",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, lofi bed)",
+      "status": "scheduled",
+      "publishAt": "2026-07-11T22:00:00Z"
+    },
+    {
+      "date": "2026-07-12",
+      "slot": "a",
+      "title": "肉夹馍为什么不叫馍夹肉？西安回民街的答案｜Xi'an Roujiamo",
+      "videoId": "TFsvTCj3Q38",
+      "url": "https://www.youtube.com/watch?v=TFsvTCj3Q38",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, lofi bed)",
+      "status": "scheduled",
+      "publishAt": "2026-07-12T13:00:00Z"
+    },
+    {
+      "date": "2026-07-12",
+      "slot": "b",
+      "title": "潮汕功夫茶：三只杯子里的宇宙｜关公巡城·韩信点兵 Chaoshan Gongfu Tea",
+      "videoId": "CvyHU_Kof6k",
+      "url": "https://www.youtube.com/watch?v=CvyHU_Kof6k",
+      "pillar": "china-culture",
+      "lane": "pexels-ffmpeg+openai-thumb+youtube-data-api (subtitle-driven, guzheng bed)",
+      "status": "scheduled",
+      "publishAt": "2026-07-12T17:00:00Z"
+    },
+    {
+      "date": "2026-07-12",
+      "slot": "c",
+      "title": "西湖清晨：比传说更安静｜断桥·欲把西湖比西子 West Lake at Dawn",
+      "videoId": "v7k01y8EsXo",
+      "url": "https://www.youtube.com/watch?v=v7k01y8EsXo",
+      "pillar": "city-travel",
+      "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, guzheng bed)",
+      "status": "scheduled",
+      "publishAt": "2026-07-12T22:00:00Z"
+    },
+    {
+      "date": "2026-07-13",
+      "slot": "a",
+      "title": "云南普洱：中国 98% 的咖啡都从这里来｜Yunnan Pu'er Coffee",
+      "videoId": "pK2ljtJD2pY",
+      "url": "https://www.youtube.com/watch?v=pK2ljtJD2pY",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, guzheng bed, no VO)",
+      "status": "scheduled",
+      "publishAt": "2026-07-13T13:00:00Z"
+    },
+    {
+      "date": "2026-07-13",
+      "slot": "b",
+      "title": "从种子到杯子：中国咖啡的三十年｜Seed to Cup — China's Coffee Story",
+      "videoId": "y7vDtyjm4GI",
+      "url": "https://www.youtube.com/watch?v=y7vDtyjm4GI",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+openai-thumb+youtube-data-api (subtitle-driven, guzheng bed, no VO)",
+      "status": "scheduled",
+      "publishAt": "2026-07-13T17:00:00Z"
+    },
+    {
+      "date": "2026-07-13",
+      "slot": "c",
+      "title": "上海永康路：全世界咖啡店最多的城市｜Shanghai, the World's Café Capital",
+      "videoId": "6dzYns0A0dc",
+      "url": "https://www.youtube.com/watch?v=6dzYns0A0dc",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, lofi bed, no VO)",
+      "status": "scheduled",
+      "publishAt": "2026-07-13T22:00:00Z"
+    },
+    {
+      "date": "2026-07-14",
+      "slot": "a",
+      "title": "北京胡同里，藏着一杯咖啡香 | Coffee in a Beijing Hutong",
+      "videoId": "Ud1XuOsyvbg",
+      "url": "https://www.youtube.com/watch?v=Ud1XuOsyvbg",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-14T13:00:00Z"
+    },
+    {
+      "date": "2026-07-14",
+      "slot": "b",
+      "title": "中国人为什么突然爱上咖啡？| Why China Fell for Coffee",
+      "videoId": "yFj2psl9ngw",
+      "url": "https://www.youtube.com/watch?v=yFj2psl9ngw",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+openai-thumb+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-14T17:00:00Z"
+    },
+    {
+      "date": "2026-07-14",
+      "slot": "c",
+      "title": "老洋房里喝手冲：广州东山口 | Coffee in Guangzhou's Old Villas",
+      "videoId": "1LpZA0pafP8",
+      "url": "https://www.youtube.com/watch?v=1LpZA0pafP8",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-14T22:00:00Z"
+    },
+    {
+      "date": "2026-07-15",
+      "slot": "a",
+      "title": "日晒还是水洗？同一颗豆，两种命运 | Natural vs Washed Coffee ☕",
+      "videoId": "tUbpsi291WE",
+      "url": "https://www.youtube.com/watch?v=tUbpsi291WE",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, no VO), guzheng bed",
+      "status": "scheduled",
+      "publishAt": "2026-07-15T13:00:00Z"
+    },
+    {
+      "date": "2026-07-15",
+      "slot": "b",
+      "title": "独立咖啡师的一天：从烘豆到拉花 | A Day With a Chinese Independent Barista ☕",
+      "videoId": "nIFaEe80h-c",
+      "url": "https://www.youtube.com/watch?v=nIFaEe80h-c",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+openai-thumb+youtube-data-api (subtitle-driven, no VO), guzheng bed",
+      "status": "scheduled",
+      "publishAt": "2026-07-15T17:00:00Z"
+    },
+    {
+      "date": "2026-07-15",
+      "slot": "c",
+      "title": "成都的咖啡馆，就开在茶馆隔壁 | In Chengdu, Coffee Sits Next to the Teahouse ☕",
+      "videoId": "mGRRuSr3Uoo",
+      "url": "https://www.youtube.com/watch?v=mGRRuSr3Uoo",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, no VO), lofi bed",
+      "status": "scheduled",
+      "publishAt": "2026-07-15T22:00:00Z"
+    },
+    {
+      "date": "2026-07-16",
+      "slot": "a",
+      "title": "9.9元一杯：烧出两万家店，今年却踩了刹车 | China's 9.9 Coffee War ☕",
+      "videoId": "cTET5tblQ88",
+      "url": "https://www.youtube.com/watch?v=cTET5tblQ88",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, no VO), lofi bed",
+      "status": "scheduled",
+      "publishAt": "2026-07-16T13:00:00Z",
+      "playlist": "中国咖啡 China Coffee (PLLExmpQ7O00U)"
+    },
+    {
+      "date": "2026-07-16",
+      "slot": "b",
+      "title": "一公斤咖啡果10块钱：云南咖农的三十年最高价 | Yunnan Coffee's Best Harvest ☕",
+      "videoId": "zrqt11wpjyk",
+      "url": "https://www.youtube.com/watch?v=zrqt11wpjyk",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, no VO), guzheng bed",
+      "status": "scheduled",
+      "publishAt": "2026-07-16T17:00:00Z",
+      "playlist": "中国咖啡 China Coffee (PLLExmpQ7O00U)"
+    },
+    {
+      "date": "2026-07-16",
+      "slot": "c",
+      "title": "中国人一年喝多少杯咖啡？答案没你想的多 | How Much Coffee China Drinks ☕",
+      "videoId": "doTvCxN8eSc",
+      "url": "https://www.youtube.com/watch?v=doTvCxN8eSc",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+youtube-data-api (subtitle-driven, no VO), lofi bed",
+      "status": "scheduled",
+      "publishAt": "2026-07-16T22:00:00Z",
+      "playlist": "中国咖啡 China Coffee (PLLExmpQ7O00U)"
+    },
+    {
+      "date": "2026-07-17",
+      "slot": "a",
+      "title": "50℃的浓缩，倒进0℃的牛奶 | What Makes a Dirty Coffee ☕",
+      "videoId": "parsr4DfN2g",
+      "url": "https://www.youtube.com/watch?v=parsr4DfN2g",
+      "pillar": "china-coffee",
+      "lane": "pexels+ffmpeg+youtube",
+      "status": "scheduled",
+      "publishAt": "2026-07-17T13:00:00Z"
+    },
+    {
+      "date": "2026-07-17",
+      "slot": "b",
+      "title": "1904年，中国第一棵咖啡树种在这个村 | China's First Coffee Tree ☕",
+      "videoId": "n0CNAyX1r5g",
+      "url": "https://www.youtube.com/watch?v=n0CNAyX1r5g",
+      "pillar": "china-coffee",
+      "lane": "pexels+ffmpeg+youtube",
+      "status": "scheduled",
+      "publishAt": "2026-07-17T17:00:00Z"
+    },
+    {
+      "date": "2026-07-17",
+      "slot": "c",
+      "title": "900栋老别墅的小岛，把咖啡馆开进百年洋楼 | Coffee in Gulangyu ☕",
+      "videoId": "XD1DPL28svw",
+      "url": "https://www.youtube.com/watch?v=XD1DPL28svw",
+      "pillar": "china-coffee",
+      "lane": "pexels+ffmpeg+youtube",
+      "status": "scheduled",
+      "publishAt": "2026-07-17T22:00:00Z"
+    },
+    {
+      "date": "2026-07-18",
+      "slot": "a",
+      "title": "造假退市五年后，它成了中国咖啡第一 | Luckin's Wild Ride ☕",
+      "videoId": "jd4gXkoGfhE",
+      "url": "https://www.youtube.com/watch?v=jd4gXkoGfhE",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-18T13:00:00Z"
+    },
+    {
+      "date": "2026-07-18",
+      "slot": "b",
+      "title": "精品率71%，云南这个边境小县全省第一 | China's Specialty-Coffee County ☕",
+      "videoId": "FBUNRO3Odtk",
+      "url": "https://www.youtube.com/watch?v=FBUNRO3Odtk",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-18T17:00:00Z"
+    },
+    {
+      "date": "2026-07-18",
+      "slot": "c",
+      "title": "在中国，咖啡师是国家认证的正经职业 | Barista Is an Official Job in China ☕",
+      "videoId": "gNI4qWz-RI8",
+      "url": "https://www.youtube.com/watch?v=gNI4qWz-RI8",
+      "pillar": "china-coffee",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-18T22:00:00Z"
+    },
+    {
+      "date": "2026-07-19",
+      "slot": "a",
+      "title": "爬遍中国五岳，他却说黄山之后无岳可看 | Huangshan Ended His Search 🏔️",
+      "videoId": "rsHaPG_Xets",
+      "url": "https://www.youtube.com/watch?v=rsHaPG_Xets",
+      "pillar": "city-travel",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-19T13:00:00Z"
+    },
+    {
+      "date": "2026-07-19",
+      "slot": "b",
+      "title": "重庆不是一座城市，是一座立体迷宫 | Chongqing: A City Built in 3D 🏙️",
+      "videoId": "4u0ycJopL18",
+      "url": "https://www.youtube.com/watch?v=4u0ycJopL18",
+      "pillar": "city-walk",
+      "lane": "pexels-ffmpeg+openai-thumb+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-19T17:00:00Z"
+    },
+    {
+      "date": "2026-07-19",
+      "slot": "c",
+      "title": "长沙臭豆腐为什么是黑的？一锅卤水发酵两年 | Why Changsha's Stinky Tofu Is Black 🖤",
+      "videoId": "F_EVPtmd4ZA",
+      "url": "https://www.youtube.com/watch?v=F_EVPtmd4ZA",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-19T22:00:00Z"
+    },
+    {
+      "date": "2026-07-20",
+      "slot": "a",
+      "title": "新中式饮品战争①：一家奶茶店，开了46479家 | China's Drink Wars P1 🧋",
+      "videoId": "3LfJPEtC9RI",
+      "url": "https://www.youtube.com/watch?v=3LfJPEtC9RI",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-20T13:00:00Z"
+    },
+    {
+      "date": "2026-07-20",
+      "slot": "b",
+      "title": "新中式饮品战争②：一杯酸奶45元，凭啥？| China's Drink Wars P2 🥤",
+      "videoId": "QVWRzg-auhw",
+      "url": "https://www.youtube.com/watch?v=QVWRzg-auhw",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-20T16:00:00Z"
+    },
+    {
+      "date": "2026-07-20",
+      "slot": "c",
+      "title": "新中式饮品战争③：一天卖542万杯的咖啡 | China's Drink Wars P3 ☕",
+      "videoId": "OWTTnizy45s",
+      "url": "https://www.youtube.com/watch?v=OWTTnizy45s",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-20T19:00:00Z"
+    },
+    {
+      "date": "2026-07-20",
+      "slot": "d",
+      "title": "新中式饮品战争④收官：9块9 和 30块，谁赢了 | China's Drink Wars P4 ☕",
+      "videoId": "E2sXl4v8ttc",
+      "url": "https://www.youtube.com/watch?v=E2sXl4v8ttc",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-20T22:00:00Z"
+    },
+    {
+      "date": "2026-07-21",
+      "slot": "a",
+      "title": "中国早餐宇宙①上海四大金刚：一顿早饭，吵了半世纪 | Shanghai's Big Four Breakfast 🥢",
+      "videoId": "RLMCDnDXoyM",
+      "url": "https://www.youtube.com/watch?v=RLMCDnDXoyM",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-21T13:00:00Z"
+    },
+    {
+      "date": "2026-07-21",
+      "slot": "b",
+      "title": "中国早餐宇宙②武汉热干面：一壶打翻的油，成就一座城的早饭 | Wuhan Hot-Dry Noodles 🍜",
+      "videoId": "No9yyegiivo",
+      "url": "https://www.youtube.com/watch?v=No9yyegiivo",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-21T16:00:00Z"
+    },
+    {
+      "date": "2026-07-21",
+      "slot": "c",
+      "title": "中国早餐宇宙③广州肠粉：薄如纸、白如雪，一匹白绸缎 | Guangzhou Cheung Fun 🥢",
+      "videoId": "0tZq3N0sUI0",
+      "url": "https://www.youtube.com/watch?v=0tZq3N0sUI0",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-21T19:00:00Z"
+    },
+    {
+      "date": "2026-07-21",
+      "slot": "d",
+      "title": "中国早餐宇宙④完结·西安肉夹馍：一个馍，夹了两千年 | Xi'an Rou Jia Mo 🥙",
+      "videoId": "3M8JBKp4BBU",
+      "url": "https://www.youtube.com/watch?v=3M8JBKp4BBU",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-21T22:00:00Z"
+    },
+    {
+      "date": "2026-07-22",
+      "slot": "a",
+      "title": "火锅分几派①重庆九宫格：不是分辣度，是分火候 | China Hotpot Schools P1 · Chongqing 🌶️🔥",
+      "videoId": "18Xbl33keUA",
+      "url": "https://www.youtube.com/watch?v=18Xbl33keUA",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-22T13:00:00Z"
+    },
+    {
+      "date": "2026-07-22",
+      "slot": "b",
+      "title": "火锅分几派②潮汕牛肉火锅：一头牛，涮火锅的不到三成 | China Hotpot Schools P2 · Chaoshan 🐮",
+      "videoId": "Ia71ofr1YTs",
+      "url": "https://www.youtube.com/watch?v=Ia71ofr1YTs",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-22T16:00:00Z"
+    },
+    {
+      "date": "2026-07-22",
+      "slot": "c",
+      "title": "火锅分几派③北京铜锅涮羊肉：一锅清水，凭什么封神 | China Hotpot Schools P3 · Beijing 🐑",
+      "videoId": "k-Hv1JqDwM8",
+      "url": "https://www.youtube.com/watch?v=k-Hv1JqDwM8",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-22T19:00:00Z"
+    },
+    {
+      "date": "2026-07-22",
+      "slot": "d",
+      "title": "火锅分几派④完结·贵州酸汤：红汤界的新顶流 | China Hotpot Schools P4 · Guizhou 🍲",
+      "videoId": "bUuF4S54-es",
+      "url": "https://www.youtube.com/watch?v=bUuF4S54-es",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-22T22:00:00Z"
+    },
+    {
+      "date": "2026-07-23",
+      "slot": "a",
+      "title": "中国粉面几大派①兰州牛肉面：一碗面，五种颜色都是规矩 | China Noodle Schools P1 · Lanzhou 🍜",
+      "videoId": "JA2sKtadlr4",
+      "url": "https://www.youtube.com/watch?v=JA2sKtadlr4",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-23T13:00:00Z"
+    },
+    {
+      "date": "2026-07-23",
+      "slot": "b",
+      "title": "中国粉面几大派②武汉热干面：一碗一滴汤都没有的面 | China Noodle Schools P2 · Wuhan 🍜",
+      "videoId": "whAd13Czlyk",
+      "url": "https://www.youtube.com/watch?v=whAd13Czlyk",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-23T16:00:00Z"
+    },
+    {
+      "date": "2026-07-23",
+      "slot": "c",
+      "title": "中国粉面几大派③柳州螺蛳粉：闻着臭，嗦出七百多亿 | China Noodle Schools P3 · Liuzhou 🍜",
+      "videoId": "UM79YPsSBFM",
+      "url": "https://www.youtube.com/watch?v=UM79YPsSBFM",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-23T19:00:00Z"
+    },
+    {
+      "date": "2026-07-23",
+      "slot": "d",
+      "title": "中国粉面几大派④完结·重庆小面：面素，料一点都不素 | China Noodle Schools P4 · Chongqing 🌶️🍜",
+      "videoId": "j3e5_xsq144",
+      "url": "https://www.youtube.com/watch?v=j3e5_xsq144",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-23T22:00:00Z"
+    },
+    {
+      "date": "2026-07-24",
+      "slot": "a",
+      "title": "云南菌子季①见手青：炒不够时间，真会\"见小人\" | Yunnan Wild Mushrooms P1 · Jianshouqing 🍄",
+      "videoId": "o8MuiqDU_oo",
+      "url": "https://www.youtube.com/watch?v=o8MuiqDU_oo",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-24T13:00:00Z"
+    },
+    {
+      "date": "2026-07-24",
+      "slot": "b",
+      "title": "云南菌子季②松茸：一斤上千，为什么种不出来 | Yunnan Wild Mushrooms P2 · Matsutake 🍄",
+      "videoId": "0I3kO59mzMk",
+      "url": "https://www.youtube.com/watch?v=0I3kO59mzMk",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-24T16:00:00Z"
+    },
+    {
+      "date": "2026-07-24",
+      "slot": "c",
+      "title": "云南菌子季③鸡枞：蚂蚁\"种\"出来的菌中之王 | Yunnan Wild Mushrooms P3 · Termite Mushroom 🐜🍄",
+      "videoId": "9aNU5YrMdAA",
+      "url": "https://www.youtube.com/watch?v=9aNU5YrMdAA",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-24T19:00:00Z"
+    },
+    {
+      "date": "2026-07-24",
+      "slot": "d",
+      "title": "云南菌子季④完结·干巴菌：长得最丑，卖得最贵 | Yunnan Wild Mushrooms P4 · Ganba Fungus 🍄",
+      "videoId": "h1bXgMgbCz8",
+      "url": "https://www.youtube.com/watch?v=h1bXgMgbCz8",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-24T22:00:00Z"
+    },
+    {
+      "date": "2026-07-25",
+      "slot": "a",
+      "title": "一道菜带火一座城①沙县小吃：一个县城，开出8万家店 | One Dish One Town P1 · Shaxian 🥡",
+      "videoId": "pJrmZ8PGt0k",
+      "url": "https://www.youtube.com/watch?v=pJrmZ8PGt0k",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "posted",
+      "publishAt": null
+    },
+    {
+      "date": "2026-07-25",
+      "slot": "b",
+      "title": "一道菜带火一座城②淄博烧烤：民宿一夜暴涨865%，小饼卷一切 | One Dish One Town P2 · Zibo BBQ 🍢",
+      "videoId": "dvSV77Se3uQ",
+      "url": "https://www.youtube.com/watch?v=dvSV77Se3uQ",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-25T16:00:00Z"
+    },
+    {
+      "date": "2026-07-25",
+      "slot": "c",
+      "title": "一道菜带火一座城③天水麻辣烫：一条视频118万赞，烫红一座城 | One Dish One Town P3 · Tianshui 🌶️",
+      "videoId": "JEAyhG0UESM",
+      "url": "https://www.youtube.com/watch?v=JEAyhG0UESM",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-25T19:00:00Z"
+    },
+    {
+      "date": "2026-07-25",
+      "slot": "d",
+      "title": "一道菜带火一座城④完结·荣昌卤鹅：五一卖爆752%，火遍32国 | One Dish One Town P4 · Rongchang 🦢",
+      "videoId": "_ZihaTK_s2c",
+      "url": "https://www.youtube.com/watch?v=_ZihaTK_s2c",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-25T22:00:00Z"
+    },
+    {
+      "date": "2026-07-26",
+      "slot": "a",
+      "title": "地方菜正在出圈①徐州伏羊：最热的三伏天，为什么喝最烫的羊汤 | Rising Flavors P1 · Xuzhou 🐑",
+      "videoId": "JUEO32DodBg",
+      "url": "https://www.youtube.com/watch?v=JUEO32DodBg",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-26T13:00:00Z"
+    },
+    {
+      "date": "2026-07-26",
+      "slot": "b",
+      "title": "地方菜正在出圈②贵州酸汤：不放一滴醋，酸掉一个省 | Rising Flavors P2 · Guizhou Sour Soup 🍲",
+      "videoId": "iVuEIkqFSNQ",
+      "url": "https://www.youtube.com/watch?v=iVuEIkqFSNQ",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-26T16:00:00Z"
+    },
+    {
+      "date": "2026-07-26",
+      "slot": "c",
+      "title": "地方菜正在出圈③云南山野火锅：一锅汤，涮下整座山 | Rising Flavors P3 · Yunnan Mountain Hotpot 🍄",
+      "videoId": "93w-F32Ra34",
+      "url": "https://www.youtube.com/watch?v=93w-F32Ra34",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-26T19:00:00Z"
+    },
+    {
+      "date": "2026-07-26",
+      "slot": "d",
+      "title": "地方菜正在出圈④完结·潮汕砂锅粥：夜里那锅粥，海鲜下得毫不手软 | Rising Flavors P4 · Chaoshan 🦀",
+      "videoId": "tYgCGawuQNQ",
+      "url": "https://www.youtube.com/watch?v=tYgCGawuQNQ",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-26T22:00:00Z"
+    },
+    {
+      "date": "2026-07-27",
+      "slot": "a",
+      "title": "中国人的夏夜①麻辣小龙虾：6万家店，卖的是一整个夏天",
+      "videoId": "Vpy1vrr5f2I",
+      "url": "https://www.youtube.com/watch?v=Vpy1vrr5f2I",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "published",
+      "publishAt": "2026-07-27T13:00:00Z",
+      "series": "中国人的夏夜 Chinese Summer Nights",
+      "playlists": [
+        "中国美食 (PLayZuFjrAEfk)",
+        "中国人的夏夜 Chinese Summer Nights (PLAdcCAPUlSW0)"
+      ]
+    },
+    {
+      "date": "2026-07-27",
+      "slot": "b",
+      "title": "中国人的夏夜②夜市烧烤：一年三千多亿，一半的夏夜是烤炉给的",
+      "videoId": "moZsu4yVfS4",
+      "url": "https://www.youtube.com/watch?v=moZsu4yVfS4",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-27T16:00:00Z",
+      "series": "中国人的夏夜 Chinese Summer Nights",
+      "playlists": [
+        "中国美食 (PLayZuFjrAEfk)",
+        "中国人的夏夜 Chinese Summer Nights (PLAdcCAPUlSW0)"
+      ]
+    },
+    {
+      "date": "2026-07-27",
+      "slot": "c",
+      "title": "中国人的夏夜③冰粉：一碗透心凉，居然是用手\"搓\"出来的",
+      "videoId": "Xyw_6TGdsao",
+      "url": "https://www.youtube.com/watch?v=Xyw_6TGdsao",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-27T19:00:00Z",
+      "series": "中国人的夏夜 Chinese Summer Nights",
+      "playlists": [
+        "中国美食 (PLayZuFjrAEfk)",
+        "中国人的夏夜 Chinese Summer Nights (PLAdcCAPUlSW0)"
+      ]
+    },
+    {
+      "date": "2026-07-27",
+      "slot": "d",
+      "title": "中国人的夏夜④完结·酸梅汤：最家常的解暑饮料，曾是清宫御膳的方子",
+      "videoId": "qHxGiPOlIi8",
+      "url": "https://www.youtube.com/watch?v=qHxGiPOlIi8",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-27T22:00:00Z",
+      "series": "中国人的夏夜 Chinese Summer Nights",
+      "playlists": [
+        "中国美食 (PLayZuFjrAEfk)",
+        "中国人的夏夜 Chinese Summer Nights (PLAdcCAPUlSW0)"
+      ]
+    },
+    {
+      "date": "2026-07-28",
+      "slot": "a",
+      "title": "中国早餐宇宙⑤北京豆汁儿焦圈：外地人闻着想逃的早餐",
+      "videoId": "DbH_p6B-2fM",
+      "url": "https://www.youtube.com/watch?v=DbH_p6B-2fM",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "published",
+      "publishAt": null,
+      "series": "中国早餐宇宙 China Breakfast Universe (S2)",
+      "playlists": [
+        "中国美食 (PLayZuFjrAEfk)",
+        "中国早餐宇宙 China Breakfast Universe (PLA26zs0p0T6k)"
+      ]
+    },
+    {
+      "date": "2026-07-28",
+      "slot": "b",
+      "title": "中国早餐宇宙⑥河南胡辣汤：一碗糊辣鲜香，河南人的早晨",
+      "videoId": "ooRELjkhWZY",
+      "url": "https://www.youtube.com/watch?v=ooRELjkhWZY",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-28T16:00:00Z",
+      "series": "中国早餐宇宙 China Breakfast Universe (S2)",
+      "playlists": [
+        "中国美食 (PLayZuFjrAEfk)",
+        "中国早餐宇宙 China Breakfast Universe (PLA26zs0p0T6k)"
+      ]
+    },
+    {
+      "date": "2026-07-28",
+      "slot": "c",
+      "title": "中国早餐宇宙⑦广州及第粥：一碗粥，讨的是\"状元\"好意头",
+      "videoId": "KReveLyFWn0",
+      "url": "https://www.youtube.com/watch?v=KReveLyFWn0",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-28T19:00:00Z",
+      "series": "中国早餐宇宙 China Breakfast Universe (S2)",
+      "playlists": [
+        "中国美食 (PLayZuFjrAEfk)",
+        "中国早餐宇宙 China Breakfast Universe (PLA26zs0p0T6k)"
+      ]
+    },
+    {
+      "date": "2026-07-28",
+      "slot": "d",
+      "title": "中国早餐宇宙⑧完结·天津煎饼馃子：放生菜会被\"骂\"的早餐",
+      "videoId": "yIKQRGjf58s",
+      "url": "https://www.youtube.com/watch?v=yIKQRGjf58s",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-28T22:00:00Z",
+      "series": "中国早餐宇宙 China Breakfast Universe (S2)",
+      "playlists": [
+        "中国美食 (PLayZuFjrAEfk)",
+        "中国早餐宇宙 China Breakfast Universe (PLA26zs0p0T6k)"
+      ]
+    },
+    {
+      "date": "2026-07-29",
+      "slot": "a",
+      "title": "中国饺子地图①威海鲅鱼饺子：一个饺子，塞进半条海鱼 | China Dumpling Map P1 · Weihai 🐟🥟",
+      "videoId": "Jewu8dHux5Y",
+      "url": "https://www.youtube.com/watch?v=Jewu8dHux5Y",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-29T13:00:00Z",
+      "series": "中国饺子地图 China Dumpling Map",
+      "playlists": [
+        "中国美食 China Food (PLNf94OBc_zg0)",
+        "中国饺子地图 China Dumpling Map (PLeYdWxs43Fn8)"
+      ]
+    },
+    {
+      "date": "2026-07-29",
+      "slot": "b",
+      "title": "中国饺子地图②东北酸菜猪肉饺：零下三十度，冻在院子里的年味 | China Dumpling Map P2 · Northeast ❄️🥟",
+      "videoId": "bqUSeDLE5VM",
+      "url": "https://www.youtube.com/watch?v=bqUSeDLE5VM",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-29T16:00:00Z",
+      "series": "中国饺子地图 China Dumpling Map",
+      "playlists": [
+        "中国美食 China Food (PLNf94OBc_zg0)",
+        "中国饺子地图 China Dumpling Map (PLeYdWxs43Fn8)"
+      ]
+    },
+    {
+      "date": "2026-07-29",
+      "slot": "c",
+      "title": "中国饺子地图③成都钟水饺：不蘸醋，浇一勺甜辣红油 | China Dumpling Map P3 · Chengdu 🌶️🥟",
+      "videoId": "IcLCMG9Y9c0",
+      "url": "https://www.youtube.com/watch?v=IcLCMG9Y9c0",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api (thumbnail 429-skipped, Shorts frame used)",
+      "status": "scheduled",
+      "publishAt": "2026-07-29T19:00:00Z",
+      "series": "中国饺子地图 China Dumpling Map",
+      "playlists": [
+        "中国美食 China Food (PLNf94OBc_zg0)",
+        "中国饺子地图 China Dumpling Map (PLeYdWxs43Fn8)"
+      ]
+    },
+    {
+      "date": "2026-07-29",
+      "slot": "d",
+      "title": "中国饺子地图④完结·过年团圆饺：为什么中国人过年都吃它 | China Dumpling Map P4 · Reunion 🧧🥟",
+      "videoId": "D5c4OKz19jw",
+      "url": "https://www.youtube.com/watch?v=D5c4OKz19jw",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api (thumbnail 429-skipped, Shorts frame used)",
+      "status": "scheduled",
+      "publishAt": "2026-07-29T22:00:00Z",
+      "series": "中国饺子地图 China Dumpling Map",
+      "playlists": [
+        "中国美食 China Food (PLNf94OBc_zg0)",
+        "中国饺子地图 China Dumpling Map (PLeYdWxs43Fn8)"
+      ]
+    },
+    {
+      "date": "2026-07-30",
+      "slot": "a",
+      "title": "中国辣度地图①四川：最出名的\"辣王\"，为什么只排第五？| China's Spice Map P1 · Sichuan 🌶️",
+      "videoId": "Eqzr3ufWC-c",
+      "url": "https://www.youtube.com/watch?v=Eqzr3ufWC-c",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-30T13:00:00Z",
+      "series": "中国辣度地图 China's Spice Map",
+      "playlists": [
+        "中国美食 China Food (PLNf94OBc_zg0)",
+        "中国辣度地图 China Spice Map (PLNs_2s-mhyRI)"
+      ]
+    },
+    {
+      "date": "2026-07-30",
+      "slot": "b",
+      "title": "中国辣度地图②湖南：不怕辣，是\"怕不辣\"| China's Spice Map P2 · Hunan 🌶️",
+      "videoId": "0GN0WIA7Gu0",
+      "url": "https://www.youtube.com/watch?v=0GN0WIA7Gu0",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-30T16:00:00Z",
+      "series": "中国辣度地图 China's Spice Map",
+      "playlists": [
+        "中国美食 China Food (PLNf94OBc_zg0)",
+        "中国辣度地图 China Spice Map (PLNs_2s-mhyRI)"
+      ]
+    },
+    {
+      "date": "2026-07-30",
+      "slot": "c",
+      "title": "中国辣度地图③江西：全国第一，居然是最低调的它 | China's Spice Map P3 · Jiangxi 🔥",
+      "videoId": "nmrDIphvDA4",
+      "url": "https://www.youtube.com/watch?v=nmrDIphvDA4",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-30T19:00:00Z",
+      "series": "中国辣度地图 China's Spice Map",
+      "playlists": [
+        "中国美食 China Food (PLNf94OBc_zg0)",
+        "中国辣度地图 China Spice Map (PLNs_2s-mhyRI)"
+      ]
+    },
+    {
+      "date": "2026-07-30",
+      "slot": "d",
+      "title": "中国辣度地图④完结·云南：最狠的辣，藏在一碟蘸水里 | China's Spice Map P4 · Yunnan 🌶️",
+      "videoId": "vFxXejSQwbU",
+      "url": "https://www.youtube.com/watch?v=vFxXejSQwbU",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api (re-assembled 3x for on-topic red-chili b-roll; first upload L855vc8jzs0 deleted before publish)",
+      "status": "scheduled",
+      "publishAt": "2026-07-30T22:00:00Z",
+      "series": "中国辣度地图 China's Spice Map",
+      "playlists": [
+        "中国美食 China Food (PLNf94OBc_zg0)",
+        "中国辣度地图 China Spice Map (PLNs_2s-mhyRI)"
+      ]
+    },
+    {
+      "date": "2026-07-31",
+      "slot": "a",
+      "title": "中国厨房必有的酱①老干妈：一瓶辣酱，一年卖出54亿 | China's Kitchen Sauces P1 · Lao Gan Ma 🌶️",
+      "videoId": "mrPUcD0qj7M",
+      "url": "https://www.youtube.com/watch?v=mrPUcD0qj7M",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-31T13:00:00Z"
+    },
+    {
+      "date": "2026-07-31",
+      "slot": "b",
+      "title": "中国厨房必有的酱②郫县豆瓣：川菜的魂，不是辣椒是它 | China's Kitchen Sauces P2 · Doubanjiang 🥢",
+      "videoId": "EXBJRsHANys",
+      "url": "https://www.youtube.com/watch?v=EXBJRsHANys",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-31T16:00:00Z"
+    },
+    {
+      "date": "2026-07-31",
+      "slot": "c",
+      "title": "中国厨房必有的酱③蚝油：一次忘了关火，鲜了一百年 | China's Kitchen Sauces P3 · Oyster Sauce 🦪",
+      "videoId": "Qw02l9EY7Go",
+      "url": "https://www.youtube.com/watch?v=Qw02l9EY7Go",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-31T19:00:00Z"
+    },
+    {
+      "date": "2026-07-31",
+      "slot": "d",
+      "title": "中国厨房必有的酱④完结·酱油：一滴酱油，晒足一百八十天 | China's Kitchen Sauces P4 · Soy Sauce 🍶",
+      "videoId": "Iyy7AoZX62A",
+      "url": "https://www.youtube.com/watch?v=Iyy7AoZX62A",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-07-31T22:00:00Z"
+    },
+    {
+      "date": "2026-08-01",
+      "slot": "a",
+      "title": "广东糖水①杨枝甘露：这碗芒果甜品，其实只有40岁 | Canton Sweet Soups P1 · Mango Pomelo Sago 🥭",
+      "videoId": "_wxzuB8d2qU",
+      "url": "https://www.youtube.com/watch?v=_wxzuB8d2qU",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-01T13:00:00Z"
+    },
+    {
+      "date": "2026-08-01",
+      "slot": "b",
+      "title": "广东糖水②双皮奶：一碗牛奶，凭\"两层皮\"封神 | Canton Sweet Soups P2 · Double-Skin Milk 🥛",
+      "videoId": "ZVZ2hC-sE0w",
+      "url": "https://www.youtube.com/watch?v=ZVZ2hC-sE0w",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-01T16:00:00Z"
+    },
+    {
+      "date": "2026-08-01",
+      "slot": "c",
+      "title": "广东糖水③姜撞奶：一碗热牛奶，被姜一\"撞\"20秒凝住 | Canton Sweet Soups P3 · Ginger Milk Curd 🫚",
+      "videoId": "WqTzV6mxwQE",
+      "url": "https://www.youtube.com/watch?v=WqTzV6mxwQE",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-01T19:00:00Z"
+    },
+    {
+      "date": "2026-08-01",
+      "slot": "d",
+      "title": "广东糖水④完结·绿豆沙：广东人消暑，靠煮到\"起沙\"的绿豆 | Canton Sweet Soups P4 · Mung Bean 🫛",
+      "videoId": "0ujPQD1AFUQ",
+      "url": "https://www.youtube.com/watch?v=0ujPQD1AFUQ",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-01T22:00:00Z"
+    },
+    {
+      "date": "2026-08-02",
+      "slot": "a",
+      "title": "中国人怎么吃一只鸡①大盘鸡：这道'新疆名菜'，其实只有40岁 | How China Eats a Chicken P1 · Xinjiang Big-Plate 🍗",
+      "videoId": "2jS1IzOZSmg",
+      "url": "https://www.youtube.com/watch?v=2jS1IzOZSmg",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-02T13:00:00Z"
+    },
+    {
+      "date": "2026-08-02",
+      "slot": "b",
+      "title": "中国人怎么吃一只鸡②白切鸡：最贵的一道鸡，什么都不加 | How China Eats a Chicken P2 · Cantonese White-Cut 🐔",
+      "videoId": "4wmaacFidno",
+      "url": "https://www.youtube.com/watch?v=4wmaacFidno",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-02T16:00:00Z"
+    },
+    {
+      "date": "2026-08-02",
+      "slot": "c",
+      "title": "中国人怎么吃一只鸡③口水鸡：这名字，居然来自郭沫若 | How China Eats a Chicken P3 · Sichuan Saliva Chicken 🌶️",
+      "videoId": "X6aan5cJvKo",
+      "url": "https://www.youtube.com/watch?v=X6aan5cJvKo",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-02T19:00:00Z"
+    },
+    {
+      "date": "2026-08-02",
+      "slot": "d",
+      "title": "中国人怎么吃一只鸡④完结·叫花鸡：一身泥，剥开却是名菜 | How China Eats a Chicken P4 · Beggar's Chicken 🔥",
+      "videoId": "q4YWjCGgDtw",
+      "url": "https://www.youtube.com/watch?v=q4YWjCGgDtw",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-02T22:00:00Z"
+    },
+    {
+      "date": "2026-08-03",
+      "slot": "a",
+      "title": "中国菜的绝活①小笼包·顶上18个褶 | Signature Skill P1 · 18 Folds in One Dumpling 🥟",
+      "videoId": "3FfvofWUZM8",
+      "url": "https://www.youtube.com/watch?v=3FfvofWUZM8",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-03T13:00:00Z"
+    },
+    {
+      "date": "2026-08-03",
+      "slot": "b",
+      "title": "中国菜的绝活②过桥米线·不冒热气却烫熟生肉 | Signature Skill P2 · Crossing-Bridge Noodles 🍜",
+      "videoId": "TX9cdwTSyQU",
+      "url": "https://www.youtube.com/watch?v=TX9cdwTSyQU",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-03T16:00:00Z"
+    },
+    {
+      "date": "2026-08-03",
+      "slot": "c",
+      "title": "中国菜的绝活③北京烤鸭·先给鸭子吹口气 | Signature Skill P3 · Air-Blown for Crispy Skin 🦆",
+      "videoId": "_ba1T9TKE0I",
+      "url": "https://www.youtube.com/watch?v=_ba1T9TKE0I",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-03T19:00:00Z"
+    },
+    {
+      "date": "2026-08-03",
+      "slot": "d",
+      "title": "中国菜的绝活④完结·文思豆腐·切成几千根丝 | Signature Skill P4 · Tofu into 1,000 Threads 🔪",
+      "videoId": "Fh-1krAiGCY",
+      "url": "https://www.youtube.com/watch?v=Fh-1krAiGCY",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-03T22:00:00Z"
+    },
+    {
+      "date": "2026-08-04",
+      "slot": "a",
+      "title": "东北硬菜①锅包肉：这道菜，居然是为外国人发明的 | Northeast Comfort Food P1 · Guobaorou 🍖",
+      "videoId": "s1C7rGSzqes",
+      "url": "https://www.youtube.com/watch?v=s1C7rGSzqes",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-04T13:00:00Z"
+    },
+    {
+      "date": "2026-08-04",
+      "slot": "b",
+      "title": "东北硬菜②铁锅炖：一口锅比脸盆还大，炖下整个冬天 | Northeast Comfort Food P2 · Iron-Pot Stew 🍲",
+      "videoId": "J1bCWk4Xbbo",
+      "url": "https://www.youtube.com/watch?v=J1bCWk4Xbbo",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-04T16:00:00Z"
+    },
+    {
+      "date": "2026-08-04",
+      "slot": "c",
+      "title": "东北硬菜③猪肉炖粉条：一句“馋死野狼嚎”，主角竟不是肉 | Northeast Comfort Food P3 · Pork & Glass Noodles 🍲",
+      "videoId": "FlyjiwMTf_A",
+      "url": "https://www.youtube.com/watch?v=FlyjiwMTf_A",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-04T19:00:00Z"
+    },
+    {
+      "date": "2026-08-04",
+      "slot": "d",
+      "title": "东北硬菜④完结·小鸡炖蘑菇：姑爷进门，为啥小鸡要“断魂” | Northeast Comfort Food P4 · Chicken & Mushroom 🍲",
+      "videoId": "7TUTDPIbbWE",
+      "url": "https://www.youtube.com/watch?v=7TUTDPIbbWE",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-04T22:00:00Z"
+    },
+    {
+      "date": "2026-08-05",
+      "slot": "a",
+      "title": "中式快餐四巨头①沙县小吃：8.8万家店，比洋快餐还多 | China's Fast-Food Giants P1 · Shaxian 🥡",
+      "videoId": "2khkDpnWJYU",
+      "url": "https://www.youtube.com/watch?v=2khkDpnWJYU",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-05T13:00:00Z"
+    },
+    {
+      "date": "2026-08-05",
+      "slot": "b",
+      "title": "中式快餐四巨头②兰州牛肉面：一碗面，能拉出九种粗细 | China's Fast-Food Giants P2 · Lanzhou 🍜",
+      "videoId": "JS4UYUSqPss",
+      "url": "https://www.youtube.com/watch?v=JS4UYUSqPss",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-05T16:00:00Z"
+    },
+    {
+      "date": "2026-08-05",
+      "slot": "c",
+      "title": "中式快餐四巨头③黄焖鸡米饭：一只砂锅，统治了写字楼午餐 | China's Fast-Food Giants P3 · Braised Chicken Rice 🍗",
+      "videoId": "ClQw9h13vOY",
+      "url": "https://www.youtube.com/watch?v=ClQw9h13vOY",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-05T19:00:00Z"
+    },
+    {
+      "date": "2026-08-05",
+      "slot": "d",
+      "title": "中式快餐四巨头④麻辣烫：江边纤夫的吃法，被两个东北人开成帝国 | China's Fast-Food Giants P4 · Malatang 🌶️",
+      "videoId": "RzgsJmqpbyc",
+      "url": "https://www.youtube.com/watch?v=RzgsJmqpbyc",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-05T22:00:00Z"
+    },
+    {
+      "date": "2026-08-06",
+      "slot": "a",
+      "title": "广式早茶四大天王①虾饺：一只饺子，要捏够十二道褶 | Cantonese Dim Sum's Four Kings P1 · Har Gow 🦐",
+      "videoId": "AVe4J_4Hrvo",
+      "url": "https://www.youtube.com/watch?v=AVe4J_4Hrvo",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-06T13:00:00Z"
+    },
+    {
+      "date": "2026-08-06",
+      "slot": "b",
+      "title": "广式早茶四大天王②干蒸烧卖：同样叫烧卖，广东和北方差一整个馅 | Four Kings P2 · Siu Mai 🦀",
+      "videoId": "7qRmhQ9Dg20",
+      "url": "https://www.youtube.com/watch?v=7qRmhQ9Dg20",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-06T16:00:00Z"
+    },
+    {
+      "date": "2026-08-06",
+      "slot": "c",
+      "title": "广式早茶四大天王③叉烧包：一个包子，蒸裂了才算成功 | Four Kings P3 · Char Siu Bao 🥟",
+      "videoId": "UovzF7f0uRU",
+      "url": "https://www.youtube.com/watch?v=UovzF7f0uRU",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-06T19:00:00Z"
+    },
+    {
+      "date": "2026-08-06",
+      "slot": "d",
+      "title": "广式早茶四大天王④收官·蛋挞：你以为是西点，广州1927年就在卖 | Four Kings P4 · Egg Tart 🥚",
+      "videoId": "LZhIZBBJk7g",
+      "url": "https://www.youtube.com/watch?v=LZhIZBBJk7g",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-06T22:00:00Z"
+    },
+    {
+      "date": "2026-08-07",
+      "slot": "a",
+      "title": "夏天的一碗凉①陕西凉皮：这碗面，居然是\"洗\"出来的 | China's Cold Noodles for Summer P1 · Shaanxi Liangpi 🥢",
+      "videoId": "cGetRD0s3jU",
+      "url": "https://www.youtube.com/watch?v=cGetRD0s3jU",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "published",
+      "publishAt": null,
+      "note": "overrun: 上传于13:01Z(publishAt 13:00已过)→按playbook去掉publishAt立即public"
+    },
+    {
+      "date": "2026-08-07",
+      "slot": "b",
+      "title": "夏天的一碗凉②延吉朝鲜族冷面：一碗汤，居然要往里加碎冰 | China's Cold Noodles for Summer P2 · Yanji Cold Noodles 🧊",
+      "videoId": "qFT_f5FDbKw",
+      "url": "https://www.youtube.com/watch?v=qFT_f5FDbKw",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-07T16:00:00Z"
+    },
+    {
+      "date": "2026-08-07",
+      "slot": "c",
+      "title": "夏天的一碗凉③川北凉粉：一碗凉粉，竟是豌豆磨出来的 | China's Cold Noodles for Summer P3 · Sichuan Liangfen 🌶️",
+      "videoId": "X5bJuHqxIGY",
+      "url": "https://www.youtube.com/watch?v=X5bJuHqxIGY",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-07T19:00:00Z"
+    },
+    {
+      "date": "2026-08-07",
+      "slot": "d",
+      "title": "夏天的一碗凉④完结·东北大拉皮：土豆淀粉，\"旋\"出一盘凉菜 | China's Cold Noodles for Summer P4 · Northeast Da Lapi 🥢",
+      "videoId": "k6JTqSxNU4Q",
+      "url": "https://www.youtube.com/watch?v=k6JTqSxNU4Q",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-07T22:00:00Z"
+    },
+    {
+      "date": "2026-08-08",
+      "slot": "a",
+      "title": "中国人怎么吃一条鱼①松鼠桂鱼：一条鱼划128刀，炸出一只\"松鼠\" | How China Eats a Fish P1 · Suzhou Squirrel Fish 🐟",
+      "videoId": "mnt131G6VhA",
+      "url": "https://www.youtube.com/watch?v=mnt131G6VhA",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled-private",
+      "publishAt": "2026-08-08T13:00:00Z"
+    },
+    {
+      "date": "2026-08-08",
+      "slot": "b",
+      "title": "中国人怎么吃一条鱼②剁椒鱼头：湖南人专挑最肥的鱼头，铺满一勺红剁椒 | How China Eats a Fish P2 · Hunan Chopped-Chili Fish Head 🌶️",
+      "videoId": "KICG6CxYBmY",
+      "url": "https://www.youtube.com/watch?v=KICG6CxYBmY",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled-private",
+      "publishAt": "2026-08-08T16:00:00Z"
+    },
+    {
+      "date": "2026-08-08",
+      "slot": "c",
+      "title": "中国人怎么吃一条鱼③水煮鱼：名叫\"水煮\"，端上桌却是一整盆红油 | How China Eats a Fish P3 · Sichuan Boiled Fish in Chili Oil 🔥",
+      "videoId": "kS6pRPe3Qwc",
+      "url": "https://www.youtube.com/watch?v=kS6pRPe3Qwc",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled-private",
+      "publishAt": "2026-08-08T19:00:00Z"
+    },
+    {
+      "date": "2026-08-08",
+      "slot": "d",
+      "title": "中国人怎么吃一条鱼④完结·酸菜鱼：一把酸菜，居然比鱼还出名 | How China Eats a Fish P4 · Chongqing Pickled-Cabbage Fish 🐟",
+      "videoId": "oOy3iWYRv2c",
+      "url": "https://www.youtube.com/watch?v=oOy3iWYRv2c",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled-private",
+      "publishAt": "2026-08-08T22:00:00Z"
+    },
+    {
+      "date": "2026-08-09",
+      "slot": "a",
+      "title": "中国北方面食①山西刀削面：削面的刀，居然不是菜刀 | Shanxi Knife-Cut Noodles 🔪🍜",
+      "videoId": "IRsNcG-e53U",
+      "url": "https://www.youtube.com/watch?v=IRsNcG-e53U",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-09T13:00:00Z",
+      "series": "中国北方面食硬核派 Northern China Noodles",
+      "playlists": [
+        "中国美食 China Food (PLNf94OBc_zg0)",
+        "中国北方面食硬核派 Northern China Noodles (PLBeBZU1k1tI8)"
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "slot": "b",
+      "title": "中国北方面食②陕西油泼面：一勺滚油，泼出满碗香 | Shaanxi Oil-Splashed Noodles 🌶️🍜",
+      "videoId": "tweIfrUN--k",
+      "url": "https://www.youtube.com/watch?v=tweIfrUN--k",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-09T16:00:00Z",
+      "series": "中国北方面食硬核派 Northern China Noodles",
+      "playlists": [
+        "中国美食 China Food (PLNf94OBc_zg0)",
+        "中国北方面食硬核派 Northern China Noodles (PLBeBZU1k1tI8)"
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "slot": "c",
+      "title": "中国北方面食③老北京炸酱面：一碗面，配八样菜码 | Old Beijing Zhajiang Noodles 🥢🍜",
+      "videoId": "rqdunRBqCx8",
+      "url": "https://www.youtube.com/watch?v=rqdunRBqCx8",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-09T19:00:00Z",
+      "series": "中国北方面食硬核派 Northern China Noodles",
+      "playlists": [
+        "中国美食 China Food (PLNf94OBc_zg0)",
+        "中国北方面食硬核派 Northern China Noodles (PLBeBZU1k1tI8)"
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "slot": "d",
+      "title": "中国北方面食④完结·河南烩面：一片面扯成宽带下羊汤 | Henan Hui Mian 🐑🍜",
+      "videoId": "ddZkxC3iPy4",
+      "url": "https://www.youtube.com/watch?v=ddZkxC3iPy4",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-09T22:00:00Z",
+      "series": "中国北方面食硬核派 Northern China Noodles",
+      "playlists": [
+        "中国美食 China Food (PLNf94OBc_zg0)",
+        "中国北方面食硬核派 Northern China Noodles (PLBeBZU1k1tI8)"
+      ]
+    },
+    {
+      "date": "2026-08-11",
+      "slot": "a",
+      "title": "One Silk Thread, Split 48 Times — Suzhou Embroidery | China Travel Expert",
+      "videoId": "_0lUw_jWaIs",
+      "url": "https://www.youtube.com/watch?v=_0lUw_jWaIs",
+      "pillar": "china-culture",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-11T13:00:00Z",
+      "topicId": "cc2-05",
+      "playlists": [
+        "China Culture 中国文化 (PLD1FxVheQkWA)"
+      ]
+    },
+    {
+      "date": "2026-08-11",
+      "slot": "b",
+      "title": "72 Hands to Make One Bowl — Jingdezhen Porcelain | China Travel Expert",
+      "videoId": "vdRPp4BKTbw",
+      "url": "https://www.youtube.com/watch?v=vdRPp4BKTbw",
+      "pillar": "china-culture",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-11T17:00:00Z",
+      "topicId": "cc2-06",
+      "playlists": [
+        "China Culture 中国文化 (PLD1FxVheQkWA)"
+      ]
+    },
+    {
+      "date": "2026-08-11",
+      "slot": "c",
+      "title": "45,000㎡ of Murals, Not One Signed — Dunhuang Mogao Caves | China Travel Expert",
+      "videoId": "4jurM3rCY-0",
+      "url": "https://www.youtube.com/watch?v=4jurM3rCY-0",
+      "pillar": "city-travel",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-11T20:00:00Z",
+      "topicId": "ctr-04",
+      "playlists": [
+        "China Travel 城市旅行 (PLI6LsqzQ-cjU)"
+      ]
+    },
+    {
+      "date": "2026-08-11",
+      "slot": "d",
+      "title": "This Temple Is Older Than Its City — Guangzhou Heritage Day P1 光孝寺 | China Travel Expert",
+      "videoId": "cXmbIjJ1hpQ",
+      "url": "https://www.youtube.com/watch?v=cXmbIjJ1hpQ",
+      "pillar": "china-route",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-11T23:00:00Z",
+      "topicId": "rt-01",
+      "series": "Guangzhou Heritage Day 广州古迹一日",
+      "playlists": [
+        "Guangzhou Heritage Day 广州古迹一日 (PLDCZIH5Dm0QQ)"
+      ]
+    },
+    {
+      "date": "2026-08-12",
+      "slot": "a",
+      "title": "This Pagoda Looks 9 Floors — Secretly It's 17 | China Travel Expert",
+      "videoId": "xiSIJS8_2fA",
+      "url": "https://www.youtube.com/watch?v=xiSIJS8_2fA",
+      "pillar": "china-culture",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "posted",
+      "publishAt": null,
+      "topicId": "gzh-04",
+      "music": "cinema-orient-01",
+      "playlists": [
+        "China Culture 中国文化 (PLD1FxVheQkWA)"
+      ]
+    },
+    {
+      "date": "2026-08-12",
+      "slot": "b",
+      "title": "A Tower That Was Both Lighthouse and Minaret | China Travel Expert",
+      "videoId": "gFapeTjltPM",
+      "url": "https://www.youtube.com/watch?v=gFapeTjltPM",
+      "pillar": "china-culture",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-12T17:00:00Z",
+      "topicId": "gzh-05",
+      "music": "lofi-upbeat-01",
+      "playlists": [
+        "China Culture 中国文化 (PLD1FxVheQkWA)"
+      ]
+    },
+    {
+      "date": "2026-08-12",
+      "slot": "c",
+      "title": "A Street Silk Road Traders Settled 1,200 Years Ago | China Travel Expert",
+      "videoId": "FV4z1EUf8nU",
+      "url": "https://www.youtube.com/watch?v=FV4z1EUf8nU",
+      "pillar": "city-travel",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-12T20:00:00Z",
+      "topicId": "str-04",
+      "music": "cpop-groove-01",
+      "playlists": [
+        "China Travel 城市旅行 (PLI6LsqzQ-cjU)"
+      ]
+    },
+    {
+      "date": "2026-08-12",
+      "slot": "d",
+      "title": "One Hall, Seven Master Crafts | Guangzhou Heritage Day P2 | China Travel Expert",
+      "videoId": "NJrWyn-U9HU",
+      "url": "https://www.youtube.com/watch?v=NJrWyn-U9HU",
+      "pillar": "china-route",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-12T23:00:00Z",
+      "topicId": "rt-02",
+      "music": "oriental-edm-01",
+      "playlists": [
+        "Guangzhou Heritage Day 广州古迹一日 (PLDCZIH5Dm0QQ)"
+      ],
+      "series": "Guangzhou Heritage Day 广州古迹一日"
+    },
+    {
+      "date": "2026-08-13",
+      "slot": "a",
+      "title": "A 1,000-Year Wooden Tower With Zero Nails | China Travel Expert",
+      "videoId": "zOqZQu8SML8",
+      "url": "https://www.youtube.com/watch?v=zOqZQu8SML8",
+      "pillar": "china-culture",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-13T13:00:00Z",
+      "topicId": "cc3-01",
+      "music": "lofi-upbeat-01",
+      "playlists": [
+        "China Culture 中国文化 (PLD1FxVheQkWA)"
+      ]
+    },
+    {
+      "date": "2026-08-13",
+      "slot": "b",
+      "title": "China's Rarest Silk Grows Just 5cm a Day | China Travel Expert",
+      "videoId": "8eSA6m5CDuI",
+      "url": "https://www.youtube.com/watch?v=8eSA6m5CDuI",
+      "pillar": "china-culture",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-13T17:00:00Z",
+      "topicId": "cc3-02",
+      "music": "cinema-orient-01",
+      "playlists": [
+        "China Culture 中国文化 (PLD1FxVheQkWA)"
+      ]
+    },
+    {
+      "date": "2026-08-13",
+      "slot": "c",
+      "title": "70% of Old Shanghai Lived Behind This Stone Gate | China Travel Expert",
+      "videoId": "JXR5lTpGLnE",
+      "url": "https://www.youtube.com/watch?v=JXR5lTpGLnE",
+      "pillar": "city-travel",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-13T20:00:00Z",
+      "topicId": "str-02",
+      "music": "oriental-edm-01",
+      "playlists": [
+        "China Travel 城市旅行 (PLI6LsqzQ-cjU)",
+        "City Walks 城市漫游"
+      ]
+    },
+    {
+      "date": "2026-08-13",
+      "slot": "d",
+      "title": "Walk a Mile in the Rain, No Umbrella | Guangzhou Heritage Day P3 | China Travel Expert",
+      "videoId": "CmyJ-l1yFKE",
+      "url": "https://www.youtube.com/watch?v=CmyJ-l1yFKE",
+      "pillar": "china-route",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-13T23:00:00Z",
+      "topicId": "rt-03",
+      "music": "cpop-groove-01",
+      "playlists": [
+        "Guangzhou Heritage Day 广州古迹一日 (PLDCZIH5Dm0QQ)"
+      ],
+      "series": "Guangzhou Heritage Day 广州古迹一日"
+    },
+    {
+      "date": "2026-08-14",
+      "slot": "a",
+      "title": "One Wall, 108 Windows — No Two Alike | Suzhou Gardens | China Travel Expert",
+      "videoId": "-OBhEgMUm88",
+      "url": "https://www.youtube.com/watch?v=-OBhEgMUm88",
+      "pillar": "china-culture",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "posted",
+      "publishAt": null,
+      "topicId": "cc3-03",
+      "music": "cinema-orient-01",
+      "playlists": [
+        "China Culture 中国文化 (PLD1FxVheQkWA)"
+      ],
+      "note": "overrun (uploaded 13:08Z > 13:00Z slot) -> publishAt removed, published public immediately"
+    },
+    {
+      "date": "2026-08-14",
+      "slot": "b",
+      "title": "A Mulberry Tree Grew Lotus — So They Built This Temple | Quanzhou | China Travel Expert",
+      "videoId": "ej9EqAKXCk0",
+      "url": "https://www.youtube.com/watch?v=ej9EqAKXCk0",
+      "pillar": "china-culture",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-14T17:00:00Z",
+      "topicId": "cc3-04",
+      "music": "lofi-upbeat-01",
+      "playlists": [
+        "China Culture 中国文化 (PLD1FxVheQkWA)"
+      ]
+    },
+    {
+      "date": "2026-08-14",
+      "slot": "c",
+      "title": "11 Floors, and You Enter From the Street on Most of Them | Chongqing | China Travel Expert",
+      "videoId": "aaj6h55G6Bw",
+      "url": "https://www.youtube.com/watch?v=aaj6h55G6Bw",
+      "pillar": "city-travel",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-14T20:00:00Z",
+      "topicId": "ctr-05",
+      "music": "cpop-groove-01",
+      "playlists": [
+        "China Travel 城市旅行 (PLI6LsqzQ-cjU)"
+      ]
+    },
+    {
+      "date": "2026-08-14",
+      "slot": "d",
+      "title": "The Reward at the End of a 1,300-Year-Old Street | Guangzhou Heritage Day P4 | China Travel Expert",
+      "videoId": "sLX5b5uwu2Q",
+      "url": "https://www.youtube.com/watch?v=sLX5b5uwu2Q",
+      "pillar": "china-route",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-14T23:00:00Z",
+      "topicId": "rt-04",
+      "music": "oriental-edm-01",
+      "playlists": [
+        "Guangzhou Heritage Day 广州古迹一日 (PLDCZIH5Dm0QQ)"
+      ],
+      "series": "Guangzhou Heritage Day 广州古迹一日"
+    },
+    {
+      "date": "2026-08-15",
+      "slot": "a",
+      "title": "1,500 Years on a Cliff, Held by 27 Beams — Shanxi's Hanging Temple | China Travel Expert",
+      "videoId": "ELOgSTfJ2H8",
+      "url": "https://www.youtube.com/watch?v=ELOgSTfJ2H8",
+      "pillar": "china-culture",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-15T13:00:00Z",
+      "topicId": "cc4-01",
+      "music": "lofi-chill-01",
+      "playlists": [
+        "China Culture 中国文化 (PLD1FxVheQkWA)"
+      ],
+      "series": null,
+      "format": "MAP-FORMAT (FOOTAGE-FIRST gate FAIL: generic footage, no 指认式, meta discloses)"
+    },
+    {
+      "date": "2026-08-15",
+      "slot": "b",
+      "title": "100,000 Buddhas in One Cliff, Carved for 400 Years — Longmen Grottoes | China Travel Expert",
+      "videoId": "Q4OEnx4LGVE",
+      "url": "https://www.youtube.com/watch?v=Q4OEnx4LGVE",
+      "pillar": "china-culture",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-15T17:00:00Z",
+      "topicId": "cc4-02",
+      "music": "cinema-orient-01",
+      "playlists": [
+        "China Culture 中国文化 (PLD1FxVheQkWA)"
+      ],
+      "series": null,
+      "format": "MAP-FORMAT (FOOTAGE-FIRST gate FAIL: generic footage, no 指认式, meta discloses)"
+    },
+    {
+      "date": "2026-08-15",
+      "slot": "c",
+      "title": "The Floating Mountains From Avatar Are Real — Zhangjiajie, China | China Travel Expert",
+      "videoId": "rnXYpAuN-A4",
+      "url": "https://www.youtube.com/watch?v=rnXYpAuN-A4",
+      "pillar": "city-travel",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-15T20:00:00Z",
+      "topicId": "ctr-01",
+      "music": "oriental-edm-01",
+      "playlists": [
+        "China Travel 城市旅行 (PLI6LsqzQ-cjU)",
+        "City Walks 城市漫游 (PLMJUqN0DUvt8)"
+      ],
+      "series": null,
+      "format": "MAP-FORMAT (FOOTAGE-FIRST gate FAIL: generic footage, no 指认式, meta discloses)"
+    },
+    {
+      "date": "2026-08-15",
+      "slot": "d",
+      "title": "China's Most Intricate Art Is Sculpted From Butter — Kumbum, Qinghai | China Travel Expert",
+      "videoId": "c9_BNHM-PGg",
+      "url": "https://www.youtube.com/watch?v=c9_BNHM-PGg",
+      "pillar": "china-route",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-15T23:00:00Z",
+      "topicId": "slk-b01",
+      "music": "cpop-groove-01",
+      "playlists": [
+        "Qinghai-Gansu Loop 青甘大环线 (PLeGH_BusVc2s)"
+      ],
+      "series": "Qinghai-Gansu Loop 青甘大环线",
+      "format": "MAP-FORMAT (FOOTAGE-FIRST gate FAIL: generic footage, no 指认式, meta discloses)"
+    }
+  ]
 }
