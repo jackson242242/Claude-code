@@ -10,7 +10,7 @@
       "whyNow": "2026-08-14 research: 补华东 徽派水乡/世遗古村",
       "addedAt": "2026-08-14",
       "addedBy": "auto-replenish (culture geo-breadth)",
-      "status": "active"
+      "status": "covered-2026-08-16"
     },
     {
       "id": "cc4-04",
@@ -21,7 +21,7 @@
       "whyNow": "2026-08-14 research: 补浙江 非遗青瓷 craft(接景德镇/云锦 craft 线)",
       "addedAt": "2026-08-14",
       "addedBy": "auto-replenish (culture geo-breadth)",
-      "status": "active"
+      "status": "covered-2026-08-16"
     },
     {
       "id": "rt-02",
@@ -692,7 +692,7 @@
       "sources": [],
       "addedAt": "2026-07-15",
       "addedBy": "owner directive",
-      "status": "active",
+      "status": "covered-2026-08-16",
       "note": "reactivated 2026-08-09 culture-first era"
     },
     {
@@ -1293,7 +1293,7 @@
       "seriesNote": "Qinghai-Gansu Loop 青甘大环线 连载",
       "addedAt": "2026-08-12",
       "addedBy": "owner directive",
-      "status": "active"
+      "status": "covered-2026-08-16"
     },
     {
       "id": "slk-b03",
@@ -1505,6 +1505,50 @@
       "seriesNote": "China's Edge S1 连载",
       "addedAt": "2026-08-12",
       "addedBy": "owner directive",
+      "status": "active"
+    },
+    {
+      "id": "ctr-06",
+      "title": "丽江古城：一座没有城墙的世界遗产",
+      "pillar": "city-travel",
+      "format": "short",
+      "angle": "fact-first钩=木氏土司姓'木',加城墙成'困'字→故意不建城墙; 纳西东巴文化·玉龙雪山背景·四方街水系. 云南. 打卡+古镇.",
+      "whyNow": "2026-08-16 research: 古镇/老街/慢体验对年轻+亲子+情侣持续走强(travelandtourworld/asiaodyssey); 补云南 heritage 古城 geo-breadth",
+      "addedAt": "2026-08-16",
+      "addedBy": "auto-replenish (city-travel heritage geo-breadth)",
+      "status": "active"
+    },
+    {
+      "id": "ctr-07",
+      "title": "平遥古城：中国第一家银行的诞生地",
+      "pillar": "city-travel",
+      "format": "short",
+      "angle": "fact-first钩=2700年古城墙+日昇昌票号=现代银行雏形/汇通天下; 明清晋商金融中心·世遗. 山西. 爱好者历史.",
+      "whyNow": "2026-08-16 research: 平遥被点名 well-preserved ancient city(chinamustsee); 补山西 heritage 古城(错开近期避连日)",
+      "addedAt": "2026-08-16",
+      "addedBy": "auto-replenish (city-travel heritage geo-breadth)",
+      "status": "active"
+    },
+    {
+      "id": "ctr-08",
+      "title": "凤凰古城：沱江上的吊脚楼与《边城》",
+      "pillar": "city-travel",
+      "format": "short",
+      "angle": "fact-first钩=整座城建在沱江之上·吊脚楼临水而立; 沈从文《边城》原型·苗族湘西. 湖南. 打卡+生活感.",
+      "whyNow": "2026-08-16 research: 老街/水乡/慢体验走红; 补湖南 heritage 古城 geo-breadth",
+      "addedAt": "2026-08-16",
+      "addedBy": "auto-replenish (city-travel heritage geo-breadth)",
+      "status": "active"
+    },
+    {
+      "id": "ctr-09",
+      "title": "阆中古城：一座按风水盖了2300年的城",
+      "pillar": "city-travel",
+      "format": "short",
+      "angle": "fact-first钩=中国四大古城之一·按风水'四面山水'布局2300年·春节文化发源地(落下闳). 四川. 爱好者+亲子.",
+      "whyNow": "2026-08-16 research: 古城/慢体验+文化沉浸走强; 补四川 heritage 古城 geo-breadth",
+      "addedAt": "2026-08-16",
+      "addedBy": "auto-replenish (city-travel heritage geo-breadth)",
       "status": "active"
     }
   ]

@@ -1798,6 +1798,50 @@
       ],
       "series": "Qinghai-Gansu Loop 青甘大环线",
       "format": "MAP-FORMAT (FOOTAGE-FIRST gate FAIL: generic footage, no 指认式, meta discloses)"
+    },
+    {
+      "date": "2026-08-16",
+      "slot": "a",
+      "title": "A 900-Year-Old Village Built in the Shape of an Ox — Anhui's Hongcun | China Travel Expert",
+      "videoId": "7xsnvxOQKn8",
+      "url": "https://www.youtube.com/watch?v=7xsnvxOQKn8",
+      "pillar": "china-culture",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-16T13:00:00Z"
+    },
+    {
+      "date": "2026-08-16",
+      "slot": "b",
+      "title": "The Only Ceramic in the World UNESCO Protects — China's Jade-Green Celadon | China Travel Expert",
+      "videoId": "DdNQ3tddpZM",
+      "url": "https://www.youtube.com/watch?v=DdNQ3tddpZM",
+      "pillar": "china-culture",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-16T17:00:00Z"
+    },
+    {
+      "date": "2026-08-16",
+      "slot": "c",
+      "title": "108 Lakes, and No Two Are the Same Color — Sichuan's Jiuzhaigou | China Travel Expert",
+      "videoId": "XDjfbAhvQVA",
+      "url": "https://www.youtube.com/watch?v=XDjfbAhvQVA",
+      "pillar": "city-travel",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-16T20:00:00Z"
+    },
+    {
+      "date": "2026-08-16",
+      "slot": "d",
+      "title": "China's Largest Lake Sits 3,200m Up | Qinghai-Gansu Loop EP2 | China Travel Expert",
+      "videoId": "ZHXVjjMewBc",
+      "url": "https://www.youtube.com/watch?v=ZHXVjjMewBc",
+      "pillar": "china-route",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-16T23:00:00Z"
     }
   ]
 }
