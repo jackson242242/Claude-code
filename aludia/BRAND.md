@@ -59,6 +59,14 @@
 - **互动权重**：收藏/分享/回复 > 点赞（Story 回复年增 88%，Story 拿信任、
   Reels 拿新流量）。发帖节奏理想值：每周 4–5 条 Reels。
 
+**8/17 周增量（来源见 2026-08-17 brief）：**
+- **Taylor Swift "August" 正当季**：怀旧/慢镜/main-character 内容标配音
+  ——**本月剩余时间的最佳情感位配乐**（8 月主题曲，天然应景，
+  8/31 前用完即弃）
+- 音频信号规则：音名旁有 ↑ 箭头＝正在起势，**24–48 小时内发**收益最大
+- 用音乐标记格式：季节怀旧→8 月模板；bass drop→transformation；
+  克制情绪音→脆弱文字型 Reels
+
 **8/10 周增量（来源见 2026-08-10 brief）：**
 - **"And for the lady..."（Noah Kahan "End of August"）**：按人设揭示
   完美单品的文字层格式——珠宝送礼/人设内容天配（"And for the lady who
