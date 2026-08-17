@@ -3,6 +3,8 @@
 One line per day (written by slot-`a` runs when vidIQ is available): date | 7d views |
 7d watch-time | subs +/- | best video | takeaway for the queue.
 
+2026-08-17 (Mon pulse, 5 credits, balance 38→33; floor 40 停 generation 但 analytics 明确豁免) | 7d top_videos (08-10..08-16): 头部 Short **991v @70.7% 留存·7赞** (4jurM3rCY-0), 次 863v@49.2%(+1 sub)·681v@51.4%·584v@54.2%·472v@41.6%(+1 sub); **两条 Short avgViewPercentage 破100%(vdRPp4BKTbw 301v@112%·ej9EqAKXCk0 110v@105.8%)=循环重看在起效**→坚持 loop-back 收尾 cue. **全频道 comments 仍 0**(likes 分散 1-7, 无评论)→ either-or CTA 未撬动评论; 行动: slot c 更激进用 GUESS-CHAIN(答案次日揭晓)逼评论(本轮 c=丽江打卡未用·留 d route 连载做连续性钩子, 记录待下轮 c 试). 留存 40-70% 健康; 单一 pillar 本窗口无碾压式差异→不 reorder 队列, 维持 culture-first slot mix. (vidiq_channel_analytics top_videos, 7d)
+
 Baseline 2026-07-08 (from vidIQ channel stats): 21 subscribers, 16,464 lifetime views,
 40 videos, ~flat daily views (~3-10/day), no uploads in the last 30 days.
 
