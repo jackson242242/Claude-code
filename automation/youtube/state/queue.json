@@ -44,7 +44,8 @@
       "seriesNote": "2-part series day2 with gzh-04",
       "addedAt": "2026-08-09",
       "addedBy": "owner directive via interactive session",
-      "status": "active"
+      "status": "covered-2026-08-11",
+      "statusNote": "backfill: already published, was left active (dedup hygiene 2026-08-17)"
     },
     {
       "id": "gzh-04",
@@ -80,7 +81,7 @@
       "seriesNote": "2-part series day3 with gzh-05",
       "addedAt": "2026-08-09",
       "addedBy": "owner directive via interactive session",
-      "status": "active"
+      "status": "covered-2026-08-17"
     },
     {
       "id": "cw-03",
@@ -474,8 +475,9 @@
       "sources": [],
       "addedAt": "2026-07-11",
       "addedBy": "cycle replenish (culture backlog flag 2026-07-10)",
-      "status": "active",
-      "note": "reactivated 2026-08-09 culture-first era"
+      "status": "covered-2026-08-16",
+      "note": "reactivated 2026-08-09 culture-first era",
+      "statusNote": "backfill: already published, was left active (dedup hygiene 2026-08-17)"
     },
     {
       "id": "cof-09",
@@ -1173,7 +1175,8 @@
       "seriesNote": "standalone or 岭南非遗系列锚点",
       "addedAt": "2026-08-10",
       "addedBy": "research auto-replenish (culture-first)",
-      "status": "active"
+      "status": "covered-2026-08-12",
+      "statusNote": "backfill: already published, was left active (dedup hygiene 2026-08-17)"
     },
     {
       "id": "gzh-08",
@@ -1185,7 +1188,7 @@
       "seriesNote": "海丝/外销工艺系列候选",
       "addedAt": "2026-08-10",
       "addedBy": "research auto-replenish (culture-first)",
-      "status": "active"
+      "status": "covered-2026-08-17"
     },
     {
       "id": "slk-a01",
@@ -1305,7 +1308,7 @@
       "seriesNote": "Qinghai-Gansu Loop 青甘大环线 连载",
       "addedAt": "2026-08-12",
       "addedBy": "owner directive",
-      "status": "active"
+      "status": "covered-2026-08-17"
     },
     {
       "id": "slk-b04",
@@ -1516,7 +1519,7 @@
       "whyNow": "2026-08-16 research: 古镇/老街/慢体验对年轻+亲子+情侣持续走强(travelandtourworld/asiaodyssey); 补云南 heritage 古城 geo-breadth",
       "addedAt": "2026-08-16",
       "addedBy": "auto-replenish (city-travel heritage geo-breadth)",
-      "status": "active"
+      "status": "covered-2026-08-17"
     },
     {
       "id": "ctr-07",
@@ -1549,6 +1552,61 @@
       "whyNow": "2026-08-16 research: 古城/慢体验+文化沉浸走强; 补四川 heritage 古城 geo-breadth",
       "addedAt": "2026-08-16",
       "addedBy": "auto-replenish (city-travel heritage geo-breadth)",
+      "status": "active"
+    },
+    {
+      "id": "cc5-01",
+      "title": "开平碉楼：华侨用一座座碉楼，把世界盖进了乡下",
+      "pillar": "china-culture",
+      "format": "short",
+      "angle": "fact-first=一座村子几十座中西合璧碉楼·华侨1900s-1930s归乡自建防匪·希腊柱+罗马穹顶+岭南灰塑·世遗2007. 广东非广州. 打卡+亲子.",
+      "whyNow": "2026-08-17 research: 补广东侨乡世遗·极视觉·china-culture 池被已发项污染后补新",
+      "addedAt": "2026-08-17",
+      "addedBy": "auto-replenish (culture geo-breadth + dedup cleanup)",
+      "status": "active"
+    },
+    {
+      "id": "cc5-02",
+      "title": "大足石刻：把一整座山雕成佛经故事",
+      "pillar": "china-culture",
+      "format": "short",
+      "angle": "fact-first=5万余尊唐宋摩崖造像·千手观音1007只手·世俗生活入佛龛·世遗1999. 重庆. 真爱好者深度.",
+      "whyNow": "2026-08-17 research: 补重庆世遗石刻·工艺深度受众",
+      "addedAt": "2026-08-17",
+      "addedBy": "auto-replenish (culture geo-breadth)",
+      "status": "active"
+    },
+    {
+      "id": "cc5-03",
+      "title": "泉州蟳埔簪花围：头上戴一座流动的花园",
+      "pillar": "china-culture",
+      "format": "short",
+      "angle": "fact-first=蟳埔女终年鲜花绕髻·'行走的花园'·宋元海丝渔村活习俗·近年爆红打卡. 福建闽南. 打卡+闽南彩蛋(好呷/古锥).",
+      "whyNow": "2026-08-17 research: 福建非遗活习俗·近年小红书爆点·可 weave 闽南",
+      "addedAt": "2026-08-17",
+      "addedBy": "auto-replenish (culture geo-breadth)",
+      "status": "active"
+    },
+    {
+      "id": "cc5-04",
+      "title": "景泰蓝：一只铜胎，掐出千根铜丝再点蓝",
+      "pillar": "china-culture",
+      "format": "short",
+      "angle": "fact-first=掐丝珐琅·一件要经百余道工·明景泰年间盛·皇家御用. 北京非遗. 工艺深度+京味彩蛋.",
+      "whyNow": "2026-08-17 research: 补北京宫廷非遗·工艺深度",
+      "addedAt": "2026-08-17",
+      "addedBy": "auto-replenish (culture geo-breadth)",
+      "status": "active"
+    },
+    {
+      "id": "cc5-05",
+      "title": "潍坊风筝：为什么全世界的风筝都认这座城",
+      "pillar": "china-culture",
+      "format": "short",
+      "angle": "fact-first=世界风筝之都·2000年放鸢传统·扎糊绘放四艺·龙头蜈蚣百米长. 山东非遗. 亲子+打卡.",
+      "whyNow": "2026-08-17 research: 补山东非遗·亲子向·视觉强",
+      "addedAt": "2026-08-17",
+      "addedBy": "auto-replenish (culture geo-breadth)",
       "status": "active"
     }
   ]

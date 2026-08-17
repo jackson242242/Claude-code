@@ -1842,6 +1842,50 @@
       "lane": "pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-08-16T23:00:00Z"
+    },
+    {
+      "date": "2026-08-17",
+      "slot": "a",
+      "title": "From the Front a Tower, From the Side a Pagoda — Guangzhou's Zhenhai | China Travel Expert",
+      "videoId": "H6J7xbh8S0s",
+      "url": "https://www.youtube.com/watch?v=H6J7xbh8S0s",
+      "pillar": "china-culture",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-17T13:00:00Z"
+    },
+    {
+      "date": "2026-08-17",
+      "slot": "b",
+      "title": "60 Million Pieces Left China Through One Port — Canton Porcelain | China Travel Expert",
+      "videoId": "Y0fXx2AWkvs",
+      "url": "https://www.youtube.com/watch?v=Y0fXx2AWkvs",
+      "pillar": "china-culture",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-17T17:00:00Z"
+    },
+    {
+      "date": "2026-08-17",
+      "slot": "c",
+      "title": "A Chinese City Survived 800 Years — With No Walls | China Travel Expert",
+      "videoId": "9jlXY8vVN3g",
+      "url": "https://www.youtube.com/watch?v=9jlXY8vVN3g",
+      "pillar": "city-travel",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-17T20:00:00Z"
+    },
+    {
+      "date": "2026-08-17",
+      "slot": "d",
+      "title": "This Lake Is Inches Deep Yet Mirrors the Whole Sky — QG Loop P3 | China Travel Expert",
+      "videoId": "9KbGTJrpOYc",
+      "url": "https://www.youtube.com/watch?v=9KbGTJrpOYc",
+      "pillar": "china-route",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-17T23:00:00Z"
     }
   ]
 }
