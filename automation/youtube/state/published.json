@@ -1886,6 +1886,50 @@
       "lane": "pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-08-17T23:00:00Z"
+    },
+    {
+      "date": "2026-08-18",
+      "slot": "a",
+      "title": "50,000 Buddhas Carved Into One Chinese Hillside — Dazu | China Travel Expert",
+      "videoId": "Xb1J3opfAIE",
+      "url": "https://www.youtube.com/watch?v=Xb1J3opfAIE",
+      "pillar": "china-culture",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-18T13:00:00Z"
+    },
+    {
+      "date": "2026-08-18",
+      "slot": "b",
+      "title": "Migrants Came Home and Built 1,800 Fortress-Towers — Kaiping | China Travel Expert",
+      "videoId": "C0jLPiv6a6Y",
+      "url": "https://www.youtube.com/watch?v=C0jLPiv6a6Y",
+      "pillar": "china-culture",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-18T17:00:00Z"
+    },
+    {
+      "date": "2026-08-18",
+      "slot": "c",
+      "title": "China's First Bank Was Born Here in 1823 — Pingyao, Shanxi | China Travel Expert",
+      "videoId": "M8Qcri2h7ns",
+      "url": "https://www.youtube.com/watch?v=M8Qcri2h7ns",
+      "pillar": "city-travel",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-18T20:00:00Z"
+    },
+    {
+      "date": "2026-08-18",
+      "slot": "d",
+      "title": "An Abandoned Mine Turned Into Jade Lakes | Qinghai-Gansu Loop EP4 | China Travel Expert",
+      "videoId": "yd4kS0j0KBo",
+      "url": "https://www.youtube.com/watch?v=yd4kS0j0KBo",
+      "pillar": "china-route",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled",
+      "publishAt": "2026-08-18T23:00:00Z"
     }
   ]
 }

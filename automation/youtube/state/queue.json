@@ -1320,7 +1320,8 @@
       "seriesNote": "Qinghai-Gansu Loop 青甘大环线 连载",
       "addedAt": "2026-08-12",
       "addedBy": "owner directive",
-      "status": "active"
+      "status": "covered-2026-08-18",
+      "statusNote": "used slot batch 2026-08-18"
     },
     {
       "id": "slk-b05",
@@ -1530,7 +1531,8 @@
       "whyNow": "2026-08-16 research: 平遥被点名 well-preserved ancient city(chinamustsee); 补山西 heritage 古城(错开近期避连日)",
       "addedAt": "2026-08-16",
       "addedBy": "auto-replenish (city-travel heritage geo-breadth)",
-      "status": "active"
+      "status": "covered-2026-08-18",
+      "statusNote": "used slot batch 2026-08-18"
     },
     {
       "id": "ctr-08",
@@ -1563,7 +1565,8 @@
       "whyNow": "2026-08-17 research: 补广东侨乡世遗·极视觉·china-culture 池被已发项污染后补新",
       "addedAt": "2026-08-17",
       "addedBy": "auto-replenish (culture geo-breadth + dedup cleanup)",
-      "status": "active"
+      "status": "covered-2026-08-18",
+      "statusNote": "used slot batch 2026-08-18"
     },
     {
       "id": "cc5-02",
@@ -1574,7 +1577,8 @@
       "whyNow": "2026-08-17 research: 补重庆世遗石刻·工艺深度受众",
       "addedAt": "2026-08-17",
       "addedBy": "auto-replenish (culture geo-breadth)",
-      "status": "active"
+      "status": "covered-2026-08-18",
+      "statusNote": "used slot batch 2026-08-18"
     },
     {
       "id": "cc5-03",
@@ -1608,6 +1612,54 @@
       "addedAt": "2026-08-17",
       "addedBy": "auto-replenish (culture geo-breadth)",
       "status": "active"
+    },
+    {
+      "id": "cc6-01",
+      "pillar": "china-culture",
+      "title": "福建土楼：没有一根钉子的圆形土堡，一栋能住一个家族",
+      "whyNow": "2026-08-18 research: 世遗2008·抖音爆款\"从天上看像UFO\"·夯土无钉圆楼是中国独有的家族聚居建筑; heritage/immersive-culture 趋势正热",
+      "audience": "打卡+families",
+      "fitNote": "触达日常:一栋楼=一个家族的生活方式; 极强b-roll(航拍圆楼); 合pillar/rules"
+    },
+    {
+      "id": "cc6-02",
+      "pillar": "china-culture",
+      "title": "侗族风雨桥与鼓楼：不用一根铁钉，榫卯撑起整座桥",
+      "whyNow": "2026-08-18 research: 侗族木构\"风雨桥/鼓楼\"全榫卯无钉·广西/贵州非遗·独此一家的少数民族建筑智慧",
+      "audience": "culture lovers",
+      "fitNote": "日常:村寨社交中心=鼓楼; 美b-roll(廊桥/山雾); 合rules(无政治)"
+    },
+    {
+      "id": "cc6-03",
+      "pillar": "china-culture",
+      "title": "大理白族扎染：一块布，靠一双手和一缸靛蓝染出星空",
+      "whyNow": "2026-08-18 research: 白族扎染国家级非遗·板蓝根靛蓝·手工缝扎; 慢工手作类内容在旅游圈持续走红",
+      "audience": "culture lovers+families",
+      "fitNote": "日常:一块布如何做; craft close-up 极上镜; 合rules"
+    },
+    {
+      "id": "cc6-04",
+      "pillar": "china-culture",
+      "title": "宜兴紫砂壶：一把壶为什么能泡出更香的茶",
+      "whyNow": "2026-08-18 research: 宜兴紫砂制作技艺国家级非遗·双气孔结构·一矿一色; 新中式茶饮热带动茶器关注",
+      "audience": "culture lovers",
+      "fitNote": "日常:泡茶=中国人的日常仪式; 手作close-up; 合brandRules(工艺factual)"
+    },
+    {
+      "id": "cc6-05",
+      "pillar": "china-culture",
+      "title": "婺源篁岭晒秋：把整个村子的屋顶变成一幅调色盘",
+      "whyNow": "2026-08-18 research: 篁岭\"晒秋\"民俗·辣椒南瓜晒满马头墙屋顶·秋季文旅爆点·徽派古村; 8月底进入预热季",
+      "audience": "打卡+families",
+      "fitNote": "日常:农家晒秋=生活风俗; 色彩极上镜; 合rules"
+    },
+    {
+      "id": "cc6-06",
+      "pillar": "china-culture",
+      "title": "潮州广济桥：白天是桥，傍晚拆成船让路给江水",
+      "whyNow": "2026-08-18 research: 广济桥\"十八梭船廿四洲\"·启闭式浮桥·中国四大古桥之一·潮州古城文旅热",
+      "audience": "打卡+culture lovers",
+      "fitNote": "日常:一座会开合的桥的巧思; paradox hook 现成; 合rules"
     }
   ]
 }
