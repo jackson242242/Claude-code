@@ -24,11 +24,13 @@ cadence:
   # a 9am ET / EU afternoon · b 1pm ET / 6-7pm EU prime · c 4pm ET / 9-10pm EU prime
   # · d 7pm ET US evening prime / 4pm PT. Slot a must stay >=13:00Z (routine fires
   # 12:30Z; earlier would always overrun into immediate-publish).
+  # growth-v2 (owner 2026-08-15, plans/growth-v2.md): 4→3/day — quality over
+  # volume; slot b RETIRED (effort reallocated to depth + new formats + TikTok).
+  # Reversible — revisit at the 08-29 review.
   slots:
-    - { name: a, publishAtUtc: "13:00", format: short }  # china-culture
-    - { name: b, publishAtUtc: "17:00", format: short }  # china-culture
-    - { name: c, publishAtUtc: "20:00", format: short }  # city-travel (heritage)
-    - { name: d, publishAtUtc: "23:00", format: short }  # china-food
+    - { name: a, publishAtUtc: "13:00", format: short }  # china-culture (Fri = Expert Opinions)
+    - { name: c, publishAtUtc: "20:00", format: short }  # city-travel heritage (2×/wk = China Practical)
+    - { name: d, publishAtUtc: "23:00", format: short }  # china-route
 
 voice:
   status: paused-2026-07-10   # owner: "voice over 好差" — format is now burned

@@ -88,6 +88,20 @@ log `skipped: batch already published today` and stop. (Protects against manual
    ended early on 08-09; overrides everything):** the China-Travel-Expert persona
    is built on 中国古文化产物 — the architecture, history, and traditional customs
    that make China UNLIKE anywhere else — not on food volume. Slot mix:
+   **GROWTH-V2 (owner 2026-08-15, plans/growth-v2.md — 3 slots/day, b RETIRED):**
+   - a 13:00 = china-culture; **Fridays = "Expert Opinions" format** (rankings /
+     overrated-underrated / tourists' top mistakes — opinions clearly labeled as
+     the expert's own judgment, facts still verified; comment-native by design).
+   - c 20:00 = city-travel heritage; **2×/week (Tue & Sat) = "China Practical"**
+     search-intent explainers (tourist payment apps, train booking, taxi apps,
+     daily budget, cash vs card — planning-stage viewers are the premium
+     audience; visa topics = official facts only + "check official sources",
+     never eligibility advice).
+   - d 23:00 = china-route (unchanged).
+   **LIKE-CTA (new, every Short): one cue at ~60% progress (the emotional peak,
+   NOT the ending — half the viewers are gone by then): "Double-tap if you'd
+   walk this street / 想走这条街的点个赞" — rotate the wording daily.**
+   Legacy mix reference (superseded):
    - a 13:00 + b 17:00 UTC = `china-culture` Shorts (ancient-culture products:
      heritage architecture 陈家祠/骑楼/园林/寺庙, crafts 非遗 porcelain/silk/
      embroidery, opera/calligraphy/tea ceremony, festivals & customs, history
