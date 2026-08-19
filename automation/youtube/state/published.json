@@ -1930,6 +1930,39 @@
       "lane": "pexels-ffmpeg+youtube-data-api",
       "status": "scheduled",
       "publishAt": "2026-08-18T23:00:00Z"
+    },
+    {
+      "date": "2026-08-19",
+      "slot": "a",
+      "title": "2,000-Year-Old Kites: Inside the World's Kite Capital | China Travel Expert",
+      "videoId": "5U5NuV4CY9A",
+      "url": "https://www.youtube.com/watch?v=5U5NuV4CY9A",
+      "pillar": "china-culture",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled-private",
+      "publishAt": "2026-08-19T13:00:00Z"
+    },
+    {
+      "date": "2026-08-19",
+      "slot": "c",
+      "title": "This 1,000-Year-Old Pine Has Its Own Full-Time Guardian — Huangshan | China Travel Expert",
+      "videoId": "8zZPF4-ivWE",
+      "url": "https://www.youtube.com/watch?v=8zZPF4-ivWE",
+      "pillar": "city-travel",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled-private",
+      "publishAt": "2026-08-19T20:00:00Z"
+    },
+    {
+      "date": "2026-08-19",
+      "slot": "d",
+      "title": "Asia's Largest Clay Buddha Is 34.5m Long | Qinghai-Gansu Loop EP6 | China Travel Expert",
+      "videoId": "B8Ob99wDXcQ",
+      "url": "https://www.youtube.com/watch?v=B8Ob99wDXcQ",
+      "pillar": "china-route",
+      "lane": "pexels-ffmpeg+youtube-data-api",
+      "status": "scheduled-private",
+      "publishAt": "2026-08-19T23:00:00Z"
     }
   ]
 }

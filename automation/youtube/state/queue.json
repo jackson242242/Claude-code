@@ -681,8 +681,9 @@
       "sources": [],
       "addedAt": "2026-07-15",
       "addedBy": "owner directive",
-      "status": "active",
-      "note": "reactivated 2026-08-09 culture-first era"
+      "status": "covered-2026-08-19",
+      "note": "reactivated 2026-08-09 culture-first era",
+      "statusNote": "produced+scheduled slot c 2026-08-19"
     },
     {
       "id": "ctr-03",
@@ -1345,7 +1346,8 @@
       "seriesNote": "Qinghai-Gansu Loop 青甘大环线 连载",
       "addedAt": "2026-08-12",
       "addedBy": "owner directive",
-      "status": "active"
+      "status": "covered-2026-08-19",
+      "statusNote": "produced+scheduled slot d 2026-08-19"
     },
     {
       "id": "slk-b07",
@@ -1611,7 +1613,8 @@
       "whyNow": "2026-08-17 research: 补山东非遗·亲子向·视觉强",
       "addedAt": "2026-08-17",
       "addedBy": "auto-replenish (culture geo-breadth)",
-      "status": "active"
+      "status": "covered-2026-08-19",
+      "statusNote": "produced+scheduled slot a 2026-08-19"
     },
     {
       "id": "cc6-01",
@@ -1660,6 +1663,72 @@
       "whyNow": "2026-08-18 research: 广济桥\"十八梭船廿四洲\"·启闭式浮桥·中国四大古桥之一·潮州古城文旅热",
       "audience": "打卡+culture lovers",
       "fitNote": "日常:一座会开合的桥的巧思; paradox hook 现成; 合rules"
+    },
+    {
+      "id": "cc7-01",
+      "title": "兵马俑：八千陶俑，没有两张相同的脸",
+      "pillar": "china-culture",
+      "format": "short",
+      "angle": "fact-first superlative=八千兵马俑·无一张脸相同·秦始皇陵1974农民打井发现;彩绘出土即氧化。陕西西安。打卡+爱好者。FOOTAGE:Pexels有兵马俑真实素材(subject-level PASS)。",
+      "whyNow": "2026-08-19 research: 世界遗产硬核视觉+footage-first可过·补陕西",
+      "addedAt": "2026-08-19",
+      "addedBy": "auto-replenish (culture geo+footage-viable)",
+      "status": "active"
+    },
+    {
+      "id": "cc7-02",
+      "title": "苏州园林：一堵墙上开108扇窗，扇扇不同",
+      "pillar": "china-culture",
+      "format": "short",
+      "angle": "fact-first=移步换景·借景造景·拙政园/留园世遗;方寸之地藏山水。江苏苏州。爱好者+打卡。FOOTAGE:Chinese garden/pavilion/moon gate 泛用充沛。",
+      "whyNow": "2026-08-19 research: 古典园林慢体验走强·补江苏",
+      "addedAt": "2026-08-19",
+      "addedBy": "auto-replenish (culture geo+footage-viable)",
+      "status": "active"
+    },
+    {
+      "id": "cc7-03",
+      "title": "少林寺：1500年的一座寺，练出半部武术史",
+      "pillar": "china-culture",
+      "format": "short",
+      "angle": "fact-first=北魏495年建·禅宗祖庭·少林功夫非遗;塔林数百座。河南登封嵩山。亲子+打卡。FOOTAGE:shaolin/kung fu/monk 泛用可用。",
+      "whyNow": "2026-08-19 research: 功夫IP海外认知强·补河南",
+      "addedAt": "2026-08-19",
+      "addedBy": "auto-replenish (culture geo+footage-viable)",
+      "status": "active"
+    },
+    {
+      "id": "cc7-04",
+      "title": "京剧脸谱：一张脸的颜色，就是这个人的命",
+      "pillar": "china-culture",
+      "format": "short",
+      "angle": "fact-first=红忠白奸黑刚·颜色即人物性格密码·非遗;勾脸一笔不能错。北京。爱好者+亲子。FOOTAGE:peking opera/chinese opera 表演素材可用。",
+      "whyNow": "2026-08-19 research: 非遗表演视觉强·comment-bait(猜颜色含义)·补北京",
+      "addedAt": "2026-08-19",
+      "addedBy": "auto-replenish (culture geo+footage-viable)",
+      "status": "active"
+    },
+    {
+      "id": "cc7-05",
+      "title": "西湖龙井：一锅茶，全靠一双手在铁锅里炒",
+      "pillar": "china-culture",
+      "format": "short",
+      "angle": "fact-first=十大手法·200°C铁锅徒手炒·明前一斤要四万颗芽;非遗炒制。浙江杭州。生活感+爱好者。FOOTAGE:tea picking/tea ceremony/green tea 充沛。",
+      "whyNow": "2026-08-19 research: 茶文化+手作工艺贴近生活·补浙江",
+      "addedAt": "2026-08-19",
+      "addedBy": "auto-replenish (culture geo+footage-viable)",
+      "status": "active"
+    },
+    {
+      "id": "cc7-06",
+      "title": "景德镇：一千七百年，一座城只烧一件事",
+      "pillar": "china-culture",
+      "format": "short",
+      "angle": "fact-first=瓷都1700年·72道工序·'白如玉薄如纸声如磬';一件瓷器过手数十人。江西景德镇。爱好者+打卡。FOOTAGE:pottery/porcelain/ceramic wheel 泛用充沛。",
+      "whyNow": "2026-08-19 research: 出口非遗工艺线·补江西瓷都",
+      "addedAt": "2026-08-19",
+      "addedBy": "auto-replenish (culture geo+footage-viable)",
+      "status": "active"
     }
   ]
 }
