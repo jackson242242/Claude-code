@@ -10,7 +10,8 @@
    "whyNow": "owner 2026-08-18 现代建筑专辑直令(plans/modern-china.md)",
    "addedAt": "2026-08-18",
    "addedBy": "owner directive",
-   "status": "active"
+   "status": "active",
+   "deferNote": "2026-08-20 FOOTAGE-FIRST FAIL: Pexels 无来福士/水晶连廊专属素材(返回 Mexico City/Brisbane/Dubai 泛用天际线); '这栋横楼'压泛用天际线=违字幕诚实规则 → DEFER, 待实拍/map数据复盘日再产(现代建筑专辑不废)"
   },
   {
    "id": "mod-02",
@@ -830,7 +831,7 @@
    "sources": [],
    "addedAt": "2026-07-18",
    "addedBy": "owner directive",
-   "status": "active",
+   "status": "covered-2026-08-20",
    "note": "reactivated 2026-08-09 culture-first era"
   },
   {
@@ -1403,7 +1404,7 @@
    "seriesNote": "Qinghai-Gansu Loop 青甘大环线 连载",
    "addedAt": "2026-08-12",
    "addedBy": "owner directive",
-   "status": "active"
+   "status": "covered-2026-08-20"
   },
   {
    "id": "rt-05",
@@ -1717,7 +1718,8 @@
    "whyNow": "2026-08-19 research: 世界遗产硬核视觉+footage-first可过·补陕西",
    "addedAt": "2026-08-19",
    "addedBy": "auto-replenish (culture geo+footage-viable)",
-   "status": "active"
+   "status": "active",
+   "deferNote": "2026-08-20 footage 稀薄: terracotta 查询返回篝火/幸运饼/毛像 filler, site-ID FAIL; 若产需 map/fact-explainer 且严选素材, 或待实拍"
   },
   {
    "id": "cc7-02",
@@ -1728,7 +1730,7 @@
    "whyNow": "2026-08-19 research: 古典园林慢体验走强·补江苏",
    "addedAt": "2026-08-19",
    "addedBy": "auto-replenish (culture geo+footage-viable)",
-   "status": "active"
+   "status": "covered-2026-08-20"
   },
   {
    "id": "cc7-03",
@@ -1772,6 +1774,72 @@
    "whyNow": "2026-08-19 research: 出口非遗工艺线·补江西瓷都",
    "addedAt": "2026-08-19",
    "addedBy": "auto-replenish (culture geo+footage-viable)",
+   "status": "active"
+  },
+  {
+   "id": "ctv-01",
+   "title": "苏州平江路：一条800年没改道的水巷",
+   "pillar": "city-travel",
+   "format": "short",
+   "angle": "heritage老街: 宋《平江图》原样保留至今·河街并行·摇橹船; fact-first 钩=按800年前地图还能走. FOOTAGE 江南水乡素材充沛.",
+   "whyNow": "2026-08-20 research 入境游古镇/古街持续升温(小红书报告);苏州线延展(接 08-20 a 苏州园林)",
+   "addedAt": "2026-08-20",
+   "addedBy": "auto-replenish (city-travel heritage)",
+   "status": "active"
+  },
+  {
+   "id": "ctv-02",
+   "title": "成都宽窄巷子：三条巷子读懂一座慢城",
+   "pillar": "city-travel",
+   "format": "short",
+   "angle": "heritage: 清代满城遗留·宽巷窄巷井巷·川西民居; fact-first 钩=三条巷=三种老成都生活. 打卡+生活感(茶馆掏耳).",
+   "whyNow": "2026-08-20 research 成都仍居入境热门前十;慢生活/茶馆生活感",
+   "addedAt": "2026-08-20",
+   "addedBy": "auto-replenish (city-travel heritage)",
+   "status": "active"
+  },
+  {
+   "id": "ctv-03",
+   "title": "泉州西街：走1300年的海丝第一街",
+   "pillar": "city-travel",
+   "format": "short",
+   "angle": "heritage: 开元寺东西塔(抗震石塔)·1300年老街·海上丝路起点; fact-first 钩=一条街站着中国最高一对石塔. 世遗泉州22处.",
+   "whyNow": "2026-08-20 research 建筑/历史迷专项游崛起(黑神话带火古建);泉州世遗热",
+   "addedAt": "2026-08-20",
+   "addedBy": "auto-replenish (city-travel heritage)",
+   "status": "active"
+  },
+  {
+   "id": "ctv-04",
+   "title": "西塘古镇：枕水人家的一夜",
+   "pillar": "city-travel",
+   "format": "short",
+   "angle": "heritage 水乡: 千年廊棚(遮雨长廊,呼应骑楼)·九条水道·枕河人家; fact-first 钩=下雨天走过整座镇不湿鞋. 日间为主(禁夜景).",
+   "whyNow": "2026-08-20 research 江南水乡古镇入境热;廊棚=挡雨建筑智慧线(接骑楼)",
+   "addedAt": "2026-08-20",
+   "addedBy": "auto-replenish (city-travel heritage)",
+   "status": "active"
+  },
+  {
+   "id": "ctv-p1",
+   "title": "China Practical｜外国游客怎么用支付宝/微信付钱",
+   "pillar": "city-travel",
+   "format": "short",
+   "angle": "China Practical(Tue/Sat slot c)搜索意图: 外卡绑 Alipay/WeChat Pay 游客版·实名·扫码; 只报可核实操作步骤·不做金融建议. footage=手机扫码/摊位付款泛用(explainer 诚实).",
+   "whyNow": "2026-08-20 research '数字墙消除·外卡可绑钱包'=规划期高购买力观众搜索长尾",
+   "addedAt": "2026-08-20",
+   "addedBy": "auto-replenish (China Practical search-intent)",
+   "status": "active"
+  },
+  {
+   "id": "ctv-p2",
+   "title": "China Practical｜不会中文怎么买中国高铁票",
+   "pillar": "city-travel",
+   "format": "short",
+   "angle": "China Practical(Tue/Sat slot c)搜索意图: 护照购票·12306英文版/Trip·刷证进站·二等座; 只报官方可核实流程. footage=车站/动车/检票泛用(explainer 诚实).",
+   "whyNow": "2026-08-20 research 规划期观众搜 train booking/itinerary;搜索流量常青",
+   "addedAt": "2026-08-20",
+   "addedBy": "auto-replenish (China Practical search-intent)",
    "status": "active"
   }
  ]
