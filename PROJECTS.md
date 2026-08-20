@@ -63,7 +63,21 @@ Web Audio 八音盒音乐（零版权）。`render.yaml` 已注册 `alexandra-ar
 | 内容更新 | 按需 | （老板点单：加作品/换音乐） | ⚪ | 2026-06-12 上线 v2（PR #37） | 加新作品＝图扔进 `works/` + `WORKS` 数组加一行（见 `alexandra-art/README.md`） |
 | 部署确认 | 一次性 | Render Blueprint sync | 🟡 | render.yaml 已含服务定义；沙箱探不到 onrender | **老板**：若 Render 没自动建站，仪表盘批准 Blueprint sync；URL 形如 `alexandra-art-<suffix>.onrender.com`，拿到后可填进 site-health 探测 |
 
-### P5+ · 新项目占位
+### P5 · 小红书号 · 时尚美妆行业解读（老板本人 IP）
+**位置：本仓库 `xhs/`，分支 `claude/xiaohongshu-fashion-beauty-content-hk774m`**。
+小红书号 103684030。目标：立人设 → 建粉丝群 → 成为业界 influencer。
+定位与风格卡见 `xhs/BRAND-XHS.md`（风格已从老板 4 篇原文提炼）。
+**核心资产：老板本人在美国美妆行业内部**——中美双战场对照是唯一不可复制的赛道。
+
+| 工作流 | 周期 | 入口 | 状态 | 最近一轮（证据） | 下一步 |
+|--------|------|------|------|------------------|--------|
+| 每日出稿 | **24h** | `/xhs-daily` | 🟢 | 2026-08-20 第 1 期（简报 10 条 + 选题 3 个 + 完整初稿「线下反超线上」+ 7 张 1080×1440 配图 + 邮件到 amelia718@gmail.com） | 等老板审稿；改稿要点写回 BRAND-XHS §3 |
+
+**红线：** agent **不代发**、不刷量、不保证涨粉数字；不编数字/爆料；
+不碰政治·签证·法律·功效宣称·私德指控（同 CADENCE §3 内容硬过滤）。
+**配图管线：** `xhs/tools/render-cards.mjs`（Chromium headless + Noto SC，1080×1440 小红书竖版）。
+
+### P6+ · 新项目占位
 尚无。新项目按 §C 登记后启动。
 
 ## B. 状态图例

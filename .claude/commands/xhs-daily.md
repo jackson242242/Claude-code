@@ -1,0 +1,60 @@
+---
+description: Run one Xiaohongshu daily cycle — fashion/beauty news sweep, 3 topic pitches, one full draft in the boss's voice, rendered cards, emailed to amelia718@gmail.com
+---
+
+# /xhs-daily — 小红书每日出稿循环
+
+老板的小红书号（103684030）每日内容循环。**一轮只出一篇完整初稿。**
+每次运行都是失忆的新会话——`xhs/BRAND-XHS.md` 是唯一记忆，必须先读后写。
+
+## 0. 读状态（不可跳过）
+1. 读 `xhs/BRAND-XHS.md`——尤其 §1 定位、§3 风格卡、§5 红线。
+2. 读最近 3 期 `xhs/daily/*.md`——**避免选题重复**，并检查上一篇结尾是否留了
+   设问钩子（老板的连载习惯：结尾抛问题 → 下一篇兑现）。**有钩子就优先兑现。**
+
+## 1. 抓料（WebSearch，中英双源）
+覆盖这些角度，每轮至少 6 次检索：
+- 时尚：创意总监人事、并购、财报、秀场、代言/广告翻车
+- 美妆：并购与融资、渠道与零售商动作、成分与趋势、财报
+- 中国侧：国货品牌、平台（小红书/抖音/天猫）动向、出海
+- 美国侧（老板所在战场）：Sephora / Ulta / Target / TikTok Shop / K-Beauty
+- 八卦：代言、名人品牌、舆情翻车（**只写有二手源的**）
+
+## 2. 过滤与打分
+- 先过 `BRAND-XHS.md` §5 红线（政治/签证/法律/功效宣称/私德指控 → 丢弃）。
+- 按四维打分选题：冲突度 / 数据可讲性 / **中美对照潜力** / 与人设契合。
+- 中美对照潜力高的优先——那是这个号唯一不可复制的赛道。
+
+## 3. 产出（写进 `xhs/daily/YYYY-MM-DD.md`）
+1. **今日简报**：8–12 条，一条一句，**每条带来源 + 可信度（高/中/待核实）**。
+2. **选题提案 ×3**：标支柱代号（M/R/X/G/C）+ 为什么值得写 + 预估爆点。
+3. **完整初稿 ×1**：严格按 §3 风格卡的五段式骨架与句法（「不是 A，而是 B」、
+   短句单句成段、数字密集、中英混用、"作为在美国美妆市场做事的人"）。
+   含：标题 ×3 / 封面文案 / 正文 / 8–10 标签 / 首评 / 配图建议 / **出处与可信度表**。
+4. **事实核对**：初稿里每个数字都要能追到源；追不到就删，不许估算。
+
+## 4. 渲染配图（必做）
+1. 把初稿正文切成 6–8 屏，写 `xhs/daily/YYYY-MM-DD.cards.json`
+   （schema 见上一期文件；`type:"cover"` 封面 + 若干正文卡，`num`/`heading`/`body`，
+   body 支持 `{type:"quote"}` 金句、`{type:"lead"}` 观点句、`**粗体**` 高亮）。
+2. 跑 `node xhs/tools/render-cards.mjs xhs/daily/YYYY-MM-DD.cards.json`
+   → 输出 1080×1440 PNG 到 `xhs/daily/YYYY-MM-DD/`。
+3. **自检**：Read 至少封面 + 一张正文卡，确认无溢出/截断/乱码，页脚完整。
+
+## 5. 交付
+1. `git add xhs/ && git commit && git push -u origin claude/xiaohongshu-fashion-beauty-content-hk774m`
+2. **发邮件到 amelia718@gmail.com**（Gmail MCP `send_message`）：
+   - 主题：`小红书日报 YYYY-MM-DD ｜ <今日主推标题>`
+   - HTML 正文：今日简报表格 → 3 个选题 → **可直接复制的完整文案**（标题/正文/标签/首评）
+   - 附 GitHub 上配图目录链接（图片不塞附件，避免超大邮件）
+   - 结尾固定一行：**「agent 不代发，请审核后自行上传。」**
+3. 用 `SendUserFile` 把渲染好的 PNG 发给老板（会话内可直接预览）。
+
+## 6. 写回记忆（不可跳过）
+- 老板若给了改稿意见 → 把风格要点追加进 `xhs/BRAND-XHS.md` §3。
+- 若发布了 → 在 `xhs/BRAND-XHS.md` 末尾追加一行发布记录（日期/标题/数据）。
+
+## 红线（同 BRAND-XHS §5）
+- **不代发**、不刷量、不承诺涨粉数字。
+- 不编数字、不编爆料；传闻写成"传闻/网上在传"。
+- 不碰政治/签证移民/法律责任；不做功效或医疗宣称；不写私德指控。
