@@ -200,16 +200,23 @@ SESSIONS = {
     ),
 }
 
-# 一周排布：4 次健身房（周一/二/四/五）+ 周六主动恢复 + 周三/日休息
+# 一周排布，按实际可用时段排：工作日晚 19 点后 + 周六早上 + 周日下午
+# 周二 A(下肢) · 周四 B(上肢推) · 周六 C(下肢) · 周日 D(上肢拉)
+# 上下肢各间隔 3-4 天；周日上午顺带做复盘/称重/备餐，下午再练
 WEEK_MAP = {
-    0: ("gym", "A"),
-    1: ("gym", "B"),
+    0: ("rest", None),
+    1: ("gym", "A"),
     2: ("rest", None),
-    3: ("gym", "C"),
-    4: ("gym", "D"),
-    5: ("active", None),
-    6: ("log", None),
+    3: ("gym", "B"),
+    4: ("active", None),
+    5: ("gym", "C"),
+    6: ("gym", "D"),
 }
+
+# 每个训练日的固定时段（写进日历的就是这些）
+SESSION_TIME = {1: "19:30-21:30", 3: "19:30-21:30", 5: "09:00-11:00", 6: "14:00-16:00"}
+LOG_WEEKDAY = 6          # 周日上午 10:00-11:30 复盘 + 称重量围 + 备餐
+LATE_WEEKDAYS = {1, 3}   # 晚间训练日，有氧要前置以免影响睡眠
 
 SESSION_STRUCTURE = [
     ("0-10 分钟", "有氧热身 + 动态活动度（快走/单车 5 分钟 + 髋绕环、胸椎旋转、肩绕环）"),
@@ -367,28 +374,33 @@ def render_workout(d: date) -> str:
 
     if kind == "rest":
         out.append("### 今天不练 · 主动休息")
-        out.append("- 走路 30 分钟（凑当日步数），或做 10 分钟拉伸/泡沫轴")
+        out.append("- 走路 30-45 分钟（凑当日步数），或做 10 分钟拉伸/泡沫轴")
         out.append("- 训练日之间的恢复日就是长肌肉的日子，别偷偷加练")
         return "\n".join(out)
 
     if kind == "active":
         out.append("### 今天不进健身房 · 主动恢复")
-        out.append("- 60-90 分钟户外快走 / 骑行 / 打球，强度能聊天为准")
+        out.append("- 60-90 分钟户外快走 / 骑行 / 打球，强度能聊天为准（周五，为周末两练留恢复）")
         out.append("- 全身拉伸 10 分钟，重点髋屈肌和胸小肌（久坐的两个死穴）")
         out.append("- 这天的热量按休息日算，但如果活动量特别大可以加 150 kcal 碳水")
         return "\n".join(out)
 
-    if kind == "log":
-        out.append("### 今天不练 · 复盘与备餐日")
-        out.append("- **晨起空腹称重**，记进表格（只看 7 日均值，别管单日波动）")
-        out.append("- **每 4 周量一次**：腰围（肚脐水平）、胸围、臂围、大腿围")
+    if d.weekday() == LOG_WEEKDAY:
+        out.append("### 上午 10:00-11:30 · 复盘 + 备餐（练之前先把这周结掉）")
+        out.append("- **晨起空腹称重**，算最近 7 天均值，和上周均值比，按下方校准规则决定加减热量")
+        out.append("- **每 4 周量一次**：腰围（肚脐水平、呼气末、不收腹）、胸围、臂围、大腿围")
         out.append("- **每 4 周拍一次**：正面/侧面/背面，同一位置同一光线同一条裤子")
-        out.append("- 备餐 90 分钟：煮 1kg 鸡胸/牛肉、蒸 1kg 米饭或红薯、洗切 1kg 蔬菜、水煮 12 个蛋")
-        out.append("- 看一眼下周的卡片，把 4 次训练写进日历（写进日历的才会发生）")
-        return "\n".join(out)
+        out.append("- 备餐 90 分钟：烤 1kg 鸡胸、蒸 1kg 米饭或红薯、洗切 1kg 蔬菜、水煮 12 个蛋、分装 4 份坚果")
+        out.append("- 扫一眼下周卡片，确认 4 次训练都在日历上")
+        out.append("")
 
     sess = SESSIONS[code]
-    out.append(f"### 训练 {code} · {sess['title']} · 约 2 小时")
+    slot = SESSION_TIME.get(d.weekday(), "")
+    out.append(f"### 训练 {code} · {sess['title']} · {slot} · 约 2 小时")
+    if d.weekday() in LATE_WEEKDAYS:
+        out.append("> 🌙 **晚间训练日**：有氧提到热身之后立刻做 10 分钟，力量部分做完就走，"
+                   "争取 21:30 前离开健身房——练太晚会推迟入睡，而睡眠是这个计划里最不能省的一环。"
+                   "省下的有氧挪到周一/周三的走路里补。")
     if week in DELOAD_WEEKS:
         out.append("> ⚠️ **本周是强制减载周**：重量降到平时的 55-60%，绝不力竭。43 岁的恢复窗口比 25 岁窄，"
                    "这一周省下来的是后面 4 周的进步。")
@@ -511,7 +523,10 @@ def render_week(week: int) -> str:
         d = mon + timedelta(days=i)
         kind, code = day_kind(d)
         if kind == "gym":
-            what = f"训练 {code} · {SESSIONS[code]['title']}"
+            slot = SESSION_TIME.get(i, "")
+            what = f"{slot}　训练 {code} · {SESSIONS[code]['title']}"
+            if i == LOG_WEEKDAY:
+                what = "10:00-11:30 复盘/称重/备餐　+　" + what
         elif kind == "active":
             what = "主动恢复（60-90 分钟快走/骑行）"
         elif kind == "log":
@@ -540,7 +555,7 @@ def selftest() -> int:
         d = START + timedelta(days=i)
         try:
             text = render_day(d)
-            assert "今天" in text or "复盘" in text, d
+            assert "今天" in text, d
             assert kcal_of(d)[0] > 1500, d
         except Exception as exc:  # noqa: BLE001 — 自检就是要抓所有异常
             bad.append((d, exc))
