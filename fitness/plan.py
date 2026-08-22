@@ -410,8 +410,8 @@ def render_workout(d: date) -> str:
         out.append(f"- {span}｜{what}")
     out.append("")
     out.append(f"**主项** — {s['main']}")
-    for name, cue in sess["main"]:
-        out.append(f"1. {name}　·　{cue}")
+    for i, (name, cue) in enumerate(sess["main"], 1):
+        out.append(f"{i}. {name}　·　{cue}")
     out.append("")
     out.append(f"**辅助** — {s['acc']}")
     for name, cue in sess["acc"]:
