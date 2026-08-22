@@ -92,7 +92,11 @@ log `skipped: batch already published today` and stop. (Protects against manual
    - a 13:00 = china-culture; **Fridays = "Expert Opinions" format** (rankings /
      overrated-underrated / tourists' top mistakes — opinions clearly labeled as
      the expert's own judgment, facts still verified; comment-native by design).
-   - c 20:00 = city-travel heritage; **2×/week (Tue & Sat) = "China Practical"**
+   - c 20:00 = city-travel heritage; **2×/week (Thu & Sun) = food OR
+     leisure/hot-springs (owner 2026-08-22: "发食物和游玩温泉之类的" — food
+     Shorts welcome again here; 温泉/泡汤/spa/leisure experiences enter the
+     rotation, autumn-winter is hot-spring prime time)**; **2×/week (Tue & Sat)
+     = "China Practical"**
      search-intent explainers (tourist payment apps, train booking, taxi apps,
      daily budget, cash vs card — planning-stage viewers are the premium
      audience; visa topics = official facts only + "check official sources",
@@ -347,6 +351,15 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
 7. **Commit checkpoint** — commit this slot's text artifacts + state delta before
    starting the next slot (protects against mid-run session death). Media never
    enters git (runs/.gitignore).
+
+## 5a-recovery. Owner-footage pending uploads (token outage 08-18..)
+If the YouTube lane is LIVE and `state/pending-owner-uploads.json` has pending
+entries: upload up to 3 per run (masters + metas are committed in the repo;
+where meta says "write per PERSONA", compose it from the named .srt + PERSONA.md
+§3). publishAt = the next unexpired slot-d going forward, one EP per day; claim
+each date in owner-slots.json; file to the listed playlists (create "Beijing,
+Walked 带你走北京" on first use); move entries to "done"; log in RUNLOG. If the
+token is still dead, log one line and move on — never retry-spam.
 
 ## 5b. Persona metadata rollout (until queue empty)
 If `state/metadata-retrofit-queue.json` has `"status": "pending"` items, run

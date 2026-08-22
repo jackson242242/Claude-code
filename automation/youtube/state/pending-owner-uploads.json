@@ -1,0 +1,11 @@
+{
+ "note": "token 恢复后按序上传(每天最多3条防刷屏); 每条认领当天起顺延的 slot d; publishAt 用上传当天最近的未过期槽时; 上传后移入 done",
+ "pending": [
+  {"ep": "EP1", "video": "runs/owner-footage/2026-08-18/ep1-mutianyu.mp4", "meta": "runs/owner-footage/2026-08-18/ep1-meta.json", "playlist": ["Beijing, Walked 带你走北京", "China Travel 城市旅行"]},
+  {"ep": "EP2", "video": "runs/owner-footage/2026-08-18/ep2-summerpalace.mp4", "meta": "runs/owner-footage/2026-08-18/ep2-meta.json", "playlist": ["Beijing, Walked 带你走北京", "China Travel 城市旅行"]},
+  {"ep": "EP3", "video": "runs/owner-footage/2026-08-18/ep3-tiantan.mp4", "meta": "write per PERSONA from ep3-tiantan.srt (Temple of Heaven cypress POV)", "playlist": ["Beijing, Walked 带你走北京", "China Travel 城市旅行"]},
+  {"ep": "EP4", "video": "runs/owner-footage/2026-08-18/ep4-baita.mp4", "meta": "write per PERSONA from ep4-baita.srt (hutong roofs + White Stupa Temple 700+yr)", "playlist": ["Beijing, Walked 带你走北京", "China Travel 城市旅行"]},
+  {"ep": "EP5", "video": "runs/owner-footage/2026-08-18/ep5-duck.mp4", "meta": "write per PERSONA from ep5-duck.srt (Siji Minfu duck finale, sugar-dip tip, route CTA)", "playlist": ["Beijing, Walked 带你走北京", "China Food 中国美食"]}
+ ],
+ "done": []
+}
