@@ -207,7 +207,9 @@
       "views": 453,
       "date": null,
       "slot": null,
-      "status": "pending"
+      "status": "sent",
+      "sentDate": "2026-08-22",
+      "note": "re-rendered clean master from runs artifacts (subs.srt + credits.json queries) + badge, no music; delivered to owner chat 2026-08-22"
     },
     {
       "videoId": "F_EVPtmd4ZA",
@@ -215,7 +217,9 @@
       "views": 439,
       "date": null,
       "slot": null,
-      "status": "pending"
+      "status": "sent",
+      "sentDate": "2026-08-22",
+      "note": "re-rendered clean master from runs artifacts (subs.srt + credits.json queries) + badge, no music; delivered to owner chat 2026-08-22"
     },
     {
       "videoId": "18Xbl33keUA",

@@ -1,0 +1,54 @@
+1
+00:00:00,000 --> 00:00:02,000
+I'm your China Travel Expert.
+我是你的中国旅游专家
+
+2
+00:00:02,200 --> 00:00:04,700
+No Chinese bank? You can still pay everywhere.
+没有中国卡，照样扫码付
+
+3
+00:00:04,900 --> 00:00:07,300
+Download Alipay or Weixin (WeChat).
+下载支付宝或微信
+
+4
+00:00:07,500 --> 00:00:09,900
+Verify once with your passport.
+用护照实名一次
+
+5
+00:00:10,100 --> 00:00:12,500
+Bind your Visa or Mastercard.
+绑 Visa 或 Mastercard
+
+6
+00:00:12,700 --> 00:00:15,100
+Now scan any QR code to pay.
+扫二维码就能付
+
+7
+00:00:15,300 --> 00:00:17,700
+No local SIM, no bank account needed.
+不用中国手机号和银行卡
+
+8
+00:00:17,900 --> 00:00:20,300
+Double-tap to save this for your trip.
+收藏起来，出行用得上
+
+9
+00:00:20,500 --> 00:00:22,900
+Small fees may apply on bigger payments.
+大额可能收点手续费
+
+10
+00:00:23,100 --> 00:00:25,700
+★ Expert Tip: set it up before you land, keep ¥200 cash.
+出发前设好，备200元现金
+
+11
+00:00:25,900 --> 00:00:28,200
+Which will you try first — Alipay or Weixin?
+你先试支付宝还是微信？

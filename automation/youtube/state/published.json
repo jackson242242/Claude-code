@@ -1,6 +1,39 @@
 {
   "videos": [
     {
+      "date": "2026-08-22",
+      "slot": "a",
+      "title": "China's Top Green Tea Is Fried by Bare Hands — Longjing | China Travel Expert",
+      "videoId": null,
+      "url": null,
+      "pillar": "china-culture",
+      "lane": "pexels-ffmpeg (subtitle-driven, no VO) — UPLOAD DOWN invalid_grant",
+      "status": "awaiting-upload-credentials",
+      "publishAt": "2026-08-22T13:00:00Z"
+    },
+    {
+      "date": "2026-08-22",
+      "slot": "c",
+      "title": "How to Pay in China With No Chinese Bank Account (2026) | China Travel Expert",
+      "videoId": null,
+      "url": null,
+      "pillar": "city-travel",
+      "lane": "pexels-ffmpeg (subtitle-driven, no VO) — UPLOAD DOWN invalid_grant",
+      "status": "awaiting-upload-credentials",
+      "publishAt": "2026-08-22T20:00:00Z"
+    },
+    {
+      "date": "2026-08-22",
+      "slot": "d",
+      "title": "The Beijing Hall Built With Zero Nails — Temple of Heaven | China Travel Expert",
+      "videoId": null,
+      "url": null,
+      "pillar": "china-route",
+      "lane": "pexels-ffmpeg (subtitle-driven, no VO) — UPLOAD DOWN invalid_grant",
+      "status": "awaiting-upload-credentials",
+      "publishAt": "2026-08-22T23:00:00Z"
+    },
+    {
       "date": "2026-08-10",
       "slot": "a",
       "title": "China's Only Silk-Sewn Jade Suit: 2,291 Plaques | Buried Empire P1 · 丝缕玉衣",

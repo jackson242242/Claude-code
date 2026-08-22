@@ -1457,7 +1457,7 @@
    ],
    "addedAt": "2026-08-11",
    "addedBy": "cycle replenish (china-route next series)",
-   "status": "active"
+   "status": "covered-2026-08-22"
   },
   {
    "id": "rt-07",
@@ -1669,7 +1669,9 @@
    "title": "福建土楼：没有一根钉子的圆形土堡，一栋能住一个家族",
    "whyNow": "2026-08-18 research: 世遗2008·抖音爆款\"从天上看像UFO\"·夯土无钉圆楼是中国独有的家族聚居建筑; heritage/immersive-culture 趋势正热",
    "audience": "打卡+families",
-   "fitNote": "触达日常:一栋楼=一个家族的生活方式; 极强b-roll(航拍圆楼); 合pillar/rules"
+   "fitNote": "触达日常:一栋楼=一个家族的生活方式; 极强b-roll(航拍圆楼); 合pillar/rules",
+   "status": "active",
+   "deferNote": "2026-08-22 FOOTAGE-FIRST FAIL: Pexels 无福建土楼专属素材(仅1条真土楼#32247891·其余返回越南梯田/尼泊尔山径/意大利村/欧洲村); 泛用素材压\"这栋土楼\"=违字幕诚实规则 → DEFER, 待实拍/map-format数据复盘再产(土楼选题不废). slot a 改产 cc7-05 龙井茶(craft footage 诚实)."
   },
   {
    "id": "cc6-02",
@@ -1765,7 +1767,7 @@
    "whyNow": "2026-08-19 research: 茶文化+手作工艺贴近生活·补浙江",
    "addedAt": "2026-08-19",
    "addedBy": "auto-replenish (culture geo+footage-viable)",
-   "status": "active"
+   "status": "covered-2026-08-22"
   },
   {
    "id": "cc7-06",
@@ -1820,7 +1822,7 @@
    "whyNow": "2026-08-20 research '数字墙消除·外卡可绑钱包'=规划期高购买力观众搜索长尾",
    "addedAt": "2026-08-20",
    "addedBy": "auto-replenish (China Practical search-intent)",
-   "status": "active"
+   "status": "covered-2026-08-22"
   },
   {
    "id": "ctv-p2",
