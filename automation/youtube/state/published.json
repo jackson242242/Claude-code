@@ -1,6 +1,39 @@
 {
   "videos": [
     {
+      "date": "2026-08-23",
+      "slot": "a",
+      "title": "One Chinese Character Hides All 8 Brush Strokes · 书法 | China Travel Expert",
+      "videoId": null,
+      "url": null,
+      "pillar": "china-culture",
+      "lane": "pexels-ffmpeg (subtitle-driven, no VO) — UPLOAD DOWN invalid_grant",
+      "status": "awaiting-upload-credentials",
+      "publishAt": "2026-08-23T13:00:00Z"
+    },
+    {
+      "date": "2026-08-23",
+      "slot": "c",
+      "title": "China Has a Spring So Hot It Cooks Your Lunch · 腾冲热海 | China Travel Expert",
+      "videoId": null,
+      "url": null,
+      "pillar": "city-travel",
+      "lane": "pexels-ffmpeg (subtitle-driven, no VO) — UPLOAD DOWN invalid_grant",
+      "status": "awaiting-upload-credentials",
+      "publishAt": "2026-08-23T20:00:00Z"
+    },
+    {
+      "date": "2026-08-23",
+      "slot": "d",
+      "title": "The Forbidden City Isn't Really 9,999 Rooms · 故宫 | China Travel Expert",
+      "videoId": null,
+      "url": null,
+      "pillar": "china-route",
+      "lane": "pexels-ffmpeg (subtitle-driven, no VO) — UPLOAD DOWN invalid_grant",
+      "status": "awaiting-upload-credentials",
+      "publishAt": "2026-08-23T23:00:00Z"
+    },
+    {
       "date": "2026-08-22",
       "slot": "a",
       "title": "China's Top Green Tea Is Fried by Bare Hands — Longjing | China Travel Expert",

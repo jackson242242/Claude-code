@@ -10,7 +10,8 @@
    "whyNow": "owner 2026-08-22 直令:发食物和游玩温泉之类; 秋冬温泉旺季前布局",
    "addedAt": "2026-08-22",
    "addedBy": "owner directive",
-   "status": "active"
+   "status": "covered-2026-08-23",
+   "coveredBy": "2026-08-23 slot c 腾冲热海 (Sun leisure·食×泡汤·MAP-FORMAT dry-run)"
   },
   {
    "id": "ls-02",
@@ -99,7 +100,8 @@
    "whyNow": "owner 2026-08-18 现代建筑专辑直令(plans/modern-china.md)",
    "addedAt": "2026-08-18",
    "addedBy": "owner directive",
-   "status": "active"
+   "status": "active",
+   "deferNote": "2026-08-23 FOOTAGE-FIRST FAIL: Pexels Shanghai-skyline corpus night-dominated across 3 daytime-query passes (night/twilight/foreign Willis Tower kept ranking); NO-night is a hard rule → DEFER (as mod-01 来福士); slot a swapped to 书法/calligraphy craft. Retry when owner real footage / MAP-3D data-review day. Modern-arch album not shelved."
   },
   {
    "id": "mod-04",
@@ -1471,7 +1473,8 @@
    ],
    "addedAt": "2026-08-11",
    "addedBy": "cycle replenish (china-route next series)",
-   "status": "active"
+   "status": "covered-2026-08-23",
+   "coveredBy": "2026-08-23 slot d 故宫 Beijing Central Axis EP3 (MAP-FORMAT dry-run)"
   },
   {
    "id": "rt-08",
