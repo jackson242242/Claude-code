@@ -2153,6 +2153,32 @@
    "status": "awaiting-upload-credentials",
    "publishAt": "2026-08-21T23:00:00Z",
    "note": "New route series: Beijing Central Axis EP1; MAP-FORMAT route intro"
+  },
+  {
+   "date": "2026-08-24",
+   "slot": "a",
+   "title": "One Cocoon = 900m of Silk — China's Deadly 1,000-Year Secret | China Travel Expert",
+   "videoId": "qX1mrDjB5-0",
+   "url": "https://www.youtube.com/watch?v=qX1mrDjB5-0",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-24T13:00:00Z",
+   "music": "lofi-chill-01",
+   "format": "9x16"
+  },
+  {
+   "date": "2026-08-24",
+   "slot": "c",
+   "title": "This Suzhou Water Lane Still Matches Its 1229 Map | China Travel Expert",
+   "videoId": "I-pV0ME4IzI",
+   "url": "https://www.youtube.com/watch?v=I-pV0ME4IzI",
+   "pillar": "city-travel",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-24T20:00:00Z",
+   "music": "lofi-upbeat-01",
+   "format": "9x16"
   }
  ]
 }

@@ -576,7 +576,8 @@
    "addedAt": "2026-07-11",
    "addedBy": "cycle replenish (culture backlog flag 2026-07-10)",
    "status": "active",
-   "note": "reactivated 2026-08-09 culture-first era"
+   "note": "reactivated 2026-08-09 culture-first era",
+   "deferNote": "2026-08-24 FOOTAGE-FIRST weak: Pexels \"paper making\" returns Western scrapbook/papercraft, not xuan-paper pulp; craft footage mismatched. Defer until real xuan-paper b-roll or MAP-format. Slot a produced silk 丝绸 instead."
   },
   {
    "id": "cc2-04",
@@ -1792,7 +1793,8 @@
    "whyNow": "2026-08-20 research 入境游古镇/古街持续升温(小红书报告);苏州线延展(接 08-20 a 苏州园林)",
    "addedAt": "2026-08-20",
    "addedBy": "auto-replenish (city-travel heritage)",
-   "status": "active"
+   "status": "covered-2026-08-24",
+   "coveredBy": "slot c 2026-08-24 (re-angled to Suzhou city-level water lanes; footage = genuine Suzhou/Jiangnan, honest non-site-specific)"
   },
   {
    "id": "ctv-03",
