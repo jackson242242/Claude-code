@@ -260,6 +260,11 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    --seg-seconds <2.5-3 fast, 7-8 slow>`.
    STYLE.md is the visual authority — riben is retired (yellow cast), fade-in is
    gone in fast mode (frame one IS the hook), hard cuts only on Shorts.
+   **Subtitles are colored + animated + SFX by DEFAULT (STYLE.md v2.4, owner
+   2026-08-24): white EN / gold 中文 / coral number pops / amber ★Expert-Tip line,
+   per-cue scale-bounce entrance, and a soft "pop" SFX on each cue. No flag needed —
+   assemble-video.mjs applies it whenever `--srt` is passed. Use `--sub-style plain`
+   / `--sfx none` only to opt out.**
    B-roll queries per styleGuide 生活感 quota (hard): >=50% of shots show people
    mid-action — query in people-action language ('<place> street food vendor
    cooking', 'family dinner table', 'night market crowd eating', 'people cycling

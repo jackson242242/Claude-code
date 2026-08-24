@@ -15,7 +15,16 @@
  *     --queries "university campus,students studying,library books" \
  *     [--format 16x9|9x16|1x1] [--title "Why Finland Rethinks Homework"] \
  *     [--seg-seconds 6] [--max-clips 10] [--srt subs.srt] \
- *     [--style default|riben] [--music bgm.mp3]
+ *     [--style default|riben] [--music bgm.mp3] \
+ *     [--sub-style dynamic|plain] [--sfx pop|none]
+ *
+ * --sub-style dynamic (default when --srt is present): colored + animated burned
+ * subtitles (STYLE.md v2.4) — white EN lead, gold ZH accent, coral number pops,
+ * amber "★ Expert Tip" line, per-cue scale-bounce fade-in; long CJK lines auto-wrap.
+ * --sub-style plain reverts to the flat-white SRT burn.
+ * --sfx pop (default when --srt is present): a soft synthesized "pop" on each cue's
+ * entry (skips cue 1 so the 0-second hook is clean), mixed under the music bed.
+ * --sfx none disables it. Both need no assets and add no external dependencies.
  *
  * --style riben: 日系唯美 grade — lifted milky blacks, muted saturation, teal-green
  * shadows + warm golden highlights (Shinkai-style split-tone; specs from the
@@ -56,6 +65,21 @@ const [W, H] = FORMATS[fmtName];
 const vertical = H > W;
 const SEG = Number(args['seg-seconds'] || 6);
 const MAX_CLIPS = Number(args['max-clips'] || 10);
+// Subtitle look (owner 2026-08-24: "字幕改成彩色 + 字母动态效果 + 音效"):
+//   dynamic = colored bilingual ASS (white EN lead + gold ZH accent + coral number
+//             pops + amber Expert-Tip line) with a per-cue scale-bounce/fade-in;
+//   plain   = the legacy flat-white burned SRT.
+// Default: dynamic whenever an --srt is burned (that is the channel's Shorts look);
+// pass --sub-style plain to force the old style.
+const SUB_STYLE = (args['sub-style'] || (args.srt ? 'dynamic' : 'plain')).toLowerCase();
+// Cue-synced sound design: a soft plucked "pop" laid on each subtitle's entry,
+// mixed under the music bed. Default on for burned-subtitle videos; --sfx none off.
+const SFX = (args.sfx || (args.srt ? 'pop' : 'none')).toLowerCase();
+// Subtitle palette. Inline \c colours are 6-digit &HBBGGRR& (no alpha).
+const C_WHITE = '&HFFFFFF&';   // EN lead
+const C_GOLD = '&H00D7FF&';    // ZH accent (RGB 255,215,0)
+const C_AMBER = '&H00A5FF&';   // Expert-Tip EN line (RGB 255,165,0)
+const C_CORAL = '&H3C5AFF&';   // number pop (RGB 255,90,60)
 
 for (const bin of ['ffmpeg', 'ffprobe']) {
   try { execFileSync(bin, ['-version'], { stdio: 'ignore' }); }
@@ -229,14 +253,27 @@ if (args.badge && existsSync(LATIN_FONT)) {
     `fontcolor=white@0.82:borderw=2:bordercolor=black@0.35:x=(w-text_w)/2:y=${vertical ? 118 : 40}`,
   );
 }
+let cueStarts = []; // seconds, for cue-synced SFX
 if (args.srt) {
   if (!existsSync(args.srt)) fail(`--srt file not found: ${args.srt}`);
   // Noto Sans CJK covers zh/yue/ja; falls back to default font if not installed.
   const cjk = existsSync('/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc');
   if (!cjk) process.stderr.write('WARN: fonts-noto-cjk not installed — CJK subtitles may render as boxes (apt-get install -y fonts-noto-cjk).\n');
-  // Subtitles carry the narrative in no-VO mode — larger and bolder than typical CC.
-  const subSize = audioFile ? (vertical ? 13 : 17) : (vertical ? 17 : 21);
-  filters.push(`subtitles=${args.srt}:force_style='FontName=${cjk ? 'Noto Sans CJK SC' : 'DejaVu Sans'},FontSize=${subSize},Bold=1,Outline=2,Shadow=1,MarginV=${vertical ? 110 : 40}'`);
+  const cues = parseSrt(await readFile(args.srt, 'utf8'));
+  cueStarts = cues.map((c) => c.start);
+  if (SUB_STYLE === 'dynamic') {
+    // Colored + animated burned subtitles (owner 2026-08-24). One styled ASS,
+    // rendered by libass exactly like the plain path but with per-line colour and
+    // a scale-bounce entrance per cue.
+    const assPath = join(tmp, 'subs.ass');
+    await writeFile(assPath, buildAss(cues, { W, H, vertical, voiced: !!audioFile, cjk }));
+    // ASS carries its own PlayRes/styles; escape the path for the filter.
+    filters.push(`subtitles=${assPath.replace(/([:,\\'\[\]])/g, '\\$1')}`);
+  } else {
+    // Legacy flat-white burned SRT.
+    const subSize = audioFile ? (vertical ? 13 : 17) : (vertical ? 17 : 21);
+    filters.push(`subtitles=${args.srt}:force_style='FontName=${cjk ? 'Noto Sans CJK SC' : 'DejaVu Sans'},FontSize=${subSize},Bold=1,Outline=2,Shadow=1,MarginV=${vertical ? 110 : 40}'`);
+  }
 }
 
 // Fast mode: NO fade-in — frame one is the hook; only a short tail fade.
@@ -246,27 +283,58 @@ filters.push(FAST
 await mkdir(dirname(outFile), { recursive: true });
 if (args.music && !existsSync(args.music)) fail(`--music file not found: ${args.music}`);
 
+// Cue-synced SFX bed: one soft plucked pop per subtitle entry (skip cue 1 = the
+// 0-second brand line, so the hook is never stepped on), pre-rendered to a WAV the
+// length of the video so the final mux just amixes it under the music.
+let sfxBed = null;
+if (SFX === 'pop' && cueStarts.length > 1) {
+  sfxBed = join(tmp, 'sfxbed.wav');
+  const pluck = join(tmp, 'pluck.wav');
+  // Exponentially-decayed dual sine = a clean, royalty-free "tick/pop" (no assets).
+  run('ffmpeg', ['-y', '-f', 'lavfi', '-i',
+    "aevalsrc='(0.6*sin(2*PI*760*t)+0.4*sin(2*PI*1240*t))*exp(-26*t):s=44100:d=0.14'",
+    '-ac', '2', pluck]);
+  const hits = cueStarts.slice(1).filter((t) => t < audioDur - 0.05);
+  const parts = hits.map((t, i) => `[0:a]adelay=${Math.round(t * 1000)}|${Math.round(t * 1000)}[p${i}]`);
+  const mixIns = hits.map((_, i) => `[p${i}]`).join('');
+  run('ffmpeg', ['-y', '-i', pluck, '-filter_complex',
+    `${parts.join(';')};${mixIns}amix=inputs=${hits.length}:normalize=0[m];[m]apad[o]`,
+    '-map', '[o]', '-t', audioDur.toFixed(2), sfxBed]);
+}
+
 if (audioFile) {
   // Voiceover mode: VO is the main track; optional music bed mixed in quiet.
-  const voiced = args.music ? join(tmp, 'voiced.mp4') : outFile;
+  const voiced = args.music || sfxBed ? join(tmp, 'voiced.mp4') : outFile;
   run('ffmpeg', ['-y', '-i', silent, '-i', audioFile, '-vf', filters.join(','),
     '-map', '0:v', '-map', '1:a', '-c:v', 'libx264', '-preset', 'medium', '-crf', '21',
     '-c:a', 'aac', '-b:a', '160k', '-shortest', '-movflags', '+faststart', voiced]);
-  if (args.music) {
-    run('ffmpeg', ['-y', '-i', voiced, '-stream_loop', '-1', '-i', args.music,
-      '-filter_complex',
-      `[1:a]volume=0.13,afade=t=in:d=1[m];[0:a][m]amix=inputs=2:duration=first:dropout_transition=2[aout]`,
+  if (args.music || sfxBed) {
+    const ins = ['-i', voiced];
+    const parts = [];
+    let n = 1;
+    const mix = ['[0:a]'];
+    if (args.music) { ins.push('-stream_loop', '-1', '-i', args.music); parts.push(`[${n}:a]volume=0.13,afade=t=in:d=1[m]`); mix.push('[m]'); n++; }
+    if (sfxBed) { ins.push('-i', sfxBed); parts.push(`[${n}:a]volume=0.5[s]`); mix.push('[s]'); n++; }
+    run('ffmpeg', ['-y', ...ins, '-filter_complex',
+      `${parts.join(';')};${mix.join('')}amix=inputs=${mix.length}:duration=first:dropout_transition=2:normalize=0[aout]`,
       '-map', '0:v', '-map', '[aout]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '160k',
       '-movflags', '+faststart', outFile]);
   }
 } else {
   // Subtitle-driven mode (owner directive 2026-07-10): no narration — the music
-  // IS the audio, at full presence, looped/trimmed to the target duration.
-  run('ffmpeg', ['-y', '-i', silent, '-stream_loop', '-1', '-i', args.music,
+  // IS the audio, at full presence, looped/trimmed to the target duration; the
+  // SFX pops sit lightly on top, synced to each cue's entry.
+  const ins = ['-i', silent, '-stream_loop', '-1', '-i', args.music];
+  let sfxChain = '';
+  let aout = '[mus]';
+  if (sfxBed) { ins.push('-i', sfxBed); sfxChain = `[2:a]volume=0.5[sfx];[mus][sfx]amix=inputs=2:duration=first:normalize=0[aout];`; aout = '[aout]'; }
+  else { sfxChain = ''; aout = '[mus]'; }
+  run('ffmpeg', ['-y', ...ins,
     '-filter_complex',
     `[0:v]${filters.join(',')}[vout];` +
-    `[1:a]volume=0.85,afade=t=in:d=1,afade=t=out:st=${Math.max(0, audioDur - 1.6).toFixed(2)}:d=1.5[aout]`,
-    '-map', '[vout]', '-map', '[aout]', '-t', audioDur.toFixed(2),
+    `[1:a]volume=0.85,afade=t=in:d=1,afade=t=out:st=${Math.max(0, audioDur - 1.6).toFixed(2)}:d=1.5${sfxBed ? '[mus]' : '[aout]'};` +
+    sfxChain,
+    '-map', '[vout]', '-map', aout, '-t', audioDur.toFixed(2),
     '-c:v', 'libx264', '-preset', 'medium', '-crf', '21',
     '-c:a', 'aac', '-b:a', '160k', '-movflags', '+faststart', outFile]);
 }
@@ -295,6 +363,83 @@ function wrap(text, width) {
   }
   if (line) lines.push(line);
   return lines.join('\n');
+}
+
+// --- Subtitle helpers (dynamic colored/animated ASS) -----------------------
+function srtTime(s) {
+  const m = s.trim().match(/(\d+):(\d+):(\d+)[,.](\d+)/);
+  if (!m) return 0;
+  return (+m[1]) * 3600 + (+m[2]) * 60 + (+m[3]) + (+m[4]) / 1000;
+}
+function parseSrt(text) {
+  const blocks = text.replace(/\r/g, '').trim().split(/\n\n+/);
+  const cues = [];
+  for (const b of blocks) {
+    const lines = b.split('\n');
+    const ti = lines.findIndex((l) => l.includes('-->'));
+    if (ti < 0) continue;
+    const [a, z] = lines[ti].split('-->');
+    const body = lines.slice(ti + 1).filter((l) => l.trim() !== '');
+    cues.push({ start: srtTime(a), end: srtTime(z), en: (body[0] || '').trim(), zh: (body.slice(1).join(' ') || '').trim() });
+  }
+  return cues;
+}
+function assTime(t) {
+  const cs = Math.round(t * 100);
+  const h = Math.floor(cs / 360000);
+  const m = Math.floor((cs % 360000) / 6000);
+  const s = Math.floor((cs % 6000) / 100);
+  const c = cs % 100;
+  return `${h}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}.${String(c).padStart(2, '0')}`;
+}
+function assEsc(s) { return s.replace(/[{}]/g, '').replace(/\\/g, '⧵'); }
+function highlightNums(s, base) {
+  // Coral pop on numbers/quantities — the 小红书 "数字弹出条" feel. A unit only
+  // joins the number when it is a standalone token (so "900 meters" colours "900",
+  // not "900 m|eters").
+  return assEsc(s).replace(
+    /(\$?\d[\d,.]*(?:\s?(?:m|km|km²|%|°C|°|AD|BC|BCE|CE|am|pm|kg|min|hrs?|hours?|years?)(?![A-Za-z]))?)/gi,
+    (mtch) => `{\\c${C_CORAL}}${mtch}{\\c${base}}`,
+  );
+}
+// Wrap a long CJK line (no spaces to break on) onto two lines at a punctuation
+// mark near the middle, so burned Chinese never overflows the frame width.
+function wrapZh(zh, maxChars) {
+  if ([...zh].length <= maxChars) return zh;
+  const chars = [...zh];
+  const mid = Math.floor(chars.length / 2);
+  let best = -1;
+  for (let i = 0; i < chars.length; i++) {
+    if ('，、；：。！？'.includes(chars[i]) && (best < 0 || Math.abs(i - mid) < Math.abs(best - mid))) best = i;
+  }
+  const cut = best >= 0 ? best + 1 : mid;
+  return chars.slice(0, cut).join('') + '\\N' + chars.slice(cut).join('');
+}
+function buildAss(cues, { W, H, vertical, voiced, cjk }) {
+  const fontName = cjk ? 'Noto Sans CJK SC' : 'DejaVu Sans';
+  const enFs = vertical ? (voiced ? 54 : 72) : (voiced ? 44 : 54);
+  const zhFs = vertical ? (voiced ? 60 : 80) : (voiced ? 48 : 60);
+  const marginV = vertical ? 130 : 54;
+  const marginLR = vertical ? 70 : 90;
+  const header = [
+    '[Script Info]', 'ScriptType: v4.00+', `PlayResX: ${W}`, `PlayResY: ${H}`,
+    'WrapStyle: 0', 'ScaledBorderAndShadow: yes', '',
+    '[V4+ Styles]',
+    'Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding',
+    // PrimaryColour 8-digit &HAABBGGRR (opaque white), semi-opaque dark box off, strong outline.
+    `Style: Sub,${fontName},${enFs},&H00FFFFFF,&H000000FF,&H00101010,&H90000000,1,0,0,0,100,100,0,0,1,4.5,1.6,2,${marginLR},${marginLR},${marginV},1`,
+    '', '[Events]',
+    'Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text',
+  ];
+  const anim = '{\\fad(70,40)\\fscx60\\fscy60\\t(0,120,\\fscx110\\fscy110)\\t(120,220,\\fscx100\\fscy100)}';
+  const zhMax = vertical ? 12 : 20;
+  const dialog = cues.map((c) => {
+    const enBase = c.en.trimStart().startsWith('★') ? C_AMBER : C_WHITE;
+    const en = `{\\c${enBase}}${highlightNums(c.en, enBase)}`;
+    const zh = c.zh ? `\\N{\\fs${zhFs}\\c${C_GOLD}}${wrapZh(assEsc(c.zh), zhMax)}` : '';
+    return `Dialogue: 0,${assTime(c.start)},${assTime(c.end)},Sub,,0,0,0,,${anim}${en}${zh}`;
+  });
+  return header.concat(dialog).join('\n') + '\n';
 }
 
 function run(bin, argv) {
