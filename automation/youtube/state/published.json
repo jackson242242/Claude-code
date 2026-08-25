@@ -35,6 +35,32 @@
   },
   {
    "date": "2026-08-25",
+   "slot": "a",
+   "title": "Why Porcelain Is Literally Called \"China\" — Fired at 1,300°C | China Travel Expert",
+   "videoId": "vUfaHYvdERU",
+   "url": "https://www.youtube.com/watch?v=vUfaHYvdERU",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-25T13:00:00Z",
+   "music": "cinema-orient-01",
+   "format": "9x16"
+  },
+  {
+   "date": "2026-08-25",
+   "slot": "c",
+   "title": "How to Buy China Bullet-Train Tickets With No Chinese (2026) | China Travel Expert",
+   "videoId": "fuTGEovmmLc",
+   "url": "https://www.youtube.com/watch?v=fuTGEovmmLc",
+   "pillar": "city-travel",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-25T20:00:00Z",
+   "music": "cpop-groove-01",
+   "format": "9x16"
+  },
+  {
+   "date": "2026-08-25",
    "slot": "d",
    "title": "An emperor's private lake — Summer Palace | Beijing, Walked EP2 | China Travel Expert",
    "videoId": "dRsAeXT2OnE",
