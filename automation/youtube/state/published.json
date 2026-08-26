@@ -2205,6 +2205,32 @@
    "publishAt": "2026-08-24T20:00:00Z",
    "music": "lofi-upbeat-01",
    "format": "9x16"
+  },
+  {
+   "date": "2026-08-26",
+   "slot": "a",
+   "title": "One Stroke, No Undo — The Art of Chinese Calligraphy | China Travel Expert",
+   "videoId": "dwEZ39ZrFO8",
+   "url": "https://www.youtube.com/watch?v=dwEZ39ZrFO8",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "public (immediate — 13:00Z overrun)",
+   "publishAt": null,
+   "music": "oriental-edm-01",
+   "format": "9x16"
+  },
+  {
+   "date": "2026-08-26",
+   "slot": "c",
+   "title": "In Guangzhou, Breakfast Lasts 3 Hours — Cantonese Yum Cha | China Travel Expert",
+   "videoId": "SogiIrOWCWk",
+   "url": "https://www.youtube.com/watch?v=SogiIrOWCWk",
+   "pillar": "city-travel",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-26T20:00:00Z",
+   "music": "lofi-chill-01",
+   "format": "9x16"
   }
  ]
 }

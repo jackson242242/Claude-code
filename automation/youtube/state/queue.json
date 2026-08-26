@@ -1727,7 +1727,8 @@
    "addedAt": "2026-08-19",
    "addedBy": "auto-replenish (culture geo+footage-viable)",
    "status": "active",
-   "deferNote": "2026-08-20 footage 稀薄: terracotta 查询返回篝火/幸运饼/毛像 filler, site-ID FAIL; 若产需 map/fact-explainer 且严选素材, 或待实拍"
+   "deferNote": "2026-08-20 footage 稀薄: terracotta 查询返回篝火/幸运饼/毛像 filler, site-ID FAIL; 若产需 map/fact-explainer 且严选素材, 或待实拍",
+   "fitNote": "2026-08-26 FOOTAGE-FIRST portrait FAIL: no site-specific terracotta clips in Pexels portrait (returns figurines/Georgia monument/Mao heads/cosplay). Use MAP-FORMAT or defer until real portrait footage exists; do not claim \"this army\" over generic clay clips."
   },
   {
    "id": "cc7-02",
