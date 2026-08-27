@@ -2,6 +2,7 @@
 
 One line per run, newest first: `date slot | topic | lane used | outcome (posted videoId / dry-run / blocked-why) | vidIQ credits spent`.
 
+2026-08-27 owner | **LONGFORM v2 立项(owner: 学 GoldenSeniorsLiving 每4天一条 10-15min 纯英文 AI 解说)**: workflow 四路网研合成 → plans/longform-v2.md 格式圣经(倒计时清单骨架/逐分钟节拍/美元账签名/分层画面/合规护城河) + config longform 块 + playbook 4L 步骤; 首发排播 L01 visa-free(08-28)→L02 15 mistakes(09-01)→L03 支付(09-05)→L04 $50/day(09-09); 数据面研究(对标频道解剖+英文区格局)转交首个 longform run 执行(research-brief); 红线: 无中文/不虚构亲历/VPN只做60秒中性段/政治永不碰 | 0 vidIQ credits
 2026-08-26 a | china-culture 中国书法 Chinese calligraphy | pexels-ffmpeg+youtube-data-api | POSTED public dwEZ39ZrFO8 https://www.youtube.com/watch?v=dwEZ39ZrFO8 (13:00Z overrun→immediate public); FOOTAGE-FIRST: 原拟兵马俑 cc7-01 portrait FAIL→改书法(真实书写/墨笔素材); music oriental-edm-01(cinema-orient-01 08-25 slot a→相邻同槽避重); playlist China Culture 中国文化; 缩略图 set OK | vidIQ 0
 2026-08-26 c | city-travel 广式早茶 Cantonese yum cha (Guangzhou heritage daily-life) | pexels-ffmpeg+youtube-data-api | SCHEDULED 20:00Z SogiIrOWCWk https://www.youtube.com/watch?v=SogiIrOWCWk; FOOTAGE-FIRST: 原拟西湖/苏堤 portrait FAIL(泛用湖/南京玄武湖错city)→改早茶(真实点心/蒸笼/倒茶·泛用不指认单店); music lofi-chill-01(cpop-groove-01 08-25 slot c→相邻同槽避重); playlist China Food 中国美食; 缩略图 403 软失败(Shorts/scheduled 常见非阻断) | vidIQ 0
 2026-08-26 d | china-route Beijing Walked EP3 天坛 Temple of Heaven (owner-footage) | owner-footage+youtube-data-api | owner 实拍已认领(owner-slots.json)·scheduled 23:00Z fGWdBwp3Ros·routine 不产库存·计入当日3槽 | vidIQ 0

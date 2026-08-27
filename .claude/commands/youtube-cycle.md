@@ -357,6 +357,20 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    starting the next slot (protects against mid-run session death). Media never
    enters git (runs/.gitignore).
 
+## 4L. LONGFORM DAY (config `longform`: every 4 days from anchor 2026-08-28)
+If (today - anchorDate) % cadenceDays == 0: ALSO produce one 10-15 min ENGLISH-ONLY
+AI-narrated longform per `plans/longform-v2.md` (the bible — follow §1 structure,
+§2 narration rules incl. no-fabricated-anecdotes + TTS phonetic QA, §3 layered
+visuals, §4 title/thumbnail formulas, §7 pipeline). Topic = next unpublished row
+of the bible's §5 schedule (verify visa/price facts against official sources
+dated ≤60 days). ZERO Chinese anywhere in this video. ElevenLabs English
+documentary voice (voice lane is UNPAUSED for longform-english only). publishAt
+15:00Z same day; playlist "China Travel Guides"; slot label "L" in published.json.
+If ElevenLabs quota/key fails: save script+shotlist as the run artifact, log
+"longform blocked: TTS quota" honestly, and continue the normal Shorts day.
+**ONE-OFF (first longform day only): also run the Data-API research brief in
+plans/longform-research-brief.md and commit its output, then delete the brief.**
+
 ## 5a-recovery. Owner-footage pending uploads (token outage 08-18..)
 If the YouTube lane is LIVE and `state/pending-owner-uploads.json` has pending
 entries: upload up to 3 per run (masters + metas are committed in the repo;
