@@ -33,7 +33,7 @@ cadence:
     - { name: d, publishAtUtc: "23:00", format: short }  # china-route
 
 voice:
-  status: paused-2026-07-10   # owner: "voice over 好差" — format is now burned
+  status: paused-for-shorts; longform-english UNPAUSED 2026-08-27 (owner longform directive)   # owner: "voice over 好差" — format is now burned
   # bilingual subtitles (the narrative) + full-presence music from assets/music/.
   # ElevenLabs scripts/keys kept for possible revival; monthly TTS cost now $0.
   # Trending/licensed music (verified 2026-07-10): YouTube's own licensed library
@@ -179,3 +179,15 @@ runtime:
   runsDir: automation/youtube/runs
   stateDir: automation/youtube/state
   keepMediaInRepo: false       # media stays in the container; only manifests/scripts are committed
+
+# ================= LONGFORM v2 (owner 2026-08-27) =================
+longform:
+  status: active
+  cadenceDays: 4            # every 4 days (trial); anchor first release below
+  anchorDate: "2026-08-28"  # first longform Friday
+  publishAtUtc: "15:00"     # search/browse-driven; EU evening + US morning
+  durationMin: [10, 15]
+  language: english-only    # NO Chinese anywhere: title/description/narration/captions
+  narration: elevenlabs-english   # AI VO explicitly OK (benchmark: GoldenSeniorsLiving)
+  format16x9: true
+  playbook: plans/longform-v2.md  # format bible (written from 2026-08-27 research)
