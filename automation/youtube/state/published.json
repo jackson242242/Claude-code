@@ -23,6 +23,32 @@
    "publishAt": "2026-08-27T23:00:00Z"
   },
   {
+   "date": "2026-08-27",
+   "slot": "a",
+   "title": "One Temple Shaped Half of Kung Fu — Shaolin, Born 495 AD · 少林 | China Travel Expert",
+   "videoId": "ekLT4e9eeqY",
+   "url": "https://www.youtube.com/watch?v=ekLT4e9eeqY",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-27T13:00:00Z",
+   "music": "cinema-orient-01",
+   "format": "9x16"
+  },
+  {
+   "date": "2026-08-27",
+   "slot": "c",
+   "title": "China's Spiciest Pot Was Born on the Docks — Chongqing Hotpot · 九宫格 | China Travel Expert",
+   "videoId": "Yda9UR7rL00",
+   "url": "https://www.youtube.com/watch?v=Yda9UR7rL00",
+   "pillar": "city-travel",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-27T20:00:00Z",
+   "music": "cpop-groove-01",
+   "format": "9x16"
+  },
+  {
    "date": "2026-08-26",
    "slot": "d",
    "title": "Emperors prayed here — Temple of Heaven | Beijing, Walked EP3 | China Travel Expert",
