@@ -58,14 +58,15 @@
    "ep": "EP5",
    "video": "runs/owner-footage/2026-08-18/ep5-duck.mp4",
    "meta": "runs/owner-footage/2026-08-18/ep5-meta.json",
-   "videoId": "kSl3Btl4JcQ",
-   "url": "https://www.youtube.com/watch?v=kSl3Btl4JcQ",
+   "videoId": "h-6tu1E19j4",
+   "url": "https://www.youtube.com/watch?v=h-6tu1E19j4",
    "publishAt": "2026-08-28T23:00:00Z",
    "playlist": [
     "Beijing, Walked 带你走北京",
     "China Food 中国美食"
    ],
-   "uploadedAt": "2026-08-24"
+   "uploadedAt": "2026-08-28",
+   "note": "re-uploaded 2026-08-28: prior kSl3Btl4JcQ never resolved on YouTube (bad ID from 08-24 recovery); real footage now genuinely scheduled 23:00Z"
   }
  ]
 }
