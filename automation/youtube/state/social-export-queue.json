@@ -319,7 +319,8 @@
    "views": 259,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "sent",
+   "sentDate": "2026-08-28"
   },
   {
    "videoId": "3LfJPEtC9RI",
@@ -327,7 +328,9 @@
    "views": 253,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "sent",
+   "sentDate": "2026-08-28",
+   "note": "back-catalog clean master re-rendered with generic street bubble-tea b-roll (Pexels boba pool lacks China-specific portrait footage); honest generic, owner adds in-app sound"
   },
   {
    "videoId": "o8MuiqDU_oo",

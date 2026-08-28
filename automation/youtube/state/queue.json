@@ -2,6 +2,39 @@
  "note": "Topic backlog for /youtube-cycle. Top item matching the slot format is used next. Owner may edit/reorder freely.",
  "queue": [
   {
+   "id": "eo-01",
+   "title": "游客在中国最常犯的5个错(Expert Opinions)",
+   "pillar": "china-culture",
+   "format": "short",
+   "angle": "Expert-Opinions 周五格式·排名/误区体·观点明确标注为专家个人判断·事实核实·评论native(踩门槛/走中门/上四香/拍照/穿着 等通用礼仪非站点指认→FOOTAGE 泛用中国寺庙/景区诚实)",
+   "whyNow": "growth-v2 周五 Expert-Opinions 需队列深度; 2026-08-28 温和衍生",
+   "addedAt": "2026-08-28",
+   "addedBy": "generated (research)",
+   "status": "active"
+  },
+  {
+   "id": "cp-01",
+   "title": "China Practical: 外国游客如何在中国支付(Alipay/WeChat Tour Pass)",
+   "pillar": "city-travel",
+   "format": "short",
+   "angle": "China Practical(Tue/Sat)·搜索意图·支付宝/微信游客版绑外卡设置步骤·官方事实+以官方为准·FOOTAGE 手机支付/扫码泛用诚实·规划期高购买力观众=私域目标",
+   "whyNow": "Data-API brief: practical=high-intent search floor·longform L03 同题引流; 2026-08-28",
+   "addedAt": "2026-08-28",
+   "addedBy": "generated (research)",
+   "status": "active"
+  },
+  {
+   "id": "eo-02",
+   "title": "关于中国高铁,游客最容易搞错的3件事(Expert Opinions)",
+   "pillar": "city-travel",
+   "format": "short",
+   "angle": "Expert-Opinions·高铁购票/进站/座位实用误区·观点标注·FOOTAGE 高铁/车站 portrait 素材充足诚实·China Practical 交叉",
+   "whyNow": "growth-v2 Expert-Opinions/Practical 队列深度; 2026-08-28",
+   "addedAt": "2026-08-28",
+   "addedBy": "generated (research)",
+   "status": "active"
+  },
+  {
    "id": "ls-01",
    "title": "腾冲热海:大地在这里沸腾",
    "pillar": "city-travel",

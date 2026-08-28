@@ -2257,6 +2257,47 @@
    "publishAt": "2026-08-26T20:00:00Z",
    "music": "lofi-chill-01",
    "format": "9x16"
+  },
+  {
+   "date": "2026-08-28",
+   "slot": "a",
+   "title": "3 Temple Mistakes Tourists Make in China (Don't Offer 4) | China Travel Expert",
+   "videoId": "IrXG25z8GEs",
+   "url": "https://www.youtube.com/watch?v=IrXG25z8GEs",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-28T13:00:00Z",
+   "music": "cinema-orient-01",
+   "format": "9x16"
+  },
+  {
+   "date": "2026-08-28",
+   "slot": "c",
+   "title": "You Can't See This Whole Garden at Once — On Purpose | China Travel Expert",
+   "videoId": "qCSrmyK1niY",
+   "url": "https://www.youtube.com/watch?v=qCSrmyK1niY",
+   "pillar": "city-travel",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-28T20:00:00Z",
+   "music": "oriental-edm-01",
+   "format": "9x16"
+  },
+  {
+   "date": "2026-08-28",
+   "slot": "L",
+   "title": "China Visa-Free in 2026: Every Rule & the Mistakes That Void It",
+   "videoId": "CVIO9RvK5sw",
+   "url": "https://www.youtube.com/watch?v=CVIO9RvK5sw",
+   "pillar": "longform-china-travel",
+   "lane": "elevenlabs+pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-28T15:00:00Z",
+   "music": "lofi-chill-01(bed)",
+   "format": "16x9",
+   "durationMin": 13.3,
+   "chapters": 12
   }
  ]
 }
