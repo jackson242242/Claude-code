@@ -18,7 +18,10 @@ from __future__ import annotations
 import argparse
 import os
 import sys
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
+from zoneinfo import ZoneInfo
+
+TZ = ZoneInfo("America/New_York")  # 所有「今天」按美东算，服务器跑在 UTC 也不会错天
 
 # ---------------------------------------------------------------- 基础常量
 
@@ -747,7 +750,7 @@ def main() -> int:
         print(render_week(args.week))
         return 0
 
-    d = date.fromisoformat(args.date) if args.date else date.today()
+    d = date.fromisoformat(args.date) if args.date else datetime.now(TZ).date()
     if args.tomorrow:
         d += timedelta(days=1)
     print(render_day(d))
