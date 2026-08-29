@@ -1,0 +1,54 @@
+1
+00:00:00,000 --> 00:00:01,600
+I'm your China Travel Expert.
+我是你的中国旅游专家
+
+2
+00:00:01,600 --> 00:00:04,000
+You'll never buy a subway ticket in China.
+在中国不用买地铁票
+
+3
+00:00:04,000 --> 00:00:06,400
+Your phone IS the ticket.
+手机就是你的车票
+
+4
+00:00:06,400 --> 00:00:08,800
+Open Alipay or WeChat, tap the transit QR.
+打开支付宝或微信，点乘车码
+
+5
+00:00:08,800 --> 00:00:11,200
+Scan going in — and scan going out.
+进站扫一下，出站再扫
+
+6
+00:00:11,200 --> 00:00:13,600
+The fare's by distance, deducted automatically.
+按里程算钱，自动扣费
+
+7
+00:00:13,600 --> 00:00:16,000
+Most rides cost just 3 to 5 yuan.
+大多数只要3到5块
+
+8
+00:00:16,000 --> 00:00:18,400
+One QR code works in 200+ Chinese cities.
+一个码，通行200多城
+
+9
+00:00:18,400 --> 00:00:20,600
+Double-tap if you'd ride this line.
+想坐这条线的点个赞
+
+10
+00:00:20,600 --> 00:00:23,400
+★ Expert Tip: set up the transit QR on home wifi — it needs passport verification.
+内行提示：出发前在家绑好乘车码
+
+11
+00:00:23,400 --> 00:00:26,000
+Buy a token or just scan — which would you do?
+你会买票还是扫码？评论区见
