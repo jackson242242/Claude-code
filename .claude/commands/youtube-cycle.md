@@ -361,7 +361,9 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
 If (today - anchorDate) % cadenceDays == 0: ALSO produce one 10-15 min ENGLISH-ONLY
 AI-narrated longform per `plans/longform-v2.md` (the bible — follow §1 structure,
 §2 narration rules incl. no-fabricated-anecdotes + TTS phonetic QA, §3 layered
-visuals, §4 title/thumbnail formulas, §7 pipeline). Topic = next unpublished row
+visuals, §4 title/thumbnail formulas, §7 pipeline, **§8 audio rules v2: --sfx
+none, NO short-loop beds — rotate 2-3 documentary underscores switching at
+chapter boundaries, -18dB under VO; prefer owner yal-* tracks when present**). Topic = next unpublished row
 of the bible's §5 schedule (verify visa/price facts against official sources
 dated ≤60 days). ZERO Chinese anywhere in this video. ElevenLabs English
 documentary voice (voice lane is UNPAUSED for longform-english only). publishAt

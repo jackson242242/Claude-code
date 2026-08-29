@@ -71,3 +71,11 @@ AI 解说本身合规；死的是"模板 AI 声+通用素材+零附加值"。我
 7. 状态写回 published.json（slot: L）+ RUNLOG；歌单《China Travel Guides》
 - 字幕：不烧录（靠 YouTube 自动字幕）；成本：EL 字符 ~9-11k/条——若配额不足，
   run 里如实降级为"脚本+分镜完成待配音"并报告
+
+## 8. 音频规则 v2（owner 2026-08-29: L01 声效不行——短视频 lofi 循环 13 分钟）
+- **禁止**：任何字幕音效（--sfx none）；60 秒短曲循环整片；商业流行音乐
+  （Content ID 判收益/屏蔽——长视频没有 Shorts 的站内配乐特权）
+- **必须**：纪录片级底床（assets/music/underscore-* 或 owner 的 yal-* 真人曲优先）
+  每片轮换 2-3 首、**按章节边界切换**（分段 amix 或分段拼接底床），
+  音量 -18dB 于解说下，进出各 1s 淡变
+- "最红音乐"的合法形态 = YouTube 音频库热门真人曲（owner 下载 yal-*.mp3 入库）
