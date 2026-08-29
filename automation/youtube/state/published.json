@@ -2299,6 +2299,46 @@
    "format": "16x9",
    "durationMin": 13.3,
    "chapters": 12
+  },
+  {
+   "date": "2026-08-29",
+   "slot": "a",
+   "title": "One Leaf, 2,000 Teas — China's Tea Secret | China Travel Expert",
+   "videoId": "dhTRKpRRAhs",
+   "url": "https://www.youtube.com/watch?v=dhTRKpRRAhs",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-29T13:00:00Z",
+   "music": "lofi-chill-01",
+   "format": "9x16"
+  },
+  {
+   "date": "2026-08-29",
+   "slot": "c",
+   "title": "How to Ride China's Subway — No Ticket Needed | China Travel Expert",
+   "videoId": "PcI8uvgH1i8",
+   "url": "https://www.youtube.com/watch?v=PcI8uvgH1i8",
+   "pillar": "city-travel",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-29T20:00:00Z",
+   "music": "cpop-groove-01",
+   "format": "9x16",
+   "note": "China Practical (Sat search-intent)"
+  },
+  {
+   "date": "2026-08-29",
+   "slot": "d",
+   "title": "The ¥20 Note Route: China's Li River, Stop by Stop | China Travel Expert",
+   "videoId": "Zx5L5hA55ag",
+   "url": "https://www.youtube.com/watch?v=Zx5L5hA55ag",
+   "pillar": "china-route",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-29T23:00:00Z",
+   "music": "oriental-edm-01",
+   "format": "9x16"
   }
  ]
 }
