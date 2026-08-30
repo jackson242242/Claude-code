@@ -221,8 +221,9 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    - Video (slot b, 90-120s): 22-30 cues in four movements (establish → walk +
      history beat → food/discovery twist → dusk reflection). One 成语 or poem
      line per video.
-   - Each cue = ENGLISH line first (≤9 words, the lead) + 中文 line second
-     (≤12 字, punchy — carries the dialect flavor). Leave 1-2
+   - **Each cue = ENGLISH ONLY, single line ≤10 words (owner 2026-08-30: no
+     Chinese in Shorts subtitles; FontSize 19). Dialect-bank flavor moves to
+     TikTok captions/descriptions only.** Leave 1-2
      cue-free seconds between movements — the footage breathes.
    - **JOURNEY VOICE (owner 2026-08-14, STYLE.md v2.3):** write cues as a
      first-person route-walking creator, not an encyclopedia — "Follow me
@@ -278,8 +279,16 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    2026-08-11 delegated music strategy fully):** pick by the style↔pillar map
    (oriental-edm → route/travel; cinema-orient → culture reveals; cpop-groove →
    city-life/food beats; lofi-* general fallback; guzheng slow culture only).
-   HARD rotation rules: no track repeats within the same day's 4 slots; no track
-   repeats in the same slot on adjacent days (check published.json). Match
+   HARD rotation rules (owner 2026-08-30: 背景音乐要经常换): rotate across the
+   FULL Shorts pool (lofi-upbeat/lofi-chill/guzheng-calm/oriental-edm/
+   cinema-orient/cpop-groove + any yal-*); no track repeats within the same day;
+   no track in the same slot on adjacent days; no track >2 uses per rolling 3
+   days (grep published.json lanes). Monthly (post vidIQ reset): generate 2-3
+   fresh beds, retire the most-used one.
+   **TRENDING-SOUND UPGRADE PATH (the "Add Sound" library is app/Studio-only —
+   no API): the daily report MUST list each Short's Studio editor deep-link
+   (studio.youtube.com/video/<id>/editor) + a suggested trending-sound style,
+   so the owner can 1-tap add a hot licensed track to the day's best performer.** Match
    `--seg-seconds` to the track's bar length per MUSIC.md §3 (105BPM→2.3s,
    90BPM→2.7s, 100BPM→2.4s) so cuts land on beats.
    Owner-supplied tracks (YouTube Audio Library downloads committed to
@@ -309,10 +318,14 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    3. #ChinaTravelExpert (FIXED brand tag on every video — owner 2026-08-10)
    4.-5. two specific ENGLISH: city + subject (#Wuhan #HotDryNoodles); a Chinese
       tag may replace one. Titles stay hashtag-free.
-   **Metadata tags (snippet.tags):** CHANNEL CORE SET first, per PERSONA.md §5
-   ["china travel","china travel expert","china food","chinese street food",
-   "china travel guide","travel china"], then 6-10 video-specific ENGLISH
-   keywords (city, dish, topic) + ≤2-3 Chinese; stay under ~450 chars total.
+   **Metadata tags (snippet.tags) — BEST-MATCH RULE (owner 2026-08-30 每条加最
+   配合的 tag):** CHANNEL CORE SET first, per PERSONA.md §5, then 8-10
+   video-specific ENGLISH keywords researched THIS RUN for THIS topic (exact
+   site/dish/city names + what searchers actually type — pull phrasing from the
+   run's WebSearch results; series name included) + ≤2-3 Chinese; ~450 chars max.
+   The 2 specific hashtags must be topic-exact (#Mutianyu not #GreatWall when
+   the video IS Mutianyu). RUNLOG line lists each slot's hashtags so tag
+   discipline is auditable.
 6. **Playlist filing:** after each upload, run
    `node scripts/youtube-playlist.mjs --title "<playlist>" --video <videoId>`
    (script wired 2026-07-15 — reuses by exact title, creates public if missing).
