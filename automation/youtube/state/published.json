@@ -2339,6 +2339,47 @@
    "publishAt": "2026-08-29T23:00:00Z",
    "music": "oriental-edm-01",
    "format": "9x16"
+  },
+  {
+   "date": "2026-08-30",
+   "slot": "a",
+   "title": "1,700 Years of One Craft — China's Porcelain Capital | China Travel Expert",
+   "videoId": "vbYo1FswoxM",
+   "url": "https://www.youtube.com/watch?v=vbYo1FswoxM",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-30T13:00:00Z",
+   "music": "cinema-orient-01",
+   "format": "9x16"
+  },
+  {
+   "date": "2026-08-30",
+   "slot": "c",
+   "title": "Chinese Dumplings Began as Medicine, Not Food | China Travel Expert",
+   "videoId": "STy0lHrS4Ro",
+   "url": "https://www.youtube.com/watch?v=STy0lHrS4Ro",
+   "pillar": "china-food",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-30T20:00:00Z",
+   "music": "lofi-chill-01",
+   "format": "9x16",
+   "note": "Sun food slot (hot-springs footage FAIL→pivot to dumplings)"
+  },
+  {
+   "date": "2026-08-30",
+   "slot": "d",
+   "title": "A Desert Cave Hid a Library for 900 Years — Silk Road EP1 | China Travel Expert",
+   "videoId": "FGWlLCPvfkg",
+   "url": "https://www.youtube.com/watch?v=FGWlLCPvfkg",
+   "pillar": "china-route",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-30T23:00:00Z",
+   "music": "lofi-upbeat-01",
+   "format": "9x16",
+   "note": "Silk Road Heritage series EP1"
   }
  ]
 }

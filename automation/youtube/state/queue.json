@@ -55,7 +55,8 @@
    "whyNow": "owner 2026-08-22 直令:发食物和游玩温泉之类; 秋冬温泉旺季前布局",
    "addedAt": "2026-08-22",
    "addedBy": "owner directive",
-   "status": "active"
+   "status": "active",
+   "deferNote": "2026-08-30 FOOTAGE-FIRST FAIL(硬): Pexels \"hot spring/onsen\" 返回 Yellowstone 间歇泉 + 日本雪猴, 0 中国温泉素材(复现 08-27)。温泉不可诚实成片; owner 08-22 允 Sun-c 食物→当日改产饺子。温泉系列(ls-02/03/04)需 owner 实拍或 MAP-FORMAT 方可复活。"
   },
   {
    "id": "ls-03",
@@ -1321,7 +1322,8 @@
    "seriesNote": "Silk Road Heritage 丝路人文线 连载",
    "addedAt": "2026-08-12",
    "addedBy": "owner directive",
-   "status": "active"
+   "status": "covered-2026-08-30",
+   "coveredBy": "2026-08-30 slot d Silk Road EP1 莫高窟藏经洞 (route opener; 沙漠+古书 illustrative 诚实, Mogao无站点素材; scheduled FGWlLCPvfkg)"
   },
   {
    "id": "slk-a02",
@@ -1760,7 +1762,7 @@
    "addedAt": "2026-08-19",
    "addedBy": "auto-replenish (culture geo+footage-viable)",
    "status": "active",
-   "deferNote": "2026-08-20 footage 稀薄: terracotta 查询返回篝火/幸运饼/毛像 filler, site-ID FAIL; 若产需 map/fact-explainer 且严选素材, 或待实拍",
+   "deferNote": "2026-08-30 FOOTAGE-FIRST FAIL: Pexels \"terracotta army/warriors xian\" 返回泛用陶俑/公园英雄雕像/毛主席像/做陶罐——无站点级兵马俑素材(旧注 subject-level PASS 经实测证伪)。指认\"这8000尊\"违字幕诚实规则→DEFER，待 owner 实拍/MAP-3D 复盘日再产。改产 cc7-06 景德镇。",
    "fitNote": "2026-08-26 FOOTAGE-FIRST portrait FAIL: no site-specific terracotta clips in Pexels portrait (returns figurines/Georgia monument/Mao heads/cosplay). Use MAP-FORMAT or defer until real portrait footage exists; do not claim \"this army\" over generic clay clips."
   },
   {
@@ -1818,7 +1820,8 @@
    "whyNow": "2026-08-19 research: 出口非遗工艺线·补江西瓷都",
    "addedAt": "2026-08-19",
    "addedBy": "auto-replenish (culture geo+footage-viable)",
-   "status": "active"
+   "status": "covered-2026-08-30",
+   "coveredBy": "2026-08-30 slot a 景德镇瓷器 (fact-first 1700yr/72工序; craft类型层诚实 pottery-wheel footage; scheduled vbYo1FswoxM)"
   },
   {
    "id": "ctv-01",
