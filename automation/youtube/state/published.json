@@ -2380,6 +2380,48 @@
    "music": "lofi-upbeat-01",
    "format": "9x16",
    "note": "Silk Road Heritage series EP1"
+  },
+  {
+   "date": "2026-08-31",
+   "slot": "a",
+   "title": "One Root Dyes This Blue — China's Bai Tie-Dye | China Travel Expert",
+   "videoId": "92q-qNWmj0U",
+   "url": "https://www.youtube.com/watch?v=92q-qNWmj0U",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "public",
+   "publishAt": null,
+   "music": "lofi-upbeat-01",
+   "format": "9x16",
+   "note": "13:00Z overrun (render iterations)→immediate public; footage: craft-category indigo/tie-dye, honest, no foreign"
+  },
+  {
+   "date": "2026-08-31",
+   "slot": "c",
+   "title": "The Chinese Towns With No Roads — Only Water | China Travel Expert",
+   "videoId": "6lWBRUhcWeY",
+   "url": "https://www.youtube.com/watch?v=6lWBRUhcWeY",
+   "pillar": "city-travel",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-31T20:00:00Z",
+   "music": "oriental-edm-01",
+   "format": "9x16",
+   "note": "Jiangnan water towns (generated topic); China place-named footage after 4 re-renders to drop Venice; 1 night clip honest-noted"
+  },
+  {
+   "date": "2026-08-31",
+   "slot": "d",
+   "title": "The Desert Lake That Won't Dry Up — Silk Road EP2 | China Travel Expert",
+   "videoId": "eF0rAE0AhdI",
+   "url": "https://www.youtube.com/watch?v=eF0rAE0AhdI",
+   "pillar": "china-route",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-08-31T23:00:00Z",
+   "music": "cinema-orient-01",
+   "format": "9x16",
+   "note": "Silk Road Heritage series EP2 (Crescent Lake); generic desert illustrative, disclosed NOT-verified, 0 foreign"
   }
  ]
 }
