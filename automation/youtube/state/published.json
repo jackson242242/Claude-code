@@ -2422,6 +2422,62 @@
    "music": "cinema-orient-01",
    "format": "9x16",
    "note": "Silk Road Heritage series EP2 (Crescent Lake); generic desert illustrative, disclosed NOT-verified, 0 foreign"
+  },
+  {
+   "date": "2026-09-01",
+   "slot": "a",
+   "title": "It Looks Painted, But Not a Drop Is Paint | China Travel Expert",
+   "videoId": "zi7VLLPFNFY",
+   "url": "https://www.youtube.com/watch?v=zi7VLLPFNFY",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "public",
+   "publishAt": null,
+   "music": "lofi-chill-01",
+   "format": "9x16",
+   "note": "景泰蓝 Cloisonne (cc5-04); 13:00Z overrun→immediate public; metalwork/enamel craft-category footage honest, 0 foreign; credits.json committed"
+  },
+  {
+   "date": "2026-09-01",
+   "slot": "c",
+   "title": "How to Get a Taxi in China With No Chinese — DiDi | China Travel Expert",
+   "videoId": "QLg1jYTlk1I",
+   "url": "https://www.youtube.com/watch?v=QLg1jYTlk1I",
+   "pillar": "city-travel",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-01T20:00:00Z",
+   "music": "cpop-groove-01",
+   "format": "9x16",
+   "note": "China Practical (Tue·generated); DEDUP vs 08-22 pay/08-25 rail/08-29 subway; phone/taxi process footage honest; credits.json committed"
+  },
+  {
+   "date": "2026-09-01",
+   "slot": "d",
+   "title": "A Mud Wall in the Desert Once Guarded All of China — Silk Road EP3 | China Travel Expert",
+   "videoId": "V38BajuIsNk",
+   "url": "https://www.youtube.com/watch?v=V38BajuIsNk",
+   "pillar": "china-route",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-01T23:00:00Z",
+   "music": "oriental-edm-01",
+   "format": "9x16",
+   "note": "Silk Road Heritage EP3 玉门关 Yumen Pass (slk-a03·续EP2); re-rendered to drop Dubai/Sahara named clips→neutral ruins/desert; NOT-verified-Yumen disclosed; credits.json committed"
+  },
+  {
+   "date": "2026-09-01",
+   "slot": "L",
+   "title": "15 Mistakes First-Timers Make in China (Do NOT Skip #3) | China Travel Expert",
+   "videoId": "dCSlXA3dUzI",
+   "url": "https://www.youtube.com/watch?v=dCSlXA3dUzI",
+   "pillar": "longform-english",
+   "lane": "elevenlabs+pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-01T15:00:00Z",
+   "music": "underscore-docu-01/02/03 (rotating)",
+   "format": "16x9",
+   "note": "L02 bible §5; 10.7min ENGLISH-ONLY 0 CJK verified; Rachel VO stability0.5; 18 chapters; VPN 60s neutral in #14; OpenAI thumb; AI-narration disclosed; 50 clips; credits.json committed"
   }
  ]
 }

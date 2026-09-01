@@ -1347,7 +1347,8 @@
    "seriesNote": "Silk Road Heritage 丝路人文线 连载",
    "addedAt": "2026-08-12",
    "addedBy": "owner directive",
-   "status": "active"
+   "status": "covered-2026-09-01",
+   "coveredBy": "2026-09-01 slot d Silk Road EP3 玉门关 Yumen Pass"
   },
   {
    "id": "slk-a04",
@@ -1688,7 +1689,8 @@
    "whyNow": "2026-08-17 research: 补北京宫廷非遗·工艺深度",
    "addedAt": "2026-08-17",
    "addedBy": "auto-replenish (culture geo-breadth)",
-   "status": "active"
+   "status": "covered-2026-09-01",
+   "coveredBy": "2026-09-01 slot a 景泰蓝 Cloisonne"
   },
   {
    "id": "cc5-05",
