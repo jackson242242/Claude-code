@@ -1360,7 +1360,8 @@
    "seriesNote": "Silk Road Heritage 丝路人文线 连载",
    "addedAt": "2026-08-12",
    "addedBy": "owner directive",
-   "status": "active"
+   "status": "active",
+   "deferNote": "2026-09-02: series re-sequenced — EP4 slot used for 张掖丹霞 (rainbow, honoring EP3 tease), EP5 teased as 大地之子 (slk-a05). 榆林窟/嘉峪关/马蹄寺 shift to later EPs; renumber when produced."
   },
   {
    "id": "slk-a05",
@@ -1408,7 +1409,8 @@
    "seriesNote": "Silk Road Heritage 丝路人文线 连载",
    "addedAt": "2026-08-12",
    "addedBy": "owner directive",
-   "status": "active"
+   "status": "covered-2026-09-02",
+   "coveredBy": "2026-09-02 slot d Silk Road EP4 张掖丹霞 gDlLBcgVndc — 彩虹山 content pulled forward to EP4 to honor EP3's 'rainbow mountains' tease. Only the Rainbow-Mountains half was made (honest desert-crossing framing, colors described not shown — no honest Danxia footage exists). The '全线串讲' finale recap was NOT made; if a series finale is wanted later, re-scope as a recap-only EP."
   },
   {
    "id": "slk-b02",
@@ -1712,7 +1714,7 @@
    "audience": "打卡+families",
    "fitNote": "触达日常:一栋楼=一个家族的生活方式; 极强b-roll(航拍圆楼); 合pillar/rules",
    "status": "active",
-   "deferNote": "2026-08-22 FOOTAGE-FIRST FAIL: Pexels 无福建土楼专属素材(仅1条真土楼#32247891·其余返回越南梯田/尼泊尔山径/意大利村/欧洲村); 泛用素材压\"这栋土楼\"=违字幕诚实规则 → DEFER, 待实拍/map-format数据复盘再产(土楼选题不废). slot a 改产 cc7-05 龙井茶(craft footage 诚实)."
+   "deferNote": "2026-08-22 FOOTAGE-FIRST FAIL: Pexels 无福建土楼专属素材(仅1条真土楼#32247891·其余返回越南梯田/尼泊尔山径/意大利村/欧洲村); 泛用素材压\"这栋土楼\"=违字幕诚实规则 → DEFER, 待实拍/map-format数据复盘再产(土楼选题不废). slot a 改产 cc7-05 龙井茶(craft footage 诚实). | 2026-09-02 FOOTAGE-FIRST FAIL (slot a): Pexels 'fujian tulou'/'tulou aerial' returned only 1 real tulou clip; rest Vietnam rice terraces / Italy (Civita di Bagnoregio) / Philippine farming — cannot honestly say 'this fortress' over foreign farmland. Deferred; needs owner real footage or MAP-FORMAT."
   },
   {
    "id": "cc6-02",
@@ -1882,6 +1884,30 @@
    "addedBy": "auto-replenish (China Practical search-intent)",
    "status": "covered-2026-08-25",
    "coveredBy": "fuTGEovmmLc"
+  },
+  {
+   "id": "cc-callig-01",
+   "title": "Chinese Calligraphy 书法: you can't fix a single stroke",
+   "pillar": "china-culture",
+   "format": "short",
+   "angle": "fact-first paradox=一笔落纸不能改·no eraser/undo·文房四宝 Four Treasures·stroke order fixed; craft type-level honest footage (Chinese calligraphy/ink-brush)",
+   "whyNow": "generated 2026-09-02 (postmortem WINNER craft-paradox shape); tulou fallback",
+   "addedAt": "2026-09-02",
+   "addedBy": "generated (footage-forced pivot)",
+   "status": "covered-2026-09-02",
+   "coveredBy": "2026-09-02 slot a cXz-EP3dogQ"
+  },
+  {
+   "id": "cc-dougong-01",
+   "title": "Dougong 斗拱: a giant roof held up without a single nail",
+   "pillar": "china-culture",
+   "format": "short",
+   "angle": "fact-first paradox=无钉托屋顶·interlocking brackets·2500yr·抗震·Forbidden City 200 quakes/600yr; footage Chaotian Palace Nanjing (真中国) type-level honest",
+   "whyNow": "generated 2026-09-02 (city-travel-heritage place footage all failed → architecture technique re-angle)",
+   "addedAt": "2026-09-02",
+   "addedBy": "generated (footage-forced pivot)",
+   "status": "covered-2026-09-02",
+   "coveredBy": "2026-09-02 slot c KVviEiY--iI"
   }
  ]
 }
