@@ -54,6 +54,17 @@ run; put the source links in the video description.
    if it's missing, do a research-only run (replenish queue, write state back,
    log `blocked: no footage lane`) and stop. Do not fabricate output.
 
+## 0b. DAILY SELF-CORRECTION LOOP (owner 2026-09-02 — execute, don't report)
+1. `NODE_USE_ENV_PROXY=1 node scripts/yt-postmortem.mjs` → read
+   `state/postmortem.md` top block BEFORE picking topics: replicate WINNER
+   shapes today, drop LOSER shapes. One line in RUNLOG: "postmortem: <verdicts>".
+2. Mondays: `node scripts/yt-competitor-scan.mjs` (~600 quota units) → read
+   `state/competitors.md`; copy the top-3 hook SHAPES this week (never content).
+3. After each upload: `node scripts/youtube-comment.mjs --video <id> --text
+   "<the video's either-or question + ★ Expert Tip>"` — seeds the first comment
+   (force-ssl granted 2026-08-24). Reply to every viewer comment found via
+   commentThreads.list (comments.insert) — tiny volume, strong signal.
+
 ## 1. Read state
 `automation/youtube/state/queue.json` (topic backlog), `state/published.json`,
 `state/RUNLOG.md` (yesterday's outcomes), `config.yaml` (pillars, rules, budgets).
@@ -102,7 +113,19 @@ log `skipped: batch already published today` and stop. (Protects against manual
      audience; visa topics = official facts only + "check official sources",
      never eligibility advice).
    - d 23:00 = china-route (unchanged).
-   **LIKE-CTA (new, every Short): one cue at ~60% progress (the emotional peak,
+   **SHORTS v3 "SINGLE-CLAIM SPECTACLE" (owner 2026-09-02 turnaround, STYLE v2.6 —
+   supersedes the 9-12-cue fact-card format; data: our fact-cards cap at ~1k
+   views / 0.5% likes while single-claim spectacle Shorts break out from
+   sub-1k-sub channels):**
+   - ONE concrete surprising claim per Short; it IS the title and it IS cue 1
+     (big line) with the brand line small beneath it in the same cue
+     (`{\fs28}I'm your China Travel Expert`) — hook first, brand still first.
+   - 4-6 cues total, 15-22s, spectacle-first footage (aerial/drone/reveal/
+     motion; NIGHT cyberpunk skylines NOW ALLOWED for spectacle pieces —
+     Chongqing-night Shorts win the feed), footage gate unchanged.
+   - Music is the audio: energetic/cinematic bed at 0.9, beat-locked cuts.
+   - Title = the claim in ≤60 chars, curiosity gap, no series prefix clutter.
+   **LIKE-CTA (every Short): one cue at ~60% progress (the emotional peak,
    NOT the ending — half the viewers are gone by then): "Double-tap if you'd
    walk this street / 想走这条街的点个赞" — rotate the wording daily.**
    Legacy mix reference (superseded):
@@ -370,7 +393,14 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    starting the next slot (protects against mid-run session death). Media never
    enters git (runs/.gitignore).
 
-## 4L. LONGFORM DAY (config `longform`: every 4 days from anchor 2026-08-28)
+## 4L. LONGFORM DAY (config `longform`: WEEKLY Fridays from 2026-09-04; owner
+turnaround 2026-09-02 — the 13-min AI listicle is CANCELLED (0 browse
+distribution on a Shorts-fed channel; runtime dead zone). Alternate two lanes:
+odd weeks = 8-10 min SEARCH-INTENT practical guide (title = the exact query
+people type, e.g. "How to pay in China as a tourist 2026", screen-recording
+style graphics, ranks over weeks); even weeks = 35-50 min AMBIENT "Unseen China"
+background doc (sparse narration, underscore rotation, long-watch-time lane).
+Also apply `state/pending-video-updates.json` (retitles for L01/L02) once.)
 If (today - anchorDate) % cadenceDays == 0: ALSO produce one 10-15 min ENGLISH-ONLY
 AI-narrated longform per `plans/longform-v2.md` (the bible — follow §1 structure,
 §2 narration rules incl. no-fabricated-anecdotes + TTS phonetic QA, §3 layered

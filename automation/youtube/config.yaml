@@ -183,11 +183,16 @@ runtime:
 # ================= LONGFORM v2 (owner 2026-08-27) =================
 longform:
   status: active
-  cadenceDays: 4            # every 4 days (trial); anchor first release below
-  anchorDate: "2026-08-28"  # first longform Friday
+  cadenceDays: 7            # weekly Fridays (owner turnaround 2026-09-02; 4-day listicle cadence cancelled)
+  anchorDate: "2026-09-04"  # weekly anchor; lanes alternate practical-guide / ambient-doc
   publishAtUtc: "15:00"     # search/browse-driven; EU evening + US morning
-  durationMin: [10, 15]
+  durationMin: [8, 50]      # practical guide 8-10 / ambient doc 35-50
   language: english-only    # NO Chinese anywhere: title/description/narration/captions
   narration: elevenlabs-english   # AI VO explicitly OK (benchmark: GoldenSeniorsLiving)
   format16x9: true
   playbook: plans/longform-v2.md  # format bible (written from 2026-08-27 research)
+
+# vidIQ spend guard (2026-09-02: monthly music-gen drained the balance to 0)
+vidiqRules:
+  musicGenOnlyIfBalanceAtLeast: 100
+  musicGenMonthlyCap: 50
