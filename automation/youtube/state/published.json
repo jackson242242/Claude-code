@@ -1,6 +1,45 @@
 {
  "videos": [
   {
+   "date": "2026-09-03",
+   "slot": "a",
+   "title": "The Chinese Teapot That Gets Better Every Year | China Travel Expert",
+   "videoId": "88FkaoYGysg",
+   "url": "https://www.youtube.com/watch?v=88FkaoYGysg",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-03T13:00:00Z",
+   "music": "lofi-upbeat-01",
+   "format": "9x16"
+  },
+  {
+   "date": "2026-09-03",
+   "slot": "c",
+   "title": "In Guangzhou, \"Drinking Tea\" Means a 3-Hour Feast | China Travel Expert",
+   "videoId": "4Xxqy8P66z8",
+   "url": "https://www.youtube.com/watch?v=4Xxqy8P66z8",
+   "pillar": "china-food",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-03T20:00:00Z",
+   "music": "cpop-groove-01",
+   "format": "9x16"
+  },
+  {
+   "date": "2026-09-03",
+   "slot": "d",
+   "title": "A Giant Sleeping Baby Lies Alone in China's Gobi — Silk Road EP5 | China Travel Expert",
+   "videoId": "bP3aVd0Am7Y",
+   "url": "https://www.youtube.com/watch?v=bP3aVd0Am7Y",
+   "pillar": "china-route",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-03T23:00:00Z",
+   "music": "oriental-edm-01",
+   "format": "9x16"
+  },
+  {
    "date": "2026-08-28",
    "slot": "d",
    "title": "Dip Peking duck skin in sugar — the finale | Beijing, Walked EP5 | China Travel Expert",

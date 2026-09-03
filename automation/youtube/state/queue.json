@@ -100,7 +100,8 @@
    "whyNow": "owner 2026-08-22 直令:发食物和游玩温泉之类; 秋冬温泉旺季前布局",
    "addedAt": "2026-08-22",
    "addedBy": "owner directive",
-   "status": "active"
+   "status": "covered-2026-09-03",
+   "coveredBy": "2026-09-03 slot c Cantonese yum cha/dim sum (Thu food)"
   },
   {
    "id": "mod-01",
@@ -1373,7 +1374,8 @@
    "seriesNote": "Silk Road Heritage 丝路人文线 连载",
    "addedAt": "2026-08-12",
    "addedBy": "owner directive",
-   "status": "active"
+   "status": "covered-2026-09-03",
+   "coveredBy": "2026-09-03 slot d Silk Road EP5 大地之子 Son of the Earth"
   },
   {
    "id": "slk-a06",
@@ -1739,7 +1741,9 @@
    "title": "宜兴紫砂壶：一把壶为什么能泡出更香的茶",
    "whyNow": "2026-08-18 research: 宜兴紫砂制作技艺国家级非遗·双气孔结构·一矿一色; 新中式茶饮热带动茶器关注",
    "audience": "culture lovers",
-   "fitNote": "日常:泡茶=中国人的日常仪式; 手作close-up; 合brandRules(工艺factual)"
+   "fitNote": "日常:泡茶=中国人的日常仪式; 手作close-up; 合brandRules(工艺factual)",
+   "status": "covered-2026-09-03",
+   "coveredBy": "2026-09-03 slot a 宜兴紫砂壶 Yixing zisha (object-paradox)"
   },
   {
    "id": "cc6-05",
