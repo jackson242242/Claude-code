@@ -2559,6 +2559,62 @@
    "music": "lofi-upbeat-01",
    "format": "9x16",
    "note": "Silk Road Heritage EP4 张掖丹霞 (honors EP3 玉门关 'rainbow mountains' tease; teases EP5 大地之子). Rainbow-rock footage IMPOSSIBLE honestly (Peru Vinicunca+alpacas/Kazakhstan/Iceland/Cappadocia; canyon=Arizona/Gunnison/Utah)→refused faking. RE-ANGLE to honest Silk Road desert-crossing (sand ripples desert, max-clips 6, 6 unnamed generic 0 foreign 0 night); Zhangye colors delivered as described DESTINATION fact + desc discloses NOT-verified (EP1-3 precedent). oriental-edm at rolling-3 cap→lofi-upbeat. credits.json committed"
+  },
+  {
+   "date": "2026-09-04",
+   "slot": "a",
+   "title": "China's Best Morning Costs Almost Nothing (Skip the Ticket Line) | China Travel Expert",
+   "videoId": "L9vCh0NDo0U",
+   "url": "https://www.youtube.com/watch?v=L9vCh0NDo0U",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "public",
+   "publishAt": "2026-09-04T13:00:00Z",
+   "music": "cinema-orient-01",
+   "format": "9x16",
+   "note": "Friday Expert-Opinions: underrated free/cheap living temples vs premium ticketed sights (opinion labelled; fees verified — ¥1/free temples, free joss sticks, Lingyin free since Dec2025, 6-9am worship). OVERRUN: 13:00Z publishAt past at upload→removed publishAt, PUBLIC immediate (honest). FOOTAGE-FIRST: site picks failed Pexels→Chinese-temple type-level (Nanjing Chaotian+neutral courtyard/incense), 0 country-named-foreign, credits.json committed. cinema-orient-01. comment-seed SKIP(403 force-ssl)."
+  },
+  {
+   "date": "2026-09-04",
+   "slot": "c",
+   "title": "Shanghai: One River Splits 1920s Europe From the Future | China Travel Expert",
+   "videoId": "hoEyAIKYF1E",
+   "url": "https://www.youtube.com/watch?v=hoEyAIKYF1E",
+   "pillar": "city-travel",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-04T20:00:00Z",
+   "music": "oriental-edm-01",
+   "format": "9x16",
+   "note": "city-travel heritage/contrast: the Bund (1920s European stone) vs Lujiazui (farmland 1990→632m Shanghai Tower ~30yr, world-first adjacent supertall trio). superlative-contrast spectacle, night skyline (v2.6). FOOTAGE-FIRST: Shanghai site-identifiable, 9/9 Shanghai clips, 0 foreign, credits.json committed. oriental-edm-01. scheduled 20:00Z."
+  },
+  {
+   "date": "2026-09-04",
+   "slot": "d",
+   "title": "Where China's Great Wall Ends — Alone in the Desert · Silk Road EP6 | China Travel Expert",
+   "videoId": "fpMDJUB2Mqs",
+   "url": "https://www.youtube.com/watch?v=fpMDJUB2Mqs",
+   "pillar": "china-route",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-04T23:00:00Z",
+   "music": "cpop-groove-01",
+   "format": "9x16",
+   "note": "Silk Road Heritage EP6 Jiayuguan (续 EP5 大地之子; teases EP7 beacon towers). westernmost Ming Wall fort, begun 1372 Feng Sheng, rammed loess not brick, 天下第一雄关 1873 Zuo Zongtang, Gobi edge. FOOTAGE-FIRST: fort=no honest stock (desert-fortress=named foreign)→generic unnamed Gobi/desert/camel per EP1-5; subs state facts, desc discloses footage!=fort; 0 country-named-foreign, credits.json committed. cpop-groove-01 (route oriental-edm blocked by adjacent-slot rule). scheduled 23:00Z."
+  },
+  {
+   "date": "2026-09-04",
+   "slot": "L",
+   "title": "How to Pay in China as a Tourist in 2026 (Do This First) | China Travel Expert",
+   "videoId": "cSO3Di-5aiQ",
+   "url": "https://www.youtube.com/watch?v=cSO3Di-5aiQ",
+   "pillar": "longform-english",
+   "lane": "elevenlabs+pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-04T15:00:00Z",
+   "music": "underscore-docu-01/02/03 (rotating)",
+   "format": "16x9",
+   "note": "L03 first WEEKLY-Friday longform (new regime; old 4-day listicle cancelled). PRACTICAL-GUIDE lane (matches §5 L03 + practical lane desc; ambient-doc no defined topic→不懂不动). 7:00min ENGLISH-ONLY 0 CJK, ElevenLabs doc VO 433s, countdown 7-1+cold-open+bonus, dual USD+RMB, no fabricated anecdotes. Facts verified Sep2026 (Alipay/WeChat no-CN-bank passport+face-scan foreign card ~90%; in-app limit ¥3000-6500; cash BoC/ICBC; Trip.com fees). Rotating underscore bed (3 docu concat no-loop -18dB), --sfx none. OpenAI thumb+ffmpeg text. Render: slow-xfade timed out 2x→fast concat 20 clips (hard cuts). scheduled 15:00Z. China Travel Guides playlist."
   }
  ]
 }
