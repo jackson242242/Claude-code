@@ -378,7 +378,8 @@
    "views": 229,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "no-artifacts",
+   "note": "2026-09-04: no locatable run artifacts (null date/slot; not in published.json) — cannot re-render honestly"
   },
   {
    "videoId": "4wmaacFidno",
@@ -386,7 +387,8 @@
    "views": 225,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "no-artifacts",
+   "note": "2026-09-04: no locatable run artifacts (null date/slot; not in published.json) — cannot re-render honestly"
   },
   {
    "videoId": "pJrmZ8PGt0k",
