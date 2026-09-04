@@ -1,3 +1,12 @@
+## 2026-09-04 post-mortem (baseline = 14d median views of Shorts ≥3d old: 278)
+- 2026-09-03 d bP3aVd0Am7Y | 347v 2L 0C @1d | ×1.25 | baseline | A Giant Sleeping Baby Lies Alone in China's Gobi — Silk Road EP5 | Chi
+- 2026-09-02 c KVviEiY--iI | 248v 0L 0C @2d | ×0.89 | baseline | No Nails Hold Up This Roof — China's 2,500-Year Secret | China Travel 
+- 2026-09-02 d gDlLBcgVndc | 198v 0L 0C @2d | ×0.71 | baseline | The Hills That Rusted Rainbow — Zhangye Danxia · Silk Road EP4 | China
+- 2026-09-02 a cXz-EP3dogQ | 98v 0L 0C @2d | ×0.35 | LOSER — avoid this shape today | In Chinese Calligraphy, You Can't Fix a Single Stroke | China Travel E
+- 2026-09-03 c 4Xxqy8P66z8 | 91v 0L 0C @1d | ×0.33 | LOSER — avoid this shape today | In Guangzhou, "Drinking Tea" Means a 3-Hour Feast | China Travel Exper
+- 2026-09-03 a 88FkaoYGysg | 82v 0L 0C @1d | ×0.29 | LOSER — avoid this shape today | The Chinese Teapot That Gets Better Every Year | China Travel Expert
+- like-rate (fresh Shorts): 0.19% (peers 1-6%)
+
 ## 2026-09-03 post-mortem (baseline = 14d median views of Shorts ≥3d old: 200)
 - 2026-09-01 d V38BajuIsNk | 467v 1L 0C @2d | ×2.33 | WINNER — replicate this hook shape today | A Mud Wall in the Desert Once Guarded All of China — Silk Road EP3 | C
 - 2026-09-01 a zi7VLLPFNFY | 311v 1L 0C @2d | ×1.55 | baseline | It Looks Painted, But Not a Drop Is Paint | China Travel Expert
