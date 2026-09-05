@@ -396,7 +396,9 @@
    "views": 220,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "no-artifacts",
+   "processedDate": "2026-09-05",
+   "note": "[2026-09-05] no runs/<date>-<slot>/ artifacts (date/slot null) — cannot re-render honestly without music-free master; skipped per playbook."
   },
   {
    "videoId": "JA2sKtadlr4",
@@ -404,7 +406,9 @@
    "views": 214,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "no-artifacts",
+   "processedDate": "2026-09-05",
+   "note": "[2026-09-05] no runs/<date>-<slot>/ artifacts (date/slot null) — cannot re-render honestly without music-free master; skipped per playbook."
   },
   {
    "videoId": "RLMCDnDXoyM",
