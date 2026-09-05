@@ -2615,6 +2615,48 @@
    "music": "underscore-docu-01/02/03 (rotating)",
    "format": "16x9",
    "note": "L03 first WEEKLY-Friday longform (new regime; old 4-day listicle cancelled). PRACTICAL-GUIDE lane (matches §5 L03 + practical lane desc; ambient-doc no defined topic→不懂不动). 7:00min ENGLISH-ONLY 0 CJK, ElevenLabs doc VO 433s, countdown 7-1+cold-open+bonus, dual USD+RMB, no fabricated anecdotes. Facts verified Sep2026 (Alipay/WeChat no-CN-bank passport+face-scan foreign card ~90%; in-app limit ¥3000-6500; cash BoC/ICBC; Trip.com fees). Rotating underscore bed (3 docu concat no-loop -18dB), --sfx none. OpenAI thumb+ffmpeg text. Render: slow-xfade timed out 2x→fast concat 20 clips (hard cuts). scheduled 15:00Z. China Travel Guides playlist."
+  },
+  {
+   "date": "2026-09-05",
+   "slot": "a",
+   "title": "Nine Dancers, One Dragon — and They Never Touch It | China Travel Expert",
+   "videoId": "A1goahMqImQ",
+   "url": "https://www.youtube.com/watch?v=A1goahMqImQ",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-05T13:00:00Z",
+   "music": "lofi-upbeat-01",
+   "format": "9x16",
+   "note": "Chinese dragon dance 舞龙 (winner-shape single-claim paradox: nine dancers lift one dragon, never touch it—body rides on poles; up to 50 people; bamboo+silk 25-70m; Pearl of Wisdom chase; Han-dynasty rain/ancestor rite; longer=more luck). Traditional custom, spectacle+people-in-motion 生活感 by construction. FOOTAGE-FIRST: 福建土楼 original pick FAILED (only 1 real tulou clip, rest Vietnam terraces)→deferred; dragon dance PASS, re-rendered to drop Bandung(Indonesia) leak→8 China/CNY-identifiable clips 0 foreign, credits.json committed. lofi-upbeat-01 (cinema-orient at rolling-3 cap+slot-a adjacent). heritage grade. scheduled 13:00Z. China Culture 中国文化 playlist (PLD1FxVheQkWA)."
+  },
+  {
+   "date": "2026-09-05",
+   "slot": "c",
+   "title": "How Tourists Book China's 350 km/h Bullet Trains (2026) | China Travel Expert",
+   "videoId": "kyNuqztP3xs",
+   "url": "https://www.youtube.com/watch?v=kyNuqztP3xs",
+   "pillar": "city-travel",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-05T20:00:00Z",
+   "music": "cinema-orient-01",
+   "format": "9x16",
+   "note": "China Practical (Sat) high-speed rail for tourists. Spectacle/number-led hook (350km/h, world-biggest 45,000km, Beijing-Shanghai <6h) to AVOID the DiDi how-to LOSER shape (×0.08 postmortem). Practical payload: official 12306 app, register w/ passport (no CN SIM), foreign card, tickets 14d ahead, tap passport at orange gate. FOOTAGE: generic bullet-train/station illustrative; dropped hizli-tren(Turkish)/Moroccan/Egyptian leaks→5 generic-unnamed HSR clips 0 country-named-foreign, credits.json committed. cpop/oriental-edm blocked by rolling-3 cap→cinema-orient-01. clean grade. scheduled 20:00Z. China Travel 城市旅行 (PLI6LsqzQ-cjU)."
+  },
+  {
+   "date": "2026-09-05",
+   "slot": "d",
+   "title": "The Mud Towers That Outran Every Horse — Silk Road EP7 | China Travel Expert",
+   "videoId": "IHgj7Bj2jOU",
+   "url": "https://www.youtube.com/watch?v=IHgj7Bj2jOU",
+   "pillar": "china-route",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-05T23:00:00Z",
+   "music": "lofi-chill-01",
+   "format": "9x16",
+   "note": "Silk Road Heritage EP7 Han Great Wall beacon towers 烽燧. Honors EP6(Jiayuguan) tease \"beacon towers that could warn the capital in a day\"; queue EP7=马蹄寺 shifted to EP8 (teased cue9). Facts: day-smoke/night-fire relay, tower every ~5km, visible 15km, Dunhuang Han Wall ~136km 80+ towers rammed loess; Han courier ~300 li/day vs beacon far faster (Tang Feng Shi ~2000 li/day-night). HONESTY: tease delivered as \"faster than any horse\" NOT unverified \"capital in a day\". FOOTAGE MAP-format: generic sand-dunes/ripples 6 clip 0 country-named 0 sahara (dropped Egyptian statue/Sahara caravan/castle/plane/road across renders), desc discloses footage!=towers, credits.json committed. lofi-chill-01 (oriental-edm route track at rolling-3 cap). heritage grade. scheduled 23:00Z. China Travel 城市旅行 + Silk Road Heritage 丝路人文线 (PLfFfn_mEtKUc)."
   }
  ]
 }
