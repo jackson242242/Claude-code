@@ -1,3 +1,13 @@
+## 2026-09-06 post-mortem (baseline = 14d median views of Shorts ≥3d old: 277)
+- 2026-09-04 c hoEyAIKYF1E | 671v 18L 0C @2d | ×2.42 | WINNER — replicate this hook shape today | Shanghai: One River Splits 1920s Europe From the Future | China Travel
+- 2026-09-04 a L9vCh0NDo0U | 367v 2L 0C @2d | ×1.32 | baseline | China's Best Morning Costs Almost Nothing (Skip the Ticket Line) | Chi
+- 2026-09-05 c kyNuqztP3xs | 349v 7L 0C @1d | ×1.26 | baseline | How Tourists Book China's 350 km/h Bullet Trains (2026) | China Travel
+- 2026-09-05 a A1goahMqImQ | 126v 2L 0C @1d | ×0.45 | LOSER — avoid this shape today | Nine Dancers, One Dragon — and They Never Touch It | China Travel Expe
+- 2026-09-04 d fpMDJUB2Mqs | 40v 2L 0C @2d | ×0.14 | LOSER — avoid this shape today | Where China's Great Wall Ends — Alone in the Desert · Silk Road EP6 | 
+- 2026-09-05 d IHgj7Bj2jOU | 17v 0L 0C @1d | ×0.06 | LOSER — avoid this shape today | The Mud Towers That Outran Every Horse — Silk Road EP7 | China Travel 
+- 2026-09-04 L cSO3Di-5aiQ | 6v 0L 0C @2d | ×0.02 | LONGFORM: no distribution (expected on this channel; search-ranking is slow) | How to Pay in China as a Tourist in 2026 (Do This First) | China Trave
+- like-rate (fresh Shorts): 1.97% (peers 1-6%)
+
 ## 2026-09-04 post-mortem (baseline = 14d median views of Shorts ≥3d old: 278)
 - 2026-09-03 d bP3aVd0Am7Y | 347v 2L 0C @1d | ×1.25 | baseline | A Giant Sleeping Baby Lies Alone in China's Gobi — Silk Road EP5 | Chi
 - 2026-09-02 c KVviEiY--iI | 248v 0L 0C @2d | ×0.89 | baseline | No Nails Hold Up This Roof — China's 2,500-Year Secret | China Travel 
