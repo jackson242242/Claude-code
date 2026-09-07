@@ -2699,6 +2699,48 @@
    "music": "oriental-edm-01",
    "format": "9x16",
    "note": "Tea-Horse Road (茶马古道) MAP-format route. Self-correction: Silk Road desert-route series is LOSER shape (EP6 x0.14, EP7 x0.06 — two worst); queue next route item Silk Road EP8 马蹄寺 also FAILED footage gate (cliff-temple results Nepal/India/Turkey)->EP8 DEFERRED (left in queue), pivot to Tea-Horse Road with spectacle paradox hook (winner shape). MAP-format: generic mountain/route b-roll honest; genuine identified stop Shaxi ancient town (#27958758). Across 3 renders removed famous foreign landmarks: Christ the Redeemer (Rio), Boudhanath+Swayambhunath (Kathmandu). Final: 6 China anchors (Shaxi/tulou/market town/temple steps/canal bridge/aerial village) + generic terraced-mountain atmosphere (2 SE-Asia-slug terraces used as generic route hills, no site claim). Facts verified: Tang->20c >1000y, tea one of Tibet's 'four pillars of life' imported, mule caravans + pressed tea bricks over passes >4500m, Shaxi only complete surviving Tea-Horse town (tibettravel/theedgesingapore/connollycove). oriental-edm-01. heritage grade. Playlist China Travel 城市旅行. credits.json committed."
+  },
+  {
+   "date": "2026-09-07",
+   "slot": "a",
+   "title": "One Wrong Stroke and the Whole Scroll Is Ruined | China Travel Expert",
+   "videoId": "j5MX1wK3pnk",
+   "url": "https://www.youtube.com/watch?v=j5MX1wK3pnk",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-07T13:00:00Z",
+   "music": "cinema-orient-01",
+   "format": "9x16",
+   "note": "Chinese Calligraphy 书法 (queue cc-callig-01, DEQUEUED). SHORTS v3 single-claim paradox: on raw xuan paper a corrected line dries darker, so a stroke can't be touched up -> every stroke is one unbroken breath. FOOTAGE-FIRST: place-specific culture subjects FAILED gate this run (Terracotta/Forbidden City/Temple of Heaven -> generic/foreign clips); calligraphy PASSES subject-level (the ACT). Re-rendered once to drop Japanese-letters + t-shirt-painting leaks; final 10/10 Chinese calligraphy/ink-brush, 0 foreign. EN-only subs, clean grade, cinema-orient-01. Playlist China Culture 中国文化. credits.json committed. DEDUP NOTE: 09-02 slot a was also Chinese Calligraphy (cXz-EP3dogQ, same core paradox); repeated because culture footage-passing options are scarce this run; angle refreshed (xuan-paper-darkening / 'one breath'). Verified art-virtue/china.org.cn/travelchinaguide."
+  },
+  {
+   "date": "2026-09-07",
+   "slot": "c",
+   "title": "In Chengdu, One Cup of Tea Buys You the Whole Day | China Travel Expert",
+   "videoId": "cdd4SeYLxKU",
+   "url": "https://www.youtube.com/watch?v=cdd4SeYLxKU",
+   "pillar": "city-travel",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-07T20:00:00Z",
+   "music": "lofi-chill-01",
+   "format": "9x16",
+   "note": "Chengdu Teahouse 成都茶馆 (city-travel heritage, Mon standard). Lived-experience single claim: one cup buys the whole day; 10,000+ teahouses (most in China), ~Y10 bottomless gaiwan, tea-doctor refills, no check. FOOTAGE-FIRST: old-town/street footage FAILED gate (Fenghuang->Venice/Turkey; Suzhou Pingjiang already published 08-24); tea-pouring PASSES subject-level. Re-rendered twice to drop palo-santo (incense) + tea-on-statue leaks; final 10/10 tea pouring/brewing/drinking, 0 leaks. Subtitles type-level (People's Park named only in Expert-Tip advice text, not a footage claim). warmfood grade, lofi-chill-01 (cpop-groove blocked: adjacent-slot 09-06c). Playlist China Travel 城市旅行. Generated fresh (queue city-travel items non-Monday formats / best heritage fit dedup) -> no dequeue. Verified FISU/realchinatrip2026/quietroutes."
+  },
+  {
+   "date": "2026-09-07",
+   "slot": "d",
+   "title": "The Perfect First-Timer China Route: 4 Cities by Bullet Train | China Travel Expert",
+   "videoId": "g-7R2rmWXTo",
+   "url": "https://www.youtube.com/watch?v=g-7R2rmWXTo",
+   "pillar": "china-route",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-07T23:00:00Z",
+   "music": "lofi-upbeat-01",
+   "format": "9x16",
+   "note": "First-Timer China Rail Route Beijing->Xi'an->Chengdu->Shanghai (china-route pillar; feeds route-guide funnel). Self-correction: Silk-Road EPn desert-metaphor route is LOSER shape (09-05d x0.11, 09-06d x0.86); postmortem WINNER is practical/concrete (09-05c bullet trains x2.71) -> kept route pillar, dropped EPn shape, built a practical itinerary. FOOTAGE-FIRST: city/heritage footage FAILED gate (Forbidden City/Temple of Heaven/Three Gorges -> generic/foreign); rail footage PASSES subject-level ('riding China's rails'). City names live in itinerary TEXT only, never a footage claim. Re-rendered 3x to purge foreign trains (Japan/Morocco/Mumbai/Turkish hizli-tren) + night; final 5 clean neutral/China bullet-train clips looped, 0 leaks. clean grade, lofi-upbeat-01 (oriental-edm blocked: adjacent-slot 09-06d). Playlist China Travel 城市旅行. Generated fresh (queue route items all Silk-Road/edge EPn, footage-FAIL+LOSER) -> no dequeue. Facts approximate, verify on 12306; verified chinahighlights/chinadiscovery/wiki-BJ-SH-HSR/travelchinaguide/matador."
   }
  ]
 }
