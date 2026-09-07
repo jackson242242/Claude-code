@@ -1,3 +1,12 @@
+## 2026-09-07 post-mortem (baseline = 14d median views of Shorts ≥3d old: 280)
+- 2026-09-05 c kyNuqztP3xs | 759v 13L 1C @2d | ×2.71 | WINNER — replicate this hook shape today | How Tourists Book China's 350 km/h Bullet Trains (2026) | China Travel
+- 2026-09-06 d 2__kKM4yoYI | 242v 5L 0C @1d | ×0.86 | baseline | Tea Reached Tibet Only by Horseback — China's Tea-Horse Road | China T
+- 2026-09-06 c b1decGmfdbI | 209v 1L 0C @1d | ×0.75 | baseline | One Pot, 20 Spices, and You Cook Your Own Dinner — Hotpot | China Trav
+- 2026-09-05 a A1goahMqImQ | 168v 2L 0C @2d | ×0.60 | baseline | Nine Dancers, One Dragon — and They Never Touch It | China Travel Expe
+- 2026-09-06 a 2EAvQQDS5eU | 53v 0L 0C @1d | ×0.19 | LOSER — avoid this shape today | The Chinese Towns Where the Streets Are Water | China Travel Expert
+- 2026-09-05 d IHgj7Bj2jOU | 32v 0L 0C @2d | ×0.11 | LOSER — avoid this shape today | The Mud Towers That Outran Every Horse — Silk Road EP7 | China Travel 
+- like-rate (fresh Shorts): 1.44% (peers 1-6%)
+
 ## 2026-09-06 post-mortem (baseline = 14d median views of Shorts ≥3d old: 277)
 - 2026-09-04 c hoEyAIKYF1E | 671v 18L 0C @2d | ×2.42 | WINNER — replicate this hook shape today | Shanghai: One River Splits 1920s Europe From the Future | China Travel
 - 2026-09-04 a L9vCh0NDo0U | 367v 2L 0C @2d | ×1.32 | baseline | China's Best Morning Costs Almost Nothing (Skip the Ticket Line) | Chi
