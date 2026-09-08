@@ -2741,6 +2741,48 @@
    "music": "lofi-upbeat-01",
    "format": "9x16",
    "note": "First-Timer China Rail Route Beijing->Xi'an->Chengdu->Shanghai (china-route pillar; feeds route-guide funnel). Self-correction: Silk-Road EPn desert-metaphor route is LOSER shape (09-05d x0.11, 09-06d x0.86); postmortem WINNER is practical/concrete (09-05c bullet trains x2.71) -> kept route pillar, dropped EPn shape, built a practical itinerary. FOOTAGE-FIRST: city/heritage footage FAILED gate (Forbidden City/Temple of Heaven/Three Gorges -> generic/foreign); rail footage PASSES subject-level ('riding China's rails'). City names live in itinerary TEXT only, never a footage claim. Re-rendered 3x to purge foreign trains (Japan/Morocco/Mumbai/Turkish hizli-tren) + night; final 5 clean neutral/China bullet-train clips looped, 0 leaks. clean grade, lofi-upbeat-01 (oriental-edm blocked: adjacent-slot 09-06d). Playlist China Travel 城市旅行. Generated fresh (queue route items all Silk-Road/edge EPn, footage-FAIL+LOSER) -> no dequeue. Facts approximate, verify on 12306; verified chinahighlights/chinadiscovery/wiki-BJ-SH-HSR/travelchinaguide/matador."
+  },
+  {
+   "date": "2026-09-08",
+   "slot": "a",
+   "title": "China's New Year Ends 15 Days Late — With a Sky of Lanterns | China Travel Expert",
+   "videoId": "LUf6mSnabx8",
+   "url": "https://www.youtube.com/watch?v=LUf6mSnabx8",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-08T13:00:00Z",
+   "music": "cpop-groove-01",
+   "format": "9x16",
+   "note": "Chinese Lantern Festival 元宵节 (culture: festivals/customs). SHORTS v3 single-claim: CNY runs 15 days, ends with the Lantern Festival. Fact-first (avoids quiet-craft LOSERS: calligraphy 09-07a x0.06). FOOTAGE-FIRST: original candidate Chongqing Raffles/8D-city site-specific FAILED Pexels (Dubai/Jakarta/Brisbane/Mexico-City; monorail=Dubai/DisneySea) -> RE-ANGLE to Lantern Festival; probe PASS identifiable Chinese lantern clips; subtitle claims type-level (no 'this is Zigong' picture-claim; Zigong named only in Expert-Tip text). credits.json committed, 0 country-named-foreign leaks. clean grade; cpop-groove-01 (cinema-orient blocked adjacent-slot 09-07a; not repeated same day; rolling-3<=2). EN-only subs. Generated fresh (Lantern Festival not a direct queue item) -> 0 dequeue. Verified chinatravel.com/travelchinaguide/travelofchina-Zigong/chinadaily."
+  },
+  {
+   "date": "2026-09-08",
+   "slot": "c",
+   "title": "Google & WhatsApp Won't Work in China — Here's How Tourists Get Online | China Travel Expert",
+   "videoId": "_PBcP2dmvIc",
+   "url": "https://www.youtube.com/watch?v=_PBcP2dmvIc",
+   "pillar": "city-travel",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-08T20:00:00Z",
+   "music": "lofi-upbeat-01",
+   "format": "9x16",
+   "note": "China Practical (Tue lane): getting online in China. Number/claim-led (blocked-apps list), avoids dry how-to LOSER (DiDi x0.08); replicates practical WINNER shape (bullet-train x2.71, route x3.47). Facts: firewall blocks Google/Gmail/Maps/YouTube/WhatsApp/Instagram/FB/X on mobile+hotel-wifi+cafe; VPNs mostly dead since 2026 crackdown; roaming travel eSIM routes traffic outside mainland so apps work w/o VPN. FOOTAGE-FIRST: connectivity topic -> type-level people-on-phones honest (no site claim), PASS, 0 foreign-named leaks. Honesty: framed as what travel guides recommend + 'rules change, verify' in description. clean grade; lofi-upbeat-01 (lofi-chill blocked adjacent-slot 09-07c; not repeated same day). EN-only subs. Generated fresh (queue Practical item is payments, different) -> 0 dequeue. Verified chinafortravelers/saily/getroamify/simology/triposim/cellesim (2026)."
+  },
+  {
+   "date": "2026-09-08",
+   "slot": "d",
+   "title": "The World's Highest Train Pumps Oxygen Into the Cabin — Road to Tibet | China Travel Expert",
+   "videoId": "a1mrh_5wGKU",
+   "url": "https://www.youtube.com/watch?v=a1mrh_5wGKU",
+   "pillar": "china-route",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-08T23:00:00Z",
+   "music": "oriental-edm-01",
+   "format": "9x16",
+   "note": "Qinghai-Tibet Railway Xining->Lhasa (china-route as one iconic rail journey). Replicates practical-rail WINNER (09-07d x3.47, 09-05c x2.71); avoids Silk-Road-EPn desert LOSER shape (09-05d x0.11, EP6 x0.14, EP7 x0.06). Single-claim spectacle+number. Facts: world's highest railway; Tanggula Pass 5072m (station 5068m world's highest); enclosed carriages diffusion-oxygen to ~23.5% w/ per-seat oxygen ports; ~a full day&night; ~half sea-level oxygen at 5000m; foreigners need Tibet Travel Permit via licensed agency+guided tour. FOOTAGE-FIRST: plateau/site footage FAILS Pexels (Vietnam/Sapa) -> honest generic-train footage illustrates the journey (same as x3.47 winner); no 'this is the Tibet line' picture-claim; place names in text only; 0 country-named-foreign leaks (all generic trains/stations/interiors). Permit line = official-fact framing (no eligibility advice) + 'check official sources' in description. heritage grade; oriental-edm-01 (lofi-upbeat blocked adjacent-slot 09-07d; 09-06d oriental-edm is 2d prior, allowed; rolling-3<=2). EN-only subs. Generated fresh (queue routes all Silk-Road/edge) -> 0 dequeue. Verified chinatibettrain/wiki-Tanggula/tibettravel/chinadiscovery/windhorsetour(2026 permit)."
   }
  ]
 }
