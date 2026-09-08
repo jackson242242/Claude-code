@@ -436,7 +436,8 @@
    "views": 199,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "no-artifacts",
+   "note": "2026-09-08: null date/slot → no runs/ artifacts to re-render honestly; marked no-artifacts (never fake)."
   },
   {
    "videoId": "ClQw9h13vOY",
@@ -444,7 +445,8 @@
    "views": 198,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "no-artifacts",
+   "note": "2026-09-08: null date/slot → no runs/ artifacts to re-render honestly; marked no-artifacts (never fake)."
   },
   {
    "videoId": "ZVZ2hC-sE0w",
