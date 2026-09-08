@@ -1,3 +1,12 @@
+## 2026-09-08 post-mortem (baseline = 14d median views of Shorts ≥3d old: 279)
+- 2026-09-07 d g-7R2rmWXTo | 969v 6L 0C @1d | ×3.47 | WINNER — replicate this hook shape today | The Perfect First-Timer China Route: 4 Cities by Bullet Train | China 
+- 2026-09-06 d 2__kKM4yoYI | 278v 7L 0C @2d | ×1.00 | baseline | Tea Reached Tibet Only by Horseback — China's Tea-Horse Road | China T
+- 2026-09-06 c b1decGmfdbI | 266v 4L 0C @2d | ×0.95 | baseline | One Pot, 20 Spices, and You Cook Your Own Dinner — Hotpot | China Trav
+- 2026-09-07 c cdd4SeYLxKU | 132v 1L 0C @1d | ×0.47 | LOSER — avoid this shape today | In Chengdu, One Cup of Tea Buys You the Whole Day | China Travel Exper
+- 2026-09-06 a 2EAvQQDS5eU | 71v 1L 0C @2d | ×0.25 | LOSER — avoid this shape today | The Chinese Towns Where the Streets Are Water | China Travel Expert
+- 2026-09-07 a j5MX1wK3pnk | 16v 1L 0C @1d | ×0.06 | LOSER — avoid this shape today | One Wrong Stroke and the Whole Scroll Is Ruined | China Travel Expert
+- like-rate (fresh Shorts): 1.15% (peers 1-6%)
+
 ## 2026-09-07 post-mortem (baseline = 14d median views of Shorts ≥3d old: 280)
 - 2026-09-05 c kyNuqztP3xs | 759v 13L 1C @2d | ×2.71 | WINNER — replicate this hook shape today | How Tourists Book China's 350 km/h Bullet Trains (2026) | China Travel
 - 2026-09-06 d 2__kKM4yoYI | 242v 5L 0C @1d | ×0.86 | baseline | Tea Reached Tibet Only by Horseback — China's Tea-Horse Road | China T
