@@ -78,3 +78,18 @@ supplies the week's core idea.
   to sign-up-required or paid-only content as the main course.
 - If sending fails, retry twice; if it still fails, stop (no alternate
   channels).
+
+## Continuity (read and write this every day)
+- `ISSUE_LOG.md` in this folder is the memory of the series. BEFORE writing,
+  read it: it gives the last issue number actually sent and every hook,
+  example, and link already used. Never repeat one; never re-send an issue
+  number already listed.
+- Trust the log over the date arithmetic when they disagree (a missed day
+  leaves a gap; keep numbering by date and note the gap rather than
+  renumbering).
+- AFTER the email is sent, append one row for today's issue, then commit and
+  push to `claude/teen-reading-finance-literacy-sx3xig`. An unsent issue is
+  never logged; a sent issue is always logged.
+- If days were missed, do NOT backfill several emails. Send one issue for
+  today, fold in the most important missed slot (usually Monday's books), and
+  acknowledge the gap in one light line in the digest's own voice.
