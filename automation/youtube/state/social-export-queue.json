@@ -454,7 +454,8 @@
    "views": 197,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "no-artifacts",
+   "note": "2026-09-09: null date/slot mapping + media not in repo (runs media gitignored, fresh container) -> not re-renderable this run; never faked."
   },
   {
    "videoId": "KICG6CxYBmY",
@@ -462,7 +463,8 @@
    "views": 191,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "no-artifacts",
+   "note": "2026-09-09: null date/slot mapping + media not in repo (runs media gitignored, fresh container) -> not re-renderable this run; never faked."
   },
   {
    "videoId": "kS6pRPe3Qwc",
