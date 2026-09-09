@@ -59,6 +59,15 @@
 - **互动权重**：收藏/分享/回复 > 点赞（Story 回复年增 88%，Story 拿信任、
   Reels 拿新流量）。发帖节奏理想值：每周 4–5 条 Reels。
 
+**9/9 周增量（来源见 2026-09-09 brief）：**
+- **"A New Season Had Begun"**：无字幕拼接秋季氛围格式——换季线的
+  零成本模板（现有 b-roll 拼起来即可）
+- **秋季 acoustic 器乐底噪**："romanticizing the fall season" 的标配，
+  与我们 quiet-luxury 声线天然合拍（礼盒开箱件用它）
+- "Petal"（Ariana Grande）持续走强，时尚/美妆向；"Timber" 快切复古向
+- 结构性：创作者原声（Bedazzle / Corporate Girl 等）持续占据前列，
+  低制作仍是主流
+
 **8/31 周增量（来源见 2026-08-31 brief）：**
 - **Fleetwood Mac "Sometimes"**：万能生活方式/回望底噪——换季线安全牌
 - "august" 窗口 8/31 截止；9/1 起换季叙事接管
