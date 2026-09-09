@@ -125,6 +125,19 @@ log `skipped: batch already published today` and stop. (Protects against manual
      Chongqing-night Shorts win the feed), footage gate unchanged.
    - Music is the audio: energetic/cinematic bed at 0.9, beat-locked cuts.
    - Title = the claim in ≤60 chars, curiosity gap, no series prefix clutter.
+   **HOOK v4 — NUMBERS ARE MANDATORY (owner 2026-09-09 「没有hook，没有数字」):**
+   Every Short's TITLE and cue 1 must carry a number, price, ratio or hard
+   superlative. No number → the topic is not ready; re-angle or pick another.
+   Three owner-specified hook families, rotate them:
+   1. **PRICE-ANCHOR (highest priority)** — the same experience at a fraction of
+      a Western price. Both sides verified THIS RUN, same tier, both in USD:
+      "Switzerland's famous train: $290. The same kind of view in China: $25."
+      Never compare budget-vs-luxury to fake a ratio; state the real multiple.
+   2. **DISCOVERY** — "the stunning place is everywhere, you just have to look":
+      "Nobody photographs this street — and it is 600 years old."
+   3. **PRIVATE-GUIDE** — "I'll walk you through it": "Ten minutes with a local
+      guide in Xi'an, and you skip the two-hour queue."
+   Price/number sourcing: two independent sources, dated, in the description.
    **LIKE-CTA (every Short): one cue at ~60% progress (the emotional peak,
    NOT the ending — half the viewers are gone by then): "Double-tap if you'd
    walk this street / 想走这条街的点个赞" — rotate the wording daily.**
@@ -308,6 +321,10 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    no track in the same slot on adjacent days; no track >2 uses per rolling 3
    days (grep published.json lanes). Monthly (post vidIQ reset): generate 2-3
    fresh beds, retire the most-used one.
+   **MUSIC CREDIT (owner 2026-09-09 「不tag音乐名字」): every description ends
+   with a credit line before the hashtags — `🎵 Music: <track name> (royalty-free
+   bed)`; when an owner yal-* track is used, credit its real title + artist as
+   given by the YouTube Audio Library. Never claim a commercial song.**
    **TRENDING-SOUND UPGRADE PATH (the "Add Sound" library is app/Studio-only —
    no API): the daily report MUST list each Short's Studio editor deep-link
    (studio.youtube.com/video/<id>/editor) + a suggested trending-sound style,

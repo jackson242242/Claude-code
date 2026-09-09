@@ -328,7 +328,7 @@ if (audioFile) {
   let sfxChain = '';
   let aout = '[mus]';
   if (sfxBed) { ins.push('-i', sfxBed); sfxChain = `[2:a]volume=0.5[sfx];[mus][sfx]amix=inputs=2:duration=first:normalize=0[aout];`; aout = '[aout]'; }
-  else { sfxChain = ''; aout = '[mus]'; }
+  else { sfxChain = ''; aout = '[aout]'; }  // no SFX: the music chain itself emits [aout] (bug fixed 2026-09-09)
   run('ffmpeg', ['-y', ...ins,
     '-filter_complex',
     `[0:v]${filters.join(',')}[vout];` +
@@ -399,7 +399,8 @@ function highlightNums(s, base) {
   // not "900 m|eters").
   return assEsc(s).replace(
     /(\$?\d[\d,.]*(?:\s?(?:m|km|km²|%|°C|°|AD|BC|BCE|CE|am|pm|kg|min|hrs?|hours?|years?)(?![A-Za-z]))?)/gi,
-    (mtch) => `{\\c${C_CORAL}}${mtch}{\\c${base}}`,
+    // v3.1: numbers also scale up 15% — the price/number IS the hook (owner 2026-09-09)
+    (mtch) => `{\\c${C_CORAL}\\fscx115\\fscy115}${mtch}{\\c${base}\\fscx100\\fscy100}`,
   );
 }
 // Wrap a long CJK line (no spaces to break on) onto two lines at a punctuation
@@ -417,9 +418,11 @@ function wrapZh(zh, maxChars) {
 }
 function buildAss(cues, { W, H, vertical, voiced, cjk }) {
   const fontName = cjk ? 'Noto Sans CJK SC' : 'DejaVu Sans';
-  const enFs = vertical ? (voiced ? 54 : 72) : (voiced ? 44 : 54);
+  // Shorts v3.1 (owner 2026-09-09 「不够劲爆」): hook text must read like the
+  // competitors' — big, lower-third, numbers oversized. Was 72/130.
+  const enFs = vertical ? (voiced ? 54 : 96) : (voiced ? 44 : 62);
   const zhFs = vertical ? (voiced ? 60 : 80) : (voiced ? 48 : 60);
-  const marginV = vertical ? 130 : 54;
+  const marginV = vertical ? 300 : 70;
   const marginLR = vertical ? 70 : 90;
   const header = [
     '[Script Info]', 'ScriptType: v4.00+', `PlayResX: ${W}`, `PlayResY: ${H}`,
@@ -433,9 +436,11 @@ function buildAss(cues, { W, H, vertical, voiced, cjk }) {
   ];
   const anim = '{\\fad(70,40)\\fscx60\\fscy60\\t(0,120,\\fscx110\\fscy110)\\t(120,220,\\fscx100\\fscy100)}';
   const zhMax = vertical ? 12 : 20;
-  const dialog = cues.map((c) => {
+  const dialog = cues.map((c, i) => {
     const enBase = c.en.trimStart().startsWith('★') ? C_AMBER : C_WHITE;
-    const en = `{\\c${enBase}}${highlightNums(c.en, enBase)}`;
+    // cue 1 IS the hook: 1.2x so the claim lands before anyone reads anything else
+    const hookFs = i === 0 && !voiced ? `{\\fs${Math.round(enFs * 1.2)}}` : '';
+    const en = `${hookFs}{\\c${enBase}}${highlightNums(c.en, enBase)}`;
     const zh = c.zh ? `\\N{\\fs${zhFs}\\c${C_GOLD}}${wrapZh(assEsc(c.zh), zhMax)}` : '';
     return `Dialogue: 0,${assTime(c.start)},${assTime(c.end)},Sub,,0,0,0,,${anim}${en}${zh}`;
   });
