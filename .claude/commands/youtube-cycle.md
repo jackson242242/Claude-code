@@ -321,14 +321,25 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    no track in the same slot on adjacent days; no track >2 uses per rolling 3
    days (grep published.json lanes). Monthly (post vidIQ reset): generate 2-3
    fresh beds, retire the most-used one.
+   **OWNER TRACKS (owner 2026-09-10 chose path A+B): if `assets/music/manifest.json`
+   exists, its yal-* tracks OUTRANK every generated bed — pick from them first
+   (match `mood`), and credit with the manifest's REAL title/artist:
+   `🎵 Music: "<title>" — <artist> (YouTube Audio Library)`. New drops arrive via
+   `node scripts/ingest-music.mjs --in <path> [--mood upbeat|cinematic|calm|epic]`.**
    **MUSIC CREDIT (owner 2026-09-09 「不tag音乐名字」): every description ends
    with a credit line before the hashtags — `🎵 Music: <track name> (royalty-free
    bed)`; when an owner yal-* track is used, credit its real title + artist as
    given by the YouTube Audio Library. Never claim a commercial song.**
-   **TRENDING-SOUND UPGRADE PATH (the "Add Sound" library is app/Studio-only —
-   no API): the daily report MUST list each Short's Studio editor deep-link
-   (studio.youtube.com/video/<id>/editor) + a suggested trending-sound style,
-   so the owner can 1-tap add a hot licensed track to the day's best performer.** Match
+   **TRENDING-SOUND UPGRADE PATH (path B, owner 2026-09-10 — the "Add Sound"
+   library is app/Studio-only, no API). The daily report MUST end with a block
+   in exactly this shape, one line per Short, nothing else between them:
+   ```
+   🎵 ADD SOUND (1 min each, highest-view first)
+   1. <title 40 chars> → studio.youtube.com/video/<id>/editor  · search: "<sound style>"
+   2. ...
+   ```
+   Order by the postmortem's view ranking so the owner upgrades the best one
+   first. Adding a licensed track in Studio does not reset views.** Match
    `--seg-seconds` to the track's bar length per MUSIC.md §3 (105BPM→2.3s,
    90BPM→2.7s, 100BPM→2.4s) so cuts land on beats.
    Owner-supplied tracks (YouTube Audio Library downloads committed to
