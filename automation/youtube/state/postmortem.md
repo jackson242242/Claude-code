@@ -1,3 +1,12 @@
+## 2026-09-10 post-mortem (baseline = 14d median views of Shorts ≥3d old: 284)
+- 2026-09-09 a T9LHb4qRL1A | 390v 1L 0C @1d | ×1.37 | baseline | The Great Wall Isn't One Wall — It's 21,196 km | China Travel Expert
+- 2026-09-09 d aeSJ6uYc7Yo | 142v 1L 0C @1d | ×0.50 | LOSER — avoid this shape today | The Ancient Silk Road Now Has a Bullet Train — 1,776 km | China Travel
+- 2026-09-08 d a1mrh_5wGKU | 137v 0L 0C @2d | ×0.48 | LOSER — avoid this shape today | The World's Highest Train Pumps Oxygen Into the Cabin — Road to Tibet 
+- 2026-09-08 a LUf6mSnabx8 | 107v 1L 0C @2d | ×0.38 | LOSER — avoid this shape today | China's New Year Ends 15 Days Late — With a Sky of Lanterns | China Tr
+- 2026-09-08 c _PBcP2dmvIc | 78v 0L 0C @2d | ×0.27 | LOSER — avoid this shape today | Google & WhatsApp Won't Work in China — Here's How Tourists Get Online
+- 2026-09-09 c IPN7YJtiA4c | 72v 0L 0C @1d | ×0.25 | LOSER — avoid this shape today | China's 20-Yuan Note Is a Real View — and It Costs 20 Yuan | China Tra
+- like-rate (fresh Shorts): 0.32% (peers 1-6%)
+
 ## 2026-09-08 post-mortem (baseline = 14d median views of Shorts ≥3d old: 279)
 - 2026-09-07 d g-7R2rmWXTo | 969v 6L 0C @1d | ×3.47 | WINNER — replicate this hook shape today | The Perfect First-Timer China Route: 4 Cities by Bullet Train | China 
 - 2026-09-06 d 2__kKM4yoYI | 278v 7L 0C @2d | ×1.00 | baseline | Tea Reached Tibet Only by Horseback — China's Tea-Horse Road | China T

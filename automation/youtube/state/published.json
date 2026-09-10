@@ -2825,6 +2825,51 @@
    "music": "lofi-chill-01",
    "format": "9x16",
    "note": "china-route SUPERLATIVE-NUMBER route-overview, replicates practical-rail WINNER shape (09-07d x3.47): the Silk Road now has a bullet train. Lanzhou-Urumqi (Lanxin) HSR 1,776 km, world's longest built at once, opened 2014, mostly Gobi; cut ~21h to under 12h; passes Jiayuguan (Ming Great Wall west end) & Zhangye (Danxia rainbow mts). FOOTAGE-FIRST: desert/rainbow-mtn queries pull Dubai/Peru/Namib leaks -> used proven-clean pure generic bullet-train set (same as 09-07d/08d winners); 0 country-named-foreign; site names in narration only, not indexed to footage. heritage grade; lofi-chill-01 (route fallback; oriental-edm blocked adjacent-slot 09-08d; rolling-3<=2). EN-only subs. Generated fresh -> 0 dequeue. Verified wiki-Lanxin-HSR/railway-technology/scmp."
+  },
+  {
+   "date": "2026-09-10",
+   "slot": "a",
+   "title": "China's Tallest Tower Twists 120° — the Twist Saved $58M in Steel | China Travel Expert",
+   "videoId": "jAXGW8B5zIA",
+   "url": "https://www.youtube.com/watch?v=jAXGW8B5zIA",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-10T13:00:00Z",
+   "music": "cpop-groove-01",
+   "format": "9x16",
+   "note": "china-culture (modern-china album, dequeued mod-03) SUPERLATIVE-NUMBER/paradox hook: Shanghai Tower 632m/128fl, world's 3rd-tallest (corrected: Merdeka118+Burj ahead, NOT 2nd); twists 120°, cuts wind load ~24% -> saved ~$58M steel. Night skyline spectacle (now allowed). FOOTAGE PASS: identifiable Shanghai/Lujiazui/Bund/Oriental Pearl clips; tower named at skyline level (honest). Music cpop-groove-01 (cinema-orient blocked adjacent slot a 09-09; rolling-3<=2). EN-only subs. cmt-seed BLOCKED (token lacks force-ssl, 403). Sources: Guinness/ChinaHighlights/StudioMatrx.",
+   "hashtags": "#Shorts #ChinaTravel #ChinaTravelExpert #Shanghai #ShanghaiTower"
+  },
+  {
+   "date": "2026-09-10",
+   "slot": "c",
+   "title": "One Soup Dumpling, 18 Folds, and Hidden Molten Broth | China Travel Expert",
+   "videoId": "xU01aJLk2jc",
+   "url": "https://www.youtube.com/watch?v=xU01aJLk2jc",
+   "pillar": "china-food",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-10T20:00:00Z",
+   "music": "cinema-orient-01",
+   "format": "9x16",
+   "note": "Thu food lane (owner 2026-08-22). NUMBER hook '18 folds' (dequeued cfd-04). Xiaolongbao: soup from aspic that melts when steamed; Din Tai Fung benchmark 18 pleats; refined Nanxiang/Shanghai 1870s. FOOTAGE PASS: identifiable Chinese steamed/soup dumplings + people making dumplings (生活感). Music cinema-orient-01 (cpop blocked adjacent slot c 09-09). EN-only. cmt-seed BLOCKED (force-ssl 403). Sources: wiki-Xiaolongbao/SCMP/wiki-Nanxiang.",
+   "hashtags": "#Shorts #ChinaTravel #ChinaTravelExpert #SoupDumplings #Xiaolongbao"
+  },
+  {
+   "date": "2026-09-10",
+   "slot": "d",
+   "title": "Two of China's Ancient Capitals, 90 Minutes Apart by Bullet Train | China Travel Expert",
+   "videoId": "brrsn31-Z50",
+   "url": "https://www.youtube.com/watch?v=brrsn31-Z50",
+   "pillar": "china-route",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-10T23:00:00Z",
+   "music": "oriental-edm-01",
+   "format": "9x16",
+   "note": "china-route, replicates route WINNER shape (09-07d x3.47). Xi'an<->Luoyang on Zhengzhou-Xi'an HSR: G-trains 350km/h, ~380km in ~90min, ~96 trains/day; both ancient imperial capitals. Generated fresh -> 0 dequeue. FOOTAGE: site clips (Xi'an wall/Longmen/Terracotta) FAILED probe -> used generic HS-train+scenery (some non-China stock: JP/IT), names in narration only, DISCLOSED illustrative honestly. Music oriental-edm-01 (route track; lofi-chill blocked adjacent slot d 09-09). EN-only. cmt-seed BLOCKED (force-ssl 403). Sources: AsiaOdyssey/ChinaDiscovery.",
+   "hashtags": "#Shorts #ChinaTravel #ChinaTravelExpert #Xian #HighSpeedRail"
   }
  ]
 }

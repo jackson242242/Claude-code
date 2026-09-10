@@ -127,18 +127,6 @@
    "status": "active"
   },
   {
-   "id": "mod-03",
-   "title": "上海中心:拧了120度的中国第一高",
-   "pillar": "china-culture",
-   "format": "short",
-   "angle": "632m/上海中心阻尼器'定楼神器'(核实);爱好者轨; FOOTAGE-FIRST GATE 必过, 不合格走 MAP-FORMAT; 现代建筑=文化槽每周2集试验(数据复盘后定量)",
-   "whyNow": "owner 2026-08-18 现代建筑专辑直令(plans/modern-china.md)",
-   "addedAt": "2026-08-18",
-   "addedBy": "owner directive",
-   "status": "active",
-   "deferNote": "2026-08-23 FOOTAGE-FIRST FAIL: Pexels Shanghai-skyline corpus night-dominated across 3 daytime-query passes (night/twilight/foreign Willis Tower kept ranking); NO-night is a hard rule → DEFER (as mod-01 来福士); slot a swapped to 书法/calligraphy craft. Retry when owner real footage / MAP-3D data-review day. Modern-arch album not shelved."
-  },
-  {
    "id": "mod-04",
    "title": "北京地铁飞天壁画站",
    "pillar": "china-culture",
@@ -826,19 +814,6 @@
    "pillar": "china-food",
    "format": "short",
    "angle": "Air-pump craft hook; carving 108 slices fact.",
-   "whyNow": "owner core-shift 2026-07-15: travel resources + food",
-   "sources": [],
-   "addedAt": "2026-07-15",
-   "addedBy": "owner directive",
-   "status": "covered-2026-08-03",
-   "coveredBy": "2026-08-03 绝活系列"
-  },
-  {
-   "id": "cfd-04",
-   "title": "一笼小笼包的十八个褶",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "18 pleats standard; soup-inside engineering; 上海话彩蛋.",
    "whyNow": "owner core-shift 2026-07-15: travel resources + food",
    "sources": [],
    "addedAt": "2026-07-15",
