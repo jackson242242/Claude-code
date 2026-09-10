@@ -472,7 +472,8 @@
    "views": 191,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "no-artifacts",
+   "note": "null date/slot, no runs/ dir to re-render (2026-09-10)"
   },
   {
    "videoId": "UovzF7f0uRU",
@@ -480,7 +481,8 @@
    "views": 183,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "no-artifacts",
+   "note": "null date/slot, no runs/ dir to re-render (2026-09-10)"
   },
   {
    "videoId": "bqUSeDLE5VM",
