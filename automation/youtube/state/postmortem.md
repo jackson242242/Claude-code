@@ -1,3 +1,12 @@
+## 2026-09-11 post-mortem (baseline = 14d median views of Shorts ≥3d old: 281)
+- 2026-09-09 d aeSJ6uYc7Yo | 528v 5L 0C @2d | ×1.88 | baseline | The Ancient Silk Road Now Has a Bullet Train — 1,776 km | China Travel
+- 2026-09-10 a jAXGW8B5zIA | 518v 5L 0C @1d | ×1.84 | baseline | China's Tallest Tower Twists 120° — the Twist Saved $58M in Steel | Ch
+- 2026-09-09 a T9LHb4qRL1A | 474v 1L 0C @2d | ×1.69 | baseline | The Great Wall Isn't One Wall — It's 21,196 km | China Travel Expert
+- 2026-09-10 c xU01aJLk2jc | 401v 2L 0C @1d | ×1.43 | baseline | One Soup Dumpling, 18 Folds, and Hidden Molten Broth | China Travel Ex
+- 2026-09-09 c IPN7YJtiA4c | 72v 0L 0C @2d | ×0.26 | LOSER — avoid this shape today | China's 20-Yuan Note Is a Real View — and It Costs 20 Yuan | China Tra
+- 2026-09-10 d brrsn31-Z50 | 14v 1L 0C @1d | ×0.05 | LOSER — avoid this shape today | Two of China's Ancient Capitals, 90 Minutes Apart by Bullet Train | Ch
+- like-rate (fresh Shorts): 0.70% (peers 1-6%)
+
 ## 2026-09-10 post-mortem (baseline = 14d median views of Shorts ≥3d old: 284)
 - 2026-09-09 a T9LHb4qRL1A | 390v 1L 0C @1d | ×1.37 | baseline | The Great Wall Isn't One Wall — It's 21,196 km | China Travel Expert
 - 2026-09-09 d aeSJ6uYc7Yo | 142v 1L 0C @1d | ×0.50 | LOSER — avoid this shape today | The Ancient Silk Road Now Has a Bullet Train — 1,776 km | China Travel
