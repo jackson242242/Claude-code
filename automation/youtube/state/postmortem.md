@@ -1,3 +1,12 @@
+## 2026-09-12 post-mortem (baseline = 14d median views of Shorts ≥3d old: 305)
+- 2026-09-10 c xU01aJLk2jc | 920v 6L 0C @2d | ×3.02 | WINNER — replicate this hook shape today | One Soup Dumpling, 18 Folds, and Hidden Molten Broth | China Travel Ex
+- 2026-09-10 a jAXGW8B5zIA | 886v 5L 0C @2d | ×2.90 | WINNER — replicate this hook shape today | China's Tallest Tower Twists 120° — the Twist Saved $58M in Steel | Ch
+- 2026-09-11 d p-y_Eun7F1Q | 803v 4L 1C @1d | ×2.63 | WINNER — replicate this hook shape today | China Has More Bullet-Train Track Than the Rest of Earth Combined | Ch
+- 2026-09-11 c cD3-0hgdeE0 | 498v 5L 0C @1d | ×1.63 | baseline | This 600-Year-Old Wall Took 350 Million Bricks — Each One Signed | Chi
+- 2026-09-10 d brrsn31-Z50 | 124v 2L 0C @2d | ×0.41 | LOSER — avoid this shape today | Two of China's Ancient Capitals, 90 Minutes Apart by Bullet Train | Ch
+- 2026-09-11 a bkMbeG-BtFo | 56v 0L 0C @1d | ×0.18 | LOSER — avoid this shape today | 5 Mistakes Tourists Make in China — And None Are Cultural | China Trav
+- like-rate (fresh Shorts): 0.67% (peers 1-6%)
+
 ## 2026-09-11 post-mortem (baseline = 14d median views of Shorts ≥3d old: 281)
 - 2026-09-09 d aeSJ6uYc7Yo | 528v 5L 0C @2d | ×1.88 | baseline | The Ancient Silk Road Now Has a Bullet Train — 1,776 km | China Travel
 - 2026-09-10 a jAXGW8B5zIA | 518v 5L 0C @1d | ×1.84 | baseline | China's Tallest Tower Twists 120° — the Twist Saved $58M in Steel | Ch
