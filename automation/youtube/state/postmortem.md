@@ -1,3 +1,13 @@
+## 2026-09-13 post-mortem (baseline = 14d median views of Shorts ≥3d old: 305)
+- 2026-09-11 c cD3-0hgdeE0 | 899v 7L 0C @2d | ×2.95 | WINNER — replicate this hook shape today | This 600-Year-Old Wall Took 350 Million Bricks — Each One Signed | Chi
+- 2026-09-11 d p-y_Eun7F1Q | 883v 7L 1C @2d | ×2.90 | WINNER — replicate this hook shape today | China Has More Bullet-Train Track Than the Rest of Earth Combined | Ch
+- 2026-09-12 a NJmZdbFDWLM | 77v 0L 0C @1d | ×0.25 | LOSER — avoid this shape today | This Chinese Tea Costs $1.2 Million a Kilo — From 6 Bushes | China Tra
+- 2026-09-11 a bkMbeG-BtFo | 59v 0L 0C @2d | ×0.19 | LOSER — avoid this shape today | 5 Mistakes Tourists Make in China — And None Are Cultural | China Trav
+- 2026-09-12 c b5p9iRGKOao | 48v 0L 0C @1d | ×0.16 | LOSER — avoid this shape today | How Tourists Pay in China in 2026: Foreign Cards Now Work | China Trav
+- 2026-09-12 d AVcjvY0HdQ0 | 10v 0L 0C @1d | ×0.03 | LOSER — avoid this shape today | Beijing to Shanghai: 1,318 km in 4.5 Hours at 350 km/h | China Travel 
+- 2026-09-11 L Vqbx8JYn51Y | 6v 0L 0C @2d | ×0.02 | LONGFORM: no distribution (expected on this channel; search-ranking is slow) | How to Get Around China as a Tourist (2026): Trains, Metro & Apps
+- like-rate (fresh Shorts): 0.71% (peers 1-6%)
+
 ## 2026-09-12 post-mortem (baseline = 14d median views of Shorts ≥3d old: 305)
 - 2026-09-10 c xU01aJLk2jc | 920v 6L 0C @2d | ×3.02 | WINNER — replicate this hook shape today | One Soup Dumpling, 18 Folds, and Hidden Molten Broth | China Travel Ex
 - 2026-09-10 a jAXGW8B5zIA | 886v 5L 0C @2d | ×2.90 | WINNER — replicate this hook shape today | China's Tallest Tower Twists 120° — the Twist Saved $58M in Steel | Ch
