@@ -1,3 +1,9 @@
+## 2026-09-14 (Mon) direction + postmortem
+- WINNER shape holding: single-subject SUPERLATIVE/PARADOX-NUMBER on heritage megastructures/crafts/routes — 09-13 noodles ×1.05 / HZMB ×0.94 / silk ×0.94, all near/above baseline 309. LOSERS reconfirmed: practical/payment (pay-in-China ×0.23), specialty-price (¥1.2M tea ×0.28), vague A→B route (BJ-SH ×0.09) — keep avoiding.
+- Today replicates winners: a porcelain (Europe-copy / 1,300°C paradox), c Suzhou gardens (借景 / 13-acre paradox), d Grand Canal (world's-longest superlative). Footage-first passed with China-anchored/type-level clips; d re-rendered to drop a European-city canal leak from the first pass.
+- Direction search returned only national slang; no fresh China-travel trend signal beyond postmortem. vidIQ trend/analytics SKIP (balance 0, resets 09-29).
+- dialect-bank: 广西/桂柳话 deepening MISS again (no two-source-verifiable region-specific slang; national memes only) — honest, not fabricated.
+
 ## 2026-09-13 direction research (culture-first / growth-v2, Sun — 3 Shorts a/c/d@13/20/23Z, vidIQ 0, longform 非今日)
 - 排播 = config authoritative 3 Shorts a/c/d@13/20/23Z 全 9:16。firing prompt「a Short/b longform 16:9/c @13/17/22」按 PROMPT-OVERRIDE 视 STALE(known/accepted,不复flag)。longform 非今日((09-13−anchor 09-04)%7=2≠0；下个 weekly Fri 09-18)。owner-slots 无认领·pending-owner-uploads/metadata-retrofit/pending-video-updates 皆空(5a/5b skip)·social-export-queue 0 pending·idempotency 产前 today 0 条→正常产。
 - postmortem 裁决(baseline 305·like 0.71%): WINNER=single-subject SUPERLATIVE/PARADOX-NUMBER(Nanjing 城墙 350M-bricks-each-signed ×2.95 / more-bullet-track-than-Earth ×2.90); LOSER=practical/payment explainer(pay-in-China ×0.16) + 列表(5-mistakes ×0.19) + 模糊 A→B route(BJ-SH 1,318km ×0.03) + specialty-price(¥1.2M tea ×0.25)。→ 押 single-subject superlative·避 practical/列表/模糊route。**注: 昨日多条 practical/route 读 LOSER→今日 c/d 虽属 food/route 槽,均改用 superlative/paradox 单点钩(非 how-to·非 A→B)。**

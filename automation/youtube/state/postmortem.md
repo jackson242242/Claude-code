@@ -1,3 +1,12 @@
+## 2026-09-14 post-mortem (baseline = 14d median views of Shorts ≥3d old: 309)
+- 2026-09-13 c wTwcBpuuR_g | 324v 2L 0C @1d | ×1.05 | baseline | The World's Oldest Noodles Are 4,000 Years Old — and They're Chinese |
+- 2026-09-13 d 9M_ZAj0Y7bM | 291v 1L 0C @1d | ×0.94 | baseline | The World's Longest Sea Crossing Is 55 km — Then It Dives Underwater |
+- 2026-09-13 a 37JkhBAUwT0 | 290v 2L 0C @1d | ×0.94 | baseline | One Cocoon = 900m of Silk Thread — China Killed to Keep It Secret | Ch
+- 2026-09-12 a NJmZdbFDWLM | 87v 0L 0C @2d | ×0.28 | LOSER — avoid this shape today | This Chinese Tea Costs $1.2 Million a Kilo — From 6 Bushes | China Tra
+- 2026-09-12 c b5p9iRGKOao | 71v 0L 0C @2d | ×0.23 | LOSER — avoid this shape today | How Tourists Pay in China in 2026: Foreign Cards Now Work | China Trav
+- 2026-09-12 d AVcjvY0HdQ0 | 29v 0L 0C @2d | ×0.09 | LOSER — avoid this shape today | Beijing to Shanghai: 1,318 km in 4.5 Hours at 350 km/h | China Travel 
+- like-rate (fresh Shorts): 0.46% (peers 1-6%)
+
 ## 2026-09-13 post-mortem (baseline = 14d median views of Shorts ≥3d old: 305)
 - 2026-09-11 c cD3-0hgdeE0 | 899v 7L 0C @2d | ×2.95 | WINNER — replicate this hook shape today | This 600-Year-Old Wall Took 350 Million Bricks — Each One Signed | Chi
 - 2026-09-11 d p-y_Eun7F1Q | 883v 7L 1C @2d | ×2.90 | WINNER — replicate this hook shape today | China Has More Bullet-Train Track Than the Rest of Earth Combined | Ch
