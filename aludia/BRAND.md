@@ -59,6 +59,15 @@
 - **互动权重**：收藏/分享/回复 > 点赞（Story 回复年增 88%，Story 拿信任、
   Reels 拿新流量）。发帖节奏理想值：每周 4–5 条 Reels。
 
+**9/14 周增量（来源见 2026-09-14 brief）：**
+- **"Ring My Bell"（Anita Ward, 1979）**：穿搭/俏皮女性向复兴——
+  珠宝试戴、换装、"ring" 双关天配（Aludia 有戒指线，梗现成）
+- **"September"（Earth, Wind & Fire）**：迎秋万能曲，日常画面即刻
+  电影感——秋季 b-roll 的零门槛配乐
+- **"Bad Dream"（cosrx 原声）**：产品戏剧化噩梦→安睡格式，幽默向，
+  珠宝可做"戒指差点掉进下水道→安放回丝绒盒"
+- JENNIE "Less Than a Lover"（221k+ reels）梦幻/浪漫向持续走强
+
 **9/9 周增量（来源见 2026-09-09 brief）：**
 - **"A New Season Had Begun"**：无字幕拼接秋季氛围格式——换季线的
   零成本模板（现有 b-roll 拼起来即可）
