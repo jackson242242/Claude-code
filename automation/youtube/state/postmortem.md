@@ -1,3 +1,12 @@
+## 2026-09-15 post-mortem (baseline = 14d median views of Shorts ≥3d old: 284)
+- 2026-09-13 c wTwcBpuuR_g | 551v 4L 0C @2d | ×1.94 | baseline | The World's Oldest Noodles Are 4,000 Years Old — and They're Chinese |
+- 2026-09-13 d 9M_ZAj0Y7bM | 405v 2L 0C @2d | ×1.43 | baseline | The World's Longest Sea Crossing Is 55 km — Then It Dives Underwater |
+- 2026-09-14 a Ii5_464cOkg | 362v 3L 0C @1d | ×1.27 | baseline | Europe Spent 1,000 Years Copying This Cup, Fired at 1,300°C
+- 2026-09-13 a 37JkhBAUwT0 | 337v 2L 0C @2d | ×1.19 | baseline | One Cocoon = 900m of Silk Thread — China Killed to Keep It Secret | Ch
+- 2026-09-14 c g7HVFDWf0DI | 81v 2L 0C @1d | ×0.29 | LOSER — avoid this shape today | 13 Acres Built to Feel Endless: Suzhou’s 500-Year-Old Garden
+- 2026-09-14 d j85Co481-zE | 57v 1L 0C @1d | ×0.20 | LOSER — avoid this shape today | The World’s Longest Man-Made River: 1,776 km, 2,500 Years Old
+- like-rate (fresh Shorts): 0.78% (peers 1-6%)
+
 ## 2026-09-14 post-mortem (baseline = 14d median views of Shorts ≥3d old: 309)
 - 2026-09-13 c wTwcBpuuR_g | 324v 2L 0C @1d | ×1.05 | baseline | The World's Oldest Noodles Are 4,000 Years Old — and They're Chinese |
 - 2026-09-13 d 9M_ZAj0Y7bM | 291v 1L 0C @1d | ×0.94 | baseline | The World's Longest Sea Crossing Is 55 km — Then It Dives Underwater |

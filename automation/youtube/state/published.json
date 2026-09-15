@@ -3053,6 +3053,45 @@
    "lane": "pexels-ffmpeg+youtube-data-api",
    "status": "scheduled",
    "publishAt": "2026-09-14T23:00:00Z"
+  },
+  {
+   "date": "2026-09-15",
+   "slot": "a",
+   "title": "China Fired Stone Into Fake Jade at 1,300°C | China Travel Expert",
+   "videoId": "TTRkPcv8LsY",
+   "url": "https://www.youtube.com/watch?v=TTRkPcv8LsY",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "music": "cinema-orient-01",
+   "status": "published",
+   "publishAt": "2026-09-15T13:00:00Z",
+   "note": "overrun→immediate public; HOOK v4 re-angle of 08-16 celadon"
+  },
+  {
+   "date": "2026-09-15",
+   "slot": "c",
+   "title": "Switzerland's Train: $240. China's: $28 | China Travel Expert",
+   "videoId": "c84m1E3SQPE",
+   "url": "https://www.youtube.com/watch?v=c84m1E3SQPE",
+   "pillar": "city-travel",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "music": "cpop-groove-01",
+   "status": "scheduled",
+   "publishAt": "2026-09-15T20:00:00Z",
+   "note": "price-anchor Glacier Express vs Kunming-Lijiang; Tue China-Practical re-angled to price-anchor winner family"
+  },
+  {
+   "date": "2026-09-15",
+   "slot": "d",
+   "title": "The View on China's ¥20 Bill Is Real — Li River | China Travel Expert",
+   "videoId": "fvlFd7M8_5Q",
+   "url": "https://www.youtube.com/watch?v=fvlFd7M8_5Q",
+   "pillar": "china-route",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "music": "oriental-edm-01",
+   "status": "scheduled",
+   "publishAt": "2026-09-15T23:00:00Z",
+   "note": "Li River ¥20-note route EP; fact-first"
   }
  ]
 }
