@@ -1,3 +1,12 @@
+## 2026-09-16 post-mortem (baseline = 14d median views of Shorts ≥3d old: 307)
+- 2026-09-14 a Ii5_464cOkg | 523v 4L 0C @2d | ×1.70 | baseline | Europe Spent 1,000 Years Copying This Cup, Fired at 1,300°C
+- 2026-09-15 a TTRkPcv8LsY | 359v 2L 0C @1d | ×1.17 | baseline | China Fired Stone Into Fake Jade at 1,300°C | China Travel Expert
+- 2026-09-15 d fvlFd7M8_5Q | 290v 1L 0C @1d | ×0.94 | baseline | The View on China's ¥20 Bill Is Real — Li River | China Travel Expert
+- 2026-09-15 c c84m1E3SQPE | 273v 1L 0C @1d | ×0.89 | baseline | Switzerland's Train: $240. China's: $28 | China Travel Expert
+- 2026-09-14 c g7HVFDWf0DI | 173v 3L 0C @2d | ×0.56 | baseline | 13 Acres Built to Feel Endless: Suzhou’s 500-Year-Old Garden
+- 2026-09-14 d j85Co481-zE | 111v 1L 0C @2d | ×0.36 | LOSER — avoid this shape today | The World’s Longest Man-Made River: 1,776 km, 2,500 Years Old
+- like-rate (fresh Shorts): 0.69% (peers 1-6%)
+
 ## 2026-09-15 post-mortem (baseline = 14d median views of Shorts ≥3d old: 284)
 - 2026-09-13 c wTwcBpuuR_g | 551v 4L 0C @2d | ×1.94 | baseline | The World's Oldest Noodles Are 4,000 Years Old — and They're Chinese |
 - 2026-09-13 d 9M_ZAj0Y7bM | 405v 2L 0C @2d | ×1.43 | baseline | The World's Longest Sea Crossing Is 55 km — Then It Dives Underwater |

@@ -2,7 +2,9 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
-**Today:** 2026-09-14 (轮到: 广西/桂柳话 — 仍为11区中最久未更新者(上次成功更新09-01·09-13再试亦 MISS). **诚实降级: 本run 未新增词条** — 定向搜索(桂柳话/南宁白话 网络流行语/梗 2026)仅返回全国性热梗(lingoace/新浪/维基·中国大陆网络用语列表),无广西区专属且可二源核实的全新条目; 库内广西已有 车大炮/漏嘢/灰机/魂都失(09-01/08-21)→不重复不伪造. 记录 miss·下轮再补. 今日 Mon·config authoritative 3 Shorts a/c/d@13/20/23Z 全英(growth-v2 slot b RETIRED)·longform 非今日((09-14−anchor09-04)%7=3≠0·下个 weekly Fri 09-18). 3题(porcelain/Suzhou-garden/Grand-Canal)非广西区+owner 08-30 Shorts全英→方言味归社媒caption. 详见 RUNLOG 2026-09-14.)
+**Today:** 2026-09-16 (轮到: 广西/桂柳话 — 11区中最久未更新者(上次成功更新09-01·09-13/09-14 连续 MISS). **HIT: +栓Q** (桂林 Teacher Liu 刘涛 空耳'Thank you'→对人事物无语·从桂林走红全国) — 首破 Guangxi MISS 连败; 二源核实(数英 digitaling 2026热词 / lingoace 网络流行语·均记桂林起源)·clean 非政治非群体攻击·车大炮/漏嘢/灰机/魂都失 already present→未重复. 今日 Wed·config authoritative 3 Shorts a/c/d@13/20/23Z 全英(growth-v2 slot b RETIRED)·longform 非今日((09-16−anchor09-04)%7=5≠0·下个 weekly Fri 09-18). 3题(苏绣双面绣/江南水乡/西安城墙)非广西区+owner 08-30 Shorts全英→方言味归社媒caption. 详见 RUNLOG 2026-09-16.)
+
+**PRIOR (2026-09-14):** (轮到: 广西/桂柳话 — 仍为11区中最久未更新者(上次成功更新09-01·09-13再试亦 MISS). **诚实降级: 本run 未新增词条** — 定向搜索(桂柳话/南宁白话 网络流行语/梗 2026)仅返回全国性热梗(lingoace/新浪/维基·中国大陆网络用语列表),无广西区专属且可二源核实的全新条目; 库内广西已有 车大炮/漏嘢/灰机/魂都失(09-01/08-21)→不重复不伪造. 记录 miss·下轮再补. 今日 Mon·config authoritative 3 Shorts a/c/d@13/20/23Z 全英(growth-v2 slot b RETIRED)·longform 非今日((09-14−anchor09-04)%7=3≠0·下个 weekly Fri 09-18). 3题(porcelain/Suzhou-garden/Grand-Canal)非广西区+owner 08-30 Shorts全英→方言味归社媒caption. 详见 RUNLOG 2026-09-14.)
 
 **PRIOR (2026-09-13):**  (轮到: 广西/桂柳话 — 11区中最久未更新者(上次09-01·其余 09-02..09-12 均已轮过). **诚实降级: 本run 未新增词条** — 广西/桂柳话 定向搜索(桂柳话 网络流行语/南宁白话 词汇 2026)未返回可二源核实的全新条目(通用2026热梗非广西区); 权威源 zh.wikipedia 桂柳话 / baidu baike 桂柳文化 被 egress proxy 拦截无法 WebFetch. 库内广西已有 车大炮/漏嘢/灰机/魂都失(09-01/08-21)→不重复不伪造. 记录 miss·下轮再补. 今日 Sun·config authoritative 3 Shorts a/c/d@13/20/23Z 全英(growth-v2 slot b RETIRED)·longform 非今日((09-13−anchor09-04)%7=2≠0). 3题(silk/noodles/HZMB)非广西区+owner 08-30 Shorts全英→方言味归社媒caption. 详见 RUNLOG 2026-09-13.)
 
@@ -268,7 +270,9 @@
 <!-- 07-30 deepened 广西话 again (11区最久未更新, 上次07-19): +友仔/友女 (南宁壮语影响称呼) +是公的=是空的 (g/k不分误听梗). 蓝瘦香菇/老表/克/得~~~ already present, not duplicated. -->
 <!-- 08-10 deepened 广西话 (11区最久未更新, 上次07-30): +老友 (南宁铁哥们/老友粉命名) +白话 (广西人称粤语为白话, 明清粤商入桂形成第一大方言). 只补 clean·verified 条, 不塞政治/群体梗. -->
 <!-- 08-21 deepened 广西话 (11区最久未更新, 上次08-10, 其余10区08-11..08-20均已轮过): +灰机 (f/h不分, 飞机→灰机口音梗) +魂都失 (南宁程度补语, 极致夸张). 得~~~/老表 already present(196/191)→未重复. 二源核实(澎湃 4591085·知乎 574386827·喜马拉雅 t6815083). 今日无广西选题→按"最久未更新"如实深化不强塞入片(honest). -->
+- **栓Q** (shuān Q, "thank you" 空耳) | "I'm so done / speechless / exasperated" | 广西桂林 Teacher Liu 刘涛用带口音英文介绍桂林山水,"Thank you"被网友空耳成"栓Q",引申为对人事物无语/受不了；"栓Q咯"≈我真服了 | 从广西桂林走红全国的空耳梗,travel/吐槽短片轻松彩蛋(桂林山水本就是频道选题) | [comedy] [teach] [travel] | clean（verified 数英 digitaling 2026热词 / lingoace 网络流行语·均记桂林 Teacher Liu 刘涛起源）  <!-- added 2026-09-16 -->
 <!-- 09-01 deepened 广西话 (11区最久未更新, 上次08-21, 其余10区08-22..08-31均已轮过): +车大炮 (吹牛/夸口·白话/桂柳话) +漏嘢 (假货/次货·白话). 灰机/魂都失/老友/白话 already present→未重复. 二源核实(维基·桂柳话 / 中新网·闲话广西汉语方言 / 喜马拉雅 t6815083). 今日3题(景泰蓝/DiDi/玉门关)非广西选题且 owner 08-30 Shorts全英字幕→方言味归社媒caption(honest 未织入片). -->
+<!-- 09-16 deepened 广西话 (仍为11区最久未更新·09-13/09-14 连续 MISS): +栓Q (桂林 Teacher Liu 刘涛 空耳'Thank you'→对人无语·全国热梗). 首破 Guangxi MISS 连败·二源核实(数英 digitaling / lingoace)·clean 非政治非群体攻击·车大炮/漏嘢/灰机/魂都失 already present→未重复. 今日3题(苏绣/水乡/西安城墙)非广西选题·owner 08-30 Shorts全英→方言味归社媒caption. -->
 
 
 ## 台湾腔 (Taiwan Accent — Taiwanese Mandarin)

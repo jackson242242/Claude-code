@@ -508,7 +508,8 @@
    "views": 176,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "no-artifacts",
+   "note": "2026-09-16: date/slot null, no runs/ artifacts in repo -> cannot re-render, not faked"
   },
   {
    "videoId": "tweIfrUN--k",
@@ -516,7 +517,8 @@
    "views": 175,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "no-artifacts",
+   "note": "2026-09-16: date/slot null, no runs/ artifacts in repo -> cannot re-render, not faked"
   },
   {
    "videoId": "3FfvofWUZM8",

@@ -3092,6 +3092,45 @@
    "status": "scheduled",
    "publishAt": "2026-09-15T23:00:00Z",
    "note": "Li River ¥20-note route EP; fact-first"
+  },
+  {
+   "date": "2026-09-16",
+   "slot": "a",
+   "title": "One Silk Thread, Split 48 Ways, Hides Two Pictures | China Travel Expert",
+   "videoId": "I1bhRq5QTsc",
+   "url": "https://www.youtube.com/watch?v=I1bhRq5QTsc",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "music": "oriental-edm-01",
+   "status": "scheduled",
+   "publishAt": "2026-09-16T13:00:00Z",
+   "note": "Suzhou double-sided embroidery craft; HOOK v4 number 48; embroidery footage type-honest"
+  },
+  {
+   "date": "2026-09-16",
+   "slot": "c",
+   "title": "China's Water Towns Are 1,300 Years Old — Streets Made of Water | China Travel Expert",
+   "videoId": "ZOWHhJFu9yQ",
+   "url": "https://www.youtube.com/watch?v=ZOWHhJFu9yQ",
+   "pillar": "city-travel",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "music": "lofi-chill-01",
+   "status": "scheduled",
+   "publishAt": "2026-09-16T20:00:00Z",
+   "note": "Jiangnan water towns heritage; number 1,300yr; Chinese-waterfront footage 0 foreign leak"
+  },
+  {
+   "date": "2026-09-16",
+   "slot": "d",
+   "title": "Bike a 13.7 km Loop Atop Xi'an's 650-Year-Old City Wall | China Travel Expert",
+   "videoId": "q2idNSHe2kw",
+   "url": "https://www.youtube.com/watch?v=q2idNSHe2kw",
+   "pillar": "china-route",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "music": "lofi-upbeat-01",
+   "status": "scheduled",
+   "publishAt": "2026-09-16T23:00:00Z",
+   "note": "Xi'an city wall loop route; number 13.7km/650yr; re-assembled 2x to purge EU bell-tower/cathedral leaks -> clean Chinese-city footage"
   }
  ]
 }
