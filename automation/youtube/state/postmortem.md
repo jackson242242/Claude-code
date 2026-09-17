@@ -1,3 +1,12 @@
+## 2026-09-17 post-mortem (baseline = 14d median views of Shorts ≥3d old: 284)
+- 2026-09-15 a TTRkPcv8LsY | 451v 3L 0C @2d | ×1.59 | baseline | China Fired Stone Into Fake Jade at 1,300°C | China Travel Expert
+- 2026-09-15 d fvlFd7M8_5Q | 312v 2L 0C @2d | ×1.10 | baseline | The View on China's ¥20 Bill Is Real — Li River | China Travel Expert
+- 2026-09-15 c c84m1E3SQPE | 280v 2L 0C @2d | ×0.99 | baseline | Switzerland's Train: $240. China's: $28 | China Travel Expert
+- 2026-09-16 a I1bhRq5QTsc | 42v 0L 0C @1d | ×0.15 | LOSER — avoid this shape today | One Silk Thread, Split 48 Ways, Hides Two Pictures | China Travel Expe
+- 2026-09-16 d q2idNSHe2kw | 30v 0L 0C @1d | ×0.11 | LOSER — avoid this shape today | Bike a 13.7 km Loop Atop Xi'an's 650-Year-Old City Wall | China Travel
+- 2026-09-16 c ZOWHhJFu9yQ | 21v 0L 0C @1d | ×0.07 | LOSER — avoid this shape today | China's Water Towns Are 1,300 Years Old — Streets Made of Water | Chin
+- like-rate (fresh Shorts): 0.62% (peers 1-6%)
+
 ## 2026-09-16 post-mortem (baseline = 14d median views of Shorts ≥3d old: 307)
 - 2026-09-14 a Ii5_464cOkg | 523v 4L 0C @2d | ×1.70 | baseline | Europe Spent 1,000 Years Copying This Cup, Fired at 1,300°C
 - 2026-09-15 a TTRkPcv8LsY | 359v 2L 0C @1d | ×1.17 | baseline | China Fired Stone Into Fake Jade at 1,300°C | China Travel Expert

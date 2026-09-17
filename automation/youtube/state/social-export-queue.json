@@ -526,7 +526,8 @@
    "views": 171,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "no-artifacts",
+   "note": "date/slot null → runs/<date>-<slot>/ not locatable in fresh clone; cannot re-render without fabricating"
   },
   {
    "videoId": "iVuEIkqFSNQ",
@@ -534,7 +535,8 @@
    "views": 168,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "no-artifacts",
+   "note": "date/slot null → runs/<date>-<slot>/ not locatable in fresh clone; cannot re-render without fabricating"
   },
   {
    "videoId": "rsHaPG_Xets",
