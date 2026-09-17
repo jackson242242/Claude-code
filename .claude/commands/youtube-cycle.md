@@ -125,6 +125,24 @@ log `skipped: batch already published today` and stop. (Protects against manual
      Chongqing-night Shorts win the feed), footage gate unchanged.
    - Music is the audio: energetic/cinematic bed at 0.9, beat-locked cuts.
    - Title = the claim in ≤60 chars, curiosity gap, no series prefix clutter.
+   **Q4 PLAN (owner 2026-09-17, plans/q4-2026-plan.md — three pillars; this
+   overrides the weekday theme table above where they conflict):**
+   - **Wed + Sun slot a = 《China Price Check》** the channel's signature
+     subscribable series: ONE price comparison per episode, both sides verified
+     THIS RUN, both in USD, same tier. Title always starts "China Price Check:";
+     closing cue always teases next week's comparison ("Next: <thing> vs <thing>");
+     file to the "China Price Check" playlist. Queue ids cpc-*.
+   - **slot c, 2-3×/week = 《China Trip Planner》** search-intent utility (queue
+     ids ctp-*): title = the exact query travellers type. These compound over
+     4-8 weeks — do NOT judge them by day-1 views in the postmortem; mark them
+     `search-compounding` in RUNLOG and review monthly instead.
+   - **Seasonal lead times (miss it and it waits a year):** Golden Week Oct 1-7
+     content ships before 09-30; Harbin Ice Festival + CNY 2027-02-06 planning
+     content ships in November (8-10 weeks of ranking lead); year-ahead piece in
+     December.
+   - **Topic gate:** if a topic has no honest footage AND no number, it is not a
+     video — pick from cpc-*/ctp-* instead (this week's three LOSERs were all
+     site-specific culture cards with generic footage).
    **HOOK v4 — NUMBERS ARE MANDATORY (owner 2026-09-09 「没有hook，没有数字」):**
    Every Short's TITLE and cue 1 must carry a number, price, ratio or hard
    superlative. No number → the topic is not ready; re-angle or pick another.
