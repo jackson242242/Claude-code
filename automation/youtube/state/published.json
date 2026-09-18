@@ -3209,6 +3209,19 @@
    "publishAt": "2026-09-18T23:00:00Z",
    "music": "guzheng-calm-01",
    "format": "9x16"
+  },
+  {
+   "date": "2026-09-18",
+   "slot": "L",
+   "title": "China on $50 a Day: Real 2026 Prices | China Travel Expert",
+   "videoId": "9llBaFakK1g",
+   "url": "https://www.youtube.com/watch?v=9llBaFakK1g",
+   "pillar": "china-practical",
+   "lane": "elevenlabs+pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-18T15:00:00Z",
+   "music": "underscore-docu-01",
+   "format": "16x9"
   }
  ]
 }
