@@ -1,3 +1,12 @@
+## 2026-09-18 post-mortem (baseline = 14d median views of Shorts ≥3d old: 308)
+- 2026-09-17 c GuQ5XRWdNoI | 166v 0L 0C @1d | ×0.54 | baseline | Only 30% of a Cow Makes This Hotpot — Timed to the Second | China Trav
+- 2026-09-17 d WfjxfDApvZM | 131v 0L 0C @1d | ×0.43 | LOSER — avoid this shape today | In 1990 This Was Farmland — Now It's China's Tallest Skyline | China T
+- 2026-09-16 a I1bhRq5QTsc | 68v 0L 0C @2d | ×0.22 | LOSER — avoid this shape today | One Silk Thread, Split 48 Ways, Hides Two Pictures | China Travel Expe
+- 2026-09-16 d q2idNSHe2kw | 56v 0L 0C @2d | ×0.18 | LOSER — avoid this shape today | Bike a 13.7 km Loop Atop Xi'an's 650-Year-Old City Wall | China Travel
+- 2026-09-16 c ZOWHhJFu9yQ | 51v 0L 0C @2d | ×0.17 | LOSER — avoid this shape today | China's Water Towns Are 1,300 Years Old — Streets Made of Water | Chin
+- 2026-09-17 a W6ZH-Sgcjzs | 44v 0L 0C @1d | ×0.14 | LOSER — avoid this shape today | One Chinese Teapot Sold for $2 Million — No Glaze at All | China Trave
+- like-rate (fresh Shorts): 0.00% (peers 1-6%)
+
 ## 2026-09-17 post-mortem (baseline = 14d median views of Shorts ≥3d old: 284)
 - 2026-09-15 a TTRkPcv8LsY | 451v 3L 0C @2d | ×1.59 | baseline | China Fired Stone Into Fake Jade at 1,300°C | China Travel Expert
 - 2026-09-15 d fvlFd7M8_5Q | 312v 2L 0C @2d | ×1.10 | baseline | The View on China's ¥20 Bill Is Real — Li River | China Travel Expert
