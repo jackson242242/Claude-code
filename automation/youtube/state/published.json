@@ -3170,6 +3170,45 @@
    "status": "scheduled",
    "publishAt": "2026-09-17T23:00:00Z",
    "note": "Shanghai Bund->Pudong route(generated); paradox+number 1990 farmland->632m Shanghai Tower + world's-first 3 adjacent supertalls; Shanghai-ID footage 10 clip(night skyline OK per SHORTS v3); Chengdu-panda DEFERRED(1 real clip·red-panda/bear/elephant leak)"
+  },
+  {
+   "date": "2026-09-18",
+   "slot": "a",
+   "title": "Shanghai's River Cruise Is $17. Locals Cross for 30¢ | China Travel Expert",
+   "videoId": "ZRBLIpYlPP4",
+   "url": "https://www.youtube.com/watch?v=ZRBLIpYlPP4",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-18T13:00:00Z",
+   "music": "lofi-upbeat-01",
+   "format": "9x16"
+  },
+  {
+   "date": "2026-09-18",
+   "slot": "c",
+   "title": "The Great Wall Is 21,196 km — but You Can't See It From Space | China Travel Expert",
+   "videoId": "xFyMjg6QKzw",
+   "url": "https://www.youtube.com/watch?v=xFyMjg6QKzw",
+   "pillar": "city-travel",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-18T20:00:00Z",
+   "music": "cinema-orient-01",
+   "format": "9x16"
+  },
+  {
+   "date": "2026-09-18",
+   "slot": "d",
+   "title": "Suzhou Once Had 200+ Private Gardens — 9 Are Now World Heritage | China Travel Expert",
+   "videoId": "us4orpAEzKg",
+   "url": "https://www.youtube.com/watch?v=us4orpAEzKg",
+   "pillar": "city-travel",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-18T23:00:00Z",
+   "music": "guzheng-calm-01",
+   "format": "9x16"
   }
  ]
 }
