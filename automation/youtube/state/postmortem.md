@@ -1,3 +1,13 @@
+## 2026-09-19 post-mortem (baseline = 14d median views of Shorts ≥3d old: 307)
+- 2026-09-17 c GuQ5XRWdNoI | 592v 1L 0C @2d | ×1.93 | baseline | Only 30% of a Cow Makes This Hotpot — Timed to the Second | China Trav
+- 2026-09-18 c xFyMjg6QKzw | 148v 1L 0C @1d | ×0.48 | LOSER — avoid this shape today | The Great Wall Is 21,196 km — but You Can't See It From Space | China 
+- 2026-09-17 d WfjxfDApvZM | 133v 0L 0C @2d | ×0.43 | LOSER — avoid this shape today | In 1990 This Was Farmland — Now It's China's Tallest Skyline | China T
+- 2026-09-18 a ZRBLIpYlPP4 | 103v 0L 0C @1d | ×0.34 | LOSER — avoid this shape today | Shanghai's River Cruise Is $17. Locals Cross for 30¢ | China Travel Ex
+- 2026-09-18 d us4orpAEzKg | 53v 0L 0C @1d | ×0.17 | LOSER — avoid this shape today | Suzhou Once Had 200+ Private Gardens — 9 Are Now World Heritage | Chin
+- 2026-09-17 a W6ZH-Sgcjzs | 46v 0L 0C @2d | ×0.15 | LOSER — avoid this shape today | One Chinese Teapot Sold for $2 Million — No Glaze at All | China Trave
+- 2026-09-18 L 9llBaFakK1g | 12v 0L 0C @1d | ×0.04 | LONGFORM: no distribution (expected on this channel; search-ranking is slow) | China on $50 a Day: Real 2026 Prices | China Travel Expert
+- like-rate (fresh Shorts): 0.19% (peers 1-6%)
+
 ## 2026-09-18 post-mortem (baseline = 14d median views of Shorts ≥3d old: 308)
 - 2026-09-17 c GuQ5XRWdNoI | 166v 0L 0C @1d | ×0.54 | baseline | Only 30% of a Cow Makes This Hotpot — Timed to the Second | China Trav
 - 2026-09-17 d WfjxfDApvZM | 131v 0L 0C @1d | ×0.43 | LOSER — avoid this shape today | In 1990 This Was Farmland — Now It's China's Tallest Skyline | China T

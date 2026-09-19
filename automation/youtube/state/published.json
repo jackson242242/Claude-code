@@ -3222,6 +3222,48 @@
    "publishAt": "2026-09-18T15:00:00Z",
    "music": "underscore-docu-01",
    "format": "16x9"
+  },
+  {
+   "date": "2026-09-19",
+   "slot": "a",
+   "title": "China's Oldest Wooden Halls Use Zero Nails — 1,000+ Years Standing | China Travel Expert",
+   "videoId": "_v9qHQEg550",
+   "url": "https://www.youtube.com/watch?v=_v9qHQEg550",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-19T13:00:00Z",
+   "music": "cpop-groove-01",
+   "format": "9x16",
+   "note": "dougong/nail-free timber temples; generated (cc7-01 Terracotta deferred: no site footage)"
+  },
+  {
+   "date": "2026-09-19",
+   "slot": "c",
+   "title": "How Much a Week in China Actually Costs (From $300) | China Travel Expert",
+   "videoId": "e6LxhrGkLIQ",
+   "url": "https://www.youtube.com/watch?v=e6LxhrGkLIQ",
+   "pillar": "china-practical",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-19T20:00:00Z",
+   "music": "lofi-chill-01",
+   "format": "9x16",
+   "note": "China Trip Planner ctp-04; search-compounding (judge monthly, not day-1)"
+  },
+  {
+   "date": "2026-09-19",
+   "slot": "d",
+   "title": "A Perfect Soup Dumpling Has Exactly 18 Folds | China Travel Expert",
+   "videoId": "dc0b_GyH20w",
+   "url": "https://www.youtube.com/watch?v=dc0b_GyH20w",
+   "pillar": "china-food",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-19T23:00:00Z",
+   "music": "oriental-edm-01",
+   "format": "9x16",
+   "note": "xiaolongbao 18-folds; footage-forced pivot (route subjects Jiayuguan/HSR/Great Wall all failed FOOTAGE-FIRST gate). Replaced HSR upload ZFySlOi-LRo (deleted; foreign-train footage)."
   }
  ]
 }

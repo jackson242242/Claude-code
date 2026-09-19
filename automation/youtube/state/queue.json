@@ -107,7 +107,8 @@
    "series": "China Trip Planner",
    "addedAt": "2026-09-17",
    "addedBy": "q4 plan",
-   "status": "active"
+   "status": "published-2026-09-19",
+   "publishedVideoId": "e6LxhrGkLIQ"
   },
   {
    "id": "ctp-05",
@@ -1473,7 +1474,8 @@
    "seriesNote": "Silk Road Heritage 丝路人文线 连载",
    "addedAt": "2026-08-12",
    "addedBy": "owner directive",
-   "status": "active"
+   "status": "deferred-footage-2026-09-19",
+   "fitNote": "FOOTAGE-FIRST fail: Jiayuguan fort has no site-identifying Pexels portrait clips (desert queries return non-China/Oman/Egypt). Defer or use map-format route framing."
   },
   {
    "id": "slk-a07",
@@ -1857,9 +1859,9 @@
    "whyNow": "2026-08-19 research: 世界遗产硬核视觉+footage-first可过·补陕西",
    "addedAt": "2026-08-19",
    "addedBy": "auto-replenish (culture geo+footage-viable)",
-   "status": "active",
+   "status": "deferred-footage-2026-09-19",
    "deferNote": "2026-08-30 FOOTAGE-FIRST FAIL: Pexels \"terracotta army/warriors xian\" 返回泛用陶俑/公园英雄雕像/毛主席像/做陶罐——无站点级兵马俑素材(旧注 subject-level PASS 经实测证伪)。指认\"这8000尊\"违字幕诚实规则→DEFER，待 owner 实拍/MAP-3D 复盘日再产。改产 cc7-06 景德镇。",
-   "fitNote": "2026-08-26 FOOTAGE-FIRST portrait FAIL: no site-specific terracotta clips in Pexels portrait (returns figurines/Georgia monument/Mao heads/cosplay). Use MAP-FORMAT or defer until real portrait footage exists; do not claim \"this army\" over generic clay clips."
+   "fitNote": "FOOTAGE-FIRST fail: Terracotta Army has no site-identifying Pexels portrait clips (returns worldwide statues/monuments). Revisit only with real Terracotta footage or a map/museum-honest re-angle."
   },
   {
    "id": "cc7-02",

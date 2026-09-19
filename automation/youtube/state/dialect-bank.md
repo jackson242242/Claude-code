@@ -56,6 +56,7 @@
 - **扮嘢** (baan6 je5) | "to put on airs / pretend" | "扮"=装，"嘢"=东西/样子；扮嘢=装模作样、做作。"唔好喺度扮嘢"=别在这儿装 | 广府人戳穿虚张声势的俏皮话；轻松吐槽场景百搭 | [comedy] [teach] | clean  <!-- added 2026-08-12, verified (羊城网 广州话俚语/新浪 广东话常用字词) -->
 - **论尽** (leon6 zeon6) | "clumsy / awkward / a burden" | 不灵活、笨手笨脚、做事不利落；也引申"累赘、麻烦"。"你做嘢咁论尽" = "你做事这么笨拙" | 广州话形容笨拙最传神的词，褒少贬多的日常吐槽 | [comedy] [teach] | clean  <!-- added 2026-08-23, verified (羊城网 gznf.net 言简意赅广州话俚语/豆瓣845483808) -->
 - **埋单** (maai4 daan1) | "pay the bill / settle up" | 广府食肆结账用语，"埋"=聚拢/结算，"埋单"=把账单结清。普通话流行的"买单"其实是它的讹变 | 一切餐厅/早茶/糖水短片的收尾天然彩蛋；点出粤语反哺全国的活例子 | [travel] [teach] | clean  <!-- added 2026-08-23, verified (羊城网 gznf.net 广州话俚语/知乎 p557056162 粤剧口头禅) -->
+- **MM7** (em1 em1 cat1) | "so good / awesome (正)" | "正"的速成/仓颉输入码；粉丝打字太快用"mm7"表示"正=赞/棒"。源自 MIRROR 成员柳应廷(阿Jer)直播，粉丝刷"mm7！"称赞，阿Jer 2022 更出同名单曲 | 港式 Gen-Z 潮语，clean 非政治；赞美食/景点百搭「呢个景 mm7！」→ 归社媒 caption 味道 | [comedy] [travel] [teach] | clean  <!-- added 2026-09-19, verified (etnet 296276 今期最红潮语 / hk01 679449 00后新潮语 / weekendhk mm7潮语·均记速成码「正」+阿Jer来源) -->
 
 ## 北京话 (Beijing Dialect)
 
