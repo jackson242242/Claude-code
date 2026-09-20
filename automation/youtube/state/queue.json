@@ -14,18 +14,6 @@
    "status": "active"
   },
   {
-   "id": "cpc-01",
-   "title": "China Price Check: 高铁 vs 欧洲高铁同距离票价",
-   "pillar": "china-practical",
-   "format": "short",
-   "angle": "同里程对比(北京-上海1318km vs 巴黎-马赛/伦敦-爱丁堡), 两边当次核实官方票价, 换算USD | HOOK v4 强制数字; FOOTAGE-FIRST: 实用类用 type-level 诚实素材(手机/车站/餐桌)不做景点指认",
-   "whyNow": "owner 2026-09-17 三个月计划(plans/q4-2026-plan.md): 招牌栏目+搜索复利库",
-   "series": "China Price Check",
-   "addedAt": "2026-09-17",
-   "addedBy": "q4 plan",
-   "status": "active"
-  },
-  {
    "id": "cpc-02",
    "title": "China Price Check: 一线城市五星酒店 vs 苏黎世三星",
    "pillar": "china-practical",
@@ -932,19 +920,6 @@
    "addedBy": "owner directive",
    "status": "covered-2026-08-03",
    "coveredBy": "2026-08-03 绝活系列"
-  },
-  {
-   "id": "cfd-05",
-   "title": "潮汕牛肉火锅：一头牛分出十二个部位",
-   "pillar": "china-food",
-   "format": "short",
-   "angle": "12-cut beef map hook; 手打牛肉丸 bounce test.",
-   "whyNow": "owner core-shift 2026-07-15: travel resources + food",
-   "sources": [],
-   "addedAt": "2026-07-15",
-   "addedBy": "owner directive",
-   "status": "covered-2026-07-22-duplicate",
-   "coveredBy": "dedup: already produced (see status)"
   },
   {
    "id": "str-01",

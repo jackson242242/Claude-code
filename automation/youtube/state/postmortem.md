@@ -1,3 +1,13 @@
+## 2026-09-20 post-mortem (baseline = 14d median views of Shorts ≥3d old: 284)
+- 2026-09-19 d dc0b_GyH20w | 552v 1L 1C @1d | ×1.94 | baseline | A Perfect Soup Dumpling Has Exactly 18 Folds | China Travel Expert
+- 2026-09-19 c e6LxhrGkLIQ | 227v 1L 0C @1d | ×0.80 | baseline | How Much a Week in China Actually Costs (From $300) | China Travel Exp
+- 2026-09-18 c xFyMjg6QKzw | 181v 1L 0C @2d | ×0.64 | baseline | The Great Wall Is 21,196 km — but You Can't See It From Space | China 
+- 2026-09-18 a ZRBLIpYlPP4 | 138v 1L 0C @2d | ×0.49 | LOSER — avoid this shape today | Shanghai's River Cruise Is $17. Locals Cross for 30¢ | China Travel Ex
+- 2026-09-19 a _v9qHQEg550 | 96v 2L 0C @1d | ×0.34 | LOSER — avoid this shape today | China's Oldest Wooden Halls Use Zero Nails — 1,000+ Years Standing | C
+- 2026-09-18 d us4orpAEzKg | 55v 0L 0C @2d | ×0.19 | LOSER — avoid this shape today | Suzhou Once Had 200+ Private Gardens — 9 Are Now World Heritage | Chin
+- 2026-09-18 L 9llBaFakK1g | 38v 1L 0C @2d | ×0.13 | LONGFORM: has traffic | China on $50 a Day: Real 2026 Prices | China Travel Expert
+- like-rate (fresh Shorts): 0.48% (peers 1-6%)
+
 ## 2026-09-19 post-mortem (baseline = 14d median views of Shorts ≥3d old: 307)
 - 2026-09-17 c GuQ5XRWdNoI | 592v 1L 0C @2d | ×1.93 | baseline | Only 30% of a Cow Makes This Hotpot — Timed to the Second | China Trav
 - 2026-09-18 c xFyMjg6QKzw | 148v 1L 0C @1d | ×0.48 | LOSER — avoid this shape today | The Great Wall Is 21,196 km — but You Can't See It From Space | China 

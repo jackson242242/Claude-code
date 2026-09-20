@@ -1,6 +1,45 @@
 {
  "videos": [
   {
+   "date": "2026-09-20",
+   "slot": "a",
+   "title": "China Price Check: Bullet Train $84 for 1,318 km — 6¢ a km | China Travel Expert",
+   "videoId": "D0lXxIB8wzI",
+   "url": "https://www.youtube.com/watch?v=D0lXxIB8wzI",
+   "pillar": "china-practical",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-20T13:00:00Z",
+   "music": "oriental-edm-01",
+   "format": "9x16"
+  },
+  {
+   "date": "2026-09-20",
+   "slot": "c",
+   "title": "One Chaoshan Beef Cut Is Under 1% of the Cow — a 7-Second Dip | China Travel Expert",
+   "videoId": "vl9egi9vapU",
+   "url": "https://www.youtube.com/watch?v=vl9egi9vapU",
+   "pillar": "china-food",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-20T20:00:00Z",
+   "music": "cpop-groove-01",
+   "format": "9x16"
+  },
+  {
+   "date": "2026-09-20",
+   "slot": "d",
+   "title": "China's 2,800 km Northwest Loop: Lakes, Salt Flats, Rainbow Hills | China Travel Expert",
+   "videoId": "0UXG9dHOtX8",
+   "url": "https://www.youtube.com/watch?v=0UXG9dHOtX8",
+   "pillar": "china-route",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-20T23:00:00Z",
+   "music": "cinema-orient-01",
+   "format": "9x16"
+  },
+  {
    "date": "2026-09-03",
    "slot": "a",
    "title": "The Chinese Teapot That Gets Better Every Year | China Travel Expert",
