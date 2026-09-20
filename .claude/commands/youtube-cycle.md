@@ -55,6 +55,16 @@ run; put the source links in the video description.
    log `blocked: no footage lane`) and stop. Do not fabricate output.
 
 ## 0b. DAILY SELF-CORRECTION LOOP (owner 2026-09-02 — execute, don't report)
+0. **HOOK LEARNING LOOP (owner 2026-09-20, HARD):** BEFORE writing any cue 1,
+   read `automation/youtube/HOOKS.md` — its 铁律, template bank A-F, and the
+   AUTO leaderboard of which hook types actually performed. Today's hooks must
+   come from the types the leaderboard says to use; never ship a PLAIN-FACT hook
+   alone. Every Short's cue 1 must be discussion-worthy: the viewer can
+   DISAGREE, must CHOOSE, or gets a belief OVERTURNED — a fact they merely learn
+   does not qualify. AFTER all uploads, run
+   `NODE_USE_ENV_PROXY=1 node scripts/hook-ledger.mjs --days 30` and commit the
+   updated HOOKS.md; log each slot's hook TYPE in RUNLOG (`hook:<TYPE>`), and
+   mark novel shapes `HOOK-NEW:<desc>`.
 1. `NODE_USE_ENV_PROXY=1 node scripts/yt-postmortem.mjs` → read
    `state/postmortem.md` top block BEFORE picking topics: replicate WINNER
    shapes today, drop LOSER shapes. One line in RUNLOG: "postmortem: <verdicts>".
