@@ -59,6 +59,14 @@
 - **互动权重**：收藏/分享/回复 > 点赞（Story 回复年增 88%，Story 拿信任、
   Reels 拿新流量）。发帖节奏理想值：每周 4–5 条 Reels。
 
+**9/21 周增量（来源见 2026-09-21 brief）：**
+- **"Money Can't Buy You Happiness" 价值揭示格式**（原声）：先说
+  "买不来快乐"→ 再展示真正在乎的小物——**demi-fine 的定位天然契合**
+  （不卖炫耀，卖日常意义），本月最适合我们的格式
+- "Reason to Stay"（Olivia Dean）· "Bass Persuades"（Miley Cyrus）·
+  "Nicole Kidman"（ADÉLA）为本周榜首；"Sunny" 明快向
+- "September" 仍在迎秋窗口；"Petal" 时尚向持续
+
 **9/14 周增量（来源见 2026-09-14 brief）：**
 - **"Ring My Bell"（Anita Ward, 1979）**：穿搭/俏皮女性向复兴——
   珠宝试戴、换装、"ring" 双关天配（Aludia 有戒指线，梗现成）
