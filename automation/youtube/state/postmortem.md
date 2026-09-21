@@ -1,3 +1,12 @@
+## 2026-09-21 post-mortem (baseline = 14d median views of Shorts ≥3d old: 207)
+- 2026-09-19 d dc0b_GyH20w | 866v 2L 1C @2d | ×4.18 | WINNER — replicate this hook shape today | A Perfect Soup Dumpling Has Exactly 18 Folds | China Travel Expert
+- 2026-09-20 a D0lXxIB8wzI | 349v 3L 0C @1d | ×1.69 | baseline | China Price Check: Bullet Train $84 for 1,318 km — 6¢ a km | China Tra
+- 2026-09-19 c e6LxhrGkLIQ | 340v 2L 0C @2d | ×1.64 | baseline | How Much a Week in China Actually Costs (From $300) | China Travel Exp
+- 2026-09-19 a _v9qHQEg550 | 124v 2L 0C @2d | ×0.60 | baseline | China's Oldest Wooden Halls Use Zero Nails — 1,000+ Years Standing | C
+- 2026-09-20 d 0UXG9dHOtX8 | 122v 1L 0C @1d | ×0.59 | baseline | China's 2,800 km Northwest Loop: Lakes, Salt Flats, Rainbow Hills | Ch
+- 2026-09-20 c vl9egi9vapU | 84v 0L 0C @1d | ×0.41 | LOSER — avoid this shape today | One Chaoshan Beef Cut Is Under 1% of the Cow — a 7-Second Dip | China 
+- like-rate (fresh Shorts): 0.53% (peers 1-6%)
+
 ## 2026-09-20 post-mortem (baseline = 14d median views of Shorts ≥3d old: 284)
 - 2026-09-19 d dc0b_GyH20w | 552v 1L 1C @1d | ×1.94 | baseline | A Perfect Soup Dumpling Has Exactly 18 Folds | China Travel Expert
 - 2026-09-19 c e6LxhrGkLIQ | 227v 1L 0C @1d | ×0.80 | baseline | How Much a Week in China Actually Costs (From $300) | China Travel Exp
