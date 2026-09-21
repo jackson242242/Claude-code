@@ -600,7 +600,9 @@
    "views": 145,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "no-artifacts",
+   "statusDate": "2026-09-21",
+   "statusNote": "null date/slot -> no runs/<date>-<slot>/ artifacts to re-render (never fake)"
   },
   {
    "videoId": "_wxzuB8d2qU",
@@ -608,7 +610,9 @@
    "views": 144,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "no-artifacts",
+   "statusDate": "2026-09-21",
+   "statusNote": "null date/slot -> no runs/<date>-<slot>/ artifacts to re-render (never fake)"
   },
   {
    "videoId": "Q6QL21qmDjM",
