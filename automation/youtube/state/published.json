@@ -3303,6 +3303,48 @@
    "music": "oriental-edm-01",
    "format": "9x16",
    "note": "xiaolongbao 18-folds; footage-forced pivot (route subjects Jiayuguan/HSR/Great Wall all failed FOOTAGE-FIRST gate). Replaced HSR upload ZFySlOi-LRo (deleted; foreign-train footage)."
+  },
+  {
+   "date": "2026-09-21",
+   "slot": "a",
+   "title": "The World's Longest Dragon Dance Ran 6,500 Meters | China Travel Expert",
+   "videoId": "H4nVguDqfPE",
+   "url": "https://www.youtube.com/watch?v=H4nVguDqfPE",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "public",
+   "publishAt": null,
+   "music": "cinema-orient-01",
+   "format": "9x16",
+   "note": "overrun: 13:00Z passed at upload (13:04Z) -> immediate public per playbook; hook SPECTACLE-FACT (dragon dance 6,500m)"
+  },
+  {
+   "date": "2026-09-21",
+   "slot": "c",
+   "title": "Don't Visit China During Golden Week (Oct 1-7) | China Travel Expert",
+   "videoId": "8o7YsVHH7WU",
+   "url": "https://www.youtube.com/watch?v=8o7YsVHH7WU",
+   "pillar": "city-travel",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-21T20:00:00Z",
+   "music": "cpop-groove-01",
+   "format": "9x16",
+   "note": "queue gw-01 (seasonal, ships before 09-30); hook DEBATE (Golden Week 888M)"
+  },
+  {
+   "date": "2026-09-21",
+   "slot": "d",
+   "title": "3 Cities, 2,600 km: China's First-Timer Bullet-Train Loop | China Travel Expert",
+   "videoId": "wyZkQePSUio",
+   "url": "https://www.youtube.com/watch?v=wyZkQePSUio",
+   "pillar": "china-route",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-21T23:00:00Z",
+   "music": "oriental-edm-01",
+   "format": "9x16",
+   "note": "route-facts framing (Beijing/Shanghai representative footage); hook SPECTACLE-FACT (2,600km loop)"
   }
  ]
 }
