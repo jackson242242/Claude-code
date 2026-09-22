@@ -45,17 +45,17 @@ run 自动执行；若某条钩子是**新写法**（不属 A-F），在 RUNLOG 
 
 
 <!-- AUTO:BEGIN — rewritten by scripts/hook-ledger.mjs, do not hand-edit below -->
-## 📊 实测排行（2026-09-21，近 30 天、满 3 天的 78 条；baseline 中位数 264 播放）
+## 📊 实测排行（2026-09-22，近 30 天、满 3 天的 81 条；baseline 中位数 265 播放）
 
 | 钩子类型 | 条数 | 均播放 | 相对基准 | 点赞率 | 评论 |
 |---|---|---|---|---|---|
-| INSIDER | 1 | 962 | ×3.64 | 0.62% | 0 |
-| SPECTACLE-FACT | 24 | 443 | ×1.68 | 0.78% | 2 |
-| PLAIN-FACT | 45 | 374 | ×1.42 | 0.67% | 2 |
-| DEBATE | 1 | 369 | ×1.4 | 0.54% | 0 |
-| PRICE-SHOCK | 5 | 213 | ×0.81 | 0.47% | 0 |
+| INSIDER | 1 | 962 | ×3.63 | 0.62% | 0 |
+| SPECTACLE-FACT | 26 | 450 | ×1.7 | 0.74% | 3 |
+| PLAIN-FACT | 45 | 375 | ×1.41 | 0.67% | 2 |
+| DEBATE | 1 | 369 | ×1.39 | 0.54% | 0 |
+| PRICE-SHOCK | 6 | 240 | ×0.9 | 0.49% | 0 |
 | STAKES | 1 | 194 | ×0.73 | 1.55% | 0 |
-| MISCONCEPTION | 1 | 111 | ×0.42 | 0% | 0 |
+| MISCONCEPTION | 1 | 114 | ×0.43 | 0% | 0 |
 
 **下一条用**：SPECTACLE-FACT / PLAIN-FACT
 **避免**：PLAIN-FACT（无可回复点）
@@ -64,44 +64,44 @@ run 自动执行；若某条钩子是**新写法**（不属 A-F），在 RUNLOG 
 
 | 日期 | 播放 | ×基准 | 赞 | 评 | 类型 | 钩子原文 |
 |---|---|---|---|---|---|---|
-| 2026-09-20d | 124 | ×0.47 | 1 | 0 | SPECTACLE-FACT | One road loop: 2,800 km across northwest China. I'm your China T |
-| 2026-09-20c | 84 | ×0.32 | 0 | 0 | SPECTACLE-FACT | This beef cut is under 1% of the whole cow. I'm your China Trave |
-| 2026-09-20a | 352 | ×1.33 | 3 | 0 | SPECTACLE-FACT | China's bullet train: 6 cents a kilometer. I'm your China Travel |
-| 2026-09-19d | 866 | ×3.28 | 2 | 1 | SPECTACLE-FACT | A perfect soup dumpling has exactly 18 folds. I'm your China Tra |
-| 2026-09-19c | 340 | ×1.29 | 2 | 0 | PRICE-SHOCK | A full week in China — from $300. I'm your China Travel Expert |
+| 2026-09-21d | 74 | ×0.28 | 0 | 0 | SPECTACLE-FACT | Three cities, 2,600 km, one bullet-train trip. I'm your China Tr |
+| 2026-09-21c | 937 | ×3.54 | 3 | 0 | STAKES | Don't visit China during Golden Week, October 1 to 7. I'm your C |
+| 2026-09-21a | 155 | ×0.58 | 0 | 0 | SPECTACLE-FACT | The world's longest dragon dance ran 6,500 meters. I'm your Chin |
+| 2026-09-20d | 285 | ×1.08 | 2 | 0 | SPECTACLE-FACT | One road loop: 2,800 km across northwest China. I'm your China T |
+| 2026-09-20c | 85 | ×0.32 | 0 | 0 | SPECTACLE-FACT | This beef cut is under 1% of the whole cow. I'm your China Trave |
+| 2026-09-20a | 731 | ×2.76 | 3 | 0 | SPECTACLE-FACT | China's bullet train: 6 cents a kilometer. I'm your China Travel |
+| 2026-09-19d | 956 | ×3.61 | 2 | 1 | SPECTACLE-FACT | A perfect soup dumpling has exactly 18 folds. I'm your China Tra |
+| 2026-09-19c | 368 | ×1.39 | 2 | 0 | PRICE-SHOCK | A full week in China — from $300. I'm your China Travel Expert |
 | 2026-09-19a | 124 | ×0.47 | 2 | 0 | SPECTACLE-FACT | Zero nails. Over 1,000 years standing. I'm your China Travel Exp |
 | 2026-09-18d | 56 | ×0.21 | 0 | 0 | SPECTACLE-FACT | Suzhou once had over 200 private gardens. I'm your China Travel  |
-| 2026-09-18c | 198 | ×0.75 | 1 | 0 | SPECTACLE-FACT | The Great Wall is 21,196 km long. I'm your China Travel Expert |
-| 2026-09-18a | 142 | ×0.54 | 1 | 0 | PRICE-SHOCK | Shanghai's river cruise: $17. Locals pay 30 cents. I'm your Chin |
+| 2026-09-18c | 197 | ×0.74 | 1 | 0 | SPECTACLE-FACT | The Great Wall is 21,196 km long. I'm your China Travel Expert |
+| 2026-09-18a | 144 | ×0.54 | 1 | 0 | PRICE-SHOCK | Shanghai's river cruise: $17. Locals pay 30 cents. I'm your Chin |
 | 2026-09-17d | 114 | ×0.43 | 0 | 0 | SPECTACLE-FACT | In 1990, this Shanghai skyline was farmland. I'm your China Trav |
-| 2026-09-17c | 894 | ×3.39 | 2 | 0 | SPECTACLE-FACT | Only 30% of a cow makes this hotpot. I'm your China Travel Exper |
+| 2026-09-17c | 894 | ×3.37 | 2 | 0 | SPECTACLE-FACT | Only 30% of a cow makes this hotpot. I'm your China Travel Exper |
 | 2026-09-17a | 45 | ×0.17 | 0 | 0 | PRICE-SHOCK | One Chinese teapot sold for $2 million. I'm your China Travel Ex |
-| 2026-09-16d | 73 | ×0.28 | 0 | 0 | SPECTACLE-FACT | Bike 13.7 km atop a 650-year-old wall. I'm your China Travel Exp |
+| 2026-09-16d | 75 | ×0.28 | 0 | 0 | SPECTACLE-FACT | Bike 13.7 km atop a 650-year-old wall. I'm your China Travel Exp |
 | 2026-09-16c | 77 | ×0.29 | 0 | 0 | SPECTACLE-FACT | China has canal towns 1,300 years old. I'm your China Travel Exp |
 | 2026-09-16a | 74 | ×0.28 | 0 | 0 | SPECTACLE-FACT | One silk thread, split 48 ways. I'm your China Travel Expert |
 | 2026-09-15d | 521 | ×1.97 | 2 | 0 | PRICE-SHOCK | The view on China's ¥20 bill is a real place. I'm your China Tra |
-| 2026-09-15c | 264 | ×1.00 | 2 | 0 | PRICE-SHOCK | Switzerland's Glacier Express: about $240. I'm your China Travel |
-| 2026-09-15a | 465 | ×1.76 | 3 | 0 | SPECTACLE-FACT | China fired plain stone into "jade" — at 1,300°C. I'm your China |
-| 2026-09-14d | 134 | ×0.51 | 3 | 0 | PLAIN-FACT | This is the world’s longest man-made river. |
+| 2026-09-15c | 265 | ×1.00 | 2 | 0 | PRICE-SHOCK | Switzerland's Glacier Express: about $240. I'm your China Travel |
+| 2026-09-15a | 465 | ×1.75 | 3 | 0 | SPECTACLE-FACT | China fired plain stone into "jade" — at 1,300°C. I'm your China |
+| 2026-09-14d | 135 | ×0.51 | 3 | 0 | PLAIN-FACT | This is the world’s longest man-made river. |
 | 2026-09-14c | 207 | ×0.78 | 4 | 0 | PLAIN-FACT | This garden is built to feel endless. |
-| 2026-09-14a | 548 | ×2.08 | 4 | 0 | SPECTACLE-FACT | Europe spent 1,000 years trying to copy this. |
-| 2026-09-13d | 477 | ×1.81 | 3 | 0 | SPECTACLE-FACT | The world's longest sea crossing runs 55 km. |
-| 2026-09-13c | 660 | ×2.50 | 4 | 0 | SPECTACLE-FACT | The world's oldest noodles are 4,000 years old. |
-| 2026-09-13a | 351 | ×1.33 | 2 | 0 | SPECTACLE-FACT | One cocoon unwinds into 900 metres of silk thread. |
+| 2026-09-14a | 550 | ×2.08 | 4 | 0 | SPECTACLE-FACT | Europe spent 1,000 years trying to copy this. |
+| 2026-09-13d | 477 | ×1.80 | 3 | 0 | SPECTACLE-FACT | The world's longest sea crossing runs 55 km. |
+| 2026-09-13c | 661 | ×2.49 | 4 | 0 | SPECTACLE-FACT | The world's oldest noodles are 4,000 years old. |
+| 2026-09-13a | 353 | ×1.33 | 2 | 0 | SPECTACLE-FACT | One cocoon unwinds into 900 metres of silk thread. |
 | 2026-09-12d | 73 | ×0.28 | 0 | 0 | SPECTACLE-FACT | Beijing to Shanghai: 1,318 km in about 4.5 hours. |
-| 2026-09-12c | 111 | ×0.42 | 0 | 0 | MISCONCEPTION | Here's how tourists actually pay in China in 2026. |
+| 2026-09-12c | 114 | ×0.43 | 0 | 0 | MISCONCEPTION | Here's how tourists actually pay in China in 2026. |
 | 2026-09-12a | 95 | ×0.36 | 0 | 0 | PRICE-SHOCK | This Chinese tea costs $1.2 million a kilo. |
-| 2026-09-11d | 969 | ×3.67 | 7 | 1 | SPECTACLE-FACT | China's bullet trains now cover over 50,000 km. |
-| 2026-09-11c | 904 | ×3.42 | 8 | 0 | SPECTACLE-FACT | This 600-year-old wall took 350 million bricks — each one signed |
+| 2026-09-11d | 969 | ×3.66 | 7 | 1 | SPECTACLE-FACT | China's bullet trains now cover over 50,000 km. |
+| 2026-09-11c | 904 | ×3.41 | 8 | 0 | SPECTACLE-FACT | This 600-year-old wall took 350 million bricks — each one signed |
 | 2026-09-11a | 60 | ×0.23 | 0 | 0 | PLAIN-FACT | Five mistakes tourists make in China — none are cultural. |
 | 2026-09-10d | 309 | ×1.17 | 4 | 0 | SPECTACLE-FACT | Two of China's ancient capitals — 90 minutes apart. |
-| 2026-09-10c | 962 | ×3.64 | 6 | 0 | INSIDER | One dumpling, 18 folds, hidden hot soup. |
-| 2026-09-10a | 938 | ×3.55 | 5 | 0 | SPECTACLE-FACT | China's tallest tower twists 120 degrees. |
-| 2026-09-09d | 693 | ×2.63 | 7 | 0 | PLAIN-FACT | The ancient Silk Road now has a bullet train. |
+| 2026-09-10c | 962 | ×3.63 | 6 | 0 | INSIDER | One dumpling, 18 folds, hidden hot soup. |
+| 2026-09-10a | 938 | ×3.54 | 5 | 0 | SPECTACLE-FACT | China's tallest tower twists 120 degrees. |
+| 2026-09-09d | 693 | ×2.62 | 7 | 0 | PLAIN-FACT | The ancient Silk Road now has a bullet train. |
 | 2026-09-09c | 72 | ×0.27 | 0 | 0 | SPECTACLE-FACT | The mountains on China's 20-yuan note are a real place. |
-| 2026-09-09a | 470 | ×1.78 | 1 | 0 | SPECTACLE-FACT | The Great Wall isn't one wall — it's 21,196 kilometers. |
+| 2026-09-09a | 470 | ×1.77 | 1 | 0 | SPECTACLE-FACT | The Great Wall isn't one wall — it's 21,196 kilometers. |
 | 2026-09-08d | 178 | ×0.67 | 1 | 0 | PLAIN-FACT | One train climbs so high it pipes oxygen into the cabin. |
-| 2026-09-08c | 105 | ×0.40 | 0 | 0 | PLAIN-FACT | In China, Google, WhatsApp and Instagram just won't load. |
-| 2026-09-08a | 111 | ×0.42 | 1 | 0 | SPECTACLE-FACT | Chinese New Year isn't over for 15 whole days. |
-| 2026-09-07d | 1034 | ×3.92 | 7 | 0 | SPECTACLE-FACT | See China's 4 must-sees in one week — by train. |
 <!-- AUTO:END -->
