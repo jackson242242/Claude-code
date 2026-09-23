@@ -39,35 +39,11 @@
       "status": "active"
     },
     {
-      "id": "cpc-04",
-      "title": "China Price Check: 打车10公里 全球城市对比",
-      "pillar": "china-practical",
-      "format": "short",
-      "angle": "滴滴 vs Uber 同距离 核实 | HOOK v4 强制数字; FOOTAGE-FIRST: 实用类用 type-level 诚实素材(手机/车站/餐桌)不做景点指认",
-      "whyNow": "owner 2026-09-17 三个月计划(plans/q4-2026-plan.md): 招牌栏目+搜索复利库",
-      "series": "China Price Check",
-      "addedAt": "2026-09-17",
-      "addedBy": "q4 plan",
-      "status": "active"
-    },
-    {
       "id": "ctp-01",
       "title": "How to pay in China as a tourist (2026)",
       "pillar": "china-practical",
       "format": "short",
       "angle": "支付宝/微信国际卡绑定 步骤+常见失败点; 录屏式图卡 | HOOK v4 强制数字; FOOTAGE-FIRST: 实用类用 type-level 诚实素材(手机/车站/餐桌)不做景点指认",
-      "whyNow": "owner 2026-09-17 三个月计划(plans/q4-2026-plan.md): 招牌栏目+搜索复利库",
-      "series": "China Trip Planner",
-      "addedAt": "2026-09-17",
-      "addedBy": "q4 plan",
-      "status": "active"
-    },
-    {
-      "id": "ctp-02",
-      "title": "How to book China high-speed rail with a passport",
-      "pillar": "china-practical",
-      "format": "short",
-      "angle": "12306国际版/Trip.com 对比 14天窗口 取票 | HOOK v4 强制数字; FOOTAGE-FIRST: 实用类用 type-level 诚实素材(手机/车站/餐桌)不做景点指认",
       "whyNow": "owner 2026-09-17 三个月计划(plans/q4-2026-plan.md): 招牌栏目+搜索复利库",
       "series": "China Trip Planner",
       "addedAt": "2026-09-17",
@@ -1454,18 +1430,6 @@
       "addedBy": "owner directive",
       "status": "covered-2026-09-02",
       "coveredBy": "2026-09-02 slot d Silk Road EP4 张掖丹霞 gDlLBcgVndc — 彩虹山 content pulled forward to EP4 to honor EP3's 'rainbow mountains' tease. Only the Rainbow-Mountains half was made (honest desert-crossing framing, colors described not shown — no honest Danxia footage exists). The '全线串讲' finale recap was NOT made; if a series finale is wanted later, re-scope as a recap-only EP."
-    },
-    {
-      "id": "slk-b02",
-      "title": "Route: Qinghai-Gansu Loop 青甘大环线EP2 青海湖:海拔3200米的中国最大湖",
-      "pillar": "china-route",
-      "format": "short",
-      "angle": "环湖骑行/油菜花季(制作时核实季节)。 受众轨:打卡。音乐按MUSIC.md(A系cinema-orient/B系oriental-edm)。片尾下一站预告。",
-      "whyNow": "owner 2026-08-12 亲选丝路双线('我也很想去');facts verify at scripting 双源",
-      "seriesNote": "Qinghai-Gansu Loop 青甘大环线 连载",
-      "addedAt": "2026-08-12",
-      "addedBy": "owner directive",
-      "status": "covered-2026-08-16"
     },
     {
       "id": "slk-b03",

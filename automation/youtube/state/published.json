@@ -3385,6 +3385,45 @@
       "publishAt": "2026-09-22T23:00:00Z",
       "music": "lofi-upbeat-01",
       "hook": "SPECTACLE-FACT"
+    },
+    {
+      "date": "2026-09-23",
+      "slot": "a",
+      "title": "China Price Check: 10 km Taxi Is $27 in NYC, $7 in China | China Travel Expert",
+      "videoId": "8J1rcboypB8",
+      "url": "https://www.youtube.com/watch?v=8J1rcboypB8",
+      "pillar": "china-practical",
+      "lane": "pexels-ffmpeg",
+      "status": "scheduled",
+      "publishAt": "2026-09-23T13:00:00Z",
+      "music": "cpop-groove-01",
+      "hook": "PRICE-SHOCK"
+    },
+    {
+      "date": "2026-09-23",
+      "slot": "c",
+      "title": "How to Book China's Bullet Trains as a Tourist in 2026 (Passport Only) | China Travel Expert",
+      "videoId": "k0czxA0NtHE",
+      "url": "https://www.youtube.com/watch?v=k0czxA0NtHE",
+      "pillar": "china-practical",
+      "lane": "pexels-ffmpeg",
+      "status": "scheduled",
+      "publishAt": "2026-09-23T20:00:00Z",
+      "music": "oriental-edm-01",
+      "hook": "MISCONCEPTION"
+    },
+    {
+      "date": "2026-09-23",
+      "slot": "d",
+      "title": "China's Biggest Lake Sits 3,260 m Up — a 360 km Loop | China Travel Expert",
+      "videoId": "q9OoVepvgVQ",
+      "url": "https://www.youtube.com/watch?v=q9OoVepvgVQ",
+      "pillar": "china-route",
+      "lane": "pexels-ffmpeg",
+      "status": "scheduled",
+      "publishAt": "2026-09-23T23:00:00Z",
+      "music": "cinema-orient-01",
+      "hook": "SPECTACLE-FACT"
     }
   ]
 }

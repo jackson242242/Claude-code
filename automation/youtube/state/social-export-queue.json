@@ -638,7 +638,8 @@
       "views": 136,
       "date": null,
       "slot": null,
-      "status": "pending"
+      "status": "no-artifacts",
+      "note": "pre-pivot voiceover video, no subs.srt — cannot build current burned-subtitle clean master"
     },
     {
       "videoId": "Xyw_6TGdsao",
@@ -646,7 +647,8 @@
       "views": 133,
       "date": null,
       "slot": null,
-      "status": "pending"
+      "status": "sent",
+      "sentDate": "2026-09-23"
     },
     {
       "videoId": "_ba1T9TKE0I",
