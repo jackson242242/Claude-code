@@ -3424,6 +3424,47 @@
       "publishAt": "2026-09-23T23:00:00Z",
       "music": "cinema-orient-01",
       "hook": "SPECTACLE-FACT"
+    },
+    {
+      "date": "2026-09-24",
+      "slot": "a",
+      "title": "China’s Best Green Tea Is Fried by Bare Hands at 200°C | China Travel Expert",
+      "videoId": "KZS8TwMo5xc",
+      "url": "https://www.youtube.com/watch?v=KZS8TwMo5xc",
+      "pillar": "china-culture",
+      "lane": "pexels-ffmpeg",
+      "status": "scheduled",
+      "publishAt": "2026-09-24T13:00:00Z",
+      "music": "cinema-orient-01",
+      "hook": "SPECTACLE-FACT"
+    },
+    {
+      "date": "2026-09-24",
+      "slot": "c",
+      "title": "This Fried Pork Got 100M Views and Its Own Office in China | China Travel Expert",
+      "videoId": "SJpBOAt-3VI",
+      "url": "https://www.youtube.com/watch?v=SJpBOAt-3VI",
+      "pillar": "china-food",
+      "lane": "pexels-ffmpeg",
+      "status": "scheduled",
+      "publishAt": "2026-09-24T20:00:00Z",
+      "music": "cpop-groove-01",
+      "hook": "CHOICE",
+      "note": "comment-driver (amber vs ketchup)"
+    },
+    {
+      "date": "2026-09-24",
+      "slot": "d",
+      "title": "China’s 561 km Sky Road Is Open Just 4 Months a Year | China Travel Expert",
+      "videoId": "AN0borXgxoE",
+      "url": "https://www.youtube.com/watch?v=AN0borXgxoE",
+      "pillar": "china-route",
+      "lane": "pexels-ffmpeg",
+      "status": "scheduled",
+      "publishAt": "2026-09-24T23:00:00Z",
+      "music": "oriental-edm-01",
+      "hook": "SPECTACLE-FACT",
+      "note": "seasonal (Duku closes early Oct)"
     }
   ]
 }

@@ -1,3 +1,12 @@
+## 2026-09-24 post-mortem (baseline = 14d median views of Shorts ≥3d old: 208)
+- 2026-09-22 d ncQzEHy3cUE | 367v 6L 0C @2d | ×1.76 | baseline | China's New Bullet Train Hit 453 km/h in Testing | China Travel Expert
+- 2026-09-23 a 8J1rcboypB8 | 121v 0L 0C @1d | ×0.58 | baseline | China Price Check: 10 km Taxi Is $27 in NYC, $7 in China | China Trave
+- 2026-09-22 a EzZBitZtvrg | 93v 1L 0C @2d | ×0.45 | LOSER — avoid this shape today | China Spent 1,700 Years Faking Jade With Fire | China Travel Expert
+- 2026-09-23 c k0czxA0NtHE | 88v 1L 0C @1d | ×0.42 | LOSER — avoid this shape today | How to Book China's Bullet Trains as a Tourist in 2026 (Passport Only)
+- 2026-09-23 d q9OoVepvgVQ | 42v 2L 0C @1d | ×0.20 | LOSER — avoid this shape today | China's Biggest Lake Sits 3,260 m Up — a 360 km Loop | China Travel Ex
+- 2026-09-22 c IXrLi2eFxW4 | 20v 0L 0C @2d | ×0.10 | LOSER — avoid this shape today | China Blocks 10 Apps You Use Daily — the 2026 Fix | China Travel Exper
+- like-rate (fresh Shorts): 1.37% (peers 1-6%)
+
 ## 2026-09-21 post-mortem (baseline = 14d median views of Shorts ≥3d old: 207)
 - 2026-09-19 d dc0b_GyH20w | 866v 2L 1C @2d | ×4.18 | WINNER — replicate this hook shape today | A Perfect Soup Dumpling Has Exactly 18 Folds | China Travel Expert
 - 2026-09-20 a D0lXxIB8wzI | 349v 3L 0C @1d | ×1.69 | baseline | China Price Check: Bullet Train $84 for 1,318 km — 6¢ a km | China Tra
