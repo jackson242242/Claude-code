@@ -1,6 +1,306 @@
 {
- "note": "Topic backlog for /youtube-cycle. Top item matching the slot format is used next. Owner may edit/reorder freely.",
+ "note": "Topic backlog for /youtube-cycle. Top item matching the slot format is used next. Owner may edit/reorder freely. NATURE PIVOT 2026-09-26: nat-* seeds lead (china-nature / small-town / nature-priced china-practical); each carries hookType + hook (discussion-worthy, numbers to verify this run) + footage lane (VIDEO site-ID / PHOTO site-ID → assemble --photos / MAP-FORMAT). Big-city subjects are paused-bigcity-2026-09-26 (prevStatus kept, reversible).",
  "queue": [
+  {
+   "id": "nat-01",
+   "title": "Zhangye Danxia: rainbow hills for ~$10 vs Antelope Canyon $90 tour",
+   "pillar": "china-nature",
+   "format": "short",
+   "hookType": "PRICE-SHOCK",
+   "hook": "Antelope Canyon: a $90 tour. China's rainbow hills: about $10 at the gate. Which one are you paying for?",
+   "angle": "七彩丹霞 门票¥75(旺季,2025)+景区车¥20 → 双源核实当次; Antelope Canyon lower/upper tour ~$90-$110 核实; 观景最佳 16:00-18:00 侧光(STAKES 备用: \"go after 4pm or the colours are gone\"); 收尾 either-or + 首评同问",
+   "footage": "VIDEO site-ID verified (Pexels slugs): queries \"zhangye danxia\",\"zhangye danxia landform\" (19/20 slugs contain zhangye/danxia)",
+   "series": "",
+   "whyNow": "owner 2026-09-26: 转向小城市/山里/沙漠/地貌/自然风光; competitors.md 09-26: 9/25 top China Shorts = mountains/villages, #1 Zhangjiajie path 2.9M",
+   "addedAt": "2026-09-26",
+   "addedBy": "owner nature pivot 2026-09-26 (plans/nature-pivot.md)",
+   "status": "active"
+  },
+  {
+   "id": "nat-02",
+   "title": "Locals skip the $60 Li River cruise — Yangshuo's 10 km loop costs $3",
+   "pillar": "china-nature",
+   "format": "short",
+   "hookType": "INSIDER",
+   "hook": "Locals skip the $60 Li River cruise. They cycle Yangshuo's Yulong River loop for $3.",
+   "angle": "漓江游船 ¥215-¥360(桂林→阳朔) 核实; 阳朔单车租 ¥20-30/天 核实; 遇龙河/十里画廊 ~10 km 环线; 数字锚 = 喀斯特峰林 ~2万座(桂林) 核实口径",
+   "footage": "VIDEO site-ID verified (Pexels slugs): \"yangshuo karst\",\"guilin li river\",\"china karst mountains\" (16/18, 11/17, 13/16 slugs)",
+   "series": "",
+   "whyNow": "owner 2026-09-26: 转向小城市/山里/沙漠/地貌/自然风光; competitors.md 09-26: 9/25 top China Shorts = mountains/villages, #1 Zhangjiajie path 2.9M",
+   "addedAt": "2026-09-26",
+   "addedBy": "owner nature pivot 2026-09-26 (plans/nature-pivot.md)",
+   "status": "active"
+  },
+  {
+   "id": "nat-03",
+   "title": "Would you walk this path for $30? Zhangjiajie's 3,000 pillars",
+   "pillar": "china-nature",
+   "format": "short",
+   "hookType": "CHOICE",
+   "hook": "Would you walk this mountain path for $30? 3,000 stone pillars, one ticket.",
+   "angle": "武陵源门票 ¥228(4日) ≈ $32 核实(2025-26 口径); 石英砂岩峰柱 3,000+; 百龙电梯 ¥65 单程 326 m 核实; 竞品同款钩子 1.1M+0.7M(competitors.md); 收尾: \"walk it or cable car? comment\"",
+   "footage": "PHOTO site-ID verified → assemble --photos only|fill: \"zhangjiajie\",\"wulingyuan\" (photos 29/30 site-ID; VIDEO = 0/20 → never use video for this one)",
+   "series": "",
+   "whyNow": "owner 2026-09-26: 转向小城市/山里/沙漠/地貌/自然风光; competitors.md 09-26: 9/25 top China Shorts = mountains/villages, #1 Zhangjiajie path 2.9M",
+   "addedAt": "2026-09-26",
+   "addedBy": "owner nature pivot 2026-09-26 (plans/nature-pivot.md)",
+   "status": "active"
+  },
+  {
+   "id": "nat-04",
+   "title": "Bolivia's salt flat is a $150 tour. China's mirror of the sky is ¥60",
+   "pillar": "china-nature",
+   "format": "short",
+   "hookType": "PRICE-SHOCK",
+   "hook": "Bolivia's salt flat: a $150 tour. China's mirror of the sky: ¥60 and a bullet train.",
+   "angle": "茶卡盐湖 门票 ¥60 核实; 西宁→茶卡 火车/大巴 ~3-4h 核实; Uyuni 1-day tour ~$150 核实; 海拔 3,059 m; 已发过 QG loop EP3(08-17)→ 新角度=价格对照, 不重复\"踩天空之镜\"",
+   "footage": "VIDEO site-ID verified (Pexels slugs): \"chaka salt lake\" (slugs: serene-view-of-salt-lake-and-mountains-in-chaka, chaka-salt-lake-panorama) + PHOTO site-ID verified → assemble --photos only|fill \"chaka salt lake qinghai\"",
+   "series": "",
+   "whyNow": "owner 2026-09-26: 转向小城市/山里/沙漠/地貌/自然风光; competitors.md 09-26: 9/25 top China Shorts = mountains/villages, #1 Zhangjiajie path 2.9M",
+   "addedAt": "2026-09-26",
+   "addedBy": "owner nature pivot 2026-09-26 (plans/nature-pivot.md)",
+   "status": "active"
+  },
+  {
+   "id": "nat-05",
+   "title": "The Yellow River squeezes from 300 m to 30 m here — go in the wrong month and you miss it",
+   "pillar": "china-nature",
+   "format": "short",
+   "hookType": "STAKES",
+   "hook": "The Yellow River goes from 300 m wide to 30 m here. Come in the wrong month and it's a trickle.",
+   "angle": "壶口瀑布 河宽由 ~300 m 收窄至 20-30 m、落差 ~20 m 核实; 最佳=雨季后 9-10 月 或 冰瀑 1-2 月 核实; 门票 ¥100 核实; 陕西宜川/山西吉县两岸(小城)",
+   "footage": "VIDEO site-ID verified (Pexels slugs): \"hukou waterfall yellow river\" (2 slugs: dynamic-flow-of-hukou-waterfall…, woman-at-hukou-waterfall…) — thin, pad with photos --photos fill",
+   "series": "",
+   "whyNow": "owner 2026-09-26: 转向小城市/山里/沙漠/地貌/自然风光; competitors.md 09-26: 9/25 top China Shorts = mountains/villages, #1 Zhangjiajie path 2.9M",
+   "addedAt": "2026-09-26",
+   "addedBy": "owner nature pivot 2026-09-26 (plans/nature-pivot.md)",
+   "status": "active"
+  },
+  {
+   "id": "nat-06",
+   "title": "Skip Huangshan's sunrise crowd — 20,000 people, one staircase",
+   "pillar": "china-nature",
+   "format": "short",
+   "hookType": "DEBATE",
+   "hook": "Skip Huangshan at sunrise. Twenty thousand people, one staircase. Here's when to go instead.",
+   "angle": "黄山旺季门票 ¥190 / 淡季 ¥150 核实; 日承载量上限(官方数字)核实, 不确定就换成\"black-friday 级别\"的可核实人次; 迎客松 已发(08-19) → 新角度=错峰; 收尾: sunrise crowd or empty November? comment",
+   "footage": "PHOTO site-ID verified → assemble --photos only|fill: \"huangshan\" (23/30 site-ID photos); VIDEO 0/20",
+   "series": "",
+   "whyNow": "owner 2026-09-26: 转向小城市/山里/沙漠/地貌/自然风光; competitors.md 09-26: 9/25 top China Shorts = mountains/villages, #1 Zhangjiajie path 2.9M",
+   "addedAt": "2026-09-26",
+   "addedBy": "owner nature pivot 2026-09-26 (plans/nature-pivot.md)",
+   "status": "active"
+  },
+  {
+   "id": "nat-07",
+   "title": "Plitvice €40 or Jiuzhaigou's 114 lakes for ¥169 — which blue?",
+   "pillar": "china-nature",
+   "format": "short",
+   "hookType": "CHOICE",
+   "hook": "Plitvice Lakes: €40. Jiuzhaigou's 114 lakes: ¥169. Which blue are you booking?",
+   "angle": "九寨沟 门票 ¥169(旺季)+观光车 ¥90 核实; Plitvice 高峰季 €40 核实; 114 个湖(官方口径 108/114 需定一个并注明来源); 已发 08-16 \"108 lakes\" → 新角度=对照选择",
+   "footage": "PHOTO site-ID verified → assemble --photos only|fill: \"jiuzhaigou\" (22/30 site-ID photos); VIDEO 0/20",
+   "series": "",
+   "whyNow": "owner 2026-09-26: 转向小城市/山里/沙漠/地貌/自然风光; competitors.md 09-26: 9/25 top China Shorts = mountains/villages, #1 Zhangjiajie path 2.9M",
+   "addedAt": "2026-09-26",
+   "addedBy": "owner nature pivot 2026-09-26 (plans/nature-pivot.md)",
+   "status": "active"
+  },
+  {
+   "id": "nat-08",
+   "title": "99 hairpin bends or the world's longest cable car — which way up Tianmen?",
+   "pillar": "china-nature",
+   "format": "short",
+   "hookType": "CHOICE",
+   "hook": "99 hairpin bends or the world's longest cable car, 7,455 m — which way up Tianmen Mountain?",
+   "angle": "天门山索道 7,455 m(曾为世界最长客运索道, 措辞用 \"one of the world's longest\" 除非当次核实纪录现状); 通天大道 99 弯 核实; 门票 ¥278(含索道) 核实; 玻璃栈道 加 ¥5 鞋套",
+   "footage": "PHOTO site-ID verified → assemble --photos only|fill: \"tianmen mountain\" (10/28 site-ID photos incl. cable-car scenes)",
+   "series": "",
+   "whyNow": "owner 2026-09-26: 转向小城市/山里/沙漠/地貌/自然风光; competitors.md 09-26: 9/25 top China Shorts = mountains/villages, #1 Zhangjiajie path 2.9M",
+   "addedAt": "2026-09-26",
+   "addedBy": "owner nature pivot 2026-09-26 (plans/nature-pivot.md)",
+   "status": "active"
+  },
+  {
+   "id": "nat-09",
+   "title": "Everyone thinks the terraces are a photo park. They've fed this village for 1,300 years",
+   "pillar": "china-nature",
+   "format": "short",
+   "hookType": "MISCONCEPTION",
+   "hook": "Everyone thinks these terraces are a photo park. They've fed the same villages for 1,300 years — by hand.",
+   "angle": "元阳哈尼梯田 UNESCO 2013; ~1,300 年; 门票 ¥100(多景点联票)核实; 最佳=灌水期 12-3 月(镜面)核实; 哈尼族 ~ 数字锚: 3,000 级/16.6 万亩 择一核实",
+   "footage": "PHOTO site-ID verified → assemble --photos only|fill: \"yuanyang rice terraces\" (9/30 photos slug yuanyang); VIDEO returns Vietnam/Sapa → NEVER video for this",
+   "series": "",
+   "whyNow": "owner 2026-09-26: 转向小城市/山里/沙漠/地貌/自然风光; competitors.md 09-26: 9/25 top China Shorts = mountains/villages, #1 Zhangjiajie path 2.9M",
+   "addedAt": "2026-09-26",
+   "addedBy": "owner nature pivot 2026-09-26 (plans/nature-pivot.md)",
+   "status": "active"
+  },
+  {
+   "id": "nat-10",
+   "title": "China's biggest Miao village: 1,000 stilt houses for ¥90 — real or a theme park?",
+   "pillar": "small-town",
+   "format": "short",
+   "hookType": "DEBATE",
+   "hook": "China's biggest Miao village: over a thousand stilt houses, ¥90 to enter. Real village, or theme park? Tell me I'm wrong.",
+   "angle": "西江千户苗寨 ~1,400 户 核实; 门票 ¥90(+观光车)核实; 夜景灯 & 长桌宴 ; 争议点=商业化 vs 活态村寨 (真实存在的讨论, 不带政治)",
+   "footage": "PHOTO site-ID verified → assemble --photos only|fill: \"xijiang miao village\" (15/30 site-ID photos)",
+   "series": "",
+   "whyNow": "owner 2026-09-26: 转向小城市/山里/沙漠/地貌/自然风光; competitors.md 09-26: 9/25 top China Shorts = mountains/villages, #1 Zhangjiajie path 2.9M",
+   "addedAt": "2026-09-26",
+   "addedBy": "owner nature pivot 2026-09-26 (plans/nature-pivot.md)",
+   "status": "active"
+  },
+  {
+   "id": "nat-11",
+   "title": "Dali or Lijiang — which Yunnan old town for your first trip?",
+   "pillar": "small-town",
+   "format": "short",
+   "hookType": "CHOICE",
+   "hook": "Dali or Lijiang for your first Yunnan trip? Pick one — and here's the price gap.",
+   "angle": "大理古城 免费 vs 丽江古城 维护费 ¥50(2025 口径核实); 洱海环线 ~120 km, 电动车租 ¥50-80/天 核实; 两城间高铁 ~2h ¥35-60 核实; 收尾: Dali or Lijiang, comment",
+   "footage": "VIDEO site-ID verified (Pexels slugs): \"dali ancient town\" (2 slugs: aerial-view-of-dali-ancient-town-in-yunnan, bustling-street-scene-in-dali-ancient-city) + PHOTO site-ID verified → assemble --photos only|fill \"dali old town yunnan\",\"lijiang old town\"; --photos fill",
+   "series": "",
+   "whyNow": "owner 2026-09-26: 转向小城市/山里/沙漠/地貌/自然风光; competitors.md 09-26: 9/25 top China Shorts = mountains/villages, #1 Zhangjiajie path 2.9M",
+   "addedAt": "2026-09-26",
+   "addedBy": "owner nature pivot 2026-09-26 (plans/nature-pivot.md)",
+   "status": "active"
+  },
+  {
+   "id": "nat-12",
+   "title": "Mount Hua's plank walk is ¥30 and 2,150 m up. Would you clip in?",
+   "pillar": "china-nature",
+   "format": "short",
+   "hookType": "CHOICE",
+   "hook": "Mount Hua's plank walk: ¥30, 2,150 metres up, one carabiner. Would you clip in?",
+   "angle": "长空栈道 ¥30 核实; 南峰 2,154.9 m; 华山门票 ¥160(旺季) 核实; 西峰索道 ¥140 单程 核实; 华阴(小城) 从西安高铁 ~30 min → 西安只作出发点",
+   "footage": "PHOTO site-ID verified → assemble --photos only|fill: \"mount hua\" (11/30 site-ID photos); VIDEO 0/20",
+   "series": "",
+   "whyNow": "owner 2026-09-26: 转向小城市/山里/沙漠/地貌/自然风光; competitors.md 09-26: 9/25 top China Shorts = mountains/villages, #1 Zhangjiajie path 2.9M",
+   "addedAt": "2026-09-26",
+   "addedBy": "owner nature pivot 2026-09-26 (plans/nature-pivot.md)",
+   "status": "active"
+  },
+  {
+   "id": "nat-13",
+   "title": "Would you pay ¥180 to see one rock? 150 m tall, 4 m wide",
+   "pillar": "china-nature",
+   "format": "short",
+   "hookType": "CHOICE",
+   "hook": "Would you pay ¥180 to see one rock? It's 150 metres tall and 4 metres wide at the base.",
+   "angle": "恩施大峡谷 一炷香 高 ~150 m、底径 ~4 m 核实; 门票 ¥180 左右(含索道?) 核实; 恩施 = 小城, 从武汉高铁 ~4h → 武汉只作出发点",
+   "footage": "PHOTO site-ID verified → assemble --photos only|fill: \"enshi grand canyon\" (8/29 site-ID photos); VIDEO 0/20",
+   "series": "",
+   "whyNow": "owner 2026-09-26: 转向小城市/山里/沙漠/地貌/自然风光; competitors.md 09-26: 9/25 top China Shorts = mountains/villages, #1 Zhangjiajie path 2.9M",
+   "addedAt": "2026-09-26",
+   "addedBy": "owner nature pivot 2026-09-26 (plans/nature-pivot.md)",
+   "status": "active"
+  },
+  {
+   "id": "nat-14",
+   "title": "Longji or Yuanyang — 2 hours from Guilin or 6 from Kunming? Pick your terraces",
+   "pillar": "china-nature",
+   "format": "short",
+   "hookType": "CHOICE",
+   "hook": "Longji or Yuanyang? Two hours from Guilin, or six from Kunming. Pick your terraces.",
+   "angle": "龙脊梯田 门票 ¥80 核实, 桂林→龙脊 ~2h; 元阳 ¥100, 昆明→元阳 ~6h 核实; 最佳季: 龙脊 5-6 月灌水/9-10 月金黄, 元阳 12-3 月 核实",
+   "footage": "PHOTO site-ID verified → assemble --photos only|fill: \"longji rice terraces\" (8/30 slug longsheng/longji) + \"yuanyang rice terraces\" (9/30)",
+   "series": "",
+   "whyNow": "owner 2026-09-26: 转向小城市/山里/沙漠/地貌/自然风光; competitors.md 09-26: 9/25 top China Shorts = mountains/villages, #1 Zhangjiajie path 2.9M",
+   "addedAt": "2026-09-26",
+   "addedBy": "owner nature pivot 2026-09-26 (plans/nature-pivot.md)",
+   "status": "active"
+  },
+  {
+   "id": "nat-15",
+   "title": "This \"forest\" is a 270-million-year-old sea floor",
+   "pillar": "china-nature",
+   "format": "short",
+   "hookType": "MISCONCEPTION",
+   "hook": "Everyone calls it a forest. It's a 270-million-year-old sea floor standing 30 metres tall.",
+   "angle": "石林 二叠纪石灰岩 ~2.7 亿年 核实; 最高石柱 ~30-40 m 核实; 门票 ¥130 核实; 昆明→石林 ~1.5h → 昆明只作出发点; 彝族撒尼人 阿诗玛 一句",
+   "footage": "PHOTO site-ID verified → assemble --photos only|fill: \"stone forest kunming\" (7/30 site-ID photos)",
+   "series": "",
+   "whyNow": "owner 2026-09-26: 转向小城市/山里/沙漠/地貌/自然风光; competitors.md 09-26: 9/25 top China Shorts = mountains/villages, #1 Zhangjiajie path 2.9M",
+   "addedAt": "2026-09-26",
+   "addedBy": "owner nature pivot 2026-09-26 (plans/nature-pivot.md)",
+   "status": "active"
+  },
+  {
+   "id": "nat-16",
+   "title": "Skip Wuzhen's ¥190 ticket — this water town is free to walk in",
+   "pillar": "small-town",
+   "format": "short",
+   "hookType": "DEBATE",
+   "hook": "Skip Wuzhen's ¥190 ticket. This water town, one hour from Shanghai, is free to walk in.",
+   "angle": "乌镇 东栅 ¥110 / 西栅 ¥150 / 联票 ¥190 核实; 朱家角 免票(内部景点单收) 核实; 上海地铁 17 号线直达 ~1h → 上海只作出发点; 已发水乡片(09-16 canal towns ×0.28 LOSER = 没数字没争论) → 这次是 DEBATE+价格",
+   "footage": "VIDEO site-ID verified (Pexels slugs): \"wuzhen water town\" query returns 18/20 ZHUJIAJIAO slugs (traditional-chinese-water-town…, zhujiajiao-water-town…) — claim Zhujiajiao, never Wuzhen, over that footage",
+   "series": "",
+   "whyNow": "owner 2026-09-26: 转向小城市/山里/沙漠/地貌/自然风光; competitors.md 09-26: 9/25 top China Shorts = mountains/villages, #1 Zhangjiajie path 2.9M",
+   "addedAt": "2026-09-26",
+   "addedBy": "owner nature pivot 2026-09-26 (plans/nature-pivot.md)",
+   "status": "active"
+  },
+  {
+   "id": "nat-17",
+   "title": "China Price Check: Yosemite $35 vs Zhangjiajie $32 — China isn't always cheaper",
+   "pillar": "china-practical",
+   "format": "short",
+   "hookType": "MISCONCEPTION",
+   "hook": "Everyone thinks China's parks are cheap. Zhangjiajie costs the same as Yosemite.",
+   "angle": "Wed/Sun slot a 栏目; Yosemite $35/车(7 天) vs 张家界武陵源 ¥228/人(4 天) ≈ $32 核实两边; 诚实反差=中国不一定便宜(讨论点: per car vs per person); 片尾 \"Next: <x> vs <y>\"; 歌单 China Price Check",
+   "footage": "PHOTO site-ID verified → assemble --photos only|fill: \"zhangjiajie\" photos; Yosemite side type-level (pexels \"yosemite\" video is plentiful & slug-verifiable)",
+   "series": "China Price Check",
+   "whyNow": "owner 2026-09-26: 转向小城市/山里/沙漠/地貌/自然风光; competitors.md 09-26: 9/25 top China Shorts = mountains/villages, #1 Zhangjiajie path 2.9M",
+   "addedAt": "2026-09-26",
+   "addedBy": "owner nature pivot 2026-09-26 (plans/nature-pivot.md)",
+   "status": "active"
+  },
+  {
+   "id": "nat-18",
+   "title": "How to get to Zhangjiajie from Shanghai (2026): fly 2.5 h or train 8 h?",
+   "pillar": "china-practical",
+   "format": "short",
+   "hookType": "CHOICE",
+   "hook": "Shanghai to Zhangjiajie: a 2.5-hour flight or an 8-hour bullet train — which would you take?",
+   "angle": "slot c China Trip Planner(search-intent, search-compounding 标记); 航班 ~2.5h 价格区间 & 高铁 上海→张家界西 ~7.5-8.5h ¥400-500 核实(12306 口径); 机场→景区 ~40 min; 标题=搜索原句",
+   "footage": "PHOTO site-ID verified → assemble --photos only|fill: \"zhangjiajie\" + type-level airport/train footage (already honest lane)",
+   "series": "China Trip Planner",
+   "whyNow": "owner 2026-09-26: 转向小城市/山里/沙漠/地貌/自然风光; competitors.md 09-26: 9/25 top China Shorts = mountains/villages, #1 Zhangjiajie path 2.9M",
+   "addedAt": "2026-09-26",
+   "addedBy": "owner nature pivot 2026-09-26 (plans/nature-pivot.md)",
+   "status": "active"
+  },
+  {
+   "id": "nat-19",
+   "title": "Guilin or Zhangjiajie for first-timers? (2026 planner)",
+   "pillar": "china-practical",
+   "format": "short",
+   "hookType": "CHOICE",
+   "hook": "Guilin or Zhangjiajie for your first China trip? Pick one — here's the honest split.",
+   "angle": "slot c China Trip Planner; 对照: 门票(漓江船 ¥215+ vs 武陵源 ¥228) / 体力(平缓 vs 台阶) / 天数(2 vs 3) / 交通; 收尾 either-or; 首评同问",
+   "footage": "VIDEO site-ID verified (Pexels slugs) \"yangshuo karst\" for Guilin side + PHOTO site-ID verified → assemble --photos only|fill \"zhangjiajie\" for the other → --photos fill",
+   "series": "China Trip Planner",
+   "whyNow": "owner 2026-09-26: 转向小城市/山里/沙漠/地貌/自然风光; competitors.md 09-26: 9/25 top China Shorts = mountains/villages, #1 Zhangjiajie path 2.9M",
+   "addedAt": "2026-09-26",
+   "addedBy": "owner nature pivot 2026-09-26 (plans/nature-pivot.md)",
+   "status": "active"
+  },
+  {
+   "id": "nat-20",
+   "title": "Best month for Zhangye Danxia — and why 4 pm matters",
+   "pillar": "china-practical",
+   "format": "short",
+   "hookType": "STAKES",
+   "hook": "Go to Zhangye Danxia at noon and the hills look grey. Here's the month and the hour that work.",
+   "angle": "slot c China Trip Planner; 侧光 16:00-18:00 / 雨后 色彩最饱和 / 6-9 月 主季 / 冬季部分观景台关闭 核实; 门票 ¥75 + 车 ¥20; 高铁 张掖西 从兰州 ~1.5h",
+   "footage": "VIDEO site-ID verified (Pexels slugs): \"zhangye danxia\" (19/20)",
+   "series": "China Trip Planner",
+   "whyNow": "owner 2026-09-26: 转向小城市/山里/沙漠/地貌/自然风光; competitors.md 09-26: 9/25 top China Shorts = mountains/villages, #1 Zhangjiajie path 2.9M",
+   "addedAt": "2026-09-26",
+   "addedBy": "owner nature pivot 2026-09-26 (plans/nature-pivot.md)",
+   "status": "active"
+  },
   {
    "id": "gw-01",
    "title": "国庆黄金周:中国一年最不该来的7天",
@@ -24,7 +324,8 @@
    "series": "China Price Check",
    "addedAt": "2026-09-17",
    "addedBy": "q4 plan",
-   "status": "active"
+   "status": "paused-bigcity-2026-09-26",
+   "prevStatus": "active"
   },
   {
    "id": "cpc-03",
@@ -120,8 +421,9 @@
    "whyNow": "owner 2026-08-22 直令:发食物和游玩温泉之类; 秋冬温泉旺季前布局",
    "addedAt": "2026-08-22",
    "addedBy": "owner directive",
-   "status": "active",
-   "deferNote": "2026-08-30 FOOTAGE-FIRST FAIL(硬): Pexels \"hot spring/onsen\" 返回 Yellowstone 间歇泉 + 日本雪猴, 0 中国温泉素材(复现 08-27)。温泉不可诚实成片; owner 08-22 允 Sun-c 食物→当日改产饺子。温泉系列(ls-02/03/04)需 owner 实拍或 MAP-FORMAT 方可复活。"
+   "status": "paused-bigcity-2026-09-26",
+   "deferNote": "2026-08-30 FOOTAGE-FIRST FAIL(硬): Pexels \"hot spring/onsen\" 返回 Yellowstone 间歇泉 + 日本雪猴, 0 中国温泉素材(复现 08-27)。温泉不可诚实成片; owner 08-22 允 Sun-c 食物→当日改产饺子。温泉系列(ls-02/03/04)需 owner 实拍或 MAP-FORMAT 方可复活。",
+   "prevStatus": "active"
   },
   {
    "id": "ls-03",
@@ -143,7 +445,8 @@
    "whyNow": "owner 2026-08-22 直令:发食物和游玩温泉之类; 秋冬温泉旺季前布局",
    "addedAt": "2026-08-22",
    "addedBy": "owner directive",
-   "status": "active"
+   "status": "paused-bigcity-2026-09-26",
+   "prevStatus": "active"
   },
   {
    "id": "fd-01",
@@ -154,7 +457,8 @@
    "whyNow": "owner 2026-08-22 直令:发食物和游玩温泉之类; 秋冬温泉旺季前布局",
    "addedAt": "2026-08-22",
    "addedBy": "owner directive",
-   "status": "active"
+   "status": "paused-bigcity-2026-09-26",
+   "prevStatus": "active"
   },
   {
    "id": "fd-02",
@@ -177,8 +481,9 @@
    "whyNow": "owner 2026-08-18 现代建筑专辑直令(plans/modern-china.md)",
    "addedAt": "2026-08-18",
    "addedBy": "owner directive",
-   "status": "active",
-   "deferNote": "2026-08-20 FOOTAGE-FIRST FAIL: Pexels 无来福士/水晶连廊专属素材(返回 Mexico City/Brisbane/Dubai 泛用天际线); '这栋横楼'压泛用天际线=违字幕诚实规则 → DEFER, 待实拍/map数据复盘日再产(现代建筑专辑不废)"
+   "status": "paused-bigcity-2026-09-26",
+   "deferNote": "2026-08-20 FOOTAGE-FIRST FAIL: Pexels 无来福士/水晶连廊专属素材(返回 Mexico City/Brisbane/Dubai 泛用天际线); '这栋横楼'压泛用天际线=违字幕诚实规则 → DEFER, 待实拍/map数据复盘日再产(现代建筑专辑不废)",
+   "prevStatus": "active"
   },
   {
    "id": "mod-02",
@@ -189,7 +494,8 @@
    "whyNow": "owner 2026-08-18 现代建筑专辑直令(plans/modern-china.md)",
    "addedAt": "2026-08-18",
    "addedBy": "owner directive",
-   "status": "active"
+   "status": "paused-bigcity-2026-09-26",
+   "prevStatus": "active"
   },
   {
    "id": "mod-04",
@@ -200,7 +506,8 @@
    "whyNow": "owner 2026-08-18 现代建筑专辑直令(plans/modern-china.md)",
    "addedAt": "2026-08-18",
    "addedBy": "owner directive",
-   "status": "active"
+   "status": "paused-bigcity-2026-09-26",
+   "prevStatus": "active"
   },
   {
    "id": "cc4-03",
@@ -300,8 +607,9 @@
    ],
    "addedAt": "2026-07-19",
    "addedBy": "cycle replenish (city-walk lane hit 0)",
-   "status": "active",
-   "note": "reactivated 2026-08-09 culture-first era"
+   "status": "paused-bigcity-2026-09-26",
+   "note": "reactivated 2026-08-09 culture-first era",
+   "prevStatus": "active"
   },
   {
    "id": "seed-11",
@@ -885,8 +1193,9 @@
    "sources": [],
    "addedAt": "2026-07-18",
    "addedBy": "owner directive",
-   "status": "active",
-   "note": "reactivated 2026-08-09 culture-first era"
+   "status": "paused-bigcity-2026-09-26",
+   "note": "reactivated 2026-08-09 culture-first era",
+   "prevStatus": "active"
   },
   {
    "id": "str-03",
@@ -1523,7 +1832,8 @@
    ],
    "addedAt": "2026-08-11",
    "addedBy": "cycle replenish (china-route next series)",
-   "status": "active"
+   "status": "paused-bigcity-2026-09-26",
+   "prevStatus": "active"
   },
   {
    "id": "edge-a01",
@@ -1764,9 +2074,10 @@
    "whyNow": "2026-08-19 research: 世界遗产硬核视觉+footage-first可过·补陕西",
    "addedAt": "2026-08-19",
    "addedBy": "auto-replenish (culture geo+footage-viable)",
-   "status": "deferred-footage-2026-09-19",
+   "status": "paused-bigcity-2026-09-26",
    "deferNote": "2026-08-30 FOOTAGE-FIRST FAIL: Pexels \"terracotta army/warriors xian\" 返回泛用陶俑/公园英雄雕像/毛主席像/做陶罐——无站点级兵马俑素材(旧注 subject-level PASS 经实测证伪)。指认\"这8000尊\"违字幕诚实规则→DEFER，待 owner 实拍/MAP-3D 复盘日再产。改产 cc7-06 景德镇。",
-   "fitNote": "FOOTAGE-FIRST fail: Terracotta Army has no site-identifying Pexels portrait clips (returns worldwide statues/monuments). Revisit only with real Terracotta footage or a map/museum-honest re-angle."
+   "fitNote": "FOOTAGE-FIRST fail: Terracotta Army has no site-identifying Pexels portrait clips (returns worldwide statues/monuments). Revisit only with real Terracotta footage or a map/museum-honest re-angle.",
+   "prevStatus": "deferred-footage-2026-09-19"
   },
   {
    "id": "cc7-02",

@@ -57,22 +57,41 @@ run; put the source links in the video description.
 ## 0b. DAILY SELF-CORRECTION LOOP (owner 2026-09-02 — execute, don't report)
 0. **HOOK LEARNING LOOP (owner 2026-09-20, HARD):** BEFORE writing any cue 1,
    read `automation/youtube/HOOKS.md` — its 铁律, template bank A-F, and the
-   AUTO leaderboard of which hook types actually performed. Today's hooks must
-   come from the types the leaderboard says to use; never ship a PLAIN-FACT hook
-   alone. Every Short's cue 1 must be discussion-worthy: the viewer can
-   DISAGREE, must CHOOSE, or gets a belief OVERTURNED — a fact they merely learn
-   does not qualify. AFTER all uploads, run
+   AUTO block. The AUTO line **`今日三槽依次用（a / c / d）`** is an ASSIGNMENT,
+   not a menu: slot a takes the first type, c the second, d the third (swap
+   order only when a slot's format forces it, and say so in RUNLOG). Types
+   marked 补样本 MUST be shipped until they reach 3 samples — that is the only
+   way the loop learns (audit 2026-09-21..26: 16 of 22 hooks were number-only
+   SPECTACLE/PLAIN-FACT, discussion types stayed at n=1-2, nothing was learned).
+   SPECTACLE-FACT and PLAIN-FACT are NOT hook types — the number goes INSIDE a
+   discussion hook (铁律 3). Hard cap: ≤1 non-discussion hook per day, only for
+   a slot-d route superlative, ≤3 per week; the AUTO block prints the quota used
+   and the run must respect it. Every Short's cue 1 must be discussion-worthy:
+   the viewer can DISAGREE, must CHOOSE, or gets a belief OVERTURNED — a fact
+   they merely learn does not qualify. AFTER all uploads, run
    `NODE_USE_ENV_PROXY=1 node scripts/hook-ledger.mjs --days 30` and commit the
    updated HOOKS.md; log each slot's hook TYPE in RUNLOG (`hook:<TYPE>`), and
    mark novel shapes `HOOK-NEW:<desc>`.
 1. `NODE_USE_ENV_PROXY=1 node scripts/yt-postmortem.mjs` → read
    `state/postmortem.md` top block BEFORE picking topics: replicate WINNER
    shapes today, drop LOSER shapes. One line in RUNLOG: "postmortem: <verdicts>".
-2. Mondays: `node scripts/yt-competitor-scan.mjs` (~600 quota units) → read
+2. Mondays: `node scripts/yt-competitor-scan.mjs` (~1,000 quota units; query
+   set now includes nature/mountain/desert/village) → read
    `state/competitors.md`; copy the top-3 hook SHAPES this week (never content).
+   (First real run 2026-09-26: 9 of the top 25 China Shorts were mountains/
+   villages; "Would you walk this mountain path for free?" = 1.1M + 0.7M.)
+   If the file is older than 8 days on a non-Monday, run it anyway — it never
+   ran between 09-02 and 09-26 because Mondays kept skipping on vidIQ balance,
+   which this script does not even use.
 3. After each upload: `node scripts/youtube-comment.mjs --video <id> --text
-   "<the video's either-or question + ★ Expert Tip>"` — seeds the first comment
-   (force-ssl granted 2026-08-24). Reply to every viewer comment found via
+   "<the video's either-or question + ★ Expert Tip>"` — seeds the first comment.
+   **Requires the `youtube.force-ssl` scope. Checked 2026-09-26: the refresh
+   token in the environment carries only `youtube` + `youtube.upload`, so this
+   lane is BLOCKED until the owner re-mints the token with all three scopes
+   (OAuth Playground → replace YOUTUBE_REFRESH_TOKEN in Claude environment
+   variables → new container).** Probe once per run with tokeninfo; if
+   force-ssl is absent log `comment-seed: BLOCKED (no force-ssl)` once and do
+   not retry per slot. Reply to every viewer comment found via
    commentThreads.list (comments.insert) — tiny volume, strong signal.
 
 ## 1. Read state
@@ -105,8 +124,53 @@ log `skipped: batch already published today` and stop. (Protects against manual
    generates within-theme. Formats unchanged (a/c Short, b longform). If the
    theme queue is empty and research can't fill it, fall back to general pillars
    and log why.
+   **NATURE-FIRST ERA (owner 2026-09-26 — supersedes the CULTURE-FIRST /
+   GROWTH-V2 slot SUBJECTS below; the Q4 PLAN formats, SHORTS v3, HOOK v4 and
+   the hook loop still apply):** 「转一下方向去小城市，不再是去大城市；去山里、
+   沙漠里、风景很好的地方，什么地貌、特别的自然风光」. The persona now maps
+   China's LANDFORMS, WILD SCENERY and SMALL TOWNS. Big cities (Beijing /
+   Shanghai / Guangzhou / Shenzhen / Chongqing / Hangzhou / Chengdu / Xi'an /
+   Nanjing / Wuhan / Suzhou…) are never the subject — only a departure point
+   ("one hour from Shanghai") or a price contrast. Bible: `plans/nature-pivot.md`.
+   - **a 13:00 = `china-nature`** — one landform or place, one number, one
+     argument (danxia, karst, dunes, salt flats, terraces, gorges, sacred
+     peaks, alpine lakes, grasslands). Wed + Sun stay 《China Price Check》 but
+     priced around nature trips (park ticket + cable car vs a Western park;
+     Antelope Canyon tour vs Danxia gate; Yosemite $35 vs Zhangjiajie $32 —
+     honest even when China is NOT cheaper). Fri stays Expert Opinions =
+     DEBATE-native ("skip Huangshan at sunrise", overrated/underrated peaks).
+   - **c 20:00 = 《China Trip Planner》 2-3×/wk** with nature-intent queries
+     ("how to get to Zhangjiajie from Shanghai", "Guilin or Zhangjiajie for
+     first-timers", "best month for Zhangye Danxia"); other days **`small-town`**
+     (Dali, Yangshuo, Shaxi, Fenghuang, Langzhong, Miao/Tibetan villages, water
+     towns). Hot springs / food stay welcome ONLY when set in a small town or
+     a mountain valley (Tengchong, Changbai) — never a big-city spa or duck.
+   - **d 23:00 = `china-route`** unchanged — it is already the nature slot and
+     the channel's best lane (561 km sky road ×3.52, Tarim 446 km, QG loop).
+   - `china-culture` ≤1/wk and only inside a landscape or small town (cliff
+     carvings, mountain monasteries, village crafts); no standalone craft cards
+     or big-city heritage cards (this week's LOSERs: tea ×0.30, jade ×0.45).
+   - Queue: `nat-*` seeds lead (each has hookType + hook + verified footage
+     lane); big-city seeds are `paused-bigcity-2026-09-26` (prevStatus kept).
+   **NATURE FOOTAGE — measured 2026-09-26 (plans/nature-pivot.md §2 truth table):**
+   Pexels VIDEO has slug-verified clips for only ~8 places: Zhangye Danxia
+   (query "zhangye danxia", 19/20), Guilin / Yangshuo / Li River karst
+   ("yangshuo karst", "guilin li river", "china karst mountains"), Chaka salt
+   lake, Hukou waterfall, Leshan Giant Buddha, Zhujiajiao water town (query
+   "wuzhen water town" returns Zhujiajiao — claim Zhujiajiao), Dali old town,
+   Three Gorges / Yangtze. The 09-25/26 runs dropped Danxia and Guilin as
+   "FAILED site-ID" because they queried "Zhangye" alone — use the exact
+   queries in the table. Pexels PHOTOS cover ~25 more (Zhangjiajie 29/30,
+   Huangshan, Jiuzhaigou, Tianmen, Qinghai Lake, Xijiang Miao, Changbai,
+   Mount Hua, Yuanyang/Longji, Enshi, Stone Forest…): render them with
+   `assemble-video.mjs --photos fill|only` (Ken-Burns stills; photo page URLs
+   go to credits.json so the slug gate is identical). Rice-terrace VIDEO is
+   Vietnam/Thailand — never say Yuanyang over it. A site name may be spoken
+   ONLY over clips/photos whose slug names that site; everything else is
+   type-level wording or MAP-FORMAT. No honest footage AND no number = not a
+   video; pick the next nat-* seed.
    **CULTURE-FIRST ERA (owner 2026-08-09 — supersedes the food sprint, which
-   ended early on 08-09; overrides everything):** the China-Travel-Expert persona
+   ended early on 08-09; slot SUBJECTS superseded by NATURE-FIRST above):** the China-Travel-Expert persona
    is built on 中国古文化产物 — the architecture, history, and traditional customs
    that make China UNLIKE anywhere else — not on food volume. Slot mix:
    **GROWTH-V2 (owner 2026-08-15, plans/growth-v2.md — 3 slots/day, b RETIRED):**
@@ -341,8 +405,10 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    with cultural note.
    **Music rules — `automation/youtube/MUSIC.md` is the authority (owner
    2026-08-11 delegated music strategy fully):** pick by the style↔pillar map
-   (oriental-edm → route/travel; cinema-orient → culture reveals; cpop-groove →
-   city-life/food beats; lofi-* general fallback; guzheng slow culture only).
+   (oriental-edm → route/travel + drone landform reveals; cinema-orient →
+   culture reveals + mountain/desert spectacle; guzheng-calm → terraces, water
+   towns, lakes; cpop-groove → small-town street life/food beats; lofi-*
+   general fallback).
    HARD rotation rules (owner 2026-08-30: 背景音乐要经常换): rotate across the
    FULL Shorts pool (lofi-upbeat/lofi-chill/guzheng-calm/oriental-edm/
    cinema-orient/cpop-groove + any yal-*); no track repeats within the same day;
@@ -410,7 +476,12 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    (script wired 2026-07-15 — reuses by exact title, creates public if missing).
    Playlists (EXACT titles — renamed English-first 2026-08-09; the script matches
    by exact title, a stale name would create a duplicate): "China Food 中国美食" /
-   "China Travel 城市旅行" / "City Walks 城市漫游" / "China Coffee 中国咖啡";
+   "China Travel 城市旅行" / "City Walks 城市漫游" / "China Coffee 中国咖啡" /
+   **NATURE PIVOT 2026-09-26: `china-nature` → "China Nature 山河地貌",
+   `small-town` → "China Small Towns 小城古镇" (both created on first use, then
+   backfill the earlier landscape Shorts listed in plans/nature-pivot.md §1 —
+   Danxia, Jiuzhaigou, Zhangjiajie, QG loop, Silk Road, Duku, Tarim — so the
+   shelf opens with 10+ videos); routes keep "China Travel 城市旅行" + series;**
    new series playlists are created ENGLISH-FIRST: "<English series name> <中文名>"
    with the PERSONA.md playlist description sign-off.
    Backfill note: on first use, also file this week's earlier theme videos (see

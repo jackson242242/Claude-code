@@ -60,13 +60,24 @@ strategy:
   # (research 2026-07-09), specs land in styleGuide as they are verified.
   # CULTURE-FIRST (owner 2026-08-09): 古文化产物 is the persona's backbone —
   # architecture/history/traditional customs that make China unlike anywhere else.
-  # Slot mix: a+b china-culture, c city-travel(heritage), d china-food. Audiences
-  # rotate: 打卡 tourists / culture lovers / families with kids.
+  # Slot mix (superseded 2026-09-26 by the NATURE PIVOT block below): was
+  # a+b china-culture, c city-travel(heritage), d china-food.
+  # ================= NATURE PIVOT 2026-09-26 (owner directive, supersedes
+  # CULTURE-FIRST as the spine) =================
+  # 「转一下方向去小城市，不再是去大城市；去山里、沙漠里、风景很好的地方，什么地貌、
+  # 特别的自然风光」— big cities are OUT as subjects (departure point / price
+  # contrast only). The persona now maps China's landforms, wild scenery and
+  # small towns. Data: this week's competitor scan (state/competitors.md) has
+  # 9/25 top China Shorts on mountains/villages; #1 = a Zhangjiajie mountain
+  # path at 2.9M views. Playbook: .claude/commands/youtube-cycle.md NATURE-FIRST
+  # block; footage truth table + seeds: plans/nature-pivot.md.
   pillars:
-    - china-culture   # PRIMARY (2 slots/day): heritage architecture, 非遗 crafts, opera, tea, porcelain, festivals, customs, history stories
-    - city-travel     # heritage-priority: 古迹/古镇/historic districts/old streets; modern city as contrast only
-    - china-route     # slot d (owner 2026-08-11): travel routes stop-by-stop; architecture leads, food = reward stops only — never the subject
-    - city-walk       # (longform lane, still paused)
+    - china-nature    # PRIMARY (slot a daily + Fri Expert Opinions): landforms (danxia/karst/dunes/salt flats/terraces/gorges/glaciers), mountains, deserts, lakes, grasslands — one place, one number, one argument
+    - small-town      # slot c non-Planner days: 古镇/小城/山村 — Dali, Yangshuo, Shaxi, Fenghuang, water towns, Miao/Tibetan villages; NEVER Beijing/Shanghai/Guangzhou/Shenzhen/Chongqing as the subject
+    - china-route     # slot d: routes through nature stop-by-stop (Silk Road, Qinghai-Gansu loop, China's Edge, Duku, Tarim, Tea-Horse Road) — already the best-performing slot
+    - china-practical # Wed+Sun slot a 《China Price Check》 + slot c 《China Trip Planner》 2-3×/wk — now priced/planned around nature trips (park tickets, cable cars, homestays, getting to Zhangjiajie/Guilin/Danxia)
+    - china-culture   # DEMOTED to occasional (≤1/wk, must sit in a small town or a landscape — e.g. cliff carvings, mountain monasteries); no more standalone craft/city-heritage cards
+  pausedPillarsBigCity: [city-travel, city-walk]  # owner 2026-09-26: big-city subjects paused; seeds tagged paused-bigcity-2026-09-26 in queue.json (reversible)
   pausedPillarsFood: [china-food]  # owner 2026-08-11: no standalone food videos; seeds recyclable as route stops
   pausedPillarsExtra: [china-coffee]  # paused by owner 2026-07-18 (咖啡收官); ~20 seeds retained for revival
   brandRules: # applies to any pillar covering companies (coffee brands, wineries...)

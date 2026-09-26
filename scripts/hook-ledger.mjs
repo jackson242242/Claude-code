@@ -33,6 +33,16 @@ const TYPES = [
   ['SPECTACLE-FACT', /\b\d/, 'a number, but no angle to argue with'],
 ];
 const classify = (s) => (TYPES.find(([, re]) => re.test(s)) || ['PLAIN-FACT', null, 'nothing to reply to'])[0];
+// Only these can be a hook TYPE. SPECTACLE-FACT / PLAIN-FACT are a number or a
+// fact with no angle — the number belongs INSIDE a discussion hook (铁律 3), it
+// is never the hook itself. (Fix 2026-09-26: the old leaderboard recommended
+// SPECTACLE-FACT/PLAIN-FACT whenever they beat the median, so runs shipped 8/15
+// non-discussion hooks in a week and the discussion types never got samples.)
+const DISCUSSION = ['DEBATE', 'CHOICE', 'MISCONCEPTION', 'STAKES', 'PRICE-SHOCK', 'INSIDER'];
+const NON_DISCUSSION = ['SPECTACLE-FACT', 'PLAIN-FACT'];
+const MIN_N = 3;            // samples before a type's index is trusted
+const SPECTACLE_CAP_DAY = 1; // non-discussion hooks allowed per day (slot d route superlatives only)
+const SPECTACLE_CAP_WEEK = 3;
 
 const tok = await (await fetch('https://oauth2.googleapis.com/token', { method: 'POST',
   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -77,19 +87,37 @@ for (const e of mature) {
 const board = Object.entries(byType).map(([t, d]) => ({
   type: t, n: d.n, avg: Math.round(d.v / d.n), idx: +(d.v / d.n / base).toFixed(2),
   likeRate: +(d.l / Math.max(1, d.v) * 100).toFixed(2), comments: d.c,
+  cPerK: +(d.c / Math.max(1, d.v) * 1000).toFixed(2),
 })).sort((a, b) => b.idx - a.idx);
+const byName = Object.fromEntries(board.map((b) => [b.type, b]));
+
+// Recommendation logic — discussion types only.
+const proven = DISCUSSION.filter((t) => byName[t] && byName[t].n >= MIN_N && byName[t].idx >= 1)
+  .sort((a, b) => byName[b].idx - byName[a].idx);
+const weak = DISCUSSION.filter((t) => byName[t] && byName[t].n >= MIN_N && byName[t].idx < 0.8);
+const explore = DISCUSSION.filter((t) => !byName[t] || byName[t].n < MIN_N)
+  .sort((a, b) => (byName[a]?.n || 0) - (byName[b]?.n || 0)); // fewest samples first
+// Today's three slots, in order: proven winners first, then the least-sampled
+// types so every discussion type reaches MIN_N and the loop can actually learn.
+const todayPlan = [...proven, ...explore, ...DISCUSSION.filter((t) => !proven.includes(t) && !explore.includes(t) && !weak.includes(t))].slice(0, 3);
+const last7 = entries.filter((e) => e.age <= 7);
+const spent7 = last7.filter((e) => NON_DISCUSSION.includes(e.type)).length;
+const disc7 = last7.length - spent7;
 
 const stamp = today.toISOString().slice(0, 10);
 const measured = [
   `<!-- AUTO:BEGIN — rewritten by scripts/hook-ledger.mjs, do not hand-edit below -->`,
   `## 📊 实测排行（${stamp}，近 ${DAYS} 天、满 3 天的 ${mature.length} 条；baseline 中位数 ${base} 播放）`,
   '',
-  '| 钩子类型 | 条数 | 均播放 | 相对基准 | 点赞率 | 评论 |',
-  '|---|---|---|---|---|---|',
-  ...board.map((b) => `| ${b.type} | ${b.n} | ${b.avg} | ×${b.idx} | ${b.likeRate}% | ${b.comments} |`),
+  '| 钩子类型 | 讨论型? | 条数 | 均播放 | 相对基准 | 点赞率 | 评论 | 评/千播 |',
+  '|---|---|---|---|---|---|---|---|',
+  ...board.map((b) => `| ${b.type} | ${DISCUSSION.includes(b.type) ? '✅' : '❌ 数字锚而已'} | ${b.n}${b.n < MIN_N ? ' ⚠️样本不足' : ''} | ${b.avg} | ×${b.idx} | ${b.likeRate}% | ${b.comments} | ${b.cPerK} |`),
   '',
-  `**下一条用**：${board.filter((b) => b.idx >= 1 && b.n >= 2).map((b) => b.type).join(' / ') || '样本不足，优先 DEBATE / CHOICE / MISCONCEPTION（讨论性最高）'}`,
-  `**避免**：${board.filter((b) => b.idx < 0.8 && b.n >= 2).map((b) => b.type).join(' / ') || 'PLAIN-FACT（无可回复点）'}`,
+  `**今日三槽依次用（a / c / d）**：${todayPlan.join(' / ')}`,
+  `**已验证（≥${MIN_N} 条且 ≥×1.0）**：${proven.join(' / ') || '还没有——讨论型样本都不够，先补样本再谈优化'}`,
+  `**补样本（<${MIN_N} 条，必须排进去才学得到）**：${explore.map((t) => `${t}(${byName[t]?.n || 0})`).join(' / ') || '无'}`,
+  `**避免**：SPECTACLE-FACT / PLAIN-FACT 永远不是钩子类型（数字只能放进讨论型钩子里）${weak.length ? `；讨论型里已证实偏弱：${weak.join(' / ')}` : ''}`,
+  `**非讨论型配额**：近 7 天已用 ${spent7}/${SPECTACLE_CAP_WEEK}（每天 ≤${SPECTACLE_CAP_DAY}，仅限 slot d 路线超级数字，且收尾仍须 either-or）；讨论型 ${disc7}/${last7.length}${spent7 > SPECTACLE_CAP_WEEK ? ' — **超额，本周剩余全部讨论型**' : ''}`,
   '',
   `## 📒 近期逐条账本（新→旧）`,
   '',
@@ -106,4 +134,5 @@ doc = doc.includes('<!-- AUTO:BEGIN')
   : `${doc}\n\n${measured}\n`;
 await writeFile(HOOKS, doc);
 console.log(board.map((b) => `${b.type} n=${b.n} ×${b.idx} like ${b.likeRate}% c=${b.comments}`).join('\n'));
+console.log(`\nTODAY a/c/d → ${todayPlan.join(' / ')} | proven: ${proven.join(',') || '-'} | explore: ${explore.join(',') || '-'} | non-discussion last7: ${spent7}/${SPECTACLE_CAP_WEEK}`);
 console.log(`\nHOOKS.md updated (${entries.length} entries, baseline ${base}).`);

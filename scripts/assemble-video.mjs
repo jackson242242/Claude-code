@@ -16,7 +16,14 @@
  *     [--format 16x9|9x16|1x1] [--title "Why Finland Rethinks Homework"] \
  *     [--seg-seconds 6] [--max-clips 10] [--srt subs.srt] \
  *     [--style default|riben] [--music bgm.mp3] \
- *     [--sub-style dynamic|plain] [--sfx pop|none]
+ *     [--sub-style dynamic|plain] [--sfx pop|none] [--photos off|fill|only]
+ *
+ * --photos (2026-09-26 nature pivot): Pexels PHOTO search as a footage lane.
+ * Site-identifiable VIDEO exists for only ~8 Chinese landscapes, but photos
+ * cover Zhangjiajie/Huangshan/Jiuzhaigou/Tianmen/… (plans/nature-pivot.md).
+ * Each photo becomes a Ken-Burns segment (real zoom/pan, never a frozen frame).
+ * fill = videos first, photos top up to --max-clips; only = photos exclusively.
+ * Photo page URLs land in credits.json like clips, so the slug gate still works.
  *
  * --sub-style dynamic (default when --srt is present): colored + animated burned
  * subtitles (STYLE.md v2.4) — white EN lead, gold ZH accent, coral number pops,
@@ -75,6 +82,8 @@ const SUB_STYLE = (args['sub-style'] || (args.srt ? 'dynamic' : 'plain')).toLowe
 // Cue-synced sound design: a soft plucked "pop" laid on each subtitle's entry,
 // mixed under the music bed. Default on for burned-subtitle videos; --sfx none off.
 const SFX = (args.sfx || (args.srt ? 'pop' : 'none')).toLowerCase();
+const PHOTOS = (args.photos || 'off').toLowerCase();
+if (!['off', 'fill', 'only'].includes(PHOTOS)) fail(`Unknown --photos "${PHOTOS}". Supported: off, fill, only`);
 // Subtitle palette. Inline \c colours are 6-digit &HBBGGRR& (no alpha).
 const C_WHITE = '&HFFFFFF&';   // EN lead
 const C_GOLD = '&H00D7FF&';    // ZH accent (RGB 255,215,0)
@@ -130,16 +139,41 @@ async function searchPixabay(q) {
   }).filter(Boolean);
 }
 
-for (const q of queries) {
-  const found = [...(await searchPexels(q)), ...(PIXABAY_KEY ? await searchPixabay(q) : [])];
-  for (const c of found) {
-    if (seen.has(c.id) || clips.length >= MAX_CLIPS) continue;
-    seen.add(c.id);
-    clips.push(c);
+async function searchPexelsPhotos(q) {
+  const res = await fetch(
+    `https://api.pexels.com/v1/search?query=${encodeURIComponent(q)}&orientation=${orientation}&size=large&per_page=6`,
+    { headers: { Authorization: API_KEY } },
+  );
+  if (!res.ok) fail(`Pexels photo API error ${res.status} for "${q}": ${await res.text()}`);
+  return ((await res.json()).photos || []).map((p) => {
+    // large2x ≈ 1880px on the long side (portrait photos ≈ 1880×2820): covers
+    // 1080×1920 with room for the 1.25× Ken-Burns overscan without upscaling.
+    const link = p.src?.large2x || p.src?.original;
+    return link && { id: `pxp-${p.id}`, kind: 'photo', query: q, url: link, duration: SEG, sourceUrl: p.url, photographer: p.photographer || '', source: 'Pexels' };
+  }).filter(Boolean);
+}
+
+if (PHOTOS !== 'only') {
+  for (const q of queries) {
+    const found = [...(await searchPexels(q)), ...(PIXABAY_KEY ? await searchPixabay(q) : [])];
+    for (const c of found) {
+      if (seen.has(c.id) || clips.length >= MAX_CLIPS) continue;
+      seen.add(c.id);
+      clips.push(c);
+    }
+  }
+}
+if (PHOTOS !== 'off') {
+  for (const q of queries) {
+    for (const c of await searchPexelsPhotos(q)) {
+      if (seen.has(c.id) || clips.length >= MAX_CLIPS) continue;
+      seen.add(c.id);
+      clips.push(c);
+    }
   }
 }
 if (clips.length === 0) fail('No usable clips found for the given queries.');
-process.stderr.write(`Using ${clips.length} unique clip(s) (${clips.filter((c) => c.source === 'Pixabay').length} from Pixabay)\n`);
+process.stderr.write(`Using ${clips.length} unique clip(s) (${clips.filter((c) => c.source === 'Pixabay').length} from Pixabay, ${clips.filter((c) => c.kind === 'photo').length} photos)\n`);
 
 // 2. Download and normalize each needed segment (cycle clips if fewer than segments).
 const tmp = await mkdtemp(join(tmpdir(), 'assemble-'));
@@ -148,7 +182,7 @@ const segFiles = [];
 for (let i = 0; i < nSegs; i++) {
   const clip = clips[i % clips.length];
   if (!downloaded.has(clip.id)) {
-    const raw = join(tmp, `clip-${clip.id}.mp4`);
+    const raw = join(tmp, clip.kind === 'photo' ? `photo-${clip.id}.jpg` : `clip-${clip.id}.mp4`);
     const res = await fetch(clip.url);
     if (!res.ok) fail(`Failed to download clip ${clip.id}: HTTP ${res.status}`);
     await writeFile(raw, Buffer.from(await res.arrayBuffer()));
@@ -158,7 +192,21 @@ for (let i = 0; i < nSegs; i++) {
   // Reuse of the same clip in a later cycle starts deeper into the clip for variety.
   const start = Math.min(Math.floor(i / clips.length) * SEG, Math.max(0, (clip.duration || SEG) - segLen));
   const seg = join(tmp, `seg-${String(i).padStart(3, '0')}.mp4`);
-  if (FAST) {
+  if (clip.kind === 'photo') {
+    // Still → motion: a single frame drives zoompan for the whole segment.
+    // Alternate a centred push-in with a lateral pan at fixed zoom so
+    // consecutive stills never move the same way; overscan 1.25× so the pan
+    // has room and nothing is upscaled at zoom 1.0.
+    const frames = Math.round(segLen * 30);
+    const W2 = Math.ceil((W * 1.25) / 2) * 2;
+    const H2 = Math.ceil((H * 1.25) / 2) * 2;
+    const zp = i % 2 === 0
+      ? `zoompan=z='1+0.12*on/${frames}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=${frames}:s=${W}x${H}:fps=30`
+      : `zoompan=z='1.12':x='(iw-iw/zoom)*${(Math.floor(i / 2) % 2 === 0) ? `on/${frames}` : `(1-on/${frames})`}':y='ih/2-(ih/zoom/2)':d=${frames}:s=${W}x${H}:fps=30`;
+    run('ffmpeg', ['-y', '-i', downloaded.get(clip.id),
+      '-vf', `scale=${W2}:${H2}:force_original_aspect_ratio=increase,crop=${W2}:${H2},${zp},format=yuv420p`,
+      '-t', segLen.toFixed(2), '-an', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '22', seg]);
+  } else if (FAST) {
     // Crisp: straight cover-crop, rely on the footage's own motion (queries
     // demand people/action shots) — uniform drift on every shot reads sleepy.
     run('ffmpeg', ['-y', '-ss', String(start), '-i', downloaded.get(clip.id), '-t', segLen.toFixed(2),
@@ -339,7 +387,7 @@ if (audioFile) {
     '-c:a', 'aac', '-b:a', '160k', '-movflags', '+faststart', outFile]);
 }
 
-const credits = clips.map(({ query, sourceUrl, photographer, source }) => ({ query, sourceUrl, photographer, source }));
+const credits = clips.map(({ query, sourceUrl, photographer, source, kind }) => ({ query, sourceUrl, photographer, source, ...(kind ? { kind } : {}) }));
 await writeFile(`${outFile}.credits.json`, JSON.stringify(credits, null, 2));
 const outDur = Number(run('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', outFile]));
 console.log(`Wrote ${outFile} (${outDur.toFixed(1)}s, ${W}x${H}) + ${outFile}.credits.json (${credits.length} clip credits)`);

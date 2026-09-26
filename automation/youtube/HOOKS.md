@@ -18,22 +18,41 @@
 - "X is the most overrated stop in <city>. Here's where locals go instead."
 - "Skip <famous site>. The one 20 minutes away is better and free."
 - "<City A> beats <City B> for first-timers — and it's not close."
+- 山野版："Skip Wuzhen's ¥190 ticket — this water town is free to enter." /
+  "China's biggest Miao village: 1,000 stilt houses for ¥90 — real, or a theme park? Tell me I'm wrong."
 ### B. CHOICE 二选一（逼站队，回复成本最低）
 - "$240 train or $28 raft — which trip are you booking?"
 - "Street food stall or hotel breakfast in China? Pick one."
+- **山野版（2026-09-26 竞品实测：同一句 "Would you walk this mountain path for free?"
+  一周内两条 1.1M + 0.7M 播放，见 state/competitors.md）**：
+  "Would you walk this path for $30? 3,000 stone pillars, one ticket." /
+  "99 hairpin bends or the world's longest cable car — which way up Tianmen?" /
+  "Guilin or Zhangjiajie for your first China trip? Pick one."
 ### C. MISCONCEPTION 认知推翻（"我一直以为…"）
 - "Everyone thinks you need cash in China. You need neither cash nor a card."
 - "You don't need a visa for <N> days. Most travellers still book one."
+- 山野版："Everyone thinks China's parks are cheap. Zhangjiajie costs the same as Yosemite." /
+  "This 'forest' is a 270-million-year-old sea floor."
 ### D. STAKES 利害（会痛，所以会问）
 - "This one mistake voids your visa-free entry."
 - "Book the wrong train seat and you stand for 5 hours."
 ### E. PRICE-SHOCK 价格反差（引发"真的假的/我那边不是这样"）
 - "Switzerland's famous train: $290. Same view in China: $25."
+- 山野版："Antelope Canyon: a $90 tour. China's rainbow hills: $10 at the gate." /
+  "Bolivia's salt flat: a $150 tour. China's mirror of the sky: ¥60 and a bullet train."
+- 实测注意（n=7，×0.82）：**小差价没人回**（$27 vs $7 打车 ×0.52）；要 ≥4 倍、且是观众
+  自己付过的东西（按摩 $25 vs $120 ×4.11）。
 ### F. INSIDER 内行信息（引发"还有哪里？"）
 - "Locals never queue here — they enter from the north gate."
-### ❌ PLAIN-FACT 纯知识卡（禁止单独使用）
+### ❌ PLAIN-FACT / SPECTACLE-FACT 纯知识卡（不是钩子类型）
 - "苏绣一根丝线劈成 48 股" —— 无可回复点。要用必须改写成 A-F 之一：
   "Machine embroidery costs 1/50 of this. Can you tell them apart?"
+- **2026-09-26 复盘（owner："hook 做得不足"）**：09-20 建库后 6 天，22 条里 16 条仍是
+  SPECTACLE-FACT/PLAIN-FACT（数字 + 无争论点），讨论型每类只攒到 1-2 条样本，
+  等于没学到东西。根因：旧排行榜把"播放高于中位数"的数字卡也列进"下一条用"。
+  已改：脚本只推荐讨论型；`今日三槽依次用` 是**指派**不是菜单；样本 <3 的类型必须排进去
+  补样本；非讨论型每天 ≤1（只限 slot d 路线超级数字）、每周 ≤3，AUTO 区打印配额。
+- 数字卡唯一合法用法：做 A-F 钩子里的**锚**（"3,000 pillars" 放进 "Would you walk…"）。
 
 ## 收尾必须承接钩子
 钩子提出的争论，最后一条字幕要把话筒递出去（either-or 提问 / "tell me I'm wrong"），
@@ -47,29 +66,32 @@ run 自动执行；若某条钩子是**新写法**（不属 A-F），在 RUNLOG 
 <!-- AUTO:BEGIN — rewritten by scripts/hook-ledger.mjs, do not hand-edit below -->
 ## 📊 实测排行（2026-09-26，近 30 天、满 3 天的 84 条；baseline 中位数 279 播放）
 
-| 钩子类型 | 条数 | 均播放 | 相对基准 | 点赞率 | 评论 |
-|---|---|---|---|---|---|
-| INSIDER | 1 | 962 | ×3.45 | 0.62% | 0 |
-| STAKES | 2 | 560 | ×2.01 | 0.54% | 0 |
-| SPECTACLE-FACT | 35 | 397 | ×1.42 | 0.73% | 3 |
-| PLAIN-FACT | 37 | 389 | ×1.39 | 0.71% | 2 |
-| DEBATE | 1 | 369 | ×1.32 | 0.54% | 0 |
-| PRICE-SHOCK | 7 | 227 | ×0.82 | 0.44% | 0 |
-| MISCONCEPTION | 1 | 114 | ×0.41 | 0% | 0 |
+| 钩子类型 | 讨论型? | 条数 | 均播放 | 相对基准 | 点赞率 | 评论 | 评/千播 |
+|---|---|---|---|---|---|---|---|
+| INSIDER | ✅ | 1 ⚠️样本不足 | 962 | ×3.45 | 0.62% | 0 | 0 |
+| STAKES | ✅ | 2 ⚠️样本不足 | 560 | ×2.01 | 0.54% | 0 | 0 |
+| SPECTACLE-FACT | ❌ 数字锚而已 | 35 | 397 | ×1.42 | 0.73% | 3 | 0.22 |
+| PLAIN-FACT | ❌ 数字锚而已 | 37 | 389 | ×1.39 | 0.71% | 2 | 0.14 |
+| DEBATE | ✅ | 1 ⚠️样本不足 | 369 | ×1.32 | 0.54% | 0 | 0 |
+| PRICE-SHOCK | ✅ | 7 | 227 | ×0.82 | 0.44% | 0 | 0 |
+| MISCONCEPTION | ✅ | 1 ⚠️样本不足 | 114 | ×0.41 | 0% | 0 | 0 |
 
-**下一条用**：STAKES / SPECTACLE-FACT / PLAIN-FACT
-**避免**：PLAIN-FACT（无可回复点）
+**今日三槽依次用（a / c / d）**：CHOICE / DEBATE / MISCONCEPTION
+**已验证（≥3 条且 ≥×1.0）**：还没有——讨论型样本都不够，先补样本再谈优化
+**补样本（<3 条，必须排进去才学得到）**：CHOICE(0) / DEBATE(1) / MISCONCEPTION(1) / INSIDER(1) / STAKES(2)
+**避免**：SPECTACLE-FACT / PLAIN-FACT 永远不是钩子类型（数字只能放进讨论型钩子里）
+**非讨论型配额**：近 7 天已用 16/3（每天 ≤1，仅限 slot d 路线超级数字，且收尾仍须 either-or）；讨论型 5/21 — **超额，本周剩余全部讨论型**
 
 ## 📒 近期逐条账本（新→旧）
 
 | 日期 | 播放 | ×基准 | 赞 | 评 | 类型 | 钩子原文 |
 |---|---|---|---|---|---|---|
-| 2026-09-25d | 130 | ×0.47 | 0 | 0 | SPECTACLE-FACT | One desert cave hid 50,000 manuscripts for 900 years. I'm your C |
-| 2026-09-25c | 806 | ×2.89 | 5 | 0 | PRICE-SHOCK | A one-hour massage in China: about $25. I'm your China Travel Ex |
-| 2026-09-25a | 220 | ×0.79 | 2 | 0 | DEBATE | Skip Badaling — 10 million tourists a year. I'm your China Trave |
-| 2026-09-24d | 689 | ×2.47 | 5 | 0 | SPECTACLE-FACT | 561 km of road, open barely 4 months a year. I'm your China Trav |
-| 2026-09-24c | 518 | ×1.86 | 2 | 0 | PLAIN-FACT | This fried pork got its own government office. I'm your China Tr |
-| 2026-09-24a | 117 | ×0.42 | 0 | 0 | PLAIN-FACT | China's finest green tea is fried by bare hands. I'm your China  |
+| 2026-09-25d | 131 | ×0.47 | 0 | 0 | SPECTACLE-FACT | One desert cave hid 50,000 manuscripts for 900 years. I'm your C |
+| 2026-09-25c | 869 | ×3.11 | 6 | 0 | PRICE-SHOCK | A one-hour massage in China: about $25. I'm your China Travel Ex |
+| 2026-09-25a | 262 | ×0.94 | 2 | 0 | DEBATE | Skip Badaling — 10 million tourists a year. I'm your China Trave |
+| 2026-09-24d | 770 | ×2.76 | 7 | 0 | SPECTACLE-FACT | 561 km of road, open barely 4 months a year. I'm your China Trav |
+| 2026-09-24c | 551 | ×1.97 | 2 | 0 | PLAIN-FACT | This fried pork got its own government office. I'm your China Tr |
+| 2026-09-24a | 128 | ×0.46 | 0 | 0 | PLAIN-FACT | China's finest green tea is fried by bare hands. I'm your China  |
 | 2026-09-23d | 110 | ×0.39 | 3 | 0 | SPECTACLE-FACT | China's biggest lake sits 3,260 metres above the sea. I'm your C |
 | 2026-09-23c | 141 | ×0.51 | 1 | 0 | PLAIN-FACT | You can book China's bullet trains with just a passport. I'm you |
 | 2026-09-23a | 145 | ×0.52 | 0 | 0 | PRICE-SHOCK | A 10 km taxi ride costs about $27 in New York. I'm your China Tr |
@@ -91,7 +113,7 @@ run 自动执行；若某条钩子是**新写法**（不属 A-F），在 RUNLOG 
 | 2026-09-17d | 115 | ×0.41 | 0 | 0 | SPECTACLE-FACT | In 1990, this Shanghai skyline was farmland. I'm your China Trav |
 | 2026-09-17c | 894 | ×3.20 | 2 | 0 | SPECTACLE-FACT | Only 30% of a cow makes this hotpot. I'm your China Travel Exper |
 | 2026-09-17a | 45 | ×0.16 | 0 | 0 | PRICE-SHOCK | One Chinese teapot sold for $2 million. I'm your China Travel Ex |
-| 2026-09-16d | 79 | ×0.28 | 0 | 0 | SPECTACLE-FACT | Bike 13.7 km atop a 650-year-old wall. I'm your China Travel Exp |
+| 2026-09-16d | 80 | ×0.29 | 0 | 0 | SPECTACLE-FACT | Bike 13.7 km atop a 650-year-old wall. I'm your China Travel Exp |
 | 2026-09-16c | 77 | ×0.28 | 0 | 0 | SPECTACLE-FACT | China has canal towns 1,300 years old. I'm your China Travel Exp |
 | 2026-09-16a | 74 | ×0.27 | 0 | 0 | SPECTACLE-FACT | One silk thread, split 48 ways. I'm your China Travel Expert |
 | 2026-09-15d | 521 | ×1.87 | 2 | 0 | PRICE-SHOCK | The view on China's ¥20 bill is a real place. I'm your China Tra |
