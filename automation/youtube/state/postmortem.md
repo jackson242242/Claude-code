@@ -1,3 +1,13 @@
+## 2026-09-26 post-mortem (baseline = 14d median views of Shorts ≥3d old: 196)
+- 2026-09-25 c 6kY1d70QwpU | 806v 5L 0C @1d | ×4.11 | WINNER — replicate this hook shape today | China Price Check: A $25 Massage That's $120 in New York | China Trave
+- 2026-09-24 d AN0borXgxoE | 689v 5L 0C @2d | ×3.52 | WINNER — replicate this hook shape today | China’s 561 km Sky Road Is Open Just 4 Months a Year | China Travel Ex
+- 2026-09-24 c SJpBOAt-3VI | 518v 2L 0C @2d | ×2.64 | WINNER — replicate this hook shape today | This Fried Pork Got 100M Views and Its Own Office in China | China Tra
+- 2026-09-25 a RfG0fK0U0es | 192v 2L 0C @1d | ×0.98 | baseline | Skip Badaling: 10 Million Tourists a Year — Walk This Wall Instead | C
+- 2026-09-25 d KBLOTv9AFa8 | 128v 0L 0C @1d | ×0.65 | baseline | One Cave Hid 50,000 Manuscripts for 900 Years | Silk Road EP1 | China 
+- 2026-09-24 a KZS8TwMo5xc | 117v 0L 0C @2d | ×0.60 | baseline | China’s Best Green Tea Is Fried by Bare Hands at 200°C | China Travel 
+- 2026-09-25 L DCVju5gEEbc | 5v 0L 0C @1d | ×0.03 | LONGFORM: no distribution (expected on this channel; search-ranking is slow) | How to Ride China's High-Speed Trains in 2026 (Tourist Guide) | China 
+- like-rate (fresh Shorts): 0.57% (peers 1-6%)
+
 ## 2026-09-25 post-mortem (baseline = 14d median views of Shorts ≥3d old: 265)
 - 2026-09-24 c SJpBOAt-3VI | 263v 2L 0C @1d | ×0.99 | baseline | This Fried Pork Got 100M Views and Its Own Office in China | China Tra
 - 2026-09-24 d AN0borXgxoE | 196v 1L 0C @1d | ×0.74 | baseline | China’s 561 km Sky Road Is Open Just 4 Months a Year | China Travel Ex

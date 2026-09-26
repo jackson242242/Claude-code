@@ -3521,6 +3521,48 @@
    "music": "underscore-docu-01/02/03",
    "format": "16x9",
    "note": "weekly Fri longform (week3 odd=practical guide); search-compounding, judge monthly"
+  },
+  {
+   "date": "2026-09-26",
+   "slot": "a",
+   "title": "One Bowl Is $3, One Is $300 — Same Pattern, Which Is Real? | China Travel Expert",
+   "videoId": "DbssQLETKJw",
+   "url": "https://www.youtube.com/watch?v=DbssQLETKJw",
+   "pillar": "china-culture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "public",
+   "publishAt": null,
+   "music": "cinema-orient-01",
+   "format": "9x16",
+   "note": "CHOICE/price hook (handmade vs machine porcelain); OVERRUN 13:00Z -> immediate public; craft-level footage honest (no site-ID)"
+  },
+  {
+   "date": "2026-09-26",
+   "slot": "c",
+   "title": "You Don't Need Cash in China: Foreign Cards Now Spend $50,000 a Year | China Travel Expert",
+   "videoId": "4lBYxIZ7zQ8",
+   "url": "https://www.youtube.com/watch?v=4lBYxIZ7zQ8",
+   "pillar": "china-practical",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-26T20:00:00Z",
+   "music": "cpop-groove-01",
+   "format": "9x16",
+   "note": "Sat China Practical; MISCONCEPTION+number ($5k/$50k foreign card on Alipay/WeChat); type-level phone footage honest"
+  },
+  {
+   "date": "2026-09-26",
+   "slot": "d",
+   "title": "China Built the World's Longest Desert Road — 446 km Across Shifting Sand | China Travel Expert",
+   "videoId": "3Ssc3Dw8lWw",
+   "url": "https://www.youtube.com/watch?v=3Ssc3Dw8lWw",
+   "pillar": "china-route",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-26T23:00:00Z",
+   "music": "oriental-edm-01",
+   "format": "9x16",
+   "note": "SPECTACLE-FACT superlative (Tarim Desert Highway 446km/436km green belt); generic desert footage, re-rendered to drop Route 66/Chile leaks; illustrative-not-site"
   }
  ]
 }

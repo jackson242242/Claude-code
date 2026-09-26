@@ -48,7 +48,8 @@
    "series": "China Trip Planner",
    "addedAt": "2026-09-17",
    "addedBy": "q4 plan",
-   "status": "active"
+   "status": "covered-2026-09-26",
+   "coveredBy": "2026-09-26 slot c — paying in China 2026, foreign card on Alipay/WeChat (4lBYxIZ7zQ8)"
   },
   {
    "id": "ctp-03",
@@ -1894,6 +1895,30 @@
    "addedBy": "generated (footage-forced pivot)",
    "status": "covered-2026-09-02",
    "coveredBy": "2026-09-02 slot c KVviEiY--iI"
+  },
+  {
+   "id": "cc-porc-01",
+   "title": "Chinese porcelain: handmade vs machine — $3 vs $300 (CHOICE)",
+   "pillar": "china-culture",
+   "format": "short",
+   "angle": "CHOICE/price reframe of craft card (HOOKS.md E/B); craft-level footage honest (no kiln site-ID); Jingdezhen 70+ steps, handmade ~$150+ vs printed few $",
+   "whyNow": "2026-09-26 generated: postmortem winner=number+discussion; culture site-cards keep FAILing footage gate → craft-level CHOICE is the honest culture lane",
+   "addedAt": "2026-09-26",
+   "addedBy": "generated (run)",
+   "status": "published-2026-09-26",
+   "publishedVideoId": "DbssQLETKJw"
+  },
+  {
+   "id": "rt-tarim-01",
+   "title": "Tarim Desert Highway: world's longest road across shifting sand (446km)",
+   "pillar": "china-route",
+   "format": "short",
+   "angle": "SPECTACLE-FACT superlative (446km dune crossing + 436km shelterbelt, desert wells); generic desert-road footage honest illustrative",
+   "whyNow": "2026-09-26 generated: replicate route superlative-number winner shape (561km sky road ×3.52)",
+   "addedAt": "2026-09-26",
+   "addedBy": "generated (run)",
+   "status": "published-2026-09-26",
+   "publishedVideoId": "3Ssc3Dw8lWw"
   }
  ]
 }
