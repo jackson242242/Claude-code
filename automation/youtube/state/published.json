@@ -3563,6 +3563,48 @@
    "music": "oriental-edm-01",
    "format": "9x16",
    "note": "SPECTACLE-FACT superlative (Tarim Desert Highway 446km/436km green belt); generic desert footage, re-rendered to drop Route 66/Chile leaks; illustrative-not-site"
+  },
+  {
+   "date": "2026-09-27",
+   "slot": "a",
+   "title": "China Price Check: $95 Antelope Canyon or $13 Rainbow Hills? | China Travel Expert",
+   "videoId": "0Gd-v1HPFH8",
+   "url": "https://www.youtube.com/watch?v=0Gd-v1HPFH8",
+   "pillar": "china-practical",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "public",
+   "publishAt": null,
+   "music": "oriental-edm-01",
+   "format": "9x16",
+   "note": "Sun China Price Check; CHOICE hook; Antelope Canyon $95 vs Zhangye Danxia ~$13 (~7x); OVERRUN 13:00Z->immediate public; MAP-FORMAT illustrative canyon/red-rock (US slot-canyon stock), disclosed, NO site-ID 指认; nat-01"
+  },
+  {
+   "date": "2026-09-27",
+   "slot": "c",
+   "title": "Skip Wuzhen's ¥150 Ticket — This 1,300-Year-Old Canal Town Is Free | China Travel Expert",
+   "videoId": "lcbt7YYu7_w",
+   "url": "https://www.youtube.com/watch?v=lcbt7YYu7_w",
+   "pillar": "small-town",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-27T20:00:00Z",
+   "music": "guzheng-calm-01",
+   "format": "9x16",
+   "note": "DEBATE small-town (nat-16); Shaxi Taicang FREE vs Wuzhen Xizha ¥150/combined ¥190; Shaxi slug-verified site-ID clip + type-level China canal; RE-RENDERED to drop Venice/European leak"
+  },
+  {
+   "date": "2026-09-27",
+   "slot": "d",
+   "title": "China-to-Europe Trains Stop at the Border to Swap Every Wheel | China Travel Expert",
+   "videoId": "RuU2-qTbIIw",
+   "url": "https://www.youtube.com/watch?v=RuU2-qTbIIw",
+   "pillar": "china-route",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-27T23:00:00Z",
+   "music": "cinema-orient-01",
+   "format": "9x16",
+   "note": "MISCONCEPTION route (edge-a06 topic released STANDALONE, not China's-Edge EP6); Manzhouli break-of-gauge 1435mm vs 1520mm, bogie swap; MAP-FORMAT generic rail, disclosed illustrative not-Manzhouli"
   }
  ]
 }

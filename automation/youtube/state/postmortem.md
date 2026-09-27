@@ -1,3 +1,13 @@
+## 2026-09-27 post-mortem (baseline = 14d median views of Shorts ≥3d old: 157)
+- 2026-09-25 c 6kY1d70QwpU | 937v 5L 0C @2d | ×5.97 | WINNER — replicate this hook shape today | China Price Check: A $25 Massage That's $120 in New York | China Trave
+- 2026-09-26 a DbssQLETKJw | 812v 3L 0C @1d | ×5.17 | WINNER — replicate this hook shape today | One Bowl Is $3, One Is $300 — Same Pattern, Which Is Real? | China Tra
+- 2026-09-25 a RfG0fK0U0es | 350v 2L 0C @2d | ×2.23 | WINNER — replicate this hook shape today | Skip Badaling: 10 Million Tourists a Year — Walk This Wall Instead | C
+- 2026-09-26 d 3Ssc3Dw8lWw | 255v 0L 0C @1d | ×1.62 | baseline | China Built the World's Longest Desert Road — 446 km Across Shifting S
+- 2026-09-25 d KBLOTv9AFa8 | 140v 0L 0C @2d | ×0.89 | baseline | One Cave Hid 50,000 Manuscripts for 900 Years | Silk Road EP1 | China 
+- 2026-09-26 c 4lBYxIZ7zQ8 | 58v 0L 0C @1d | ×0.37 | LOSER — avoid this shape today | You Don't Need Cash in China: Foreign Cards Now Spend $50,000 a Year |
+- 2026-09-25 L DCVju5gEEbc | 4v 0L 0C @2d | ×0.03 | LONGFORM: no distribution (expected on this channel; search-ranking is slow) | How to Ride China's High-Speed Trains in 2026 (Tourist Guide) | China 
+- like-rate (fresh Shorts): 0.39% (peers 1-6%)
+
 ## 2026-09-26 post-mortem (baseline = 14d median views of Shorts ≥3d old: 196)
 - 2026-09-25 c 6kY1d70QwpU | 806v 5L 0C @1d | ×4.11 | WINNER — replicate this hook shape today | China Price Check: A $25 Massage That's $120 in New York | China Trave
 - 2026-09-24 d AN0borXgxoE | 689v 5L 0C @2d | ×3.52 | WINNER — replicate this hook shape today | China’s 561 km Sky Road Is Open Just 4 Months a Year | China Travel Ex

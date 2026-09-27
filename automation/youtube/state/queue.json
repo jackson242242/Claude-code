@@ -14,7 +14,8 @@
    "whyNow": "owner 2026-09-26: 转向小城市/山里/沙漠/地貌/自然风光; competitors.md 09-26: 9/25 top China Shorts = mountains/villages, #1 Zhangjiajie path 2.9M",
    "addedAt": "2026-09-26",
    "addedBy": "owner nature pivot 2026-09-26 (plans/nature-pivot.md)",
-   "status": "active"
+   "status": "published-2026-09-27",
+   "prevStatus": "active"
   },
   {
    "id": "nat-02",
@@ -239,7 +240,8 @@
    "whyNow": "owner 2026-09-26: 转向小城市/山里/沙漠/地貌/自然风光; competitors.md 09-26: 9/25 top China Shorts = mountains/villages, #1 Zhangjiajie path 2.9M",
    "addedAt": "2026-09-26",
    "addedBy": "owner nature pivot 2026-09-26 (plans/nature-pivot.md)",
-   "status": "active"
+   "status": "published-2026-09-27",
+   "prevStatus": "active"
   },
   {
    "id": "nat-17",
@@ -1905,7 +1907,8 @@
    "seriesNote": "China's Edge S1 连载",
    "addedAt": "2026-08-12",
    "addedBy": "owner directive",
-   "status": "active"
+   "status": "published-2026-09-27",
+   "prevStatus": "active"
   },
   {
    "id": "edge-a07",

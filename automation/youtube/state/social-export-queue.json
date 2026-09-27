@@ -692,7 +692,8 @@
    "views": 108,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "no-artifacts",
+   "note": "date/slot null -> run folder unresolvable; not faked (2026-09-27)"
   },
   {
    "videoId": "KReveLyFWn0",
@@ -700,7 +701,8 @@
    "views": 106,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "no-artifacts",
+   "note": "date/slot null -> run folder unresolvable; not faked (2026-09-27)"
   },
   {
    "videoId": "EXBJRsHANys",
