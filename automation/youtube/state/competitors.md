@@ -1,3 +1,32 @@
+## 2026-09-28 competitor scan (top 25 China-travel Shorts published in the last 7 days, by views)
+hook-shape tally: {"other":11,"number-claim":8,"question":5,"tag-only-spectacle":1} · nature/small-town titles in top 25: 11
+- 4705396v 161718L (3.4%) PT1M38S | Andrew Chung | 🏔 would you do this in crocs 😭✌️📍 qixing mountain in zhangjiajie, china #chungus | https://youtube.com/shorts/DkQkW1gprgI
+- 2144930v 11513L (0.5%) PT3M3S | New York Post | Watch Trump&#39;s PRICELESS Reaction During Xi&#39;s Welcome Military Jet Flyove | https://youtube.com/shorts/bL030mCoPlk
+- 1733349v 5121L (0.3%) PT15S | Banana Loves Traveling | 🏔 Would you walk this mountain path for free? 😎👠 Beautiful China #Travel #Nature | https://youtube.com/shorts/5bNYXI7AXRI
+- 1661422v 34595L (2.1%) PT2M6S | Andrew Chung | 🏔 wait for the end 😭✌️📍 qixing mountain in zhangjiajie, china #chunguspov #trave | https://youtube.com/shorts/1TOGfmXU0TU
+- 1509899v 13480L (0.9%) PT48S | CGTN Europe | 🏔 How a giant wind turbine blade navigates mountain roads | https://youtube.com/shorts/ntETOlooyqE
+- 1419203v 0L (0.0%) PT18S | FactJunction  | 🏔 🇨🇳😱 China के Dinghu Mountain में ये Wish Bowl देखकर सब हैरान! आखिर लोग इसमें  | https://youtube.com/shorts/4Uf-exQ0izg
+- 1407404v 21603L (1.5%) PT1M30S | SAMANWAYAM | ഇതാണ് കറുത്ത ചട്ടിയും ചുവന്ന ചട്ടിയും തമ്മിലുള്ള വ്യത്യാസം | Manchatti, Clay pot | https://youtube.com/shorts/obC5SzoSAdc
+- 1294466v 20051L (1.5%) PT1M13S | Xfacto | 😱 How? |3 ultimate marvels found only in China #shorts #tamil #news #facts #eng | https://youtube.com/shorts/a0whvpQVn4o
+- 1291082v 4717L (0.4%) PT29S | Banana Loves Traveling | 🏔 Would you walk this mountain path for free? 😎👠 Beautiful China #Travel #Nature | https://youtube.com/shorts/ZagTrNLGAz8
+- 1238721v 27559L (2.2%) PT1M38S | O.H. Rahman | 🏔 പച്ചപ്പും വരുമാനവും China’s Brilliant Desert Strategy, Malayalam inspirational v | https://youtube.com/shorts/BAjA7zSg1Nw
+- 1206579v 8307L (0.7%) PT40S | FactInfinity | 🏔 China Built an Entire Village on a Mountain Slope! 😳🏔️ | https://youtube.com/shorts/B_6ad44S_70
+- 1112760v 12430L (1.1%) PT43S | Hidden Facts | 🏔 China&#39;s most beautiful village | https://youtube.com/shorts/2trq6Rzhqtw
+- 1071406v 22730L (2.1%) PT1M58S | Sunil The Craver | ₹200 में इतना बड़ा Veg Chinese Platter 😱🥢 एक प्लेट में इतना कुछ! #chinesefood  | https://youtube.com/shorts/-hq5TEoTMM4
+- 992841v 6808L (0.7%) PT16S | Discover Asia  | 🌍✨ THE MOST BEAUTIFUL PLACES ON EARTH – PART 6  #explore #travel #china | https://youtube.com/shorts/VKsOAMtg5Lg
+- 987503v 76833L (7.8%) PT1M35S | Aarif's MindVoice | 💥🤯₹80-க்கு  Fish Meals with Fish Fry-ஆ 😱 | Madurai Street Food 🔥..⁉️💢 #shor | https://youtube.com/shorts/CNtyMI2Bkc0
+- 893113v 5480L (0.6%) PT1M17S | New York Post | Watch China&#39;s Xi Laugh at Biden&#39;s Autopen Portrait While on White House  | https://youtube.com/shorts/cBEH7dIDH4o
+- 815683v 4735L (0.6%) PT1M2S | Pooja APT | Cute Child Portrait and Colorful Caricature Art in Dali China | #ChinaTravel #Da | https://youtube.com/shorts/hQd4E6RdPMY
+- 806110v 26350L (3.3%) PT27S | Shu Xu | Trying The Most Unhinged Restaurant | https://youtube.com/shorts/NNCg3Ez7Tg4
+- 756281v 4345L (0.6%) PT16S | Alex Young | 中國敦煌鳴沙山月牙泉#travel #China #fyp | https://youtube.com/shorts/FesF0inK4Vs
+- 740448v 12713L (1.7%) PT2M45S | Haryanvi Voyager Shorts | Is China Really This Poor? 🇨🇳 Local Chinese Street Market #shorts #china | https://youtube.com/shorts/uTR0YYZiVfY
+- 727958v 28622L (3.9%) PT1M29S | Xfacto | 🤯8D City that even confuses Google Maps #shorts #tamil #news #facts #China #tra | https://youtube.com/shorts/rXqBYdxZBKo
+- 650614v 0L (0.0%) PT23S | Facts Junction | Why this train will change everything 🤯 #china #future #tech | https://youtube.com/shorts/iKwAHbMx4hU
+- 644190v 17107L (2.7%) PT2M59S | 小王在农村🇨🇳 | 🏔 Today in the Village: Roujiamo and a Bowl of Duck Blood Vermicelli Soup 🇨🇳 #ru | https://youtube.com/shorts/5fvX7DlCyvk
+- 641645v 16225L (2.5%) PT2M | Haryanvi Voyager Shorts | 🏔 This Chinese Village Looks Just Like Rajasthan! 🇨🇳 | Meeting Local Kids #short | https://youtube.com/shorts/95TkfxTjbNM
+- 494993v 5835L (1.2%) PT1M1S | fact 2 research | चीन में जमीन की कमी की वजह से पहाड़ों पर करते हैं खेती! 😱  @fact2research | https://youtube.com/shorts/CbUpcqnlyMM
+ACTION for this week's runs: copy the top 3 SHAPES (title grammar, length, spectacle-first) into our Shorts; never copy content.
+
 ## 2026-09-26 competitor scan (top 25 China-travel Shorts published in the last 7 days, by views)
 hook-shape tally: {"other":14,"question":4,"number-claim":6,"paradox-claim":1} · nature/small-town titles in top 25: 9
 - 2895226v 92886L (3.2%) PT1M38S | Andrew Chung | 🏔 would you do this in crocs 😭✌️📍 qixing mountain in zhangjiajie, china #chungus | https://youtube.com/shorts/DkQkW1gprgI

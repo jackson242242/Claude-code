@@ -1,3 +1,12 @@
+## 2026-09-28 post-mortem (baseline = 14d median views of Shorts ≥3d old: 157)
+- 2026-09-26 a DbssQLETKJw | 960v 3L 0C @2d | ×6.11 | WINNER — replicate this hook shape today | One Bowl Is $3, One Is $300 — Same Pattern, Which Is Real? | China Tra
+- 2026-09-27 d RuU2-qTbIIw | 339v 2L 0C @1d | ×2.16 | WINNER — replicate this hook shape today | China-to-Europe Trains Stop at the Border to Swap Every Wheel | China 
+- 2026-09-27 a 0Gd-v1HPFH8 | 290v 1L 0C @1d | ×1.85 | baseline | China Price Check: $95 Antelope Canyon or $13 Rainbow Hills? | China T
+- 2026-09-26 d 3Ssc3Dw8lWw | 262v 0L 0C @2d | ×1.67 | baseline | China Built the World's Longest Desert Road — 446 km Across Shifting S
+- 2026-09-27 c lcbt7YYu7_w | 167v 2L 0C @1d | ×1.06 | baseline | Skip Wuzhen's ¥150 Ticket — This 1,300-Year-Old Canal Town Is Free | C
+- 2026-09-26 c 4lBYxIZ7zQ8 | 79v 0L 0C @2d | ×0.50 | baseline | You Don't Need Cash in China: Foreign Cards Now Spend $50,000 a Year |
+- like-rate (fresh Shorts): 0.38% (peers 1-6%)
+
 ## 2026-09-27 post-mortem (baseline = 14d median views of Shorts ≥3d old: 157)
 - 2026-09-25 c 6kY1d70QwpU | 937v 5L 0C @2d | ×5.97 | WINNER — replicate this hook shape today | China Price Check: A $25 Massage That's $120 in New York | China Trave
 - 2026-09-26 a DbssQLETKJw | 812v 3L 0C @1d | ×5.17 | WINNER — replicate this hook shape today | One Bowl Is $3, One Is $300 — Same Pattern, Which Is Real? | China Tra

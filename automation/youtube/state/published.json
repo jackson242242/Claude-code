@@ -3605,6 +3605,57 @@
    "music": "cinema-orient-01",
    "format": "9x16",
    "note": "MISCONCEPTION route (edge-a06 topic released STANDALONE, not China's-Edge EP6); Manzhouli break-of-gauge 1435mm vs 1520mm, bogie swap; MAP-FORMAT generic rail, disclosed illustrative not-Manzhouli"
+  },
+  {
+   "date": "2026-09-28",
+   "slot": "a",
+   "title": "Would You Walk Across 3,000 Stone Pillars? Zhangjiajie for $33 | China Travel Expert",
+   "videoId": "zIWz6QMKy3Q",
+   "url": "https://www.youtube.com/watch?v=zIWz6QMKy3Q",
+   "pillar": "china-nature",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-28T13:00:00Z",
+   "music": "cinema-orient-01",
+   "format": "9x16",
+   "hook": "CHOICE",
+   "queue": "nat-03",
+   "playlist": "China Nature 山河地貌",
+   "note": "Wulingyuan/Zhangjiajie ¥236/4-day (~$33) + Bailong 326m/¥65; --photos only, 9/10 site-ID Zhangjiajie"
+  },
+  {
+   "date": "2026-09-28",
+   "slot": "c",
+   "title": "China's Biggest Miao Village — Living Village or Theme Park? | China Travel Expert",
+   "videoId": "MBTbAaNcvd0",
+   "url": "https://www.youtube.com/watch?v=MBTbAaNcvd0",
+   "pillar": "small-town",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-28T20:00:00Z",
+   "music": "cpop-groove-01",
+   "format": "9x16",
+   "hook": "DEBATE",
+   "queue": "nat-10",
+   "playlist": "China Small Towns 小城古镇",
+   "note": "Xijiang Qianhu Miao 1,400+ households/5,600+ residents/~¥90; --photos only, 8/9 Guizhou/Miao site-ID (proxy path leaked a Vietnam clip on \"xijiang miao village\" query; used proxy-verified \"guizhou village china\"+\"xijiang qianhu miao village guizhou\")"
+  },
+  {
+   "date": "2026-09-28",
+   "slot": "d",
+   "title": "You Don't Need Flights to See China's Northwest — One 3,000 km Loop | China Travel Expert",
+   "videoId": "-Pq6UmUbi30",
+   "url": "https://www.youtube.com/watch?v=-Pq6UmUbi30",
+   "pillar": "china-route",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-09-28T23:00:00Z",
+   "music": "oriental-edm-01",
+   "format": "9x16",
+   "hook": "MISCONCEPTION",
+   "queue": null,
+   "playlist": "China Travel 城市旅行",
+   "note": "Qinghai-Gansu Grand Loop ~3,000km from Xining, 7-10 days; MAP-FORMAT type-level scenery over generic footage, disclosed illustrative (not named sites); generated topic, not a queue seed"
   }
  ]
 }
