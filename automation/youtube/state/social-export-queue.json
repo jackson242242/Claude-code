@@ -710,7 +710,8 @@
    "views": 100,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "no-artifacts",
+   "checkedAt": "2026-09-28"
   },
   {
    "videoId": "Ia71ofr1YTs",
@@ -718,7 +719,8 @@
    "views": 99,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "no-artifacts",
+   "checkedAt": "2026-09-28"
   },
   {
    "videoId": "qFT_f5FDbKw",
