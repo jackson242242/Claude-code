@@ -64,66 +64,66 @@ run 自动执行；若某条钩子是**新写法**（不属 A-F），在 RUNLOG 
 
 
 <!-- AUTO:BEGIN — rewritten by scripts/hook-ledger.mjs, do not hand-edit below -->
-## 📊 实测排行（2026-09-28，近 30 天、满 3 天的 84 条；baseline 中位数 279 播放）
+## 📊 实测排行（2026-09-29，近 30 天、满 3 天的 84 条；baseline 中位数 265 播放）
 
 | 钩子类型 | 讨论型? | 条数 | 均播放 | 相对基准 | 点赞率 | 评论 | 评/千播 |
 |---|---|---|---|---|---|---|---|
-| INSIDER | ✅ | 1 ⚠️样本不足 | 962 | ×3.45 | 0.62% | 0 | 0 |
-| STAKES | ✅ | 2 ⚠️样本不足 | 561 | ×2.01 | 0.54% | 0 | 0 |
-| SPECTACLE-FACT | ❌ 数字锚而已 | 36 | 408 | ×1.46 | 0.74% | 3 | 0.2 |
-| DEBATE | ✅ | 2 ⚠️样本不足 | 379 | ×1.36 | 0.53% | 0 | 0 |
-| PLAIN-FACT | ❌ 数字锚而已 | 34 | 332 | ×1.19 | 0.72% | 1 | 0.09 |
-| PRICE-SHOCK | ✅ | 8 | 317 | ×1.14 | 0.51% | 0 | 0 |
-| MISCONCEPTION | ✅ | 1 ⚠️样本不足 | 114 | ×0.41 | 0% | 0 | 0 |
+| INSIDER | ✅ | 1 ⚠️样本不足 | 962 | ×3.63 | 0.62% | 0 | 0 |
+| STAKES | ✅ | 2 ⚠️样本不足 | 562 | ×2.12 | 0.53% | 0 | 0 |
+| SPECTACLE-FACT | ❌ 数字锚而已 | 36 | 408 | ×1.54 | 0.74% | 3 | 0.2 |
+| PRICE-SHOCK | ✅ | 9 | 390 | ×1.47 | 0.46% | 0 | 0 |
+| DEBATE | ✅ | 2 ⚠️样本不足 | 379 | ×1.43 | 0.53% | 0 | 0 |
+| PLAIN-FACT | ❌ 数字锚而已 | 33 | 314 | ×1.19 | 0.75% | 1 | 0.1 |
+| MISCONCEPTION | ✅ | 1 ⚠️样本不足 | 114 | ×0.43 | 0% | 0 | 0 |
 
 **今日三槽依次用（a / c / d）**：PRICE-SHOCK / CHOICE / MISCONCEPTION
 **已验证（≥3 条且 ≥×1.0）**：PRICE-SHOCK
 **补样本（<3 条，必须排进去才学得到）**：CHOICE(0) / MISCONCEPTION(1) / INSIDER(1) / DEBATE(2) / STAKES(2)
 **避免**：SPECTACLE-FACT / PLAIN-FACT 永远不是钩子类型（数字只能放进讨论型钩子里）
-**非讨论型配额**：近 7 天已用 13/3（每天 ≤1，仅限 slot d 路线超级数字，且收尾仍须 either-or）；讨论型 8/21 — **超额，本周剩余全部讨论型**
+**非讨论型配额**：近 7 天已用 11/3（每天 ≤1，仅限 slot d 路线超级数字，且收尾仍须 either-or）；讨论型 10/21 — **超额，本周剩余全部讨论型**
 
 ## 📒 近期逐条账本（新→旧）
 
 | 日期 | 播放 | ×基准 | 赞 | 评 | 类型 | 钩子原文 |
 |---|---|---|---|---|---|---|
-| 2026-09-27d | 350 | ×1.25 | 2 | 0 | STAKES | China to Europe by rail? The wheels don't fit. I'm your China Tr |
-| 2026-09-27c | 169 | ×0.61 | 2 | 0 | DEBATE | Skip Wuzhen — ¥150 just to get in. I'm your China Travel Expert. |
-| 2026-09-27a | 291 | ×1.04 | 1 | 0 | PRICE-SHOCK | One canyon: $95. One: $13. I'm your China Travel Expert. |
-| 2026-09-26d | 262 | ×0.94 | 0 | 0 | PLAIN-FACT | China paved a road across shifting sand. I'm your China Travel E |
-| 2026-09-26c | 79 | ×0.28 | 0 | 0 | PLAIN-FACT | Everyone says: bring cash to China. I'm your China Travel Expert |
-| 2026-09-26a | 960 | ×3.44 | 3 | 0 | PRICE-SHOCK | One bowl: $3. One: $300. I'm your China Travel Expert. |
-| 2026-09-25d | 150 | ×0.54 | 0 | 0 | SPECTACLE-FACT | One desert cave hid 50,000 manuscripts for 900 years. I'm your C |
-| 2026-09-25c | 941 | ×3.37 | 5 | 0 | PRICE-SHOCK | A one-hour massage in China: about $25. I'm your China Travel Ex |
-| 2026-09-25a | 389 | ×1.39 | 2 | 0 | DEBATE | Skip Badaling — 10 million tourists a year. I'm your China Trave |
-| 2026-09-24d | 847 | ×3.04 | 7 | 0 | SPECTACLE-FACT | 561 km of road, open barely 4 months a year. I'm your China Trav |
-| 2026-09-24c | 582 | ×2.09 | 2 | 0 | PLAIN-FACT | This fried pork got its own government office. I'm your China Tr |
-| 2026-09-24a | 132 | ×0.47 | 0 | 0 | PLAIN-FACT | China's finest green tea is fried by bare hands. I'm your China  |
-| 2026-09-23d | 110 | ×0.39 | 3 | 0 | SPECTACLE-FACT | China's biggest lake sits 3,260 metres above the sea. I'm your C |
-| 2026-09-23c | 146 | ×0.52 | 1 | 0 | PLAIN-FACT | You can book China's bullet trains with just a passport. I'm you |
-| 2026-09-23a | 146 | ×0.52 | 1 | 0 | PRICE-SHOCK | A 10 km taxi ride costs about $27 in New York. I'm your China Tr |
-| 2026-09-22d | 427 | ×1.53 | 6 | 0 | SPECTACLE-FACT | China's newest bullet train hit 453 km/h in tests. I'm your Chin |
-| 2026-09-22c | 28 | ×0.10 | 0 | 0 | SPECTACLE-FACT | China blocks 10 apps you use every day. I'm your China Travel Ex |
-| 2026-09-22a | 102 | ×0.37 | 1 | 0 | SPECTACLE-FACT | China spent 1,700 years faking jade with fire. I'm your China Tr |
-| 2026-09-21d | 74 | ×0.27 | 0 | 0 | SPECTACLE-FACT | Three cities, 2,600 km, one bullet-train trip. I'm your China Tr |
-| 2026-09-21c | 925 | ×3.32 | 3 | 0 | STAKES | Don't visit China during Golden Week, October 1 to 7. I'm your C |
-| 2026-09-21a | 157 | ×0.56 | 0 | 0 | SPECTACLE-FACT | The world's longest dragon dance ran 6,500 meters. I'm your Chin |
-| 2026-09-20d | 395 | ×1.42 | 2 | 0 | SPECTACLE-FACT | One road loop: 2,800 km across northwest China. I'm your China T |
-| 2026-09-20c | 85 | ×0.30 | 0 | 0 | SPECTACLE-FACT | This beef cut is under 1% of the whole cow. I'm your China Trave |
-| 2026-09-20a | 800 | ×2.87 | 3 | 0 | SPECTACLE-FACT | China's bullet train: 6 cents a kilometer. I'm your China Travel |
-| 2026-09-19d | 956 | ×3.43 | 2 | 1 | SPECTACLE-FACT | A perfect soup dumpling has exactly 18 folds. I'm your China Tra |
-| 2026-09-19c | 364 | ×1.30 | 2 | 0 | PRICE-SHOCK | A full week in China — from $300. I'm your China Travel Expert |
-| 2026-09-19a | 124 | ×0.44 | 2 | 0 | SPECTACLE-FACT | Zero nails. Over 1,000 years standing. I'm your China Travel Exp |
-| 2026-09-18d | 56 | ×0.20 | 0 | 0 | SPECTACLE-FACT | Suzhou once had over 200 private gardens. I'm your China Travel  |
-| 2026-09-18c | 196 | ×0.70 | 1 | 0 | SPECTACLE-FACT | The Great Wall is 21,196 km long. I'm your China Travel Expert |
-| 2026-09-18a | 157 | ×0.56 | 1 | 0 | PRICE-SHOCK | Shanghai's river cruise: $17. Locals pay 30 cents. I'm your Chin |
-| 2026-09-17d | 115 | ×0.41 | 0 | 0 | SPECTACLE-FACT | In 1990, this Shanghai skyline was farmland. I'm your China Trav |
-| 2026-09-17c | 894 | ×3.20 | 2 | 0 | SPECTACLE-FACT | Only 30% of a cow makes this hotpot. I'm your China Travel Exper |
-| 2026-09-17a | 45 | ×0.16 | 0 | 0 | PRICE-SHOCK | One Chinese teapot sold for $2 million. I'm your China Travel Ex |
-| 2026-09-16d | 85 | ×0.30 | 0 | 0 | SPECTACLE-FACT | Bike 13.7 km atop a 650-year-old wall. I'm your China Travel Exp |
-| 2026-09-16c | 77 | ×0.28 | 0 | 0 | SPECTACLE-FACT | China has canal towns 1,300 years old. I'm your China Travel Exp |
-| 2026-09-16a | 74 | ×0.27 | 0 | 0 | SPECTACLE-FACT | One silk thread, split 48 ways. I'm your China Travel Expert |
-| 2026-09-15d | 521 | ×1.87 | 2 | 0 | PRICE-SHOCK | The view on China's ¥20 bill is a real place. I'm your China Tra |
-| 2026-09-15c | 265 | ×0.95 | 2 | 0 | PRICE-SHOCK | Switzerland's Glacier Express: about $240. I'm your China Travel |
-| 2026-09-15a | 465 | ×1.67 | 3 | 0 | SPECTACLE-FACT | China fired plain stone into "jade" — at 1,300°C. I'm your China |
-| 2026-09-14d | 135 | ×0.48 | 3 | 0 | PLAIN-FACT | This is the world’s longest man-made river. |
+| 2026-09-28d | 2 | ×0.01 | 0 | 0 | STAKES | You don't need a dozen flights to see China's northwest. I'm you |
+| 2026-09-28c | 308 | ×1.16 | 9 | 0 | CHOICE | China's biggest Miao village — real place, or a theme park? I'm  |
+| 2026-09-28a | 19 | ×0.07 | 1 | 0 | CHOICE | Would you walk a trail across 3,000 stone pillars? I'm your Chin |
+| 2026-09-27d | 429 | ×1.62 | 2 | 0 | STAKES | China to Europe by rail? The wheels don't fit. I'm your China Tr |
+| 2026-09-27c | 190 | ×0.72 | 2 | 0 | DEBATE | Skip Wuzhen — ¥150 just to get in. I'm your China Travel Expert. |
+| 2026-09-27a | 335 | ×1.26 | 1 | 0 | PRICE-SHOCK | One canyon: $95. One: $13. I'm your China Travel Expert. |
+| 2026-09-26d | 268 | ×1.01 | 0 | 0 | PLAIN-FACT | China paved a road across shifting sand. I'm your China Travel E |
+| 2026-09-26c | 82 | ×0.31 | 0 | 0 | PLAIN-FACT | Everyone says: bring cash to China. I'm your China Travel Expert |
+| 2026-09-26a | 970 | ×3.66 | 3 | 0 | PRICE-SHOCK | One bowl: $3. One: $300. I'm your China Travel Expert. |
+| 2026-09-25d | 149 | ×0.56 | 0 | 0 | SPECTACLE-FACT | One desert cave hid 50,000 manuscripts for 900 years. I'm your C |
+| 2026-09-25c | 940 | ×3.55 | 5 | 0 | PRICE-SHOCK | A one-hour massage in China: about $25. I'm your China Travel Ex |
+| 2026-09-25a | 389 | ×1.47 | 2 | 0 | DEBATE | Skip Badaling — 10 million tourists a year. I'm your China Trave |
+| 2026-09-24d | 847 | ×3.20 | 7 | 0 | SPECTACLE-FACT | 561 km of road, open barely 4 months a year. I'm your China Trav |
+| 2026-09-24c | 582 | ×2.20 | 2 | 0 | PLAIN-FACT | This fried pork got its own government office. I'm your China Tr |
+| 2026-09-24a | 132 | ×0.50 | 0 | 0 | PLAIN-FACT | China's finest green tea is fried by bare hands. I'm your China  |
+| 2026-09-23d | 110 | ×0.42 | 3 | 0 | SPECTACLE-FACT | China's biggest lake sits 3,260 metres above the sea. I'm your C |
+| 2026-09-23c | 149 | ×0.56 | 1 | 0 | PLAIN-FACT | You can book China's bullet trains with just a passport. I'm you |
+| 2026-09-23a | 147 | ×0.55 | 1 | 0 | PRICE-SHOCK | A 10 km taxi ride costs about $27 in New York. I'm your China Tr |
+| 2026-09-22d | 428 | ×1.62 | 6 | 0 | SPECTACLE-FACT | China's newest bullet train hit 453 km/h in tests. I'm your Chin |
+| 2026-09-22c | 28 | ×0.11 | 0 | 0 | SPECTACLE-FACT | China blocks 10 apps you use every day. I'm your China Travel Ex |
+| 2026-09-22a | 102 | ×0.38 | 1 | 0 | SPECTACLE-FACT | China spent 1,700 years faking jade with fire. I'm your China Tr |
+| 2026-09-21d | 74 | ×0.28 | 0 | 0 | SPECTACLE-FACT | Three cities, 2,600 km, one bullet-train trip. I'm your China Tr |
+| 2026-09-21c | 928 | ×3.50 | 3 | 0 | STAKES | Don't visit China during Golden Week, October 1 to 7. I'm your C |
+| 2026-09-21a | 158 | ×0.60 | 0 | 0 | SPECTACLE-FACT | The world's longest dragon dance ran 6,500 meters. I'm your Chin |
+| 2026-09-20d | 395 | ×1.49 | 2 | 0 | SPECTACLE-FACT | One road loop: 2,800 km across northwest China. I'm your China T |
+| 2026-09-20c | 85 | ×0.32 | 0 | 0 | SPECTACLE-FACT | This beef cut is under 1% of the whole cow. I'm your China Trave |
+| 2026-09-20a | 803 | ×3.03 | 3 | 0 | SPECTACLE-FACT | China's bullet train: 6 cents a kilometer. I'm your China Travel |
+| 2026-09-19d | 956 | ×3.61 | 2 | 1 | SPECTACLE-FACT | A perfect soup dumpling has exactly 18 folds. I'm your China Tra |
+| 2026-09-19c | 365 | ×1.38 | 2 | 0 | PRICE-SHOCK | A full week in China — from $300. I'm your China Travel Expert |
+| 2026-09-19a | 124 | ×0.47 | 2 | 0 | SPECTACLE-FACT | Zero nails. Over 1,000 years standing. I'm your China Travel Exp |
+| 2026-09-18d | 56 | ×0.21 | 0 | 0 | SPECTACLE-FACT | Suzhou once had over 200 private gardens. I'm your China Travel  |
+| 2026-09-18c | 196 | ×0.74 | 1 | 0 | SPECTACLE-FACT | The Great Wall is 21,196 km long. I'm your China Travel Expert |
+| 2026-09-18a | 158 | ×0.60 | 1 | 0 | PRICE-SHOCK | Shanghai's river cruise: $17. Locals pay 30 cents. I'm your Chin |
+| 2026-09-17d | 115 | ×0.43 | 0 | 0 | SPECTACLE-FACT | In 1990, this Shanghai skyline was farmland. I'm your China Trav |
+| 2026-09-17c | 894 | ×3.37 | 2 | 0 | SPECTACLE-FACT | Only 30% of a cow makes this hotpot. I'm your China Travel Exper |
+| 2026-09-17a | 45 | ×0.17 | 0 | 0 | PRICE-SHOCK | One Chinese teapot sold for $2 million. I'm your China Travel Ex |
+| 2026-09-16d | 85 | ×0.32 | 0 | 0 | SPECTACLE-FACT | Bike 13.7 km atop a 650-year-old wall. I'm your China Travel Exp |
+| 2026-09-16c | 77 | ×0.29 | 0 | 0 | SPECTACLE-FACT | China has canal towns 1,300 years old. I'm your China Travel Exp |
+| 2026-09-16a | 74 | ×0.28 | 0 | 0 | SPECTACLE-FACT | One silk thread, split 48 ways. I'm your China Travel Expert |
+| 2026-09-15d | 521 | ×1.97 | 2 | 0 | PRICE-SHOCK | The view on China's ¥20 bill is a real place. I'm your China Tra |
 <!-- AUTO:END -->

@@ -1,3 +1,12 @@
+## 2026-09-29 post-mortem (baseline = 14d median views of Shorts ≥3d old: 208)
+- 2026-09-27 d RuU2-qTbIIw | 429v 2L 0C @2d | ×2.06 | WINNER — replicate this hook shape today | China-to-Europe Trains Stop at the Border to Swap Every Wheel | China 
+- 2026-09-27 a 0Gd-v1HPFH8 | 335v 1L 0C @2d | ×1.61 | baseline | China Price Check: $95 Antelope Canyon or $13 Rainbow Hills? | China T
+- 2026-09-28 c MBTbAaNcvd0 | 308v 9L 0C @1d | ×1.48 | baseline | China's Biggest Miao Village — Living Village or Theme Park? | China T
+- 2026-09-27 c lcbt7YYu7_w | 190v 2L 0C @2d | ×0.91 | baseline | Skip Wuzhen's ¥150 Ticket — This 1,300-Year-Old Canal Town Is Free | C
+- 2026-09-28 a zIWz6QMKy3Q | 20v 1L 0C @1d | ×0.10 | LOSER — avoid this shape today | Would You Walk Across 3,000 Stone Pillars? Zhangjiajie for $33 | China
+- 2026-09-28 d -Pq6UmUbi30 | 3v 0L 0C @1d | ×0.01 | LOSER — avoid this shape today | You Don't Need Flights to See China's Northwest — One 3,000 km Loop | 
+- like-rate (fresh Shorts): 1.17% (peers 1-6%)
+
 ## 2026-09-28 post-mortem (baseline = 14d median views of Shorts ≥3d old: 157)
 - 2026-09-26 a DbssQLETKJw | 960v 3L 0C @2d | ×6.11 | WINNER — replicate this hook shape today | One Bowl Is $3, One Is $300 — Same Pattern, Which Is Real? | China Tra
 - 2026-09-27 d RuU2-qTbIIw | 339v 2L 0C @1d | ×2.16 | WINNER — replicate this hook shape today | China-to-Europe Trains Stop at the Border to Swap Every Wheel | China 
