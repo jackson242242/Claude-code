@@ -1,3 +1,12 @@
+## 2026-09-30 post-mortem (baseline = 14d median views of Shorts ≥3d old: 196)
+- 2026-09-28 c MBTbAaNcvd0 | 609v 15L 0C @2d | ×3.11 | WINNER — replicate this hook shape today | China's Biggest Miao Village — Living Village or Theme Park? | China T
+- 2026-09-29 a ZIHfkIn91qc | 56v 1L 0C @1d | ×0.29 | LOSER — avoid this shape today | $290 for Switzerland's Peaks or $32 for China's Avatar Mountains | Chi
+- 2026-09-29 d TD3EQY8hBdY | 50v 0L 0C @1d | ×0.26 | LOSER — avoid this shape today | You'd Need an Oxygen Mask at 5,072 m — This Train Makes Its Own | Chin
+- 2026-09-29 c Wk5Bg2dDnAo | 31v 0L 0C @1d | ×0.16 | LOSER — avoid this shape today | $50 Li River Cruise or a $28 Bamboo Raft? Guilin's Two Rivers | China 
+- 2026-09-28 a zIWz6QMKy3Q | 26v 1L 0C @2d | ×0.13 | LOSER — avoid this shape today | Would You Walk Across 3,000 Stone Pillars? Zhangjiajie for $33 | China
+- 2026-09-28 d -Pq6UmUbi30 | 13v 0L 0C @2d | ×0.07 | LOSER — avoid this shape today | You Don't Need Flights to See China's Northwest — One 3,000 km Loop | 
+- like-rate (fresh Shorts): 2.17% (peers 1-6%)
+
 ## 2026-09-29 post-mortem (baseline = 14d median views of Shorts ≥3d old: 208)
 - 2026-09-27 d RuU2-qTbIIw | 429v 2L 0C @2d | ×2.06 | WINNER — replicate this hook shape today | China-to-Europe Trains Stop at the Border to Swap Every Wheel | China 
 - 2026-09-27 a 0Gd-v1HPFH8 | 335v 1L 0C @2d | ×1.61 | baseline | China Price Check: $95 Antelope Canyon or $13 Rainbow Hills? | China T
