@@ -1,5 +1,5 @@
 {
-  "note": "Topic backlog for /youtube-cycle. Top item matching the slot format is used next. Owner may edit/reorder freely. NATURE PIVOT 2026-09-26: nat-* seeds lead (china-nature / small-town / nature-priced china-practical); each carries hookType + hook (discussion-worthy, numbers to verify this run) + footage lane (VIDEO site-ID / PHOTO site-ID → assemble --photos / MAP-FORMAT). Big-city subjects are paused-bigcity-2026-09-26 (prevStatus kept, reversible).",
+  "note": "Topic backlog for /youtube-cycle. Top item matching the slot format is used next. Owner may edit/reorder freely. NATURE PIVOT 2026-09-26: nat-* seeds lead (china-nature / small-town / nature-priced china-practical); each carries hookType + hook (discussion-worthy, numbers to verify this run) + footage lane (VIDEO site-ID / PHOTO site-ID → assemble --photos / MAP-FORMAT). Big-city subjects are paused-bigcity-2026-09-26 (prevStatus kept, reversible). [2026-10-01 note: Pexels site-ID slugs in these seeds DRIFT over time — re-probe VIDEO and PHOTO each run; recent runs find video site-ID broken and rely on the PHOTO lane or type-level/MAP-FORMAT with disclosure.]",
   "queue": [
     {
       "id": "nat-01",
@@ -55,12 +55,14 @@
       "hookType": "PRICE-SHOCK",
       "hook": "Bolivia's salt flat: a $150 tour. China's mirror of the sky: ¥60 and a bullet train.",
       "angle": "茶卡盐湖 门票 ¥60 核实; 西宁→茶卡 火车/大巴 ~3-4h 核实; Uyuni 1-day tour ~$150 核实; 海拔 3,059 m; 已发过 QG loop EP3(08-17)→ 新角度=价格对照, 不重复\"踩天空之镜\"",
-      "footage": "VIDEO site-ID verified (Pexels slugs): \"chaka salt lake\" (slugs: serene-view-of-salt-lake-and-mountains-in-chaka, chaka-salt-lake-panorama) + PHOTO site-ID verified → assemble --photos only|fill \"chaka salt lake qinghai\"",
+      "footage": "FOOTAGE DRIFT 2026-10-01: Pexels VIDEO \"chaka salt lake\" now returns 0 China site-ID (Turkey/Utah/India/Atacama); PHOTO also 0 Chaka site-ID. Produced as a TYPE-LEVEL price-check with illustrative salt-flat/mirror footage + disclosure (no site 指认). Prior slug claims stale.",
       "series": "",
       "whyNow": "owner 2026-09-26: 转向小城市/山里/沙漠/地貌/自然风光; competitors.md 09-26: 9/25 top China Shorts = mountains/villages, #1 Zhangjiajie path 2.9M",
       "addedAt": "2026-09-26",
       "addedBy": "owner nature pivot 2026-09-26 (plans/nature-pivot.md)",
-      "status": "active"
+      "status": "published-2026-10-01",
+      "prevStatus": "active",
+      "statusNote": "produced 2026-10-01 slot c PRICE-SHOCK vs Uyuni. HONESTY CORRECTION: this seed said \"Bolivia salt flat $150 tour\" — NOT supported this run; 1-day Uyuni mirror tours are ~$60-80 (3-day ~$290). Used $60-80 vs Chaka ¥60. mW_b_Af_V6A."
     },
     {
       "id": "nat-05",
@@ -75,7 +77,9 @@
       "whyNow": "owner 2026-09-26: 转向小城市/山里/沙漠/地貌/自然风光; competitors.md 09-26: 9/25 top China Shorts = mountains/villages, #1 Zhangjiajie path 2.9M",
       "addedAt": "2026-09-26",
       "addedBy": "owner nature pivot 2026-09-26 (plans/nature-pivot.md)",
-      "status": "active"
+      "status": "deferred-footage-2026-10-01",
+      "prevStatus": "active",
+      "fitNote": "FOOTAGE-FIRST FAIL 2026-10-01: Pexels VIDEO + PHOTO for \"hukou waterfall\"/\"yellow river hukou\" return 0 site-ID (generic/foreign waterfalls, Dray Nur Vietnam, Hội An, Nanjing). Single-SITE waterfall piece needs site-ID footage; deferred. Revive via owner footage, a verified Hukou slug, or re-angle. Swapped slot a to Huangshan STAKES (photo site-ID)."
     },
     {
       "id": "nat-06",
@@ -90,7 +94,9 @@
       "whyNow": "owner 2026-09-26: 转向小城市/山里/沙漠/地貌/自然风光; competitors.md 09-26: 9/25 top China Shorts = mountains/villages, #1 Zhangjiajie path 2.9M",
       "addedAt": "2026-09-26",
       "addedBy": "owner nature pivot 2026-09-26 (plans/nature-pivot.md)",
-      "status": "active"
+      "status": "published-2026-10-01",
+      "prevStatus": "active",
+      "statusNote": "produced 2026-10-01 slot a as STAKES (re-cast from DEBATE): \"~200 mist days/yr, pay ¥190 to see fog; sea of clouds best after rain.\" PHOTO site-ID PASS (huangshan slugs). GR_jYhfR7HE."
     },
     {
       "id": "nat-07",

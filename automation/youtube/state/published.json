@@ -3750,6 +3750,57 @@
    "queue": null,
    "playlist": "China Travel 城市旅行",
    "note": "Guoliang cliff tunnel: 13 villagers hand-carved 1972-77, 1.2km, one died, ~4000 hammers/12t steel (Wikipedia+dangerousroads+chinadiscovery). MAP-FORMAT Taihang/Xinxiang/Linzhou cliff photos, re-rendered to drop Zhangjiajie leak; no tunnel-interior 指认, disclosed illustrative. Builds MISCONCEPTION samples (was n=1)."
+  },
+  {
+   "date": "2026-10-01",
+   "slot": "a",
+   "title": "Huangshan Is in Cloud 200 Days a Year — Here's the Day to Climb | China Travel Expert",
+   "videoId": "GR_jYhfR7HE",
+   "url": "https://www.youtube.com/watch?v=GR_jYhfR7HE",
+   "pillar": "china-nature",
+   "lane": "pexels-photos-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-10-01T13:00:00Z",
+   "music": "guzheng-calm-01",
+   "format": "9x16",
+   "hook": "STAKES",
+   "queue": "nat-06 (Huangshan; re-cast DEBATE→STAKES)",
+   "playlist": "China Nature 山河地貌",
+   "note": "STAKES: ~200 mist days/yr; ¥190 peak ticket; sea of clouds over 80% in winter/spring, best the morning after rain. PHOTO site-ID PASS: 6/10 huangshan slugs + a few illustrative misty-peak/cloud fills (disclosed). nat-05 Hukou deferred same day (0 footage site-ID this run)."
+  },
+  {
+   "date": "2026-10-01",
+   "slot": "c",
+   "title": "Bolivia's Sky Mirror: a $70 Tour. China's Chaka: ¥60 at the Gate | China Travel Expert",
+   "videoId": "mW_b_Af_V6A",
+   "url": "https://www.youtube.com/watch?v=mW_b_Af_V6A",
+   "pillar": "china-nature",
+   "lane": "pexels-video-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-10-01T20:00:00Z",
+   "music": "lofi-chill-01",
+   "format": "9x16",
+   "hook": "PRICE-SHOCK",
+   "queue": "nat-04 (Chaka)",
+   "playlist": "China Nature 山河地貌",
+   "note": "PRICE-SHOCK price-check: Uyuni 1-day tour $60-80 vs Chaka ¥60 gate (~$8) + ¥34 bullet train ≈8x; 3,059m. HONESTY: queue seed said Uyuni '$150 tour' — NOT supported this run; corrected to $60-80 (3-day is $290). Type-level illustrative salt-flat/mirror footage (disclosed, NO site 指认). Slot-c subject deviation: china-nature used in c (no active small-town/planner PRICE-SHOCK seed)."
+  },
+  {
+   "date": "2026-10-01",
+   "slot": "d",
+   "title": "Everyone Drives the G318 to Tibet. Drive the Duku Highway Instead | China Travel Expert",
+   "videoId": "UyHXJc7Z9-Y",
+   "url": "https://www.youtube.com/watch?v=UyHXJc7Z9-Y",
+   "pillar": "china-route",
+   "lane": "pexels-video-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-10-01T23:00:00Z",
+   "music": "lofi-upbeat-01",
+   "format": "9x16",
+   "hook": "DEBATE",
+   "queue": null,
+   "playlist": "China Travel 城市旅行",
+   "note": "DEBATE (generated; builds DEBATE samples, was n=3). Duku = 09-24d ×3.52 winner subject, fresh DEBATE frame vs G318, Golden-Week-timely. G318 2,142km/10-12d/5,130m/Tibet+Alien permits vs Duku 561km Tianshan/~4 months open. MAP-FORMAT mountain-road illustrative (disclosed, NO site 指认)."
   }
  ]
 }

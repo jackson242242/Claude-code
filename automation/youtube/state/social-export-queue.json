@@ -768,7 +768,8 @@
    "views": 66,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "no-artifacts",
+   "note": "2026-10-01: null date/slot → cannot locate run folder; fresh container has no committed media (gitignored). Cannot re-render honestly."
   },
   {
    "videoId": "MwxYdEOprl8",
@@ -776,7 +777,8 @@
    "views": 65,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "no-artifacts",
+   "note": "2026-10-01: null date/slot → cannot locate run folder; fresh container has no committed media (gitignored). Cannot re-render honestly."
   },
   {
    "videoId": "J1bCWk4Xbbo",

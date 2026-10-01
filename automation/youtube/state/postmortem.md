@@ -1,3 +1,12 @@
+## 2026-10-01 post-mortem (baseline = 14d median views of Shorts ≥3d old: 196)
+- 2026-09-30 a sToyOJLqo0w | 165v 0L 0C @1d | ×0.84 | baseline | China Price Check: $96 Blue Lagoon or $7 Hot Springs? | China Travel E
+- 2026-09-29 c Wk5Bg2dDnAo | 144v 0L 0C @2d | ×0.73 | baseline | $50 Li River Cruise or a $28 Bamboo Raft? Guilin's Two Rivers | China 
+- 2026-09-29 a ZIHfkIn91qc | 126v 3L 0C @2d | ×0.64 | baseline | $290 for Switzerland's Peaks or $32 for China's Avatar Mountains | Chi
+- 2026-09-30 c jbb9C2gnbXA | 91v 0L 0C @1d | ×0.46 | LOSER — avoid this shape today | Fenghuang: China's Prettiest Town, or a Theme Park? | China Travel Exp
+- 2026-09-29 d TD3EQY8hBdY | 60v 0L 0C @2d | ×0.31 | LOSER — avoid this shape today | You'd Need an Oxygen Mask at 5,072 m — This Train Makes Its Own | Chin
+- 2026-09-30 d ZDnTfIpnuyQ | 18v 0L 0C @1d | ×0.09 | LOSER — avoid this shape today | 13 Villagers Carved This Cliff Tunnel by Hand, Not the State | China T
+- like-rate (fresh Shorts): 0.50% (peers 1-6%)
+
 ## 2026-09-30 post-mortem (baseline = 14d median views of Shorts ≥3d old: 196)
 - 2026-09-28 c MBTbAaNcvd0 | 609v 15L 0C @2d | ×3.11 | WINNER — replicate this hook shape today | China's Biggest Miao Village — Living Village or Theme Park? | China T
 - 2026-09-29 a ZIHfkIn91qc | 56v 1L 0C @1d | ×0.29 | LOSER — avoid this shape today | $290 for Switzerland's Peaks or $32 for China's Avatar Mountains | Chi
