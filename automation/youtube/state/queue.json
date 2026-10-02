@@ -111,7 +111,10 @@
       "whyNow": "owner 2026-09-26: 转向小城市/山里/沙漠/地貌/自然风光; competitors.md 09-26: 9/25 top China Shorts = mountains/villages, #1 Zhangjiajie path 2.9M",
       "addedAt": "2026-09-26",
       "addedBy": "owner nature pivot 2026-09-26 (plans/nature-pivot.md)",
-      "status": "active"
+      "status": "published-2026-10-02",
+      "prevStatus": "active",
+      "usedHook": "MISCONCEPTION",
+      "note": "slot c; subject Jiuzhaigou re-cast CHOICE→MISCONCEPTION (补样本); \"lakes look filtered but are real\""
     },
     {
       "id": "nat-08",
@@ -126,7 +129,10 @@
       "whyNow": "owner 2026-09-26: 转向小城市/山里/沙漠/地貌/自然风光; competitors.md 09-26: 9/25 top China Shorts = mountains/villages, #1 Zhangjiajie path 2.9M",
       "addedAt": "2026-09-26",
       "addedBy": "owner nature pivot 2026-09-26 (plans/nature-pivot.md)",
-      "status": "active"
+      "status": "published-2026-10-02",
+      "prevStatus": "active",
+      "usedHook": "STAKES",
+      "note": "slot d; Tianmen 99-bends re-cast CHOICE→STAKES; either-or (bends vs cable car) kept as close"
     },
     {
       "id": "nat-09",
@@ -292,7 +298,10 @@
       "whyNow": "owner 2026-09-26: 转向小城市/山里/沙漠/地貌/自然风光; competitors.md 09-26: 9/25 top China Shorts = mountains/villages, #1 Zhangjiajie path 2.9M",
       "addedAt": "2026-09-26",
       "addedBy": "owner nature pivot 2026-09-26 (plans/nature-pivot.md)",
-      "status": "active"
+      "status": "published-2026-10-02",
+      "prevStatus": "active",
+      "usedHook": "DEBATE",
+      "note": "slot a; CHOICE→DEBATE Expert-Opinion verdict (Fri Expert Opinions)"
     },
     {
       "id": "nat-20",
@@ -1877,7 +1886,9 @@
       "seriesNote": "China's Edge S1 连载",
       "addedAt": "2026-08-12",
       "addedBy": "owner directive",
-      "status": "active"
+      "status": "deferred-footage-2026-10-02",
+      "prevStatus": "active",
+      "note": "Changbai Tianchi attempted for slot d but FOOTAGE-FIRST GATE failed this run — Pexels returned ~1 changbai photo + foreign lakes (Kazakhstan Kaindy/Almaty, Turkey). Needs owner real footage or a MAP-FORMAT treatment. Replaced by nat-08 Tianmen."
     },
     {
       "id": "edge-a04",
@@ -2239,6 +2250,62 @@
       "addedBy": "generated (run)",
       "status": "published-2026-09-26",
       "publishedVideoId": "3Ssc3Dw8lWw"
+    },
+    {
+      "id": "nat-21",
+      "title": "Zhangjiajie's glass bridge: ¥138 to walk 300 m above the canyon — or skip it?",
+      "pillar": "china-nature",
+      "format": "short",
+      "hookType": "DEBATE",
+      "hook": "Everyone queues for Zhangjiajie’s glass bridge. I’d skip it — the pillars below are the real show. Tell me I’m wrong.",
+      "angle": "张家界大峡谷玻璃桥 ~430m长/~300m高, 门票当次核实(~¥138); DEBATE: 排队玻璃桥 vs 走峰林栈道; 收尾 either-or",
+      "footage": "PHOTO site-ID verified 2026-10-02: \"zhangjiajie\" 8/8 incl. glass-bridge-walkway-in-zhangjiajie slug. --photos only (VIDEO lane = Vietnam karst this run).",
+      "whyNow": "owner nature pivot; Golden Week crowd angle; competitors.md Zhangjiajie path #1 2.9M",
+      "addedAt": "2026-10-02",
+      "addedBy": "cycle 2026-10-02 replenish",
+      "status": "active"
+    },
+    {
+      "id": "nat-22",
+      "title": "Guilin’s ¥20-note cormorant fishermen mostly pose for photos now",
+      "pillar": "china-nature",
+      "format": "short",
+      "hookType": "MISCONCEPTION",
+      "hook": "You think those Li River cormorant fishermen still fish for a living. Most now pose for tourist photos — and that’s okay.",
+      "angle": "鸬鹚捕鱼=非遗表演化; ¥20纸币背面兴坪; 老渔民多为摆拍/表演, 核实口径; MISCONCEPTION 补样本",
+      "footage": "PHOTO site-ID verified 2026-10-02: \"guilin\" 6/8 incl. traditional-cormorant-fisherman-in-guilin, fisherman-on-li-river-guilin. --photos only.",
+      "whyNow": "owner nature pivot; pairs with nat-19 Guilin footage already validated",
+      "addedAt": "2026-10-02",
+      "addedBy": "cycle 2026-10-02 replenish",
+      "status": "active"
+    },
+    {
+      "id": "nat-23",
+      "title": "Jiuzhaigou caps daily visitors — no advance booking, no entry",
+      "pillar": "china-practical",
+      "format": "short",
+      "hookType": "STAKES",
+      "hook": "Turn up at Jiuzhaigou without a booking and you don’t get in — it caps daily visitors and sells out.",
+      "angle": "九寨沟每日限流 + 实名预约制(当次核实上限/口径); 旺季¥190+¥90; STAKES=没预约进不去; 收尾 either-or 去不去",
+      "footage": "PHOTO site-ID verified 2026-10-02: \"jiuzhaigou\" 5/8. --photos only.",
+      "whyNow": "owner nature pivot; Golden Week booking panic timely",
+      "addedAt": "2026-10-02",
+      "addedBy": "cycle 2026-10-02 replenish",
+      "status": "active"
+    },
+    {
+      "id": "nat-24",
+      "title": "Mount Hua’s plank walk: ¥30, 2,150 m up, bolted to a cliff — would you clip in?",
+      "pillar": "china-nature",
+      "format": "short",
+      "hookType": "CHOICE",
+      "hook": "Mount Hua’s plank walk is ¥30 and 2,150 m up a vertical cliff. Would you clip in, or watch from the cable car?",
+      "angle": "华山长空栈道 ~¥30 挂锁; 2,154m 南峰; CHOICE 补样本; 收尾 either-or",
+      "footage": "PHOTO site-ID verified 2026-10-02: \"mount hua\" ~2-3 (majestic-winter-landscape-of-mount-hua, huashan-mountain-peak-in-shaanxi) + type-level cliff — verify ≥300 slugs next run; --photos only. If <3 site-ID, MAP/defer.",
+      "whyNow": "owner nature pivot; 补样本 CHOICE (n=2)",
+      "addedAt": "2026-10-02",
+      "addedBy": "cycle 2026-10-02 replenish",
+      "status": "active"
     }
   ]
 }

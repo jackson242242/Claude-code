@@ -1,3 +1,12 @@
+## 2026-10-02 post-mortem (baseline = 14d median views of Shorts ≥3d old: 158)
+- 2026-09-30 a sToyOJLqo0w | 168v 0L 0C @2d | ×1.06 | baseline | China Price Check: $96 Blue Lagoon or $7 Hot Springs? | China Travel E
+- 2026-09-30 c jbb9C2gnbXA | 101v 0L 0C @2d | ×0.64 | baseline | Fenghuang: China's Prettiest Town, or a Theme Park? | China Travel Exp
+- 2026-10-01 d UyHXJc7Z9-Y | 100v 0L 0C @1d | ×0.63 | baseline | Everyone Drives the G318 to Tibet. Drive the Duku Highway Instead | Ch
+- 2026-10-01 a GR_jYhfR7HE | 49v 0L 0C @1d | ×0.31 | LOSER — avoid this shape today | Huangshan Is in Cloud 200 Days a Year — Here's the Day to Climb | Chin
+- 2026-09-30 d ZDnTfIpnuyQ | 43v 0L 0C @2d | ×0.27 | LOSER — avoid this shape today | 13 Villagers Carved This Cliff Tunnel by Hand, Not the State | China T
+- 2026-10-01 c mW_b_Af_V6A | 31v 0L 0C @1d | ×0.20 | LOSER — avoid this shape today | Bolivia's Sky Mirror: a $70 Tour. China's Chaka: ¥60 at the Gate | Chi
+- like-rate (fresh Shorts): 0.00% (peers 1-6%)
+
 ## 2026-10-01 post-mortem (baseline = 14d median views of Shorts ≥3d old: 196)
 - 2026-09-30 a sToyOJLqo0w | 165v 0L 0C @1d | ×0.84 | baseline | China Price Check: $96 Blue Lagoon or $7 Hot Springs? | China Travel E
 - 2026-09-29 c Wk5Bg2dDnAo | 144v 0L 0C @2d | ×0.73 | baseline | $50 Li River Cruise or a $28 Bamboo Raft? Guilin's Two Rivers | China 
