@@ -1,3 +1,13 @@
+## 2026-10-03 post-mortem (baseline = 14d median views of Shorts ≥3d old: 160)
+- 2026-10-02 d favsn238UwI | 161v 3L 0C @1d | ×1.01 | baseline | 99 Hairpin Bends to Heaven's Gate — China's Wildest Mountain Road | Ch
+- 2026-10-01 d UyHXJc7Z9-Y | 153v 0L 0C @2d | ×0.96 | baseline | Everyone Drives the G318 to Tibet. Drive the Duku Highway Instead | Ch
+- 2026-10-02 a MysbLBS5k_I | 77v 1L 0C @1d | ×0.48 | LOSER — avoid this shape today | Guilin or Zhangjiajie for a First China Trip? The Expert's Verdict | C
+- 2026-10-01 a GR_jYhfR7HE | 59v 0L 0C @2d | ×0.37 | LOSER — avoid this shape today | Huangshan Is in Cloud 200 Days a Year — Here's the Day to Climb | Chin
+- 2026-10-01 c mW_b_Af_V6A | 58v 0L 0C @2d | ×0.36 | LOSER — avoid this shape today | Bolivia's Sky Mirror: a $70 Tour. China's Chaka: ¥60 at the Gate | Chi
+- 2026-10-02 c XC8V3o_rezw | 29v 0L 0C @1d | ×0.18 | LOSER — avoid this shape today | Everyone Thinks Jiuzhaigou's Lakes Are Photoshopped. They're Not | Chi
+- 2026-10-02 L 790Utt-4HV8 | 2v 0L 0C @1d | ×0.01 | LONGFORM: no distribution (expected on this channel; search-ranking is slow) | How to Plan a China Nature Trip in 2026 (8 Things to Set Up First) | C
+- like-rate (fresh Shorts): 0.74% (peers 1-6%)
+
 ## 2026-10-02 post-mortem (baseline = 14d median views of Shorts ≥3d old: 158)
 - 2026-09-30 a sToyOJLqo0w | 168v 0L 0C @2d | ×1.06 | baseline | China Price Check: $96 Blue Lagoon or $7 Hot Springs? | China Travel E
 - 2026-09-30 c jbb9C2gnbXA | 101v 0L 0C @2d | ×0.64 | baseline | Fenghuang: China's Prettiest Town, or a Theme Park? | China Travel Exp

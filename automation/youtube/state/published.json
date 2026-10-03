@@ -3869,6 +3869,57 @@
    "queue": null,
    "playlist": "China Travel Guides",
    "note": "Fri weekly longform (28d since anchor 09-04, %7=0). Nature-first SEARCH-INTENT how-to (not a place-countdown — assemble scrambles clips, so a how-to keeps type-level b-roll honest; same format as the payment/transport/trains longforms). ~1,400 words / 8.2min, ElevenLabs EN documentary VO (key has TTS, lacks user_read). §8 bed = docu-01+02+03 concat (not a short loop), -18dB under VO, --sfx none. Chapters in description. Footage = strong China montage (zhangjiajie/guilin/jiuzhaigou/great-wall/HSR), disclosed illustrative/type-level. First render KILLED by default 30-min bg cap; re-rendered seg-7/photos-only with 90-min timeout."
+  },
+  {
+   "date": "2026-10-03",
+   "slot": "a",
+   "title": "China's Rainbow Mountains, ¥74 — But the Wrong Hour Ruins Them | China Travel Expert",
+   "videoId": "Occ-xojDWOk",
+   "url": "https://www.youtube.com/watch?v=Occ-xojDWOk",
+   "pillar": "china-nature",
+   "lane": "pexels-photos-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-10-03T13:00:00Z",
+   "music": "oriental-edm-01",
+   "format": "9x16",
+   "hook": "STAKES",
+   "queue": "nat-20 (Zhangye Danxia timing)",
+   "playlist": "China Nature 山河地貌",
+   "note": "STAKES (worth-the-trip either-or close). Zhangye Danxia ~¥74 (~$10) incl shuttle; best Jun-Oct + after rain; color only at sunrise/late-afternoon, flat grey at noon. PHOTO site-ID PASS 8/8 (zhangye national geopark / rainbow mountains). VIDEO lane skipped (unreliable)."
+  },
+  {
+   "date": "2026-10-03",
+   "slot": "c",
+   "title": "Petra $70, Machu Picchu $43 — the Great Wall? Just $6 | China Travel Expert",
+   "videoId": "HBKUX--9IS4",
+   "url": "https://www.youtube.com/watch?v=HBKUX--9IS4",
+   "pillar": "china-culture",
+   "lane": "pexels-photos-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-10-03T20:00:00Z",
+   "music": "lofi-upbeat-01",
+   "format": "9x16",
+   "hook": "PRICE-SHOCK",
+   "queue": "cpc-worldwonders-01 (new)",
+   "playlist": "China Travel 城市旅行",
+   "note": "PRICE-SHOCK ~x12 (Petra ~$70 / MachuPicchu ~$43 / Taj ~$16 / Great Wall ~¥45 ~$6). New7Wonder best-value angle. Footage type-level Great Wall (confirmed), foreign-wonder prices spoken only (no foreign footage). china-culture counts toward <=1/wk (landscape framing)."
+  },
+  {
+   "date": "2026-10-03",
+   "slot": "d",
+   "title": "Skip the Yunnan Tour Bus — Travel the Tea-Horse Road to 3,300 m | China Travel Expert",
+   "videoId": "Jg0Bv7nVlVc",
+   "url": "https://www.youtube.com/watch?v=Jg0Bv7nVlVc",
+   "pillar": "china-route",
+   "lane": "pexels-photos-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-10-03T23:00:00Z",
+   "music": "cinema-orient-01",
+   "format": "9x16",
+   "hook": "DEBATE",
+   "queue": "route-th-01 (new)",
+   "playlist": "China Travel 城市旅行",
+   "note": "DEBATE (package tour vs independent). Tea-Horse Road Dali->Shangri-La 2,400->3,300m; Tiger Leaping Gorge ~3,790m peak-to-river; no Tibet-style permit. Framed 'independent' not 'self-drive' (foreigner licensing honesty). Footage type-level China mountain roads (Zhangjiajie/Sichuan/Dali, confirmed)."
   }
  ]
 }
