@@ -3920,6 +3920,57 @@
    "queue": "route-th-01 (new)",
    "playlist": "China Travel 城市旅行",
    "note": "DEBATE (package tour vs independent). Tea-Horse Road Dali->Shangri-La 2,400->3,300m; Tiger Leaping Gorge ~3,790m peak-to-river; no Tibet-style permit. Framed 'independent' not 'self-drive' (foreigner licensing honesty). Footage type-level China mountain roads (Zhangjiajie/Sichuan/Dali, confirmed)."
+  },
+  {
+   "date": "2026-10-04",
+   "slot": "a",
+   "title": "China Price Check: $120 Great Wall Tour, or $20 Solo? | China Travel Expert",
+   "videoId": "ibTLflSCCMo",
+   "url": "https://www.youtube.com/watch?v=ibTLflSCCMo",
+   "pillar": "china-practical",
+   "lane": "pexels-photos-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-10-04T13:00:00Z",
+   "music": "lofi-upbeat-01",
+   "format": "9x16",
+   "hook": "PRICE-SHOCK",
+   "queue": "cpc-greatwall-01 (new)",
+   "playlist": "China Price Check",
+   "note": "Sunday Q4 China Price Check. Mutianyu DIY ~$20 (¥40 entry + ~¥80 express bus RT + ¥15 shuttle) vs private Beijing day tour $90-120+ => ~4-6x. Anchor = a cost every visitor pays (tour vs solo), not scenic transport/world-wonder fees (those fatigued). Great Wall PHOTO lane strong site-ID; spoken wording type-level 'the Great Wall'. Format-forced hook swap: AUTO slot a=STAKES but Sunday Price Check forces PRICE-SHOCK (logged)."
+  },
+  {
+   "date": "2026-10-04",
+   "slot": "c",
+   "title": "Skip Wuzhen's ¥190 Ticket — This Water Town Is Free | China Travel Expert",
+   "videoId": "K0XVaICFhKM",
+   "url": "https://www.youtube.com/watch?v=K0XVaICFhKM",
+   "pillar": "small-town",
+   "lane": "pexels-photos-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-10-04T20:00:00Z",
+   "music": "cpop-groove-01",
+   "format": "9x16",
+   "hook": "DEBATE",
+   "queue": "nat-16 (dequeued)",
+   "playlist": "China Small Towns 小城古镇",
+   "note": "DEBATE (skip the famous paid one). Wuzhen Xizha ~¥150 / combined up to ¥190 vs Zhujiajiao free to enter (attractions ticketed), ~47km/~1h from Shanghai via Metro Line 17. Replicates winning overrated/authentic shape (09-28c Miao ×3.11). Zhujiajiao shown (2 slug-confirmed + generic Chinese canal towns, one generically 'Asian'); Wuzhen named foil, NO footage (no 指认)."
+  },
+  {
+   "date": "2026-10-04",
+   "slot": "d",
+   "title": "China's Highest Highway: 915 km Above 4,000 m | China Travel Expert",
+   "videoId": "rbyp5JTfvrM",
+   "url": "https://www.youtube.com/watch?v=rbyp5JTfvrM",
+   "pillar": "china-route",
+   "lane": "pexels-photos-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-10-04T23:00:00Z",
+   "music": "guzheng-calm-01",
+   "format": "9x16",
+   "hook": "STAKES",
+   "queue": "route-g219-01 (new)",
+   "playlist": "China Travel 城市旅行",
+   "note": "Route STAKES = replicate-winner (10-02d Tianmen route STAKES ×2.19). G219 ~2,942km Yecheng->Lhasa, avg >4,500m, ~915km above 4,000m, passes >5,300m, 5 peaks >5,000m; altitude sickness the real danger. MAP-FORMAT/type-level: route facts spoken, illustrative China mountain-road b-roll (Zhangjiajie/Guizhou/Chongqing/Sichuan, all China-slugged), no 'this is G219' deixis; disclosed in description."
   }
  ]
 }

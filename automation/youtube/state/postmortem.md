@@ -1,3 +1,13 @@
+## 2026-10-04 post-mortem (baseline = 14d median views of Shorts ≥3d old: 160)
+- 2026-10-02 d favsn238UwI | 350v 4L 0C @2d | ×2.19 | WINNER — replicate this hook shape today | 99 Hairpin Bends to Heaven's Gate — China's Wildest Mountain Road | Ch
+- 2026-10-02 a MysbLBS5k_I | 89v 1L 0C @2d | ×0.56 | baseline | Guilin or Zhangjiajie for a First China Trip? The Expert's Verdict | C
+- 2026-10-03 d Jg0Bv7nVlVc | 86v 0L 0C @1d | ×0.54 | baseline | Skip the Yunnan Tour Bus — Travel the Tea-Horse Road to 3,300 m | Chin
+- 2026-10-03 a Occ-xojDWOk | 47v 0L 0C @1d | ×0.29 | LOSER — avoid this shape today | China's Rainbow Mountains, ¥74 — But the Wrong Hour Ruins Them | China
+- 2026-10-02 c XC8V3o_rezw | 35v 0L 0C @2d | ×0.22 | LOSER — avoid this shape today | Everyone Thinks Jiuzhaigou's Lakes Are Photoshopped. They're Not | Chi
+- 2026-10-03 c HBKUX--9IS4 | 33v 0L 0C @1d | ×0.21 | LOSER — avoid this shape today | Petra $70, Machu Picchu $43 — the Great Wall? Just $6 | China Travel E
+- 2026-10-02 L 790Utt-4HV8 | 4v 0L 0C @2d | ×0.03 | LONGFORM: no distribution (expected on this channel; search-ranking is slow) | How to Plan a China Nature Trip in 2026 (8 Things to Set Up First) | C
+- like-rate (fresh Shorts): 0.78% (peers 1-6%)
+
 ## 2026-10-03 post-mortem (baseline = 14d median views of Shorts ≥3d old: 160)
 - 2026-10-02 d favsn238UwI | 161v 3L 0C @1d | ×1.01 | baseline | 99 Hairpin Bends to Heaven's Gate — China's Wildest Mountain Road | Ch
 - 2026-10-01 d UyHXJc7Z9-Y | 153v 0L 0C @2d | ×0.96 | baseline | Everyone Drives the G318 to Tibet. Drive the Duku Highway Instead | Ch
