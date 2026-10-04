@@ -822,7 +822,8 @@
    "views": 32,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "no-artifacts",
+   "note": "2026-07-09-a education-era short: no subs.srt (voiceover format) -> cannot faithfully re-render burned-sub clean master"
   },
   {
    "videoId": "4u0ycJopL18",
@@ -830,7 +831,9 @@
    "views": 27,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "sent",
+   "sentDate": "2026-10-04",
+   "note": "re-rendered clean master from 2026-07-19-b artifacts (subs.srt + clip queries), music-stripped, sent via chat"
   },
   {
    "videoId": "c9uBqC4hiz8",
