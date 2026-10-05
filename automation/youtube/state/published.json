@@ -3988,6 +3988,23 @@
    "queue": "nat-jiuzhaigou-cap-01 (new)",
    "playlist": "China Nature 山河地貌",
    "note": "STAKES scarcity/booking (41,000/day cap, Golden Week sell-outs, colour Oct15-Nov5). Photos-only, Jiuzhaigou-slugged Pexels stills (site deixis OK). comment-seed BLOCKED (no force-ssl)."
+  },
+  {
+   "date": "2026-10-05",
+   "slot": "c",
+   "title": "Lijiang Charges ¥50 to Enter. Dali's Old Town Is Free | China Travel Expert",
+   "videoId": "nZZ26BpQFTc",
+   "url": "https://www.youtube.com/watch?v=nZZ26BpQFTc",
+   "pillar": "small-town",
+   "lane": "pexels-photos-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-10-05T20:00:00Z",
+   "music": "lofi-chill-01",
+   "format": "9x16",
+   "hookType": "PRICE-SHOCK",
+   "queue": "st-dali-free-01 (new)",
+   "playlist": "China Small Towns 小城古镇",
+   "note": "PRICE-SHOCK free-vs-fee (Dali free vs Lijiang ¥50 upkeep fee, eff Aug2025, enforcement varies — caveat in desc). Photos-only, Dali-slugged Pexels stills. comment-seed BLOCKED (no force-ssl)."
   }
  ]
 }
