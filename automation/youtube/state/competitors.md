@@ -1,3 +1,32 @@
+## 2026-10-05 competitor scan (top 25 China-travel Shorts published in the last 7 days, by views)
+hook-shape tally: {"number-claim":7,"other":16,"paradox-claim":1,"question":1} · nature/small-town titles in top 25: 5
+- 4915521v 16669L (0.3%) PT8S | Electric Scotes  | 🏔 ELECTRIC BIKES BRG VESPRO 1500W  #electric #bikes #china #Environment #safe #nat | https://youtube.com/shorts/2XxWbySqTcM
+- 2299951v 35395L (1.5%) PT1M13S | Lounge Guru | $840 China Luxury First Class High Speed Train | https://youtube.com/shorts/KPJyYv3oR2I
+- 2098258v 14538L (0.7%) PT10S | Hey Hey | Strategi Cerdas Petani China | https://youtube.com/shorts/7hjRLee3DNQ
+- 1168342v 16838L (1.4%) PT36S | TheAnuragkushwaha | 🏔 Using Sandbags to Fight Desertification 😱 | https://youtube.com/shorts/DCR8AbulwFU
+- 645683v 13367L (2.1%) PT40S | Jiemo‘s Puzzle | China Made 3 Adventures for Wimps #chinatravel  #adventure #china | https://youtube.com/shorts/l3ZA5gZe4Po
+- 565194v 2139L (0.4%) PT20S | Chinese Outdoor Adventures | Into China’s Last True Wild 🌲 | https://youtube.com/shorts/JnskgkG0GMA
+- 471219v 4323L (0.9%) PT41S | Maa Annpurna | Paneer+Noodles=Street Style Love😍🍜”#recipe #shortsfeed #yt #explore  #streetfo | https://youtube.com/shorts/CAhLmO8U1dQ
+- 465655v 3971L (0.9%) PT27S | China Vitality | 🏔 Wingsuit Flying at Qingjiang Cliff Peak｜Extreme Flight Over Valley #chinatravel | https://youtube.com/shorts/OdvvuTEu1aA
+- 454575v 0L (0.0%) PT58S | Meoliwala | These are the scariest places tourists actually visit in China. The last one is  | https://youtube.com/shorts/EbEp9wWbyhQ
+- 442290v 1306L (0.3%) PT14S | ChinaDish | Most Satisfying Meat Wrapped Flatbread! So Yummy! 🥩✨ #food | https://youtube.com/shorts/SRMiDH96ulU
+- 432239v 4281L (1.0%) PT1M31S | k_table | Grandpa Cooks Your Ramen at Gwangjang Market 🍜 | Korean Street Food #광장시장 #서울맛집 | https://youtube.com/shorts/mdmDYEMt554
+- 415470v 13935L (3.4%) PT1M19S | Jornada Comum | O futuro chegou! Sem motorista! #china #chinatravel | https://youtube.com/shorts/42JZyAmkX14
+- 364046v 4109L (1.1%) PT17S | The moody chef | Crispy Chowmein Cabbage Rolls | Easy Noodles Snack Recipe #shorts | https://youtube.com/shorts/gYyn3wFgQeI
+- 333030v 9032L (2.7%) PT43S | Niks food vlogs | Chinese Family Serving Authentic Food in Bangalore for 20 Years! #ytviral #bangl | https://youtube.com/shorts/DvCmpV6ouQE
+- 321816v 0L (0.0%) PT1M2S | Curiosidades Incríveis | As 12 Aldeias Mais BIZARRAS da China que Você NÃO Vai Acreditar que Existem #cur | https://youtube.com/shorts/S226m__YUiY
+- 305606v 1903L (0.6%) PT27S | BEAUTY OF CHINA | 🏔 The Most Beautiful places in China#Nature#Explore#Culture#progres#trips china#Wo | https://youtube.com/shorts/pfALCHxi4jg
+- 284380v 6733L (2.4%) PT19S | MarcosWorldNYC | Only in the Bronx you’ll find Jamaican Chinese food #shorts #jamaican #food #chi | https://youtube.com/shorts/Q_UrOl56iYk
+- 283273v 1367L (0.5%) PT21S | RUTA DORADA | ¡Así utilizan toneladas de PAJA para frenar el desierto! 🌾 | https://youtube.com/shorts/MSIb0bkMe4E
+- 268671v 8385L (3.1%) PT45S | Mathu Soundar | Momos Fans , Which Momo Place is your favoutite?? | https://youtube.com/shorts/ECHMafdXuQE
+- 265778v 4079L (1.5%) PT2M2S | คนชากังราว konchakangrao | อนุโมทนาสาธุ พ่อค้านักบุญ ไม่รู้เอาทุนมาจากไหน  กิuไม่จำกัดเวลา ราดหน้าบุฟเฟ่ 5O | https://youtube.com/shorts/lSYDY7rfDNA
+- 260950v 6948L (2.7%) PT45S | Under kitchen  | Chowmein spring roll ! #shorts #ytshorts | https://youtube.com/shorts/gFO9ioX19fg
+- 245156v 792L (0.3%) PT25S | DuniaTakBiasa | Proyek Gila Tiongkok Menghijaukan Gurun Taklamakan! 🚜🌱#shorts | https://youtube.com/shorts/O1eL6ufTFkM
+- 213161v 7664L (3.6%) PT2M57S | Jonadson e Lidi | Um SPA na China 👀😬🔥 #china #chinatravel #humor #humormemes #fyp #fypシ゚viral # | https://youtube.com/shorts/_BbyrEPH1PQ
+- 211865v 4900L (2.3%) PT25S | Jiemo‘s Puzzle | 🏔 This Beautiful Lake Will Ruin Your Dress#chineseculture #cosplay #nature #travel | https://youtube.com/shorts/6Z8In7adz90
+- 198764v 0L (0.0%) PT20S | Facto Find | China&#39;s Unique Sticky Rice Dish Will Surprise You! 😱 #shorts #facts | https://youtube.com/shorts/kF8vtL_pljI
+ACTION for this week's runs: copy the top 3 SHAPES (title grammar, length, spectacle-first) into our Shorts; never copy content.
+
 ## 2026-09-28 competitor scan (top 25 China-travel Shorts published in the last 7 days, by views)
 hook-shape tally: {"other":11,"number-claim":8,"question":5,"tag-only-spectacle":1} · nature/small-town titles in top 25: 11
 - 4705396v 161718L (3.4%) PT1M38S | Andrew Chung | 🏔 would you do this in crocs 😭✌️📍 qixing mountain in zhangjiajie, china #chungus | https://youtube.com/shorts/DkQkW1gprgI
