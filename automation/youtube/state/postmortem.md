@@ -1,3 +1,12 @@
+## 2026-10-05 post-mortem (baseline = 14d median views of Shorts ≥3d old: 160)
+- 2026-10-03 d Jg0Bv7nVlVc | 153v 1L 0C @2d | ×0.96 | baseline | Skip the Yunnan Tour Bus — Travel the Tea-Horse Road to 3,300 m | Chin
+- 2026-10-04 c K0XVaICFhKM | 130v 1L 0C @1d | ×0.81 | baseline | Skip Wuzhen's ¥190 Ticket — This Water Town Is Free | China Travel Exp
+- 2026-10-03 a Occ-xojDWOk | 77v 0L 0C @2d | ×0.48 | LOSER — avoid this shape today | China's Rainbow Mountains, ¥74 — But the Wrong Hour Ruins Them | China
+- 2026-10-04 a ibTLflSCCMo | 57v 0L 0C @1d | ×0.36 | LOSER — avoid this shape today | China Price Check: $120 Great Wall Tour, or $20 Solo? | China Travel E
+- 2026-10-04 d rbyp5JTfvrM | 54v 0L 0C @1d | ×0.34 | LOSER — avoid this shape today | China's Highest Highway: 915 km Above 4,000 m | China Travel Expert
+- 2026-10-03 c HBKUX--9IS4 | 42v 0L 0C @2d | ×0.26 | LOSER — avoid this shape today | Petra $70, Machu Picchu $43 — the Great Wall? Just $6 | China Travel E
+- like-rate (fresh Shorts): 0.39% (peers 1-6%)
+
 ## 2026-10-04 post-mortem (baseline = 14d median views of Shorts ≥3d old: 160)
 - 2026-10-02 d favsn238UwI | 350v 4L 0C @2d | ×2.19 | WINNER — replicate this hook shape today | 99 Hairpin Bends to Heaven's Gate — China's Wildest Mountain Road | Ch
 - 2026-10-02 a MysbLBS5k_I | 89v 1L 0C @2d | ×0.56 | baseline | Guilin or Zhangjiajie for a First China Trip? The Expert's Verdict | C

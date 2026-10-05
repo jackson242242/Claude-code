@@ -3971,6 +3971,23 @@
    "queue": "route-g219-01 (new)",
    "playlist": "China Travel 城市旅行",
    "note": "Route STAKES = replicate-winner (10-02d Tianmen route STAKES ×2.19). G219 ~2,942km Yecheng->Lhasa, avg >4,500m, ~915km above 4,000m, passes >5,300m, 5 peaks >5,000m; altitude sickness the real danger. MAP-FORMAT/type-level: route facts spoken, illustrative China mountain-road b-roll (Zhangjiajie/Guizhou/Chongqing/Sichuan, all China-slugged), no 'this is G219' deixis; disclosed in description."
+  },
+  {
+   "date": "2026-10-05",
+   "slot": "a",
+   "title": "Jiuzhaigou Sells Out at 41,000 a Day — When to Actually Go | China Travel Expert",
+   "videoId": "oLCP-1L5ZRk",
+   "url": "https://www.youtube.com/watch?v=oLCP-1L5ZRk",
+   "pillar": "china-nature",
+   "lane": "pexels-photos-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-10-05T13:00:00Z",
+   "music": "cinema-orient-01",
+   "format": "9x16",
+   "hookType": "STAKES",
+   "queue": "nat-jiuzhaigou-cap-01 (new)",
+   "playlist": "China Nature 山河地貌",
+   "note": "STAKES scarcity/booking (41,000/day cap, Golden Week sell-outs, colour Oct15-Nov5). Photos-only, Jiuzhaigou-slugged Pexels stills (site deixis OK). comment-seed BLOCKED (no force-ssl)."
   }
  ]
 }
