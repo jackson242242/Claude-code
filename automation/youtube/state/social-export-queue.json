@@ -841,7 +841,9 @@
    "views": 8,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "no-artifacts",
+   "note": "education-era (runs/2026-07-08-b) voiceover-based, no subs.srt → cannot faithfully re-render burned-sub clean master",
+   "checkedDate": "2026-10-05"
   },
   {
    "videoId": "RzgsJmqpbyc",
@@ -849,7 +851,9 @@
    "views": 8,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "sent",
+   "sentDate": "2026-10-05",
+   "exportRun": "2026-08-05-d/malatang-p4-clean.mp4"
   },
   {
    "videoId": "bUuF4S54-es",
