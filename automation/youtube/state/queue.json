@@ -2379,7 +2379,7 @@
    "whyNow": "PRICE-SHOCK proven; nature pivot; karst small-town (competitors favor karst)",
    "addedAt": "2026-10-05",
    "addedBy": "routine replenish 2026-10-05",
-   "status": "ready"
+   "status": "covered-2026-10-06"
   },
   {
    "id": "st-langzhong-01",
@@ -2395,6 +2395,51 @@
    "addedAt": "2026-10-05",
    "addedBy": "routine replenish 2026-10-05",
    "status": "ready"
+  },
+  {
+   "id": "nat-huangshan-cablecar-01",
+   "title": "Miss Huangshan last cable car -> 10,000 steps down STAKES",
+   "pillar": "china-nature",
+   "format": "short",
+   "hookType": "STAKES",
+   "hook": "Miss Huangshan's last cable car and it's 10,000 steps down — in the dark.",
+   "angle": "黄山: 60,000+ 石阶, 全程贯穿 10,000+ 阶/~2,700m 爬升/10-12h; 三条缆车 ¥80-90 单程, 下午收班; 旺季门票 ¥190. STAKES=赶不上末班缆车被迫步行下山 (非稀缺/非价格, 避免疲劳钩)",
+   "footage": "PHOTO site-ID verified 2026-10-06: \"huangshan mountains\"/\"huangshan sea of clouds\" 5 huangshan-slug + type-level China mountain/pine stills. --photos only. VIDEO lane unusable.",
+   "series": "",
+   "whyNow": "shipped 2026-10-06a; postmortem: scarcity/price STAKES fatigued -> logistics/physical STAKES fresh",
+   "addedAt": "2026-10-06",
+   "addedBy": "routine 2026-10-06",
+   "status": "published-2026-10-06"
+  },
+  {
+   "id": "st-yangshuo-gondola-raft-01",
+   "title": "Venice gondola $97 vs Yangshuo raft $28 PRICE-SHOCK",
+   "pillar": "small-town",
+   "format": "short",
+   "hookType": "PRICE-SHOCK",
+   "hook": "A Venice gondola is $97 for 30 minutes. Yangshuo's bamboo raft? About $28.",
+   "angle": "阳朔遇龙河竹筏 ¥200/两人/40-50min (~$28) vs 威尼斯贡多拉 €90/~$97 整船/30min; ~3.5x + 更久; 双源核实; 漓江/阳朔喀斯特 site-ID 图, 竹筏镜头是泰国 -> 竹筏用 type-level",
+   "footage": "PHOTO site-ID verified 2026-10-06: \"guilin li river\"/\"karst mountains guilin china\" all Guilin/Li slug (Vietnam karst clip removed on re-run). --photos only.",
+   "series": "",
+   "whyNow": "shipped 2026-10-06c; cross-country same-kind-of-ride price-shock (avoid fatigued free-vs-fee)",
+   "addedAt": "2026-10-06",
+   "addedBy": "routine 2026-10-06",
+   "status": "published-2026-10-06"
+  },
+  {
+   "id": "rt-tianmen-24zig-choice-01",
+   "title": "99 bends vs 24-Zig which drive CHOICE",
+   "pillar": "china-route",
+   "format": "short",
+   "hookType": "CHOICE",
+   "hook": "99 bends to Heaven's Gate, or 24 wartime switchbacks — which would you drive?",
+   "angle": "天门山通天大道 10.8km/99弯/200->1,300m/区间车 vs 晴隆24道拐 24 switchback/~4km/1935 建/二战补给线/1995 重新发现; 双源核实; MAP-FORMAT type-level",
+   "footage": "PHOTO China-slug verified 2026-10-06: zhangjiajie/chongqing/guizhou/hunan winding-road stills + type-level. --photos only. MAP-FORMAT, no single-road deixis.",
+   "series": "",
+   "whyNow": "shipped 2026-10-06d; replicate 10-02d Tianmen 99-bends WINNER x2.19 in CHOICE wrapper",
+   "addedAt": "2026-10-06",
+   "addedBy": "routine 2026-10-06",
+   "status": "published-2026-10-06"
   }
  ]
 }

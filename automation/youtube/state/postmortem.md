@@ -1,3 +1,12 @@
+## 2026-10-06 post-mortem (baseline = 14d median views of Shorts ≥3d old: 155)
+- 2026-10-04 c K0XVaICFhKM | 180v 2L 0C @2d | ×1.16 | baseline | Skip Wuzhen's ¥190 Ticket — This Water Town Is Free | China Travel Exp
+- 2026-10-04 d rbyp5JTfvrM | 88v 0L 0C @2d | ×0.57 | baseline | China's Highest Highway: 915 km Above 4,000 m | China Travel Expert
+- 2026-10-04 a ibTLflSCCMo | 67v 0L 0C @2d | ×0.43 | LOSER — avoid this shape today | China Price Check: $120 Great Wall Tour, or $20 Solo? | China Travel E
+- 2026-10-05 d mDHOBrc6Ftk | 28v 1L 0C @1d | ×0.18 | LOSER — avoid this shape today | Everyone Drives the Qinghai-Gansu Loop in 7 Days — Too Fast | China Tr
+- 2026-10-05 a oLCP-1L5ZRk | 27v 0L 0C @1d | ×0.17 | LOSER — avoid this shape today | Jiuzhaigou Sells Out at 41,000 a Day — When to Actually Go | China Tra
+- 2026-10-05 c nZZ26BpQFTc | 12v 0L 0C @1d | ×0.08 | LOSER — avoid this shape today | Lijiang Charges ¥50 to Enter. Dali's Old Town Is Free | China Travel E
+- like-rate (fresh Shorts): 0.75% (peers 1-6%)
+
 ## 2026-10-05 post-mortem (baseline = 14d median views of Shorts ≥3d old: 160)
 - 2026-10-03 d Jg0Bv7nVlVc | 153v 1L 0C @2d | ×0.96 | baseline | Skip the Yunnan Tour Bus — Travel the Tea-Horse Road to 3,300 m | Chin
 - 2026-10-04 c K0XVaICFhKM | 130v 1L 0C @1d | ×0.81 | baseline | Skip Wuzhen's ¥190 Ticket — This Water Town Is Free | China Travel Exp

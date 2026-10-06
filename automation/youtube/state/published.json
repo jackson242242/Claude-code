@@ -4022,6 +4022,57 @@
    "queue": "rt-qg-loop-days-01 (new)",
    "playlist": "China Travel 城市旅行",
    "note": "DEBATE pacing (QG loop ~2,800km, 7 vs 9 days, ~5h/day; book Mogao ~1mo ahead). MAP-FORMAT: route facts over China-verified illustrative stills (Zhangye Danxia-slugged + China desert/Gansu/Taklamakan), disclosed; portrait lane had no Qinghai/Chaka/Dunhuang site clips (foreign contamination avoided). comment-seed BLOCKED (no force-ssl)."
+  },
+  {
+   "date": "2026-10-06",
+   "slot": "a",
+   "title": "Miss Huangshan's Last Cable Car and It's 10,000 Steps Down | China Travel Expert",
+   "videoId": "kjNDZSduPtw",
+   "url": "https://www.youtube.com/watch?v=kjNDZSduPtw",
+   "pillar": "china-nature",
+   "lane": "pexels-photos-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-10-06T13:00:00Z",
+   "music": "oriental-edm-01",
+   "format": "9x16",
+   "hookType": "STAKES",
+   "queue": "nat-huangshan-cablecar-01 (new)",
+   "playlist": "China Nature 山河地貌",
+   "note": "STAKES physical/logistics (NOT scarcity/price — avoiding fatigued shapes). Miss Huangshan last cable car (close late afternoon) -> descend 10,000+ steps on foot; 60,000+ steps total, ~2,700m ascent, 10-12h traverse; peak entry ¥190, cable car ¥80-90. Photos-only, 5 Huangshan-slug stills (site deixis OK) + type-level China mountain stills (no foreign). comment-seed BLOCKED (no force-ssl)."
+  },
+  {
+   "date": "2026-10-06",
+   "slot": "c",
+   "title": "Venice Gondola $97 for 30 Min. Yangshuo's Bamboo Raft? $28 | China Travel Expert",
+   "videoId": "J0BRx6PiEk8",
+   "url": "https://www.youtube.com/watch?v=J0BRx6PiEk8",
+   "pillar": "small-town",
+   "lane": "pexels-photos-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-10-06T20:00:00Z",
+   "music": "cpop-groove-01",
+   "format": "9x16",
+   "hookType": "PRICE-SHOCK",
+   "queue": "st-yangshuo-gondola-raft-01 (new); st-yangshuo-west-st-01 covered",
+   "note": "PRICE-SHOCK cross-country, same-kind-of-ride (NOT fatigued free-vs-fee): Venice gondola €90/~$97 per boat 30min vs Yulong River bamboo raft ¥200/~$28 per 2-person 40-50min (~3.5x + longer). Both 2-source verified. Photos-only, all Guilin/Li-River-slug + generic China (Vietnam clip caught on first assembly + removed, re-ran China-only). Raft footage stays type-level (raft clips are Thailand). comment-seed BLOCKED.",
+   "playlist": "China Small Towns 小城古镇"
+  },
+  {
+   "date": "2026-10-06",
+   "slot": "d",
+   "title": "99 Bends to Heaven's Gate, or 24 WWII Switchbacks — Which Drive? | China Travel Expert",
+   "videoId": "dVCBmPUpVo4",
+   "url": "https://www.youtube.com/watch?v=dVCBmPUpVo4",
+   "pillar": "china-route",
+   "lane": "pexels-photos-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-10-06T23:00:00Z",
+   "music": "cinema-orient-01",
+   "format": "9x16",
+   "hookType": "CHOICE",
+   "queue": "rt-tianmen-24zig-choice-01 (new)",
+   "note": "CHOICE between two roads (replicates 10-02d Tianmen 99-bends WINNER x2.19 in CHOICE wrapper; CHOICE best like-rate 1.78%). Tongtian Ave 10.8km/99 bends/200->1,300m, shuttle-only; Qinglong 24-Zig 24 switchbacks/~4km/built 1935/WWII supply road/rediscovered 1995. MAP-FORMAT: route facts spoken, illustrative China roads (zhangjiajie/chongqing/guizhou/hunan-slug + type-level), disclosed, no single-road deixis. comment-seed BLOCKED.",
+   "playlist": "China Travel 城市旅行"
   }
  ]
 }
