@@ -4073,6 +4073,23 @@
    "queue": "rt-tianmen-24zig-choice-01 (new)",
    "note": "CHOICE between two roads (replicates 10-02d Tianmen 99-bends WINNER x2.19 in CHOICE wrapper; CHOICE best like-rate 1.78%). Tongtian Ave 10.8km/99 bends/200->1,300m, shuttle-only; Qinglong 24-Zig 24 switchbacks/~4km/built 1935/WWII supply road/rediscovered 1995. MAP-FORMAT: route facts spoken, illustrative China roads (zhangjiajie/chongqing/guizhou/hunan-slug + type-level), disclosed, no single-road deixis. comment-seed BLOCKED.",
    "playlist": "China Travel 城市旅行"
+  },
+  {
+   "date": "2026-10-07",
+   "slot": "a",
+   "title": "China Price Check: Zhangjiajie $33 vs Yosemite $35 | China Travel Expert",
+   "videoId": "_e0f0gwTBAw",
+   "url": "https://www.youtube.com/watch?v=_e0f0gwTBAw",
+   "pillar": "china-practical",
+   "lane": "pexels-photos-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-10-07T13:00:00Z",
+   "music": "lofi-upbeat-01",
+   "format": "9x16",
+   "hookType": "PRICE-SHOCK",
+   "queue": "nat-17 (Yosemite vs Zhangjiajie)",
+   "playlist": "China Price Check",
+   "note": "Wed China Price Check; honest reversal (China not always cheaper): Wulingyuan ¥236≈$33/person(4d) vs Yosemite $35/vehicle(7d)+2026 +$100/intl. a↔c hook-type swap (AUTO slot c=PRICE-SHOCK moved to a; Wed Price Check forces it). Photos-only, zhangjiajie/wulingyuan+yosemite slugs (few type-level mountain stills). comment-seed BLOCKED (no force-ssl)."
   }
  ]
 }
