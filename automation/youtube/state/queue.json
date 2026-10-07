@@ -252,7 +252,9 @@
    "whyNow": "owner 2026-09-26: 转向小城市/山里/沙漠/地貌/自然风光; competitors.md 09-26: 9/25 top China Shorts = mountains/villages, #1 Zhangjiajie path 2.9M",
    "addedAt": "2026-09-26",
    "addedBy": "owner nature pivot 2026-09-26 (plans/nature-pivot.md)",
-   "status": "active"
+   "status": "published-2026-10-07",
+   "prevStatus": "active",
+   "statusNote": "slot a Wed China Price Check (PRICE-SHOCK). Zhangjiajie ¥236≈$33/person(4d) vs Yosemite $35/vehicle(7d)+2026 +$100/intl; honest reversal. _e0f0gwTBAw."
   },
   {
    "id": "nat-18",
@@ -1765,7 +1767,9 @@
    "seriesNote": "Qinghai-Gansu Loop 青甘大环线 连载",
    "addedAt": "2026-08-12",
    "addedBy": "owner directive",
-   "status": "active"
+   "status": "published-2026-10-07",
+   "prevStatus": "active",
+   "statusNote": "slot d CHOICE (夜敦煌 day caves vs night stars). Mogao ~492 caves ¥238 + Mingsha/Crescent ¥110 night-free. MAP-FORMAT (no site-ID footage). 1mEcXeST8d4."
   },
   {
    "id": "slk-b06",
@@ -2440,6 +2444,20 @@
    "addedAt": "2026-10-06",
    "addedBy": "routine 2026-10-06",
    "status": "published-2026-10-06"
+  },
+  {
+   "id": "ctp-05",
+   "title": "Do China’s top parks need advance booking? (2026)",
+   "pillar": "china-practical",
+   "format": "short",
+   "hookType": "STAKES",
+   "series": "China Trip Planner",
+   "angle": "slot c search-intent STAKES: real-name reservation since 2017; 5A/Forbidden City book 1-7 days ahead, no walk-up; official apps reject foreign passports -> Trip.com with passport. Type-level footage only.",
+   "whyNow": "generated 2026-10-07 from research; high-intent planner topic, search-compounding",
+   "addedAt": "2026-10-07",
+   "addedBy": "cycle generated (slot c)",
+   "status": "published-2026-10-07",
+   "publishedVideoId": "M5bwbl-YA38"
   }
  ]
 }

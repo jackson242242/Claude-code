@@ -4108,6 +4108,23 @@
    "playlist": "China Travel 城市旅行",
    "searchCompounding": true,
    "note": "Trip Planner STAKES (search-compounding; do not judge on day-1 views). Real-name reservation since 2017; 5A/Forbidden City book 1-7 days ahead, no walk-up; official apps reject foreign passports→Trip.com. Type-level footage only (no site deixis). AUTO a/c/d STAKES/PRICE-SHOCK/CHOICE with a↔c order swap. comment-seed BLOCKED (no force-ssl)."
+  },
+  {
+   "date": "2026-10-07",
+   "slot": "d",
+   "title": "Dunhuang: 492 Caves by Day or Desert Stars by Night? | China Travel Expert",
+   "videoId": "1mEcXeST8d4",
+   "url": "https://www.youtube.com/watch?v=1mEcXeST8d4",
+   "pillar": "china-route",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-10-07T23:00:00Z",
+   "music": "cpop-groove-01",
+   "format": "9x16",
+   "hookType": "CHOICE",
+   "queue": "slk-b05 (夜敦煌 Dunhuang day/night)",
+   "playlist": "China Travel 城市旅行",
+   "note": "CHOICE caves-by-day vs stars-by-night. Mogao ~492 caves ¥238 peak (daily cap) + Mingsha/Crescent Lake ¥110, night free. MAP-FORMAT/type-level: Pexels has NO site-ID Dunhuang/Mingsha footage (desert queries→Peru/Egypt/Dubai/Maspalomas traps, dropped); used location-neutral desert-dune + night-sky clips, disclosed, no site deixis. comment-seed BLOCKED (no force-ssl)."
   }
  ]
 }
