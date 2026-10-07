@@ -4090,6 +4090,24 @@
    "queue": "nat-17 (Yosemite vs Zhangjiajie)",
    "playlist": "China Price Check",
    "note": "Wed China Price Check; honest reversal (China not always cheaper): Wulingyuan ¥236≈$33/person(4d) vs Yosemite $35/vehicle(7d)+2026 +$100/intl. a↔c hook-type swap (AUTO slot c=PRICE-SHOCK moved to a; Wed Price Check forces it). Photos-only, zhangjiajie/wulingyuan+yosemite slugs (few type-level mountain stills). comment-seed BLOCKED (no force-ssl)."
+  },
+  {
+   "date": "2026-10-07",
+   "slot": "c",
+   "title": "Do China's Top Parks Need Advance Booking? (2026) | China Travel Expert",
+   "videoId": "M5bwbl-YA38",
+   "url": "https://www.youtube.com/watch?v=M5bwbl-YA38",
+   "pillar": "china-practical",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-10-07T20:00:00Z",
+   "music": "lofi-chill-01",
+   "format": "9x16",
+   "hookType": "STAKES",
+   "queue": "generated this run (China Trip Planner: advance booking)",
+   "playlist": "China Travel 城市旅行",
+   "searchCompounding": true,
+   "note": "Trip Planner STAKES (search-compounding; do not judge on day-1 views). Real-name reservation since 2017; 5A/Forbidden City book 1-7 days ahead, no walk-up; official apps reject foreign passports→Trip.com. Type-level footage only (no site deixis). AUTO a/c/d STAKES/PRICE-SHOCK/CHOICE with a↔c order swap. comment-seed BLOCKED (no force-ssl)."
   }
  ]
 }
