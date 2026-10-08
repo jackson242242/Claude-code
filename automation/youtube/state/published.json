@@ -4125,6 +4125,57 @@
    "queue": "slk-b05 (夜敦煌 Dunhuang day/night)",
    "playlist": "China Travel 城市旅行",
    "note": "CHOICE caves-by-day vs stars-by-night. Mogao ~492 caves ¥238 peak (daily cap) + Mingsha/Crescent Lake ¥110, night free. MAP-FORMAT/type-level: Pexels has NO site-ID Dunhuang/Mingsha footage (desert queries→Peru/Egypt/Dubai/Maspalomas traps, dropped); used location-neutral desert-dune + night-sky clips, disclosed, no site deixis. comment-seed BLOCKED (no force-ssl)."
+  },
+  {
+   "date": "2026-10-08",
+   "slot": "a",
+   "title": "The Li River's ¥20-Note Fisherman Quit in 2008 | China Travel Expert",
+   "videoId": "KQhGeNnC1-o",
+   "url": "https://www.youtube.com/watch?v=KQhGeNnC1-o",
+   "pillar": "china-nature",
+   "lane": "pexels-photos+ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-10-08T13:00:00Z",
+   "music": "cinema-orient-01",
+   "format": "9x16",
+   "hookType": "MISCONCEPTION",
+   "queue": "nat-22 (Guilin ¥20 cormorant fishermen pose now)",
+   "playlist": "China Nature 山河地貌",
+   "note": "补样本 FORCE (AUTO assigned STAKES; MISCONCEPTION n=2<3 must ship per 0b.0). Famous ¥20-note Xingping fishermen (Huang bros) quit commercial fishing ~2008, now paid photo models; fishing largely staged (China Daily 2016 + China Digital Times 2013). Guilin/Li-River site-ID photos --photos only, slug-audited China-only (1 Thai Krabi raft removed on re-run). comment-seed BLOCKED (no force-ssl)."
+  },
+  {
+   "date": "2026-10-08",
+   "slot": "c",
+   "title": "Skip Dali's Old Town — Locals Ride 130 km Around the Lake | China Travel Expert",
+   "videoId": "kbOdLADn3X4",
+   "url": "https://www.youtube.com/watch?v=kbOdLADn3X4",
+   "pillar": "small-town",
+   "lane": "pexels-photos+ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-10-08T20:00:00Z",
+   "music": "lofi-upbeat-01",
+   "format": "9x16",
+   "hookType": "INSIDER",
+   "queue": "generated (Dali Erhai lake-loop insider)",
+   "playlist": "China Small Towns 小城古镇",
+   "note": "补样本 FORCE (AUTO assigned CHOICE; INSIDER n=1<3 must ship per 0b.0). Dali old town free+packed; locals ride ~125-136km Erhai loop (bike ¥20-50/day), Xizhou tie-dye+喜洲粑粑 ¥5-8, calmer east shore (gokunming/chinatravel/goasia). Dali/Erhai site-ID photos + type-level China lakeside --photos only, 0 foreign. comment-seed BLOCKED."
+  },
+  {
+   "date": "2026-10-08",
+   "slot": "d",
+   "title": "China's 3 AM Sunrise or Its Aurora: Which Edge Would You Drive? | China Travel Expert",
+   "videoId": "wi9MbUqGZOI",
+   "url": "https://www.youtube.com/watch?v=wi9MbUqGZOI",
+   "pillar": "china-route",
+   "lane": "pexels+ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-10-08T23:00:00Z",
+   "music": "oriental-edm-01",
+   "format": "9x16",
+   "hookType": "CHOICE",
+   "queue": "edge-a04+edge-a05 (China Edge Fuyuan/Mohe combined CHOICE)",
+   "playlist": "China Travel 城市旅行",
+   "note": "AUTO CHOICE kept on route slot. Fuyuan East Pole first sunrise ~3AM (one nationwide time zone) vs Mohe northernmost aurora (China Daily/CGTN). MAP-FORMAT: NO site-ID footage exists → location-neutral illustrative night-sky clips only, disclosed, no deixis; did NOT claim G331 links the towns (unverified). 0 foreign. comment-seed BLOCKED."
   }
  ]
 }

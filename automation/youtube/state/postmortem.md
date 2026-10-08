@@ -1,3 +1,12 @@
+## 2026-10-08 post-mortem (baseline = 14d median views of Shorts ≥3d old: 146)
+- 2026-10-07 a _e0f0gwTBAw | 85v 0L 0C @1d | ×0.58 | baseline | China Price Check: Zhangjiajie $33 vs Yosemite $35 | China Travel Expe
+- 2026-10-06 d dVCBmPUpVo4 | 82v 0L 0C @2d | ×0.56 | baseline | 99 Bends to Heaven's Gate, or 24 WWII Switchbacks — Which Drive? | Chi
+- 2026-10-06 a kjNDZSduPtw | 54v 0L 0C @2d | ×0.37 | LOSER — avoid this shape today | Miss Huangshan's Last Cable Car and It's 10,000 Steps Down | China Tra
+- 2026-10-06 c J0BRx6PiEk8 | 41v 0L 0C @2d | ×0.28 | LOSER — avoid this shape today | Venice Gondola $97 for 30 Min. Yangshuo's Bamboo Raft? $28 | China Tra
+- 2026-10-07 d 1mEcXeST8d4 | 16v 0L 0C @1d | ×0.11 | LOSER — avoid this shape today | Dunhuang: 492 Caves by Day or Desert Stars by Night? | China Travel Ex
+- 2026-10-07 c M5bwbl-YA38 | 7v 0L 0C @1d | ×0.05 | LOSER — avoid this shape today | Do China's Top Parks Need Advance Booking? (2026) | China Travel Exper
+- like-rate (fresh Shorts): 0.00% (peers 1-6%)
+
 ## 2026-10-07 post-mortem (baseline = 14d median views of Shorts ≥3d old: 153)
 - 2026-10-05 c nZZ26BpQFTc | 43v 0L 0C @2d | ×0.28 | LOSER — avoid this shape today | Lijiang Charges ¥50 to Enter. Dali's Old Town Is Free | China Travel E
 - 2026-10-05 d mDHOBrc6Ftk | 39v 1L 0C @2d | ×0.25 | LOSER — avoid this shape today | Everyone Drives the Qinghai-Gansu Loop in 7 Days — Too Fast | China Tr
