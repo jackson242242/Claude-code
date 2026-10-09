@@ -1,3 +1,12 @@
+## 2026-10-09 post-mortem (baseline = 14d median views of Shorts ≥3d old: 136)
+- 2026-10-07 a _e0f0gwTBAw | 96v 0L 0C @2d | ×0.71 | baseline | China Price Check: Zhangjiajie $33 vs Yosemite $35 | China Travel Expe
+- 2026-10-07 d 1mEcXeST8d4 | 90v 1L 0C @2d | ×0.66 | baseline | Dunhuang: 492 Caves by Day or Desert Stars by Night? | China Travel Ex
+- 2026-10-08 a KQhGeNnC1-o | 38v 0L 0C @1d | ×0.28 | LOSER — avoid this shape today | The Li River's ¥20-Note Fisherman Quit in 2008 | China Travel Expert
+- 2026-10-08 c kbOdLADn3X4 | 17v 0L 0C @1d | ×0.13 | LOSER — avoid this shape today | Skip Dali's Old Town — Locals Ride 130 km Around the Lake | China Trav
+- 2026-10-07 c M5bwbl-YA38 | 14v 0L 0C @2d | ×0.10 | LOSER — avoid this shape today | Do China's Top Parks Need Advance Booking? (2026) | China Travel Exper
+- 2026-10-08 d wi9MbUqGZOI | 4v 0L 0C @1d | ×0.03 | LOSER — avoid this shape today | China's 3 AM Sunrise or Its Aurora: Which Edge Would You Drive? | Chin
+- like-rate (fresh Shorts): 0.39% (peers 1-6%)
+
 ## 2026-10-08 post-mortem (baseline = 14d median views of Shorts ≥3d old: 146)
 - 2026-10-07 a _e0f0gwTBAw | 85v 0L 0C @1d | ×0.58 | baseline | China Price Check: Zhangjiajie $33 vs Yosemite $35 | China Travel Expe
 - 2026-10-06 d dVCBmPUpVo4 | 82v 0L 0C @2d | ×0.56 | baseline | 99 Bends to Heaven's Gate, or 24 WWII Switchbacks — Which Drive? | Chi

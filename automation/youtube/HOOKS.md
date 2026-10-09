@@ -64,67 +64,67 @@ run 自动执行；若某条钩子是**新写法**（不属 A-F），在 RUNLOG 
 
 
 <!-- AUTO:BEGIN — rewritten by scripts/hook-ledger.mjs, do not hand-edit below -->
-## 📊 实测排行（2026-10-08，近 30 天、满 3 天的 84 条；baseline 中位数 160 播放）
+## 📊 实测排行（2026-10-09，近 30 天、满 3 天的 84 条；baseline 中位数 156 播放）
 
 | 钩子类型 | 讨论型? | 条数 | 均播放 | 相对基准 | 点赞率 | 评论 | 评/千播 |
 |---|---|---|---|---|---|---|---|
-| INSIDER | ✅ | 1 ⚠️样本不足 | 962 | ×6.01 | 0.62% | 0 | 0 |
-| STAKES | ✅ | 3 | 478 | ×2.99 | 0.35% | 0 | 0 |
-| CHOICE | ✅ | 3 | 361 | ×2.25 | 1.76% | 0 | 0 |
-| SPECTACLE-FACT | ❌ 数字锚而已 | 39 | 333 | ×2.08 | 0.59% | 2 | 0.15 |
-| PRICE-SHOCK | ✅ | 12 | 332 | ×2.08 | 0.43% | 0 | 0 |
-| DEBATE | ✅ | 5 | 242 | ×1.51 | 0.58% | 0 | 0 |
-| PLAIN-FACT | ❌ 数字锚而已 | 19 | 186 | ×1.16 | 0.62% | 0 | 0 |
-| MISCONCEPTION | ✅ | 2 ⚠️样本不足 | 79 | ×0.49 | 0% | 0 | 0 |
+| INSIDER | ✅ | 1 ⚠️样本不足 | 962 | ×6.17 | 0.62% | 0 | 0 |
+| STAKES | ✅ | 3 | 478 | ×3.06 | 0.35% | 0 | 0 |
+| SPECTACLE-FACT | ❌ 数字锚而已 | 39 | 332 | ×2.13 | 0.59% | 2 | 0.15 |
+| PRICE-SHOCK | ✅ | 13 | 310 | ×1.99 | 0.42% | 0 | 0 |
+| CHOICE | ✅ | 4 | 292 | ×1.87 | 1.63% | 0 | 0 |
+| DEBATE | ✅ | 5 | 242 | ×1.55 | 0.58% | 0 | 0 |
+| PLAIN-FACT | ❌ 数字锚而已 | 17 | 190 | ×1.22 | 0.62% | 0 | 0 |
+| MISCONCEPTION | ✅ | 2 ⚠️样本不足 | 80 | ×0.51 | 0% | 0 | 0 |
 
-**今日三槽依次用（a / c / d）**：STAKES / CHOICE / PRICE-SHOCK
-**已验证（≥3 条且 ≥×1.0）**：STAKES / CHOICE / PRICE-SHOCK / DEBATE
+**今日三槽依次用（a / c / d）**：STAKES / PRICE-SHOCK / CHOICE
+**已验证（≥3 条且 ≥×1.0）**：STAKES / PRICE-SHOCK / CHOICE / DEBATE
 **补样本（<3 条，必须排进去才学得到）**：INSIDER(1) / MISCONCEPTION(2)
 **避免**：SPECTACLE-FACT / PLAIN-FACT 永远不是钩子类型（数字只能放进讨论型钩子里）
-**非讨论型配额**：近 7 天已用 10/3（每天 ≤1，仅限 slot d 路线超级数字，且收尾仍须 either-or）；讨论型 11/21 — **超额，本周剩余全部讨论型**
+**非讨论型配额**：近 7 天已用 8/3（每天 ≤1，仅限 slot d 路线超级数字，且收尾仍须 either-or）；讨论型 13/21 — **超额，本周剩余全部讨论型**
 
 ## 📒 近期逐条账本（新→旧）
 
 | 日期 | 播放 | ×基准 | 赞 | 评 | 类型 | 钩子原文 |
 |---|---|---|---|---|---|---|
-| 2026-10-07d | 19 | ×0.12 | 1 | 0 | CHOICE | 492 painted caves by day, or desert stars by night? |
-| 2026-10-07c | 7 | ×0.04 | 0 | 0 | PLAIN-FACT | Fly to China's top park — and get turned away at the gate. |
-| 2026-10-07a | 85 | ×0.53 | 0 | 0 | PRICE-SHOCK | Zhangjiajie: $33. Yosemite: $35. Almost the same. |
-| 2026-10-06d | 82 | ×0.51 | 0 | 0 | CHOICE | 99 bends to Heaven's Gate, or 24 wartime switchbacks — which wou |
+| 2026-10-08d | 4 | ×0.03 | 0 | 0 | CHOICE | East for a 3 AM sunrise, or north for the aurora? |
+| 2026-10-08c | 16 | ×0.10 | 0 | 0 | DEBATE | Skip Dali's old town. Locals ride the lake — 130 km. |
+| 2026-10-08a | 38 | ×0.24 | 0 | 0 | PRICE-SHOCK | China's ¥20 note shows a fisherman who quit in 2008. |
+| 2026-10-07d | 89 | ×0.57 | 1 | 0 | CHOICE | 492 painted caves by day, or desert stars by night? |
+| 2026-10-07c | 14 | ×0.09 | 0 | 0 | PLAIN-FACT | Fly to China's top park — and get turned away at the gate. |
+| 2026-10-07a | 96 | ×0.62 | 0 | 0 | PRICE-SHOCK | Zhangjiajie: $33. Yosemite: $35. Almost the same. |
+| 2026-10-06d | 83 | ×0.53 | 0 | 0 | CHOICE | 99 bends to Heaven's Gate, or 24 wartime switchbacks — which wou |
 | 2026-10-06c | 41 | ×0.26 | 0 | 0 | PRICE-SHOCK | A Venice gondola is $97 for 30 minutes. Yangshuo's bamboo raft?  |
-| 2026-10-06a | 54 | ×0.34 | 0 | 0 | SPECTACLE-FACT | Miss Huangshan's last cable car and it's 10,000 steps down — in  |
-| 2026-10-05d | 88 | ×0.55 | 1 | 0 | SPECTACLE-FACT | Everyone drives the Qinghai-Gansu loop in 7 days. Too fast. I'm  |
-| 2026-10-05c | 58 | ×0.36 | 0 | 0 | PRICE-SHOCK | Lijiang charges ¥50 to enter its old town. Dali's is free. I'm y |
-| 2026-10-05a | 41 | ×0.26 | 0 | 0 | SPECTACLE-FACT | 41,000 tickets a day — and it still sells out by morning. I'm yo |
-| 2026-10-04d | 101 | ×0.63 | 0 | 0 | PLAIN-FACT | Rush China's highest highway and it'll put you on oxygen. I'm yo |
-| 2026-10-04c | 206 | ×1.29 | 2 | 0 | DEBATE | Skip Wuzhen's 190-yuan ticket. I'm your China Travel Expert. |
-| 2026-10-04a | 71 | ×0.44 | 0 | 0 | PRICE-SHOCK | The Great Wall costs about $20 to visit yourself. I'm your China |
-| 2026-10-03d | 230 | ×1.44 | 1 | 0 | DEBATE | Everyone books the Yunnan package tour. Skip it. I'm your China  |
-| 2026-10-03c | 54 | ×0.34 | 0 | 0 | PLAIN-FACT | Petra costs seventy dollars. The Great Wall? Six. I'm your China |
-| 2026-10-03a | 81 | ×0.51 | 0 | 0 | SPECTACLE-FACT | Travel 2,000 km for the Rainbow Mountains — and see grey? I'm yo |
-| 2026-10-02d | 476 | ×2.98 | 5 | 0 | SPECTACLE-FACT | 99 hairpin bends in 11 kilometers. I'm your China Travel Expert. |
-| 2026-10-02c | 44 | ×0.28 | 0 | 0 | MISCONCEPTION | You think Jiuzhaigou's lakes are Photoshopped. I'm your China Tr |
-| 2026-10-02a | 104 | ×0.65 | 1 | 0 | CHOICE | Guilin or Zhangjiajie for your first China trip? I'm your China  |
-| 2026-10-01d | 164 | ×1.02 | 0 | 0 | DEBATE | Everyone drives the G318 to Tibet. Skip it. I'm your China Trave |
-| 2026-10-01c | 65 | ×0.41 | 0 | 0 | SPECTACLE-FACT | Bolivia's sky mirror costs a 60-to-80-dollar tour. I'm your Chin |
+| 2026-10-06a | 64 | ×0.41 | 0 | 0 | SPECTACLE-FACT | Miss Huangshan's last cable car and it's 10,000 steps down — in  |
+| 2026-10-05d | 90 | ×0.58 | 1 | 0 | SPECTACLE-FACT | Everyone drives the Qinghai-Gansu loop in 7 days. Too fast. I'm  |
+| 2026-10-05c | 62 | ×0.40 | 0 | 0 | PRICE-SHOCK | Lijiang charges ¥50 to enter its old town. Dali's is free. I'm y |
+| 2026-10-05a | 44 | ×0.28 | 0 | 0 | SPECTACLE-FACT | 41,000 tickets a day — and it still sells out by morning. I'm yo |
+| 2026-10-04d | 100 | ×0.64 | 0 | 0 | PLAIN-FACT | Rush China's highest highway and it'll put you on oxygen. I'm yo |
+| 2026-10-04c | 208 | ×1.33 | 2 | 0 | DEBATE | Skip Wuzhen's 190-yuan ticket. I'm your China Travel Expert. |
+| 2026-10-04a | 72 | ×0.46 | 0 | 0 | PRICE-SHOCK | The Great Wall costs about $20 to visit yourself. I'm your China |
+| 2026-10-03d | 231 | ×1.48 | 1 | 0 | DEBATE | Everyone books the Yunnan package tour. Skip it. I'm your China  |
+| 2026-10-03c | 54 | ×0.35 | 0 | 0 | PLAIN-FACT | Petra costs seventy dollars. The Great Wall? Six. I'm your China |
+| 2026-10-03a | 83 | ×0.53 | 0 | 0 | SPECTACLE-FACT | Travel 2,000 km for the Rainbow Mountains — and see grey? I'm yo |
+| 2026-10-02d | 478 | ×3.06 | 5 | 0 | SPECTACLE-FACT | 99 hairpin bends in 11 kilometers. I'm your China Travel Expert. |
+| 2026-10-02c | 46 | ×0.29 | 0 | 0 | MISCONCEPTION | You think Jiuzhaigou's lakes are Photoshopped. I'm your China Tr |
+| 2026-10-02a | 107 | ×0.69 | 1 | 0 | CHOICE | Guilin or Zhangjiajie for your first China trip? I'm your China  |
+| 2026-10-01d | 164 | ×1.05 | 0 | 0 | DEBATE | Everyone drives the G318 to Tibet. Skip it. I'm your China Trave |
+| 2026-10-01c | 65 | ×0.42 | 0 | 0 | SPECTACLE-FACT | Bolivia's sky mirror costs a 60-to-80-dollar tour. I'm your Chin |
 | 2026-10-01a | 60 | ×0.38 | 0 | 0 | SPECTACLE-FACT | Huangshan is in cloud 200 days a year. I'm your China Travel Exp |
-| 2026-09-30d | 59 | ×0.37 | 0 | 0 | PLAIN-FACT | I'm your China Travel Expert. |
-| 2026-09-30c | 119 | ×0.74 | 0 | 0 | PLAIN-FACT | I'm your China Travel Expert. |
-| 2026-09-30a | 168 | ×1.05 | 0 | 0 | PLAIN-FACT | I'm your China Travel Expert. |
-| 2026-09-29d | 66 | ×0.41 | 0 | 0 | PLAIN-FACT | I'm your China Travel Expert. |
-| 2026-09-29c | 173 | ×1.08 | 0 | 0 | PLAIN-FACT | I'm your China Travel Expert. |
-| 2026-09-29a | 146 | ×0.91 | 3 | 0 | PLAIN-FACT | I'm your China Travel Expert. |
+| 2026-09-30d | 59 | ×0.38 | 0 | 0 | PLAIN-FACT | I'm your China Travel Expert. |
+| 2026-09-30c | 119 | ×0.76 | 0 | 0 | PLAIN-FACT | I'm your China Travel Expert. |
+| 2026-09-30a | 169 | ×1.08 | 0 | 0 | PLAIN-FACT | I'm your China Travel Expert. |
+| 2026-09-29d | 67 | ×0.43 | 0 | 0 | PLAIN-FACT | I'm your China Travel Expert. |
+| 2026-09-29c | 174 | ×1.12 | 0 | 0 | PLAIN-FACT | I'm your China Travel Expert. |
+| 2026-09-29a | 146 | ×0.94 | 3 | 0 | PLAIN-FACT | I'm your China Travel Expert. |
 | 2026-09-28d | 24 | ×0.15 | 0 | 0 | STAKES | You don't need a dozen flights to see China's northwest. I'm you |
-| 2026-09-28c | 946 | ×5.91 | 17 | 0 | CHOICE | China's biggest Miao village — real place, or a theme park? I'm  |
-| 2026-09-28a | 32 | ×0.20 | 1 | 0 | CHOICE | Would you walk a trail across 3,000 stone pillars? I'm your Chin |
-| 2026-09-27d | 476 | ×2.98 | 1 | 0 | STAKES | China to Europe by rail? The wheels don't fit. I'm your China Tr |
-| 2026-09-27c | 209 | ×1.31 | 2 | 0 | DEBATE | Skip Wuzhen — ¥150 just to get in. I'm your China Travel Expert. |
-| 2026-09-27a | 334 | ×2.09 | 1 | 0 | PRICE-SHOCK | One canyon: $95. One: $13. I'm your China Travel Expert. |
-| 2026-09-26d | 271 | ×1.69 | 0 | 0 | PLAIN-FACT | China paved a road across shifting sand. I'm your China Travel E |
-| 2026-09-26c | 99 | ×0.62 | 0 | 0 | PLAIN-FACT | Everyone says: bring cash to China. I'm your China Travel Expert |
-| 2026-09-26a | 974 | ×6.09 | 3 | 0 | PRICE-SHOCK | One bowl: $3. One: $300. I'm your China Travel Expert. |
-| 2026-09-25d | 156 | ×0.97 | 0 | 0 | SPECTACLE-FACT | One desert cave hid 50,000 manuscripts for 900 years. I'm your C |
-| 2026-09-25c | 948 | ×5.92 | 5 | 0 | PRICE-SHOCK | A one-hour massage in China: about $25. I'm your China Travel Ex |
-| 2026-09-25a | 399 | ×2.49 | 2 | 0 | DEBATE | Skip Badaling — 10 million tourists a year. I'm your China Trave |
-| 2026-09-24d | 857 | ×5.36 | 7 | 0 | SPECTACLE-FACT | 561 km of road, open barely 4 months a year. I'm your China Trav |
+| 2026-09-28c | 946 | ×6.06 | 17 | 0 | CHOICE | China's biggest Miao village — real place, or a theme park? I'm  |
+| 2026-09-28a | 32 | ×0.21 | 1 | 0 | CHOICE | Would you walk a trail across 3,000 stone pillars? I'm your Chin |
+| 2026-09-27d | 477 | ×3.06 | 1 | 0 | STAKES | China to Europe by rail? The wheels don't fit. I'm your China Tr |
+| 2026-09-27c | 209 | ×1.34 | 2 | 0 | DEBATE | Skip Wuzhen — ¥150 just to get in. I'm your China Travel Expert. |
+| 2026-09-27a | 334 | ×2.14 | 1 | 0 | PRICE-SHOCK | One canyon: $95. One: $13. I'm your China Travel Expert. |
+| 2026-09-26d | 271 | ×1.74 | 0 | 0 | PLAIN-FACT | China paved a road across shifting sand. I'm your China Travel E |
+| 2026-09-26c | 99 | ×0.63 | 0 | 0 | PLAIN-FACT | Everyone says: bring cash to China. I'm your China Travel Expert |
+| 2026-09-26a | 974 | ×6.24 | 3 | 0 | PRICE-SHOCK | One bowl: $3. One: $300. I'm your China Travel Expert. |
+| 2026-09-25d | 156 | ×1.00 | 0 | 0 | SPECTACLE-FACT | One desert cave hid 50,000 manuscripts for 900 years. I'm your C |
 <!-- AUTO:END -->
