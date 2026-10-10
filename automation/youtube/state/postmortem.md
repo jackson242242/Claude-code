@@ -1,3 +1,9 @@
+## 2026-10-10 post-mortem (baseline = 14d median views of Shorts ≥3d old: 110)
+- 2026-10-08 a KQhGeNnC1-o | 39v 0L 0C @2d | ×0.35 | LOSER — avoid this shape today | The Li River's ¥20-Note Fisherman Quit in 2008 | China Travel Expert
+- 2026-10-08 c kbOdLADn3X4 | 31v 0L 0C @2d | ×0.28 | LOSER — avoid this shape today | Skip Dali's Old Town — Locals Ride 130 km Around the Lake | China Trav
+- 2026-10-08 d wi9MbUqGZOI | 5v 0L 0C @2d | ×0.05 | LOSER — avoid this shape today | China's 3 AM Sunrise or Its Aurora: Which Edge Would You Drive? | Chin
+- like-rate (fresh Shorts): 0.00% (peers 1-6%)
+
 ## 2026-10-09 post-mortem (baseline = 14d median views of Shorts ≥3d old: 136)
 - 2026-10-07 a _e0f0gwTBAw | 96v 0L 0C @2d | ×0.71 | baseline | China Price Check: Zhangjiajie $33 vs Yosemite $35 | China Travel Expe
 - 2026-10-07 d 1mEcXeST8d4 | 90v 1L 0C @2d | ×0.66 | baseline | Dunhuang: 492 Caves by Day or Desert Stars by Night? | China Travel Ex

@@ -1,3 +1,9 @@
+## 2026-10-10 (Sat)
+- vidIQ trending (Shorts, "china travel", by vph): top = "China's most surreal hidden gems" (Knowra, VN, 6.7k subs -> 195k views, vph 2841, tags incl. "Ruyi Bridge","places that dont feel real"); "These Travel Spots Have a Secret 😳" (UNPOSED, 233k, vph 1839); a 291-sub channel hit 30k on a nature "What do you think?" hook (vph 1367).
+- OVER-PERFORMING FORMATS: (1) mystery framing "surreal / hidden gems / secret" over cinematic nature; (2) curiosity-question hooks ("what do you think?","has a secret"); (3) tiny channels CAN break out on pure nature spectacle + a question. Reinforces our discussion-hook + nature-spectacle + either-or-close strategy; angle toward "secret/hidden/you-wouldnt-believe" curiosity gaps on real places.
+- TIRED here: info/price-card Shorts with near-equal ratios and MAP-only route cards keep landing ×0.03-0.35 (0 comments channel-wide).
+- Dialect-bank deepening: not added this run (EN-only subs; prioritized footage-gating + trend call); flavor stays in TikTok captions. (Consistent w/ recent honest misses.)
+
 ## 2026-10-08 (Thu)
 - Analytics pulse (7d): 2,027v / 0 subs / 0 comments / 13 likes. Flat and comment-dead. The one thing that has ever broken out is a DISCUSSION hook that makes the viewer reply — and we have almost no samples of the two highest-ceiling discussion types (INSIDER ×6.0 but n=1; MISCONCEPTION n=2). Shipping them is the only way to learn whether they travel; forced both today.
 - What resonates (ledger): belief-overturn + personally-paid ≥4× gaps + route superlatives/CHOICE. What's tired: near-ratio price checks, scarcity/sells-out STAKES, "two-drives — which" CHOICE (all ×0.1–0.3 this week).
