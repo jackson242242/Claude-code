@@ -4295,6 +4295,57 @@
       "queue": "nat-aizhai-choice (generated)",
       "playlist": "China Travel 城市旅行 (PLI6LsqzQ-cjU)",
       "note": "Aizhai Bridge would-you-cross CHOICE: ~330m above a Hunan gorge, span over 1,100m, opened 2012, one of worlds highest road bridges. Dropped unverified old-road/13-bends/1936 claim. MAP-FORMAT location-neutral canyon/road, 0 foreign after audit. Scheduled-private 23:00Z. First upload 400 invalidDescription (<,> chars) -> fixed, 1 re-upload, no duplicate. comment-seed BLOCKED (no force-ssl)."
+    },
+    {
+      "date": "2026-10-11",
+      "slot": "a",
+      "title": "China Price Check: $300 Up a Swiss Peak, $49 Up Huangshan | China Travel Expert",
+      "videoId": "_P-HIqOWII0",
+      "url": "https://www.youtube.com/watch?v=_P-HIqOWII0",
+      "pillar": "china-practical",
+      "lane": "pexels-photos+ffmpeg (upload LIVE)",
+      "status": "public",
+      "publishAt": "2026-10-11T13:08:41Z",
+      "music": "cinema-orient-01",
+      "format": "9x16",
+      "hookType": "PRICE-SHOCK",
+      "queue": "cpc-huangshan-swiss (generated)",
+      "playlist": "China Price Check (PLG-JepCwvn-Y)",
+      "note": "Q4 Sunday China Price Check. Jungfraujoch return ~CHF261/~US$300 vs Huangshan entry 190 + cable 160RMB ~US$49 all-in (~6x; honest 'not identical modes' mountain ride). Huangshan photos site-ID + 1 alpine-railway still for Swiss side; 0 foreign mislabels. publishAt bumped 13:00->13:08:41Z (13:00 passed mid-run, overrun) -> publishes ~immediately. comment-seed BLOCKED (no force-ssl)."
+    },
+    {
+      "date": "2026-10-11",
+      "slot": "c",
+      "title": "China Trains 2026: a Standing Ticket Costs the Same as a Seat | China Travel Expert",
+      "videoId": "iFdqnONZZHU",
+      "url": "https://www.youtube.com/watch?v=iFdqnONZZHU",
+      "pillar": "china-practical",
+      "lane": "pexels+ffmpeg (upload LIVE)",
+      "status": "scheduled",
+      "publishAt": "2026-10-11T20:00:00Z",
+      "music": "lofi-upbeat-01",
+      "format": "9x16",
+      "hookType": "STAKES",
+      "queue": "ctp-trains-noseat (generated)",
+      "playlist": "China Trip Planner (PLBBCtLmUZCEc)",
+      "note": "China Trip Planner search-intent. 'No-seat' (wuzuo) ticket = same seat class/price as 2nd class per 12306; trended 2026-08-24; Beijing-Shanghai ~4.5h standing. Type-level HSR/station footage incl Nanjing-station still, no site deixis. Scheduled-private 20:00Z. search-compounding (review monthly). comment-seed BLOCKED (no force-ssl)."
+    },
+    {
+      "date": "2026-10-11",
+      "slot": "d",
+      "title": "Would You Drive 446 km Across China's Taklamakan Desert? | China Travel Expert",
+      "videoId": "Dl84GBedw3E",
+      "url": "https://www.youtube.com/watch?v=Dl84GBedw3E",
+      "pillar": "china-route",
+      "lane": "pexels-photos MAP-FORMAT (upload LIVE)",
+      "status": "scheduled",
+      "publishAt": "2026-10-11T23:00:00Z",
+      "music": "oriental-edm-01",
+      "format": "9x16",
+      "hookType": "CHOICE",
+      "queue": "nat-route-tarim (generated)",
+      "playlist": "China Travel 城市旅行 (PLI6LsqzQ-cjU)",
+      "note": "Tarim Desert Highway CHOICE (approachable would-you-drive shape, not obscure A/B). ~446km uninhabited dunes across Taklamakan (~337,000 km2, 2nd-largest shifting-sand desert, ~size of Germany), no village/farm/water, well-houses ~every 4km w/ keepers, opened 1995. MAP-FORMAT location-neutral desert/road stills, 0 foreign after audit (dropped Dubai/Oman/Sahara/Nevada/Canary across re-runs), no deixis, disclosed. Scheduled-private 23:00Z. comment-seed BLOCKED."
     }
   ]
 }

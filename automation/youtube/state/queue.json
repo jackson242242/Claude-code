@@ -2473,6 +2473,33 @@
       "title": "Aizhai Bridge ~330m over a Hunan gorge, span over 1,100m — would you cross?",
       "footage": "NO site-ID (MAP-FORMAT location-neutral canyon/road)",
       "whyNow": "route CHOICE superlative; evergreen"
+    },
+    {
+      "id": "cpc-huangshan-swiss",
+      "pillar": "china-practical",
+      "hookType": "PRICE-SHOCK",
+      "status": "covered-2026-10-11",
+      "title": "China Price Check: Jungfraujoch ~$300 vs Huangshan ~$49 (same cloud-sea summit)",
+      "footage": "Huangshan photos site-ID + alpine-railway still (Swiss)",
+      "whyNow": "Q4 Sunday Price Check; Swiss-vs-China peak ride ~6x, honest even when not identical modes"
+    },
+    {
+      "id": "ctp-trains-noseat",
+      "pillar": "china-practical",
+      "hookType": "STAKES",
+      "status": "covered-2026-10-11",
+      "title": "China bullet-train 'no-seat' ticket = same price as a 2nd-class seat (2026)",
+      "footage": "type-level trains/stations (no site deixis)",
+      "whyNow": "12306 no-seat=2nd-class price trended 2026-08-24; search-intent planner"
+    },
+    {
+      "id": "nat-route-tarim",
+      "pillar": "china-route",
+      "hookType": "CHOICE",
+      "status": "covered-2026-10-11",
+      "title": "Tarim Desert Highway: 446 km across the Taklamakan, no town/water — would you drive it?",
+      "footage": "NO site-ID (MAP-FORMAT neutral desert/road)",
+      "whyNow": "route CHOICE superlative; desert-crossing spectacle, well-house keepers human angle"
     }
   ]
 }
