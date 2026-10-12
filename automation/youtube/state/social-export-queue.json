@@ -889,7 +889,9 @@
    "views": 4,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "sent",
+   "sentAt": "2026-10-12",
+   "note": "re-rendered 9:16 clean master (no music, badge, 720p) from 2026-07-11-b subs.srt + script.md queries; delivered via chat"
   },
   {
    "videoId": "3M8JBKp4BBU",
