@@ -1,3 +1,32 @@
+## 2026-10-12 competitor scan (top 25 China-travel Shorts published in the last 7 days, by views)
+hook-shape tally: {"other":13,"number-claim":6,"question":3,"paradox-claim":2,"tag-only-spectacle":1} · nature/small-town titles in top 25: 6
+- 8224703v 174365L (2.1%) PT23S | HAUTE TALES  | 🏔 China converted deserts into forests👏🏻 #shorts #shortsfeed #viral#viralvideo | https://youtube.com/shorts/8y3fEuLGtd0
+- 4324025v 150990L (3.5%) PT1M13S | A vida é uma maravilha | 🏔 Fazenda solar transformou deserto em pasto 🌱 | https://youtube.com/shorts/V818Cpgge08
+- 2761456v 26595L (1.0%) PT11S | CosmicFuse | China’s ALIEN Solar Technology — TWO Towers, 27,000 Mirrors | https://youtube.com/shorts/Ym3GCEDH0wA
+- 2612224v 21872L (0.8%) PT41S | KHFI CHANNEL | Pertanian Kuno di tepi jurang di China😳 | https://youtube.com/shorts/ELaxraacd9g
+- 1038424v 24455L (2.4%) PT25S | Shu Xu | I waited all year for this | https://youtube.com/shorts/qaTh11BoAzs
+- 646829v 0L (0.0%) PT33S | Abir Ahmed  | 🏔 How Do Chinese Farmers Grow Giant Bananas on Impossible Mountain Slopes? 🍌🚁#vi | https://youtube.com/shorts/-hj_JssqxHc
+- 580032v 7059L (1.2%) PT31S | Foodwalebhaiya | Desi Chowmein In Just 150/-😍 #chowmein #noodles #streetfood #chinese | https://youtube.com/shorts/MF-P_PuGWJo
+- 570637v 24390L (4.3%) PT1M | Ms Shi and Mr He | Grilled Gluten Skewers (It’s gluten-full ✅) | https://youtube.com/shorts/6Si7uUzsXnA
+- 467976v 0L (0.0%) PT26S | ZISSU FACT  | 🏔 Why, after all, is China planting trees in the desert? | https://youtube.com/shorts/n4YZlmxQ-4Q
+- 417417v 4699L (1.1%) PT14S | Hey Hey | Warlok Bikin Pendaki Melongo | https://youtube.com/shorts/Kqeya94yDFI
+- 382718v 2837L (0.7%) PT29S | Amazing Facts2.0 | China’s Nomadic Duck Farmers: Thousands of Ducks on a Never-Ending Journey! 🦆🇨 | https://youtube.com/shorts/Ksh2goEXFvw
+- 373113v 6674L (1.8%) PT38S | Foodwalebhaiya | Honey Chilli Potato In Just 120/-😍 #chinese #noodles #chowmein #streetfood | https://youtube.com/shorts/x_EgvyZ0Myg
+- 364675v 2305L (0.6%) PT35S | Teman Ngupi Channel | China’s Shoulder Pole Harvest #food #streetfood #foodnerd #trending #viral #shor | https://youtube.com/shorts/IzbiPyxi3xI
+- 347855v 12101L (3.5%) PT3M | Swad Ke Diwane | 1999 से खिला रहे नदी की छोटी वाली देशी मछली की चाउमीन 🤔 #shorts #chickennoodles | https://youtube.com/shorts/x-nTYGUeAtk
+- 335987v 2396L (0.7%) PT22S | Orlando Tips | La ruta más ATERRADORA y extrema de Asia ⛰️ | https://youtube.com/shorts/UJs2jKYLUvY
+- 313016v 2105L (0.7%) PT14S | Alex Young | 中國鳴沙山月牙泉#fyp #China #travel | https://youtube.com/shorts/fWi1Fa4ks78
+- 296784v 13904L (4.7%) PT44S | The D Square Vlogs | 💥 70years old Couple Serving The best Chinese food in Bangalore Koramangala ⁉️  | https://youtube.com/shorts/uSL7gdlb9yY
+- 289179v 4701L (1.6%) PT1M13S | Flow of Facts Fun | โครงการยักษ์จีนเปลี่ยนทะเลทรายเป็นโรงไฟฟ้าโซลาร์เซลล์ | https://youtube.com/shorts/WsN89ETLHjQ
+- 279765v 1117L (0.4%) PT22S | China Vitality | 🏔 Guansing Highway: The Sky Road Built on Cliffs in Southwest Guizhou#chinatravel | https://youtube.com/shorts/vn12xU549R4
+- 262908v 17410L (6.6%) PT1M10S | Joy Sanzio | Presidenta de México 🇲🇽 visitará China 🇨🇳 y esto dice un chino 😲‼️ #mexico  | https://youtube.com/shorts/eJM4tvrgMAA
+- 223699v 4987L (2.2%) PT35S | Facts Boy 2.0 | 🏔 Why Did China Release 1.2 Million Rabbits Into the Desert? 😱🐇 #facts | https://youtube.com/shorts/TxCtCeZGbe0
+- 223674v 9525L (4.3%) PT1M46S | NanaKoot | MIE AYAM JAMUR KHAS JAWA YG RASANYA GAK ADA JAWA2 NYA 😂😂😂 | https://youtube.com/shorts/C9LqhzDV_B8
+- 222588v 6229L (2.8%) PT25S | Shu Xu | China’s Most Unique Burger | https://youtube.com/shorts/EM1gDFtNMLY
+- 219463v 5908L (2.7%) PT2M42S | Rural Cooking Experience | Spicy Traditional Chinese Vegetable Cooking | Tomato, Carrot, Potato, Cabbage &a | https://youtube.com/shorts/kSuvT3WlDh0
+- 214703v 2053L (1.0%) PT16S | Knowra | China’s most surreal hidden gems #china #travel #explore | https://youtube.com/shorts/jnEFLyia5fY
+ACTION for this week's runs: copy the top 3 SHAPES (title grammar, length, spectacle-first) into our Shorts; never copy content.
+
 ## 2026-10-05 competitor scan (top 25 China-travel Shorts published in the last 7 days, by views)
 hook-shape tally: {"number-claim":7,"other":16,"paradox-claim":1,"question":1} · nature/small-town titles in top 25: 5
 - 4915521v 16669L (0.3%) PT8S | Electric Scotes  | 🏔 ELECTRIC BIKES BRG VESPRO 1500W  #electric #bikes #china #Environment #safe #nat | https://youtube.com/shorts/2XxWbySqTcM

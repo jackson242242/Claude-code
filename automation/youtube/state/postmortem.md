@@ -1,3 +1,12 @@
+## 2026-10-12 post-mortem (baseline = 14d median views of Shorts ≥3d old: 90)
+- 2026-10-10 c o_J5mVd-gHo | 36v 0L 0C @2d | ×0.40 | LOSER — avoid this shape today | Shanghai's Free Water Town Is One Metro Ride Away (Line 17) | China Tr
+- 2026-10-10 a -YedX-34U9k | 12v 0L 0C @2d | ×0.13 | LOSER — avoid this shape today | No Filter: China's Rainbow Mountains Are 24M-Year-Old Rock | China Tra
+- 2026-10-10 d OsfUyNa2nwk | 11v 0L 0C @2d | ×0.12 | LOSER — avoid this shape today | China's Aizhai Bridge Hangs 330m Over a Canyon — Would You Cross? | Ch
+- 2026-10-11 c iFdqnONZZHU | 5v 0L 0C @1d | ×0.06 | LOSER — avoid this shape today | China Trains 2026: a Standing Ticket Costs the Same as a Seat | China 
+- 2026-10-11 d Dl84GBedw3E | 4v 0L 0C @1d | ×0.04 | LOSER — avoid this shape today | Would You Drive 446 km Across China's Taklamakan Desert? | China Trave
+- 2026-10-11 a _P-HIqOWII0 | 1v 0L 0C @1d | ×0.01 | LOSER — avoid this shape today | China Price Check: $300 Up a Swiss Peak, $49 Up Huangshan | China Trav
+- like-rate (fresh Shorts): 0.00% (peers 1-6%)
+
 ## 2026-10-10 post-mortem (baseline = 14d median views of Shorts ≥3d old: 110)
 - 2026-10-08 a KQhGeNnC1-o | 39v 0L 0C @2d | ×0.35 | LOSER — avoid this shape today | The Li River's ¥20-Note Fisherman Quit in 2008 | China Travel Expert
 - 2026-10-08 c kbOdLADn3X4 | 31v 0L 0C @2d | ×0.28 | LOSER — avoid this shape today | Skip Dali's Old Town — Locals Ride 130 km Around the Lake | China Trav

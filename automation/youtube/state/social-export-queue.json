@@ -879,7 +879,9 @@
    "views": 4,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "no-artifacts",
+   "note": "2026-07-09-b subs.srt absent in fresh container (gitignored media + no committed subs) — cannot re-render honestly",
+   "checkedAt": "2026-10-12"
   },
   {
    "videoId": "7QgN6KFozMI",
