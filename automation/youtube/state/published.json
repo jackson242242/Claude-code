@@ -4397,6 +4397,57 @@
    "queue": "tibet-train-vs-g318-choice (generated)",
    "playlist": "China Travel 城市旅行 (PLI6LsqzQ-cjU)",
    "note": "CHOICE approachable (train vs drive, both recognizable). Qinghai-Tibet Railway 1,956km Xining-Lhasa, highest railway on Earth, Tanggula station ~5,068m, highest track ~5,072m, ~960km above 4,000m, oxygen in carriages, opened 2006; vs G318 overland. MAP-FORMAT Tibetan/Sichuan+neutral stills, 0 foreign (re-rendered to drop Ladakh/Nepal/Andes/Scottish), no deixis, disclosed. 2-source (wikipedia + worldatlas). comment-seed BLOCKED."
+  },
+  {
+   "date": "2026-10-13",
+   "slot": "a",
+   "title": "China's 71m Buddha Didn't Survive 1,200 Years by Luck | China Travel Expert",
+   "videoId": "CN0RGve-MrU",
+   "url": "https://www.youtube.com/watch?v=CN0RGve-MrU",
+   "pillar": "china-culture",
+   "lane": "pexels-photos site-ID (upload LIVE)",
+   "status": "public",
+   "publishAt": "2026-10-13T13:00:00Z",
+   "music": "lofi-chill-01",
+   "format": "9x16",
+   "hookType": "MISCONCEPTION",
+   "queue": "leshan-drainage-mis (generated)",
+   "playlist": "China Travel 城市旅行 (PLI6LsqzQ-cjU)",
+   "note": "补样本 MISCONCEPTION n=2→3 (AUTO=STAKES swapped: no fresh china-nature STAKES subject had site-ID footage — Jiuzhaigou 3x/11d incl 10-05a booking-cap, Mt Emei fails Pexels site-ID — and MISCONCEPTION under-sampled, must ship). Leshan Giant Buddha 71m, Tang ~713-803 (~90yr), hidden drainage in 1,021 hair curls/behind ears/robe still working ~1,200yr. Footage Leshan PHOTO site-ID 4/7 + 3 generic China stone-buddha (0 foreign, 0 Ushiku/Yungang after 2 re-renders), deixis OK. 2-source (wikipedia + china daily). PUBLIC: 13:00Z publishAt passed mid-run (uploaded 13:xx) → immediate public per playbook. comment-seed BLOCKED (no force-ssl)."
+  },
+  {
+   "date": "2026-10-13",
+   "slot": "c",
+   "title": "Mount Tai: 6,600 Steps in the Dark for a Maybe-Sunrise | China Travel Expert",
+   "videoId": "Ukl3AYeCfEk",
+   "url": "https://www.youtube.com/watch?v=Ukl3AYeCfEk",
+   "pillar": "china-nature",
+   "lane": "pexels-photos TYPE-LEVEL (upload LIVE)",
+   "status": "scheduled",
+   "publishAt": "2026-10-13T20:00:00Z",
+   "music": "oriental-edm-01",
+   "format": "9x16",
+   "hookType": "STAKES",
+   "queue": "mount-tai-sunrise-stakes (generated)",
+   "playlist": "China Nature 山河地貌 (PLOMaWf-bWTYg)",
+   "note": "AUTO=PRICE-SHOCK swapped to STAKES (forced/logged): PRICE-SHOCK subjects with fresh+site-ID footage exhausted — Mount Hua FAILS site-ID at assembler params (Mt Tai/Seoraksan/Hua-Hin/Taipei-art-district); Danxia 10-10/Huangshan 10-11/Yangshuo 10-06/ZJJ-Yosemite all ≤7d. Recovers the STAKES slot a dropped → net day MISCONCEPTION/STAKES/CHOICE all-discussion. Mt Tai ~1,545m, ~6,600 steps, night climb for summit sunrise/sea-of-clouds, weather-dependent. Footage TYPE-LEVEL China mountain-temple+stairs (incl genuine Mt-Tai staircase/hiker frames; 0 foreign after re-render dropping Turkey/Huangshan; NO deixis, disclosed). 2-source (thecrowdedplanet + china daily). comment-seed BLOCKED."
+  },
+  {
+   "date": "2026-10-13",
+   "slot": "d",
+   "title": "China's 9,200 km Border Road: Frozen East or Desert West? | China Travel Expert",
+   "videoId": "RcmtnMVD6Jo",
+   "url": "https://www.youtube.com/watch?v=RcmtnMVD6Jo",
+   "pillar": "china-route",
+   "lane": "pexels-photos MAP-FORMAT (upload LIVE)",
+   "status": "scheduled",
+   "publishAt": "2026-10-13T23:00:00Z",
+   "music": "lofi-upbeat-01",
+   "format": "9x16",
+   "hookType": "CHOICE",
+   "queue": "g331-border-road-choice (generated)",
+   "playlist": "China Travel 城市旅行 (PLI6LsqzQ-cjU)",
+   "note": "CHOICE approachable either-or (frozen east vs desert west). G331 Dandong→Altay ~9,200km (wiki)/9,333km (Xinhua), 2nd-longest national highway; part of planned ~26,000km border loop by 2030. Apolitical scenery framing (no border politics). Footage MAP-FORMAT location-neutral snow-forest+desert roads (0 foreign, NO deixis, disclosed). 2-source (wikipedia + CGTN/Yicai). comment-seed BLOCKED."
   }
  ]
 }

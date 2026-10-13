@@ -2527,6 +2527,54 @@
    "addedAt": "2026-10-12",
    "addedBy": "routine generate 2026-10-12",
    "status": "covered-2026-10-12"
+  },
+  {
+   "id": "leshan-drainage-mis",
+   "title": "Leshan Giant Buddha hidden drainage system (MISCONCEPTION)",
+   "pillar": "china-culture",
+   "format": "short",
+   "hookType": "MISCONCEPTION",
+   "hook": "Everyone thinks this Buddha survived 1,200 years by luck — it was engineered.",
+   "angle": "1,021 hair curls hide rain gutters; behind ears + in robe; 71m largest stone Buddha",
+   "footage": "pexels-photos leshan site-ID",
+   "series": "",
+   "whyNow": "补样本 MISCONCEPTION n=2→3; fresh (Jiuzhaigou/Duku overused)",
+   "addedAt": "2026-10-13T12:40:00Z",
+   "addedBy": "yt-cycle-2026-10-13",
+   "status": "covered-2026-10-13",
+   "prevStatus": ""
+  },
+  {
+   "id": "mount-tai-sunrise-stakes",
+   "title": "Mount Tai all-night climb for a maybe-sunrise (STAKES)",
+   "pillar": "china-nature",
+   "format": "short",
+   "hookType": "STAKES",
+   "hook": "Climb Mount Tai's 6,600 steps through the night — the sunrise might never show.",
+   "angle": "~1,545m, night climb, sea-of-clouds weather-dependent",
+   "footage": "type-level china mountain-temple (incl Mt Tai staircase)",
+   "series": "",
+   "whyNow": "recovers dropped STAKES; PRICE-SHOCK footage exhausted",
+   "addedAt": "2026-10-13T12:40:00Z",
+   "addedBy": "yt-cycle-2026-10-13",
+   "status": "covered-2026-10-13",
+   "prevStatus": ""
+  },
+  {
+   "id": "g331-border-road-choice",
+   "title": "G331 border road frozen-east vs desert-west (CHOICE)",
+   "pillar": "china-route",
+   "format": "short",
+   "hookType": "CHOICE",
+   "hook": "China's longest border road runs 9,200km — frozen east or desert west?",
+   "angle": "Dandong→Altay, 2nd-longest national highway, part of ~26,000km border loop",
+   "footage": "MAP-FORMAT neutral snow-forest+desert roads",
+   "series": "",
+   "whyNow": "fresh route (Duku/G318/Tarim all ≤12d); competitor-validated would-you shape",
+   "addedAt": "2026-10-13T12:40:00Z",
+   "addedBy": "yt-cycle-2026-10-13",
+   "status": "covered-2026-10-13",
+   "prevStatus": ""
   }
  ]
 }
