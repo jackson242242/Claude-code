@@ -1,3 +1,12 @@
+## 2026-10-13 post-mortem (baseline = 14d median views of Shorts ≥3d old: 82)
+- 2026-10-12 a dRRCN-BaSMQ | 14v 0L 0C @1d | ×0.17 | LOSER — avoid this shape today | Book "Zhangjiajie" Wrong and You'll Miss the Avatar Pillars | China Tr
+- 2026-10-12 c K7BRh76oNMk | 13v 1L 0C @1d | ×0.16 | LOSER — avoid this shape today | China's 4th Great Ancient City Is 2,300 Years Old — and Nobody Books I
+- 2026-10-11 d Dl84GBedw3E | 12v 0L 0C @2d | ×0.15 | LOSER — avoid this shape today | Would You Drive 446 km Across China's Taklamakan Desert? | China Trave
+- 2026-10-11 c iFdqnONZZHU | 10v 0L 0C @2d | ×0.12 | LOSER — avoid this shape today | China Trains 2026: a Standing Ticket Costs the Same as a Seat | China 
+- 2026-10-11 a _P-HIqOWII0 | 1v 0L 0C @2d | ×0.01 | LOSER — avoid this shape today | China Price Check: $300 Up a Swiss Peak, $49 Up Huangshan | China Trav
+- 2026-10-12 d HGcW5knzBwk | 0v 0L 0C @1d | ×0.00 | LOSER — avoid this shape today | The World's Highest Railway, or the G318 Drive — Which Way to Tibet? |
+- like-rate (fresh Shorts): 2.00% (peers 1-6%)
+
 ## 2026-10-12 post-mortem (baseline = 14d median views of Shorts ≥3d old: 90)
 - 2026-10-10 c o_J5mVd-gHo | 36v 0L 0C @2d | ×0.40 | LOSER — avoid this shape today | Shanghai's Free Water Town Is One Metro Ride Away (Line 17) | China Tr
 - 2026-10-10 a -YedX-34U9k | 12v 0L 0C @2d | ×0.13 | LOSER — avoid this shape today | No Filter: China's Rainbow Mountains Are 24M-Year-Old Rock | China Tra
