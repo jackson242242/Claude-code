@@ -440,7 +440,10 @@ function assTime(t) {
   const c = cs % 100;
   return `${h}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}.${String(c).padStart(2, '0')}`;
 }
-function assEsc(s) { return s.replace(/[{}]/g, '').replace(/\\/g, '⧵'); }
+// Strip whole ASS override blocks first ({\fs13} etc. that leak into the ZH
+// accent line via the SRT line-2 convention), THEN clean any stray braces/
+// backslashes. Without the first pass, "{\fs13}brand" rendered as "⧵fs13brand".
+function assEsc(s) { return s.replace(/\{[^}]*\}/g, '').replace(/[{}]/g, '').replace(/\\/g, '⧵'); }
 function highlightNums(s, base) {
   // Coral pop on numbers/quantities — the 小红书 "数字弹出条" feel. A unit only
   // joins the number when it is a standalone token (so "900 meters" colours "900",

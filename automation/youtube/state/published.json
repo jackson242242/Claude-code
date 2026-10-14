@@ -4456,22 +4456,22 @@
    "videoId": "zmmFvPhcno0",
    "url": "https://www.youtube.com/watch?v=zmmFvPhcno0",
    "pillar": "china-practical",
-   "lane": "pexels-photos site-ID (upload LIVE, scheduled)",
-   "status": "scheduled",
+   "lane": "pexels-photos site-ID (upload LIVE, PUBLISHED 13:00Z)",
+   "status": "public",
    "publishAt": "2026-10-14T13:00:00Z",
    "music": "cinema-orient-01",
    "format": "9x16",
    "hookType": "PRICE-SHOCK",
    "queue": "cpc-danxia-antelope (generated)",
    "playlist": "China Price Check (PLG-JepCwvn-Y) + China Nature 山河地貌 (PLOMaWf-bWTYg)",
-   "note": "Wed Q4 《China Price Check》. Zhangye Danxia 七彩丹霞 ¥108起 ~$15 (Trip.com + Ctrip, 2-src) vs Antelope Canyon guided tour $90-135 (maxtour+taketours) = honest ~7x. PHOTO site-ID only (VIDEO lane fails→Cappadocia/Kazakhstan/Peru); 6/7 zhangye-slug + 1 generic rock macro (no false-site deixis). Hook-type a<->c SWAP: Wed forces slot a=Price Check (logged). comment-seed BLOCKED (no force-ssl)."
+   "note": "Wed Q4 《China Price Check》. Zhangye Danxia 七彩丹霞 ¥108起 ~$15 (Trip.com + Ctrip, 2-src) vs Antelope Canyon guided tour $90-135 (maxtour+taketours) = honest ~7x. PHOTO site-ID only (VIDEO lane fails→Cappadocia/Kazakhstan/Peru); 6/7 zhangye-slug + 1 generic rock macro (no false-site deixis). Hook-type a<->c SWAP: Wed forces slot a=Price Check (logged). comment-seed BLOCKED (no force-ssl). | NOTE: published 13:00Z BEFORE the brand-line fix → carries the same pre-existing '\\fs13' glitch as recent channel videos (10-11..10-13); left live (deleting a published video loses its URL/early signal); clean cross-post master regenerated. Fix applies to c/d (re-uploaded) + all future runs."
   },
   {
    "date": "2026-10-14",
    "slot": "c",
    "title": "In China, 9 of 10 Payments Are by Phone — Your Card May Not Buy Lunch | China Travel Expert",
-   "videoId": "i_JtH04IfRE",
-   "url": "https://www.youtube.com/watch?v=i_JtH04IfRE",
+   "videoId": "8t6OVqG7FfY",
+   "url": "https://www.youtube.com/watch?v=8t6OVqG7FfY",
    "pillar": "china-practical",
    "lane": "pexels-video TYPE-LEVEL (upload LIVE, scheduled)",
    "status": "scheduled",
@@ -4481,14 +4481,14 @@
    "hookType": "STAKES",
    "queue": "china-cashless-foreign-card (generated)",
    "playlist": "China Trip Planner (PLBBCtLmUZCEc)",
-   "note": "STAKES (swapped off slot a). Alipay 55%+WeChat 38% / >94% tx volume (PaymentsJournal+Daxue); foreign cards rarely at POS; fix=bind to Alipay Tour Pass. Official-facts only, no visa/eligibility advice. Generic people-action footage type-level (7/9 people, no site deixis) — lowest-risk lane. comment-seed BLOCKED."
+   "note": "STAKES (swapped off slot a). Alipay 55%+WeChat 38% / >94% tx volume (PaymentsJournal+Daxue); foreign cards rarely at POS; fix=bind to Alipay Tour Pass. Official-facts only, no visa/eligibility advice. Generic people-action footage type-level (7/9 people, no site deixis) — lowest-risk lane. comment-seed BLOCKED. | BRAND-LINE FIX: first upload rendered the cue-1 brand line as leaked '\\fs13...' (pre-existing channel-wide glitch: SRT line-2 → zh slot → assEsc strips {} leaving \\fs13). Patched assemble-video.mjs assEsc to strip {...} override blocks + dropped {\\fs13} from subs; re-rendered; DELETED buggy upload and re-uploaded this clean videoId."
   },
   {
    "date": "2026-10-14",
    "slot": "d",
    "title": "Skip the 200-Person Li River Cruise — Raft the Prettiest Stretch Instead | China Travel Expert",
-   "videoId": "1hqcrx42KVE",
-   "url": "https://www.youtube.com/watch?v=1hqcrx42KVE",
+   "videoId": "SzBIdZb7yL0",
+   "url": "https://www.youtube.com/watch?v=SzBIdZb7yL0",
    "pillar": "china-route",
    "lane": "pexels-photos site-ID (upload LIVE, scheduled)",
    "status": "scheduled",
@@ -4498,7 +4498,7 @@
    "hookType": "DEBATE",
    "queue": "liriver-cruise-vs-raft (generated)",
    "playlist": "China Travel 城市旅行 (PLI6LsqzQ-cjU) + China Nature 山河地貌 (PLOMaWf-bWTYg)",
-   "note": "DEBATE 'skip the famous one' (proven: Yunnan ×1.90, G318 ×1.37). Cruise ¥215-360, 80-200pax vs Yangdi-Xingping raft 'a fraction' (¥20-note=Yellow Cloth Shoal); WanderInChina+travelchinawith.me 2-src. Raft NOT claimed hand-poled bamboo (now 4-pax electric). PHOTO site-ID only (VIDEO→Vietnam/Ha-Long); 7/8 guilin-slug +1 generic raft (no false site). comment-seed BLOCKED."
+   "note": "DEBATE 'skip the famous one' (proven: Yunnan ×1.90, G318 ×1.37). Cruise ¥215-360, 80-200pax vs Yangdi-Xingping raft 'a fraction' (¥20-note=Yellow Cloth Shoal); WanderInChina+travelchinawith.me 2-src. Raft NOT claimed hand-poled bamboo (now 4-pax electric). PHOTO site-ID only (VIDEO→Vietnam/Ha-Long); 7/8 guilin-slug +1 generic raft (no false site). comment-seed BLOCKED. | BRAND-LINE FIX: first upload rendered the cue-1 brand line as leaked '\\fs13...' (pre-existing channel-wide glitch: SRT line-2 → zh slot → assEsc strips {} leaving \\fs13). Patched assemble-video.mjs assEsc to strip {...} override blocks + dropped {\\fs13} from subs; re-rendered; DELETED buggy upload and re-uploaded this clean videoId."
   }
  ]
 }
