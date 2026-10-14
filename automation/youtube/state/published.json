@@ -4448,6 +4448,57 @@
    "queue": "g331-border-road-choice (generated)",
    "playlist": "China Travel 城市旅行 (PLI6LsqzQ-cjU)",
    "note": "CHOICE approachable either-or (frozen east vs desert west). G331 Dandong→Altay ~9,200km (wiki)/9,333km (Xinhua), 2nd-longest national highway; part of planned ~26,000km border loop by 2030. Apolitical scenery framing (no border politics). Footage MAP-FORMAT location-neutral snow-forest+desert roads (0 foreign, NO deixis, disclosed). 2-source (wikipedia + CGTN/Yicai). comment-seed BLOCKED."
+  },
+  {
+   "date": "2026-10-14",
+   "slot": "a",
+   "title": "China Price Check: Antelope Canyon $100, China's Rainbow Hills $15 | China Travel Expert",
+   "videoId": "zmmFvPhcno0",
+   "url": "https://www.youtube.com/watch?v=zmmFvPhcno0",
+   "pillar": "china-practical",
+   "lane": "pexels-photos site-ID (upload LIVE, scheduled)",
+   "status": "scheduled",
+   "publishAt": "2026-10-14T13:00:00Z",
+   "music": "cinema-orient-01",
+   "format": "9x16",
+   "hookType": "PRICE-SHOCK",
+   "queue": "cpc-danxia-antelope (generated)",
+   "playlist": "China Price Check (PLG-JepCwvn-Y) + China Nature 山河地貌 (PLOMaWf-bWTYg)",
+   "note": "Wed Q4 《China Price Check》. Zhangye Danxia 七彩丹霞 ¥108起 ~$15 (Trip.com + Ctrip, 2-src) vs Antelope Canyon guided tour $90-135 (maxtour+taketours) = honest ~7x. PHOTO site-ID only (VIDEO lane fails→Cappadocia/Kazakhstan/Peru); 6/7 zhangye-slug + 1 generic rock macro (no false-site deixis). Hook-type a<->c SWAP: Wed forces slot a=Price Check (logged). comment-seed BLOCKED (no force-ssl)."
+  },
+  {
+   "date": "2026-10-14",
+   "slot": "c",
+   "title": "In China, 9 of 10 Payments Are by Phone — Your Card May Not Buy Lunch | China Travel Expert",
+   "videoId": "i_JtH04IfRE",
+   "url": "https://www.youtube.com/watch?v=i_JtH04IfRE",
+   "pillar": "china-practical",
+   "lane": "pexels-video TYPE-LEVEL (upload LIVE, scheduled)",
+   "status": "scheduled",
+   "publishAt": "2026-10-14T20:00:00Z",
+   "music": "cpop-groove-01",
+   "format": "9x16",
+   "hookType": "STAKES",
+   "queue": "china-cashless-foreign-card (generated)",
+   "playlist": "China Trip Planner (PLBBCtLmUZCEc)",
+   "note": "STAKES (swapped off slot a). Alipay 55%+WeChat 38% / >94% tx volume (PaymentsJournal+Daxue); foreign cards rarely at POS; fix=bind to Alipay Tour Pass. Official-facts only, no visa/eligibility advice. Generic people-action footage type-level (7/9 people, no site deixis) — lowest-risk lane. comment-seed BLOCKED."
+  },
+  {
+   "date": "2026-10-14",
+   "slot": "d",
+   "title": "Skip the 200-Person Li River Cruise — Raft the Prettiest Stretch Instead | China Travel Expert",
+   "videoId": "1hqcrx42KVE",
+   "url": "https://www.youtube.com/watch?v=1hqcrx42KVE",
+   "pillar": "china-route",
+   "lane": "pexels-photos site-ID (upload LIVE, scheduled)",
+   "status": "scheduled",
+   "publishAt": "2026-10-14T23:00:00Z",
+   "music": "guzheng-calm-01",
+   "format": "9x16",
+   "hookType": "DEBATE",
+   "queue": "liriver-cruise-vs-raft (generated)",
+   "playlist": "China Travel 城市旅行 (PLI6LsqzQ-cjU) + China Nature 山河地貌 (PLOMaWf-bWTYg)",
+   "note": "DEBATE 'skip the famous one' (proven: Yunnan ×1.90, G318 ×1.37). Cruise ¥215-360, 80-200pax vs Yangdi-Xingping raft 'a fraction' (¥20-note=Yellow Cloth Shoal); WanderInChina+travelchinawith.me 2-src. Raft NOT claimed hand-poled bamboo (now 4-pax electric). PHOTO site-ID only (VIDEO→Vietnam/Ha-Long); 7/8 guilin-slug +1 generic raft (no false site). comment-seed BLOCKED."
   }
  ]
 }

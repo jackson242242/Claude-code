@@ -1,3 +1,12 @@
+## 2026-10-14 post-mortem (baseline = 14d median views of Shorts ≥3d old: 73)
+- 2026-10-13 a CN0RGve-MrU | 84v 1L 0C @1d | ×1.15 | baseline | China's 71m Buddha Didn't Survive 1,200 Years by Luck | China Travel E
+- 2026-10-12 a dRRCN-BaSMQ | 59v 0L 0C @2d | ×0.81 | baseline | Book "Zhangjiajie" Wrong and You'll Miss the Avatar Pillars | China Tr
+- 2026-10-13 c Ukl3AYeCfEk | 54v 1L 0C @1d | ×0.74 | baseline | Mount Tai: 6,600 Steps in the Dark for a Maybe-Sunrise | China Travel 
+- 2026-10-12 c K7BRh76oNMk | 20v 1L 0C @2d | ×0.27 | LOSER — avoid this shape today | China's 4th Great Ancient City Is 2,300 Years Old — and Nobody Books I
+- 2026-10-13 d RcmtnMVD6Jo | 13v 0L 0C @1d | ×0.18 | LOSER — avoid this shape today | China's 9,200 km Border Road: Frozen East or Desert West? | China Trav
+- 2026-10-12 d HGcW5knzBwk | 5v 0L 0C @2d | ×0.07 | LOSER — avoid this shape today | The World's Highest Railway, or the G318 Drive — Which Way to Tibet? |
+- like-rate (fresh Shorts): 1.28% (peers 1-6%)
+
 ## 2026-10-13 post-mortem (baseline = 14d median views of Shorts ≥3d old: 82)
 - 2026-10-12 a dRRCN-BaSMQ | 14v 0L 0C @1d | ×0.17 | LOSER — avoid this shape today | Book "Zhangjiajie" Wrong and You'll Miss the Avatar Pillars | China Tr
 - 2026-10-12 c K7BRh76oNMk | 13v 1L 0C @1d | ×0.16 | LOSER — avoid this shape today | China's 4th Great Ancient City Is 2,300 Years Old — and Nobody Books I
