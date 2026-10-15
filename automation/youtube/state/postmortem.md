@@ -1,3 +1,12 @@
+## 2026-10-15 post-mortem (baseline = 14d median views of Shorts ≥3d old: 67)
+- 2026-10-14 d SzBIdZb7yL0 | 456v 0L 0C @1d | ×6.81 | WINNER — replicate this hook shape today | Skip the 200-Person Li River Cruise — Raft the Prettiest Stretch Inste
+- 2026-10-13 a CN0RGve-MrU | 86v 1L 0C @2d | ×1.28 | baseline | China's 71m Buddha Didn't Survive 1,200 Years by Luck | China Travel E
+- 2026-10-13 c Ukl3AYeCfEk | 84v 1L 0C @2d | ×1.25 | baseline | Mount Tai: 6,600 Steps in the Dark for a Maybe-Sunrise | China Travel 
+- 2026-10-14 a zmmFvPhcno0 | 30v 0L 0C @1d | ×0.45 | LOSER — avoid this shape today | China Price Check: Antelope Canyon $100, China's Rainbow Hills $15 | C
+- 2026-10-14 c 8t6OVqG7FfY | 28v 0L 0C @1d | ×0.42 | LOSER — avoid this shape today | In China, 9 of 10 Payments Are by Phone — Your Card May Not Buy Lunch 
+- 2026-10-13 d RcmtnMVD6Jo | 20v 0L 0C @2d | ×0.30 | LOSER — avoid this shape today | China's 9,200 km Border Road: Frozen East or Desert West? | China Trav
+- like-rate (fresh Shorts): 0.28% (peers 1-6%)
+
 ## 2026-10-14 post-mortem (baseline = 14d median views of Shorts ≥3d old: 73)
 - 2026-10-13 a CN0RGve-MrU | 84v 1L 0C @1d | ×1.15 | baseline | China's 71m Buddha Didn't Survive 1,200 Years by Luck | China Travel E
 - 2026-10-12 a dRRCN-BaSMQ | 59v 0L 0C @2d | ×0.81 | baseline | Book "Zhangjiajie" Wrong and You'll Miss the Avatar Pillars | China Tr
