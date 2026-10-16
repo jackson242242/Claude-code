@@ -4601,6 +4601,23 @@
    "queue": "generated (nature route)",
    "playlist": "China Travel 城市旅行 (PLI6LsqzQ-cjU) + China Nature 山河地貌 (PLOMaWf-bWTYg)",
    "note": "STAKES per AUTO (seasonal-lockout + altitude = crater-lake ×12 winner shape). Daocheng Yading: golden larch ~2wk late Oct (sichuantravelguide), shuttle base ~3,900m, no private cars, Oct nights 5C to <0 (chinafortravelers). Apolitical. Pivoted from Karakoram/Khunjerab (now YEAR-ROUND Dec-2024 -> seasonal-STAKES false). Siguniang+Sichuan site-ID + western-Sichuan autumn peaks, 0 foreign after re-render dropping Georgia clip; type-level no deixis. comment-seed BLOCKED."
+  },
+  {
+   "date": "2026-10-16",
+   "slot": "L",
+   "title": "Best Time to Visit China in 2026: Month-by-Month Guide | China Travel Expert",
+   "videoId": "Z8_NShpwwZ8",
+   "url": "https://www.youtube.com/watch?v=Z8_NShpwwZ8",
+   "pillar": "china-practical",
+   "lane": "pexels-photos-ffmpeg+elevenlabs-en+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-10-16T15:00:00Z",
+   "music": "underscore-docu-01+02+03 (concatenated bed)",
+   "format": "16x9",
+   "hook": "longform-howto-search-intent",
+   "queue": null,
+   "playlist": "China Travel Guides (PLLlHM4Czghfo)",
+   "note": "Weekly-Fri longform (42d since anchor 09-04, %7=0, week 6). SEARCH-INTENT practical guide (established lane; the §4L even-week 35-50min ambient-doc lane has never been produced and cannot be sourced honestly - Pexels has ~8 China nature VIDEO sites, nowhere near 40min of non-repetitive footage - see RUNLOG LANE note). ~1,350 words / 454s (7:34), ElevenLabs EN documentary VO (Rachel stab0.5), zero Chinese per longform rule. Bed = underscore-docu-01+02+03 concat (not a short loop), --sfx none, 16x9. 30 clips (re-rendered up from the default MAX_CLIPS=10 which was too repetitive, to match the prior longform 10-02-L 24-clip bar); strong China site-ID montage (Great Wall/Zhangjiajie/Guilin-Li River/Jiuzhaigou/Huangshan), 0 foreign, disclosed illustrative/type-level. OpenAI thumbnail (navy + China-red iconographic, 1280x720, 80KB, custom thumb set). Chapters in description. Facts 2-src (chinahighlights/chinavigators/wanderinchina/intotravelchina); 2026 holiday dates flagged confirm-official-State-Council. Upload truncated the description at the 5000-char cap (30-URL footage list) -> re-synced a compact Pexels attribution via videos.update; full per-photo credits in runs/2026-10-16-L/footage-credits.txt. search-compounding; judge monthly not day-1. comment-seed BLOCKED (no force-ssl)."
   }
  ]
 }
