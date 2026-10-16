@@ -1,3 +1,12 @@
+## 2026-10-16 post-mortem (baseline = 14d median views of Shorts ≥3d old: 66)
+- 2026-10-15 a OjUjOUFbAVQ | 798v 4L 0C @1d | ×12.09 | WINNER — replicate this hook shape today | China's Highest Crater Lake Is Clear Only ~50 Days a Year | China Trav
+- 2026-10-14 d SzBIdZb7yL0 | 454v 0L 0C @2d | ×6.88 | WINNER — replicate this hook shape today | Skip the 200-Person Li River Cruise — Raft the Prettiest Stretch Inste
+- 2026-10-15 c s6EuriN5JT4 | 37v 0L 0C @1d | ×0.56 | baseline | A Canal Room in Venice: ~$300. The Same View in China: $30 | China Tra
+- 2026-10-14 a zmmFvPhcno0 | 35v 1L 0C @2d | ×0.53 | baseline | China Price Check: Antelope Canyon $100, China's Rainbow Hills $15 | C
+- 2026-10-14 c 8t6OVqG7FfY | 30v 0L 0C @2d | ×0.45 | LOSER — avoid this shape today | In China, 9 of 10 Payments Are by Phone — Your Card May Not Buy Lunch 
+- 2026-10-15 d yuYt9QXZR64 | 15v 0L 0C @1d | ×0.23 | LOSER — avoid this shape today | Skip Crowded Lijiang — Shaxi's Last Tea Caravan Left in 1949 | China T
+- like-rate (fresh Shorts): 0.37% (peers 1-6%)
+
 ## 2026-10-15 post-mortem (baseline = 14d median views of Shorts ≥3d old: 67)
 - 2026-10-14 d SzBIdZb7yL0 | 456v 0L 0C @1d | ×6.81 | WINNER — replicate this hook shape today | Skip the 200-Person Li River Cruise — Raft the Prettiest Stretch Inste
 - 2026-10-13 a CN0RGve-MrU | 86v 1L 0C @2d | ×1.28 | baseline | China's 71m Buddha Didn't Survive 1,200 Years by Luck | China Travel E
