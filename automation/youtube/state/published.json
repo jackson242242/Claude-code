@@ -1,6 +1,51 @@
 {
  "videos": [
   {
+   "date": "2026-10-17",
+   "slot": "a",
+   "title": "Mount Siguniang Is 6,250 m — and Altitude Hits You Long Before the Top | China Travel Expert",
+   "videoId": null,
+   "url": null,
+   "pillar": "china-nature",
+   "lane": "pexels-ffmpeg (upload blocked this session)",
+   "status": "dry-run",
+   "publishAt": "2026-10-17T13:00:00Z",
+   "music": "guzheng-calm-01",
+   "format": "9x16",
+   "hookType": "STAKES",
+   "note": "Overrun -> intended immediate PUBLIC. youtube-upload action DENIED by session auto-mode permission classifier (Real-World Transactions); NOT posted, package ready for manual upload."
+  },
+  {
+   "date": "2026-10-17",
+   "slot": "c",
+   "title": "A Blue Lagoon Soak: About $90. China's Volcanic Hot Springs: About $12 | China Travel Expert",
+   "videoId": null,
+   "url": null,
+   "pillar": "china-practical",
+   "lane": "pexels-ffmpeg (upload blocked this session)",
+   "status": "dry-run",
+   "publishAt": "2026-10-17T20:00:00Z",
+   "music": "cpop-groove-01",
+   "format": "9x16",
+   "hookType": "PRICE-SHOCK",
+   "note": "youtube-upload action DENIED by session permission classifier; NOT posted, package ready for manual upload."
+  },
+  {
+   "date": "2026-10-17",
+   "slot": "d",
+   "title": "Skip Badaling — Hike 7 km of Wild Great Wall, Jiankou to Mutianyu | China Travel Expert",
+   "videoId": null,
+   "url": null,
+   "pillar": "china-route",
+   "lane": "pexels-ffmpeg (upload blocked this session)",
+   "status": "dry-run",
+   "publishAt": "2026-10-17T23:00:00Z",
+   "music": "oriental-edm-01",
+   "format": "9x16",
+   "hookType": "DEBATE",
+   "note": "youtube-upload action DENIED by session permission classifier; NOT posted, package ready for manual upload."
+  },
+  {
    "date": "2026-09-29",
    "slot": "a",
    "title": "$290 for Switzerland's Peaks or $32 for China's Avatar Mountains | China Travel Expert",
