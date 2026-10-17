@@ -7,6 +7,13 @@
  * honestly (owner: "不tag流行音乐名字").
  *
  * Usage: node scripts/ingest-music.mjs --in <file-or-dir> [--mood upbeat|cinematic|calm|epic]
+ *   [--prefix yal|el|vq|wc] [--source "<credit source>"] [--title "..."] [--artist "..."]
+ *   [--license "..."] [--attribution "..."] [--style <styleCode>] [--bpm N] [--sourceUrl <url>]
+ *
+ * 2026-10-17: also files licensed NON-YAL tracks (ElevenLabs Music generated on the
+ * paid plan, vidIQ-generated, Wikimedia Commons CC0/PD/CC-BY). Pass --prefix and
+ * --source so the manifest credit is honest; --attribution is the exact line a
+ * CC-BY track must carry in every description. Defaults keep the YAL behaviour.
  */
 import { readdir, readFile, writeFile, mkdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
@@ -37,20 +44,25 @@ const results = [];
 for (const f of files) {
   const probe = JSON.parse(run('ffprobe', ['-v', 'error', '-show_entries', 'format=duration:format_tags=title,artist,album', '-of', 'json', f]));
   const tags = probe.format?.tags || {};
-  const title = tags.title || basename(f, extname(f)).replace(/[_-]+/g, ' ').trim();
-  const artist = tags.artist || 'YouTube Audio Library';
+  const title = args.title || tags.title || basename(f, extname(f)).replace(/[_-]+/g, ' ').trim();
+  const artist = args.artist || tags.artist || 'YouTube Audio Library';
+  const prefix = (args.prefix || 'yal').replace(/[^a-z]/g, '') || 'yal';
+  const source = args.source || 'YouTube Audio Library';
   const dur = Number(probe.format?.duration || 0);
   const mood = args.mood || 'mixed';
   const n = String(manifest.tracks.length + results.length + 1).padStart(2, '0');
-  const out = join(MUSIC_DIR, `yal-${slug(title)}-${n}.mp3`);
+  const out = join(MUSIC_DIR, `${prefix}-${slug(args.style || title)}-${n}.mp3`);
   // loudnorm so beds sit consistently under cues; 192k keeps the repo light
   run('ffmpeg', ['-y', '-i', f, '-af', 'loudnorm=I=-16:TP=-1.5:LRA=11', '-b:a', '192k', out]);
-  results.push({ file: out.replace('automation/youtube/', ''), title, artist, mood, durationSec: Math.round(dur), source: 'YouTube Audio Library', addedAt: new Date().toISOString().slice(0, 10) });
+  results.push({ file: out.replace('automation/youtube/', ''), title, artist, mood, durationSec: Math.round(dur), source,
+    ...(args.style ? { style: args.style } : {}), ...(args.bpm ? { bpm: Number(args.bpm) } : {}),
+    ...(args.license ? { license: args.license } : {}), ...(args.attribution ? { attribution: args.attribution } : {}),
+    ...(args.sourceUrl ? { sourceUrl: args.sourceUrl } : {}), addedAt: new Date().toISOString().slice(0, 10) });
   console.log(`+ ${out}  ← "${title}" — ${artist} (${Math.round(dur)}s)`);
 }
 manifest.tracks.push(...results);
 await writeFile(MANIFEST, JSON.stringify(manifest, null, 1));
-console.log(`\nmanifest: ${manifest.tracks.length} owner tracks. Credit line format:\n  🎵 Music: "<title>" — <artist> (YouTube Audio Library)`);
+console.log(`\nmanifest: ${manifest.tracks.length} tracks. Credit line format:\n  🎵 Music: "<title>" — <artist> (<source>)   [+ the track's attribution line when present]`);
 
 function run(bin, a) {
   try { return execFileSync(bin, a, { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 }); }
