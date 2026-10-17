@@ -1,3 +1,13 @@
+## 2026-10-17 post-mortem (baseline = 14d median views of Shorts ≥3d old: 61)
+- 2026-10-15 a OjUjOUFbAVQ | 876v 5L 0C @2d | ×14.36 | WINNER — replicate this hook shape today | China's Highest Crater Lake Is Clear Only ~50 Days a Year | China Trav
+- 2026-10-16 c cbH2DwPJ3gc | 218v 0L 0C @1d | ×3.57 | WINNER — replicate this hook shape today | The $100 Massage That Costs About $20 in China | China Travel Expert
+- 2026-10-16 a PfZGpyjFh3M | 81v 2L 0C @1d | ×1.33 | baseline | Skip Huangshan's Summer Sunrise: Cloud Sea Peaks Nov–May | China Trave
+- 2026-10-15 c s6EuriN5JT4 | 47v 0L 0C @2d | ×0.77 | baseline | A Canal Room in Venice: ~$300. The Same View in China: $30 | China Tra
+- 2026-10-16 d XuGFEubLnUw | 33v 1L 0C @1d | ×0.54 | baseline | China's Last Shangri-La: a 2-Week Gold Window at 3,900 m | China Trave
+- 2026-10-15 d yuYt9QXZR64 | 24v 0L 0C @2d | ×0.39 | LOSER — avoid this shape today | Skip Crowded Lijiang — Shaxi's Last Tea Caravan Left in 1949 | China T
+- 2026-10-16 L Z8_NShpwwZ8 | 10v 0L 0C @1d | ×0.16 | LONGFORM: no distribution (expected on this channel; search-ranking is slow) | Best Time to Visit China in 2026: Month-by-Month Guide | China Travel 
+- like-rate (fresh Shorts): 0.63% (peers 1-6%)
+
 ## 2026-10-16 post-mortem (baseline = 14d median views of Shorts ≥3d old: 66)
 - 2026-10-15 a OjUjOUFbAVQ | 798v 4L 0C @1d | ×12.09 | WINNER — replicate this hook shape today | China's Highest Crater Lake Is Clear Only ~50 Days a Year | China Trav
 - 2026-10-14 d SzBIdZb7yL0 | 454v 0L 0C @2d | ×6.88 | WINNER — replicate this hook shape today | Skip the 200-Person Li River Cruise — Raft the Prettiest Stretch Inste
