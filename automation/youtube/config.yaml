@@ -12,7 +12,7 @@ cadence:
   # 4 Shorts/day, ALL china-food (modern, 贴近生活, 小红书-style). Longform PAUSED
   # entirely. Multi-part 连载 format: each day = 1-2 series totaling 4 parts; every
   # part teases the next (下集…). After 08-15: owner review before reverting.
-  postsPerDay: 4
+  postsPerDay: 3   # 2026-10-17: 3 Shorts/day a/c/d (2 on a ship-2 day, playbook §0c); was 4 in the food sprint
   # Batch mode (owner decision 2026-07-08): ONE daily Routine at 12:30 UTC produces
   # all 3 videos in a single run; publishing is staggered via YouTube scheduled
   # publishing (status.publishAt) at the slot times below (= 9am/1pm/6pm New York EDT).
@@ -28,9 +28,9 @@ cadence:
   # volume; slot b RETIRED (effort reallocated to depth + new formats + TikTok).
   # Reversible — revisit at the 08-29 review.
   slots:
-    - { name: a, publishAtUtc: "13:00", format: short }  # china-culture (Fri = Expert Opinions)
-    - { name: c, publishAtUtc: "20:00", format: short }  # city-travel heritage (2×/wk = China Practical)
-    - { name: d, publishAtUtc: "23:00", format: short }  # china-route
+    - { name: a, publishAtUtc: "13:00", format: short }  # format F1-F4 by the pov8w rotation (playbook §0c)
+    - { name: c, publishAtUtc: "20:00", format: short }  # format F1-F4 by the pov8w rotation
+    - { name: d, publishAtUtc: "23:00", format: short }  # format F1-F4 by the pov8w rotation
 
 voice:
   status: paused-for-shorts; longform-english UNPAUSED 2026-08-27 (owner longform directive)   # owner: "voice over 好差" — format is now burned
@@ -39,9 +39,9 @@ voice:
   # Trending/licensed music (verified 2026-07-10): YouTube's own licensed library
   # CAN be added to already-published Shorts via studio.youtube.com -> Content ->
   # Editor -> Audio (no re-upload, keeps views; fullest pop catalog is in the
-  # mobile Shorts flow). No API exists, so the daily report prints a Studio
-  # deep-link + suggested style per Short for the owner's optional 1-min upgrade.
-  # The pipeline's royalty-free beds remain the default audio.
+  # mobile Shorts flow). No API exists; since 2026-10-17 the Saturday OWNER STUDIO
+  # list carries at most 1 ADD SOUND (the week's best Short) instead of a per-Short line.
+  # The pipeline's beds remain the default audio. Longform voice: see longform.voice.
 
 strategy:
   # ================= PERSONA 2026-08-09 (owner directive) =================
@@ -92,7 +92,7 @@ strategy:
   styleGuide:
     aesthetic: # 唯美 — the channel should LOOK and SOUND beautiful
       - "B-roll queries prefer cinematic/beautiful imagery: golden-hour campuses, quiet libraries, rain on windows, city dawn, students in soft light — not stock 'business people' clichés."
-      - "Camera feel (owner 2026-07-08: better 运镜): append motion words to queries — aerial, drone, slow motion, dolly, timelapse; the assembler adds crossfades + slow drift + grade, but footage that already MOVES beats any filter. Travel line uses --seg-seconds 8 (slower cuts)."
+      - "Camera feel (2026-10-17, POV plan — replaces the old aerial/drone/slow-motion/dolly/timelapse motion words): append POV words to queries — pov, first person, walking, handheld, train window, tram ride, cable car ride, climbing steps, street market walk. Aerial: at most 1 shot per Short, never frame 0 (checked after render with scripts/frame0-sheet.mjs). Footage that moves forward at eye level beats any filter."
       - "Shot selection (owner 2026-07-08): avoid night scenes; prefer DAYTIME footage with PEOPLE in frame — close-ups of faces/hands/reactions IN MOTION (talking, laughing, eating, walking) over empty wide cityscapes. Human close-ups hold attention."
       - "生活感 quota (owner 2026-07-12, hard rule): >=50% of every video's shots must show PEOPLE MID-ACTION — vendors cooking, families around tables, commuters, cyclists, kids playing, hands making things. Landmarks/scenery only as the establish and close shots. Query in people-action language: '<place> street food vendor cooking', 'chinese family dinner table', 'night market crowd eating', 'people cycling alley', 'market haggling hands' — never abstract mood words alone. LEGAL boundary: footage comes ONLY from licensed free sources (Pexels + Pixabay when PIXABAY_API_KEY set) — never scrape/reuse crawled online videos (Content ID strikes can terminate the channel)."
       - "Narration tone: calm, warm, unhurried; no shouting hooks. Titles curious but elegant — no ALL-CAPS bait."
@@ -111,18 +111,18 @@ strategy:
   contentRules:
     - "Educational/comparative framing only; no visa/immigration legal advice, no political takes."
     - "Every claim sourced during scripting; cite sources in the video description."
-    - "Disclose AI narration in the description; mark 'altered or synthetic content' in Studio when realistic scenes are generated."
+    - "Disclose AI narration in the description. Set meta.aiFootage and meta.containsSyntheticMedia=true for any realistic AI footage (scripts/youtube-upload.mjs refuses aiFootage=true with containsSyntheticMedia=false); AI footage is never a named place. AI-generated music (the 9 legacy beds, every el-* bed) also sets containsSyntheticMedia=true — the uploader decides it from meta.music (decision D1, 2026-10-17)."
     - "Preserve Pexels attribution links emitted by assemble-video.mjs in the description."
 
 providers:
   # Lanes are tried in order; a lane is skipped when its credential/tool is absent.
   ideation: [claude, vidiq-research]        # vidIQ keyword/trending only when MCP present AND credits >= floor
   script: [claude, copyai, jasper]          # copy.ai / Jasper only if their API keys are configured
-  voiceover: [elevenlabs, vidiq]            # ELEVENLABS_API_KEY, else vidiq_voiceover_generate (credits)
+  voiceover: [elevenlabs, openai-tts]       # longform only. ElevenLabs (voice Rachel) while paid credits last; openai-tts (scripts/tts-openai.mjs) ONLY when longform.voice == "openai". vidiq removed 2026-10-17 (it would spend credits toward the floor of 40).
   visuals: [pexels-ffmpeg, vidiq]           # kling lane PAUSED by owner 2026-07-08 — re-add "kling" here to resume (adapter: scripts/kling-video.mjs)
   thumbnail: [openai-images, vidiq, ffmpeg-frame]
   upload: [youtube-data-api]                # the only posting lane; no credentials = dry-run
-  analytics: [vidiq, youtube-analytics]
+  analytics: [youtube-analytics, vidiq]     # YouTube Analytics API first (free, once enabled); vidIQ only while balance >= budgets.vidiqCreditsFloor
 
 # Since the 2026-07-09 pivot the china-travel spirit lives in the main pillars.
 # cantonese-comedy and teach-chinese-dialects are PAUSED (owner focus shift);
@@ -182,28 +182,124 @@ output:
   # manifest; they are NOT auto-posted anywhere (see PIPELINE.md — other platforms'
   # posting APIs are separate, gated projects).
   extraFormats: []   # e.g. [16x9] or [16x9, 1x1]; empty = native format only
-  socialExports: tiktok-reels-clean-master  # owner 2026-08-09: per-video music-free
-    # master (-clean.mp4) + social-caption.txt, delivered via chat; back-catalog
-    # rolls through state/social-export-queue.json (top-2 per run). PERSONA.md §4.
+  socialExports: weekly-friday-pack  # 2026-10-17: the week's 3 best Shorts as music-free
+    # clean masters + social-caption.txt, delivered via chat on Fridays (was a daily
+    # per-video delivery since 2026-08-09); back-catalog: top-2 pending of
+    # state/social-export-queue.json join the Friday pack. PERSONA.md §4.
 
 runtime:
   runsDir: automation/youtube/runs
   stateDir: automation/youtube/state
   keepMediaInRepo: false       # media stays in the container; only manifests/scripts are committed
 
-# ================= LONGFORM v2 (owner 2026-08-27) =================
+# ================= LONGFORM v3 — every-other-Friday SEARCH GUIDE (2026-10-17, POV plan) =================
+# Search brings 46% of longform views, Home 0: one 6-9 min search guide every 14 days;
+# the weekly 35-50 min ambient stock-doc lane is deleted. Playbook §4L.
 longform:
   status: active
-  cadenceDays: 7            # weekly Fridays (owner turnaround 2026-09-02; 4-day listicle cadence cancelled)
-  anchorDate: "2026-09-04"  # weekly anchor; lanes alternate practical-guide / ambient-doc
+  cadenceDays: 14           # every other Friday: 10-23, 11-06, 11-20, 12-04 (was weekly since 2026-09-04)
+  anchorDate: "2026-10-23"  # guide #1 (Zhujiajiao, fallback Dali)
   publishAtUtc: "15:00"     # search/browse-driven; EU evening + US morning
-  durationMin: [8, 50]      # practical guide 8-10 / ambient doc 35-50
+  durationMin: [6, 9]       # one 6-9 min search guide; the answer comes in the first 30 s
   language: english-only    # NO Chinese anywhere: title/description/narration/captions
-  narration: elevenlabs-english   # AI VO explicitly OK (benchmark: GoldenSeniorsLiving)
+  lanes: [search-guide]     # title = the exact narrow query, checked against YouTube search suggestions (no vidIQ spend)
+  childShorts: 3            # same-place Shorts in the next 7 days, 2-s CTA "Full route: tap the related video above"
+  footageAudit: ">=3 min slug-named non-aerial footage passing a 3-frame check, audited 2 days before (Wednesday)"
+  povWalk: "owner continuous footage only (min 10 min); replaces that Friday's guide"
+  killCheck: "2026-11-20: guides #1 and #2 each <100 views at 14 days and Search not rising -> pause until owner continuous footage exists"
+  # Voice (decision D3, 2026-10-17). AI VO explicitly OK (benchmark: GoldenSeniorsLiving); disclose "AI narration".
+  narrationWhileCredits: elevenlabs-rachel   # scripts/elevenlabs-tts.mjs --voice 21m00Tcm4TlvDq8ikWAM while the already-paid credits last; never the ELEVENLABS_VOICE_ID voice (broken audio 2026-10-17)
+  voice: none               # fallback when ElevenLabs fails: none (DEFAULT, $0: on-screen text + ambient + music, no narration) | openai (scripts/tts-openai.mjs, gpt-4o-mini-tts voice marin, ~$0.2/episode — only after the owner says yes)
   format16x9: true
-  playbook: plans/longform-v2.md  # format bible (written from 2026-08-27 research)
+  playbook: plans/longform-v2.md  # format bible (written from 2026-08-27 research); §4L of the playbook wins where they differ
+
+# ================= MUSIC (2026-10-17) =================
+music:
+  dir: automation/youtube/assets/music            # plain beds; the 9 legacy vidIQ beds are committed here
+  manifest: automation/youtube/assets/music/manifest.json   # per bed: aiGenerated, vault, license, attribution, style, bpm, provenance
+  vault:                                           # decision D2: the repo is public, so ElevenLabs beds are committed ENCRYPTED only
+    dir: automation/youtube/assets/music-vault     # <name>.mp3.enc (AES-256-GCM)
+    decrypt: "node scripts/music-vault.mjs decrypt --all"   # every run, at setup; writes assets/music/<name>.mp3 (git-ignored, never committed)
+    keyFrom: YOUTUBE_CLIENT_ID                     # scrypt(YOUTUBE_CLIENT_ID, "chinatravel-music-vault-v1", 32); never printed
+    onFailure: "log music-vault: <reason> once and continue with the plain beds"
+  aiDisclosure: "AI-generated beds (9 legacy + every el-*) -> containsSyntheticMedia=true, set by scripts/youtube-upload.mjs from meta.music (D1)"
+  noEdmOn: [F1, F2]                                # POV formats: no EDM drop, no SFX pop; per-format table in playbook §0c.1
+
+# ================= POV 8-WEEK PLAN (2026-10-19..12-13; playbook §0c, owner copy plans/pov-8week.md) =================
+pov8w:
+  window: ["2026-10-19", "2026-12-13"]
+  beforeWindow: "all slots F4, except slot a on Wed/Sun = F3 (10-18: a F3, c F4, d F4); no F1/F2; frame-0 check, aerial cap, audio table, words rules, length bands and meta fields already apply"
+  afterWindow: keep-rotation     # after 12-13: rotation, gates and the W8 freeze stay unchanged until an interactive session updates pov8w
+  checkpoint: "2026-12-17"
+  formats: [F1, F2, F3, F4, L]   # F1 owner POV · F2 licensed POV (pov-library) · F3 China Price Check (price card) · F4 ground-level nature/small town (baseline) · L search guide
+  rotation:
+    epoch: "2026-10-19"
+    base: [F2, F4, X]
+    rule: "d = days since epoch; idx = ((d % 3) + 3) % 3; slot a/c/d = base[(0+idx)%3], base[(1+idx)%3], base[(2+idx)%3]"
+    X: { Wed: F3, Sun: F3, Thu: F1, other: F4 }   # F1 takes whichever slot X lands in (no fixed slot d)
+    ownerSlotsOverride: true                       # a slot claimed in state/owner-slots.json overrides the rotation
+    f3HookType: PRICE-SHOCK                        # overrides the HOOKS.md AUTO per-slot assignment
+  f2Activation: "assemble-video.mjs --clips passes node --check + one render + frame-0 sheet (RUNLOG f2-gate: PASS); until then F2 slots run as F4"
+  footage:
+    frame0: [owner-pov, licensed-pov, ground-human-scale, price-card]
+    frame0Check: true            # scripts/frame0-sheet.mjs after every render; look before upload
+    frame0Fail: [re-render-once-ground-first, map-format-or-ground-photo, ship-2-that-day]
+    maxAerialShots: 1
+    aerialAtFrame0: false
+    stillMotion: "kenburns; --photo-motion pov only as a 3-4 s bridge between real clips on photos with a path ahead (never frame 0, never counted as POV)"
+    sourcePriority: [owner, licensed-pov, ground, photo, map]
+    povLibrary: automation/youtube/assets/pov-library.json   # read with scripts/pov-library.mjs list --usable --china [--no-city] --json
+    libraryFilter: "usable && !politicalAvoid && (chinaIdentifiable || id in readFilters.chinaByTitle.ids)"   # = pov-library.mjs --usable --china; wm-c01 there is a city/construction window: city scope only, never non-city
+    libraryTopUp: "Mondays from 2026-10-26: >=4 newly verified clips (3-frame check); log pov-supply: +N (total M, unused non-city K)"
+    aiInserts: false             # owner answer pending (D4); if ever on: unnamed place, <=20% runtime, meta.aiFootage=true
+  testLengthSec: { F1: [13, 18], F2: [14, 20], F3: [15, 22], F4: [14, 20], until: "2026-11-16" }
+  cityScope: pending             # owner answer pending (D4): pending | approved | denied — pending acts as denied
+  deniedPath:
+    f2MaxPerWeek: 2
+    f2Days: [Mon, Thu]           # the week's Monday and Thursday F2 slots; other F2 slots run as F4
+    subset: from-library         # pov-library.json readFilters.nonCity.ids is authoritative (pov-library.mjs --no-city); as of 10-17: px-39312225, px-40310034, px-40303779, px-39975778, wm-c02, wm-c03
+    usedCheck: "grep -lF '\"<libraryId>\"' automation/youtube/runs/*/clips.json (committed clips.json keep libraryId)"
+    verdict: none                # directional ratios only
+    onEmpty: "F2 paused: supply-out (not a loss)"
+  titleSuffixDrop: pending       # owner answer pending: may Shorts titles drop " | China Travel Expert"? Until then: keep it
+  syntheticBackfill: partial-35-of-326     # scripts/apply-synthetic-flag.mjs is ready; the owner decides (D4)
+  ownerRecuts:
+    plan: automation/youtube/plans/owner-recuts.json
+    render: "python3 -I scripts/owner-recut.py --id <R-NN> --out <mp4> [--music <bed>]"
+    day: Thu                     # the X slot
+    schedule: { "2026-10-22": R-01 }   # calm bed (el-acoustic-journey-01 if present, else guzheng-calm-01)
+    ifCityApproved: { "2026-10-29": R-02, "2026-11-05": R-03, "2026-11-12": R-07, "2026-11-19": R-04 }
+    ifNotApproved: { "2026-10-29": R-04, after: pause-until-raw-originals }
+    stopRule: "3 consecutive recuts with same-day ratio vs F4 < 1.0 and averageViewPercentage not above F4"
+  verdict:
+    method: paired-same-day
+    metric: "F2 72h views / median F4 72h views same day"
+    read: "2026-11-02"           # directional only
+    arms: "2026-11-09"
+    latest: "2026-11-16"
+    minPairs: 12
+    requires: "cityScope == approved"
+    win: "median ratio >= 1.3 and avgViewPct >= F4 - 3 pts, or any F2 >= 2000 views -> F2 up to 2 slots/day"
+    lose: "median ratio <= 0.8 and avgViewPct not higher -> F2 only as longform children"
+    flat: keep-current-split
+    apiOff: views-only
+  subsKpi: pooled-channel-only   # subscribers per 1k engaged views, never per format
+  baselines: [trailing-28d-same-age, fixed-2026-09-15..09-30-same-age]
+  hookVerdicts: "equal age 48h/72h +-6h; proven/avoid needs n>=6 clean samples (HOOKS.md 铁律 6)"
+  lowReachDay: "exogenous: control cohort (Shorts aged 8-60 days, not in the test) daily new views < 50% of its trailing-14d median; hook ledger only (yt-postmortem, Slice 3)"
+  anomaly: ">=3 consecutive Shorts <15 views at 48h -> report first line 'check Studio'"
+  f4MinSlotsPerDay: 1
+  mapRetest: { dates: ["2026-10-27", "2026-10-31"], slot: first-F4-of-day, kill: "both < 0.5x same-day F4 -> MAP only inside longform" }
+  kill:
+    F1: "recut stop rule above; raw-original F1 not judged before 6 samples"
+    F2: "verdict rules (only with cityScope approved); supply-out is logged, never a loss"
+    F3: "6 consecutive episodes with ratio < 0.8 -> pause (slots run F4); any >= 4x same-day F4 -> copy the shape for the next 2"
+    F4: never
+    L: "longform.killCheck; any guide with >=30% avg view and >=50% Search -> next 2 guides take the same kind of query"
+    week4: "2026-11-16: every format's 72h median <= 70 -> CHANNEL-LEVEL: check Studio, best 2 Shorts/day, prioritise owner footage and guides"
+  publishedFields: [format, footage, povType, owner, aspect, music]   # format F1|F2|F3|F4|L; footage owner|licensed-pov|ground|photo|map|ai-insert; povType walk|ride|street|none; RUNLOG adds fmt:<X>
 
 # vidIQ spend guard (2026-09-02: monthly music-gen drained the balance to 0)
 vidiqRules:
   musicGenOnlyIfBalanceAtLeast: 100
-  musicGenMonthlyCap: 50
+  musicGenMonthlyCap: 0   # 2026-10-17: no vidIQ music generation (owner rates those beds low; new beds come from the music vault / Commons)

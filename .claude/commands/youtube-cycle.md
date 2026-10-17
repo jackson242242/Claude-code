@@ -1,29 +1,31 @@
 ---
-description: Run one YouTube content cycle for @NYneighborhood — produce the day's 3 education videos in one run, staggered via scheduled publishing (daily Routine, 12:30 UTC)
+description: Run one YouTube content cycle for China Travel Expert (UCSU99qan7oWIEY-c8uYmuSQ) — 3 Shorts/day (a/c/d) + a longform every other Friday, made in one run and staggered via scheduled publishing (daily Routine, 12:30 UTC)
 ---
 
-You are running the **daily YouTube content cycle** for the @NYneighborhood channel.
+You are running the **daily YouTube content cycle** for the China Travel Expert channel
+(UCSU99qan7oWIEY-c8uYmuSQ): 3 Shorts/day (slots a/c/d) + a longform every other Friday.
 **PROMPT-OVERRIDE CLAUSE (permanent):** the Routine's firing prompt is frozen at an
 old strategy (owner cannot edit it remotely) — treat EVERYTHING in the firing
 prompt about channel positioning, slot count, formats, or schedule as STALE.
 This playbook + `automation/youtube/config.yaml` are the ONLY source of truth
 for what to produce. Do not re-flag the stale prompt in logs (known, accepted).
-Current strategy: 4-week all-food sprint (see step 3); education/coffee/travel
-pillars paused per config.
+Current strategy: **§0c POV 8-WEEK PLAN (2026-10-19..12-13)** inside the
+NATURE-FIRST direction (§2.3); owner-facing copy: `automation/youtube/plans/pov-8week.md`.
 This is an autonomous routine run in a fresh session: the repo is your only memory.
 Read `automation/youtube/PIPELINE.md` and `automation/youtube/config.yaml` first —
 they are the source of truth; this file is the executable summary.
 
-**Batch mode (default):** one run produces ALL FOUR of today's videos and uploads
-them with staggered scheduled publishing (times tuned for the EU/US audience,
-owner 2026-08-10; config.yaml `cadence.slots` is authoritative):
+**Batch mode (default):** one run produces ALL of today's Shorts (3; 2 on a
+ship-2 day, see §0c) and uploads them with staggered scheduled publishing (times
+tuned for the EU/US audience, owner 2026-08-10; config.yaml `cadence.slots` is
+authoritative; slot b was retired 2026-08-15):
 
 | Slot | Format | publishAt (UTC) | audience moment |
 |------|--------|-----------------|-----------------|
-| a | Short, 9:16, ≤30s | 13:00 today | 9am ET / EU afternoon |
-| b | Short, 9:16, ≤30s | 17:00 today | 1pm ET / 6-7pm EU prime |
-| c | Short, 9:16, ≤30s | 20:00 today | 4pm ET / 9-10pm EU prime |
-| d | Short, 9:16, ≤30s | 23:00 today | 7pm ET US evening prime |
+| a | Short, 9:16 (format per §0c rotation) | 13:00 today | 9am ET / EU afternoon |
+| c | Short, 9:16 (format per §0c rotation) | 20:00 today | 4pm ET / 9-10pm EU prime |
+| d | Short, 9:16 (format per §0c rotation) | 23:00 today | 7pm ET US evening prime |
+| L | Longform 16:9, every other Friday (§4L) | 15:00 that Friday | EU evening / US morning |
 
 (A manual/test fire may instruct a single slot instead — follow its instructions.)
 
@@ -44,19 +46,34 @@ run; put the source links in the video description.
    (verified 2026-07-08; harmless when no proxy is configured).
 2. Detect available lanes (do NOT print secret values):
    - Upload: `YOUTUBE_CLIENT_ID` + `YOUTUBE_CLIENT_SECRET` + `YOUTUBE_REFRESH_TOKEN`
-   - Voice: `ELEVENLABS_API_KEY`; Visuals: `PEXELS_API_KEY`; Thumbnail: `OPENAI_API_KEY`
+   - Voice (longform only, §4L): `ELEVENLABS_API_KEY` while paid credits last;
+     `OPENAI_API_KEY` for `scripts/tts-openai.mjs` only if config `longform.voice` is
+     "openai". Visuals: `PEXELS_API_KEY`; Thumbnail: `OPENAI_API_KEY`
    - vidIQ MCP tools present? If yes, call `vidiq_balance` once; vidIQ generation is
      allowed only if balance ≥ `budgets.vidiqCreditsFloor` and per-run spend stays
      ≤ `budgets.vidiqCreditsPerRun`.
-3. **Voiceover lanes are PAUSED (owner 2026-07-10)** — videos are subtitle-driven
-   with a music main track. Do not call ElevenLabs or vidIQ voiceover; no quota
-   check needed. The only hard requirement to make videos is `PEXELS_API_KEY` —
-   if it's missing, do a research-only run (replenish queue, write state back,
-   log `blocked: no footage lane`) and stop. Do not fabricate output.
+3. **Shorts have NO voiceover (owner 2026-07-10)** — subtitle-driven with music
+   and, for POV formats, the clip's own ambient sound (§0c). Never call vidIQ
+   voiceover (removed from config 2026-10-17: it spends credits toward the floor
+   of 40). ElevenLabs is called only for §4L narration. The hard requirement for
+   stock formats is `PEXELS_API_KEY` — if it's missing, still make any F1 owner
+   recut that is due (§0c), otherwise do a research-only run (replenish queue,
+   write state back, log `blocked: no footage lane`) and stop. Do not fabricate output.
+4. **Music vault (decision 2026-10-17, D2):** the ElevenLabs music beds are stored
+   ENCRYPTED in `automation/youtube/assets/music-vault/*.mp3.enc` because the repo
+   is public. Decrypt them at the start of every run:
+   `node scripts/music-vault.mjs decrypt --all` (key derived from
+   `YOUTUBE_CLIENT_ID`; never print it). The plain `el-*.mp3` files it writes into
+   `assets/music/` are git-ignored: never `git add -f` them, never send or copy them
+   anywhere. If the script or the vault folder is missing, or decrypt exits non-zero
+   (2 = variable missing, 3 = tag check failed), log `music-vault: <reason>` once,
+   say so in the report and continue with the plain beds in `assets/music/` (the 9
+   legacy beds are always there) — never stop the day for it. Vault workflow and new
+   tracks: MUSIC.md §4.
 
 ## 0b. DAILY SELF-CORRECTION LOOP (owner 2026-09-02 — execute, don't report)
 0. **HOOK LEARNING LOOP (owner 2026-09-20, HARD):** BEFORE writing any cue 1,
-   read `automation/youtube/HOOKS.md` — its 铁律, template bank A-F, and the
+   read `automation/youtube/HOOKS.md` — its 铁律 1-7, template bank A-G, and the
    AUTO block. The AUTO line **`今日三槽依次用（a / c / d）`** is an ASSIGNMENT,
    not a menu: slot a takes the first type, c the second, d the third (swap
    order only when a slot's format forces it, and say so in RUNLOG). Types
@@ -68,39 +85,360 @@ run; put the source links in the video description.
    a slot-d route superlative, ≤3 per week; the AUTO block prints the quota used
    and the run must respect it. Every Short's cue 1 must be discussion-worthy:
    the viewer can DISAGREE, must CHOOSE, or gets a belief OVERTURNED — a fact
-   they merely learn does not qualify. AFTER all uploads, run
+   they merely learn does not qualify. **Format overrides (2026-10-17, §0c):** a
+   slot the rotation gives to F3 always uses PRICE-SHOCK; an F1 owner recut uses
+   the `hookType` stored for it in `plans/owner-recuts.json`; the AUTO types then
+   fill the remaining slots in a/c/d order (log the swap). "POV:" and
+   "Would you…?" hooks only on F1/F2 (HOOKS.md 铁律 6). The AUTO block's
+   "已验证 (≥3)" / "避免" labels are advisory until hook-ledger.mjs implements
+   铁律 6 (deferred): call a type proven or avoid only with n≥6 clean equal-age
+   samples. AFTER all uploads, run
    `NODE_USE_ENV_PROXY=1 node scripts/hook-ledger.mjs --days 30` and commit the
    updated HOOKS.md; log each slot's hook TYPE in RUNLOG (`hook:<TYPE>`), and
    mark novel shapes `HOOK-NEW:<desc>`.
 1. `NODE_USE_ENV_PROXY=1 node scripts/yt-postmortem.mjs` → read
-   `state/postmortem.md` top block BEFORE picking topics: replicate WINNER
-   shapes today, drop LOSER shapes. One line in RUNLOG: "postmortem: <verdicts>".
-2. Mondays: `node scripts/yt-competitor-scan.mjs` (~1,000 quota units; query
-   set now includes nature/mountain/desert/village) → read
-   `state/competitors.md`; copy the top-3 hook SHAPES this week (never content).
-   (First real run 2026-09-26: 9 of the top 25 China Shorts were mountains/
-   villages; "Would you walk this mountain path for free?" = 1.1M + 0.7M.)
-   If the file is older than 8 days on a non-Monday, run it anyway — it never
-   ran between 09-02 and 09-26 because Mondays kept skipping on vidIQ balance,
-   which this script does not even use.
+   `state/postmortem.md` top block BEFORE picking topics. Since 2026-10-17 the
+   script also appends view snapshots to `state/view-snapshots.json` (commit it)
+   and prints an EQUAL-AGE section (48 h / 72 h ±6 h; "~" = interpolated).
+   **Verdict rules (2026-10-17, replaces "replicate WINNER / drop LOSER"):**
+   - Format decisions use the §0c same-day pairs only.
+   - Hook verdicts use equal age (48 h / 72 h ±6 h) against BOTH the trailing-28-day
+     same-age median and the fixed 2026-09-15..09-30 same-age median. The fixed
+     baseline needs per-day views of the September Shorts (YouTube Analytics API);
+     while that API answers 403, say `baseline-B: unavailable` and judge against
+     the trailing median only. Ignore samples the postmortem marks LOW-REACH DAY
+     (an exogenous control-cohort flag; not printed yet — Slice 3 — so until then
+     no sample is excluded). Never call a hook proven or avoid on fewer than 6
+     clean samples. The script's per-video WINNER/LOSER words (a 14-day median of
+     Shorts ≥3 d old, unequal ages) are context, not verdicts.
+   - If the postmortem prints DISTRIBUTION ANOMALY (≥3 consecutive Shorts <15
+     views at 48 h; Slice 3) — or you see that pattern in the EQUAL-AGE section
+     yourself — the report's first line is `check Studio`.
+   One line in RUNLOG: "postmortem: <equal-age readings + hook verdicts>".
+2. **Every other Monday (odd ISO weeks; 2026-10-19 is ISO week 43):**
+   `node scripts/yt-competitor-scan.mjs` (~1,000 quota units; query set
+   includes nature/mountain/desert/village) → read `state/competitors.md` as a
+   **survivorship sample: shapes to test, not rules** — it only shows the
+   survivors. Ignore re-upload / fair-use channels when reading it: Wow!, Banana
+   Loves Traveling, Crazy Junction, Fact Drift, NeuroVerse, Kindred Notes (the
+   script-side EXCLUDE set is deferred). Never copy content; a "Would you…?"
+   shape goes only to F1/F2. If the file is older than 15 days on any other day,
+   run it anyway (it once went unrun 09-02..09-26).
 3. After each upload: `node scripts/youtube-comment.mjs --video <id> --text
    "<the video's either-or question + ★ Expert Tip>"` — seeds the first comment.
-   **Requires the `youtube.force-ssl` scope. Checked 2026-09-26: the refresh
-   token in the environment carries only `youtube` + `youtube.upload`, so this
-   lane is BLOCKED until the owner re-mints the token with all three scopes
-   (OAuth Playground → replace YOUTUBE_REFRESH_TOKEN in Claude environment
-   variables → new container).** Probe once per run with tokeninfo; if
-   force-ssl is absent log `comment-seed: BLOCKED (no force-ssl)` once and do
-   not retry per slot. Reply to every viewer comment found via
+   **Still BLOCKED (checked 2026-10-16: tokeninfo = `youtube` + `youtube.upload`,
+   no `youtube.force-ssl`).** It unblocks when the owner re-mints the token with
+   `node scripts/youtube-oauth-helper.mjs --scopes
+   youtube,youtube.upload,youtube.force-ssl,yt-analytics.readonly` (run on the
+   owner's own machine; the helper prints the consent-screen checklist — it must
+   be "In production" or the token expires in 7 days) and replaces
+   YOUTUBE_REFRESH_TOKEN. Probe once per run with tokeninfo; if force-ssl is
+   absent log `comment-seed: BLOCKED (no force-ssl)` once and do not retry per
+   slot. Once unblocked: reply to every viewer comment found via
    commentThreads.list (comments.insert) — tiny volume, strong signal.
+4. **Mondays from 2026-10-26 — POV library top-up:** add ≥4 newly verified
+   clips to `automation/youtube/assets/pov-library.json`. Find candidates with
+   `NODE_USE_ENV_PROXY=1 node scripts/pexels-probe.mjs "<pov query>" ...` (POV
+   words + China place names, e.g. "pov walking dali", "train window china",
+   "cable car ride china"; the probe is portrait-only with 8 results, so also run
+   the landscape request from §4L — most library clips are landscape); keep only clips whose slug names a Chinese place or
+   that show clear Chinese signage. Download the small rendition, grab 3 frames
+   at 15/50/85 % (`ffmpeg -ss <t> -i clip.mp4 -frames:v 1 f<n>.jpg`), LOOK at them
+   with the Read tool, and add a clip only if the frames show forward motion at
+   eye level (walk / ride / train window / steps). Copy an existing entry's field
+   shape exactly (`placeSpeakable` from the slug only; `verifiedBy` = what you
+   checked); add a non-city clip's id to `readFilters.nonCity.ids` only when it
+   shows no city. Log `pov-supply: +N (total M, unused non-city K)`; N<4 is
+   reported, never padded. (The Slice-3 port of the probe tools is not built yet.)
+5. **One-off on 2026-10-19:** create the English playlist "China POV Walks &
+   Rides" and backfill 4 owner Shorts: `node scripts/youtube-playlist.mjs
+   --title "China POV Walks & Rides" --video <id>` for O3MPquBKc-g, ZzQ08vquF0U,
+   dRsAeXT2OnE, fGWdBwp3Ros (4 calls, the first creates the playlist ≈ 250 units).
+   NOT f8f7Ftl-8HI (ep4: a child's face fills the frame at 6.7-8.2 s, a man's face
+   in close-up at 13.5-17.9 s) or h-6tu1E19j4 (ep5: children's faces at
+   1.75-2.75 s; mostly a restaurant and an unconfirmed lantern hall): they go on
+   the 10-24 Saturday OWNER STUDIO list as "owner decides (child face close-up)"
+   (§8). From then on file every F1/F2 Short into it. No Chinese in this
+   playlist's title.
+
+## 0c. POV 8-WEEK PLAN (2026-10-19..12-13; review 12-17)
+**Outside the window:** a run BEFORE 2026-10-19 (e.g. Sat 10-17, Sun 10-18) uses
+no rotation and no F1/F2: every slot is F4, except slot a on a Wednesday or Sunday
+= F3 China Price Check (so 10-18 = a F3, c F4, d F4). The frame-0 check (0c.3), the
+aerial cap, the audio table (0c.1), the words rules (0c.4), the length bands and
+the meta/state fields (0c.7) already apply to those runs. A run AFTER 2026-12-13
+keeps the rotation, gates and W8 freeze unchanged (no new variables, still no
+verdicts) until an interactive session updates config `pov8w`; 12-17 adds the
+review report only. Compute every day count with a non-negative mod:
+`((d % 3) + 3) % 3`.
+Owner complaint 2026-10-17: every Short was aerial/drone, none felt first-person.
+This section decides each slot's FORMAT, footage and audio. Where it conflicts with
+the §2.3 NATURE-FIRST slot subjects it wins (the subjects still fill F4 and the F3
+pricing). The hook loop (§0b.0), the FOOTAGE-FIRST gate, the honesty rules,
+English-only subtitles, no commercial music and no politics all stay. Machine-readable
+copy: config `pov8w`; owner-facing plan: `plans/pov-8week.md`.
+**Owner answers still pending (defaults, decision D4):** `pov8w.cityScope` =
+pending (acts as NOT approved); longform voice = "none"; AI inserts = off;
+synthetic-flag backfill of old videos = PARTIAL: the 35 newest videos were set to
+containsSyntheticMedia=true on 2026-10-17 13:13Z by an accidental live test run (accurate —
+all use AI beds; record in `state/synthetic-flag-queue.json`); the other 291 wait for the
+owner. The routine never runs `apply-synthetic-flag.mjs --apply`. Only an interactive session
+changes these values in config; the routine reads them every run.
+
+**0c.1 Formats**
+| Fmt | What | Length (F2/F4 = test band through 11-16) | Frame 0 | Footage | Words |
+|---|---|---|---|---|---|
+| F1 | Owner POV: recuts from `plans/owner-recuts.json` now, raw originals later | 13-18 s | the motion itself (toboggan, chairlift, window, alley walk, hands paying/eating) | `runs/owner-footage/` only | first person allowed |
+| F2 | "Ride It / Walk It": licensed first-person POV, one place, one ride or walk | 14-20 s | forward first-person motion | `assets/pov-library.json` via `--clips` | second person only |
+| F3 | China Price Check (Wed + Sun) | 15-22 s | price card or the owner's receipt/POV | slug-named ground clip of the priced place, or MAP-FORMAT | second person |
+| F4 | Ground-level nature / small town — the baseline arm | 14-20 s | human-scale ground shot (path, village lane, boat, people at a viewpoint) | slug-verified Pexels video, Ken-Burns photos, MAP-FORMAT fallback | second person |
+| L | 6-9 min search guide, every other Friday (§4L) | 6-9 min | answer-first | ≥3 min slug-named non-aerial | no "I" over stock |
+F3 keeps the Q4 rules (one comparison, both sides verified THIS RUN, both in USD,
+≥4× gap, something the viewer pays for, 2 dated sources in the description). Price
+card = cue 1 shows both prices big in the middle of the frame over a ground clip whose
+slug names the place of the priced item, or over MAP-FORMAT; the US side is text only.
+No generic "item being priced" clip (massage room, coaster, cable car) unless its slug
+names a Chinese place — probe the item with `scripts/pexels-probe.mjs` first.
+F4 = today's NATURE-FIRST DEBATE/STAKES Short with a ground-level frame 0 and one
+distinct verified fact per Short (so a run of them does not read as templated).
+**Audio per format** (summary — `MUSIC.md` §5 is the authority, §6 the credit lines,
+§7 the rotation):
+| Fmt | Bed (first choice → fallback when el-*/wc-* are not in `assets/music/`) | Gain |
+|---|---|---|
+| F1 | el-acoustic-journey-01 / wc "Acoustic Meditation", "Second Nature" → guzheng-calm-01 (from 17 s) | ambient first, music ≤0.3; recuts whose audio was replaced: 0.85 |
+| F2 | el-pov-walk-groove-01 / wc "Travel Light", "Cool Steel Breeze" → lofi-chill-01 | clip audio kept: music 0.3-0.4 (`--keep-audio 0.6 --music-volume 0.35`); silent clip: 0.6-0.7 |
+| F3 | el-street-funk-01, el-hype-pluck-01 → cpop-groove-01 | 0.6-0.7 |
+| F4 | el-mountain-calm-01 / wc "Green Leaves", "Paper Wings" → guzheng-calm-01 | 0.6-0.8 |
+| L | el-docu-underscore-04/05 / wc "Solo Acoustic #3" → underscore-docu-01..03 | under VO / text |
+No EDM drop, no heavy-drum bed and no SFX pop on F1/F2 (`--sfx none`):
+oriental-edm-01/02, cinema-orient-01, cinema-reveal-02 and silk-road-drums-01 are for
+F3/F4 only. Use a bed only if its file is in `assets/music/` this run (el-* appear
+after the vault decrypt; wc-* only once the Commons download has been ingested).
+
+**0c.2 Daily rotation (deterministic — do not improvise)**
+`d = UTC date − 2026-10-19 in days`; `idx = ((d % 3) + 3) % 3` (never negative;
+only used from 10-19 on); base = `[F2, F4, X]`;
+slot a/c/d = `base[(0+idx) mod 3]`, `base[(1+idx) mod 3]`, `base[(2+idx) mod 3]`.
+X = F3 on Wed + Sun, F1 on Thu, F4 on Mon/Tue/Fri/Sat. F1 takes whichever slot X
+lands in (no fixed slot d). A slot claimed in `state/owner-slots.json` with a
+videoId overrides the rotation (log it as F1). L is extra on its Fridays (15:00Z), not a slot.
+First week (the pattern repeats every 3 weeks):
+| Day | a | c | d |
+|---|---|---|---|
+| Mon 10-19 | F2 | F4 | F4 |
+| Tue 10-20 | F4 | F4 | F2 |
+| Wed 10-21 | F3 | F2 | F4 |
+| Thu 10-22 | F2 | F4 | F1 (R-01) |
+| Fri 10-23 | F4 | F4 | F2 (+ L #1) |
+| Sat 10-24 | F4 | F2 | F4 |
+| Sun 10-25 | F2 | F4 | F3 |
+Then apply the gates in 0c.3, which can turn an F2 or F1 slot into F4. Log every
+slot as `fmt:<X>` and, when a gate changed it, `fmt:F4 (F2→F4: <gate>)`.
+
+**0c.3 Gates**
+- **F2 activation:** F2 needs `scripts/assemble-video.mjs --clips`. On the first run
+  with F2 in the rotation: `node --check scripts/assemble-video.mjs`, render the F2
+  Short, make its frame-0 sheet and look at it. All three pass → log
+  `f2-gate: PASS` once in RUNLOG; later runs skip this when RUNLOG has the line. Any
+  failure → that F2 slot runs as F4 and you log `f2-gate: FAIL <reason>`; retry next run.
+- **City scope (`pov8w.cityScope`):** approved → every F2 slot runs F2 (half street POV
+  with people doing things, `povType: street`; half rides and trails). pending or
+  denied → F2 runs at most 2 a week, on Monday's and Thursday's F2 slots, from the
+  non-city subset only: `node scripts/pov-library.mjs list --usable --china --no-city`
+  (the library's `readFilters.nonCity.ids` is the authority; e.g. as of 10-17:
+  px-39312225 = "Great Wall" only, never a section name; px-40310034 and px-40303779 =
+  Dali; px-39975778 = Guangxi; wm-c02/wm-c03 = "D-train" only, no route or place).
+  Every other F2 slot runs as F4.
+  **Used clips:** every clips.json entry keeps the `libraryId` that
+  `pov-library.mjs --json` prints (px-… / wm-c…; the assembler ignores extra fields),
+  and every run commits its `<run>/clips.json` (§7). A clip is used once
+  `grep -lF '"<libraryId>"' automation/youtube/runs/*/clips.json` finds it (the
+  quotes stop wm-c01 matching wm-c010; no match, or no clips.json yet = unused).
+  Never pick a used clip for another F2. Among
+  unused clips take first those whose numeric Pexels id is not in any
+  `runs/*/meta.json` (`grep -lF '<number>' automation/youtube/runs/*/meta.json`; as
+  of 10-17 only px-39312225 is, in 4 stock Shorts 09-09..09-25). Do not count by
+  meta.json or credits.json alone: meta.json holds Pexels page URLs, not px- ids, a
+  Commons title is URL-encoded there, and `*.mp4.credits.json` is git-ignored.
+  When no unused non-city clip is left, log `F2 paused: supply-out (not a loss)` and
+  run F4.
+- **Frame-0 check (every Short and every L, from 10-19):** after render run
+  `node scripts/frame0-sheet.mjs --video <run>/final.mp4 --out <run>/frame0.jpg` and
+  LOOK at the sheet with the Read tool before uploading (frames 0.0 s / 0.5 s / 1.0 s
+  / mid / end−1 s). Pass = frame 0 is not an aerial or drone view; F1/F2 show forward
+  first-person motion (0.0/0.5/1.0 differ); F4 a human-scale ground shot; F3 the price
+  card or the owner's receipt. Fail → re-render ONCE with a ground-first opening (with
+  `--clips`: put a ground clip first; in query mode: make the first query ground-level,
+  e.g. "<place> village lane walking", "<place> boat river", "<place> viewpoint
+  people"). Still aerial → open on MAP-FORMAT or a ground photo (`--photos fill` with a
+  ground photo first). Neither honest → ship 2 Shorts that day. Log
+  `frame0: PASS | RERENDER | MAP | PHOTO | DROP`.
+- **Aerial cap:** at most 1 aerial/drone shot per Short, never at 0 s. Check the run's
+  `final.mp4.credits.json`: count sourceUrl slugs containing aerial, drone, bird-s-eye,
+  top-view, overhead or from-above; more than 1 → re-render without the extras.
+- **Ship 2, not 3,** when a slot has no honest footage or fails frame 0 twice — log
+  `dropped: <slot> <reason>`. Never fill a slot with a dishonest video.
+- **Never delete or re-upload a published Short** to "fix" its reach.
+- **AI footage:** off (D4). If the owner ever turns it on: not a named place, ≤20 % of
+  the runtime, `meta.aiFootage: true` (the uploader then sets the AI label).
+
+**0c.4 Words (hard)**
+- Over licensed or stock footage write second person only ("you", "POV: you…").
+  First person (I / my / we / Follow me / My first stop / I'd come back) only over
+  owner footage (F1). The fixed brand line "I'm your China Travel Expert" stays: it
+  is the channel's identity, not a travel claim.
+- "POV:" and "Would you…?" titles and hooks only over F1/F2 first-person footage.
+- Say a place only over clips whose source slug or Commons title names it (library
+  `placeSpeakable`; owner clips: `owner-recuts.json` labels). Write each caption from
+  that clip's `verifyNote` and `mood`; never add speeds, routes, step counts,
+  distances or scenery that the frames — or a source covering that exact clip or
+  place — do not support. Owner-clip times (e.g. "5 am") come from file metadata only.
+- Series endings: an F1/F2 Short whose next POV is already scheduled ends with
+  `Next POV: <place>. Follow so you don't miss it.` and puts its either-or question
+  on the cue before; every other Short ends with the either-or question.
+- Stills: plain Ken-Burns is fine. `--photo-motion pov` (forward walk-in on a real
+  photo) only as a 3-4 s bridge between real clips, only on photos with a path,
+  stairs or alley ahead; never at frame 0, never counted as POV footage
+  (`footage: photo`), never under a "POV:" title, never captioned as walked.
+
+**0c.5 Making each format**
+- **F2:** write the cue plan and `subs.srt` first; its total length T (14-20 s,
+  0c.1) is the Short's length. `node scripts/pov-library.mjs list --usable --china
+  [--no-city] --json --seconds <T> > <run>/library.json` → pick ONE place: one
+  window of one unused clip, or 2-5 unused entries of that place → write
+  `<run>/clips.json` with those entries' `id`, `libraryId`, `in`, `out`, `label`
+  (= placeSpeakable, omit when null), optional `cx` and `mute`.
+  **Length rule:** `--json` prints 4-second windows by default and the assembler
+  makes a `--clips` render exactly as long as the sum of the windows when no
+  `--duration` is given (a 4 s window under a 16 s srt gave a 4.0 s Short with the
+  subtitles cut off). So set the windows (`--seconds <T>`, or edit `in`/`out`) until
+  the sum of (out − in) is ≥ T (hard cuts, the default fast pace), and always pass
+  `--duration <T>`. A clip shorter than T needs a second entry of the same place
+  (px-40310034 gives at most 12.8 s: add px-40303779, also Dali), a shorter cue plan
+  inside the band (px-39312225 gives at most 18.8 s), or a different place for this
+  Short — never two places in one F2. A
+  `WARN: --clips total … cycling the list` line means the windows are too short:
+  re-pick, never upload a render that cycled. After the render the `Wrote … (<N>s`
+  line must show N = T (±0.1 s).
+  Render: `node scripts/assemble-video.mjs --clips <run>/clips.json --duration <T>
+  --fit auto --keep-audio 0.6 --music <F2 bed> --music-volume 0.35 --sfx none --srt
+  <run>/subs.srt --format 9x16 --title "<overlay>" --badge "CHINA TRAVEL EXPERT"
+  --out <run>/final.mp4`.
+  Landscape sources: alternate `--fit crop` (entries with `cx`, or `pov-library.mjs
+  … --crop`) and `--fit frame` on alternate F2 days through 11-01 and log `fit:<crop|frame>`.
+- **Ambient sound:** you cannot hear the clips, so keep source audio only on rides,
+  trails, train windows and steps; street, market, shop, mall and temple-fair clips
+  get `--keep-audio 0 --music-volume 0.65` (a shop speaker or busker is a Content ID
+  risk). Most Pexels files have no audio track at all. The assembler prints
+  `ambient: full | partial | none (…)` after each `--keep-audio` render: `none` → it
+  has already raised the music to 0.65 itself (log `ambient:none`); `partial` → the
+  silent part has music at 0.35 only, so re-render with `--music-volume 0.5`; `full`
+  → keep. Known music ranges go into the entry's `mute`. A Content ID claim on a kept
+  track → log it and use `--keep-audio 0` for that clip from then on.
+- **F4 / F3:** query mode as in §3 (POV words from `styleGuide`, never aerial/drone
+  words), or — once `f2-gate: PASS` — `--clips` with chosen slug-verified ids so the
+  ground clip at frame 0 is picked, not searched.
+- **F1:** see 0c.6.
+
+**0c.6 Owner POV recut queue (F1, Thursdays)**
+Each Thursday the X slot takes one recut from `plans/owner-recuts.json`:
+`python3 -I scripts/owner-recut.py --id <R-NN> --out <run>/final.mp4 [--music <bed>]`
+(it writes `final.mp4.credits.json` and `final.mp4.recut.json` with meta hints; it
+refuses face ranges, wrong place labels and non-ready recuts by itself). Claim the
+slot in `state/owner-slots.json` only AFTER the upload succeeded, as
+`{"<date>": {"<slot>": {"videoId": "<id>", "title": "<title>"}}}` like the existing
+entries — a claim made before the upload would make a re-fire skip the slot (§1)
+and lose the recut if the run died in between.
+- 10-22: **R-01** on a calm bed — `--music el-acoustic-journey-01.mp3` when that file is
+  in `assets/music/` after the vault decrypt and has a manifest entry; otherwise the
+  plan default (guzheng-calm-01 from 17 s). Never the old oriental-edm-01 drop.
+- cityScope approved: 10-29 R-02, 11-05 R-03, 11-12 R-07, 11-19 R-04. Not approved
+  (the default): 10-29 R-04, then pause until raw originals arrive (the X slot runs F4).
+- If owner-recut.py warns that the scheduled recut reuses an owner shot published in
+  the last 8 weeks (R-07 after R-02 does), take the next ready recut that does not
+  warn; none → the slot runs F4.
+- Never publish both of a pair (R-01/R-08, R-02/R-06); never name editB; the editA
+  spire is "Shanghai" only. The face ranges (ep4 6.7-8.2 s and 13.5-17.9 s; ep5
+  1.75-2.75 s) are never used.
+- Stop recuts after 3 consecutive recuts whose same-day ratio vs F4 is <1.0 and whose
+  averageViewPercentage is not above F4 (the novelty is used up).
+- Raw originals (REAL-FOOTAGE.md intake): `node scripts/prep-owner-clip.mjs` (audio
+  kept) → F1 at 2-3 a week (Thursday X plus 1-2 F4 slots; F4 keeps ≥1 slot a day);
+  raw-original F1 is not judged before 6 samples.
+
+**0c.7 Upload metadata and state (contract C3, C11)**
+- Every `meta.json` carries `"music"`: the bed file name(s) actually used (string or
+  array; `"none"` if no music) and `"aiFootage": false` (true only for realistic AI
+  footage). The uploader sets `status.containsSyntheticMedia` itself: true for any
+  AI-generated bed (the 9 legacy beds and every el-* bed), for AI footage, for an
+  unknown or missing `music` (fail-safe); human-made wc-*/yal-* beds alone → false.
+  It refuses `aiFootage: true` with `containsSyntheticMedia: false`. Never write
+  `containsSyntheticMedia: false` to avoid the label. Copy its
+  `containsSyntheticMedia=<bool>` line into RUNLOG as `synthetic:<bool>`.
+- Description credit lines per MUSIC.md §6 (every AI bed says "AI-generated");
+  Commons footage → its attribution string from the library / credits.json.
+- `state/published.json` entries gain: `format` (F1|F2|F3|F4|L), `footage`
+  (owner|licensed-pov|ground|photo|map|ai-insert — the source of most of the runtime),
+  `povType` (walk|ride|street|none), `owner` (true/false), `aspect` ("9x16"/"16x9" —
+  the value older entries keep in `format`; never rewrite old entries) and `music`
+  (same as meta.music; the synthetic-flag backfill reads it).
+- RUNLOG slot lines add `fmt:<X> footage:<…> frame0:<…> synthetic:<…>`.
+
+**0c.8 Weekly rhythm**
+Mon: library top-up (from 10-26, §0b.4); competitor scan in odd ISO weeks (§0b.2).
+Wed: F3; footage audit for the next guide on 10-21, 11-04, 11-18, 12-02 (§4L).
+Thu: F1 recut (0c.6). Fri: F2/F4 + L on 10-23, 11-06, 11-20, 12-04 + SOCIAL PACK (§8).
+Sat: OWNER STUDIO checklist (§8). Sun: F3 + the format table (§8).
+- W2 (10-26..11-01): 2 MAP-FORMAT retests — 10-27 and 10-31, each day's first F4 slot
+  (October's "MAP/CHOICE weakest" verdict came from trough days). Both <0.5× the
+  same-day F4 → MAP only inside longform from then on.
+- W4 (11-09..15): reallocate only if cityScope is approved and the verdict is not flat:
+  the winner gets up to 2 slots a day (supply permitting), F4 keeps ≥1.
+- W5 (11-16..22): inside the winner, alternate 12-15 s and 20-25 s days (length test).
+- W6 (11-23..29): fixed neutral series name "Ride It: <place>" ("Walked" only for owner
+  footage), each with its own verified fact.
+- W7 (11-30..12-06): winter / Chinese New Year topics in the winning format, only for
+  places with slug-named footage or photos; F4 keeps ≥1 a day.
+- W8 (12-07..13): freeze — no new variables. 12-17: review (report only).
+
+**0c.9 Verdicts and kill rules (no day is excluded)**
+- Pairs: for each day that has F2 and F4, r = F2 72 h views ÷ median F4 72 h views of
+  the same day (same for F1 and F3). 72 h values come from the postmortem EQUAL-AGE
+  section; until the script prints the paired table (Slice 3), compute it in the run
+  from that section + published.json `format`.
+- 11-02: directional only. 11-09 (latest 11-16): a verdict only if cityScope is
+  approved and there are ≥12 paired days.
+  Win: median r ≥1.3 and averageViewPercentage no more than 3 points below F4, or any
+  F2 ≥2,000 views → F2 up to 2 slots a day. Lose: median r ≤0.8 and
+  averageViewPercentage not higher → F2 only as longform child Shorts. Flat (0.8-1.3):
+  keep the split (the owner asked for POV; equal is no reason to cut it). Analytics
+  API still off on 11-09 → judge on r alone and label the verdict `views-only`.
+- cityScope not approved: no F2 verdict, no reallocation; report the ratios as directional.
+- Subscribers per 1k engaged views: one pooled channel number, never per format
+  (about 1 expected subscriber per arm at this scale).
+- F1 recuts: the stop rule in 0c.6. F3: 6 consecutive episodes with r <0.8 → pause F3
+  (its slots run F4); any F3 ≥4× the same-day F4 → copy that shape for the next 2
+  episodes. F4 is never cut. L: §4L kill check.
+- Week-4 rule (11-16): if every format's 72 h median is ≤70, the report's first line is
+  `CHANNEL-LEVEL: check Studio`; drop to the best 2 Shorts a day and put the effort into
+  owner footage and guides.
+- Checkpoints to report as met / not met (checks, never promises):
+  11-02 — same-age 72 h median ≥80; on ≥4 of 7 days every new Short gets ≥100 Shorts-feed
+  views (API off: channel daily views ≥500); like rate ≥0.6 %; ≥3 new subscribers since
+  10-17; median F2/F4 r ≥1.0 (directional).
+  11-16 — 72 h median ≥120 and the best format ≥170; ≥1 Short ≥2,000 views; total
+  subscribers ≥78; pooled subs per 1k engaged views ≥2.5; guide #1 ≥100 views at 14 days
+  with Search ≥50 %.
 
 ## 1. Read state
 `automation/youtube/state/queue.json` (topic backlog), `state/published.json`,
 `state/RUNLOG.md` (yesterday's outcomes), `config.yaml` (pillars, rules, budgets).
-**Idempotency guard:** if `published.json` already has 3 entries for TODAY (UTC)
-and this fire carries no explicit override instructions, today's batch is done —
-log `skipped: batch already published today` and stop. (Protects against manual
-"Run now" double-posting.)
+**Idempotency guard:** if `published.json` already has an entry for every slot
+scheduled TODAY (UTC) — a slot claimed in `state/owner-slots.json` with a non-null
+`videoId` counts (a claim without a videoId means "in progress": produce it), and on a
+ship-2 day a slot that RUNLOG logs as `dropped:` counts — and this fire carries no
+explicit override instructions, today's batch is done — log `skipped: batch already
+published today` and stop. (Protects against manual "Run now" double-posting.)
 
 ## 2. Daily direction research + pick today's 3 topics
 1. **Direction research (every run, ~5 min, free):** 2-3 WebSearch passes on
@@ -124,6 +462,9 @@ log `skipped: batch already published today` and stop. (Protects against manual
    generates within-theme. Formats unchanged (a/c Short, b longform). If the
    theme queue is empty and research can't fill it, fall back to general pillars
    and log why.
+   **POV 8-WEEK PLAN first (2026-10-19..12-13):** §0c decides each slot's FORMAT
+   (F1-F4) and footage; the NATURE-FIRST subjects below fill the F4 slots and the
+   F3 pricing. Where they conflict, §0c wins.
    **NATURE-FIRST ERA (owner 2026-09-26 — supersedes the CULTURE-FIRST /
    GROWTH-V2 slot SUBJECTS below; the Q4 PLAN formats, SHORTS v3, HOOK v4 and
    the hook loop still apply):** 「转一下方向去小城市，不再是去大城市；去山里、
@@ -194,10 +535,16 @@ log `skipped: batch already published today` and stop. (Protects against manual
    - ONE concrete surprising claim per Short; it IS the title and it IS cue 1
      (big line) with the brand line small beneath it in the same cue
      (`{\fs28}I'm your China Travel Expert`) — hook first, brand still first.
-   - 4-6 cues total, 15-22s, spectacle-first footage (aerial/drone/reveal/
-     motion; NIGHT cyberpunk skylines NOW ALLOWED for spectacle pieces —
-     Chongqing-night Shorts win the feed), footage gate unchanged.
-   - Music is the audio: energetic/cinematic bed at 0.9, beat-locked cuts.
+   - **(rewritten 2026-10-17, POV plan §0c — the old "spectacle-first
+     aerial/drone" rule is gone):** 4-6 cues; F1 13-18 s; F2 and F4 14-20 s during
+     the test (through 11-16); F3 15-22 s. Frame 0 = forward first-person motion
+     (F1/F2), a human-scale ground shot (F4), or the price card or owner receipt
+     (F3). Aerial: at most 1 shot per Short, never at 0 s (frame-0 check in §0c.3).
+     Plain Ken-Burns photo motion is allowed; `--photo-motion pov` only under the
+     §0c.4 limits, never as POV footage. Each F4 Short carries one distinct
+     verified fact so the run does not read as templated. Footage gate unchanged.
+   - Audio per §0c.1: F1/F2 keep ambient sound with the music low and no EDM
+     drop; F3/F4 use the bed as the main track (beat-locked cuts there only).
    - Title = the claim in ≤60 chars, curiosity gap, no series prefix clutter.
    **Q4 PLAN (owner 2026-09-17, plans/q4-2026-plan.md — three pillars; this
    overrides the weekday theme table above where they conflict):**
@@ -255,8 +602,9 @@ log `skipped: batch already published today` and stop. (Protects against manual
    **HOOK DOCTRINE (owner 2026-08-11 + 07-15 data: fact-first beats place-first
    ~4x):** frame 0 = a visual that exists NOWHERE outside China (hanging temple,
    tulou ring, nail-free pagoda, red walls) + first cue = a surprise FACT about
-   it. Food is never the opening hook in culture/route videos — it is the
-   mid-route reward beat.
+   it. (2026-10-17: the frame-0 SHOT TYPE now follows §0c.3 — first-person
+   motion or an eye-level ground shot, never aerial.) Food is never the opening
+   hook in culture/route videos — it is the mid-route reward beat.
    **HOOK FORMULA v2 (2026-08-13 weekly data):** best performers are
    PARADOX/SUPERLATIVE NUMBER hooks about the site itself — "45,000㎡ of murals,
    not one signed" (988v) / "older than its city" (865v) / "grows 5cm a day"
@@ -281,12 +629,13 @@ log `skipped: batch already published today` and stop. (Protects against manual
    夜市, 外卖时代, 网红店排队学, 家常菜革命 — not museum food history.
    Slot order within a day = story order (morning slot = Part 1).
    **Owner-footage slot claims (check FIRST):** read
-   `state/owner-slots.json` — if today's date has claimed slots (owner real
-   footage already uploaded/scheduled by an interactive session, lane
-   `owner-footage`), those slots are TAKEN: produce NO stock video for them,
-   count them toward the day's total, and note the claim in RUNLOG. 实拍永远
-   优先于库存快剪 (see `automation/youtube/REAL-FOOTAGE.md`). Missing file or
-   no entry for today = no claims.
+   `state/owner-slots.json` — if today's date has claimed slots with a non-null
+   `videoId` (owner real footage already uploaded/scheduled by an interactive
+   session or an earlier fire, lane `owner-footage`), those slots are TAKEN:
+   produce NO stock video for them, count them toward the day's total, and note
+   the claim in RUNLOG. A claim without a videoId is not taken: produce that slot
+   (an F1 recut per §0c.6). 实拍永远优先于库存快剪 (see
+   `automation/youtube/REAL-FOOTAGE.md`). Missing file or no entry for today = no claims.
    **FOOTAGE-FIRST GATE (owner 2026-08-14, HARD — after 洪崖洞 takedown: subs
    claimed "this building" over generic city b-roll):** BEFORE committing to any
    site-specific topic, actually search Pexels (+Pixabay if keyed) for the site
@@ -314,7 +663,7 @@ log `skipped: batch already published today` and stop. (Protects against manual
    advice, no political takes), and should honor `strategy.styleGuide` in its
    angle (lived experience over institution-speak).
 
-## 3-5. Produce each video (loop slots a → b → c)
+## 3-5. Produce each video (loop slots a → c → d; format per §0c)
 For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
 
 1. **Subtitle script (NO VOICEOVER — owner directive 2026-07-10):** the video
@@ -326,7 +675,9 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    Every video carries the China-Travel-Expert memorable point: the second-to-last
    cue is `★ Expert Tip: <one actionable, verified traveler tip>` (ASCII star —
    burned fonts have no emoji glyph; 🧭 lives in metadata only).**
-   - Short (20-28s — 7-day data 2026-07-11: 22s cut doubled retention vs 55s):
+   - Short (lengths and cue counts here are superseded by SHORTS v3 and the
+     §0c test bands; the cue-1 brand rule and the 起承转合 shape still apply)
+     (20-28s — 7-day data 2026-07-11: 22s cut doubled retention vs 55s):
      9-12 cues, each 2-2.5s, 中文行 ≤12 字 (STYLE.md v2 fast rhythm — information
      density beats lingering) — **CUE 1 IS FIXED (owner 2026-08-11: 第一句永远
      自报家门): `I'm your China Travel Expert.` / `我是你的中国旅游专家`, at
@@ -353,12 +704,18 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
      Chinese in Shorts subtitles; FontSize 19). Dialect-bank flavor moves to
      TikTok captions/descriptions only.** Leave 1-2
      cue-free seconds between movements — the footage breathes.
-   - **JOURNEY VOICE (owner 2026-08-14, STYLE.md v2.3):** write cues as a
-     first-person route-walking creator, not an encyclopedia — "Follow me
-     into...", "My first stop...", "I'd come back just for this". Structure =
-     journey beats (arrive → approach → inside → detail → reward), b-roll
-     queries prefer POV/walking/handheld motion with progression continuity.
-     Facts discipline unchanged.
+   - **VOICE (2026-10-17, replaces JOURNEY VOICE — it told the loop to invent
+     first-person experiences over other people's footage):** over licensed or
+     stock footage, use second person only (you / "POV: you…"). First person (I /
+     my / Follow me / My first stop / I'd come back) only over owner footage (F1).
+     "POV:" and "Would you…?" titles only over F1/F2 first-person footage. Say a
+     place name only over clips whose source slug or Commons title names it
+     (pov-library `placeSpeakable`); px-39312225 is "Great Wall" with no section
+     name. Write each caption from that clip's `verifyNote` and `mood`; never add
+     speeds, routes, step counts or scenery that the frames, or a source covering
+     that exact clip or place, do not support. Owner-clip times come from file
+     metadata only. Journey structure (arrive → approach → inside → detail →
+     reward) is still fine; the fixed brand cue "I'm your China Travel Expert" stays.
    - Set total duration from the cue plan (Shorts ≤32s, video ≤120s).
    claim with WebSearch/WebFetch this run; collect source URLs. Produce `script.md`
    (with sources), `voiceover.txt` (clean spoken text), `meta.json` (title ≤95
@@ -369,12 +726,12 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    fit; the brand suffix is never dropped — the platforms' recommenders must
    associate every upload with the china-travel niche**; description follows the
    PERSONA.md §3 template EXACTLY (EN hook → EN facts → 🧭 Expert Tip → one 中文
-   hook line → fixed signature block verbatim → credits/disclosure → 4-5 hashtags);
-   10-15 tags per PERSONA.md §5; categoryId 19 (Travel & Events; 27 only for
+   hook line → fixed signature block verbatim → credits/disclosure → exactly 3
+   hashtags per step 5); tags = core set + 3-5 place terms (step 5); categoryId 19 (Travel & Events; 27 only for
    education pillars); `defaultLanguage: "en"`; `publishAt` set to the slot's UTC
    time today; privacyStatus private — scheduling requires it). Title: write 3
    candidates, pick best (optionally `vidiq_score_title`, 5 credits, within budget).
-2. **Voiceover: NONE.** ElevenLabs is paused (scripts kept for possible revival —
+2. **Voiceover: NONE (Shorts; longform voice = §4L).** ElevenLabs is paused for Shorts (scripts kept —
    do not call them). Local flavor now lives in the SUBTITLE text: use the city's
    words from the dialect bank (京味儿化 / 沪语词 / 川话 巴适...) in the 中文 line
    with the English line translating the spirit. Zero profanity in all active
@@ -387,6 +744,13 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    --style <STYLE.md v2: clean default | warmfood for food close-up pieces | heritage for culture/Sunday>
    --pace <fast for ALL Shorts (default) | slow ONLY for Sunday longform/heritage>
    --seg-seconds <2.5-3 fast, 7-8 slow>`.
+   That is query mode (F3/F4). F2 renders use `--clips` (§0c.5): `assemble-video.mjs
+   --clips <run>/clips.json --duration <cue-plan total seconds> --fit auto|crop|frame
+   --keep-audio 0.6 --sfx none …`, with clip windows that add up to at least that
+   length (§0c.5 length rule; a "cycling the list" WARN = re-pick); F1
+   uses `scripts/owner-recut.py` (§0c.6). Queries get the POV/ground words from
+   config `styleGuide` — never aerial/drone words. After every render: the §0c.3
+   frame-0 check and aerial cap.
    STYLE.md is the visual authority — riben is retired (yellow cast), fade-in is
    gone in fast mode (frame one IS the hook), hard cuts only on Shorts.
    **Subtitles are colored + animated + SFX by DEFAULT (STYLE.md v2.4, owner
@@ -404,45 +768,40 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    line in the subs, local phrase from the dialect bank, craft/food close-up
    with cultural note.
    **Music rules — `automation/youtube/MUSIC.md` is the authority (owner
-   2026-08-11 delegated music strategy fully):** pick by the style↔pillar map
-   (oriental-edm → route/travel + drone landform reveals; cinema-orient →
-   culture reveals + mountain/desert spectacle; guzheng-calm → terraces, water
-   towns, lakes; cpop-groove → small-town street life/food beats; lofi-*
-   general fallback).
+   2026-08-11 delegated music strategy fully); since 2026-10-17 the bed is picked
+   by FORMAT from the §0c.1 audio table** (MUSIC.md §5 once written). The old
+   "oriental-edm → route/travel + drone landform reveals" pairing is deleted.
+   Non-POV fallbacks: cinema-orient → culture reveals + mountain/desert
+   landscapes; guzheng-calm → terraces, water towns, lakes; cpop-groove →
+   small-town street life/food beats; lofi-* general fallback. F1/F2 never use
+   an EDM drop. Before keeping any source or owner audio, apply the §0c.5
+   ambient rule (shop, busker or commercial music → mute or drop that audio).
    HARD rotation rules (owner 2026-08-30: 背景音乐要经常换): rotate across the
-   FULL Shorts pool (lofi-upbeat/lofi-chill/guzheng-calm/oriental-edm/
-   cinema-orient/cpop-groove + any yal-*); no track repeats within the same day;
-   no track in the same slot on adjacent days; no track >2 uses per rolling 3
-   days (grep published.json lanes). Monthly (post vidIQ reset): generate 2-3
-   fresh beds, retire the most-used one.
-   **OWNER TRACKS (owner 2026-09-10 chose path A+B): if `assets/music/manifest.json`
-   exists, its yal-* tracks OUTRANK every generated bed — pick from them first
-   (match `mood`), and credit with the manifest's REAL title/artist:
-   `🎵 Music: "<title>" — <artist> (YouTube Audio Library)`. New drops arrive via
-   `node scripts/ingest-music.mjs --in <path> [--mood upbeat|cinematic|calm|epic]`.**
-   **MUSIC CREDIT (owner 2026-09-09 「不tag音乐名字」): every description ends
-   with a credit line before the hashtags — `🎵 Music: <track name> (royalty-free
-   bed)`; when an owner yal-* track is used, credit its real title + artist as
-   given by the YouTube Audio Library. Never claim a commercial song.**
-   **TRENDING-SOUND UPGRADE PATH (path B, owner 2026-09-10 — the "Add Sound"
-   library is app/Studio-only, no API). The daily report MUST end with a block
-   in exactly this shape, one line per Short, nothing else between them:
-   ```
-   🎵 ADD SOUND (1 min each, highest-view first)
-   1. <title 40 chars> → studio.youtube.com/video/<id>/editor  · search: "<sound style>"
-   2. ...
-   ```
-   Order by the postmortem's view ranking so the owner upgrades the best one
-   first. Adding a licensed track in Studio does not reset views.** Match
-   `--seg-seconds` to the track's bar length per MUSIC.md §3 (105BPM→2.3s,
-   90BPM→2.7s, 100BPM→2.4s) so cuts land on beats.
-   Owner-supplied tracks (YouTube Audio Library downloads committed to
-   assets/music/, named `yal-<style>-NN.mp3`) take priority over generated beds
-   — rotate so consecutive videos don't share a track. After the 07-29 vidIQ
-   reset, generate 2-3 modern beds (upbeat pop-instrumental / phonk-lite /
-   acoustic warm) ONCE and commit them. Never attach copyrighted commercial
-   music in the pipeline (Content ID) — real trending tracks remain the owner's
-   1-min Studio/app step per Short.
+   format's list in §0c.1, using only files present in `assets/music/` this run
+   (legacy beds + decrypted el-* + any wc-*/yal-* in the manifest); no track
+   repeats within the same day; no track in the same slot on adjacent days; no
+   track >2 uses per rolling 3 days (grep published.json `music`). No vidIQ music
+   generation any more (config `vidiqRules.musicGenMonthlyCap: 0`).
+   **OWNER / LICENSED TRACKS:** `assets/music/manifest.json` describes every bed
+   (`aiGenerated`, `vault`, `license`, `attribution`, `style`, `bpm`). yal-*
+   (YouTube Audio Library, owner downloads — none in the folder today) are
+   YouTube-only; credit their real title + artist:
+   `🎵 Music: "<title>" — <artist> (YouTube Audio Library)`. New human-made drops
+   arrive via `node scripts/ingest-music.mjs --in <path> [--mood …]`.
+   **MUSIC CREDIT (owner 2026-09-09 「不tag音乐名字」 + AI disclosure 2026-10-17;
+   exact formats in MUSIC.md §6, `<title>` from the manifest):** every description
+   ends with one credit line per bed before the hashtags — legacy beds
+   `🎵 Music: <title> (AI-generated, vidIQ)`; el-* `🎵 Music: <title> (AI-generated,
+   ElevenLabs)`; wc-* (Wikimedia Commons) `🎵 Music: "<title>" by <artist>` + the
+   manifest's `attribution` line verbatim; yal-*: as above. Never claim a
+   commercial song. A CC BY track that draws a third-party Content ID claim is
+   disputed with its licence page (log it).
+   **ADD SOUND** (Studio/app-only "Add Sound" library, no API): no longer a
+   per-Short block — the Saturday OWNER STUDIO list (§8) carries at most 1, for the
+   week's best Short. Adding a licensed track in Studio does not reset views.
+   Match `--seg-seconds` to the track's bar length per MUSIC.md §3 (105BPM→2.3s,
+   90BPM→2.7s, 100BPM→2.4s) so cuts land on beats (F3/F4 only; F1/F2 cut on the
+   motion). Never attach copyrighted commercial music in the pipeline (Content ID).
    If `output.extraFormats` in config.yaml is non-empty, re-run once per extra
    format (same vo.mp3, out `final-<fmt>.mp4`) — cross-posting masters, NOT
    uploaded to YouTube.
@@ -451,26 +810,22 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    frame-grab: `ffmpeg -ss <t> -i final.mp4 -frames:v 1 thumb.jpeg`. YouTube cap
    2 MB — recompress with `ffmpeg -i thumb.jpeg -q:v 4 thumb-small.jpeg` if larger.
 5. **Append Pexels credits** from `final.mp4.credits.json` to the description in
-   `meta.json` ("Footage: Pexels — <urls>") — credits sit between the persona
-   signature block and the hashtag line (PERSONA.md §3 order).
+   `meta.json` ("Footage: Pexels — <urls>"; Commons clips: their attribution
+   string + file page URL; owner footage: "Filmed by the channel owner") — credits
+   sit between the persona signature block and the hashtag line (PERSONA.md §3
+   order), followed by the music credit line (§3 step 3). Prices: 2 dated sources
+   listed in the description.
    **Description = PERSONA.md §3 template.** The EN hook line doubles as comment
    bait where natural; the in-video either-or question stays the primary comment
    driver (nobody reads Shorts descriptions).
-   **Hashtag ladder (research-verified 2026-07-16: 3-5 tags beat 10+): exactly
-   5, ENGLISH-FIRST, brand fixed:**
-   1. #Shorts
-   2. #ChinaTravel (channel anchor)
-   3. #ChinaTravelExpert (FIXED brand tag on every video — owner 2026-08-10)
-   4.-5. two specific ENGLISH: city + subject (#Wuhan #HotDryNoodles); a Chinese
-      tag may replace one. Titles stay hashtag-free.
-   **Metadata tags (snippet.tags) — BEST-MATCH RULE (owner 2026-08-30 每条加最
-   配合的 tag):** CHANNEL CORE SET first, per PERSONA.md §5, then 8-10
-   video-specific ENGLISH keywords researched THIS RUN for THIS topic (exact
-   site/dish/city names + what searchers actually type — pull phrasing from the
-   run's WebSearch results; series name included) + ≤2-3 Chinese; ~450 chars max.
-   The 2 specific hashtags must be topic-exact (#Mutianyu not #GreatWall when
-   the video IS Mutianyu). RUNLOG line lists each slot's hashtags so tag
-   discipline is auditable.
+   **Hashtags (2026-10-17 — only 3 show above the title; this overrides the 4-5
+   count in PERSONA.md §3 item 7): exactly 3, ENGLISH:** `#ChinaTravel
+   #ChinaTravelExpert` + 1 exact place tag (#Mutianyu, not #GreatWall, when the
+   video IS Mutianyu; #GreatWall over px-39312225). Titles stay hashtag-free.
+   **Metadata tags (snippet.tags):** CHANNEL CORE SET per PERSONA.md §5 + 3-5
+   exact place terms (site / town / region names as searchers type them). The
+   per-video 8-10 keyword research step is deleted (tags play a minimal role).
+   RUNLOG line lists each slot's hashtags so tag discipline is auditable.
 6. **Playlist filing:** after each upload, run
    `node scripts/youtube-playlist.mjs --title "<playlist>" --video <videoId>`
    (script wired 2026-07-15 — reuses by exact title, creates public if missing).
@@ -489,68 +844,123 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
 6. **Upload** — if the upload lane is available:
    `node scripts/youtube-upload.mjs --video .../final.mp4 --meta .../meta.json
    [--thumbnail .../thumb.jpeg]`
+   - `meta.json` must carry `music` and `aiFootage` (§0c.7); the uploader decides
+     `containsSyntheticMedia` from them and prints the decision — log it.
+     (`--dry-run` prints the request body without uploading.)
    - `publishAt` in the past by the time you upload (overrun)? Remove it and set
      privacyStatus public (immediate publish) — note the change in the run log.
    - If the API leaves the video locked private (unverified project), record that
      honestly — do not claim it is public/scheduled.
    - Upload lane missing → **dry-run**: keep the package, set
      `"status": "awaiting-upload-credentials"` in `meta.json`, continue.
-6c. **Multi-platform clean master (owner 2026-08-09 — TikTok/IG Reels):** after
-   upload, strip the music track (YAL/derived beds are licensed for YouTube ONLY):
-   `ffmpeg -i final.mp4 -c:v copy -an <slot>-clean.mp4` (video track + burned subs
-   intact, zero re-render). Write `social-caption.txt` per PERSONA.md §4: first
+6c. **Multi-platform clean masters — WEEKLY since 2026-10-17 (was daily):**
+   every run still writes `social-caption.txt` per Short per PERSONA.md §4 (first
    line starts `China Travel Expert 🧭 | <hook>`; hashtags always include
-   #chinatravelexpert (+ #chinatravel #traveltok etc., NO #Shorts, ≤300 chars).
-   **TikTok draft push (owner 2026-08-12):** if TIKTOK_CLIENT_KEY +
-   TIKTOK_CLIENT_SECRET + TIKTOK_REFRESH_TOKEN env secrets exist, also run
-   `NODE_USE_ENV_PROXY=1 node scripts/tiktok-draft-upload.mjs --video
-   <slot>-clean.mp4` per video (max 4/day; on API error log verbatim in RUNLOG
-   and fall back to chat delivery — never fake a push). Captions still travel
-   via chat/ammo pack (inbox uploads carry no caption; owner pastes in-app). In the report step,
-   SendUserFile all 4 clean masters + captions to the owner chat (recompress crf 24
-   if a file exceeds 29MB) — the owner posts them adding a platform-native trending
-   sound in-app.
-   **Back-catalog exports:** `state/social-export-queue.json` lists past videos by
-   views desc. Each run, take the top 2 with `"status": "pending"`, re-render each
-   from its `runs/<date>-<slot>/` artifacts (script.md clip list + subs.srt) WITHOUT
-   music and WITH `--badge "CHINA TRAVEL EXPERT"`, send via SendUserFile alongside
-   the day's masters, mark `"sent"` + date.
-   Missing artifacts → mark `"no-artifacts"` and move on, never fake.
+   #chinatravelexpert (+ #chinatravel #traveltok etc., NO #Shorts, ≤300 chars)) —
+   text only, committed with the run. The daily chat delivery of 3 clean masters
+   is gone. **Fridays = SOCIAL PACK:** pick the week's 3 best Shorts by views
+   (Mon-Thu of this week + Fri-Sun of last week), re-render each from its
+   `runs/<date>-<slot>/` artifacts (clips.json or the script.md clip list +
+   subs.srt) WITHOUT music (yal-* beds are YouTube-only; the owner adds a
+   platform sound in-app) and WITH `--badge "CHINA TRAVEL EXPERT"`; F2 keeps its
+   `--keep-audio` ambient; F1 recuts: `ffmpeg -i final.mp4 -c:v copy -an` of a
+   fresh owner-recut.py render. SendUserFile the 3 masters + captions (recompress
+   crf 24 if a file exceeds 29MB). Missing artifacts → say so, never fake.
+   **TikTok draft push (owner 2026-08-12):** only if TIKTOK_CLIENT_KEY +
+   TIKTOK_CLIENT_SECRET + TIKTOK_REFRESH_TOKEN exist: push the Friday pack with
+   `NODE_USE_ENV_PROXY=1 node scripts/tiktok-draft-upload.mjs --video <clean.mp4>`
+   (on API error log verbatim in RUNLOG — never fake a push).
+   **Back-catalog exports:** `state/social-export-queue.json` (views desc): on
+   Fridays add the top 2 `"status": "pending"` items to the pack, re-rendered the
+   same way; mark `"sent"` + date, or `"no-artifacts"` and move on.
 7. **Commit checkpoint** — commit this slot's text artifacts + state delta before
    starting the next slot (protects against mid-run session death). Media never
    enters git (runs/.gitignore).
 
-## 4L. LONGFORM DAY (config `longform`: WEEKLY Fridays from 2026-09-04; owner
-turnaround 2026-09-02 — the 13-min AI listicle is CANCELLED (0 browse
-distribution on a Shorts-fed channel; runtime dead zone). Alternate two lanes:
-odd weeks = 8-10 min SEARCH-INTENT practical guide (title = the exact query
-people type, e.g. "How to pay in China as a tourist 2026", screen-recording
-style graphics, ranks over weeks); even weeks = 35-50 min AMBIENT "Unseen China"
-background doc (sparse narration, underscore rotation, long-watch-time lane).
-Also apply `state/pending-video-updates.json` (retitles for L01/L02) once.)
-If (today - anchorDate) % cadenceDays == 0: ALSO produce one 10-15 min ENGLISH-ONLY
-AI-narrated longform per `plans/longform-v2.md` (the bible — follow §1 structure,
-§2 narration rules incl. no-fabricated-anecdotes + TTS phonetic QA, §3 layered
-visuals, §4 title/thumbnail formulas, §7 pipeline, **§8 audio rules v2: --sfx
-none, NO short-loop beds — rotate 2-3 documentary underscores switching at
-chapter boundaries, -18dB under VO; prefer owner yal-* tracks when present**). Topic = next unpublished row
-of the bible's §5 schedule (verify visa/price facts against official sources
-dated ≤60 days). ZERO Chinese anywhere in this video. ElevenLabs English
-documentary voice (voice lane is UNPAUSED for longform-english only). publishAt
-15:00Z same day; playlist "China Travel Guides"; slot label "L" in published.json.
-If ElevenLabs quota/key fails: save script+shotlist as the run artifact, log
-"longform blocked: TTS quota" honestly, and continue the normal Shorts day.
-**ONE-OFF (first longform day only): also run the Data-API research brief in
-plans/longform-research-brief.md and commit its output, then delete the brief.**
+## 4L. LONGFORM DAY — every other Friday SEARCH GUIDE (rewritten 2026-10-17)
+(config `longform`: cadenceDays 14, anchorDate 2026-10-23 → 10-23, 11-06, 11-20,
+12-04 at 15:00Z. Search brings 46 % of our longform views and Home 0, so the
+weekly alternation of 8-10 min guides and the 35-50 min AMBIENT stock-doc lane is
+DELETED — the ambient lane was never produced and cannot be sourced honestly.
+`state/pending-video-updates.json` still applies once when it has pending items.)
+If (today − anchorDate) % cadenceDays == 0: ALSO produce ONE 6-9 min ENGLISH-ONLY
+search guide (16:9) per `plans/longform-v2.md` where it does not conflict (§2
+narration rules incl. no fabricated anecdotes + TTS phonetic QA, §3 layered visuals,
+§4 title/thumbnail, §7 pipeline, §8 audio: `--sfx none`, no short-loop beds, 2-3
+underscores switching at chapter boundaries, −18 dB under VO).
+- **Title = the exact narrow query** a traveller types, checked against YouTube
+  search suggestions (WebFetch `https://suggestqueries.google.com/complete/search?client=youtube&ds=yt&q=<query>`
+  or WebSearch; no vidIQ spend). The answer comes in the first 30 s; chapters in
+  the description; every price and time verified within 60 days, sources listed.
+  ZERO Chinese anywhere. Playlist "China Travel Guides"; published.json slot "L",
+  `format: "L"`, `aspect: "16x9"`. Shoot for a guide worth watching — never publish a
+  weak guide to fill a Friday.
+- **Footage audit gate — the Wednesday 2 days before** (10-21, 11-04, 11-18, 12-02):
+  the topic needs ≥3 min of slug-named, non-aerial LANDSCAPE footage that passes a
+  3-frame check (owner footage counts). `scripts/pexels-probe.mjs` is portrait-only
+  (8 results a query), so it is wrong for a 16:9 guide: query landscape directly —
+  `curl -s -H "Authorization: $PEXELS_API_KEY" "https://api.pexels.com/videos/search?query=<q>&orientation=landscape&per_page=40"
+  | python3 -c 'import json,sys; [print(v["id"], v["duration"], v["url"]) for v in json.load(sys.stdin)["videos"]]'`
+  (never echo the key) — plus the POV library's landscape entries (`pov-library.mjs
+  list --usable --china --orientation landscape`). Sum the durations of landscape
+  clips whose slug names the place (portrait clips do not count toward the 3 min),
+  LOOK at 3 frames of each kept clip; log `L-audit: <topic> <minutes> PASS|FAIL`.
+  FAIL → the fallback topic. (Slice 3: `--orientation` / `--per-page` for pexels-probe.)
+- **Schedule:** 10-23 topic: Zhujiajiao from Shanghai (getting there, boat prices,
+  what to skip) — 53 slug-named landscape clips (≈16 min raw; frames not checked,
+  aerials not excluded) in the 10-17 sweep, so the 10-21 audit still decides; facts
+  verified that run; fallback Dali. The title is the exact suggested query for that
+  topic + " | China Travel Expert", ≤95 characters in total (YouTube's limit is 100;
+  the uploader cuts longer titles and mangles the suffix). 11-06 Dali Old Town (30
+  slug-named landscape clips, ≈6 min raw; the
+  Dali steps POV can be a child). 11-20 the best-stocked F4 place by audit — Mutianyu
+  only after owner raw originals arrive (≈13 s of owner footage, 0 slug-named Pexels
+  clips today); Harbin dropped (0 slug-named clips). 12-04 a sequel to (or the
+  neighbour of) the guide with the highest Search share.
+- **Child Shorts:** 3 same-place Shorts in the next 7 days (they fill F4/F2 slots),
+  each ending with a 2-second on-screen CTA "Full route: tap the related video
+  above". A child must show the guide's place by slug or owner metadata;
+  px-39312225 is never the child of a guide that names a Great Wall section. The
+  owner links them in Studio (Saturday list, §8) — the Data API has no field for it.
+- **Voice ladder (decision D3):** (1) ElevenLabs while the already-paid credits
+  last, ALWAYS `node scripts/elevenlabs-tts.mjs --voice 21m00Tcm4TlvDq8ikWAM …`
+  (Rachel; never `--voice env` — that voice returned broken audio on 10-17). QA the
+  result: `ffmpeg -i vo.mp3 -af astats -f null - 2>&1 | grep "DC offset"` — any
+  |value| > 0.05, or audio that does not match the script, counts as a failure.
+  (2) ElevenLabs fails (key, credits, cancelled, QA) → config `longform.voice`
+  decides: `"none"` (DEFAULT, $0) = no narration: on-screen English text carries
+  the guide (burned captions written as the narration) + ambient sound
+  (`--keep-audio`) + music; `"openai"` (only after the owner says yes; ~$0.2 an
+  episode) = `node scripts/tts-openai.mjs` with the same flags. Any AI voice →
+  "AI narration" disclosed in the description. Never skip a guide only for lack
+  of a voice; log `L-voice: elevenlabs-rachel | none | openai`.
+- A POV-walk longform is allowed only from ≥10 min of continuous owner footage; it
+  replaces that Friday's guide (landscape 4K, ambient sound, no narration, chapters,
+  3-5 vertical child cuts).
+- **Kill check 11-20:** if guides #1 and #2 each have <100 views at 14 days and
+  Search views are not rising, pause the lane until owner continuous footage exists
+  (log it; Fridays run Shorts only). Any guide with ≥30 % average view and ≥50 %
+  Search → the next 2 guides take the same kind of query.
+If a needed step fails (no footage, audit FAIL with no fallback): save the script
++ shotlist as the run artifact, log `longform blocked: <reason>` honestly, and
+continue the normal Shorts day.
 
-## 5a-recovery. Owner-footage pending uploads (token outage 08-18..)
-If the YouTube lane is LIVE and `state/pending-owner-uploads.json` has pending
-entries: upload up to 3 per run (masters + metas are committed in the repo;
-where meta says "write per PERSONA", compose it from the named .srt + PERSONA.md
-§3). publishAt = the next unexpired slot-d going forward, one EP per day; claim
-each date in owner-slots.json; file to the listed playlists (create "Beijing,
-Walked 带你走北京" on first use); move entries to "done"; log in RUNLOG. If the
-token is still dead, log one line and move on — never retry-spam.
+## 5a. Owner POV recut queue (rewritten 2026-10-17; was "Owner-footage pending uploads")
+Every Thursday the §0c X slot (F1) takes one recut from
+`automation/youtube/plans/owner-recuts.json`, rendered by `scripts/owner-recut.py`.
+Schedule, pair/reuse/face rules and the stop rule: §0c.6 (10-22 = R-01 on a calm
+bed). Steps: `python3 -I scripts/owner-recut.py --id <R-NN> --out
+<run>/final.mp4 [--music <bed>]` → §0c.3 frame-0 check → meta.json from the recut's
+`final.mp4.recut.json` hints + PERSONA.md §3 (title = the recut's hook; `owner:
+true`, `footage: owner`, `music` = the bed) → upload → only then claim the slot in
+`state/owner-slots.json` with `{videoId, title}` (§0c.6) → playlists "China POV Walks & Rides" + the old series playlist ("Beijing,
+Walked 带你走北京" for Beijing recuts) → append one `{date, videoId, in, out, what}`
+entry per segment to that source's `uses` list in owner-recuts.json (the 8-week
+reuse check reads it; `python3 -I scripts/owner-recut.py --list` shows the
+reuse-safe dates) → RUNLOG `fmt:F1 recut:<R-NN>`.
+Legacy (the token outage queue): if `state/pending-owner-uploads.json` ever has
+pending entries again, upload up to 3 per run at the next free slot d, claim each
+date in owner-slots.json, move entries to "done"; token dead → one log line, no retry-spam.
 
 ## 5b. Persona metadata rollout (until queue empty)
 If `state/metadata-retrofit-queue.json` has `"status": "pending"` items, run
@@ -560,6 +970,9 @@ stay under the 10k daily quota). The script is resumable and stops itself on
 quota exhaustion. Log done/pending counts in RUNLOG. Commit the queue file.
 
 ## 6. Analytics pulse (Mon & Thu only — credit budget)
+The YouTube Analytics API (via yt-postmortem, free) comes first once the owner
+enables it; vidIQ is the fallback and only while its balance is ≥ the floor of 40
+(125 credits until the 10-29 reset — spend nothing else from it).
 If vidIQ MCP is present AND today is Monday or Thursday (UTC):
 `vidiq_channel_analytics` (channel UCSU99qan7oWIEY-c8uYmuSQ, last 7 days, 5 credits)
 → append one summary line to `state/analytics.md`; if a pillar or style clearly
@@ -568,27 +981,48 @@ silently. (~15 credits/week total with the Sat trend call — sustainable within
 150/month cap.)
 
 ## 7. Write state back (never skip)
-1. Dequeue the 3 used topics; save replenished queue to `state/queue.json`.
+1. Dequeue the used topics; save replenished queue to `state/queue.json`.
 2. Append each video (or dry-run entry) to `state/published.json`:
-   `{date, slot, title, videoId|null, url|null, pillar, lane, status, publishAt}`.
+   `{date, slot, title, videoId|null, url|null, pillar, lane, status, publishAt,
+   format, footage, povType, owner, aspect, music}` (§0c.7 for the new fields).
 3. Prepend one line per slot to `state/RUNLOG.md`:
-   `date slot | topic | lanes | outcome | credits`.
-4. Final commit of everything under `automation/youtube/` (+ nothing else), message
-   `yt-cycle(<date>): 3 videos — <posted|scheduled|dry-run|blocked>` and push to
+   `date slot | fmt:<X> | topic | lanes | outcome | credits` (+ footage / frame0 /
+   synthetic per §0c.7). Commit `state/view-snapshots.json` too.
+4. Final commit of everything under `automation/youtube/` (+ nothing else; never the
+   decrypted `assets/music/el-*.mp3`; always each run's `clips.json` — the §0c.3 F2
+   used-clip check reads only committed clips.json files), message
+   `yt-cycle(<date>): <n> Shorts[ + L] — <posted|scheduled|dry-run|blocked>` and push to
    `claude/youtube-automation-workflow-v8egf3`
    (`git push -u origin claude/youtube-automation-workflow-v8egf3`, retry 4x with
    backoff on network errors).
 
-## 8. Report (+ style spot-check)
-Before the text report, extract each video's hook frame
-(`ffmpeg -ss 0.2 -i final.mp4 -frames:v 1 hook.jpg`), hstack the day's three
-into one contact sheet, and send it to the owner via SendUserFile (caption:
-date + titles) — STYLE.md governance: the owner spot-checks look/pacing daily.
-End with three lines (one per slot): slot / topic / lanes used / posted-or-scheduled
-URL or degrade reason — plus vidIQ credits spent and queue depth remaining.
-**Music upgrade shortcuts (owner's optional 1-min/Short step):** for each Short,
-also print a line:
-`🎵 studio.youtube.com/video/<videoId>/editor — 建议曲风: <style, e.g. chill lofi / 古风 / upbeat pop>`
-— the owner can open Studio's Editor → Audio, add a YouTube-licensed track over
-(or instead of) our bed, and lower the original audio. The pipeline's bed stays
-as the default so untouched videos still sound finished.
+## 8. Report (+ style spot-check) — rewritten 2026-10-17
+**Daily:** stack the day's `frame0.jpg` sheets (§0c.3 — each already shows frame 0
+first) into one contact sheet (`ffmpeg -i a/frame0.jpg -i c/frame0.jpg -i
+d/frame0.jpg -filter_complex vstack=inputs=3 day-sheet.jpg`; fewer inputs on a
+ship-2 day) and send it via SendUserFile (caption: date + titles) — the owner
+spot-checks look/pacing daily. Then exactly one line per Short:
+`<slot> / <fmt> / <footage> / <hook type> / <scheduled URL or degrade reason>`,
+plus one line with vidIQ credits spent and queue depth. If a check fired
+(`check Studio`, `CHANNEL-LEVEL: check Studio`), it is the report's FIRST line.
+No per-Short ADD SOUND or Studio-editor lines any more.
+**Friday:** the SOCIAL PACK (§3 step 6c): the week's 3 best clean masters + captions.
+**Saturday — `OWNER STUDIO (10 min)`**, exact video ids and Studio URLs
+(`https://studio.youtube.com/video/<id>/edit`):
+1. Related video: each child Short of the latest guide → that guide (list child id →
+   guide id), plus any Short over 500 views at 48 h → the matching guide.
+2. Test & Compare: 3 printed titles for the latest longform (`<id>`).
+3. A request for this week's "Viewed vs swiped away" screenshot (Studio → Analytics →
+   Advanced mode, Shorts).
+4. At most 1 ADD SOUND: the week's best Short (`<id>` → Studio Editor → Audio, a
+   YouTube Audio Library track; trending app sounds can only be added when a Short
+   is created in the app — MUSIC.md §8 and `state/add-sound-list.md`).
+5. 10-24 only (repeat until answered): "f8f7Ftl-8HI (Beijing, Walked EP4) and
+   h-6tu1E19j4 (EP5): add to the 'China POV Walks & Rides' playlist? Owner decides
+   (child face close-up: EP4 6.7-8.2 s, EP5 1.75-2.75 s)." The routine never adds
+   them itself; an interactive session does it after the owner says yes.
+**Sunday:** append a format table to RUNLOG and print it in the report — per format
+(F1, F2, F3, F4, L): n, median same-day ratio vs F4, 72 h median, average % viewed
+(Analytics API; "n/a" while it is off), likes per 1k views; then ONE pooled channel
+line: subscribers per 1k engaged views and like rate (likes ÷ views of the Shorts
+published that week). Ratios are directional while `pov8w.cityScope` is not approved.

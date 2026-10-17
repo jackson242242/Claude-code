@@ -104,6 +104,9 @@ street food tour / hidden gems china
 ## 8. 频道层对齐（2026-08-09 执行）+ owner 待办
 - 频道描述/keywords 英文先行改写（已执行，见 git log）；26 个系列歌单标题英文
   先行翻转 + 统一人设描述（已执行/配额内滚动）
+- **2026-10-17 频道简介新文案**：已起草在 `plans/pov-8week.md` 附录 A，由你审过后自己在
+  Studio → Customization → Basic info 粘贴（改频道页的脚本推迟到 11-09 之后，自动化不改简介）。
+  §1 固定签名块不变。
 - 120 条存量视频元数据分 3 天滚动改写（配额 10k/天，例行 run 需留 ~7k）：
   D1 频道+歌单+top30，D2 55 条，D3 余量；进度在 `state/metadata-retrofit-queue.json`
 - **Owner 待办**：

@@ -12,6 +12,21 @@
 3. 必须含数字/价格/倍数（HOOK v4 不变）——数字给讨论提供**可争论的锚**。
 4. 钩子里的每个数字当次双源核实；不确定就换选题，不许模糊化蒙混。
 5. 一条只争一件事。钩子里塞两个论点 = 观众一个都不回。
+6. **同龄才比、样本够才下结论、POV 句式只给第一人称画面（2026-10-17，POV 8 周计划）**：
+   - 钩子只在**同龄**比（48h / 72h ±6h，看 postmortem 的 EQUAL-AGE 段），同时对比两条基线：
+     近 28 天同龄中位、固定的 09-15..09-30 同龄中位（后者要 Analytics API 开通才算得出，
+     没开就注明"仅一条基线"）。postmortem 标了 LOW-REACH DAY（外部对照组信号）的样本不算。
+   - **n≥6 条干净样本之前，任何类型都不叫"已验证"，也不叫"避免"。** 下方 AUTO 区
+     "已验证（≥3 条）""避免"的标签在 hook-ledger.mjs 改代码前只作参考。
+     例：现在"MISCONCEPTION 偏弱"只有 n=3，**没有被证明**。
+   - **"POV:" 和 "Would you…?" 句式只用于 F1/F2**（第一人称画面）。账本里配航拍/风景
+     库存的这类标题只拿到个位数到二十几播放。F3/F4 改用 "X or Y — which?" 形式。
+7. **人称、地名、数字的诚实（2026-10-17）**：
+   - "I / my / we" 只用在老板自己拍的素材（F1）上；库存/授权素材只用 "you"。
+     固定品牌句 "I'm your China Travel Expert" 不算亲身经历，保留。
+   - 地名只说在素材 slug / Commons 文件名点了名的片段上（pov-library 的 `placeSpeakable`）；
+     px-39312225 只能说 "Great Wall"，不说哪一段。
+   - 速度、台阶数、距离、路线等数字，只有来源覆盖到**这个片段或这个地点**才写；否则不写。
 
 ## 模板库（按讨论强度排序，括号内为实测代号）
 ### A. DEBATE 观点分裂（最强，必然有人反对）
@@ -24,7 +39,8 @@
 - "$240 train or $28 raft — which trip are you booking?"
 - "Street food stall or hotel breakfast in China? Pick one."
 - **山野版（2026-09-26 竞品实测：同一句 "Would you walk this mountain path for free?"
-  一周内两条 1.1M + 0.7M 播放，见 state/competitors.md）**：
+  一周内两条 1.1M + 0.7M 播放，见 state/competitors.md）**——2026-10-19 起 "Would you…?"
+  只配 F1/F2 第一人称画面（铁律 6）；F4 把同样的选择写成 "X or Y — which?"：
   "Would you walk this path for $30? 3,000 stone pillars, one ticket." /
   "99 hairpin bends or the world's longest cable car — which way up Tianmen?" /
   "Guilin or Zhangjiajie for your first China trip? Pick one."
@@ -44,6 +60,22 @@
   自己付过的东西（按摩 $25 vs $120 ×4.11）。
 ### F. INSIDER 内行信息（引发"还有哪里？"）
 - "Locals never queue here — they enter from the north gate."
+- INSIDER 的样本从 F1 的 R-07 来（owner-recuts.json）。
+### G. POV 第一人称（2026-10-17；只用于 F1/F2，[verify] = 发布当次双源核实后才填，填不了就删掉那半句）
+- F1（老板素材重剪，钩子见 plans/owner-recuts.json）：
+  "Stairs or SLIDE down the Great Wall?"（R-01；票价两源核实后可改成
+  "Would you pay ¥[verify] to slide down the Great Wall?"）/
+  "Forbidden City sold out? Tickets drop 7 days ahead — here's Plan B on foot"（R-02）/
+  "5 am city or 6:30 am mountains — which do you wake up to?"（R-04；时间只取自文件元数据）
+- F2（授权 POV，只用 `placeSpeakable`）：
+  "POV: Hong Kong's double-decker tram — HK$[verify] for this view. Would you ride it?"（**只在 cityScope = approved 时用**——城市 POV 未获批前 F2 只用非城市片段；香港只做旅游）/
+  "Window seat on a D-train: misty hills, small villages. Train or plane?"（**只配 wm-c02**：
+  画面就是雾山和村庄；wm-c01 是城市和工地，不配这句；不写时速）/
+  "POV: temple steps in Dali's old town. Keep climbing or turn back?"（不写台阶数）
+- F3（价格卡）："Mutianyu toboggan: ¥[verify]. A US alpine coaster: $[verify]. Which would you ride?"
+  （**不配老板的慕田峪镜头**：那些镜头 10-22 发 R-01，与它成对的 R-08 永远不能再发，
+  任何老板镜头 8 周内也不能复用。只能配 slug 写明 Mutianyu 的 Pexels 片段（10-17 为 0 条）
+  或 MAP-FORMAT；都没有就不做这条）
 ### ❌ PLAIN-FACT / SPECTACLE-FACT 纯知识卡（不是钩子类型）
 - "苏绣一根丝线劈成 48 股" —— 无可回复点。要用必须改写成 A-F 之一：
   "Machine embroidery costs 1/50 of this. Can you tell them apart?"

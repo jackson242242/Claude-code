@@ -10,8 +10,14 @@
  *   node scripts/elevenlabs-tts.mjs \
  *     --text-file automation/youtube/runs/2026-07-08-a/voiceover.txt \
  *     --out automation/youtube/runs/2026-07-08-a/vo.mp3 \
- *     [--voice 21m00Tcm4TlvDq8ikWAM] [--model eleven_multilingual_v2] \
+ *     [--voice 21m00Tcm4TlvDq8ikWAM | env] [--model eleven_multilingual_v2] \
  *     [--stability 0.45] [--similarity 0.75] [--style 0.35]
+ *
+ * Voice (decision D3, 2026-10-17): the default is "Rachel" (21m00Tcm4TlvDq8ikWAM). The voice
+ * in ELEVENLABS_VOICE_ID returned broken audio on 2026-10-17 (DC offset -0.39, not
+ * transcribable), so it is used ONLY when you pass --voice env explicitly. When ElevenLabs
+ * fails (credits gone / subscription cancelled), config longform.voice decides the fallback:
+ * "none" (default, no narration) or "openai" (scripts/tts-openai.mjs, same CLI).
  *
  * Voice settings default to a more human, less monotone delivery (lower stability
  * = more expressive variation; style adds performance color). Raise stability
@@ -37,10 +43,17 @@ const args = parseArgs(process.argv.slice(2));
 const textFile = args['text-file'];
 const outFile = args.out;
 if (!textFile || !outFile) {
-  fail('Usage: node scripts/elevenlabs-tts.mjs --text-file <txt> --out <mp3> [--voice <id>] [--model <id>]');
+  fail('Usage: node scripts/elevenlabs-tts.mjs --text-file <txt> --out <mp3> [--voice <id>|env] [--model <id>]');
 }
-// Default voice: "Rachel" (a standard ElevenLabs premade voice).
-const voiceId = args.voice || process.env.ELEVENLABS_VOICE_ID || '21m00Tcm4TlvDq8ikWAM';
+// Default voice: "Rachel" (a standard ElevenLabs premade voice). ELEVENLABS_VOICE_ID only via --voice env (D3).
+const DEFAULT_VOICE = '21m00Tcm4TlvDq8ikWAM';
+let voiceId = args.voice || DEFAULT_VOICE;
+let voiceLabel = voiceId;
+if (args.voice === 'env') {
+  voiceId = process.env.ELEVENLABS_VOICE_ID;
+  if (!voiceId) fail('--voice env was given but ELEVENLABS_VOICE_ID is not set.');
+  voiceLabel = `${voiceId.slice(0, 4)}... (from ELEVENLABS_VOICE_ID)`;
+}
 const modelId = args.model || 'eleven_multilingual_v2';
 const voiceSettings = {
   stability: Number(args.stability ?? 0.45),
@@ -61,7 +74,7 @@ for (let i = 0; i < chunks.length; i++) {
 
 await mkdir(dirname(outFile), { recursive: true });
 await writeFile(outFile, Buffer.concat(parts));
-console.log(`Wrote ${outFile} (${(parts.reduce((n, b) => n + b.length, 0) / 1024).toFixed(0)} KiB, ${chunks.length} chunk(s), voice ${voiceId})`);
+console.log(`Wrote ${outFile} (${(parts.reduce((n, b) => n + b.length, 0) / 1024).toFixed(0)} KiB, ${chunks.length} chunk(s), voice ${voiceLabel})`);
 
 async function tts(chunk, attempt = 1) {
   const res = await fetch(
