@@ -1,3 +1,13 @@
+### 2026-10-18 Sunday format table (honest snapshot)
+The F1–F4/L format tagging begins today (before-window), so there is not yet a
+per-format verdict set. Counts: F1 n=0, F2 n=0, F3 n=1 (today a, 0 h old), F4 n=2
+(today c+d, 0 h old), L n=4 last-28d (all ×0.16–0.19 @48h — longform has no
+distribution, expected). 72 h medians / averageViewPercentage: unavailable
+(Analytics API 403; equal-age Data-API samples still n=1). Pooled channel: like
+rate 0.87% (fresh Shorts, peers 1–6%); subs/1k engaged views ≈0.6. First real
+F3-vs-F4 same-day pair lands once today's three reach 72 h (2026-10-21). No verdict
+until ≥6 clean equal-age samples per type and (for F2) cityScope approval.
+
 ## 2026-10-18 (Sun) — 3 Shorts SCHEDULED (real uploads LIVE); before the POV window (rotation off: a=F3, c=F4, d=F4)
 postmortem: baseline 54; equal-age trailing-28d 48h 87v / 72h 899v (n=1); Analytics API 403 -> baseline-B unavailable, judged on trailing median only; no DISTRIBUTION ANOMALY, no check-Studio. WINNER shapes replicated = F3 PRICE-SHOCK (10-16c massage ×4.11) + single-hard-number nature (10-15a ×14.36); avoided "A or B route" losers.
 f2-gate: PASS (--clips path validated: node --check OK + 3 --clips renders at exact target length + frame-0 sheets; no F2 slot today, before-window).
