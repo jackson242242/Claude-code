@@ -96,66 +96,66 @@ run 自动执行；若某条钩子是**新写法**（不属 A-F），在 RUNLOG 
 
 
 <!-- AUTO:BEGIN — rewritten by scripts/hook-ledger.mjs, do not hand-edit below -->
-## 📊 实测排行（2026-10-17，近 30 天、满 3 天的 81 条；baseline 中位数 101 播放）
+## 📊 实测排行（2026-10-18，近 30 天、满 3 天的 81 条；baseline 中位数 99 播放）
 
 | 钩子类型 | 讨论型? | 条数 | 均播放 | 相对基准 | 点赞率 | 评论 | 评/千播 |
 |---|---|---|---|---|---|---|---|
-| STAKES | ✅ | 3 | 479 | ×4.74 | 0.35% | 0 | 0 |
-| SPECTACLE-FACT | ❌ 数字锚而已 | 27 | 248 | ×2.45 | 0.55% | 1 | 0.15 |
-| DEBATE | ✅ | 7 | 248 | ×2.45 | 0.46% | 0 | 0 |
-| PRICE-SHOCK | ✅ | 14 | 242 | ×2.4 | 0.41% | 0 | 0 |
-| CHOICE | ✅ | 8 | 173 | ×1.71 | 1.52% | 0 | 0 |
-| PLAIN-FACT | ❌ 数字锚而已 | 19 | 124 | ×1.22 | 0.26% | 0 | 0 |
-| MISCONCEPTION | ✅ | 3 | 52 | ×0.51 | 1.28% | 0 | 0 |
+| STAKES | ✅ | 3 | 479 | ×4.84 | 0.35% | 0 | 0 |
+| PRICE-SHOCK | ✅ | 13 | 258 | ×2.61 | 0.42% | 0 | 0 |
+| SPECTACLE-FACT | ❌ 数字锚而已 | 25 | 228 | ×2.3 | 0.61% | 1 | 0.18 |
+| DEBATE | ✅ | 8 | 222 | ×2.24 | 0.45% | 0 | 0 |
+| CHOICE | ✅ | 8 | 174 | ×1.76 | 1.58% | 0 | 0 |
+| PLAIN-FACT | ❌ 数字锚而已 | 21 | 157 | ×1.59 | 0.36% | 0 | 0 |
+| MISCONCEPTION | ✅ | 3 | 52 | ×0.53 | 1.27% | 0 | 0 |
 
-**今日三槽依次用（a / c / d）**：STAKES / DEBATE / PRICE-SHOCK
-**已验证（≥3 条且 ≥×1.0）**：STAKES / DEBATE / PRICE-SHOCK / CHOICE
+**今日三槽依次用（a / c / d）**：STAKES / PRICE-SHOCK / DEBATE
+**已验证（≥3 条且 ≥×1.0）**：STAKES / PRICE-SHOCK / DEBATE / CHOICE
 **补样本（<3 条，必须排进去才学得到）**：INSIDER(0)
 **避免**：SPECTACLE-FACT / PLAIN-FACT 永远不是钩子类型（数字只能放进讨论型钩子里）；讨论型里已证实偏弱：MISCONCEPTION
-**非讨论型配额**：近 7 天已用 12/3（每天 ≤1，仅限 slot d 路线超级数字，且收尾仍须 either-or）；讨论型 9/21 — **超额，本周剩余全部讨论型**
+**非讨论型配额**：近 7 天已用 10/3（每天 ≤1，仅限 slot d 路线超级数字，且收尾仍须 either-or）；讨论型 8/18 — **超额，本周剩余全部讨论型**
 
 ## 📒 近期逐条账本（新→旧）
 
 | 日期 | 播放 | ×基准 | 赞 | 评 | 类型 | 钩子原文 |
 |---|---|---|---|---|---|---|
-| 2026-10-16d | 33 | ×0.33 | 1 | 0 | PLAIN-FACT | Come to China's last Shangri-La a week too late — the gold is go |
-| 2026-10-16c | 218 | ×2.16 | 0 | 0 | PLAIN-FACT | A one-hour massage in New York? Eighty to a hundred and twenty d |
-| 2026-10-16a | 84 | ×0.83 | 2 | 0 | STAKES | Hot take: don't climb Huangshan in summer. I'm your China Travel |
-| 2026-10-15d | 24 | ×0.24 | 0 | 0 | DEBATE | Everyone packs into Lijiang. Skip it. I'm your China Travel Expe |
+| 2026-10-16d | 37 | ×0.37 | 1 | 0 | PLAIN-FACT | Come to China's last Shangri-La a week too late — the gold is go |
+| 2026-10-16c | 222 | ×2.24 | 0 | 0 | PLAIN-FACT | A one-hour massage in New York? Eighty to a hundred and twenty d |
+| 2026-10-16a | 87 | ×0.88 | 2 | 0 | STAKES | Hot take: don't climb Huangshan in summer. I'm your China Travel |
+| 2026-10-15d | 26 | ×0.26 | 0 | 0 | DEBATE | Everyone packs into Lijiang. Skip it. I'm your China Travel Expe |
 | 2026-10-15c | 47 | ×0.47 | 0 | 0 | PLAIN-FACT | A canal-view room in Venice runs about three hundred dollars. I' |
-| 2026-10-15a | 882 | ×8.73 | 6 | 0 | PLAIN-FACT | China's highest crater lake is clear maybe fifty days a year. I' |
-| 2026-10-14d | 456 | ×4.51 | 1 | 0 | DEBATE | A Li River cruise packs up to 200 people on one boat. Skip it. I |
+| 2026-10-15a | 899 | ×9.08 | 6 | 0 | PLAIN-FACT | China's highest crater lake is clear maybe fifty days a year. I' |
+| 2026-10-14d | 456 | ×4.61 | 1 | 0 | DEBATE | A Li River cruise packs up to 200 people on one boat. Skip it. I |
 | 2026-10-14c | 34 | ×0.34 | 0 | 0 | PLAIN-FACT | Nine in ten payments in China happen by phone, not card. I'm you |
 | 2026-10-14a | 36 | ×0.36 | 1 | 0 | PRICE-SHOCK | Antelope Canyon: a guided tour, about $100. I'm your China Trave |
 | 2026-10-13d | 26 | ×0.26 | 0 | 0 | SPECTACLE-FACT | China's longest border road runs 9,200 km. {\fs13}I'm your China |
-| 2026-10-13c | 108 | ×1.07 | 1 | 0 | SPECTACLE-FACT | Climbing Mount Tai means 6,600 steps — in the dark. {\fs13}I'm y |
-| 2026-10-13a | 87 | ×0.86 | 1 | 0 | MISCONCEPTION | Everyone thinks this Buddha survived by luck. {\fs13}I'm your Ch |
+| 2026-10-13c | 113 | ×1.14 | 1 | 0 | SPECTACLE-FACT | Climbing Mount Tai means 6,600 steps — in the dark. {\fs13}I'm y |
+| 2026-10-13a | 87 | ×0.88 | 1 | 0 | MISCONCEPTION | Everyone thinks this Buddha survived by luck. {\fs13}I'm your Ch |
 | 2026-10-12d | 6 | ×0.06 | 0 | 0 | PLAIN-FACT | Two ways into Tibet, and they're nothing alike. I'm your China T |
-| 2026-10-12c | 22 | ×0.22 | 1 | 0 | MISCONCEPTION | You think China's famous old towns are Pingyao and Lijiang. I'm  |
-| 2026-10-12a | 61 | ×0.60 | 0 | 0 | PLAIN-FACT | Book "Zhangjiajie" wrong and you'll miss the Avatar pillars. I'm |
-| 2026-10-11d | 16 | ×0.16 | 0 | 0 | CHOICE | Would you drive 446 km of desert with no town, no water? I'm you |
-| 2026-10-11c | 17 | ×0.17 | 0 | 0 | PLAIN-FACT | China's sold-out bullet trains still sell a ticket — to stand. I |
+| 2026-10-12c | 23 | ×0.23 | 1 | 0 | MISCONCEPTION | You think China's famous old towns are Pingyao and Lijiang. I'm  |
+| 2026-10-12a | 61 | ×0.62 | 0 | 0 | PLAIN-FACT | Book "Zhangjiajie" wrong and you'll miss the Avatar pillars. I'm |
+| 2026-10-11d | 17 | ×0.17 | 0 | 0 | CHOICE | Would you drive 446 km of desert with no town, no water? I'm you |
+| 2026-10-11c | 18 | ×0.18 | 0 | 0 | PLAIN-FACT | China's sold-out bullet trains still sell a ticket — to stand. I |
 | 2026-10-11a | 1 | ×0.01 | 0 | 0 | PRICE-SHOCK | Switzerland's famous peak train: about $300. I'm your China Trav |
 | 2026-10-10d | 13 | ×0.13 | 0 | 0 | CHOICE | Would you drive a bridge hanging 330 metres over a canyon? |
-| 2026-10-10c | 50 | ×0.50 | 0 | 0 | PLAIN-FACT | Shanghai's prettiest water town is free — one metro ride away. |
-| 2026-10-10a | 22 | ×0.22 | 0 | 0 | SPECTACLE-FACT | These colors look edited — they're 24 million years old. |
+| 2026-10-10c | 50 | ×0.51 | 0 | 0 | PLAIN-FACT | Shanghai's prettiest water town is free — one metro ride away. |
+| 2026-10-10a | 25 | ×0.25 | 0 | 0 | SPECTACLE-FACT | These colors look edited — they're 24 million years old. |
 | 2026-10-08d | 6 | ×0.06 | 0 | 0 | CHOICE | East for a 3 AM sunrise, or north for the aurora? |
 | 2026-10-08c | 36 | ×0.36 | 0 | 0 | DEBATE | Skip Dali's old town. Locals ride the lake — 130 km. |
 | 2026-10-08a | 43 | ×0.43 | 0 | 0 | PRICE-SHOCK | China's ¥20 note shows a fisherman who quit in 2008. |
-| 2026-10-07d | 94 | ×0.93 | 1 | 0 | CHOICE | 492 painted caves by day, or desert stars by night? |
+| 2026-10-07d | 94 | ×0.95 | 1 | 0 | CHOICE | 492 painted caves by day, or desert stars by night? |
 | 2026-10-07c | 16 | ×0.16 | 0 | 0 | PLAIN-FACT | Fly to China's top park — and get turned away at the gate. |
-| 2026-10-07a | 101 | ×1.00 | 0 | 0 | PRICE-SHOCK | Zhangjiajie: $33. Yosemite: $35. Almost the same. |
-| 2026-10-06d | 85 | ×0.84 | 0 | 0 | CHOICE | 99 bends to Heaven's Gate, or 24 wartime switchbacks — which wou |
+| 2026-10-07a | 101 | ×1.02 | 0 | 0 | PRICE-SHOCK | Zhangjiajie: $33. Yosemite: $35. Almost the same. |
+| 2026-10-06d | 87 | ×0.88 | 0 | 0 | CHOICE | 99 bends to Heaven's Gate, or 24 wartime switchbacks — which wou |
 | 2026-10-06c | 41 | ×0.41 | 0 | 0 | PRICE-SHOCK | A Venice gondola is $97 for 30 minutes. Yangshuo's bamboo raft?  |
-| 2026-10-06a | 82 | ×0.81 | 0 | 0 | SPECTACLE-FACT | Miss Huangshan's last cable car and it's 10,000 steps down — in  |
-| 2026-10-05d | 91 | ×0.90 | 1 | 0 | SPECTACLE-FACT | Everyone drives the Qinghai-Gansu loop in 7 days. Too fast. I'm  |
-| 2026-10-05c | 84 | ×0.83 | 0 | 0 | PRICE-SHOCK | Lijiang charges ¥50 to enter its old town. Dali's is free. I'm y |
-| 2026-10-05a | 67 | ×0.66 | 0 | 0 | SPECTACLE-FACT | 41,000 tickets a day — and it still sells out by morning. I'm yo |
-| 2026-10-04d | 106 | ×1.05 | 0 | 0 | PLAIN-FACT | Rush China's highest highway and it'll put you on oxygen. I'm yo |
-| 2026-10-04c | 212 | ×2.10 | 2 | 0 | DEBATE | Skip Wuzhen's 190-yuan ticket. I'm your China Travel Expert. |
-| 2026-10-04a | 81 | ×0.80 | 0 | 0 | PRICE-SHOCK | The Great Wall costs about $20 to visit yourself. I'm your China |
-| 2026-10-03d | 246 | ×2.44 | 1 | 0 | DEBATE | Everyone books the Yunnan package tour. Skip it. I'm your China  |
-| 2026-10-03c | 54 | ×0.53 | 0 | 0 | PLAIN-FACT | Petra costs seventy dollars. The Great Wall? Six. I'm your China |
-| 2026-10-03a | 90 | ×0.89 | 0 | 0 | SPECTACLE-FACT | Travel 2,000 km for the Rainbow Mountains — and see grey? I'm yo |
-| 2026-10-02d | 487 | ×4.82 | 5 | 0 | SPECTACLE-FACT | 99 hairpin bends in 11 kilometers. I'm your China Travel Expert. |
+| 2026-10-06a | 82 | ×0.83 | 0 | 0 | SPECTACLE-FACT | Miss Huangshan's last cable car and it's 10,000 steps down — in  |
+| 2026-10-05d | 91 | ×0.92 | 1 | 0 | SPECTACLE-FACT | Everyone drives the Qinghai-Gansu loop in 7 days. Too fast. I'm  |
+| 2026-10-05c | 85 | ×0.86 | 0 | 0 | PRICE-SHOCK | Lijiang charges ¥50 to enter its old town. Dali's is free. I'm y |
+| 2026-10-05a | 67 | ×0.68 | 0 | 0 | SPECTACLE-FACT | 41,000 tickets a day — and it still sells out by morning. I'm yo |
+| 2026-10-04d | 106 | ×1.07 | 0 | 0 | PLAIN-FACT | Rush China's highest highway and it'll put you on oxygen. I'm yo |
+| 2026-10-04c | 217 | ×2.19 | 2 | 0 | DEBATE | Skip Wuzhen's 190-yuan ticket. I'm your China Travel Expert. |
+| 2026-10-04a | 81 | ×0.82 | 0 | 0 | PRICE-SHOCK | The Great Wall costs about $20 to visit yourself. I'm your China |
+| 2026-10-03d | 246 | ×2.48 | 1 | 0 | DEBATE | Everyone books the Yunnan package tour. Skip it. I'm your China  |
+| 2026-10-03c | 54 | ×0.55 | 0 | 0 | PLAIN-FACT | Petra costs seventy dollars. The Great Wall? Six. I'm your China |
+| 2026-10-03a | 90 | ×0.91 | 0 | 0 | SPECTACLE-FACT | Travel 2,000 km for the Rainbow Mountains — and see grey? I'm yo |
+| 2026-10-02d | 487 | ×4.92 | 5 | 0 | SPECTACLE-FACT | 99 hairpin bends in 11 kilometers. I'm your China Travel Expert. |
 <!-- AUTO:END -->
