@@ -1,3 +1,20 @@
+## 2026-10-19 post-mortem (baseline = 14d median views of Shorts ≥3d old: 54)
+- 2026-10-18 a tCPHwTvMxZg | 1038v 3L 1C @1d | ×19.22 | WINNER — replicate this hook shape today | China Price Check: Swiss Summit Train $155 vs China's $11 | China Trav
+- 2026-10-18 c 6UXkqL7ItCI | 558v 3L 0C @1d | ×10.33 | WINNER — replicate this hook shape today | Skip Zhangjiajie's 430m Glass Bridge — Look Below | China Travel Exper
+- 2026-10-18 d S0USzMjVQ4s | 180v 1L 0C @1d | ×3.33 | WINNER — replicate this hook shape today | 131m Mountain Gate That Jets Have Flown Through | China Travel Expert
+- like-rate (fresh Shorts): 0.39% (peers 1-6%)
+### Equal age (Data API snapshots since 2026-10-18; 48 h / 72 h ±6 h; "~" = interpolated between the snapshots either side)
+- Shorts median, trailing 28 d: 48h 87v (n=3) · 72h 94v (n=4)
+- 2026-10-16 d fmt:- XuGFEubLnUw | 48h ~41v 1L 0C | 72h — | China's Last Shangri-La: a 2-Week Gold Window at 3,900 m | C
+- 2026-10-16 c fmt:- cbH2DwPJ3gc | 48h ~223v 0L 0C | 72h — | The $100 Massage That Costs About $20 in China | China Trave
+- 2026-10-16 L fmt:- Z8_NShpwwZ8 | 48h 10v 0L 0C | 72h 10v 0L 0C | Best Time to Visit China in 2026: Month-by-Month Guide | Chi
+- 2026-10-16 a fmt:- PfZGpyjFh3M | 48h 87v 2L 0C | 72h 94v 2L 0C | Skip Huangshan's Summer Sunrise: Cloud Sea Peaks Nov–May | C
+- 2026-10-15 d fmt:- yuYt9QXZR64 | 48h — | 72h ~26v 0L 0C | Skip Crowded Lijiang — Shaxi's Last Tea Caravan Left in 1949
+- 2026-10-15 c fmt:- s6EuriN5JT4 | 48h — | 72h ~47v 0L 0C | A Canal Room in Venice: ~$300. The Same View in China: $30 |
+- 2026-10-15 a fmt:- OjUjOUFbAVQ | 48h — | 72h 899v 6L 0C | China's Highest Crater Lake Is Clear Only ~50 Days a Year | 
+### YouTube Analytics API
+- unavailable: HTTP 403 accessNotConfigured — the YouTube Analytics API is not enabled in the Google Cloud project (owner action: APIs & Services > enable "YouTube Analytics API"; checklist in scripts/youtube-oauth-helper.mjs). Equal-age numbers come from Data API snapshots only.
+
 ## 2026-10-18 post-mortem (baseline = 14d median views of Shorts ≥3d old: 54)
 - 2026-10-16 c cbH2DwPJ3gc | 222v 0L 0C @2d | ×4.11 | WINNER — replicate this hook shape today | The $100 Massage That Costs About $20 in China | China Travel Expert
 - 2026-10-16 a PfZGpyjFh3M | 87v 2L 0C @2d | ×1.61 | baseline | Skip Huangshan's Summer Sunrise: Cloud Sea Peaks Nov–May | China Trave
