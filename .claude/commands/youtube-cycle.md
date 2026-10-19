@@ -177,13 +177,18 @@ the §2.3 NATURE-FIRST slot subjects it wins (the subjects still fill F4 and the
 pricing). The hook loop (§0b.0), the FOOTAGE-FIRST gate, the honesty rules,
 English-only subtitles, no commercial music and no politics all stay. Machine-readable
 copy: config `pov8w`; owner-facing plan: `plans/pov-8week.md`.
-**Owner answers still pending (defaults, decision D4):** `pov8w.cityScope` =
-pending (acts as NOT approved); longform voice = "none"; AI inserts = off;
-synthetic-flag backfill of old videos = PARTIAL: the 35 newest videos were set to
-containsSyntheticMedia=true on 2026-10-17 13:13Z by an accidental live test run (accurate —
-all use AI beds; record in `state/synthetic-flag-queue.json`); the other 291 wait for the
-owner. The routine never runs `apply-synthetic-flag.mjs --apply`. Only an interactive session
+**Decisions (owner delegated everything on 2026-10-19: 「都没有时间做，都交给你」 —
+never wait for or ask the owner; run on these values):** `pov8w.cityScope` = approved
+for HERITAGE subjects (see ARCHITECTURE-FIRST in §2.3); longform voice = ElevenLabs
+Rachel while the Starter plan's credits last, then "none"; AI inserts = off; title
+suffix kept. Synthetic-flag backfill of old videos = PARTIAL 35/326 (an accidental test
+run on 10-17 13:13Z, accurate — all use AI beds; record in
+`state/synthetic-flag-queue.json`); on 10-19 `--apply` was denied by the session
+permission classifier, so the routine NEVER attempts it. Only an interactive session
 changes these values in config; the routine reads them every run.
+**Subject of every slot from 2026-10-19 = Chinese ancient architecture** (§2.3
+ARCHITECTURE-FIRST). Read "NATURE-FIRST subjects" below as "ARCHITECTURE-FIRST
+subjects" wherever §0c mentions them.
 
 **0c.1 Formats**
 | Fmt | What | Length (F2/F4 = test band through 11-16) | Frame 0 | Footage | Words |
@@ -463,9 +468,39 @@ published today` and stop. (Protects against manual "Run now" double-posting.)
    theme queue is empty and research can't fill it, fall back to general pillars
    and log why.
    **POV 8-WEEK PLAN first (2026-10-19..12-13):** §0c decides each slot's FORMAT
-   (F1-F4) and footage; the NATURE-FIRST subjects below fill the F4 slots and the
-   F3 pricing. Where they conflict, §0c wins.
-   **NATURE-FIRST ERA (owner 2026-09-26 — supersedes the CULTURE-FIRST /
+   (F1-F4) and footage; the ARCHITECTURE-FIRST subjects below fill every slot.
+   Where they conflict, §0c wins.
+   **ARCHITECTURE-FIRST ERA (owner 2026-10-19 — supersedes the NATURE-FIRST
+   subjects; formats, hooks, gates and audio unchanged):** 「接下来都做介绍中国的古建筑，
+   寺庙，不同的塔，宫殿，城墙等等」. EVERY slot introduces one piece of Chinese
+   ancient architecture: temples (Buddhist / Taoist / Confucian / Tibetan), pagodas
+   by style (pavilion-style louge, dense-eave miyan, lama stupa / white dagoba,
+   diamond-throne, flower pagoda, iron / glazed, leaning), palaces, city walls and
+   gates, drum and bell towers, ancient bridges, tulou and ancestral halls, cliff
+   temples and grottoes. One building, one number, one argument (HOOKS.md types).
+   Heritage sites inside big cities are IN (Forbidden City, Temple of Heaven, Xi'an
+   wall, Nanjing wall, Lingyin); modern skylines and city life stay OUT.
+   - **Formats:** F1 = owner recuts (all heritage: Mutianyu, Temple of Heaven, White
+     Stupa Temple, Summer Palace); F2 = licensed POV at heritage sites (cityScope
+     approved — pov-library entries at temples / palaces / walls / old streets);
+     F3 (Wed + Sun) = heritage China Price Check (a Chinese heritage ticket or
+     experience vs a Western heritage ticket, both verified this run, USD, honest
+     multiple); F4 = ground-level heritage Short; L = heritage trip-planning
+     search guide (exact query, e.g. "Forbidden City tickets 2026").
+   - **Queue:** take `arch-*` seeds first (status active, by priority, each with a
+     verified footage lane, hookType, hook, angle and sources). Nature seeds are
+     `paused-arch-2026-10-19`. Series seeds keep their EP order.
+   - **Footage truth table:** `plans/architecture-pivot.md` (which sites have
+     slug-verified ground / POV video, photos only, or nothing). Pexels is full of
+     Japanese, Korean, Vietnamese, Thai and Taiwanese temples and pagodas: a site
+     name may be spoken ONLY over a clip or photo whose slug names that site;
+     generic "Chinese temple" material only with type-level words and only when
+     the slug or signage shows it is in China. Frame 0 never aerial.
+   - **Facts:** dates, heights, counts and prices are re-verified THIS RUN against
+     2 sources (the seed's sources are a starting point, not a pass). Myths are
+     framed as MISCONCEPTION only when the correction is sourced. Tibet sites:
+     architecture and visiting only, no political framing.
+   **NATURE-FIRST ERA (owner 2026-09-26 — SUBJECTS PAUSED 2026-10-19; kept for reference; supersedes the CULTURE-FIRST /
    GROWTH-V2 slot SUBJECTS below; the Q4 PLAN formats, SHORTS v3, HOOK v4 and
    the hook loop still apply):** 「转一下方向去小城市，不再是去大城市；去山里、
    沙漠里、风景很好的地方，什么地貌、特别的自然风光」. The persona now maps
@@ -832,7 +867,13 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    Playlists (EXACT titles — renamed English-first 2026-08-09; the script matches
    by exact title, a stale name would create a duplicate): "China Food 中国美食" /
    "China Travel 城市旅行" / "City Walks 城市漫游" / "China Coffee 中国咖啡" /
-   **NATURE PIVOT 2026-09-26: `china-nature` → "China Nature 山河地貌",
+   **ARCHITECTURE PIVOT 2026-10-19: `china-architecture` → "Ancient China
+   Architecture 中国古建筑" (create on first use, then backfill the earlier heritage
+   Shorts from published.json — Mutianyu, Temple of Heaven, White Stupa, Summer
+   Palace, Great Wall, Badaling/Mutianyu DEBATE, Jiankou, zero-nail halls, Guangzhou
+   temples — so the shelf opens with 10+ videos); each `arch-*` series gets its own
+   playlist too (e.g. "Pagoda Types 中国塔"); F3 stays in "China Price Check".**
+   **NATURE PIVOT 2026-09-26 (paused 10-19): `china-nature` → "China Nature 山河地貌",
    `small-town` → "China Small Towns 小城古镇" (both created on first use, then
    backfill the earlier landscape Shorts listed in plans/nature-pivot.md §1 —
    Danxia, Jiuzhaigou, Zhangjiajie, QG loop, Silk Road, Duku, Tarim — so the

@@ -71,13 +71,19 @@ strategy:
   # 9/25 top China Shorts on mountains/villages; #1 = a Zhangjiajie mountain
   # path at 2.9M views. Playbook: .claude/commands/youtube-cycle.md NATURE-FIRST
   # block; footage truth table + seeds: plans/nature-pivot.md.
+  # ================= ARCHITECTURE PIVOT 2026-10-19 (owner directive, supersedes
+  # the NATURE PIVOT subjects) =================
+  # 「接下来都做介绍中国的古建筑，寺庙，不同的塔，宫殿，城墙等等」+「都交给你」.
+  # EVERY slot's subject is now Chinese ancient architecture. Formats, rotation,
+  # gates and audio stay as in pov8w (playbook §0c); only the subject changes.
+  # Heritage sites inside big cities (Forbidden City, Xi'an wall, Nanjing wall,
+  # Lingyin…) are IN scope; modern skylines stay out. Seeds: queue arch-*;
+  # footage truth table + series: plans/architecture-pivot.md.
   pillars:
-    - china-nature    # PRIMARY (slot a daily + Fri Expert Opinions): landforms (danxia/karst/dunes/salt flats/terraces/gorges/glaciers), mountains, deserts, lakes, grasslands — one place, one number, one argument
-    - small-town      # slot c non-Planner days: 古镇/小城/山村 — Dali, Yangshuo, Shaxi, Fenghuang, water towns, Miao/Tibetan villages; NEVER Beijing/Shanghai/Guangzhou/Shenzhen/Chongqing as the subject
-    - china-route     # slot d: routes through nature stop-by-stop (Silk Road, Qinghai-Gansu loop, China's Edge, Duku, Tarim, Tea-Horse Road) — already the best-performing slot
-    - china-practical # Wed+Sun slot a 《China Price Check》 + slot c 《China Trip Planner》 2-3×/wk — now priced/planned around nature trips (park tickets, cable cars, homestays, getting to Zhangjiajie/Guilin/Danxia)
-    - china-culture   # DEMOTED to occasional (≤1/wk, must sit in a small town or a landscape — e.g. cliff carvings, mountain monasteries); no more standalone craft/city-heritage cards
-  pausedPillarsBigCity: [city-travel, city-walk]  # owner 2026-09-26: big-city subjects paused; seeds tagged paused-bigcity-2026-09-26 in queue.json (reversible)
+    - china-architecture  # ALL slots: temples (Buddhist/Taoist/Confucian/Tibetan), pagodas by style (pavilion, dense-eave, lama stupa, diamond-throne, flower, iron/glazed, leaning), palaces, city walls & gates, drum/bell towers, ancient bridges, tulou & ancestral halls, cliff temples & grottoes — one building, one number, one argument
+    - china-practical     # Wed+Sun F3 《China Price Check》 now = heritage tickets/experiences vs Western heritage sites; L search guides = heritage trip planning (Forbidden City tickets, Xi'an wall bike, which Great Wall section)
+  pausedPillarsNature: [china-nature, small-town, china-route]  # owner 2026-10-19: nature/landscape subjects paused (seeds tagged paused-arch-2026-10-19, reversible); a village/old-town seed stays only when the subject is its architecture (stilt houses, tulou, wind-rain bridge)
+  pausedPillarsBigCity: [city-travel, city-walk]  # owner 2026-09-26: modern big-city subjects paused (heritage sites in cities are allowed again since 2026-10-19)
   pausedPillarsFood: [china-food]  # owner 2026-08-11: no standalone food videos; seeds recyclable as route stops
   pausedPillarsExtra: [china-coffee]  # paused by owner 2026-07-18 (咖啡收官); ~20 seeds retained for revival
   brandRules: # applies to any pillar covering companies (coffee brands, wineries...)
@@ -251,9 +257,9 @@ pov8w:
     povLibrary: automation/youtube/assets/pov-library.json   # read with scripts/pov-library.mjs list --usable --china [--no-city] --json
     libraryFilter: "usable && !politicalAvoid && (chinaIdentifiable || id in readFilters.chinaByTitle.ids)"   # = pov-library.mjs --usable --china; wm-c01 there is a city/construction window: city scope only, never non-city
     libraryTopUp: "Mondays from 2026-10-26: >=4 newly verified clips (3-frame check); log pov-supply: +N (total M, unused non-city K)"
-    aiInserts: false             # owner answer pending (D4); if ever on: unnamed place, <=20% runtime, meta.aiFootage=true
+    aiInserts: false             # decided 2026-10-19 under owner delegation: OFF (AI video invents the place after ~3 s — wrong for an honest heritage channel); if ever on: unnamed place, <=20% runtime, meta.aiFootage=true
   testLengthSec: { F1: [13, 18], F2: [14, 20], F3: [15, 22], F4: [14, 20], until: "2026-11-16" }
-  cityScope: pending             # owner answer pending (D4): pending | approved | denied — pending acts as denied
+  cityScope: approved            # 2026-10-19: owner delegated all pending decisions ("都交给你") and made heritage architecture the subject — POV at heritage sites in cities is in scope (temple approaches, palace courtyards, wall walks, hutongs, old streets). Modern skyline/street POV without a heritage subject stays out.
   deniedPath:
     f2MaxPerWeek: 2
     f2Days: [Mon, Thu]           # the week's Monday and Thursday F2 slots; other F2 slots run as F4
@@ -261,8 +267,8 @@ pov8w:
     usedCheck: "grep -lF '\"<libraryId>\"' automation/youtube/runs/*/clips.json (committed clips.json keep libraryId)"
     verdict: none                # directional ratios only
     onEmpty: "F2 paused: supply-out (not a loss)"
-  titleSuffixDrop: pending       # owner answer pending: may Shorts titles drop " | China Travel Expert"? Until then: keep it
-  syntheticBackfill: partial-35-of-326     # scripts/apply-synthetic-flag.mjs is ready; the owner decides (D4)
+  titleSuffixDrop: no            # decided 2026-10-19 under owner delegation: keep " | China Travel Expert" (channel name was not changed)
+  syntheticBackfill: partial-35-of-326     # 2026-10-19: --apply was DENIED by the session permission classifier [External System Writes]; the routine never attempts it. Needs the owner (Studio "Altered content" or a permission rule). New uploads are flagged by youtube-upload.mjs.
   ownerRecuts:
     plan: automation/youtube/plans/owner-recuts.json
     render: "python3 -I scripts/owner-recut.py --id <R-NN> --out <mp4> [--music <bed>]"
