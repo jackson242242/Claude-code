@@ -28,6 +28,18 @@
      px-39312225 只能说 "Great Wall"，不说哪一段。
    - 速度、台阶数、距离、路线等数字，只有来源覆盖到**这个片段或这个地点**才写；否则不写。
 
+## 古建筑版例句（2026-10-19 起全部槽位都是古建筑；数字发布当次重核，来源见 plans/architecture-facts.md）
+（以下全部取自 queue 里已核验的 `arch-*` 选题和价格研究；新写法照这个句型，数字一律当次重核。）
+- DEBATE："Forbidden City's 9,999 rooms? Surveys count 8,886. What counts?"（arch-01）/
+  "Real or rebuilt? Is this pagoda still 'ancient'? Tell me I'm wrong."（格式建议 R6，年份当次核）
+- STAKES："No same-day tickets: Forbidden City releases them 7 days ahead, 20:00."（arch-02）
+- PRICE-SHOCK（F3）："Versailles: €35. The Forbidden City: ¥60 — under €8."（arch-06）/
+  诚实反差也做："Rome's Colosseum: $20. Xi'an's Terracotta Army: $18. Same price — which?"（价格研究 07）
+- CHOICE（F4 写成 "X or Y — which?"，不用 "Would you…?"）："Walking Dubrovnik's walls: $45.
+  Xi'an's 13.7 km Ming wall: $8. Which wall?"（价格研究 05，仅夏季价）
+- INSIDER（还缺样本）："Count the roof beasts: only one building in China has 10."（arch-04）
+- MISCONCEPTION（偏弱，少用）："The Forbidden City opened in 1420. Its biggest hall? Built 1695."（arch-05）
+
 ## 模板库（按讨论强度排序，括号内为实测代号）
 ### A. DEBATE 观点分裂（最强，必然有人反对）
 - "X is the most overrated stop in <city>. Here's where locals go instead."

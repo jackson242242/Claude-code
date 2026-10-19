@@ -947,17 +947,16 @@ underscores switching at chapter boundaries, −18 dB under VO).
   clips whose slug names the place (portrait clips do not count toward the 3 min),
   LOOK at 3 frames of each kept clip; log `L-audit: <topic> <minutes> PASS|FAIL`.
   FAIL → the fallback topic. (Slice 3: `--orientation` / `--per-page` for pexels-probe.)
-- **Schedule:** 10-23 topic: Zhujiajiao from Shanghai (getting there, boat prices,
-  what to skip) — 53 slug-named landscape clips (≈16 min raw; frames not checked,
-  aerials not excluded) in the 10-17 sweep, so the 10-21 audit still decides; facts
-  verified that run; fallback Dali. The title is the exact suggested query for that
-  topic + " | China Travel Expert", ≤95 characters in total (YouTube's limit is 100;
-  the uploader cuts longer titles and mangles the suffix). 11-06 Dali Old Town (30
-  slug-named landscape clips, ≈6 min raw; the
-  Dali steps POV can be a child). 11-20 the best-stocked F4 place by audit — Mutianyu
-  only after owner raw originals arrive (≈13 s of owner footage, 0 slug-named Pexels
-  clips today); Harbin dropped (0 slug-named clips). 12-04 a sequel to (or the
-  neighbour of) the guide with the highest Search share.
+- **Schedule (ARCHITECTURE PIVOT 2026-10-19 — replaces the Zhujiajiao/Dali list):**
+  10-23 "Forbidden City Tickets 2026" (query: forbidden city tickets; ~21 min of
+  slug-named FC clips, audit 10-21); 11-06 "Temple of Heaven Beijing"; 11-20 "Xi'an
+  City Wall"; 12-04 "Xi'an Bell Tower and Drum Tower"; 12-18 "Forbidden City and
+  Temple of Heaven in One Day"; 01-01 "Three Pagodas Dali". Footage audit lists,
+  outlines and fallbacks: `plans/architecture-pivot.md` §3. The title is the exact
+  query + " | China Travel Expert", ≤95 characters in total (YouTube's limit is 100;
+  the uploader cuts longer titles and mangles the suffix). Child Shorts come from the
+  matching `arch-*` series (Forbidden City Decoded after 10-23, Ming Walls & Gates
+  after 11-20).
 - **Child Shorts:** 3 same-place Shorts in the next 7 days (they fill F4/F2 slots),
   each ending with a 2-second on-screen CTA "Full route: tap the related video
   above". A child must show the guide's place by slug or owner metadata;

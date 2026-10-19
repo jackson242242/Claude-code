@@ -1,3 +1,10 @@
+## 2026-10-19 (Mon, owner session) — ARCHITECTURE PIVOT; owner delegated all decisions; no uploads from this session
+owner: 「都没有时间做，都交给你去用你的方法每天做，继续保持每天输出YouTube视频。接下来都做介绍中国的古建筑，寺庙，不同的塔，宫殿，城墙等等」.
+pivot: config pillars = china-architecture (+ heritage-priced china-practical); nature/small-town/route seeds paused-arch-2026-10-19 (25); pov8w.cityScope = approved for heritage; aiInserts off; title suffix kept; voice = ElevenLabs Rachel while Starter credits last, then none.
+research (14 agents): footage probe of ~94 heritage sites/types (slug + frame verified) → plans/architecture-pivot.md truth table; strongest video lanes: Xi'an City Wall (27 ground), Xi'an Bell/Drum Tower (31), Big Wild Goose Pagoda (8), Temple of Heaven (6 ground + 3 POV), Forbidden City (4 ground + 5 POV), Dali Three Pagodas, Jing'an, Yu Garden, Chen Clan, Nanjing wall; photo-only: Potala, Summer Palace, Beihai, Leifeng, tulou, Suzhou gardens, grottoes; no named Great Wall section in stock (only owner Mutianyu). 60 two-source facts → plans/architecture-facts.md; 12 heritage price checks (4 honest "China not cheaper"); 55 seeds → adversarial verify: keep 19 / fix 35 / drop 1 → queue arch-* (54). Longform L: 10-23 Forbidden City tickets, 11-06 Temple of Heaven, 11-20 Xi'an City Wall, 12-04 Bell & Drum Tower, 12-18 FC + ToH in one day, 01-01 Three Pagodas. Series: Pagoda Types, Forbidden City Decoded, Ming Walls & Gates.
+ElevenLabs: Gmail receipt = Starter $6.52/mo (paid 09-08 for 09-08..10-08); no October receipt found, but ~20k credits used 10-08..10-17 exceeds the free tier → still paid. Cancellation needs the owner (no tool can cancel).
+synthetic backfill: `apply-synthetic-flag.mjs --apply --limit 40` DENIED by the session permission classifier [External System Writes] → not retried; 35/326 remain the only flagged old videos; routine never attempts it.
+
 ### 2026-10-18 Sunday format table (honest snapshot)
 The F1–F4/L format tagging begins today (before-window), so there is not yet a
 per-format verdict set. Counts: F1 n=0, F2 n=0, F3 n=1 (today a, 0 h old), F4 n=2
