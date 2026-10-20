@@ -1,3 +1,32 @@
+## 2026-10-20 competitor scan (top 25 China-travel Shorts published in the last 7 days, by views)
+hook-shape tally: {"number-claim":10,"other":10,"question":5} · nature/small-town titles in top 25: 8
+- 16680933v 239956L (1.4%) PT21S | Mr. SKR Explainer | The Internet Is Fooling You 🫪 Part 2 | https://youtube.com/shorts/pRZFm6o3ja0
+- 4107855v 0L (0.0%) PT30S | Khan vai shorts  | 2 Terrifying Places in China That Will Make Your Legs Shake! 😱  Khan vai shorts | https://youtube.com/shorts/IOYN0SSdxGk
+- 1756911v 48164L (2.7%) PT25S | DepzInfo | 🏔 These Unreal Travel Spots Aren&#39;t What You Think 😳#travel #explore #trip #va | https://youtube.com/shorts/1FBwyWfM7Tc
+- 1632611v 0L (0.0%) PT19S | Facto Try  | This Giant Chinese Roll Is Made in the Most Unusual Way! 🤯🌯 #shorts #eggroll | https://youtube.com/shorts/RzWAcFAND8k
+- 1418246v 0L (0.0%) PT2M59S | The Daily Relish | Making Homemade Sweet Potato Starch Noodles &amp; Street Food Style Hot Pot #coo | https://youtube.com/shorts/nt9U4oARlH0
+- 1395229v 21256L (1.5%) PT2M19S | 夜市练习生 | 沈阳西塔家鸡蛋饼 Chinese Savory Crepe with 5 Eggs #streetfood #snacks #delicious #chines | https://youtube.com/shorts/OM5I2AqUcPI
+- 1356176v 32100L (2.4%) PT59S | Strike Motivation | China Used A 200 IQ Trick To Save Its Billion Dollar Solar Farm🤯☀️ | https://youtube.com/shorts/S_M_1h92bQM
+- 951476v 12522L (1.3%) PT44S | Dark Narr | This Place in China Is Actually Insane | https://youtube.com/shorts/0KmIMNr6hE0
+- 918101v 8927L (1.0%) PT8S | Haida în Lume  | 🏔 Harmona Resort and Spa, Zhangjiajie, Hunan, China — a quiet pool in the forest.  | https://youtube.com/shorts/npDSLwM_rUQ
+- 805045v 23178L (2.9%) PT59S | Ayu速食 | 这碗泡面看似简单，实则……#路边摊美味 #noodles #delicious #streetfood #cooking #ramen | https://youtube.com/shorts/L4WOqWd50yc
+- 564569v 18787L (3.3%) PT2M11S | Little Indian Everywhere | யாருனே தெரியாத சீனக் கிராமத்தில் வீடு புகுவிழா! 🏡Roast Pork,முதல் இப்படித்தான்  | https://youtube.com/shorts/Wg8T9SpDzvo
+- 550046v 5323L (1.0%) PT1M18S | شورتكاوي | شوف ذكاء الصين في تحويل الصحراء | https://youtube.com/shorts/dnARLQshV6E
+- 528479v 17972L (3.4%) PT2M46S | Indian Backpacker | Chongqing 8D City of China 😱🇨🇳 #shorts | https://youtube.com/shorts/PcvmA_p2oSU
+- 496317v 3310L (0.7%) PT14S | Spicy Street Food | Changsha&#39;s best &quot;folk Michelin&quot; food is in old buildings: Claypot  | https://youtube.com/shorts/MyJMcr9zUos
+- 485731v 30397L (6.3%) PT1M33S | Mister Lewis' Luxury Lifestyle | I Tried JAMAICAN CHINESE Food for the First Time! 🇯🇲🇨🇳 (Oxtail Lo Mein?!) | https://youtube.com/shorts/aoo1vUHxNgk
+- 483324v 3507L (0.7%) PT1M1S | Crash Plane Days | 🏔 Unable to avoid the mountain⛰️😮✈️| Air China Flight 129 | https://youtube.com/shorts/EOxiTNZ2ktk
+- 459428v 8719L (1.9%) PT47S | Aapka Viral City Food | 🥢 Delhi’s Viral ₹100 Chinese Platter! 🤯🔥 #foodies #chinese #food #youtubeshor | https://youtube.com/shorts/K5e8-CzMEQQ
+- 446264v 13174L (3.0%) PT2M56S | 老牛不吃路边摊 | 1m超长烤冷面，谁能吃完一整条！#中国美食 #特色小吃 #烤冷面  #chinesefood #chinesestreetfood #streetfood #s | https://youtube.com/shorts/t-Qr9g9P7tU
+- 379700v 5564L (1.5%) PT29S | Nuvora | 🌎 Which Country Has the BEST Food in the World? 🤤🍕 #Shorts | https://youtube.com/shorts/dH-5p_8rALo
+- 353198v 3839L (1.1%) PT7S | Haida în Lume  | 🏔 Harmona Resort and Spa, Zhangjiajie, Hunan, China — a quiet pool in the forest. | https://youtube.com/shorts/aH_R6jEztDo
+- 347134v 3692L (1.1%) PT18S | Orlando B´eenik | 🏔️ ¿Vivirías diez años aislado en esta montaña? | https://youtube.com/shorts/GiEuc3drHSQ
+- 336516v 967L (0.3%) PT15S | Banana Loves Traveling | 🏔 Would you walk this path for free? 😎👠 Beautiful China #Travel #Nature #Stunnin | https://youtube.com/shorts/WT_SjWNtn6o
+- 324932v 2907L (0.9%) PT8S | Haida în Lume  | 🏔 Zhangjiajie, Hunan, China — green trees on top of the rocks.  🎋 | https://youtube.com/shorts/WZJVZ72qnpM
+- 324515v 1228L (0.4%) PT8S | Haida în Lume  | 🏔 Tianmen Mountain, Zhangjiajie, Hunan, China — the natural hole in the mountain.  | https://youtube.com/shorts/K5jNLNJHJ-c
+- 323836v 4865L (1.5%) PT37S | TheAnuragkushwaha | 🏔 Planting Trees to STOP a DESERT 😱🌳 | https://youtube.com/shorts/eF4OMwJKhI8
+ACTION for this week's runs: copy the top 3 SHAPES (title grammar, length, spectacle-first) into our Shorts; never copy content.
+
 ## 2026-10-12 competitor scan (top 25 China-travel Shorts published in the last 7 days, by views)
 hook-shape tally: {"other":13,"number-claim":6,"question":3,"paradox-claim":2,"tag-only-spectacle":1} · nature/small-town titles in top 25: 6
 - 8224703v 174365L (2.1%) PT23S | HAUTE TALES  | 🏔 China converted deserts into forests👏🏻 #shorts #shortsfeed #viral#viralvideo | https://youtube.com/shorts/8y3fEuLGtd0
