@@ -4852,6 +4852,27 @@
       "queue": "arch-08 hook + arch-10 clips",
       "playlist": "Ancient China Architecture 中国古建筑 (PLN7ICAupP7TQ) / China POV Walks & Rides (PLReiEmt4RjLI)",
       "note": "F2 POV DEBATE (cityScope approved). ToH park ~273ha ~4x Forbidden City; through-ticket ¥34 peak/¥28 off; 6:30am locals hour (cgtn+beijing-kids + beijing.gov.cn FAQ + wanderinchina 2026). pov-library px-34722881(avenue)+px-34722878(plaza), both unused+slug ToH; fit crop (frame alternation deferred: 4K frame letterboxed POV too small); ambient:none->music 0.65, sfx none. frame0 forward avenue walk=PASS, 0 aerial. 2nd person. synthetic=true (el-pov-walk-groove AI)."
+    },
+    {
+      "date": "2026-10-21",
+      "slot": "a",
+      "title": "China Price Check: Versailles $39 vs Forbidden City $9 | China Travel Expert",
+      "videoId": "s-jDXjgfebg",
+      "url": "https://www.youtube.com/watch?v=s-jDXjgfebg",
+      "pillar": "china-architecture",
+      "lane": "F3 China Price Check --clips site-ID Forbidden City (upload LIVE)",
+      "status": "scheduled",
+      "publishAt": "2026-10-21T13:00:00Z",
+      "music": "el-street-funk-01",
+      "format": "F3",
+      "footage": "ground",
+      "povType": "none",
+      "owner": false,
+      "aspect": "9x16",
+      "hookType": "PRICE-SHOCK",
+      "queue": "price-pair-01 (FC vs Versailles)",
+      "playlist": "China Price Check (pending)",
+      "note": "F3 PRICE-SHOCK. FC ¥60 peak (Apr-Oct; ¥40 off) vs Versailles Passport €35 high season (non-EEA) ~4.4x; same tier, both in Apr-Oct peak. Verified 2026-10-21: realchinatrip+wanderinchina (FC), official chateauversailles.fr 2026+artvisitguide (Versailles); FX ~6.75 CNY/USD, ~1.13 USD/EUR. Price card over 3 FC-slug ground clips (px-40156142/40156373/40154354), West side text-only. frame0 ground FC hall w/ tourists=PASS, 0 aerial. 2nd person. synthetic=true (el-street-funk AI). comment-seed BLOCKED (no force-ssl)."
     }
   ]
 }
