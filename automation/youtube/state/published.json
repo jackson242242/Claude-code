@@ -4871,7 +4871,7 @@
       "aspect": "9x16",
       "hookType": "PRICE-SHOCK",
       "queue": "price-pair-01 (FC vs Versailles)",
-      "playlist": "China Price Check (pending)",
+      "playlist": "China Price Check (PLG-JepCwvn-Y)",
       "note": "F3 PRICE-SHOCK. FC ¥60 peak (Apr-Oct; ¥40 off) vs Versailles Passport €35 high season (non-EEA) ~4.4x; same tier, both in Apr-Oct peak. Verified 2026-10-21: realchinatrip+wanderinchina (FC), official chateauversailles.fr 2026+artvisitguide (Versailles); FX ~6.75 CNY/USD, ~1.13 USD/EUR. Price card over 3 FC-slug ground clips (px-40156142/40156373/40154354), West side text-only. frame0 ground FC hall w/ tourists=PASS, 0 aerial. 2nd person. synthetic=true (el-street-funk AI). comment-seed BLOCKED (no force-ssl)."
     },
     {
@@ -4892,7 +4892,7 @@
       "aspect": "9x16",
       "hookType": "DEBATE",
       "queue": "arch (Dali old-town; new DEBATE angle)",
-      "playlist": "Ancient China Architecture / China POV Walks & Rides (pending)",
+      "playlist": "Ancient China Architecture 中国古建筑 (PLN7ICAupP7TQ) / China POV Walks & Rides (PLReiEmt4RjLI)",
       "note": "F2 POV DEBATE (cityScope approved). Dali Old Town free to enter, 4 open gates (chinahighlights + trip.com/AAA, verified 2026-10-21); Three Pagodas ticketed outside the walls (price varies across sources -> not quoted, 铁律 4). pov-library px-40303779(forward courtyard walk)+px-40310034(temple facade), both unused+Dali-slug. RERENDER once: led with forward-motion clip so frame0 = eye-level temple-steps POV w/ people walking (not the facade tilt); =PASS, 0 aerial. fit:crop (4K POV letterboxes too small under frame; alternation stays deferred, as 10-20). ambient:none->music 0.65, sfx none (F2). 2nd person+POV. synthetic=true (lofi-chill AI). hook swap c/d: STAKES->DEBATE (F2 library only had Dali unused=fits DEBATE; Potala STAKES is photo-only so ran F4/d) -- logged."
     },
     {
@@ -4913,7 +4913,7 @@
       "aspect": "9x16",
       "hookType": "STAKES",
       "queue": "arch-15",
-      "playlist": "Ancient China Architecture (pending)",
+      "playlist": "Ancient China Architecture 中国古建筑 (PLN7ICAupP7TQ)",
       "note": "F4 STAKES (photo). Potala ~3,700m, ~2,300 visitors/day cap, ~1h inside strictly timed (chinavigators+geographyworlds+snowliontours, verified 2026-10-21; travel-operator figures/current policy, noted). 6 slug-verified Potala photos (pxp-30136198/38462384/31013239/8604523/30136203/38374937), pinned via --clips to avoid generic/night look-alikes. frame0 ground-level Potala front view=PASS, 0 aerial. Tibet: architecture/visiting only, no politics. 2nd person, which-form close. synthetic=true (el-mountain-calm AI). hook swap c/d logged (see slot c)."
     }
   ]
