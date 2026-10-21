@@ -4873,6 +4873,27 @@
       "queue": "price-pair-01 (FC vs Versailles)",
       "playlist": "China Price Check (pending)",
       "note": "F3 PRICE-SHOCK. FC ¥60 peak (Apr-Oct; ¥40 off) vs Versailles Passport €35 high season (non-EEA) ~4.4x; same tier, both in Apr-Oct peak. Verified 2026-10-21: realchinatrip+wanderinchina (FC), official chateauversailles.fr 2026+artvisitguide (Versailles); FX ~6.75 CNY/USD, ~1.13 USD/EUR. Price card over 3 FC-slug ground clips (px-40156142/40156373/40154354), West side text-only. frame0 ground FC hall w/ tourists=PASS, 0 aerial. 2nd person. synthetic=true (el-street-funk AI). comment-seed BLOCKED (no force-ssl)."
+    },
+    {
+      "date": "2026-10-21",
+      "slot": "c",
+      "title": "Skip Dali's Paid Pagodas — the Old Town Is Free | China Travel Expert",
+      "videoId": "RcLjDwyKBxE",
+      "url": "https://www.youtube.com/watch?v=RcLjDwyKBxE",
+      "pillar": "china-architecture",
+      "lane": "F2 pov-library licensed-POV Dali old-town temple (upload LIVE)",
+      "status": "scheduled",
+      "publishAt": "2026-10-21T20:00:00Z",
+      "music": "lofi-chill-01",
+      "format": "F2",
+      "footage": "licensed-pov",
+      "povType": "walk",
+      "owner": false,
+      "aspect": "9x16",
+      "hookType": "DEBATE",
+      "queue": "arch (Dali old-town; new DEBATE angle)",
+      "playlist": "Ancient China Architecture / China POV Walks & Rides (pending)",
+      "note": "F2 POV DEBATE (cityScope approved). Dali Old Town free to enter, 4 open gates (chinahighlights + trip.com/AAA, verified 2026-10-21); Three Pagodas ticketed outside the walls (price varies across sources -> not quoted, 铁律 4). pov-library px-40303779(forward courtyard walk)+px-40310034(temple facade), both unused+Dali-slug. RERENDER once: led with forward-motion clip so frame0 = eye-level temple-steps POV w/ people walking (not the facade tilt); =PASS, 0 aerial. fit:crop (4K POV letterboxes too small under frame; alternation stays deferred, as 10-20). ambient:none->music 0.65, sfx none (F2). 2nd person+POV. synthetic=true (lofi-chill AI). hook swap c/d: STAKES->DEBATE (F2 library only had Dali unused=fits DEBATE; Potala STAKES is photo-only so ran F4/d) -- logged."
     }
   ]
 }
