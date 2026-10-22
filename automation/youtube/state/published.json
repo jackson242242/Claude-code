@@ -4957,6 +4957,27 @@
    "queue": "arch-35",
    "playlist": "Ancient China Architecture 中国古建筑 (PLN7ICAupP7TQ)",
    "note": "F4 PRICE-SHOCK. Dubrovnik City Walls €40(~$45) vs Xi'an wall ¥54(~$8) ~5.6x; replicates the 10-20 WINNER shape (Edinburgh vs Xi'an wall x7.51) with a FRESH Western anchor, deliberately NOT the 10-21 LOSER Versailles/FC shape (x0.37). Distinct F4 fact: 13.7km loop, built 1370-1378 Ming on Tang foundations, bikeable top ~2h. Sources: Xi'an ¥54 wanderinchina+trvlogue 2026; Dubrovnik €40 dubrovnik-tickets.co 2026 (official dpds.hr); dims wanderinchina — all verified 2026-10-22. 6 slug-verified Xi'an-wall ground clips (px-35226080/35195594/35195642/35226085/35195608/35195593); slug gate warned on exact-phrase label but every slug names Xi'an+(ancient/Ming) city wall, visually confirmed (people on wall walkway, brick facade, gate-tower roof). frame0 ground-level people-on-wall=PASS, 0 aerial. --fit crop (4K landscape). synthetic=true (guzheng-calm legacy AI). 2nd person, USD both sides, either-or close."
+  },
+  {
+   "date": "2026-10-22",
+   "slot": "d",
+   "title": "Stairs or SLIDE down the Great Wall? | China Travel Expert",
+   "videoId": "Ip_nMRVgxa0",
+   "url": "https://www.youtube.com/watch?v=Ip_nMRVgxa0",
+   "pillar": "china-architecture",
+   "lane": "F1 owner recut R-01 (Mutianyu ep1; upload LIVE)",
+   "status": "scheduled",
+   "publishAt": "2026-10-22T23:00:00Z",
+   "music": "el-acoustic-journey-01",
+   "format": "F1",
+   "footage": "owner",
+   "povType": "ride",
+   "owner": true,
+   "aspect": "9x16",
+   "hookType": "CHOICE",
+   "queue": "arch-53",
+   "playlist": "China POV Walks & Rides (PLReiEmt4RjLI) + Ancient China Architecture 中国古建筑 (PLN7ICAupP7TQ)",
+   "note": "F1 CHOICE recut R-01 (Thu X slot). Owner footage ep1-mutianyu.mp4 (4 segments, exclusion+label checks PASS, no face ranges). Mutianyu: chairlift up + toboggan slide down (shown in footage; location confirmed commit 36be928). frame0 = toboggan slide motion itself (F1 ideal)=PASS, 0 drone. bed el-acoustic-journey-01 (calm, per 0c.6; NOT the old oriental-edm drop). 1st person allowed (owner footage). synthetic=true (el-acoustic-journey AI). owner-slots claimed AFTER upload; 4 uses logged to sources.mutianyu for the 8-week reuse check. pair R-01/R-08 — R-08 not published. CHOICE close."
   }
  ]
 }

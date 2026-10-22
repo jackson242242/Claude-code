@@ -1,0 +1,64 @@
+{
+  "recut": "R-01",
+  "title": "Stairs or SLIDE down the Great Wall?",
+  "hookType": "CHOICE",
+  "status": "ready",
+  "forced": false,
+  "uploadable": true,
+  "renderedAt": "2026-10-22T13:00:06+00:00",
+  "out": "/home/user/Claude-code/automation/youtube/runs/2026-10-22-d/final.mp4",
+  "durationSec": 12.967,
+  "sizeBytes": 20197908,
+  "music": {
+    "file": "el-acoustic-journey-01.mp3",
+    "start": 0.0,
+    "aiGenerated": true
+  },
+  "loudness": {
+    "integratedLUFS": -13.9,
+    "truePeakDbfs": -1.8
+  },
+  "checks": {
+    "exclusions": "pass",
+    "labels": "pass",
+    "warnings": []
+  },
+  "cues": [
+    {
+      "start": 0.0,
+      "end": 4.0,
+      "text": "Stairs or [[SLIDE]]\ndown the Great Wall?"
+    },
+    {
+      "start": 4.0,
+      "end": 10.2,
+      "text": "Mutianyu, Beijing:\nchairlift up, toboggan down"
+    },
+    {
+      "start": 10.2,
+      "end": null,
+      "text": "Stairs or slide —\nwhich are you picking?"
+    }
+  ],
+  "frames": [],
+  "metaHints": {
+    "music": "el-acoustic-journey-01.mp3",
+    "format": "F1",
+    "footage": "owner",
+    "owner": true,
+    "povType": "ride",
+    "aiFootage": false,
+    "containsSyntheticMediaExpected": true,
+    "placesNamed": [
+      "Mutianyu Great Wall",
+      "Beijing"
+    ],
+    "facts": [
+      {
+        "claim": "Mutianyu has a chairlift up and a toboggan down",
+        "source": "the footage itself (ep1 4.03-8.93 chairlift, 9.03-15.75 toboggan) + EP1 meta; location confirmed in commit 36be928"
+      }
+    ],
+    "pairWith": "R-08"
+  }
+}
