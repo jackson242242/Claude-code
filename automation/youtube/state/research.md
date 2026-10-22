@@ -1,3 +1,26 @@
+# Research log (newest first)
+
+## 2026-10-22 (Thu) — architecture-first, pov8w W1 day 4
+- Rotation a=F2 / c=F4 / d=F1(R-01); hooks STAKES / PRICE-SHOCK / CHOICE (AUTO gave
+  STAKES/PRICE-SHOCK/DEBATE, F1 slot d takes its stored CHOICE, DEBATE dropped). All
+  three discussion-type — satisfies the "remaining all discussion-type" quota (ledger
+  flagged non-discussion 11/3 over 7d).
+- What resonates (postmortem + ledger): PRICE-SHOCK is the reliable breakout shape
+  (Edinburgh vs Xi'an wall ×7.51 on 10-20; Swiss train $155 vs $11 ×10.46 on 10-18).
+  STAKES ×3.91 top of ledger. The one recent LOSER was a *weak-gap* price check
+  (Versailles $39 vs Forbidden City $9, ×0.37) — so today's PRICE-SHOCK uses a real
+  ~5-6× gap and a DIFFERENT pair (Dubrovnik €40 vs Xi'an ¥54) to dodge that shape.
+- Tired angle: number-only PLAIN-FACT/SPECTACLE-FACT (pagoda-storeys ×0.31, ToH
+  "beats Forbidden City" ×0.32). Keep numbers INSIDE a discussion hook.
+- Facts/prices verified THIS RUN (2 sources each, in descriptions):
+  - Temple of Heaven peak (to Oct 31): park ¥15, combo 联票 ¥34 (covers Hall of Prayer,
+    Echo Wall/Imperial Vault, Circular Mound). Beijing gov FAQ + 2026 guides.
+  - Xi'an City Wall adult ¥54 (wall-only) ≈ $7.6; 13.7 km loop, bikeable.
+  - Dubrovnik City Walls adult €40 (2026) ≈ $45.
+- Queue health: 47 active arch-* seeds; took arch-09(ToH STAKES angle), arch-35
+  (Xi'an wall PRICE-SHOCK), arch-53/R-01 (Mutianyu CHOICE). Deep backlog, no replenish
+  needed this run.
+
 ## 2026-10-20 (Tue) — POV window day 2 (a=F4 STAKES Great Wall, c=F4 PRICE-SHOCK Xi'an wall, d=F2 DEBATE Temple of Heaven)
 - Direction (heritage-travel discussion this week): fine/rules-as-stakes travels well (the "wild Great Wall" ¥30,000 fine is a real, shareable "did you know you could be fined" hook — stakes + number + a choice). Heritage price contrasts stay the channel's most reliable lane (postmortem: F3 price-checks x11–19 @48h; the Edinburgh-vs-Xi'an-wall contrast re-angles that onto an F4). "X beats Y, tell me I'm wrong" opinion framing over real POV footage is the cleanest way to force comments on a heritage subject (slot d).
 - Competitor scan 2026-10-20 (caught up; top-25 China Shorts last 7d): number-claim 10 / other 10 / question 5; nature/small-town 8/25. Survivorship only — the breakouts are big-number spectacle + "these spots aren't what you think" paradox + a couple of street-food POVs. Read as shapes to test, not rules; the arch pivot keeps its own subject. Several top entries are low-signal re-upload/AI-spectacle channels (ignore per the EXCLUDE guidance).
