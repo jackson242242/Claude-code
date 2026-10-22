@@ -4936,6 +4936,27 @@
    "queue": "arch-09",
    "playlist": "Ancient China Architecture 中国古建筑 (PLN7ICAupP7TQ)",
    "note": "F2 STAKES. ToH ticket trap: park ¥15 peak (Apr1-Oct31) only enters the grounds; the 联票 combo ¥34 peak/¥28 off covers Hall of Prayer, Echo Wall, Circular Mound (intotravelchina 'ToH Off-Season Ticket Prices 2026' + beijing.gov.cn 12345 FAQ, verified 2026-10-22). px-34722883 unused+slug-verified ToH, forward step-climb POV. frame0 eye-level step climb=PASS, 0 aerial. --fit crop (4K landscape). ambient:none->music auto 0.35->0.65. re-rendered once to strip literal [[]] markup (auto number-pop colors; frame0 unchanged, not a frame0 rerender). synthetic=true (el-pov-walk-groove AI). 2nd person, either-or close."
+  },
+  {
+   "date": "2026-10-22",
+   "slot": "c",
+   "title": "Dubrovnik's Walls ~$45, Xi'an's Bigger Ming Wall ~$8 | China Travel Expert",
+   "videoId": "MUiondooNRA",
+   "url": "https://www.youtube.com/watch?v=MUiondooNRA",
+   "pillar": "china-architecture",
+   "lane": "F4 --clips ground VIDEO site-ID Xi'an City Wall (6 slug-verified clips; upload LIVE)",
+   "status": "scheduled",
+   "publishAt": "2026-10-22T20:00:00Z",
+   "music": "guzheng-calm-01",
+   "format": "F4",
+   "footage": "ground",
+   "povType": "none",
+   "owner": false,
+   "aspect": "9x16",
+   "hookType": "PRICE-SHOCK",
+   "queue": "arch-35",
+   "playlist": "Ancient China Architecture 中国古建筑 (PLN7ICAupP7TQ)",
+   "note": "F4 PRICE-SHOCK. Dubrovnik City Walls €40(~$45) vs Xi'an wall ¥54(~$8) ~5.6x; replicates the 10-20 WINNER shape (Edinburgh vs Xi'an wall x7.51) with a FRESH Western anchor, deliberately NOT the 10-21 LOSER Versailles/FC shape (x0.37). Distinct F4 fact: 13.7km loop, built 1370-1378 Ming on Tang foundations, bikeable top ~2h. Sources: Xi'an ¥54 wanderinchina+trvlogue 2026; Dubrovnik €40 dubrovnik-tickets.co 2026 (official dpds.hr); dims wanderinchina — all verified 2026-10-22. 6 slug-verified Xi'an-wall ground clips (px-35226080/35195594/35195642/35226085/35195608/35195593); slug gate warned on exact-phrase label but every slug names Xi'an+(ancient/Ming) city wall, visually confirmed (people on wall walkway, brick facade, gate-tower roof). frame0 ground-level people-on-wall=PASS, 0 aerial. --fit crop (4K landscape). synthetic=true (guzheng-calm legacy AI). 2nd person, USD both sides, either-or close."
   }
  ]
 }
