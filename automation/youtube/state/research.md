@@ -1,3 +1,8 @@
+## 2026-10-23 (Fri) — architecture-first direction
+- What's resonating (postmortem + this run): heritage PRICE-SHOCK (Western landmark vs a far-cheaper Chinese equivalent) and F4 STAKES ("you'd miss X") keep topping the feed — 10-22 Dubrovnik-vs-Xi'an-wall ×12.71, Great Wall slide ×11.82. Weak-gap price checks (FC vs Versailles ×0.37) underperform; use a real ≥4-5× gap and a FRESH pair each time, never repeat the same wall.
+- Today's slate deliberately diversified: Xi'an Bell Tower (Tang-era? no—Ming 1384) price-shock, Yu Garden Ming-garden debate, Guangzhou Beijing Road POV stakes — different cities + building types so the day does not read as templated.
+- Longform search lane: "forbidden city tickets" confirmed real search intent; search brings ~46% of longform views (plans) — keep answer-first in the first 30s.
+- dialect-bank deepening: SKIPPED — it feeds the legacy comedy/dialect test-line format, which the architecture-first slate no longer uses (flagged honestly, not silently).
 # Research log (newest first)
 
 ## 2026-10-22 (Thu) — architecture-first, pov8w W1 day 4

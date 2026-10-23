@@ -108,66 +108,66 @@ run 自动执行；若某条钩子是**新写法**（不属 A-F），在 RUNLOG 
 
 
 <!-- AUTO:BEGIN — rewritten by scripts/hook-ledger.mjs, do not hand-edit below -->
-## 📊 实测排行（2026-10-22，近 30 天、满 3 天的 78 条；baseline 中位数 96 播放）
+## 📊 实测排行（2026-10-23，近 30 天、满 3 天的 78 条；baseline 中位数 96 播放）
 
 | 钩子类型 | 讨论型? | 条数 | 均播放 | 相对基准 | 点赞率 | 评论 | 评/千播 |
 |---|---|---|---|---|---|---|---|
-| PRICE-SHOCK | ✅ | 13 | 302 | ×3.14 | 0.38% | 1 | 0.25 |
+| PRICE-SHOCK | ✅ | 14 | 307 | ×3.2 | 0.37% | 1 | 0.23 |
 | DEBATE | ✅ | 8 | 222 | ×2.32 | 0.45% | 0 | 0 |
-| SPECTACLE-FACT | ❌ 数字锚而已 | 17 | 206 | ×2.14 | 0.77% | 0 | 0 |
-| STAKES | ✅ | 3 | 205 | ×2.13 | 0.49% | 0 | 0 |
-| CHOICE | ✅ | 8 | 179 | ×1.86 | 1.54% | 0 | 0 |
-| PLAIN-FACT | ❌ 数字锚而已 | 26 | 173 | ×1.8 | 0.42% | 0 | 0 |
+| SPECTACLE-FACT | ❌ 数字锚而已 | 14 | 208 | ×2.17 | 0.69% | 0 | 0 |
+| STAKES | ✅ | 3 | 205 | ×2.14 | 0.49% | 0 | 0 |
+| CHOICE | ✅ | 8 | 180 | ×1.87 | 1.53% | 0 | 0 |
+| PLAIN-FACT | ❌ 数字锚而已 | 28 | 173 | ×1.8 | 0.43% | 0 | 0 |
 | MISCONCEPTION | ✅ | 3 | 52 | ×0.55 | 1.27% | 0 | 0 |
 
 **今日三槽依次用（a / c / d）**：PRICE-SHOCK / DEBATE / STAKES
 **已验证（≥3 条且 ≥×1.0）**：PRICE-SHOCK / DEBATE / STAKES / CHOICE
 **补样本（<3 条，必须排进去才学得到）**：INSIDER(0)
 **避免**：SPECTACLE-FACT / PLAIN-FACT 永远不是钩子类型（数字只能放进讨论型钩子里）；讨论型里已证实偏弱：MISCONCEPTION
-**非讨论型配额**：近 7 天已用 11/3（每天 ≤1，仅限 slot d 路线超级数字，且收尾仍须 either-or）；讨论型 7/18 — **超额，本周剩余全部讨论型**
+**非讨论型配额**：近 7 天已用 9/3（每天 ≤1，仅限 slot d 路线超级数字，且收尾仍须 either-or）；讨论型 9/18 — **超额，本周剩余全部讨论型**
 
 ## 📒 近期逐条账本（新→旧）
 
 | 日期 | 播放 | ×基准 | 赞 | 评 | 类型 | 钩子原文 |
 |---|---|---|---|---|---|---|
-| 2026-10-21d | 161 | ×1.68 | 0 | 0 | SPECTACLE-FACT | Potala Palace: about 2,300 tickets a day. I'm your China Travel  |
-| 2026-10-21c | 153 | ×1.59 | 1 | 0 | DEBATE | Skip Dali's famous pagodas — the old town is free. I'm your Chin |
-| 2026-10-21a | 18 | ×0.19 | 0 | 0 | PRICE-SHOCK | Versailles: about $39. The Forbidden City: under $9. I'm your Ch |
-| 2026-10-20d | 43 | ×0.45 | 0 | 0 | PLAIN-FACT | Temple of Heaven beats the Forbidden City. I'm your China Travel |
-| 2026-10-20c | 369 | ×3.84 | 1 | 0 | PRICE-SHOCK | Edinburgh Castle costs £26 to enter. I'm your China Travel Exper |
-| 2026-10-20a | 302 | ×3.15 | 2 | 0 | PLAIN-FACT | Climb the Great Wall's unofficial sections? I'm your China Trave |
+| 2026-10-22d | 643 | ×6.70 | 2 | 0 | CHOICE | Stairs or SLIDE down the Great Wall? |
+| 2026-10-22c | 628 | ×6.54 | 0 | 0 | PRICE-SHOCK | Dubrovnik's walls: ~$45. Xi'an's: ~$8. {\fs13}I'm your China Tra |
+| 2026-10-22a | 28 | ×0.29 | 0 | 0 | PRICE-SHOCK | Pay ¥15 here and you miss all three. {\fs13}I'm your China Trave |
+| 2026-10-21d | 183 | ×1.91 | 1 | 0 | SPECTACLE-FACT | Potala Palace: about 2,300 tickets a day. I'm your China Travel  |
+| 2026-10-21c | 184 | ×1.92 | 1 | 0 | DEBATE | Skip Dali's famous pagodas — the old town is free. I'm your Chin |
+| 2026-10-21a | 50 | ×0.52 | 1 | 0 | PRICE-SHOCK | Versailles: about $39. The Forbidden City: under $9. I'm your Ch |
+| 2026-10-20d | 46 | ×0.48 | 0 | 0 | PLAIN-FACT | Temple of Heaven beats the Forbidden City. I'm your China Travel |
+| 2026-10-20c | 374 | ×3.90 | 1 | 0 | PRICE-SHOCK | Edinburgh Castle costs £26 to enter. I'm your China Travel Exper |
+| 2026-10-20a | 305 | ×3.18 | 2 | 0 | PLAIN-FACT | Climb the Great Wall's unofficial sections? I'm your China Trave |
 | 2026-10-19d | 40 | ×0.42 | 0 | 0 | PLAIN-FACT | Most Chinese pagodas have an odd number of storeys. I'm your Chi |
 | 2026-10-19c | 71 | ×0.74 | 1 | 0 | PRICE-SHOCK | Westminster Abbey: £31. Temple of Heaven: ¥34. I'm your China Tr |
-| 2026-10-19a | 188 | ×1.96 | 0 | 0 | PLAIN-FACT | The Forbidden City sells no same-day tickets. I'm your China Tra |
+| 2026-10-19a | 189 | ×1.97 | 0 | 0 | PLAIN-FACT | The Forbidden City sells no same-day tickets. I'm your China Tra |
 | 2026-10-18d | 647 | ×6.74 | 2 | 0 | SPECTACLE-FACT | 999 steps climb to a hole in this mountain. I'm your China Trave |
 | 2026-10-18c | 658 | ×6.85 | 5 | 0 | PLAIN-FACT | Everyone queues for Zhangjiajie's glass bridge. I'm your China T |
-| 2026-10-18a | 1036 | ×10.79 | 3 | 1 | PRICE-SHOCK | Swiss summit train: $155. Same China view: $11. I'm your China T |
+| 2026-10-18a | 1037 | ×10.80 | 3 | 1 | PRICE-SHOCK | Swiss summit train: $155. Same China view: $11. I'm your China T |
 | 2026-10-16d | 49 | ×0.51 | 1 | 0 | PLAIN-FACT | Come to China's last Shangri-La a week too late — the gold is go |
-| 2026-10-16c | 234 | ×2.44 | 0 | 0 | PLAIN-FACT | A one-hour massage in New York? Eighty to a hundred and twenty d |
-| 2026-10-16a | 108 | ×1.13 | 2 | 0 | STAKES | Hot take: don't climb Huangshan in summer. I'm your China Travel |
+| 2026-10-16c | 236 | ×2.46 | 0 | 0 | PLAIN-FACT | A one-hour massage in New York? Eighty to a hundred and twenty d |
+| 2026-10-16a | 109 | ×1.14 | 2 | 0 | STAKES | Hot take: don't climb Huangshan in summer. I'm your China Travel |
 | 2026-10-15d | 28 | ×0.29 | 0 | 0 | DEBATE | Everyone packs into Lijiang. Skip it. I'm your China Travel Expe |
 | 2026-10-15c | 48 | ×0.50 | 0 | 0 | PLAIN-FACT | A canal-view room in Venice runs about three hundred dollars. I' |
-| 2026-10-15a | 900 | ×9.38 | 6 | 0 | PLAIN-FACT | China's highest crater lake is clear maybe fifty days a year. I' |
+| 2026-10-15a | 902 | ×9.40 | 6 | 0 | PLAIN-FACT | China's highest crater lake is clear maybe fifty days a year. I' |
 | 2026-10-14d | 456 | ×4.75 | 1 | 0 | DEBATE | A Li River cruise packs up to 200 people on one boat. Skip it. I |
 | 2026-10-14c | 34 | ×0.35 | 0 | 0 | PLAIN-FACT | Nine in ten payments in China happen by phone, not card. I'm you |
 | 2026-10-14a | 35 | ×0.36 | 1 | 0 | PRICE-SHOCK | Antelope Canyon: a guided tour, about $100. I'm your China Trave |
 | 2026-10-13d | 27 | ×0.28 | 0 | 0 | SPECTACLE-FACT | China's longest border road runs 9,200 km. {\fs13}I'm your China |
-| 2026-10-13c | 119 | ×1.24 | 1 | 0 | SPECTACLE-FACT | Climbing Mount Tai means 6,600 steps — in the dark. {\fs13}I'm y |
+| 2026-10-13c | 120 | ×1.25 | 1 | 0 | SPECTACLE-FACT | Climbing Mount Tai means 6,600 steps — in the dark. {\fs13}I'm y |
 | 2026-10-13a | 87 | ×0.91 | 1 | 0 | MISCONCEPTION | Everyone thinks this Buddha survived by luck. {\fs13}I'm your Ch |
 | 2026-10-12d | 7 | ×0.07 | 0 | 0 | PLAIN-FACT | Two ways into Tibet, and they're nothing alike. I'm your China T |
 | 2026-10-12c | 23 | ×0.24 | 1 | 0 | MISCONCEPTION | You think China's famous old towns are Pingyao and Lijiang. I'm  |
 | 2026-10-12a | 64 | ×0.67 | 0 | 0 | PLAIN-FACT | Book "Zhangjiajie" wrong and you'll miss the Avatar pillars. I'm |
-| 2026-10-11d | 22 | ×0.23 | 0 | 0 | CHOICE | Would you drive 446 km of desert with no town, no water? I'm you |
-| 2026-10-11c | 25 | ×0.26 | 0 | 0 | PLAIN-FACT | China's sold-out bullet trains still sell a ticket — to stand. I |
+| 2026-10-11d | 23 | ×0.24 | 0 | 0 | CHOICE | Would you drive 446 km of desert with no town, no water? I'm you |
+| 2026-10-11c | 26 | ×0.27 | 0 | 0 | PLAIN-FACT | China's sold-out bullet trains still sell a ticket — to stand. I |
 | 2026-10-11a | 1 | ×0.01 | 0 | 0 | PRICE-SHOCK | Switzerland's famous peak train: about $300. I'm your China Trav |
 | 2026-10-10d | 14 | ×0.15 | 0 | 0 | CHOICE | Would you drive a bridge hanging 330 metres over a canyon? |
-| 2026-10-10c | 53 | ×0.55 | 0 | 0 | PLAIN-FACT | Shanghai's prettiest water town is free — one metro ride away. |
+| 2026-10-10c | 54 | ×0.56 | 0 | 0 | PLAIN-FACT | Shanghai's prettiest water town is free — one metro ride away. |
 | 2026-10-10a | 31 | ×0.32 | 0 | 0 | SPECTACLE-FACT | These colors look edited — they're 24 million years old. |
 | 2026-10-08d | 7 | ×0.07 | 0 | 0 | CHOICE | East for a 3 AM sunrise, or north for the aurora? |
 | 2026-10-08c | 37 | ×0.39 | 0 | 0 | DEBATE | Skip Dali's old town. Locals ride the lake — 130 km. |
 | 2026-10-08a | 43 | ×0.45 | 0 | 0 | PRICE-SHOCK | China's ¥20 note shows a fisherman who quit in 2008. |
 | 2026-10-07d | 96 | ×1.00 | 1 | 0 | CHOICE | 492 painted caves by day, or desert stars by night? |
-| 2026-10-07c | 16 | ×0.17 | 0 | 0 | PLAIN-FACT | Fly to China's top park — and get turned away at the gate. |
-| 2026-10-07a | 102 | ×1.06 | 0 | 0 | PRICE-SHOCK | Zhangjiajie: $33. Yosemite: $35. Almost the same. |
-| 2026-10-06d | 87 | ×0.91 | 0 | 0 | CHOICE | 99 bends to Heaven's Gate, or 24 wartime switchbacks — which wou |
 <!-- AUTO:END -->
