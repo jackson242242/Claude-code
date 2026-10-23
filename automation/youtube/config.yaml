@@ -203,21 +203,37 @@ runtime:
 # the weekly 35-50 min ambient stock-doc lane is deleted. Playbook §4L.
 longform:
   status: active
-  cadenceDays: 14           # every other Friday: 10-23, 11-06, 11-20, 12-04 (was weekly since 2026-09-04)
+  cadenceDays: 7            # ROAD-TO-1M 2026-10-23: EVERY Friday from 11-06; lanes alternate G (11-06, 11-20, 12-04…) / M-Long (11-13, 11-27, 12-11…); 10-23 = G #1
   anchorDate: "2026-10-23"  # guide #1 (Zhujiajiao, fallback Dali)
   publishAtUtc: "15:00"     # search/browse-driven; EU evening + US morning
   durationMin: [6, 9]       # one 6-9 min search guide; the answer comes in the first 30 s
   language: english-only    # NO Chinese anywhere: title/description/narration/captions
-  lanes: [search-guide]     # title = the exact narrow query, checked against YouTube search suggestions (no vidIQ spend)
+  lanes: [search-guide, mechanism-explainer]   # G: title = exact search query · M-Long: 10-14 min narrated "How Ancient China Built It" from plans/mechanism/<topic>/ text assets (playbook §4L)
+  mLongFridays: ["2026-11-13", "2026-11-27", "2026-12-11", "2026-12-25", "2027-01-08"]
+  mLongFirst: plans/mechanism/yingxian
   childShorts: 3            # same-place Shorts in the next 7 days, 2-s CTA "Full route: tap the related video above"
   footageAudit: ">=3 min slug-named non-aerial footage passing a 3-frame check, audited 2 days before (Wednesday)"
   povWalk: "owner continuous footage only (min 10 min); replaces that Friday's guide"
   killCheck: "2026-11-20: guides #1 and #2 each <100 views at 14 days and Search not rising -> pause until owner continuous footage exists"
   # Voice (decision D3, 2026-10-17). AI VO explicitly OK (benchmark: GoldenSeniorsLiving); disclose "AI narration".
   narrationWhileCredits: elevenlabs-rachel   # scripts/elevenlabs-tts.mjs --voice 21m00Tcm4TlvDq8ikWAM while the already-paid credits last; never the ELEVENLABS_VOICE_ID voice (broken audio 2026-10-17)
-  voice: none               # fallback when ElevenLabs fails: none (DEFAULT, $0: on-screen text + ambient + music, no narration) | openai (scripts/tts-openai.mjs, gpt-4o-mini-tts voice marin, ~$0.2/episode — only after the owner says yes)
+  voice: openai             # 2026-10-23 (owner delegated everything 10-19/10-23): fallback when ElevenLabs fails = scripts/tts-openai.mjs (gpt-4o-mini-tts marin, ~$0.2/episode), HARD CAP $2/month (log spend in RUNLOG; over cap -> none). A captions-only 10-min explainer has no retention, so 'none' is the last resort only.
   format16x9: true
   playbook: plans/longform-v2.md  # format bible (written from 2026-08-27 research); §4L of the playbook wins where they differ
+
+# ================= ROAD TO 1M (2026-10-23; plans/road-to-1m.md is the authority; weekly manager session Sundays 10:49Z) =================
+roadTo1m:
+  plan: automation/youtube/plans/road-to-1m.md
+  stage: 0                      # 0 = prove the M-Short (2026-10-26..11-23)
+  mShortDays: [Mon, Tue, Fri, Sat]   # X slot = M (was F4)
+  mShortLengthSec: [30, 60]
+  stage0Gate: "n>=6 clean M samples (exclude LOW-REACH days and 10-09..12): M 72h median >= 1.5x same-day F4 72h median AND >=1 M-Short >= 2,000 views by 2026-11-23; one of two -> extend 2 weeks"
+  stage0Kill: "n>=9 and M median <= F4 median -> M-Short 1/week series only; M-Long test continues"
+  stage1Gate: "by 2027-01-31: >=1 M-Long >=1,000 views at 28 d AND channel >=300 subs AND longform >=20% of January views; any M-Long >=10k -> Stage 2"
+  stage1Kill: ">=12 M-Long episodes AND >=6 months with none >=10x lane median -> stop M-Long, write the needs-human-voice report"
+  budgets: { openaiUsdPerMonth: 2, openaiHardStop: 5, vidiqFloor: 40, vidiqPulseMinBalance: 60, dataApiUnitsPerDay: 8000, pexelsReqPerRun: 60, agentHoursPerWeek: 15, overCapCutFirst: F4 }
+  weeklyRules: "one variable per week; rollback a change that coincides with >=30% drop in 72h median two weeks running; pre-registered prediction scored next week; 3-video guardrail audit"
+  subjectOrder: [yingxian-pagoda, forbidden-city-drainage, great-wall-rammed-earth-jiumenkou, dujiangyan, zhaozhou-bridge, tulou-rammed-earth, city-wall-rice-mortar]
 
 # ================= MUSIC (2026-10-17) =================
 music:
@@ -237,7 +253,7 @@ pov8w:
   beforeWindow: "all slots F4, except slot a on Wed/Sun = F3 (10-18: a F3, c F4, d F4); no F1/F2; frame-0 check, aerial cap, audio table, words rules, length bands and meta fields already apply"
   afterWindow: keep-rotation     # after 12-13: rotation, gates and the W8 freeze stay unchanged until an interactive session updates pov8w
   checkpoint: "2026-12-17"
-  formats: [F1, F2, F3, F4, L]   # F1 owner POV · F2 licensed POV (pov-library) · F3 China Price Check (price card) · F4 ground-level nature/small town (baseline) · L search guide
+  formats: [F1, F2, F3, F4, M, L]   # F1 owner POV · F2 licensed POV (pov-library) · F3 China Price Check · F4 ground-level heritage (baseline) · M mechanism-explainer Short (code-drawn, ROAD-TO-1M 2026-10-23, X slot Mon/Tue/Fri/Sat) · L longform (G / M-Long alternating)
   rotation:
     epoch: "2026-10-19"
     base: [F2, F4, X]

@@ -36,7 +36,10 @@ run; put the source links in the video description.
 
 ## 0. Setup & lane detection
 1. `apt-get update && apt-get install -y ffmpeg fonts-noto-cjk` (container is fresh
-   each run; the CJK font is required for burned-in Chinese subtitles). The 书法
+   each run; the CJK font is required for burned-in Chinese subtitles). ALSO
+   `python3 -m pip install cairosvg pillow numpy` (PyPI is reachable; needed by the
+   M lane renderers in `scripts/mechanism/`; ~20 s). If pip fails, log
+   `M-lane: BLOCKED (cairosvg)` and run that day's M slot as F4. The 书法
    title font ships IN THE REPO (`automation/youtube/assets/fonts/
    MaShanZheng-Regular.ttf`, OFL) — assemble-video finds it automatically when
    run from the repo root; no download needed (github.com is proxy-blocked in
@@ -198,6 +201,19 @@ subjects" wherever §0c mentions them.
 | F3 | China Price Check (Wed + Sun) | 15-22 s | price card or the owner's receipt/POV | slug-named ground clip of the priced place, or MAP-FORMAT | second person |
 | F4 | Ground-level nature / small town — the baseline arm | 14-20 s | human-scale ground shot (path, village lane, boat, people at a viewpoint) | slug-verified Pexels video, Ken-Burns photos, MAP-FORMAT fallback | second person |
 | L | 6-9 min search guide, every other Friday (§4L) | 6-9 min | answer-first | ≥3 min slug-named non-aerial | no "I" over stock |
+| **M** | **Mechanism explainer Short (ROAD-TO-1M 2026-10-23, `plans/road-to-1m.md`): code-drawn SVG animation of HOW a building works (dougong, hidden floors, rammed earth, drainage…), 3-4 labelled steps, then 3 s of a slug-named real photo/clip of the site** | 30-60 s (NOT the 14-20 s band) | hook card: big number + the building drawing itself | `scripts/mechanism/render_*.py` → `--clips` with a `file:` entry + the site photo; NO stock in the steps, NO AI imagery | second person; every caption number from `plans/architecture-facts.md` or the seed's 2 sources |
+**M lane rules:** takes the X slot on Mon/Tue/Fri/Sat (X = M instead of F4; Wed/Sun F3 and Thu
+F1 unchanged, so the F2/F4 same-day pair is intact). Seeds: queue `arch-M-*` (each names its
+renderer or scene JSON; a seed without a renderer yet = write one from `render_pagoda.py`
+primitives, ≤25 agent-min, else run the slot as F4 and log `M: no renderer`). Bed from the
+vault; `containsSyntheticMedia` stays true (AI bed, D1) — never claim "no AI label". Audit:
+render → `frame0-sheet` → LOOK (labels never overlap the drawing; nothing below y=1260 where
+subtitles sit) → upload with `fmt:M`, `footage:diagram`. Log `M-sample: <n>` so the Stage 0
+gate (≥6 clean samples; M 72 h median ≥1.5× same-day F4 and ≥1 M ≥2,000 views by 11-23) can
+be read by the Sunday manager session. First seed arch-M-01 (Yingxian) is pre-rendered by
+`python3 -I scripts/mechanism/render_pagoda.py <outdir>` (~30 s) with
+`plans/mechanism/yingxian/short-subs.srt` and `short-clips.json` (fix the file: path to
+the rendered mp4).
 F3 keeps the Q4 rules (one comparison, both sides verified THIS RUN, both in USD,
 ≥4× gap, something the viewer pays for, 2 dated sources in the description). Price
 card = cue 1 shows both prices big in the middle of the frame over a ground clip whose
@@ -224,8 +240,8 @@ after the vault decrypt; wc-* only once the Commons download has been ingested).
 `d = UTC date − 2026-10-19 in days`; `idx = ((d % 3) + 3) % 3` (never negative;
 only used from 10-19 on); base = `[F2, F4, X]`;
 slot a/c/d = `base[(0+idx) mod 3]`, `base[(1+idx) mod 3]`, `base[(2+idx) mod 3]`.
-X = F3 on Wed + Sun, F1 on Thu, F4 on Mon/Tue/Fri/Sat. F1 takes whichever slot X
-lands in (no fixed slot d). A slot claimed in `state/owner-slots.json` with a
+X = F3 on Wed + Sun, F1 on Thu, **M on Mon/Tue/Fri/Sat (from 2026-10-24; was F4 —
+ROAD-TO-1M)**. F1/M take whichever slot X lands in (no fixed slot d). A slot claimed in `state/owner-slots.json` with a
 videoId overrides the rotation (log it as F1). L is extra on its Fridays (15:00Z), not a slot.
 First week (the pattern repeats every 3 weeks):
 | Day | a | c | d |
@@ -918,9 +934,24 @@ For each slot, work in `automation/youtube/runs/<YYYY-MM-DD>-<slot>/`:
    starting the next slot (protects against mid-run session death). Media never
    enters git (runs/.gitignore).
 
-## 4L. LONGFORM DAY — every other Friday SEARCH GUIDE (rewritten 2026-10-17)
-(config `longform`: cadenceDays 14, anchorDate 2026-10-23 → 10-23, 11-06, 11-20,
-12-04 at 15:00Z. Search brings 46 % of our longform views and Home 0, so the
+## 4L. LONGFORM DAY — EVERY Friday from 2026-11-06: search guide (G) and mechanism explainer (M-Long) ALTERNATE (ROAD-TO-1M 2026-10-23)
+**M-Long Fridays: 11-13, 11-27, 12-11, 12-25, 01-08 …** — a 10-14 min narrated
+"How Ancient China Built It" explainer built from the text assets the Sunday manager
+session committed to `plans/mechanism/<topic>/` (script with ≥20-claim fact ledger,
+scene JSONs / renderer, thumbnail spec, 3 child-Short briefs). The Friday run renders
+the diagrams (`scripts/mechanism/*.py`), narrates (ElevenLabs Rachel while credits last →
+`scripts/tts-openai.mjs` marin, hard cap $2/month logged in RUNLOG → captions-only as the
+last resort), assembles per `plans/mechanism/yingxian/longform-assemble.sh` pattern
+(real photos only where the slug/Commons title names the site; CC BY attribution lines
+in the description), makes the thumbnail (real photo + ≤4 words, code-drawn text; one
+gpt-image illustration allowed only as a non-photo "illustration" and never a fake
+photo of the site), uploads 15:00Z with `fmt:L lane:M-Long`, and schedules 3 child
+M-Shorts over the next 7 days. If the text assets are missing or a fact lacks 2
+sources, slip the M-Long to the next M-Long Friday, log it, and run that day as a normal
+Shorts day (never a padded video). First M-Long = Yingxian (`plans/mechanism/yingxian/`).
+**G Fridays: 11-06, 11-20, 12-04, 12-18 …** — the search guide below.
+(config `longform`: cadenceDays 7 from 2026-11-06 with lanes alternating; before that
+anchorDate 2026-10-23 → 10-23 G. Search brings 46 % of our longform views and Home 0, so the
 weekly alternation of 8-10 min guides and the 35-50 min AMBIENT stock-doc lane is
 DELETED — the ambient lane was never produced and cannot be sourced honestly.
 `state/pending-video-updates.json` still applies once when it has pending items.)
