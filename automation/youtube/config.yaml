@@ -234,6 +234,8 @@ roadTo1m:
   budgets: { openaiUsdPerMonth: 2, openaiHardStop: 5, vidiqFloor: 40, vidiqPulseMinBalance: 60, dataApiUnitsPerDay: 8000, pexelsReqPerRun: 60, agentHoursPerWeek: 15, overCapCutFirst: F4 }
   weeklyRules: "one variable per week; rollback a change that coincides with >=30% drop in 72h median two weeks running; pre-registered prediction scored next week; 3-video guardrail audit"
   subjectOrder: [yingxian-pagoda, forbidden-city-drainage, great-wall-rammed-earth-jiumenkou, dujiangyan, zhaozhou-bridge, tulou-rammed-earth, city-wall-rice-mortar]
+  spendDecision: "owner 2026-10-23: keep $0-9/month. Voice = OpenAI gpt-4o-mini-tts (cap $2/month) once ElevenLabs credits end (owner cancels the subscription); ElevenLabs v4 voice and AI 3D shots (Veo 3.1 Lite, $0.48/8 s, tested 10-23) are NOT used; visuals stay code-drawn. Re-ask only if a stage gate is passed."
+  aiAnimation: off
 
 # ================= MUSIC (2026-10-17) =================
 music:
