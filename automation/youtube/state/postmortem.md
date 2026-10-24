@@ -1,3 +1,32 @@
+## 2026-10-24 post-mortem (baseline = 14d median views of Shorts ≥3d old: 54)
+- 2026-10-22 d Ip_nMRVgxa0 | 1035v 2L 0C @2d | ×19.17 | WINNER — replicate this hook shape today | Stairs or SLIDE down the Great Wall? | China Travel Expert
+- 2026-10-23 d DtESOVzTiP0 | 795v 1L 0C @1d | ×14.72 | WINNER — replicate this hook shape today | Guangzhou's Beijing Road Hides 11 Layers of Old Road
+- 2026-10-22 c MUiondooNRA | 716v 0L 0C @2d | ×13.26 | WINNER — replicate this hook shape today | Dubrovnik's Walls ~$45, Xi'an's Bigger Ming Wall ~$8 | China Travel Ex
+- 2026-10-23 c DQoax0AuYI8 | 598v 1L 0C @1d | ×11.07 | WINNER — replicate this hook shape today | One Man Spent 20 Years on This Garden — and Nearly Went Broke
+- 2026-10-22 a pMEj0mnWusk | 56v 0L 0C @2d | ×1.04 | baseline | Temple of Heaven's ¥15 Ticket Misses All 3 Monuments | China Travel Ex
+- 2026-10-23 a JieQ5elWaKU | 36v 0L 0C @1d | ×0.67 | baseline | Pisa Costs $22 to Climb. Xi'an's Bell Tower? About $4.
+- 2026-10-23 L x71MzcRixrk | 1v 0L 0C @1d | ×0.02 | LONGFORM: no distribution (expected on this channel; search-ranking is slow) | Forbidden City Tickets 2026 | China Travel Expert
+- like-rate (fresh Shorts): 0.12% (peers 1-6%)
+### Equal age (Data API snapshots since 2026-10-18; 48 h / 72 h ±6 h; "~" = interpolated between the snapshots either side)
+- Shorts median, trailing 28 d: 48h 187v (n=16) · 72h 188v (n=16)
+- 2026-10-22 a fmt:F2 pMEj0mnWusk | 48h 56v 0L 0C | 72h — | Temple of Heaven's ¥15 Ticket Misses All 3 Monuments | China
+- 2026-10-21 d fmt:F4 Ey5CNTHrlHA | 48h ~183v 1L 0C | 72h — | Potala Palace: 2,300 Tickets a Day, One Hour Inside | China 
+- 2026-10-21 c fmt:F2 RcLjDwyKBxE | 48h ~190v 1L 0C | 72h — | Skip Dali's Paid Pagodas — the Old Town Is Free | China Trav
+- 2026-10-21 a fmt:F3 s-jDXjgfebg | 48h 47v 1L 0C | 72h 55v 1L 0C | China Price Check: Versailles $39 vs Forbidden City $9 | Chi
+- 2026-10-20 d fmt:F2 JJEvBONjjvk | 48h ~44v 0L 0C | 72h ~46v 0L 0C | Temple of Heaven Beats the Forbidden City — Tell Me I'm Wron
+- 2026-10-20 c fmt:F4 dLMZKPuHhtg | 48h ~370v 1L 0C | 72h ~374v 1L 0C | Edinburgh Castle £26. Xi'an's Ming Wall: ¥54 | China Travel 
+- 2026-10-20 a fmt:F4 5F_zGpkGOP8 | 48h 302v 2L 0C | 72h 305v 2L 0C | Climb the Wild Great Wall? Up to a ¥30,000 Fine | China Trav
+- 2026-10-19 d fmt:F4 YCULs2S6EG4 | 48h ~35v 0L 0C | 72h ~40v 0L 0C | Most Chinese Pagodas Have Odd Storeys — Dali's Has 16 | Chin
+- 2026-10-19 c fmt:F4 X7AMcI6ne_A | 48h ~70v 1L 0C | 72h ~71v 1L 0C | Westminster Abbey £31. Temple of Heaven, All 3 Sights: ¥34 |
+- 2026-10-19 a fmt:F2 Q3e9Dds3EcM | 48h 187v 0L 0C | 72h 188v 0L 0C | Forbidden City: No Same-Day Tickets, Book 7 Days Ahead | Chi
+- 2026-10-18 d fmt:F4 S0USzMjVQ4s | 48h ~535v 2L 0C | 72h ~650v 2L 0C | 131m Mountain Gate That Jets Have Flown Through | China Trav
+- 2026-10-18 c fmt:F4 6UXkqL7ItCI | 48h ~626v 5L 0C | 72h ~658v 5L 0C | Skip Zhangjiajie's 430m Glass Bridge — Look Below | China Tr
+- 2026-10-18 a fmt:F3 tCPHwTvMxZg | 48h 1035v 3L 1C | 72h 1036v 3L 1C | China Price Check: Swiss Summit Train $155 vs China's $11 | 
+- 2026-10-16 d fmt:- XuGFEubLnUw | 48h ~41v 1L 0C | 72h ~47v 1L 0C | China's Last Shangri-La: a 2-Week Gold Window at 3,900 m | C
+- 2026-10-16 c fmt:- cbH2DwPJ3gc | 48h ~223v 0L 0C | 72h ~226v 0L 0C | The $100 Massage That Costs About $20 in China | China Trave
+### YouTube Analytics API
+- unavailable: HTTP 403 accessNotConfigured — the YouTube Analytics API is not enabled in the Google Cloud project (owner action: APIs & Services > enable "YouTube Analytics API"; checklist in scripts/youtube-oauth-helper.mjs). Equal-age numbers come from Data API snapshots only.
+
 ## 2026-10-23 post-mortem (baseline = 14d median views of Shorts ≥3d old: 49)
 - 2026-10-22 c MUiondooNRA | 623v 0L 0C @1d | ×12.71 | WINNER — replicate this hook shape today | Dubrovnik's Walls ~$45, Xi'an's Bigger Ming Wall ~$8 | China Travel Ex
 - 2026-10-22 d Ip_nMRVgxa0 | 579v 2L 0C @1d | ×11.82 | WINNER — replicate this hook shape today | Stairs or SLIDE down the Great Wall? | China Travel Expert
