@@ -1,0 +1,537 @@
+## 2026-10-24 post-mortem (baseline = 14d median views of Shorts ≥3d old: 54)
+- 2026-10-22 d Ip_nMRVgxa0 | 1035v 2L 0C @2d | ×19.17 | WINNER — replicate this hook shape today | Stairs or SLIDE down the Great Wall? | China Travel Expert
+- 2026-10-23 d DtESOVzTiP0 | 795v 1L 0C @1d | ×14.72 | WINNER — replicate this hook shape today | Guangzhou's Beijing Road Hides 11 Layers of Old Road
+- 2026-10-22 c MUiondooNRA | 716v 0L 0C @2d | ×13.26 | WINNER — replicate this hook shape today | Dubrovnik's Walls ~$45, Xi'an's Bigger Ming Wall ~$8 | China Travel Ex
+- 2026-10-23 c DQoax0AuYI8 | 598v 1L 0C @1d | ×11.07 | WINNER — replicate this hook shape today | One Man Spent 20 Years on This Garden — and Nearly Went Broke
+- 2026-10-22 a pMEj0mnWusk | 56v 0L 0C @2d | ×1.04 | baseline | Temple of Heaven's ¥15 Ticket Misses All 3 Monuments | China Travel Ex
+- 2026-10-23 a JieQ5elWaKU | 36v 0L 0C @1d | ×0.67 | baseline | Pisa Costs $22 to Climb. Xi'an's Bell Tower? About $4.
+- 2026-10-23 L x71MzcRixrk | 1v 0L 0C @1d | ×0.02 | LONGFORM: no distribution (expected on this channel; search-ranking is slow) | Forbidden City Tickets 2026 | China Travel Expert
+- like-rate (fresh Shorts): 0.12% (peers 1-6%)
+### Equal age (Data API snapshots since 2026-10-18; 48 h / 72 h ±6 h; "~" = interpolated between the snapshots either side)
+- Shorts median, trailing 28 d: 48h 187v (n=16) · 72h 188v (n=16)
+- 2026-10-22 a fmt:F2 pMEj0mnWusk | 48h 56v 0L 0C | 72h — | Temple of Heaven's ¥15 Ticket Misses All 3 Monuments | China
+- 2026-10-21 d fmt:F4 Ey5CNTHrlHA | 48h ~183v 1L 0C | 72h — | Potala Palace: 2,300 Tickets a Day, One Hour Inside | China 
+- 2026-10-21 c fmt:F2 RcLjDwyKBxE | 48h ~190v 1L 0C | 72h — | Skip Dali's Paid Pagodas — the Old Town Is Free | China Trav
+- 2026-10-21 a fmt:F3 s-jDXjgfebg | 48h 47v 1L 0C | 72h 55v 1L 0C | China Price Check: Versailles $39 vs Forbidden City $9 | Chi
+- 2026-10-20 d fmt:F2 JJEvBONjjvk | 48h ~44v 0L 0C | 72h ~46v 0L 0C | Temple of Heaven Beats the Forbidden City — Tell Me I'm Wron
+- 2026-10-20 c fmt:F4 dLMZKPuHhtg | 48h ~370v 1L 0C | 72h ~374v 1L 0C | Edinburgh Castle £26. Xi'an's Ming Wall: ¥54 | China Travel 
+- 2026-10-20 a fmt:F4 5F_zGpkGOP8 | 48h 302v 2L 0C | 72h 305v 2L 0C | Climb the Wild Great Wall? Up to a ¥30,000 Fine | China Trav
+- 2026-10-19 d fmt:F4 YCULs2S6EG4 | 48h ~35v 0L 0C | 72h ~40v 0L 0C | Most Chinese Pagodas Have Odd Storeys — Dali's Has 16 | Chin
+- 2026-10-19 c fmt:F4 X7AMcI6ne_A | 48h ~70v 1L 0C | 72h ~71v 1L 0C | Westminster Abbey £31. Temple of Heaven, All 3 Sights: ¥34 |
+- 2026-10-19 a fmt:F2 Q3e9Dds3EcM | 48h 187v 0L 0C | 72h 188v 0L 0C | Forbidden City: No Same-Day Tickets, Book 7 Days Ahead | Chi
+- 2026-10-18 d fmt:F4 S0USzMjVQ4s | 48h ~535v 2L 0C | 72h ~650v 2L 0C | 131m Mountain Gate That Jets Have Flown Through | China Trav
+- 2026-10-18 c fmt:F4 6UXkqL7ItCI | 48h ~626v 5L 0C | 72h ~658v 5L 0C | Skip Zhangjiajie's 430m Glass Bridge — Look Below | China Tr
+- 2026-10-18 a fmt:F3 tCPHwTvMxZg | 48h 1035v 3L 1C | 72h 1036v 3L 1C | China Price Check: Swiss Summit Train $155 vs China's $11 | 
+- 2026-10-16 d fmt:- XuGFEubLnUw | 48h ~41v 1L 0C | 72h ~47v 1L 0C | China's Last Shangri-La: a 2-Week Gold Window at 3,900 m | C
+- 2026-10-16 c fmt:- cbH2DwPJ3gc | 48h ~223v 0L 0C | 72h ~226v 0L 0C | The $100 Massage That Costs About $20 in China | China Trave
+### YouTube Analytics API
+- unavailable: HTTP 403 accessNotConfigured — the YouTube Analytics API is not enabled in the Google Cloud project (owner action: APIs & Services > enable "YouTube Analytics API"; checklist in scripts/youtube-oauth-helper.mjs). Equal-age numbers come from Data API snapshots only.
+
+## 2026-10-23 post-mortem (baseline = 14d median views of Shorts ≥3d old: 49)
+- 2026-10-22 c MUiondooNRA | 623v 0L 0C @1d | ×12.71 | WINNER — replicate this hook shape today | Dubrovnik's Walls ~$45, Xi'an's Bigger Ming Wall ~$8 | China Travel Ex
+- 2026-10-22 d Ip_nMRVgxa0 | 579v 2L 0C @1d | ×11.82 | WINNER — replicate this hook shape today | Stairs or SLIDE down the Great Wall? | China Travel Expert
+- 2026-10-21 c RcLjDwyKBxE | 183v 1L 0C @2d | ×3.73 | WINNER — replicate this hook shape today | Skip Dali's Paid Pagodas — the Old Town Is Free | China Travel Expert
+- 2026-10-21 d Ey5CNTHrlHA | 183v 1L 0C @2d | ×3.73 | WINNER — replicate this hook shape today | Potala Palace: 2,300 Tickets a Day, One Hour Inside | China Travel Exp
+- 2026-10-21 a s-jDXjgfebg | 47v 1L 0C @2d | ×0.96 | baseline | China Price Check: Versailles $39 vs Forbidden City $9 | China Travel 
+- 2026-10-22 a pMEj0mnWusk | 28v 0L 0C @1d | ×0.57 | baseline | Temple of Heaven's ¥15 Ticket Misses All 3 Monuments | China Travel Ex
+- like-rate (fresh Shorts): 0.30% (peers 1-6%)
+### Equal age (Data API snapshots since 2026-10-18; 48 h / 72 h ±6 h; "~" = interpolated between the snapshots either side)
+- Shorts median, trailing 28 d: 48h 187v (n=13) · 72h 188v (n=13)
+- 2026-10-21 a fmt:F3 s-jDXjgfebg | 48h 47v 1L 0C | 72h — | China Price Check: Versailles $39 vs Forbidden City $9 | Chi
+- 2026-10-20 d fmt:F2 JJEvBONjjvk | 48h ~44v 0L 0C | 72h — | Temple of Heaven Beats the Forbidden City — Tell Me I'm Wron
+- 2026-10-20 c fmt:F4 dLMZKPuHhtg | 48h ~370v 1L 0C | 72h — | Edinburgh Castle £26. Xi'an's Ming Wall: ¥54 | China Travel 
+- 2026-10-20 a fmt:F4 5F_zGpkGOP8 | 48h 302v 2L 0C | 72h 305v 2L 0C | Climb the Wild Great Wall? Up to a ¥30,000 Fine | China Trav
+- 2026-10-19 d fmt:F4 YCULs2S6EG4 | 48h ~35v 0L 0C | 72h ~40v 0L 0C | Most Chinese Pagodas Have Odd Storeys — Dali's Has 16 | Chin
+- 2026-10-19 c fmt:F4 X7AMcI6ne_A | 48h ~70v 1L 0C | 72h ~71v 1L 0C | Westminster Abbey £31. Temple of Heaven, All 3 Sights: ¥34 |
+- 2026-10-19 a fmt:F2 Q3e9Dds3EcM | 48h 187v 0L 0C | 72h 188v 0L 0C | Forbidden City: No Same-Day Tickets, Book 7 Days Ahead | Chi
+- 2026-10-18 d fmt:F4 S0USzMjVQ4s | 48h ~535v 2L 0C | 72h ~650v 2L 0C | 131m Mountain Gate That Jets Have Flown Through | China Trav
+- 2026-10-18 c fmt:F4 6UXkqL7ItCI | 48h ~626v 5L 0C | 72h ~658v 5L 0C | Skip Zhangjiajie's 430m Glass Bridge — Look Below | China Tr
+- 2026-10-18 a fmt:F3 tCPHwTvMxZg | 48h 1035v 3L 1C | 72h 1036v 3L 1C | China Price Check: Swiss Summit Train $155 vs China's $11 | 
+- 2026-10-16 d fmt:- XuGFEubLnUw | 48h ~41v 1L 0C | 72h ~47v 1L 0C | China's Last Shangri-La: a 2-Week Gold Window at 3,900 m | C
+- 2026-10-16 c fmt:- cbH2DwPJ3gc | 48h ~223v 0L 0C | 72h ~226v 0L 0C | The $100 Massage That Costs About $20 in China | China Trave
+- 2026-10-16 L fmt:- Z8_NShpwwZ8 | 48h 10v 0L 0C | 72h 10v 0L 0C | Best Time to Visit China in 2026: Month-by-Month Guide | Chi
+- 2026-10-16 a fmt:- PfZGpyjFh3M | 48h 87v 2L 0C | 72h 94v 2L 0C | Skip Huangshan's Summer Sunrise: Cloud Sea Peaks Nov–May | C
+- 2026-10-15 d fmt:- yuYt9QXZR64 | 48h — | 72h ~26v 0L 0C | Skip Crowded Lijiang — Shaxi's Last Tea Caravan Left in 1949
+### YouTube Analytics API
+- unavailable: HTTP 403 accessNotConfigured — the YouTube Analytics API is not enabled in the Google Cloud project (owner action: APIs & Services > enable "YouTube Analytics API"; checklist in scripts/youtube-oauth-helper.mjs). Equal-age numbers come from Data API snapshots only.
+
+## 2026-10-22 post-mortem (baseline = 14d median views of Shorts ≥3d old: 49)
+- 2026-10-20 c dLMZKPuHhtg | 368v 1L 0C @2d | ×7.51 | WINNER — replicate this hook shape today | Edinburgh Castle £26. Xi'an's Ming Wall: ¥54 | China Travel Expert
+- 2026-10-20 a 5F_zGpkGOP8 | 302v 2L 0C @2d | ×6.16 | WINNER — replicate this hook shape today | Climb the Wild Great Wall? Up to a ¥30,000 Fine | China Travel Expert
+- 2026-10-21 d Ey5CNTHrlHA | 161v 0L 0C @1d | ×3.29 | WINNER — replicate this hook shape today | Potala Palace: 2,300 Tickets a Day, One Hour Inside | China Travel Exp
+- 2026-10-21 c RcLjDwyKBxE | 153v 1L 0C @1d | ×3.12 | WINNER — replicate this hook shape today | Skip Dali's Paid Pagodas — the Old Town Is Free | China Travel Expert
+- 2026-10-20 d JJEvBONjjvk | 42v 0L 0C @2d | ×0.86 | baseline | Temple of Heaven Beats the Forbidden City — Tell Me I'm Wrong | China 
+- 2026-10-21 a s-jDXjgfebg | 18v 0L 0C @1d | ×0.37 | LOSER — avoid this shape today | China Price Check: Versailles $39 vs Forbidden City $9 | China Travel 
+- like-rate (fresh Shorts): 0.38% (peers 1-6%)
+### Equal age (Data API snapshots since 2026-10-18; 48 h / 72 h ±6 h; "~" = interpolated between the snapshots either side)
+- Shorts median, trailing 28 d: 48h 223v (n=10) · 72h 226v (n=10)
+- 2026-10-20 a fmt:F4 5F_zGpkGOP8 | 48h 302v 2L 0C | 72h — | Climb the Wild Great Wall? Up to a ¥30,000 Fine | China Trav
+- 2026-10-19 d fmt:F4 YCULs2S6EG4 | 48h ~35v 0L 0C | 72h — | Most Chinese Pagodas Have Odd Storeys — Dali's Has 16 | Chin
+- 2026-10-19 c fmt:F4 X7AMcI6ne_A | 48h ~70v 1L 0C | 72h — | Westminster Abbey £31. Temple of Heaven, All 3 Sights: ¥34 |
+- 2026-10-19 a fmt:F2 Q3e9Dds3EcM | 48h 187v 0L 0C | 72h 188v 0L 0C | Forbidden City: No Same-Day Tickets, Book 7 Days Ahead | Chi
+- 2026-10-18 d fmt:F4 S0USzMjVQ4s | 48h ~535v 2L 0C | 72h ~650v 2L 0C | 131m Mountain Gate That Jets Have Flown Through | China Trav
+- 2026-10-18 c fmt:F4 6UXkqL7ItCI | 48h ~626v 5L 0C | 72h ~658v 5L 0C | Skip Zhangjiajie's 430m Glass Bridge — Look Below | China Tr
+- 2026-10-18 a fmt:F3 tCPHwTvMxZg | 48h 1035v 3L 1C | 72h 1036v 3L 1C | China Price Check: Swiss Summit Train $155 vs China's $11 | 
+- 2026-10-16 d fmt:- XuGFEubLnUw | 48h ~41v 1L 0C | 72h ~47v 1L 0C | China's Last Shangri-La: a 2-Week Gold Window at 3,900 m | C
+- 2026-10-16 c fmt:- cbH2DwPJ3gc | 48h ~223v 0L 0C | 72h ~226v 0L 0C | The $100 Massage That Costs About $20 in China | China Trave
+- 2026-10-16 L fmt:- Z8_NShpwwZ8 | 48h 10v 0L 0C | 72h 10v 0L 0C | Best Time to Visit China in 2026: Month-by-Month Guide | Chi
+- 2026-10-16 a fmt:- PfZGpyjFh3M | 48h 87v 2L 0C | 72h 94v 2L 0C | Skip Huangshan's Summer Sunrise: Cloud Sea Peaks Nov–May | C
+- 2026-10-15 d fmt:- yuYt9QXZR64 | 48h — | 72h ~26v 0L 0C | Skip Crowded Lijiang — Shaxi's Last Tea Caravan Left in 1949
+- 2026-10-15 c fmt:- s6EuriN5JT4 | 48h — | 72h ~47v 0L 0C | A Canal Room in Venice: ~$300. The Same View in China: $30 |
+- 2026-10-15 a fmt:- OjUjOUFbAVQ | 48h — | 72h 899v 6L 0C | China's Highest Crater Lake Is Clear Only ~50 Days a Year | 
+### YouTube Analytics API
+- unavailable: HTTP 403 accessNotConfigured — the YouTube Analytics API is not enabled in the Google Cloud project (owner action: APIs & Services > enable "YouTube Analytics API"; checklist in scripts/youtube-oauth-helper.mjs). Equal-age numbers come from Data API snapshots only.
+
+## 2026-10-21 post-mortem (baseline = 14d median views of Shorts ≥3d old: 53)
+- 2026-10-20 c dLMZKPuHhtg | 345v 1L 0C @1d | ×6.51 | WINNER — replicate this hook shape today | Edinburgh Castle £26. Xi'an's Ming Wall: ¥54 | China Travel Expert
+- 2026-10-20 a 5F_zGpkGOP8 | 285v 1L 0C @1d | ×5.38 | WINNER — replicate this hook shape today | Climb the Wild Great Wall? Up to a ¥30,000 Fine | China Travel Expert
+- 2026-10-19 a Q3e9Dds3EcM | 187v 0L 0C @2d | ×3.53 | WINNER — replicate this hook shape today | Forbidden City: No Same-Day Tickets, Book 7 Days Ahead | China Travel 
+- 2026-10-19 c X7AMcI6ne_A | 70v 1L 0C @2d | ×1.32 | baseline | Westminster Abbey £31. Temple of Heaven, All 3 Sights: ¥34 | China Tra
+- 2026-10-20 d JJEvBONjjvk | 32v 0L 0C @1d | ×0.60 | baseline | Temple of Heaven Beats the Forbidden City — Tell Me I'm Wrong | China 
+- 2026-10-19 d YCULs2S6EG4 | 31v 0L 0C @2d | ×0.58 | baseline | Most Chinese Pagodas Have Odd Storeys — Dali's Has 16 | China Travel E
+- like-rate (fresh Shorts): 0.32% (peers 1-6%)
+### Equal age (Data API snapshots since 2026-10-18; 48 h / 72 h ±6 h; "~" = interpolated between the snapshots either side)
+- Shorts median, trailing 28 d: 48h 223v (n=7) · 72h 94v (n=7)
+- 2026-10-19 a fmt:F2 Q3e9Dds3EcM | 48h 187v 0L 0C | 72h — | Forbidden City: No Same-Day Tickets, Book 7 Days Ahead | Chi
+- 2026-10-18 d fmt:F4 S0USzMjVQ4s | 48h ~535v 2L 0C | 72h — | 131m Mountain Gate That Jets Have Flown Through | China Trav
+- 2026-10-18 c fmt:F4 6UXkqL7ItCI | 48h ~626v 5L 0C | 72h — | Skip Zhangjiajie's 430m Glass Bridge — Look Below | China Tr
+- 2026-10-18 a fmt:F3 tCPHwTvMxZg | 48h 1035v 3L 1C | 72h 1036v 3L 1C | China Price Check: Swiss Summit Train $155 vs China's $11 | 
+- 2026-10-16 d fmt:- XuGFEubLnUw | 48h ~41v 1L 0C | 72h ~47v 1L 0C | China's Last Shangri-La: a 2-Week Gold Window at 3,900 m | C
+- 2026-10-16 c fmt:- cbH2DwPJ3gc | 48h ~223v 0L 0C | 72h ~226v 0L 0C | The $100 Massage That Costs About $20 in China | China Trave
+- 2026-10-16 L fmt:- Z8_NShpwwZ8 | 48h 10v 0L 0C | 72h 10v 0L 0C | Best Time to Visit China in 2026: Month-by-Month Guide | Chi
+- 2026-10-16 a fmt:- PfZGpyjFh3M | 48h 87v 2L 0C | 72h 94v 2L 0C | Skip Huangshan's Summer Sunrise: Cloud Sea Peaks Nov–May | C
+- 2026-10-15 d fmt:- yuYt9QXZR64 | 48h — | 72h ~26v 0L 0C | Skip Crowded Lijiang — Shaxi's Last Tea Caravan Left in 1949
+- 2026-10-15 c fmt:- s6EuriN5JT4 | 48h — | 72h ~47v 0L 0C | A Canal Room in Venice: ~$300. The Same View in China: $30 |
+- 2026-10-15 a fmt:- OjUjOUFbAVQ | 48h — | 72h 899v 6L 0C | China's Highest Crater Lake Is Clear Only ~50 Days a Year | 
+### YouTube Analytics API
+- unavailable: HTTP 403 accessNotConfigured — the YouTube Analytics API is not enabled in the Google Cloud project (owner action: APIs & Services > enable "YouTube Analytics API"; checklist in scripts/youtube-oauth-helper.mjs). Equal-age numbers come from Data API snapshots only.
+
+## 2026-10-20 post-mortem (baseline = 14d median views of Shorts ≥3d old: 53)
+- 2026-10-18 a tCPHwTvMxZg | 1035v 3L 1C @2d | ×19.53 | WINNER — replicate this hook shape today | China Price Check: Swiss Summit Train $155 vs China's $11 | China Trav
+- 2026-10-18 c 6UXkqL7ItCI | 612v 5L 0C @2d | ×11.55 | WINNER — replicate this hook shape today | Skip Zhangjiajie's 430m Glass Bridge — Look Below | China Travel Exper
+- 2026-10-18 d S0USzMjVQ4s | 447v 2L 0C @2d | ×8.43 | WINNER — replicate this hook shape today | 131m Mountain Gate That Jets Have Flown Through | China Travel Expert
+- 2026-10-19 a Q3e9Dds3EcM | 163v 0L 0C @1d | ×3.08 | WINNER — replicate this hook shape today | Forbidden City: No Same-Day Tickets, Book 7 Days Ahead | China Travel 
+- 2026-10-19 c X7AMcI6ne_A | 67v 1L 0C @1d | ×1.26 | baseline | Westminster Abbey £31. Temple of Heaven, All 3 Sights: ¥34 | China Tra
+- 2026-10-19 d YCULs2S6EG4 | 18v 0L 0C @1d | ×0.34 | LOSER — avoid this shape today | Most Chinese Pagodas Have Odd Storeys — Dali's Has 16 | China Travel E
+- like-rate (fresh Shorts): 0.47% (peers 1-6%)
+### Equal age (Data API snapshots since 2026-10-18; 48 h / 72 h ±6 h; "~" = interpolated between the snapshots either side)
+- Shorts median, trailing 28 d: 48h 223v (n=4) · 72h 94v (n=6)
+- 2026-10-18 a fmt:F3 tCPHwTvMxZg | 48h 1035v 3L 1C | 72h — | China Price Check: Swiss Summit Train $155 vs China's $11 | 
+- 2026-10-16 d fmt:- XuGFEubLnUw | 48h ~41v 1L 0C | 72h ~47v 1L 0C | China's Last Shangri-La: a 2-Week Gold Window at 3,900 m | C
+- 2026-10-16 c fmt:- cbH2DwPJ3gc | 48h ~223v 0L 0C | 72h ~226v 0L 0C | The $100 Massage That Costs About $20 in China | China Trave
+- 2026-10-16 L fmt:- Z8_NShpwwZ8 | 48h 10v 0L 0C | 72h 10v 0L 0C | Best Time to Visit China in 2026: Month-by-Month Guide | Chi
+- 2026-10-16 a fmt:- PfZGpyjFh3M | 48h 87v 2L 0C | 72h 94v 2L 0C | Skip Huangshan's Summer Sunrise: Cloud Sea Peaks Nov–May | C
+- 2026-10-15 d fmt:- yuYt9QXZR64 | 48h — | 72h ~26v 0L 0C | Skip Crowded Lijiang — Shaxi's Last Tea Caravan Left in 1949
+- 2026-10-15 c fmt:- s6EuriN5JT4 | 48h — | 72h ~47v 0L 0C | A Canal Room in Venice: ~$300. The Same View in China: $30 |
+- 2026-10-15 a fmt:- OjUjOUFbAVQ | 48h — | 72h 899v 6L 0C | China's Highest Crater Lake Is Clear Only ~50 Days a Year | 
+### YouTube Analytics API
+- unavailable: HTTP 403 accessNotConfigured — the YouTube Analytics API is not enabled in the Google Cloud project (owner action: APIs & Services > enable "YouTube Analytics API"; checklist in scripts/youtube-oauth-helper.mjs). Equal-age numbers come from Data API snapshots only.
+
+## 2026-10-19 post-mortem (baseline = 14d median views of Shorts ≥3d old: 54)
+- 2026-10-18 a tCPHwTvMxZg | 1038v 3L 1C @1d | ×19.22 | WINNER — replicate this hook shape today | China Price Check: Swiss Summit Train $155 vs China's $11 | China Trav
+- 2026-10-18 c 6UXkqL7ItCI | 558v 3L 0C @1d | ×10.33 | WINNER — replicate this hook shape today | Skip Zhangjiajie's 430m Glass Bridge — Look Below | China Travel Exper
+- 2026-10-18 d S0USzMjVQ4s | 180v 1L 0C @1d | ×3.33 | WINNER — replicate this hook shape today | 131m Mountain Gate That Jets Have Flown Through | China Travel Expert
+- like-rate (fresh Shorts): 0.39% (peers 1-6%)
+### Equal age (Data API snapshots since 2026-10-18; 48 h / 72 h ±6 h; "~" = interpolated between the snapshots either side)
+- Shorts median, trailing 28 d: 48h 87v (n=3) · 72h 94v (n=4)
+- 2026-10-16 d fmt:- XuGFEubLnUw | 48h ~41v 1L 0C | 72h — | China's Last Shangri-La: a 2-Week Gold Window at 3,900 m | C
+- 2026-10-16 c fmt:- cbH2DwPJ3gc | 48h ~223v 0L 0C | 72h — | The $100 Massage That Costs About $20 in China | China Trave
+- 2026-10-16 L fmt:- Z8_NShpwwZ8 | 48h 10v 0L 0C | 72h 10v 0L 0C | Best Time to Visit China in 2026: Month-by-Month Guide | Chi
+- 2026-10-16 a fmt:- PfZGpyjFh3M | 48h 87v 2L 0C | 72h 94v 2L 0C | Skip Huangshan's Summer Sunrise: Cloud Sea Peaks Nov–May | C
+- 2026-10-15 d fmt:- yuYt9QXZR64 | 48h — | 72h ~26v 0L 0C | Skip Crowded Lijiang — Shaxi's Last Tea Caravan Left in 1949
+- 2026-10-15 c fmt:- s6EuriN5JT4 | 48h — | 72h ~47v 0L 0C | A Canal Room in Venice: ~$300. The Same View in China: $30 |
+- 2026-10-15 a fmt:- OjUjOUFbAVQ | 48h — | 72h 899v 6L 0C | China's Highest Crater Lake Is Clear Only ~50 Days a Year | 
+### YouTube Analytics API
+- unavailable: HTTP 403 accessNotConfigured — the YouTube Analytics API is not enabled in the Google Cloud project (owner action: APIs & Services > enable "YouTube Analytics API"; checklist in scripts/youtube-oauth-helper.mjs). Equal-age numbers come from Data API snapshots only.
+
+## 2026-10-18 post-mortem (baseline = 14d median views of Shorts ≥3d old: 54)
+- 2026-10-16 c cbH2DwPJ3gc | 222v 0L 0C @2d | ×4.11 | WINNER — replicate this hook shape today | The $100 Massage That Costs About $20 in China | China Travel Expert
+- 2026-10-16 a PfZGpyjFh3M | 87v 2L 0C @2d | ×1.61 | baseline | Skip Huangshan's Summer Sunrise: Cloud Sea Peaks Nov–May | China Trave
+- 2026-10-16 d XuGFEubLnUw | 37v 1L 0C @2d | ×0.69 | baseline | China's Last Shangri-La: a 2-Week Gold Window at 3,900 m | China Trave
+- 2026-10-16 L Z8_NShpwwZ8 | 10v 0L 0C @2d | ×0.19 | LONGFORM: no distribution (expected on this channel; search-ranking is slow) | Best Time to Visit China in 2026: Month-by-Month Guide | China Travel 
+- like-rate (fresh Shorts): 0.87% (peers 1-6%)
+### Equal age (Data API snapshots since 2026-10-18; 48 h / 72 h ±6 h; "~" = interpolated between the snapshots either side)
+- Shorts median, trailing 28 d: 48h 87v (n=1) · 72h 899v (n=1)
+- 2026-10-16 L fmt:- Z8_NShpwwZ8 | 48h 10v 0L 0C | 72h — | Best Time to Visit China in 2026: Month-by-Month Guide | Chi
+- 2026-10-16 a fmt:- PfZGpyjFh3M | 48h 87v 2L 0C | 72h — | Skip Huangshan's Summer Sunrise: Cloud Sea Peaks Nov–May | C
+- 2026-10-15 a fmt:- OjUjOUFbAVQ | 48h — | 72h 899v 6L 0C | China's Highest Crater Lake Is Clear Only ~50 Days a Year | 
+### YouTube Analytics API
+- unavailable: HTTP 403 accessNotConfigured — the YouTube Analytics API is not enabled in the Google Cloud project (owner action: APIs & Services > enable "YouTube Analytics API"; checklist in scripts/youtube-oauth-helper.mjs). Equal-age numbers come from Data API snapshots only.
+
+## 2026-10-17 post-mortem (baseline = 14d median views of Shorts ≥3d old: 61)
+- 2026-10-15 a OjUjOUFbAVQ | 876v 5L 0C @2d | ×14.36 | WINNER — replicate this hook shape today | China's Highest Crater Lake Is Clear Only ~50 Days a Year | China Trav
+- 2026-10-16 c cbH2DwPJ3gc | 218v 0L 0C @1d | ×3.57 | WINNER — replicate this hook shape today | The $100 Massage That Costs About $20 in China | China Travel Expert
+- 2026-10-16 a PfZGpyjFh3M | 81v 2L 0C @1d | ×1.33 | baseline | Skip Huangshan's Summer Sunrise: Cloud Sea Peaks Nov–May | China Trave
+- 2026-10-15 c s6EuriN5JT4 | 47v 0L 0C @2d | ×0.77 | baseline | A Canal Room in Venice: ~$300. The Same View in China: $30 | China Tra
+- 2026-10-16 d XuGFEubLnUw | 33v 1L 0C @1d | ×0.54 | baseline | China's Last Shangri-La: a 2-Week Gold Window at 3,900 m | China Trave
+- 2026-10-15 d yuYt9QXZR64 | 24v 0L 0C @2d | ×0.39 | LOSER — avoid this shape today | Skip Crowded Lijiang — Shaxi's Last Tea Caravan Left in 1949 | China T
+- 2026-10-16 L Z8_NShpwwZ8 | 10v 0L 0C @1d | ×0.16 | LONGFORM: no distribution (expected on this channel; search-ranking is slow) | Best Time to Visit China in 2026: Month-by-Month Guide | China Travel 
+- like-rate (fresh Shorts): 0.63% (peers 1-6%)
+
+## 2026-10-16 post-mortem (baseline = 14d median views of Shorts ≥3d old: 66)
+- 2026-10-15 a OjUjOUFbAVQ | 798v 4L 0C @1d | ×12.09 | WINNER — replicate this hook shape today | China's Highest Crater Lake Is Clear Only ~50 Days a Year | China Trav
+- 2026-10-14 d SzBIdZb7yL0 | 454v 0L 0C @2d | ×6.88 | WINNER — replicate this hook shape today | Skip the 200-Person Li River Cruise — Raft the Prettiest Stretch Inste
+- 2026-10-15 c s6EuriN5JT4 | 37v 0L 0C @1d | ×0.56 | baseline | A Canal Room in Venice: ~$300. The Same View in China: $30 | China Tra
+- 2026-10-14 a zmmFvPhcno0 | 35v 1L 0C @2d | ×0.53 | baseline | China Price Check: Antelope Canyon $100, China's Rainbow Hills $15 | C
+- 2026-10-14 c 8t6OVqG7FfY | 30v 0L 0C @2d | ×0.45 | LOSER — avoid this shape today | In China, 9 of 10 Payments Are by Phone — Your Card May Not Buy Lunch 
+- 2026-10-15 d yuYt9QXZR64 | 15v 0L 0C @1d | ×0.23 | LOSER — avoid this shape today | Skip Crowded Lijiang — Shaxi's Last Tea Caravan Left in 1949 | China T
+- like-rate (fresh Shorts): 0.37% (peers 1-6%)
+
+## 2026-10-15 post-mortem (baseline = 14d median views of Shorts ≥3d old: 67)
+- 2026-10-14 d SzBIdZb7yL0 | 456v 0L 0C @1d | ×6.81 | WINNER — replicate this hook shape today | Skip the 200-Person Li River Cruise — Raft the Prettiest Stretch Inste
+- 2026-10-13 a CN0RGve-MrU | 86v 1L 0C @2d | ×1.28 | baseline | China's 71m Buddha Didn't Survive 1,200 Years by Luck | China Travel E
+- 2026-10-13 c Ukl3AYeCfEk | 84v 1L 0C @2d | ×1.25 | baseline | Mount Tai: 6,600 Steps in the Dark for a Maybe-Sunrise | China Travel 
+- 2026-10-14 a zmmFvPhcno0 | 30v 0L 0C @1d | ×0.45 | LOSER — avoid this shape today | China Price Check: Antelope Canyon $100, China's Rainbow Hills $15 | C
+- 2026-10-14 c 8t6OVqG7FfY | 28v 0L 0C @1d | ×0.42 | LOSER — avoid this shape today | In China, 9 of 10 Payments Are by Phone — Your Card May Not Buy Lunch 
+- 2026-10-13 d RcmtnMVD6Jo | 20v 0L 0C @2d | ×0.30 | LOSER — avoid this shape today | China's 9,200 km Border Road: Frozen East or Desert West? | China Trav
+- like-rate (fresh Shorts): 0.28% (peers 1-6%)
+
+## 2026-10-14 post-mortem (baseline = 14d median views of Shorts ≥3d old: 73)
+- 2026-10-13 a CN0RGve-MrU | 84v 1L 0C @1d | ×1.15 | baseline | China's 71m Buddha Didn't Survive 1,200 Years by Luck | China Travel E
+- 2026-10-12 a dRRCN-BaSMQ | 59v 0L 0C @2d | ×0.81 | baseline | Book "Zhangjiajie" Wrong and You'll Miss the Avatar Pillars | China Tr
+- 2026-10-13 c Ukl3AYeCfEk | 54v 1L 0C @1d | ×0.74 | baseline | Mount Tai: 6,600 Steps in the Dark for a Maybe-Sunrise | China Travel 
+- 2026-10-12 c K7BRh76oNMk | 20v 1L 0C @2d | ×0.27 | LOSER — avoid this shape today | China's 4th Great Ancient City Is 2,300 Years Old — and Nobody Books I
+- 2026-10-13 d RcmtnMVD6Jo | 13v 0L 0C @1d | ×0.18 | LOSER — avoid this shape today | China's 9,200 km Border Road: Frozen East or Desert West? | China Trav
+- 2026-10-12 d HGcW5knzBwk | 5v 0L 0C @2d | ×0.07 | LOSER — avoid this shape today | The World's Highest Railway, or the G318 Drive — Which Way to Tibet? |
+- like-rate (fresh Shorts): 1.28% (peers 1-6%)
+
+## 2026-10-13 post-mortem (baseline = 14d median views of Shorts ≥3d old: 82)
+- 2026-10-12 a dRRCN-BaSMQ | 14v 0L 0C @1d | ×0.17 | LOSER — avoid this shape today | Book "Zhangjiajie" Wrong and You'll Miss the Avatar Pillars | China Tr
+- 2026-10-12 c K7BRh76oNMk | 13v 1L 0C @1d | ×0.16 | LOSER — avoid this shape today | China's 4th Great Ancient City Is 2,300 Years Old — and Nobody Books I
+- 2026-10-11 d Dl84GBedw3E | 12v 0L 0C @2d | ×0.15 | LOSER — avoid this shape today | Would You Drive 446 km Across China's Taklamakan Desert? | China Trave
+- 2026-10-11 c iFdqnONZZHU | 10v 0L 0C @2d | ×0.12 | LOSER — avoid this shape today | China Trains 2026: a Standing Ticket Costs the Same as a Seat | China 
+- 2026-10-11 a _P-HIqOWII0 | 1v 0L 0C @2d | ×0.01 | LOSER — avoid this shape today | China Price Check: $300 Up a Swiss Peak, $49 Up Huangshan | China Trav
+- 2026-10-12 d HGcW5knzBwk | 0v 0L 0C @1d | ×0.00 | LOSER — avoid this shape today | The World's Highest Railway, or the G318 Drive — Which Way to Tibet? |
+- like-rate (fresh Shorts): 2.00% (peers 1-6%)
+
+## 2026-10-12 post-mortem (baseline = 14d median views of Shorts ≥3d old: 90)
+- 2026-10-10 c o_J5mVd-gHo | 36v 0L 0C @2d | ×0.40 | LOSER — avoid this shape today | Shanghai's Free Water Town Is One Metro Ride Away (Line 17) | China Tr
+- 2026-10-10 a -YedX-34U9k | 12v 0L 0C @2d | ×0.13 | LOSER — avoid this shape today | No Filter: China's Rainbow Mountains Are 24M-Year-Old Rock | China Tra
+- 2026-10-10 d OsfUyNa2nwk | 11v 0L 0C @2d | ×0.12 | LOSER — avoid this shape today | China's Aizhai Bridge Hangs 330m Over a Canyon — Would You Cross? | Ch
+- 2026-10-11 c iFdqnONZZHU | 5v 0L 0C @1d | ×0.06 | LOSER — avoid this shape today | China Trains 2026: a Standing Ticket Costs the Same as a Seat | China 
+- 2026-10-11 d Dl84GBedw3E | 4v 0L 0C @1d | ×0.04 | LOSER — avoid this shape today | Would You Drive 446 km Across China's Taklamakan Desert? | China Trave
+- 2026-10-11 a _P-HIqOWII0 | 1v 0L 0C @1d | ×0.01 | LOSER — avoid this shape today | China Price Check: $300 Up a Swiss Peak, $49 Up Huangshan | China Trav
+- like-rate (fresh Shorts): 0.00% (peers 1-6%)
+
+## 2026-10-10 post-mortem (baseline = 14d median views of Shorts ≥3d old: 110)
+- 2026-10-08 a KQhGeNnC1-o | 39v 0L 0C @2d | ×0.35 | LOSER — avoid this shape today | The Li River's ¥20-Note Fisherman Quit in 2008 | China Travel Expert
+- 2026-10-08 c kbOdLADn3X4 | 31v 0L 0C @2d | ×0.28 | LOSER — avoid this shape today | Skip Dali's Old Town — Locals Ride 130 km Around the Lake | China Trav
+- 2026-10-08 d wi9MbUqGZOI | 5v 0L 0C @2d | ×0.05 | LOSER — avoid this shape today | China's 3 AM Sunrise or Its Aurora: Which Edge Would You Drive? | Chin
+- like-rate (fresh Shorts): 0.00% (peers 1-6%)
+
+## 2026-10-09 post-mortem (baseline = 14d median views of Shorts ≥3d old: 136)
+- 2026-10-07 a _e0f0gwTBAw | 96v 0L 0C @2d | ×0.71 | baseline | China Price Check: Zhangjiajie $33 vs Yosemite $35 | China Travel Expe
+- 2026-10-07 d 1mEcXeST8d4 | 90v 1L 0C @2d | ×0.66 | baseline | Dunhuang: 492 Caves by Day or Desert Stars by Night? | China Travel Ex
+- 2026-10-08 a KQhGeNnC1-o | 38v 0L 0C @1d | ×0.28 | LOSER — avoid this shape today | The Li River's ¥20-Note Fisherman Quit in 2008 | China Travel Expert
+- 2026-10-08 c kbOdLADn3X4 | 17v 0L 0C @1d | ×0.13 | LOSER — avoid this shape today | Skip Dali's Old Town — Locals Ride 130 km Around the Lake | China Trav
+- 2026-10-07 c M5bwbl-YA38 | 14v 0L 0C @2d | ×0.10 | LOSER — avoid this shape today | Do China's Top Parks Need Advance Booking? (2026) | China Travel Exper
+- 2026-10-08 d wi9MbUqGZOI | 4v 0L 0C @1d | ×0.03 | LOSER — avoid this shape today | China's 3 AM Sunrise or Its Aurora: Which Edge Would You Drive? | Chin
+- like-rate (fresh Shorts): 0.39% (peers 1-6%)
+
+## 2026-10-08 post-mortem (baseline = 14d median views of Shorts ≥3d old: 146)
+- 2026-10-07 a _e0f0gwTBAw | 85v 0L 0C @1d | ×0.58 | baseline | China Price Check: Zhangjiajie $33 vs Yosemite $35 | China Travel Expe
+- 2026-10-06 d dVCBmPUpVo4 | 82v 0L 0C @2d | ×0.56 | baseline | 99 Bends to Heaven's Gate, or 24 WWII Switchbacks — Which Drive? | Chi
+- 2026-10-06 a kjNDZSduPtw | 54v 0L 0C @2d | ×0.37 | LOSER — avoid this shape today | Miss Huangshan's Last Cable Car and It's 10,000 Steps Down | China Tra
+- 2026-10-06 c J0BRx6PiEk8 | 41v 0L 0C @2d | ×0.28 | LOSER — avoid this shape today | Venice Gondola $97 for 30 Min. Yangshuo's Bamboo Raft? $28 | China Tra
+- 2026-10-07 d 1mEcXeST8d4 | 16v 0L 0C @1d | ×0.11 | LOSER — avoid this shape today | Dunhuang: 492 Caves by Day or Desert Stars by Night? | China Travel Ex
+- 2026-10-07 c M5bwbl-YA38 | 7v 0L 0C @1d | ×0.05 | LOSER — avoid this shape today | Do China's Top Parks Need Advance Booking? (2026) | China Travel Exper
+- like-rate (fresh Shorts): 0.00% (peers 1-6%)
+
+## 2026-10-07 post-mortem (baseline = 14d median views of Shorts ≥3d old: 153)
+- 2026-10-05 c nZZ26BpQFTc | 43v 0L 0C @2d | ×0.28 | LOSER — avoid this shape today | Lijiang Charges ¥50 to Enter. Dali's Old Town Is Free | China Travel E
+- 2026-10-05 d mDHOBrc6Ftk | 39v 1L 0C @2d | ×0.25 | LOSER — avoid this shape today | Everyone Drives the Qinghai-Gansu Loop in 7 Days — Too Fast | China Tr
+- 2026-10-05 a oLCP-1L5ZRk | 35v 0L 0C @2d | ×0.23 | LOSER — avoid this shape today | Jiuzhaigou Sells Out at 41,000 a Day — When to Actually Go | China Tra
+- 2026-10-06 d dVCBmPUpVo4 | 26v 0L 0C @1d | ×0.17 | LOSER — avoid this shape today | 99 Bends to Heaven's Gate, or 24 WWII Switchbacks — Which Drive? | Chi
+- 2026-10-06 a kjNDZSduPtw | 17v 0L 0C @1d | ×0.11 | LOSER — avoid this shape today | Miss Huangshan's Last Cable Car and It's 10,000 Steps Down | China Tra
+- 2026-10-06 c J0BRx6PiEk8 | 17v 0L 0C @1d | ×0.11 | LOSER — avoid this shape today | Venice Gondola $97 for 30 Min. Yangshuo's Bamboo Raft? $28 | China Tra
+- like-rate (fresh Shorts): 0.56% (peers 1-6%)
+
+## 2026-10-06 post-mortem (baseline = 14d median views of Shorts ≥3d old: 155)
+- 2026-10-04 c K0XVaICFhKM | 180v 2L 0C @2d | ×1.16 | baseline | Skip Wuzhen's ¥190 Ticket — This Water Town Is Free | China Travel Exp
+- 2026-10-04 d rbyp5JTfvrM | 88v 0L 0C @2d | ×0.57 | baseline | China's Highest Highway: 915 km Above 4,000 m | China Travel Expert
+- 2026-10-04 a ibTLflSCCMo | 67v 0L 0C @2d | ×0.43 | LOSER — avoid this shape today | China Price Check: $120 Great Wall Tour, or $20 Solo? | China Travel E
+- 2026-10-05 d mDHOBrc6Ftk | 28v 1L 0C @1d | ×0.18 | LOSER — avoid this shape today | Everyone Drives the Qinghai-Gansu Loop in 7 Days — Too Fast | China Tr
+- 2026-10-05 a oLCP-1L5ZRk | 27v 0L 0C @1d | ×0.17 | LOSER — avoid this shape today | Jiuzhaigou Sells Out at 41,000 a Day — When to Actually Go | China Tra
+- 2026-10-05 c nZZ26BpQFTc | 12v 0L 0C @1d | ×0.08 | LOSER — avoid this shape today | Lijiang Charges ¥50 to Enter. Dali's Old Town Is Free | China Travel E
+- like-rate (fresh Shorts): 0.75% (peers 1-6%)
+
+## 2026-10-05 post-mortem (baseline = 14d median views of Shorts ≥3d old: 160)
+- 2026-10-03 d Jg0Bv7nVlVc | 153v 1L 0C @2d | ×0.96 | baseline | Skip the Yunnan Tour Bus — Travel the Tea-Horse Road to 3,300 m | Chin
+- 2026-10-04 c K0XVaICFhKM | 130v 1L 0C @1d | ×0.81 | baseline | Skip Wuzhen's ¥190 Ticket — This Water Town Is Free | China Travel Exp
+- 2026-10-03 a Occ-xojDWOk | 77v 0L 0C @2d | ×0.48 | LOSER — avoid this shape today | China's Rainbow Mountains, ¥74 — But the Wrong Hour Ruins Them | China
+- 2026-10-04 a ibTLflSCCMo | 57v 0L 0C @1d | ×0.36 | LOSER — avoid this shape today | China Price Check: $120 Great Wall Tour, or $20 Solo? | China Travel E
+- 2026-10-04 d rbyp5JTfvrM | 54v 0L 0C @1d | ×0.34 | LOSER — avoid this shape today | China's Highest Highway: 915 km Above 4,000 m | China Travel Expert
+- 2026-10-03 c HBKUX--9IS4 | 42v 0L 0C @2d | ×0.26 | LOSER — avoid this shape today | Petra $70, Machu Picchu $43 — the Great Wall? Just $6 | China Travel E
+- like-rate (fresh Shorts): 0.39% (peers 1-6%)
+
+## 2026-10-04 post-mortem (baseline = 14d median views of Shorts ≥3d old: 160)
+- 2026-10-02 d favsn238UwI | 350v 4L 0C @2d | ×2.19 | WINNER — replicate this hook shape today | 99 Hairpin Bends to Heaven's Gate — China's Wildest Mountain Road | Ch
+- 2026-10-02 a MysbLBS5k_I | 89v 1L 0C @2d | ×0.56 | baseline | Guilin or Zhangjiajie for a First China Trip? The Expert's Verdict | C
+- 2026-10-03 d Jg0Bv7nVlVc | 86v 0L 0C @1d | ×0.54 | baseline | Skip the Yunnan Tour Bus — Travel the Tea-Horse Road to 3,300 m | Chin
+- 2026-10-03 a Occ-xojDWOk | 47v 0L 0C @1d | ×0.29 | LOSER — avoid this shape today | China's Rainbow Mountains, ¥74 — But the Wrong Hour Ruins Them | China
+- 2026-10-02 c XC8V3o_rezw | 35v 0L 0C @2d | ×0.22 | LOSER — avoid this shape today | Everyone Thinks Jiuzhaigou's Lakes Are Photoshopped. They're Not | Chi
+- 2026-10-03 c HBKUX--9IS4 | 33v 0L 0C @1d | ×0.21 | LOSER — avoid this shape today | Petra $70, Machu Picchu $43 — the Great Wall? Just $6 | China Travel E
+- 2026-10-02 L 790Utt-4HV8 | 4v 0L 0C @2d | ×0.03 | LONGFORM: no distribution (expected on this channel; search-ranking is slow) | How to Plan a China Nature Trip in 2026 (8 Things to Set Up First) | C
+- like-rate (fresh Shorts): 0.78% (peers 1-6%)
+
+## 2026-10-03 post-mortem (baseline = 14d median views of Shorts ≥3d old: 160)
+- 2026-10-02 d favsn238UwI | 161v 3L 0C @1d | ×1.01 | baseline | 99 Hairpin Bends to Heaven's Gate — China's Wildest Mountain Road | Ch
+- 2026-10-01 d UyHXJc7Z9-Y | 153v 0L 0C @2d | ×0.96 | baseline | Everyone Drives the G318 to Tibet. Drive the Duku Highway Instead | Ch
+- 2026-10-02 a MysbLBS5k_I | 77v 1L 0C @1d | ×0.48 | LOSER — avoid this shape today | Guilin or Zhangjiajie for a First China Trip? The Expert's Verdict | C
+- 2026-10-01 a GR_jYhfR7HE | 59v 0L 0C @2d | ×0.37 | LOSER — avoid this shape today | Huangshan Is in Cloud 200 Days a Year — Here's the Day to Climb | Chin
+- 2026-10-01 c mW_b_Af_V6A | 58v 0L 0C @2d | ×0.36 | LOSER — avoid this shape today | Bolivia's Sky Mirror: a $70 Tour. China's Chaka: ¥60 at the Gate | Chi
+- 2026-10-02 c XC8V3o_rezw | 29v 0L 0C @1d | ×0.18 | LOSER — avoid this shape today | Everyone Thinks Jiuzhaigou's Lakes Are Photoshopped. They're Not | Chi
+- 2026-10-02 L 790Utt-4HV8 | 2v 0L 0C @1d | ×0.01 | LONGFORM: no distribution (expected on this channel; search-ranking is slow) | How to Plan a China Nature Trip in 2026 (8 Things to Set Up First) | C
+- like-rate (fresh Shorts): 0.74% (peers 1-6%)
+
+## 2026-10-02 post-mortem (baseline = 14d median views of Shorts ≥3d old: 158)
+- 2026-09-30 a sToyOJLqo0w | 168v 0L 0C @2d | ×1.06 | baseline | China Price Check: $96 Blue Lagoon or $7 Hot Springs? | China Travel E
+- 2026-09-30 c jbb9C2gnbXA | 101v 0L 0C @2d | ×0.64 | baseline | Fenghuang: China's Prettiest Town, or a Theme Park? | China Travel Exp
+- 2026-10-01 d UyHXJc7Z9-Y | 100v 0L 0C @1d | ×0.63 | baseline | Everyone Drives the G318 to Tibet. Drive the Duku Highway Instead | Ch
+- 2026-10-01 a GR_jYhfR7HE | 49v 0L 0C @1d | ×0.31 | LOSER — avoid this shape today | Huangshan Is in Cloud 200 Days a Year — Here's the Day to Climb | Chin
+- 2026-09-30 d ZDnTfIpnuyQ | 43v 0L 0C @2d | ×0.27 | LOSER — avoid this shape today | 13 Villagers Carved This Cliff Tunnel by Hand, Not the State | China T
+- 2026-10-01 c mW_b_Af_V6A | 31v 0L 0C @1d | ×0.20 | LOSER — avoid this shape today | Bolivia's Sky Mirror: a $70 Tour. China's Chaka: ¥60 at the Gate | Chi
+- like-rate (fresh Shorts): 0.00% (peers 1-6%)
+
+## 2026-10-01 post-mortem (baseline = 14d median views of Shorts ≥3d old: 196)
+- 2026-09-30 a sToyOJLqo0w | 165v 0L 0C @1d | ×0.84 | baseline | China Price Check: $96 Blue Lagoon or $7 Hot Springs? | China Travel E
+- 2026-09-29 c Wk5Bg2dDnAo | 144v 0L 0C @2d | ×0.73 | baseline | $50 Li River Cruise or a $28 Bamboo Raft? Guilin's Two Rivers | China 
+- 2026-09-29 a ZIHfkIn91qc | 126v 3L 0C @2d | ×0.64 | baseline | $290 for Switzerland's Peaks or $32 for China's Avatar Mountains | Chi
+- 2026-09-30 c jbb9C2gnbXA | 91v 0L 0C @1d | ×0.46 | LOSER — avoid this shape today | Fenghuang: China's Prettiest Town, or a Theme Park? | China Travel Exp
+- 2026-09-29 d TD3EQY8hBdY | 60v 0L 0C @2d | ×0.31 | LOSER — avoid this shape today | You'd Need an Oxygen Mask at 5,072 m — This Train Makes Its Own | Chin
+- 2026-09-30 d ZDnTfIpnuyQ | 18v 0L 0C @1d | ×0.09 | LOSER — avoid this shape today | 13 Villagers Carved This Cliff Tunnel by Hand, Not the State | China T
+- like-rate (fresh Shorts): 0.50% (peers 1-6%)
+
+## 2026-09-30 post-mortem (baseline = 14d median views of Shorts ≥3d old: 196)
+- 2026-09-28 c MBTbAaNcvd0 | 609v 15L 0C @2d | ×3.11 | WINNER — replicate this hook shape today | China's Biggest Miao Village — Living Village or Theme Park? | China T
+- 2026-09-29 a ZIHfkIn91qc | 56v 1L 0C @1d | ×0.29 | LOSER — avoid this shape today | $290 for Switzerland's Peaks or $32 for China's Avatar Mountains | Chi
+- 2026-09-29 d TD3EQY8hBdY | 50v 0L 0C @1d | ×0.26 | LOSER — avoid this shape today | You'd Need an Oxygen Mask at 5,072 m — This Train Makes Its Own | Chin
+- 2026-09-29 c Wk5Bg2dDnAo | 31v 0L 0C @1d | ×0.16 | LOSER — avoid this shape today | $50 Li River Cruise or a $28 Bamboo Raft? Guilin's Two Rivers | China 
+- 2026-09-28 a zIWz6QMKy3Q | 26v 1L 0C @2d | ×0.13 | LOSER — avoid this shape today | Would You Walk Across 3,000 Stone Pillars? Zhangjiajie for $33 | China
+- 2026-09-28 d -Pq6UmUbi30 | 13v 0L 0C @2d | ×0.07 | LOSER — avoid this shape today | You Don't Need Flights to See China's Northwest — One 3,000 km Loop | 
+- like-rate (fresh Shorts): 2.17% (peers 1-6%)
+
+## 2026-09-29 post-mortem (baseline = 14d median views of Shorts ≥3d old: 208)
+- 2026-09-27 d RuU2-qTbIIw | 429v 2L 0C @2d | ×2.06 | WINNER — replicate this hook shape today | China-to-Europe Trains Stop at the Border to Swap Every Wheel | China 
+- 2026-09-27 a 0Gd-v1HPFH8 | 335v 1L 0C @2d | ×1.61 | baseline | China Price Check: $95 Antelope Canyon or $13 Rainbow Hills? | China T
+- 2026-09-28 c MBTbAaNcvd0 | 308v 9L 0C @1d | ×1.48 | baseline | China's Biggest Miao Village — Living Village or Theme Park? | China T
+- 2026-09-27 c lcbt7YYu7_w | 190v 2L 0C @2d | ×0.91 | baseline | Skip Wuzhen's ¥150 Ticket — This 1,300-Year-Old Canal Town Is Free | C
+- 2026-09-28 a zIWz6QMKy3Q | 20v 1L 0C @1d | ×0.10 | LOSER — avoid this shape today | Would You Walk Across 3,000 Stone Pillars? Zhangjiajie for $33 | China
+- 2026-09-28 d -Pq6UmUbi30 | 3v 0L 0C @1d | ×0.01 | LOSER — avoid this shape today | You Don't Need Flights to See China's Northwest — One 3,000 km Loop | 
+- like-rate (fresh Shorts): 1.17% (peers 1-6%)
+
+## 2026-09-28 post-mortem (baseline = 14d median views of Shorts ≥3d old: 157)
+- 2026-09-26 a DbssQLETKJw | 960v 3L 0C @2d | ×6.11 | WINNER — replicate this hook shape today | One Bowl Is $3, One Is $300 — Same Pattern, Which Is Real? | China Tra
+- 2026-09-27 d RuU2-qTbIIw | 339v 2L 0C @1d | ×2.16 | WINNER — replicate this hook shape today | China-to-Europe Trains Stop at the Border to Swap Every Wheel | China 
+- 2026-09-27 a 0Gd-v1HPFH8 | 290v 1L 0C @1d | ×1.85 | baseline | China Price Check: $95 Antelope Canyon or $13 Rainbow Hills? | China T
+- 2026-09-26 d 3Ssc3Dw8lWw | 262v 0L 0C @2d | ×1.67 | baseline | China Built the World's Longest Desert Road — 446 km Across Shifting S
+- 2026-09-27 c lcbt7YYu7_w | 167v 2L 0C @1d | ×1.06 | baseline | Skip Wuzhen's ¥150 Ticket — This 1,300-Year-Old Canal Town Is Free | C
+- 2026-09-26 c 4lBYxIZ7zQ8 | 79v 0L 0C @2d | ×0.50 | baseline | You Don't Need Cash in China: Foreign Cards Now Spend $50,000 a Year |
+- like-rate (fresh Shorts): 0.38% (peers 1-6%)
+
+## 2026-09-27 post-mortem (baseline = 14d median views of Shorts ≥3d old: 157)
+- 2026-09-25 c 6kY1d70QwpU | 937v 5L 0C @2d | ×5.97 | WINNER — replicate this hook shape today | China Price Check: A $25 Massage That's $120 in New York | China Trave
+- 2026-09-26 a DbssQLETKJw | 812v 3L 0C @1d | ×5.17 | WINNER — replicate this hook shape today | One Bowl Is $3, One Is $300 — Same Pattern, Which Is Real? | China Tra
+- 2026-09-25 a RfG0fK0U0es | 350v 2L 0C @2d | ×2.23 | WINNER — replicate this hook shape today | Skip Badaling: 10 Million Tourists a Year — Walk This Wall Instead | C
+- 2026-09-26 d 3Ssc3Dw8lWw | 255v 0L 0C @1d | ×1.62 | baseline | China Built the World's Longest Desert Road — 446 km Across Shifting S
+- 2026-09-25 d KBLOTv9AFa8 | 140v 0L 0C @2d | ×0.89 | baseline | One Cave Hid 50,000 Manuscripts for 900 Years | Silk Road EP1 | China 
+- 2026-09-26 c 4lBYxIZ7zQ8 | 58v 0L 0C @1d | ×0.37 | LOSER — avoid this shape today | You Don't Need Cash in China: Foreign Cards Now Spend $50,000 a Year |
+- 2026-09-25 L DCVju5gEEbc | 4v 0L 0C @2d | ×0.03 | LONGFORM: no distribution (expected on this channel; search-ranking is slow) | How to Ride China's High-Speed Trains in 2026 (Tourist Guide) | China 
+- like-rate (fresh Shorts): 0.39% (peers 1-6%)
+
+## 2026-09-26 post-mortem (baseline = 14d median views of Shorts ≥3d old: 196)
+- 2026-09-25 c 6kY1d70QwpU | 806v 5L 0C @1d | ×4.11 | WINNER — replicate this hook shape today | China Price Check: A $25 Massage That's $120 in New York | China Trave
+- 2026-09-24 d AN0borXgxoE | 689v 5L 0C @2d | ×3.52 | WINNER — replicate this hook shape today | China’s 561 km Sky Road Is Open Just 4 Months a Year | China Travel Ex
+- 2026-09-24 c SJpBOAt-3VI | 518v 2L 0C @2d | ×2.64 | WINNER — replicate this hook shape today | This Fried Pork Got 100M Views and Its Own Office in China | China Tra
+- 2026-09-25 a RfG0fK0U0es | 192v 2L 0C @1d | ×0.98 | baseline | Skip Badaling: 10 Million Tourists a Year — Walk This Wall Instead | C
+- 2026-09-25 d KBLOTv9AFa8 | 128v 0L 0C @1d | ×0.65 | baseline | One Cave Hid 50,000 Manuscripts for 900 Years | Silk Road EP1 | China 
+- 2026-09-24 a KZS8TwMo5xc | 117v 0L 0C @2d | ×0.60 | baseline | China’s Best Green Tea Is Fried by Bare Hands at 200°C | China Travel 
+- 2026-09-25 L DCVju5gEEbc | 5v 0L 0C @1d | ×0.03 | LONGFORM: no distribution (expected on this channel; search-ranking is slow) | How to Ride China's High-Speed Trains in 2026 (Tourist Guide) | China 
+- like-rate (fresh Shorts): 0.57% (peers 1-6%)
+
+## 2026-09-25 post-mortem (baseline = 14d median views of Shorts ≥3d old: 265)
+- 2026-09-24 c SJpBOAt-3VI | 263v 2L 0C @1d | ×0.99 | baseline | This Fried Pork Got 100M Views and Its Own Office in China | China Tra
+- 2026-09-24 d AN0borXgxoE | 196v 1L 0C @1d | ×0.74 | baseline | China’s 561 km Sky Road Is Open Just 4 Months a Year | China Travel Ex
+- 2026-09-23 a 8J1rcboypB8 | 135v 0L 0C @2d | ×0.51 | baseline | China Price Check: 10 km Taxi Is $27 in NYC, $7 in China | China Trave
+- 2026-09-23 c k0czxA0NtHE | 132v 1L 0C @2d | ×0.50 | LOSER — avoid this shape today | How to Book China's Bullet Trains as a Tourist in 2026 (Passport Only)
+- 2026-09-23 d q9OoVepvgVQ | 86v 2L 0C @2d | ×0.32 | LOSER — avoid this shape today | China's Biggest Lake Sits 3,260 m Up — a 360 km Loop | China Travel Ex
+- 2026-09-24 a KZS8TwMo5xc | 80v 0L 0C @1d | ×0.30 | LOSER — avoid this shape today | China’s Best Green Tea Is Fried by Bare Hands at 200°C | China Travel 
+- like-rate (fresh Shorts): 0.67% (peers 1-6%)
+
+## 2026-09-24 post-mortem (baseline = 14d median views of Shorts ≥3d old: 208)
+- 2026-09-22 d ncQzEHy3cUE | 367v 6L 0C @2d | ×1.76 | baseline | China's New Bullet Train Hit 453 km/h in Testing | China Travel Expert
+- 2026-09-23 a 8J1rcboypB8 | 121v 0L 0C @1d | ×0.58 | baseline | China Price Check: 10 km Taxi Is $27 in NYC, $7 in China | China Trave
+- 2026-09-22 a EzZBitZtvrg | 93v 1L 0C @2d | ×0.45 | LOSER — avoid this shape today | China Spent 1,700 Years Faking Jade With Fire | China Travel Expert
+- 2026-09-23 c k0czxA0NtHE | 88v 1L 0C @1d | ×0.42 | LOSER — avoid this shape today | How to Book China's Bullet Trains as a Tourist in 2026 (Passport Only)
+- 2026-09-23 d q9OoVepvgVQ | 42v 2L 0C @1d | ×0.20 | LOSER — avoid this shape today | China's Biggest Lake Sits 3,260 m Up — a 360 km Loop | China Travel Ex
+- 2026-09-22 c IXrLi2eFxW4 | 20v 0L 0C @2d | ×0.10 | LOSER — avoid this shape today | China Blocks 10 Apps You Use Daily — the 2026 Fix | China Travel Exper
+- like-rate (fresh Shorts): 1.37% (peers 1-6%)
+
+## 2026-09-21 post-mortem (baseline = 14d median views of Shorts ≥3d old: 207)
+- 2026-09-19 d dc0b_GyH20w | 866v 2L 1C @2d | ×4.18 | WINNER — replicate this hook shape today | A Perfect Soup Dumpling Has Exactly 18 Folds | China Travel Expert
+- 2026-09-20 a D0lXxIB8wzI | 349v 3L 0C @1d | ×1.69 | baseline | China Price Check: Bullet Train $84 for 1,318 km — 6¢ a km | China Tra
+- 2026-09-19 c e6LxhrGkLIQ | 340v 2L 0C @2d | ×1.64 | baseline | How Much a Week in China Actually Costs (From $300) | China Travel Exp
+- 2026-09-19 a _v9qHQEg550 | 124v 2L 0C @2d | ×0.60 | baseline | China's Oldest Wooden Halls Use Zero Nails — 1,000+ Years Standing | C
+- 2026-09-20 d 0UXG9dHOtX8 | 122v 1L 0C @1d | ×0.59 | baseline | China's 2,800 km Northwest Loop: Lakes, Salt Flats, Rainbow Hills | Ch
+- 2026-09-20 c vl9egi9vapU | 84v 0L 0C @1d | ×0.41 | LOSER — avoid this shape today | One Chaoshan Beef Cut Is Under 1% of the Cow — a 7-Second Dip | China 
+- like-rate (fresh Shorts): 0.53% (peers 1-6%)
+
+## 2026-09-20 post-mortem (baseline = 14d median views of Shorts ≥3d old: 284)
+- 2026-09-19 d dc0b_GyH20w | 552v 1L 1C @1d | ×1.94 | baseline | A Perfect Soup Dumpling Has Exactly 18 Folds | China Travel Expert
+- 2026-09-19 c e6LxhrGkLIQ | 227v 1L 0C @1d | ×0.80 | baseline | How Much a Week in China Actually Costs (From $300) | China Travel Exp
+- 2026-09-18 c xFyMjg6QKzw | 181v 1L 0C @2d | ×0.64 | baseline | The Great Wall Is 21,196 km — but You Can't See It From Space | China 
+- 2026-09-18 a ZRBLIpYlPP4 | 138v 1L 0C @2d | ×0.49 | LOSER — avoid this shape today | Shanghai's River Cruise Is $17. Locals Cross for 30¢ | China Travel Ex
+- 2026-09-19 a _v9qHQEg550 | 96v 2L 0C @1d | ×0.34 | LOSER — avoid this shape today | China's Oldest Wooden Halls Use Zero Nails — 1,000+ Years Standing | C
+- 2026-09-18 d us4orpAEzKg | 55v 0L 0C @2d | ×0.19 | LOSER — avoid this shape today | Suzhou Once Had 200+ Private Gardens — 9 Are Now World Heritage | Chin
+- 2026-09-18 L 9llBaFakK1g | 38v 1L 0C @2d | ×0.13 | LONGFORM: has traffic | China on $50 a Day: Real 2026 Prices | China Travel Expert
+- like-rate (fresh Shorts): 0.48% (peers 1-6%)
+
+## 2026-09-19 post-mortem (baseline = 14d median views of Shorts ≥3d old: 307)
+- 2026-09-17 c GuQ5XRWdNoI | 592v 1L 0C @2d | ×1.93 | baseline | Only 30% of a Cow Makes This Hotpot — Timed to the Second | China Trav
+- 2026-09-18 c xFyMjg6QKzw | 148v 1L 0C @1d | ×0.48 | LOSER — avoid this shape today | The Great Wall Is 21,196 km — but You Can't See It From Space | China 
+- 2026-09-17 d WfjxfDApvZM | 133v 0L 0C @2d | ×0.43 | LOSER — avoid this shape today | In 1990 This Was Farmland — Now It's China's Tallest Skyline | China T
+- 2026-09-18 a ZRBLIpYlPP4 | 103v 0L 0C @1d | ×0.34 | LOSER — avoid this shape today | Shanghai's River Cruise Is $17. Locals Cross for 30¢ | China Travel Ex
+- 2026-09-18 d us4orpAEzKg | 53v 0L 0C @1d | ×0.17 | LOSER — avoid this shape today | Suzhou Once Had 200+ Private Gardens — 9 Are Now World Heritage | Chin
+- 2026-09-17 a W6ZH-Sgcjzs | 46v 0L 0C @2d | ×0.15 | LOSER — avoid this shape today | One Chinese Teapot Sold for $2 Million — No Glaze at All | China Trave
+- 2026-09-18 L 9llBaFakK1g | 12v 0L 0C @1d | ×0.04 | LONGFORM: no distribution (expected on this channel; search-ranking is slow) | China on $50 a Day: Real 2026 Prices | China Travel Expert
+- like-rate (fresh Shorts): 0.19% (peers 1-6%)
+
+## 2026-09-18 post-mortem (baseline = 14d median views of Shorts ≥3d old: 308)
+- 2026-09-17 c GuQ5XRWdNoI | 166v 0L 0C @1d | ×0.54 | baseline | Only 30% of a Cow Makes This Hotpot — Timed to the Second | China Trav
+- 2026-09-17 d WfjxfDApvZM | 131v 0L 0C @1d | ×0.43 | LOSER — avoid this shape today | In 1990 This Was Farmland — Now It's China's Tallest Skyline | China T
+- 2026-09-16 a I1bhRq5QTsc | 68v 0L 0C @2d | ×0.22 | LOSER — avoid this shape today | One Silk Thread, Split 48 Ways, Hides Two Pictures | China Travel Expe
+- 2026-09-16 d q2idNSHe2kw | 56v 0L 0C @2d | ×0.18 | LOSER — avoid this shape today | Bike a 13.7 km Loop Atop Xi'an's 650-Year-Old City Wall | China Travel
+- 2026-09-16 c ZOWHhJFu9yQ | 51v 0L 0C @2d | ×0.17 | LOSER — avoid this shape today | China's Water Towns Are 1,300 Years Old — Streets Made of Water | Chin
+- 2026-09-17 a W6ZH-Sgcjzs | 44v 0L 0C @1d | ×0.14 | LOSER — avoid this shape today | One Chinese Teapot Sold for $2 Million — No Glaze at All | China Trave
+- like-rate (fresh Shorts): 0.00% (peers 1-6%)
+
+## 2026-09-17 post-mortem (baseline = 14d median views of Shorts ≥3d old: 284)
+- 2026-09-15 a TTRkPcv8LsY | 451v 3L 0C @2d | ×1.59 | baseline | China Fired Stone Into Fake Jade at 1,300°C | China Travel Expert
+- 2026-09-15 d fvlFd7M8_5Q | 312v 2L 0C @2d | ×1.10 | baseline | The View on China's ¥20 Bill Is Real — Li River | China Travel Expert
+- 2026-09-15 c c84m1E3SQPE | 280v 2L 0C @2d | ×0.99 | baseline | Switzerland's Train: $240. China's: $28 | China Travel Expert
+- 2026-09-16 a I1bhRq5QTsc | 42v 0L 0C @1d | ×0.15 | LOSER — avoid this shape today | One Silk Thread, Split 48 Ways, Hides Two Pictures | China Travel Expe
+- 2026-09-16 d q2idNSHe2kw | 30v 0L 0C @1d | ×0.11 | LOSER — avoid this shape today | Bike a 13.7 km Loop Atop Xi'an's 650-Year-Old City Wall | China Travel
+- 2026-09-16 c ZOWHhJFu9yQ | 21v 0L 0C @1d | ×0.07 | LOSER — avoid this shape today | China's Water Towns Are 1,300 Years Old — Streets Made of Water | Chin
+- like-rate (fresh Shorts): 0.62% (peers 1-6%)
+
+## 2026-09-16 post-mortem (baseline = 14d median views of Shorts ≥3d old: 307)
+- 2026-09-14 a Ii5_464cOkg | 523v 4L 0C @2d | ×1.70 | baseline | Europe Spent 1,000 Years Copying This Cup, Fired at 1,300°C
+- 2026-09-15 a TTRkPcv8LsY | 359v 2L 0C @1d | ×1.17 | baseline | China Fired Stone Into Fake Jade at 1,300°C | China Travel Expert
+- 2026-09-15 d fvlFd7M8_5Q | 290v 1L 0C @1d | ×0.94 | baseline | The View on China's ¥20 Bill Is Real — Li River | China Travel Expert
+- 2026-09-15 c c84m1E3SQPE | 273v 1L 0C @1d | ×0.89 | baseline | Switzerland's Train: $240. China's: $28 | China Travel Expert
+- 2026-09-14 c g7HVFDWf0DI | 173v 3L 0C @2d | ×0.56 | baseline | 13 Acres Built to Feel Endless: Suzhou’s 500-Year-Old Garden
+- 2026-09-14 d j85Co481-zE | 111v 1L 0C @2d | ×0.36 | LOSER — avoid this shape today | The World’s Longest Man-Made River: 1,776 km, 2,500 Years Old
+- like-rate (fresh Shorts): 0.69% (peers 1-6%)
+
+## 2026-09-15 post-mortem (baseline = 14d median views of Shorts ≥3d old: 284)
+- 2026-09-13 c wTwcBpuuR_g | 551v 4L 0C @2d | ×1.94 | baseline | The World's Oldest Noodles Are 4,000 Years Old — and They're Chinese |
+- 2026-09-13 d 9M_ZAj0Y7bM | 405v 2L 0C @2d | ×1.43 | baseline | The World's Longest Sea Crossing Is 55 km — Then It Dives Underwater |
+- 2026-09-14 a Ii5_464cOkg | 362v 3L 0C @1d | ×1.27 | baseline | Europe Spent 1,000 Years Copying This Cup, Fired at 1,300°C
+- 2026-09-13 a 37JkhBAUwT0 | 337v 2L 0C @2d | ×1.19 | baseline | One Cocoon = 900m of Silk Thread — China Killed to Keep It Secret | Ch
+- 2026-09-14 c g7HVFDWf0DI | 81v 2L 0C @1d | ×0.29 | LOSER — avoid this shape today | 13 Acres Built to Feel Endless: Suzhou’s 500-Year-Old Garden
+- 2026-09-14 d j85Co481-zE | 57v 1L 0C @1d | ×0.20 | LOSER — avoid this shape today | The World’s Longest Man-Made River: 1,776 km, 2,500 Years Old
+- like-rate (fresh Shorts): 0.78% (peers 1-6%)
+
+## 2026-09-14 post-mortem (baseline = 14d median views of Shorts ≥3d old: 309)
+- 2026-09-13 c wTwcBpuuR_g | 324v 2L 0C @1d | ×1.05 | baseline | The World's Oldest Noodles Are 4,000 Years Old — and They're Chinese |
+- 2026-09-13 d 9M_ZAj0Y7bM | 291v 1L 0C @1d | ×0.94 | baseline | The World's Longest Sea Crossing Is 55 km — Then It Dives Underwater |
+- 2026-09-13 a 37JkhBAUwT0 | 290v 2L 0C @1d | ×0.94 | baseline | One Cocoon = 900m of Silk Thread — China Killed to Keep It Secret | Ch
+- 2026-09-12 a NJmZdbFDWLM | 87v 0L 0C @2d | ×0.28 | LOSER — avoid this shape today | This Chinese Tea Costs $1.2 Million a Kilo — From 6 Bushes | China Tra
+- 2026-09-12 c b5p9iRGKOao | 71v 0L 0C @2d | ×0.23 | LOSER — avoid this shape today | How Tourists Pay in China in 2026: Foreign Cards Now Work | China Trav
+- 2026-09-12 d AVcjvY0HdQ0 | 29v 0L 0C @2d | ×0.09 | LOSER — avoid this shape today | Beijing to Shanghai: 1,318 km in 4.5 Hours at 350 km/h | China Travel 
+- like-rate (fresh Shorts): 0.46% (peers 1-6%)
+
+## 2026-09-13 post-mortem (baseline = 14d median views of Shorts ≥3d old: 305)
+- 2026-09-11 c cD3-0hgdeE0 | 899v 7L 0C @2d | ×2.95 | WINNER — replicate this hook shape today | This 600-Year-Old Wall Took 350 Million Bricks — Each One Signed | Chi
+- 2026-09-11 d p-y_Eun7F1Q | 883v 7L 1C @2d | ×2.90 | WINNER — replicate this hook shape today | China Has More Bullet-Train Track Than the Rest of Earth Combined | Ch
+- 2026-09-12 a NJmZdbFDWLM | 77v 0L 0C @1d | ×0.25 | LOSER — avoid this shape today | This Chinese Tea Costs $1.2 Million a Kilo — From 6 Bushes | China Tra
+- 2026-09-11 a bkMbeG-BtFo | 59v 0L 0C @2d | ×0.19 | LOSER — avoid this shape today | 5 Mistakes Tourists Make in China — And None Are Cultural | China Trav
+- 2026-09-12 c b5p9iRGKOao | 48v 0L 0C @1d | ×0.16 | LOSER — avoid this shape today | How Tourists Pay in China in 2026: Foreign Cards Now Work | China Trav
+- 2026-09-12 d AVcjvY0HdQ0 | 10v 0L 0C @1d | ×0.03 | LOSER — avoid this shape today | Beijing to Shanghai: 1,318 km in 4.5 Hours at 350 km/h | China Travel 
+- 2026-09-11 L Vqbx8JYn51Y | 6v 0L 0C @2d | ×0.02 | LONGFORM: no distribution (expected on this channel; search-ranking is slow) | How to Get Around China as a Tourist (2026): Trains, Metro & Apps
+- like-rate (fresh Shorts): 0.71% (peers 1-6%)
+
+## 2026-09-12 post-mortem (baseline = 14d median views of Shorts ≥3d old: 305)
+- 2026-09-10 c xU01aJLk2jc | 920v 6L 0C @2d | ×3.02 | WINNER — replicate this hook shape today | One Soup Dumpling, 18 Folds, and Hidden Molten Broth | China Travel Ex
+- 2026-09-10 a jAXGW8B5zIA | 886v 5L 0C @2d | ×2.90 | WINNER — replicate this hook shape today | China's Tallest Tower Twists 120° — the Twist Saved $58M in Steel | Ch
+- 2026-09-11 d p-y_Eun7F1Q | 803v 4L 1C @1d | ×2.63 | WINNER — replicate this hook shape today | China Has More Bullet-Train Track Than the Rest of Earth Combined | Ch
+- 2026-09-11 c cD3-0hgdeE0 | 498v 5L 0C @1d | ×1.63 | baseline | This 600-Year-Old Wall Took 350 Million Bricks — Each One Signed | Chi
+- 2026-09-10 d brrsn31-Z50 | 124v 2L 0C @2d | ×0.41 | LOSER — avoid this shape today | Two of China's Ancient Capitals, 90 Minutes Apart by Bullet Train | Ch
+- 2026-09-11 a bkMbeG-BtFo | 56v 0L 0C @1d | ×0.18 | LOSER — avoid this shape today | 5 Mistakes Tourists Make in China — And None Are Cultural | China Trav
+- like-rate (fresh Shorts): 0.67% (peers 1-6%)
+
+## 2026-09-11 post-mortem (baseline = 14d median views of Shorts ≥3d old: 281)
+- 2026-09-09 d aeSJ6uYc7Yo | 528v 5L 0C @2d | ×1.88 | baseline | The Ancient Silk Road Now Has a Bullet Train — 1,776 km | China Travel
+- 2026-09-10 a jAXGW8B5zIA | 518v 5L 0C @1d | ×1.84 | baseline | China's Tallest Tower Twists 120° — the Twist Saved $58M in Steel | Ch
+- 2026-09-09 a T9LHb4qRL1A | 474v 1L 0C @2d | ×1.69 | baseline | The Great Wall Isn't One Wall — It's 21,196 km | China Travel Expert
+- 2026-09-10 c xU01aJLk2jc | 401v 2L 0C @1d | ×1.43 | baseline | One Soup Dumpling, 18 Folds, and Hidden Molten Broth | China Travel Ex
+- 2026-09-09 c IPN7YJtiA4c | 72v 0L 0C @2d | ×0.26 | LOSER — avoid this shape today | China's 20-Yuan Note Is a Real View — and It Costs 20 Yuan | China Tra
+- 2026-09-10 d brrsn31-Z50 | 14v 1L 0C @1d | ×0.05 | LOSER — avoid this shape today | Two of China's Ancient Capitals, 90 Minutes Apart by Bullet Train | Ch
+- like-rate (fresh Shorts): 0.70% (peers 1-6%)
+
+## 2026-09-10 post-mortem (baseline = 14d median views of Shorts ≥3d old: 284)
+- 2026-09-09 a T9LHb4qRL1A | 390v 1L 0C @1d | ×1.37 | baseline | The Great Wall Isn't One Wall — It's 21,196 km | China Travel Expert
+- 2026-09-09 d aeSJ6uYc7Yo | 142v 1L 0C @1d | ×0.50 | LOSER — avoid this shape today | The Ancient Silk Road Now Has a Bullet Train — 1,776 km | China Travel
+- 2026-09-08 d a1mrh_5wGKU | 137v 0L 0C @2d | ×0.48 | LOSER — avoid this shape today | The World's Highest Train Pumps Oxygen Into the Cabin — Road to Tibet 
+- 2026-09-08 a LUf6mSnabx8 | 107v 1L 0C @2d | ×0.38 | LOSER — avoid this shape today | China's New Year Ends 15 Days Late — With a Sky of Lanterns | China Tr
+- 2026-09-08 c _PBcP2dmvIc | 78v 0L 0C @2d | ×0.27 | LOSER — avoid this shape today | Google & WhatsApp Won't Work in China — Here's How Tourists Get Online
+- 2026-09-09 c IPN7YJtiA4c | 72v 0L 0C @1d | ×0.25 | LOSER — avoid this shape today | China's 20-Yuan Note Is a Real View — and It Costs 20 Yuan | China Tra
+- like-rate (fresh Shorts): 0.32% (peers 1-6%)
+
+## 2026-09-08 post-mortem (baseline = 14d median views of Shorts ≥3d old: 279)
+- 2026-09-07 d g-7R2rmWXTo | 969v 6L 0C @1d | ×3.47 | WINNER — replicate this hook shape today | The Perfect First-Timer China Route: 4 Cities by Bullet Train | China 
+- 2026-09-06 d 2__kKM4yoYI | 278v 7L 0C @2d | ×1.00 | baseline | Tea Reached Tibet Only by Horseback — China's Tea-Horse Road | China T
+- 2026-09-06 c b1decGmfdbI | 266v 4L 0C @2d | ×0.95 | baseline | One Pot, 20 Spices, and You Cook Your Own Dinner — Hotpot | China Trav
+- 2026-09-07 c cdd4SeYLxKU | 132v 1L 0C @1d | ×0.47 | LOSER — avoid this shape today | In Chengdu, One Cup of Tea Buys You the Whole Day | China Travel Exper
+- 2026-09-06 a 2EAvQQDS5eU | 71v 1L 0C @2d | ×0.25 | LOSER — avoid this shape today | The Chinese Towns Where the Streets Are Water | China Travel Expert
+- 2026-09-07 a j5MX1wK3pnk | 16v 1L 0C @1d | ×0.06 | LOSER — avoid this shape today | One Wrong Stroke and the Whole Scroll Is Ruined | China Travel Expert
+- like-rate (fresh Shorts): 1.15% (peers 1-6%)
+
+## 2026-09-07 post-mortem (baseline = 14d median views of Shorts ≥3d old: 280)
+- 2026-09-05 c kyNuqztP3xs | 759v 13L 1C @2d | ×2.71 | WINNER — replicate this hook shape today | How Tourists Book China's 350 km/h Bullet Trains (2026) | China Travel
+- 2026-09-06 d 2__kKM4yoYI | 242v 5L 0C @1d | ×0.86 | baseline | Tea Reached Tibet Only by Horseback — China's Tea-Horse Road | China T
+- 2026-09-06 c b1decGmfdbI | 209v 1L 0C @1d | ×0.75 | baseline | One Pot, 20 Spices, and You Cook Your Own Dinner — Hotpot | China Trav
+- 2026-09-05 a A1goahMqImQ | 168v 2L 0C @2d | ×0.60 | baseline | Nine Dancers, One Dragon — and They Never Touch It | China Travel Expe
+- 2026-09-06 a 2EAvQQDS5eU | 53v 0L 0C @1d | ×0.19 | LOSER — avoid this shape today | The Chinese Towns Where the Streets Are Water | China Travel Expert
+- 2026-09-05 d IHgj7Bj2jOU | 32v 0L 0C @2d | ×0.11 | LOSER — avoid this shape today | The Mud Towers That Outran Every Horse — Silk Road EP7 | China Travel 
+- like-rate (fresh Shorts): 1.44% (peers 1-6%)
+
+## 2026-09-06 post-mortem (baseline = 14d median views of Shorts ≥3d old: 277)
+- 2026-09-04 c hoEyAIKYF1E | 671v 18L 0C @2d | ×2.42 | WINNER — replicate this hook shape today | Shanghai: One River Splits 1920s Europe From the Future | China Travel
+- 2026-09-04 a L9vCh0NDo0U | 367v 2L 0C @2d | ×1.32 | baseline | China's Best Morning Costs Almost Nothing (Skip the Ticket Line) | Chi
+- 2026-09-05 c kyNuqztP3xs | 349v 7L 0C @1d | ×1.26 | baseline | How Tourists Book China's 350 km/h Bullet Trains (2026) | China Travel
+- 2026-09-05 a A1goahMqImQ | 126v 2L 0C @1d | ×0.45 | LOSER — avoid this shape today | Nine Dancers, One Dragon — and They Never Touch It | China Travel Expe
+- 2026-09-04 d fpMDJUB2Mqs | 40v 2L 0C @2d | ×0.14 | LOSER — avoid this shape today | Where China's Great Wall Ends — Alone in the Desert · Silk Road EP6 | 
+- 2026-09-05 d IHgj7Bj2jOU | 17v 0L 0C @1d | ×0.06 | LOSER — avoid this shape today | The Mud Towers That Outran Every Horse — Silk Road EP7 | China Travel 
+- 2026-09-04 L cSO3Di-5aiQ | 6v 0L 0C @2d | ×0.02 | LONGFORM: no distribution (expected on this channel; search-ranking is slow) | How to Pay in China as a Tourist in 2026 (Do This First) | China Trave
+- like-rate (fresh Shorts): 1.97% (peers 1-6%)
+
+## 2026-09-04 post-mortem (baseline = 14d median views of Shorts ≥3d old: 278)
+- 2026-09-03 d bP3aVd0Am7Y | 347v 2L 0C @1d | ×1.25 | baseline | A Giant Sleeping Baby Lies Alone in China's Gobi — Silk Road EP5 | Chi
+- 2026-09-02 c KVviEiY--iI | 248v 0L 0C @2d | ×0.89 | baseline | No Nails Hold Up This Roof — China's 2,500-Year Secret | China Travel 
+- 2026-09-02 d gDlLBcgVndc | 198v 0L 0C @2d | ×0.71 | baseline | The Hills That Rusted Rainbow — Zhangye Danxia · Silk Road EP4 | China
+- 2026-09-02 a cXz-EP3dogQ | 98v 0L 0C @2d | ×0.35 | LOSER — avoid this shape today | In Chinese Calligraphy, You Can't Fix a Single Stroke | China Travel E
+- 2026-09-03 c 4Xxqy8P66z8 | 91v 0L 0C @1d | ×0.33 | LOSER — avoid this shape today | In Guangzhou, "Drinking Tea" Means a 3-Hour Feast | China Travel Exper
+- 2026-09-03 a 88FkaoYGysg | 82v 0L 0C @1d | ×0.29 | LOSER — avoid this shape today | The Chinese Teapot That Gets Better Every Year | China Travel Expert
+- like-rate (fresh Shorts): 0.19% (peers 1-6%)
+
+## 2026-09-03 post-mortem (baseline = 14d median views of Shorts ≥3d old: 200)
+- 2026-09-01 d V38BajuIsNk | 467v 1L 0C @2d | ×2.33 | WINNER — replicate this hook shape today | A Mud Wall in the Desert Once Guarded All of China — Silk Road EP3 | C
+- 2026-09-01 a zi7VLLPFNFY | 311v 1L 0C @2d | ×1.55 | baseline | It Looks Painted, But Not a Drop Is Paint | China Travel Expert
+- 2026-09-02 c KVviEiY--iI | 228v 0L 0C @1d | ×1.14 | baseline | No Nails Hold Up This Roof — China's 2,500-Year Secret | China Travel 
+- 2026-09-02 d gDlLBcgVndc | 189v 0L 0C @1d | ×0.94 | baseline | The Hills That Rusted Rainbow — Zhangye Danxia · Silk Road EP4 | China
+- 2026-09-02 a cXz-EP3dogQ | 85v 0L 0C @1d | ×0.42 | LOSER — avoid this shape today | In Chinese Calligraphy, You Can't Fix a Single Stroke | China Travel E
+- 2026-09-01 c QLg1jYTlk1I | 45v 0L 0C @2d | ×0.23 | LOSER — avoid this shape today | How to Get a Taxi in China With No Chinese — DiDi | China Travel Exper
+- 2026-09-01 L dCSlXA3dUzI | 7v 0L 0C @2d | ×0.04 | LONGFORM: no distribution (expected on this channel; search-ranking is slow) | 15 Mistakes First-Timers Make in China (Do NOT Skip #3) | China Travel
+- like-rate (fresh Shorts): 0.15% (peers 1-6%)
+
+## 2026-09-02 post-mortem (baseline = 14d median views of Shorts ≥3d old: 175)
+- 2026-08-31 a 92q-qNWmj0U | 1218v 6L 0C @2d | ×6.96 | WINNER — replicate this hook shape today | One Root Dyes This Blue — China's Bai Tie-Dye | China Travel Expert
+- 2026-08-31 c 6lWBRUhcWeY | 922v 7L 1C @2d | ×5.27 | WINNER — replicate this hook shape today | The Chinese Towns With No Roads — Only Water | China Travel Expert
+- 2026-09-01 a zi7VLLPFNFY | 223v 1L 0C @1d | ×1.27 | baseline | It Looks Painted, But Not a Drop Is Paint | China Travel Expert
+- 2026-09-01 d V38BajuIsNk | 177v 1L 0C @1d | ×1.01 | baseline | A Mud Wall in the Desert Once Guarded All of China — Silk Road EP3 | C
+- 2026-08-31 d eF0rAE0AhdI | 134v 0L 0C @2d | ×0.77 | baseline | The Desert Lake That Won't Dry Up — Silk Road EP2 | China Travel Exper
+- 2026-09-01 c QLg1jYTlk1I | 14v 0L 0C @1d | ×0.08 | LOSER — avoid this shape today | How to Get a Taxi in China With No Chinese — DiDi | China Travel Exper
+- 2026-09-01 L dCSlXA3dUzI | 2v 0L 0C @1d | ×0.01 | LONGFORM: no distribution (expected on this channel; search-ranking is slow) | 15 Mistakes First-Timers Make in China (Do NOT Skip #3) | China Travel
+- like-rate (fresh Shorts): 0.56% (peers 1-6%)
+

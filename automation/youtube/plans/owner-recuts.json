@@ -1,0 +1,997 @@
+{
+ "version": 1,
+ "updated": "2026-10-22",
+ "purpose": "Owner POV recut queue (format F1). Recuts of the owner's own finished edits in automation/youtube/runs/owner-footage/, rendered by scripts/owner-recut.py. Source research: 2026-10-17 recut plan (pov-owner), ported into the repo so the daily routine can render without the scratch directory.",
+ "footageRoot": "automation/youtube/runs/owner-footage",
+ "render": {
+  "canvas": [
+   1080,
+   1920
+  ],
+  "fps": 30,
+  "bands": {
+   "default": {
+    "y": 840,
+    "h": 388,
+    "why": "old bilingual subtitles (3 lines from y~870, bottom-anchored at y~1180)"
+   },
+   "tall": {
+    "y": 740,
+    "h": 488,
+    "why": "Guangzhou master: up to 4 subtitle lines from y~770"
+   }
+  },
+  "bandStyle": {
+   "feather": 26,
+   "sigma": 34,
+   "brightness": -0.13,
+   "saturation": 0.75,
+   "note": "feathered alpha mask is drawn with ffmpeg at runtime (no png in git)"
+  },
+  "cueFont": "Inter Display ExtraBold",
+  "cueSize": 84,
+  "highlight": "#FFD84D",
+  "cueMarkup": "'\\n' = line break; [[word]] = yellow highlight. Keep each line under ~30 characters (no auto-wrap); at most 3 lines.",
+  "povTag": true,
+  "loudnessLUFS": -14,
+  "truePeakDb": -1.5,
+  "videoFadeOutSec": 0.3,
+  "audioFadeOutSec": 0.8,
+  "defaultMusic": "guzheng-calm-01.mp3",
+  "musicBeds": {
+   "guzheng-calm-01.mp3": {
+    "start": 17.0,
+    "why": "0-17 s is a quiet plucked intro (about -22 LUFS); the full calm section runs from 17 s. No EDM drop."
+   }
+  },
+  "audioNote": "The masters already have the old music mixed into their audio, so a recut replaces the audio completely (the real ambient sound is lost until the raw iPhone originals arrive)."
+ },
+ "rules": {
+  "statusGate": "owner-recut.py renders only status 'ready'. 'needs-owner-confirmation' and 'needs-price' refuse unless --force, and a forced render is marked uploadable:false.",
+  "exclusions": "A segment that overlaps any exclusion range of its source is refused, with or without --force. Face ranges never get used: ep4 6.7-8.2 s (child's face), ep4 13.5-17.9 s (umbrella then a man's face), ep5 1.75-2.75 s (children's faces).",
+  "labels": "A per-shot place label must be in the source's allowed list for that time range; editB has no allowed label (location unconfirmed: never name it); the editA car-window spire is 'Shanghai' only.",
+  "pairs": [
+   [
+    "R-01",
+    "R-08"
+   ],
+   [
+    "R-02",
+    "R-06"
+   ]
+  ],
+  "pairsRule": "Never publish both recuts of a pair; they share most shots.",
+  "reuseWeeks": 8,
+  "reuseRule": "Never reuse an owner shot within 8 weeks of its last publish. After a recut is published, append {date, videoId, in, out} for each of its segments to that source's 'uses' list; owner-recut.py warns when a segment overlaps a use from the last 8 weeks.",
+  "inPoints": "Every in-point is 2.6 s or later (old calligraphy title 0-2.5 s); the old end fades are excluded too.",
+  "honesty": [
+   "Name a place only over footage whose meta/srt confirms it (sources[*].labels).",
+   "Numbers only if already verified in the repo (facts[*].source) or taken from the clip's own file metadata (shooting times).",
+   "editB valley: location unconfirmed — never name it, never promise a reveal.",
+   "editA spire (car window 6.03-10.15 s): say 'Shanghai' only (the 08-01 guess 'Shanghai Exhibition Centre' was never confirmed).",
+   "EP2 gate (ep2 0-4.03 s, shot 7/31): excluded until the owner confirms it is a Summer Palace gate.",
+   "EP5 lantern hall (ep5 8.5-16.9 s) matches IMG_9279 shot 8/8 and filed under 南方篇: excluded until the owner confirms the city; the published EP5 description may need a correction.",
+   "Never caption the Temple of Heaven cypress path as 'empty' — people are visible on it.",
+   "First person ('I', 'my') is allowed over owner footage only (F1)."
+  ],
+  "stopRule": "Stop recuts after 3 consecutive recuts whose same-day ratio vs F4 is below 1.0 and whose averageViewPercentage is not above F4.",
+  "rawOriginals": "When the raw iPhone originals arrive they go through scripts/prep-owner-clip.mjs (audio kept) and become F1 at 2-3 a week; these recuts are a stopgap."
+ },
+ "schedule": {
+  "slot": "Thursday X slot (wherever the §0c rotation puts it); claim it in state/owner-slots.json first.",
+  "2026-10-22": "R-01 (calm bed)",
+  "cityScopeApproved": {
+   "2026-10-29": "R-02",
+   "2026-11-05": "R-03",
+   "2026-11-12": "R-07",
+   "2026-11-19": "R-04"
+  },
+  "cityScopeNotApproved": {
+   "2026-10-29": "R-04",
+   "after": "pause until the raw originals arrive"
+  },
+  "conflictNote": "R-07 shares shots with R-02 (ep3 2.60-6.80, ep4 9.03-13.40), so under the 8-week reuse rule R-07 cannot follow R-02 two weeks later; owner-recut.py will warn. Decide which one wins before 11-12."
+ },
+ "sources": {
+  "mutianyu": {
+   "file": "2026-08-18/ep1-mutianyu.mp4",
+   "duration": 16.1,
+   "band": "default",
+   "placeEvidence": "EP1 meta; commit 36be928 'locations confirmed'; park map wall legend points to Mutianyu (inventory #15)",
+   "segments": "2.60-3.93 walking up to the park map wall (lead-in) · 4.03-8.93 chairlift ride up into the mist (riding POV) · 9.03-15.75 toboggan ride behind another rider; 'No Stopping' gantry ~11-13 s (best clip)",
+   "labels": [
+    {
+     "from": 0,
+     "to": 16.1,
+     "allowed": [
+      "Mutianyu Great Wall",
+      "Mutianyu, Beijing",
+      "Great Wall"
+     ]
+    }
+   ],
+   "exclusions": [
+    {
+     "from": 0,
+     "to": 2.6,
+     "kind": "title",
+     "why": "old calligraphy title"
+    },
+    {
+     "from": 15.8,
+     "to": 16.1,
+     "kind": "fade",
+     "why": "old end fade"
+    }
+   ],
+   "uses": [
+    {
+     "date": "2026-08-24",
+     "videoId": "ZzQ08vquF0U",
+     "in": 0,
+     "out": 16.1,
+     "what": "Beijing, Walked EP1"
+    },
+    {
+     "date": "2026-10-22",
+     "videoId": "Ip_nMRVgxa0",
+     "in": 9.03,
+     "out": 13.0,
+     "what": "R-01 Stairs or SLIDE down the Great Wall?"
+    },
+    {
+     "date": "2026-10-22",
+     "videoId": "Ip_nMRVgxa0",
+     "in": 2.6,
+     "out": 3.93,
+     "what": "R-01 Stairs or SLIDE down the Great Wall?"
+    },
+    {
+     "date": "2026-10-22",
+     "videoId": "Ip_nMRVgxa0",
+     "in": 4.03,
+     "out": 8.93,
+     "what": "R-01 Stairs or SLIDE down the Great Wall?"
+    },
+    {
+     "date": "2026-10-22",
+     "videoId": "Ip_nMRVgxa0",
+     "in": 13.0,
+     "out": 15.75,
+     "what": "R-01 Stairs or SLIDE down the Great Wall?"
+    }
+   ]
+  },
+  "summerpalace": {
+   "file": "2026-08-18/ep2-summerpalace.mp4",
+   "duration": 14.3,
+   "band": "default",
+   "placeEvidence": "EP2 meta (published dRsAeXT2OnE)",
+   "segments": "4.03-7.5 handheld tilt from painted eaves down to the lake (reveal) · 7.5-13.95 Kunming Lake, almost static",
+   "labels": [
+    {
+     "from": 4.03,
+     "to": 14.3,
+     "allowed": [
+      "Summer Palace, Beijing",
+      "Summer Palace"
+     ]
+    }
+   ],
+   "exclusions": [
+    {
+     "from": 0,
+     "to": 4.03,
+     "kind": "unconfirmed",
+     "why": "calligraphy title + gate shot 7/31, Summer Palace gate not owner-confirmed"
+    },
+    {
+     "from": 13.95,
+     "to": 14.3,
+     "kind": "fade",
+     "why": "old end fade"
+    }
+   ],
+   "uses": [
+    {
+     "date": "2026-08-25",
+     "videoId": "dRsAeXT2OnE",
+     "in": 0,
+     "out": 14.3,
+     "what": "Beijing, Walked EP2"
+    }
+   ]
+  },
+  "tiantan": {
+   "file": "2026-08-18/ep3-tiantan.mp4",
+   "duration": 13.4,
+   "band": "default",
+   "placeEvidence": "EP3 meta (published fGWdBwp3Ros)",
+   "segments": "2.60-8.47 walking POV down a cypress-lined path behind a walker (IMG_9180, shot 8/3 10:36) · 8.53-13.05 handheld in the queue at the red walls (IMG_9183, shot 8/3 10:42)",
+   "labels": [
+    {
+     "from": 0,
+     "to": 13.4,
+     "allowed": [
+      "Temple of Heaven, Beijing",
+      "Temple of Heaven"
+     ]
+    }
+   ],
+   "exclusions": [
+    {
+     "from": 0,
+     "to": 2.6,
+     "kind": "title",
+     "why": "old calligraphy title"
+    },
+    {
+     "from": 13.05,
+     "to": 13.4,
+     "kind": "fade",
+     "why": "old end fade"
+    }
+   ],
+   "uses": [
+    {
+     "date": "2026-08-26",
+     "videoId": "fGWdBwp3Ros",
+     "in": 0,
+     "out": 13.4,
+     "what": "Beijing, Walked EP3"
+    }
+   ]
+  },
+  "baita": {
+   "file": "2026-08-18/ep4-baita.mp4",
+   "duration": 17.9,
+   "band": "default",
+   "placeEvidence": "EP4 meta (published f8f7Ftl-8HI): Baitasi (White Stupa Temple) area",
+   "segments": "2.60-6.60 handheld pan across grey roof tiles up to the White Stupa · 8.3-8.97 roofs · 9.03-13.40 walking POV along the red-wall lane toward the stupa",
+   "labels": [
+    {
+     "from": 0,
+     "to": 17.9,
+     "allowed": [
+      "White Stupa Temple, Beijing",
+      "White Stupa Temple",
+      "Baitasi, Beijing"
+     ]
+    }
+   ],
+   "exclusions": [
+    {
+     "from": 0,
+     "to": 2.6,
+     "kind": "title",
+     "why": "old calligraphy title"
+    },
+    {
+     "from": 6.7,
+     "to": 8.2,
+     "kind": "face",
+     "why": "a child's face fills the frame"
+    },
+    {
+     "from": 13.5,
+     "to": 17.9,
+     "kind": "face",
+     "why": "umbrella, then a man's face in close-up"
+    }
+   ],
+   "uses": [
+    {
+     "date": "2026-08-27",
+     "videoId": "f8f7Ftl-8HI",
+     "in": 0,
+     "out": 17.9,
+     "what": "Beijing, Walked EP4"
+    }
+   ]
+  },
+  "duck": {
+   "file": "2026-08-18/ep5-duck.mp4",
+   "duration": 16.9,
+   "band": "default",
+   "placeEvidence": "EP5 meta names Siji Minfu, Beijing for the open kitchen (IMG_9105, shot 7/31 15:21)",
+   "segments": "3.7-8.47 walking past the open kitchen, dim with motion blur",
+   "labels": [
+    {
+     "from": 2.75,
+     "to": 8.5,
+     "allowed": [
+      "Siji Minfu, Beijing",
+      "Beijing"
+     ]
+    }
+   ],
+   "exclusions": [
+    {
+     "from": 0,
+     "to": 2.6,
+     "kind": "title",
+     "why": "old calligraphy title"
+    },
+    {
+     "from": 1.75,
+     "to": 2.75,
+     "kind": "face",
+     "why": "children's faces in close-up"
+    },
+    {
+     "from": 8.5,
+     "to": 16.9,
+     "kind": "unconfirmed",
+     "why": "lantern hall = IMG_9279 shot 8/8, filed under 南方篇, city unconfirmed"
+    }
+   ],
+   "uses": [
+    {
+     "date": "2026-08-28",
+     "videoId": "h-6tu1E19j4",
+     "in": 0,
+     "out": 16.9,
+     "what": "Beijing, Walked EP5"
+    }
+   ]
+  },
+  "guangzhou": {
+   "file": "2026-08-09/ep1-guangzhou.mp4",
+   "duration": 22.17,
+   "band": "tall",
+   "placeEvidence": "Guangzhou Ate First EP1 meta (published O3MPquBKc-g)",
+   "segments": "2.60-6.37 first-person hand picking a lychee under the '荔枝王' sign · 6.43-9.97 bakery counter · 10.03-12.93 staff in red seen from behind · 13.0-17.97 riding past apartment blocks and an overpass (vehicle window) · 18.0-21.8 tour-bus interior",
+   "labels": [
+    {
+     "from": 0,
+     "to": 22.17,
+     "allowed": [
+      "Guangzhou"
+     ]
+    }
+   ],
+   "exclusions": [
+    {
+     "from": 0,
+     "to": 2.6,
+     "kind": "title",
+     "why": "old calligraphy title"
+    },
+    {
+     "from": 21.8,
+     "to": 22.17,
+     "kind": "fade",
+     "why": "old end fade"
+    }
+   ],
+   "uses": [
+    {
+     "date": "2026-08-10",
+     "videoId": "O3MPquBKc-g",
+     "in": 0,
+     "out": 22.17,
+     "what": "Guangzhou Ate First EP1"
+    }
+   ]
+  },
+  "shanghai": {
+   "file": "2026-08-01/editA-shanghai-dongfangzhiguan.mp4",
+   "duration": 10.5,
+   "band": "default",
+   "placeEvidence": "editA srt + 08-01 plan: IMG_9040 = China Art Museum (former 2010 Expo China Pavilion); IMG_9096 car window shot 7/31 05:13 (spire not confirmed)",
+   "segments": "2.60-5.97 handheld move along the railings under the red former Expo China Pavilion · 6.03-10.15 car-window ride at 5 am past a spire and towers",
+   "labels": [
+    {
+     "from": 0,
+     "to": 6.0,
+     "allowed": [
+      "Shanghai",
+      "China Art Museum, Shanghai",
+      "Former Expo China Pavilion, Shanghai"
+     ]
+    },
+    {
+     "from": 6.0,
+     "to": 10.5,
+     "allowed": [
+      "Shanghai"
+     ]
+    }
+   ],
+   "exclusions": [
+    {
+     "from": 0,
+     "to": 2.6,
+     "kind": "title",
+     "why": "old calligraphy title"
+    },
+    {
+     "from": 10.15,
+     "to": 10.5,
+     "kind": "fade",
+     "why": "fades to black"
+    }
+   ],
+   "uses": []
+  },
+  "valley": {
+   "file": "2026-08-01/editB-shangu-chenwu.mp4",
+   "duration": 12.0,
+   "band": "default",
+   "placeEvidence": "NONE — location unconfirmed (IMG_8810 shot 7/23 06:34 during the Guangzhou leg). Never name it.",
+   "segments": "2.60-11.65 near-static balcony view of a misty valley and terraced fields",
+   "labels": [
+    {
+     "from": 0,
+     "to": 12.0,
+     "allowed": []
+    }
+   ],
+   "exclusions": [
+    {
+     "from": 0,
+     "to": 2.6,
+     "kind": "title",
+     "why": "old calligraphy title"
+    },
+    {
+     "from": 11.65,
+     "to": 12.0,
+     "kind": "fade",
+     "why": "old end fade"
+    }
+   ],
+   "uses": []
+  }
+ },
+ "recuts": [
+  {
+   "id": "R-01",
+   "title": "Stairs or SLIDE down the Great Wall?",
+   "hookType": "CHOICE",
+   "status": "ready",
+   "cityScope": "non-city",
+   "povType": "ride",
+   "pairWith": "R-08",
+   "music": null,
+   "segments": [
+    {
+     "src": "mutianyu",
+     "in": 9.03,
+     "out": 13.0,
+     "label": "Mutianyu Great Wall"
+    },
+    {
+     "src": "mutianyu",
+     "in": 2.6,
+     "out": 3.93,
+     "label": "Mutianyu Great Wall"
+    },
+    {
+     "src": "mutianyu",
+     "in": 4.03,
+     "out": 8.93,
+     "label": "Mutianyu Great Wall"
+    },
+    {
+     "src": "mutianyu",
+     "in": 13.0,
+     "out": 15.75,
+     "label": "Mutianyu Great Wall"
+    }
+   ],
+   "cues": [
+    {
+     "start": 0.0,
+     "end": 4.0,
+     "text": "Stairs or [[SLIDE]]\ndown the Great Wall?"
+    },
+    {
+     "start": 4.0,
+     "end": 10.2,
+     "text": "Mutianyu, Beijing:\nchairlift up, toboggan down"
+    },
+    {
+     "start": 10.2,
+     "end": null,
+     "text": "Stairs or slide —\nwhich are you picking?"
+    }
+   ],
+   "placesNamed": [
+    "Mutianyu Great Wall",
+    "Beijing"
+   ],
+   "facts": [
+    {
+     "claim": "Mutianyu has a chairlift up and a toboggan down",
+     "source": "the footage itself (ep1 4.03-8.93 chairlift, 9.03-15.75 toboggan) + EP1 meta; location confirmed in commit 36be928"
+    }
+   ],
+   "differentEnough": "MEDIUM: all shots from EP1, but the toboggan POV is now frame 0 (EP1 opened on the map wall); new choice claim, new captions, new music, no brand-intro cue.",
+   "notes": [
+    "Re-rendered on a calm bed (default guzheng-calm-01 from 17 s) instead of oriental-edm-01 from its drop.",
+    "Optional hook upgrade: 'Would you pay ¥__ to slide down the Great Wall?' only after the toboggan price is checked against 2 sources."
+   ]
+  },
+  {
+   "id": "R-02",
+   "title": "Forbidden City sold out? Plan B on foot",
+   "hookType": "STAKES",
+   "status": "ready",
+   "cityScope": "city",
+   "povType": "walk",
+   "pairWith": "R-06",
+   "music": null,
+   "segments": [
+    {
+     "src": "tiantan",
+     "in": 2.6,
+     "out": 6.8,
+     "label": "Temple of Heaven, Beijing"
+    },
+    {
+     "src": "baita",
+     "in": 2.6,
+     "out": 6.6,
+     "label": "White Stupa Temple, Beijing"
+    },
+    {
+     "src": "baita",
+     "in": 9.03,
+     "out": 13.4,
+     "label": "White Stupa Temple, Beijing"
+    },
+    {
+     "src": "summerpalace",
+     "in": 4.03,
+     "out": 9.6,
+     "label": "Summer Palace, Beijing"
+    }
+   ],
+   "cues": [
+    {
+     "start": 0.0,
+     "end": 4.2,
+     "text": "Forbidden City sold out?\nTickets drop [[7 days]] ahead."
+    },
+    {
+     "start": 4.2,
+     "end": 12.57,
+     "text": "Plan B, on foot: a [[700-year-old]]\nstupa over old Beijing roofs"
+    },
+    {
+     "start": 12.57,
+     "end": null,
+     "text": "Palace queue or Plan B?\nPick a side."
+    }
+   ],
+   "placesNamed": [
+    "Forbidden City (foil only, no footage claimed)",
+    "Temple of Heaven",
+    "White Stupa Temple",
+    "Summer Palace"
+   ],
+   "facts": [
+    {
+     "claim": "Forbidden City tickets are released 7 days ahead",
+     "source": "state/RUNLOG.md 2026-08-21 a (english.beijing.gov.cn / realchinatrip) and 2026-10-07 c"
+    },
+    {
+     "claim": "the White Stupa is 700+ years old",
+     "source": "runs/owner-footage/2026-08-18/ep4-meta.json + ep4-baita.srt (published EP4); not re-checked on 2026-10-17"
+    }
+   ],
+   "differentEnough": "HIGH: mixes 3 uploaded EPs, at most 9 s from any one, new claim and order.",
+   "notes": [
+    "The Forbidden City is named only as the foil; none of the footage is claimed to be it."
+   ]
+  },
+  {
+   "id": "R-03",
+   "title": "First China stop: Shanghai or Guangzhou?",
+   "hookType": "CHOICE",
+   "status": "ready",
+   "cityScope": "city",
+   "povType": "ride",
+   "pairWith": null,
+   "music": null,
+   "segments": [
+    {
+     "src": "shanghai",
+     "in": 6.03,
+     "out": 10.15,
+     "label": "Shanghai"
+    },
+    {
+     "src": "shanghai",
+     "in": 2.6,
+     "out": 5.97,
+     "label": "China Art Museum, Shanghai"
+    },
+    {
+     "src": "guangzhou",
+     "in": 2.6,
+     "out": 6.37,
+     "label": "Guangzhou"
+    },
+    {
+     "src": "guangzhou",
+     "in": 13.0,
+     "out": 17.97,
+     "label": "Guangzhou"
+    }
+   ],
+   "cues": [
+    {
+     "start": 0.0,
+     "end": 4.12,
+     "text": "First China stop:\n[[Shanghai]] or [[Guangzhou]]?"
+    },
+    {
+     "start": 4.12,
+     "end": 7.49,
+     "text": "Shanghai: the old\nExpo China Pavilion"
+    },
+    {
+     "start": 7.49,
+     "end": 11.26,
+     "text": "Guangzhou:\n[[\"Lychee King\"]] season"
+    },
+    {
+     "start": 11.26,
+     "end": null,
+     "text": "Pick one —\nand tell me why."
+    }
+   ],
+   "placesNamed": [
+    "Shanghai",
+    "China Art Museum (former Expo China Pavilion)",
+    "Guangzhou"
+   ],
+   "facts": [
+    {
+     "claim": "the red building is the former 2010 Expo China Pavilion, now the China Art Museum",
+     "source": "editA.srt + runs/owner-footage/2026-08-01/plan.md (IMG_9040)"
+    },
+    {
+     "claim": "'Lychee King' (荔枝王) sign at the fruit counter",
+     "source": "visible in the footage; Guangzhou EP1 meta"
+    }
+   ],
+   "differentEnough": "HIGH: the Shanghai footage was never published; only ~9 s of the 22 s Guangzhou EP1, under a different claim.",
+   "notes": [
+    "Guangzhou shots use the tall band (y 740-1228).",
+    "Optional: '5 am' (IMG_9096 shot 05:13) may go into a cue."
+   ]
+  },
+  {
+   "id": "R-04",
+   "title": "5 am city or 6:30 am mountains?",
+   "hookType": "CHOICE",
+   "status": "ready",
+   "cityScope": "mixed",
+   "povType": "ride",
+   "pairWith": null,
+   "music": null,
+   "segments": [
+    {
+     "src": "shanghai",
+     "in": 6.03,
+     "out": 10.15,
+     "label": "Shanghai"
+    },
+    {
+     "src": "valley",
+     "in": 2.6,
+     "out": 11.65,
+     "label": null
+    }
+   ],
+   "cues": [
+    {
+     "start": 0.0,
+     "end": 4.12,
+     "text": "[[5 am]] city or\n[[6:30 am]] mountains?"
+    },
+    {
+     "start": 4.12,
+     "end": 9.0,
+     "text": "6:30 am:\nmist on the slopes"
+    },
+    {
+     "start": 9.0,
+     "end": null,
+     "text": "City or mountains?\nPick one."
+    }
+   ],
+   "placesNamed": [
+    "Shanghai"
+   ],
+   "facts": [
+    {
+     "claim": "5 am Shanghai car window",
+     "source": "IMG_9096 file metadata 2026-07-31 05:13 (runs/owner-footage/2026-08-01/plan.md)"
+    },
+    {
+     "claim": "6:30 am valley",
+     "source": "IMG_8810 file metadata 2026-07-23 06:34 (same plan)"
+    }
+   ],
+   "differentEnough": "HIGH: both clips have never been published.",
+   "notes": [
+    "The valley stays unnamed ('mountains' only).",
+    "Weak POV feel: one car-window shot, one static balcony shot.",
+    "The plan schedules R-04 on 10-29 when city scope is NOT approved."
+   ]
+  },
+  {
+   "id": "R-05",
+   "title": "'Lychee King' in Guangzhou: ¥__ a jin",
+   "hookType": "PRICE-SHOCK",
+   "status": "needs-price",
+   "cityScope": "city",
+   "povType": "street",
+   "pairWith": null,
+   "music": null,
+   "segments": [
+    {
+     "src": "guangzhou",
+     "in": 2.6,
+     "out": 6.37,
+     "label": "Guangzhou"
+    },
+    {
+     "src": "guangzhou",
+     "in": 6.43,
+     "out": 9.97,
+     "label": "Guangzhou"
+    },
+    {
+     "src": "guangzhou",
+     "in": 10.03,
+     "out": 12.93,
+     "label": "Guangzhou"
+    },
+    {
+     "src": "guangzhou",
+     "in": 13.0,
+     "out": 17.97,
+     "label": "Guangzhou"
+    }
+   ],
+   "cues": [
+    {
+     "start": 0.0,
+     "end": 4.5,
+     "text": "\"Lychee King\" in Guangzhou:\n[[¥__]] a jin"
+    },
+    {
+     "start": 4.5,
+     "end": 10.5,
+     "text": "[[1 jin]] = 500 g.\nPicked one by one."
+    },
+    {
+     "start": 10.5,
+     "end": null,
+     "text": "What do lychees cost\nwhere you live?"
+    }
+   ],
+   "placesNamed": [
+    "Guangzhou"
+   ],
+   "facts": [],
+   "differentEnough": "MEDIUM-LOW: ~68% of Guangzhou EP1 reordered; only a new claim if the price is real.",
+   "notes": [
+    "Waiting on the owner's actual price (receipt or price-tag photo). Never guess it.",
+    "Without a price, skip it (the fallback close would repeat EP1)."
+   ]
+  },
+  {
+   "id": "R-06",
+   "title": "Summer Palace or Temple of Heaven — one morning",
+   "hookType": "CHOICE",
+   "status": "needs-price",
+   "cityScope": "city",
+   "povType": "walk",
+   "pairWith": "R-02",
+   "music": null,
+   "segments": [
+    {
+     "src": "tiantan",
+     "in": 2.6,
+     "out": 8.47,
+     "label": "Temple of Heaven, Beijing"
+    },
+    {
+     "src": "summerpalace",
+     "in": 4.03,
+     "out": 13.95,
+     "label": "Summer Palace, Beijing"
+    }
+   ],
+   "cues": [
+    {
+     "start": 0.0,
+     "end": 5.87,
+     "text": "One morning in Beijing:\npick [[one]]."
+    },
+    {
+     "start": 5.87,
+     "end": 11.0,
+     "text": "Temple of Heaven\nor Summer Palace?"
+    },
+    {
+     "start": 11.0,
+     "end": null,
+     "text": "Cypress paths\nor the lake?"
+    }
+   ],
+   "placesNamed": [
+    "Temple of Heaven",
+    "Summer Palace"
+   ],
+   "facts": [],
+   "differentEnough": "MEDIUM: two EPs combined under a new choice claim.",
+   "notes": [
+    "'needs-price' here means it needs one verified number (e.g. Temple of Heaven 'built 1420', checked against 2 sources) before it ships.",
+    "Alternative to R-02 (shared shots): publish only one of the two."
+   ]
+  },
+  {
+   "id": "R-07",
+   "title": "10:36 am cypress shade, 10:42 am this queue",
+   "hookType": "INSIDER",
+   "status": "ready",
+   "cityScope": "city",
+   "povType": "walk",
+   "pairWith": null,
+   "music": null,
+   "segments": [
+    {
+     "src": "tiantan",
+     "in": 2.6,
+     "out": 8.47,
+     "label": "Temple of Heaven, Beijing"
+    },
+    {
+     "src": "tiantan",
+     "in": 8.53,
+     "out": 13.05,
+     "label": "Temple of Heaven, Beijing"
+    },
+    {
+     "src": "baita",
+     "in": 9.03,
+     "out": 13.4,
+     "label": "White Stupa Temple, Beijing"
+    }
+   ],
+   "cues": [
+    {
+     "start": 0.0,
+     "end": 5.87,
+     "text": "[[10:36 am]]:\ncypress shade."
+    },
+    {
+     "start": 5.87,
+     "end": 10.39,
+     "text": "[[10:42 am]]:\nthis queue."
+    },
+    {
+     "start": 10.39,
+     "end": null,
+     "text": "Queue or trees —\nwhich would you do?"
+    }
+   ],
+   "placesNamed": [
+    "Temple of Heaven",
+    "White Stupa Temple"
+   ],
+   "facts": [
+    {
+     "claim": "the two Temple of Heaven clips were shot 6 minutes apart",
+     "source": "file metadata IMG_9180 2026-08-03 10:36 and IMG_9183 10:42 (runs/owner-footage/2026-08-18-inventory.md)"
+    }
+   ],
+   "differentEnough": "MEDIUM: EP3 already gave the 'tree paths beat crowds' tip; the new part is the timestamped before/after.",
+   "notes": [
+    "Never caption the path as 'empty'.",
+    "Shares shots with R-02: see schedule.conflictNote."
+   ]
+  },
+  {
+   "id": "R-08",
+   "title": "Private Great Wall tour ~$120, on your own ~$20",
+   "hookType": "PRICE-SHOCK",
+   "status": "ready",
+   "cityScope": "non-city",
+   "povType": "ride",
+   "pairWith": "R-01",
+   "music": null,
+   "segments": [
+    {
+     "src": "mutianyu",
+     "in": 2.6,
+     "out": 3.93,
+     "label": "Mutianyu Great Wall"
+    },
+    {
+     "src": "mutianyu",
+     "in": 4.03,
+     "out": 8.93,
+     "label": "Mutianyu Great Wall"
+    },
+    {
+     "src": "mutianyu",
+     "in": 9.03,
+     "out": 15.75,
+     "label": "Mutianyu Great Wall"
+    }
+   ],
+   "cues": [
+    {
+     "start": 0.0,
+     "end": 4.0,
+     "text": "Private Great Wall tour: [[~$120]].\nOn your own: [[~$20]]."
+    },
+    {
+     "start": 4.0,
+     "end": 8.6,
+     "text": "Mutianyu: [[¥40]] entry\n+ bus + shuttle\n(rides cost extra)"
+    },
+    {
+     "start": 8.6,
+     "end": null,
+     "text": "$120 tour or $20 DIY —\nwhich are you booking?"
+    }
+   ],
+   "placesNamed": [
+    "Mutianyu Great Wall"
+   ],
+   "facts": [
+    {
+     "claim": "Mutianyu entry ¥40; express bus ~¥80 return; shuttle ¥15; DIY ~$20; private tours ~$99-128 all-in",
+     "source": "runs/2026-10-04-a/script.md (6 sources, verified 2026-10-04); re-check if older than 30 days at publish"
+    }
+   ],
+   "differentEnough": "LOW-MEDIUM: same footage and order as EP1; the claim repeats the 10-04 stock Short, now over real footage.",
+   "notes": [
+    "Alternative to R-01: publish only one.",
+    "The caption must say the chairlift and toboggan cost extra."
+   ]
+  },
+  {
+   "id": "R-09",
+   "title": "Peking duck: walking past the open kitchen",
+   "hookType": null,
+   "status": "needs-owner-confirmation",
+   "cityScope": "city",
+   "povType": "walk",
+   "pairWith": null,
+   "music": null,
+   "segments": [
+    {
+     "src": "duck",
+     "in": 3.7,
+     "out": 8.47,
+     "label": "Siji Minfu, Beijing"
+    }
+   ],
+   "cues": [
+    {
+     "start": 0.0,
+     "end": null,
+     "text": "Peking duck:\nthe open kitchen"
+    }
+   ],
+   "placesNamed": [
+    "Siji Minfu, Beijing"
+   ],
+   "facts": [],
+   "differentEnough": "n/a",
+   "notes": [
+    "HOLD: only 4.8 s of Beijing kitchen footage; the lantern hall (8.5-16.9 s) city is unconfirmed (owner question)."
+   ]
+  }
+ ]
+}

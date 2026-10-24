@@ -1,0 +1,5 @@
+[
+  { "id": "px-35092273", "libraryId": "px-35092273", "in": 0.0, "out": 6.5, "label": "Xi'an Bell Tower", "fit": "crop", "cx": 0.5 },
+  { "id": "px-35092266", "libraryId": "px-35092266", "in": 0.0, "out": 6.0, "label": "Xi'an Bell Tower", "fit": "crop", "cx": 0.5 },
+  { "id": "px-39142220", "libraryId": "px-39142220", "in": 2.0, "out": 6.0, "label": "Xi'an Bell Tower", "fit": "crop", "cx": 0.5 }
+]
