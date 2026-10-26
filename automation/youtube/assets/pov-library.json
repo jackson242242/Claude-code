@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-17",
+ "generated": "2026-10-26",
  "purpose": "Licensed first-person (POV) travel footage for CHINATRAVEL Shorts (owner complaint: everything is aerial).",
  "rules": {
   "placeNames": "Say a place only over a clip whose sourceUrl slug (Pexels) or file title (Commons) names it: use placeSpeakable; null = say no place.",
@@ -49,11 +49,11 @@
   "pexelsChinaCandidatesFrameChecked_pass1_previews": 450,
   "pexelsClipsDownloadVerified_pass2": 223,
   "pass1PreviewYes_confirmedByDownload": "43 of 118",
-  "pexelsPovVerified_total": 62,
-  "pexelsPovVerified_chinaIdentifiable": 53,
-  "pexelsPovVerified_chinaIdentifiable_usable": 51,
-  "pexelsPovVerified_chinaIdentifiable_usable_portrait": 9,
-  "pexelsPovVerified_chinaIdentifiable_usable_landscape": 42,
+  "pexelsPovVerified_total": 67,
+  "pexelsPovVerified_chinaIdentifiable": 58,
+  "pexelsPovVerified_chinaIdentifiable_usable": 56,
+  "pexelsPovVerified_chinaIdentifiable_usable_portrait": 12,
+  "pexelsPovVerified_chinaIdentifiable_usable_landscape": 44,
   "pexelsPovVerified_chinaIdentifiable_usable_hongKong": 11,
   "pexelsPovVerified_chinaIdentifiable_usable_mainland": 40,
   "pexelsPovVerified_chinaIdentifiable_usable_mainland_portrait": 1,
@@ -79,7 +79,8 @@
   "commonsOwnWorkChecked": 18,
   "commonsPovVerified": 10,
   "commonsPovVerified_chinaIdentifiable": 7,
-  "commonsYouTubeOriginWalkingTours_blockedByChannelRule_estimated": 32
+  "commonsYouTubeOriginWalkingTours_blockedByChannelRule_estimated": 32,
+  "lastTopUp": "2026-10-26 (+5 heritage POV: Chaotian Palace x3 portrait, Jing'an Temple + Nanjing corridor landscape)"
  },
  "clips": [
   {
@@ -1711,6 +1712,141 @@
     "village walk china|landscape",
     "walking market china|landscape",
     "walking pov china|landscape"
+   ]
+  },
+  {
+   "id": "px-38446592",
+   "source": "Pexels",
+   "license": "Pexels License (free commercial use, attribution optional; credit kept)",
+   "sourceUrl": "https://www.pexels.com/video/exploring-chaotian-palace-in-nanjing-china-38446592/",
+   "downloadLink": "https://videos.pexels.com/video-files/38446592/16326023_1080_1920_30fps.mp4",
+   "downloadDims": "1080x1920",
+   "duration": 10,
+   "orientation": "portrait",
+   "photographer": "Cheng Shi Song",
+   "place": "Nanjing, Chaotian Palace (temple fair under the colonnade)",
+   "placeSpeakable": "Chaotian Palace",
+   "chinaIdentifiable": true,
+   "chinaEvidence": "slug",
+   "pov": "yes",
+   "povType": "street (forward walk through the colonnade market)",
+   "mood": "heritage temple fair, red pillars, glazed eaves, crowds",
+   "usable": true,
+   "flags": [
+    "market-audio: use --keep-audio 0 (stall speakers/busker Content-ID risk)"
+   ],
+   "verifyNote": "forward walk down the red-pillar colonnade of Chaotian Palace; frame0 eye-level ground, Chinese signage (朝天宫)",
+   "verifiedBy": "2026-10-26 Monday top-up: downloaded 720x1280 rendition, frames at 15/50/85% compared — camera advances down the colonnade (forward POV)",
+   "foundBy": [
+    "walking forbidden city beijing|portrait",
+    "entering chinese palace gate|portrait"
+   ]
+  },
+  {
+   "id": "px-38446700",
+   "source": "Pexels",
+   "license": "Pexels License (free commercial use, attribution optional; credit kept)",
+   "sourceUrl": "https://www.pexels.com/video/bustling-scene-at-chaotian-palace-nanjing-38446700/",
+   "downloadLink": "https://videos.pexels.com/video-files/38446700/16326040_1080_1920_30fps.mp4",
+   "downloadDims": "1080x1920",
+   "duration": 17,
+   "orientation": "portrait",
+   "photographer": "Cheng Shi Song",
+   "place": "Nanjing, Chaotian Palace (under the eaves, temple fair)",
+   "placeSpeakable": "Chaotian Palace",
+   "chinaIdentifiable": true,
+   "chinaEvidence": "slug",
+   "pov": "yes",
+   "povType": "street (moving through the fair under the heritage eaves)",
+   "mood": "dougong brackets, red pillars, glazed roof, busy market",
+   "usable": true,
+   "flags": [
+    "market-audio: use --keep-audio 0 (busker/speaker Content-ID risk)"
+   ],
+   "verifyNote": "moving through the Chaotian Palace temple fair under the carved eaves; eye-level ground, dougong visible",
+   "verifiedBy": "2026-10-26 Monday top-up: frames at 15/50/85% compared — camera moves (bracket parallax); forward/pan POV",
+   "foundBy": [
+    "summer palace walk beijing|portrait",
+    "entering chinese palace gate|portrait"
+   ]
+  },
+  {
+   "id": "px-38446814",
+   "source": "Pexels",
+   "license": "Pexels License (free commercial use, attribution optional; credit kept)",
+   "sourceUrl": "https://www.pexels.com/video/chaotian-palace-in-nanjing-china-38446814/",
+   "downloadLink": "https://videos.pexels.com/video-files/38446814/16326126_1080_1920_30fps.mp4",
+   "downloadDims": "1080x1920",
+   "duration": 15,
+   "orientation": "portrait",
+   "photographer": "Cheng Shi Song",
+   "place": "Nanjing, Chaotian Palace (the paifang gate from the plaza)",
+   "placeSpeakable": "Chaotian Palace",
+   "chinaIdentifiable": true,
+   "chinaEvidence": "slug",
+   "pov": "partial",
+   "povType": "establishing (camera near-static; crowd walks toward the gate)",
+   "mood": "red walls, glazed-tile paifang, stone guardian lions",
+   "usable": true,
+   "flags": [
+    "weak-pov: camera near-static — use as a same-place 2nd clip / establishing beat, never as frame 0"
+   ],
+   "verifyNote": "Chaotian Palace main gate/paifang with guardian lions; eye-level but the camera is near-static (people move, not the lens)",
+   "verifiedBy": "2026-10-26 Monday top-up: frames at 15/50/85% compared — foreground tree fixed across frames (camera static); establishing only",
+   "foundBy": [
+    "summer palace walk beijing|portrait"
+   ]
+  },
+  {
+   "id": "px-39484162",
+   "source": "Pexels",
+   "license": "Pexels License (free commercial use, attribution optional; credit kept)",
+   "sourceUrl": "https://www.pexels.com/video/exploring-the-corridors-of-jing-an-temple-shanghai-39484162/",
+   "downloadLink": "https://videos.pexels.com/video-files/39484162/16819349_1920_1080_25fps.mp4",
+   "downloadDims": "1920x1080",
+   "duration": 20,
+   "orientation": "landscape",
+   "photographer": "LayG Traveller",
+   "place": "Shanghai, Jing'an Temple (the wood-bracketed corridor)",
+   "placeSpeakable": "Jing'an Temple",
+   "chinaIdentifiable": true,
+   "chinaEvidence": "slug",
+   "pov": "yes",
+   "povType": "walk (forward, eye level)",
+   "mood": "dark carved-wood dougong corridor, stone pillars, crowds",
+   "usable": true,
+   "flags": [],
+   "verifyNote": "forward walk down the Jing'an Temple colonnade; corridor recedes, people approach (clear forward POV)",
+   "verifiedBy": "2026-10-26 Monday top-up: downloaded 960x540 rendition, frames at 15/50/85% compared — camera advances (forward POV)",
+   "foundBy": [
+    "walking through chinese temple china|landscape"
+   ]
+  },
+  {
+   "id": "px-34318610",
+   "source": "Pexels",
+   "license": "Pexels License (free commercial use, attribution optional; credit kept)",
+   "sourceUrl": "https://www.pexels.com/video/exploring-nanjing-s-vibrant-walking-corridor-34318610/",
+   "downloadLink": "https://videos.pexels.com/video-files/34318610/14539304_1920_1080_60fps.mp4",
+   "downloadDims": "1920x1080",
+   "duration": 10,
+   "orientation": "landscape",
+   "photographer": "LayG Traveller",
+   "place": "Nanjing (a red-lantern heritage corridor toward an arched gate)",
+   "placeSpeakable": "Nanjing",
+   "chinaIdentifiable": true,
+   "chinaEvidence": "slug",
+   "pov": "yes",
+   "povType": "walk (forward, eye level)",
+   "mood": "red lanterns, latticed windows, green tiled ceiling, arched gateway ahead",
+   "usable": true,
+   "flags": [
+    "placeSpeakable is the city (Nanjing); do not name a specific hall over it"
+   ],
+   "verifyNote": "forward walk down a Nanjing heritage corridor toward an arched gate; lanterns and lattice overhead",
+   "verifiedBy": "2026-10-26 Monday top-up: downloaded 960x540 rendition, frames at 15/50/85% compared — arch grows closer (forward POV)",
+   "foundBy": [
+    "walking through chinese temple china|landscape"
    ]
   }
  ],

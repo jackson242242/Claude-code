@@ -1,3 +1,31 @@
+## 2026-10-26 post-mortem (baseline = 14d median views of Shorts ≥3d old: 71)
+- 2026-10-25 a hDMzgRXdxrg | 349v 1L 0C @1d | ×4.92 | WINNER — replicate this hook shape today | Nanjing's Ming Bricks Are Signed by Their Makers | China Travel Expert
+- 2026-10-25 c WCEhBfrQ83E | 227v 0L 0C @1d | ×3.20 | WINNER — replicate this hook shape today | 72 Chen Families Paid for This 1894 Guangzhou Hall | China Travel Expe
+- 2026-10-24 a WiH-uYkEHXk | 130v 1L 0C @2d | ×1.83 | baseline | Wood beats stone in quakes? This 67 m pagoda has stood since 1056 | Ch
+- 2026-10-25 d fHS1i11ad3g | 83v 0L 0C @1d | ×1.17 | baseline | Sagrada Família €26. Beijing's Lama Temple ¥25 | China Travel Expert
+- 2026-10-24 d rRpVHa_4NYs | 55v 0L 0C @2d | ×0.77 | baseline | A 1,500-year-old cliff temple now caps climbers at 2,475 a day | China
+- 2026-10-24 c nZKqHekSgDY | 20v 0L 0C @2d | ×0.28 | LOSER — avoid this shape today | Neuschwanstein: ~$25 to enter. Beijing's Summer Palace? ~$4 | China Tr
+- like-rate (fresh Shorts): 0.23% (peers 1-6%)
+### Equal age (Data API snapshots since 2026-10-18; 48 h / 72 h ±6 h; "~" = interpolated between the snapshots either side)
+- Shorts median, trailing 28 d: 48h 190v (n=22) · 72h 188v (n=22)
+- 2026-10-24 a fmt:- WiH-uYkEHXk | 48h 130v 1L 0C | 72h — | Wood beats stone in quakes? This 67 m pagoda has stood since
+- 2026-10-23 d fmt:F2 DtESOVzTiP0 | 48h ~934v 1L 0C | 72h — | Guangzhou's Beijing Road Hides 11 Layers of Old Road
+- 2026-10-23 c fmt:F4 DQoax0AuYI8 | 48h ~673v 1L 0C | 72h — | One Man Spent 20 Years on This Garden — and Nearly Went Brok
+- 2026-10-23 L fmt:L x71MzcRixrk | 48h 7v 0L 0C | 72h 7v 0L 0C | Forbidden City Tickets 2026 | China Travel Expert
+- 2026-10-23 a fmt:F4 JieQ5elWaKU | 48h 67v 1L 0C | 72h 74v 1L 0C | Pisa Costs $22 to Climb. Xi'an's Bell Tower? About $4.
+- 2026-10-22 d fmt:F1 Ip_nMRVgxa0 | 48h ~1035v 2L 0C | 72h ~1037v 2L 0C | Stairs or SLIDE down the Great Wall? | China Travel Expert
+- 2026-10-22 c fmt:F4 MUiondooNRA | 48h ~728v 0L 0C | 72h ~757v 0L 0C | Dubrovnik's Walls ~$45, Xi'an's Bigger Ming Wall ~$8 | China
+- 2026-10-22 a fmt:F2 pMEj0mnWusk | 48h 56v 0L 0C | 72h 65v 0L 0C | Temple of Heaven's ¥15 Ticket Misses All 3 Monuments | China
+- 2026-10-21 d fmt:F4 Ey5CNTHrlHA | 48h ~183v 1L 0C | 72h ~184v 1L 0C | Potala Palace: 2,300 Tickets a Day, One Hour Inside | China 
+- 2026-10-21 c fmt:F2 RcLjDwyKBxE | 48h ~190v 1L 0C | 72h ~207v 1L 0C | Skip Dali's Paid Pagodas — the Old Town Is Free | China Trav
+- 2026-10-21 a fmt:F3 s-jDXjgfebg | 48h 47v 1L 0C | 72h 55v 1L 0C | China Price Check: Versailles $39 vs Forbidden City $9 | Chi
+- 2026-10-20 d fmt:F2 JJEvBONjjvk | 48h ~44v 0L 0C | 72h ~46v 0L 0C | Temple of Heaven Beats the Forbidden City — Tell Me I'm Wron
+- 2026-10-20 c fmt:F4 dLMZKPuHhtg | 48h ~370v 1L 0C | 72h ~374v 1L 0C | Edinburgh Castle £26. Xi'an's Ming Wall: ¥54 | China Travel 
+- 2026-10-20 a fmt:F4 5F_zGpkGOP8 | 48h 302v 2L 0C | 72h 305v 2L 0C | Climb the Wild Great Wall? Up to a ¥30,000 Fine | China Trav
+- 2026-10-19 d fmt:F4 YCULs2S6EG4 | 48h ~35v 0L 0C | 72h ~40v 0L 0C | Most Chinese Pagodas Have Odd Storeys — Dali's Has 16 | Chin
+### YouTube Analytics API
+- unavailable: HTTP 403 accessNotConfigured — the YouTube Analytics API is not enabled in the Google Cloud project (owner action: APIs & Services > enable "YouTube Analytics API"; checklist in scripts/youtube-oauth-helper.mjs). Equal-age numbers come from Data API snapshots only.
+
 ## 2026-10-25 post-mortem (baseline = 14d median views of Shorts ≥3d old: 65)
 - 2026-10-23 d DtESOVzTiP0 | 914v 1L 0C @2d | ×14.06 | WINNER — replicate this hook shape today | Guangzhou's Beijing Road Hides 11 Layers of Old Road
 - 2026-10-23 c DQoax0AuYI8 | 672v 1L 0C @2d | ×10.34 | WINNER — replicate this hook shape today | One Man Spent 20 Years on This Garden — and Nearly Went Broke
