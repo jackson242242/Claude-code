@@ -237,6 +237,18 @@ roadTo1m:
   spendDecision: "owner 2026-10-23: keep $0-9/month. Voice = OpenAI gpt-4o-mini-tts (cap $2/month) once ElevenLabs credits end (owner cancels the subscription); ElevenLabs v4 voice and AI 3D shots (Veo 3.1 Lite, $0.48/8 s, tested 10-23) are NOT used; visuals stay code-drawn. Re-ask only if a stage gate is passed."
   aiAnimation: off
 
+# ================= MULTI-CHANNEL TEST (owner 2026-10-29; plans/multi-channel-test.md) =================
+multiChannel:
+  status: waiting-for-owner-channels   # the test routine skips any channel whose token env is absent
+  quotaRaised: false                   # set true when the GCP YouTube Data API quota increase is approved -> main channel back to 3/day
+  channels:
+    - { key: CHINABUILDS, name: "China Builds", tokenEnv: YT_TOKEN_CHINABUILDS, direction: "modern Chinese mega-engineering, one project one number, no politics", perDay: 1 }
+    - { key: UNREAL, name: "Unreal Places", tokenEnv: YT_TOKEN_UNREAL, direction: "real places worldwide that look fake, 15-20 s, slug-named footage only", perDay: 1 }
+    - { key: ANCIENT, name: "Ancient Engineering", tokenEnv: YT_TOKEN_ANCIENT, direction: "how ancient people built it, worldwide, 90-180 s code-drawn mechanism with real-footage open", perDay: 1 }
+  verdictAfterDays: 30
+  winRule: "any video >=100k views -> scale to 3/day; 72h median >=3x main channel or a video >=20k -> keep 30 more days; 72h median < main -> stop and replace (next: China nature POV, world most/least expensive, ancient city map animations)"
+  calendar: automation/youtube/plans/content-calendar-2026-10-30.md
+
 # ================= MUSIC (2026-10-17) =================
 music:
   dir: automation/youtube/assets/music            # plain beds; the 9 legacy vidIQ beds are committed here

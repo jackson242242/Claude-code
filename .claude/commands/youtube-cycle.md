@@ -164,6 +164,24 @@ run; put the source links in the video description.
    (§8). From then on file every F1/F2 Short into it. No Chinese in this
    playlist's title.
 
+## 0d. CONTENT CALENDAR + MULTI-CHANNEL TEST (owner 2026-10-29 — overrides topic picking)
+- **Calendar first:** if `automation/youtube/plans/content-calendar-*.md` has an entry for
+  today's date and slot, produce exactly that (format, seed, title, cue 1, close, first
+  comment). The footage/fact gates still apply; on a gate failure use the entry's fallback,
+  or the next seed of the same format, and log why. With no entry, pick from the queue as usual.
+- **Frame-0 rule (data 10-24..10-28):** frame 0 is ALWAYS real, eye-level footage or a photo
+  of the place: never a diagram, a map or a bare price card. Diagram-first M Shorts got 6 and
+  3 views, map-first got 2, a bare price card got 18; real-footage openers got 153-368.
+- **M structure from 10-30:** 0-2.5 s slug-named real clip with the hook; 2.5 s on, the
+  code-drawn steps; last 3 s, real footage again + the either-or close. M samples for the
+  Stage 0 gate restart from 10-30.
+- **Price comparisons** go over a real clip of the Chinese site (the 10-20 / 10-26 winning
+  shape), never a standalone card.
+- **Upload budget during the multi-channel test** (`plans/multi-channel-test.md`): when ANY
+  `YT_TOKEN_*` test-channel env var is present, the main channel makes 2 Shorts a day. Drop the
+  F2 slot first, else the lowest-priority slot. Keep 3 when no test token exists or when config
+  `multiChannel.quotaRaised` is true.
+
 ## 0c. POV 8-WEEK PLAN (2026-10-19..12-13; review 12-17)
 **Outside the window:** a run BEFORE 2026-10-19 (e.g. Sat 10-17, Sun 10-18) uses
 no rotation and no F1/F2: every slot is F4, except slot a on a Wednesday or Sunday
