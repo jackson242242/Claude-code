@@ -1,3 +1,31 @@
+## 2026-10-29 post-mortem (baseline = 14d median views of Shorts ≥3d old: 131)
+- 2026-10-27 c 8YiWVmeFemE | 45v 0L 0C @2d | ×0.34 | LOSER — avoid this shape today | London's St Paul's ~$35. Shanghai's Jing'an Temple ~$7 | China Travel 
+- 2026-10-28 c B4OGsuDLqTQ | 22v 0L 0C @1d | ×0.17 | LOSER — avoid this shape today | This Summer Palace bridge glows gold for 20 minutes a year | China Tra
+- 2026-10-27 a SO5vqDYu7gQ | 9v 0L 0C @2d | ×0.07 | LOSER — avoid this shape today | Packed earth or concrete — which wall lasts 600 years? | China Travel 
+- 2026-10-27 d JVmkVSWD_vM | 8v 0L 0C @2d | ×0.06 | LOSER — avoid this shape today | Forbidden City sold out? A stupa from 1279 is your Plan B | China Trav
+- 2026-10-28 a DzCjdKlbeqc | 7v 0L 0C @1d | ×0.05 | LOSER — avoid this shape today | Bike it or walk it? Xi'an's 13.7 km Ming wall | China Travel Expert
+- 2026-10-28 d kj1kwCvmH6A | 3v 0L 0C @1d | ×0.02 | LOSER — avoid this shape today | China Price Check: Tower of London £37 vs a $6 Great Wall | China Trav
+- like-rate (fresh Shorts): 0.00% (peers 1-6%)
+### Equal age (Data API snapshots since 2026-10-18; 48 h / 72 h ±6 h; "~" = interpolated between the snapshots either side)
+- Shorts median, trailing 28 d: 48h 153v (n=31) · 72h 184v (n=31)
+- 2026-10-27 a fmt:- SO5vqDYu7gQ | 48h 9v 0L 0C | 72h — | Packed earth or concrete — which wall lasts 600 years? | Chi
+- 2026-10-26 d fmt:F2 VBv_eQRVHhM | 48h ~10v 1L 0C | 72h — | A 600-Year-Old Ming Palace in Nanjing Is Now a Street Market
+- 2026-10-26 c fmt:- fwFOdiJZ23E | 48h ~3v 0L 0C | 72h — | Floods and a Quake Couldn't Break This 1,400-Year-Old Chines
+- 2026-10-26 a fmt:F4 oVXvqO0jAm4 | 48h 153v 0L 0C | 72h 154v 0L 0C | Florence's Duomo Climb: ~$34. Xi'an's 1,370-Year-Old Pagoda:
+- 2026-10-25 d fmt:F3 fHS1i11ad3g | 48h ~90v 0L 0C | 72h ~90v 0L 0C | Sagrada Família €26. Beijing's Lama Temple ¥25 | China Trave
+- 2026-10-25 c fmt:F4 WCEhBfrQ83E | 48h ~232v 0L 0C | 72h ~234v 0L 0C | 72 Chen Families Paid for This 1894 Guangzhou Hall | China T
+- 2026-10-25 a fmt:F4 hDMzgRXdxrg | 48h 348v 1L 0C | 72h 348v 1L 0C | Nanjing's Ming Bricks Are Signed by Their Makers | China Tra
+- 2026-10-24 d fmt:F4 rRpVHa_4NYs | 48h ~57v 0L 0C | 72h ~59v 0L 0C | A 1,500-year-old cliff temple now caps climbers at 2,475 a d
+- 2026-10-24 c fmt:F4 nZKqHekSgDY | 48h ~21v 0L 0C | 72h ~22v 0L 0C | Neuschwanstein: ~$25 to enter. Beijing's Summer Palace? ~$4 
+- 2026-10-24 a fmt:- WiH-uYkEHXk | 48h 130v 1L 0C | 72h 134v 1L 0C | Wood beats stone in quakes? This 67 m pagoda has stood since
+- 2026-10-23 d fmt:F2 DtESOVzTiP0 | 48h ~934v 1L 0C | 72h ~960v 1L 0C | Guangzhou's Beijing Road Hides 11 Layers of Old Road
+- 2026-10-23 c fmt:F4 DQoax0AuYI8 | 48h ~673v 1L 0C | 72h ~674v 1L 0C | One Man Spent 20 Years on This Garden — and Nearly Went Brok
+- 2026-10-23 L fmt:L x71MzcRixrk | 48h 7v 0L 0C | 72h 7v 0L 0C | Forbidden City Tickets 2026 | China Travel Expert
+- 2026-10-23 a fmt:F4 JieQ5elWaKU | 48h 67v 1L 0C | 72h 74v 1L 0C | Pisa Costs $22 to Climb. Xi'an's Bell Tower? About $4.
+- 2026-10-22 d fmt:F1 Ip_nMRVgxa0 | 48h ~1035v 2L 0C | 72h ~1037v 2L 0C | Stairs or SLIDE down the Great Wall? | China Travel Expert
+### YouTube Analytics API
+- unavailable: HTTP 403 accessNotConfigured — the YouTube Analytics API is not enabled in the Google Cloud project (owner action: APIs & Services > enable "YouTube Analytics API"; checklist in scripts/youtube-oauth-helper.mjs). Equal-age numbers come from Data API snapshots only.
+
 ## 2026-10-28 post-mortem (baseline = 14d median views of Shorts ≥3d old: 110)
 - 2026-10-26 a oVXvqO0jAm4 | 153v 0L 0C @2d | ×1.39 | baseline | Florence's Duomo Climb: ~$34. Xi'an's 1,370-Year-Old Pagoda: ~$11 | Ch
 - 2026-10-27 c 8YiWVmeFemE | 42v 0L 0C @1d | ×0.38 | LOSER — avoid this shape today | London's St Paul's ~$35. Shanghai's Jing'an Temple ~$7 | China Travel 
