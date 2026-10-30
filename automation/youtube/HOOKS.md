@@ -108,66 +108,66 @@ run 自动执行；若某条钩子是**新写法**（不属 A-F），在 RUNLOG 
 
 
 <!-- AUTO:BEGIN — rewritten by scripts/hook-ledger.mjs, do not hand-edit below -->
-## 📊 实测排行（2026-10-29，近 30 天、满 3 天的 78 条；baseline 中位数 87 播放）
+## 📊 实测排行（2026-10-30，近 30 天、满 3 天的 78 条；baseline 中位数 82 播放）
 
 | 钩子类型 | 讨论型? | 条数 | 均播放 | 相对基准 | 点赞率 | 评论 | 评/千播 |
 |---|---|---|---|---|---|---|---|
-| SPECTACLE-FACT | ❌ 数字锚而已 | 19 | 229 | ×2.63 | 0.34% | 0 | 0 |
-| CHOICE | ✅ | 7 | 199 | ×2.29 | 0.29% | 0 | 0 |
-| DEBATE | ✅ | 7 | 196 | ×2.25 | 0.36% | 0 | 0 |
-| PRICE-SHOCK | ✅ | 16 | 192 | ×2.21 | 0.26% | 1 | 0.32 |
-| PLAIN-FACT | ❌ 数字锚而已 | 25 | 148 | ×1.7 | 0.49% | 0 | 0 |
-| STAKES | ✅ | 1 ⚠️样本不足 | 110 | ×1.26 | 1.82% | 0 | 0 |
-| MISCONCEPTION | ✅ | 3 | 52 | ×0.6 | 1.27% | 0 | 0 |
+| SPECTACLE-FACT | ❌ 数字锚而已 | 19 | 229 | ×2.8 | 0.34% | 0 | 0 |
+| DEBATE | ✅ | 7 | 196 | ×2.39 | 0.36% | 0 | 0 |
+| PRICE-SHOCK | ✅ | 17 | 185 | ×2.25 | 0.25% | 1 | 0.32 |
+| CHOICE | ✅ | 8 | 176 | ×2.15 | 0.28% | 0 | 0 |
+| PLAIN-FACT | ❌ 数字锚而已 | 23 | 144 | ×1.75 | 0.42% | 0 | 0 |
+| STAKES | ✅ | 1 ⚠️样本不足 | 110 | ×1.34 | 1.82% | 0 | 0 |
+| MISCONCEPTION | ✅ | 3 | 52 | ×0.64 | 1.27% | 0 | 0 |
 
-**今日三槽依次用（a / c / d）**：CHOICE / DEBATE / PRICE-SHOCK
-**已验证（≥3 条且 ≥×1.0）**：CHOICE / DEBATE / PRICE-SHOCK
+**今日三槽依次用（a / c / d）**：DEBATE / PRICE-SHOCK / CHOICE
+**已验证（≥3 条且 ≥×1.0）**：DEBATE / PRICE-SHOCK / CHOICE
 **补样本（<3 条，必须排进去才学得到）**：INSIDER(0) / STAKES(1)
 **避免**：SPECTACLE-FACT / PLAIN-FACT 永远不是钩子类型（数字只能放进讨论型钩子里）；讨论型里已证实偏弱：MISCONCEPTION
-**非讨论型配额**：近 7 天已用 11/3（每天 ≤1，仅限 slot d 路线超级数字，且收尾仍须 either-or）；讨论型 10/21 — **超额，本周剩余全部讨论型**
+**非讨论型配额**：近 7 天已用 14/3（每天 ≤1，仅限 slot d 路线超级数字，且收尾仍须 either-or）；讨论型 7/21 — **超额，本周剩余全部讨论型**
 
 ## 📒 近期逐条账本（新→旧）
 
 | 日期 | 播放 | ×基准 | 赞 | 评 | 类型 | 钩子原文 |
 |---|---|---|---|---|---|---|
-| 2026-10-28d | 3 | ×0.03 | 0 | 0 | PRICE-SHOCK | Tower of London: £37. China's Great Wall: ¥40. {\fs13}I'm your C |
-| 2026-10-28c | 22 | ×0.25 | 0 | 0 | PLAIN-FACT | This marble bridge looks ordinary at noon. {\fs13}I'm your China |
-| 2026-10-28a | 7 | ×0.08 | 0 | 0 | CHOICE | Bike it or walk it — Xi'an's 13.7 km Ming wall? {\fs13}I'm your  |
-| 2026-10-27d | 8 | ×0.09 | 0 | 0 | PLAIN-FACT | Forbidden City tickets? None sold on the day. {\fs13}I'm your Ch |
-| 2026-10-27c | 45 | ×0.52 | 0 | 0 | PRICE-SHOCK | London's St Paul's: about $35 to walk in. {\fs13}I'm your China  |
-| 2026-10-27a | 9 | ×0.10 | 0 | 0 | CHOICE | Packed earth or concrete — which wall lasts 600 years? |
-| 2026-10-26d | 11 | ×0.13 | 1 | 0 | SPECTACLE-FACT | POV: you're inside Nanjing's Chaotian Palace — 600 years old, an |
-| 2026-10-26c | 3 | ×0.03 | 0 | 0 | SPECTACLE-FACT | Floods and a Quake Couldn't Break This 1,400-Year-Old Chinese Br |
-| 2026-10-26a | 154 | ×1.77 | 0 | 0 | PRICE-SHOCK | Climb Florence's Duomo: about $34. Climb this 1,370-year-old pag |
-| 2026-10-25d | 90 | ×1.03 | 0 | 0 | PRICE-SHOCK | Sagrada Família: €26. Beijing's Lama Temple: ¥25. {\fs13}I'm you |
-| 2026-10-25c | 234 | ×2.69 | 0 | 0 | SPECTACLE-FACT | Chen families from 72 places built this 1894 hall. {\fs13}I'm yo |
-| 2026-10-25a | 346 | ×3.98 | 1 | 0 | SPECTACLE-FACT | These 600-year-old bricks are signed by their makers. {\fs13}I'm |
-| 2026-10-24d | 61 | ×0.70 | 0 | 0 | PLAIN-FACT | I'm your China Travel Expert |
-| 2026-10-24c | 22 | ×0.25 | 0 | 0 | PLAIN-FACT | I'm your China Travel Expert |
-| 2026-10-24a | 139 | ×1.60 | 1 | 0 | SPECTACLE-FACT | Wood beats stone in quakes? Since 1056. |
-| 2026-10-23d | 963 | ×11.07 | 1 | 0 | SPECTACLE-FACT | Walk Guangzhou's Beijing Road and you stroll right over 11 layer |
-| 2026-10-23c | 673 | ×7.74 | 1 | 0 | SPECTACLE-FACT | One man spent nearly 20 years on this garden — and nearly ruined |
-| 2026-10-23a | 73 | ×0.84 | 1 | 0 | PRICE-SHOCK | Pisa's leaning tower: about $22 to climb. {\fs13}I'm your China  |
-| 2026-10-22d | 1042 | ×11.98 | 2 | 0 | CHOICE | Stairs or SLIDE down the Great Wall? |
-| 2026-10-22c | 756 | ×8.69 | 0 | 0 | PRICE-SHOCK | Dubrovnik's walls: ~$45. Xi'an's: ~$8. {\fs13}I'm your China Tra |
-| 2026-10-22a | 65 | ×0.75 | 0 | 0 | PRICE-SHOCK | Pay ¥15 here and you miss all three. {\fs13}I'm your China Trave |
-| 2026-10-21d | 184 | ×2.11 | 1 | 0 | SPECTACLE-FACT | Potala Palace: about 2,300 tickets a day. I'm your China Travel  |
-| 2026-10-21c | 208 | ×2.39 | 1 | 0 | DEBATE | Skip Dali's famous pagodas — the old town is free. I'm your Chin |
-| 2026-10-21a | 57 | ×0.66 | 1 | 0 | PRICE-SHOCK | Versailles: about $39. The Forbidden City: under $9. I'm your Ch |
-| 2026-10-20d | 46 | ×0.53 | 0 | 0 | PLAIN-FACT | Temple of Heaven beats the Forbidden City. I'm your China Travel |
-| 2026-10-20c | 374 | ×4.30 | 1 | 0 | PRICE-SHOCK | Edinburgh Castle costs £26 to enter. I'm your China Travel Exper |
-| 2026-10-20a | 306 | ×3.52 | 2 | 0 | PLAIN-FACT | Climb the Great Wall's unofficial sections? I'm your China Trave |
-| 2026-10-19d | 40 | ×0.46 | 0 | 0 | PLAIN-FACT | Most Chinese pagodas have an odd number of storeys. I'm your Chi |
-| 2026-10-19c | 71 | ×0.82 | 1 | 0 | PRICE-SHOCK | Westminster Abbey: £31. Temple of Heaven: ¥34. I'm your China Tr |
-| 2026-10-19a | 190 | ×2.18 | 0 | 0 | PLAIN-FACT | The Forbidden City sells no same-day tickets. I'm your China Tra |
-| 2026-10-18d | 645 | ×7.41 | 2 | 0 | SPECTACLE-FACT | 999 steps climb to a hole in this mountain. I'm your China Trave |
-| 2026-10-18c | 658 | ×7.56 | 5 | 0 | PLAIN-FACT | Everyone queues for Zhangjiajie's glass bridge. I'm your China T |
-| 2026-10-18a | 1037 | ×11.92 | 3 | 1 | PRICE-SHOCK | Swiss summit train: $155. Same China view: $11. I'm your China T |
-| 2026-10-16d | 53 | ×0.61 | 1 | 0 | PLAIN-FACT | Come to China's last Shangri-La a week too late — the gold is go |
-| 2026-10-16c | 240 | ×2.76 | 0 | 0 | PLAIN-FACT | A one-hour massage in New York? Eighty to a hundred and twenty d |
-| 2026-10-16a | 110 | ×1.26 | 2 | 0 | STAKES | Hot take: don't climb Huangshan in summer. I'm your China Travel |
-| 2026-10-15d | 28 | ×0.32 | 0 | 0 | DEBATE | Everyone packs into Lijiang. Skip it. I'm your China Travel Expe |
-| 2026-10-15c | 48 | ×0.55 | 0 | 0 | PLAIN-FACT | A canal-view room in Venice runs about three hundred dollars. I' |
-| 2026-10-15a | 902 | ×10.37 | 6 | 0 | PLAIN-FACT | China's highest crater lake is clear maybe fifty days a year. I' |
-| 2026-10-14d | 456 | ×5.24 | 1 | 0 | DEBATE | A Li River cruise packs up to 200 people on one boat. Skip it. I |
+| 2026-10-29d | 20 | ×0.24 | 1 | 0 | SPECTACLE-FACT | In 1582, they moved this whole tower 1,000 metres. {\fs13}I'm yo |
+| 2026-10-29c | 17 | ×0.21 | 0 | 0 | SPECTACLE-FACT | Forbidden City Sold Out? Your Plan B Is a 700-Year-Old Beijing W |
+| 2026-10-29a | 34 | ×0.41 | 1 | 0 | SPECTACLE-FACT | Two Chinese cliffs. 150,000 carved Buddhas between them. {\fs13} |
+| 2026-10-28d | 4 | ×0.05 | 0 | 0 | PRICE-SHOCK | Tower of London: £37. China's Great Wall: ¥40. {\fs13}I'm your C |
+| 2026-10-28c | 27 | ×0.33 | 0 | 0 | PLAIN-FACT | This marble bridge looks ordinary at noon. {\fs13}I'm your China |
+| 2026-10-28a | 11 | ×0.13 | 0 | 0 | CHOICE | Bike it or walk it — Xi'an's 13.7 km Ming wall? {\fs13}I'm your  |
+| 2026-10-27d | 8 | ×0.10 | 0 | 0 | PLAIN-FACT | Forbidden City tickets? None sold on the day. {\fs13}I'm your Ch |
+| 2026-10-27c | 48 | ×0.59 | 0 | 0 | PRICE-SHOCK | London's St Paul's: about $35 to walk in. {\fs13}I'm your China  |
+| 2026-10-27a | 9 | ×0.11 | 0 | 0 | CHOICE | Packed earth or concrete — which wall lasts 600 years? |
+| 2026-10-26d | 10 | ×0.12 | 1 | 0 | SPECTACLE-FACT | POV: you're inside Nanjing's Chaotian Palace — 600 years old, an |
+| 2026-10-26c | 3 | ×0.04 | 0 | 0 | SPECTACLE-FACT | Floods and a Quake Couldn't Break This 1,400-Year-Old Chinese Br |
+| 2026-10-26a | 155 | ×1.89 | 0 | 0 | PRICE-SHOCK | Climb Florence's Duomo: about $34. Climb this 1,370-year-old pag |
+| 2026-10-25d | 93 | ×1.13 | 0 | 0 | PRICE-SHOCK | Sagrada Família: €26. Beijing's Lama Temple: ¥25. {\fs13}I'm you |
+| 2026-10-25c | 234 | ×2.85 | 0 | 0 | SPECTACLE-FACT | Chen families from 72 places built this 1894 hall. {\fs13}I'm yo |
+| 2026-10-25a | 346 | ×4.22 | 1 | 0 | SPECTACLE-FACT | These 600-year-old bricks are signed by their makers. {\fs13}I'm |
+| 2026-10-24d | 63 | ×0.77 | 0 | 0 | PLAIN-FACT | I'm your China Travel Expert |
+| 2026-10-24c | 22 | ×0.27 | 0 | 0 | PLAIN-FACT | I'm your China Travel Expert |
+| 2026-10-24a | 140 | ×1.71 | 1 | 0 | SPECTACLE-FACT | Wood beats stone in quakes? Since 1056. |
+| 2026-10-23d | 963 | ×11.74 | 1 | 0 | SPECTACLE-FACT | Walk Guangzhou's Beijing Road and you stroll right over 11 layer |
+| 2026-10-23c | 673 | ×8.21 | 1 | 0 | SPECTACLE-FACT | One man spent nearly 20 years on this garden — and nearly ruined |
+| 2026-10-23a | 74 | ×0.90 | 1 | 0 | PRICE-SHOCK | Pisa's leaning tower: about $22 to climb. {\fs13}I'm your China  |
+| 2026-10-22d | 1043 | ×12.72 | 2 | 0 | CHOICE | Stairs or SLIDE down the Great Wall? |
+| 2026-10-22c | 756 | ×9.22 | 0 | 0 | PRICE-SHOCK | Dubrovnik's walls: ~$45. Xi'an's: ~$8. {\fs13}I'm your China Tra |
+| 2026-10-22a | 65 | ×0.79 | 0 | 0 | PRICE-SHOCK | Pay ¥15 here and you miss all three. {\fs13}I'm your China Trave |
+| 2026-10-21d | 188 | ×2.29 | 1 | 0 | SPECTACLE-FACT | Potala Palace: about 2,300 tickets a day. I'm your China Travel  |
+| 2026-10-21c | 208 | ×2.54 | 1 | 0 | DEBATE | Skip Dali's famous pagodas — the old town is free. I'm your Chin |
+| 2026-10-21a | 57 | ×0.70 | 1 | 0 | PRICE-SHOCK | Versailles: about $39. The Forbidden City: under $9. I'm your Ch |
+| 2026-10-20d | 46 | ×0.56 | 0 | 0 | PLAIN-FACT | Temple of Heaven beats the Forbidden City. I'm your China Travel |
+| 2026-10-20c | 377 | ×4.60 | 1 | 0 | PRICE-SHOCK | Edinburgh Castle costs £26 to enter. I'm your China Travel Exper |
+| 2026-10-20a | 306 | ×3.73 | 2 | 0 | PLAIN-FACT | Climb the Great Wall's unofficial sections? I'm your China Trave |
+| 2026-10-19d | 40 | ×0.49 | 0 | 0 | PLAIN-FACT | Most Chinese pagodas have an odd number of storeys. I'm your Chi |
+| 2026-10-19c | 72 | ×0.88 | 1 | 0 | PRICE-SHOCK | Westminster Abbey: £31. Temple of Heaven: ¥34. I'm your China Tr |
+| 2026-10-19a | 190 | ×2.32 | 0 | 0 | PLAIN-FACT | The Forbidden City sells no same-day tickets. I'm your China Tra |
+| 2026-10-18d | 645 | ×7.87 | 2 | 0 | SPECTACLE-FACT | 999 steps climb to a hole in this mountain. I'm your China Trave |
+| 2026-10-18c | 658 | ×8.02 | 5 | 0 | PLAIN-FACT | Everyone queues for Zhangjiajie's glass bridge. I'm your China T |
+| 2026-10-18a | 1037 | ×12.65 | 3 | 1 | PRICE-SHOCK | Swiss summit train: $155. Same China view: $11. I'm your China T |
+| 2026-10-16d | 53 | ×0.65 | 1 | 0 | PLAIN-FACT | Come to China's last Shangri-La a week too late — the gold is go |
+| 2026-10-16c | 240 | ×2.93 | 0 | 0 | PLAIN-FACT | A one-hour massage in New York? Eighty to a hundred and twenty d |
+| 2026-10-16a | 110 | ×1.34 | 2 | 0 | STAKES | Hot take: don't climb Huangshan in summer. I'm your China Travel |
+| 2026-10-15d | 28 | ×0.34 | 0 | 0 | DEBATE | Everyone packs into Lijiang. Skip it. I'm your China Travel Expe |
 <!-- AUTO:END -->
