@@ -1,0 +1,320 @@
+{
+  "canvas": {
+    "w": 1080,
+    "h": 1920,
+    "fps": 30,
+    "duration_s": 18
+  },
+  "style": {
+    "bg": "#15110d",
+    "bg_grid": "#1f1913",
+    "wood": "#c9873d",
+    "wood_dark": "#8a4f1c",
+    "wood_light": "#e3a55a",
+    "outline": "#3a1f08",
+    "roof": "#5f6f7a",
+    "roof_dark": "#3b474f",
+    "ink": "#f6ead3",
+    "ink_dim": "#b9a98d",
+    "accent": "#e8513a",
+    "card": "#231b14",
+    "font_en": "DejaVu Sans",
+    "font_cn": "Noto Serif CJK SC"
+  },
+  "title": {
+    "line1": "How a 1,000-year-old roof",
+    "line2": "stays up with NO nails",
+    "sub": "Dougong 斗拱 — the Chinese bracket set, built step by step"
+  },
+  "origin": {
+    "x": 540,
+    "y": 1180
+  },
+  "caption_card": {
+    "y": 1550,
+    "h": 190
+  },
+  "steps": [
+    {
+      "id": "column",
+      "t": 1.0,
+      "drop": 0,
+      "parts": [
+        {
+          "shape": "rect",
+          "x": -70,
+          "y": 0,
+          "w": 140,
+          "h": 300,
+          "fill": "wood_dark"
+        }
+      ],
+      "caption": "1. One wooden column",
+      "cn": "柱 zhù",
+      "tag": {
+        "side": "right",
+        "y": 1400,
+        "anchor": [
+          70,
+          200
+        ]
+      }
+    },
+    {
+      "id": "ludou",
+      "t": 3.0,
+      "drop": 260,
+      "parts": [
+        {
+          "shape": "path",
+          "d": "M -95,0 L 95,0 L 95,-45 L 110,-45 L 110,-115 L -110,-115 L -110,-45 L -95,-45 Z",
+          "fill": "wood"
+        }
+      ],
+      "caption": "2. A big cap block starts the set",
+      "cn": "栌斗 lǔdǒu",
+      "tag": {
+        "side": "left",
+        "y": 1140,
+        "anchor": [
+          -110,
+          -60
+        ]
+      }
+    },
+    {
+      "id": "gong1",
+      "t": 5.0,
+      "drop": 260,
+      "dy": -115,
+      "parts": [
+        {
+          "shape": "gong",
+          "half": 260,
+          "h": 70,
+          "fill": "wood_light"
+        }
+      ],
+      "caption": "3. A bow-shaped arm sits in its notch",
+      "cn": "拱 gǒng",
+      "tag": {
+        "side": "right",
+        "y": 1090,
+        "anchor": [
+          260,
+          -35
+        ]
+      }
+    },
+    {
+      "id": "sandou",
+      "t": 7.0,
+      "drop": 260,
+      "dy": -185,
+      "parts": [
+        {
+          "shape": "rect",
+          "x": -295,
+          "y": -70,
+          "w": 80,
+          "h": 70,
+          "fill": "wood"
+        },
+        {
+          "shape": "rect",
+          "x": -40,
+          "y": -70,
+          "w": 80,
+          "h": 70,
+          "fill": "wood"
+        },
+        {
+          "shape": "rect",
+          "x": 215,
+          "y": -70,
+          "w": 80,
+          "h": 70,
+          "fill": "wood"
+        }
+      ],
+      "caption": "4. Small blocks ride on each end",
+      "cn": "散斗 sàndǒu",
+      "tag": {
+        "side": "left",
+        "y": 1045,
+        "anchor": [
+          -295,
+          -35
+        ]
+      }
+    },
+    {
+      "id": "gong2",
+      "t": 9.0,
+      "drop": 260,
+      "dy": -255,
+      "parts": [
+        {
+          "shape": "gong",
+          "half": 400,
+          "h": 70,
+          "fill": "wood_light"
+        }
+      ],
+      "caption": "5. A longer arm, one tier up",
+      "cn": "慢拱 màngǒng",
+      "tag": {
+        "side": "right",
+        "y": 920,
+        "anchor": [
+          400,
+          -35
+        ]
+      }
+    },
+    {
+      "id": "ang",
+      "t": 11.0,
+      "drop": 260,
+      "dy": -325,
+      "parts": [
+        {
+          "shape": "path",
+          "d": "M -500,105 L -470,60 L 330,-135 L 345,-95 L -455,100 L -485,135 Z",
+          "fill": "wood_dark"
+        }
+      ],
+      "caption": "6. A tilted lever reaches out to the eave",
+      "cn": "昂 áng",
+      "tag": {
+        "side": "left",
+        "y": 820,
+        "anchor": [
+          -480,
+          100
+        ]
+      }
+    },
+    {
+      "id": "beam",
+      "t": 13.0,
+      "drop": 300,
+      "dy": -400,
+      "parts": [
+        {
+          "shape": "rect",
+          "x": -430,
+          "y": -60,
+          "w": 860,
+          "h": 60,
+          "fill": "wood"
+        },
+        {
+          "shape": "path",
+          "d": "M -520,-60 L 520,-60 L 520,-110 L 380,-150 L -380,-150 L -520,-110 Z",
+          "fill": "roof"
+        },
+        {
+          "shape": "path",
+          "d": "M -520,-110 L 520,-110 L 520,-118 L -520,-118 Z",
+          "fill": "roof_dark"
+        }
+      ],
+      "caption": "7. The roof load lands on top",
+      "cn": "梁 liáng · 檐 yán",
+      "tag": {
+        "side": "right",
+        "y": 700,
+        "anchor": [
+          430,
+          -90
+        ]
+      }
+    },
+    {
+      "id": "forces",
+      "t": 15.0,
+      "drop": 0,
+      "kind": "arrows",
+      "arrows": [
+        {
+          "from": [
+            -300,
+            -620
+          ],
+          "to": [
+            -300,
+            -520
+          ]
+        },
+        {
+          "from": [
+            0,
+            -620
+          ],
+          "to": [
+            0,
+            -520
+          ]
+        },
+        {
+          "from": [
+            300,
+            -620
+          ],
+          "to": [
+            300,
+            -520
+          ]
+        },
+        {
+          "from": [
+            -330,
+            -450
+          ],
+          "to": [
+            -140,
+            -340
+          ]
+        },
+        {
+          "from": [
+            330,
+            -450
+          ],
+          "to": [
+            140,
+            -340
+          ]
+        },
+        {
+          "from": [
+            0,
+            -300
+          ],
+          "to": [
+            0,
+            -160
+          ]
+        },
+        {
+          "from": [
+            0,
+            40
+          ],
+          "to": [
+            0,
+            200
+          ]
+        }
+      ],
+      "caption": "8. Weight spreads out, then down — joints flex in a quake",
+      "cn": "无钉 无胶 wú dīng wú jiāo"
+    }
+  ],
+  "outro": {
+    "t": 16.6,
+    "text": "Which site should I draw next?",
+    "sub": "Forbidden City · Foguang Temple · Yingxian Pagoda"
+  }
+}

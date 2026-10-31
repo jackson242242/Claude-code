@@ -1,0 +1,341 @@
+# YouTube automation config — @NYneighborhood (channel UCSU99qan7oWIEY-c8uYmuSQ)
+# Read by the /youtube-cycle skill each run. Owner edits this file to steer the loop.
+
+channel:
+  handle: "@NYneighborhood"
+  channelId: "UCSU99qan7oWIEY-c8uYmuSQ"
+  language: en
+  categoryId: "27" # YouTube category: Education
+
+cadence:
+  # ============ 4-WEEK FOOD SPRINT (owner 2026-07-18, runs 07-19..08-15) ============
+  # 4 Shorts/day, ALL china-food (modern, 贴近生活, 小红书-style). Longform PAUSED
+  # entirely. Multi-part 连载 format: each day = 1-2 series totaling 4 parts; every
+  # part teases the next (下集…). After 08-15: owner review before reverting.
+  postsPerDay: 3   # 2026-10-17: 3 Shorts/day a/c/d (2 on a ship-2 day, playbook §0c); was 4 in the food sprint
+  # Batch mode (owner decision 2026-07-08): ONE daily Routine at 12:30 UTC produces
+  # all 3 videos in a single run; publishing is staggered via YouTube scheduled
+  # publishing (status.publishAt) at the slot times below (= 9am/1pm/6pm New York EDT).
+  mode: batch-daily
+  routineUtc: "12:30"
+  # Durations: Shorts <=28s. Longform PAUSED (owner 2026-07-18, food sprint).
+  # 4 slots = ET 9am / noon / 3pm / 6pm.
+  # Slot times tuned for EU/US audience (owner 2026-08-10: 观众是欧美时区,不是华人):
+  # a 9am ET / EU afternoon · b 1pm ET / 6-7pm EU prime · c 4pm ET / 9-10pm EU prime
+  # · d 7pm ET US evening prime / 4pm PT. Slot a must stay >=13:00Z (routine fires
+  # 12:30Z; earlier would always overrun into immediate-publish).
+  # growth-v2 (owner 2026-08-15, plans/growth-v2.md): 4→3/day — quality over
+  # volume; slot b RETIRED (effort reallocated to depth + new formats + TikTok).
+  # Reversible — revisit at the 08-29 review.
+  slots:
+    - { name: a, publishAtUtc: "13:00", format: short }  # format F1-F4 by the pov8w rotation (playbook §0c)
+    - { name: c, publishAtUtc: "20:00", format: short }  # format F1-F4 by the pov8w rotation
+    - { name: d, publishAtUtc: "23:00", format: short }  # format F1-F4 by the pov8w rotation
+
+voice:
+  status: paused-for-shorts; longform-english UNPAUSED 2026-08-27 (owner longform directive)   # owner: "voice over 好差" — format is now burned
+  # bilingual subtitles (the narrative) + full-presence music from assets/music/.
+  # ElevenLabs scripts/keys kept for possible revival; monthly TTS cost now $0.
+  # Trending/licensed music (verified 2026-07-10): YouTube's own licensed library
+  # CAN be added to already-published Shorts via studio.youtube.com -> Content ->
+  # Editor -> Audio (no re-upload, keeps views; fullest pop catalog is in the
+  # mobile Shorts flow). No API exists; since 2026-10-17 the Saturday OWNER STUDIO
+  # list carries at most 1 ADD SOUND (the week's best Short) instead of a per-Short line.
+  # The pipeline's beds remain the default audio. Longform voice: see longform.voice.
+
+strategy:
+  # ================= PERSONA 2026-08-09 (owner directive) =================
+  # Channel persona: "Your China Travel Expert 🧭 你的中国旅游专家" — audience is
+  # ENGLISH-SPEAKING. English leads every title/description/tag/subtitle cue;
+  # Chinese is the accent. Every video carries the memorable expert signature
+  # (★ Expert Tip cue + 🧭 metadata block). automation/youtube/PERSONA.md is the
+  # metadata/language authority; STYLE.md v2.2 covers the subtitle flip.
+  persona: china-travel-expert   # see PERSONA.md
+  audienceLanguage: en
+  # ================= PIVOT 2026-07-09 (owner directive) =================
+  # Education content PAUSED. Channel now focuses on China:
+  #   Shorts   -> city tourism + food (城市旅游/美食)
+  #   Longform -> culture + city walks (文化/城市漫游)
+  # Aesthetic: 日系唯美 filming feel x 中式文化底蕴 — style upgrade in progress
+  # (research 2026-07-09), specs land in styleGuide as they are verified.
+  # CULTURE-FIRST (owner 2026-08-09): 古文化产物 is the persona's backbone —
+  # architecture/history/traditional customs that make China unlike anywhere else.
+  # Slot mix (superseded 2026-09-26 by the NATURE PIVOT block below): was
+  # a+b china-culture, c city-travel(heritage), d china-food.
+  # ================= NATURE PIVOT 2026-09-26 (owner directive, supersedes
+  # CULTURE-FIRST as the spine) =================
+  # 「转一下方向去小城市，不再是去大城市；去山里、沙漠里、风景很好的地方，什么地貌、
+  # 特别的自然风光」— big cities are OUT as subjects (departure point / price
+  # contrast only). The persona now maps China's landforms, wild scenery and
+  # small towns. Data: this week's competitor scan (state/competitors.md) has
+  # 9/25 top China Shorts on mountains/villages; #1 = a Zhangjiajie mountain
+  # path at 2.9M views. Playbook: .claude/commands/youtube-cycle.md NATURE-FIRST
+  # block; footage truth table + seeds: plans/nature-pivot.md.
+  # ================= ARCHITECTURE PIVOT 2026-10-19 (owner directive, supersedes
+  # the NATURE PIVOT subjects) =================
+  # 「接下来都做介绍中国的古建筑，寺庙，不同的塔，宫殿，城墙等等」+「都交给你」.
+  # EVERY slot's subject is now Chinese ancient architecture. Formats, rotation,
+  # gates and audio stay as in pov8w (playbook §0c); only the subject changes.
+  # Heritage sites inside big cities (Forbidden City, Xi'an wall, Nanjing wall,
+  # Lingyin…) are IN scope; modern skylines stay out. Seeds: queue arch-*;
+  # footage truth table + series: plans/architecture-pivot.md.
+  pillars:
+    - china-architecture  # ALL slots: temples (Buddhist/Taoist/Confucian/Tibetan), pagodas by style (pavilion, dense-eave, lama stupa, diamond-throne, flower, iron/glazed, leaning), palaces, city walls & gates, drum/bell towers, ancient bridges, tulou & ancestral halls, cliff temples & grottoes — one building, one number, one argument
+    - china-practical     # Wed+Sun F3 《China Price Check》 now = heritage tickets/experiences vs Western heritage sites; L search guides = heritage trip planning (Forbidden City tickets, Xi'an wall bike, which Great Wall section)
+  pausedPillarsNature: [china-nature, small-town, china-route]  # owner 2026-10-19: nature/landscape subjects paused (seeds tagged paused-arch-2026-10-19, reversible); a village/old-town seed stays only when the subject is its architecture (stilt houses, tulou, wind-rain bridge)
+  pausedPillarsBigCity: [city-travel, city-walk]  # owner 2026-09-26: modern big-city subjects paused (heritage sites in cities are allowed again since 2026-10-19)
+  pausedPillarsFood: [china-food]  # owner 2026-08-11: no standalone food videos; seeds recyclable as route stops
+  pausedPillarsExtra: [china-coffee]  # paused by owner 2026-07-18 (咖啡收官); ~20 seeds retained for revival
+  brandRules: # applies to any pillar covering companies (coffee brands, wineries...)
+    - "Factual and sourced only; no endorsements, no sponsorship implications, no stock/investment takes; criticism must be well-sourced and proportionate."
+  pausedPillars: [education-trends, world-colleges, education-systems, whats-latest]
+  # THEMED WEEKS — ALL ENDED/CANCELLED per owner 2026-07-18 ("明天开始不做咖啡了，
+  # 做美食与旅游"): coffee week ends 07-18 (a day early), wine + young-china weeks
+  # CANCELLED before starting. Seeds stay in the queue as paused for revival.
+  # Standing content = china-food + city-travel (incl. street scenery) per slots.
+  themeWeeks: []  # empty = general mapping every day
+  # Owner directive 2026-07-08: 唯美主义 + 贴近生活 (aesthetic + everyday-life relevance)
+  styleGuide:
+    aesthetic: # 唯美 — the channel should LOOK and SOUND beautiful
+      - "B-roll queries prefer cinematic/beautiful imagery: golden-hour campuses, quiet libraries, rain on windows, city dawn, students in soft light — not stock 'business people' clichés."
+      - "Camera feel (2026-10-17, POV plan — replaces the old aerial/drone/slow-motion/dolly/timelapse motion words): append POV words to queries — pov, first person, walking, handheld, train window, tram ride, cable car ride, climbing steps, street market walk. Aerial: at most 1 shot per Short, never frame 0 (checked after render with scripts/frame0-sheet.mjs). Footage that moves forward at eye level beats any filter."
+      - "Shot selection (owner 2026-07-08): avoid night scenes; prefer DAYTIME footage with PEOPLE in frame — close-ups of faces/hands/reactions IN MOTION (talking, laughing, eating, walking) over empty wide cityscapes. Human close-ups hold attention."
+      - "生活感 quota (owner 2026-07-12, hard rule): >=50% of every video's shots must show PEOPLE MID-ACTION — vendors cooking, families around tables, commuters, cyclists, kids playing, hands making things. Landmarks/scenery only as the establish and close shots. Query in people-action language: '<place> street food vendor cooking', 'chinese family dinner table', 'night market crowd eating', 'people cycling alley', 'market haggling hands' — never abstract mood words alone. LEGAL boundary: footage comes ONLY from licensed free sources (Pexels + Pixabay when PIXABAY_API_KEY set) — never scrape/reuse crawled online videos (Content ID strikes can terminate the channel)."
+      - "Narration tone: calm, warm, unhurried; no shouting hooks. Titles curious but elegant — no ALL-CAPS bait."
+      - "Anti-AI voice (owner 2026-07-08): write for the EAR — contractions, varied sentence lengths, one rhetorical question, natural pauses via em-dashes/ellipses, a specific human detail per script; never listicle cadence ('here are 5 reasons'), never robotic parallel sentences. TTS uses expressive settings (stability 0.45/style 0.35 defaults in elevenlabs-tts.mjs)."
+      - "Thumbnails: minimal, one strong image, muted palette, little or no text."
+      - "日系唯美 v2 (researched 2026-07-09, implemented): assemble --style riben = lifted milky blacks + muted saturation + teal-green shadows / warm golden highlights; longer holds (--seg-seconds 7-8); narration sparse with silence beats (~140-160wpm); titles fade in 0.5s / hold 3-5s / fade out; footage keywords lean soft morning light / mist / steam / rain-by-day / lantern dusk."
+      - "中式落地 v1 (implemented): 书法标题字体 Ma Shan Zheng → 文楷 → Noto fallback (OFL, auto-downloaded per run); every video carries ≥1 of {poem/成语 line, dialect-bank local phrase, craft/food close-up + cultural note}; narrative = 起承转合 four-beat structure."
+      - "中式 phase-2 backlog (not yet implemented): 印章 red-seal corner stamp PNG overlay; 竖排 vertical poetry text; ink-wash 水墨 transitions; traditional-palette LUT (故宫红/黛青/月白 #D6ECF0); richer music via Pixabay (needs owner PIXABAY key) — currently vidiq_generate_music within budget, longform only."
+    everydayLife: # 贴近生活 — every topic must touch the viewer's real life
+      - "Frame every topic through lived experience: what it means for a student's day, a family's budget, a commute, a dinner-table conversation — not policy abstractions."
+      - "Prefer concrete humans and scenes ('a Seoul student's 10pm hagwon run') over institution-speak ('the ministry announced')."
+  topicFitGate: # every topic picked for production must pass ALL of these
+    - "Can you state in one sentence how this touches an ordinary person's daily life? If not, rewrite the angle or skip."
+    - "Does it have b-roll potential that is genuinely beautiful (not just news footage)? If not, skip."
+    - "Does it fit a pillar and contentRules? If not, drop."
+  contentRules:
+    - "Educational/comparative framing only; no visa/immigration legal advice, no political takes."
+    - "Every claim sourced during scripting; cite sources in the video description."
+    - "Disclose AI narration in the description. Set meta.aiFootage and meta.containsSyntheticMedia=true for any realistic AI footage (scripts/youtube-upload.mjs refuses aiFootage=true with containsSyntheticMedia=false); AI footage is never a named place. AI-generated music (the 9 legacy beds, every el-* bed) also sets containsSyntheticMedia=true — the uploader decides it from meta.music (decision D1, 2026-10-17)."
+    - "Preserve Pexels attribution links emitted by assemble-video.mjs in the description."
+
+providers:
+  # Lanes are tried in order; a lane is skipped when its credential/tool is absent.
+  ideation: [claude, vidiq-research]        # vidIQ keyword/trending only when MCP present AND credits >= floor
+  script: [claude, copyai, jasper]          # copy.ai / Jasper only if their API keys are configured
+  voiceover: [elevenlabs, openai-tts]       # longform only. ElevenLabs (voice Rachel) while paid credits last; openai-tts (scripts/tts-openai.mjs) ONLY when longform.voice == "openai". vidiq removed 2026-10-17 (it would spend credits toward the floor of 40).
+  visuals: [pexels-ffmpeg, vidiq]           # kling lane PAUSED by owner 2026-07-08 — re-add "kling" here to resume (adapter: scripts/kling-video.mjs)
+  thumbnail: [openai-images, vidiq, ffmpeg-frame]
+  upload: [youtube-data-api]                # the only posting lane; no credentials = dry-run
+  analytics: [youtube-analytics, vidiq]     # YouTube Analytics API first (free, once enabled); vidIQ only while balance >= budgets.vidiqCreditsFloor
+
+# Since the 2026-07-09 pivot the china-travel spirit lives in the main pillars.
+# cantonese-comedy and teach-chinese-dialects are PAUSED (owner focus shift);
+# their specs are kept for possible revival. state/dialect-bank.md stays ACTIVE —
+# travel/food/culture videos weave local phrases and 梗 from it (local-language
+# flavor per city was an explicit owner directive), and the daily research step
+# still deepens one region per day.
+testLines: # PAUSED except as reference material
+  _status: paused-2026-07-09
+
+  cantonese-comedy:
+    what: "搞笑广东话 — teach funny Cantonese; e.g. spoof interviews of foreigners speaking Cantonese; playful, self-aware humor"
+    language: cantonese
+    voiceModel: eleven_v3   # v3 supports Cantonese; if the API rejects it, log honestly and skip the slot (do NOT fake Cantonese with Mandarin voices)
+    voiceIdEnv: ELEVENLABS_CANTONESE_VOICE_ID  # dedicated NATIVE Cantonese voice (owner picks from Voice Library or clones a 广府话 speaker). Owner feedback 2026-07-08: preview voice 唔係纯正广府话 — until this env var is set, the line SKIPS production (education lines unaffected). Authenticity gate: native voice or nothing.
+    profanity: raw          # OWNER-APPROVED 2026-07-08: real 粤语粗口 allowed in THIS line only (spoken audio + burned subs). Owner accepts age-restriction/demonetization risk. HARD limits: titles/descriptions/tags/thumbnails stay 100% clean (that's what the algorithm scans hardest); EN subtitle line may soften with asterisks to keep the joke readable. ALL other lines/pillars (education, china-travel): zero profanity.
+    subtitles: { mode: burned, languages: [yue, en] }  # comedy needs subs for non-speakers
+    rules:
+      - "Punch at situations and language mishaps, never at ethnicities/groups — no hate, no slurs targeting people."
+      - "Comedy quality gate: if the script doesn't read genuinely funny, skip the slot rather than post cringe."
+  china-travel:
+    what: "中国旅游推广 — ONE scenic spot per Short (famous or hidden); 日式唯美 cinematic aesthetic with 中式文化底蕴 (poetry lines, dynasty context, local food/customs)"
+    language: local-dialect-ladder
+    dialectLadder:  # try top to bottom; NEVER fake a dialect — label what it actually is
+      - "True dialect TTS if available (Cantonese via eleven_v3 for粤语区; future: Volcano/MiniMax dialect voices when owner adds keys)"
+      - "Mandarin with authentic local flavor in the SCRIPT (北京儿化/方言词汇/local idioms) — label as 普通话(京味) etc."
+      - "Standard Mandarin — label plainly"
+    subtitles: { mode: burned, languages: [zh, en] }
+    style: "styleGuide.aesthetic applies double: slow pans, golden hour, mist, water reflections; one poem line or cultural note per video; calm pacing"
+    memes: "weave 1-2 entries from state/dialect-bank.md matching the spot's region into every video (a local phrase as the hook or the closing wink); clean entries only"
+  teach-chinese-dialects:
+    what: "教人说不同的中文 — one dialect phrase/梗 per Short: how to say it, what it means, when to use it, why it's funny/characteristic; sourced from state/dialect-bank.md"
+    language: dialect-of-the-day
+    voiceRules: |
+      Authentic audio ladder (never fake): 粤语 episodes via eleven_v3; other
+      dialects use a standard-Mandarin narrator TEACHING the phrase — dialect
+      shown big on screen with romanization, narrator explains; on-screen label
+      states what the audio actually is. Native dialect audio unlocks when the
+      owner adds a Chinese dialect-TTS provider key (e.g. Volcano Engine 豆包 /
+      MiniMax — they carry 东北/四川/粤/台 voices); note this in research.md
+      whenever a dialect we can't voice keeps performing well.
+    profanity: none   # profanity stays exclusive to cantonese-comedy (owner rule)
+    subtitles: { mode: burned, languages: [zh, en] }
+    style: "fast, playful, meme-native pacing; one phrase per video, repeated 3x (slow → natural → in a mini-scene)"
+
+budgets:
+  vidiqCreditsPerRun: 10       # hard per-run cap on vidIQ credit spend
+  vidiqCreditsFloor: 40        # below this balance, stop ALL vidIQ generation; keep analytics only
+  maxUploadUnitsPerDay: 4800   # 3 x videos.insert (1600) — fits the default 10000 quota
+
+output:
+  # Native format per slot stays as defined in cadence.slots (Short=9x16, longform=16x9).
+  # Formats listed here are ALSO rendered for every video (same narration, re-searched
+  # b-roll in the right orientation) as cross-posting variants: 9x16 fits TikTok /
+  # Reels / 抖音 / 小红书, 16x9 fits Bilibili / X, 1x1 fits Instagram feed.
+  # Variants land in the run folder as final-<format>.mp4 and are listed in the run
+  # manifest; they are NOT auto-posted anywhere (see PIPELINE.md — other platforms'
+  # posting APIs are separate, gated projects).
+  extraFormats: []   # e.g. [16x9] or [16x9, 1x1]; empty = native format only
+  socialExports: weekly-friday-pack  # 2026-10-17: the week's 3 best Shorts as music-free
+    # clean masters + social-caption.txt, delivered via chat on Fridays (was a daily
+    # per-video delivery since 2026-08-09); back-catalog: top-2 pending of
+    # state/social-export-queue.json join the Friday pack. PERSONA.md §4.
+
+runtime:
+  runsDir: automation/youtube/runs
+  stateDir: automation/youtube/state
+  keepMediaInRepo: false       # media stays in the container; only manifests/scripts are committed
+
+# ================= LONGFORM v3 — every-other-Friday SEARCH GUIDE (2026-10-17, POV plan) =================
+# Search brings 46% of longform views, Home 0: one 6-9 min search guide every 14 days;
+# the weekly 35-50 min ambient stock-doc lane is deleted. Playbook §4L.
+longform:
+  status: active
+  cadenceDays: 7            # ROAD-TO-1M 2026-10-23: EVERY Friday from 11-06; lanes alternate G (11-06, 11-20, 12-04…) / M-Long (11-13, 11-27, 12-11…); 10-23 = G #1
+  anchorDate: "2026-10-23"  # guide #1 (Zhujiajiao, fallback Dali)
+  publishAtUtc: "15:00"     # search/browse-driven; EU evening + US morning
+  durationMin: [6, 9]       # one 6-9 min search guide; the answer comes in the first 30 s
+  language: english-only    # NO Chinese anywhere: title/description/narration/captions
+  lanes: [search-guide, mechanism-explainer]   # G: title = exact search query · M-Long: 10-14 min narrated "How Ancient China Built It" from plans/mechanism/<topic>/ text assets (playbook §4L)
+  mLongFridays: ["2026-11-13", "2026-11-27", "2026-12-11", "2026-12-25", "2027-01-08"]
+  mLongFirst: plans/mechanism/yingxian
+  childShorts: 3            # same-place Shorts in the next 7 days, 2-s CTA "Full route: tap the related video above"
+  footageAudit: ">=3 min slug-named non-aerial footage passing a 3-frame check, audited 2 days before (Wednesday)"
+  povWalk: "owner continuous footage only (min 10 min); replaces that Friday's guide"
+  killCheck: "2026-11-20: guides #1 and #2 each <100 views at 14 days and Search not rising -> pause until owner continuous footage exists"
+  # Voice (decision D3, 2026-10-17). AI VO explicitly OK (benchmark: GoldenSeniorsLiving); disclose "AI narration".
+  narrationWhileCredits: elevenlabs-rachel   # scripts/elevenlabs-tts.mjs --voice 21m00Tcm4TlvDq8ikWAM while the already-paid credits last; never the ELEVENLABS_VOICE_ID voice (broken audio 2026-10-17)
+  voice: openai             # 2026-10-23 (owner delegated everything 10-19/10-23): fallback when ElevenLabs fails = scripts/tts-openai.mjs (gpt-4o-mini-tts marin, ~$0.2/episode), HARD CAP $2/month (log spend in RUNLOG; over cap -> none). A captions-only 10-min explainer has no retention, so 'none' is the last resort only.
+  format16x9: true
+  playbook: plans/longform-v2.md  # format bible (written from 2026-08-27 research); §4L of the playbook wins where they differ
+
+# ================= ROAD TO 1M (2026-10-23; plans/road-to-1m.md is the authority; weekly manager session Sundays 10:49Z) =================
+roadTo1m:
+  plan: automation/youtube/plans/road-to-1m.md
+  stage: 0                      # 0 = prove the M-Short (2026-10-26..11-23)
+  mShortDays: [Mon, Tue, Fri, Sat]   # X slot = M (was F4)
+  mShortLengthSec: [30, 60]
+  stage0Gate: "n>=6 clean M samples (exclude LOW-REACH days and 10-09..12): M 72h median >= 1.5x same-day F4 72h median AND >=1 M-Short >= 2,000 views by 2026-11-23; one of two -> extend 2 weeks"
+  stage0Kill: "n>=9 and M median <= F4 median -> M-Short 1/week series only; M-Long test continues"
+  stage1Gate: "by 2027-01-31: >=1 M-Long >=1,000 views at 28 d AND channel >=300 subs AND longform >=20% of January views; any M-Long >=10k -> Stage 2"
+  stage1Kill: ">=12 M-Long episodes AND >=6 months with none >=10x lane median -> stop M-Long, write the needs-human-voice report"
+  budgets: { openaiUsdPerMonth: 2, openaiHardStop: 5, vidiqFloor: 40, vidiqPulseMinBalance: 60, dataApiUnitsPerDay: 8000, pexelsReqPerRun: 60, agentHoursPerWeek: 15, overCapCutFirst: F4 }
+  weeklyRules: "one variable per week; rollback a change that coincides with >=30% drop in 72h median two weeks running; pre-registered prediction scored next week; 3-video guardrail audit"
+  subjectOrder: [yingxian-pagoda, forbidden-city-drainage, great-wall-rammed-earth-jiumenkou, dujiangyan, zhaozhou-bridge, tulou-rammed-earth, city-wall-rice-mortar]
+  spendDecision: "owner 2026-10-23: keep $0-9/month. Voice = OpenAI gpt-4o-mini-tts (cap $2/month) once ElevenLabs credits end (owner cancels the subscription); ElevenLabs v4 voice and AI 3D shots (Veo 3.1 Lite, $0.48/8 s, tested 10-23) are NOT used; visuals stay code-drawn. Re-ask only if a stage gate is passed."
+  aiAnimation: off
+
+# ================= MULTI-CHANNEL TEST (owner 2026-10-29; plans/multi-channel-test.md) =================
+multiChannel:
+  status: waiting-for-owner-channels   # the test routine skips any channel whose token env is absent
+  quotaRaised: false                   # set true when the GCP YouTube Data API quota increase is approved -> main channel back to 3/day
+  channels:
+    - { key: CHINABUILDS, name: "China Builds", tokenEnv: YT_TOKEN_CHINABUILDS, direction: "modern Chinese mega-engineering, one project one number, no politics", perDay: 1 }
+    - { key: UNREAL, name: "Unreal Places", tokenEnv: YT_TOKEN_UNREAL, direction: "real places worldwide that look fake, 15-20 s, slug-named footage only", perDay: 1 }
+    - { key: ANCIENT, name: "Ancient Engineering", tokenEnv: YT_TOKEN_ANCIENT, direction: "how ancient people built it, worldwide, 90-180 s code-drawn mechanism with real-footage open", perDay: 1 }
+  verdictAfterDays: 30
+  winRule: "any video >=100k views -> scale to 3/day; 72h median >=3x main channel or a video >=20k -> keep 30 more days; 72h median < main -> stop and replace (next: China nature POV, world most/least expensive, ancient city map animations)"
+  calendar: automation/youtube/plans/content-calendar-2026-10-30.md
+
+# ================= MUSIC (2026-10-17) =================
+music:
+  dir: automation/youtube/assets/music            # plain beds; the 9 legacy vidIQ beds are committed here
+  manifest: automation/youtube/assets/music/manifest.json   # per bed: aiGenerated, vault, license, attribution, style, bpm, provenance
+  vault:                                           # decision D2: the repo is public, so ElevenLabs beds are committed ENCRYPTED only
+    dir: automation/youtube/assets/music-vault     # <name>.mp3.enc (AES-256-GCM)
+    decrypt: "node scripts/music-vault.mjs decrypt --all"   # every run, at setup; writes assets/music/<name>.mp3 (git-ignored, never committed)
+    keyFrom: YOUTUBE_CLIENT_ID                     # scrypt(YOUTUBE_CLIENT_ID, "chinatravel-music-vault-v1", 32); never printed
+    onFailure: "log music-vault: <reason> once and continue with the plain beds"
+  aiDisclosure: "AI-generated beds (9 legacy + every el-*) -> containsSyntheticMedia=true, set by scripts/youtube-upload.mjs from meta.music (D1)"
+  noEdmOn: [F1, F2]                                # POV formats: no EDM drop, no SFX pop; per-format table in playbook §0c.1
+
+# ================= POV 8-WEEK PLAN (2026-10-19..12-13; playbook §0c, owner copy plans/pov-8week.md) =================
+pov8w:
+  window: ["2026-10-19", "2026-12-13"]
+  beforeWindow: "all slots F4, except slot a on Wed/Sun = F3 (10-18: a F3, c F4, d F4); no F1/F2; frame-0 check, aerial cap, audio table, words rules, length bands and meta fields already apply"
+  afterWindow: keep-rotation     # after 12-13: rotation, gates and the W8 freeze stay unchanged until an interactive session updates pov8w
+  checkpoint: "2026-12-17"
+  formats: [F1, F2, F3, F4, M, L]   # F1 owner POV · F2 licensed POV (pov-library) · F3 China Price Check · F4 ground-level heritage (baseline) · M mechanism-explainer Short (code-drawn, ROAD-TO-1M 2026-10-23, X slot Mon/Tue/Fri/Sat) · L longform (G / M-Long alternating)
+  rotation:
+    epoch: "2026-10-19"
+    base: [F2, F4, X]
+    rule: "d = days since epoch; idx = ((d % 3) + 3) % 3; slot a/c/d = base[(0+idx)%3], base[(1+idx)%3], base[(2+idx)%3]"
+    X: { Wed: F3, Sun: F3, Thu: F1, other: F4 }   # F1 takes whichever slot X lands in (no fixed slot d)
+    ownerSlotsOverride: true                       # a slot claimed in state/owner-slots.json overrides the rotation
+    f3HookType: PRICE-SHOCK                        # overrides the HOOKS.md AUTO per-slot assignment
+  f2Activation: "assemble-video.mjs --clips passes node --check + one render + frame-0 sheet (RUNLOG f2-gate: PASS); until then F2 slots run as F4"
+  footage:
+    frame0: [owner-pov, licensed-pov, ground-human-scale, price-card]
+    frame0Check: true            # scripts/frame0-sheet.mjs after every render; look before upload
+    frame0Fail: [re-render-once-ground-first, map-format-or-ground-photo, ship-2-that-day]
+    maxAerialShots: 1
+    aerialAtFrame0: false
+    stillMotion: "kenburns; --photo-motion pov only as a 3-4 s bridge between real clips on photos with a path ahead (never frame 0, never counted as POV)"
+    sourcePriority: [owner, licensed-pov, ground, photo, map]
+    povLibrary: automation/youtube/assets/pov-library.json   # read with scripts/pov-library.mjs list --usable --china [--no-city] --json
+    libraryFilter: "usable && !politicalAvoid && (chinaIdentifiable || id in readFilters.chinaByTitle.ids)"   # = pov-library.mjs --usable --china; wm-c01 there is a city/construction window: city scope only, never non-city
+    libraryTopUp: "Mondays from 2026-10-26: >=4 newly verified clips (3-frame check); log pov-supply: +N (total M, unused non-city K)"
+    aiInserts: false             # decided 2026-10-19 under owner delegation: OFF (AI video invents the place after ~3 s — wrong for an honest heritage channel); if ever on: unnamed place, <=20% runtime, meta.aiFootage=true
+  testLengthSec: { F1: [13, 18], F2: [14, 20], F3: [15, 22], F4: [14, 20], until: "2026-11-16" }
+  cityScope: approved            # 2026-10-19: owner delegated all pending decisions ("都交给你") and made heritage architecture the subject — POV at heritage sites in cities is in scope (temple approaches, palace courtyards, wall walks, hutongs, old streets). Modern skyline/street POV without a heritage subject stays out.
+  deniedPath:
+    f2MaxPerWeek: 2
+    f2Days: [Mon, Thu]           # the week's Monday and Thursday F2 slots; other F2 slots run as F4
+    subset: from-library         # pov-library.json readFilters.nonCity.ids is authoritative (pov-library.mjs --no-city); as of 10-17: px-39312225, px-40310034, px-40303779, px-39975778, wm-c02, wm-c03
+    usedCheck: "grep -lF '\"<libraryId>\"' automation/youtube/runs/*/clips.json (committed clips.json keep libraryId)"
+    verdict: none                # directional ratios only
+    onEmpty: "F2 paused: supply-out (not a loss)"
+  titleSuffixDrop: no            # decided 2026-10-19 under owner delegation: keep " | China Travel Expert" (channel name was not changed)
+  syntheticBackfill: partial-35-of-326     # 2026-10-19: --apply was DENIED by the session permission classifier [External System Writes]; the routine never attempts it. Needs the owner (Studio "Altered content" or a permission rule). New uploads are flagged by youtube-upload.mjs.
+  ownerRecuts:
+    plan: automation/youtube/plans/owner-recuts.json
+    render: "python3 -I scripts/owner-recut.py --id <R-NN> --out <mp4> [--music <bed>]"
+    day: Thu                     # the X slot
+    schedule: { "2026-10-22": R-01 }   # calm bed (el-acoustic-journey-01 if present, else guzheng-calm-01)
+    ifCityApproved: { "2026-10-29": R-02, "2026-11-05": R-03, "2026-11-12": R-07, "2026-11-19": R-04 }
+    ifNotApproved: { "2026-10-29": R-04, after: pause-until-raw-originals }
+    stopRule: "3 consecutive recuts with same-day ratio vs F4 < 1.0 and averageViewPercentage not above F4"
+  verdict:
+    method: paired-same-day
+    metric: "F2 72h views / median F4 72h views same day"
+    read: "2026-11-02"           # directional only
+    arms: "2026-11-09"
+    latest: "2026-11-16"
+    minPairs: 12
+    requires: "cityScope == approved"
+    win: "median ratio >= 1.3 and avgViewPct >= F4 - 3 pts, or any F2 >= 2000 views -> F2 up to 2 slots/day"
+    lose: "median ratio <= 0.8 and avgViewPct not higher -> F2 only as longform children"
+    flat: keep-current-split
+    apiOff: views-only
+  subsKpi: pooled-channel-only   # subscribers per 1k engaged views, never per format
+  baselines: [trailing-28d-same-age, fixed-2026-09-15..09-30-same-age]
+  hookVerdicts: "equal age 48h/72h +-6h; proven/avoid needs n>=6 clean samples (HOOKS.md 铁律 6)"
+  lowReachDay: "exogenous: control cohort (Shorts aged 8-60 days, not in the test) daily new views < 50% of its trailing-14d median; hook ledger only (yt-postmortem, Slice 3)"
+  anomaly: ">=3 consecutive Shorts <15 views at 48h -> report first line 'check Studio'"
+  f4MinSlotsPerDay: 1
+  mapRetest: { dates: ["2026-10-27", "2026-10-31"], slot: first-F4-of-day, kill: "both < 0.5x same-day F4 -> MAP only inside longform" }
+  kill:
+    F1: "recut stop rule above; raw-original F1 not judged before 6 samples"
+    F2: "verdict rules (only with cityScope approved); supply-out is logged, never a loss"
+    F3: "6 consecutive episodes with ratio < 0.8 -> pause (slots run F4); any >= 4x same-day F4 -> copy the shape for the next 2"
+    F4: never
+    L: "longform.killCheck; any guide with >=30% avg view and >=50% Search -> next 2 guides take the same kind of query"
+    week4: "2026-11-16: every format's 72h median <= 70 -> CHANNEL-LEVEL: check Studio, best 2 Shorts/day, prioritise owner footage and guides"
+  publishedFields: [format, footage, povType, owner, aspect, music]   # format F1|F2|F3|F4|L; footage owner|licensed-pov|ground|photo|map|ai-insert; povType walk|ride|street|none; RUNLOG adds fmt:<X>
+
+# vidIQ spend guard (2026-09-02: monthly music-gen drained the balance to 0)
+vidiqRules:
+  musicGenOnlyIfBalanceAtLeast: 100
+  musicGenMonthlyCap: 0   # 2026-10-17: no vidIQ music generation (owner rates those beds low; new beds come from the music vault / Commons)
