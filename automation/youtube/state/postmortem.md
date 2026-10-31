@@ -1,3 +1,31 @@
+## 2026-10-31 post-mortem (baseline = 14d median views of Shorts ≥3d old: 93)
+- 2026-10-29 a DCXHeQ1rV5M | 55v 1L 0C @2d | ×0.59 | baseline | 150,000 Cliff Buddhas: Yungang's Giants or Longmen's Thousands? | Chin
+- 2026-10-29 d alb45BagwWc | 39v 1L 0C @2d | ×0.42 | LOSER — avoid this shape today | They Moved Xi'an's 600-Year-Old Bell Tower 1,000 m. Worth It? | China 
+- 2026-10-29 c VJ__k0v1ydg | 19v 0L 0C @2d | ×0.20 | LOSER — avoid this shape today | Forbidden City Sold Out? Your Plan B Is a 700-Year-Old Beijing Walk | 
+- 2026-10-30 a Z7vjrlDZ5qs | 6v 0L 0C @1d | ×0.06 | LOSER — avoid this shape today | When Beijing Floods, the 600-Year-Old Forbidden City Drains Itself | C
+- 2026-10-30 c ixIHwN6tSM8 | 3v 0L 0C @1d | ×0.03 | LOSER — avoid this shape today | The Forbidden City Is One-Way: Enter South, Exit North | China Travel 
+- 2026-10-30 d -oxbujVgPXo | 2v 0L 0C @1d | ×0.02 | LOSER — avoid this shape today | One Earth Building Held Up to 800 People — Fujian Tulou | China Travel
+- like-rate (fresh Shorts): 1.61% (peers 1-6%)
+### Equal age (Data API snapshots since 2026-10-18; 48 h / 72 h ±6 h; "~" = interpolated between the snapshots either side)
+- Shorts median, trailing 28 d: 48h 90v (n=36) · 72h 134v (n=36)
+- 2026-10-29 a fmt:F4 DCXHeQ1rV5M | 48h 55v 1L 0C | 72h — | 150,000 Cliff Buddhas: Yungang's Giants or Longmen's Thousan
+- 2026-10-28 d fmt:F3 kj1kwCvmH6A | 48h ~4v 0L 0C | 72h — | China Price Check: Tower of London £37 vs a $6 Great Wall | 
+- 2026-10-28 c fmt:F4 B4OGsuDLqTQ | 48h ~27v 0L 0C | 72h — | This Summer Palace bridge glows gold for 20 minutes a year |
+- 2026-10-27 d fmt:F4 JVmkVSWD_vM | 48h ~8v 0L 0C | 72h ~8v 0L 0C | Forbidden City sold out? A stupa from 1279 is your Plan B | 
+- 2026-10-27 c fmt:F2 8YiWVmeFemE | 48h ~46v 0L 0C | 72h ~48v 0L 0C | London's St Paul's ~$35. Shanghai's Jing'an Temple ~$7 | Chi
+- 2026-10-27 a fmt:- SO5vqDYu7gQ | 48h 9v 0L 0C | 72h 9v 0L 0C | Packed earth or concrete — which wall lasts 600 years? | Chi
+- 2026-10-26 d fmt:F2 VBv_eQRVHhM | 48h ~10v 1L 0C | 72h ~11v 1L 0C | A 600-Year-Old Ming Palace in Nanjing Is Now a Street Market
+- 2026-10-26 c fmt:- fwFOdiJZ23E | 48h ~3v 0L 0C | 72h ~3v 0L 0C | Floods and a Quake Couldn't Break This 1,400-Year-Old Chines
+- 2026-10-26 a fmt:F4 oVXvqO0jAm4 | 48h 153v 0L 0C | 72h 154v 0L 0C | Florence's Duomo Climb: ~$34. Xi'an's 1,370-Year-Old Pagoda:
+- 2026-10-25 d fmt:F3 fHS1i11ad3g | 48h ~90v 0L 0C | 72h ~90v 0L 0C | Sagrada Família €26. Beijing's Lama Temple ¥25 | China Trave
+- 2026-10-25 c fmt:F4 WCEhBfrQ83E | 48h ~232v 0L 0C | 72h ~234v 0L 0C | 72 Chen Families Paid for This 1894 Guangzhou Hall | China T
+- 2026-10-25 a fmt:F4 hDMzgRXdxrg | 48h 348v 1L 0C | 72h 348v 1L 0C | Nanjing's Ming Bricks Are Signed by Their Makers | China Tra
+- 2026-10-24 d fmt:F4 rRpVHa_4NYs | 48h ~57v 0L 0C | 72h ~59v 0L 0C | A 1,500-year-old cliff temple now caps climbers at 2,475 a d
+- 2026-10-24 c fmt:F4 nZKqHekSgDY | 48h ~21v 0L 0C | 72h ~22v 0L 0C | Neuschwanstein: ~$25 to enter. Beijing's Summer Palace? ~$4 
+- 2026-10-24 a fmt:- WiH-uYkEHXk | 48h 130v 1L 0C | 72h 134v 1L 0C | Wood beats stone in quakes? This 67 m pagoda has stood since
+### YouTube Analytics API
+- unavailable: HTTP 403 accessNotConfigured — the YouTube Analytics API is not enabled in the Google Cloud project (owner action: APIs & Services > enable "YouTube Analytics API"; checklist in scripts/youtube-oauth-helper.mjs). Equal-age numbers come from Data API snapshots only.
+
 ## 2026-10-30 post-mortem (baseline = 14d median views of Shorts ≥3d old: 110)
 - 2026-10-29 a DCXHeQ1rV5M | 34v 1L 0C @1d | ×0.31 | LOSER — avoid this shape today | 150,000 Cliff Buddhas: Yungang's Giants or Longmen's Thousands? | Chin
 - 2026-10-28 c B4OGsuDLqTQ | 27v 0L 0C @2d | ×0.25 | LOSER — avoid this shape today | This Summer Palace bridge glows gold for 20 minutes a year | China Tra
