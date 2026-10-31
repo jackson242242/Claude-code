@@ -5524,6 +5524,27 @@
    "queue": "arch-11",
    "playlist": "Ancient China Architecture 中国古建筑 (PLN7ICAupP7TQ)",
    "note": "F2 Temple of Heaven POV. Calendar 10-31 a was arch-11 (Hall of Prayer burned 1889) but its only hall-nameable clip px-40181108 is already used (10-19-c) and not in pov-library -> re-angled to a scale fact that holds over a general ToH grounds walk, naming only 'Temple of Heaven' (slug). 2 unused forward-walk clips px-34722881/px-34722878. Area verified this run: ToH ~2.73M m²/273ha (Wikipedia) vs Forbidden City ~720,000 m²/72ha (Wikipedia) ~3.8-4x. frame0 forward eye-level avenue walk=PASS, not aerial. aerial:0. ambient:none (music 0.65). synthetic=true (el-pov-walk-groove-01 AI bed, echoed)."
+  },
+  {
+   "date": "2026-10-31",
+   "slot": "c",
+   "title": "This Chinese Village Was Built in the Shape of an Ox | China Travel Expert",
+   "videoId": "LkTCgOTqYv8",
+   "url": "https://www.youtube.com/watch?v=LkTCgOTqYv8",
+   "pillar": "china-architecture",
+   "lane": "F4 ground-level heritage (slug-verified Hongcun Pexels photos, Ken-Burns) — upload LIVE scheduled",
+   "status": "scheduled",
+   "publishAt": "2026-10-31T20:00:00Z",
+   "music": "cinema-orient-01",
+   "format": "F4",
+   "footage": "photo",
+   "povType": "none",
+   "owner": false,
+   "aspect": "9x16",
+   "hookType": "INSIDER",
+   "queue": "arch-52",
+   "playlist": "Ancient China Architecture 中国古建筑 (PLN7ICAupP7TQ)",
+   "note": "F4 Hongcun ox-village. SUB for calendar 10-31 c (arch-50 Tulou) which already shipped 10-30 d (-oxbujVgPXo) -> picked arch-52 Hongcun (distinct subject, verify verdict 'keep', 3 Hongcun-slug eye-level photos). W2 MAP retest for this first-F4 slot SUPERSEDED by the newer 10-29 calendar hard-rule #1 (frame 0 always real footage; map-first got 2 views) -> real-photo F4, logged. Facts verified this run: ox layout head/horns/intestines/Moon Pond+South Lake (Wikipedia Hongcun + chinaculturetour); UNESCO 2000 with Xidi (whc list/1002). frame0 eye-level Moon Pond village scene=PASS, not aerial. aerial:0. synthetic=true (cinema-orient-01 legacy AI bed, echoed)."
   }
  ]
 }
