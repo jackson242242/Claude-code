@@ -5545,6 +5545,27 @@
    "queue": "arch-52",
    "playlist": "Ancient China Architecture 中国古建筑 (PLN7ICAupP7TQ)",
    "note": "F4 Hongcun ox-village. SUB for calendar 10-31 c (arch-50 Tulou) which already shipped 10-30 d (-oxbujVgPXo) -> picked arch-52 Hongcun (distinct subject, verify verdict 'keep', 3 Hongcun-slug eye-level photos). W2 MAP retest for this first-F4 slot SUPERSEDED by the newer 10-29 calendar hard-rule #1 (frame 0 always real footage; map-first got 2 views) -> real-photo F4, logged. Facts verified this run: ox layout head/horns/intestines/Moon Pond+South Lake (Wikipedia Hongcun + chinaculturetour); UNESCO 2000 with Xidi (whc list/1002). frame0 eye-level Moon Pond village scene=PASS, not aerial. aerial:0. synthetic=true (cinema-orient-01 legacy AI bed, echoed)."
+  },
+  {
+   "date": "2026-10-31",
+   "slot": "d",
+   "title": "Sticky-Rice Soup Holds Up Nanjing's 600-Year-Old Ming Wall | China Travel Expert",
+   "videoId": "SrZr9RBBXaM",
+   "url": "https://www.youtube.com/watch?v=SrZr9RBBXaM",
+   "pillar": "china-architecture",
+   "lane": "F4 ground-level heritage (slug-verified Nanjing Ming wall Pexels clips+photo) — upload LIVE scheduled; M->F4 fallback",
+   "status": "scheduled",
+   "publishAt": "2026-10-31T23:00:00Z",
+   "music": "lofi-chill-01",
+   "format": "F4",
+   "footage": "ground",
+   "povType": "none",
+   "owner": false,
+   "aspect": "9x16",
+   "hookType": "DEBATE",
+   "queue": "arch-38",
+   "playlist": "Ancient China Architecture 中国古建筑 (PLN7ICAupP7TQ)",
+   "note": "M->F4 FALLBACK. Calendar 10-31 d was arch-M-04 (sticky-rice mechanism) but render_rice_mortar.py = TODO (no renderer) and seed sources empty -> per M-lane rule + calendar fallback ran arch-38 F4 (same sticky-rice topic, real Nanjing wall footage, 3 sources). M-sample NOT added (M: no renderer). Facts re-verified this run: amylopectin sticky-rice lime mortar, Nanjing ~600-yr wall sampled, denser/water-resistant CaCO3, ~1500-yr technique, strength 'average' per NatGeo (ACS ar9001944 + NatGeo + LiveScience). Slug gate: photo pxp-35748051 labeled 'Nanjing city wall' (slug lacks 'ming'); video clips ming-slug keep 'Nanjing Ming wall'. frame0 twilight gate eye-level=PASS, not aerial. aerial:0. keep-audio:0. synthetic=true (lofi-chill-01 legacy AI bed, echoed)."
   }
  ]
 }
