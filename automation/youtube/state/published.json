@@ -5503,6 +5503,27 @@
    "queue": "arch-50",
    "playlist": "Ancient China Architecture 中国古建筑 (PLN7ICAupP7TQ)",
    "note": "F4 CHOICE (arch-50). SWAP: calendar d was arch-45 (Xi'an Bell Tower) but it shipped 10-29 (alb45BagwWc) -> de-dup, picked next F4 seed arch-50 Tulou (distinct non-FC subject; a+c both FC today). NOTE tomorrow 10-31 c (calendar arch-50 Tulou) now needs a sub. Facts (UNESCO): 46 Fujian Tulou inscribed 2008; up to 800 residents each; single entrance, windows only above ground floor for defense (whc.unesco.org + en.wikipedia). Footage: only 2 clearly tulou-slugged Pexels photos exist (pxp-37013897 exterior ground / pxp-34722281 interior) -> used just those; dropped 4 generic/non-tulou photos query mode returned. Slug gate: slugs name 'tulou' not 'Fujian' -> burned text says 'tulou' only (Fujian in metadata/sources). frame0 eye-level tulou exterior across field=PASS, not aerial. aerial:0. synthetic=true (cinema-orient-01 legacy AI bed)."
+  },
+  {
+   "date": "2026-10-31",
+   "slot": "a",
+   "title": "This Beijing Park Is Nearly 4x the Forbidden City | China Travel Expert",
+   "videoId": "s6mqUuxBBCE",
+   "url": "https://www.youtube.com/watch?v=s6mqUuxBBCE",
+   "pillar": "china-architecture",
+   "lane": "F2 licensed POV (pov-library Temple of Heaven walk clips) — upload LIVE scheduled",
+   "status": "scheduled",
+   "publishAt": "2026-10-31T13:00:00Z",
+   "music": "el-pov-walk-groove-01",
+   "format": "F2",
+   "footage": "licensed-pov",
+   "povType": "walk",
+   "owner": false,
+   "aspect": "9x16",
+   "hookType": "CHOICE",
+   "queue": "arch-11",
+   "playlist": "Ancient China Architecture 中国古建筑 (PLN7ICAupP7TQ)",
+   "note": "F2 Temple of Heaven POV. Calendar 10-31 a was arch-11 (Hall of Prayer burned 1889) but its only hall-nameable clip px-40181108 is already used (10-19-c) and not in pov-library -> re-angled to a scale fact that holds over a general ToH grounds walk, naming only 'Temple of Heaven' (slug). 2 unused forward-walk clips px-34722881/px-34722878. Area verified this run: ToH ~2.73M m²/273ha (Wikipedia) vs Forbidden City ~720,000 m²/72ha (Wikipedia) ~3.8-4x. frame0 forward eye-level avenue walk=PASS, not aerial. aerial:0. ambient:none (music 0.65). synthetic=true (el-pov-walk-groove-01 AI bed, echoed)."
   }
  ]
 }
