@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-26",
+ "generated": "2026-11-02",
  "purpose": "Licensed first-person (POV) travel footage for CHINATRAVEL Shorts (owner complaint: everything is aerial).",
  "rules": {
   "placeNames": "Say a place only over a clip whose sourceUrl slug (Pexels) or file title (Commons) names it: use placeSpeakable; null = say no place.",
@@ -29,7 +29,9 @@
     "px-40303779",
     "px-39975778",
     "wm-c02",
-    "wm-c03"
+    "wm-c03",
+    "px-36399584",
+    "px-35833454"
    ],
    "why": "pov8w deniedPath subset (plan 2026-10-17): Great Wall (say 'Great Wall' only, no section), Dali old-town temple steps, Guangxi nature walkway, D-train windows over misty hills/villages and green hills. Used while city POV is not approved.",
    "reviewCandidates": {
@@ -49,10 +51,10 @@
   "pexelsChinaCandidatesFrameChecked_pass1_previews": 450,
   "pexelsClipsDownloadVerified_pass2": 223,
   "pass1PreviewYes_confirmedByDownload": "43 of 118",
-  "pexelsPovVerified_total": 67,
-  "pexelsPovVerified_chinaIdentifiable": 58,
-  "pexelsPovVerified_chinaIdentifiable_usable": 56,
-  "pexelsPovVerified_chinaIdentifiable_usable_portrait": 12,
+  "pexelsPovVerified_total": 69,
+  "pexelsPovVerified_chinaIdentifiable": 60,
+  "pexelsPovVerified_chinaIdentifiable_usable": 58,
+  "pexelsPovVerified_chinaIdentifiable_usable_portrait": 14,
   "pexelsPovVerified_chinaIdentifiable_usable_landscape": 44,
   "pexelsPovVerified_chinaIdentifiable_usable_hongKong": 11,
   "pexelsPovVerified_chinaIdentifiable_usable_mainland": 40,
@@ -60,7 +62,7 @@
   "pexelsPovVerified_chinaIdentifiable_politicalAvoid": 2,
   "pexelsPovVerified_notChinaIdentifiable": 9,
   "pexelsPovVerified_byType": {
-   "walk": 39,
+   "walk": 41,
    "ride": 12
   },
   "pexelsPovVerified_natureOrOldTown_chinaUsable": [
@@ -80,7 +82,7 @@
   "commonsPovVerified": 10,
   "commonsPovVerified_chinaIdentifiable": 7,
   "commonsYouTubeOriginWalkingTours_blockedByChannelRule_estimated": 32,
-  "lastTopUp": "2026-10-26 (+5 heritage POV: Chaotian Palace x3 portrait, Jing'an Temple + Nanjing corridor landscape)"
+  "lastTopUp": "2026-11-02 (+2 NEW type-level Chinese-temple POV walks: red-ribbon walkway px-36399584, prayer-wheel corridor px-35833454; both placeSpeakable null. Re-confirmed already-catalogued px-36675730 steps-to-Mahavira-Hall + px-31368547 paifang gate. Yield thin — most portrait POV results were non-China (Istanbul/Hoi An/Intramuros), static locked shots, lateral pans, or already in-lib; this is the ongoing F2 supply-out root cause.)"
  },
  "clips": [
   {
@@ -1848,6 +1850,53 @@
    "foundBy": [
     "walking through chinese temple china|landscape"
    ]
+  },
+  {
+   "id": "px-36399584",
+   "source": "Pexels",
+   "license": "Pexels License (free commercial use, attribution optional; credit kept)",
+   "sourceUrl": "https://www.pexels.com/video/ascending-under-red-wishing-ribbons-in-temple-36399584/",
+   "downloadLink": "https://videos.pexels.com/video-files/36399584/15436231_2160_3840_30fps.mp4",
+   "downloadDims": "2160x3840",
+   "duration": 8,
+   "orientation": "portrait",
+   "photographer": "Chris Zhou",
+   "place": "a Chinese temple walkway hung with red wishing ribbons",
+   "placeSpeakable": null,
+   "chinaIdentifiable": true,
+   "chinaEvidence": "slug 'chinese temple' + Chinese text on the red wishing ribbons + Chinese temple architecture",
+   "pov": "yes",
+   "povType": "walk (forward, eye level — walking under a canopy of red wishing ribbons)",
+   "mood": "dense red wishing ribbons overhead with Chinese characters, covered walkway, a visitor walking through to the corridor beyond",
+   "usable": true,
+   "flags": [
+    "placeSpeakable null — type-level only; say 'a Chinese temple', never a specific place"
+   ],
+   "verifyNote": "3-frame check 2026-11-02: forward walk under the red-ribbon canopy, ribbons recede and the corridor beyond opens; eye level; Chinese characters on ribbons."
+  },
+  {
+   "id": "px-35833454",
+   "source": "Pexels",
+   "license": "Pexels License (free commercial use, attribution optional; credit kept)",
+   "sourceUrl": "https://www.pexels.com/video/peaceful-walkway-in-ancient-chinese-temple-35833454/",
+   "downloadLink": "https://videos.pexels.com/video-files/35833454/15194253_1080_1920_30fps.mp4",
+   "downloadDims": "1080x1920",
+   "duration": 5,
+   "orientation": "portrait",
+   "photographer": "vignesh srivatsav",
+   "place": "a Chinese-style temple covered corridor lined with prayer wheels",
+   "placeSpeakable": null,
+   "chinaIdentifiable": true,
+   "chinaEvidence": "slug 'ancient chinese temple' + Chinese-style covered corridor (green-trimmed posts, grey tile eaves); prayer wheels (pan-Buddhist)",
+   "pov": "yes",
+   "povType": "walk (forward, eye level — down the prayer-wheel corridor)",
+   "mood": "long covered corridor, row of bronze prayer wheels, grey tiled eaves, open view to trees",
+   "usable": true,
+   "flags": [
+    "placeSpeakable null — type-level only; say 'a Chinese temple corridor', never a specific place",
+    "WEAKEST China evidence of this top-up: no Chinese text visible and the photographer (vignesh srivatsav) is not Chinese — China evidence is only the slug + corridor architecture. VERIFY before ever naming; type-level use only."
+   ],
+   "verifyNote": "3-frame check 2026-11-02: forward motion down the corridor, prayer wheels recede; eye level (the near-static take px-35861966 of the same spot was rejected)."
   }
  ],
  "weakPov": [
