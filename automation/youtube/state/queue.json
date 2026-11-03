@@ -63,7 +63,7 @@
    "hook": "Most of the Great Wall is not brick. It is rammed earth.",
    "angle": "Steps: 1 formwork boards (版筑); 2 layers ~10-15 cm tamped; 3 reed/tamarisk layers in desert sections; 4 Ming brick skin only near Beijing. Verify: share of rammed earth vs brick (UNESCO/Great Wall survey 21,196 km; Ming brick ~6,000 km), layer thickness. End clip: Great Wall slug (section unnamed). Renderer TODO.",
    "footage": "M lane: code-drawn SVG animation (scripts/mechanism) + 3 s slug-named real photo/clip at the end; no stock in the steps, no AI imagery; bed from vault (containsSyntheticMedia true)",
-   "renderer": "TODO render_rammed_earth.py",
+   "renderer": "scripts/mechanism/render_rammed_earth.py",
    "series": "How Ancient China Built It",
    "priority": 2,
    "sources": [],
@@ -74,7 +74,9 @@
    "whyNow": "ROAD-TO-1M: mechanism explainer Shorts are the Stage 0 test lane",
    "addedAt": "2026-10-23",
    "addedBy": "road-to-1m 2026-10-23 (plans/road-to-1m.md)",
-   "status": "active"
+   "status": "published-2026-11-03",
+   "usedDate": "2026-11-03",
+   "videoId": "Z2lz7SQ8aWo"
   },
   {
    "id": "arch-M-04",
@@ -1153,7 +1155,14 @@
    "addedBy": "architecture pivot 2026-10-19 (plans/architecture-pivot.md)",
    "status": "done",
    "usedDate": "2026-10-29",
-   "videoId": "DCXHeQ1rV5M"
+   "videoId": "DCXHeQ1rV5M",
+   "reuse": [
+    {
+     "date": "2026-11-03",
+     "videoId": "5-FqutWOmyc",
+     "note": "calendar 11-03 re-run, distinct count framing"
+    }
+   ]
   },
   {
    "id": "arch-23",
@@ -1191,7 +1200,9 @@
    "whyNow": "owner 2026-10-19: all content = Chinese ancient architecture (temples, pagodas, palaces, city walls)",
    "addedAt": "2026-10-19",
    "addedBy": "architecture pivot 2026-10-19 (plans/architecture-pivot.md)",
-   "status": "active"
+   "status": "published-2026-11-03",
+   "usedDate": "2026-11-03",
+   "videoId": "gBhEFvB7JCw"
   },
   {
    "id": "arch-24",
