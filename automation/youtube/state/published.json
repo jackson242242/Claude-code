@@ -5755,6 +5755,27 @@
    "queue": "arch-M-03",
    "playlist": "Ancient China Architecture 中国古建筑 (PLN7ICAupP7TQ)",
    "note": "Calendar 11-03 d = arch-M-03 (M mechanism). MISCONCEPTION: most of the Great Wall is rammed earth, not brick. 2012 national survey total ~21,196 km vs Ming brick-and-stone ~8,851.8 km; hangtu/banzhu earth tamped between wooden boards one layer at a time; desert sections (Han wall near Yumen Pass/Dunhuang) layered reeds+tamarisk fascines (Aurel Stein, ~20-40 cm layers); Ming brick facing mostly near Beijing. NEW renderer scripts/mechanism/render_rammed_earth.py written this run from render_roof_beasts/render_svg_anim primitives (~25 agent-min): formwork 版筑 -> rammed layers 1->18 counter -> reed/tamarisk bands 芦苇柽柳 -> Ming brick skin 明代包砖 -> length read-out. Diagram deterministic cairosvg (NOT AI) -> aiFootage false (synthetic:true only from the AI music bed). 6 preview frames LOOKed + 3 label repositions so no label overlaps the drawing; labels kept above the subtitle band. Structure 30.5s: 2.5s real GW POV px-39312225 (section unnamed; frame0 eye-level out of a watchtower window=PASS) -> 24s diagram -> 4s real GW close. Sources: Wikipedia Great Wall + U.Washington Silk Road (Stein) + China Highlights Han wall + China Daily (Gansu). aerial:0. M-sample:3 (Stage-0 gate; 10-30a=1, 11-02a=2)."
+  },
+  {
+   "date": "2026-11-04",
+   "slot": "a",
+   "title": "This 961 Pagoda Leans 2.3 m - China's Pisa? | China Travel Expert",
+   "videoId": "M9lE7uz0pYg",
+   "url": "https://www.youtube.com/watch?v=M9lE7uz0pYg",
+   "pillar": "china-architecture",
+   "lane": "F4 Ken-Burns photo (Pexels) + youtube-data-api — scheduled 13:00Z",
+   "status": "scheduled",
+   "publishAt": "2026-11-04T13:00:00Z",
+   "music": "cinema-orient-01.mp3",
+   "format": "F4",
+   "footage": "photo",
+   "povType": "none",
+   "owner": false,
+   "aspect": "9x16",
+   "hookType": "DEBATE",
+   "queue": "arch-24",
+   "playlist": "Ancient China Architecture 中国古建筑 (PLN7ICAupP7TQ); Pagoda Types 中国塔 (PLbQgod_rbw1c)",
+   "note": "Calendar 11-04 a = arch-24 Tiger Hill (Yunyan) Pagoda, Suzhou. DEBATE: China Pisa vs Pisa. Facts re-verified this run (2 sources): begun 959/finished 961, ~47m 7-storey octagonal brick, leans ~2.34m (>Pisa), reinforced 1980s still standing; Pisa tower begun 1173 so Tiger Hill ~2 centuries older. Footage: single slug-verified Pexels photo pxp-31021040 (leaning-pagoda-at-tiger-hill-suzhou), 2 Ken-Burns segments; only Tiger-Hill-slugged photo available (others were generic/Beisi/Nanjing, excluded). frame0 eye-level ground shot of the leaning pagoda=PASS; aerial:0. Sources: Wikipedia Huqiu Tower + Structurae + Wikipedia Leaning Tower of Pisa."
   }
  ]
 }
