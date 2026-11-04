@@ -5776,6 +5776,27 @@
    "queue": "arch-24",
    "playlist": "Ancient China Architecture 中国古建筑 (PLN7ICAupP7TQ); Pagoda Types 中国塔 (PLbQgod_rbw1c)",
    "note": "Calendar 11-04 a = arch-24 Tiger Hill (Yunyan) Pagoda, Suzhou. DEBATE: China Pisa vs Pisa. Facts re-verified this run (2 sources): begun 959/finished 961, ~47m 7-storey octagonal brick, leans ~2.34m (>Pisa), reinforced 1980s still standing; Pisa tower begun 1173 so Tiger Hill ~2 centuries older. Footage: single slug-verified Pexels photo pxp-31021040 (leaning-pagoda-at-tiger-hill-suzhou), 2 Ken-Burns segments; only Tiger-Hill-slugged photo available (others were generic/Beisi/Nanjing, excluded). frame0 eye-level ground shot of the leaning pagoda=PASS; aerial:0. Sources: Wikipedia Huqiu Tower + Structurae + Wikipedia Leaning Tower of Pisa."
+  },
+  {
+   "date": "2026-11-04",
+   "slot": "c",
+   "title": "China Price Check: Potala $14 This Winter vs Alhambra $24 | China Travel Expert",
+   "videoId": "Z01Xmc36l-A",
+   "url": "https://www.youtube.com/watch?v=Z01Xmc36l-A",
+   "pillar": "china-architecture",
+   "lane": "F3 heritage China Price Check — Ken-Burns Potala photos (Pexels) price card + youtube-data-api — scheduled 20:00Z",
+   "status": "scheduled",
+   "publishAt": "2026-11-04T20:00:00Z",
+   "music": "el-hype-pluck-01.mp3",
+   "format": "F3",
+   "footage": "photo",
+   "povType": "none",
+   "owner": false,
+   "aspect": "9x16",
+   "hookType": "PRICE-SHOCK",
+   "queue": "price-research-10",
+   "playlist": "China Price Check (PLG-JepCwvn-Y); Ancient China Architecture 中国古建筑 (PLN7ICAupP7TQ)",
+   "note": "Calendar 11-04 c = price research 10 Potala vs Alhambra (honest contrast, China cheaper in WINTER). Prices re-verified this run (2 dated sources each): Potala Route1 ¥200 peak (May1-Oct31) / ¥100 off-season (Nov1-Apr30)=~$14 now; summer ~$28; Alhambra General ~€21 (€22.27 online)=~$24. Winter free-admission promo UNCONFIRMED (commercial sources only) -> NOT claimed. Frame0 = pxp-31013239 iconic-potala-palace-reflected-in-water (ground-level reflection, no flag, not aerial)=PASS; 2nd photo pxp-38374937. Price card: both prices big in cue1. No political framing, no Tibet permit advice. Sources: tibettravel.org + eastchinatrip.com (Potala); lovegranada.com + granadadirect.com (Alhambra)."
   }
  ]
 }
