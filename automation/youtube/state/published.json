@@ -5797,6 +5797,27 @@
    "queue": "price-research-10",
    "playlist": "China Price Check (PLG-JepCwvn-Y); Ancient China Architecture 中国古建筑 (PLN7ICAupP7TQ)",
    "note": "Calendar 11-04 c = price research 10 Potala vs Alhambra (honest contrast, China cheaper in WINTER). Prices re-verified this run (2 dated sources each): Potala Route1 ¥200 peak (May1-Oct31) / ¥100 off-season (Nov1-Apr30)=~$14 now; summer ~$28; Alhambra General ~€21 (€22.27 online)=~$24. Winter free-admission promo UNCONFIRMED (commercial sources only) -> NOT claimed. Frame0 = pxp-31013239 iconic-potala-palace-reflected-in-water (ground-level reflection, no flag, not aerial)=PASS; 2nd photo pxp-38374937. Price card: both prices big in cue1. No political framing, no Tibet permit advice. Sources: tibettravel.org + eastchinatrip.com (Potala); lovegranada.com + granadadirect.com (Alhambra)."
+  },
+  {
+   "date": "2026-11-04",
+   "slot": "d",
+   "title": "Beijing's Drum Tower Still Drums - 24 Drums, One Left | China Travel Expert",
+   "videoId": "C8ngn2ybzyc",
+   "url": "https://www.youtube.com/watch?v=C8ngn2ybzyc",
+   "pillar": "china-architecture",
+   "lane": "F4 (calendar F2->F4: no POV video, Drum Tower is photo-lane) — Ken-Burns photos (Pexels) + youtube-data-api — scheduled 23:00Z",
+   "status": "scheduled",
+   "publishAt": "2026-11-04T23:00:00Z",
+   "music": "cpop-groove-01.mp3",
+   "format": "F4",
+   "footage": "photo",
+   "povType": "none",
+   "owner": false,
+   "aspect": "9x16",
+   "hookType": "CHOICE",
+   "queue": "arch-47",
+   "playlist": "Ancient China Architecture 中国古建筑 (PLN7ICAupP7TQ)",
+   "note": "Calendar 11-04 d = arch-47 Beijing Drum Tower (F2->F4: no first-person POV video exists, photo-lane only). CHOICE: first show or last. Facts re-verified this run (2 sources): Drum Tower (Gulou) on Beijing central axis, paired with Bell Tower; night-watch drum + 24 solar-term drums (25 total), only 1 Qing original survives; Ming/Qing rebuilds; drum performances still staged through the day (times seasonal). Footage: 2 slug-verified Beijing Drum Tower photos pxp-39517215 (street scene, frame0 ground-level) + pxp-29474210 (autumn). Dropped pxp-39876852 (posed portrait) on re-render for a clean architecture close. frame0 PASS, aerial:0. Sources: travelchinaguide + chinahighlights + thebeijinger."
   }
  ]
 }
