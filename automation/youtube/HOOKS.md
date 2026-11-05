@@ -115,7 +115,7 @@ run 自动执行；若某条钩子是**新写法**（不属 A-F），在 RUNLOG 
 | DEBATE | ✅ | 4 | 182 | ×3.96 | 0.27% | 0 | 0 |
 | PRICE-SHOCK | ✅ | 17 | 176 | ×3.83 | 0.27% | 1 | 0.33 |
 | CHOICE | ✅ | 8 | 163 | ×3.54 | 0.23% | 0 | 0 |
-| SPECTACLE-FACT | ❌ 数字锚而已 | 23 | 161 | ×3.49 | 0.35% | 0 | 0 |
+| SPECTACLE-FACT | ❌ 数字锚而已 | 23 | 161 | ×3.5 | 0.35% | 0 | 0 |
 | PLAIN-FACT | ❌ 数字锚而已 | 23 | 124 | ×2.7 | 0.49% | 0 | 0 |
 | STAKES | ✅ | 1 ⚠️样本不足 | 110 | ×2.39 | 1.82% | 0 | 0 |
 | MISCONCEPTION | ✅ | 2 ⚠️样本不足 | 55 | ×1.2 | 1.82% | 0 | 0 |
@@ -130,13 +130,13 @@ run 自动执行；若某条钩子是**新写法**（不属 A-F），在 RUNLOG 
 
 | 日期 | 播放 | ×基准 | 赞 | 评 | 类型 | 钩子原文 |
 |---|---|---|---|---|---|---|
-| 2026-11-04d | 1 | ×0.02 | 0 | 0 | SPECTACLE-FACT | 24 drums once kept Beijing's time - one survives. {\fs13}I'm you |
-| 2026-11-04c | 0 | ×0.00 | 0 | 0 | PRICE-SHOCK | Potala Palace: ~$14 this winter. Alhambra: ~$24. {\fs13}I'm your |
-| 2026-11-04a | 1 | ×0.02 | 0 | 0 | SPECTACLE-FACT | Built in 961, and it leans 2.3 metres. {\fs13}I'm your China Tra |
-| 2026-11-03d | 7 | ×0.15 | 0 | 0 | PLAIN-FACT | Most of the Great Wall isn't brick. {\fs13}I'm your China Travel |
-| 2026-11-03c | 2 | ×0.04 | 0 | 0 | SPECTACLE-FACT | A Nepali architect built Beijing's White Stupa in 1279. {\fs13}I |
-| 2026-11-03a | 6 | ×0.13 | 0 | 0 | CHOICE | 51,000 carvings, or more than 100,000? {\fs13}I'm your China Tra |
-| 2026-11-02d | 0 | ×0.00 | 0 | 0 | SPECTACLE-FACT | 9,999 rooms? Every survey counts fewer. {\fs13}I'm your China Tr |
+| 2026-11-04d | 6 | ×0.13 | 0 | 0 | SPECTACLE-FACT | 24 drums once kept Beijing's time - one survives. {\fs13}I'm you |
+| 2026-11-04c | 2 | ×0.04 | 0 | 0 | PRICE-SHOCK | Potala Palace: ~$14 this winter. Alhambra: ~$24. {\fs13}I'm your |
+| 2026-11-04a | 4 | ×0.09 | 0 | 0 | SPECTACLE-FACT | Built in 961, and it leans 2.3 metres. {\fs13}I'm your China Tra |
+| 2026-11-03d | 11 | ×0.24 | 0 | 0 | PLAIN-FACT | Most of the Great Wall isn't brick. {\fs13}I'm your China Travel |
+| 2026-11-03c | 6 | ×0.13 | 0 | 0 | SPECTACLE-FACT | A Nepali architect built Beijing's White Stupa in 1279. {\fs13}I |
+| 2026-11-03a | 8 | ×0.17 | 0 | 0 | CHOICE | 51,000 carvings, or more than 100,000? {\fs13}I'm your China Tra |
+| 2026-11-02d | 2 | ×0.04 | 0 | 0 | SPECTACLE-FACT | 9,999 rooms? Every survey counts fewer. {\fs13}I'm your China Tr |
 | 2026-11-02c | 2 | ×0.04 | 1 | 0 | SPECTACLE-FACT | 63 tonnes of Ming bronze - silent for 66 years. {\fs13}I'm your  |
 | 2026-11-02a | 8 | ×0.17 | 0 | 0 | SPECTACLE-FACT | Count the roof beasts. Only one hall in China has all 10. {\fs13 |
 | 2026-11-01d | 6 | ×0.13 | 0 | 0 | SPECTACLE-FACT | Temple of Heaven's park opens at 6:30 - the halls wait till 8. { |
@@ -155,7 +155,7 @@ run 自动执行；若某条钩子是**新写法**（不属 A-F），在 RUNLOG 
 | 2026-10-28c | 28 | ×0.61 | 0 | 0 | PLAIN-FACT | This marble bridge looks ordinary at noon. {\fs13}I'm your China |
 | 2026-10-28a | 12 | ×0.26 | 0 | 0 | CHOICE | Bike it or walk it — Xi'an's 13.7 km Ming wall? {\fs13}I'm your  |
 | 2026-10-27d | 8 | ×0.17 | 0 | 0 | PLAIN-FACT | Forbidden City tickets? None sold on the day. {\fs13}I'm your Ch |
-| 2026-10-27c | 48 | ×1.04 | 0 | 0 | PRICE-SHOCK | London's St Paul's: about $35 to walk in. {\fs13}I'm your China  |
+| 2026-10-27c | 50 | ×1.09 | 0 | 0 | PRICE-SHOCK | London's St Paul's: about $35 to walk in. {\fs13}I'm your China  |
 | 2026-10-27a | 10 | ×0.22 | 0 | 0 | CHOICE | Packed earth or concrete — which wall lasts 600 years? |
 | 2026-10-26d | 17 | ×0.37 | 1 | 0 | SPECTACLE-FACT | POV: you're inside Nanjing's Chaotian Palace — 600 years old, an |
 | 2026-10-26c | 3 | ×0.07 | 0 | 0 | SPECTACLE-FACT | Floods and a Quake Couldn't Break This 1,400-Year-Old Chinese Br |
@@ -165,7 +165,7 @@ run 自动执行；若某条钩子是**新写法**（不属 A-F），在 RUNLOG 
 | 2026-10-25a | 346 | ×7.52 | 1 | 0 | SPECTACLE-FACT | These 600-year-old bricks are signed by their makers. {\fs13}I'm |
 | 2026-10-24d | 68 | ×1.48 | 0 | 0 | PLAIN-FACT | I'm your China Travel Expert |
 | 2026-10-24c | 25 | ×0.54 | 0 | 0 | PLAIN-FACT | I'm your China Travel Expert |
-| 2026-10-24a | 145 | ×3.15 | 1 | 0 | SPECTACLE-FACT | Wood beats stone in quakes? Since 1056. |
+| 2026-10-24a | 146 | ×3.17 | 1 | 0 | SPECTACLE-FACT | Wood beats stone in quakes? Since 1056. |
 | 2026-10-23d | 973 | ×21.15 | 1 | 0 | SPECTACLE-FACT | Walk Guangzhou's Beijing Road and you stroll right over 11 layer |
 | 2026-10-23c | 674 | ×14.65 | 1 | 0 | SPECTACLE-FACT | One man spent nearly 20 years on this garden — and nearly ruined |
 | 2026-10-23a | 74 | ×1.61 | 1 | 0 | PRICE-SHOCK | Pisa's leaning tower: about $22 to climb. {\fs13}I'm your China  |

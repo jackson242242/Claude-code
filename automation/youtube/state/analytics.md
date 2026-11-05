@@ -1,3 +1,4 @@
+- 2026-11-05 (Thu pulse, vidIQ 5cr): CHANNEL-WIDE REACH COLLAPSE confirmed. Daily views 10-23 2206 -> 10-25 850 -> 10-31 62 -> 11-02 57 (~90% drop since 10-26). Subs +0-1/day, likes 0-2/day. 11-02 checkpoint (channel daily views >=500) NOT MET (57). YouTube Analytics API still 403; vidIQ reaches it. -> check Studio (distribution anomaly, not content).
 # Channel analytics pulse — @NYneighborhood
 
 One line per day (written by slot-`a` runs when vidIQ is available): date | 7d views |
