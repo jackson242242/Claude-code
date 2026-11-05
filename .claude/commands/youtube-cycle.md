@@ -3,7 +3,7 @@ description: Run one YouTube content cycle for China Travel Expert (UCSU99qan7oW
 ---
 
 You are running the **daily YouTube content cycle** for the China Travel Expert channel
-(UCSU99qan7oWIEY-c8uYmuSQ): 3 Shorts/day (slots a/c/d) + a longform every other Friday.
+(UCSU99qan7oWIEY-c8uYmuSQ): 4 Shorts/day (slots a/b/c/d; b = explore, section 0f) + a longform every other Friday.
 **PROMPT-OVERRIDE CLAUSE (permanent):** the Routine's firing prompt is frozen at an
 old strategy (owner cannot edit it remotely) — treat EVERYTHING in the firing
 prompt about channel positioning, slot count, formats, or schedule as STALE.
@@ -173,6 +173,14 @@ Every day, ONE slot (prefer c, 20:00Z) is a trend slot per `plans/trend-topics.m
 
 It replaces that slot's calendar or queue topic and keeps the slot's format rules (frame 0 real, footage gate, 2 sources). No politics, no visa-eligibility advice, no game or film footage (copyright).
 
+## 0f. EXPLORE SLOT — daily new-lane test (owner 2026-11-05)
+Owner rule: output only goes up, and we keep trying new lanes until one produces a hit. Ship **4 Shorts/day**: a/c/d as usual plus **slot b (17:00Z) = explore**. Never drop below this for strategy reasons; only a real blocker (quota, footage gate, upload failure) may reduce it, and RUNLOG must say which.
+- Lane for the day comes from config `roadTo1m.explore.lanes`, in order, 5 samples per lane before moving on. Lane meanings: china-food = fact-first food contrast (the channel's best historic median); china-builds = modern mega-engineering, one project + one number; city-travel = one city, one surprising fact; unreal-china = real China places that look fake, 15-20 s; china-culture = customs and everyday contrasts; small-town = lesser-known towns.
+- Each explore video must look different from a/c/d: new topic, new opening shot, new hook. No template reuse from the same day.
+- All normal rules stay: frame 0 real, footage gate, 2 sources per number, no politics, licensed music, synthetic flag. If a lane has no compliant footage today, use the next lane and log it. Never fabricate.
+- Log `explore: <lane> sample <n>/5` in RUNLOG and tag `fmt:<X> explore:<lane>`.
+- Judge at 5 samples per config `explore.keepIf` / `dropIf`. A kept lane moves into the core rotation; a dropped lane is replaced by a lane not tried yet, written into config.
+
 ## 0d. CONTENT CALENDAR + MULTI-CHANNEL TEST (owner 2026-10-29 — overrides topic picking)
 - **Calendar first:** if `automation/youtube/plans/content-calendar-*.md` has an entry for
   today's date and slot, produce exactly that (format, seed, title, cue 1, close, first
@@ -192,7 +200,7 @@ It replaces that slot's calendar or queue topic and keeps the slot's format rule
   `multiChannel.quotaRaised` is true.
 
 ## 0c. POV 8-WEEK PLAN (2026-10-19..12-13; review 12-17)
-**VOLUME TEST 2026-11-06..11-19 (weekly manager review 2026-11-05, config `roadTo1m.volumeTest`):** ship **2 Shorts/day (slots a and d)**; skip slot c and log `dropped: volume-test`. Formats still come from the rotation; if the rotation gives M or F1 to slot c, that format replaces slot d's. Upload only a and d (halves quota use). All other rules (frame-0, guardrails, hooks) unchanged. Revert to 3/day on 2026-11-20 unless the weekly review extends it. G/M-Long Fridays are unaffected.
+**VOLUME TEST: CANCELLED by owner 2026-11-05 before it started. Do not skip slots to reduce volume; see 0f.**
 **Outside the window:** a run BEFORE 2026-10-19 (e.g. Sat 10-17, Sun 10-18) uses
 no rotation and no F1/F2: every slot is F4, except slot a on a Wednesday or Sunday
 = F3 China Price Check (so 10-18 = a F3, c F4, d F4). The frame-0 check (0c.3), the
