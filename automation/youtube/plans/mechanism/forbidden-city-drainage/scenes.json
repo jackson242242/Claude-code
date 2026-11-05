@@ -1,0 +1,10 @@
+{
+  "_note": "Four 16:9 (1920x1080, 30 fps) diagram scenes for the M-Long. Renderer: write scripts/mechanism/render_diagrams_fcdrain.py by copying render_diagrams_yingxian.py primitives (SVG -> cairosvg -> ffmpeg); palette = render_fc_drain.py C{} dict. All numbers on screen must match longform-script.md section 2. No AI imagery.",
+  "canvas": {"w": 1920, "h": 1080, "fps": 30},
+  "scenes": [
+    {"id": "S1-slope", "duration_s": 12, "view": "side elevation, south left / north right", "steps": ["ground line tilts: north 46.05 m, south 44.28 m (labels, not to scale, slope exaggerated x40 with a 'exaggerated' tag)", "raindrops fall across 960 m", "droplets roll south", "text '< 2 m over ~960 m'"]},
+    {"id": "S2-terrace-spouts", "duration_s": 14, "view": "section of a hall on three-tier marble terrace", "steps": ["terrace tiers appear (~8 m)", "rain on top", "spouts fire in sequence (count NOT shown; tag 'museum: over 1,000')", "water lands on paving"]},
+    {"id": "S3-ditches-culverts", "duration_s": 16, "view": "plan + section", "steps": ["courtyard grid", "open ditches (blue lines)", "lines go underground (dashed) - tag 'about 15 km of ditches, ~13 km hidden'", "tag 'diagram not to scale'"]},
+    {"id": "S4-golden-river-moat", "duration_s": 14, "view": "plan, north up", "steps": ["bow-shaped Inner Golden Water River", "5 bridges drawn (1417: 3, 1465: 5)", "flow arrows to the palace wall and the moat (52 m wide, 6 m deep)", "recap ribbon: slope > spouts > culverts > river > moat"]}
+  ]
+}

@@ -1,3 +1,31 @@
+## 2026-11-05 post-mortem (baseline = 14d median views of Shorts ≥3d old: 45)
+- 2026-11-03 d Z2lz7SQ8aWo | 7v 0L 0C @2d | ×0.16 | LOSER — avoid this shape today | Most of the Great Wall Isn't Brick - It's Rammed Earth | China Travel 
+- 2026-11-03 a 5-FqutWOmyc | 6v 0L 0C @2d | ×0.13 | LOSER — avoid this shape today | 100,000 Statues or 51,000: Longmen or Yungang? | China Travel Expert
+- 2026-11-03 c gBhEFvB7JCw | 4v 0L 0C @2d | ×0.09 | LOSER — avoid this shape today | A Nepali Architect Built Beijing's White Stupa in 1279 | China Travel 
+- 2026-11-04 a M9lE7uz0pYg | 1v 0L 0C @1d | ×0.02 | LOSER — avoid this shape today | This 961 Pagoda Leans 2.3 m - China's Pisa? | China Travel Expert
+- 2026-11-04 c Z01Xmc36l-A | 0v 0L 0C @1d | ×0.00 | LOSER — avoid this shape today | China Price Check: Potala $14 This Winter vs Alhambra $24 | China Trav
+- 2026-11-04 d C8ngn2ybzyc | 0v 0L 0C @1d | ×0.00 | LOSER — avoid this shape today | Beijing's Drum Tower Still Drums - 24 Drums, One Left | China Travel E
+- like-rate (fresh Shorts): 0.00% (peers 1-6%)
+### Equal age (Data API snapshots since 2026-10-18; 48 h / 72 h ±6 h; "~" = interpolated between the snapshots either side)
+- Shorts median, trailing 28 d: 48h 47v (n=50) · 72h 58v (n=50)
+- 2026-11-02 d fmt:F4 ziu2GIlqfq4 | 48h 0v 0L 0C | 72h — | Forbidden City: 9,999 Rooms? Surveys Count 8,886 | China Tra
+- 2026-11-02 c fmt:F4 EsNg3JUQujs | 48h ~2v 1L 0C | 72h — | 63 Tonnes of Bronze: China's Heaviest Ancient Bell | China T
+- 2026-11-02 a fmt:- H_KtmlBdOfw | 48h 8v 0L 0C | 72h — | Only One Building in China Has 10 Roof Beasts | China Travel
+- 2026-11-01 d fmt:F4 R82Leqj3mzs | 48h ~5v 0L 0C | 72h 6v 0L 0C | Temple of Heaven Opens at 6:30 — the Halls Wait Till 8 | Chi
+- 2026-11-01 c fmt:F3 eyP8n3jU74o | 48h ~15v 0L 0C | 72h ~19v 0L 0C | Vatican Museums €25. The Forbidden City in Winter: ¥40 | Chi
+- 2026-11-01 a fmt:F4 qwVHgHyMdZQ | 48h 1v 0L 0C | 72h 2v 0L 0C | Xi'an's 13.74 km Wall or Nanjing's Signed Bricks? | China Tr
+- 2026-10-31 d fmt:F4 SrZr9RBBXaM | 48h ~5v 0L 0C | 72h ~5v 0L 0C | Sticky-Rice Soup Holds Up Nanjing's 600-Year-Old Ming Wall |
+- 2026-10-31 c fmt:F4 LkTCgOTqYv8 | 48h ~1v 0L 0C | 72h ~1v 0L 0C | This Chinese Village Was Built in the Shape of an Ox | China
+- 2026-10-31 a fmt:F2 s6mqUuxBBCE | 48h 15v 0L 0C | 72h 15v 0L 0C | This Beijing Park Is Nearly 4x the Forbidden City | China Tr
+- 2026-10-30 d fmt:F4 -oxbujVgPXo | 48h ~2v 0L 0C | 72h ~2v 0L 0C | One Earth Building Held Up to 800 People — Fujian Tulou | Ch
+- 2026-10-30 c fmt:F4 ixIHwN6tSM8 | 48h ~4v 0L 0C | 72h ~5v 0L 0C | The Forbidden City Is One-Way: Enter South, Exit North | Chi
+- 2026-10-30 a fmt:- Z7vjrlDZ5qs | 48h 6v 0L 0C | 72h 6v 0L 0C | When Beijing Floods, the 600-Year-Old Forbidden City Drains 
+- 2026-10-29 d fmt:F4 alb45BagwWc | 48h ~40v 1L 0C | 72h ~42v 1L 0C | They Moved Xi'an's 600-Year-Old Bell Tower 1,000 m. Worth It
+- 2026-10-29 c fmt:F1 VJ__k0v1ydg | 48h ~19v 0L 0C | 72h ~20v 0L 0C | Forbidden City Sold Out? Your Plan B Is a 700-Year-Old Beiji
+- 2026-10-29 a fmt:F4 DCXHeQ1rV5M | 48h 55v 1L 0C | 72h 58v 2L 0C | 150,000 Cliff Buddhas: Yungang's Giants or Longmen's Thousan
+### YouTube Analytics API
+- unavailable: HTTP 403 accessNotConfigured — the YouTube Analytics API is not enabled in the Google Cloud project (owner action: APIs & Services > enable "YouTube Analytics API"; checklist in scripts/youtube-oauth-helper.mjs). Equal-age numbers come from Data API snapshots only.
+
 ## 2026-11-04 post-mortem (baseline = 14d median views of Shorts ≥3d old: 48)
 - 2026-11-02 a H_KtmlBdOfw | 8v 0L 0C @2d | ×0.17 | LOSER — avoid this shape today | Only One Building in China Has 10 Roof Beasts | China Travel Expert
 - 2026-11-03 d Z2lz7SQ8aWo | 4v 0L 0C @1d | ×0.08 | LOSER — avoid this shape today | Most of the Great Wall Isn't Brick - It's Rammed Earth | China Travel 

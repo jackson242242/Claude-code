@@ -236,6 +236,13 @@ roadTo1m:
   subjectOrder: [yingxian-pagoda, forbidden-city-drainage, great-wall-rammed-earth-jiumenkou, dujiangyan, zhaozhou-bridge, tulou-rammed-earth, city-wall-rice-mortar]
   spendDecision: "owner 2026-10-23: keep $0-9/month. Voice = OpenAI gpt-4o-mini-tts (cap $2/month) once ElevenLabs credits end (owner cancels the subscription); ElevenLabs v4 voice and AI 3D shots (Veo 3.1 Lite, $0.48/8 s, tested 10-23) are NOT used; visuals stay code-drawn. Re-ask only if a stage gate is passed."
   aiAnimation: off
+  stage0Extended: "2026-12-07"   # weekly review 2026-11-05: only 1 clean M sample (10-24); every format collapsed to ~6 views from 10-26 (LOW-REACH) -> §4 rule 'one of two -> extend 2 weeks'
+  volumeTest:                     # weekly review 2026-11-05: THE ONE variable this week
+    window: ["2026-11-06", "2026-11-19"]
+    perDay: 2                     # ship slots a + d; slot c is skipped (RUNLOG 'dropped: volume-test')
+    exception: "if the pov8w rotation puts M or F1 in slot c, that format replaces slot d's format (keeps the M sample and F1 alive)"
+    hypothesis: "3 near-template Shorts/day dilute or throttle channel-level Shorts distribution; fewer, better-spaced uploads restore the 48h floor"
+    judge: "2026-11-19 review: 72h median of window uploads vs 6 (10-26..11-04 median); rollback to 3/day if no improvement or if reach was already recovering before 11-06"
 
 # ================= MULTI-CHANNEL TEST (owner 2026-10-29; plans/multi-channel-test.md) =================
 multiChannel:

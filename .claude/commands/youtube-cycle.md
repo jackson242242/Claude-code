@@ -192,6 +192,7 @@ It replaces that slot's calendar or queue topic and keeps the slot's format rule
   `multiChannel.quotaRaised` is true.
 
 ## 0c. POV 8-WEEK PLAN (2026-10-19..12-13; review 12-17)
+**VOLUME TEST 2026-11-06..11-19 (weekly manager review 2026-11-05, config `roadTo1m.volumeTest`):** ship **2 Shorts/day (slots a and d)**; skip slot c and log `dropped: volume-test`. Formats still come from the rotation; if the rotation gives M or F1 to slot c, that format replaces slot d's. Upload only a and d (halves quota use). All other rules (frame-0, guardrails, hooks) unchanged. Revert to 3/day on 2026-11-20 unless the weekly review extends it. G/M-Long Fridays are unaffected.
 **Outside the window:** a run BEFORE 2026-10-19 (e.g. Sat 10-17, Sun 10-18) uses
 no rotation and no F1/F2: every slot is F4, except slot a on a Wednesday or Sunday
 = F3 China Price Check (so 10-18 = a F3, c F4, d F4). The frame-0 check (0c.3), the

@@ -80,23 +80,27 @@
   },
   {
    "id": "arch-M-04",
-   "title": "Rice in the Mortar: Why Ming Walls Outlast Concrete",
+   "title": "Sticky Rice in the Mortar: Real, 1,500 Years Old",
    "pillar": "china-architecture",
    "format": "short",
    "fmt": "M",
    "archType": "mechanism",
    "site": "Nanjing / Xi'an Ming city walls",
-   "hookType": "DEBATE",
-   "hook": "Sticky rice mortar beats modern mortar? 600 years say yes.",
-   "angle": "Steps: 1 brick + lime + glutinous rice soup; 2 amylopectin binds calcium carbonate (2010 Accounts of Chemical Research, Zhang Bingjian); 3 wall section: rammed core + brick skin + rice mortar joints. Verify 2 sources. End clip: Nanjing wall slug px-39285962 or Xi'an wall px-39126873. Renderer TODO.",
+   "hookType": "MISCONCEPTION",
+   "hook": "Sticky-rice mortar holds Ming walls together. Real — but only \"average\" strength.",
+   "angle": "RENDERER DONE (2026-11-05, 24 s, ~23 s render): python3 -I scripts/mechanism/render_rice_mortar.py <outdir> -> rice_mortar_1080x1920.mp4. Steps: 1 brick+lime+rice soup; 2 plain vs +amylopectin crystals (Zhejiang Univ. 2010, Accounts of Chemical Research doi 10.1021/ar9001944); 3 rice-lime joints in a brick wall; 4 honest card: ~1,500 yr, water-resistant/less shrinkage, strength only 'average' (National Geographic). NO 'beats concrete' claim. Sources: pubs.acs.org/doi/10.1021/ar9001944 + nationalgeographic.com/history/article/100608-sticky-rice-mortar-china-science (+ sciencedaily 2010-05-30). Same topic ran as F4 on 10-31 (arch-38); this is the mechanism angle. End clip: Nanjing wall slug px-39285962 or Xi'an wall px-39126873.",
    "footage": "M lane: code-drawn SVG animation (scripts/mechanism) + 3 s slug-named real photo/clip at the end; no stock in the steps, no AI imagery; bed from vault (containsSyntheticMedia true)",
-   "renderer": "TODO render_rice_mortar.py",
+   "renderer": "scripts/mechanism/render_rice_mortar.py",
    "series": "How Ancient China Built It",
    "priority": 2,
-   "sources": [],
+   "sources": [
+    "https://pubs.acs.org/doi/10.1021/ar9001944",
+    "https://www.nationalgeographic.com/history/article/100608-sticky-rice-mortar-china-science",
+    "https://www.sciencedaily.com/releases/2010/05/100530093704.htm"
+   ],
    "verify": {
-    "verdict": "facts-from-architecture-facts.md; re-verify 2 sources at render",
-    "at": "2026-10-23"
+    "verdict": "facts #42 in architecture-facts.md, 3 sources",
+    "at": "2026-11-05"
    },
    "whyNow": "ROAD-TO-1M: mechanism explainer Shorts are the Stage 0 test lane",
    "addedAt": "2026-10-23",
@@ -4661,6 +4665,81 @@
    "addedBy": "yt-cycle-2026-10-13",
    "status": "covered-2026-10-13",
    "prevStatus": ""
+  },
+  {
+   "id": "arch-M-08",
+   "title": "Those Dragon Heads on the Forbidden City Are Drain Spouts",
+   "pillar": "china-architecture",
+   "format": "short",
+   "fmt": "M",
+   "archType": "mechanism",
+   "site": "Forbidden City, Beijing",
+   "hookType": "INSIDER",
+   "hook": "Those dragon heads on the Forbidden City terraces are drain spouts.",
+   "angle": "Child of M-Long #2 (publish Fri 2026-11-27 + 7 days). Brief: F15-F17 of plans/mechanism/forbidden-city-drainage/child-shorts.md #1; say \"more than a thousand\", never an exact count. Renderer: extend scripts/mechanism/render_fc_drain.py (TODO render_fc_drain_<variant>.py). Facts only from the ledger (2 sources).",
+   "footage": "M lane: code-drawn SVG animation (scripts/mechanism) + 3 s slug-named real photo/clip at the end; no stock in the steps, no AI imagery; bed from vault (containsSyntheticMedia true)",
+   "renderer": "TODO render_fc_drain_child.py (copy render_fc_drain.py)",
+   "series": "How Ancient China Built It",
+   "priority": 3,
+   "sources": [],
+   "verify": {
+    "verdict": "ledger in plans/mechanism/forbidden-city-drainage/longform-script.md",
+    "at": "2026-11-05"
+   },
+   "whyNow": "child Short of M-Long #2",
+   "addedAt": "2026-11-05",
+   "addedBy": "weekly manager 2026-11-05",
+   "status": "hold-until-2026-11-27"
+  },
+  {
+   "id": "arch-M-09",
+   "title": "The Forbidden City Isn't Flat - That's the Drain",
+   "pillar": "china-architecture",
+   "format": "short",
+   "fmt": "M",
+   "archType": "mechanism",
+   "site": "Forbidden City, Beijing",
+   "hookType": "MISCONCEPTION",
+   "hook": "The Forbidden City isn't flat — and that's the point.",
+   "angle": "Child of M-Long #2 (publish Fri 2026-11-27 + 7 days). Brief: #2: gate levels 46.05 vs 44.28 m, <2 m over ~960 m; caveat walls weaken self-draining. Renderer: extend scripts/mechanism/render_fc_drain.py (TODO render_fc_drain_<variant>.py). Facts only from the ledger (2 sources).",
+   "footage": "M lane: code-drawn SVG animation (scripts/mechanism) + 3 s slug-named real photo/clip at the end; no stock in the steps, no AI imagery; bed from vault (containsSyntheticMedia true)",
+   "renderer": "TODO render_fc_drain_child.py (copy render_fc_drain.py)",
+   "series": "How Ancient China Built It",
+   "priority": 3,
+   "sources": [],
+   "verify": {
+    "verdict": "ledger in plans/mechanism/forbidden-city-drainage/longform-script.md",
+    "at": "2026-11-05"
+   },
+   "whyNow": "child Short of M-Long #2",
+   "addedAt": "2026-11-05",
+   "addedBy": "weekly manager 2026-11-05",
+   "status": "hold-until-2026-11-27"
+  },
+  {
+   "id": "arch-M-10",
+   "title": "13 km of Forbidden City Drains You Cannot See",
+   "pillar": "china-architecture",
+   "format": "short",
+   "fmt": "M",
+   "archType": "mechanism",
+   "site": "Forbidden City, Beijing",
+   "hookType": "STAKES",
+   "hook": "About 13 km of the Forbidden City's drains are underground.",
+   "angle": "Child of M-Long #2 (publish Fri 2026-11-27 + 7 days). Brief: #3: ditch -> covered channel -> Inner Golden Water River -> moat; dredging line only if re-sourced. Renderer: extend scripts/mechanism/render_fc_drain.py (TODO render_fc_drain_<variant>.py). Facts only from the ledger (2 sources).",
+   "footage": "M lane: code-drawn SVG animation (scripts/mechanism) + 3 s slug-named real photo/clip at the end; no stock in the steps, no AI imagery; bed from vault (containsSyntheticMedia true)",
+   "renderer": "TODO render_fc_drain_child.py (copy render_fc_drain.py)",
+   "series": "How Ancient China Built It",
+   "priority": 3,
+   "sources": [],
+   "verify": {
+    "verdict": "ledger in plans/mechanism/forbidden-city-drainage/longform-script.md",
+    "at": "2026-11-05"
+   },
+   "whyNow": "child Short of M-Long #2",
+   "addedAt": "2026-11-05",
+   "addedBy": "weekly manager 2026-11-05",
+   "status": "hold-until-2026-11-27"
   }
  ]
 }
