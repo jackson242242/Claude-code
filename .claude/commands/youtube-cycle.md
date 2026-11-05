@@ -164,6 +164,15 @@ run; put the source links in the video description.
    (§8). From then on file every F1/F2 Short into it. No Chinese in this
    playlist's title.
 
+## 0e. TREND SLOT — US-China culture memes (owner 2026-11-05)
+Every day, ONE slot (prefer c, 20:00Z) is a trend slot per `plans/trend-topics.md`:
+- Run the daily trend scan (≤5 WebSearch, sources ≤7 days old).
+- Hook the freshest clean meme to a verified China fact with real footage.
+- Log `trend: <meme> → <topic> (<url>)` in RUNLOG and tag `fmt:<X> trend:yes`.
+- Fallback when no fresh meme is found: the next unused tr-* topic.
+
+It replaces that slot's calendar or queue topic and keeps the slot's format rules (frame 0 real, footage gate, 2 sources). No politics, no visa-eligibility advice, no game or film footage (copyright).
+
 ## 0d. CONTENT CALENDAR + MULTI-CHANNEL TEST (owner 2026-10-29 — overrides topic picking)
 - **Calendar first:** if `automation/youtube/plans/content-calendar-*.md` has an entry for
   today's date and slot, produce exactly that (format, seed, title, cue 1, close, first
