@@ -5957,6 +5957,25 @@
    "music": "el-docu-underscore-05.mp3",
    "hookType": "MISCONCEPTION",
    "mSample": 4
+  },
+  {
+   "date": "2026-11-06",
+   "slot": "b",
+   "title": "China Eats About 42 Billion Instant-Noodle Servings a Year | China Travel Expert",
+   "videoId": "uzIBOe09kxc",
+   "url": "https://www.youtube.com/watch?v=uzIBOe09kxc",
+   "pillar": "china-food",
+   "lane": "explore:china-food (pexels-ffmpeg+youtube-data-api)",
+   "status": "scheduled",
+   "publishAt": "2026-11-06T17:00:00Z",
+   "format": "explore",
+   "footage": "ground",
+   "povType": "none",
+   "owner": false,
+   "aspect": "9x16",
+   "music": "lofi-upbeat-01.mp3",
+   "hookType": "CHOICE",
+   "explore": "china-food 2/5"
   }
  ]
 }
