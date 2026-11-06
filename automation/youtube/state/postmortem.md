@@ -1,3 +1,32 @@
+## 2026-11-06 post-mortem (baseline = 14d median views of Shorts ≥3d old: 24)
+- 2026-11-04 d C8ngn2ybzyc | 7v 0L 0C @2d | ×0.29 | LOSER — avoid this shape today | Beijing's Drum Tower Still Drums - 24 Drums, One Left | China Travel E
+- 2026-11-05 c zoCgPeYBS2I | 5v 0L 0C @1d | ×0.21 | LOSER — avoid this shape today | Xi'an beats Beijing for first-timers: 13 dynasties | China Travel Expe
+- 2026-11-04 a M9lE7uz0pYg | 4v 0L 0C @2d | ×0.17 | LOSER — avoid this shape today | This 961 Pagoda Leans 2.3 m - China's Pisa? | China Travel Expert
+- 2026-11-04 c Z01Xmc36l-A | 3v 0L 0C @2d | ×0.13 | LOSER — avoid this shape today | China Price Check: Potala $14 This Winter vs Alhambra $24 | China Trav
+- 2026-11-05 a uDofq4D45Ds | 2v 0L 0C @1d | ×0.08 | LOSER — avoid this shape today | First China stop: Shanghai or Guangzhou? | China Travel Expert
+- 2026-11-05 b 1KEjaU3lZp4 | 1v 0L 0C @1d | ×0.04 | LOSER — avoid this shape today | China has more hotpot restaurants than McDonald's worldwide | China Tr
+- 2026-11-05 d fUUIvtA5_qM | 0v 0L 0C @1d | ×0.00 | LOSER — avoid this shape today | The Great Wall: about $6. Machu Picchu: about $40 | China Travel Exper
+- like-rate (fresh Shorts): 0.00% (peers 1-6%)
+### Equal age (Data API snapshots since 2026-10-18; 48 h / 72 h ±6 h; "~" = interpolated between the snapshots either side)
+- Shorts median, trailing 28 d: 48h 44v (n=54) · 72h 48v (n=54)
+- 2026-11-04 a fmt:F4 M9lE7uz0pYg | 48h 4v 0L 0C | 72h — | This 961 Pagoda Leans 2.3 m - China's Pisa? | China Travel E
+- 2026-11-03 d fmt:- Z2lz7SQ8aWo | 48h ~11v 0L 0C | 72h — | Most of the Great Wall Isn't Brick - It's Rammed Earth | Chi
+- 2026-11-03 c fmt:F4 gBhEFvB7JCw | 48h ~7v 0L 0C | 72h — | A Nepali Architect Built Beijing's White Stupa in 1279 | Chi
+- 2026-11-03 a fmt:F4 5-FqutWOmyc | 48h 8v 0L 0C | 72h 8v 0L 0C | 100,000 Statues or 51,000: Longmen or Yungang? | China Trave
+- 2026-11-02 d fmt:F4 ziu2GIlqfq4 | 48h 0v 0L 0C | 72h ~3v 0L 0C | Forbidden City: 9,999 Rooms? Surveys Count 8,886 | China Tra
+- 2026-11-02 c fmt:F4 EsNg3JUQujs | 48h ~2v 1L 0C | 72h ~2v 1L 0C | 63 Tonnes of Bronze: China's Heaviest Ancient Bell | China T
+- 2026-11-02 a fmt:- H_KtmlBdOfw | 48h 8v 0L 0C | 72h 8v 0L 0C | Only One Building in China Has 10 Roof Beasts | China Travel
+- 2026-11-01 d fmt:F4 R82Leqj3mzs | 48h ~5v 0L 0C | 72h 6v 0L 0C | Temple of Heaven Opens at 6:30 — the Halls Wait Till 8 | Chi
+- 2026-11-01 c fmt:F3 eyP8n3jU74o | 48h ~15v 0L 0C | 72h ~19v 0L 0C | Vatican Museums €25. The Forbidden City in Winter: ¥40 | Chi
+- 2026-11-01 a fmt:F4 qwVHgHyMdZQ | 48h 1v 0L 0C | 72h 2v 0L 0C | Xi'an's 13.74 km Wall or Nanjing's Signed Bricks? | China Tr
+- 2026-10-31 d fmt:F4 SrZr9RBBXaM | 48h ~5v 0L 0C | 72h ~5v 0L 0C | Sticky-Rice Soup Holds Up Nanjing's 600-Year-Old Ming Wall |
+- 2026-10-31 c fmt:F4 LkTCgOTqYv8 | 48h ~1v 0L 0C | 72h ~1v 0L 0C | This Chinese Village Was Built in the Shape of an Ox | China
+- 2026-10-31 a fmt:F2 s6mqUuxBBCE | 48h 15v 0L 0C | 72h 15v 0L 0C | This Beijing Park Is Nearly 4x the Forbidden City | China Tr
+- 2026-10-30 d fmt:F4 -oxbujVgPXo | 48h ~2v 0L 0C | 72h ~2v 0L 0C | One Earth Building Held Up to 800 People — Fujian Tulou | Ch
+- 2026-10-30 c fmt:F4 ixIHwN6tSM8 | 48h ~4v 0L 0C | 72h ~5v 0L 0C | The Forbidden City Is One-Way: Enter South, Exit North | Chi
+### YouTube Analytics API
+- unavailable: HTTP 403 accessNotConfigured — the YouTube Analytics API is not enabled in the Google Cloud project (owner action: APIs & Services > enable "YouTube Analytics API"; checklist in scripts/youtube-oauth-helper.mjs). Equal-age numbers come from Data API snapshots only.
+
 ## 2026-11-05 post-mortem (baseline = 14d median views of Shorts ≥3d old: 45)
 - 2026-11-03 d Z2lz7SQ8aWo | 11v 0L 0C @2d | ×0.24 | LOSER — avoid this shape today | Most of the Great Wall Isn't Brick - It's Rammed Earth | China Travel 
 - 2026-11-03 a 5-FqutWOmyc | 8v 0L 0C @2d | ×0.18 | LOSER — avoid this shape today | 100,000 Statues or 51,000: Longmen or Yungang? | China Travel Expert

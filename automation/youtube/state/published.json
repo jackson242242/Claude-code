@@ -5902,6 +5902,24 @@
    "queue": "-",
    "playlist": "Ancient China Architecture 中国古建筑 (PLN7ICAupP7TQ)",
    "note": "Rotation d=F4, hook AUTO=PRICE-SHOCK. Great Wall section ~35-45 yuan (~$5-6; Badaling 40/35, Mutianyu ~40-45: wanderinchina + thepricer) vs Machu Picchu foreign adult S/152 ~$40 (andina.pe Peru state agency + TReXperience). Both New7Wonders. US side text-only; frame0=Great Wall ground clip (px-39312225, slug 'scenic-view-of-the-great-wall', section NOT named -> label 'Great Wall' only). frame0 PASS (eye-level from watchtower, not aerial), aerial:0. synthetic:true (el-mountain-calm AI bed)."
+  },
+  {
+   "date": "2026-11-06",
+   "slot": "a",
+   "title": "The Forbidden City Opened in 1420. Its Biggest Hall? 1697 | China Travel Expert",
+   "videoId": "OYkeRy7DXsY",
+   "url": "https://www.youtube.com/watch?v=OYkeRy7DXsY",
+   "pillar": "china-architecture",
+   "lane": "pexels-ffmpeg+youtube-data-api",
+   "status": "scheduled",
+   "publishAt": "2026-11-06T13:00:00Z",
+   "format": "F4",
+   "footage": "ground",
+   "povType": "none",
+   "owner": false,
+   "aspect": "9x16",
+   "music": "cinema-orient-01.mp3",
+   "hookType": "DEBATE"
   }
  ]
 }
