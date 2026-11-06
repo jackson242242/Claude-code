@@ -5976,6 +5976,26 @@
    "music": "lofi-upbeat-01.mp3",
    "hookType": "CHOICE",
    "explore": "china-food 2/5"
+  },
+  {
+   "date": "2026-11-06",
+   "slot": "L",
+   "title": "Temple of Heaven Beijing: Tickets, Hours & What to See (2026) | China Travel Expert",
+   "videoId": "YJ2RNNpFqb8",
+   "url": "https://www.youtube.com/watch?v=YJ2RNNpFqb8",
+   "pillar": "china-architecture",
+   "lane": "G search-guide (pexels-ffmpeg+elevenlabs-rachel+youtube-data-api)",
+   "status": "scheduled",
+   "publishAt": "2026-11-06T15:00:00Z",
+   "format": "L",
+   "footage": "ground",
+   "povType": "none",
+   "owner": false,
+   "aspect": "16x9",
+   "music": "el-docu-underscore-04.mp3",
+   "voice": "elevenlabs-rachel",
+   "hookType": "search-guide",
+   "guideNum": 2
   }
  ]
 }
