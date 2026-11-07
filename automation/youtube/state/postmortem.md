@@ -1,3 +1,34 @@
+## 2026-11-07 post-mortem (baseline = 14d median views of Shorts ≥3d old: 15)
+- 2026-11-06 b uzIBOe09kxc | 44v 1L 0C @1d | ×2.93 | WINNER — replicate this hook shape today | China Eats About 42 Billion Instant-Noodle Servings a Year | China Tra
+- 2026-11-06 L YJ2RNNpFqb8 | 17v 0L 0C @1d | ×1.13 | LONGFORM: no distribution (expected on this channel; search-ranking is slow) | Temple of Heaven Beijing: Tickets, Hours & What to See (2026) | China 
+- 2026-11-05 c zoCgPeYBS2I | 8v 1L 0C @2d | ×0.53 | baseline | Xi'an beats Beijing for first-timers: 13 dynasties | China Travel Expe
+- 2026-11-06 a OYkeRy7DXsY | 5v 1L 0C @1d | ×0.33 | LOSER — avoid this shape today | The Forbidden City Opened in 1420. Its Biggest Hall? 1697 | China Trav
+- 2026-11-06 d Xijsm5GpbDA | 5v 1L 0C @1d | ×0.33 | LOSER — avoid this shape today | Ming Builders Put Sticky Rice in Their Mortar — But It's No Miracle | 
+- 2026-11-06 c 0X9fVqEwNps | 4v 1L 0C @1d | ×0.27 | LOSER — avoid this shape today | World's Tallest Wooden Pagoda: 970 Years Old, Too Fragile to Climb | C
+- 2026-11-05 a uDofq4D45Ds | 3v 1L 0C @2d | ×0.20 | LOSER — avoid this shape today | First China stop: Shanghai or Guangzhou? | China Travel Expert
+- 2026-11-05 d fUUIvtA5_qM | 3v 1L 0C @2d | ×0.20 | LOSER — avoid this shape today | The Great Wall: about $6. Machu Picchu: about $40 | China Travel Exper
+- 2026-11-05 b 1KEjaU3lZp4 | 2v 1L 0C @2d | ×0.13 | LOSER — avoid this shape today | China has more hotpot restaurants than McDonald's worldwide | China Tr
+- like-rate (fresh Shorts): 10.81% (peers 1-6%)
+### Equal age (Data API snapshots since 2026-10-18; 48 h / 72 h ±6 h; "~" = interpolated between the snapshots either side)
+- Shorts median, trailing 28 d: 48h 40v (n=58) · 72h 47v (n=57)
+- 2026-11-05 b fmt:- 1KEjaU3lZp4 | 48h 2v 1L 0C | 72h — | China has more hotpot restaurants than McDonald's worldwide 
+- 2026-11-05 a fmt:F1 uDofq4D45Ds | 48h 3v 1L 0C | 72h — | First China stop: Shanghai or Guangzhou? | China Travel Expe
+- 2026-11-04 d fmt:F4 C8ngn2ybzyc | 48h ~7v 0L 0C | 72h — | Beijing's Drum Tower Still Drums - 24 Drums, One Left | Chin
+- 2026-11-04 c fmt:F3 Z01Xmc36l-A | 48h ~4v 0L 0C | 72h — | China Price Check: Potala $14 This Winter vs Alhambra $24 | 
+- 2026-11-04 a fmt:F4 M9lE7uz0pYg | 48h 4v 0L 0C | 72h 5v 0L 0C | This 961 Pagoda Leans 2.3 m - China's Pisa? | China Travel E
+- 2026-11-03 d fmt:- Z2lz7SQ8aWo | 48h ~11v 0L 0C | 72h ~11v 0L 0C | Most of the Great Wall Isn't Brick - It's Rammed Earth | Chi
+- 2026-11-03 c fmt:F4 gBhEFvB7JCw | 48h ~7v 0L 0C | 72h ~10v 0L 0C | A Nepali Architect Built Beijing's White Stupa in 1279 | Chi
+- 2026-11-03 a fmt:F4 5-FqutWOmyc | 48h 8v 0L 0C | 72h 8v 0L 0C | 100,000 Statues or 51,000: Longmen or Yungang? | China Trave
+- 2026-11-02 d fmt:F4 ziu2GIlqfq4 | 48h 0v 0L 0C | 72h ~3v 0L 0C | Forbidden City: 9,999 Rooms? Surveys Count 8,886 | China Tra
+- 2026-11-02 c fmt:F4 EsNg3JUQujs | 48h ~2v 1L 0C | 72h ~2v 1L 0C | 63 Tonnes of Bronze: China's Heaviest Ancient Bell | China T
+- 2026-11-02 a fmt:- H_KtmlBdOfw | 48h 8v 0L 0C | 72h 8v 0L 0C | Only One Building in China Has 10 Roof Beasts | China Travel
+- 2026-11-01 d fmt:F4 R82Leqj3mzs | 48h ~5v 0L 0C | 72h 6v 0L 0C | Temple of Heaven Opens at 6:30 — the Halls Wait Till 8 | Chi
+- 2026-11-01 c fmt:F3 eyP8n3jU74o | 48h ~15v 0L 0C | 72h ~19v 0L 0C | Vatican Museums €25. The Forbidden City in Winter: ¥40 | Chi
+- 2026-11-01 a fmt:F4 qwVHgHyMdZQ | 48h 1v 0L 0C | 72h 2v 0L 0C | Xi'an's 13.74 km Wall or Nanjing's Signed Bricks? | China Tr
+- 2026-10-31 d fmt:F4 SrZr9RBBXaM | 48h ~5v 0L 0C | 72h ~5v 0L 0C | Sticky-Rice Soup Holds Up Nanjing's 600-Year-Old Ming Wall |
+### YouTube Analytics API
+- unavailable: HTTP 403 accessNotConfigured — the YouTube Analytics API is not enabled in the Google Cloud project (owner action: APIs & Services > enable "YouTube Analytics API"; checklist in scripts/youtube-oauth-helper.mjs). Equal-age numbers come from Data API snapshots only.
+
 ## 2026-11-06 post-mortem (baseline = 14d median views of Shorts ≥3d old: 24)
 - 2026-11-04 d C8ngn2ybzyc | 7v 0L 0C @2d | ×0.29 | LOSER — avoid this shape today | Beijing's Drum Tower Still Drums - 24 Drums, One Left | China Travel E
 - 2026-11-05 c zoCgPeYBS2I | 5v 0L 0C @1d | ×0.21 | LOSER — avoid this shape today | Xi'an beats Beijing for first-timers: 13 dynasties | China Travel Expe
