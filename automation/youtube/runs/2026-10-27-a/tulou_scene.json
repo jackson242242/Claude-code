@@ -1,0 +1,98 @@
+{
+  "canvas": { "w": 1080, "h": 1920, "fps": 30, "duration_s": 33 },
+  "style": {
+    "bg": "#15110d",
+    "bg_grid": "#1f1913",
+    "outline": "#2a1c0d",
+    "ink": "#f6ead3",
+    "ink_dim": "#b9a98d",
+    "accent": "#e8513a",
+    "card": "#231b14",
+    "earth": "#b07a43",
+    "earth_dark": "#7d5329",
+    "earth_light": "#cf9b5f",
+    "stone": "#9a9382",
+    "stone_dark": "#6f6a5c",
+    "bamboo": "#8fae4d",
+    "concrete": "#9aa3ab",
+    "none": "none",
+    "font_en": "DejaVu Sans",
+    "font_cn": "Noto Serif CJK SC"
+  },
+  "title": {
+    "line1": "Packed earth or concrete —",
+    "line2": "which lasts 600 years?",
+    "sub": "Fujian Tulou 福建土楼 — the Hakka earth ring"
+  },
+  "origin": { "x": 540, "y": 1080 },
+  "caption_card": { "y": 1500, "h": 190 },
+  "steps": [
+    {
+      "id": "footing",
+      "t": 1.0,
+      "drop": 0,
+      "parts": [
+        { "shape": "rect", "x": -300, "y": -60, "w": 260, "h": 60, "fill": "stone_dark" },
+        { "shape": "rect", "x": -290, "y": -190, "w": 240, "h": 130, "fill": "earth" }
+      ],
+      "caption": "Not mud. Subsoil, sand and lime, rammed in layers.",
+      "cn": "夯土 hangtu"
+    },
+    {
+      "id": "bamboo1",
+      "t": 6.0,
+      "drop": 80,
+      "parts": [
+        { "shape": "rect", "x": -290, "y": -200, "w": 240, "h": 14, "fill": "bamboo" },
+        { "shape": "rect", "x": -282, "y": -320, "w": 224, "h": 130, "fill": "earth_light" }
+      ],
+      "caption": "Strips of bamboo run through it like rebar.",
+      "cn": "竹木拉筋 bamboo ties"
+    },
+    {
+      "id": "rise",
+      "t": 11.0,
+      "drop": 90,
+      "parts": [
+        { "shape": "rect", "x": -282, "y": -330, "w": 224, "h": 14, "fill": "bamboo" },
+        { "shape": "rect", "x": -274, "y": -455, "w": 208, "h": 130, "fill": "earth" },
+        { "shape": "rect", "x": -266, "y": -585, "w": 192, "h": 130, "fill": "earth_light" }
+      ],
+      "caption": "The ring climbs 3 to 5 floors, up to about 1.8 m thick.",
+      "cn": "墙厚约1.8米"
+    },
+    {
+      "id": "gate",
+      "t": 16.0,
+      "drop": 0,
+      "parts": [
+        { "shape": "rect", "x": -205, "y": -175, "w": 70, "h": 115, "fill": "bg" }
+      ],
+      "caption": "One gate. No windows low down — a wall built to defend.",
+      "cn": "一门·底层无窗"
+    },
+    {
+      "id": "people",
+      "t": 21.0,
+      "drop": 0,
+      "parts": [],
+      "caption": "UNESCO-listed. One earthen ring could house up to 800 people.",
+      "cn": "可住约800人"
+    },
+    {
+      "id": "compare",
+      "t": 25.5,
+      "drop": 0,
+      "parts": [
+        { "shape": "rect", "x": 150, "y": -585, "w": 60, "h": 525, "fill": "concrete" }
+      ],
+      "caption": "Packed earth, 600+ years. Modern concrete: about 30 cm.",
+      "cn": "对比 earth vs concrete"
+    }
+  ],
+  "outro": {
+    "t": 29.5,
+    "text": "Earth or concrete — which lasts 600 years?",
+    "sub": "China Travel Expert 中国古建筑"
+  }
+}

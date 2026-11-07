@@ -1,0 +1,70 @@
+{
+  "recut": "R-02",
+  "title": "Forbidden City sold out? Plan B on foot",
+  "hookType": "STAKES",
+  "status": "ready",
+  "forced": false,
+  "uploadable": true,
+  "renderedAt": "2026-10-29T13:03:01+00:00",
+  "out": "/home/user/Claude-code/automation/youtube/runs/2026-10-29-c/final.mp4",
+  "durationSec": 18.14,
+  "sizeBytes": 21380895,
+  "music": {
+    "file": "el-acoustic-journey-01.mp3",
+    "start": 0.0,
+    "aiGenerated": true
+  },
+  "loudness": {
+    "integratedLUFS": -13.9,
+    "truePeakDbfs": -1.8
+  },
+  "checks": {
+    "exclusions": "pass",
+    "labels": "pass",
+    "warnings": []
+  },
+  "cues": [
+    {
+      "start": 0.0,
+      "end": 4.2,
+      "text": "Forbidden City sold out?\nTickets drop [[7 days]] ahead."
+    },
+    {
+      "start": 4.2,
+      "end": 12.57,
+      "text": "Plan B, on foot: a [[700-year-old]]\nstupa over old Beijing roofs"
+    },
+    {
+      "start": 12.57,
+      "end": null,
+      "text": "Palace queue or Plan B?\nPick a side."
+    }
+  ],
+  "frames": [],
+  "metaHints": {
+    "music": "el-acoustic-journey-01.mp3",
+    "format": "F1",
+    "footage": "owner",
+    "owner": true,
+    "povType": "walk",
+    "aiFootage": false,
+    "containsSyntheticMediaExpected": true,
+    "placesNamed": [
+      "Forbidden City (foil only, no footage claimed)",
+      "Temple of Heaven",
+      "White Stupa Temple",
+      "Summer Palace"
+    ],
+    "facts": [
+      {
+        "claim": "Forbidden City tickets are released 7 days ahead",
+        "source": "state/RUNLOG.md 2026-08-21 a (english.beijing.gov.cn / realchinatrip) and 2026-10-07 c"
+      },
+      {
+        "claim": "the White Stupa is 700+ years old",
+        "source": "runs/owner-footage/2026-08-18/ep4-meta.json + ep4-baita.srt (published EP4); not re-checked on 2026-10-17"
+      }
+    ],
+    "pairWith": "R-06"
+  }
+}
