@@ -134,7 +134,7 @@ run 自动执行；若某条钩子是**新写法**（不属 A-F），在 RUNLOG 
 | 2026-11-07c | 3 | ×0.09 | 0 | 0 | SPECTACLE-FACT | No nails. No glue. These brackets held Chinese roofs up for 1,00 |
 | 2026-11-07b | 11 | ×0.32 | 0 | 0 | PLAIN-FACT | No country eats pork like China. {\fs13}I'm your China Travel Ex |
 | 2026-11-07a | 918 | ×27.00 | 3 | 0 | PRICE-SHOCK | Versailles Passport this winter: about $28. {\fs13}I'm your Chin |
-| 2026-11-06b | 166 | ×4.88 | 1 | 0 | SPECTACLE-FACT | The world eats 120 billion instant-noodle servings a year. {\fs1 |
+| 2026-11-06b | 187 | ×5.50 | 1 | 0 | SPECTACLE-FACT | The world eats 120 billion instant-noodle servings a year. {\fs1 |
 | 2026-11-06d | 5 | ×0.15 | 1 | 0 | PLAIN-FACT | Sticky-rice soup in the mortar? Real - but no miracle. {\fs13}I' |
 | 2026-11-06c | 9 | ×0.26 | 1 | 0 | SPECTACLE-FACT | The world's tallest wooden pagoda is nearly 970 years old. {\fs1 |
 | 2026-11-06a | 7 | ×0.21 | 1 | 0 | SPECTACLE-FACT | The Forbidden City opened in 1420. Its biggest hall? 1697. {\fs1 |
@@ -151,7 +151,7 @@ run 自动执行；若某条钩子是**新写法**（不属 A-F），在 RUNLOG 
 | 2026-11-02d | 5 | ×0.15 | 0 | 0 | SPECTACLE-FACT | 9,999 rooms? Every survey counts fewer. {\fs13}I'm your China Tr |
 | 2026-11-02c | 2 | ×0.06 | 1 | 0 | SPECTACLE-FACT | 63 tonnes of Ming bronze - silent for 66 years. {\fs13}I'm your  |
 | 2026-11-02a | 8 | ×0.24 | 0 | 0 | SPECTACLE-FACT | Count the roof beasts. Only one hall in China has all 10. {\fs13 |
-| 2026-11-01d | 7 | ×0.21 | 0 | 0 | SPECTACLE-FACT | Temple of Heaven's park opens at 6:30 - the halls wait till 8. { |
+| 2026-11-01d | 8 | ×0.24 | 0 | 0 | SPECTACLE-FACT | Temple of Heaven's park opens at 6:30 - the halls wait till 8. { |
 | 2026-11-01c | 20 | ×0.59 | 0 | 0 | PRICE-SHOCK | Vatican Museums: €25 online. The Forbidden City today: ¥40. {\fs |
 | 2026-11-01a | 2 | ×0.06 | 0 | 0 | SPECTACLE-FACT | Xi'an's Ming wall loops 13.74 km. {\fs13}I'm your China Travel E |
 | 2026-10-31d | 5 | ×0.15 | 0 | 0 | SPECTACLE-FACT | Sticky-rice soup holds up this 600-year-old wall {\fs12}I'm your |
