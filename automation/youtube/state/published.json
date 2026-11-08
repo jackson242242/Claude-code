@@ -6089,6 +6089,26 @@
    "aspect": "9x16",
    "music": "el-hype-pluck-01.mp3",
    "hookType": "PRICE-SHOCK"
+  },
+  {
+   "date": "2026-11-08",
+   "slot": "b",
+   "title": "China Grows ~72% of the World's Garlic — and Eats It Raw | China Travel Expert",
+   "videoId": "Jg2OFrTVkvs",
+   "url": "https://www.youtube.com/watch?v=Jg2OFrTVkvs",
+   "pillar": "china-food",
+   "lane": "explore china-food (pexels-ffmpeg+youtube-data-api)",
+   "status": "scheduled",
+   "publishAt": "2026-11-08T17:00:00Z",
+   "format": "explore",
+   "footage": "ground",
+   "povType": "none",
+   "owner": false,
+   "aspect": "9x16",
+   "music": "cpop-groove-01.mp3",
+   "hookType": "DEBATE",
+   "exploreLane": "china-food",
+   "exploreSample": "4/5"
   }
  ]
 }
