@@ -6109,6 +6109,25 @@
    "hookType": "DEBATE",
    "exploreLane": "china-food",
    "exploreSample": "4/5"
+  },
+  {
+   "date": "2026-11-08",
+   "slot": "c",
+   "title": "POV: Walking Old-Town Chongqing in the Rain | China Travel Expert",
+   "videoId": "SYHdIOkysLA",
+   "url": "https://www.youtube.com/watch?v=SYHdIOkysLA",
+   "pillar": "china-architecture",
+   "lane": "F2 licensed-pov (pov-library+pexels-ffmpeg+youtube-data-api)",
+   "status": "scheduled",
+   "publishAt": "2026-11-08T20:00:00Z",
+   "format": "F2",
+   "footage": "licensed-pov",
+   "povType": "walk",
+   "owner": false,
+   "aspect": "9x16",
+   "music": "el-pov-walk-groove-01.mp3",
+   "hookType": "DEBATE",
+   "libraryId": "px-36321498"
   }
  ]
 }
