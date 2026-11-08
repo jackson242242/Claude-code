@@ -241,6 +241,12 @@ roadTo1m:
   volumeTest:                     # CANCELLED by owner 2026-11-05 before it started: never ship fewer than planned
     status: cancelled
     note: "owner 2026-11-05: output only goes up; keep trying new lanes to find a hit. Do not reduce daily volume."
+  f3Replication:                  # weekly review 2026-11-08: THE one variable this week (11-09..11-22)
+    status: active
+    window: ["2026-11-09", "2026-11-22"]
+    rule: "every F3 (Wed/Sun a-slot X) = the 11-07 recipe: ONE price pair with >=4x gap, both prices re-verified in USD that day (2 sources each), price drawn over a real slug-named ground clip of the place (not a map/stock lookalike), PRICE-SHOCK hook, ~15-22 s. No other format changes. Volume unchanged (4/day)."
+    trigger: "11-07 F3 'Versailles ~$28 vs Forbidden City ~$6' = 918 views @1d (x83 baseline) vs 11-04 F3 Potala/Alhambra 4-6 views and 10-25 F3 90"
+    judge: "2026-11-22 (review 11-22): >=4 F3 samples; if F3 72h median >= 3x same-window F4 median -> keep and add one more F3 day; else revert to the old F3 rule. Roll back if 72h all-format median falls >=30% two weeks running."
   explore:                        # owner 2026-11-05; playbook section 0f
     enabled: true
     slot: b

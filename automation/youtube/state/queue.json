@@ -4676,9 +4676,9 @@
    "site": "Forbidden City, Beijing",
    "hookType": "INSIDER",
    "hook": "Those dragon heads on the Forbidden City terraces are drain spouts.",
-   "angle": "Child of M-Long #2 (publish Fri 2026-11-27 + 7 days). Brief: F15-F17 of plans/mechanism/forbidden-city-drainage/child-shorts.md #1; say \"more than a thousand\", never an exact count. Renderer: extend scripts/mechanism/render_fc_drain.py (TODO render_fc_drain_<variant>.py). Facts only from the ledger (2 sources).",
+   "angle": "RENDERER DONE (2026-11-08, 24 s, ~18 s render): python3 -I scripts/mechanism/render_fc_spouts.py <outdir> -> fc_spouts_1080x1920.mp4 (3-tier marble terrace, rain, spouts throw water clear; text says only 'more than a thousand'). Hold lifted: M slots had no ready seed (daily routine would run M as F4). Brief: ledger F15-F17 of plans/mechanism/forbidden-city-drainage/longform-script.md. Open/close: real FC clip slug-named only (px-40154354 'explore-beijing-s-forbidden-city-grounds' or similar). Never an exact spout count.",
    "footage": "M lane: code-drawn SVG animation (scripts/mechanism) + 3 s slug-named real photo/clip at the end; no stock in the steps, no AI imagery; bed from vault (containsSyntheticMedia true)",
-   "renderer": "TODO render_fc_drain_child.py (copy render_fc_drain.py)",
+   "renderer": "scripts/mechanism/render_fc_spouts.py",
    "series": "How Ancient China Built It",
    "priority": 3,
    "sources": [],
@@ -4686,10 +4686,10 @@
     "verdict": "ledger in plans/mechanism/forbidden-city-drainage/longform-script.md",
     "at": "2026-11-05"
    },
-   "whyNow": "child Short of M-Long #2",
+   "whyNow": "M-lane supply: only ready renderer-backed seed; can run before M-Long #2 (11-27) as a stand-alone Short",
    "addedAt": "2026-11-05",
    "addedBy": "weekly manager 2026-11-05",
-   "status": "hold-until-2026-11-27"
+   "status": "active"
   },
   {
    "id": "arch-M-09",
@@ -4740,6 +4740,81 @@
    "addedAt": "2026-11-05",
    "addedBy": "weekly manager 2026-11-05",
    "status": "hold-until-2026-11-27"
+  },
+  {
+   "id": "arch-M-11",
+   "title": "The Great Wall Isn't All Brick: 8,850 of 21,196 km",
+   "pillar": "china-architecture",
+   "format": "short",
+   "fmt": "M",
+   "archType": "mechanism",
+   "site": "Great Wall (all eras)",
+   "hookType": "MISCONCEPTION",
+   "hook": "The Great Wall isn't all brick — the Ming wall is ~8,850 of 21,196 km.",
+   "angle": "Child of M-Long #3 (publish 2026-12-11 + 7 days). Brief #1 in plans/mechanism/great-wall-rammed-earth-jiumenkou/child-shorts.md; ledger G1,G4. Renderer: copy render_rammed_earth.py length read-out. Note: arch-M-03 (published 11-03) already covered 'mostly rammed earth' - this one is the bar-diagram angle; skip if M-03 numbers are repeated verbatim.",
+   "footage": "M lane: code-drawn SVG animation (scripts/mechanism) + 3 s slug-named real photo/clip at the end; no stock in the steps, no AI imagery; bed from vault (containsSyntheticMedia true)",
+   "renderer": "TODO (see angle)",
+   "series": "How Ancient China Built It",
+   "priority": 5,
+   "sources": [],
+   "verify": {
+    "verdict": "ledger in plans/mechanism/great-wall-rammed-earth-jiumenkou/longform-script.md",
+    "at": "2026-11-08"
+   },
+   "whyNow": "child Short of M-Long #3 (Fri 2026-12-11)",
+   "addedAt": "2026-11-08",
+   "addedBy": "weekly manager 2026-11-08",
+   "status": "hold-until-2026-12-11"
+  },
+  {
+   "id": "arch-M-12",
+   "title": "Reeds in the Wall: Desert Great Wall, 2,000 Years",
+   "pillar": "china-architecture",
+   "format": "short",
+   "fmt": "M",
+   "archType": "mechanism",
+   "site": "Han Great Wall, Dunhuang / Gansu",
+   "hookType": "INSIDER",
+   "hook": "Desert Great Wall: gravel + reed layers, 2,000 years.",
+   "angle": "Child of M-Long #3. Brief #2 in child-shorts.md; ledger G8,G9,G11 ('reportedly'); drop sand-ditch step if G11 unsourced. Renderer: TODO render_gw_reeds.py (scene JSON via render_svg_anim.py works).",
+   "footage": "M lane: code-drawn SVG animation (scripts/mechanism) + 3 s slug-named real photo/clip at the end; no stock in the steps, no AI imagery; bed from vault (containsSyntheticMedia true)",
+   "renderer": "TODO (see angle)",
+   "series": "How Ancient China Built It",
+   "priority": 5,
+   "sources": [],
+   "verify": {
+    "verdict": "ledger in plans/mechanism/great-wall-rammed-earth-jiumenkou/longform-script.md",
+    "at": "2026-11-08"
+   },
+   "whyNow": "child Short of M-Long #3 (Fri 2026-12-11)",
+   "addedAt": "2026-11-08",
+   "addedBy": "weekly manager 2026-11-08",
+   "status": "hold-until-2026-12-11"
+  },
+  {
+   "id": "arch-M-13",
+   "title": "One Great Wall Section Stands on a River: Nine Arches",
+   "pillar": "china-architecture",
+   "format": "short",
+   "fmt": "M",
+   "archType": "mechanism",
+   "site": "Jiumenkou Great Wall, Liaoning",
+   "hookType": "STAKES",
+   "hook": "One Great Wall section stands ON a river: nine arches.",
+   "angle": "Child of M-Long #3. Brief #3 in child-shorts.md; ledger G18-G23. Never say UNESCO/original/only-without-'often described'. Footage: slug-named Jiumenkou clip only, else map-format card. Renderer: TODO render_jiumenkou.py.",
+   "footage": "M lane: code-drawn SVG animation (scripts/mechanism) + 3 s slug-named real photo/clip at the end; no stock in the steps, no AI imagery; bed from vault (containsSyntheticMedia true)",
+   "renderer": "TODO (see angle)",
+   "series": "How Ancient China Built It",
+   "priority": 5,
+   "sources": [],
+   "verify": {
+    "verdict": "ledger in plans/mechanism/great-wall-rammed-earth-jiumenkou/longform-script.md",
+    "at": "2026-11-08"
+   },
+   "whyNow": "child Short of M-Long #3 (Fri 2026-12-11)",
+   "addedAt": "2026-11-08",
+   "addedBy": "weekly manager 2026-11-08",
+   "status": "hold-until-2026-12-11"
   }
  ]
 }

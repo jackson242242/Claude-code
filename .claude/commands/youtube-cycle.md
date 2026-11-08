@@ -250,6 +250,14 @@ be read by the Sunday manager session. First seed arch-M-01 (Yingxian) is pre-re
 `python3 -I scripts/mechanism/render_pagoda.py <outdir>` (~30 s) with
 `plans/mechanism/yingxian/short-subs.srt` and `short-clips.json` (fix the file: path to
 the rendered mp4).
+**F3 REPLICATION (weekly manager 2026-11-08, window 11-09..11-22; config roadTo1m.f3Replication):**
+the 11-07 F3 (Versailles ~$28 vs Forbidden City ~$6, 4.6× gap, price over a real slug-named
+FC ground clip) got 918 views at 1 day vs single digits for most formats. For the window every
+F3 copies that recipe exactly: one pair, gap ≥4×, both prices re-verified in USD that day,
+price over a slug-named ground clip of the Chinese place (MAP-FORMAT only if no such clip
+passes the 3-frame check), PRICE-SHOCK hook. Nothing else changes; volume stays 4/day.
+Seed for M slots: `arch-M-08` (renderer `scripts/mechanism/render_fc_spouts.py`, ready) —
+use it before improvising an M so the slot is never run as F4 for lack of a renderer.
 F3 keeps the Q4 rules (one comparison, both sides verified THIS RUN, both in USD,
 ≥4× gap, something the viewer pays for, 2 dated sources in the description). Price
 card = cue 1 shows both prices big in the middle of the frame over a ground clip whose
