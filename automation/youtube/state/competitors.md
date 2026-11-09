@@ -1,3 +1,32 @@
+## 2026-11-09 competitor scan (top 25 China-travel Shorts published in the last 7 days, by views)
+hook-shape tally: {"other":16,"tag-only-spectacle":1,"paradox-claim":1,"number-claim":4,"question":3} · nature/small-town titles in top 25: 3
+- 2533108v 167121L (6.6%) PT1M38S | A vida é uma maravilha | A China cobriu montanhas com painéis solares ☀️ | https://youtube.com/shorts/Gmsze-dT_pA
+- 2053713v 85403L (4.2%) PT2M59S | Foodie_man  | Ye kawwa biryani nahi Chinese Biryani hai #greatindianthali #food #streetfood #s | https://youtube.com/shorts/it2s41Y9PQ0
+- 1395934v 17255L (1.2%) PT1M42S | SANS INSIGHT | Via Ferrata China, Jalur Pendakian Ekstrem di Antara Tebing dan Jurang | https://youtube.com/shorts/xX4zYQ3rSSc
+- 977353v 0L (0.0%) PT44S | factmayra | China’s Insane Cable Crane Technology Explained! | https://youtube.com/shorts/hdG21N5JbA0
+- 828158v 9342L (1.1%) PT12S | MATV | #funnyvideo#money #girl #fightting #changsha #china #hunan #chinatravel  #travel | https://youtube.com/shorts/Uq3VpHxbQ2Y
+- 784036v 11073L (1.4%) PT2M51S | DERI MANANTA | mie instan yg naik kasta | https://youtube.com/shorts/mJw_Kyein3A
+- 760812v 18081L (2.4%) PT24S |  APS Derma short | Never get into this contraption from China! 😱🚁 #Shorts | https://youtube.com/shorts/v6JWgwNKzxY
+- 601765v 0L (0.0%) PT18S | Fact777 | Travel places in China😱 | https://youtube.com/shorts/tCwPSzJzoKc
+- 566975v 11326L (2.0%) PT43S | 뚝딱 상식 뚝배기 | 중국에서 미인이 가장 많은 마을의 진실 | https://youtube.com/shorts/wtZth2SZEKE
+- 535547v 0L (0.0%) PT46S | SHORT Fact 777 | 🥹❤️ 20,000 STRANGERS AT ONE WEDDING! 😱💍 | CHINA’S MOST HEARTWARMING WEDDING!  | https://youtube.com/shorts/o2T_KY6X8oQ
+- 509920v 17736L (3.5%) PT1M28S | Tamil Traveler | #shorts 10000 பேர் கலந்து கொண்ட பிரம்மாண்ட கல்யாணம் china marriage  #trending | https://youtube.com/shorts/xXiTJvi3YSs
+- 428877v 24861L (5.8%) PT2M23S | Cute family vlog  | 3 Din ke liya chilli momo Nhi banaya Achanak Customer ke Bheed #momowala #dailyv | https://youtube.com/shorts/wNERtyBuX9U
+- 426829v 5055L (1.2%) PT1M19S | عماد الغافري | 🏔 بوابة الجنة في معتقد الصينيين 🇨🇳🔥 #الصين #اكسبلور #explore #zhangjiajie #trav | https://youtube.com/shorts/3xSdKVXaH9k
+- 412686v 3288L (0.8%) PT1M4S | Gue Ga Nyongko | China Melawan Gurun dengan Jerami?! 😱 | https://youtube.com/shorts/CSBtUBT2IKk
+- 409113v 4478L (1.1%) PT15S | Only shila  | পাড়ার মোড়ের চাউমিন🤤 #viral #food #streetfood #chawmein #chilichicken #foryou  | https://youtube.com/shorts/peG5V44wVCo
+- 391179v 7149L (1.8%) PT24S | FF Umair 22 | How China controls the AI cars with gestures. 🇨🇳 #travel #advance #autonomousv | https://youtube.com/shorts/7QfpzG939k4
+- 374261v 5028L (1.3%) PT27S | rovix | 😱 Деревня на скале в Китае! Как люди живут среди опасных лестниц?#Китай #Деревн | https://youtube.com/shorts/h13YKuI8I6I
+- 371488v 11382L (3.1%) PT17S | vioce of leo | 🏔 Carrying Construction Materials on a Dangerous Mountain! 😱🏔️ #China #AmazingSk | https://youtube.com/shorts/UPmx-HrCdc0
+- 370228v 7266L (2.0%) PT1M33S | World Explore  | China’s Most Mind-Blowing Wonders You Won’t Believe Exist! #viralvideoshorts #tr | https://youtube.com/shorts/dy453qs4F9E
+- 369150v 17183L (4.7%) PT1M10S | Yashmita | Food challenge: Chinese platter challenge #food #whatsinmyplate #streetfood #foo | https://youtube.com/shorts/gJNdGRrq88Y
+- 363912v 12618L (3.5%) PT2M57S | Food Pandits Shorts | Desi Chinese Streetfood Of Kanpur #shorts #ytshorts #youtubeshorts | https://youtube.com/shorts/Eb-rdg1VZUc
+- 361141v 0L (0.0%) PT27S | FACTSMIC | Are These Places Real? 😱 | https://youtube.com/shorts/Wd5ccRZivtI
+- 321109v 5264L (1.6%) PT3M | FactopiaLabs | China Moved Water 1,400 KM to Save Its Cities! 😱 | Mega Engineering Project | https://youtube.com/shorts/MXXHhPlssa0
+- 301258v 5373L (1.8%) PT50S | Motor Vibe Talks | Inside China’s Massive New Cruise Ship Adora Magic City! 🚢 | https://youtube.com/shorts/r2gMbu36F8Y
+- 272669v 983L (0.4%) PT10S | Miracle in the Mountains | 🏔 Stunning assembly of wind tower deep in mountains | https://youtube.com/shorts/4AWa_NeOUV0
+ACTION for this week's runs: copy the top 3 SHAPES (title grammar, length, spectacle-first) into our Shorts; never copy content.
+
 ## 2026-10-20 competitor scan (top 25 China-travel Shorts published in the last 7 days, by views)
 hook-shape tally: {"number-claim":10,"other":10,"question":5} · nature/small-town titles in top 25: 8
 - 16680933v 239956L (1.4%) PT21S | Mr. SKR Explainer | The Internet Is Fooling You 🫪 Part 2 | https://youtube.com/shorts/pRZFm6o3ja0
