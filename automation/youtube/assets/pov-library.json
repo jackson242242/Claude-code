@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-02",
+ "generated": "2026-11-09",
  "purpose": "Licensed first-person (POV) travel footage for CHINATRAVEL Shorts (owner complaint: everything is aerial).",
  "rules": {
   "placeNames": "Say a place only over a clip whose sourceUrl slug (Pexels) or file title (Commons) names it: use placeSpeakable; null = say no place.",
@@ -82,7 +82,7 @@
   "commonsPovVerified": 10,
   "commonsPovVerified_chinaIdentifiable": 7,
   "commonsYouTubeOriginWalkingTours_blockedByChannelRule_estimated": 32,
-  "lastTopUp": "2026-11-02 (+2 NEW type-level Chinese-temple POV walks: red-ribbon walkway px-36399584, prayer-wheel corridor px-35833454; both placeSpeakable null. Re-confirmed already-catalogued px-36675730 steps-to-Mahavira-Hall + px-31368547 paifang gate. Yield thin — most portrait POV results were non-China (Istanbul/Hoi An/Intramuros), static locked shots, lateral pans, or already in-lib; this is the ongoing F2 supply-out root cause.)"
+  "lastTopUp": "2026-11-09 (+0 NEW. Probed heritage POV portrait queries (forbidden-city/palace-courtyard/temple-corridor/ancient-town/drum-tower/lantern-street). Only candidates that LOOKed clean were px-38446814/592/700 Chaotian Palace Nanjing - but ALL already catalogued 2026-10-26 (592+700 already USED in runs/2026-10-26-d; 814 pov:partial, left unused). px-37528085 jiming-temple-pagoda REJECTED (distant pagoda over a modern traffic street, not a heritage walk). px-36675730 already catalogued. Yield 0<4, reported not padded - F2 supply-out root cause persists; slot a today therefore ran F4 (used 814 as a slug-named ground clip)."
  },
  "clips": [
   {
