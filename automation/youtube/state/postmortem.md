@@ -1,3 +1,33 @@
+## 2026-11-10 post-mortem (baseline = 14d median views of Shorts ≥3d old: 10)
+- 2026-11-08 b Jg2OFrTVkvs | 146v 0L 0C @2d | ×14.60 | WINNER — replicate this hook shape today | China Grows ~72% of the World's Garlic — and Eats It Raw | China Trave
+- 2026-11-08 a SFNKEtN9hj0 | 53v 0L 0C @2d | ×5.30 | WINNER — replicate this hook shape today | St Paul's ~$36 vs the Temple of Heaven ~$4 in Winter | China Travel Ex
+- 2026-11-08 d JzLH5z31Ls8 | 33v 1L 0C @2d | ×3.30 | WINNER — replicate this hook shape today | 1,700-Year-Old Water Town Near Shanghai — Bridge or Boat? | China Trav
+- 2026-11-08 c SYHdIOkysLA | 29v 0L 0C @2d | ×2.90 | WINNER — replicate this hook shape today | POV: Walking Old-Town Chongqing in the Rain | China Travel Expert
+- 2026-11-09 a mTOEHRg9X5g | 14v 0L 0C @1d | ×1.40 | baseline | Nanjing Hides Jiangnan's Biggest Palace Complex — Temple, Palace or Mu
+- 2026-11-09 b YmVMRW8Yrpc | 12v 0L 0C @1d | ×1.20 | baseline | Noodles or Rice? China's Staple Flips Halfway Across the Country | Chi
+- 2026-11-09 d lJFZm89D14c | 3v 0L 0C @1d | ×0.30 | LOSER — avoid this shape today | The Forbidden City's Dragon Heads Aren't Decoration — They're Drains |
+- 2026-11-09 c WANUdrjqyNQ | 1v 0L 0C @1d | ×0.10 | LOSER — avoid this shape today | Schönbrunn ~$47 vs China's Summer Palace ~$7 — Which Palace? | China T
+- like-rate (fresh Shorts): 0.34% (peers 1-6%)
+### Equal age (Data API snapshots since 2026-10-18; 48 h / 72 h ±6 h; "~" = interpolated between the snapshots either side)
+- Shorts median, trailing 28 d: 48h 35v (n=70) · 72h 27v (n=69)
+- 2026-11-08 b fmt:- Jg2OFrTVkvs | 48h 146v 0L 0C | 72h — | China Grows ~72% of the World's Garlic — and Eats It Raw | C
+- 2026-11-08 a fmt:F3 SFNKEtN9hj0 | 48h 53v 0L 0C | 72h — | St Paul's ~$36 vs the Temple of Heaven ~$4 in Winter | China
+- 2026-11-07 d fmt:F2 azg1Gzu4H1w | 48h ~51v 0L 0C | 72h — | POV: Walking Xi'an, Capital of 13 Dynasties | China Travel E
+- 2026-11-07 c fmt:- 0ZK5eq1YaJY | 48h ~3v 0L 0C | 72h — | No Nails, No Glue: How Dougong Holds Up a Chinese Roof | Chi
+- 2026-11-07 b fmt:- vZW3p9p6pnM | 48h 14v 0L 0C | 72h 14v 0L 0C | China Raises Half the World's Pork — and Stockpiles It | Chi
+- 2026-11-07 a fmt:F3 7x4z_8ZG4Tc | 48h 1004v 4L 0C | 72h 1008v 4L 0C | Versailles ~$28 vs the Forbidden City ~$6 in Winter | China 
+- 2026-11-06 d fmt:- Xijsm5GpbDA | 48h ~5v 1L 0C | 72h ~5v 1L 0C | Ming Builders Put Sticky Rice in Their Mortar — But It's No 
+- 2026-11-06 c fmt:F4 0X9fVqEwNps | 48h ~9v 1L 0C | 72h ~9v 1L 0C | World's Tallest Wooden Pagoda: 970 Years Old, Too Fragile to
+- 2026-11-06 b fmt:- uzIBOe09kxc | 48h 187v 1L 0C | 72h 244v 1L 0C | China Eats About 42 Billion Instant-Noodle Servings a Year |
+- 2026-11-06 L fmt:L YJ2RNNpFqb8 | 48h 22v 0L 0C | 72h 26v 0L 0C | Temple of Heaven Beijing: Tickets, Hours & What to See (2026
+- 2026-11-06 a fmt:F4 OYkeRy7DXsY | 48h 7v 1L 0C | 72h 7v 1L 0C | The Forbidden City Opened in 1420. Its Biggest Hall? 1697 | 
+- 2026-11-05 d fmt:F4 fUUIvtA5_qM | 48h ~3v 1L 0C | 72h ~3v 1L 0C | The Great Wall: about $6. Machu Picchu: about $40 | China Tr
+- 2026-11-05 c fmt:F2 zoCgPeYBS2I | 48h ~9v 1L 0C | 72h ~12v 1L 0C | Xi'an beats Beijing for first-timers: 13 dynasties | China T
+- 2026-11-05 b fmt:- 1KEjaU3lZp4 | 48h 2v 1L 0C | 72h 2v 1L 0C | China has more hotpot restaurants than McDonald's worldwide 
+- 2026-11-05 a fmt:F1 uDofq4D45Ds | 48h 3v 1L 0C | 72h 3v 1L 0C | First China stop: Shanghai or Guangzhou? | China Travel Expe
+### YouTube Analytics API
+- unavailable: HTTP 403 accessNotConfigured — the YouTube Analytics API is not enabled in the Google Cloud project (owner action: APIs & Services > enable "YouTube Analytics API"; checklist in scripts/youtube-oauth-helper.mjs). Equal-age numbers come from Data API snapshots only.
+
 ## 2026-11-09 post-mortem (baseline = 14d median views of Shorts ≥3d old: 10)
 - 2026-11-07 a 7x4z_8ZG4Tc | 1004v 4L 0C @2d | ×100.40 | WINNER — replicate this hook shape today | Versailles ~$28 vs the Forbidden City ~$6 in Winter | China Travel Exp
 - 2026-11-08 b Jg2OFrTVkvs | 142v 0L 0C @1d | ×14.20 | WINNER — replicate this hook shape today | China Grows ~72% of the World's Garlic — and Eats It Raw | China Trave

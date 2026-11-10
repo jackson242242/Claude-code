@@ -6218,6 +6218,24 @@
    "aspect": "9x16",
    "music": "el-docu-underscore-04.mp3",
    "hookType": "INSIDER"
+  },
+  {
+   "date": "2026-11-10",
+   "slot": "c",
+   "title": "Nine Beasts or Ten? Only One Chinese Roof Has All 10 | China Travel Expert",
+   "videoId": "FW02jn8sLms",
+   "url": "https://www.youtube.com/watch?v=FW02jn8sLms",
+   "pillar": "china-architecture-mechanism",
+   "lane": "M code-drawn roof-ridge counting animation + real Hall of Supreme Harmony photos (python-cairosvg-ffmpeg+youtube-data-api)",
+   "status": "scheduled",
+   "publishAt": "2026-11-10T20:00:00Z",
+   "format": "M",
+   "footage": "diagram",
+   "povType": "none",
+   "owner": false,
+   "aspect": "9x16",
+   "music": "el-docu-underscore-05.mp3",
+   "hookType": "INSIDER"
   }
  ]
 }
