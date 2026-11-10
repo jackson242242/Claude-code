@@ -6254,6 +6254,24 @@
    "aspect": "9x16",
    "music": "guzheng-calm-01.mp3",
    "hookType": "DEBATE"
+  },
+  {
+   "date": "2026-11-10",
+   "slot": "b",
+   "title": "Shanghai's Pudong Was Farmland in 1990 — Now a 632m Skyline | China Travel Expert",
+   "videoId": "-D_iCGSngtk",
+   "url": "https://www.youtube.com/watch?v=-D_iCGSngtk",
+   "pillar": "explore-china-builds",
+   "lane": "explore china-builds ground, slug-named Shanghai skyline footage (pexels-ffmpeg+youtube-data-api)",
+   "status": "scheduled",
+   "publishAt": "2026-11-10T17:00:00Z",
+   "format": "explore",
+   "footage": "ground",
+   "povType": "none",
+   "owner": false,
+   "aspect": "9x16",
+   "music": "el-hype-pluck-01.mp3",
+   "hookType": "DEBATE"
   }
  ]
 }
