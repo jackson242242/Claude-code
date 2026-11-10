@@ -6236,6 +6236,24 @@
    "aspect": "9x16",
    "music": "el-docu-underscore-05.mp3",
    "hookType": "INSIDER"
+  },
+  {
+   "date": "2026-11-10",
+   "slot": "a",
+   "title": "Dali's Three Pagodas Are ~1,200 Years Old — But the Temple Isn't | China Travel Expert",
+   "videoId": "yj72bXtklIQ",
+   "url": "https://www.youtube.com/watch?v=yj72bXtklIQ",
+   "pillar": "china-architecture",
+   "lane": "F4 ground heritage Ken-Burns photos (pexels-photos+ffmpeg+youtube-data-api)",
+   "status": "posted-public-overrun",
+   "publishAt": null,
+   "format": "F4",
+   "footage": "photo",
+   "povType": "none",
+   "owner": false,
+   "aspect": "9x16",
+   "music": "guzheng-calm-01.mp3",
+   "hookType": "DEBATE"
   }
  ]
 }
