@@ -1,3 +1,9 @@
+## 2026-11-11 (direction research + trend scan)
+- Trend scan (3 WebSearch): no China meme with a clean ≤7-day dated source surfaced. Live-but-older US-facing China memes still circulating: "China Haul" unboxing (CGTN early Oct), "China spas"/24h bathhouses on TikTok/YouTube, Hanfu heritage photoshoots, and Chongqing's "city or not city" surreal-cityscape clips. → used standby tr-03 "City or not city?" for the trend slot (Chongqing), per playbook fallback.
+- What resonates on this channel (postmortem): F3 PRICE-SHOCK is the one proven breakout (FC/Versailles 1008v@72h; ToH/St-Paul's 55v); explore-FOOD fact-contrasts over-performed before the lane finished (garlic 146v, instant-noodles 244v). Plain architecture "fact cards" keep landing single digits @48h → the number must ride a discussion hook, and a real ground/price opener beats a diagram/map/bare-card opener.
+- Tired angles: standalone roof-ornament/counting cards (roof-beasts 0v), drainage/dragon-head reveals (3v), and a weak palace price pair (Schönbrunn/Summer Palace 1v — the comparator wasn't famous/pricey enough; keep the Western side a top-tier, clearly-pricier landmark).
+- Today's bet: pair the proven PRICE-SHOCK shape with a topical Western hike (Louvre's 2026 +45% non-EU fee) vs the cheapest iconic Chinese hero (Great Wall off-season). Watch whether the Louvre topicality lifts it vs the FC/Versailles baseline.
+
 ## 2026-11-09 (Mon)
 - Authenticity backlash is the live angle: travelers increasingly skip renovated "fake ancient towns" / theme-park copies (Sixth Tone). The win is REAL, lesser-known heritage over the overexposed big names. Lead with under-the-radar sites (e.g. Chaotian Palace Nanjing = largest preserved traditional complex in Jiangnan, not Suzhou/FC).
 - Temple tourism is a Gen-Z surge (~50% of temple scenic-spot ticket bookings are Gen Z, Ctrip via theworldofchinese/chinatemper) - architecture-first era is well-timed.
