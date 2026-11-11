@@ -181,6 +181,14 @@ Owner rule: output only goes up, and we keep trying new lanes until one produces
 - Log `explore: <lane> sample <n>/5` in RUNLOG and tag `fmt:<X> explore:<lane>`.
 - Judge at 5 samples per config `explore.keepIf` / `dropIf`. A kept lane moves into the core rotation; a dropped lane is replaced by a lane not tried yet, written into config.
 
+## 0f. PARODY SLOT — format P (owner 2026-11-11; `plans/parody-lane.md` is the authority)
+The trend slot (0e) alternates daily: even UTC days = P parody, odd days = trend meme.
+- **What P is:** a famous Chinese drama or variety line, spoken by OUR original caricature character (an animal or chibi in costume), with a new AI voice, over slug-named mainland-city footage.
+- **Length and layout:** 7-12 s; English situational hook first; the Chinese line big with its English gloss; a bottom line `AI-made parody · original character · <place>`.
+- **Tools:** OpenAI image model, transparent background, prompt says "not based on any real person"; `scripts/tts-openai.mjs` for the line. Set `meta.aiFootage=true` and `containsSyntheticMedia=true`; log `fmt:P`.
+- **Hard no:** real actors' or celebrities' faces or voices (generated, altered or imitated); any clip, audio, screenshot, poster or theme music from the show; political figures.
+- **Cost:** about $0.05 a video, inside the OpenAI $2/month cap.
+
 ## 0d. CONTENT CALENDAR + MULTI-CHANNEL TEST (owner 2026-10-29 — overrides topic picking)
 - **Calendar first:** if `automation/youtube/plans/content-calendar-*.md` has an entry for
   today's date and slot, produce exactly that (format, seed, title, cue 1, close, first
