@@ -1,3 +1,33 @@
+## 2026-11-12 post-mortem (baseline = 14d median views of Shorts ≥3d old: 11)
+- 2026-11-10 a yj72bXtklIQ | 31v 0L 0C @2d | ×2.82 | WINNER — replicate this hook shape today | Dali's Three Pagodas Are ~1,200 Years Old — But the Temple Isn't | Chi
+- 2026-11-11 c 1Hcj4n60Tv0 | 16v 0L 0C @1d | ×1.45 | baseline | City or Not City? POV: Walking Chongqing, China's 8D Magic City | Chin
+- 2026-11-10 d Ru190GCtH7I | 12v 0L 0C @2d | ×1.09 | baseline | POV: Hong Kong's Tram Has Run Since 1904 — Ride It for ~30 Cents | Chi
+- 2026-11-10 b -D_iCGSngtk | 7v 0L 0C @2d | ×0.64 | baseline | Shanghai's Pudong Was Farmland in 1990 — Now a 632m Skyline | China Tr
+- 2026-11-11 a bviASNGpVgc | 4v 0L 0C @1d | ×0.36 | LOSER — avoid this shape today | The Louvre Now ~$36 for Tourists. The Great Wall? ~$5 | China Travel E
+- 2026-11-11 b s1LRN1a9pYA | 4v 0L 0C @1d | ×0.36 | LOSER — avoid this shape today | China's 604m Canton Tower Pinches to a ~22m Waist | China Travel Exper
+- 2026-11-11 d jq3E2FUsKuM | 3v 0L 0C @1d | ×0.27 | LOSER — avoid this shape today | 晨钟暮鼓: Xi'an Ran on a Bell and a Drum for 600 Years | China Travel Expe
+- 2026-11-10 c FW02jn8sLms | 0v 0L 0C @2d | ×0.00 | LOSER — avoid this shape today | Nine Beasts or Ten? Only One Chinese Roof Has All 10 | China Travel Ex
+- like-rate (fresh Shorts): 0.00% (peers 1-6%)
+### Equal age (Data API snapshots since 2026-10-18; 48 h / 72 h ±6 h; "~" = interpolated between the snapshots either side)
+- Shorts median, trailing 28 d: 48h 27v (n=78) · 72h 29v (n=77)
+- 2026-11-10 b fmt:- -D_iCGSngtk | 48h 7v 0L 0C | 72h — | Shanghai's Pudong Was Farmland in 1990 — Now a 632m Skyline 
+- 2026-11-10 a fmt:F4 yj72bXtklIQ | 48h 31v 0L 0C | 72h — | Dali's Three Pagodas Are ~1,200 Years Old — But the Temple I
+- 2026-11-09 d fmt:- lJFZm89D14c | 48h ~3v 0L 0C | 72h — | The Forbidden City's Dragon Heads Aren't Decoration — They'r
+- 2026-11-09 c fmt:F3 WANUdrjqyNQ | 48h ~8v 0L 0C | 72h — | Schönbrunn ~$47 vs China's Summer Palace ~$7 — Which Palace?
+- 2026-11-09 b fmt:- YmVMRW8Yrpc | 48h 12v 0L 0C | 72h 12v 0L 0C | Noodles or Rice? China's Staple Flips Halfway Across the Cou
+- 2026-11-09 a fmt:F4 mTOEHRg9X5g | 48h 13v 0L 0C | 72h 13v 0L 0C | Nanjing Hides Jiangnan's Biggest Palace Complex — Temple, Pa
+- 2026-11-08 d fmt:F4 JzLH5z31Ls8 | 48h ~34v 1L 0C | 72h ~35v 1L 0C | 1,700-Year-Old Water Town Near Shanghai — Bridge or Boat? | 
+- 2026-11-08 c fmt:F2 SYHdIOkysLA | 48h ~29v 0L 0C | 72h ~29v 0L 0C | POV: Walking Old-Town Chongqing in the Rain | China Travel E
+- 2026-11-08 b fmt:- Jg2OFrTVkvs | 48h 146v 0L 0C | 72h 148v 0L 0C | China Grows ~72% of the World's Garlic — and Eats It Raw | C
+- 2026-11-08 a fmt:F3 SFNKEtN9hj0 | 48h 53v 0L 0C | 72h 55v 0L 0C | St Paul's ~$36 vs the Temple of Heaven ~$4 in Winter | China
+- 2026-11-07 d fmt:F2 azg1Gzu4H1w | 48h ~51v 0L 0C | 72h ~55v 0L 0C | POV: Walking Xi'an, Capital of 13 Dynasties | China Travel E
+- 2026-11-07 c fmt:- 0ZK5eq1YaJY | 48h ~3v 0L 0C | 72h ~3v 0L 0C | No Nails, No Glue: How Dougong Holds Up a Chinese Roof | Chi
+- 2026-11-07 b fmt:- vZW3p9p6pnM | 48h 14v 0L 0C | 72h 14v 0L 0C | China Raises Half the World's Pork — and Stockpiles It | Chi
+- 2026-11-07 a fmt:F3 7x4z_8ZG4Tc | 48h 1004v 4L 0C | 72h 1008v 4L 0C | Versailles ~$28 vs the Forbidden City ~$6 in Winter | China 
+- 2026-11-06 d fmt:- Xijsm5GpbDA | 48h ~5v 1L 0C | 72h ~5v 1L 0C | Ming Builders Put Sticky Rice in Their Mortar — But It's No 
+### YouTube Analytics API
+- unavailable: HTTP 403 accessNotConfigured — the YouTube Analytics API is not enabled in the Google Cloud project (owner action: APIs & Services > enable "YouTube Analytics API"; checklist in scripts/youtube-oauth-helper.mjs). Equal-age numbers come from Data API snapshots only.
+
 ## 2026-11-11 post-mortem (baseline = 14d median views of Shorts ≥3d old: 11)
 - 2026-11-10 a yj72bXtklIQ | 31v 0L 0C @1d | ×2.82 | WINNER — replicate this hook shape today | Dali's Three Pagodas Are ~1,200 Years Old — But the Temple Isn't | Chi
 - 2026-11-09 a mTOEHRg9X5g | 13v 0L 0C @2d | ×1.18 | baseline | Nanjing Hides Jiangnan's Biggest Palace Complex — Temple, Palace or Mu
