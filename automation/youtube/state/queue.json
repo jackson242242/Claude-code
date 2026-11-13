@@ -2,6 +2,54 @@
  "note": "Topic backlog for /youtube-cycle. Top item matching the slot format is used next. Owner may edit/reorder freely. NATURE PIVOT 2026-09-26: nat-* seeds lead (china-nature / small-town / nature-priced china-practical); each carries hookType + hook (discussion-worthy, numbers to verify this run) + footage lane (VIDEO site-ID / PHOTO site-ID → assemble --photos / MAP-FORMAT). Big-city subjects are paused-bigcity-2026-09-26 (prevStatus kept, reversible). [2026-10-01 note: Pexels site-ID slugs in these seeds DRIFT over time — re-probe VIDEO and PHOTO each run; recent runs find video site-ID broken and rely on the PHOTO lane or type-level/MAP-FORMAT with disclosure.] ARCHITECTURE PIVOT 2026-10-19: arch-* seeds lead (priority 1 first; fmt = F1-F4 per playbook §0c; footage lane + clips + frame0 verified 10-19, verify.note holds the verifier corrections — read it before rendering). Non-architecture seeds are paused-arch-2026-10-19 (prevStatus kept). ROAD-TO-1M 2026-10-23: arch-M-* seeds (fmt M, mechanism explainer Shorts) take the X slot on Mon/Tue/Fri/Sat; arch-M-01 is pre-rendered.",
  "queue": [
   {
+   "id": "arch-M-01-child3",
+   "title": "The World's Tallest Wooden Tower Is Leaning",
+   "pillar": "china-architecture",
+   "format": "short",
+   "fmt": "M",
+   "archType": "pagoda",
+   "site": "Sakyamuni Pagoda of Fogong Temple, Yingxian, Shanxi",
+   "hookType": "MISCONCEPTION",
+   "hook": "It survived 970 years of earthquakes. What is bending it now is us.",
+   "angle": "Child Short #3 of the 2026-11-13 M-Long (BYNUP21Ns-k). A 2004 survey found the tower tilted 65 cm north-east and compressed 88 cm; a second-floor column had leaned more than 56 cm by 2015; the best explanation is a 1930s 'repair' that removed walls and braces on floor 2, then the shelling and more war. Four repair plans from 2002 were all shelved; upper floors closed to visitors 10+ years. Ends with the 2-second CTA 'Full route: tap the related video above'. Ships the MISCONCEPTION 补样本 type.",
+   "footage": "Real slug-named photo pxp-15955261 for frame 0 and close; middle = render_diagrams_yingxian.py section scene with the lean numbers as lower-thirds (keep text out of the diagram's own label zone).",
+   "clips": [
+    "pxp-15955261"
+   ],
+   "frame0": "pxp-15955261 (real photo, not the diagram)",
+   "series": "Yingxian M-Long children",
+   "priority": 2,
+   "status": "active",
+   "sources": [
+    "https://news.cgtn.com/news/2021-05-03/",
+    "https://www.sixthtone.com/news/1017643"
+   ]
+  },
+  {
+   "id": "arch-M-01-child2",
+   "title": "200+ Shells in 1926. It Burned. It Stayed Up.",
+   "pillar": "china-architecture",
+   "format": "short",
+   "fmt": "M",
+   "archType": "pagoda",
+   "site": "Sakyamuni Pagoda of Fogong Temple, Yingxian, Shanxi",
+   "hookType": "STAKES",
+   "hook": "More than 200 shells hit this wooden tower in 1926. It is still standing.",
+   "angle": "Child Short #2 of the 2026-11-13 M-Long (BYNUP21Ns-k). The 1926 warlord fighting between Yan Xishan and Feng Yuxiang put 200+ shells into the pagoda; railings and beams were smashed, the top canopy was blown off, fires started and went out on their own; scars remain on floors 2-3. Ends with the 2-second CTA 'Full route: tap the related video above'. Ships the STAKES 补样本 type. Re-verify the 200+ figure this run; say 'more than 200', never an exact count.",
+   "footage": "Real slug-named photo pxp-15955261 (pagoda-of-fogong-temple-in-shanxi-in-china) for frame 0 and close; middle from scripts/mechanism/render_pagoda.py or render_diagrams_yingxian.py (sway scene). No stock of the site exists.",
+   "clips": [
+    "pxp-15955261"
+   ],
+   "frame0": "pxp-15955261 (real photo, not the diagram)",
+   "series": "Yingxian M-Long children",
+   "priority": 2,
+   "status": "active",
+   "sources": [
+    "https://shanxi.chinadaily.com.cn/datong/2018-08/20/c_302357.htm",
+    "https://regional.chinadaily.com.cn/shanxi/2025-07/28/c_1116918.htm"
+   ]
+  },
+  {
    "id": "arch-M-01",
    "title": "Wood Beats Stone in Quakes? Since 1056 — Yingxian Pagoda",
    "pillar": "china-architecture",

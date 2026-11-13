@@ -1,0 +1,85 @@
+In the year ten fifty-six, in a small town in northern China, carpenters finished a tower of wood sixty-seven metres tall. No steel. No concrete. And in its joints, almost no nails.
+
+Then the earthquakes came. Records describe one that shook the ground for seven days.
+
+In nineteen twenty-six, two warlord armies fought through the town, and more than two hundred shells hit the tower. It caught fire. It burned out. It stayed up.
+
+Nine hundred and seventy years later, it is still the tallest wooden pagoda on Earth. Every stone tower of its age in this region has cracked, been rebuilt, or is gone.
+
+So how does a stack of timber beat earthquakes that shatter stone?
+
+The answer is three ideas, hidden inside the building. A joint that is designed to slip. A tower inside a tower. And four floors that visitors have never been allowed to see.
+
+I'm your China Travel Expert. Let's take it apart.
+
+Yingxian is a county town in Shanxi province, about eighty-five kilometres south of Datong. A thousand years ago this was the frontier of the Liao dynasty, a Khitan empire that ruled northern China and the steppe beyond it.
+
+In ten fifty-six the Liao emperor Daozong had a Buddhist pagoda raised here, by tradition on the site of his grandmother's family home. Its proper name is the Sakyamuni Pagoda of Fogong Temple, the Buddha Palace Temple. Locals just call it moo-ta. The wooden tower.
+
+Sixty-seven point three one metres tall. Thirty point two seven metres across at the base. That is a twenty-storey building, in timber, finished before the Normans had got round to building Durham Cathedral.
+
+From outside you count five storeys and six rings of eaves. Inside there are nine levels, because between every visible floor there is a low hidden one. Five bright, four dark, the carpenters' phrase for it.
+
+And under every eave, hundreds of these: bracket sets, called dougong. Fifty-four different kinds on this one building, and some surveys count fifty-nine. Hold that thought. They are the first secret.
+
+In September twenty-sixteen, Guinness World Records certified it as the tallest wooden pagoda in the world. It had been that for nine and a half centuries. Nobody had asked.
+
+Now let's be honest about what it has been through, because the brochures aren't.
+
+Tourism sites say more than forty earthquakes. No heritage body and no engineering paper gives that number, so you won't hear it from me. What the records do say is this.
+
+Local chronicles list seven earthquakes in the tower's first forty-seven years.
+
+In the Yuan dynasty, the Mongol century, one earthquake is recorded as lasting seven days. The tower stood. Repairs are recorded after the quake of thirteen oh five.
+
+This is the Shanxi rift. The province sits on a line of faults that, in fifteen fifty-six, produced the deadliest earthquake in recorded history, just across the border in Shaanxi. Brick pagodas here lost their tops. This one lost nothing it couldn't replace.
+
+Then people tried. In nineteen twenty-six the armies of two warlords, Yan Xishan and Feng Yuxiang, fought over Yingxian. More than two hundred shells hit the pagoda. Railings and beams were smashed, the ornamental canopy at the top was blown off, and it was set alight more than once. The fires went out on their own. In nineteen forty-eight it was in the line of fire again.
+
+Shell scars are still visible on the second and third floors. The tower is not undamaged. It is un-fallen. That is a very different, and much more interesting, thing.
+
+So start with the dougong. A column. On top of it a big cap block. In a notch in the block, a bow-shaped arm. On the ends of the arm, small blocks. On the blocks, a longer arm. And so on, stepping outward and upward, until the stack is wide enough to carry the beam and the eave above it.
+
+Every piece is cut to fit the piece below. Mortise and tenon. There are no metal nails in these joints. Nothing is glued. The whole set is held together by its own weight and by friction.
+
+That sounds like a weakness. It's the point.
+
+When the ground moves, a rigid joint has two options: hold, or break. A dougong has a third. The blocks rotate, the arms slide a few millimetres in their notches, wood rubs on wood, and that rubbing turns the energy of the quake into heat.
+
+Engineers have put scale models of wooden pagodas and single bracket sets on shaking tables. The damping ratio comes out above zero point one, roughly double what a modern concrete frame is designed for, and the harder you shake a dougong, the more it damps. The cap block and the first arm do most of the work.
+
+So the first secret is a joint that is designed to give. Hundreds of them, on every level, each one a tiny shock absorber that resets itself when the shaking stops.
+
+Now the plan. Each storey has two rings of columns. Eight on the inside, around the Buddha statue. Twenty-four on the outside, around the walkway. Song-dynasty builders called them the inner trough and the outer trough. Engineers today call it tube-in-tube, the same idea as a modern skyscraper core.
+
+The two rings are tied together by beams and by those bracket sets. Push the tower sideways and the whole octagon works as one stiff ring, not as thirty-two separate sticks.
+
+And here are the four floors nobody sees. The hidden levels are not storage. They are packed with diagonal timber braces, triangles, the same geometry as a modern truss. Each one makes a rigid belt around the tower.
+
+So from the ground up, the structure alternates: a flexible storey that can rock, then a stiff belt that keeps it in shape, then a flexible storey, then a belt. Nine levels, five soft, four hard. This is, roughly, how seismic engineers design tall buildings now. The Liao carpenters got there in ten fifty-six.
+
+Third secret, and it's the material itself. Stone and brick are strong in compression and useless in tension. They crack the moment you bend them. Timber bends, and comes back.
+
+Put the three together: joints that slip, rings that stiffen, a material that flexes, and you get a tower that moves with an earthquake instead of fighting it. Micro-tremor measurements on the real building show it twisting and translating as a coupled system, exactly as the model predicts.
+
+And it is heavy. Reportedly over seven thousand tonnes of larch and elm, which keeps it planted while it sways.
+
+Here's the part the hero story leaves out. If you go today, you will not be allowed above the ground floor. The upper levels have been closed to visitors for more than ten years.
+
+Because the tower is leaning. A two thousand and four survey found the whole structure tilted sixty-five centimetres to the north-east, and compressed by eighty-eight centimetres. On the second floor, one column, number twenty-three, was leaning more than fifty-six centimetres when it was measured in twenty fifteen.
+
+Why the second floor? The best explanation is us, not the earthquakes. A nineteen-thirties repair removed walls and braces on that level to open up the view. Then came the shelling, then more war. The flexible storey lost part of its stiff belt.
+
+Four repair plans were drawn up in two thousand and two. All four were shelved. In twenty twenty-four a Tsinghua team began mapping every member with AI-assisted scanning, because nobody could agree on how the tower was deforming. The argument now is brutal: take it apart and rebuild it, or correct it in place. Nobody wants to be the engineer who touched it and was wrong.
+
+That is the honest status of the tallest wooden building in the world in twenty twenty-six: standing, leaning, and waiting.
+
+Two more things, because they change how you see it. In nineteen thirty-three the architect Liang Sicheng climbed this tower with a tape measure and drew it, storey by storey, the first modern survey of it. He wrote to his wife that it was unlike anything he had seen. His drawings are why we know the hidden levels exist.
+
+And in nineteen seventy-four, during repairs, workers found silver boxes sealed inside the Buddha statues: two tooth-shaped relics, and a cache of Liao-dynasty printed scriptures, among the oldest printed books in China. The tower had been a library for nine hundred years, and nobody knew.
+
+So, how did it survive? Not by being strong. By being allowed to move, held in shape by belts you can't see, built from a material that forgives.
+
+Which leaves the question the engineers can't settle, and I'd like your answer in the comments: take it apart and rebuild it piece by piece, or fix it standing, and risk it?
+
+Next: the brick pagoda that the fifteen fifty-six earthquake split in half, and that a second quake closed again. Follow so you don't miss it.
