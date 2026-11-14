@@ -1,3 +1,34 @@
+## 2026-11-14 post-mortem (baseline = 14d median views of Shorts ≥3d old: 11)
+- 2026-11-13 a BL_x6IO2CI0 | 541v 4L 0C @1d | ×49.18 | WINNER — replicate this hook shape today | 800 People, One Round Building — Home or Fortress? | China Travel Expe
+- 2026-11-13 d c3LDOjriXrc | 457v 4L 0C @1d | ×41.55 | WINNER — replicate this hook shape today | 51,000 Buddhas in a Cliff, or a Temple Pinned to One? | China Travel E
+- 2026-11-13 b cin6g2-pxm0 | 211v 1L 0C @1d | ×19.18 | WINNER — replicate this hook shape today | World's Longest Metro? Not Tokyo or New York — Shanghai | China Travel
+- 2026-11-13 c 1Hr1mpGzK8o | 50v 0L 0C @1d | ×4.55 | WINNER — replicate this hook shape today | Count 5 Floors Outside — There Are 9 Inside | China Travel Expert
+- 2026-11-12 a 6lNg-RzDOtI | 28v 0L 0C @2d | ×2.55 | WINNER — replicate this hook shape today | Older Than Shanghai Itself: a 247 AD Temple Ringed by Luxury Malls | C
+- 2026-11-12 c JmCWAkM1cmo | 28v 1L 0C @2d | ×2.55 | WINNER — replicate this hook shape today | The Tower of London ~$50 vs the Forbidden City ~$6 in Winter | China T
+- 2026-11-12 b FoDH8ypMYJo | 10v 0L 0C @2d | ×0.91 | baseline | Glass Floor 259m Up, or the Solid Deck? Shanghai's Oriental Pearl | Ch
+- 2026-11-12 d uZByAAXLFMw | 8v 0L 0C @2d | ×0.73 | baseline | 5 am city or 6:30 am mountains? | China Travel Expert
+- 2026-11-13 L BYNUP21Ns-k | 3v 0L 0C @1d | ×0.27 | LONGFORM: no distribution (expected on this channel; search-ranking is slow) | The 67-Metre Wooden Pagoda Earthquakes Can't Kill | China Travel Exper
+- like-rate (fresh Shorts): 0.75% (peers 1-6%)
+### Equal age (Data API snapshots since 2026-10-18; 48 h / 72 h ±6 h; "~" = interpolated between the snapshots either side)
+- Shorts median, trailing 28 d: 48h 15v (n=83) · 72h 15v (n=79)
+- 2026-11-12 b fmt:F4 FoDH8ypMYJo | 48h 10v 0L 0C | 72h — | Glass Floor 259m Up, or the Solid Deck? Shanghai's Oriental 
+- 2026-11-12 a fmt:F4 6lNg-RzDOtI | 48h 28v 0L 0C | 72h — | Older Than Shanghai Itself: a 247 AD Temple Ringed by Luxury
+- 2026-11-11 d fmt:F4 jq3E2FUsKuM | 48h ~4v 0L 0C | 72h — | 晨钟暮鼓: Xi'an Ran on a Bell and a Drum for 600 Years | China T
+- 2026-11-11 c fmt:F2 1Hcj4n60Tv0 | 48h ~17v 0L 0C | 72h — | City or Not City? POV: Walking Chongqing, China's 8D Magic C
+- 2026-11-11 b fmt:- s1LRN1a9pYA | 48h 8v 0L 0C | 72h 8v 0L 0C | China's 604m Canton Tower Pinches to a ~22m Waist | China Tr
+- 2026-11-11 a fmt:F3 bviASNGpVgc | 48h 4v 0L 0C | 72h 4v 0L 0C | The Louvre Now ~$36 for Tourists. The Great Wall? ~$5 | Chin
+- 2026-11-10 d fmt:F2 Ru190GCtH7I | 48h ~13v 0L 0C | 72h ~14v 0L 0C | POV: Hong Kong's Tram Has Run Since 1904 — Ride It for ~30 C
+- 2026-11-10 c fmt:- FW02jn8sLms | 48h ~0v 0L 0C | 72h ~0v 0L 0C | Nine Beasts or Ten? Only One Chinese Roof Has All 10 | China
+- 2026-11-10 b fmt:- -D_iCGSngtk | 48h 7v 0L 0C | 72h 7v 0L 0C | Shanghai's Pudong Was Farmland in 1990 — Now a 632m Skyline 
+- 2026-11-10 a fmt:F4 yj72bXtklIQ | 48h 31v 0L 0C | 72h 31v 0L 0C | Dali's Three Pagodas Are ~1,200 Years Old — But the Temple I
+- 2026-11-09 d fmt:- lJFZm89D14c | 48h ~3v 0L 0C | 72h ~3v 0L 0C | The Forbidden City's Dragon Heads Aren't Decoration — They'r
+- 2026-11-09 c fmt:F3 WANUdrjqyNQ | 48h ~8v 0L 0C | 72h ~8v 0L 0C | Schönbrunn ~$47 vs China's Summer Palace ~$7 — Which Palace?
+- 2026-11-09 b fmt:- YmVMRW8Yrpc | 48h 12v 0L 0C | 72h 12v 0L 0C | Noodles or Rice? China's Staple Flips Halfway Across the Cou
+- 2026-11-09 a fmt:F4 mTOEHRg9X5g | 48h 13v 0L 0C | 72h 13v 0L 0C | Nanjing Hides Jiangnan's Biggest Palace Complex — Temple, Pa
+- 2026-11-08 d fmt:F4 JzLH5z31Ls8 | 48h ~34v 1L 0C | 72h ~35v 1L 0C | 1,700-Year-Old Water Town Near Shanghai — Bridge or Boat? | 
+### YouTube Analytics API
+- unavailable: HTTP 403 accessNotConfigured — the YouTube Analytics API is not enabled in the Google Cloud project (owner action: APIs & Services > enable "YouTube Analytics API"; checklist in scripts/youtube-oauth-helper.mjs). Equal-age numbers come from Data API snapshots only.
+
 ## 2026-11-13 post-mortem (baseline = 14d median views of Shorts ≥3d old: 11)
 - 2026-11-12 a 6lNg-RzDOtI | 26v 0L 0C @1d | ×2.36 | WINNER — replicate this hook shape today | Older Than Shanghai Itself: a 247 AD Temple Ringed by Luxury Malls | C
 - 2026-11-12 c JmCWAkM1cmo | 25v 1L 0C @1d | ×2.27 | WINNER — replicate this hook shape today | The Tower of London ~$50 vs the Forbidden City ~$6 in Winter | China T
