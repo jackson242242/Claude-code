@@ -1,0 +1,67 @@
+{
+  "recut": "R-04",
+  "title": "5 am city or 6:30 am mountains?",
+  "hookType": "CHOICE",
+  "status": "ready",
+  "forced": false,
+  "uploadable": true,
+  "renderedAt": "2026-11-12T12:51:31+00:00",
+  "out": "/home/user/Claude-code/automation/youtube/runs/2026-11-12-d/final.mp4",
+  "durationSec": 13.2,
+  "sizeBytes": 8410268,
+  "music": {
+    "file": "el-acoustic-journey-01.mp3",
+    "start": 0.0,
+    "aiGenerated": true
+  },
+  "loudness": {
+    "integratedLUFS": -13.9,
+    "truePeakDbfs": -1.8
+  },
+  "checks": {
+    "exclusions": "pass",
+    "labels": "pass",
+    "warnings": []
+  },
+  "cues": [
+    {
+      "start": 0.0,
+      "end": 4.12,
+      "text": "[[5 am]] city or\n[[6:30 am]] mountains?"
+    },
+    {
+      "start": 4.12,
+      "end": 9.0,
+      "text": "6:30 am:\nmist on the slopes"
+    },
+    {
+      "start": 9.0,
+      "end": null,
+      "text": "City or mountains?\nPick one."
+    }
+  ],
+  "frames": [],
+  "metaHints": {
+    "music": "el-acoustic-journey-01.mp3",
+    "format": "F1",
+    "footage": "owner",
+    "owner": true,
+    "povType": "ride",
+    "aiFootage": false,
+    "containsSyntheticMediaExpected": true,
+    "placesNamed": [
+      "Shanghai"
+    ],
+    "facts": [
+      {
+        "claim": "5 am Shanghai car window",
+        "source": "IMG_9096 file metadata 2026-07-31 05:13 (runs/owner-footage/2026-08-01/plan.md)"
+      },
+      {
+        "claim": "6:30 am valley",
+        "source": "IMG_8810 file metadata 2026-07-23 06:34 (same plan)"
+      }
+    ],
+    "pairWith": null
+  }
+}

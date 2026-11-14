@@ -1,0 +1,72 @@
+{
+  "canvas": { "w": 1080, "h": 1920, "fps": 30, "duration_s": 29 },
+  "style": {
+    "bg": "#15110d", "bg_grid": "#1f1913",
+    "wood": "#c9873d", "wood_dark": "#8a4f1c", "wood_light": "#e3a55a",
+    "outline": "#3a1f08", "roof": "#5f6f7a", "roof_dark": "#3b474f",
+    "ink": "#f6ead3", "ink_dim": "#b9a98d", "accent": "#e8513a", "card": "#231b14",
+    "font_en": "DejaVu Sans", "font_cn": "Noto Serif CJK SC"
+  },
+  "title": {
+    "line1": "The poles don't hold it up.",
+    "line2": "The cliff does.",
+    "sub": "悬空寺 Hanging Temple — Hengshan, Shanxi"
+  },
+  "origin": { "x": 540, "y": 720 },
+  "caption_card": { "y": 1060, "h": 175 },
+  "steps": [
+    {
+      "id": "cliff", "t": 1.0, "drop": 0,
+      "parts": [
+        { "shape": "path", "fill": "roof_dark", "d": "M 80,-320 L 440,-320 L 440,300 L 80,300 L 112,170 L 70,50 L 120,-70 L 82,-190 Z" }
+      ],
+      "caption": "A wooden temple pinned to a sheer cliff, 75 m up.",
+      "cn": "悬空寺 Xuánkōng Sì"
+    },
+    {
+      "id": "beams", "t": 5.5, "drop": 0,
+      "parts": [
+        { "shape": "rect", "fill": "wood_dark", "x": -300, "y": -70, "w": 440, "h": 16 },
+        { "shape": "rect", "fill": "wood_dark", "x": -300, "y": -4,  "w": 440, "h": 16 },
+        { "shape": "rect", "fill": "wood_dark", "x": -300, "y": 62,  "w": 440, "h": 16 }
+      ],
+      "caption": "Its real support: oak beams driven deep into the rock.",
+      "cn": "横梁插进崖壁"
+    },
+    {
+      "id": "halls", "t": 11.0, "drop": 40,
+      "parts": [
+        { "shape": "path", "fill": "roof", "d": "M -320,-150 L 40,-150 L -10,-212 L -270,-212 Z" },
+        { "shape": "rect", "fill": "wood", "x": -300, "y": -150, "w": 320, "h": 82 }
+      ],
+      "caption": "The halls sit on those hidden beams.",
+      "cn": "大殿压在梁上"
+    },
+    {
+      "id": "load", "t": 16.0, "kind": "arrows",
+      "arrows": [
+        { "from": [-110, -24], "to": [180, -24] },
+        { "from": [-110, 40], "to": [180, 40] }
+      ],
+      "caption": "The load pushes sideways — into the mountain.",
+      "cn": "力向山里传"
+    },
+    {
+      "id": "poles", "t": 21.0, "drop": 0,
+      "parts": [
+        { "shape": "rect", "fill": "wood_light", "x": -258, "y": 80, "w": 10, "h": 170 },
+        { "shape": "rect", "fill": "wood_light", "x": -186, "y": 80, "w": 10, "h": 170 },
+        { "shape": "rect", "fill": "wood_light", "x": -110, "y": 80, "w": 10, "h": 170 },
+        { "shape": "rect", "fill": "wood_light", "x": -36,  "y": 80, "w": 10, "h": 170 }
+      ],
+      "caption": "The thin poles below were mostly added for looks.",
+      "cn": "下面的立柱多为装饰"
+    },
+    {
+      "id": "cta", "t": 25.0, "drop": 0,
+      "parts": [],
+      "caption": "Double-tap if those poles fooled you too.",
+      "cn": "被立柱骗到的点赞"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+1
+00:00:00,000 --> 00:00:03,000
+Three cities, 2,600 km, one bullet-train trip.
+I'm your China Travel Expert
+
+2
+00:00:03,000 --> 00:00:06,000
+Start in Beijing: the Great Wall and old capital.
+
+3
+00:00:06,000 --> 00:00:09,500
+Ride 1,216 km to Xi'an in under six hours.
+
+4
+00:00:09,500 --> 00:00:12,500
+Xi'an holds China's ancient heart and buried army.
+
+5
+00:00:12,500 --> 00:00:15,500
+Double-tap if this is your kind of trip.
+
+6
+00:00:15,500 --> 00:00:19,000
+Then 1,380 km to Shanghai — old China meets neon.
+
+7
+00:00:19,000 --> 00:00:22,000
+★ Expert Tip: Book high-speed seats 10+ days ahead.
+
+8
+00:00:22,000 --> 00:00:25,000
+Which city would you cut — Beijing, Xi'an, Shanghai?

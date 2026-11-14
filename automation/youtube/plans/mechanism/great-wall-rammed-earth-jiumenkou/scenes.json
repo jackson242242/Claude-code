@@ -1,0 +1,11 @@
+{
+  "_note": "Five 16:9 (1920x1080, 30 fps) diagram scenes for M-Long #3. Renderer: scripts/mechanism/render_diagrams_greatwall.py (TODO, Friday run or next manager week: copy render_diagrams_yingxian.py primitives; palette from render_rammed_earth.py). Numbers on screen must match longform-script.md section 2. No AI imagery.",
+  "canvas": {"w": 1920, "h": 1080, "fps": 30},
+  "scenes": [
+    {"id": "S1-length-blocks", "duration_s": 12, "view": "horizontal bar", "steps": ["bar labelled 21,196 km (all eras: walls + trenches + natural barriers)", "highlight block 'Ming wall ~8,850 km'", "remaining block 'earlier walls, trenches, natural barriers' (no sub-numbers)", "tags: 15 provinces/regions · 43,721 sites", "tag 'not to scale'"]},
+    {"id": "S2-rammed-earth", "duration_s": 18, "view": "side section", "steps": ["wooden formwork boards appear", "soil poured", "tamper pounds layer flat (repeat x3, layer counter without a thickness)", "boards lift, next course", "tag 'plains: earth / mountains: stone'"]},
+    {"id": "S3-desert-reed-layers", "duration_s": 16, "view": "side section + plan inset", "steps": ["layers: gravel/sandy soil, reed bundle, branches, repeated", "label 'reeds + branches reinforce'", "inset plan: wall, sand-filled ditch, footprints", "tag 'reportedly'"]},
+    {"id": "S4-ming-shell", "duration_s": 14, "view": "section + elevation", "steps": ["earth/rubble core", "brick shell wraps it", "hollow watchtower rises", "tags 'Ming: brick & stone' · '1567–1570: ~1,200 towers' · 'Jiayu Pass = west end'"]},
+    {"id": "S5-jiumenkou", "duration_s": 18, "view": "side elevation", "steps": ["river line (Jiujiang River, ~100 m)", "granite slab foundation (tag '~7,000 m², reportedly iron-bonded')", "8 piers rise, 9 arches (5 m x 7 m) open, water flows through", "brick wall on top", "map pin: Liaoning, next to Shanhaiguan; tags '1,704 m' · 'around 1381' · 'restored since'"]}
+  ]
+}

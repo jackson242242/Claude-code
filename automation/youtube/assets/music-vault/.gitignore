@@ -1,0 +1,3 @@
+# Partial writes from scripts/music-vault.mjs (<name>.mp3.enc.tmp-<pid>); only *.mp3.enc belongs here.
+*.tmp-*
+*.decrypting
