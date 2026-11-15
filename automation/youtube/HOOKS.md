@@ -116,7 +116,7 @@ run 自动执行；若某条钩子是**新写法**（不属 A-F），在 RUNLOG 
 | PRICE-SHOCK | ✅ | 19 | 205 | ×10.23 | 0.33% | 1 | 0.26 |
 | CHOICE | ✅ | 7 | 160 | ×7.99 | 0.27% | 0 | 0 |
 | STAKES | ✅ | 1 ⚠️样本不足 | 117 | ×5.85 | 1.71% | 0 | 0 |
-| SPECTACLE-FACT | ❌ 数字锚而已 | 37 | 111 | ×5.57 | 0.48% | 0 | 0 |
+| SPECTACLE-FACT | ❌ 数字锚而已 | 37 | 112 | ×5.58 | 0.48% | 0 | 0 |
 | PLAIN-FACT | ❌ 数字锚而已 | 24 | 76 | ×3.78 | 0.5% | 0 | 0 |
 
 **今日三槽依次用（a / c / d）**：PRICE-SHOCK / CHOICE / MISCONCEPTION
@@ -133,13 +133,13 @@ run 自动执行；若某条钩子是**新写法**（不属 A-F），在 RUNLOG 
 | 2026-11-14c | 67 | ×3.35 | 0 | 0 | PLAIN-FACT | POV: you just rolled into Xi'an. {\fs13}I'm your China Travel Ex |
 | 2026-11-14b | 110 | ×5.50 | 0 | 0 | PLAIN-FACT | Everyone picks Shanghai's towers. Here's the case against. {\fs1 |
 | 2026-11-14a | 134 | ×6.70 | 0 | 0 | PLAIN-FACT | See those thin poles? They're not what holds this up. {\fs13}I'm |
-| 2026-11-13d | 459 | ×22.95 | 4 | 0 | CHOICE | 51,000 Buddhas in a cliff, or a temple pinned to one? {\fs13}I'm |
+| 2026-11-13d | 464 | ×23.20 | 4 | 0 | CHOICE | 51,000 Buddhas in a cliff, or a temple pinned to one? {\fs13}I'm |
 | 2026-11-13c | 54 | ×2.70 | 0 | 0 | PLAIN-FACT | Count five floors from outside. There are nine inside. {\fs13}I' |
 | 2026-11-13b | 214 | ×10.70 | 1 | 0 | PLAIN-FACT | The world's longest metro isn't in Tokyo or New York. {\fs13}I'm |
-| 2026-11-13a | 625 | ×31.25 | 4 | 0 | CHOICE | 800 people, one round building — home or fortress? {\fs13}I'm yo |
+| 2026-11-13a | 634 | ×31.70 | 4 | 0 | CHOICE | 800 people, one round building — home or fortress? {\fs13}I'm yo |
 | 2026-11-12d | 8 | ×0.40 | 0 | 0 | CHOICE | 5 am city or 6:30 am mountains? |
 | 2026-11-12c | 28 | ×1.40 | 1 | 0 | PRICE-SHOCK | The Tower of London this winter: about $50. {\fs13}I'm your Chin |
-| 2026-11-12b | 11 | ×0.55 | 1 | 0 | SPECTACLE-FACT | Shanghai's Oriental Pearl Tower stands 468 metres tall. {\fs13}I |
+| 2026-11-12b | 13 | ×0.65 | 1 | 0 | SPECTACLE-FACT | Shanghai's Oriental Pearl Tower stands 468 metres tall. {\fs13}I |
 | 2026-11-12a | 28 | ×1.40 | 0 | 0 | SPECTACLE-FACT | Shanghai's oldest temple was founded in 247 AD. {\fs13}I'm your  |
 | 2026-11-11d | 5 | ×0.25 | 0 | 0 | SPECTACLE-FACT | For 600 years, Xi'an woke to a bell and slept to a drum. {\fs13} |
 | 2026-11-11c | 20 | ×1.00 | 0 | 0 | CHOICE | City or not city? POV: you're walking Chongqing. {\fs13}I'm your |

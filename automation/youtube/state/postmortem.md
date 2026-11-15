@@ -1,4 +1,35 @@
 ## 2026-11-15 post-mortem (baseline = 14d median views of Shorts ≥3d old: 11)
+- 2026-11-13 a BL_x6IO2CI0 | 639v 4L 0C @2d | ×58.09 | WINNER — replicate this hook shape today | 800 People, One Round Building — Home or Fortress? | China Travel Expe
+- 2026-11-13 d c3LDOjriXrc | 464v 4L 0C @2d | ×42.18 | WINNER — replicate this hook shape today | 51,000 Buddhas in a Cliff, or a Temple Pinned to One? | China Travel E
+- 2026-11-13 b cin6g2-pxm0 | 214v 1L 0C @2d | ×19.45 | WINNER — replicate this hook shape today | World's Longest Metro? Not Tokyo or New York — Shanghai | China Travel
+- 2026-11-14 a vNkN4S9kHEw | 134v 0L 0C @1d | ×12.18 | WINNER — replicate this hook shape today | 1,500 Years on a Cliff — and the Poles Aren't Holding It Up | China Tr
+- 2026-11-14 b BzEXqk0L7Ig | 110v 0L 0C @1d | ×10.00 | WINNER — replicate this hook shape today | Skip Shanghai's Towers? Suzhou Is 2,500 Years Old, 30 Min Away | China
+- 2026-11-14 d fRT78myrilU | 81v 0L 0C @1d | ×7.36 | WINNER — replicate this hook shape today | How to Get Into the Forbidden City: Book 7 Days Ahead | China Travel E
+- 2026-11-14 c ZrrPkXXfd-U | 67v 0L 0C @1d | ×6.09 | WINNER — replicate this hook shape today | 1,300 Years Ago This Was Chang'an — Wear the Tang Robes or Not? | Chin
+- 2026-11-13 c 1Hr1mpGzK8o | 54v 0L 0C @2d | ×4.91 | WINNER — replicate this hook shape today | Count 5 Floors Outside — There Are 9 Inside | China Travel Expert
+- 2026-11-13 L BYNUP21Ns-k | 3v 0L 0C @2d | ×0.27 | LONGFORM: no distribution (expected on this channel; search-ranking is slow) | The 67-Metre Wooden Pagoda Earthquakes Can't Kill | China Travel Exper
+- like-rate (fresh Shorts): 0.51% (peers 1-6%)
+### Equal age (Data API snapshots since 2026-10-18; 48 h / 72 h ±6 h; "~" = interpolated between the snapshots either side)
+- Shorts median, trailing 28 d: 48h 15v (n=87) · 72h 15v (n=83)
+- 2026-11-13 b fmt:- cin6g2-pxm0 | 48h 214v 1L 0C | 72h — | World's Longest Metro? Not Tokyo or New York — Shanghai | Ch
+- 2026-11-13 L fmt:L BYNUP21Ns-k | 48h 3v 0L 0C | 72h — | The 67-Metre Wooden Pagoda Earthquakes Can't Kill | China Tr
+- 2026-11-13 a fmt:F4 BL_x6IO2CI0 | 48h 639v 4L 0C | 72h — | 800 People, One Round Building — Home or Fortress? | China T
+- 2026-11-12 d fmt:F1 uZByAAXLFMw | 48h ~8v 0L 0C | 72h — | 5 am city or 6:30 am mountains? | China Travel Expert
+- 2026-11-12 c fmt:F3 JmCWAkM1cmo | 48h ~28v 1L 0C | 72h — | The Tower of London ~$50 vs the Forbidden City ~$6 in Winter
+- 2026-11-12 b fmt:F4 FoDH8ypMYJo | 48h 10v 0L 0C | 72h 13v 1L 0C | Glass Floor 259m Up, or the Solid Deck? Shanghai's Oriental 
+- 2026-11-12 a fmt:F4 6lNg-RzDOtI | 48h 28v 0L 0C | 72h 28v 0L 0C | Older Than Shanghai Itself: a 247 AD Temple Ringed by Luxury
+- 2026-11-11 d fmt:F4 jq3E2FUsKuM | 48h ~4v 0L 0C | 72h ~4v 0L 0C | 晨钟暮鼓: Xi'an Ran on a Bell and a Drum for 600 Years | China T
+- 2026-11-11 c fmt:F2 1Hcj4n60Tv0 | 48h ~17v 0L 0C | 72h ~20v 0L 0C | City or Not City? POV: Walking Chongqing, China's 8D Magic C
+- 2026-11-11 b fmt:- s1LRN1a9pYA | 48h 8v 0L 0C | 72h 8v 0L 0C | China's 604m Canton Tower Pinches to a ~22m Waist | China Tr
+- 2026-11-11 a fmt:F3 bviASNGpVgc | 48h 4v 0L 0C | 72h 4v 0L 0C | The Louvre Now ~$36 for Tourists. The Great Wall? ~$5 | Chin
+- 2026-11-10 d fmt:F2 Ru190GCtH7I | 48h ~13v 0L 0C | 72h ~14v 0L 0C | POV: Hong Kong's Tram Has Run Since 1904 — Ride It for ~30 C
+- 2026-11-10 c fmt:- FW02jn8sLms | 48h ~0v 0L 0C | 72h ~0v 0L 0C | Nine Beasts or Ten? Only One Chinese Roof Has All 10 | China
+- 2026-11-10 b fmt:- -D_iCGSngtk | 48h 7v 0L 0C | 72h 7v 0L 0C | Shanghai's Pudong Was Farmland in 1990 — Now a 632m Skyline 
+- 2026-11-10 a fmt:F4 yj72bXtklIQ | 48h 31v 0L 0C | 72h 31v 0L 0C | Dali's Three Pagodas Are ~1,200 Years Old — But the Temple I
+### YouTube Analytics API
+- unavailable: HTTP 403 accessNotConfigured — the YouTube Analytics API is not enabled in the Google Cloud project (owner action: APIs & Services > enable "YouTube Analytics API"; checklist in scripts/youtube-oauth-helper.mjs). Equal-age numbers come from Data API snapshots only.
+
+## 2026-11-15 post-mortem (baseline = 14d median views of Shorts ≥3d old: 11)
 - 2026-11-13 a BL_x6IO2CI0 | 631v 4L 0C @2d | ×57.36 | WINNER — replicate this hook shape today | 800 People, One Round Building — Home or Fortress? | China Travel Expe
 - 2026-11-13 d c3LDOjriXrc | 459v 4L 0C @2d | ×41.73 | WINNER — replicate this hook shape today | 51,000 Buddhas in a Cliff, or a Temple Pinned to One? | China Travel E
 - 2026-11-13 b cin6g2-pxm0 | 214v 1L 0C @2d | ×19.45 | WINNER — replicate this hook shape today | World's Longest Metro? Not Tokyo or New York — Shanghai | China Travel
