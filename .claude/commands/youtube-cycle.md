@@ -266,6 +266,10 @@ price over a slug-named ground clip of the Chinese place (MAP-FORMAT only if no 
 passes the 3-frame check), PRICE-SHOCK hook. Nothing else changes; volume stays 4/day.
 Seed for M slots: `arch-M-08` (renderer `scripts/mechanism/render_fc_spouts.py`, ready) —
 use it before improvising an M so the slot is never run as F4 for lack of a renderer.
+Weekly review 2026-11-15: next M seeds in order = `arch-M-01-child2`, `arch-M-01-child3`
+(active; Yingxian children), then `arch-M-09` from 11-27 (renderer
+`scripts/mechanism/render_fc_slope.py`, ready, 26 s). If an M day has no active seed, improvise
+a new scene JSON (precedent 11-14 Hanging Temple) rather than running F4.
 F3 keeps the Q4 rules (one comparison, both sides verified THIS RUN, both in USD,
 ≥4× gap, something the viewer pays for, 2 dated sources in the description). Price
 card = cue 1 shows both prices big in the middle of the frame over a ground clip whose

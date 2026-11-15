@@ -108,65 +108,65 @@ run 自动执行；若某条钩子是**新写法**（不属 A-F），在 RUNLOG 
 
 
 <!-- AUTO:BEGIN — rewritten by scripts/hook-ledger.mjs, do not hand-edit below -->
-## 📊 实测排行（2026-11-14，近 30 天、满 3 天的 88 条；baseline 中位数 25 播放）
+## 📊 实测排行（2026-11-15，近 30 天、满 3 天的 89 条；baseline 中位数 20 播放）
 
 | 钩子类型 | 讨论型? | 条数 | 均播放 | 相对基准 | 点赞率 | 评论 | 评/千播 |
 |---|---|---|---|---|---|---|---|
-| PRICE-SHOCK | ✅ | 18 | 214 | ×8.57 | 0.31% | 1 | 0.26 |
-| CHOICE | ✅ | 6 | 185 | ×7.41 | 0.27% | 0 | 0 |
-| DEBATE | ✅ | 2 ⚠️样本不足 | 118 | ×4.72 | 0.42% | 0 | 0 |
-| STAKES | ✅ | 1 ⚠️样本不足 | 117 | ×4.68 | 1.71% | 0 | 0 |
-| SPECTACLE-FACT | ❌ 数字锚而已 | 35 | 117 | ×4.66 | 0.47% | 0 | 0 |
-| PLAIN-FACT | ❌ 数字锚而已 | 26 | 106 | ×4.25 | 0.54% | 0 | 0 |
+| DEBATE | ✅ | 1 ⚠️样本不足 | 208 | ×10.4 | 0.48% | 0 | 0 |
+| PRICE-SHOCK | ✅ | 19 | 205 | ×10.23 | 0.33% | 1 | 0.26 |
+| CHOICE | ✅ | 7 | 160 | ×7.99 | 0.27% | 0 | 0 |
+| STAKES | ✅ | 1 ⚠️样本不足 | 117 | ×5.85 | 1.71% | 0 | 0 |
+| SPECTACLE-FACT | ❌ 数字锚而已 | 37 | 111 | ×5.57 | 0.48% | 0 | 0 |
+| PLAIN-FACT | ❌ 数字锚而已 | 24 | 76 | ×3.78 | 0.5% | 0 | 0 |
 
 **今日三槽依次用（a / c / d）**：PRICE-SHOCK / CHOICE / MISCONCEPTION
 **已验证（≥3 条且 ≥×1.0）**：PRICE-SHOCK / CHOICE
-**补样本（<3 条，必须排进去才学得到）**：MISCONCEPTION(0) / INSIDER(0) / STAKES(1) / DEBATE(2)
+**补样本（<3 条，必须排进去才学得到）**：MISCONCEPTION(0) / INSIDER(0) / DEBATE(1) / STAKES(1)
 **避免**：SPECTACLE-FACT / PLAIN-FACT 永远不是钩子类型（数字只能放进讨论型钩子里）
-**非讨论型配额**：近 7 天已用 19/3（每天 ≤1，仅限 slot d 路线超级数字，且收尾仍须 either-or）；讨论型 9/28 — **超额，本周剩余全部讨论型**
+**非讨论型配额**：近 7 天已用 20/3（每天 ≤1，仅限 slot d 路线超级数字，且收尾仍须 either-or）；讨论型 8/28 — **超额，本周剩余全部讨论型**
 
 ## 📒 近期逐条账本（新→旧）
 
 | 日期 | 播放 | ×基准 | 赞 | 评 | 类型 | 钩子原文 |
 |---|---|---|---|---|---|---|
-| 2026-11-13d | 457 | ×18.28 | 4 | 0 | CHOICE | 51,000 Buddhas in a cliff, or a temple pinned to one? {\fs13}I'm |
-| 2026-11-13c | 50 | ×2.00 | 0 | 0 | PLAIN-FACT | Count five floors from outside. There are nine inside. {\fs13}I' |
-| 2026-11-13b | 211 | ×8.44 | 1 | 0 | PLAIN-FACT | The world's longest metro isn't in Tokyo or New York. {\fs13}I'm |
-| 2026-11-13a | 535 | ×21.40 | 4 | 0 | CHOICE | 800 people, one round building — home or fortress? {\fs13}I'm yo |
-| 2026-11-12d | 8 | ×0.32 | 0 | 0 | CHOICE | 5 am city or 6:30 am mountains? |
-| 2026-11-12c | 28 | ×1.12 | 1 | 0 | PRICE-SHOCK | The Tower of London this winter: about $50. {\fs13}I'm your Chin |
-| 2026-11-12b | 10 | ×0.40 | 0 | 0 | SPECTACLE-FACT | Shanghai's Oriental Pearl Tower stands 468 metres tall. {\fs13}I |
-| 2026-11-12a | 28 | ×1.12 | 0 | 0 | SPECTACLE-FACT | Shanghai's oldest temple was founded in 247 AD. {\fs13}I'm your  |
-| 2026-11-11d | 4 | ×0.16 | 0 | 0 | SPECTACLE-FACT | For 600 years, Xi'an woke to a bell and slept to a drum. {\fs13} |
-| 2026-11-11c | 20 | ×0.80 | 0 | 0 | CHOICE | City or not city? POV: you're walking Chongqing. {\fs13}I'm your |
-| 2026-11-11b | 8 | ×0.32 | 0 | 0 | SPECTACLE-FACT | China's Canton Tower is 604 metres tall. {\fs13}I'm your China T |
-| 2026-11-11a | 4 | ×0.16 | 0 | 0 | PRICE-SHOCK | The Louvre now charges tourists about $36. {\fs13}I'm your China |
-| 2026-11-10d | 15 | ×0.60 | 0 | 0 | PLAIN-FACT | POV: you're on the front deck of a Hong Kong tram. {\fs13}I'm yo |
-| 2026-11-10b | 9 | ×0.36 | 0 | 0 | SPECTACLE-FACT | In 1990, Shanghai's Pudong was mostly farmland. {\fs13}I'm your  |
-| 2026-11-10a | 30 | ×1.20 | 0 | 0 | SPECTACLE-FACT | Dali's Three Pagodas are nearly 1,200 years old. {\fs13}I'm your |
+| 2026-11-14d | 81 | ×4.05 | 0 | 0 | PLAIN-FACT | You can't buy a Forbidden City ticket at the gate. {\fs13}I'm yo |
+| 2026-11-14c | 67 | ×3.35 | 0 | 0 | PLAIN-FACT | POV: you just rolled into Xi'an. {\fs13}I'm your China Travel Ex |
+| 2026-11-14b | 110 | ×5.50 | 0 | 0 | PLAIN-FACT | Everyone picks Shanghai's towers. Here's the case against. {\fs1 |
+| 2026-11-14a | 134 | ×6.70 | 0 | 0 | PLAIN-FACT | See those thin poles? They're not what holds this up. {\fs13}I'm |
+| 2026-11-13d | 459 | ×22.95 | 4 | 0 | CHOICE | 51,000 Buddhas in a cliff, or a temple pinned to one? {\fs13}I'm |
+| 2026-11-13c | 54 | ×2.70 | 0 | 0 | PLAIN-FACT | Count five floors from outside. There are nine inside. {\fs13}I' |
+| 2026-11-13b | 214 | ×10.70 | 1 | 0 | PLAIN-FACT | The world's longest metro isn't in Tokyo or New York. {\fs13}I'm |
+| 2026-11-13a | 625 | ×31.25 | 4 | 0 | CHOICE | 800 people, one round building — home or fortress? {\fs13}I'm yo |
+| 2026-11-12d | 8 | ×0.40 | 0 | 0 | CHOICE | 5 am city or 6:30 am mountains? |
+| 2026-11-12c | 28 | ×1.40 | 1 | 0 | PRICE-SHOCK | The Tower of London this winter: about $50. {\fs13}I'm your Chin |
+| 2026-11-12b | 11 | ×0.55 | 1 | 0 | SPECTACLE-FACT | Shanghai's Oriental Pearl Tower stands 468 metres tall. {\fs13}I |
+| 2026-11-12a | 28 | ×1.40 | 0 | 0 | SPECTACLE-FACT | Shanghai's oldest temple was founded in 247 AD. {\fs13}I'm your  |
+| 2026-11-11d | 5 | ×0.25 | 0 | 0 | SPECTACLE-FACT | For 600 years, Xi'an woke to a bell and slept to a drum. {\fs13} |
+| 2026-11-11c | 20 | ×1.00 | 0 | 0 | CHOICE | City or not city? POV: you're walking Chongqing. {\fs13}I'm your |
+| 2026-11-11b | 9 | ×0.45 | 0 | 0 | SPECTACLE-FACT | China's Canton Tower is 604 metres tall. {\fs13}I'm your China T |
+| 2026-11-11a | 4 | ×0.20 | 0 | 0 | PRICE-SHOCK | The Louvre now charges tourists about $36. {\fs13}I'm your China |
+| 2026-11-10d | 15 | ×0.75 | 0 | 0 | PLAIN-FACT | POV: you're on the front deck of a Hong Kong tram. {\fs13}I'm yo |
+| 2026-11-10b | 9 | ×0.45 | 0 | 0 | SPECTACLE-FACT | In 1990, Shanghai's Pudong was mostly farmland. {\fs13}I'm your  |
+| 2026-11-10a | 30 | ×1.50 | 0 | 0 | SPECTACLE-FACT | Dali's Three Pagodas are nearly 1,200 years old. {\fs13}I'm your |
 | 2026-11-10c | 0 | ×0.00 | 0 | 0 | PLAIN-FACT | Count the beasts on an imperial roof. {\fs13}I'm your China Trav |
-| 2026-11-09d | 3 | ×0.12 | 0 | 0 | PLAIN-FACT | Those dragon heads on the Forbidden City's terraces? {\fs13}I'm  |
-| 2026-11-09c | 8 | ×0.32 | 0 | 0 | PRICE-SHOCK | Vienna's Schönbrunn Palace: about $47. Beijing's Summer Palace:  |
-| 2026-11-09b | 12 | ×0.48 | 0 | 0 | PLAIN-FACT | China grows more wheat than any country on Earth. {\fs13}I'm you |
-| 2026-11-09a | 19 | ×0.76 | 0 | 0 | PLAIN-FACT | The biggest old-architecture complex in Jiangnan hides in Nanjin |
-| 2026-11-08d | 40 | ×1.60 | 1 | 0 | SPECTACLE-FACT | An hour from Shanghai sits a 1,700-year-old water town. {\fs13}I |
-| 2026-11-08c | 29 | ×1.16 | 0 | 0 | PLAIN-FACT | POV: you're walking old-town Chongqing in the rain. {\fs13}I'm y |
-| 2026-11-08b | 149 | ×5.96 | 0 | 0 | SPECTACLE-FACT | China grows ~72% of the world's garlic — and eats it raw. {\fs13 |
-| 2026-11-08a | 56 | ×2.24 | 0 | 0 | PRICE-SHOCK | St Paul's in London this winter: about $36. {\fs13}I'm your Chin |
-| 2026-11-07d | 67 | ×2.68 | 0 | 0 | SPECTACLE-FACT | POV: you're walking Xi'an — capital to 13 dynasties. {\fs13}I'm  |
-| 2026-11-07c | 3 | ×0.12 | 0 | 0 | SPECTACLE-FACT | No nails. No glue. These brackets held Chinese roofs up for 1,00 |
-| 2026-11-07b | 14 | ×0.56 | 0 | 0 | PLAIN-FACT | No country eats pork like China. {\fs13}I'm your China Travel Ex |
-| 2026-11-07a | 1008 | ×40.32 | 4 | 0 | PRICE-SHOCK | Versailles Passport this winter: about $28. {\fs13}I'm your Chin |
-| 2026-11-06b | 247 | ×9.88 | 2 | 0 | SPECTACLE-FACT | The world eats 120 billion instant-noodle servings a year. {\fs1 |
-| 2026-11-06d | 5 | ×0.20 | 1 | 0 | PLAIN-FACT | Sticky-rice soup in the mortar? Real - but no miracle. {\fs13}I' |
-| 2026-11-06c | 10 | ×0.40 | 1 | 0 | SPECTACLE-FACT | The world's tallest wooden pagoda is nearly 970 years old. {\fs1 |
-| 2026-11-06a | 7 | ×0.28 | 1 | 0 | SPECTACLE-FACT | The Forbidden City opened in 1420. Its biggest hall? 1697. {\fs1 |
-| 2026-11-05d | 6 | ×0.24 | 1 | 0 | PRICE-SHOCK | Machu Picchu costs about $40. The Great Wall? About $6. {\fs13}I |
-| 2026-11-05c | 21 | ×0.84 | 1 | 0 | SPECTACLE-FACT | Xi'an beats Beijing for first-timers: 13 dynasties. {\fs13}I'm y |
-| 2026-11-05b | 2 | ×0.08 | 1 | 0 | SPECTACLE-FACT | 45,000 McDonald's worldwide. Around 500,000 hotpot spots in Chin |
-| 2026-11-05a | 3 | ×0.12 | 1 | 0 | CHOICE | First China stop: Shanghai or Guangzhou? |
-| 2026-11-04d | 11 | ×0.44 | 0 | 0 | SPECTACLE-FACT | 24 drums once kept Beijing's time - one survives. {\fs13}I'm you |
-| 2026-11-04c | 8 | ×0.32 | 0 | 0 | PRICE-SHOCK | Potala Palace: ~$14 this winter. Alhambra: ~$24. {\fs13}I'm your |
-| 2026-11-04a | 18 | ×0.72 | 0 | 0 | SPECTACLE-FACT | Built in 961, and it leans 2.3 metres. {\fs13}I'm your China Tra |
-| 2026-11-03d | 12 | ×0.48 | 0 | 0 | PLAIN-FACT | Most of the Great Wall isn't brick. {\fs13}I'm your China Travel |
+| 2026-11-09d | 3 | ×0.15 | 0 | 0 | PLAIN-FACT | Those dragon heads on the Forbidden City's terraces? {\fs13}I'm  |
+| 2026-11-09c | 8 | ×0.40 | 0 | 0 | PRICE-SHOCK | Vienna's Schönbrunn Palace: about $47. Beijing's Summer Palace:  |
+| 2026-11-09b | 12 | ×0.60 | 0 | 0 | PLAIN-FACT | China grows more wheat than any country on Earth. {\fs13}I'm you |
+| 2026-11-09a | 20 | ×1.00 | 0 | 0 | PLAIN-FACT | The biggest old-architecture complex in Jiangnan hides in Nanjin |
+| 2026-11-08d | 41 | ×2.05 | 1 | 0 | SPECTACLE-FACT | An hour from Shanghai sits a 1,700-year-old water town. {\fs13}I |
+| 2026-11-08c | 29 | ×1.45 | 0 | 0 | PLAIN-FACT | POV: you're walking old-town Chongqing in the rain. {\fs13}I'm y |
+| 2026-11-08b | 149 | ×7.45 | 0 | 0 | SPECTACLE-FACT | China grows ~72% of the world's garlic — and eats it raw. {\fs13 |
+| 2026-11-08a | 57 | ×2.85 | 0 | 0 | PRICE-SHOCK | St Paul's in London this winter: about $36. {\fs13}I'm your Chin |
+| 2026-11-07d | 69 | ×3.45 | 0 | 0 | SPECTACLE-FACT | POV: you're walking Xi'an — capital to 13 dynasties. {\fs13}I'm  |
+| 2026-11-07c | 3 | ×0.15 | 0 | 0 | SPECTACLE-FACT | No nails. No glue. These brackets held Chinese roofs up for 1,00 |
+| 2026-11-07b | 14 | ×0.70 | 0 | 0 | PLAIN-FACT | No country eats pork like China. {\fs13}I'm your China Travel Ex |
+| 2026-11-07a | 1008 | ×50.40 | 4 | 0 | PRICE-SHOCK | Versailles Passport this winter: about $28. {\fs13}I'm your Chin |
+| 2026-11-06b | 247 | ×12.35 | 2 | 0 | SPECTACLE-FACT | The world eats 120 billion instant-noodle servings a year. {\fs1 |
+| 2026-11-06d | 5 | ×0.25 | 1 | 0 | PLAIN-FACT | Sticky-rice soup in the mortar? Real - but no miracle. {\fs13}I' |
+| 2026-11-06c | 10 | ×0.50 | 1 | 0 | SPECTACLE-FACT | The world's tallest wooden pagoda is nearly 970 years old. {\fs1 |
+| 2026-11-06a | 7 | ×0.35 | 1 | 0 | SPECTACLE-FACT | The Forbidden City opened in 1420. Its biggest hall? 1697. {\fs1 |
+| 2026-11-05d | 6 | ×0.30 | 1 | 0 | PRICE-SHOCK | Machu Picchu costs about $40. The Great Wall? About $6. {\fs13}I |
+| 2026-11-05c | 21 | ×1.05 | 1 | 0 | SPECTACLE-FACT | Xi'an beats Beijing for first-timers: 13 dynasties. {\fs13}I'm y |
+| 2026-11-05b | 2 | ×0.10 | 1 | 0 | SPECTACLE-FACT | 45,000 McDonald's worldwide. Around 500,000 hotpot spots in Chin |
+| 2026-11-05a | 3 | ×0.15 | 1 | 0 | CHOICE | First China stop: Shanghai or Guangzhou? |
 <!-- AUTO:END -->

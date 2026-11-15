@@ -247,6 +247,11 @@ roadTo1m:
     rule: "every F3 (Wed/Sun a-slot X) = the 11-07 recipe: ONE price pair with >=4x gap, both prices re-verified in USD that day (2 sources each), price drawn over a real slug-named ground clip of the place (not a map/stock lookalike), PRICE-SHOCK hook, ~15-22 s. No other format changes. Volume unchanged (4/day)."
     trigger: "11-07 F3 'Versailles ~$28 vs Forbidden City ~$6' = 918 views @1d (x83 baseline) vs 11-04 F3 Potala/Alhambra 4-6 views and 10-25 F3 90"
     judge: "2026-11-22 (review 11-22): >=4 F3 samples; if F3 72h median >= 3x same-window F4 median -> keep and add one more F3 day; else revert to the old F3 rule. Roll back if 72h all-format median falls >=30% two weeks running."
+    review20261115: "kept unchanged (no new variable this week). F3 in window so far: 11-09 8v, 11-11 4v @72h, 11-12 ~28v @48h vs F4 72h median 13 -> on track to revert 11-22. No rollback: 72h median 8.5 -> 8.1 (-5%), not a >=30% drop."
+  stage0KillCheck:                # weekly review 2026-11-15 (measurement note, not a variable)
+    lowReachByDefinition: "control cohort (Shorts aged 8-60 d) new views/day stayed 16-46 (trailing-14d median 24-34) 10-20..11-14 -> NO day met the <50% LOW-REACH rule; the 10-26..11-12 collapse hit new uploads only, so those M samples count as clean"
+    asOf: "2026-11-15: n=9 same-day M/F4 pairs (10-24..11-10): pooled M 72h median 6 vs same-day F4 median 9 (letter of the kill met); median paired ratio 1.12 (spirit not met)"
+    rule: "2026-11-22 review: recompute with every pair incl. 11-13/14 onward (reach recovered 11-13). If n>=12 pairs and pooled M median <= same-day F4 median AND median paired ratio < 1.0 -> apply stage0Kill (M-Short 1/week; freed Mon/Tue/Sat X slots run F4 so volume stays 4/day per plan 6b). Otherwise keep."
   explore:                        # owner 2026-11-05; playbook section 0f
     enabled: true
     slot: b
@@ -351,7 +356,7 @@ pov8w:
     F3: "6 consecutive episodes with ratio < 0.8 -> pause (slots run F4); any >= 4x same-day F4 -> copy the shape for the next 2"
     F4: never
     L: "longform.killCheck; any guide with >=30% avg view and >=50% Search -> next 2 guides take the same kind of query"
-    week4: "2026-11-16: every format's 72h median <= 70 -> CHANNEL-LEVEL: check Studio, best 2 Shorts/day, prioritise owner footage and guides"
+    week4: "2026-11-16: every format's 72h median <= 70 -> CHANNEL-LEVEL: check Studio, best 2 Shorts/day, prioritise owner footage and guides"   # 2026-11-15 manager: 'best 2 Shorts/day' is SUPERSEDED by road-to-1m.md 6b (owner 11-05: never reduce volume) -> if triggered, only log check-Studio + prioritise owner footage; keep 4/day
   publishedFields: [format, footage, povType, owner, aspect, music]   # format F1|F2|F3|F4|L; footage owner|licensed-pov|ground|photo|map|ai-insert; povType walk|ride|street|none; RUNLOG adds fmt:<X>
 
 # vidIQ spend guard (2026-09-02: monthly music-gen drained the balance to 0)

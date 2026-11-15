@@ -4750,9 +4750,9 @@
    "site": "Forbidden City, Beijing",
    "hookType": "MISCONCEPTION",
    "hook": "The Forbidden City isn't flat — and that's the point.",
-   "angle": "Child of M-Long #2 (publish Fri 2026-11-27 + 7 days). Brief: #2: gate levels 46.05 vs 44.28 m, <2 m over ~960 m; caveat walls weaken self-draining. Renderer: extend scripts/mechanism/render_fc_drain.py (TODO render_fc_drain_<variant>.py). Facts only from the ledger (2 sources).",
+   "angle": "Child of M-Long #2 (publish Fri 2026-11-27 + 7 days). Brief: #2: gate levels 46.05 vs 44.28 m, <2 m over ~960 m; caveat walls weaken self-draining. Renderer DONE: scripts/mechanism/render_fc_slope.py. Facts only from the ledger (2 sources).",
    "footage": "M lane: code-drawn SVG animation (scripts/mechanism) + 3 s slug-named real photo/clip at the end; no stock in the steps, no AI imagery; bed from vault (containsSyntheticMedia true)",
-   "renderer": "TODO render_fc_drain_child.py (copy render_fc_drain.py)",
+   "renderer": "DONE 2026-11-15: python3 -I scripts/mechanism/render_fc_slope.py <outdir> -> fc_slope_1080x1920.mp4 (26 s, ~19 s render; N 46.05 / S 44.28 m, 'less than 2 m over ~960 m', caveat card; vertical scale tagged exaggerated; nothing below y=1260)",
    "series": "How Ancient China Built It",
    "priority": 3,
    "sources": [],
@@ -4864,6 +4864,81 @@
    "addedAt": "2026-11-08",
    "addedBy": "weekly manager 2026-11-08",
    "status": "hold-until-2026-12-11"
+  },
+  {
+   "pillar": "china-architecture",
+   "format": "short",
+   "fmt": "M",
+   "archType": "mechanism",
+   "site": "Dujiangyan Irrigation System, Sichuan",
+   "footage": "M lane: code-drawn SVG animation (scripts/mechanism) + 2.5 s slug-named real Dujiangyan open + 3-4 s close (site named only if the clip slug names it; else map card); no stock in the steps, no AI imagery; bed from vault (containsSyntheticMedia true)",
+   "series": "How Ancient China Built It",
+   "priority": 3,
+   "verify": {
+    "verdict": "ledger in plans/mechanism/dujiangyan/longform-script.md",
+    "at": "2026-11-15"
+   },
+   "whyNow": "child Short of M-Long #4",
+   "addedAt": "2026-11-15",
+   "addedBy": "weekly manager 2026-11-15",
+   "status": "hold-until-2026-12-25",
+   "id": "arch-M-14",
+   "title": "No Dam Across This River — for 2,000 Years",
+   "hookType": "MISCONCEPTION",
+   "hook": "No dam across this river — for 2,000 years.",
+   "angle": "Child #1 of M-Long #4 (Dujiangyan, 2026-12-25 + 7 days). Brief #1 in plans/mechanism/dujiangyan/child-shorts.md; ledger D1,D2,D6-D8 ('roughly 60/40').",
+   "renderer": "TODO (scene parts of plans/mechanism/dujiangyan/scenes.json; copy render_fc_slope.py water helpers)",
+   "sources": []
+  },
+  {
+   "pillar": "china-architecture",
+   "format": "short",
+   "fmt": "M",
+   "archType": "mechanism",
+   "site": "Dujiangyan Irrigation System, Sichuan",
+   "footage": "M lane: code-drawn SVG animation (scripts/mechanism) + 2.5 s slug-named real Dujiangyan open + 3-4 s close (site named only if the clip slug names it; else map card); no stock in the steps, no AI imagery; bed from vault (containsSyntheticMedia true)",
+   "series": "How Ancient China Built It",
+   "priority": 3,
+   "verify": {
+    "verdict": "ledger in plans/mechanism/dujiangyan/longform-script.md",
+    "at": "2026-11-15"
+   },
+   "whyNow": "child Short of M-Long #4",
+   "addedAt": "2026-11-15",
+   "addedBy": "weekly manager 2026-11-15",
+   "status": "hold-until-2026-12-25",
+   "id": "arch-M-15",
+   "title": "This Low Wall Is a 2,000-Year-Old Flood Valve",
+   "hookType": "INSIDER",
+   "hook": "This low wall is a 2,000-year-old flood valve.",
+   "angle": "Child #2 of M-Long #4. Brief #2 in child-shorts.md; ledger D10,D17,D18,D24 (say 'now concrete').",
+   "renderer": "TODO (scene parts of plans/mechanism/dujiangyan/scenes.json; copy render_fc_slope.py water helpers)",
+   "sources": []
+  },
+  {
+   "pillar": "china-architecture",
+   "format": "short",
+   "fmt": "M",
+   "archType": "mechanism",
+   "site": "Dujiangyan Irrigation System, Sichuan",
+   "footage": "M lane: code-drawn SVG animation (scripts/mechanism) + 2.5 s slug-named real Dujiangyan open + 3-4 s close (site named only if the clip slug names it; else map card); no stock in the steps, no AI imagery; bed from vault (containsSyntheticMedia true)",
+   "series": "How Ancient China Built It",
+   "priority": 3,
+   "verify": {
+    "verdict": "ledger in plans/mechanism/dujiangyan/longform-script.md",
+    "at": "2026-11-15"
+   },
+   "whyNow": "child Short of M-Long #4",
+   "addedAt": "2026-11-15",
+   "addedBy": "weekly manager 2026-11-15",
+   "status": "hold-until-2026-12-25",
+   "id": "arch-M-16",
+   "title": "A 20 m Gap Cut Through a Mountain — With Fire and Water?",
+   "hookType": "STAKES",
+   "hook": "They cut a 20 m gap through a mountain — by fire and water, says tradition.",
+   "angle": "Child #3 of M-Long #4. Brief #3 in child-shorts.md; ledger D12-D14 ('according to tradition', 'reportedly about eight years').",
+   "renderer": "TODO (scene parts of plans/mechanism/dujiangyan/scenes.json; copy render_fc_slope.py water helpers)",
+   "sources": []
   }
  ]
 }
