@@ -43,11 +43,12 @@
    "frame0": "pxp-15955261 (real photo, not the diagram)",
    "series": "Yingxian M-Long children",
    "priority": 2,
-   "status": "active",
+   "status": "published-2026-11-16",
    "sources": [
     "https://shanxi.chinadaily.com.cn/datong/2018-08/20/c_302357.htm",
     "https://regional.chinadaily.com.cn/shanxi/2025-07/28/c_1116918.htm"
-   ]
+   ],
+   "publishedAs": "xzSv38kNDwI"
   },
   {
    "id": "arch-M-01",
@@ -1803,7 +1804,8 @@
    "whyNow": "owner 2026-10-19: all content = Chinese ancient architecture (temples, pagodas, palaces, city walls)",
    "addedAt": "2026-10-19",
    "addedBy": "architecture pivot 2026-10-19 (plans/architecture-pivot.md)",
-   "status": "active"
+   "status": "active",
+   "footageStatus": "MAP-only: no slug-named Pexels ground footage found (slot-a fork check 2026-11-16); use MAP-FORMAT or longform, not an F4 frame-0"
   },
   {
    "id": "arch-28",
@@ -1834,7 +1836,8 @@
    "whyNow": "owner 2026-10-19: all content = Chinese ancient architecture (temples, pagodas, palaces, city walls)",
    "addedAt": "2026-10-19",
    "addedBy": "architecture pivot 2026-10-19 (plans/architecture-pivot.md)",
-   "status": "active"
+   "status": "active",
+   "footageStatus": "MAP-only: no slug-named Pexels ground footage found (slot-a fork check 2026-11-16); use MAP-FORMAT or longform, not an F4 frame-0"
   },
   {
    "id": "arch-29",
@@ -1867,7 +1870,8 @@
    "whyNow": "owner 2026-10-19: all content = Chinese ancient architecture (temples, pagodas, palaces, city walls)",
    "addedAt": "2026-10-19",
    "addedBy": "architecture pivot 2026-10-19 (plans/architecture-pivot.md)",
-   "status": "active"
+   "status": "active",
+   "footageStatus": "MAP-only: no slug-named Pexels ground footage found (slot-a fork check 2026-11-16); use MAP-FORMAT or longform, not an F4 frame-0"
   },
   {
    "id": "arch-30",
