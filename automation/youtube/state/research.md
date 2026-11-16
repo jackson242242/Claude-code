@@ -1,3 +1,8 @@
+## 2026-11-16 (maintenance fork — competitor-scan readout, heritage-transferable shapes)
+- Competitor top-25 (last 7d): number-claim 7 / question 3 / other 15; still dominated by china-builds spectacle (desert solar farms, 80m wind-blades around mountain curves, tunnels) + nature via-ferrata + food challenges. Survivorship only — test the SHAPE, never copy content.
+- HERITAGE-ARCHITECTURE shape to test: the PARADOX "whole village hidden underground" (Annu Facts 3D, 348k) = the 地坑院/yaodong sunken-courtyard dwellings (Sanmenxia, Henan). Fits ARCHITECTURE-FIRST as a discovery/MISCONCEPTION Short ("a village with no houses above ground — where do 100 people live?"); slug-named ground footage gate applies. Candidate new arch-* seed.
+- china-builds "How do they…?" question-hooks over ONE mega-structure keep breaking out — reinforces the explore china-builds lane and the M-lane "how was this built" framing (one structure + one number + a question the viewer answers).
+
 ## 2026-11-15 (Sun)
 - **F4 architecture is the breakout lane** (11-13/14 cohorts 67–639v @1-2d after months of single digits) — keep leaning heritage + a clear discussion hook. Buddha/pagoda/wall/temple subjects all reaching.
 - **F2 arm fully blocked by POV supply** — 4th supply-out in 6 days. Every named heritage POV clip (Jing'an, Chaotian, Forbidden City, Temple of Heaven, Xi'an wall) is used. Monday 11-16 library top-up (temple/palace/wall POV walks) is the single highest-leverage task.
