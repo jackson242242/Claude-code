@@ -2,6 +2,7 @@
 
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
+**2026-11-16 (Mon):** region = 客家/Hakka (least-recently-updated after Minnan was touched 11-15; Hakka last ~07-12). **诚实降级: 未新增词条 (honest MISS)** — 定向搜索(客家话 网络流行语 梗 2026 后生/恁/煞猛)只返回全国普通话热梗讨论(夯爆了/活人感/背手负鼠…),无客家专属的全新且可二源核实的网络梗(候选 后生 young person / 恁 so·very / 煞猛 hard-working 均为客家常用词汇本身，非新生网络梗，且单源)→ 不重复不伪造，记录 miss(precedent 11-15 Minnan / 10-08 Beijing / 09-28)。今日 config-authoritative 4 Shorts a/b/c/d@13/17/20/23Z 全英(owner 08-30)→方言味归社媒 caption。详见 RUNLOG 2026-11-16。  
 
 **2026-11-15 (Sun):** region = 闽南/Minnan (last touched 07-12 食饱未/好呷/多谢; least-recently-updated with Hakka, and today’s slot b = Quanzhou, Minnan heartland). **诚实降级: 未新增词条** — 定向搜索(闽南话 网络流行语 水啦/歹势/冻蒜 2026)只返回萌娘百科单一词条，无可二源核实的全新且闽南专属条目(候选 水啦/歹势/冻蒜 释义各仅单源或为台湾腔泛用)→不重复不伪造，记录 miss(同 09-26/09-28 先例)。**机会note:** Quanzhou/Minnan footage lane is strong on Pexels — a future Fujian Short could carry a verified Minnan phrase in the social caption. 今日 config-authoritative 4 Shorts a/b/c/d@13/17/20/23Z 全英(owner 08-30)→方言味归社媒 caption。详见 RUNLOG 2026-11-15.
 
