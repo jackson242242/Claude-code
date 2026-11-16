@@ -1,3 +1,33 @@
+## 2026-11-16 post-mortem (baseline = 14d median views of Shorts ≥3d old: 12)
+- 2026-11-15 a vu1g6tAySEI | 299v 6L 0C @1d | ×24.92 | WINNER — replicate this hook shape today | A 71 m Buddha in a Cliff: River View or Climb to Its Feet? | China Tra
+- 2026-11-15 c 1xp-gOPQcxg | 250v 0L 0C @1d | ×20.83 | WINNER — replicate this hook shape today | China's Longest City Wall Isn't Xi'an's — It's Nanjing's | China Trave
+- 2026-11-14 a vNkN4S9kHEw | 134v 0L 0C @2d | ×11.17 | WINNER — replicate this hook shape today | 1,500 Years on a Cliff — and the Poles Aren't Holding It Up | China Tr
+- 2026-11-14 b BzEXqk0L7Ig | 110v 0L 0C @2d | ×9.17 | WINNER — replicate this hook shape today | Skip Shanghai's Towers? Suzhou Is 2,500 Years Old, 30 Min Away | China
+- 2026-11-14 d fRT78myrilU | 83v 0L 0C @2d | ×6.92 | WINNER — replicate this hook shape today | How to Get Into the Forbidden City: Book 7 Days Ahead | China Travel E
+- 2026-11-14 c ZrrPkXXfd-U | 68v 0L 0C @2d | ×5.67 | WINNER — replicate this hook shape today | 1,300 Years Ago This Was Chang'an — Wear the Tang Robes or Not? | Chin
+- 2026-11-15 b HRHFM2ARYOY | 46v 0L 0C @1d | ×3.83 | WINNER — replicate this hook shape today | China's Tallest Stone Pagodas Hide in a Quiet Fujian Port | China Trav
+- 2026-11-15 d NIqNL1eF9c8 | 19v 1L 0C @1d | ×1.58 | baseline | Westminster Abbey ~$41 vs the Temple of Heaven ~$4 | China Travel Expe
+- like-rate (fresh Shorts): 0.69% (peers 1-6%)
+### Equal age (Data API snapshots since 2026-10-18; 48 h / 72 h ±6 h; "~" = interpolated between the snapshots either side)
+- Shorts median, trailing 28 d: 48h 17v (n=88) · 72h 15v (n=84)
+- 2026-11-14 b fmt:F4 BzEXqk0L7Ig | 48h 110v 0L 0C | 72h — | Skip Shanghai's Towers? Suzhou Is 2,500 Years Old, 30 Min Aw
+- 2026-11-14 a fmt:- vNkN4S9kHEw | 48h 134v 0L 0C | 72h — | 1,500 Years on a Cliff — and the Poles Aren't Holding It Up 
+- 2026-11-13 d fmt:F4 c3LDOjriXrc | 48h ~468v 4L 0C | 72h — | 51,000 Buddhas in a Cliff, or a Temple Pinned to One? | Chin
+- 2026-11-13 c fmt:- 1Hr1mpGzK8o | 48h ~55v 0L 0C | 72h — | Count 5 Floors Outside — There Are 9 Inside | China Travel E
+- 2026-11-13 b fmt:- cin6g2-pxm0 | 48h 214v 1L 0C | 72h 217v 1L 0C | World's Longest Metro? Not Tokyo or New York — Shanghai | Ch
+- 2026-11-13 L fmt:L BYNUP21Ns-k | 48h 3v 0L 0C | 72h 3v 0L 0C | The 67-Metre Wooden Pagoda Earthquakes Can't Kill | China Tr
+- 2026-11-13 a fmt:F4 BL_x6IO2CI0 | 48h 639v 4L 0C | 72h 641v 4L 0C | 800 People, One Round Building — Home or Fortress? | China T
+- 2026-11-12 d fmt:F1 uZByAAXLFMw | 48h ~8v 0L 0C | 72h ~8v 0L 0C | 5 am city or 6:30 am mountains? | China Travel Expert
+- 2026-11-12 c fmt:F3 JmCWAkM1cmo | 48h ~28v 1L 0C | 72h ~28v 1L 0C | The Tower of London ~$50 vs the Forbidden City ~$6 in Winter
+- 2026-11-12 b fmt:F4 FoDH8ypMYJo | 48h 10v 0L 0C | 72h 13v 1L 0C | Glass Floor 259m Up, or the Solid Deck? Shanghai's Oriental 
+- 2026-11-12 a fmt:F4 6lNg-RzDOtI | 48h 28v 0L 0C | 72h 28v 0L 0C | Older Than Shanghai Itself: a 247 AD Temple Ringed by Luxury
+- 2026-11-11 d fmt:F4 jq3E2FUsKuM | 48h ~4v 0L 0C | 72h ~4v 0L 0C | 晨钟暮鼓: Xi'an Ran on a Bell and a Drum for 600 Years | China T
+- 2026-11-11 c fmt:F2 1Hcj4n60Tv0 | 48h ~17v 0L 0C | 72h ~20v 0L 0C | City or Not City? POV: Walking Chongqing, China's 8D Magic C
+- 2026-11-11 b fmt:- s1LRN1a9pYA | 48h 8v 0L 0C | 72h 8v 0L 0C | China's 604m Canton Tower Pinches to a ~22m Waist | China Tr
+- 2026-11-11 a fmt:F3 bviASNGpVgc | 48h 4v 0L 0C | 72h 4v 0L 0C | The Louvre Now ~$36 for Tourists. The Great Wall? ~$5 | Chin
+### YouTube Analytics API
+- unavailable: HTTP 403 accessNotConfigured — the YouTube Analytics API is not enabled in the Google Cloud project (owner action: APIs & Services > enable "YouTube Analytics API"; checklist in scripts/youtube-oauth-helper.mjs). Equal-age numbers come from Data API snapshots only.
+
 ## 2026-11-15 post-mortem (baseline = 14d median views of Shorts ≥3d old: 11)
 - 2026-11-13 a BL_x6IO2CI0 | 639v 4L 0C @2d | ×58.09 | WINNER — replicate this hook shape today | 800 People, One Round Building — Home or Fortress? | China Travel Expe
 - 2026-11-13 d c3LDOjriXrc | 464v 4L 0C @2d | ×42.18 | WINNER — replicate this hook shape today | 51,000 Buddhas in a Cliff, or a Temple Pinned to One? | China Travel E

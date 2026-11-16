@@ -1,3 +1,32 @@
+## 2026-11-16 competitor scan (top 25 China-travel Shorts published in the last 7 days, by views)
+hook-shape tally: {"number-claim":7,"other":15,"question":3} · nature/small-town titles in top 25: 7
+- 6235343v 143278L (2.3%) PT1M8S | Unique Fact Official | 5 Most China’s Weirdest Farms Will Leave You Speechless!🙄#shorts #facts #farmin | https://youtube.com/shorts/toBtC1Cllwk
+- 1911288v 46482L (2.4%) PT51S | В двух словах | Экстремальная виа феррата в Китае: страшная тропа над пропастью в Баоцюане | https://youtube.com/shorts/V77R1KmBpHM
+- 1843369v 42124L (2.3%) PT2M56S | Foodie We | Japan Food Challenge 🇯🇵😍 #shorts #japan #food | https://youtube.com/shorts/RbtqH1TdFoc
+- 1734427v 0L (0.0%) PT1M4S | firoj_drop | 🏔 China solar panels desert problem | https://youtube.com/shorts/r9LMoTang9Y
+- 1183698v 6232L (0.5%) P0D | Street Food Records | Chinese Street food Live Streaming Mochi 2026-11-16 17:29:46 | https://youtube.com/shorts/osK7pg-53tI
+- 876559v 9999L (1.1%) PT17S | FactMind Bangla | China&#39;s Unique Food Preparation Technique Will Shock You! | https://youtube.com/shorts/J-FVsT96fT4
+- 853455v 4417L (0.5%) PT14S | BEAUTY OF CHINA | 🏔 The Most Beautiful places in China#Nature#Explore#Culture#progres#trips china#Wo | https://youtube.com/shorts/YW3fZ22owkQ
+- 840896v 0L (0.0%) PT1M10S | Curiosidades Incríveis | Como Caminhões Levam Pás Eólicas de 80 Metros em Curvas Fechadas da Montanha? #c | https://youtube.com/shorts/hEj4iyLrKJ4
+- 795138v 15540L (2.0%) PT1M2S | FactBoom | 😱 Китай поражает мир! Самые невероятные места 🇨🇳🔥 #Китай #Факты #Shorts | https://youtube.com/shorts/4VJWf3vb1o4
+- 470744v 2741L (0.6%) PT16S | Shuke Traveler | 🏔 Places That Feel Least Like Earth🤯Part-76#shortvideo #nature #explore #usa #chi | https://youtube.com/shorts/4hCta3Yg76E
+- 446396v 24874L (5.6%) PT1M31S | sarorahere | Hong Kong Khaya OCTOPUS??🐙😛😂#travel #china #hongkong #travelvlog #comedy #sar | https://youtube.com/shorts/8cIR1DotGJU
+- 440148v 1619L (0.4%) PT7S | Electric Scotes  | 🏔 ELECTRIC BIKES BRG VESPRO 1500W  #electric #bikes #china #Environment #safe #nat | https://youtube.com/shorts/UAAlq0bfmC8
+- 419725v 0L (0.0%) PT19S | Abdul Rehman | 🏔 China’s Most Difficult Mountain Life 🇨🇳⛰️😱 #shorts | https://youtube.com/shorts/VRP9RIV3sns
+- 382984v 18075L (4.7%) PT2M1S | Foodie We | Cheap vs Most Expensive Noodles 🔥 #shorts #noodles #ytshorts | https://youtube.com/shorts/u-ghEln0pCM
+- 357800v 8836L (2.5%) PT2M1S | 老牛不吃路边摊 | 街头豪华牛肉炒饭，贵是贵点吃点不烧心~#中国美食 #特色小吃 #烤冷面  #chinesefood #chinesestreetfood #streetfood | https://youtube.com/shorts/Ak3VBWIDH08
+- 348642v 0L (0.0%) PT23S | Annu Facts 3D | Poora Gaon Zameen Ke Neeche Chhup Gaya 😱 #shorts #underground #historyfacts #ch | https://youtube.com/shorts/e_s4AEl72uI
+- 341454v 1099L (0.3%) PT11S | Hàm Làm Nông | 🏔 🚄 China&#39;s Incredible Tunnels Through Massive Mountains! #automobile #farmin | https://youtube.com/shorts/loGokjfrVEE
+- 331150v 7822L (2.4%) PT28S | BTFVLOGSS | 😱 ₹70/- Amul Makkhan Maggi 🥵 #shorts #viral #trending #youtubeshorts #shortvid | https://youtube.com/shorts/_ebCl--RA_Y
+- 306059v 3438L (1.1%) PT42S | silentSKY | cara istri indonesia memuliakan rasa indonesia🇮🇩 di desa china🇨🇳 #shorts #ch | https://youtube.com/shorts/9r2yVA0ffns
+- 299729v 15865L (5.3%) PT53S | Yashmita | Food challenge:Cheapest Chinese platter #food #foodchallenge #streetfood | https://youtube.com/shorts/qHXYe4F2zyI
+- 293452v 3229L (1.1%) PT1M2S | Mcdonell Schrader | how delicious is this crispy pork belly from the streets of China?#didyouknow #k | https://youtube.com/shorts/NGEO1_u1TwI
+- 264601v 0L (0.0%) PT49S | Rohit Star | 🏔 Solar Panels Made China Raise Goats in a Desert! 😱 | https://youtube.com/shorts/pobjAZeBhgQ
+- 261430v 1257L (0.5%) PT21S | 「걸어서 보는 세상 | See & Go」 | 아슬아슬한 균형 묘기! 중국 전통 불도옹 공연｜Incredible Balance Performance in China  #중국여행 #travel | https://youtube.com/shorts/ADkcRbcEN5o
+- 257985v 3324L (1.3%) PT1M48S | 夜市练习生 | 山东曹县鸡蛋火烧 Baked Flatbread Stuffed with Eggs #chinesefood #streetfood  #food  #sna | https://youtube.com/shorts/R_6BSUVvSXk
+- 253482v 3962L (1.6%) PT27S | Nivicbe Vlogs | DJ to DSLR Upgrade – New passion, new gear, same crazy energy!  #chinatravel #im | https://youtube.com/shorts/mVINUKpCPrI
+ACTION for this week's runs: copy the top 3 SHAPES (title grammar, length, spectacle-first) into our Shorts; never copy content.
+
 ## 2026-11-09 competitor scan (top 25 China-travel Shorts published in the last 7 days, by views)
 hook-shape tally: {"other":16,"tag-only-spectacle":1,"paradox-claim":1,"number-claim":4,"question":3} · nature/small-town titles in top 25: 3
 - 2533108v 167121L (6.6%) PT1M38S | A vida é uma maravilha | A China cobriu montanhas com painéis solares ☀️ | https://youtube.com/shorts/Gmsze-dT_pA
