@@ -51,7 +51,7 @@
   "pexelsChinaCandidatesFrameChecked_pass1_previews": 450,
   "pexelsClipsDownloadVerified_pass2": 223,
   "pass1PreviewYes_confirmedByDownload": "43 of 118",
-  "pexelsPovVerified_total": 69,
+  "pexelsPovVerified_total": 70,
   "pexelsPovVerified_chinaIdentifiable": 60,
   "pexelsPovVerified_chinaIdentifiable_usable": 58,
   "pexelsPovVerified_chinaIdentifiable_usable_portrait": 14,
@@ -82,7 +82,7 @@
   "commonsPovVerified": 10,
   "commonsPovVerified_chinaIdentifiable": 7,
   "commonsYouTubeOriginWalkingTours_blockedByChannelRule_estimated": 32,
-  "lastTopUp": "2026-11-09 (+0 NEW. Probed heritage POV portrait queries (forbidden-city/palace-courtyard/temple-corridor/ancient-town/drum-tower/lantern-street). Only candidates that LOOKed clean were px-38446814/592/700 Chaotian Palace Nanjing - but ALL already catalogued 2026-10-26 (592+700 already USED in runs/2026-10-26-d; 814 pov:partial, left unused). px-37528085 jiming-temple-pagoda REJECTED (distant pagoda over a modern traffic street, not a heritage walk). px-36675730 already catalogued. Yield 0<4, reported not padded - F2 supply-out root cause persists; slot a today therefore ran F4 (used 814 as a slug-named ground clip)."
+  "lastTopUp": "2026-11-16 (+1 NEW: px-39692405 Kaiyuan-temple courtyard, gentle forward dolly, chinaIdentifiable=false/placeSpeakable=null so it does NOT relieve F2 China supply-out. Probed ~14 China POV queries, frame-checked ~11 candidates: 36675730(climbing-steps temple) & 38446592/814(Chaotian Palace Nanjing) ALREADY catalogued; 30931843 Suzhou / 39693071 Xi'an Bell Tower / 27958758 Shaxi Taicang / 38791823 Nanjing Zhongshan-gate = static establishes or pans (no forward camera motion); 38875242=Thean Hou Temple KUALA LUMPUR (not mainland), 39903845=non-mainland pan. Yield 1<4, reported NOT padded. Mainland China-nameable portrait POV supply on Pexels remains exhausted, same root cause as the 11-09 top-up -> F2 supply-out persists.)"
  },
  "clips": [
   {
@@ -1897,6 +1897,32 @@
     "WEAKEST China evidence of this top-up: no Chinese text visible and the photographer (vignesh srivatsav) is not Chinese — China evidence is only the slug + corridor architecture. VERIFY before ever naming; type-level use only."
    ],
    "verifyNote": "3-frame check 2026-11-02: forward motion down the corridor, prayer wheels recede; eye level (the near-static take px-35861966 of the same spot was rejected)."
+  },
+  {
+   "id": "px-39692405",
+   "source": "Pexels",
+   "license": "Pexels License (free commercial use, attribution optional; credit kept)",
+   "sourceUrl": "https://www.pexels.com/video/traditional-chinese-temple-architecture-in-sunlight-39692405/",
+   "downloadLink": "https://videos.pexels.com/video-files/39692405/16923690_1080_1920_30fps.mp4",
+   "downloadDims": "1080x1920",
+   "duration": 10,
+   "orientation": "portrait",
+   "photographer": "Christiana Dj",
+   "place": "Unnamed Chinese-style temple courtyard; on-screen plaque reads 开元禅寺 (Kaiyuan Chan Temple) but slug does not name a place",
+   "placeSpeakable": null,
+   "chinaIdentifiable": false,
+   "chinaEvidence": null,
+   "pov": "yes",
+   "povType": "walk (slow forward slide/dolly past a stone lion toward the temple hall, eye level)",
+   "mood": "sunlit heritage temple courtyard, stone guardian lion, red timber hall",
+   "usable": true,
+   "flags": [],
+   "verifyNote": "gentle forward dolly past stone lion toward a timber temple hall; plaque 开元禅寺 but location not confirmed mainland (same shooter/style as px-36675730, keywords say asian) -> chinaIdentifiable=false, type-level 'a Chinese temple' only, never name a site",
+   "verifiedBy": "downloaded 1080x1920 rendition, frames at 15/50/85% LOOKed (maintenance fork 2026-11-16): eye-level, mild forward motion",
+   "foundBy": [
+    "first person walking temple china|portrait",
+    "walking chinese temple|portrait"
+   ]
   }
  ],
  "weakPov": [
