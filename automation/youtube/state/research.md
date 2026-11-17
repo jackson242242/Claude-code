@@ -1,3 +1,7 @@
+## 2026-11-17 (Tue) — direction research + today's batch
+- Architecture "overturned-belief" angles are the live winners: Yingxian pagoda's lean (human 1930s repair, not earthquakes) + Forbidden City roof-beast rank system both shipped today as MISCONCEPTION/INSIDER. Postmortem confirms slug-named-photo architecture MISCONCEPTION/CHOICE lead (11-15/16: 279-639v); M code-drawn lane still weak (Yingxian M 0v@1d) — Stage-0 M gate review due 11-22.
+- Trend: no fresh <=7d US-China meme (city不city + Chinamaxxing coverage all 2024..2026-03) -> standby tr-03 "city or not city" -> Chongqing (Liziba through-building floors 6-8/19; "8D magic city"). Untested arch seed worth queueing: 地坑院/sunken-courtyard dwellings (from 11-16 competitor readout) = clean MISCONCEPTION "a village with no houses above ground".
+
 ## 2026-11-16 (maintenance fork — competitor-scan readout, heritage-transferable shapes)
 - Competitor top-25 (last 7d): number-claim 7 / question 3 / other 15; still dominated by china-builds spectacle (desert solar farms, 80m wind-blades around mountain curves, tunnels) + nature via-ferrata + food challenges. Survivorship only — test the SHAPE, never copy content.
 - HERITAGE-ARCHITECTURE shape to test: the PARADOX "whole village hidden underground" (Annu Facts 3D, 348k) = the 地坑院/yaodong sunken-courtyard dwellings (Sanmenxia, Henan). Fits ARCHITECTURE-FIRST as a discovery/MISCONCEPTION Short ("a village with no houses above ground — where do 100 people live?"); slug-named ground footage gate applies. Candidate new arch-* seed.
