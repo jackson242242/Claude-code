@@ -19,11 +19,12 @@
    "frame0": "pxp-15955261 (real photo, not the diagram)",
    "series": "Yingxian M-Long children",
    "priority": 2,
-   "status": "active",
+   "status": "published-2026-11-17",
    "sources": [
     "https://news.cgtn.com/news/2021-05-03/",
     "https://www.sixthtone.com/news/1017643"
-   ]
+   ],
+   "publishedAs": "JDh7coLKRAo"
   },
   {
    "id": "arch-M-01-child2",
@@ -918,7 +919,8 @@
    "whyNow": "owner 2026-10-19: all content = Chinese ancient architecture (temples, pagodas, palaces, city walls)",
    "addedAt": "2026-10-19",
    "addedBy": "architecture pivot 2026-10-19 (plans/architecture-pivot.md)",
-   "status": "active"
+   "status": "published-2026-11-17",
+   "publishedAs": "dL-QfQDF-js"
   },
   {
    "id": "arch-05",
