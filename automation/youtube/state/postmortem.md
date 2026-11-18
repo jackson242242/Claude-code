@@ -1,3 +1,33 @@
+## 2026-11-18 post-mortem (baseline = 14d median views of Shorts ≥3d old: 17)
+- 2026-11-17 c Azgh_pM5b40 | 868v 3L 0C @1d | ×51.06 | WINNER — replicate this hook shape today | City or Not City? Chongqing Runs a Train Through a Building | China Tr
+- 2026-11-16 a jB6MF8t1prg | 297v 1L 0C @2d | ×17.47 | WINNER — replicate this hook shape today | The Great Wall Isn't 2,000 Years Old — It's Ming | China Travel Expert
+- 2026-11-17 d dL-QfQDF-js | 100v 1L 0C @1d | ×5.88 | WINNER — replicate this hook shape today | Count the Roof Beasts: Only One Building in China Has 10 | China Trave
+- 2026-11-17 b s3a5g7nJMHs | 76v 0L 0C @1d | ×4.47 | WINNER — replicate this hook shape today | Skip the Great Wall Crowds? Xi'an Has the Wall You Can Ride Around | C
+- 2026-11-16 d kQCQqss7_54 | 66v 0L 0C @2d | ×3.88 | WINNER — replicate this hook shape today | Street Snacks or the Old Town? Walking 2,200-Year-Old Guangzhou | Chin
+- 2026-11-16 b s0cdnK42cpM | 56v 0L 0C @2d | ×3.29 | WINNER — replicate this hook shape today | Beijing's Famous Dragon Wall? The Real One's in Datong | China Travel 
+- 2026-11-16 c xzSv38kNDwI | 0v 0L 0C @2d | ×0.00 | LOSER — avoid this shape today | 200+ Shells Hit This Wooden Tower in 1926 — Still Standing | China Tra
+- 2026-11-17 a JDh7coLKRAo | 0v 0L 0C @1d | ×0.00 | LOSER — avoid this shape today | The World's Tallest Wooden Tower Is Leaning | China Travel Expert
+- like-rate (fresh Shorts): 0.34% (peers 1-6%)
+### Equal age (Data API snapshots since 2026-10-18; 48 h / 72 h ±6 h; "~" = interpolated between the snapshots either side)
+- Shorts median, trailing 28 d: 48h 19v (n=90) · 72h 19v (n=86)
+- 2026-11-16 b fmt:F4 s0cdnK42cpM | 48h 56v 0L 0C | 72h — | Beijing's Famous Dragon Wall? The Real One's in Datong | Chi
+- 2026-11-16 a fmt:F4 jB6MF8t1prg | 48h 297v 1L 0C | 72h — | The Great Wall Isn't 2,000 Years Old — It's Ming | China Tra
+- 2026-11-15 d fmt:F3 NIqNL1eF9c8 | 48h ~49v 1L 0C | 72h — | Westminster Abbey ~$41 vs the Temple of Heaven ~$4 | China T
+- 2026-11-15 c fmt:F4 1xp-gOPQcxg | 48h ~283v 0L 0C | 72h — | China's Longest City Wall Isn't Xi'an's — It's Nanjing's | C
+- 2026-11-15 b fmt:F4 HRHFM2ARYOY | 48h 48v 0L 0C | 72h 48v 0L 0C | China's Tallest Stone Pagodas Hide in a Quiet Fujian Port | 
+- 2026-11-15 a fmt:F4 vu1g6tAySEI | 48h 328v 7L 0C | 72h 333v 7L 0C | A 71 m Buddha in a Cliff: River View or Climb to Its Feet? |
+- 2026-11-14 d fmt:F4 fRT78myrilU | 48h ~84v 0L 0C | 72h ~82v 0L 0C | How to Get Into the Forbidden City: Book 7 Days Ahead | Chin
+- 2026-11-14 c fmt:F2 ZrrPkXXfd-U | 48h ~68v 0L 0C | 72h ~66v 0L 0C | 1,300 Years Ago This Was Chang'an — Wear the Tang Robes or N
+- 2026-11-14 b fmt:F4 BzEXqk0L7Ig | 48h 110v 0L 0C | 72h 111v 0L 0C | Skip Shanghai's Towers? Suzhou Is 2,500 Years Old, 30 Min Aw
+- 2026-11-14 a fmt:- vNkN4S9kHEw | 48h 134v 0L 0C | 72h 141v 0L 0C | 1,500 Years on a Cliff — and the Poles Aren't Holding It Up 
+- 2026-11-13 d fmt:F4 c3LDOjriXrc | 48h ~468v 4L 0C | 72h ~472v 4L 0C | 51,000 Buddhas in a Cliff, or a Temple Pinned to One? | Chin
+- 2026-11-13 c fmt:- 1Hr1mpGzK8o | 48h ~55v 0L 0C | 72h ~56v 0L 0C | Count 5 Floors Outside — There Are 9 Inside | China Travel E
+- 2026-11-13 b fmt:- cin6g2-pxm0 | 48h 214v 1L 0C | 72h 217v 1L 0C | World's Longest Metro? Not Tokyo or New York — Shanghai | Ch
+- 2026-11-13 L fmt:L BYNUP21Ns-k | 48h 3v 0L 0C | 72h 3v 0L 0C | The 67-Metre Wooden Pagoda Earthquakes Can't Kill | China Tr
+- 2026-11-13 a fmt:F4 BL_x6IO2CI0 | 48h 639v 4L 0C | 72h 641v 4L 0C | 800 People, One Round Building — Home or Fortress? | China T
+### YouTube Analytics API
+- unavailable: HTTP 403 accessNotConfigured — the YouTube Analytics API is not enabled in the Google Cloud project (owner action: APIs & Services > enable "YouTube Analytics API"; checklist in scripts/youtube-oauth-helper.mjs). Equal-age numbers come from Data API snapshots only.
+
 ## 2026-11-17 post-mortem (baseline = 14d median views of Shorts ≥3d old: 13)
 - 2026-11-15 a vu1g6tAySEI | 328v 7L 0C @2d | ×25.23 | WINNER — replicate this hook shape today | A 71 m Buddha in a Cliff: River View or Climb to Its Feet? | China Tra
 - 2026-11-16 a jB6MF8t1prg | 289v 1L 0C @1d | ×22.23 | WINNER — replicate this hook shape today | The Great Wall Isn't 2,000 Years Old — It's Ming | China Travel Expert

@@ -3,6 +3,8 @@
 **Purpose:** Survey-level dialect meme repository for YouTube content pipeline covering 11 major Chinese regions/dialects.  
 **Cycle:** Daily research cycle appends/deepens one region per day across all 11 regions.  
 
+**2026-11-18 (Wed):** region = 湖南/Hunan (least-recently-updated: last touched ~09-05; Sichuan-Chongqing 11-17 / Hakka 11-16 / Minnan 11-15 / Shanghai 11-12 all more recent). **诚实降级: 未新增词条 (honest MISS)** — 定向搜索(湖南话/长沙话 网络流行语 梗 2026 塑普/霸得蛮)只返回全国性"玩梗/词穷"讨论(中新网/新湖南/人民日报),无湖南专属且可二源核实的全新网络梗;候选 霸得蛮/塑普 均为长期方言常用语(单源、非新生网络梗)→不重复不伪造,记录 miss(precedent 11-17 川渝 / 11-16 Hakka / 11-15 Minnan)。今日 config-authoritative 4 Shorts a/b/c/d@13/17/20/23Z 全英(owner 08-30)→方言味归社媒 caption。详见 RUNLOG 2026-11-18。  
+
 **2026-11-17 (Tue):** region = 四川/重庆 Sichuan-Chongqing (among the stale set — recent touches Hakka 11-16 / Minnan 11-15 / Shanghai 11-12 / Beijing 10-08; aligns with today's Chongqing slot c). **诚实降级: 未新增词条 (honest MISS)** — 定向搜索(四川话/重庆话 网络流行语 梗 2026)只返回 2025 年度榜单(魔丸/灵珠等,与川渝方言无关)和常用词释义;候选 巴适 bā-shì「舒服/不错, travel-apt」、瓜娃子、要得 均为长期方言常用词而非本周期新生网络梗,2026-new 二源无果(巴适主要单源萌娘百科)→ 不重复不伪造,记录 miss(precedent 11-15 Minnan / 11-16 Hakka)。今日 config-authoritative 4 Shorts a/b/c/d@13/17/20/23Z 全英→方言味归社媒 caption。详见 RUNLOG 2026-11-17.  
 **2026-11-16 (Mon):** region = 客家/Hakka (least-recently-updated after Minnan was touched 11-15; Hakka last ~07-12). **诚实降级: 未新增词条 (honest MISS)** — 定向搜索(客家话 网络流行语 梗 2026 后生/恁/煞猛)只返回全国普通话热梗讨论(夯爆了/活人感/背手负鼠…),无客家专属的全新且可二源核实的网络梗(候选 后生 young person / 恁 so·very / 煞猛 hard-working 均为客家常用词汇本身，非新生网络梗，且单源)→ 不重复不伪造，记录 miss(precedent 11-15 Minnan / 10-08 Beijing / 09-28)。今日 config-authoritative 4 Shorts a/b/c/d@13/17/20/23Z 全英(owner 08-30)→方言味归社媒 caption。详见 RUNLOG 2026-11-16。  
 
