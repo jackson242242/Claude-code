@@ -1,3 +1,33 @@
+## 2026-11-19 post-mortem (baseline = 14d median views of Shorts ≥3d old: 24)
+- 2026-11-17 c Azgh_pM5b40 | 869v 3L 0C @2d | ×36.21 | WINNER — replicate this hook shape today | City or Not City? Chongqing Runs a Train Through a Building | China Tr
+- 2026-11-18 b VzSFSnT8l5I | 746v 2L 0C @1d | ×31.08 | WINNER — replicate this hook shape today | Everyone Skips Chengdu for 'Old China' — It's 2,300 Years Old | China 
+- 2026-11-18 c jKmCUg80lPA | 332v 1L 0C @1d | ×13.83 | WINNER — replicate this hook shape today | You Think This Pagoda Is 1,000 Years Old — The Real One Fell in 1924 |
+- 2026-11-17 d dL-QfQDF-js | 110v 1L 0C @2d | ×4.58 | WINNER — replicate this hook shape today | Count the Roof Beasts: Only One Building in China Has 10 | China Trave
+- 2026-11-17 b s3a5g7nJMHs | 77v 0L 0C @2d | ×3.21 | WINNER — replicate this hook shape today | Skip the Great Wall Crowds? Xi'an Has the Wall You Can Ride Around | C
+- 2026-11-18 d KJGTW8XrskU | 77v 0L 0C @1d | ×3.21 | WINNER — replicate this hook shape today | Windsor Castle ~$41 vs the Forbidden City ~$6 in Winter | China Travel
+- 2026-11-18 a hb2bZJp4haA | 2v 0L 0C @1d | ×0.08 | LOSER — avoid this shape today | A 247 AD Temple, Boxed In by Shanghai's Malls — Stop or Shop? | China 
+- 2026-11-17 a JDh7coLKRAo | 1v 0L 0C @2d | ×0.04 | LOSER — avoid this shape today | The World's Tallest Wooden Tower Is Leaning | China Travel Expert
+- like-rate (fresh Shorts): 0.32% (peers 1-6%)
+### Equal age (Data API snapshots since 2026-10-18; 48 h / 72 h ±6 h; "~" = interpolated between the snapshots either side)
+- Shorts median, trailing 28 d: 48h 15v (n=91) · 72h 19v (n=87)
+- 2026-11-17 b fmt:F4 s3a5g7nJMHs | 48h 77v 0L 0C | 72h — | Skip the Great Wall Crowds? Xi'an Has the Wall You Can Ride 
+- 2026-11-17 a fmt:- JDh7coLKRAo | 48h 1v 0L 0C | 72h — | The World's Tallest Wooden Tower Is Leaning | China Travel E
+- 2026-11-16 d fmt:F2 kQCQqss7_54 | 48h ~67v 0L 0C | 72h — | Street Snacks or the Old Town? Walking 2,200-Year-Old Guangz
+- 2026-11-16 c fmt:- xzSv38kNDwI | 48h ~0v 0L 0C | 72h — | 200+ Shells Hit This Wooden Tower in 1926 — Still Standing |
+- 2026-11-16 b fmt:F4 s0cdnK42cpM | 48h 56v 0L 0C | 72h 56v 0L 0C | Beijing's Famous Dragon Wall? The Real One's in Datong | Chi
+- 2026-11-16 a fmt:F4 jB6MF8t1prg | 48h 297v 1L 0C | 72h 297v 1L 0C | The Great Wall Isn't 2,000 Years Old — It's Ming | China Tra
+- 2026-11-15 d fmt:F3 NIqNL1eF9c8 | 48h ~49v 1L 0C | 72h ~56v 1L 0C | Westminster Abbey ~$41 vs the Temple of Heaven ~$4 | China T
+- 2026-11-15 c fmt:F4 1xp-gOPQcxg | 48h ~283v 0L 0C | 72h ~294v 0L 0C | China's Longest City Wall Isn't Xi'an's — It's Nanjing's | C
+- 2026-11-15 b fmt:F4 HRHFM2ARYOY | 48h 48v 0L 0C | 72h 48v 0L 0C | China's Tallest Stone Pagodas Hide in a Quiet Fujian Port | 
+- 2026-11-15 a fmt:F4 vu1g6tAySEI | 48h 328v 7L 0C | 72h 333v 7L 0C | A 71 m Buddha in a Cliff: River View or Climb to Its Feet? |
+- 2026-11-14 d fmt:F4 fRT78myrilU | 48h ~84v 0L 0C | 72h ~82v 0L 0C | How to Get Into the Forbidden City: Book 7 Days Ahead | Chin
+- 2026-11-14 c fmt:F2 ZrrPkXXfd-U | 48h ~68v 0L 0C | 72h ~66v 0L 0C | 1,300 Years Ago This Was Chang'an — Wear the Tang Robes or N
+- 2026-11-14 b fmt:F4 BzEXqk0L7Ig | 48h 110v 0L 0C | 72h 111v 0L 0C | Skip Shanghai's Towers? Suzhou Is 2,500 Years Old, 30 Min Aw
+- 2026-11-14 a fmt:- vNkN4S9kHEw | 48h 134v 0L 0C | 72h 141v 0L 0C | 1,500 Years on a Cliff — and the Poles Aren't Holding It Up 
+- 2026-11-13 d fmt:F4 c3LDOjriXrc | 48h ~468v 4L 0C | 72h ~472v 4L 0C | 51,000 Buddhas in a Cliff, or a Temple Pinned to One? | Chin
+### YouTube Analytics API
+- unavailable: HTTP 403 accessNotConfigured — the YouTube Analytics API is not enabled in the Google Cloud project (owner action: APIs & Services > enable "YouTube Analytics API"; checklist in scripts/youtube-oauth-helper.mjs). Equal-age numbers come from Data API snapshots only.
+
 ## 2026-11-18 post-mortem (baseline = 14d median views of Shorts ≥3d old: 17)
 - 2026-11-17 c Azgh_pM5b40 | 868v 3L 0C @1d | ×51.06 | WINNER — replicate this hook shape today | City or Not City? Chongqing Runs a Train Through a Building | China Tr
 - 2026-11-16 a jB6MF8t1prg | 297v 1L 0C @2d | ×17.47 | WINNER — replicate this hook shape today | The Great Wall Isn't 2,000 Years Old — It's Ming | China Travel Expert
