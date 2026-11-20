@@ -7018,6 +7018,25 @@
    "aspect": "9x16",
    "music": "el-pov-walk-groove-01.mp3",
    "hookType": "CHOICE"
+  },
+  {
+   "date": "2026-11-20",
+   "slot": "b",
+   "title": "China's Rainbow Mountains Look Fake — But Zhangye Danxia Is Real | China Travel Expert",
+   "videoId": "m3oETGshSJY",
+   "url": "https://www.youtube.com/watch?v=m3oETGshSJY",
+   "pillar": "explore-unreal-china",
+   "lane": "explore unreal-china 2/5 DEBATE; Zhangye Danxia Gansu rainbow mountains, colors=real minerals (hematite/limonite/chlorite), tens of millions yrs, India-Asia uplift, 2020 UNESCO Global Geopark, honest nuance that viral photos are enhanced; verified NASA Earth Observatory + CGTN; frame0 px-35979459 viewpoint(people), 1 aerial px-35979137 back-half; fit:crop",
+   "status": "scheduled",
+   "publishAt": "2026-11-20T17:00:00Z",
+   "format": "F4",
+   "footage": "ground",
+   "povType": "none",
+   "owner": false,
+   "aspect": "9x16",
+   "music": "el-mountain-calm-01.mp3",
+   "hookType": "DEBATE",
+   "explore": "unreal-china"
   }
  ]
 }
