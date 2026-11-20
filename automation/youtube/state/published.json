@@ -6982,6 +6982,42 @@
    "aspect": "9x16",
    "music": "el-docu-underscore-04.mp3",
    "hookType": "MISCONCEPTION"
+  },
+  {
+   "date": "2026-11-20",
+   "slot": "d",
+   "title": "Guangzhou's Most Decorated Hall: the Roof, or the Carvings? | China Travel Expert",
+   "videoId": "XHtQA2VjAD4",
+   "url": "https://www.youtube.com/watch?v=XHtQA2VjAD4",
+   "pillar": "architecture",
+   "lane": "F4 ground heritage CHOICE; Chen Clan Ancestral Hall Guangzhou (Lingnan), finished 1894, 19 halls, ancestral temple + exam-prep academy, Shiwan ceramic roof ridges + three-carvings craft, now Guangdong Folk Art Museum; verified Wikipedia + TravelChinaGuide; clips px-39222241/px-39222387/px-39222239 slug-verified; fit:crop",
+   "status": "scheduled",
+   "publishAt": "2026-11-20T23:00:00Z",
+   "format": "F4",
+   "footage": "ground",
+   "povType": "none",
+   "owner": false,
+   "aspect": "9x16",
+   "music": "el-mountain-calm-01.mp3",
+   "hookType": "CHOICE"
+  },
+  {
+   "date": "2026-11-20",
+   "slot": "c",
+   "title": "Shanghai: the Skyline, or the Street Food? | China Travel Expert",
+   "videoId": "vNKwWDwwQsU",
+   "url": "https://www.youtube.com/watch?v=vNKwWDwwQsU",
+   "pillar": "city-travel",
+   "lane": "F2 licensed city-street POV (parody P blocked->rotation F2; cityScope approved; no unused heritage POV clip fills the band -> city-street POV per 0c.3, matches winning city POVs) CHOICE; Shanghai street-food lane, 2020 census 24,870,895 (most populous China); verified shanghai.gov.cn + ChinaDaily; clips px-33933028/px-33740429 slug-verified Shanghai; fit:crop",
+   "status": "scheduled",
+   "publishAt": "2026-11-20T20:00:00Z",
+   "format": "F2",
+   "footage": "licensed-pov",
+   "povType": "street",
+   "owner": false,
+   "aspect": "9x16",
+   "music": "el-pov-walk-groove-01.mp3",
+   "hookType": "CHOICE"
   }
  ]
 }
