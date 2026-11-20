@@ -1,3 +1,33 @@
+## 2026-11-20 post-mortem (baseline = 14d median views of Shorts ≥3d old: 29)
+- 2026-11-19 d cXZiMSUkho8 | 1077v 1L 0C @1d | ×37.14 | WINNER — replicate this hook shape today | POV: Walking Hong Kong's Tram Line — Running Since 1904 | China Travel
+- 2026-11-18 b VzSFSnT8l5I | 953v 5L 0C @2d | ×32.86 | WINNER — replicate this hook shape today | Everyone Skips Chengdu for 'Old China' — It's 2,300 Years Old | China 
+- 2026-11-18 c jKmCUg80lPA | 343v 1L 0C @2d | ×11.83 | WINNER — replicate this hook shape today | You Think This Pagoda Is 1,000 Years Old — The Real One Fell in 1924 |
+- 2026-11-19 a PRmHjaluaYw | 243v 1L 0C @1d | ×8.38 | WINNER — replicate this hook shape today | A 38m Hall Stands With Zero Nails — Pillars or the Echo Wall? | China 
+- 2026-11-18 d KJGTW8XrskU | 77v 0L 0C @2d | ×2.66 | WINNER — replicate this hook shape today | Windsor Castle ~$41 vs the Forbidden City ~$6 in Winter | China Travel
+- 2026-11-19 b GDfzL5R3S0g | 68v 0L 0C @1d | ×2.34 | WINNER — replicate this hook shape today | This Chinese Lake Looks Edited — It's a Real 3,000m Salt Mirror | Chin
+- 2026-11-18 a hb2bZJp4haA | 7v 0L 0C @2d | ×0.24 | LOSER — avoid this shape today | A 247 AD Temple, Boxed In by Shanghai's Malls — Stop or Shop? | China 
+- 2026-11-19 c OdiDyATtehY | 0v 0L 0C @1d | ×0.00 | LOSER — avoid this shape today | Hampton Court Palace ~$38 vs the Forbidden City ~$6 | China Travel Exp
+- like-rate (fresh Shorts): 0.29% (peers 1-6%)
+### Equal age (Data API snapshots since 2026-10-18; 48 h / 72 h ±6 h; "~" = interpolated between the snapshots either side)
+- Shorts median, trailing 28 d: 48h 15v (n=92) · 72h 15v (n=88)
+- 2026-11-18 b fmt:F4 VzSFSnT8l5I | 48h 953v 5L 0C | 72h — | Everyone Skips Chengdu for 'Old China' — It's 2,300 Years Ol
+- 2026-11-18 a fmt:F2 hb2bZJp4haA | 48h 7v 0L 0C | 72h — | A 247 AD Temple, Boxed In by Shanghai's Malls — Stop or Shop
+- 2026-11-17 d fmt:F4 dL-QfQDF-js | 48h ~113v 1L 0C | 72h — | Count the Roof Beasts: Only One Building in China Has 10 | C
+- 2026-11-17 c fmt:F2 Azgh_pM5b40 | 48h ~907v 3L 0C | 72h — | City or Not City? Chongqing Runs a Train Through a Building 
+- 2026-11-17 b fmt:F4 s3a5g7nJMHs | 48h 77v 0L 0C | 72h 77v 0L 0C | Skip the Great Wall Crowds? Xi'an Has the Wall You Can Ride 
+- 2026-11-17 a fmt:- JDh7coLKRAo | 48h 1v 0L 0C | 72h 1v 0L 0C | The World's Tallest Wooden Tower Is Leaning | China Travel E
+- 2026-11-16 d fmt:F2 kQCQqss7_54 | 48h ~67v 0L 0C | 72h ~68v 0L 0C | Street Snacks or the Old Town? Walking 2,200-Year-Old Guangz
+- 2026-11-16 c fmt:- xzSv38kNDwI | 48h ~0v 0L 0C | 72h ~0v 0L 0C | 200+ Shells Hit This Wooden Tower in 1926 — Still Standing |
+- 2026-11-16 b fmt:F4 s0cdnK42cpM | 48h 56v 0L 0C | 72h 56v 0L 0C | Beijing's Famous Dragon Wall? The Real One's in Datong | Chi
+- 2026-11-16 a fmt:F4 jB6MF8t1prg | 48h 297v 1L 0C | 72h 297v 1L 0C | The Great Wall Isn't 2,000 Years Old — It's Ming | China Tra
+- 2026-11-15 d fmt:F3 NIqNL1eF9c8 | 48h ~49v 1L 0C | 72h ~56v 1L 0C | Westminster Abbey ~$41 vs the Temple of Heaven ~$4 | China T
+- 2026-11-15 c fmt:F4 1xp-gOPQcxg | 48h ~283v 0L 0C | 72h ~294v 0L 0C | China's Longest City Wall Isn't Xi'an's — It's Nanjing's | C
+- 2026-11-15 b fmt:F4 HRHFM2ARYOY | 48h 48v 0L 0C | 72h 48v 0L 0C | China's Tallest Stone Pagodas Hide in a Quiet Fujian Port | 
+- 2026-11-15 a fmt:F4 vu1g6tAySEI | 48h 328v 7L 0C | 72h 333v 7L 0C | A 71 m Buddha in a Cliff: River View or Climb to Its Feet? |
+- 2026-11-14 d fmt:F4 fRT78myrilU | 48h ~84v 0L 0C | 72h ~82v 0L 0C | How to Get Into the Forbidden City: Book 7 Days Ahead | Chin
+### YouTube Analytics API
+- unavailable: HTTP 403 accessNotConfigured — the YouTube Analytics API is not enabled in the Google Cloud project (owner action: APIs & Services > enable "YouTube Analytics API"; checklist in scripts/youtube-oauth-helper.mjs). Equal-age numbers come from Data API snapshots only.
+
 ## 2026-11-19 post-mortem (baseline = 14d median views of Shorts ≥3d old: 24)
 - 2026-11-17 c Azgh_pM5b40 | 869v 3L 0C @2d | ×36.21 | WINNER — replicate this hook shape today | City or Not City? Chongqing Runs a Train Through a Building | China Tr
 - 2026-11-18 b VzSFSnT8l5I | 746v 2L 0C @1d | ×31.08 | WINNER — replicate this hook shape today | Everyone Skips Chengdu for 'Old China' — It's 2,300 Years Old | China 

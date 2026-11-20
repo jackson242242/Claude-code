@@ -6964,6 +6964,24 @@
    "aspect": "9x16",
    "music": "el-pov-walk-groove-01.mp3",
    "hookType": "CHOICE"
+  },
+  {
+   "date": "2026-11-20",
+   "slot": "a",
+   "title": "The Forbidden City Isn't Flat — That's the Drainage | China Travel Expert",
+   "videoId": "U-ge89WEMBI",
+   "url": "https://www.youtube.com/watch?v=U-ge89WEMBI",
+   "pillar": "architecture",
+   "lane": "M mechanism (ROAD-TO-1M; renderer render_fc_slope.py=arch-M-09 pulled forward, today had no active M seed & arch-M-08 would duplicate 11-09-d) MISCONCEPTION; FC north 46.05m vs Meridian Gate south 44.28m, <2m fall over ~960m, self-drains N->S into Inner Golden Water River+moat; verified China Daily 2016-07-22 + TravelChinaGuide; photos pxp-20683315/pxp-10578436 slug-verified",
+   "status": "scheduled",
+   "publishAt": "2026-11-20T13:00:00Z",
+   "format": "M",
+   "footage": "diagram",
+   "povType": "none",
+   "owner": false,
+   "aspect": "9x16",
+   "music": "el-docu-underscore-04.mp3",
+   "hookType": "MISCONCEPTION"
   }
  ]
 }
