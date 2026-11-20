@@ -899,7 +899,9 @@
    "views": 4,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "no-artifacts",
+   "checkedDate": "2026-11-20",
+   "note": "run artifacts not present in container (pre-pivot July video); cannot re-render"
   },
   {
    "videoId": "CvyHU_Kof6k",
@@ -907,7 +909,9 @@
    "views": 3,
    "date": null,
    "slot": null,
-   "status": "pending"
+   "status": "no-artifacts",
+   "checkedDate": "2026-11-20",
+   "note": "run artifacts not present in container (pre-pivot July video); cannot re-render"
   },
   {
    "videoId": "yIKQRGjf58s",
