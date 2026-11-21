@@ -48,3 +48,52 @@
 12. The gaokao: one exam that shapes a whole family's year
 13. Why Chinese parks are full of people at 6 am
 14. What "guanxi" is, and what it isn't
+
+## 7. 纪录短片方向（owner 2026-11-21 追加：学"一条"的拍法，多角度讲中国）
+> owner 口述里的"医调"按"一条"（一条视频）理解：安静、克制、以人和细节为主的纪录短片风格。
+
+**学什么（只学形式，不搬内容）**
+- 一个具体的人、一个具体的地方或一件具体的东西开头，不从大道理开头。
+- 旁白少而准，留白多；镜头时间长（每个 5-8 秒），不做快剪。
+- 字幕简洁，白字小号；音乐轻，接近环境声。
+- 每条只回答一个问题。
+
+**每日长视频按星期轮换五个栏目**
+| 星期 | 栏目 | 讲什么 |
+|---|---|---|
+| 周一 | Chinese Life | §6 的生活与观念选题 |
+| 周二 | Made in China, Sold Everywhere | 中国品牌怎么崛起、为什么出海 |
+| 周三 | Ordinary People | 普通人的一天：外卖骑手、早餐摊主、乡村教师、广场舞领队（依据公开报道和统计，不虚构具体个人） |
+| 周四 | From Factory to Phone | 中国外贸三十年：代工厂 → 自有品牌 → 跨境电商 |
+| 周六 | Who Needs Care | 老龄化、留守儿童、山区教育与医疗这些需要被关注的群体和项目 |
+| 周日 | 当周表现最好栏目的第二集 | |
+
+**首批选题（每个数字发布当次两个来源核实）**
+- 品牌出海：
+  - How BYD went from batteries to outselling everyone in EVs
+  - Why Pop Mart's Labubu sold out worldwide
+  - How Shein ships a new dress in days
+  - Anker: the charger brand Americans don't know is Chinese
+  - How DJI came to make most of the world's drones
+  - Why Chinese milk tea chains are opening abroad
+- 外贸：
+  - Yiwu: the one city that supplies the world's small goods
+  - What a "factory to your door" order actually travels through
+  - From making for others to selling under their own name
+  - How a village in China learned to sell on Amazon
+- 老龄化与关爱：
+  - What China's aging looks like in one community canteen
+  - Who looks after grandma when the kids work in the city
+  - Left-behind children: what the numbers say and what is being tried
+  - A mountain school with fewer than 20 pupils
+  - Universities for the elderly: why they have waiting lists
+- 普通人：
+  - A day in the life of a food-delivery rider
+  - The 4 am breakfast stall
+  - A village doctor's round
+
+**规则**
+- **不编造人物和原话。** "普通人"栏目讲的是这类人的典型一天，依据公开报道和统计，旁白说 "a typical rider" 而不是虚构的某个人；引用真人原话必须有出处并注明。真采访只用 owner 或合作者拍的、受访者同意的素材。
+- **品牌**：只讲有来源的事实；不代言，不暗示赞助，不谈股价和投资；批评要有出处且适度。不用品牌广告片和宣传片素材，画面用类型层实拍（工厂、港口、门店街景）和代码画的图表。
+- **社会议题**：只讲事实、数据和正在做的事，尊重当事群体，不消费苦难，不出现未成年人可辨认的脸。不评论政府和政策好坏，不做中美对立叙事；关税等只作为背景事实一句带过。
+- **画面不够诚实就换题**，照 §4 的素材关。

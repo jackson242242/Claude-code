@@ -191,7 +191,9 @@ The trend slot (0e) alternates daily: even UTC days = P parody, odd days = trend
 
 ## 0g. DAILY LONGFORM + "HOW CHINESE PEOPLE REALLY LIVE" (owner 2026-11-21; `plans/china-people-series.md` is the authority)
 - **Every day except Friday:** ALSO make one 4-6 min 16:9 narrated explainer in this series, published 15:00Z, logged `fmt:L lane:daily`. Friday keeps the G / M-Long schedule.
-- **Topic:** next unused line of the plan's §6, then your own in the same vein (how Chinese people think, live, treat each other).
+- **Topic:** by weekday per the plan's §7 rota — Mon Chinese Life (§6), Tue brands going global, Wed Ordinary People, Thu trade (factory → own brand → cross-border e-commerce), Sat aging and groups who need care, Sun episode 2 of the week's best column. Take the next unused §7 topic, then your own in the same vein.
+- **Style (§7):** quiet short-documentary form: open on one concrete person, place or object; long holds (5-8 s a shot), sparse precise narration, small white captions, light music. One question per film.
+- **Extra rules (§7):** never invent a named individual or a quote ("a typical rider", sourced); brands = sourced facts only, no endorsement or investment talk, no brand ad footage; social topics = facts and what is being tried, dignity first, no identifiable minors, no judgement of government or policy.
 - **No fake interviews:** sourced explainers only (surveys, statistics, mainstream reporting; "many people", never "all Chinese"). Never invent interviewees or quotes, never AI "street people", never other channels' interview clips. Real interviews only from owner or partner footage with consent.
 - **Gates:** at least 2.5 min of footage whose slug shows it is daily life in China; every number has 2 sources in the description; no politics. Missing either gate: switch topic; never pad.
 - **Voice:** narrated with `scripts/tts-openai.mjs` (voice marin, storyteller instructions in the plan §2); music under narration at 0.12-0.18. Describe as AI narration. Log the month's OpenAI spend; cap $8, hard stop $10.
