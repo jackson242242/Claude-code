@@ -236,6 +236,14 @@ async function main() {
     },
     status,
   };
+  // Translated titles/descriptions (2026-11-21): meta.localizations = { "es": {title, description}, ... }.
+  // YouTube shows them to viewers by interface language. Added only when present, so old metas are unchanged.
+  const loc = meta.localizations && typeof meta.localizations === 'object' ? meta.localizations : null;
+  const PART = loc && Object.keys(loc).length ? 'snippet,status,localizations' : 'snippet,status';
+  if (PART.includes('localizations')) {
+    body.localizations = Object.fromEntries(Object.entries(loc).map(([k, v]) => [k, {
+      title: String(v.title || meta.title).slice(0, 100), description: String(v.description || meta.description || '').slice(0, 4900) }]));
+  }
 
   if (dryRun) {
     const size = args.video ? (await stat(args.video)).size : null;
@@ -244,7 +252,7 @@ async function main() {
       video: args.video || null,
       sizeBytes: size,
       thumbnail: args.thumbnail || null,
-      request: { method: 'POST', endpoint: 'upload/youtube/v3/videos?uploadType=resumable&part=snippet,status', body },
+      request: { method: 'POST', endpoint: `upload/youtube/v3/videos?uploadType=resumable&part=${PART}`, body },
       synthetic: { containsSyntheticMedia: decision.value, reasons: decision.reasons, tracks: decision.tracks, warnings: decision.warnings },
     }, null, 2));
     console.log('Dry run: nothing uploaded.');
@@ -258,7 +266,7 @@ async function main() {
 
   // Resumable upload: init session, then PUT the bytes (with retry).
   const init = await withRetry(() =>
-    fetch('https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status', {
+    fetch(`https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=${PART}`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${accessToken}`,
