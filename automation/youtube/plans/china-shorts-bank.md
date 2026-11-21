@@ -133,3 +133,11 @@
 - 社会压力类话题（996、内卷、彩礼、催婚）可以调侃现象，但结尾留一句真实的人的感受或数据，不把别人的难处只当笑料。
 - 数字还是两个来源；为了好笑编数字不行。
 - 旁白语气：干、稳、略带无奈，不要夸张的综艺腔。TTS 指令用 "dry, deadpan, warm underneath, tiny pauses before punchlines"。
+
+## 9. 新发现与考古（discovery subagents 2026-11-21，每条两来源，发布当次重核）
+> 由每日发现子代理搜集，近 7 天英文媒体 + 官方/考古来源；多为古建筑/历史主线，可用于 slot a/c（古建筑）或 slot d（China Explained）。发布前必须当次重核数字与"may be/preliminary"措辞。
+- Shenyang's "second Forbidden City" just turned 100 — and hit a record year [new 2026-11-21] | 沈阳故宫（Mukden Palace）2026-11-16 建馆百年；2026 年截至 11 月初游客超 600 万，创新高。源：china.org.cn http://www.china.org.cn/2026-11/17/content_118777502.shtml + Xinhua english.news.cn/20261116/ba0bfeee9f3b4fac9d7608b628a3713f/c.html。素材：UNESCO 世遗，实拍充足。INSIDER/MISCONCEPTION。
+- Beijing just found its first Sui-dynasty Great Wall [new 2026-11-21] | 昌平大岭沟遗址（2026 Aug–Oct）出土 60+ 文物，研究者称为北京首次发现的隋代（581–618）长城材料，暗示隋代沿用早期城防。源：chinadailyhk.com/article/642089 + ancient-origins.net/news-history-archaeology/beijing-first-sui-dynasty-great-wall-coins-celadon-00128352。素材：北京长城（八达岭/慕田峪）实拍充足，但无发掘现场素材——按"区域"而非"该遗址"标注。MISCONCEPTION。
+- A 5,000-year-old ritual precinct beside Liangzhu's royal tombs [new 2026-11-21] | 浙江良渚反山：120 个柱洞勾勒三座木构，最大一座椭圆形约 25.2m×16m，研究者推测可能是"享殿"（祭祀厅，仍属推测）；NCHA 2026-11-19 公告将反山列为迄今最高等级良渚贵族墓地。源：globaltimes.cn/page/202611/1374652.shtml + archaeologymag.com/2026/10/funeral-hall-beside-liangzhu-royal-tombs-in-china/。素材：良渚古城遗址公园/良渚博物院（世遗）有实拍；措辞用"may be/researchers believe"。
+- The 2,200-year-old imperial "expressway" of China's first emperor [new 2026-11-21] | 陕西榆林黄土梁：疑似秦直道沿线的秦代附属宫殿地表遗存（粗凿石柱础），西南约 7.5km 发现疑似路基；2026-08 起调查，11-11 报道。源：globaltimes.cn/page/202611/1374091.shtml + dailygalaxy.com/2026/11/qin-dynasty-imperial-palace-qin-shi-huang/。素材弱：该遗址无实拍；兵马俑/秦始皇陵（西安）是不同地点，若用须明确标"秦代"而非"该遗址"。STAKES。慎用。
+- A 2,200-year-old army's supply list, dug from Qin tombs [new 2026-11-21] | 湖北云梦老虎墩墓地 113 座墓，出土 600+ 枚秦简，研究者称含中国已知最早的军备清单（防御岗、粮草/铜料储备）；约 2026-11-18 公布。源：greekreporter.com/2026/11/21/ancient-chinese-tombs-qin-military-records-human-brain-tissue/ + thehistoryblog.com/archives/77401。素材弱/有风险：无发掘实拍，仅秦代泛用素材（兵马俑/西安），非云梦本地——仅在接受"主题性非字面"画面时使用。早期报道县名/简数有出入，发布当次重核。
