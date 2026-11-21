@@ -107,3 +107,29 @@
 - **价格同时给美元**，距离同时给公里和英里，温度同时给摄氏和华氏。
 - **多语言标题和描述**：每条上传时在 `meta.localizations` 里附西班牙语、葡萄牙语、印尼语、印地语、阿拉伯语、法语的标题和描述（上传脚本已支持，YouTube 按观众界面语言显示）。字幕仍烧录英文。
 - 不比较哪国更好；讲"这里是这样的"，结尾问"你们那里呢"。
+
+## 8. 幽默的讲法（owner 2026-11-21：游戏和 996、内卷、考公、相亲这些，都要讲得更幽默）
+**原则**：笑点来自情境和反差，事实一个字不改。笑的是"我们都这样"，不是笑某一群人。
+
+**五种写法**
+1. **一本正经地说荒唐事**："In China, 'work-life balance' has a number. It's 996. The balance is the 6."
+2. **换算成观众懂的东西**："Honor of Kings has more daily players than Germany has people. Germany has not responded."
+3. **自嘲式第二人称**："You studied 12 years for one exam. Congratulations. Now there's another exam. It's called the civil service."
+4. **父母视角**："At the marriage market, your mother has written your CV. You were not consulted. Your height has been rounded up."
+5. **反转收尾**：先讲一个听起来夸张的说法，最后一句给真实数字，再问观众"你们那里呢"。
+
+**各题的幽默角度**
+- 996：把一周的时间表念成天气预报。
+- 内卷：一个人站起来看电影，全场都站起来了，电影没变好看。这个比喻是中国网上的常见说法，注明"a common way people explain it"。
+- 考公：录取比例对比观众熟悉的名校录取率（当次核实两边数字）。
+- 相亲角：用房产中介的口吻介绍"房源"。
+- 王者荣耀：把"妈妈喊吃饭"和"这局还有两分钟"做成国际通用困境。
+- 原神：全世界都在玩，很多人不知道它是中国做的。
+- 和平精英：结尾不是"你赢了"，是挥手说再见（事实当次核实）。
+- 偷菜：定闹钟半夜起来偷邻居的虚拟白菜，是一代人的集体记忆。
+
+**边界**
+- 不拿口音、长相、民族、性别、贫穷开玩笑；不嘲笑具体的人。
+- 社会压力类话题（996、内卷、彩礼、催婚）可以调侃现象，但结尾留一句真实的人的感受或数据，不把别人的难处只当笑料。
+- 数字还是两个来源；为了好笑编数字不行。
+- 旁白语气：干、稳、略带无奈，不要夸张的综艺腔。TTS 指令用 "dry, deadpan, warm underneath, tiny pauses before punchlines"。
