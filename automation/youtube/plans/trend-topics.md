@@ -40,3 +40,35 @@
 - 热点槽优先放在 slot c（20:00Z，美国下午），标题前 40 个字符就要出现梗的原词，便于搜索和推荐。
 - 收尾一律抛"站队"问题，比如"Chinamaxxing: real or cringe?"。热点题天然有评论，首评权限（force-ssl）恢复后效果更大。
 - 每周日经理会话单独统计热点槽的 72 小时中位，和其他格式对比，按周决定加量还是撤掉。
+
+## 5. 流行文化与共同回忆（owner 2026-11-21 追加）
+热点槽的第三类题，和热梗、恶搞名场面轮着做（三天一轮）。把外国正在热的东西接到"中国这边是什么样"。
+
+**游戏（先做，这两天 GTA VI 正热，发布状态和数据当次核实）**
+| id | 题 | 钩子类型 |
+|---|---|---|
+| pc-01 | Everyone's playing GTA VI. Can players in China play it? （官方发行与渠道情况当次两个来源核实，只陈述事实） | MISCONCEPTION |
+| pc-02 | The most-played game in China isn't one you've heard of（王者荣耀等，日活数据当次核实） | INSIDER |
+| pc-03 | China's biggest game 15 years ago: is anyone still playing? （梦幻西游、穿越火线、地下城与勇士等，选有可靠数据的一款） | CHOICE |
+| pc-04 | Black Myth: Wukong took years to make. What's next? （销量、开发年限、已官宣的《黑神话：钟馗》，只说官方公布的内容） | STAKES |
+| pc-05 | The real temples behind Black Myth: Wukong（山西真实古建，接古建筑主线） | INSIDER |
+| pc-06 | Internet cafes raised a generation of Chinese gamers. Where did they go? | DEBATE |
+
+**每年的共同回忆**
+- 春晚：全家一起看的那台晚会，每年的"名梗"
+- 双十一：一个购物节怎么变成全民记忆
+- 每年的年度流行语（官方或权威机构公布的榜单）
+- 童年零食和动画：一代人都认得的那几样
+- 高考那两天全城安静
+- 春运：全世界最大的年度人口流动（数字当次核实）
+
+**全民追过的东西**
+- 一年一个爆款：淄博、哈尔滨、天水这类城市（和 China Online 栏目互相引流）
+- 盲盒、露营、飞盘、骑行、Citywalk 这些一阵一阵的潮流
+- 现象级的剧和综艺：只讲现象和数字，不用片段
+
+**规则**
+- **不用游戏画面、预告片、剧集和综艺片段、官方美术图。** 这些都是版权内容。画面用授权的类型层实拍（玩家、手机、网吧、街景）、真实地点，以及自己画的图表和时间线。
+- 销量、玩家数、开发年限、发售日期，每个数字两个来源；没公布的不猜。"下一部会是什么"只说官方已宣布的。
+- 游戏审批、版号这类话题只陈述公开事实，不评论政策。
+- 语气是"带外国朋友了解"，不比高下。

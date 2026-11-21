@@ -181,6 +181,8 @@ Owner rule: output only goes up, and we keep trying new lanes until one produces
 - Log `explore: <lane> sample <n>/5` in RUNLOG and tag `fmt:<X> explore:<lane>`.
 - Judge at 5 samples per config `explore.keepIf` / `dropIf`. A kept lane moves into the core rotation; a dropped lane is replaced by a lane not tried yet, written into config.
 
+**Pop-culture rota (owner 2026-11-21):** the trend slot now cycles over three days — trend meme, P parody, pop culture / shared memories (`plans/trend-topics.md` §5: games first while GTA VI is hot; pc-* topics). Never use game footage, trailers, show clips or official art; every sales, player-count or release figure needs 2 sources; only officially announced facts about upcoming titles.
+
 ## 0f. PARODY SLOT — format P (owner 2026-11-11; `plans/parody-lane.md` is the authority)
 The trend slot (0e) alternates daily: even UTC days = P parody, odd days = trend meme.
 - **What P is:** a famous Chinese drama or variety line, spoken by OUR original caricature character (an animal or chibi in costume), with a new AI voice, over slug-named mainland-city footage.
