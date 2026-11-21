@@ -1,0 +1,7 @@
+# ElevenLabs music is committed ENCRYPTED only (assets/music-vault/*.mp3.enc, scripts/music-vault.mjs).
+# The decrypted el-*.mp3 copies must never be committed: the repo is public and ElevenLabs terms forbid
+# making output available as a library (contract D2, MUSIC.md §4). music-vault.mjs decrypt refuses to
+# write a plain copy unless git confirms it is ignored here, so keep this file committed with the vault.
+el-*.mp3
+*.tmp-*
+*.decrypting

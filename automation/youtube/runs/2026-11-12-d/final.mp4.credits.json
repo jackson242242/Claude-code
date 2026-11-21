@@ -1,0 +1,28 @@
+[
+  {
+    "query": null,
+    "sourceUrl": "owner:automation/youtube/runs/owner-footage/2026-08-01/editA-shanghai-dongfangzhiguan.mp4",
+    "photographer": "channel owner",
+    "source": "Owner",
+    "kind": "owner-video",
+    "file": "automation/youtube/runs/owner-footage/2026-08-01/editA-shanghai-dongfangzhiguan.mp4",
+    "in": 6.03,
+    "out": 10.15,
+    "at": 0.0,
+    "label": "Shanghai",
+    "recut": "R-04"
+  },
+  {
+    "query": null,
+    "sourceUrl": "owner:automation/youtube/runs/owner-footage/2026-08-01/editB-shangu-chenwu.mp4",
+    "photographer": "channel owner",
+    "source": "Owner",
+    "kind": "owner-video",
+    "file": "automation/youtube/runs/owner-footage/2026-08-01/editB-shangu-chenwu.mp4",
+    "in": 2.6,
+    "out": 11.65,
+    "at": 4.12,
+    "label": null,
+    "recut": "R-04"
+  }
+]

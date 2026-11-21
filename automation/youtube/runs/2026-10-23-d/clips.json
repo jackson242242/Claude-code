@@ -1,0 +1,5 @@
+[
+  { "id": "px-36695075", "libraryId": "px-36695075", "in": 1.0, "out": 6.0, "label": "Beijing Road, Guangzhou", "fit": "crop", "cx": 0.5 },
+  { "id": "px-36708685", "libraryId": "px-36708685", "in": 3.0, "out": 11.0, "label": "Guangzhou", "fit": "crop", "cx": 0.5 },
+  { "id": "px-36708689", "libraryId": "px-36708689", "in": 1.0, "out": 6.0, "label": "Guangzhou", "fit": "crop", "cx": 0.5 }
+]
