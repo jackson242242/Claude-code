@@ -232,7 +232,7 @@ roadTo1m:
   stage0Kill: "n>=9 and M median <= F4 median -> M-Short 1/week series only; M-Long test continues"
   stage1Gate: "by 2027-01-31: >=1 M-Long >=1,000 views at 28 d AND channel >=300 subs AND longform >=20% of January views; any M-Long >=10k -> Stage 2"
   stage1Kill: ">=12 M-Long episodes AND >=6 months with none >=10x lane median -> stop M-Long, write the needs-human-voice report"
-  budgets: { openaiUsdPerMonth: 2, openaiHardStop: 5, vidiqFloor: 40, vidiqPulseMinBalance: 60, dataApiUnitsPerDay: 8000, pexelsReqPerRun: 60, agentHoursPerWeek: 15, overCapCutFirst: F4 }
+  budgets: { openaiUsdPerMonth: 8, openaiHardStop: 10, vidiqFloor: 40, vidiqPulseMinBalance: 60, dataApiUnitsPerDay: 8000, pexelsReqPerRun: 60, agentHoursPerWeek: 15, overCapCutFirst: F4 }
   weeklyRules: "one variable per week; rollback a change that coincides with >=30% drop in 72h median two weeks running; pre-registered prediction scored next week; 3-video guardrail audit"
   subjectOrder: [yingxian-pagoda, forbidden-city-drainage, great-wall-rammed-earth-jiumenkou, dujiangyan, zhaozhou-bridge, tulou-rammed-earth, city-wall-rice-mortar]
   spendDecision: "owner 2026-10-23: keep $0-9/month. Voice = OpenAI gpt-4o-mini-tts (cap $2/month) once ElevenLabs credits end (owner cancels the subscription); ElevenLabs v4 voice and AI 3D shots (Veo 3.1 Lite, $0.48/8 s, tested 10-23) are NOT used; visuals stay code-drawn. Re-ask only if a stage gate is passed."
@@ -272,6 +272,19 @@ multiChannel:
   verdictAfterDays: 30
   winRule: "any video >=100k views -> scale to 3/day; 72h median >=3x main channel or a video >=20k -> keep 30 more days; 72h median < main -> stop and replace (next: China nature POV, world most/least expensive, ancient city map animations)"
   calendar: automation/youtube/plans/content-calendar-2026-10-30.md
+
+# ================= DAILY LONGFORM + CHINA PEOPLE SERIES (owner 2026-11-21; plans/china-people-series.md) =================
+dailyLongform:
+  status: active
+  publishAtUtc: "15:00"
+  durationMin: [4, 6]
+  series: "How Chinese People Really Live"
+  skipOn: Fri                      # Friday keeps the G / M-Long schedule
+  voice: "scripts/tts-openai.mjs marin (ElevenLabs Rachel while credits last); disclose AI narration"
+  noFakeInterviews: true           # sourced explainers only; real interviews only from owner/partner footage with consent
+  kill: "14 consecutive L-daily with 7-day median < 30 views -> 3 per week"
+  shortD: "Chinese Life in 30s — narrated 30 s cut of the day's L-daily"
+musicRotation: "least-recently-used across the whole library; no repeat within a day; max 2 uses per track per 7 days; under narration 0.12-0.18"
 
 # ================= MUSIC (2026-10-17) =================
 music:

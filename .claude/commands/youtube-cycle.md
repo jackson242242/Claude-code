@@ -189,6 +189,16 @@ The trend slot (0e) alternates daily: even UTC days = P parody, odd days = trend
 - **Hard no:** real actors' or celebrities' faces or voices (generated, altered or imitated); any clip, audio, screenshot, poster or theme music from the show; political figures.
 - **Cost:** about $0.05 a video, inside the OpenAI $2/month cap.
 
+## 0g. DAILY LONGFORM + "HOW CHINESE PEOPLE REALLY LIVE" (owner 2026-11-21; `plans/china-people-series.md` is the authority)
+- **Every day except Friday:** ALSO make one 4-6 min 16:9 narrated explainer in this series, published 15:00Z, logged `fmt:L lane:daily`. Friday keeps the G / M-Long schedule.
+- **Topic:** next unused line of the plan's §6, then your own in the same vein (how Chinese people think, live, treat each other).
+- **No fake interviews:** sourced explainers only (surveys, statistics, mainstream reporting; "many people", never "all Chinese"). Never invent interviewees or quotes, never AI "street people", never other channels' interview clips. Real interviews only from owner or partner footage with consent.
+- **Gates:** at least 2.5 min of footage whose slug shows it is daily life in China; every number has 2 sources in the description; no politics. Missing either gate: switch topic; never pad.
+- **Voice:** narrated with `scripts/tts-openai.mjs` (voice marin, storyteller instructions in the plan §2); music under narration at 0.12-0.18. Describe as AI narration. Log the month's OpenAI spend; cap $8, hard stop $10.
+- **Slot d Short** on those days = "Chinese Life in 30s": a narrated 30 s cut of the day's longform, ending with a pointer to the full video. Slots a and c are unchanged, so the day still has at least 3 Shorts.
+- **Music rotation for every video:** least-recently-used across the whole library, no repeat within a day, at most 2 uses per track per 7 days.
+- **Order of work when time is short:** 3 Shorts first, longform last; if the longform cannot pass its gates in time, log `L-daily: skipped <reason>`.
+
 ## 0d. CONTENT CALENDAR + MULTI-CHANNEL TEST (owner 2026-10-29 — overrides topic picking)
 - **Calendar first:** if `automation/youtube/plans/content-calendar-*.md` has an entry for
   today's date and slot, produce exactly that (format, seed, title, cue 1, close, first
