@@ -66,7 +66,7 @@
 | 周三 | Ordinary People | 普通人的一天：外卖骑手、早餐摊主、乡村教师、广场舞领队（依据公开报道和统计，不虚构具体个人） |
 | 周四 | From Factory to Phone | 中国外贸三十年：代工厂 → 自有品牌 → 跨境电商 |
 | 周六 | Who Needs Care | 老龄化、留守儿童、山区教育与医疗这些需要被关注的群体和项目 |
-| 周日 | 当周表现最好栏目的第二集 | |
+| 周日 | China Online（见 §8） | 网络潮流的起落、公众网络人物的走红与沉寂 |
 
 **首批选题（每个数字发布当次两个来源核实）**
 - 品牌出海：
@@ -97,3 +97,29 @@
 - **品牌**：只讲有来源的事实；不代言，不暗示赞助，不谈股价和投资；批评要有出处且适度。不用品牌广告片和宣传片素材，画面用类型层实拍（工厂、港口、门店街景）和代码画的图表。
 - **社会议题**：只讲事实、数据和正在做的事，尊重当事群体，不消费苦难，不出现未成年人可辨认的脸。不评论政府和政策好坏，不做中美对立叙事；关税等只作为背景事实一句带过。
 - **画面不够诚实就换题**，照 §4 的素材关。
+
+## 8. 栏目《China Online》：记录中国人在网上的变化（owner 2026-11-21 追加）
+每周日的长视频改做这个栏目（原来的"本周最佳栏目第二集"取消）。两类题：
+
+**A. 网络潮流的起落（优先做，风险低）**
+- Zibo barbecue: how one small city went viral, and what happened after
+- Harbin's winter boom: how "southern little potatoes" became a meme
+- Tianshui malatang: a 15-yuan bowl that filled a city's hotels
+- "Special forces travel": seeing five cities in a weekend
+- City walk: why young Chinese started wandering their own cities
+- "Dazi" culture: finding a partner just for meals, gyms or trips
+- "Lying flat" and "let it rot": what the words mean and who uses them
+- Why young people go to temples, and to night school
+- Village Super League (Cun Chao): a county football match with millions watching
+- The "revenge bedtime" generation
+
+**B. 网络人物的走红与沉寂（只做公众人物）**
+- 只讲已经有大量主流媒体报道的公众人物，比如头部主播、网红店主、因某件事全国出名的人。
+- 讲时间线：怎么红的、转折点是什么、现在怎样。每个节点两个来源，其中至少一个是主流媒体或官方通报。
+
+**规则**
+- **不做素人。** 普通用户的帖子、评论、账号不点名、不截图、不展示；只能概括成"很多用户说"。
+- **不搬运。** 不下载、不截取小红书、抖音、微博等平台上别人的视频和图片；画面用授权实拍和自己画的时间线、图表。
+- **只说有出处的事。** 不传闻，不猜测动机和私生活；处罚、道歉、封号这类事只引用官方通报或当事人公开声明的原文意思。
+- **语气中立。** 不嘲笑，不审判；讲现象和它说明了什么。
+- 涉及政治、审查的话题不做。
