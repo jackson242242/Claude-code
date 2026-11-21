@@ -191,6 +191,12 @@ The trend slot (0e) alternates daily: even UTC days = P parody, odd days = trend
 - **Hard no:** real actors' or celebrities' faces or voices (generated, altered or imitated); any clip, audio, screenshot, poster or theme music from the show; political figures.
 - **Cost:** about $0.05 a video, inside the OpenAI $2/month cap.
 
+## 0h. SHORTS ONLY for the China-people topics (owner 2026-11-21, supersedes the daily longform in 0g)
+- **No daily longform.** Config `dailyLongform.status: off`. The only longform is Friday's G / M-Long.
+- **Slot d every day = "China, Explained in 40 Seconds"**: 30-45 s, narrated (`scripts/tts-openai.mjs` marin), one thing per Short, either-or close. Topic = next unused line of `plans/china-shorts-bank.md` (games, shared memories, social background, public figures, ordinary people who became news), rotating across its sections; the columns in `plans/china-people-series.md` §6-8 are also Shorts topics now. Log `fmt:E`.
+- **Rules (bank §6):** ordinary people only when widely covered by mainstream media, respectfully, never obscure private users; public figures = two-source timeline, no private life; NEVER download, clip or repost videos or images from Xiaohongshu, Douyin, Weibo, Bilibili or any other creator; a public statement may appear as an attributed text card; no game footage or show clips; no politics.
+- Slot a (architecture / calendar) and slot c (trend / parody / pop culture rota) are unchanged: at least 3 Shorts a day.
+
 ## 0g. DAILY LONGFORM + "HOW CHINESE PEOPLE REALLY LIVE" (owner 2026-11-21; `plans/china-people-series.md` is the authority)
 - **Every day except Friday:** ALSO make one 4-6 min 16:9 narrated explainer in this series, published 15:00Z, logged `fmt:L lane:daily`. Friday keeps the G / M-Long schedule.
 - **Topic:** by weekday per the plan's §7 rota — Mon Chinese Life (§6), Tue brands going global, Wed Ordinary People, Thu trade (factory → own brand → cross-border e-commerce), Sat aging and groups who need care, Sun China Online (§8: rise and fall of internet trends first; public internet figures only with mainstream coverage; never private users, never other platforms' clips or screenshots, no rumours). Take the next unused §7 topic, then your own in the same vein.

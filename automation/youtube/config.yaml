@@ -275,7 +275,7 @@ multiChannel:
 
 # ================= DAILY LONGFORM + CHINA PEOPLE SERIES (owner 2026-11-21; plans/china-people-series.md) =================
 dailyLongform:
-  status: active
+  status: off   # owner 2026-11-21 (later the same day): these topics are Shorts, not longform; only the Friday G / M-Long remains. Columns in plans/china-people-series.md §6-8 feed the Shorts bank.
   publishAtUtc: "15:00"
   durationMin: [4, 6]
   series: "How Chinese People Really Live"
