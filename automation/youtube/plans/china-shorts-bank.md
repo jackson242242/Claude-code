@@ -74,6 +74,23 @@
 - The "Vagrant Master" of Shanghai
 - The Zibo barbecue grandpa and the city he helped make famous
 
+## 5b. 中国的美食纪录片和节目（owner 2026-11-21 追加）
+介绍节目本身和它讲的那道菜、那个地方，不用节目画面。
+- A Bite of China: the documentary that made a nation hungry (2012)
+- Chen Xiaoqing: the director behind China's best food films
+- Flavorful Origins: the Chinese food series you can watch on Netflix
+- Once Upon a Bite: one ingredient followed around the world
+- The Story of Chuaner: a whole series about skewers
+- Breakfast in China: 5 minutes, one city, one bowl
+- Japan has Midnight Diner. What does China watch at midnight?
+- The dish each show made famous, and where to eat it（每条一道菜，配该城市的授权实拍）
+规则：播出年份、平台、导演当次两个来源核实；不用节目片段、海报和配乐；菜和地点用授权实拍。
+
+## 5c. 栏目发掘机制（owner 2026-11-21：「思路可以很广，要不停找 sub agent 发掘内容、开发栏目」）
+- **每天**：routine 在选题前派 2 个子代理各做 10 分钟发掘，一个看中国这边 7 天内在火什么，一个看英语世界这周在问中国什么。各交 3 个带来源的新题，合格的追加到本库对应小节，标 `[new <日期>]`。
+- **每周日**：经理会话派 4 个子代理，各负责一个方向（游戏与娱乐、生活与社会、人物、饮食与地方），每个提出 1 个新栏目设想和 8 个选题。经理挑最多 1 个新栏目加进本库，并把连续 6 条都低于频道中位数的栏目停掉。
+- 新题照样过 §6 的规则和两个来源的核实。
+
 ## 6. 规则
 - **普通人只做"已经被主流媒体广泛报道"的那一类**（上面 §5 这种）。讲那件事和它带来的变化，语气尊重，不嘲笑，不追踪他们现在的私人生活，不出现未成年人。没有被广泛报道的普通用户不点名、不展示。
 - **公众人物**：只讲有两个来源的时间线；争议只引用官方通报或本人公开声明；不猜动机，不谈私生活。
