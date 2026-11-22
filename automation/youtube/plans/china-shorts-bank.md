@@ -39,7 +39,7 @@
 - Double 11: how a singles' joke became the biggest shopping day
 
 ## 3. 社会背景
-- "996": what the numbers mean
+- "996": what the numbers mean [used 2026-11-22 slot d — STAKES, 72h/wk + 2021 Supreme Court ruling]
 - "Involution" (neijuan): the word a generation uses for burnout
 - Why millions sit the civil-service exam
 - The only-child generation grows up
@@ -141,3 +141,6 @@
 - A 5,000-year-old ritual precinct beside Liangzhu's royal tombs [new 2026-11-21] | 浙江良渚反山：120 个柱洞勾勒三座木构，最大一座椭圆形约 25.2m×16m，研究者推测可能是"享殿"（祭祀厅，仍属推测）；NCHA 2026-11-19 公告将反山列为迄今最高等级良渚贵族墓地。源：globaltimes.cn/page/202611/1374652.shtml + archaeologymag.com/2026/10/funeral-hall-beside-liangzhu-royal-tombs-in-china/。素材：良渚古城遗址公园/良渚博物院（世遗）有实拍；措辞用"may be/researchers believe"。
 - The 2,200-year-old imperial "expressway" of China's first emperor [new 2026-11-21] | 陕西榆林黄土梁：疑似秦直道沿线的秦代附属宫殿地表遗存（粗凿石柱础），西南约 7.5km 发现疑似路基；2026-08 起调查，11-11 报道。源：globaltimes.cn/page/202611/1374091.shtml + dailygalaxy.com/2026/11/qin-dynasty-imperial-palace-qin-shi-huang/。素材弱：该遗址无实拍；兵马俑/秦始皇陵（西安）是不同地点，若用须明确标"秦代"而非"该遗址"。STAKES。慎用。
 - A 2,200-year-old army's supply list, dug from Qin tombs [new 2026-11-21] | 湖北云梦老虎墩墓地 113 座墓，出土 600+ 枚秦简，研究者称含中国已知最早的军备清单（防御岗、粮草/铜料储备）；约 2026-11-18 公布。源：greekreporter.com/2026/11/21/ancient-chinese-tombs-qin-military-records-human-brain-tissue/ + thehistoryblog.com/archives/77401。素材弱/有风险：无发掘实拍，仅秦代泛用素材（兵马俑/西安），非云梦本地——仅在接受"主题性非字面"画面时使用。早期报道县名/简数有出入，发布当次重核。
+- China's answer to Black Myth? Phantom Blade Zero sold 4M in 72 hours [new 2026-11-22] | 国产动作 RPG《影之刃零》(S-GAME) 2026-10-29 发行，72 小时全平台销量破 400 万份，Steam 同时在线峰值约 83.9 万（约为《黑神话：悟空》首发峰值的四成）。源：GamesRadar https://gamesradar.com/games/action-rpg/phantom-blade-zero-has-sold-4-million-copies-in-just-3-days... + Insider Gaming https://insider-gaming.com/phantom-blade-zero-sells-4-million-copies-in-72-hours/。素材：类型层游戏手柄/PC；**不用游戏画面/预告/官方美术**（版权）；销量与在线峰值发布当次两来源重核。STAKES/INSIDER（games 栏，接 slot c games 线）。
+- Fly in empty, fly out full: the "China haul" [new 2026-11-22] | 外国游客靠免签、离境退税（部分可店内即退）在中国扫货（无人机、手机、运动相机、潮玩），TikTok #ChinaHaul 走红；上半年离境退税申报据报同比大涨（数字发布当次重核）。源：Global Times https://www.globaltimes.cn/page/202611/1373654.shtml + People's Daily https://en.people.cn/n3/2026/1019/c90000-20509900.html。素材：类型层购物/行李箱/电子产品；只讲购物与退税便利这类消费/旅游事实，**不碰关税/政策立场**，不给签证资格建议，"以官方为准"。PRICE-SHOCK。
+- China isn't all bullet trains: the $0.30 "moving market" [new 2026-11-22] | 高铁之国里，绿皮慢火车 5633 次（普雄—攀枝花）30 年票价不变，仅 2–26.5 元（约 0.3–3.7 美元），沿线村民把车厢当赶集的"移动集市"。源：The World of Chinese https://www.theworldofchinese.com/2026/11/slow-ride-china-moving-markets/ + People's Daily https://en.people.cn/n3/2026/0421/c98649-20448616.html（票价/"移动集市"核心事实稳定；数字发布当次重核）。素材：类型层绿皮火车/铁路；不碰政治。MISCONCEPTION。

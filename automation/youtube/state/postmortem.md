@@ -1,4 +1,34 @@
 ## 2026-11-22 post-mortem (baseline = 14d median views of Shorts ≥3d old: 55)
+- 2026-11-20 c vNKwWDwwQsU | 1025v 1L 0C @2d | ×18.64 | WINNER — replicate this hook shape today | Shanghai: the Skyline, or the Street Food? | China Travel Expert
+- 2026-11-21 d DTFd1Gim_qM | 974v 4L 0C @1d | ×17.71 | WINNER — replicate this hook shape today | Table for One: China's Solo Hotpot | China, Explained
+- 2026-11-20 d XHtQA2VjAD4 | 204v 1L 0C @2d | ×3.71 | WINNER — replicate this hook shape today | Guangzhou's Most Decorated Hall: the Roof, or the Carvings? | China Tr
+- 2026-11-20 b m3oETGshSJY | 157v 1L 0C @2d | ×2.85 | WINNER — replicate this hook shape today | China's Rainbow Mountains Look Fake — But Zhangye Danxia Is Real | Chi
+- 2026-11-21 c 3Pq5RGcjb1Y | 128v 0L 0C @1d | ×2.33 | WINNER — replicate this hook shape today | Black Myth: Wukong's Temples Are Real | China Travel Expert
+- 2026-11-21 a N3fzV2pXk-k | 83v 0L 0C @1d | ×1.51 | baseline | The Palace Beijing Copied Is in Nanjing | China Travel Expert
+- 2026-11-21 b ks9o1ihy1mI | 66v 0L 0C @1d | ×1.20 | baseline | China's Avatar Mountains Are Real | China Travel Expert
+- 2026-11-20 a U-ge89WEMBI | 56v 0L 0C @2d | ×1.02 | baseline | The Forbidden City Isn't Flat — That's the Drainage | China Travel Exp
+- like-rate (fresh Shorts): 0.26% (peers 1-6%)
+### Equal age (Data API snapshots since 2026-10-18; 48 h / 72 h ±6 h; "~" = interpolated between the snapshots either side)
+- Shorts median, trailing 28 d: 48h 15v (n=94) · 72h 15v (n=90)
+- 2026-11-20 b fmt:F4 m3oETGshSJY | 48h 157v 1L 0C | 72h — | China's Rainbow Mountains Look Fake — But Zhangye Danxia Is 
+- 2026-11-20 a fmt:- U-ge89WEMBI | 48h 56v 0L 0C | 72h — | The Forbidden City Isn't Flat — That's the Drainage | China 
+- 2026-11-19 d fmt:F2 cXZiMSUkho8 | 48h ~1095v 1L 0C | 72h — | POV: Walking Hong Kong's Tram Line — Running Since 1904 | Ch
+- 2026-11-19 c fmt:F3 OdiDyATtehY | 48h ~1v 0L 0C | 72h — | Hampton Court Palace ~$38 vs the Forbidden City ~$6 | China 
+- 2026-11-19 b fmt:F4 GDfzL5R3S0g | 48h 74v 0L 0C | 72h 78v 0L 0C | This Chinese Lake Looks Edited — It's a Real 3,000m Salt Mir
+- 2026-11-19 a fmt:F4 PRmHjaluaYw | 48h 253v 1L 0C | 72h 257v 1L 0C | A 38m Hall Stands With Zero Nails — Pillars or the Echo Wall
+- 2026-11-18 d fmt:F3 KJGTW8XrskU | 48h ~76v 0L 0C | 72h ~75v 0L 0C | Windsor Castle ~$41 vs the Forbidden City ~$6 in Winter | Ch
+- 2026-11-18 c fmt:F4 jKmCUg80lPA | 48h ~343v 1L 0C | 72h ~342v 1L 0C | You Think This Pagoda Is 1,000 Years Old — The Real One Fell
+- 2026-11-18 b fmt:F4 VzSFSnT8l5I | 48h 953v 5L 0C | 72h 994v 5L 0C | Everyone Skips Chengdu for 'Old China' — It's 2,300 Years Ol
+- 2026-11-18 a fmt:F2 hb2bZJp4haA | 48h 7v 0L 0C | 72h 11v 0L 0C | A 247 AD Temple, Boxed In by Shanghai's Malls — Stop or Shop
+- 2026-11-17 d fmt:F4 dL-QfQDF-js | 48h ~113v 1L 0C | 72h ~116v 1L 0C | Count the Roof Beasts: Only One Building in China Has 10 | C
+- 2026-11-17 c fmt:F2 Azgh_pM5b40 | 48h ~907v 3L 0C | 72h ~995v 3L 0C | City or Not City? Chongqing Runs a Train Through a Building 
+- 2026-11-17 b fmt:F4 s3a5g7nJMHs | 48h 77v 0L 0C | 72h 77v 0L 0C | Skip the Great Wall Crowds? Xi'an Has the Wall You Can Ride 
+- 2026-11-17 a fmt:- JDh7coLKRAo | 48h 1v 0L 0C | 72h 1v 0L 0C | The World's Tallest Wooden Tower Is Leaning | China Travel E
+- 2026-11-16 d fmt:F2 kQCQqss7_54 | 48h ~67v 0L 0C | 72h ~68v 0L 0C | Street Snacks or the Old Town? Walking 2,200-Year-Old Guangz
+### YouTube Analytics API
+- unavailable: HTTP 403 accessNotConfigured — the YouTube Analytics API is not enabled in the Google Cloud project (owner action: APIs & Services > enable "YouTube Analytics API"; checklist in scripts/youtube-oauth-helper.mjs). Equal-age numbers come from Data API snapshots only.
+
+## 2026-11-22 post-mortem (baseline = 14d median views of Shorts ≥3d old: 55)
 - 2026-11-21 d DTFd1Gim_qM | 969v 4L 0C @1d | ×17.62 | WINNER — replicate this hook shape today | Table for One: China's Solo Hotpot | China, Explained
 - 2026-11-20 c vNKwWDwwQsU | 867v 1L 0C @2d | ×15.76 | WINNER — replicate this hook shape today | Shanghai: the Skyline, or the Street Food? | China Travel Expert
 - 2026-11-20 d XHtQA2VjAD4 | 204v 1L 0C @2d | ×3.71 | WINNER — replicate this hook shape today | Guangzhou's Most Decorated Hall: the Roof, or the Carvings? | China Tr

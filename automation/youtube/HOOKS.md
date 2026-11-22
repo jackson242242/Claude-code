@@ -133,7 +133,7 @@ run 自动执行；若某条钩子是**新写法**（不属 A-F），在 RUNLOG 
 | 2026-11-21c | 128 | ×4.92 | 0 | 0 | MISCONCEPTION | The monsters in Black Myth: Wukong are made up. {\fs13}I'm your  |
 | 2026-11-21b | 66 | ×2.54 | 0 | 0 | MISCONCEPTION | You think these floating mountains are CGI from Avatar. {\fs13}I |
 | 2026-11-21a | 83 | ×3.19 | 0 | 0 | PLAIN-FACT | A heritage corridor in Nanjing. {\fs13}I'm your China Travel Exp |
-| 2026-11-20b | 156 | ×6.00 | 0 | 0 | PLAIN-FACT | This mountain looks painted. Half the comments call it fake. {\f |
+| 2026-11-20b | 157 | ×6.04 | 1 | 0 | PLAIN-FACT | This mountain looks painted. Half the comments call it fake. {\f |
 | 2026-11-20c | 1025 | ×39.42 | 1 | 0 | PLAIN-FACT | POV: you skipped the skyline for this. {\fs13}I'm your China Tra |
 | 2026-11-20d | 204 | ×7.85 | 1 | 0 | CHOICE | A roof crammed with clay figures — or carved halls below? Which  |
 | 2026-11-20a | 56 | ×2.15 | 0 | 0 | CHOICE | Flat ground — or a hidden tilt? {\fs13}I'm your China Travel Exp |
