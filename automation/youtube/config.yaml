@@ -225,8 +225,8 @@ longform:
 # ================= ROAD TO 1M (2026-10-23; plans/road-to-1m.md is the authority; weekly manager session Sundays 10:49Z) =================
 roadTo1m:
   plan: automation/youtube/plans/road-to-1m.md
-  stage: 0                      # 0 = prove the M-Short (2026-10-26..11-23)
-  mShortDays: [Mon, Tue, Fri, Sat]   # X slot = M (was F4)
+  stage: 1                      # weekly review 2026-11-22: Stage 0 FAILED (stage0Kill applied); Stage 1 (M-Long) continues to 2027-01-31
+  mShortDays: [Sat]             # weekly review 2026-11-22 stage0Kill: M-Short = 1/week series, Saturday slot a (was Mon/Tue/Fri/Sat X slot); freed X slots run F4, volume unchanged (4/day, plan 6b)
   mShortLengthSec: [30, 60]
   stage0Gate: "n>=6 clean M samples (exclude LOW-REACH days and 10-09..12): M 72h median >= 1.5x same-day F4 72h median AND >=1 M-Short >= 2,000 views by 2026-11-23; one of two -> extend 2 weeks"
   stage0Kill: "n>=9 and M median <= F4 median -> M-Short 1/week series only; M-Long test continues"
@@ -247,11 +247,17 @@ roadTo1m:
     rule: "every F3 (Wed/Sun a-slot X) = the 11-07 recipe: ONE price pair with >=4x gap, both prices re-verified in USD that day (2 sources each), price drawn over a real slug-named ground clip of the place (not a map/stock lookalike), PRICE-SHOCK hook, ~15-22 s. No other format changes. Volume unchanged (4/day)."
     trigger: "11-07 F3 'Versailles ~$28 vs Forbidden City ~$6' = 918 views @1d (x83 baseline) vs 11-04 F3 Potala/Alhambra 4-6 views and 10-25 F3 90"
     judge: "2026-11-22 (review 11-22): >=4 F3 samples; if F3 72h median >= 3x same-window F4 median -> keep and add one more F3 day; else revert to the old F3 rule. Roll back if 72h all-format median falls >=30% two weeks running."
+    status20261122: "ENDED (judged 2026-11-22): in-window F3 72h median ~18 (n=6: 8, 4, 28, 56, 75, ~1) vs same-window F4 72h median ~257 -> far below 3x -> NOT kept, no extra F3 day; F3 continues under the base Q4 rule (playbook 0c), whose sourcing already matches the recipe."
     review20261115: "kept unchanged (no new variable this week). F3 in window so far: 11-09 8v, 11-11 4v @72h, 11-12 ~28v @48h vs F4 72h median 13 -> on track to revert 11-22. No rollback: 72h median 8.5 -> 8.1 (-5%), not a >=30% drop."
   stage0KillCheck:                # weekly review 2026-11-15 (measurement note, not a variable)
     lowReachByDefinition: "control cohort (Shorts aged 8-60 d) new views/day stayed 16-46 (trailing-14d median 24-34) 10-20..11-14 -> NO day met the <50% LOW-REACH rule; the 10-26..11-12 collapse hit new uploads only, so those M samples count as clean"
     asOf: "2026-11-15: n=9 same-day M/F4 pairs (10-24..11-10): pooled M 72h median 6 vs same-day F4 median 9 (letter of the kill met); median paired ratio 1.12 (spirit not met)"
     rule: "2026-11-22 review: recompute with every pair incl. 11-13/14 onward (reach recovered 11-13). If n>=12 pairs and pooled M median <= same-day F4 median AND median paired ratio < 1.0 -> apply stage0Kill (M-Short 1/week; freed Mon/Tue/Sat X slots run F4 so volume stays 4/day per plan 6b). Otherwise keep."
+  stage0KillApplied:              # weekly review 2026-11-22 = THE one variable this week
+    date: "2026-11-22"
+    evidence: "n=12 clean same-day M/F4 pairs 10-24..11-17 (11-15/16 LOW-REACH by the control-cohort rule -> excluded): pooled M 72h median 6 vs F4 13; median paired ratio 0.87 (<1.0). Incl. 11-16: n=13, ratio 0.62. 11-20 M 56 @48h vs F4 204 -> same direction."
+    rule: "M-Short 1/week (Saturday slot a) = the next arch-M-* seed whose hold date has passed (11-28 arch-M-10); no eligible seed -> F4, log 'M: none eligible'. The other X slots that were M (Mon/Tue/Fri) run F4. M-Long Fridays unchanged. 4 Shorts/day unchanged."
+    rollback: "if the all-format 72h median falls >=30% two weeks running after this change (from 11-17..19 baseline ~116), restore mShortDays [Mon, Tue, Fri, Sat]"
   explore:                        # owner 2026-11-05; playbook section 0f
     enabled: true
     slot: b

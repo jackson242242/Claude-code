@@ -269,8 +269,13 @@ subjects" wherever §0c mentions them.
 | F4 | Ground-level nature / small town — the baseline arm | 14-20 s | human-scale ground shot (path, village lane, boat, people at a viewpoint) | slug-verified Pexels video, Ken-Burns photos, MAP-FORMAT fallback | second person |
 | L | 6-9 min search guide, every other Friday (§4L) | 6-9 min | answer-first | ≥3 min slug-named non-aerial | no "I" over stock |
 | **M** | **Mechanism explainer Short (ROAD-TO-1M 2026-10-23, `plans/road-to-1m.md`): code-drawn SVG animation of HOW a building works (dougong, hidden floors, rammed earth, drainage…), 3-4 labelled steps, then 3 s of a slug-named real photo/clip of the site** | 30-60 s (NOT the 14-20 s band) | hook card: big number + the building drawing itself | `scripts/mechanism/render_*.py` → `--clips` with a `file:` entry + the site photo; NO stock in the steps, NO AI imagery | second person; every caption number from `plans/architecture-facts.md` or the seed's 2 sources |
-**M lane rules:** takes the X slot on Mon/Tue/Fri/Sat (X = M instead of F4; Wed/Sun F3 and Thu
-F1 unchanged, so the F2/F4 same-day pair is intact). Seeds: queue `arch-M-*` (each names its
+**STAGE 0 KILL APPLIED (weekly manager 2026-11-22; config roadTo1m.stage0KillApplied):** n=12 clean
+same-day pairs, pooled M 72h 6 vs F4 13, median paired ratio 0.87 → **M-Short = 1 per week, Saturday
+slot a only** (the next `arch-M-*` seed whose hold date has passed: 11-28 `arch-M-10`, renderer
+`render_fc_drain_child.py` ready). Mon/Tue/Fri X slots that used to be M now run **F4**; 4 Shorts/day
+unchanged; M-Long Fridays unchanged. No eligible seed on a Saturday → F4, log `M: none eligible`.
+The rules below still govern HOW the weekly M is made.
+**M lane rules:** (before 2026-11-22: took the X slot on Mon/Tue/Fri/Sat; now Saturday slot a only — see above). Seeds: queue `arch-M-*` (each names its
 renderer or scene JSON; a seed without a renderer yet = write one from `render_pagoda.py`
 primitives, ≤25 agent-min, else run the slot as F4 and log `M: no renderer`). Bed from the
 vault; `containsSyntheticMedia` stays true (AI bed, D1) — never claim "no AI label". Audit:
@@ -281,7 +286,7 @@ be read by the Sunday manager session. First seed arch-M-01 (Yingxian) is pre-re
 `python3 -I scripts/mechanism/render_pagoda.py <outdir>` (~30 s) with
 `plans/mechanism/yingxian/short-subs.srt` and `short-clips.json` (fix the file: path to
 the rendered mp4).
-**F3 REPLICATION (weekly manager 2026-11-08, window 11-09..11-22; config roadTo1m.f3Replication):**
+**F3 REPLICATION — ENDED 2026-11-22 (not kept: in-window F3 72h median ~18 vs F4 ~257; no extra F3 day; F3 runs under the base Q4 rule below). Historical text:**
 the 11-07 F3 (Versailles ~$28 vs Forbidden City ~$6, 4.6× gap, price over a real slug-named
 FC ground clip) got 918 views at 1 day vs single digits for most formats. For the window every
 F3 copies that recipe exactly: one pair, gap ≥4×, both prices re-verified in USD that day,

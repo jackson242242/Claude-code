@@ -4771,7 +4771,8 @@
    "whyNow": "child Short of M-Long #2",
    "addedAt": "2026-11-05",
    "addedBy": "weekly manager 2026-11-05",
-   "status": "hold-until-2026-11-27"
+   "status": "published-2026-11-20",
+   "note": "weekly review 2026-11-22: shipped early on 11-20 slot a (U-ge89WEMBI, render_fc_slope.py); status corrected"
   },
   {
    "id": "arch-M-10",
@@ -4785,10 +4786,13 @@
    "hook": "About 13 km of the Forbidden City's drains are underground.",
    "angle": "Child of M-Long #2 (publish Fri 2026-11-27 + 7 days). Brief: #3: ditch -> covered channel -> Inner Golden Water River -> moat; dredging line only if re-sourced. Renderer: extend scripts/mechanism/render_fc_drain.py (TODO render_fc_drain_<variant>.py). Facts only from the ledger (2 sources).",
    "footage": "M lane: code-drawn SVG animation (scripts/mechanism) + 3 s slug-named real photo/clip at the end; no stock in the steps, no AI imagery; bed from vault (containsSyntheticMedia true)",
-   "renderer": "TODO render_fc_drain_child.py (copy render_fc_drain.py)",
+   "renderer": "DONE 2026-11-22: python3 -I scripts/mechanism/render_fc_drain_child.py <outdir> -> fc_drain_child_1080x1920.mp4 (28 s, ~22 s render; ditch -> covered channel ≈13 km -> Inner Golden Water River (5 bridges inset) -> moat 52 m; end card ≈15 km / ≈13 km underground, Palace Museum figures 2016; no F21 dredging line; nothing below y=1260)",
    "series": "How Ancient China Built It",
    "priority": 3,
-   "sources": [],
+   "sources": [
+    "https://www.chinadaily.com.cn/culture/2016-07/26/content_26220950.htm",
+    "https://www.chinadaily.com.cn/china/2016-07/22/content_26183948.htm"
+   ],
    "verify": {
     "verdict": "ledger in plans/mechanism/forbidden-city-drainage/longform-script.md",
     "at": "2026-11-05"
@@ -4796,7 +4800,8 @@
    "whyNow": "child Short of M-Long #2",
    "addedAt": "2026-11-05",
    "addedBy": "weekly manager 2026-11-05",
-   "status": "hold-until-2026-11-27"
+   "status": "hold-until-2026-11-27",
+   "note": "weekly review 2026-11-22: Stage 0 kill applied -> M-Shorts 1/week (Saturday slot a); this is the 2026-11-28 M seed"
   },
   {
    "id": "arch-M-11",
@@ -4946,6 +4951,81 @@
    "hook": "They cut a 20 m gap through a mountain — by fire and water, says tradition.",
    "angle": "Child #3 of M-Long #4. Brief #3 in child-shorts.md; ledger D12-D14 ('according to tradition', 'reportedly about eight years').",
    "renderer": "TODO (scene parts of plans/mechanism/dujiangyan/scenes.json; copy render_fc_slope.py water helpers)",
+   "sources": []
+  },
+  {
+   "pillar": "china-architecture",
+   "format": "short",
+   "fmt": "M",
+   "archType": "mechanism",
+   "site": "Zhaozhou (Anji) Bridge, Zhao County, Hebei",
+   "footage": "M lane: code-drawn SVG animation (scripts/mechanism) + 2.5 s slug-named real Zhaozhou open + 3-4 s close (site named only if the slug/Commons title names it; else map card); no stock in the steps, no AI imagery; bed from vault (containsSyntheticMedia true)",
+   "series": "How Ancient China Built It",
+   "priority": 3,
+   "verify": {
+    "verdict": "ledger in plans/mechanism/zhaozhou-bridge/longform-script.md",
+    "at": "2026-11-22"
+   },
+   "whyNow": "child Short of M-Long #5",
+   "addedAt": "2026-11-22",
+   "addedBy": "weekly manager 2026-11-22",
+   "status": "hold-until-2027-01-08",
+   "id": "arch-M-17",
+   "title": "Those Holes Aren't Damage — They Saved This Bridge",
+   "hookType": "MISCONCEPTION",
+   "hook": "Those holes aren't damage — they saved this bridge for 1,400 years.",
+   "angle": "Child #1 of M-Long #5 (Zhaozhou Bridge, 2027-01-08); weekly M slot Sat 2027-01-09. Brief #1 in plans/mechanism/zhaozhou-bridge/child-shorts.md; ledger Z1,Z9-Z12 (never a tonnage or %).",
+   "renderer": "TODO (scene parts S2/S3/S4 of plans/mechanism/zhaozhou-bridge/scenes.json; copy render_fc_slope.py layout)",
+   "sources": []
+  },
+  {
+   "pillar": "china-architecture",
+   "format": "short",
+   "fmt": "M",
+   "archType": "mechanism",
+   "site": "Zhaozhou (Anji) Bridge, Zhao County, Hebei",
+   "footage": "M lane: code-drawn SVG animation (scripts/mechanism) + 2.5 s slug-named real Zhaozhou open + 3-4 s close (site named only if the slug/Commons title names it; else map card); no stock in the steps, no AI imagery; bed from vault (containsSyntheticMedia true)",
+   "series": "How Ancient China Built It",
+   "priority": 3,
+   "verify": {
+    "verdict": "ledger in plans/mechanism/zhaozhou-bridge/longform-script.md",
+    "at": "2026-11-22"
+   },
+   "whyNow": "child Short of M-Long #5",
+   "addedAt": "2026-11-22",
+   "addedBy": "weekly manager 2026-11-22",
+   "status": "hold-until-2027-01-08",
+   "id": "arch-M-18",
+   "title": "Half Circle or a Slice? One Makes a Hill",
+   "hookType": "CHOICE",
+   "hook": "Half circle or a slice? One makes a hill, one makes a road.",
+   "angle": "Child #2 of M-Long #5; weekly M slot Sat 2027-01-16. Brief #2; ledger Z3,Z6-Z8 (½ × 37 m is arithmetic, shown as such).",
+   "renderer": "TODO (scene parts S2/S3/S4 of plans/mechanism/zhaozhou-bridge/scenes.json; copy render_fc_slope.py layout)",
+   "sources": []
+  },
+  {
+   "pillar": "china-architecture",
+   "format": "short",
+   "fmt": "M",
+   "archType": "mechanism",
+   "site": "Zhaozhou (Anji) Bridge, Zhao County, Hebei",
+   "footage": "M lane: code-drawn SVG animation (scripts/mechanism) + 2.5 s slug-named real Zhaozhou open + 3-4 s close (site named only if the slug/Commons title names it; else map card); no stock in the steps, no AI imagery; bed from vault (containsSyntheticMedia true)",
+   "series": "How Ancient China Built It",
+   "priority": 3,
+   "verify": {
+    "verdict": "ledger in plans/mechanism/zhaozhou-bridge/longform-script.md",
+    "at": "2026-11-22"
+   },
+   "whyNow": "child Short of M-Long #5",
+   "addedAt": "2026-11-22",
+   "addedBy": "weekly manager 2026-11-22",
+   "status": "hold-until-2027-01-08",
+   "id": "arch-M-19",
+   "title": "This Looks Like One Arch. It's 28.",
+   "hookType": "INSIDER",
+   "hook": "This looks like one arch. It's 28.",
+   "angle": "Child #3 of M-Long #5; weekly M slot Sat 2027-01-23. Brief #3; ledger Z13-Z15 + Z18 caveat card (surface largely replaced in the 1950s).",
+   "renderer": "TODO (scene parts S2/S3/S4 of plans/mechanism/zhaozhou-bridge/scenes.json; copy render_fc_slope.py layout)",
    "sources": []
   }
  ]
