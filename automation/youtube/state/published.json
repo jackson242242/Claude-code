@@ -7221,6 +7221,24 @@
    "music": "cinema-orient-01.mp3",
    "hookType": "MISCONCEPTION",
    "explore": "unreal-china 5/5"
+  },
+  {
+   "date": "2026-11-23",
+   "slot": "c",
+   "title": "You Land in Shenzhen and Pass Through — Here's Why You Shouldn't | China Travel Expert",
+   "videoId": "qyuMbvUTXDk",
+   "url": "https://www.youtube.com/watch?v=qyuMbvUTXDk",
+   "pillar": "city-travel",
+   "lane": "F2 licensed-pov DEBATE (parody P blocked->rotation F2). Shenzhen arrival POV: 1980 first SEZ (former Bao'an farmland/fishing villages), >17.5M 2020 census. Verified Wikipedia + SCMP + CGTN. Slug-verified Shenzhen clips px-35715189 walk + 35715704/35969847 car; Bao'an+Longgang road sign confirms place. keep-audio 0. music el-pov-walk-groove-01.",
+   "status": "scheduled",
+   "publishAt": "2026-11-23T20:00:00Z",
+   "format": "F2",
+   "footage": "licensed-pov",
+   "povType": "walk",
+   "owner": false,
+   "aspect": "9x16",
+   "music": "el-pov-walk-groove-01.mp3",
+   "hookType": "DEBATE"
   }
  ]
 }

@@ -31,9 +31,10 @@
     "wm-c02",
     "wm-c03",
     "px-36399584",
-    "px-35833454"
+    "px-35833454",
+    "px-36494731"
    ],
-   "why": "pov8w deniedPath subset (plan 2026-10-17): Great Wall (say 'Great Wall' only, no section), Dali old-town temple steps, Guangxi nature walkway, D-train windows over misty hills/villages and green hills. Used while city POV is not approved.",
+   "why": "pov8w deniedPath subset (plan 2026-10-17): Great Wall (say 'Great Wall' only, no section), Dali old-town temple steps, Guangxi nature walkway, D-train windows over misty hills/villages and green hills. Used while city POV is not approved. Added 2026-11-23: px-36494731 old-town market street walk toward an ornate pagoda gate (traditional architecture only, no modern city; speakable place null).",
    "reviewCandidates": {
     "wm-c12": "eye-level forest trail in Coloane, Macau: nature footage, but the speakable place is Macau",
     "px-36321498 px-36308485 px-36321508": "Chongqing ancient-town walks: old-town footage, but the speakable place is Chongqing"
@@ -82,6 +83,7 @@
   "commonsPovVerified": 10,
   "commonsPovVerified_chinaIdentifiable": 7,
   "commonsYouTubeOriginWalkingTours_blockedByChannelRule_estimated": 32,
+  "lastTopUp2026-11-23": "+5 NEW portrait China POV walks (Monday top-up). Cheng Shi Song Nanjing series yielded 4 forward-motion walks: px-37391485 (East Beijing Road tree-lined avenue), px-38925819 (B&W street, forward follow of a cart-pusher), px-37381389 (rainy covered arcade, KFC->Starbucks slide confirms translation), px-39579618 (night-market gate approach, placeSpeakable null, china via signage). Plus px-36494731 (Cfq938888 Chen) old-town market-street walk toward a pagoda gate (placeSpeakable null, non-city, china via architecture/signage). Each checked on 3 downloaded-rendition frames at 15/50/85%. Rejected as static/locked or non-forward: 39358677, 39579617, 36792432 (locked, subjects walk), 37381390 & 38501316 (overhead / crane-tilt reveal), 38501318, 37381387, 30718724, 39839156 (static, traffic/people move only), 40661368 Wong Tai Sin (tilt-up reveal, not clean eye-level forward). Yield 5>=4, honest count not padded.",
   "lastTopUp": "2026-11-16 (+1 NEW: px-39692405 Kaiyuan-temple courtyard, gentle forward dolly, chinaIdentifiable=false/placeSpeakable=null so it does NOT relieve F2 China supply-out. Probed ~14 China POV queries, frame-checked ~11 candidates: 36675730(climbing-steps temple) & 38446592/814(Chaotian Palace Nanjing) ALREADY catalogued; 30931843 Suzhou / 39693071 Xi'an Bell Tower / 27958758 Shaxi Taicang / 38791823 Nanjing Zhongshan-gate = static establishes or pans (no forward camera motion); 38875242=Thean Hou Temple KUALA LUMPUR (not mainland), 39903845=non-mainland pan. Yield 1<4, reported NOT padded. Mainland China-nameable portrait POV supply on Pexels remains exhausted, same root cause as the 11-09 top-up -> F2 supply-out persists.)"
  },
  "clips": [
@@ -1922,6 +1924,135 @@
    "foundBy": [
     "first person walking temple china|portrait",
     "walking chinese temple|portrait"
+   ]
+  },
+  {
+   "id": "px-37391485",
+   "source": "Pexels",
+   "license": "Pexels License (free commercial use, attribution optional; credit kept)",
+   "sourceUrl": "https://www.pexels.com/video/scenic-walkway-in-nanjing-s-east-beijing-road-37391485/",
+   "downloadLink": "https://videos.pexels.com/video-files/37391485/15836055_1080_1920_30fps.mp4",
+   "downloadDims": "1080x1920",
+   "duration": 23,
+   "orientation": "portrait",
+   "photographer": "Cheng Shi Song",
+   "place": "Nanjing (East Beijing Road, tree-lined walkway)",
+   "placeSpeakable": "Nanjing",
+   "chinaIdentifiable": true,
+   "chinaEvidence": "slug",
+   "pov": "yes",
+   "povType": "walk (forward, eye level)",
+   "mood": "calm, green, leafy avenue",
+   "usable": true,
+   "flags": [],
+   "verifyNote": "walking forward down a tree-lined avenue; a scooter and cyclists ahead shift closer/past as the camera advances (frame elements translate, not a locked shot)",
+   "verifiedBy": "downloaded small rendition (540x960), frames at 15/50/85% LOOKed (top-up 2026-11-23): forward camera translation confirmed",
+   "foundBy": [
+    "hutong walk beijing|portrait",
+    "nanjing walk|portrait"
+   ]
+  },
+  {
+   "id": "px-38925819",
+   "source": "Pexels",
+   "license": "Pexels License (free commercial use, attribution optional; credit kept)",
+   "sourceUrl": "https://www.pexels.com/video/street-recycling-in-nanjing-china-38925819/",
+   "downloadLink": "https://videos.pexels.com/video-files/38925819/16555027_1080_1920_30fps.mp4",
+   "downloadDims": "1080x1920",
+   "duration": 15,
+   "orientation": "portrait",
+   "photographer": "Cheng Shi Song",
+   "place": "Nanjing (street, black & white)",
+   "placeSpeakable": "Nanjing",
+   "chinaIdentifiable": true,
+   "chinaEvidence": "slug",
+   "pov": "yes",
+   "povType": "walk (forward follow, eye level)",
+   "mood": "documentary, black & white, everyday street",
+   "usable": true,
+   "flags": [
+    "black & white; subject is a recycling-cart collector (documentary tone, not scenic)"
+   ],
+   "verifyNote": "camera tracks forward following a cart-pusher; bus shelter and buildings recede while the subject stays the same size (forward follow, not a static subject-walks-away shot)",
+   "verifiedBy": "downloaded small rendition (540x960), frames at 15/50/85% LOOKed (top-up 2026-11-23): forward camera tracking confirmed",
+   "foundBy": [
+    "nanjing street|portrait"
+   ]
+  },
+  {
+   "id": "px-39579618",
+   "source": "Pexels",
+   "license": "Pexels License (free commercial use, attribution optional; credit kept)",
+   "sourceUrl": "https://www.pexels.com/video/night-stroll-through-traditional-chinese-market-39579618/",
+   "downloadLink": "https://videos.pexels.com/video-files/39579618/16870315_1080_1920_30fps.mp4",
+   "downloadDims": "1080x1920",
+   "duration": 6,
+   "orientation": "portrait",
+   "photographer": "Cheng Shi Song",
+   "place": "traditional Chinese market gate at night (uploader's Nanjing series; slug names no place)",
+   "placeSpeakable": null,
+   "chinaIdentifiable": true,
+   "chinaEvidence": "Chinese signage in frame",
+   "pov": "yes",
+   "povType": "walk (forward toward illuminated gate)",
+   "mood": "night market, red lanterns, warm glow",
+   "usable": true,
+   "flags": [],
+   "verifyNote": "walking forward toward an illuminated gate (聚南里); the right-side food stall grows larger as the camera advances; red lanterns + Chinese signage throughout; slug names no place",
+   "verifiedBy": "downloaded small rendition (540x960), frames at 15/50/85% LOOKed (top-up 2026-11-23): forward camera translation confirmed",
+   "foundBy": [
+    "nanjing walk|portrait",
+    "china night market walk|portrait"
+   ]
+  },
+  {
+   "id": "px-37381389",
+   "source": "Pexels",
+   "license": "Pexels License (free commercial use, attribution optional; credit kept)",
+   "sourceUrl": "https://www.pexels.com/video/bustling-evening-in-nanjing-s-vibrant-streets-37381389/",
+   "downloadLink": "https://videos.pexels.com/video-files/37381389/15832449_1080_1920_30fps.mp4",
+   "downloadDims": "1080x1920",
+   "duration": 24,
+   "orientation": "portrait",
+   "photographer": "Cheng Shi Song",
+   "place": "Nanjing (covered shopping arcade, rainy evening)",
+   "placeSpeakable": "Nanjing",
+   "chinaIdentifiable": true,
+   "chinaEvidence": "slug",
+   "pov": "yes",
+   "povType": "walk (forward, eye level)",
+   "mood": "rainy, moody, neon-lit arcade, wet reflections",
+   "usable": true,
+   "flags": [],
+   "verifyNote": "walking forward along a covered arcade; the KFC sign slides left and a Starbucks sign enters frame as the camera advances; Chinese shop signage (德克士/兰州拉面 etc.)",
+   "verifiedBy": "downloaded small rendition (540x960), frames at 15/50/85% LOOKed (top-up 2026-11-23): forward camera translation confirmed",
+   "foundBy": [
+    "china night market walk|portrait"
+   ]
+  },
+  {
+   "id": "px-36494731",
+   "source": "Pexels",
+   "license": "Pexels License (free commercial use, attribution optional; credit kept)",
+   "sourceUrl": "https://www.pexels.com/video/explore-vibrant-chinese-market-street-36494731/",
+   "downloadLink": "https://videos.pexels.com/video-files/36494731/15475029_1080_1920_30fps.mp4",
+   "downloadDims": "1080x1920",
+   "duration": 9,
+   "orientation": "portrait",
+   "photographer": "Cfq938888 Chen",
+   "place": "old-town market street with ornate pagoda gate (slug names no place)",
+   "placeSpeakable": null,
+   "chinaIdentifiable": true,
+   "chinaEvidence": "Chinese signage/architecture in frame",
+   "pov": "yes",
+   "povType": "walk (forward toward pagoda gate)",
+   "mood": "heritage old town, sunny, red lanterns",
+   "usable": true,
+   "flags": [],
+   "verifyNote": "walking forward down an old-town market street toward an ornate pagoda gate; the gate enlarges and the paving advances; traditional shophouses, red lanterns, Chinese shop signs; no modern city in frame; slug names no place",
+   "verifiedBy": "downloaded small rendition (540x960), frames at 15/50/85% LOOKed (top-up 2026-11-23): forward camera translation confirmed",
+   "foundBy": [
+    "china market walk pov|portrait"
    ]
   }
  ],
