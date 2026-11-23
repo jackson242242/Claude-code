@@ -108,65 +108,65 @@ run 自动执行；若某条钩子是**新写法**（不属 A-F），在 RUNLOG 
 
 
 <!-- AUTO:BEGIN — rewritten by scripts/hook-ledger.mjs, do not hand-edit below -->
-## 📊 实测排行（2026-11-22，近 30 天、满 3 天的 99 条；baseline 中位数 26 播放）
+## 📊 实测排行（2026-11-23，近 30 天、满 3 天的 100 条；baseline 中位数 27 播放）
 
 | 钩子类型 | 讨论型? | 条数 | 均播放 | 相对基准 | 点赞率 | 评论 | 评/千播 |
 |---|---|---|---|---|---|---|---|
-| DEBATE | ✅ | 2 ⚠️样本不足 | 529 | ×20.33 | 0.47% | 0 | 0 |
-| MISCONCEPTION | ✅ | 1 ⚠️样本不足 | 342 | ×13.15 | 0.29% | 0 | 0 |
-| CHOICE | ✅ | 10 | 253 | ×9.74 | 0.83% | 0 | 0 |
-| PRICE-SHOCK | ✅ | 16 | 104 | ×3.99 | 0.48% | 0 | 0 |
-| SPECTACLE-FACT | ❌ 数字锚而已 | 44 | 101 | ×3.89 | 0.45% | 0 | 0 |
-| PLAIN-FACT | ❌ 数字锚而已 | 26 | 84 | ×3.25 | 0.14% | 0 | 0 |
+| DEBATE | ✅ | 2 ⚠️样本不足 | 529 | ×19.59 | 0.47% | 0 | 0 |
+| MISCONCEPTION | ✅ | 1 ⚠️样本不足 | 342 | ×12.67 | 0.29% | 0 | 0 |
+| CHOICE | ✅ | 12 | 235 | ×8.7 | 0.78% | 0 | 0 |
+| PLAIN-FACT | ❌ 数字锚而已 | 28 | 121 | ×4.47 | 0.15% | 0 | 0 |
+| PRICE-SHOCK | ✅ | 15 | 106 | ×3.91 | 0.44% | 0 | 0 |
+| SPECTACLE-FACT | ❌ 数字锚而已 | 42 | 66 | ×2.46 | 0.65% | 0 | 0 |
 
 **今日三槽依次用（a / c / d）**：CHOICE / PRICE-SHOCK / STAKES
 **已验证（≥3 条且 ≥×1.0）**：CHOICE / PRICE-SHOCK
 **补样本（<3 条，必须排进去才学得到）**：STAKES(0) / INSIDER(0) / MISCONCEPTION(1) / DEBATE(2)
 **避免**：SPECTACLE-FACT / PLAIN-FACT 永远不是钩子类型（数字只能放进讨论型钩子里）
-**非讨论型配额**：近 7 天已用 16/3（每天 ≤1，仅限 slot d 路线超级数字，且收尾仍须 either-or）；讨论型 12/28 — **超额，本周剩余全部讨论型**
+**非讨论型配额**：近 7 天已用 15/3（每天 ≤1，仅限 slot d 路线超级数字，且收尾仍须 either-or）；讨论型 13/28 — **超额，本周剩余全部讨论型**
 
 ## 📒 近期逐条账本（新→旧）
 
 | 日期 | 播放 | ×基准 | 赞 | 评 | 类型 | 钩子原文 |
 |---|---|---|---|---|---|---|
-| 2026-11-21d | 974 | ×37.46 | 4 | 0 | PLAIN-FACT | A table for one. In China, that's not sad anymore — it's just a  |
-| 2026-11-21c | 128 | ×4.92 | 0 | 0 | MISCONCEPTION | The monsters in Black Myth: Wukong are made up. {\fs13}I'm your  |
-| 2026-11-21b | 66 | ×2.54 | 0 | 0 | MISCONCEPTION | You think these floating mountains are CGI from Avatar. {\fs13}I |
-| 2026-11-21a | 83 | ×3.19 | 0 | 0 | PLAIN-FACT | A heritage corridor in Nanjing. {\fs13}I'm your China Travel Exp |
-| 2026-11-20b | 157 | ×6.04 | 1 | 0 | PLAIN-FACT | This mountain looks painted. Half the comments call it fake. {\f |
-| 2026-11-20c | 1025 | ×39.42 | 1 | 0 | PLAIN-FACT | POV: you skipped the skyline for this. {\fs13}I'm your China Tra |
-| 2026-11-20d | 204 | ×7.85 | 1 | 0 | CHOICE | A roof crammed with clay figures — or carved halls below? Which  |
-| 2026-11-20a | 56 | ×2.15 | 0 | 0 | CHOICE | Flat ground — or a hidden tilt? {\fs13}I'm your China Travel Exp |
-| 2026-11-19d | 1100 | ×42.31 | 1 | 0 | PLAIN-FACT | POV: you're walking Hong Kong's tram line. {\fs13}I'm your China |
+| 2026-11-22d | 16 | ×0.59 | 0 | 0 | SPECTACLE-FACT | Nine to nine. Six days a week. In China, it has a name: 996. |
+| 2026-11-22c | 769 | ×28.48 | 1 | 0 | CHOICE | City… or not city? China builds a whole one out of ice. {\fs13}I |
+| 2026-11-22b | 128 | ×4.74 | 0 | 0 | MISCONCEPTION | You think this turquoise water is photoshopped. {\fs13}I'm your  |
+| 2026-11-22a | 166 | ×6.15 | 0 | 0 | CHOICE | Beijing's Summer Palace: the lake, or the hill? {\fs13}I'm your  |
+| 2026-11-21d | 1002 | ×37.11 | 4 | 0 | PLAIN-FACT | A table for one. In China, that's not sad anymore — it's just a  |
+| 2026-11-21c | 123 | ×4.56 | 0 | 0 | MISCONCEPTION | The monsters in Black Myth: Wukong are made up. {\fs13}I'm your  |
+| 2026-11-21b | 67 | ×2.48 | 0 | 0 | MISCONCEPTION | You think these floating mountains are CGI from Avatar. {\fs13}I |
+| 2026-11-21a | 84 | ×3.11 | 0 | 0 | PLAIN-FACT | A heritage corridor in Nanjing. {\fs13}I'm your China Travel Exp |
+| 2026-11-20b | 187 | ×6.93 | 1 | 0 | PLAIN-FACT | This mountain looks painted. Half the comments call it fake. {\f |
+| 2026-11-20c | 1021 | ×37.81 | 1 | 0 | PLAIN-FACT | POV: you skipped the skyline for this. {\fs13}I'm your China Tra |
+| 2026-11-20d | 229 | ×8.48 | 1 | 0 | CHOICE | A roof crammed with clay figures — or carved halls below? Which  |
+| 2026-11-20a | 57 | ×2.11 | 0 | 0 | CHOICE | Flat ground — or a hidden tilt? {\fs13}I'm your China Travel Exp |
+| 2026-11-19d | 1076 | ×39.85 | 1 | 0 | PLAIN-FACT | POV: you're walking Hong Kong's tram line. {\fs13}I'm your China |
 | 2026-11-19c | 1 | ×0.04 | 0 | 0 | PRICE-SHOCK | Hampton Court Palace: about $38. The Forbidden City: about $6. { |
-| 2026-11-19b | 78 | ×3.00 | 0 | 0 | PLAIN-FACT | This looks edited. It isn't — it's a real salt lake. {\fs13}I'm  |
-| 2026-11-19a | 257 | ×9.88 | 1 | 0 | SPECTACLE-FACT | This 38-metre hall holds up its roof with zero iron nails. {\fs1 |
-| 2026-11-18d | 75 | ×2.88 | 0 | 0 | PRICE-SHOCK | Windsor Castle: about $41. The Forbidden City in winter: about $ |
-| 2026-11-18c | 342 | ×13.15 | 1 | 0 | MISCONCEPTION | You think this pagoda is a thousand years old. It isn't. {\fs13} |
-| 2026-11-18b | 981 | ×37.73 | 5 | 0 | DEBATE | For "old China" everyone flies to Beijing or Xi'an. They skip th |
-| 2026-11-18a | 12 | ×0.46 | 0 | 0 | SPECTACLE-FACT | A temple from 247 AD, boxed in by Shanghai's malls. {\fs13}I'm y |
-| 2026-11-17b | 76 | ×2.92 | 0 | 0 | DEBATE | Skip the Great Wall crowds — the wall you can ride all the way a |
-| 2026-11-17c | 994 | ×38.23 | 3 | 0 | CHOICE | City… or not city? Chongqing breaks the question. {\fs13}I'm you |
-| 2026-11-17d | 115 | ×4.42 | 1 | 0 | SPECTACLE-FACT | Count the roof beasts: only one building in China is allowed 10. |
-| 2026-11-17a | 2 | ×0.08 | 0 | 0 | SPECTACLE-FACT | It survived 970 years of earthquakes. Now it's leaning. {\fs13}I |
-| 2026-11-16d | 68 | ×2.62 | 0 | 0 | SPECTACLE-FACT | POV: a port that's traded 2,200 years. {\fs13}I'm your China Tra |
+| 2026-11-19b | 78 | ×2.89 | 0 | 0 | PLAIN-FACT | This looks edited. It isn't — it's a real salt lake. {\fs13}I'm  |
+| 2026-11-19a | 262 | ×9.70 | 1 | 0 | SPECTACLE-FACT | This 38-metre hall holds up its roof with zero iron nails. {\fs1 |
+| 2026-11-18d | 75 | ×2.78 | 0 | 0 | PRICE-SHOCK | Windsor Castle: about $41. The Forbidden City in winter: about $ |
+| 2026-11-18c | 342 | ×12.67 | 1 | 0 | MISCONCEPTION | You think this pagoda is a thousand years old. It isn't. {\fs13} |
+| 2026-11-18b | 982 | ×36.37 | 5 | 0 | DEBATE | For "old China" everyone flies to Beijing or Xi'an. They skip th |
+| 2026-11-18a | 12 | ×0.44 | 0 | 0 | SPECTACLE-FACT | A temple from 247 AD, boxed in by Shanghai's malls. {\fs13}I'm y |
+| 2026-11-17b | 76 | ×2.81 | 0 | 0 | DEBATE | Skip the Great Wall crowds — the wall you can ride all the way a |
+| 2026-11-17c | 995 | ×36.85 | 3 | 0 | CHOICE | City… or not city? Chongqing breaks the question. {\fs13}I'm you |
+| 2026-11-17d | 115 | ×4.26 | 1 | 0 | SPECTACLE-FACT | Count the roof beasts: only one building in China is allowed 10. |
+| 2026-11-17a | 2 | ×0.07 | 0 | 0 | SPECTACLE-FACT | It survived 970 years of earthquakes. Now it's leaning. {\fs13}I |
+| 2026-11-16d | 68 | ×2.52 | 0 | 0 | SPECTACLE-FACT | POV: a port that's traded 2,200 years. {\fs13}I'm your China Tra |
 | 2026-11-16c | 0 | ×0.00 | 0 | 0 | SPECTACLE-FACT | 200+ shells hit it in 1926. Still standing. {\fs13}I'm your Chin |
-| 2026-11-16b | 55 | ×2.12 | 0 | 0 | PLAIN-FACT | This isn't Beijing's famous dragon wall. {\fs13}I'm your China T |
-| 2026-11-16a | 305 | ×11.73 | 1 | 0 | SPECTACLE-FACT | The Great Wall you picture isn't 2,000 years old. {\fs13}I'm you |
-| 2026-11-15d | 56 | ×2.15 | 1 | 0 | PRICE-SHOCK | Westminster Abbey: about $41. Beijing's Temple of Heaven: about  |
-| 2026-11-15c | 311 | ×11.96 | 0 | 0 | SPECTACLE-FACT | Half of TikTok is "becoming Chinese" — but China's longest city  |
-| 2026-11-15b | 52 | ×2.00 | 0 | 0 | SPECTACLE-FACT | These look like wooden pagodas. They're solid stone — China's ta |
-| 2026-11-15a | 353 | ×13.58 | 8 | 0 | CHOICE | A 71-metre Buddha carved into a cliff — see it from the river, o |
-| 2026-11-14d | 78 | ×3.00 | 0 | 0 | PLAIN-FACT | You can't buy a Forbidden City ticket at the gate. {\fs13}I'm yo |
-| 2026-11-14c | 64 | ×2.46 | 0 | 0 | PLAIN-FACT | POV: you just rolled into Xi'an. {\fs13}I'm your China Travel Ex |
-| 2026-11-14b | 118 | ×4.54 | 0 | 0 | PLAIN-FACT | Everyone picks Shanghai's towers. Here's the case against. {\fs1 |
-| 2026-11-14a | 144 | ×5.54 | 0 | 0 | PLAIN-FACT | See those thin poles? They're not what holds this up. {\fs13}I'm |
-| 2026-11-13d | 470 | ×18.08 | 4 | 0 | CHOICE | 51,000 Buddhas in a cliff, or a temple pinned to one? {\fs13}I'm |
-| 2026-11-13c | 57 | ×2.19 | 0 | 0 | PLAIN-FACT | Count five floors from outside. There are nine inside. {\fs13}I' |
-| 2026-11-13b | 214 | ×8.23 | 1 | 0 | PLAIN-FACT | The world's longest metro isn't in Tokyo or New York. {\fs13}I'm |
-| 2026-11-13a | 644 | ×24.77 | 5 | 0 | CHOICE | 800 people, one round building — home or fortress? {\fs13}I'm yo |
-| 2026-11-12d | 8 | ×0.31 | 0 | 0 | CHOICE | 5 am city or 6:30 am mountains? |
-| 2026-11-12c | 29 | ×1.12 | 1 | 0 | PRICE-SHOCK | The Tower of London this winter: about $50. {\fs13}I'm your Chin |
-| 2026-11-12b | 16 | ×0.62 | 1 | 0 | SPECTACLE-FACT | Shanghai's Oriental Pearl Tower stands 468 metres tall. {\fs13}I |
-| 2026-11-12a | 29 | ×1.12 | 0 | 0 | SPECTACLE-FACT | Shanghai's oldest temple was founded in 247 AD. {\fs13}I'm your  |
+| 2026-11-16b | 55 | ×2.04 | 0 | 0 | PLAIN-FACT | This isn't Beijing's famous dragon wall. {\fs13}I'm your China T |
+| 2026-11-16a | 305 | ×11.30 | 1 | 0 | SPECTACLE-FACT | The Great Wall you picture isn't 2,000 years old. {\fs13}I'm you |
+| 2026-11-15d | 56 | ×2.07 | 1 | 0 | PRICE-SHOCK | Westminster Abbey: about $41. Beijing's Temple of Heaven: about  |
+| 2026-11-15c | 311 | ×11.52 | 0 | 0 | SPECTACLE-FACT | Half of TikTok is "becoming Chinese" — but China's longest city  |
+| 2026-11-15b | 52 | ×1.93 | 0 | 0 | SPECTACLE-FACT | These look like wooden pagodas. They're solid stone — China's ta |
+| 2026-11-15a | 353 | ×13.07 | 8 | 0 | CHOICE | A 71-metre Buddha carved into a cliff — see it from the river, o |
+| 2026-11-14d | 78 | ×2.89 | 0 | 0 | PLAIN-FACT | You can't buy a Forbidden City ticket at the gate. {\fs13}I'm yo |
+| 2026-11-14c | 64 | ×2.37 | 0 | 0 | PLAIN-FACT | POV: you just rolled into Xi'an. {\fs13}I'm your China Travel Ex |
+| 2026-11-14b | 120 | ×4.44 | 0 | 0 | PLAIN-FACT | Everyone picks Shanghai's towers. Here's the case against. {\fs1 |
+| 2026-11-14a | 144 | ×5.33 | 0 | 0 | PLAIN-FACT | See those thin poles? They're not what holds this up. {\fs13}I'm |
+| 2026-11-13d | 470 | ×17.41 | 4 | 0 | CHOICE | 51,000 Buddhas in a cliff, or a temple pinned to one? {\fs13}I'm |
+| 2026-11-13c | 57 | ×2.11 | 0 | 0 | PLAIN-FACT | Count five floors from outside. There are nine inside. {\fs13}I' |
+| 2026-11-13b | 215 | ×7.96 | 1 | 0 | PLAIN-FACT | The world's longest metro isn't in Tokyo or New York. {\fs13}I'm |
+| 2026-11-13a | 644 | ×23.85 | 5 | 0 | CHOICE | 800 people, one round building — home or fortress? {\fs13}I'm yo |
 <!-- AUTO:END -->

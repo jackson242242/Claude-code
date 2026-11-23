@@ -7239,6 +7239,24 @@
    "aspect": "9x16",
    "music": "el-pov-walk-groove-01.mp3",
    "hookType": "DEBATE"
+  },
+  {
+   "date": "2026-11-23",
+   "slot": "d",
+   "title": "The Man Who Sold Noodles at 40 Cents for 15 Years | China, Explained",
+   "videoId": "2n460AnpKiM",
+   "url": "https://www.youtube.com/watch?v=2n460AnpKiM",
+   "pillar": "china-explained",
+   "lane": "fmt:E STAKES (China, Explained in 40s; bank sec5 Ramen Brother). Cheng Yunfu, Feixian County Linyi Shandong: hand-pulled noodles 3 yuan (~$0.42) held ~15 yrs (wouldn't raise - neighbors couldn't afford), viral early 2021 via vlogger; crowds/fake relatives; hid to sleep; used fame to help Guo Gangtang find abducted son (reunited 2021); noodles still 3 yuan. Verified The Star + Sixth Tone + Caixin. OpenAI gpt-4o-mini-tts marin (AI narration disclosed, worst WER 9.1%). Illustrative hand-pulled-noodle photos (no person/place claim). either-or close. ~$0.015 this run. music underscore-docu-02 @0.14.",
+   "status": "scheduled",
+   "publishAt": "2026-11-23T23:00:00Z",
+   "format": "E",
+   "footage": "photo",
+   "povType": "none",
+   "owner": false,
+   "aspect": "9x16",
+   "music": "underscore-docu-02.mp3",
+   "hookType": "STAKES"
   }
  ]
 }
