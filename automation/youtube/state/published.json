@@ -7184,6 +7184,24 @@
    "aspect": "9x16",
    "music": "underscore-docu-01.mp3",
    "hookType": "STAKES"
+  },
+  {
+   "date": "2026-11-23",
+   "slot": "a",
+   "title": "Dali's Three Pagodas: the Tall One, or the Twins? | China Travel Expert",
+   "videoId": "Fb44xpiCz5k",
+   "url": "https://www.youtube.com/watch?v=Fb44xpiCz5k",
+   "pillar": "china-architecture",
+   "lane": "F4 architecture CHOICE; Three Pagodas of Chongsheng Temple, Dali Yunnan. Qianxun ~69.13m/16 tiers Nanzhao 9th c; flanking ~42.19m/10 tiers Dali Kingdom. Verified Wikipedia + China Daily. Slug-verified Dali photos pxp-39186629/33765076/39175542/15583903/31427558/34644903. music el-mountain-calm-01.",
+   "status": "scheduled",
+   "publishAt": "2026-11-23T13:00:00Z",
+   "format": "F4",
+   "footage": "photo",
+   "povType": "none",
+   "owner": false,
+   "aspect": "9x16",
+   "music": "el-mountain-calm-01.mp3",
+   "hookType": "CHOICE"
   }
  ]
 }
