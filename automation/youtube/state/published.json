@@ -7202,6 +7202,25 @@
    "aspect": "9x16",
    "music": "el-mountain-calm-01.mp3",
    "hookType": "CHOICE"
+  },
+  {
+   "date": "2026-11-23",
+   "slot": "b",
+   "title": "China's Stone Forest Looks Like CGI — It's 270 Million Years Old | China Travel Expert",
+   "videoId": "FkUn9ch_UDQ",
+   "url": "https://www.youtube.com/watch?v=FkUn9ch_UDQ",
+   "pillar": "explore:unreal-china",
+   "lane": "explore unreal-china 5/5 MISCONCEPTION. Stone Forest (Shilin), Yunnan: ~270M-yr Permian limestone karst, once a shallow sea; UNESCO 2007 South China Karst (Naigu Stone Forest + Suogeyi). Verified Wikipedia + Nature World News. Slug-verified photos pxp-5505108/5505111/36907620/5505099/38834894. music cinema-orient-01.",
+   "status": "scheduled",
+   "publishAt": "2026-11-23T17:00:00Z",
+   "format": "F4",
+   "footage": "photo",
+   "povType": "none",
+   "owner": false,
+   "aspect": "9x16",
+   "music": "cinema-orient-01.mp3",
+   "hookType": "MISCONCEPTION",
+   "explore": "unreal-china 5/5"
   }
  ]
 }
