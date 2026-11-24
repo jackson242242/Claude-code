@@ -1,0 +1,10 @@
+[
+ { "id": "pxp-28752881", "in": 0, "out": 6.2, "label": "High-speed rail" },
+ { "id": "pxp-37651956", "in": 0, "out": 6.2, "label": "Rural China" },
+ { "id": "pxp-38247833", "in": 0, "out": 6.2, "label": "On the train" },
+ { "id": "pxp-40723737", "in": 0, "out": 6.2, "label": "Rural market, China" },
+ { "id": "pxp-33264862", "in": 0, "out": 6.2, "label": "Rural market, China" },
+ { "id": "pxp-10503155", "in": 0, "out": 6.2, "label": "Street market" },
+ { "id": "pxp-37651956", "in": 0, "out": 6.2, "label": "Rural China" },
+ { "id": "pxp-36891792", "in": 0, "out": 6.2, "label": "Rural China" }
+]

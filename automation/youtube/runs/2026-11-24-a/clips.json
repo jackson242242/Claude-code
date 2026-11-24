@@ -1,0 +1,8 @@
+[
+ { "id": "pxp-16730527", "in": 0, "out": 3.25, "label": "Shenyang Imperial Palace" },
+ { "id": "pxp-31032328", "in": 0, "out": 3.25, "label": "Forbidden City, Beijing" },
+ { "id": "pxp-16730527", "in": 0, "out": 3.25, "label": "Shenyang Imperial Palace" },
+ { "id": "pxp-40992456", "in": 0, "out": 3.25, "label": "Shenyang" },
+ { "id": "pxp-40992457", "in": 0, "out": 3.25, "label": "Shenyang" },
+ { "id": "pxp-40213039", "in": 0, "out": 3.25, "label": "Forbidden City" }
+]

@@ -1,0 +1,7 @@
+[
+ { "id": "pxp-32831065", "in": 0, "out": 3.6, "label": "Online shopping" },
+ { "id": "pxp-5869606", "in": 0, "out": 3.6, "label": "Online shopping" },
+ { "id": "pxp-346750", "in": 0, "out": 3.6, "label": "Online shopping" },
+ { "id": "pxp-39948199", "in": 0, "out": 3.6, "label": "Delivery" },
+ { "id": "pxp-18313598", "in": 0, "out": 3.6, "label": "Delivery" }
+]

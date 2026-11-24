@@ -1,3 +1,33 @@
+## 2026-11-24 post-mortem (baseline = 14d median views of Shorts ≥3d old: 64)
+- 2026-11-22 c hmUxMiYEY_o | 803v 1L 0C @2d | ×12.55 | WINNER — replicate this hook shape today | City or Not City? China Builds a City From Ice | China Travel Expert
+- 2026-11-23 c qyuMbvUTXDk | 544v 1L 0C @1d | ×8.50 | WINNER — replicate this hook shape today | You Land in Shenzhen and Pass Through — Here's Why You Shouldn't | Chi
+- 2026-11-22 a -pqfsRtrRnQ | 168v 0L 0C @2d | ×2.63 | WINNER — replicate this hook shape today | Summer Palace: the Lake, or the Hill? | China Travel Expert
+- 2026-11-23 d 2n460AnpKiM | 162v 3L 0C @1d | ×2.53 | WINNER — replicate this hook shape today | The Man Who Sold Noodles at 40 Cents for 15 Years | China, Explained
+- 2026-11-23 b FkUn9ch_UDQ | 146v 2L 0C @1d | ×2.28 | WINNER — replicate this hook shape today | China's Stone Forest Looks Like CGI — It's 270 Million Years Old | Chi
+- 2026-11-22 b OXMMVdIeWwA | 132v 0L 0C @2d | ×2.06 | WINNER — replicate this hook shape today | Huanglong's Turquoise Pools Look Fake — They're Real | China Travel Ex
+- 2026-11-23 a Fb44xpiCz5k | 99v 0L 0C @1d | ×1.55 | baseline | Dali's Three Pagodas: the Tall One, or the Twins? | China Travel Exper
+- 2026-11-22 d YCMChVfsIGM | 20v 0L 0C @2d | ×0.31 | LOSER — avoid this shape today | 996: The 72-Hour Week China Called Illegal | China, Explained
+- like-rate (fresh Shorts): 0.34% (peers 1-6%)
+### Equal age (Data API snapshots since 2026-10-18; 48 h / 72 h ±6 h; "~" = interpolated between the snapshots either side)
+- Shorts median, trailing 28 d: 48h 27v (n=96) · 72h 20v (n=92)
+- 2026-11-22 b fmt:F4 OXMMVdIeWwA | 48h 132v 0L 0C | 72h — | Huanglong's Turquoise Pools Look Fake — They're Real | China
+- 2026-11-22 a fmt:F4 -pqfsRtrRnQ | 48h 168v 0L 0C | 72h — | Summer Palace: the Lake, or the Hill? | China Travel Expert
+- 2026-11-21 d fmt:- DTFd1Gim_qM | 48h ~1004v 4L 0C | 72h — | Table for One: China's Solo Hotpot | China, Explained
+- 2026-11-21 c fmt:F4 3Pq5RGcjb1Y | 48h ~123v 0L 0C | 72h — | Black Myth: Wukong's Temples Are Real | China Travel Expert
+- 2026-11-21 b fmt:F4 ks9o1ihy1mI | 48h 67v 0L 0C | 72h 71v 0L 0C | China's Avatar Mountains Are Real | China Travel Expert
+- 2026-11-21 a fmt:F4 N3fzV2pXk-k | 48h 84v 0L 0C | 72h 85v 0L 0C | The Palace Beijing Copied Is in Nanjing | China Travel Exper
+- 2026-11-20 d fmt:F4 XHtQA2VjAD4 | 48h ~215v 1L 0C | 72h ~229v 1L 0C | Guangzhou's Most Decorated Hall: the Roof, or the Carvings? 
+- 2026-11-20 c fmt:F2 vNKwWDwwQsU | 48h ~1024v 1L 0C | 72h ~1023v 1L 0C | Shanghai: the Skyline, or the Street Food? | China Travel Ex
+- 2026-11-20 b fmt:F4 m3oETGshSJY | 48h 157v 1L 0C | 72h 187v 1L 0C | China's Rainbow Mountains Look Fake — But Zhangye Danxia Is 
+- 2026-11-20 a fmt:- U-ge89WEMBI | 48h 56v 0L 0C | 72h 57v 0L 0C | The Forbidden City Isn't Flat — That's the Drainage | China 
+- 2026-11-19 d fmt:F2 cXZiMSUkho8 | 48h ~1095v 1L 0C | 72h ~1090v 1L 0C | POV: Walking Hong Kong's Tram Line — Running Since 1904 | Ch
+- 2026-11-19 c fmt:F3 OdiDyATtehY | 48h ~1v 0L 0C | 72h ~1v 0L 0C | Hampton Court Palace ~$38 vs the Forbidden City ~$6 | China 
+- 2026-11-19 b fmt:F4 GDfzL5R3S0g | 48h 74v 0L 0C | 72h 78v 0L 0C | This Chinese Lake Looks Edited — It's a Real 3,000m Salt Mir
+- 2026-11-19 a fmt:F4 PRmHjaluaYw | 48h 253v 1L 0C | 72h 257v 1L 0C | A 38m Hall Stands With Zero Nails — Pillars or the Echo Wall
+- 2026-11-18 d fmt:F3 KJGTW8XrskU | 48h ~76v 0L 0C | 72h ~75v 0L 0C | Windsor Castle ~$41 vs the Forbidden City ~$6 in Winter | Ch
+### YouTube Analytics API
+- unavailable: HTTP 403 accessNotConfigured — the YouTube Analytics API is not enabled in the Google Cloud project (owner action: APIs & Services > enable "YouTube Analytics API"; checklist in scripts/youtube-oauth-helper.mjs). Equal-age numbers come from Data API snapshots only.
+
 ## 2026-11-23 post-mortem (baseline = 14d median views of Shorts ≥3d old: 57)
 - 2026-11-21 d DTFd1Gim_qM | 1002v 4L 0C @2d | ×17.58 | WINNER — replicate this hook shape today | Table for One: China's Solo Hotpot | China, Explained
 - 2026-11-22 c hmUxMiYEY_o | 769v 1L 0C @1d | ×13.49 | WINNER — replicate this hook shape today | City or Not City? China Builds a City From Ice | China Travel Expert
