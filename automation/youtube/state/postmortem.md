@@ -1,3 +1,33 @@
+## 2026-11-25 post-mortem (baseline = 14d median views of Shorts ≥3d old: 71)
+- 2026-11-23 c qyuMbvUTXDk | 667v 1L 0C @2d | ×9.39 | WINNER — replicate this hook shape today | You Land in Shenzhen and Pass Through — Here's Why You Shouldn't | Chi
+- 2026-11-23 d 2n460AnpKiM | 380v 4L 0C @2d | ×5.35 | WINNER — replicate this hook shape today | The Man Who Sold Noodles at 40 Cents for 15 Years | China, Explained
+- 2026-11-23 b FkUn9ch_UDQ | 148v 2L 0C @2d | ×2.08 | WINNER — replicate this hook shape today | China's Stone Forest Looks Like CGI — It's 270 Million Years Old | Chi
+- 2026-11-23 a Fb44xpiCz5k | 101v 0L 0C @2d | ×1.42 | baseline | Dali's Three Pagodas: the Tall One, or the Twins? | China Travel Exper
+- 2026-11-24 a i8YPz-30LSc | 87v 0L 0C @1d | ×1.23 | baseline | China Has Two Imperial Palaces — Beijing's, or Shenyang's? | China Tra
+- 2026-11-24 d yY7NEkiztPs | 31v 0L 0C @1d | ×0.44 | LOSER — avoid this shape today | China Has 350 km/h Bullet Trains — and One That Still Costs 30 Cents |
+- 2026-11-24 c 2jAl_l1iNs8 | 27v 0L 0C @1d | ×0.38 | LOSER — avoid this shape today | The World's Biggest Shopping Day Isn't Black Friday — It's China's Dou
+- 2026-11-24 b 9rUR8hkG17o | 13v 0L 0C @1d | ×0.18 | LOSER — avoid this shape today | In China, Mahjong Isn't a Phone App — It's Four People at a Table | Ch
+- like-rate (fresh Shorts): 0.48% (peers 1-6%)
+### Equal age (Data API snapshots since 2026-10-18; 48 h / 72 h ±6 h; "~" = interpolated between the snapshots either side)
+- Shorts median, trailing 28 d: 48h 28v (n=97) · 72h 27v (n=93)
+- 2026-11-23 b fmt:F4 FkUn9ch_UDQ | 48h 148v 2L 0C | 72h — | China's Stone Forest Looks Like CGI — It's 270 Million Years
+- 2026-11-23 a fmt:F4 Fb44xpiCz5k | 48h 101v 0L 0C | 72h — | Dali's Three Pagodas: the Tall One, or the Twins? | China Tr
+- 2026-11-22 d fmt:- YCMChVfsIGM | 48h ~21v 0L 0C | 72h — | 996: The 72-Hour Week China Called Illegal | China, Explaine
+- 2026-11-22 c fmt:F4 hmUxMiYEY_o | 48h ~834v 1L 0C | 72h — | City or Not City? China Builds a City From Ice | China Trave
+- 2026-11-22 b fmt:F4 OXMMVdIeWwA | 48h 132v 0L 0C | 72h 133v 0L 0C | Huanglong's Turquoise Pools Look Fake — They're Real | China
+- 2026-11-22 a fmt:F4 -pqfsRtrRnQ | 48h 168v 0L 0C | 72h 168v 0L 0C | Summer Palace: the Lake, or the Hill? | China Travel Expert
+- 2026-11-21 d fmt:- DTFd1Gim_qM | 48h ~1004v 4L 0C | 72h ~1006v 4L 0C | Table for One: China's Solo Hotpot | China, Explained
+- 2026-11-21 c fmt:F4 3Pq5RGcjb1Y | 48h ~123v 0L 0C | 72h ~124v 0L 0C | Black Myth: Wukong's Temples Are Real | China Travel Expert
+- 2026-11-21 b fmt:F4 ks9o1ihy1mI | 48h 67v 0L 0C | 72h 71v 0L 0C | China's Avatar Mountains Are Real | China Travel Expert
+- 2026-11-21 a fmt:F4 N3fzV2pXk-k | 48h 84v 0L 0C | 72h 85v 0L 0C | The Palace Beijing Copied Is in Nanjing | China Travel Exper
+- 2026-11-20 d fmt:F4 XHtQA2VjAD4 | 48h ~215v 1L 0C | 72h ~229v 1L 0C | Guangzhou's Most Decorated Hall: the Roof, or the Carvings? 
+- 2026-11-20 c fmt:F2 vNKwWDwwQsU | 48h ~1024v 1L 0C | 72h ~1023v 1L 0C | Shanghai: the Skyline, or the Street Food? | China Travel Ex
+- 2026-11-20 b fmt:F4 m3oETGshSJY | 48h 157v 1L 0C | 72h 187v 1L 0C | China's Rainbow Mountains Look Fake — But Zhangye Danxia Is 
+- 2026-11-20 a fmt:- U-ge89WEMBI | 48h 56v 0L 0C | 72h 57v 0L 0C | The Forbidden City Isn't Flat — That's the Drainage | China 
+- 2026-11-19 d fmt:F2 cXZiMSUkho8 | 48h ~1095v 1L 0C | 72h ~1090v 1L 0C | POV: Walking Hong Kong's Tram Line — Running Since 1904 | Ch
+### YouTube Analytics API
+- unavailable: HTTP 403 accessNotConfigured — the YouTube Analytics API is not enabled in the Google Cloud project (owner action: APIs & Services > enable "YouTube Analytics API"; checklist in scripts/youtube-oauth-helper.mjs). Equal-age numbers come from Data API snapshots only.
+
 ## 2026-11-24 post-mortem (baseline = 14d median views of Shorts ≥3d old: 64)
 - 2026-11-22 c hmUxMiYEY_o | 803v 1L 0C @2d | ×12.55 | WINNER — replicate this hook shape today | City or Not City? China Builds a City From Ice | China Travel Expert
 - 2026-11-23 c qyuMbvUTXDk | 544v 1L 0C @1d | ×8.50 | WINNER — replicate this hook shape today | You Land in Shenzhen and Pass Through — Here's Why You Shouldn't | Chi
