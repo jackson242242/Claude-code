@@ -55,7 +55,7 @@
 - The delivery economy: lunch in 30 minutes, everywhere
 
 ## 4. 公众人物（走红、转折、现在）
-- Li Ziqi: three years of silence and a comeback
+- Li Ziqi: three years of silence and a comeback [used 2026-11-26 slot d — fmt:E STAKES; Guinness record 14.1M->20M+, stopped July 2021 (reported Weinian dispute), returned 12 Nov 2024, >100M views in hours; Guinness + CGTN + Sixth Tone + China Daily]
 - Ding Zhen: one smile that changed a county
 - Dong Yuhui: the English teacher who sold rice with poetry
 - Liu Genghong: the pandemic fitness craze
