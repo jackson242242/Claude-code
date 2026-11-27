@@ -60,7 +60,7 @@
 - Dong Yuhui: the English teacher who sold rice with poetry
 - Liu Genghong: the pandemic fitness craze
 - Luo Yonghao: paying back a huge debt by livestreaming
-- Lei Jun: from phones to cars
+- Lei Jun: from phones to cars [used 2026-11-27 fmt:E STAKES nHwQCfe3Om0]
 - Quan Hongchan: the diving champion from a village
 - Zheng Qinwen and China's tennis boom
 - Papi Jiang: the first short-video star

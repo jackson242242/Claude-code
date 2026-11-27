@@ -1,3 +1,33 @@
+## 2026-11-27 post-mortem (baseline = 14d median views of Shorts ≥3d old: 90)
+- 2026-11-25 a s6Z6j4UyjLw | 318v 4L 0C @2d | ×3.53 | WINNER — replicate this hook shape today | Yungang's Giant Buddha, or the 51,000 Carved Around It? | China Travel
+- 2026-11-25 b ViJyH98NRGw | 110v 0L 0C @2d | ×1.22 | baseline | China's Dancing Grandmas: Public Nuisance, or the Healthiest Retiremen
+- 2026-11-26 b uu9G1yE0e4U | 90v 0L 0C @1d | ×1.00 | baseline | China Naps After Lunch — Genius Habit, or Just Slacking? | China Trave
+- 2026-11-25 c QghiVBjVaiQ | 85v 0L 0C @2d | ×0.94 | baseline | Chinamaxxing: Drinking Hot Water Isn't a Hack in China — It's the Tap 
+- 2026-11-26 d lVNBgQLZj9Q | 54v 0L 0C @1d | ×0.60 | baseline | She Quit at Her Peak — 14 Million Fans, Then Years of Silence | China 
+- 2026-11-26 c uuayDcBkbok | 35v 0L 0C @1d | ×0.39 | LOSER — avoid this shape today | Cash or Phone: Which One Survives a Week in China? | China Travel Expe
+- 2026-11-26 a KTlPyoS9Q1U | 24v 1L 0C @1d | ×0.27 | LOSER — avoid this shape today | This Beijing Hall Hides a Whole Calendar in Its Pillars — No Nails | C
+- 2026-11-25 d NMuH7N8kqhA | 5v 0L 0C @2d | ×0.06 | LOSER — avoid this shape today | He Owed Nearly $90 Million — So He Sold Things on a Livestream | China
+- like-rate (fresh Shorts): 0.69% (peers 1-6%)
+### Equal age (Data API snapshots since 2026-10-18; 48 h / 72 h ±6 h; "~" = interpolated between the snapshots either side)
+- Shorts median, trailing 28 d: 48h 31v (n=100) · 72h 29v (n=96)
+- 2026-11-25 b fmt:F4 ViJyH98NRGw | 48h 110v 0L 0C | 72h — | China's Dancing Grandmas: Public Nuisance, or the Healthiest
+- 2026-11-25 a fmt:F4 s6Z6j4UyjLw | 48h 318v 4L 0C | 72h — | Yungang's Giant Buddha, or the 51,000 Carved Around It? | Ch
+- 2026-11-24 d fmt:- yY7NEkiztPs | 48h ~91v 0L 0C | 72h — | China Has 350 km/h Bullet Trains — and One That Still Costs 
+- 2026-11-24 c fmt:F4 2jAl_l1iNs8 | 48h ~27v 0L 0C | 72h — | The World's Biggest Shopping Day Isn't Black Friday — It's C
+- 2026-11-24 b fmt:F4 9rUR8hkG17o | 48h 24v 0L 0C | 72h 25v 0L 0C | In China, Mahjong Isn't a Phone App — It's Four People at a 
+- 2026-11-24 a fmt:F4 i8YPz-30LSc | 48h 89v 0L 0C | 72h 90v 0L 0C | China Has Two Imperial Palaces — Beijing's, or Shenyang's? |
+- 2026-11-23 d fmt:- 2n460AnpKiM | 48h ~442v 4L 0C | 72h ~528v 4L 0C | The Man Who Sold Noodles at 40 Cents for 15 Years | China, E
+- 2026-11-23 c fmt:F2 qyuMbvUTXDk | 48h ~682v 1L 0C | 72h ~715v 1L 0C | You Land in Shenzhen and Pass Through — Here's Why You Shoul
+- 2026-11-23 b fmt:F4 FkUn9ch_UDQ | 48h 148v 2L 0C | 72h 148v 2L 0C | China's Stone Forest Looks Like CGI — It's 270 Million Years
+- 2026-11-23 a fmt:F4 Fb44xpiCz5k | 48h 101v 0L 0C | 72h 101v 0L 0C | Dali's Three Pagodas: the Tall One, or the Twins? | China Tr
+- 2026-11-22 d fmt:- YCMChVfsIGM | 48h ~21v 0L 0C | 72h ~23v 0L 0C | 996: The 72-Hour Week China Called Illegal | China, Explaine
+- 2026-11-22 c fmt:F4 hmUxMiYEY_o | 48h ~834v 1L 0C | 72h ~904v 1L 0C | City or Not City? China Builds a City From Ice | China Trave
+- 2026-11-22 b fmt:F4 OXMMVdIeWwA | 48h 132v 0L 0C | 72h 133v 0L 0C | Huanglong's Turquoise Pools Look Fake — They're Real | China
+- 2026-11-22 a fmt:F4 -pqfsRtrRnQ | 48h 168v 0L 0C | 72h 168v 0L 0C | Summer Palace: the Lake, or the Hill? | China Travel Expert
+- 2026-11-21 d fmt:- DTFd1Gim_qM | 48h ~1004v 4L 0C | 72h ~1006v 4L 0C | Table for One: China's Solo Hotpot | China, Explained
+### YouTube Analytics API
+- unavailable: HTTP 403 accessNotConfigured — the YouTube Analytics API is not enabled in the Google Cloud project (owner action: APIs & Services > enable "YouTube Analytics API"; checklist in scripts/youtube-oauth-helper.mjs). Equal-age numbers come from Data API snapshots only.
+
 ## 2026-11-26 post-mortem (baseline = 14d median views of Shorts ≥3d old: 79)
 - 2026-11-25 a s6Z6j4UyjLw | 316v 4L 0C @1d | ×4.00 | WINNER — replicate this hook shape today | Yungang's Giant Buddha, or the 51,000 Carved Around It? | China Travel
 - 2026-11-25 b ViJyH98NRGw | 110v 0L 0C @1d | ×1.39 | baseline | China's Dancing Grandmas: Public Nuisance, or the Healthiest Retiremen

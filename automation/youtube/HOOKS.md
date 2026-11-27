@@ -108,65 +108,65 @@ run 自动执行；若某条钩子是**新写法**（不属 A-F），在 RUNLOG 
 
 
 <!-- AUTO:BEGIN — rewritten by scripts/hook-ledger.mjs, do not hand-edit below -->
-## 📊 实测排行（2026-11-26，近 30 天、满 3 天的 103 条；baseline 中位数 29 播放）
+## 📊 实测排行（2026-11-27，近 30 天、满 3 天的 104 条；baseline 中位数 30 播放）
 
 | 钩子类型 | 讨论型? | 条数 | 均播放 | 相对基准 | 点赞率 | 评论 | 评/千播 |
 |---|---|---|---|---|---|---|---|
-| DEBATE | ✅ | 2 ⚠️样本不足 | 532 | ×18.33 | 0.38% | 0 | 0 |
-| MISCONCEPTION | ✅ | 5 | 279 | ×9.61 | 0.14% | 0 | 0 |
-| CHOICE | ✅ | 15 | 267 | ×9.21 | 0.57% | 0 | 0 |
-| PLAIN-FACT | ❌ 数字锚而已 | 30 | 169 | ×5.82 | 0.3% | 0 | 0 |
-| PRICE-SHOCK | ✅ | 13 | 103 | ×3.55 | 0.52% | 0 | 0 |
-| SPECTACLE-FACT | ❌ 数字锚而已 | 38 | 55 | ×1.9 | 0.71% | 0 | 0 |
+| DEBATE | ✅ | 2 ⚠️样本不足 | 532 | ×17.72 | 0.38% | 0 | 0 |
+| CHOICE | ✅ | 14 | 286 | ×9.54 | 0.57% | 0 | 0 |
+| MISCONCEPTION | ✅ | 6 | 247 | ×8.24 | 0.13% | 0 | 0 |
+| PLAIN-FACT | ❌ 数字锚而已 | 30 | 170 | ×5.65 | 0.29% | 0 | 0 |
+| PRICE-SHOCK | ✅ | 12 | 107 | ×3.58 | 0.54% | 0 | 0 |
+| SPECTACLE-FACT | ❌ 数字锚而已 | 40 | 55 | ×1.85 | 0.68% | 0 | 0 |
 
-**今日三槽依次用（a / c / d）**：MISCONCEPTION / CHOICE / PRICE-SHOCK
-**已验证（≥3 条且 ≥×1.0）**：MISCONCEPTION / CHOICE / PRICE-SHOCK
+**今日三槽依次用（a / c / d）**：CHOICE / MISCONCEPTION / PRICE-SHOCK
+**已验证（≥3 条且 ≥×1.0）**：CHOICE / MISCONCEPTION / PRICE-SHOCK
 **补样本（<3 条，必须排进去才学得到）**：STAKES(0) / INSIDER(0) / DEBATE(2)
 **避免**：SPECTACLE-FACT / PLAIN-FACT 永远不是钩子类型（数字只能放进讨论型钩子里）
-**非讨论型配额**：近 7 天已用 15/3（每天 ≤1，仅限 slot d 路线超级数字，且收尾仍须 either-or）；讨论型 13/28 — **超额，本周剩余全部讨论型**
+**非讨论型配额**：近 7 天已用 13/3（每天 ≤1，仅限 slot d 路线超级数字，且收尾仍须 either-or）；讨论型 15/28 — **超额，本周剩余全部讨论型**
 
 ## 📒 近期逐条账本（新→旧）
 
 | 日期 | 播放 | ×基准 | 赞 | 评 | 类型 | 钩子原文 |
 |---|---|---|---|---|---|---|
+| 2026-11-26d | 54 | ×1.80 | 0 | 0 | PLAIN-FACT | At her peak — she just stopped. |
+| 2026-11-26c | 35 | ×1.17 | 0 | 0 | MISCONCEPTION | Cash or your phone — which one actually gets you through a week  |
+| 2026-11-26b | 90 | ×3.00 | 0 | 0 | CHOICE | A whole country that naps after lunch — smart habit, or just sla |
+| 2026-11-26a | 24 | ×0.80 | 1 | 0 | INSIDER | This hall in Beijing hides a secret clock inside its pillars. {\ |
 | 2026-11-25d | 5 | ×0.17 | 0 | 0 | PLAIN-FACT | Owe a fortune: disappear, or pay it back in public. |
-| 2026-11-25c | 82 | ×2.83 | 0 | 0 | PLAIN-FACT | Half of TikTok is sipping hot water to "become more Chinese." In |
-| 2026-11-25b | 110 | ×3.79 | 0 | 0 | CHOICE | A park full of dancing grandmas at full volume — public nuisance |
-| 2026-11-25a | 316 | ×10.90 | 4 | 0 | CHOICE | Yungang's giant Buddha, or the 51,000 carved around it — which d |
-| 2026-11-24d | 90 | ×3.10 | 0 | 0 | SPECTACLE-FACT | China has the world's biggest high-speed rail — 350 km/h trains. |
-| 2026-11-24c | 27 | ×0.93 | 0 | 0 | SPECTACLE-FACT | In one shopping festival, China spent about 264 billion US dolla |
-| 2026-11-24b | 24 | ×0.83 | 0 | 0 | PLAIN-FACT | In the West, mahjong is a phone game you play alone. {\fs13}I'm  |
-| 2026-11-24a | 89 | ×3.07 | 0 | 0 | MISCONCEPTION | China has two imperial palaces — and most people only ever see o |
-| 2026-11-23d | 527 | ×18.17 | 4 | 0 | PLAIN-FACT | In a village in Shandong, a farmer sells hand-pulled noodles. |
-| 2026-11-23c | 717 | ×24.72 | 1 | 0 | MISCONCEPTION | POV: you land in Shenzhen — most people just pass through. {\fs1 |
-| 2026-11-23b | 148 | ×5.10 | 2 | 0 | PLAIN-FACT | This looks like CGI — a forest made of stone. {\fs13}I'm your Ch |
-| 2026-11-23a | 101 | ×3.48 | 0 | 0 | CHOICE | Dali's Three Pagodas — the tall one, or the twins? {\fs13}I'm yo |
-| 2026-11-22d | 23 | ×0.79 | 0 | 0 | SPECTACLE-FACT | Nine to nine. Six days a week. In China, it has a name: 996. |
-| 2026-11-22c | 904 | ×31.17 | 1 | 0 | CHOICE | City… or not city? China builds a whole one out of ice. {\fs13}I |
-| 2026-11-22b | 137 | ×4.72 | 0 | 0 | MISCONCEPTION | You think this turquoise water is photoshopped. {\fs13}I'm your  |
-| 2026-11-22a | 170 | ×5.86 | 0 | 0 | CHOICE | Beijing's Summer Palace: the lake, or the hill? {\fs13}I'm your  |
-| 2026-11-21d | 1008 | ×34.76 | 4 | 0 | PLAIN-FACT | A table for one. In China, that's not sad anymore — it's just a  |
-| 2026-11-21c | 124 | ×4.28 | 0 | 0 | MISCONCEPTION | The monsters in Black Myth: Wukong are made up. {\fs13}I'm your  |
-| 2026-11-21b | 71 | ×2.45 | 0 | 0 | MISCONCEPTION | You think these floating mountains are CGI from Avatar. {\fs13}I |
-| 2026-11-21a | 85 | ×2.93 | 0 | 0 | PLAIN-FACT | A heritage corridor in Nanjing. {\fs13}I'm your China Travel Exp |
-| 2026-11-20b | 189 | ×6.52 | 1 | 0 | PLAIN-FACT | This mountain looks painted. Half the comments call it fake. {\f |
-| 2026-11-20c | 1027 | ×35.41 | 1 | 0 | PLAIN-FACT | POV: you skipped the skyline for this. {\fs13}I'm your China Tra |
-| 2026-11-20d | 229 | ×7.90 | 1 | 0 | CHOICE | A roof crammed with clay figures — or carved halls below? Which  |
-| 2026-11-20a | 60 | ×2.07 | 0 | 0 | CHOICE | Flat ground — or a hidden tilt? {\fs13}I'm your China Travel Exp |
-| 2026-11-19d | 1082 | ×37.31 | 1 | 0 | PLAIN-FACT | POV: you're walking Hong Kong's tram line. {\fs13}I'm your China |
+| 2026-11-25c | 85 | ×2.83 | 0 | 0 | PLAIN-FACT | Half of TikTok is sipping hot water to "become more Chinese." In |
+| 2026-11-25b | 110 | ×3.67 | 0 | 0 | CHOICE | A park full of dancing grandmas at full volume — public nuisance |
+| 2026-11-25a | 318 | ×10.60 | 4 | 0 | CHOICE | Yungang's giant Buddha, or the 51,000 carved around it — which d |
+| 2026-11-24d | 91 | ×3.03 | 0 | 0 | SPECTACLE-FACT | China has the world's biggest high-speed rail — 350 km/h trains. |
+| 2026-11-24c | 27 | ×0.90 | 0 | 0 | SPECTACLE-FACT | In one shopping festival, China spent about 264 billion US dolla |
+| 2026-11-24b | 25 | ×0.83 | 0 | 0 | PLAIN-FACT | In the West, mahjong is a phone game you play alone. {\fs13}I'm  |
+| 2026-11-24a | 90 | ×3.00 | 0 | 0 | MISCONCEPTION | China has two imperial palaces — and most people only ever see o |
+| 2026-11-23d | 528 | ×17.60 | 4 | 0 | PLAIN-FACT | In a village in Shandong, a farmer sells hand-pulled noodles. |
+| 2026-11-23c | 714 | ×23.80 | 1 | 0 | MISCONCEPTION | POV: you land in Shenzhen — most people just pass through. {\fs1 |
+| 2026-11-23b | 148 | ×4.93 | 2 | 0 | PLAIN-FACT | This looks like CGI — a forest made of stone. {\fs13}I'm your Ch |
+| 2026-11-23a | 101 | ×3.37 | 0 | 0 | CHOICE | Dali's Three Pagodas — the tall one, or the twins? {\fs13}I'm yo |
+| 2026-11-22d | 23 | ×0.77 | 0 | 0 | SPECTACLE-FACT | Nine to nine. Six days a week. In China, it has a name: 996. |
+| 2026-11-22c | 906 | ×30.20 | 1 | 0 | CHOICE | City… or not city? China builds a whole one out of ice. {\fs13}I |
+| 2026-11-22b | 138 | ×4.60 | 0 | 0 | MISCONCEPTION | You think this turquoise water is photoshopped. {\fs13}I'm your  |
+| 2026-11-22a | 172 | ×5.73 | 0 | 0 | CHOICE | Beijing's Summer Palace: the lake, or the hill? {\fs13}I'm your  |
+| 2026-11-21d | 1008 | ×33.60 | 4 | 0 | PLAIN-FACT | A table for one. In China, that's not sad anymore — it's just a  |
+| 2026-11-21c | 125 | ×4.17 | 0 | 0 | MISCONCEPTION | The monsters in Black Myth: Wukong are made up. {\fs13}I'm your  |
+| 2026-11-21b | 72 | ×2.40 | 0 | 0 | MISCONCEPTION | You think these floating mountains are CGI from Avatar. {\fs13}I |
+| 2026-11-21a | 85 | ×2.83 | 0 | 0 | PLAIN-FACT | A heritage corridor in Nanjing. {\fs13}I'm your China Travel Exp |
+| 2026-11-20b | 189 | ×6.30 | 1 | 0 | PLAIN-FACT | This mountain looks painted. Half the comments call it fake. {\f |
+| 2026-11-20c | 1027 | ×34.23 | 1 | 0 | PLAIN-FACT | POV: you skipped the skyline for this. {\fs13}I'm your China Tra |
+| 2026-11-20d | 229 | ×7.63 | 1 | 0 | CHOICE | A roof crammed with clay figures — or carved halls below? Which  |
+| 2026-11-20a | 62 | ×2.07 | 0 | 0 | CHOICE | Flat ground — or a hidden tilt? {\fs13}I'm your China Travel Exp |
+| 2026-11-19d | 1082 | ×36.07 | 1 | 0 | PLAIN-FACT | POV: you're walking Hong Kong's tram line. {\fs13}I'm your China |
 | 2026-11-19c | 3 | ×0.10 | 0 | 0 | PRICE-SHOCK | Hampton Court Palace: about $38. The Forbidden City: about $6. { |
-| 2026-11-19b | 79 | ×2.72 | 0 | 0 | PLAIN-FACT | This looks edited. It isn't — it's a real salt lake. {\fs13}I'm  |
-| 2026-11-19a | 269 | ×9.28 | 1 | 0 | SPECTACLE-FACT | This 38-metre hall holds up its roof with zero iron nails. {\fs1 |
-| 2026-11-18d | 76 | ×2.62 | 0 | 0 | PRICE-SHOCK | Windsor Castle: about $41. The Forbidden City in winter: about $ |
-| 2026-11-18c | 345 | ×11.90 | 1 | 0 | MISCONCEPTION | You think this pagoda is a thousand years old. It isn't. {\fs13} |
-| 2026-11-18b | 985 | ×33.97 | 4 | 0 | DEBATE | For "old China" everyone flies to Beijing or Xi'an. They skip th |
-| 2026-11-18a | 13 | ×0.45 | 0 | 0 | SPECTACLE-FACT | A temple from 247 AD, boxed in by Shanghai's malls. {\fs13}I'm y |
-| 2026-11-17b | 78 | ×2.69 | 0 | 0 | DEBATE | Skip the Great Wall crowds — the wall you can ride all the way a |
-| 2026-11-17c | 1000 | ×34.48 | 3 | 0 | CHOICE | City… or not city? Chongqing breaks the question. {\fs13}I'm you |
-| 2026-11-17d | 116 | ×4.00 | 1 | 0 | SPECTACLE-FACT | Count the roof beasts: only one building in China is allowed 10. |
+| 2026-11-19b | 82 | ×2.73 | 0 | 0 | PLAIN-FACT | This looks edited. It isn't — it's a real salt lake. {\fs13}I'm  |
+| 2026-11-19a | 272 | ×9.07 | 1 | 0 | SPECTACLE-FACT | This 38-metre hall holds up its roof with zero iron nails. {\fs1 |
+| 2026-11-18d | 76 | ×2.53 | 0 | 0 | PRICE-SHOCK | Windsor Castle: about $41. The Forbidden City in winter: about $ |
+| 2026-11-18c | 345 | ×11.50 | 1 | 0 | MISCONCEPTION | You think this pagoda is a thousand years old. It isn't. {\fs13} |
+| 2026-11-18b | 985 | ×32.83 | 4 | 0 | DEBATE | For "old China" everyone flies to Beijing or Xi'an. They skip th |
+| 2026-11-18a | 13 | ×0.43 | 0 | 0 | SPECTACLE-FACT | A temple from 247 AD, boxed in by Shanghai's malls. {\fs13}I'm y |
+| 2026-11-17b | 78 | ×2.60 | 0 | 0 | DEBATE | Skip the Great Wall crowds — the wall you can ride all the way a |
+| 2026-11-17c | 1001 | ×33.37 | 3 | 0 | CHOICE | City… or not city? Chongqing breaks the question. {\fs13}I'm you |
+| 2026-11-17d | 116 | ×3.87 | 1 | 0 | SPECTACLE-FACT | Count the roof beasts: only one building in China is allowed 10. |
 | 2026-11-17a | 3 | ×0.10 | 0 | 0 | SPECTACLE-FACT | It survived 970 years of earthquakes. Now it's leaning. {\fs13}I |
-| 2026-11-16d | 70 | ×2.41 | 0 | 0 | SPECTACLE-FACT | POV: a port that's traded 2,200 years. {\fs13}I'm your China Tra |
-| 2026-11-16c | 1 | ×0.03 | 0 | 0 | SPECTACLE-FACT | 200+ shells hit it in 1926. Still standing. {\fs13}I'm your Chin |
-| 2026-11-16b | 58 | ×2.00 | 0 | 0 | PLAIN-FACT | This isn't Beijing's famous dragon wall. {\fs13}I'm your China T |
-| 2026-11-16a | 306 | ×10.55 | 1 | 0 | SPECTACLE-FACT | The Great Wall you picture isn't 2,000 years old. {\fs13}I'm you |
 <!-- AUTO:END -->
