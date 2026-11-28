@@ -1,0 +1,74 @@
+{
+  "recut": "R-03",
+  "title": "First China stop: Shanghai or Guangzhou?",
+  "hookType": "CHOICE",
+  "status": "ready",
+  "forced": false,
+  "uploadable": true,
+  "renderedAt": "2026-11-05T12:44:55+00:00",
+  "out": "/home/user/Claude-code/automation/youtube/runs/2026-11-05-a/final.mp4",
+  "durationSec": 16.233,
+  "sizeBytes": 17504153,
+  "music": {
+    "file": "el-acoustic-journey-01.mp3",
+    "start": 0.0,
+    "aiGenerated": true
+  },
+  "loudness": {
+    "integratedLUFS": -13.9,
+    "truePeakDbfs": -1.8
+  },
+  "checks": {
+    "exclusions": "pass",
+    "labels": "pass",
+    "warnings": []
+  },
+  "cues": [
+    {
+      "start": 0.0,
+      "end": 4.12,
+      "text": "First China stop:\n[[Shanghai]] or [[Guangzhou]]?"
+    },
+    {
+      "start": 4.12,
+      "end": 7.49,
+      "text": "Shanghai: the old\nExpo China Pavilion"
+    },
+    {
+      "start": 7.49,
+      "end": 11.26,
+      "text": "Guangzhou:\n[[\"Lychee King\"]] season"
+    },
+    {
+      "start": 11.26,
+      "end": null,
+      "text": "Pick one —\nand tell me why."
+    }
+  ],
+  "frames": [],
+  "metaHints": {
+    "music": "el-acoustic-journey-01.mp3",
+    "format": "F1",
+    "footage": "owner",
+    "owner": true,
+    "povType": "ride",
+    "aiFootage": false,
+    "containsSyntheticMediaExpected": true,
+    "placesNamed": [
+      "Shanghai",
+      "China Art Museum (former Expo China Pavilion)",
+      "Guangzhou"
+    ],
+    "facts": [
+      {
+        "claim": "the red building is the former 2010 Expo China Pavilion, now the China Art Museum",
+        "source": "editA.srt + runs/owner-footage/2026-08-01/plan.md (IMG_9040)"
+      },
+      {
+        "claim": "'Lychee King' (荔枝王) sign at the fruit counter",
+        "source": "visible in the footage; Guangzhou EP1 meta"
+      }
+    ],
+    "pairWith": null
+  }
+}

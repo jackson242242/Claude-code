@@ -1,0 +1,5 @@
+# 3 child M-Shorts (publish in the 7 days after the M-Long; seeds arch-M-08..10 in queue.json)
+Each: 30-45 s, code-drawn middle from scenes.json parts (extend render_fc_drain.py or copy), 2.5 s slug-named real FC open + 3-4 s real close, 2-s CTA "Full video: tap the related video above". Facts only from the ledger (2 sources).
+1. **arch-M-08 "Dragon heads that drain" (INSIDER):** hook "Those dragon heads on the Forbidden City terraces are drain spouts." Steps: 3-tier terrace -> rain -> spouts throw water clear -> why it protects the marble. Ledger F15-F17. Say "more than a thousand"; never an exact count.
+2. **arch-M-09 "Less than 2 m of slope" (MISCONCEPTION):** hook "The Forbidden City isn't flat — and that's the point." Steps: gate levels 46.05 vs 44.28 -> rain rolls south -> water leaves via moat. F6-F7, F4. Mention "dense walls weaken this" caveat.
+3. **arch-M-10 "13 km you can't see" (STAKES):** hook "About 13 km of the Forbidden City's drains are underground." Steps: open ditch -> covered channel -> Inner Golden Water River (5 bridges) -> moat; end card "dredged 3x a year now" ONLY if F21 re-sourced. F8-F12.

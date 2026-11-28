@@ -1,0 +1,94 @@
+{
+  "canvas": { "w": 1080, "h": 1920, "fps": 30, "duration_s": 34 },
+  "style": {
+    "bg": "#0d1626",
+    "bg_grid": "#141f30",
+    "outline": "#241a10",
+    "ink": "#f6ead3",
+    "ink_dim": "#a9b4c2",
+    "accent": "#e8513a",
+    "card": "#16202f",
+    "stone": "#c9c2b0",
+    "stone_dark": "#8c8574",
+    "stone_light": "#e4ddcb",
+    "water": "#2f6d8c",
+    "roof": "#5f6f7a",
+    "none": "none",
+    "font_en": "DejaVu Sans",
+    "font_cn": "Noto Serif CJK SC"
+  },
+  "title": {
+    "line1": "1,400 years.",
+    "line2": "Floods can't break it.",
+    "sub": "Zhaozhou Bridge — the open-spandrel arch"
+  },
+  "origin": { "x": 540, "y": 900 },
+  "caption_card": { "y": 1500, "h": 190 },
+  "steps": [
+    {
+      "id": "base",
+      "t": 1.0,
+      "drop": 0,
+      "parts": [
+        { "shape": "rect", "x": -540, "y": 120, "w": 1080, "h": 300, "fill": "water" },
+        { "shape": "rect", "x": -560, "y": 40, "w": 140, "h": 320, "fill": "stone_dark" },
+        { "shape": "rect", "x": 420, "y": 40, "w": 140, "h": 320, "fill": "stone_dark" },
+        { "shape": "path", "d": "M -470,40 Q 0,-370 470,40 L 430,40 Q 0,-280 -430,40 Z", "fill": "stone" }
+      ],
+      "caption": "A single shallow arch — about 37 m across, only ~7 m high.",
+      "cn": "赵州桥 Zhaozhou"
+    },
+    {
+      "id": "spandrel",
+      "t": 6.0,
+      "drop": 90,
+      "parts": [
+        { "shape": "path", "d": "M -470,40 Q 0,-370 470,40 L 470,-204 L -470,-204 Z", "fill": "stone" },
+        { "shape": "rect", "x": -510, "y": -240, "w": 1020, "h": 40, "fill": "stone_light" },
+        { "shape": "rect", "x": -510, "y": -258, "w": 1020, "h": 12, "fill": "stone_dark" }
+      ],
+      "caption": "You'd expect the shoulders packed with solid stone.",
+      "cn": "实肩拱 solid"
+    },
+    {
+      "id": "open",
+      "t": 11.0,
+      "drop": 0,
+      "parts": [
+        { "shape": "path", "d": "M -388,-72 L -388,-142 Q -388,-190 -340,-190 Q -292,-190 -292,-142 L -292,-72 Z", "fill": "bg" },
+        { "shape": "path", "d": "M -240,-134 L -240,-156 Q -240,-196 -200,-196 Q -160,-196 -160,-156 L -160,-134 Z", "fill": "bg" },
+        { "shape": "path", "d": "M 160,-134 L 160,-156 Q 160,-196 200,-196 Q 240,-196 240,-156 L 240,-134 Z", "fill": "bg" },
+        { "shape": "path", "d": "M 292,-72 L 292,-142 Q 292,-190 340,-190 Q 388,-190 388,-142 L 388,-72 Z", "fill": "bg" }
+      ],
+      "caption": "Zhaozhou opens four arches — cutting the stone's weight.",
+      "cn": "敞肩拱 open"
+    },
+    {
+      "id": "flood",
+      "t": 16.5,
+      "kind": "arrows",
+      "parts": [],
+      "arrows": [
+        { "from": [-340, 110], "to": [-340, -120] },
+        { "from": [-200, 110], "to": [-200, -150] },
+        { "from": [200, 110], "to": [200, -150] },
+        { "from": [340, 110], "to": [340, -120] }
+      ],
+      "caption": "In a flood, water pours straight through them.",
+      "cn": "泄洪 flood relief"
+    },
+    {
+      "id": "payoff",
+      "t": 21.5,
+      "drop": 0,
+      "parts": [],
+      "caption": "Built around 605 CE. Still standing 1,400 years later.",
+      "cn": "1400 年 years"
+    }
+  ],
+  "outro": {
+    "t": 27.5,
+    "text": "Old stone or new steel — which do you trust?",
+    "sub": "China Travel Expert 中国古建筑"
+  }
+}

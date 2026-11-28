@@ -1,0 +1,5 @@
+# 3 child M-Shorts (publish in the 7 days after the M-Long on 2026-12-11; seeds arch-M-11..13 in queue.json)
+Each: 30-45 s, code-drawn middle, 2.5 s slug-named real Great Wall open + 3-4 s real close (section unnamed unless the clip slug names it), 2-s CTA "Full video: tap the related video above". Facts only from the ledger (2 sources). Renderer for #1: render_rammed_earth.py (exists; vary text) — #2/#3 need new scenes (TODO).
+1. **arch-M-11 "Why the Wall isn't all brick" (MISCONCEPTION):** hook "The Great Wall isn't all brick — the Ming wall is ~8,850 of 21,196 km." Steps: bar 21,196 → Ming block → rest. G1, G4.
+2. **arch-M-12 "Reeds in the wall" (INSIDER):** hook "Desert Great Wall: gravel + reed layers, 2,000 years." Steps: gravel/sand layer → reed bundle → repeat → sand ditch footprints (say "reportedly"). G8, G9, G11. Drop if G11 unsourced.
+3. **arch-M-13 "The Wall on a river" (STAKES):** hook "One Great Wall section stands ON a river: nine arches." Steps: river → granite slab foundation → piers → 9 arches → wall. G18–G23; never say UNESCO/original.
